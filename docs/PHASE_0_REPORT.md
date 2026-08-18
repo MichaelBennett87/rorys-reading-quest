@@ -34,9 +34,16 @@ Ran required verification commands in sequence after Phase 0 implementation:
 - Repository initialized locally with `.git` present.
 - No remote configured.
 - No pushes performed.
+- Latest commits:
+  - `24a21cb` — chore: establish phase 0 foundation
+  - `df761b2` — chore: remove template assets
 
 ## Known Assumptions
 
 - `jsdom` required to run Vitest with DOM environment was added as a local dev dependency.
 - Minimal shell intentionally avoids routing, state-management libraries, persistence, and remote calls.
 - Sample content is DRAFT and not production-ready.
+
+## Next Single Command Scope
+
+Run `npm run dev` to launch a local smoke-check of the minimal shell after any visual edits.
