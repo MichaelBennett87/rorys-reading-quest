@@ -1,0 +1,116 @@
+.app-shell {
+  display: grid;
+  gap: 1rem;
+  padding: 0.25rem 0 2rem;
+}
+
+.hero-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+
+.compass-mark {
+  width: 82px;
+  height: 82px;
+  flex: 0 0 82px;
+}
+
+.hero-text h1 {
+  font-size: clamp(1.7rem, 2.8vw, 2.3rem);
+}
+
+.hero-text p {
+  color: #42516f;
+  margin-top: 0.4rem;
+}
+
+.session-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.session-card p {
+  margin-top: 0.75rem;
+}
+
+.pathway-grid {
+  margin-top: 0.9rem;
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.pathway {
+  border: 1px dashed #c5cce3;
+  border-radius: 12px;
+  padding: 0.75rem;
+  background: #fdf5ea;
+}
+
+.pathway h3 {
+  font-size: 1rem;
+}
+
+.pathway p {
+  margin-top: 0.35rem;
+  font-size: 0.93rem;
+  color: #34405f;
+}
+
+.path-controls {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.path-controls button {
+  border: 2px solid var(--accent);
+  color: #3b304f;
+  background: #fde6d2;
+  border-radius: 10px;
+  padding: 0.58rem 0.9rem;
+  min-width: 150px;
+  cursor: default;
+}
+
+.path-controls button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.path-controls button:hover {
+  border-color: var(--accent-strong);
+}
+
+.parent-area {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.parent-note {
+  margin-top: 0.4rem;
+  color: #4c5670;
+}
+
+@media (max-width: 800px) {
+  .hero-card {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .pathway-grid {
+    grid-template-columns: 1fr;
+  }
+}

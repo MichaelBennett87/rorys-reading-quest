@@ -1,0 +1,76 @@
+:root {
+  --font-title: 'Trebuchet MS', 'Arial', sans-serif;
+  --font-body: 'Verdana', 'Helvetica Neue', sans-serif;
+  --background: #f7f7fb;
+  --surface: #ffffff;
+  --surface-alt: #ffffff;
+  --border: #d4d7eb;
+  --text: #1f2342;
+  --accent: #f07f4f;
+  --accent-strong: #bf4f27;
+  --focus: #1c3e8c;
+  --ok: #3c6e45;
+  --ok-soft: #e6f5ea;
+  --shadow:
+    0 8px 24px rgba(31, 35, 66, 0.12),
+    0 2px 6px rgba(31, 35, 66, 0.08);
+  --radius: 16px;
+  --max-width: 1060px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text);
+  background:
+    radial-gradient(circle at 15% 10%, #fff4eb 0%, transparent 35%),
+    radial-gradient(circle at 85% 0%, #edf4ff 0%, transparent 40%),
+    var(--background);
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--font-title);
+}
+
+p {
+  margin: 0;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
