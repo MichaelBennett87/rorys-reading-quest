@@ -5,6 +5,12 @@ export interface ReviewProgressionResult {
   nextIntervalDays: number
 }
 
+export function getReviewIntervalForStep(step: number): number {
+  const safeStep = Number.isFinite(step) ? Math.max(0, Math.floor(step)) : 0
+  const lastIndex = REVIEW_INTERVAL_DAYS.length - 1
+  return REVIEW_INTERVAL_DAYS[Math.min(safeStep, lastIndex)]
+}
+
 export function nextReviewInterval(step: number, passedReview: boolean): ReviewProgressionResult {
   const safeStep = Number.isFinite(step) ? Math.max(0, Math.floor(step)) : 0
   const maxIndex = REVIEW_INTERVAL_DAYS.length - 1
