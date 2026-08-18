@@ -10,9 +10,14 @@
   - [x] Content model and validation implemented.
   - [x] Required test coverage added.
   - [x] Verification commands run.
-- [ ] Phase 1: child shell and navigation
-  - [ ] Expand shell to full child session flow.
-  - [ ] Add guided movement states and route hints.
+- [x] Phase 1: child shell and navigation
+  - [x] Child home screen with rewards/status, map, and daily quest.
+  - [x] World detail and unit-selection navigation.
+  - [x] Lesson-ready placeholder route.
+  - [x] Parent-area entry placeholder.
+  - [x] Shared reusable UI components and screen-level styles.
+  - [x] Local accessibility and keyboard interaction checks added.
+  - [x] Phase 1 verification run.
 - [ ] Phase 2: lesson and question engine
   - [ ] Introduce lesson session orchestration.
   - [ ] Expand question and passage authoring structures.

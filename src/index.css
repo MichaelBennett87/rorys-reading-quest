@@ -1,21 +1,24 @@
 :root {
   --font-title: 'Trebuchet MS', 'Arial', sans-serif;
   --font-body: 'Verdana', 'Helvetica Neue', sans-serif;
-  --background: #f7f7fb;
-  --surface: #ffffff;
-  --surface-alt: #ffffff;
-  --border: #d4d7eb;
+  --background: #eff5ff;
+  --surface: #fffefb;
+  --surface-soft: #f7f4ea;
+  --surface-action: #fff1e3;
+  --border: #c7cfec;
   --text: #1f2342;
-  --accent: #f07f4f;
-  --accent-strong: #bf4f27;
+  --text-soft: #4a4f6d;
+  --accent: #f4a05c;
+  --accent-strong: #bf5b2c;
   --focus: #1c3e8c;
-  --ok: #3c6e45;
+  --ok: #356b53;
   --ok-soft: #e6f5ea;
+  --warm: #bd6d3d;
   --shadow:
-    0 8px 24px rgba(31, 35, 66, 0.12),
-    0 2px 6px rgba(31, 35, 66, 0.08);
+    0 12px 28px rgba(28, 38, 84, 0.16),
+    0 4px 10px rgba(28, 38, 84, 0.08);
   --radius: 16px;
-  --max-width: 1060px;
+  --max-width: 1080px;
 }
 
 *,
@@ -29,8 +32,8 @@ body {
   font-family: var(--font-body);
   color: var(--text);
   background:
-    radial-gradient(circle at 15% 10%, #fff4eb 0%, transparent 35%),
-    radial-gradient(circle at 85% 0%, #edf4ff 0%, transparent 40%),
+    radial-gradient(circle at 18% 8%, #fff6ec 0%, transparent 34%),
+    radial-gradient(circle at 88% 3%, #edf5ff 0%, transparent 36%),
     var(--background);
   min-height: 100vh;
 }
@@ -57,11 +60,6 @@ p {
 button,
 a {
   font: inherit;
-}
-
-button:focus-visible {
-  outline: 3px solid var(--focus);
-  outline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {

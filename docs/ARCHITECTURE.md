@@ -2,9 +2,13 @@
 
 ## Presentation Layer
 
-- React + TypeScript with one shell component.
-- Semantic HTML with accessible labels and visible focus states.
-- No router or global state library in Phase 0.
+- React + TypeScript with a local presentation state machine (no router dependency in Phase 1).
+- Reusable screen and component boundaries for child shell navigation:
+  - `src/app/AppShell.tsx`
+  - `src/screens/*`
+  - `src/components/*`
+- Semantic HTML with accessible labels and visible focus styles.
+- No router, no global store, and no backend in Phase 1.
 
 ## Domain Layer
 
@@ -44,5 +48,6 @@
 ## Tests
 
 - Domain functions are covered by deterministic unit tests.
-- Shell render test ensures baseline app starts.
+- Screen-level shell tests cover navigation transitions and input states.
+- Added coverage for accessibility basics and placeholder lesson-ready behavior.
 - Tests run via Vitest with local TypeScript configuration.

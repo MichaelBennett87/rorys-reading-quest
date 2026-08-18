@@ -4,21 +4,20 @@
 
 Rory's Reading Quest is a local-first, child-safe reading-learning foundation for Grade 2–4 progression.
 
-The current work is **Phase 0 (Foundation)**. It establishes:
+The current work is **Phase 1 (Child Shell and Navigation)**. It builds from:
 
 - a minimal React shell,
-- deterministic progression domain logic,
-- a constrained content model,
-- validation tooling for development content,
-- and documentation required for later phases.
+- deterministic progression domain logic from Phase 0,
+- a child-facing local demo shell with world, unit, and lesson-ready navigation.
+- updated architecture documentation and test coverage.
 
 This repository intentionally uses only original sample material and does not deliver official FAST scores.
 
 ## Current Status
 
-- Status: `Phase 0 foundation complete` (implementation scaffold only).
-- Scope remains minimal and phase-limited.
-- No production learning content, no remote services, and no account system are included.
+- Status: `Phase 1 complete` (navigation shell only).
+- Still no lesson engine, persistence, parent dashboard, audio, router, or backend.
+- No account system, no remote services, and no real content scoring.
 
 ## Privacy Warning
 
@@ -49,6 +48,6 @@ Only original sample content marked as DRAFT is included.
 - Only DRAFT sample content is present in this phase.
 - No real-child outcome is claimed by this phase.
 
-## FAST/FASt Score Guidance
+## FAST/FAST Score Guidance
 
 This phase is not an official assessment system. It does not claim to produce official FAST scores.

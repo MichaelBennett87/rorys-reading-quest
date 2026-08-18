@@ -44,6 +44,14 @@ The sequence follows:
 4. Progression decision
 5. Review or remedial step based on decision
 
+## Phase 1 Navigation Behavior
+
+- Home screen shows current learner demo progress and curriculum worlds.
+- Available worlds open into world detail views.
+- Unit selection is available per world.
+- Lesson-ready screen is a placeholder that intentionally does not start real gameplay.
+- Parent entry is intentionally minimal and marked "coming later."
+
 ## Reward Philosophy (Kid-Facing)
 
 - Avoid punitive language.

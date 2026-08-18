@@ -1,116 +1,270 @@
-.app-shell {
-  display: grid;
-  gap: 1rem;
-  padding: 0.25rem 0 2rem;
+main {
+  margin: 0 auto;
+  width: min(100%, var(--max-width));
 }
 
-.hero-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 1rem;
+.screen-shell {
   display: grid;
-  gap: 0.75rem;
-  grid-template-columns: auto 1fr;
+  gap: 1rem;
+}
+
+.app-header,
+.screen-header,
+.welcome-panel,
+.quest-panel,
+.card {
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 2px solid var(--border);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.app-header {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.title-row {
+  display: flex;
+  gap: 0.85rem;
   align-items: center;
 }
 
-.compass-mark {
-  width: 82px;
-  height: 82px;
-  flex: 0 0 82px;
-}
-
-.hero-text h1 {
-  font-size: clamp(1.7rem, 2.8vw, 2.3rem);
-}
-
-.hero-text p {
-  color: #42516f;
+.subtitle {
+  color: var(--text-soft);
   margin-top: 0.4rem;
 }
 
-.session-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1rem;
+.small-copy {
+  color: var(--text-soft);
+  font-size: 0.95rem;
 }
 
-.session-card p {
-  margin-top: 0.75rem;
-}
-
-.pathway-grid {
-  margin-top: 0.9rem;
-  display: grid;
-  gap: 0.8rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.pathway {
-  border: 1px dashed #c5cce3;
-  border-radius: 12px;
-  padding: 0.75rem;
-  background: #fdf5ea;
-}
-
-.pathway h3 {
-  font-size: 1rem;
-}
-
-.pathway p {
-  margin-top: 0.35rem;
-  font-size: 0.93rem;
-  color: #34405f;
-}
-
-.path-controls {
+.reward-bar {
   display: flex;
-  gap: 0.7rem;
+  gap: 0.6rem;
   flex-wrap: wrap;
 }
 
-.path-controls button {
-  border: 2px solid var(--accent);
-  color: #3b304f;
-  background: #fde6d2;
-  border-radius: 10px;
-  padding: 0.58rem 0.9rem;
-  min-width: 150px;
-  cursor: default;
+.reward-pill {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.4rem 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--surface-soft);
+  min-height: 2.75rem;
+  min-width: 8rem;
 }
 
-.path-controls button:focus-visible {
+.reward-xp {
+  border-color: var(--accent);
+}
+
+.reward-stars {
+  border-color: var(--warm);
+}
+
+.reward-streak {
+  border-color: var(--focus);
+}
+
+.welcome-panel,
+.quest-panel {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.screen-header {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.screen-actions,
+.world-map,
+.card {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.world-grid,
+.unit-grid {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.world-card-inner,
+.unit-card-inner,
+.child-button {
+  text-align: left;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-soft);
+  padding: 0.75rem;
+  width: 100%;
+  min-height: 4.5rem;
+  cursor: pointer;
+}
+
+.child-button {
+  line-height: 1.3;
+  min-height: 2.9rem;
+  width: auto;
+}
+
+.child-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.child-button:focus-visible,
+.world-card-inner:focus-visible,
+.unit-card-inner:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 2px;
 }
 
-.path-controls button:hover {
+.child-button.primary-action {
+  border-color: var(--accent);
+  background: var(--surface-action);
+  color: #1d2a54;
+}
+
+.parent-button {
+  border-color: #2a6f7a;
+  background: #e1f3f6;
+}
+
+.world-card-inner {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.world-card-header,
+.unit-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.world-icon,
+.unit-card h3 {
+  font-size: 1.08rem;
+}
+
+.status-chip {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+}
+
+.status-available {
+  color: var(--ok);
+}
+
+.status-locked {
+  color: var(--accent-strong);
+}
+
+.status-coming-later,
+.status-review {
+  color: #8b5b2b;
+}
+
+.progress-meter-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.progress-meter-bar,
+.progress-meter progress,
+.progress-meter bar {
+  width: 100%;
+}
+
+.world-unit-list {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+.unit-meta {
+  display: flex;
+  justify-content: space-between;
+}
+
+.unit-card {
+  min-width: 0;
+}
+
+.unit-card-inner {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.atlas-message {
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: calc(var(--radius) - 5px);
+  background: var(--surface-soft);
+  padding: 0.7rem;
+}
+
+.atlas-message-welcome {
+  border-color: var(--ok);
+}
+
+.atlas-message-encourage {
+  border-color: #5c6dd8;
+}
+
+.atlas-message-locked {
   border-color: var(--accent-strong);
 }
 
-.parent-area {
-  background: var(--surface-alt);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1rem;
+.atlas-guide-mark {
+  width: 88px;
+  height: 88px;
 }
 
-.parent-note {
-  margin-top: 0.4rem;
-  color: #4c5670;
+.placeholder-message {
+  border-left: 6px solid var(--accent-strong);
 }
 
-@media (max-width: 800px) {
-  .hero-card {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    text-align: center;
+.parent-area-cta {
+  display: grid;
+  gap: 0.5rem;
+}
+
+@media (max-width: 680px) {
+  #root {
+    padding: 0.65rem;
   }
 
-  .pathway-grid {
+  .reward-pill {
+    min-width: 6.6rem;
+  }
+
+  .world-grid,
+  .unit-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition: none !important;
   }
 }
