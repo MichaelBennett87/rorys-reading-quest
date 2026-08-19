@@ -18,9 +18,14 @@
   - [x] Shared reusable UI components and screen-level styles.
   - [x] Local accessibility and keyboard interaction checks added.
   - [x] Phase 1 verification run.
-- [ ] Phase 2: lesson and question engine
-  - [ ] Introduce lesson session orchestration.
-  - [ ] Expand question and passage authoring structures.
+- [x] Phase 2: lesson and question engine
+  - [x] Introduce lesson session orchestration.
+  - [x] Expand question and passage authoring structures.
+  - [x] Add deterministic evaluator for five question types.
+  - [x] Add lesson run, feedback, evidence, and completion result screens.
+  - [x] Add and wire lesson validator extensions.
+  - [x] Add focused lesson-domain and UI tests.
+  - [x] Update architecture/content/product docs and phase report.
 - [ ] Phase 3: adaptive progression and persistence
   - [ ] Add learner session persistence and history.
   - [ ] Add confidence tuning and progression telemetry-free analytics summaries.

@@ -24,7 +24,7 @@ const getPoetryCard = () => getSingleByRole('button', /Poetry Planet world - Com
 const getContinueButton = () => getSingleByRole('button', /Continue Quest/i)
 const getOpenParentButton = () => getSingleByRole('button', /Grown-Up Area/i)
 
-describe('Phase 1 child shell', () => {
+describe('Phase 2 lesson flow and child shell', () => {
   test('renders home title', () => {
     render(<App />)
 
@@ -88,7 +88,7 @@ describe('Phase 1 child shell', () => {
     expect(screen.getByText(/Potential reward: up to 3 stars/i)).toBeTruthy()
   })
 
-  test('shows lesson placeholder when Start Quest is clicked', () => {
+  test('starts the Word Forge lesson run and shows the first question', () => {
     render(<App />)
 
     fireEvent.click(getWordForgeCard())
@@ -96,8 +96,41 @@ describe('Phase 1 child shell', () => {
     fireEvent.click(screen.getByRole('button', { name: /Vowel Voyage Available/i }))
     fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
 
-    expect(screen.getByText(/This quest is being prepared/i)).toBeTruthy()
-    expect(screen.getByText(/Phase 2/i)).toBeTruthy()
+    expect(screen.getByRole('heading', { name: /Vowel Voyage/i })).toBeTruthy()
+    expect(screen.getByText(/Question 1 of 10/i)).toBeTruthy()
+    const submitButton = getSingleByRole('button', /Submit Answer/i)
+    expect(submitButton.getAttribute('disabled')).not.toBeNull()
+  })
+
+  test('can answer one question and remain child-safe', () => {
+    render(<App />)
+
+    fireEvent.click(getWordForgeCard())
+    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Vowel Voyage Available/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
+
+    const firstChoice = screen.getByRole('radio', { name: /Packing her kite bag and checking the wind/i })
+    fireEvent.click(firstChoice)
+
+    const submitButton = getSingleByRole('button', /Submit Answer/i)
+    expect(submitButton.getAttribute('disabled')).toBeNull()
+    fireEvent.click(submitButton)
+    expect(screen.getByText(/Great clue-finding!/i)).toBeTruthy()
+    expect(screen.getByText(/She packed her kite bag/i)).toBeTruthy()
+    const nextButton = getSingleByRole('button', /Next Question/i)
+    fireEvent.click(nextButton)
+    expect(screen.getByText(/Question 2 of 10/i)).toBeTruthy()
+  })
+
+  test('unavailable lesson units show safe read-only state and no launch button', () => {
+    render(<App />)
+
+    fireEvent.click(getWordForgeCard())
+    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Syllable Summit Available/i }))
+    expect(screen.getByText(/This quest is not available yet/i)).toBeTruthy()
+    expect(screen.queryByRole('button', { name: /Start Quest/i })).toBeNull()
   })
 
   test('returns from lesson-ready screen using back navigation', () => {

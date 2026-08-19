@@ -5,7 +5,9 @@ import type { DemoWorld, DemoUnit } from '../data/demoWorlds'
 interface LessonReadyScreenProps {
   world: DemoWorld
   unit: DemoUnit
-  lessonPrepared: boolean
+  hasLesson: boolean
+  previewQuestionCount?: number
+  unavailableMessage?: string
   onBack: () => void
   onStartQuest: () => void
 }
@@ -13,7 +15,9 @@ interface LessonReadyScreenProps {
 export function LessonReadyScreen({
   world,
   unit,
-  lessonPrepared,
+  hasLesson,
+  previewQuestionCount = 0,
+  unavailableMessage,
   onBack,
   onStartQuest,
 }: LessonReadyScreenProps) {
@@ -27,21 +31,22 @@ export function LessonReadyScreen({
       <section className="card">
         <h2>Lesson Preview</h2>
         <p>You will practice {unit.practiceFocus} in this quest.</p>
-        <p>Estimated time: 10–15 minutes.</p>
+        <p>Questions: {previewQuestionCount} in this play session.</p>
         <p>Potential reward: up to 3 stars.</p>
+        <p>Atlas message: Today we’re hunting for clues that help build careful reading habits.</p>
       </section>
 
       <ChildMessage category="READY" />
 
-      {lessonPrepared ? (
-        <section className="card placeholder-message" aria-live="polite">
-          <p>This quest is being prepared.</p>
-          <p>The lesson engine arrives in Phase 2.</p>
-        </section>
-      ) : (
+      {hasLesson ? (
         <ChildButton type="button" className="primary-action" onClick={onStartQuest}>
           Start Quest
         </ChildButton>
+      ) : (
+        <section className="card placeholder-message" aria-live="polite">
+          <p>This quest is not available yet.</p>
+          <p>{unavailableMessage || 'No stable lesson content is attached to this unit.'}</p>
+        </section>
       )}
 
       <section className="screen-actions">

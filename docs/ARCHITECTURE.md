@@ -1,53 +1,57 @@
-# Architecture (Phase 0)
+# Architecture (Phase 2)
 
 ## Presentation Layer
 
-- React + TypeScript with a local presentation state machine (no router dependency in Phase 1).
-- Reusable screen and component boundaries for child shell navigation:
-  - `src/app/AppShell.tsx`
-  - `src/screens/*`
-  - `src/components/*`
-- Semantic HTML with accessible labels and visible focus styles.
-- No router, no global store, and no backend in Phase 1.
+- React + TypeScript with a local `AppShell` state machine (`src/app/appView.ts`, `src/app/AppShell.tsx`).
+- Phase 2 lesson screens:
+  - `src/screens/LessonReadyScreen.tsx`
+  - `src/screens/LessonScreen.tsx`
+- Shared lesson UI:
+  - `src/components/lesson/*`
+- Semantic HTML with fieldsets/legends, keyboard controls, and visible focus styles.
+- No router, backend, or external service layer is introduced.
 
 ## Domain Layer
 
-- `src/domain/progression` contains pure logic for decisioning:
-  - Checkpoint evaluation
-  - Activity selection rules
-  - Review scheduling
-- `src/domain/content` contains:
-  - Typed content models
-  - Validator
-  - Small sample set
-- No side effects, no network calls.
+- `src/domain/progression` remains the adaptive-ready foundation and is not wired in this phase.
+- `src/domain/content` holds typed sample content and validation.
+- `src/domain/lesson` now owns deterministic lesson runtime contracts:
+  - `lessonTypes.ts` (union question model)
+  - `evaluateAnswer.ts` (pure scoring)
+  - `buildLessonResult.ts` (in-memory result object)
+  - `lessonCatalog.ts` (unit-to-lesson lookup and launch preflight checks)
+- All evaluators are pure and side-effect free.
 
-## Content Layer
+## Content Model Boundary
 
-- In-repo typed content data structures.
-- Each item carries grade band, skill ids, grade-level references, difficulty, review status, and version metadata.
-- DRAFT-only sample is intended for internal development use only.
+- `Content` is still in-repo sample content under `src/domain/content/sampleContent.ts`.
+- Each development question includes:
+  - prompt text
+  - `questionType` + `questionContent`
+  - stable IDs for selectable elements
+  - explanation and optional `evidenceReferenceIds`
+- `validateContent` is extended for phase 2 question payload rules.
 
-## Local Persistence Boundary
+## Lesson Engine Flow
 
-- No persistence is implemented in Phase 0.
-- Planned boundary in later phases:
-  - Local-only storage for session state and skill history.
-  - No external account dependency.
+- App navigation adds `lesson_ready` and `lesson_run`.
+- Runtime flow:
+  1. lesson selection
+  2. intro and question count
+  3. question rendering by type
+  4. answer submission and locked scoring
+  5. feedback + explanation
+  6. completion summary with temporary star result
+- Results are currently session-local (memory only) and designed for future adaptive handoff.
 
-## Browser Speech Boundary
+## Boundaries Deferred to Later Phases
 
-- No speech synthesis used in Phase 0.
-- Future phases reserve a boundary for assistance audio logic.
+- Persistence: no localStorage/session storage writes.
+- Progression engine wiring: not yet connected (Phase 3).
+- Parent dashboard, parent PIN, audio, sound-out, and PWA functionality: not added.
 
-## Future PWA Boundary
+## Validation & Test Coverage
 
-- No PWA runtime support in Phase 0.
-- Build remains standard Vite static output so future installability can be added later without backend dependency.
-
-## Tests
-
-- Domain functions are covered by deterministic unit tests.
-- Screen-level shell tests cover navigation transitions and input states.
-- Added coverage for accessibility basics and placeholder lesson-ready behavior.
-- Tests run via Vitest with local TypeScript configuration.
+- Pure domain tests for evaluation, result composition, validator behavior.
+- UI tests for lesson launch, interaction, completion, and child-safe messaging.
+- Accessibility checks remain part of UI test suite for focus, roles, and lockout behavior.

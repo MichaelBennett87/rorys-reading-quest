@@ -4,20 +4,22 @@
 
 Rory's Reading Quest is a local-first, child-safe reading-learning foundation for Grade 2–4 progression.
 
-The current work is **Phase 1 (Child Shell and Navigation)**. It builds from:
+The current work is **Phase 2 (Lesson and Question Engine)**. It builds from:
 
 - a minimal React shell,
-- deterministic progression domain logic from Phase 0,
-- a child-facing local demo shell with world, unit, and lesson-ready navigation.
+- deterministic progression and lesson-domain modules from earlier phases,
+- a local question runtime with five supported question types,
+- child-friendly passage display, feedback, and completion result computation,
 - updated architecture documentation and test coverage.
 
 This repository intentionally uses only original sample material and does not deliver official FAST scores.
 
 ## Current Status
 
-- Status: `Phase 1 complete` (navigation shell only).
-- Still no lesson engine, persistence, parent dashboard, audio, router, or backend.
-- No account system, no remote services, and no real content scoring.
+- Status: `Phase 2 complete` (deterministic in-memory lesson runtime).
+- Still no persistence, parent dashboard, or adaptive progression connection.
+- No audio, sound-out engine, or backend/router services yet.
+- No account system, no remote services, and no official FAST reporting.
 
 ## Privacy Warning
 
@@ -31,15 +33,15 @@ Only original sample content marked as DRAFT is included.
 - `npm run build` — TypeScript + production build.
 - `npm run lint` — run lint checks.
 - `npm run typecheck` — TypeScript type checking.
-- `npm run test` — run focused Phase 0 tests.
+- `npm run test` — run focused lesson-phase tests.
 - `npm run preview` — preview production build artifacts.
 
 ## Architecture Summary
 
 - **Presentation**: small React/TypeScript shell (`src/App.tsx`) with no router or backend dependency.
-- **Domain**: deterministic progression and content modules under `src/domain`.
-- **Content**: typed sample content for one Grade 2 bridge skill variant set plus validator.
-- **Storage**: none in Phase 0.
+- **Domain**: deterministic progression, lesson runtime, and content modules under `src/domain`.
+- **Content**: typed sample content with 2 passages and 10 development questions across 5 question types plus validator.
+- **Storage**: none in early phases.
 - **Runtime services**: browser only, no external requests.
 
 ## Content Integrity

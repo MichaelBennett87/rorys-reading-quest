@@ -1,21 +1,19 @@
-# Content Model (Phase 0)
+# Lesson Content Model (Phase 2)
 
-## Data Structures
+## Base Entities
 
 ### Passage
 
-- `identifier`
+- `passageIdentifier`
 - `gradeBand`
-- `text`
-- `sourceReference`
+- `passageText`
+- `readingContext`
 - `contentVersion`
 
-### Question/Activity
-
-The `ReadingQuestion` structure supports:
+### Question (shared reading item)
 
 - `gradeBand`
-- `benchmarkReference` (Florida benchmark or internal standard reference)
+- `benchmarkReference`
 - `skillIdentifier`
 - `prerequisiteSkillIdentifiers`
 - `reportingCategory`
@@ -26,28 +24,73 @@ The `ReadingQuestion` structure supports:
 - `questionIdentifier`
 - `questionType`
 - `prompt`
-- `answerChoices`
-- `correctAnswers`
+- `answerChoices` (legacy compatibility)
+- `correctAnswers` (legacy compatibility)
+- `lessonIdentifier` (optional runtime link)
 - `explanation`
-- `evidenceReference`
-- `targetVocabulary`
-- `soundOutChunks`
-- `estimatedReadingLevel`
-- `reviewStatus` (`DRAFT`, `REVIEWED`, `APPROVED`, `RETIRED`)
-- `contentVersion`
-- `tags`
+- `evidenceReference` (legacy)
+- `evidenceReferenceIds`
+- `questionContent` (phase 2 payload)
+- `reviewStatus`, `contentVersion`, `tags`
 
-## Validation Rules
+## questionType + questionContent mapping
 
-- identifiers must be present.
-- question types are limited to supported enum values.
-- correct answers must exist.
-- duplicate activity and question identifiers are errors.
-- prerequisite ids must resolve to known skills in the content set.
-- passage references must resolve to known passages.
-- approved items must include explanation text.
+The lesson runtime resolves `questionContent` into domain questions:
 
-## Current Status
+### MULTIPLE_CHOICE (`multiple_choice`)
 
-Phase 0 data is marked as `DRAFT` and is intentionally small.
-Reading-level labels are placeholders and are not authoritative.
+- `choices`: array of `{ id, text }`
+- `correctChoiceIds`: one item
+
+### MULTISELECT (`multi_select`)
+
+- `choices`: array of `{ id, text }`
+- `correctChoiceIds`: one or more required IDs
+
+### HOT_TEXT (`hot_text`)
+
+- `selectableSegments`: array of `{ id, text }`
+- `correctSegmentIds`: required selection set
+- `allowMultiple` is inferred from payload (`correctSegmentIds.length > 1`) for phase 2 behavior.
+
+### TWO_PART (`two_part`)
+
+- `partAPrompt`
+- `partAChoices`: array of `{ id, text }`
+- `partACorrectChoiceId`
+- `partBPrompt`
+- `partBChoices`: array of `{ id, text }`
+- `partBCorrectChoiceId`
+
+### TABLE_MATCH (`table_match`)
+
+- `rows`: one or more
+- each row has `id`, `prompt`, `correctChoiceId`, and `options: [{ id, text }]`
+
+## Validation requirements
+
+`validateContent` now enforces:
+
+- supported question types only
+- minimum/unique choices and stable IDs
+- required correct-answer data
+- required payload type for all phase 2 question types
+- hot-text segment presence/uniqueness and non-empty correct segments
+- two-part part prompts + matching choice IDs for each correct ID
+- table match rows, row IDs, prompts, options, and matching correctChoiceId
+- evidence references that exist in local content IDs
+- optional approved explanation requirement
+- duplicate activity IDs, duplicate question IDs, missing passage links, missing review status, unknown prerequisite
+
+## Evidence References
+
+- `evidenceReferenceIds` should use local IDs from the payload:
+  - choice IDs for multiple-choice and multiselect
+  - segment IDs for hot text
+  - part A and part B IDs for two-part
+  - option IDs for table match
+
+## Review States
+
+- `DRAFT`: still present as internal development content
+- `APPROVED`: requires `explanation`

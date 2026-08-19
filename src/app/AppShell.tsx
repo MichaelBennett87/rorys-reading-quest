@@ -2,9 +2,11 @@ import { useState } from 'react'
 
 import { demoLearner } from '../data/demoLearner'
 import { demoWorlds, getDemoWorldById, getRecommendedWorldId } from '../data/demoWorlds'
+import { getLessonForUnit, type LessonDefinition } from '../domain/lesson'
 import type { AppScreen } from './appView'
 import { HomeScreen } from '../screens/HomeScreen'
 import { LessonReadyScreen } from '../screens/LessonReadyScreen'
+import { LessonScreen } from '../screens/LessonScreen'
 import { ParentPlaceholderScreen } from '../screens/ParentPlaceholderScreen'
 import { UnitSelectScreen } from '../screens/UnitSelectScreen'
 import { WorldScreen } from '../screens/WorldScreen'
@@ -13,7 +15,11 @@ interface AppShellState {
   screen: AppScreen
   selectedWorldId: string | null
   selectedUnitId: string | null
-  lessonPrepared: boolean
+}
+
+interface LessonLaunchState {
+  lesson: LessonDefinition | null
+  errors: string[]
 }
 
 export function AppShell() {
@@ -21,12 +27,13 @@ export function AppShell() {
     screen: 'home',
     selectedWorldId: getRecommendedWorldId(),
     selectedUnitId: null,
-    lessonPrepared: false,
   })
   const [, setHistory] = useState<AppScreen[]>([])
+  const [lessonState, setLessonState] = useState<LessonLaunchState>({ lesson: null, errors: [] })
 
   const selectedWorld = state.selectedWorldId ? getDemoWorldById(state.selectedWorldId) : null
   const selectedUnit = selectedWorld ? selectedWorld.units.find((unit) => unit.id === state.selectedUnitId) : null
+  const lessonPreview = selectedUnit ? getLessonForUnit(selectedUnit.id) : null
 
   const navigate = (screen: AppScreen) => {
     setHistory((prev) => [...prev, state.screen])
@@ -40,7 +47,6 @@ export function AppShell() {
       setState((currentState) => ({
         ...currentState,
         screen: previous,
-        lessonPrepared: false,
       }))
       return nextHistory
     })
@@ -62,7 +68,7 @@ export function AppShell() {
     if (!world || world.status !== 'available') {
       return
     }
-    setState((prev) => ({ ...prev, selectedWorldId: worldId, selectedUnitId: null, lessonPrepared: false }))
+    setState((prev) => ({ ...prev, selectedWorldId: worldId, selectedUnitId: null }))
     navigate('world')
   }
 
@@ -70,12 +76,12 @@ export function AppShell() {
     if (!selectedWorld) {
       return
     }
-    setState((prev) => ({ ...prev, selectedUnitId: null, lessonPrepared: false }))
+    setState((prev) => ({ ...prev, selectedUnitId: null }))
     navigate('unit_select')
   }
 
   const openLessonReady = (unitId: string) => {
-    setState((prev) => ({ ...prev, selectedUnitId: unitId, lessonPrepared: false }))
+    setState((prev) => ({ ...prev, selectedUnitId: unitId }))
     navigate('lesson_ready')
   }
 
@@ -84,7 +90,13 @@ export function AppShell() {
   }
 
   const startQuest = () => {
-    setState((prev) => ({ ...prev, lessonPrepared: true }))
+    const launchResult = getLessonForUnit(state.selectedUnitId ?? '')
+    if (launchResult.lesson) {
+      setLessonState({ lesson: launchResult.lesson, errors: [] })
+    } else {
+      setLessonState({ lesson: null, errors: launchResult.errors })
+    }
+    navigate('lesson_run')
   }
 
   if (state.screen === 'parent_gate') {
@@ -92,7 +104,7 @@ export function AppShell() {
       <ParentPlaceholderScreen
         onBack={() => {
           setHistory([])
-          setState((prev) => ({ ...prev, screen: 'home', lessonPrepared: false }))
+          setState((prev) => ({ ...prev, screen: 'home' }))
         }}
       />
     )
@@ -103,10 +115,46 @@ export function AppShell() {
       <LessonReadyScreen
         world={selectedWorld}
         unit={selectedUnit}
-        lessonPrepared={state.lessonPrepared}
+        hasLesson={Boolean(lessonPreview?.lesson)}
+        previewQuestionCount={lessonPreview?.lesson?.questionCount}
+        unavailableMessage={lessonPreview?.errors[0]}
         onBack={navigateBack}
         onStartQuest={startQuest}
       />
+    )
+  }
+
+  if (state.screen === 'lesson_run' && selectedWorld && selectedUnit) {
+    if (lessonState.lesson) {
+      return (
+        <LessonScreen
+          lesson={lessonState.lesson}
+          onBack={() => {
+            setHistory([])
+            setState((prev) => ({ ...prev, screen: 'unit_select' }))
+          }}
+        />
+      )
+    }
+
+    return (
+      <section className="screen-shell">
+        <header className="screen-header">
+          <h1>{selectedUnit.title}</h1>
+          <p>{selectedWorld.name}</p>
+        </header>
+        <section className="card">
+          <h2>Lesson content is not available</h2>
+          <p>
+            {lessonState.errors[0] ?? 'This unit has no configured lesson data for this phase.'}
+          </p>
+        </section>
+        <section className="screen-actions">
+          <button type="button" className="child-button primary-action" onClick={navigateBack}>
+            Return to Unit
+          </button>
+        </section>
+      </section>
     )
   }
 

@@ -3,6 +3,7 @@ export type AppScreen =
   | 'world'
   | 'unit_select'
   | 'lesson_ready'
+  | 'lesson_run'
   | 'parent_gate'
 
 export interface AppViewState {

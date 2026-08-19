@@ -55,3 +55,24 @@
 - Reason: Keeps visual direction colorful and adventurous while avoiding extra styling dependencies.
 - Consequence: New tokens in `src/index.css` and reusable classes in `src/App.css`; no third-party CSS framework used.
 - Status: Applied
+
+## 2026-08-19 — Phase 2 Lesson Runtime
+
+- Decision: Keep phase 2 lesson sessions in local in-memory state.
+- Reason: deterministic gameplay can be validated without adding persistence or external services.
+- Consequence: `lesson_run` now supports question render, scoring, lockout, feedback, and completion result shape.
+- Status: Applied
+
+## 2026-08-19 — Supported Question Type Coverage
+
+- Decision: Implement exactly five question types in phase 2: multiple choice, multiselect, hot text, two-part evidence, and table match.
+- Reason: this set reaches the required engine complexity while staying bounded.
+- Consequence: evaluator, validator, and content model all align on the same typed payload contract.
+- Status: Applied
+
+## 2026-08-19 — Child-Safe Feedback Policy
+
+- Decision: Use only supportive language and explanations in all feedback states.
+- Reason: child safety and motivation are core product constraints for this phase.
+- Consequence: forbidden terms are rejected in tests; feedback emphasizes correction and evidence-based explanations.
+- Status: Applied

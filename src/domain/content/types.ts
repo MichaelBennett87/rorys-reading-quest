@@ -10,6 +10,60 @@ export type QuestionType =
   | 'table_match'
   | 'chart_based'
 
+export interface LessonChoice {
+  id: string
+  text: string
+}
+
+export interface MultipleChoiceQuestionData {
+  type: 'multiple_choice'
+  choices: LessonChoice[]
+  correctChoiceIds: string[]
+}
+
+export interface MultiselectQuestionData {
+  type: 'multi_select'
+  choices: LessonChoice[]
+  correctChoiceIds: string[]
+  allowMultiple?: boolean
+}
+
+export interface HotTextQuestionData {
+  type: 'hot_text'
+  selectableSegments: {
+    id: string
+    text: string
+  }[]
+  correctSegmentIds: string[]
+}
+
+export interface TwoPartQuestionData {
+  type: 'two_part'
+  partAPrompt: string
+  partAChoices: LessonChoice[]
+  partACorrectChoiceId: string
+  partBPrompt: string
+  partBChoices: LessonChoice[]
+  partBCorrectChoiceId: string
+}
+
+export interface TableMatchQuestionData {
+  type: 'table_match'
+  rows: {
+    id: string
+    prompt: string
+    correctChoiceId: string
+    options: LessonChoice[]
+  }[]
+}
+
+export type QuestionContentPayload =
+  | MultipleChoiceQuestionData
+  | MultiselectQuestionData
+  | HotTextQuestionData
+  | TwoPartQuestionData
+  | TableMatchQuestionData
+
 export interface Passage {
   passageIdentifier: string
   gradeBand: GradeBand
@@ -34,14 +88,17 @@ export interface ReadingQuestion {
   prompt: string
   answerChoices: string[]
   correctAnswers: string[]
+  lessonIdentifier?: string
   explanation?: string
   evidenceReference: string
+  evidenceReferenceIds?: string[]
   targetVocabulary: string[]
   soundOutChunks: string[]
   estimatedReadingLevel: string
   reviewStatus: ContentReviewStatus
   contentVersion: string
   tags: string[]
+  questionContent?: QuestionContentPayload
 }
 
 export interface ContentSample {
@@ -54,6 +111,13 @@ export interface ContentValidationError {
     | 'missing_identifier'
     | 'unsupported_question_type'
     | 'missing_correct_answer'
+    | 'missing_choices'
+    | 'malformed_question_payload'
+    | 'malformed_table_match_rows'
+    | 'duplicate_option_id'
+    | 'duplicate_hot_text_segment_id'
+    | 'missing_hot_text_segments'
+    | 'invalid_evidence_reference'
     | 'duplicate_activity_identifier'
     | 'duplicate_question_identifier'
     | 'unknown_prerequisite'

@@ -4,7 +4,7 @@ import { selectNextActivity } from '../../src/domain/progression/selectNextActiv
 import { sampleContent } from '../../src/domain/content/sampleContent'
 
 const targetActivities = sampleContent.questions
-  .filter((q) => q.skillIdentifier === 'g2-word-forge-vowel-patterns' && q.difficulty === 1)
+    .filter((q) => q.skillIdentifier === 'g2-word-forge-word-practice' && q.difficulty === 1)
   .map((q) => ({
     activityIdentifier: q.activityIdentifier,
     skillIdentifier: q.skillIdentifier,
@@ -16,7 +16,7 @@ const targetActivities = sampleContent.questions
 describe('selectNextActivity', () => {
   test('excludes recently used activities', () => {
     const decision = selectNextActivity({
-      skillIdentifier: 'g2-word-forge-vowel-patterns',
+      skillIdentifier: 'g2-word-forge-word-practice',
       difficulty: 1,
       availableActivities: targetActivities,
       recentActivityUsage: [
@@ -30,7 +30,7 @@ describe('selectNextActivity', () => {
 
   test('does not immediately repeat same passage-question combination', () => {
     const decision = selectNextActivity({
-      skillIdentifier: 'g2-word-forge-vowel-patterns',
+      skillIdentifier: 'g2-word-forge-word-practice',
       difficulty: 1,
       availableActivities: targetActivities,
       recentActivityUsage: [
@@ -51,7 +51,7 @@ describe('selectNextActivity', () => {
 
   test('reports when no fresh variant is available', () => {
     const decision = selectNextActivity({
-      skillIdentifier: 'g2-word-forge-vowel-patterns',
+      skillIdentifier: 'g2-word-forge-word-practice',
       difficulty: 1,
       availableActivities: targetActivities,
       recentActivityUsage: targetActivities,

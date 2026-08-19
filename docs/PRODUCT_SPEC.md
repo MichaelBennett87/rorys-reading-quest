@@ -1,86 +1,67 @@
-# Product Specification: Rory's Reading Quest (Phase 0)
+# Product Specification (Phase 2)
 
-## Purpose
+## Scope
 
-Rory's Reading Quest is a local-first reading-learning foundation for a child beginning Grade 3.
-Phase 0 proves the product structure and curriculum modeling while keeping runtime minimal.
+- Add a playable in-app lesson runtime over local sample content.
+- Implement five question types with deterministic scoring.
+- Keep all behavior local and child-safe.
+- Do not connect progression decisions, persistence, parent dashboard, audio, sound-out, or PWA features in this phase.
 
-## Grade 2 to 4 Progression
+## Lesson Runtime
 
-- Start at Grade 2 foundational reading skills.
-- Progress into Grade 3 mastery tasks.
-- Introduce graded Grade 4 material as stretch content by end of school-year sequence.
+### Flow
 
-The sequence follows:
+1. Lesson intro from unit card (`lesson_ready`).
+2. Passage + question stack (`lesson_run`).
+3. One question at a time; no automatic progression.
+4. Submit only after a valid selection.
+5. Show supportive feedback and explanation.
+6. Continue to next question via explicit action.
+7. Show completion screen with temporary score summary.
 
-1. Foundation (Grade 2 bridge work)
-2. Mastery pathways (Grade 3 core)
-3. Frontier enrichment (Grade 4 stretch)
+### Question rendering rules
 
-## Curriculum Worlds
+- Multiple choice: one selection.
+- Multiselect: multiple selections; exact set match required.
+- Hot text: selectable text segments (single or multiple depending on prompt config).
+- Two-part evidence: Part A and Part B both required.
+- Table match: one response per row, one select per row.
 
-1. Word Forge
-   - Vowel patterns, syllables, high-frequency words, prefixes/suffixes, morphology, multisyllabic decoding, Greek/Latin roots.
-2. Story Scouts
-   - Character, setting, sequence, problem and solution, plot, character development, theme, perspective, evidence.
-3. Information Detectives
-   - Topic and key details, text features, central idea, text structure, purpose/perspective, claims and evidence.
-4. Poetry Planet
-   - Rhyme, rhythm, stanzas, literal/nonliteral language, figurative language, imagery, tone/mood.
-5. Context Cavern
-   - Context clues, roots/affixes, synonyms/antonyms, multiple meanings, connotation.
-6. Compare Castle
-   - Paired texts, same-topic comparisons, author comparison, similarities/differences, synthesis.
-7. Evidence Arena
-   - Multiple choice, multiselect, hot text, two-part evidence, matching, charts/diagrams/captions/timelines.
-8. Writer's Workshop
-   - Grade 4 stretch lane: narrative/expository writing, claims/evidence, sentence craft, conventions, plan/revise/edit.
+## Feedback philosophy
 
-## Normal Session Structure
+- Feedback must be supportive, non-judgmental, and child-safe.
+- Suggested messages:
+  - Correct: “Great clue-finding!”
+  - Incorrect: “Not quite. Let’s look at the clue.”
+- Show brief explanation always after submission.
+- Do not show words such as FAILED, FAILURE, BAD, BEHIND, BAD READER, WRONG LEVEL.
 
-1. Teaching pass
-2. Guided practice
-3. Fresh checkpoint
-4. Progression decision
-5. Review or remedial step based on decision
+## Completion result
 
-## Phase 1 Navigation Behavior
+- Completion always produces:
+  - `lessonId`, `activityId`, `skillId`, `difficulty`, `totalQuestions`, `correctAnswers`, `firstAttemptCorrect`, `accuracy`, `assistanceUsed`, `questionResults`, `completed`
+- Temporary star rules (local only):
+  - `90–100% = 3`
+  - `70–89% = 2`
+  - `< 70% = 1`
+- At least one star is always awarded.
+- No FAST score or official placement claims are produced.
 
-- Home screen shows current learner demo progress and curriculum worlds.
-- Available worlds open into world detail views.
-- Unit selection is available per world.
-- Lesson-ready screen is a placeholder that intentionally does not start real gameplay.
-- Parent entry is intentionally minimal and marked "coming later."
+## Development content
 
-## Reward Philosophy (Kid-Facing)
+- Keep content local and clearly marked.
+- Current phase 2 sample includes:
+  - 2 original passages
+  - 10 questions
+  - all five supported question formats represented
+- All questions include explanations for traceability and teaching support.
 
-- Avoid punitive language.
-- Use encouraging progression language (e.g., "Try a New Route", "Power-Up Mission", "Trail Complete").
-- Rewards are tied to milestone completion and consistency, not speed alone.
+## Accessibility
 
-## Timer Philosophy
+- Keep fieldset/legend structure for question prompts.
+- Keyboard-selectable controls, visible focus, and disabled state visibility.
+- No timers and no automatic submission or timer-based scoring.
 
-No strict session time caps in Phase 0.
-Timer use is optional and should support low-pressure reminders only in later phases.
+## Future connection
 
-## Parent Dashboard Goals
-
-Phase 0 does not include parent dashboard functionality.
-Planned goals:
-
-- View skill progression milestones.
-- Review completed and in-progress checkpoints.
-- Track review schedule adherence.
-- Surface safe encouragement-oriented summaries only.
-
-## Real-Book Side-Quest
-
-No real protected passages are included in Phase 0.
-Future side quests may include references to openly available public works and clearly licensed supplemental material.
-All future reading materials will remain versioned and reviewed.
-
-## Content and Language
-
-- No punitive child-facing words such as "failed", "failed checkpoint", or "wrong level".
-- No live AI generation for child content.
-- All lesson materials are original draft content until reviewed and approved.
+- Phase 3 can consume `LessonResult` to drive adaptive activity selection and progression without changing question rendering logic.
