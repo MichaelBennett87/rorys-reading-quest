@@ -30,10 +30,19 @@ describe('unit-aware Word Forge planning', () => {
     const wordForgeAtFour = difficultyFourWorlds.find((world) => world.id === 'word-forge')!
     expect(wordForgeAtFour.units.find((unit) => unit.id === 'wg-unit-2')?.state).toBe('available')
     expect(wordForgeAtFour.units.find((unit) => unit.id === 'wg-unit-2')?.difficultyLabel).toBe('Trail 4')
+    expect(wordForgeAtFour.units.find((unit) => unit.id === 'wg-unit-3')?.state).toBe('locked')
 
     const difficultyFiveWorlds = deriveWorldsForProgress(createProgress(5))
     const wordForgeAtFive = difficultyFiveWorlds.find((world) => world.id === 'word-forge')!
     expect(['complete', 'review']).toContain(wordForgeAtFive.units.find((unit) => unit.id === 'wg-unit-2')?.state)
+    expect(wordForgeAtFive.units.find((unit) => unit.id === 'wg-unit-3')?.state).toBe('available')
+    expect(wordForgeAtFive.units.find((unit) => unit.id === 'wg-unit-3')?.difficultyLabel).toBe('Trail 5')
+
+    const difficultySixWorlds = deriveWorldsForProgress(createProgress(6))
+    const wordForgeAtSix = difficultySixWorlds.find((world) => world.id === 'word-forge')!
+    expect(['complete', 'review', 'available']).toContain(wordForgeAtSix.units.find((unit) => unit.id === 'wg-unit-3')?.state)
+    expect(wordForgeAtSix.units.find((unit) => unit.id === 'wg-unit-4')?.state).toBe('locked')
+    expect(wordForgeAtSix.units.find((unit) => unit.id === 'wg-unit-4')?.practiceFocus).toContain('prepared')
   })
 
   test('unit planning respects unit boundaries and freshness', () => {
@@ -69,6 +78,7 @@ describe('unit-aware Word Forge planning', () => {
 
     const trailFourProgress = createProgress(4)
     const trailFiveProgress = createProgress(5)
+    const trailSixProgress = createProgress(6)
     const trailFourPlan = planUnitQuest({
       selectedUnitId: 'wg-unit-2',
       progress: trailFourProgress,
@@ -85,6 +95,37 @@ describe('unit-aware Word Forge planning', () => {
       availableLessons,
     })
     expect(exhaustedPlan.status).toBe('content_needed')
+
+    const trailFourPrefixLock = planUnitQuest({
+      selectedUnitId: 'wg-unit-3',
+      progress: trailFourProgress,
+      availableLessons,
+    })
+    expect(trailFourPrefixLock.status).toBe('locked')
+
+    const trailFivePrefixPlan = planUnitQuest({
+      selectedUnitId: 'wg-unit-3',
+      progress: trailFiveProgress,
+      availableLessons,
+    })
+    expect(trailFivePrefixPlan.status).toBe('available')
+    if (trailFivePrefixPlan.status === 'available') {
+      expect(trailFivePrefixPlan.lessonId).toBe('lesson-word-forge-common-prefixes-checkpoint-a')
+    }
+
+    const trailSixPrefixPlan = planUnitQuest({
+      selectedUnitId: 'wg-unit-3',
+      progress: trailSixProgress,
+      availableLessons,
+    })
+    expect(trailSixPrefixPlan.status).toBe('content_needed')
+
+    const trailSixSuffixPlan = planUnitQuest({
+      selectedUnitId: 'wg-unit-4',
+      progress: trailSixProgress,
+      availableLessons,
+    })
+    expect(trailSixSuffixPlan.status).toBe('locked')
   })
 
   test('an active session in another unit blocks a fresh unit launch', () => {

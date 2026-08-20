@@ -237,6 +237,38 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
     const allTargets = pack.passages.flatMap((passage) => passage.wordSupportTargets ?? [])
     let hasOpenConsonantLeExample = false
     let hasClosedConsonantLeExample = false
+    const prefixFamilyObserved = new Set<string>()
+    const prefixWordExpectations = expectation.packId === 'g2-word-forge-common-prefixes'
+      ? new Map<string, { prefix: string; baseWord: string; familyTag: string }>([
+          ['unhappy', { prefix: 'un', baseWord: 'happy', familyTag: 'prefix-un' }],
+          ['unsafe', { prefix: 'un', baseWord: 'safe', familyTag: 'prefix-un' }],
+          ['unfair', { prefix: 'un', baseWord: 'fair', familyTag: 'prefix-un' }],
+          ['unkind', { prefix: 'un', baseWord: 'kind', familyTag: 'prefix-un' }],
+          ['unpack', { prefix: 'un', baseWord: 'pack', familyTag: 'prefix-un' }],
+          ['unlock', { prefix: 'un', baseWord: 'lock', familyTag: 'prefix-un' }],
+          ['unroll', { prefix: 'un', baseWord: 'roll', familyTag: 'prefix-un' }],
+          ['rebuild', { prefix: 're', baseWord: 'build', familyTag: 'prefix-re' }],
+          ['repaint', { prefix: 're', baseWord: 'paint', familyTag: 'prefix-re' }],
+          ['rewrite', { prefix: 're', baseWord: 'write', familyTag: 'prefix-re' }],
+          ['reuse', { prefix: 're', baseWord: 'use', familyTag: 'prefix-re' }],
+          ['retell', { prefix: 're', baseWord: 'tell', familyTag: 'prefix-re' }],
+          ['preview', { prefix: 'pre', baseWord: 'view', familyTag: 'prefix-pre' }],
+          ['preheat', { prefix: 'pre', baseWord: 'heat', familyTag: 'prefix-pre' }],
+          ['pretest', { prefix: 'pre', baseWord: 'test', familyTag: 'prefix-pre' }],
+          ['preschool', { prefix: 'pre', baseWord: 'school', familyTag: 'prefix-pre' }],
+          ['dislike', { prefix: 'dis', baseWord: 'like', familyTag: 'prefix-dis' }],
+          ['disagree', { prefix: 'dis', baseWord: 'agree', familyTag: 'prefix-dis' }],
+          ['disconnect', { prefix: 'dis', baseWord: 'connect', familyTag: 'prefix-dis' }],
+          ['disobey', { prefix: 'dis', baseWord: 'obey', familyTag: 'prefix-dis' }],
+          ['miscount', { prefix: 'mis', baseWord: 'count', familyTag: 'prefix-mis' }],
+          ['misplace', { prefix: 'mis', baseWord: 'place', familyTag: 'prefix-mis' }],
+          ['misprint', { prefix: 'mis', baseWord: 'print', familyTag: 'prefix-mis' }],
+          ['misspell', { prefix: 'mis', baseWord: 'spell', familyTag: 'prefix-mis' }],
+        ])
+      : null
+    const forbiddenOpaquePrefixWords = expectation.packId === 'g2-word-forge-common-prefixes'
+      ? new Set(['uncle', 'under', 'return', 'present', 'distance', 'mistake'])
+      : null
 
     if (allTargets.length < expectation.minSupportTargets || allTargets.length > expectation.maxSupportTargets) {
       pushIssue(
@@ -271,6 +303,28 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
         if (expectation.closedConsonantLeWords.has(normalizedWord)) {
           hasClosedConsonantLeExample = true
         }
+        if (prefixWordExpectations) {
+          if (forbiddenOpaquePrefixWords?.has(normalizedWord)) {
+            pushIssue(issues, 'ambiguous_forbidden_homograph', target.targetId, 'Opaque words must not be treated as transparent prefix targets.')
+            continue
+          }
+          const expectationForWord = prefixWordExpectations.get(normalizedWord)
+          if (expectationForWord) {
+            prefixFamilyObserved.add(expectationForWord.familyTag)
+            const reconstructed = (target.displayChunks ?? []).map((chunk) => chunk.displayText.toLowerCase().replace(/[^a-z]/g, '')).join('')
+            if (reconstructed !== normalizedWord) {
+              pushIssue(issues, 'support_target_structure_invalid', target.targetId, 'Prefix target chunks must reconstruct the surface word.')
+            }
+            const prefixChunk = target.displayChunks?.[0]?.displayText.toLowerCase().replace(/[^a-z]/g, '') ?? ''
+            if (prefixChunk !== expectationForWord.prefix) {
+              pushIssue(issues, 'support_target_structure_invalid', target.targetId, 'Prefix target chunks must begin with the authored prefix.')
+            }
+            const baseChunk = (target.displayChunks ?? []).slice(1).map((chunk) => chunk.displayText.toLowerCase().replace(/[^a-z]/g, '')).join('')
+            if (baseChunk !== expectationForWord.baseWord) {
+              pushIssue(issues, 'support_target_structure_invalid', target.targetId, 'Prefix target chunks must preserve the base word.')
+            }
+          }
+        }
       }
     }
 
@@ -280,6 +334,14 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
       }
       if (!hasClosedConsonantLeExample) {
         pushIssue(issues, 'missing_target_pattern_coverage', pack.manifest.packId, 'The pack must include closed syllables before consonant-le.')
+      }
+    }
+
+    if (expectation.packId === 'g2-word-forge-common-prefixes') {
+      for (const familyTag of ['prefix-un', 'prefix-re', 'prefix-pre', 'prefix-dis', 'prefix-mis'] as const) {
+        if (!prefixFamilyObserved.has(familyTag)) {
+          pushIssue(issues, 'missing_target_pattern_coverage', pack.manifest.packId, `The pack must include ${familyTag.replace('prefix-', '').replace('-', '-')} support targets.`)
+        }
       }
     }
 
@@ -358,6 +420,22 @@ function getBridgePackExpectation(pack: ContentPack): BridgePackExpectation | nu
       openConsonantLeWords: new Set(['table', 'maple', 'cable', 'title', 'noble', 'bugle', 'stable']),
       closedConsonantLeWords: new Set(['apple', 'candle', 'little', 'bottle', 'simple', 'puzzle', 'middle', 'rattle', 'bubble', 'jungle', 'pebble', 'giggle', 'sample', 'temple', 'dimple', 'tumble', 'handle', 'bundle']),
       forbiddenSilentEWords: new Set(['sale', 'mile', 'hole', 'rule', 'pale', 'smile']),
+    }
+  }
+
+  if (!hasB && !hasC && pack.manifest.benchmarkReferences.includes('ELA.2.F.1.3d') && minDifficulty === 4 && maxDifficulty === 5) {
+    return {
+      packId: pack.manifest.packId,
+      guidedDifficultyA: 4,
+      guidedDifficultyB: 5,
+      checkpointPatterns: ['prefix-un', 'prefix-re', 'prefix-pre', 'prefix-dis', 'prefix-mis'],
+      minSupportTargets: 28,
+      maxSupportTargets: 35,
+      minSupportTargetsPerPassage: 3,
+      maxSupportTargetsPerPassage: 5,
+      openConsonantLeWords: new Set(),
+      closedConsonantLeWords: new Set(),
+      forbiddenSilentEWords: new Set(),
     }
   }
 

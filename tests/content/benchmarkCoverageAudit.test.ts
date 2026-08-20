@@ -45,4 +45,39 @@ describe('benchmark coverage audit', () => {
       reviewStatus: 'DRAFT',
     }))
   })
+
+  test('reports partial coverage for 1.3d and keeps the least mature review status', () => {
+    const prefixPack = contentPacks.find((pack) => pack.manifest.packId === 'g2-word-forge-common-prefixes')
+    expect(prefixPack).toBeDefined()
+
+    const draftPack = structuredClone(prefixPack!)
+    draftPack.manifest.packId = 'synthetic-common-prefixes-draft'
+    draftPack.manifest.reviewStatus = 'DRAFT'
+
+    const reviewedPack = structuredClone(prefixPack!)
+    reviewedPack.manifest.packId = 'synthetic-common-prefixes-reviewed'
+    reviewedPack.manifest.reviewStatus = 'REVIEWED'
+
+    const approvedPack = structuredClone(prefixPack!)
+    approvedPack.manifest.packId = 'synthetic-common-prefixes-approved'
+    approvedPack.manifest.reviewStatus = 'APPROVED'
+
+    expect(buildBenchmarkCoverageAudit([draftPack, approvedPack], 'ELA.2.F.1.3d')).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.2.F.1.3d',
+      expectedPatterns: ['common-prefixes', 'common-suffixes'],
+      coveredPatterns: ['common-prefixes'],
+      missingPatterns: ['common-suffixes'],
+      coverageStatus: 'partial',
+      reviewStatus: 'DRAFT',
+    }))
+
+    expect(buildBenchmarkCoverageAudit([reviewedPack, approvedPack], 'ELA.2.F.1.3d')).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.2.F.1.3d',
+      expectedPatterns: ['common-prefixes', 'common-suffixes'],
+      coveredPatterns: ['common-prefixes'],
+      missingPatterns: ['common-suffixes'],
+      coverageStatus: 'partial',
+      reviewStatus: 'REVIEWED',
+    }))
+  })
 })

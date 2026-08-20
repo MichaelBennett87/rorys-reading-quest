@@ -28,9 +28,10 @@ describe('getLessonForUnit', () => {
     expect(candidates.filter((candidate) => candidate.difficulty === 1)).toHaveLength(7)
     expect(candidates.filter((candidate) => candidate.difficulty === 2)).toHaveLength(7)
     expect(candidates.filter((candidate) => candidate.difficulty === 3)).toHaveLength(7)
-    expect(candidates.filter((candidate) => candidate.difficulty === 4)).toHaveLength(5)
-    expect(candidates).toHaveLength(28)
-    expect(new Set(candidates.map((candidate) => candidate.activityId)).size).toBe(28)
+    expect(candidates.filter((candidate) => candidate.difficulty === 4)).toHaveLength(7)
+    expect(candidates.filter((candidate) => candidate.difficulty === 5)).toHaveLength(5)
+    expect(candidates).toHaveLength(35)
+    expect(new Set(candidates.map((candidate) => candidate.activityId)).size).toBe(35)
     expect(candidates.map((candidate) => candidate.lessonId)).not.toEqual(expect.arrayContaining([
       'lesson-word-forge-vowel-voyage-a',
       'lesson-word-forge-vowel-voyage-b',
@@ -74,6 +75,22 @@ describe('getLessonForUnit', () => {
       worldId: 'word-forge',
       unitId: 'wg-unit-2',
     }))
+    expect(getLessonCatalogMetadata('lesson-word-forge-common-prefixes-checkpoint-a')).toEqual(expect.objectContaining({
+      lessonId: 'lesson-word-forge-common-prefixes-checkpoint-a',
+      packId: 'g2-word-forge-common-prefixes',
+      worldId: 'word-forge',
+      unitId: 'wg-unit-3',
+    }))
     expect(getLessonCatalogMetadata('missing-lesson-id')).toBeNull()
+  })
+
+  test('the prefix power trail resolves to the new checkpoint lesson', () => {
+    const result = getLessonForUnit('wg-unit-3')
+    expect(result.lesson).toBeDefined()
+    expect(result.lesson?.lessonId).toBe('lesson-word-forge-common-prefixes-checkpoint-a')
+    expect(result.lesson?.lessonRole).toBe('CHECKPOINT')
+    expect(result.lesson?.selectionStatus).toBe('active')
+    expect(result.lesson?.questionCount).toBe(7)
+    expect(result.lesson?.teachingBlock).toBeUndefined()
   })
 })

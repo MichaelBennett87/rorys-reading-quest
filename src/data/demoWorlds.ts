@@ -289,14 +289,45 @@ function deriveWordForgeUnit(unit: DemoUnit, focus: ReturnType<typeof resolveWor
     }
   }
 
-  return {
-    ...unit,
-    state: unit.id === 'wg-unit-3' ? 'locked' : unit.state,
-    difficultyLabel: unit.id === 'wg-unit-3' && focus.currentDifficulty >= 5 ? 'Trail 5' : unit.difficultyLabel,
-    practiceFocus: unit.id === 'wg-unit-3' && focus.currentDifficulty >= 5
-      ? 'Prefix Power quests are being prepared.'
-      : unit.practiceFocus,
+  if (unit.id === 'wg-unit-3') {
+    const activeOrPlanned = focus.activeUnitId === unit.id || focus.plannedUnitId === unit.id
+    const state = focus.currentDifficulty >= 6
+      ? (activeOrPlanned ? 'available' : (focus.plannedPurpose === 'review' ? 'review' : 'complete'))
+      : focus.currentDifficulty >= 5 || activeOrPlanned
+        ? 'available'
+        : 'locked'
+    return {
+      ...unit,
+      state,
+      difficultyLabel: focus.currentDifficulty >= 6
+        ? (state === 'review' ? 'Review' : 'Complete')
+        : focus.currentDifficulty >= 5
+          ? 'Trail 5'
+          : activeOrPlanned
+            ? 'Trail 4'
+            : 'Locked',
+      progressPercent: state === 'locked' ? 0 : focus.currentDifficulty >= 6 ? 100 : 75,
+      practiceFocus: state === 'locked'
+        ? 'Complete Syllable Summit to unlock Prefix Power.'
+        : focus.currentDifficulty >= 6
+          ? 'Review common prefixes and base words.'
+          : 'common prefixes and base words',
+    }
   }
+
+  if (unit.id === 'wg-unit-4') {
+    return {
+      ...unit,
+      state: 'locked',
+      difficultyLabel: 'Locked',
+      progressPercent: 0,
+      practiceFocus: focus.currentDifficulty >= 6
+        ? 'Suffix Station quests are being prepared.'
+        : 'Complete Prefix Power to unlock Suffix Station.',
+    }
+  }
+
+  return { ...unit }
 }
 
 function cloneWorld(world: DemoWorld): DemoWorld {
