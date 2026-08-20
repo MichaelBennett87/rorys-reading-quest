@@ -1,0 +1,243 @@
+.parent-dashboard-shell {
+  gap: 0.9rem;
+}
+
+.parent-dashboard-header {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.parent-dashboard-header-copy {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.parent-dashboard-header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.parent-dashboard-action {
+  min-width: 9rem;
+}
+
+.parent-dashboard-trail,
+.parent-muted-copy,
+.parent-metric-note {
+  color: var(--text-soft);
+}
+
+.parent-dashboard-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.parent-dashboard-tab {
+  min-height: 2.75rem;
+  padding: 0.65rem 0.95rem;
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-soft);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.parent-dashboard-tab.is-active,
+.parent-dashboard-tab[aria-current='page'] {
+  border-color: var(--accent);
+  background: var(--surface-action);
+  font-weight: 700;
+}
+
+.parent-dashboard-main {
+  display: grid;
+  gap: 1rem;
+}
+
+.parent-dashboard-panel {
+  display: grid;
+  gap: 1rem;
+}
+
+.parent-panel-header {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.parent-metric-grid,
+.parent-card-grid,
+.parent-two-column {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.parent-metric-grid {
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+
+.parent-two-column {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.parent-metric-card,
+.parent-summary-card,
+.parent-detail-card,
+.parent-empty-state,
+.parent-data-note {
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.9rem;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 0.45rem;
+}
+
+.parent-metric-label {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  font-weight: 700;
+}
+
+.parent-metric-value {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.parent-status-badge {
+  align-self: start;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  padding: 0.14rem 0.55rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.parent-status-badge-info {
+  color: var(--focus);
+}
+
+.parent-status-badge-attention {
+  color: var(--accent-strong);
+}
+
+.parent-status-badge-neutral {
+  color: var(--text-soft);
+}
+
+.parent-card-heading-row,
+.parent-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.55rem;
+  align-items: center;
+}
+
+.parent-card-actions {
+  justify-content: flex-start;
+}
+
+.parent-summary-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.parent-summary-list-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.6rem 0.75rem;
+  background: var(--surface-soft);
+}
+
+.parent-inline-field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.parent-inline-field select {
+  min-height: 2.6rem;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 0.35rem 0.55rem;
+  font: inherit;
+  background: var(--surface-soft);
+}
+
+.accuracy-meter {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.accuracy-meter-track {
+  height: 0.7rem;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #dde4f6;
+}
+
+.accuracy-meter-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--focus), var(--accent));
+}
+
+.accuracy-meter-value {
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.accuracy-meter-empty {
+  color: var(--text-soft);
+}
+
+.parent-explainer-box {
+  display: grid;
+  gap: 0.35rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface-soft);
+  padding: 0.75rem;
+}
+
+@media (max-width: 720px) {
+  .parent-dashboard-header-actions,
+  .parent-card-heading-row,
+  .parent-card-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .parent-dashboard-tab {
+    min-width: 8.5rem;
+  }
+}
+
+@media print {
+  .parent-dashboard-nav,
+  .parent-dashboard-header-actions,
+  .parent-card-actions {
+    display: none !important;
+  }
+
+  .parent-dashboard-shell,
+  .parent-dashboard-panel,
+  .parent-summary-card,
+  .parent-detail-card,
+  .parent-empty-state,
+  .parent-data-note {
+    box-shadow: none;
+    background: #fff;
+  }
+}
