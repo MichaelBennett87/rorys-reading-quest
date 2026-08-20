@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest'
 
-import { contentPackAudit, contentPacks, sampleContent } from '../../src/domain/content'
+import { benchmarkCoverageAudit, contentPackAudit, contentPacks, sampleContent } from '../../src/domain/content'
 import { getLessonById, getLessonCandidates, getLessonForUnit } from '../../src/domain/lesson'
 
 describe('grade 2 content pack registry', () => {
@@ -9,7 +9,24 @@ describe('grade 2 content pack registry', () => {
     const sampleSnapshot = structuredClone(sampleContent)
 
     expect(new Set(contentPacks.map((pack) => pack.manifest.packId)).size).toBe(contentPacks.length)
+    expect(contentPacks.map((pack) => pack.manifest.packId)).toEqual([
+      'g2-word-forge-variable-vowels-oo-ea',
+      'g2-word-forge-variable-vowels-ou-oi-oy-ow',
+      'legacy-word-forge-development-pack',
+    ])
     expect(contentPackAudit).toHaveLength(0)
+    expect(benchmarkCoverageAudit).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.2.F.1.3a',
+      expectedPatterns: ['oo', 'ea', 'ou', 'oi', 'oy', 'ow'],
+      coveredPatterns: ['oo', 'ea', 'ou', 'oi', 'oy', 'ow'],
+      missingPatterns: [],
+      contributingPackIds: [
+        'g2-word-forge-variable-vowels-oo-ea',
+        'g2-word-forge-variable-vowels-ou-oi-oy-ow',
+      ],
+      coverageStatus: 'implemented',
+      reviewStatus: 'DRAFT',
+    }))
     expect(contentPacks).toEqual(packsSnapshot)
     expect(sampleContent).toEqual(sampleSnapshot)
   })

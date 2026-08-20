@@ -1,9 +1,11 @@
 import type { ContentPack, ContentPackAuditIssue } from './contentPackTypes'
+import { collectObservedStandardPatterns, getClaimedStandardPatterns } from './patternCoverage'
 
 export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPackAuditIssue[] {
   const issues: ContentPackAuditIssue[] = []
   const packIds = new Set<string>()
   const seenLessonIds = new Set<string>()
+  const seenPromptSignatures = new Set<string>()
   const activityIds = new Set<string>()
   const passageIds = new Set<string>()
   const questionIds = new Set<string>()
@@ -31,9 +33,21 @@ export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPac
       packIds.add(pack.manifest.packId)
     }
 
-    if (pack.manifest.benchmarkReferences.includes('ELA.2.F.1.3a')) {
-      if (!pack.manifest.coveredPatterns.includes('oo') || !pack.manifest.coveredPatterns.includes('ea')) {
-        pushIssue(issues, 'missing_target_pattern_coverage', pack.manifest.packId, 'The pack must cover both oo and ea patterns.')
+    if (pack.manifest.coveredPatterns.length === 0) {
+      pushIssue(issues, 'missing_target_pattern_coverage', pack.manifest.packId, 'Each pack must declare at least one covered pattern.')
+    }
+
+    const claimedStandardPatterns = getClaimedStandardPatterns(pack)
+    if (claimedStandardPatterns.length > 0) {
+      const observedPatterns = new Set(collectObservedStandardPatterns(pack))
+      const missingPatterns = claimedStandardPatterns.filter((pattern) => !observedPatterns.has(pattern))
+      if (missingPatterns.length > 0) {
+        pushIssue(
+          issues,
+          'missing_target_pattern_coverage',
+          pack.manifest.packId,
+          `The pack must cover its claimed patterns: ${missingPatterns.join(', ')}.`,
+        )
       }
     }
 
@@ -81,11 +95,11 @@ export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPac
         pushIssue(issues, 'unsupported_question_payload', question.questionIdentifier, 'Question payload is missing.')
       }
 
-      const promptSignature = `${question.lessonIdentifier}::${question.prompt}`
-      if (seenLessonIds.has(promptSignature)) {
+      const promptSignature = `${question.lessonIdentifier ?? 'unknown'}::${question.prompt}`
+      if (seenPromptSignatures.has(promptSignature)) {
         pushIssue(issues, 'duplicate_prompt_in_lesson', question.questionIdentifier, 'Duplicate prompt detected inside the lesson.')
       } else {
-        seenLessonIds.add(promptSignature)
+        seenPromptSignatures.add(promptSignature)
       }
     }
 

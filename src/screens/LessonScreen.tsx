@@ -147,10 +147,6 @@ export function LessonScreen({
     speechService.cancel()
   }, [step, speechService])
 
-  useEffect(() => {
-    setPracticeStarted(lesson.lessonRole !== 'GUIDED_PRACTICE' || (session?.submittedQuestions.length ?? 0) > 0)
-  }, [lesson.lessonId, lesson.lessonRole, session?.submittedQuestions.length])
-
   if (!lesson.questions.length) {
     return (
       <section className="screen-shell">

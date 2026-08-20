@@ -28,8 +28,12 @@ export function selectNextLesson(input: SelectNextLessonInput): NextQuestPlan {
     !usedActivityIds.has(candidate.activityId)
     && !candidate.passageQuestionKeys.some((key) => lastPassageQuestionKeys.has(key))
   ))
+  const preferredFresh = lastUsage
+    ? fresh.filter((candidate) => candidate.contentVersion === lastUsage.contentVersion)
+    : fresh
+  const selectable = preferredFresh.length > 0 ? preferredFresh : fresh
 
-  if (!fresh[0]) {
+  if (!selectable[0]) {
     return {
       status: 'content_needed',
       purpose: input.purpose,
@@ -41,5 +45,5 @@ export function selectNextLesson(input: SelectNextLessonInput): NextQuestPlan {
     }
   }
 
-  return { status: 'available', purpose: input.purpose, lesson: fresh[0] }
+  return { status: 'available', purpose: input.purpose, lesson: selectable[0] }
 }

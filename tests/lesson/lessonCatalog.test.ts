@@ -22,12 +22,13 @@ describe('getLessonForUnit', () => {
     expect(result.lesson?.teachingBlock).toBeUndefined()
   })
 
-  test('exposes two lower lessons and five fresh current-trail variants while excluding legacy lessons', () => {
+  test('exposes the active trail and bridge lessons while excluding legacy lessons', () => {
     const candidates = getLessonCandidates()
     expect(candidates.filter((candidate) => candidate.difficulty === 0)).toHaveLength(2)
-    expect(candidates.filter((candidate) => candidate.difficulty === 1)).toHaveLength(5)
-    expect(candidates).toHaveLength(7)
-    expect(new Set(candidates.map((candidate) => candidate.activityId)).size).toBe(7)
+    expect(candidates.filter((candidate) => candidate.difficulty === 1)).toHaveLength(7)
+    expect(candidates.filter((candidate) => candidate.difficulty === 2)).toHaveLength(5)
+    expect(candidates).toHaveLength(14)
+    expect(new Set(candidates.map((candidate) => candidate.activityId)).size).toBe(14)
     expect(candidates.map((candidate) => candidate.lessonId)).not.toEqual(expect.arrayContaining([
       'lesson-word-forge-vowel-voyage-a',
       'lesson-word-forge-vowel-voyage-b',

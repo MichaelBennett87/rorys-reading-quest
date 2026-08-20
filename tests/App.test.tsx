@@ -172,8 +172,8 @@ describe('Phase 2 lesson flow and child shell', () => {
     fireEvent.click(getWordForgeCard())
     fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
     fireEvent.click(screen.getByRole('button', { name: /Syllable Summit Available/i }))
-    expect(screen.getByText(/This quest is not available yet/i)).toBeTruthy()
-    expect(screen.queryByRole('button', { name: /Start Quest/i })).toBeNull()
+    expect(screen.getByText(/This quest is almost ready; we can open the lesson route in a later phase\./i)).toBeTruthy()
+    expect(screen.getByRole('button', { name: /Start Quest/i })).toBeTruthy()
   })
 
   test('returns from lesson-ready screen using back navigation', () => {

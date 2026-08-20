@@ -147,16 +147,17 @@ function resolveRemediationTarget(
     }
   }
 
-  const fallbackExists = input.availableLessons.some((lesson) => (
-    lesson.skillId === input.progress.skillId
-    && lesson.difficulty === input.progress.lastMasteredDifficulty
-    && lesson.eligiblePurposes.includes('remediation')
-  ))
-  return fallbackExists ? {
+  const fallbackDifficulty = input.availableLessons
+    .filter((lesson) => lesson.skillId === input.progress.skillId)
+    .filter((lesson) => lesson.eligiblePurposes.includes('remediation'))
+    .map((lesson) => lesson.difficulty)
+    .filter((difficulty) => difficulty < input.progress.currentDifficulty)
+    .sort((left, right) => right - left)[0]
+  return fallbackDifficulty === undefined ? null : {
     skillId: input.progress.skillId,
-    difficulty: input.progress.lastMasteredDifficulty,
+    difficulty: fallbackDifficulty,
     reason: 'last_mastered_difficulty',
-  } : null
+  }
 }
 
 function cloneProgress(progress: SkillProgressState): SkillProgressState {

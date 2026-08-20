@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { demoLearner } from '../data/demoLearner'
 import { demoWorlds, getDemoWorldById, getRecommendedWorldId } from '../data/demoWorlds'
-import { getLessonById, getLessonForUnit, type LessonDefinition } from '../domain/lesson'
+import { getLessonById, type LessonDefinition } from '../domain/lesson'
 import type { ActiveLessonSession } from '../persistence'
 import { HomeScreen } from '../screens/HomeScreen'
 import { LessonReadyScreen } from '../screens/LessonReadyScreen'
@@ -43,7 +43,29 @@ export function AppShell() {
 
   const selectedWorld = state.selectedWorldId ? getDemoWorldById(state.selectedWorldId) : null
   const selectedUnit = selectedWorld ? selectedWorld.units.find((unit) => unit.id === state.selectedUnitId) : null
-  const lessonPreview = selectedUnit ? getLessonForUnit(selectedUnit.id) : null
+  const resolveLaunchState = (): LessonLaunchState => {
+    const active = questProgress.progress.activeLessonSession
+    if (active) {
+      const resumed = getLessonById(active.lessonId)
+      if (resumed.lesson) {
+        return { lesson: resumed.lesson, session: active, errors: [] }
+      }
+    }
+
+    const planned = questProgress.planContinue()
+    if (planned.status === 'content_needed') {
+      return { lesson: null, session: null, errors: [planned.reason] }
+    }
+
+    const selected = getLessonById(planned.lesson.lessonId)
+    if (selected.lesson) {
+      return { lesson: selected.lesson, session: null, errors: [] }
+    }
+
+    return { lesson: null, session: null, errors: [selected.errors[0] ?? 'The planned quest is unavailable.'] }
+  }
+
+  const lessonPreview = selectedUnit ? resolveLaunchState() : null
   const activeSkill = Object.values(questProgress.progress.skillProgress)[0]
   const learner = {
     ...demoLearner,
@@ -137,7 +159,7 @@ export function AppShell() {
   }
 
   const startQuest = () => {
-    const launch = getLessonForUnit(state.selectedUnitId ?? '')
+    const launch = resolveLaunchState()
     if (launch.lesson) {
       launchLesson(launch.lesson)
       return
