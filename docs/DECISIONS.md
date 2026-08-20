@@ -132,3 +132,10 @@
 - Reason: The detailed dashboard, assessment-entry UI, and print/export flows are deferred to Phase 5B.
 - Consequence: The app can unlock a private parent area, show bounded summary data, and keep the full dashboard scope out of this split.
 - Status: Applied
+
+## 2026-08-20 - Parent Dashboard Presentation Shell
+
+- Decision: Add only a read-only dashboard shell in Phase 5B1 that consumes the existing parent analytics snapshot.
+- Reason: The phase needs a polished parent-facing presentation layer without adding record mutation or print/export behavior.
+- Consequence: Parent navigation, overview, drill-downs, session details, reviews, word help, and the assessments placeholder can be delivered now while Phase 5B2 retains the remaining mutation and print flows.
+- Status: Applied

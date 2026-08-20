@@ -30,3 +30,7 @@ Parent dashboard/PIN, additional curriculum expansion, PWA behavior, accounts, r
 ## Phase 5A Parent Data Boundary
 
 Parent access uses a separate local store with hashed PIN material only. Official assessment records use a separate local store. Neither store writes to the child-progress key, and neither store is required for child gameplay to continue. Plaintext PINs, surnames, birth dates, student IDs, school data, report images, and other child-sensitive records stay out of persisted progress. When browser cryptography is unavailable, parent unlocking fails closed and child play remains available.
+
+## Phase 5B1 Parent Dashboard Privacy
+
+The read-only parent dashboard reuses the same local progress and assessment stores. It presents aggregate summaries, privacy-safe session metadata, and read-only assessment counts without exposing passage text, answers, spoken text, PIN material, or raw assistance events. Dashboard navigation never writes to child progress or parent assessment records.

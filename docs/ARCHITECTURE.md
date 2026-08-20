@@ -37,3 +37,9 @@
 - `src/persistence/parentAccessStore.ts` and `src/persistence/parentRecordsStore.ts` keep parent access and official assessment records separate from child progress.
 - `src/screens/ParentPlaceholderScreen.tsx` now serves as the minimal authenticated parent foundation screen and lock gate.
 - Child progression, rewards, assistance, and recovery remain owned by the existing child-progress store and are not altered by parent-state loading failures.
+
+## Phase 5B1 Parent Dashboard Presentation
+
+- `src/screens/parent/ParentDashboardScreen.tsx` consumes the existing `DashboardSnapshot` contract and renders the authenticated parent overview, progress drill-downs, recent sessions, reviews, word-help summaries, and the read-only assessments placeholder.
+- `src/components/parent/*` provides small reusable presentation primitives for headers, navigation, metric cards, data notes, empty states, status badges, and accuracy meters.
+- The dashboard is responsive and local-only, with no new persistence layer, charting dependency, router, or mutation path added.
