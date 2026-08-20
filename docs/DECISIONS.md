@@ -194,6 +194,13 @@
 - Consequence: Coverage audits can report implemented or partial status accurately, and review status can remain conservative across multiple packs.
 - Status: Applied
 
+## 2026-08-20 - Phase 6C1 Common-Prefix Coverage
+
+- Decision: Mark `ELA.2.F.1.3d` as partial in DRAFT form after Phase 6C1 registers common-prefix practice for Prefix Power.
+- Reason: The benchmark now has authored common-prefix coverage, but common suffixes remain deferred to Phase 6C2.
+- Consequence: Parent and curriculum docs can report partial coverage without implying approval, mastery, or official FAST results.
+- Status: Applied
+
 ## 2026-08-20 - Unit-Aware Word Forge Planning
 
 - Decision: Make selected-unit planning unit-aware so fresh lesson selection and active-session recovery respect the chosen Word Forge trail.
