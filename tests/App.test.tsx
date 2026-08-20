@@ -196,7 +196,8 @@ describe('Phase 2 lesson flow and child shell', () => {
     fireEvent.change(screen.getByLabelText(/Confirm Parent PIN/i), { target: { value: '1234' } })
     fireEvent.click(screen.getByRole('button', { name: /Create Parent PIN/i }))
     await waitFor(() => expect(screen.getByRole('heading', { name: /Parent Area/i })).toBeTruthy())
-    expect(screen.getByText(/Completed sessions:/i)).toBeTruthy()
+    expect(screen.getByRole('navigation', { name: /Parent dashboard views/i })).toBeTruthy()
+    expect(screen.getByText(/^Completed sessions$/i)).toBeTruthy()
 
     fireEvent.click(screen.getByRole('button', { name: /Lock Parent Area/i }))
     expect(screen.getByRole('heading', { name: /Unlock Parent Area/i })).toBeTruthy()

@@ -13,6 +13,7 @@ import {
   type ParentRecordsState,
 } from '../persistence'
 import { createBrowserParentPinService, type ParentPinRecord, type ParentPinService } from '../services/parentAccess'
+import { ParentDashboardScreen } from './parent/ParentDashboardScreen'
 
 interface ParentPlaceholderScreenProps {
   progress: QuestProgressV1
@@ -137,46 +138,14 @@ export function ParentPlaceholderScreen({ progress, onBack }: ParentPlaceholderS
 
   if (showFoundation) {
     return (
-      <section className="screen-shell" aria-labelledby="parent-area-title">
-        <header className="screen-header">
-          <h1 id="parent-area-title" ref={headingRef} tabIndex={-1}>Parent Area</h1>
-          <p>Local-only parent summary.</p>
-        </header>
-
-        <section className="card" aria-label="Parent privacy notice">
-          <p>This area stays on this device. Child progress and parent records are stored separately.</p>
-          {storageNotice && <p role="status">{storageNotice}</p>}
-        </section>
-
-        <section className="card" aria-label="Parent overview">
-          <p><strong>Completed sessions:</strong> {dashboard.overview.completedSessions}</p>
-          <p>
-            <strong>Recent average accuracy:</strong>{' '}
-            {dashboard.overview.recentAverageAccuracy === null
-              ? 'No completed sessions yet'
-              : `${dashboard.overview.recentAverageAccuracy}%`}
-          </p>
-          <p><strong>Total XP:</strong> {dashboard.overview.totalXp}</p>
-          <p><strong>Total stars:</strong> {dashboard.overview.totalStars}</p>
-          <p><strong>Reviews due:</strong> {dashboard.overview.reviewsCurrentlyDue}</p>
-          <p><strong>Current attention items:</strong> {dashboard.attentionItems.length}</p>
-          <p><strong>Assessment records stored locally:</strong> {recordsState.officialAssessments.length}</p>
-          <p className="small-copy">Detailed progress dashboard arrives in Phase 5B.</p>
-        </section>
-
-        <section className="card" aria-label="Next planned quest">
-          <p>{dashboard.nextQuestExplanation}</p>
-        </section>
-
-        <section className="screen-actions">
-          <ChildButton type="button" className="secondary-action" onClick={handleLock}>
-            Lock Parent Area
-          </ChildButton>
-          <ChildButton type="button" className="primary-action" onClick={handleBackToQuest}>
-            Back to Quest
-          </ChildButton>
-        </section>
-      </section>
+      <ParentDashboardScreen
+        progress={progress}
+        dashboard={dashboard}
+        recordsState={recordsState}
+        storageNotice={storageNotice}
+        onLock={handleLock}
+        onBackToQuest={handleBackToQuest}
+      />
     )
   }
 
