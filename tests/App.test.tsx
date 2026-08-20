@@ -1,12 +1,53 @@
-import { cleanup, fireEvent, render, screen } from '@testing-library/react'
-import { afterEach, describe, expect, test } from 'vitest'
+import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
+import { afterEach, describe, expect, test, vi } from 'vitest'
 
 import App from '../src/App'
 import { QUEST_PROGRESS_STORAGE_KEY } from '../src/persistence'
+import { PARENT_ACCESS_STORAGE_KEY, PARENT_RECORDS_STORAGE_KEY } from '../src/persistence'
+import * as parentAccess from '../src/services/parentAccess'
+import type { ParentPinRecord } from '../src/services/parentAccess'
+
+let parentCryptoSupported = true
+
+vi.spyOn(parentAccess, 'createBrowserParentPinService').mockImplementation(() => ({
+  isSupported: () => parentCryptoSupported,
+  async setupPin({ pin, confirmPin }: { pin: string; confirmPin: string }, now = '2026-08-20T12:00:00.000Z') {
+    if (!parentCryptoSupported) {
+      return { status: 'unavailable', reason: 'Secure local PIN setup is not available in this browser.' }
+    }
+    if (!/^\d+$/.test(pin)) return { status: 'invalid_input', reason: 'PIN must contain digits only.' }
+    if (pin.length < 4) return { status: 'invalid_input', reason: 'PIN must be at least 4 digits.' }
+    if (pin.length > 8) return { status: 'invalid_input', reason: 'PIN must be at most 8 digits.' }
+    if (pin !== confirmPin) return { status: 'invalid_input', reason: 'PIN confirmation does not match.' }
+    return {
+      status: 'created',
+      record: {
+        schemaVersion: 1,
+        pinHash: `hash:${pin}`,
+        pinSalt: `salt:${pin}`,
+        hashAlgorithm: 'PBKDF2-SHA-256',
+        hashIterations: 60000,
+        createdAt: now,
+        updatedAt: now,
+      },
+    }
+  },
+  async verifyPin(pin: string, record: ParentPinRecord) {
+    if (!parentCryptoSupported) {
+      return { status: 'unavailable', reason: 'Secure local PIN setup is not available in this browser.' }
+    }
+    return pin === record.pinHash.replace('hash:', '')
+      ? { status: 'created', record }
+      : { status: 'incorrect', reason: 'The PIN did not match.' }
+  },
+}) as never)
 
 afterEach(() => {
   cleanup()
   window.localStorage.removeItem(QUEST_PROGRESS_STORAGE_KEY)
+  window.localStorage.removeItem(PARENT_ACCESS_STORAGE_KEY)
+  window.localStorage.removeItem(PARENT_RECORDS_STORAGE_KEY)
+  parentCryptoSupported = true
 })
 
 const getSingleByRole = (
@@ -146,13 +187,82 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getAllByRole('heading', { name: /Word Forge: Unit Selection/i })).toHaveLength(1)
   })
 
-  test('opens and closes parent placeholder', () => {
+  test('shows parent setup on first visit, then unlocks and locks again', async () => {
     render(<App />)
 
     fireEvent.click(getOpenParentButton())
-    expect(screen.getByText(/Parent dashboard is not implemented yet/i)).toBeTruthy()
-    fireEvent.click(getSingleByRole('button', /Back to Quest/i))
+    expect(screen.getByRole('heading', { name: /Set Up Parent Area/i })).toBeTruthy()
+    fireEvent.change(screen.getByLabelText(/Create Parent PIN/i), { target: { value: '1234' } })
+    fireEvent.change(screen.getByLabelText(/Confirm Parent PIN/i), { target: { value: '1234' } })
+    fireEvent.click(screen.getByRole('button', { name: /Create Parent PIN/i }))
+    await waitFor(() => expect(screen.getByRole('heading', { name: /Parent Area/i })).toBeTruthy())
+    expect(screen.getByText(/Completed sessions:/i)).toBeTruthy()
+
+    fireEvent.click(screen.getByRole('button', { name: /Lock Parent Area/i }))
+    expect(screen.getByRole('heading', { name: /Unlock Parent Area/i })).toBeTruthy()
+    fireEvent.click(screen.getByRole('button', { name: /Back to Quest/i }))
     expect(screen.getAllByRole('heading', { name: /Rory's Reading Quest/i })).toHaveLength(1)
+  })
+
+  test('returning visit shows PIN verification and incorrect PIN stays generic', async () => {
+    render(<App />)
+
+    fireEvent.click(getOpenParentButton())
+    fireEvent.change(screen.getByLabelText(/Create Parent PIN/i), { target: { value: '1234' } })
+    fireEvent.change(screen.getByLabelText(/Confirm Parent PIN/i), { target: { value: '1234' } })
+    fireEvent.click(screen.getByRole('button', { name: /Create Parent PIN/i }))
+    await waitFor(() => expect(screen.getByRole('heading', { name: /Parent Area/i })).toBeTruthy())
+    fireEvent.click(screen.getByRole('button', { name: /Back to Quest/i }))
+    fireEvent.click(getOpenParentButton())
+
+    await waitFor(() => expect(screen.getByRole('heading', { name: /Unlock Parent Area/i })).toBeTruthy())
+    fireEvent.change(screen.getByLabelText(/Parent PIN/i), { target: { value: '9999' } })
+    fireEvent.click(screen.getByRole('button', { name: /Unlock/i }))
+    await waitFor(() => {
+      expect(screen.getByRole('alert').textContent).toMatch(/The PIN did not match/i);
+    })
+    fireEvent.change(screen.getByLabelText(/Parent PIN/i), { target: { value: '1234' } })
+    fireEvent.click(screen.getByRole('button', { name: /Unlock/i }))
+    await waitFor(() => expect(screen.getByRole('heading', { name: /Parent Area/i })).toBeTruthy())
+  })
+
+  test('crypto unavailable shows a calm parent-facing notice and child gameplay still works', () => {
+    parentCryptoSupported = false
+    render(<App />)
+
+    fireEvent.click(getOpenParentButton())
+    expect(screen.getByText(/Secure local PIN setup is not available in this browser/i)).toBeTruthy()
+    fireEvent.click(screen.getByRole('button', { name: /Back to Quest/i }))
+    expect(screen.getAllByRole('heading', { name: /Rory's Reading Quest/i })).toHaveLength(1)
+  })
+
+  test('parent storage errors do not damage child progress', () => {
+    const originalGetItem = Storage.prototype.getItem
+    const originalSetItem = Storage.prototype.setItem
+    const getItemSpy = vi.spyOn(Storage.prototype, 'getItem').mockImplementation(function (this: Storage, key: string) {
+      if (key === PARENT_ACCESS_STORAGE_KEY || key === PARENT_RECORDS_STORAGE_KEY) {
+        throw new Error('parent storage blocked')
+      }
+      return originalGetItem.call(this, key)
+    })
+    const setItemSpy = vi.spyOn(Storage.prototype, 'setItem').mockImplementation(function (this: Storage, key: string, value: string) {
+      if (key === PARENT_ACCESS_STORAGE_KEY || key === PARENT_RECORDS_STORAGE_KEY) {
+        throw new Error('parent storage blocked')
+      }
+      return originalSetItem.call(this, key, value)
+    })
+
+    try {
+      render(<App />)
+      fireEvent.click(getWordForgeCard())
+      fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
+      fireEvent.click(screen.getByRole('button', { name: /Vowel Voyage Available/i }))
+      fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
+      expect(screen.getByRole('heading', { name: /Vowel Voyage/i })).toBeTruthy()
+    } finally {
+      getItemSpy.mockRestore()
+      setItemSpy.mockRestore()
+    }
   })
 
   test('shows accessible reward and progress labels', () => {

@@ -158,7 +158,7 @@ export function AppShell() {
       <ParentPlaceholderScreen onBack={() => {
         setHistory([])
         setState((previous) => ({ ...previous, screen: 'home' }))
-      }} />
+      }} progress={questProgress.progress} />
     )
   }
 
