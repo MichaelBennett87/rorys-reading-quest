@@ -1,117 +1,178 @@
-import { validateContent } from '../content/validateContent'
 import { sampleContent, type ContentSample } from '../content'
-import type { LessonChoice, LessonCatalogEntry, LessonDefinition } from './lessonTypes'
+import { validateContent } from '../content/validateContent'
+import type { LessonActivityCandidate } from '../progression/skillProgressTypes'
+import type { LessonCatalogEntry, LessonChoice, LessonDefinition, LessonQuestion } from './lessonTypes'
 import {
   type EvidencePairLessonQuestion,
   type HotTextLessonQuestion,
-  type LessonQuestion,
   type MultipleChoiceLessonQuestion,
   type MultiselectLessonQuestion,
   type TableMatchLessonQuestion,
 } from './lessonTypes'
 
-const lessonCatalog: LessonCatalogEntry[] = [
+export const lessonCatalog: readonly LessonCatalogEntry[] = [
   {
-    lessonId: 'lesson-word-forge-vowel-voyage',
+    lessonId: 'lesson-word-forge-vowel-voyage-a',
     worldId: 'word-forge',
     unitId: 'wg-unit-1',
-    activityId: 'act-word-forge-vowel-voyage',
-    passageIdentifier: ['passage-word-forge-bridge-a', 'passage-word-forge-bridge-b'] as string[],
+    activityId: 'activity-word-forge-trail-1-a',
+    passageIdentifier: ['passage-word-forge-bridge-a'],
     questionIdentifiers: [
       'q-word-forge-vowel-voyage-a-1',
       'q-word-forge-vowel-voyage-a-2',
       'q-word-forge-vowel-voyage-a-3',
-      'q-word-forge-vowel-voyage-b-1',
-      'q-word-forge-vowel-voyage-b-2',
       'q-word-forge-vowel-voyage-a-4',
+    ],
+    lessonTitle: 'Vowel Voyage: Kite Clues',
+    lessonObjective: 'Collect clues from a short kite passage and prove each choice with text.',
+    contentVersion: 'r0.1.0',
+    eligiblePurposes: ['progression', 'verification', 'remediation', 'review'],
+  },
+  {
+    lessonId: 'lesson-word-forge-vowel-voyage-b',
+    worldId: 'word-forge',
+    unitId: 'wg-unit-1',
+    activityId: 'activity-word-forge-trail-1-b',
+    passageIdentifier: ['passage-word-forge-bridge-b'],
+    questionIdentifiers: [
+      'q-word-forge-vowel-voyage-b-2',
       'q-word-forge-vowel-voyage-b-4',
       'q-word-forge-vowel-voyage-b-5',
+    ],
+    lessonTitle: 'Vowel Voyage: Seed Clues',
+    lessonObjective: 'Use details from a short seed passage to explain careful steps.',
+    contentVersion: 'r0.1.0',
+    eligiblePurposes: ['progression', 'verification', 'remediation', 'review'],
+  },
+  {
+    lessonId: 'lesson-word-forge-vowel-voyage-c',
+    worldId: 'word-forge',
+    unitId: 'wg-unit-1',
+    activityId: 'activity-word-forge-trail-1-c',
+    passageIdentifier: ['passage-word-forge-bridge-a'],
+    questionIdentifiers: [
       'q-word-forge-vowel-voyage-a-5',
       'q-word-forge-vowel-voyage-a-6',
     ],
-    lessonTitle: 'Vowel Voyage',
-    lessonObjective: 'Collect clues from two short passages and prove each choice with text.',
-  } as LessonCatalogEntry,
+    lessonTitle: 'Vowel Voyage: Team Clues',
+    lessonObjective: 'Find what happened and connect a team lesson to passage evidence.',
+    contentVersion: 'r0.1.0',
+    eligiblePurposes: ['progression', 'verification', 'remediation', 'review'],
+  },
+  {
+    lessonId: 'lesson-word-forge-building-block',
+    worldId: 'word-forge',
+    unitId: 'wg-unit-1',
+    activityId: 'activity-word-forge-trail-0-a',
+    passageIdentifier: ['passage-word-forge-bridge-b'],
+    questionIdentifiers: ['q-word-forge-vowel-voyage-b-1'],
+    lessonTitle: 'Building Block: Careful Clues',
+    lessonObjective: 'Practice finding one clear detail before returning to the trail.',
+    contentVersion: 'r0.1.0',
+    eligiblePurposes: ['remediation', 'review'],
+  },
 ]
 
-interface LessonCatalogResult {
+export interface LessonCatalogResult {
   lesson?: LessonDefinition
   errors: string[]
 }
 
 export function getLessonForUnit(unitId: string): LessonCatalogResult {
-  const lessonEntry = lessonCatalog.find((entry) => entry.unitId === unitId)
-  if (!lessonEntry) {
-    return {
-      errors: ['No lesson content assigned to this unit.'],
-    }
-  }
+  const entry = lessonCatalog.find(
+    (candidate) => candidate.unitId === unitId && candidate.eligiblePurposes.includes('progression'),
+  )
+  return entry ? buildLesson(entry) : { errors: ['No lesson content assigned to this unit.'] }
+}
 
+export function getLessonById(lessonId: string): LessonCatalogResult {
+  const entry = lessonCatalog.find((candidate) => candidate.lessonId === lessonId)
+  return entry ? buildLesson(entry) : { errors: ['No lesson content assigned to this lesson ID.'] }
+}
+
+export function getLessonCandidates(): LessonActivityCandidate[] {
+  return lessonCatalog.flatMap((entry) => {
+    const questions = entry.questionIdentifiers
+      .map((questionId) => sampleContent.questions.find((question) => question.questionIdentifier === questionId))
+      .filter((question): question is ContentSample['questions'][number] => Boolean(question))
+    const firstQuestion = questions[0]
+    if (!firstQuestion || questions.some((question) => (
+      question.skillIdentifier !== firstQuestion.skillIdentifier || question.difficulty !== firstQuestion.difficulty
+    ))) {
+      return []
+    }
+    return [{
+      lessonId: entry.lessonId,
+      activityId: entry.activityId,
+      skillId: firstQuestion.skillIdentifier,
+      difficulty: firstQuestion.difficulty,
+      eligiblePurposes: [...entry.eligiblePurposes],
+      passageQuestionKeys: questions.map(
+        (question) => `${question.passageIdentifier}::${question.questionIdentifier}`,
+      ),
+      contentVersion: entry.contentVersion,
+    }]
+  })
+}
+
+function buildLesson(entry: LessonCatalogEntry): LessonCatalogResult {
   const validationErrors = validateContent(sampleContent)
   if (validationErrors.length > 0) {
-    return {
-      errors: validationErrors.map((error) => `${error.code}: ${error.message}`),
-    }
+    return { errors: validationErrors.map((error) => `${error.code}: ${error.message}`) }
   }
 
-  const foundQuestions = lessonEntry.questionIdentifiers
+  const foundQuestions = entry.questionIdentifiers
     .map((questionId) => sampleContent.questions.find((question) => question.questionIdentifier === questionId))
-    .filter((question): question is NonNullable<typeof question> => Boolean(question))
-
-  const missingQuestions = lessonEntry.questionIdentifiers.filter((questionId) => {
-    return !sampleContent.questions.some((question) => question.questionIdentifier === questionId)
-  })
-  if (missingQuestions.length > 0) {
-    return {
-      errors: missingQuestions.map((missing) => `Missing referenced question ${missing}`),
-    }
+    .filter((question): question is ContentSample['questions'][number] => Boolean(question))
+  if (foundQuestions.length !== entry.questionIdentifiers.length) {
+    return { errors: ['Lesson references unknown question content.'] }
+  }
+  const firstQuestion = foundQuestions[0]
+  if (!firstQuestion || foundQuestions.some((question) => (
+    question.skillIdentifier !== firstQuestion.skillIdentifier || question.difficulty !== firstQuestion.difficulty
+  ))) {
+    return { errors: ['Lesson questions must share one skill and one difficulty.'] }
   }
 
-  const foundPassages = lessonEntry.passageIdentifier
+  const foundPassages = entry.passageIdentifier
     .map((passageId) => sampleContent.passages.find((passage) => passage.passageIdentifier === passageId))
-    .filter((passage): passage is NonNullable<typeof passage> => Boolean(passage))
-
-  if (foundPassages.length !== lessonEntry.passageIdentifier.length) {
-    return {
-      errors: ['Lesson references unknown passage content.'],
-    }
+    .filter((passage): passage is ContentSample['passages'][number] => Boolean(passage))
+  if (foundPassages.length !== entry.passageIdentifier.length) {
+    return { errors: ['Lesson references unknown passage content.'] }
   }
 
-  const lessonQuestions = foundQuestions
-    .map((question) => toLessonQuestion(question))
+  const questions = foundQuestions
+    .map((question) => toLessonQuestion(question, entry.lessonId))
     .filter((question): question is LessonQuestion => question !== null)
-
-  if (lessonQuestions.length !== lessonEntry.questionIdentifiers.length) {
-    return {
-      errors: ['Lesson contains malformed questions for this unit.'],
-    }
+  if (questions.length !== entry.questionIdentifiers.length) {
+    return { errors: ['Lesson contains malformed questions for this unit.'] }
   }
 
   return {
     lesson: {
-      lessonId: lessonEntry.lessonId,
-      activityId: lessonEntry.activityId,
-      passageId: lessonEntry.passageIdentifier[0],
-      skillId: foundQuestions[0]?.skillIdentifier ?? 'unknown',
-      difficulty: foundQuestions[0]?.difficulty ?? 1,
-      unitId: lessonEntry.unitId,
-      worldId: lessonEntry.worldId,
-      lessonTitle: lessonEntry.lessonTitle,
-      lessonObjective: lessonEntry.lessonObjective,
-      questionCount: lessonQuestions.length,
-      questions: lessonQuestions,
+      lessonId: entry.lessonId,
+      activityId: entry.activityId,
+      passageId: entry.passageIdentifier[0],
+      skillId: firstQuestion.skillIdentifier,
+      difficulty: firstQuestion.difficulty,
+      unitId: entry.unitId,
+      worldId: entry.worldId,
+      lessonTitle: entry.lessonTitle,
+      lessonObjective: entry.lessonObjective,
+      questionCount: questions.length,
+      questions,
+      contentVersion: entry.contentVersion,
+      eligiblePurposes: [...entry.eligiblePurposes],
     },
     errors: [],
   }
 }
 
-function toLessonQuestion(raw: ContentSample['questions'][number]): LessonQuestion | null {
-  if (!raw.explanation) {
-    return null
-  }
+function toLessonQuestion(raw: ContentSample['questions'][number], lessonId: string): LessonQuestion | null {
+  if (!raw.explanation || !raw.questionContent) return null
   const base = {
     questionId: raw.questionIdentifier,
-    lessonId: raw.lessonIdentifier ?? '',
+    lessonId,
     activityId: raw.activityIdentifier,
     passageId: raw.passageIdentifier,
     skillId: raw.skillIdentifier,
@@ -121,87 +182,65 @@ function toLessonQuestion(raw: ContentSample['questions'][number]): LessonQuesti
     evidenceReferenceIds: raw.evidenceReferenceIds ?? [],
   }
 
-  if (!raw.questionContent) {
-    return null
-  }
-
   switch (raw.questionType) {
     case 'multiple_choice': {
-      const question = raw.questionContent
-      if (question.type !== 'multiple_choice') {
-        return null
-      }
-      const mapped = toChoiceList(question.choices)
-      const multipleChoice: MultipleChoiceLessonQuestion = {
+      if (raw.questionContent.type !== 'multiple_choice') return null
+      const question: MultipleChoiceLessonQuestion = {
         ...base,
         questionType: 'MULTIPLE_CHOICE',
-        choices: mapped,
-        correctChoiceIds: [...question.correctChoiceIds],
+        choices: toChoiceList(raw.questionContent.choices),
+        correctChoiceIds: [...raw.questionContent.correctChoiceIds],
       }
-      return multipleChoice
+      return question
     }
     case 'multi_select': {
-      const question = raw.questionContent
-      if (question.type !== 'multi_select') {
-        return null
-      }
-      const mapped = toChoiceList(question.choices)
-      const multiselect: MultiselectLessonQuestion = {
+      if (raw.questionContent.type !== 'multi_select') return null
+      const question: MultiselectLessonQuestion = {
         ...base,
         questionType: 'MULTISELECT',
-        choices: mapped,
-        correctChoiceIds: [...question.correctChoiceIds],
+        choices: toChoiceList(raw.questionContent.choices),
+        correctChoiceIds: [...raw.questionContent.correctChoiceIds],
       }
-      return multiselect
+      return question
     }
     case 'hot_text': {
-      const question = raw.questionContent
-      if (question.type !== 'hot_text') {
-        return null
-      }
-      const mapped = toChoiceList(question.selectableSegments)
-      const hotText: HotTextLessonQuestion = {
+      if (raw.questionContent.type !== 'hot_text') return null
+      const question: HotTextLessonQuestion = {
         ...base,
         questionType: 'HOT_TEXT',
-        segments: mapped,
-        correctSegmentIds: [...question.correctSegmentIds],
-        allowMultiple: question.correctSegmentIds.length > 1,
+        segments: toChoiceList(raw.questionContent.selectableSegments),
+        correctSegmentIds: [...raw.questionContent.correctSegmentIds],
+        allowMultiple: raw.questionContent.correctSegmentIds.length > 1,
       }
-      return hotText
+      return question
     }
     case 'two_part': {
-      const question = raw.questionContent
-      if (question.type !== 'two_part') {
-        return null
-      }
-      const evidencePair: EvidencePairLessonQuestion = {
+      if (raw.questionContent.type !== 'two_part') return null
+      const question: EvidencePairLessonQuestion = {
         ...base,
         questionType: 'EVIDENCE_PAIR',
-        partAPrompt: question.partAPrompt,
-        partAChoices: toChoiceList(question.partAChoices),
-        partACorrectChoiceId: question.partACorrectChoiceId,
-        partBPrompt: question.partBPrompt,
-        partBChoices: toChoiceList(question.partBChoices),
-        partBCorrectChoiceId: question.partBCorrectChoiceId,
+        partAPrompt: raw.questionContent.partAPrompt,
+        partAChoices: toChoiceList(raw.questionContent.partAChoices),
+        partACorrectChoiceId: raw.questionContent.partACorrectChoiceId,
+        partBPrompt: raw.questionContent.partBPrompt,
+        partBChoices: toChoiceList(raw.questionContent.partBChoices),
+        partBCorrectChoiceId: raw.questionContent.partBCorrectChoiceId,
       }
-      return evidencePair
+      return question
     }
     case 'table_match': {
-      const question = raw.questionContent
-      if (question.type !== 'table_match') {
-        return null
-      }
-      const tableMatch: TableMatchLessonQuestion = {
+      if (raw.questionContent.type !== 'table_match') return null
+      const question: TableMatchLessonQuestion = {
         ...base,
         questionType: 'TABLE_MATCH',
-        rows: question.rows.map((row) => ({
+        rows: raw.questionContent.rows.map((row) => ({
           id: row.id,
           prompt: row.prompt,
           correctChoiceId: row.correctChoiceId,
           options: toChoiceList(row.options),
         })),
       }
-      return tableMatch
+      return question
     }
     default:
       return null

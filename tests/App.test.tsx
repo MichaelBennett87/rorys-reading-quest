@@ -97,7 +97,7 @@ describe('Phase 2 lesson flow and child shell', () => {
     fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
 
     expect(screen.getByRole('heading', { name: /Vowel Voyage/i })).toBeTruthy()
-    expect(screen.getByText(/Question 1 of 10/i)).toBeTruthy()
+    expect(screen.getByText(/Question 1 of 4/i)).toBeTruthy()
     const submitButton = getSingleByRole('button', /Submit Answer/i)
     expect(submitButton.getAttribute('disabled')).not.toBeNull()
   })
@@ -120,7 +120,7 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getByText(/She packed her kite bag/i)).toBeTruthy()
     const nextButton = getSingleByRole('button', /Next Question/i)
     fireEvent.click(nextButton)
-    expect(screen.getByText(/Question 2 of 10/i)).toBeTruthy()
+    expect(screen.getByText(/Question 2 of 4/i)).toBeTruthy()
   })
 
   test('unavailable lesson units show safe read-only state and no launch button', () => {

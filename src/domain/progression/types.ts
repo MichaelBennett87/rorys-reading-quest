@@ -42,6 +42,8 @@ export interface CheckpointEvaluationInput {
   lastMasteredDifficulty: number
   relevantPrerequisite: string | null
   currentLearningState: LearningState
+  activityId?: string
+  priorQualifyingIndependentActivityIds?: readonly string[]
 }
 
 export interface ProgressionDecision {

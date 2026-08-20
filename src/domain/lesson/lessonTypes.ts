@@ -83,7 +83,11 @@ export interface LessonDefinition {
   lessonObjective: string
   questionCount: number
   questions: LessonQuestion[]
+  contentVersion: string
+  eligiblePurposes: LessonPurpose[]
 }
+
+export type LessonPurpose = 'progression' | 'verification' | 'remediation' | 'review'
 
 export interface LessonQuestionState {
   questionId: string
@@ -159,6 +163,8 @@ export interface LessonCatalogEntry {
   questionIdentifiers: string[]
   lessonTitle: string
   lessonObjective: string
+  contentVersion: string
+  eligiblePurposes: LessonPurpose[]
 }
 
 export interface QuestionTypeMap {

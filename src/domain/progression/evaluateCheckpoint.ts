@@ -68,9 +68,17 @@ export function evaluateCheckpoint(
 
   if (strongAccuracy) {
     if (independentEvidence) {
-      const nextIndependentCount = input.priorIndependentSuccessCount + 1
+      const trackedActivityIds = input.priorQualifyingIndependentActivityIds
+        ? new Set(input.priorQualifyingIndependentActivityIds)
+        : null
+      const activityAlreadyCounted = Boolean(
+        trackedActivityIds && input.activityId && trackedActivityIds.has(input.activityId),
+      )
+      const priorIndependentCount = trackedActivityIds?.size ?? input.priorIndependentSuccessCount
+      const addsDistinctEvidence = !trackedActivityIds || !input.activityId || !activityAlreadyCounted
+      const nextIndependentCount = priorIndependentCount + (addsDistinctEvidence ? 1 : 0)
 
-      if (nextIndependentCount >= config.requiredIndependentSuccesses) {
+      if (addsDistinctEvidence && nextIndependentCount >= config.requiredIndependentSuccesses) {
         return buildDecision(
           'ADVANCE',
           input.currentDifficulty + 1,
@@ -93,7 +101,9 @@ export function evaluateCheckpoint(
         'retry_same_difficulty',
         'One strong independent checkpoint was completed. Present a new verification checkpoint at this difficulty.',
         'almost_there',
-        ['independent_evidence', 'awaiting_second_distinct_success'],
+        activityAlreadyCounted
+          ? ['independent_evidence', 'duplicate_activity_not_counted', 'awaiting_second_distinct_success']
+          : ['independent_evidence', 'awaiting_second_distinct_success'],
       )
     }
 

@@ -18,6 +18,8 @@ const baseLesson: Omit<LessonDefinition, 'questionCount' | 'questions'> = {
   worldId: 'word-forge',
   lessonTitle: 'Vowel Voyage',
   lessonObjective: 'Read for clues',
+  contentVersion: 'test-v1',
+  eligiblePurposes: ['progression'],
 }
 
 const multipleChoiceQuestion: LessonQuestion = {
