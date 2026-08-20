@@ -204,6 +204,7 @@ describe('Phase 3 adaptive child flow', () => {
       difficulty: candidate.difficulty,
       currentQuestionIndex: 0,
       submittedQuestions: [],
+      assistanceEvents: [],
       startedAt: '2026-08-20T12:00:00.000Z',
       updatedAt: '2026-08-20T12:00:00.000Z',
     }

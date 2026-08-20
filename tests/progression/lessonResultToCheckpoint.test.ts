@@ -25,7 +25,15 @@ const result: LessonResult = {
     spokenWordHelpUsed: false,
     sentenceReadAloudUsed: false,
   },
-  questionResults: [],
+  questionResults: Array.from({ length: 10 }, (_, index) => ({
+    questionId: `question-${index + 1}`,
+    isCorrect: index < 9,
+    isFirstAttemptCorrect: index < 8,
+    submittedAnswer: 'answer',
+    correctAnswer: 'answer',
+    explanation: 'Private teaching text is not persisted.',
+    evidenceReference: [],
+  })),
   completed: true,
 }
 

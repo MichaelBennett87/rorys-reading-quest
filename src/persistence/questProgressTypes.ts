@@ -5,6 +5,7 @@ import type {
   SkillProgressState,
 } from '../domain/progression'
 import type { LearningState } from '../domain/progression'
+import type { AssistanceEvent, AssistanceSummary } from '../domain/assistance'
 
 export const QUEST_PROGRESS_SCHEMA_VERSION = 1 as const
 export const QUEST_PROGRESS_STORAGE_KEY = 'rorys-reading-quest.progress.v1'
@@ -29,6 +30,8 @@ export interface CompletedLessonAttempt {
   questionResults: PersistedQuestionSummary[]
   accuracy: number
   assistanceCount: number
+  assistanceSummary: AssistanceSummary
+  assistanceEvents: PersistedAssistanceEvent[]
   completedAt: string
   progressionDecisionState: LearningState
   reasonCodes: string[]
@@ -48,9 +51,23 @@ export interface ActiveLessonSession {
   difficulty: number
   currentQuestionIndex: number
   submittedQuestions: PersistedSubmittedQuestion[]
+  assistanceEvents: PersistedAssistanceEvent[]
   startedAt: string
   updatedAt: string
 }
+
+export interface PersistedAssistanceEvent extends Pick<
+  AssistanceEvent,
+  | 'eventId'
+  | 'sessionId'
+  | 'lessonId'
+  | 'activityId'
+  | 'questionId'
+  | 'targetId'
+  | 'assistanceKind'
+  | 'assistanceLevel'
+  | 'occurredAt'
+> {}
 
 export interface ReviewQueueEntry {
   skillId: string

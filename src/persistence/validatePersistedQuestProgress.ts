@@ -1,3 +1,4 @@
+import type { AssistanceSummary } from '../domain/assistance'
 import type { RecentLessonActivityUsage, SkillProgressState } from '../domain/progression'
 import {
   COMPLETED_ATTEMPT_LIMIT,
@@ -5,6 +6,7 @@ import {
   RECENT_ACTIVITY_LIMIT_PER_TRAIL,
   type ActiveLessonSession,
   type CompletedLessonAttempt,
+  type PersistedAssistanceEvent,
   type QuestProgressV1,
 } from './questProgressTypes'
 
@@ -82,6 +84,8 @@ export function normalizeQuestProgressForSave(state: QuestProgressV1): QuestProg
       ...attempt,
       questionResults: attempt.questionResults.map((result) => ({ ...result })),
       reasonCodes: [...attempt.reasonCodes],
+      assistanceSummary: cloneAssistanceSummary(attempt.assistanceSummary),
+      assistanceEvents: (attempt.assistanceEvents ?? []).map(cloneAssistanceEvent),
     })),
     recentActivityUsage,
     reviewQueue: state.reviewQueue.map((entry) => ({ ...entry })),
@@ -129,6 +133,11 @@ function isCompletedAttempt(value: unknown): value is CompletedLessonAttempt {
       && typeof result.isFirstAttemptCorrect === 'boolean')
     && isNonNegativeNumber(value.accuracy)
     && isNonNegativeNumber(value.assistanceCount)
+    && (!('assistanceSummary' in value) || isAssistanceSummary(value.assistanceSummary))
+    && (!('assistanceEvents' in value) || (
+      Array.isArray(value.assistanceEvents)
+      && value.assistanceEvents.every(isAssistanceEvent)
+    ))
     && typeof value.completedAt === 'string'
     && typeof value.progressionDecisionState === 'string'
     && Array.isArray(value.reasonCodes)
@@ -162,8 +171,25 @@ function isActiveLessonSession(value: unknown): value is ActiveLessonSession {
       && typeof question.isCorrect === 'boolean'
       && typeof question.isFirstAttemptCorrect === 'boolean'
       && isPersistedAnswer(question.submittedAnswer))
+    && (!('assistanceEvents' in value) || (
+      Array.isArray(value.assistanceEvents)
+      && value.assistanceEvents.every(isAssistanceEvent)
+    ))
     && typeof value.startedAt === 'string'
     && typeof value.updatedAt === 'string'
+}
+
+function isAssistanceEvent(value: unknown): value is PersistedAssistanceEvent {
+  return isRecord(value)
+    && typeof value.eventId === 'string'
+    && typeof value.sessionId === 'string'
+    && typeof value.lessonId === 'string'
+    && typeof value.activityId === 'string'
+    && (value.questionId === undefined || typeof value.questionId === 'string')
+    && typeof value.targetId === 'string'
+    && typeof value.assistanceKind === 'string'
+    && Number.isInteger(value.assistanceLevel)
+    && typeof value.occurredAt === 'string'
 }
 
 function isPersistedAnswer(value: unknown): boolean {
@@ -183,7 +209,35 @@ function cloneActiveSession(session: ActiveLessonSession): ActiveLessonSession {
       ...question,
       submittedAnswer: structuredClone(question.submittedAnswer),
     })),
+    assistanceEvents: (session.assistanceEvents ?? []).map(cloneAssistanceEvent),
   }
+}
+
+function cloneAssistanceEvent(event: PersistedAssistanceEvent): PersistedAssistanceEvent {
+  return { ...event }
+}
+
+function cloneAssistanceSummary(summary: AssistanceSummary | undefined): AssistanceSummary {
+  return summary ? { ...summary } : {
+    totalUniqueEvents: 0,
+    targetsHelped: 0,
+    maximumAssistanceLevel: 0,
+    visualHintUsed: false,
+    spokenChunkHelpUsed: false,
+    spokenWordHelpUsed: false,
+    sentenceReadAloudUsed: false,
+  }
+}
+
+function isAssistanceSummary(value: unknown): value is AssistanceSummary {
+  return isRecord(value)
+    && typeof value.totalUniqueEvents === 'number'
+    && typeof value.targetsHelped === 'number'
+    && typeof value.maximumAssistanceLevel === 'number'
+    && typeof value.visualHintUsed === 'boolean'
+    && typeof value.spokenChunkHelpUsed === 'boolean'
+    && typeof value.spokenWordHelpUsed === 'boolean'
+    && typeof value.sentenceReadAloudUsed === 'boolean'
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {

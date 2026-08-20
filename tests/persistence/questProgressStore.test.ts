@@ -32,6 +32,16 @@ const attempt = (index: number): CompletedLessonAttempt => ({
   questionResults: [{ questionId: 'question-a', isCorrect: true, isFirstAttemptCorrect: true }],
   accuracy: 100,
   assistanceCount: 0,
+  assistanceSummary: {
+    totalUniqueEvents: 0,
+    targetsHelped: 0,
+    maximumAssistanceLevel: 0,
+    visualHintUsed: false,
+    spokenChunkHelpUsed: false,
+    spokenWordHelpUsed: false,
+    sentenceReadAloudUsed: false,
+  },
+  assistanceEvents: [],
   completedAt: now,
   progressionDecisionState: 'VERIFY_MASTERY',
   reasonCodes: ['independent_evidence'],
@@ -114,6 +124,7 @@ describe('local quest progress persistence', () => {
         isCorrect: true,
         isFirstAttemptCorrect: true,
       }],
+      assistanceEvents: [],
       startedAt: now,
       updatedAt: now,
     }
@@ -121,6 +132,47 @@ describe('local quest progress persistence', () => {
     store.save(state)
     const loaded = store.load()
     expect(loaded.state.activeLessonSession?.submittedQuestions[0].questionId).toBe(questionId)
+  })
+
+  test('legacy version-1 assistance data loads with empty defaults', () => {
+    const storage = new MemoryStorage()
+    const candidate = getLessonCandidates()[0]
+    const legacyState = {
+      ...createDefaultQuestProgress(now),
+      completedAttempts: [{
+        attemptId: 'legacy-attempt',
+        completionId: 'legacy-completion',
+        lessonId: candidate.lessonId,
+        activityId: candidate.activityId,
+        skillId: candidate.skillId,
+        difficulty: candidate.difficulty,
+        questionResults: [],
+        accuracy: 100,
+        assistanceCount: 0,
+        completedAt: now,
+        progressionDecisionState: 'VERIFY_MASTERY',
+        reasonCodes: ['independent_evidence'],
+        nextReviewDate: null,
+      }],
+      activeLessonSession: {
+        sessionId: 'legacy-session',
+        lessonId: candidate.lessonId,
+        activityId: candidate.activityId,
+        contentVersion: candidate.contentVersion,
+        skillId: candidate.skillId,
+        difficulty: candidate.difficulty,
+        currentQuestionIndex: 0,
+        submittedQuestions: [],
+        startedAt: now,
+        updatedAt: now,
+      },
+    }
+    storage.values.set(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(legacyState))
+    const loaded = createLocalStorageQuestProgressStore(storage, () => now).load()
+    expect(loaded.status).toBe('loaded')
+    expect(loaded.state.completedAttempts[0].assistanceSummary.totalUniqueEvents).toBe(0)
+    expect(loaded.state.completedAttempts[0].assistanceEvents).toEqual([])
+    expect(loaded.state.activeLessonSession?.assistanceEvents).toEqual([])
   })
 
   test('incompatible active content is discarded while completed progress survives', () => {
@@ -136,6 +188,7 @@ describe('local quest progress persistence', () => {
       difficulty: candidate.difficulty,
       currentQuestionIndex: 0,
       submittedQuestions: [],
+      assistanceEvents: [],
       startedAt: now,
       updatedAt: now,
     }

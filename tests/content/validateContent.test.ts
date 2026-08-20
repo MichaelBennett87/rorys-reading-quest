@@ -1,5 +1,6 @@
 import { describe, expect, test } from 'vitest'
 
+import type { ContentSample } from '../../src/domain/content'
 import { sampleContent, validateContent } from '../../src/domain/content'
 
 describe('validateContent', () => {
@@ -474,5 +475,71 @@ describe('validateContent', () => {
 
     const codes = errors.map((error) => error.code)
     expect(codes).toContain('invalid_evidence_reference')
+  })
+
+  test('valid support metadata passes and duplicate support target IDs fail', () => {
+    const supportedSample: ContentSample = {
+      passages: [
+        {
+          passageIdentifier: 'passage-support',
+          gradeBand: 2,
+          passageText: 'Helpful words guide the learner.',
+          sentences: [
+            {
+              sentenceId: 'sentence-support',
+              text: 'Helpful words guide the learner.',
+            },
+          ],
+          readingContext: 'sample',
+          contentVersion: 'r0',
+          wordSupportTargets: [
+            {
+              targetId: 'target-support',
+              passageId: 'passage-support',
+              sentenceId: 'sentence-support',
+              surfaceWord: 'Helpful',
+              focusParts: [
+                { text: 'Help', emphasis: false },
+                { text: 'ful', emphasis: true },
+              ],
+              displayChunks: [
+                { displayText: 'Help', speechText: 'help' },
+                { displayText: 'ful', speechText: 'ful' },
+              ],
+              spokenChunks: [
+                { displayText: 'Help', speechText: 'help' },
+                { displayText: 'ful', speechText: 'ful' },
+              ],
+              blendSpeechText: 'help-ful',
+              wholeWordSpeechText: 'helpful',
+              sentenceSpeechText: 'Helpful words guide the learner.',
+              reviewStatus: 'DRAFT',
+              contentVersion: 'r0',
+            },
+          ],
+        },
+      ],
+      questions: [],
+    }
+
+    expect(validateContent(supportedSample)).toHaveLength(0)
+
+    const duplicateTargetSample: ContentSample = {
+      ...supportedSample,
+      passages: [
+        {
+          ...supportedSample.passages[0],
+          wordSupportTargets: [
+            ...supportedSample.passages[0].wordSupportTargets!,
+            {
+              ...supportedSample.passages[0].wordSupportTargets![0],
+              targetId: 'target-support',
+            },
+          ],
+        },
+      ],
+    }
+
+    expect(validateContent(duplicateTargetSample).some((error) => error.code === 'duplicate_support_target_id')).toBe(true)
   })
 })

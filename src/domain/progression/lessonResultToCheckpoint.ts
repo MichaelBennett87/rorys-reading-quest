@@ -41,6 +41,9 @@ export function lessonResultToCheckpoint(
   ) {
     return { status: 'declined', reason: 'Lesson result contains out-of-range values.' }
   }
+  if (lessonResult.questionResults.length !== lessonResult.totalQuestions) {
+    return { status: 'declined', reason: 'Lesson result question count does not match total questions.' }
+  }
   if (!context.knownSkillIds.includes(lessonResult.skillId)) {
     return { status: 'declined', reason: `Unknown skill ID: ${lessonResult.skillId}` }
   }
@@ -50,9 +53,13 @@ export function lessonResultToCheckpoint(
   if (lessonResult.skillId !== context.progress.skillId || lessonResult.difficulty !== context.progress.currentDifficulty) {
     return { status: 'declined', reason: 'Lesson result does not match the active skill trail.' }
   }
-  const maxLevel = lessonResult.assistanceSummary.maximumAssistanceLevel
-  const hintsUsed = maxLevel === 1 || maxLevel === 2 ? 1 : 0
-  const majorHintsUsed = (maxLevel === 3 || maxLevel === 4 || maxLevel === 5) ? 1 : 0
+  const hintsUsed = lessonResult.assistanceSummary.visualHintUsed ? 1 : 0
+  const majorHintsUsed = (
+    lessonResult.assistanceSummary.spokenChunkHelpUsed
+    || lessonResult.assistanceSummary.spokenWordHelpUsed
+  )
+    ? 1
+    : 0
   const sentenceReadAloudUsed = lessonResult.assistanceSummary.sentenceReadAloudUsed
 
   return {

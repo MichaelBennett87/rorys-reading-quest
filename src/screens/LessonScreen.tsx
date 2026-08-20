@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 
 import {
   type EvidencePairLessonQuestion,
@@ -10,6 +10,14 @@ import {
   type QuestionEvaluationResult,
 } from '../domain/lesson'
 import { sampleContent } from '../domain/content'
+import type { WordSupportTarget } from '../domain/content'
+import {
+  type AssistanceEvent,
+  type AssistanceKind,
+  type AssistanceLevel,
+  createAssistanceEvent,
+  summarizeAssistance,
+} from '../domain/assistance'
 import { ChildButton } from '../components/ChildButton'
 import { QuestionProgress } from '../components/lesson/QuestionProgress'
 import { MultipleChoiceQuestion } from '../components/lesson/MultipleChoiceQuestion'
@@ -20,12 +28,14 @@ import { TableMatchQuestion } from '../components/lesson/TableMatchQuestion'
 import { AnswerFeedback } from '../components/lesson/AnswerFeedback'
 import { PassageCard } from '../components/lesson/PassageCard'
 import { LessonResults } from '../components/lesson/LessonResults'
+import { WordHelpPanel } from '../components/wordSupport'
 import {
   advanceActiveLessonSession,
   checkpointSubmittedQuestion,
   restoreLessonEvaluations,
   type ActiveLessonSession,
 } from '../persistence'
+import { DEFAULT_CONFIG, createSpeechService, type SpeechService, type SpeakStep } from '../services/speech'
 
 type LessonState = 'question' | 'feedback' | 'results'
 
@@ -75,6 +85,7 @@ export function LessonScreen({
   const restoredFeedback = restoredEvaluations.find(
     (evaluation) => evaluation.questionId === lesson.questions[restoredIndex]?.questionId,
   ) ?? null
+
   const [step, setStep] = useState<LessonState>(restoredFeedback ? 'feedback' : 'question')
   const [currentIndex, setCurrentIndex] = useState(restoredIndex)
   const [questionEvaluations, setQuestionEvaluations] = useState<QuestionEvaluationResult[]>(restoredEvaluations)
@@ -85,34 +96,24 @@ export function LessonScreen({
   const [selectedPartBChoiceId, setSelectedPartBChoiceId] = useState('')
   const [selectedMappings, setSelectedMappings] = useState<Record<string, string>>({})
   const [pendingFeedback, setPendingFeedback] = useState<QuestionEvaluationResult | null>(restoredFeedback)
-  const sessionRef = useRef(session)
+  const [assistanceEvents, setAssistanceEvents] = useState<AssistanceEvent[]>(session?.assistanceEvents ?? [])
+  const [openSupportTargetId, setOpenSupportTargetId] = useState<string | null>(null)
+  const [speechActive, setSpeechActive] = useState(false)
+  const [speechService] = useState<SpeechService>(() => createSpeechService())
+
+  const sessionRef = useRef<ActiveLessonSession | null>(session)
   const completionSentRef = useRef(false)
-
-  const currentQuestion = lesson.questions[currentIndex]
-
-  const submissionReady = useMemo(() => {
-    if (!currentQuestion) {
-      return false
-    }
-
-    switch (currentQuestion.questionType) {
-      case 'MULTIPLE_CHOICE':
-        return Boolean(selectedChoiceId)
-      case 'MULTISELECT':
-        return selectedChoiceIds.length > 0
-      case 'HOT_TEXT':
-        return selectedSegmentIds.length > 0
-      case 'EVIDENCE_PAIR':
-        return Boolean(selectedPartAChoiceId && selectedPartBChoiceId)
-      case 'TABLE_MATCH': {
-        const rows = currentQuestion.rows
-        return rows.every((row) => typeof selectedMappings[row.id] === 'string' && selectedMappings[row.id] !== '')
-      }
-      default:
-        return false
-    }
-  }, [currentQuestion, selectedChoiceId, selectedChoiceIds, selectedSegmentIds, selectedPartAChoiceId, selectedPartBChoiceId, selectedMappings])
-
+  const currentQuestion = lesson.questions[currentIndex] ?? null
+  const currentPassage = currentQuestion
+    ? sampleContent.passages.find((passage) => passage.passageIdentifier === currentQuestion.passageId) ?? null
+    : null
+  const passageTargets = currentPassage?.wordSupportTargets ?? []
+  const activeSupportTarget = openSupportTargetId
+    ? passageTargets.find((target) => target.targetId === openSupportTargetId) ?? null
+    : null
+  const speechSupported = speechService.isSupported()
+  const lessonAssistanceSummary = useMemo(() => summarizeAssistance(assistanceEvents), [assistanceEvents])
+  const supportLevels = useMemo(() => deriveSupportLevels(assistanceEvents), [assistanceEvents])
   const result = useMemo(
     () =>
       buildLessonResult({
@@ -121,57 +122,22 @@ export function LessonScreen({
         skillId: lesson.skillId,
         difficulty: lesson.difficulty,
         questionEvaluations,
+        assistanceSummary: lessonAssistanceSummary,
       }),
-    [lesson.lessonId, lesson.activityId, lesson.skillId, lesson.difficulty, questionEvaluations],
+    [lesson.lessonId, lesson.activityId, lesson.skillId, lesson.difficulty, questionEvaluations, lessonAssistanceSummary],
   )
 
-  const evidenceSnippets = useMemo(() => {
-    if (!currentQuestion) {
-      return []
-    }
-    const evidenceIds = currentQuestion.evidenceReferenceIds
-    if (evidenceIds.length === 0) {
-      return []
-    }
-    if (currentQuestion.questionType === 'TABLE_MATCH') {
-      return evidenceIds
-        .map((id) => {
-          const optionText = currentQuestion.rows
-            .flatMap((row) => row.options)
-            .find((option) => option.id === id)?.text
-          return optionText ? `${id}: ${optionText}` : undefined
-        })
-        .filter(Boolean) as string[]
-    }
-    if (currentQuestion.questionType === 'MULTISELECT' || currentQuestion.questionType === 'MULTIPLE_CHOICE') {
-      return currentQuestion.choices
-        .filter((choice) => evidenceIds.includes(choice.id))
-        .map((choice) => choice.text)
-    }
-    if (currentQuestion.questionType === 'HOT_TEXT') {
-      return currentQuestion.segments
-        .filter((segment) => evidenceIds.includes(segment.id))
-        .map((segment) => segment.text)
-    }
-    if (currentQuestion.questionType === 'EVIDENCE_PAIR') {
-      const allChoices = [...currentQuestion.partAChoices, ...currentQuestion.partBChoices]
-      return allChoices
-        .filter((choice) => evidenceIds.includes(choice.id))
-        .map((choice) => choice.text)
-    }
-    return evidenceIds
-  }, [currentQuestion])
+  useEffect(() => () => {
+    speechService.cancel()
+  }, [speechService])
 
-  const resetCurrentQuestionState = () => {
-    setStep('question')
-    setPendingFeedback(null)
-    setSelectedChoiceId('')
-    setSelectedChoiceIds([])
-    setSelectedSegmentIds([])
-    setSelectedPartAChoiceId('')
-    setSelectedPartBChoiceId('')
-    setSelectedMappings({})
-  }
+  useEffect(() => {
+    speechService.cancel()
+  }, [currentIndex, speechService])
+
+  useEffect(() => {
+    speechService.cancel()
+  }, [step, speechService])
 
   if (!lesson.questions.length) {
     return (
@@ -191,10 +157,154 @@ export function LessonScreen({
     )
   }
 
-  const onSubmit = () => {
-    if (!currentQuestion || !submissionReady) {
-      return
+  if (!currentQuestion) {
+    return (
+      <section className="screen-shell">
+        <header className="screen-header">
+          <h1>Lesson content is unavailable</h1>
+        </header>
+        <section className="card">
+          <p>This quest could not restore its current question. Please return to the unit.</p>
+        </section>
+        <section className="screen-actions">
+          <ChildButton type="button" className="primary-action" onClick={onBack}>
+            Return to Unit
+          </ChildButton>
+        </section>
+      </section>
+    )
+  }
+
+  const evidenceSnippets = (() => {
+    const evidenceIds = currentQuestion.evidenceReferenceIds
+    if (evidenceIds.length === 0) {
+      return []
     }
+    if (currentQuestion.questionType === 'TABLE_MATCH') {
+      return evidenceIds
+        .map((id) => {
+          const optionText = currentQuestion.rows
+            .flatMap((row) => row.options)
+            .find((option) => option.id === id)?.text
+          return optionText ? `${id}: ${optionText}` : undefined
+        })
+        .filter((entry): entry is string => Boolean(entry))
+    }
+    if (currentQuestion.questionType === 'MULTISELECT' || currentQuestion.questionType === 'MULTIPLE_CHOICE') {
+      return currentQuestion.choices
+        .filter((choice) => evidenceIds.includes(choice.id))
+        .map((choice) => choice.text)
+    }
+    if (currentQuestion.questionType === 'HOT_TEXT') {
+      return currentQuestion.segments
+        .filter((segment) => evidenceIds.includes(segment.id))
+        .map((segment) => segment.text)
+    }
+    if (currentQuestion.questionType === 'EVIDENCE_PAIR') {
+      const allChoices = [...currentQuestion.partAChoices, ...currentQuestion.partBChoices]
+      return allChoices
+        .filter((choice) => evidenceIds.includes(choice.id))
+        .map((choice) => choice.text)
+    }
+    return evidenceIds
+  })()
+
+  const submissionReady = (() => {
+    switch (currentQuestion.questionType) {
+      case 'MULTIPLE_CHOICE':
+        return Boolean(selectedChoiceId)
+      case 'MULTISELECT':
+        return selectedChoiceIds.length > 0
+      case 'HOT_TEXT':
+        return selectedSegmentIds.length > 0
+      case 'EVIDENCE_PAIR':
+        return Boolean(selectedPartAChoiceId && selectedPartBChoiceId)
+      case 'TABLE_MATCH':
+        return currentQuestion.rows.every((row) => typeof selectedMappings[row.id] === 'string' && selectedMappings[row.id] !== '')
+      default:
+        return false
+    }
+  })()
+
+  const resetCurrentQuestionState = () => {
+    setStep('question')
+    setPendingFeedback(null)
+    setSelectedChoiceId('')
+    setSelectedChoiceIds([])
+    setSelectedSegmentIds([])
+    setSelectedPartAChoiceId('')
+    setSelectedPartBChoiceId('')
+    setSelectedMappings({})
+  }
+
+  const persistAssistanceEvents = (nextEvents: AssistanceEvent[]) => {
+    if (!sessionRef.current) return
+    const nextSession: ActiveLessonSession = {
+      ...sessionRef.current,
+      assistanceEvents: nextEvents,
+      updatedAt: new Date().toISOString(),
+    }
+    sessionRef.current = nextSession
+    onSessionCheckpoint?.(nextSession)
+  }
+
+  const requestAssistance = (target: WordSupportTarget, level: AssistanceLevel, kind: AssistanceKind) => {
+    const eventResult = createAssistanceEvent({
+      sessionId: sessionRef.current?.sessionId ?? `${lesson.activityId}:preview`,
+      lessonId: lesson.lessonId,
+      activityId: lesson.activityId,
+      questionId: currentQuestion.questionId,
+      targetId: target.targetId,
+      kind,
+      level,
+      timestamp: new Date().toISOString(),
+      existingEvents: assistanceEvents,
+    })
+
+    if (eventResult.added && eventResult.event) {
+      const nextEvents = [...assistanceEvents, eventResult.event]
+      setAssistanceEvents(nextEvents)
+      persistAssistanceEvents(nextEvents)
+    }
+
+    setOpenSupportTargetId(target.targetId)
+  }
+
+  const requestSpeech = async (target: WordSupportTarget, level: AssistanceLevel) => {
+    if (!speechService.isSupported()) return
+    const speak = createSpeechRequest(target, level, speechService)
+    if (!speak) return
+    speechService.cancel()
+    setSpeechActive(true)
+    try {
+      await speak()
+    } finally {
+      setSpeechActive(false)
+    }
+  }
+
+  const onOpenSupport = (target: WordSupportTarget) => {
+    speechService.cancel()
+    setSpeechActive(false)
+    requestAssistance(target, 1, 'PATTERN_HIGHLIGHT')
+  }
+
+  const onRequestSupportLevel = async (level: AssistanceLevel, kind: AssistanceKind) => {
+    if (!activeSupportTarget) return
+    requestAssistance(activeSupportTarget, level, kind)
+    if (level >= 3) {
+      await requestSpeech(activeSupportTarget, level)
+    }
+  }
+
+  const onCloseSupport = () => {
+    speechService.cancel()
+    setSpeechActive(false)
+    setOpenSupportTargetId(null)
+  }
+
+  const onSubmit = () => {
+    if (!submissionReady) return
 
     const payload =
       currentQuestion.questionType === 'MULTIPLE_CHOICE'
@@ -207,18 +317,19 @@ export function LessonScreen({
               ? { partAChoiceId: selectedPartAChoiceId, partBChoiceId: selectedPartBChoiceId }
               : { selectedMappings }
 
-    const result = evaluateAnswer(currentQuestion as LessonQuestion, {
+    const evaluation = evaluateAnswer(currentQuestion as LessonQuestion, {
       questionType: currentQuestion.questionType,
       payload: payload as never,
     })
 
-    setQuestionEvaluations((prev) => [...prev, result])
-    setPendingFeedback(result)
+    const nextEvaluations = [...questionEvaluations, evaluation]
+    setQuestionEvaluations(nextEvaluations)
+    setPendingFeedback(evaluation)
     setStep('feedback')
     if (sessionRef.current) {
       const checkpoint = checkpointSubmittedQuestion(
         sessionRef.current,
-        result,
+        evaluation,
         currentIndex,
         new Date().toISOString(),
       )
@@ -228,6 +339,10 @@ export function LessonScreen({
   }
 
   const onNext = () => {
+    speechService.cancel()
+    setOpenSupportTargetId(null)
+    setSpeechActive(false)
+
     if (currentIndex + 1 >= lesson.questions.length) {
       setStep('results')
       if (sessionRef.current) {
@@ -259,6 +374,8 @@ export function LessonScreen({
   const continueFromResults = () => {
     if (completionSentRef.current) return
     completionSentRef.current = true
+    speechService.cancel()
+    setSpeechActive(false)
     if (onComplete && sessionRef.current) {
       onComplete(result, sessionRef.current.sessionId)
       return
@@ -267,23 +384,23 @@ export function LessonScreen({
   }
 
   const toggleChoice = (choiceId: string) => {
-    setSelectedChoiceIds((prev) =>
-      prev.includes(choiceId) ? prev.filter((entry) => entry !== choiceId) : [...prev, choiceId],
+    setSelectedChoiceIds((previous) =>
+      previous.includes(choiceId) ? previous.filter((entry) => entry !== choiceId) : [...previous, choiceId],
     )
   }
 
   const toggleSegment = (segmentId: string) => {
     const isSelected = selectedSegmentIds.includes(segmentId)
     if (isSelected) {
-      setSelectedSegmentIds((prev) => prev.filter((entry) => entry !== segmentId))
+      setSelectedSegmentIds((previous) => previous.filter((entry) => entry !== segmentId))
       return
     }
-    setSelectedSegmentIds((prev) => [...prev, segmentId])
+    setSelectedSegmentIds((previous) => [...previous, segmentId])
   }
 
   const updateMapping = (rowId: string, choiceId: string) => {
-    setSelectedMappings((prev) => ({
-      ...prev,
+    setSelectedMappings((previous) => ({
+      ...previous,
       [rowId]: choiceId,
     }))
   }
@@ -295,10 +412,27 @@ export function LessonScreen({
         <p>{lesson.lessonObjective}</p>
       </header>
       <PassageCard
-        passageText={sampleContent.passages.find((p) => p.passageIdentifier === currentQuestion.passageId)?.passageText || ''}
+        passageText={currentPassage?.passageText ?? ''}
+        wordSupportTargets={passageTargets}
+        onOpenWordSupport={onOpenSupport}
+        visibleWordSupport
         heading="Reading Passage"
         evidenceSnippets={step === 'feedback' ? evidenceSnippets : []}
       />
+      {activeSupportTarget && (
+        <WordHelpPanel
+          target={activeSupportTarget}
+          level={supportLevels[activeSupportTarget.targetId] ?? 0}
+          speechSupported={speechSupported}
+          onRequestLevel={onRequestSupportLevel}
+          onStop={() => {
+            speechService.cancel()
+            setSpeechActive(false)
+          }}
+          onClose={onCloseSupport}
+          speechActive={speechActive}
+        />
+      )}
 
       {step === 'results' && (
         <LessonResults
@@ -402,4 +536,34 @@ export function LessonScreen({
       )}
     </section>
   )
+}
+
+function deriveSupportLevels(events: AssistanceEvent[]): Record<string, AssistanceLevel> {
+  return events.reduce<Record<string, AssistanceLevel>>((levels, event) => {
+    const current = levels[event.targetId] ?? 0
+    levels[event.targetId] = Math.max(current, event.assistanceLevel) as AssistanceLevel
+    return levels
+  }, {})
+}
+
+function createSpeechRequest(
+  target: WordSupportTarget,
+  level: AssistanceLevel,
+  speechService: SpeechService,
+): (() => Promise<void>) | null {
+  const speakSequence = () => speechService.speakSequence(target.spokenChunks.map((chunk): SpeakStep => ({
+    text: chunk.speechText,
+    rate: DEFAULT_CONFIG.chunkSequenceRate,
+  })))
+
+  const requests: Record<AssistanceLevel, (() => Promise<void>) | null> = {
+    1: null,
+    2: null,
+    3: speakSequence,
+    4: () => speechService.speakText(target.blendSpeechText, { rate: DEFAULT_CONFIG.blendRate }),
+    5: () => speechService.speakText(target.wholeWordSpeechText, { rate: DEFAULT_CONFIG.wordRate }),
+    6: () => speechService.speakText(target.sentenceSpeechText, { rate: DEFAULT_CONFIG.sentenceRate }),
+  }
+
+  return requests[level]
 }

@@ -56,7 +56,7 @@ export function evaluateCheckpoint(
     input.accuracy < config.strongAccuracyThreshold
   const heavyAssistance =
     input.hintsUsed > 0 ||
-    input.majorHintsUsed > config.maxMajorHintsForIndependent ||
+    input.majorHintsUsed > 0 ||
     input.sentenceReadAloudUsed
 
   const firstAttemptStrongEnough =

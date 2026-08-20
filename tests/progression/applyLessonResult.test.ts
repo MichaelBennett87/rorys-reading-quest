@@ -39,7 +39,15 @@ function lessonResult(
       spokenWordHelpUsed: false,
       sentenceReadAloudUsed: false,
     },
-    questionResults: [],
+    questionResults: Array.from({ length: totalQuestions }, (_, index) => ({
+      questionId: `question-${index + 1}`,
+      isCorrect: index < correct,
+      isFirstAttemptCorrect: index < correct,
+      submittedAnswer: index < correct ? 'correct' : 'incorrect',
+      correctAnswer: 'correct',
+      explanation: 'Private teaching text is not persisted.',
+      evidenceReference: [],
+    })),
     completed: true,
   }
 }

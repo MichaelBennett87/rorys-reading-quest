@@ -7,6 +7,7 @@ import {
 } from '../domain/lesson'
 import type {
   ActiveLessonSession,
+  PersistedAssistanceEvent,
   PersistedAnswer,
   PersistedSubmittedQuestion,
 } from './questProgressTypes'
@@ -25,6 +26,7 @@ export function createActiveLessonSession(
     difficulty: lesson.difficulty,
     currentQuestionIndex: 0,
     submittedQuestions: [],
+    assistanceEvents: [],
     startedAt: timestamp,
     updatedAt: timestamp,
   }
@@ -50,6 +52,7 @@ export function checkpointSubmittedQuestion(
       ...session.submittedQuestions.filter((question) => question.questionId !== evaluation.questionId),
       submitted,
     ],
+    assistanceEvents: cloneAssistanceEvents(session.assistanceEvents),
     updatedAt: timestamp,
   }
 }
@@ -59,7 +62,7 @@ export function advanceActiveLessonSession(
   currentQuestionIndex: number,
   timestamp: string,
 ): ActiveLessonSession {
-  return { ...session, currentQuestionIndex, updatedAt: timestamp }
+  return { ...session, currentQuestionIndex, assistanceEvents: cloneAssistanceEvents(session.assistanceEvents), updatedAt: timestamp }
 }
 
 export function restoreLessonEvaluations(
@@ -120,4 +123,8 @@ function isStringRecord(value: unknown): value is Record<string, string> {
     && value !== null
     && !Array.isArray(value)
     && Object.values(value).every((entry) => typeof entry === 'string')
+}
+
+function cloneAssistanceEvents(events: PersistedAssistanceEvent[]): PersistedAssistanceEvent[] {
+  return events.map((event) => ({ ...event }))
 }

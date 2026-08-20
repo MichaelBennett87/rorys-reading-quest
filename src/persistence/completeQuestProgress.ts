@@ -2,6 +2,7 @@ import type { LessonResult } from '../domain/lesson'
 import type { AppliedLessonProgression } from '../domain/progression'
 import {
   type CompletedLessonAttempt,
+  type PersistedAssistanceEvent,
   type QuestProgressV1,
 } from './questProgressTypes'
 import { normalizeQuestProgressForSave } from './validatePersistedQuestProgress'
@@ -54,6 +55,8 @@ export function completeQuestProgress(input: CompleteQuestProgressInput): Comple
     })),
     accuracy: input.lessonResult.accuracy,
     assistanceCount: input.lessonResult.assistanceUsed,
+    assistanceSummary: { ...input.lessonResult.assistanceSummary },
+    assistanceEvents: cloneAssistanceEvents(input.state.activeLessonSession?.assistanceEvents ?? []),
     completedAt: input.completedAt,
     progressionDecisionState: input.progression.decision.decisionState,
     reasonCodes: [...input.progression.decision.reasonCodes],
@@ -100,4 +103,8 @@ export function completeQuestProgress(input: CompleteQuestProgressInput): Comple
     metadata: { ...input.state.metadata, updatedAt: input.completedAt },
   })
   return { state, duplicate: false, earnedXp, earnedStars }
+}
+
+function cloneAssistanceEvents(events: PersistedAssistanceEvent[]): PersistedAssistanceEvent[] {
+  return events.map((event) => ({ ...event }))
 }

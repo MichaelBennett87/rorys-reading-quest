@@ -40,6 +40,15 @@ const lessonResult: LessonResult = {
       explanation: 'Private teaching text is not persisted.',
       evidenceReference: [],
     },
+    {
+      questionId: 'question-b',
+      isCorrect: true,
+      isFirstAttemptCorrect: true,
+      submittedAnswer: 'choice-b',
+      correctAnswer: 'choice-b',
+      explanation: 'Private teaching text is not persisted.',
+      evidenceReference: [],
+    },
   ],
   completed: true,
 }
