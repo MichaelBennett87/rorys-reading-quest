@@ -6,12 +6,12 @@ Rory's Reading Quest is a local-first, child-safe reading-learning foundation fo
 
 ## Current Status
 
-- Status: `Phase 6A1 complete`.
+- Status: `Phase 6A2 complete`.
 - A completed `LessonResult` now drives verification, advancement, fresh practice, same-level remediation, prerequisite rebuilding, spaced review, or a structured content-needed outcome.
 - Progress, rewards, bounded attempt history, review scheduling, submitted active-session checkpoints, and assistance summaries persist locally.
 - Curated word-help controls reveal authored patterns and optional browser speech without using an external service or microphone.
 - The parent area now opens a polished local-only dashboard with overview, progress drill-downs, sessions, reviews, word help, editable official assessments, and a print-summary preview.
-- Phase 6A1 adds a scalable Grade 2 content-pack registry, guided-teaching lessons, and a partial bridge pack for `oo` and `ea` variable vowel teams. Audio, additional Grade 2 packs, PWA behavior, backend services, accounts, analytics, and live AI remain deferred.
+- Phase 6A1 adds a scalable Grade 2 content-pack registry, guided-teaching lessons, and a partial bridge pack for `oo` and `ea` variable vowel teams. Phase 6A2 adds the remaining `ou`, `oi`, `oy`, and `ow` patterns so `ELA.2.F.1.3a` now has authored DRAFT coverage across both packs. Audio, later Grade 2 benchmarks, PWA behavior, backend services, accounts, analytics, and live AI remain deferred.
 
 ## Commands
 
@@ -28,7 +28,7 @@ Rory's Reading Quest is a local-first, child-safe reading-learning foundation fo
 - Domain: pure lesson evaluation, adaptive progression, deterministic lesson selection, remediation return, review scheduling, and assistance summarization.
 - Content: a registered Grade 2 bridge pack with 7 DRAFT lessons, 7 original DRAFT passages, 41 DRAFT questions, and 33 DRAFT word-support targets, plus legacy lessons preserved for recovery and history.
 - Persistence: version-1 child progress plus separate parent-access and parent-record stores behind small interfaces, with safe in-memory fallback and optional assistance-event persistence.
-- Runtime services: browser only; no telemetry, advertising, cloud service, backend, or remote content request. Phase 5A adds a local parent PIN gate and parent analytics summaries without changing child learning flow. Phase 5B1 adds the parent dashboard presentation on top of the same local data, Phase 5B2 adds local assessment CRUD plus a browser-print preview, and Phase 6A1 adds local curriculum packs without runtime generation or external content.
+- Runtime services: browser only; no telemetry, advertising, cloud service, backend, or remote content request. Phase 5A adds a local parent PIN gate and parent analytics summaries without changing child learning flow. Phase 5B1 adds the parent dashboard presentation on top of the same local data, Phase 5B2 adds local assessment CRUD plus a browser-print preview, and Phase 6A1 plus Phase 6A2 add local curriculum packs without runtime generation or external content.
 
 ## Privacy and Assessment Boundary
 

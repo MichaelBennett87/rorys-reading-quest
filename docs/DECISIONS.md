@@ -168,6 +168,11 @@
 - Consequence: Parent reporting and curriculum docs can distinguish benchmark-aligned exposure from complete coverage.
 - Status: Applied
 
+- Decision: Add Phase 6A2 as the second vowel-team bridge pack and treat `ELA.2.F.1.3a` as implemented in DRAFT form only after both packs are registered.
+- Reason: The remaining `ou`, `oi`, `oy`, and `ow` patterns complete the authored pattern set while still staying inside the local DRAFT curriculum boundary.
+- Consequence: Benchmark coverage audits can report implemented coverage without implying approval, mastery, or official FAST results.
+- Status: Applied
+
 ## 2026-08-20 - Guided Practice and Checkpoint Lesson Roles
 
 - Decision: Allow guided-teaching lessons and scored checkpoint lessons to coexist in the same curriculum pack.

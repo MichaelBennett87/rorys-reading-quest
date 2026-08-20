@@ -50,9 +50,9 @@
 - `src/screens/parent/ParentPrintSummaryView.tsx` renders the print-ready parent summary from `DashboardSnapshot` and `ParentRecordsState`, then calls the injected browser print service only after an explicit parent action.
 - `src/screens/ParentPlaceholderScreen.tsx` remains the single owner of parent-access state, parent-record state, and transactional persistence. Assessment mutations and print actions never touch child progress.
 
-## Phase 6A1 Grade 2 Content Pack Architecture
+## Phase 6A1 and Phase 6A2 Grade 2 Content Pack Architecture
 
 - `src/domain/content/packs/*` registers local content packs so the bridge curriculum can grow in bounded units without breaking existing imports.
 - `sampleContent` now aggregates registered packs, while legacy lesson IDs remain resolvable for recovery and history.
 - `GUIDED_PRACTICE` lessons can include teaching blocks before scored questions; `CHECKPOINT` lessons remain fresh, scored progression material.
-- The active Grade 2 bridge pack covers `oo` and `ea` only in Phase 6A1, so `ELA.2.F.1.3a` stays explicitly partial until later packs add `ou`, `oi`, `oy`, and `ow`.
+- The active Grade 2 bridge packs cover `oo`, `ea`, `ou`, `oi`, `oy`, and `ow` across Phase 6A1 and Phase 6A2, so `ELA.2.F.1.3a` is implemented in DRAFT form while still remaining a local, auditable bridge layer.

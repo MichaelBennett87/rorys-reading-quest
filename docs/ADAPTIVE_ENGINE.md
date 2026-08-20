@@ -44,10 +44,10 @@ Stars remain 3 for 90-100%, 2 for 70-89%, and 1 below 70% for completion. XP is 
 
 Phase 5A adds deterministic parent-facing explanations that mirror the structured progression outcomes without changing the underlying adaptive rules. These explanations summarize verification, advancement, retry, guided practice, prerequisite remediation, review, and content-needed states in parent-friendly language only. They do not introduce new progression logic or predictive scoring.
 
-## Phase 6A1 Bridge Pack Selection
+## Phase 6A1 and Phase 6A2 Bridge Pack Selection
 
-Phase 6A1 adds a registered Grade 2 bridge pack for `word-forge` and `wg-unit-1`. Fresh selection prefers the active bridge lessons and leaves legacy development lessons available only for recovery and history. Guided-teaching lessons stay distinct from checkpoint lessons: they show authored teaching blocks before scored questions, but the teaching block is not scored, not counted as assistance, and not treated as mastery evidence.
+Phase 6A1 and Phase 6A2 add registered Grade 2 bridge packs for `word-forge` and `wg-unit-1`. Fresh selection prefers the active bridge lessons, leaves legacy development lessons available only for recovery and history, and chooses between trail 1 and trail 2 using the current difficulty plus freshness. Guided-teaching lessons stay distinct from checkpoint lessons: they show authored teaching blocks before scored questions, but the teaching block is not scored, not counted as assistance, and not treated as mastery evidence.
 
-## Phase 6A1 Partial Benchmark Coverage
+## Phase 6A1 and Phase 6A2 Coverage
 
-`ELA.2.F.1.3a` remains partial in Phase 6A1. The active pack covers `oo` and `ea` only, so parent and curriculum docs must distinguish benchmark-aligned exposure from complete benchmark coverage. Later bridge phases add the remaining variable vowel teams and related patterns.
+`ELA.2.F.1.3a` is implemented in DRAFT form across Phase 6A1 and Phase 6A2. The active packs cover `oo`, `ea`, `ou`, `oi`, `oy`, and `ow`, so parent and curriculum docs must distinguish benchmark-aligned exposure from complete benchmark mastery. Later bridge phases add the remaining Grade 2 foundations and reading strands.

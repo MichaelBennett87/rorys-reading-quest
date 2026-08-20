@@ -16,9 +16,9 @@ Each playable lesson candidate contains:
 - passage-question keys
 - `contentVersion`
 
-The development catalog now aggregates registered local packs instead of a single monolithic development set. Phase 6A1 adds one active Grade 2 bridge pack with 7 lessons, 7 passages, 41 scored questions, and 33 DRAFT word-support targets. Legacy lesson IDs remain resolvable for recovery and parent history, but they are excluded from fresh selection so new learners enter the active bridge pack.
+The development catalog now aggregates registered local packs instead of a single monolithic development set. Phase 6A1 and Phase 6A2 add two active Grade 2 bridge packs with 14 lessons, 14 passages, and 82 scored questions. Legacy lesson IDs remain resolvable for recovery and parent history, but they are excluded from fresh selection so new learners enter the active bridge packs.
 
-The active bridge pack remains DRAFT-only. Support is authored, not generated, and passage rendering keeps the readable sentence flow while exposing target words as controls. The pack is aligned to `ELA.2.F.1.3a` partially, covering `oo` and `ea` only in Phase 6A1.
+The active bridge packs remain DRAFT-only. Support is authored, not generated, and passage rendering keeps the readable sentence flow while exposing target words as controls. Together the packs implement the listed `ELA.2.F.1.3a` vowel-team patterns across Phase 6A1 and Phase 6A2 while still keeping the work as local practice, not oral-fluency measurement.
 
 ## Review and Safety
 
@@ -42,4 +42,4 @@ Phase 6A1 introduces a local bridge pack for `word-forge` and `wg-unit-1`. The p
 
 ## Phase 6A1 Curriculum Scope Boundary
 
-Phase 6A1 is partial benchmark coverage only. `ELA.2.F.1.3a` is not complete until later phases add `ou`, `oi`, `oy`, and `ow`. Phase 6A1 can support fluency-adjacent reading practice, but it does not assess or score oral fluency. Parent analytics should label this work as `Foundational Skills Bridge`, which is an internal practice category and not an official FAST reporting lane.
+Phase 6A1 is partial benchmark coverage only. `ELA.2.F.1.3a` becomes implemented in DRAFT form only when Phase 6A2 adds `ou`, `oi`, `oy`, and `ow`. The bridge packs can support fluency-adjacent reading practice, but they do not assess or score oral fluency. Parent analytics should label this work as `Foundational Skills Bridge`, which is an internal practice category and not an official FAST reporting lane.

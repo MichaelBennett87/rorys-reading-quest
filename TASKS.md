@@ -47,7 +47,7 @@
     - [x] Phase 5B2: assessment management, print summary, and Phase 5 completion
 - [ ] Phase 6: Grade 2 bridge content
   - [x] Phase 6A1: content framework and variable vowel teams `oo`/`ea`
-  - [ ] Phase 6A2: `ou`, `oi`, `oy`, and `ow`
+  - [x] Phase 6A2: `ou`, `oi`, `oy`, and `ow`
   - [ ] Phase 6B: two-syllable, open, closed, and consonant-`le`
   - [ ] Phase 6C: prefixes, suffixes, silent letters, and fluency foundations
   - [ ] Phase 6D: Grade 2 prose and poetry

@@ -41,4 +41,4 @@ Assessment records stay local, use the separate parent-record store, and store o
 
 ## Phase 6A1 Curriculum Boundary
 
-Phase 6A1 keeps all new Grade 2 content local, original, and DRAFT-only. The bridge pack does not call a runtime content-generation service, does not browse external curriculum sources at runtime, and does not add official fluency scoring. Audio remains optional and browser-provided only, with no microphone access or speech recognition. Legacy lesson history remains local and readable without exposing child-sensitive identifiers or persisted raw passage text.
+Phase 6A1 and Phase 6A2 keep all new Grade 2 content local, original, and DRAFT-only. The bridge packs do not call a runtime content-generation service, do not browse external curriculum sources at runtime, and do not add official fluency scoring. Audio remains optional and browser-provided only, with no microphone access or speech recognition. Legacy lesson history remains local and readable without exposing child-sensitive identifiers or persisted raw passage text.
