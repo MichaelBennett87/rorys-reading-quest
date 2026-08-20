@@ -34,8 +34,12 @@
   - [x] Make completion idempotent and persist deterministic XP and stars.
   - [x] Wire supportive progression outcomes and adaptive Continue Quest behavior.
   - [x] Add a telemetry-free local progress summary and focused test coverage.
-- [ ] Phase 4: sound-out support
-  - [ ] Implement assist ladder without speech synthesis in this phase.
+- [x] Phase 4: sound-out support
+  - [x] Add curated support metadata and validation for authored word-help targets.
+  - [x] Add assistance-event tracking, summaries, and lesson-result integration.
+  - [x] Add optional browser speech support and accessible word-help controls.
+  - [x] Persist assistance with active sessions and completed attempts.
+  - [x] Add focused support, persistence, and UI test coverage.
 - [ ] Phase 5: parent dashboard
   - [ ] Add parent review summaries and milestone visibility.
 - [ ] Phase 6: Grade 2 bridge content

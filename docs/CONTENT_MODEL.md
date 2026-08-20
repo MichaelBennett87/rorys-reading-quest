@@ -4,6 +4,8 @@
 
 Passages and questions retain the Phase 2 typed model, stable IDs, content versions, explanations, evidence IDs, and review states. The five supported question types remain multiple choice, multiselect, hot text, two-part evidence, and table match.
 
+Phase 4 extends passages with optional authored `wordSupportTargets`. Each target includes a stable target ID, owning passage and sentence IDs, a surface word, authored focus parts, authored display and spoken chunks, blend/word/sentence speech text, review status, and content version.
+
 ## Lesson-Level Candidate
 
 Each playable lesson candidate contains:
@@ -20,6 +22,8 @@ The development catalog contains four coherent lessons:
 - three distinct difficulty-1 Word Forge variants
 
 All 2 passages and all 10 questions are reused from Phase 2. No new passage or question was added, and no lesson mixes difficulty 0 and 1.
+
+The same two passages now also carry 9 DRAFT support targets across the existing lesson content. Support is authored, not generated, and passage rendering keeps the readable sentence flow while exposing target words as controls.
 
 ## Review and Safety
 

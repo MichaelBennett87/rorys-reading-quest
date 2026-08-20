@@ -15,6 +15,7 @@
 ## Child Safety, Privacy, and Content
 
 - Do not add child-facing live AI, telemetry, advertising, or runtime cloud services.
+- Browser speech, when introduced, must remain optional, local to the browser, and free of microphone or external speech-provider requirements.
 - Do not store private assessment records, child-sensitive identifiers, credentials, school data, or personal records.
 - Use only original content with an explicit `DRAFT`, `REVIEWED`, `APPROVED`, or `RETIRED` review state.
 - Do not treat unreviewed DRAFT content as production-ready.

@@ -4,12 +4,15 @@
 
 `LessonResult.accuracy` is a percentage from `0` through `100`. The checkpoint engine receives `accuracy / 100`. First-attempt accuracy is `firstAttemptCorrect / totalQuestions`; incomplete, zero-question, malformed, unknown-skill, mismatched-trail, and unsupported-difficulty results are declined.
 
+`LessonResult.assistanceSummary` is the Phase 4 bridge into progression. Visual hints, spoken chunk help, spoken word help, and sentence read-aloud assistance are summarized locally and then adapted into the checkpoint contract without exposing raw support text.
+
 ## Distinct Independent Evidence
 
 - Strong independent evidence requires at least 85% accuracy and first-attempt accuracy with no disqualifying assistance.
 - The first distinct qualifying activity stays at the same difficulty and returns `VERIFY_MASTERY`.
 - A replayed activity ID is recorded as an attempt but cannot increase mastery evidence.
 - A second distinct qualifying activity returns `ADVANCE`, increases difficulty by exactly one, records the prior difficulty as mastered, clears current evidence/failure counters, and schedules review one day later.
+- Any used assistance prevents a result from counting as independent mastery evidence, even when accuracy remains strong.
 
 ## Partial and Unsuccessful Outcomes
 

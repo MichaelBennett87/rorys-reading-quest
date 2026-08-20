@@ -6,9 +6,10 @@ Rory's Reading Quest is a local-first, child-safe reading-learning foundation fo
 
 ## Current Status
 
-- Status: `Phase 3 complete`.
+- Status: `Phase 4 complete locally; final publication pending`.
 - A completed `LessonResult` now drives verification, advancement, fresh practice, same-level remediation, prerequisite rebuilding, spaced review, or a structured content-needed outcome.
-- Progress, rewards, bounded attempt history, review scheduling, and submitted active-session checkpoints persist locally.
+- Progress, rewards, bounded attempt history, review scheduling, submitted active-session checkpoints, and assistance summaries persist locally.
+- Curated word-help controls reveal authored patterns and optional browser speech without using an external service or microphone.
 - The parent area remains a placeholder. Audio, sound-out support, PWA behavior, backend services, accounts, analytics, and live AI remain deferred.
 
 ## Commands
@@ -23,9 +24,9 @@ Rory's Reading Quest is a local-first, child-safe reading-learning foundation fo
 ## Architecture Summary
 
 - Presentation: React/TypeScript shell with explicit local screen state and a small progress hook.
-- Domain: pure lesson evaluation, adaptive progression, deterministic lesson selection, remediation return, and review scheduling.
-- Content: 2 original DRAFT passages and 10 DRAFT questions arranged as one lower-trail lesson and three current-trail variants.
-- Persistence: version-1 `localStorage` adapter behind a small interface, with safe in-memory fallback.
+- Domain: pure lesson evaluation, adaptive progression, deterministic lesson selection, remediation return, review scheduling, and assistance summarization.
+- Content: 2 original DRAFT passages, 10 DRAFT questions, and 9 DRAFT word-support targets arranged as one lower-trail lesson and three current-trail variants.
+- Persistence: version-1 `localStorage` adapter behind a small interface, with safe in-memory fallback and optional assistance-event persistence.
 - Runtime services: browser only; no telemetry, advertising, cloud service, backend, or remote content request.
 
 ## Privacy and Assessment Boundary

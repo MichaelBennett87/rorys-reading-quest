@@ -104,3 +104,10 @@
 - Reason: Submitted work must survive reload while one completion must award progress and rewards exactly once.
 - Consequence: Compatible sessions reconstruct evaluation from current local content; incompatible sessions alone are discarded.
 - Status: Applied
+
+## 2026-08-20 - Curated Word Support and Optional Speech
+
+- Decision: Add authored support targets, deterministic assistance events, and an optional browser-speech boundary for word help.
+- Reason: Learners need supportive on-demand clues without introducing an external speech service or microphone dependency.
+- Consequence: Assistance stays local, is persisted as privacy-safe IDs and summaries, and never counts as independent mastery evidence.
+- Status: Applied

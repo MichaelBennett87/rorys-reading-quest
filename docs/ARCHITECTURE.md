@@ -6,6 +6,7 @@
 - `src/app/useQuestProgress.ts` is the small application coordinator. It loads progress, resumes safe sessions, invokes pure progression, commits completion idempotently, saves local state, and plans Continue Quest.
 - `src/screens/LessonScreen.tsx` owns question interaction only. It emits submitted-question checkpoints and one explicit completed `LessonResult` callback.
 - `src/screens/ProgressionOutcomeScreen.tsx` maps structured outcomes to supportive child-safe copy without exposing reason codes.
+- Phase 4 adds `src/components/wordSupport/*` for authored word-help controls and `src/services/speech/*` for an optional browser-speech boundary.
 
 ## Pure Domain Layer
 
@@ -13,7 +14,7 @@
 - `applyLessonResult.ts` coordinates checkpoint evaluation, distinct activity evidence, immutable skill-state updates, remediation routing, and next-quest planning.
 - `selectNextLesson.ts` filters by skill, difficulty, and purpose; excludes recent activity IDs and immediate passage-question reuse; then chooses deterministically.
 - `reviewSchedule.ts` retains the `1, 3, 7, 14, 30` day sequence and uses supplied timestamps through the coordinator.
-- Assistance remains in the contract. Until Phase 4 controls exist, hint/read-aloud fields are explicitly adapted as zero/false and are not presented as fully implemented tracking.
+- Assistance is now a first-class local contract. Lesson results carry a privacy-safe assistance summary; assistance events are deterministic and idempotent; and any used help suppresses independent mastery evidence.
 
 ## Persistence Layer
 
@@ -22,8 +23,9 @@
 - Schema: version `1` only; invalid, unavailable, throwing, or unsupported storage falls back to fresh in-memory progress without crashing.
 - Loading malformed storage never overwrites it. Incompatible active-session data is discarded independently while completed progress remains intact.
 - Completed attempts are capped at 250; recent activity usage is capped at 12 entries per trail.
+- Active sessions now also carry bounded assistance events so a compatible reload keeps the already-requested word help attached to the lesson state.
 
 ## Boundaries
 
-- No router, state-management library, persistence dependency, IndexedDB, backend, cloud sync, telemetry, live AI, audio, parent dashboard, service worker, or PWA behavior was added.
+- No router, state-management library, persistence dependency, IndexedDB, backend, cloud sync, telemetry, live AI, external speech provider, microphone capture, parent dashboard, service worker, or PWA behavior was added.
 - All content remains local and DRAFT.
