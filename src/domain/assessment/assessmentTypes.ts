@@ -36,4 +36,3 @@ export interface AssessmentValidationResult {
   status: 'valid' | 'invalid'
   errors: AssessmentValidationError[]
 }
-
