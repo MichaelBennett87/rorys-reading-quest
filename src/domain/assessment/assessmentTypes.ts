@@ -19,11 +19,13 @@ export type AssessmentValidationErrorCode =
   | 'unsupported_window'
   | 'unsupported_grade'
   | 'non_integer_score'
+  | 'score_out_of_range'
   | 'invalid_date'
   | 'future_date'
   | 'invalid_achievement_level'
   | 'invalid_percentile'
   | 'duplicate_assessment_entry'
+  | 'duplicate_assessment_identifier'
 
 export interface AssessmentValidationError {
   code: AssessmentValidationErrorCode

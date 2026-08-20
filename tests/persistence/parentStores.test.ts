@@ -100,7 +100,8 @@ describe('parent stores', () => {
     expect(loaded.state.officialAssessments[0].assessmentId).toBe('assessment-0')
 
     const bounded = store.save(recordsState(PARENT_RECORD_LIMIT + 5))
-    expect(bounded.state.officialAssessments).toHaveLength(PARENT_RECORD_LIMIT)
+    expect(bounded.status).toBe('storage_error')
+    expect(store.load(now).state.officialAssessments).toHaveLength(2)
   })
 
   test('duplicate assessment entries are rejected and keys remain distinct', () => {
@@ -112,11 +113,48 @@ describe('parent stores', () => {
       ],
     }, now)
     if (validation.status !== 'valid') {
-      expect(validation.reason).toContain('Duplicate assessment entries')
+      expect(validation.reason).toContain('Assessment IDs must be unique.')
     } else {
       throw new Error('Expected duplicate assessment entries to be invalid.')
     }
     expect(PARENT_ACCESS_STORAGE_KEY).not.toBe(PARENT_RECORDS_STORAGE_KEY)
+  })
+
+  test('duplicate assessment IDs are rejected before save', () => {
+    const storage = new MemoryStorage()
+    const store = createLocalStorageParentRecordsStore(storage, () => now)
+
+    const duplicateId = store.save({
+      ...recordsState(2),
+      officialAssessments: [
+        recordsState(1).officialAssessments[0],
+        {
+          ...recordsState(1).officialAssessments[0],
+          assessmentId: recordsState(1).officialAssessments[0].assessmentId,
+        },
+      ],
+    })
+
+    expect(duplicateId.status).toBe('storage_error')
+    expect(storage.values.has(PARENT_RECORDS_STORAGE_KEY)).toBe(false)
+  })
+
+  test('out-of-range scores are rejected before save', () => {
+    const storage = new MemoryStorage()
+    const store = createLocalStorageParentRecordsStore(storage, () => now)
+
+    const outOfRange = store.save({
+      ...recordsState(1),
+      officialAssessments: [
+        {
+          ...recordsState(1).officialAssessments[0],
+          scaleScore: 1000,
+        },
+      ],
+    })
+
+    expect(outOfRange.status).toBe('storage_error')
+    expect(storage.values.has(PARENT_RECORDS_STORAGE_KEY)).toBe(false)
   })
 
   test('invalid parent records do not alter child progress and storage exceptions are safe', () => {
@@ -130,5 +168,31 @@ describe('parent stores', () => {
     const snapshot = structuredClone(childProgress)
     void createDefaultParentRecords(now)
     expect(childProgress).toEqual(snapshot)
+  })
+
+  test('failed save preserves the previous state without touching child progress', () => {
+    const storage: StorageLike = {
+      getItem(key: string) {
+        return key === PARENT_RECORDS_STORAGE_KEY ? JSON.stringify(recordsState(1)) : null
+      },
+      setItem() {
+        throw new Error('write blocked')
+      },
+    }
+    const store = createLocalStorageParentRecordsStore(storage, () => now)
+    const loaded = store.load(now)
+    expect(loaded.status).toBe('loaded')
+
+    const saved = store.save({
+      ...recordsState(1),
+      officialAssessments: [
+        {
+          ...recordsState(1).officialAssessments[0],
+          assessmentId: 'assessment-c',
+        },
+      ],
+    })
+    expect(saved.status).toBe('storage_error')
+    expect(storage.getItem(PARENT_RECORDS_STORAGE_KEY)).toContain('assessment-0')
   })
 })

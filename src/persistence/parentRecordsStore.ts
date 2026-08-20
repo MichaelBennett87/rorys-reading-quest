@@ -64,15 +64,19 @@ export function createLocalStorageParentRecordsStore(storage: StorageLike | null
       return { state: normalizeParentRecordsForSave(validated.state), status: 'loaded' }
     },
     save(state: ParentRecordsState): ParentRecordsSaveResult {
-      const normalized = normalizeParentRecordsForSave(state)
       if (!storage) {
-        return { state: normalized, status: 'unavailable', technicalDetail: 'Browser storage is unavailable.' }
+        return { state, status: 'unavailable', technicalDetail: 'Browser storage is unavailable.' }
       }
+      const validation = validateParentRecordsState(state, now())
+      if (validation.status !== 'valid') {
+        return { state, status: 'storage_error', technicalDetail: validation.reason }
+      }
+      const normalized = normalizeParentRecordsForSave(validation.state)
       try {
         storage.setItem(PARENT_RECORDS_STORAGE_KEY, JSON.stringify(normalized))
         return { state: normalized, status: 'saved' }
       } catch (error) {
-        return { state: normalized, status: 'storage_error', technicalDetail: errorMessage(error) }
+        return { state, status: 'storage_error', technicalDetail: errorMessage(error) }
       }
     },
   }

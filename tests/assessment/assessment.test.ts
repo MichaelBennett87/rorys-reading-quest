@@ -33,6 +33,7 @@ describe('assessment record model', () => {
     expect(validateAssessmentRecord(record({ assessmentWindow: 'PMX' as never }), now).errors[0].code).toBe('unsupported_window')
     expect(validateAssessmentRecord(record({ gradeBand: 5 as never }), now).errors[0].code).toBe('unsupported_grade')
     expect(validateAssessmentRecord(record({ scaleScore: 400.5 }), now).errors[0].code).toBe('non_integer_score')
+    expect(validateAssessmentRecord(record({ scaleScore: 1000 }), now).errors[0].code).toBe('score_out_of_range')
     expect(validateAssessmentRecord(record({ testedOn: '2026-13-40' }), now).errors[0].code).toBe('invalid_date')
     expect(validateAssessmentRecord(record({ testedOn: '2026-08-21' }), now).errors[0].code).toBe('future_date')
   })
@@ -49,6 +50,15 @@ describe('assessment record model', () => {
     ], now)
     expect(result.status).toBe('invalid')
     expect(result.errors.some((error) => error.code === 'duplicate_assessment_entry')).toBe(true)
+  })
+
+  test('duplicate assessment IDs are flagged', () => {
+    const result = validateAssessmentRecords([
+      record({ assessmentId: 'assessment-a' }),
+      record({ assessmentId: 'assessment-a', testedOn: '2026-08-18', assessmentWindow: 'PM2', gradeBand: 3 }),
+    ], now)
+    expect(result.status).toBe('invalid')
+    expect(result.errors.some((error) => error.code === 'duplicate_assessment_identifier')).toBe(true)
   })
 
   test('records contain no child surname, student id, or report image fields', () => {

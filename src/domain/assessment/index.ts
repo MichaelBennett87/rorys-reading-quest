@@ -1,2 +1,5 @@
 export * from './assessmentTypes'
+export * from './assessmentFormTypes'
+export * from './parseAssessmentForm'
+export * from './manageAssessmentRecords'
 export * from './validateAssessmentRecord'

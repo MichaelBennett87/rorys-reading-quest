@@ -25,10 +25,24 @@ export function validateAssessmentRecords(
   now: string,
 ): AssessmentValidationResult {
   const errors: AssessmentValidationError[] = []
+  const assessmentIds = new Set<string>()
   const duplicateKeys = new Set<string>()
 
   for (const record of records) {
     errors.push(...validateSingleAssessmentRecord(record, now))
+    const assessmentId = record.assessmentId?.trim() ?? ''
+    if (assessmentId) {
+      if (assessmentIds.has(assessmentId)) {
+        errors.push({
+          code: 'duplicate_assessment_identifier',
+          field: 'assessmentId',
+          assessmentId,
+          message: 'Assessment IDs must be unique.',
+        })
+      } else {
+        assessmentIds.add(assessmentId)
+      }
+    }
     const duplicateKey = `${record.testedOn}::${record.assessmentWindow}::${record.gradeBand}`
     if (duplicateKeys.has(duplicateKey)) {
       errors.push({
@@ -85,6 +99,13 @@ function validateSingleAssessmentRecord(
       field: 'scaleScore',
       assessmentId,
       message: 'Scale score must be an integer.',
+    })
+  } else if (record.scaleScore < 0 || record.scaleScore > 999) {
+    errors.push({
+      code: 'score_out_of_range',
+      field: 'scaleScore',
+      assessmentId,
+      message: 'Scale score must be between 0 and 999.',
     })
   }
   if (!isIsoCalendarDate(record.testedOn)) {
