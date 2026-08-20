@@ -199,6 +199,12 @@
 - Decision: Mark `ELA.2.F.1.3d` as partial in DRAFT form after Phase 6C1 registers common-prefix practice for Prefix Power.
 - Reason: The benchmark now has authored common-prefix coverage, but common suffixes remain deferred to Phase 6C2.
 - Consequence: Parent and curriculum docs can report partial coverage without implying approval, mastery, or official FAST results.
+
+## 2026-08-20 - Phase 6C2 Common-Suffix Coverage
+
+- Decision: Mark `ELA.2.F.1.3d` as implemented in DRAFT form after Phase 6C2 registers common-suffix practice for Suffix Station.
+- Reason: The benchmark now has authored common-prefix and common-suffix coverage across the two bridge packs.
+- Consequence: Parent and curriculum docs can report implemented coverage without implying approval, mastery, or official FAST results.
 - Status: Applied
 
 ## 2026-08-20 - Unit-Aware Word Forge Planning

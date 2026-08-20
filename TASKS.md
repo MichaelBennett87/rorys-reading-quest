@@ -53,7 +53,7 @@
     - [x] Phase 6B2: consonant-`le` and final ELA.2.F.1.3c integration
   - [ ] Phase 6C: prefixes, suffixes, silent letters, and fluency foundations
     - [x] Phase 6C1: common prefixes and Prefix Power
-    - [ ] Phase 6C2: common suffixes and final ELA.2.F.1.3d integration
+    - [x] Phase 6C2: common suffixes and final ELA.2.F.1.3d integration
     - [ ] Phase 6C3: silent-letter combinations and ELA.2.F.1.3e
     - [ ] Phase 6C4: fluency foundations and final Phase 6C audit
   - [ ] Phase 6D: Grade 2 prose and poetry
