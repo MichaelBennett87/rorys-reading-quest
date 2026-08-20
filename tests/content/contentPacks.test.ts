@@ -1,6 +1,7 @@
 import { describe, expect, test } from 'vitest'
 
 import { benchmarkCoverageAudit, contentPackAudit, contentPacks, sampleContent } from '../../src/domain/content'
+import { buildBenchmarkCoverageAudit } from '../../src/domain/content/packs/benchmarkCoverageAudit'
 import { getLessonById, getLessonCandidates, getLessonForUnit } from '../../src/domain/lesson'
 
 describe('grade 2 content pack registry', () => {
@@ -14,6 +15,7 @@ describe('grade 2 content pack registry', () => {
       'g2-word-forge-variable-vowels-ou-oi-oy-ow',
       'g2-word-forge-two-syllable-open-closed',
       'g2-word-forge-consonant-le-integrated',
+      'g2-word-forge-common-prefixes',
       'legacy-word-forge-development-pack',
     ])
     expect(contentPackAudit).toHaveLength(0)
@@ -27,6 +29,15 @@ describe('grade 2 content pack registry', () => {
         'g2-word-forge-variable-vowels-ou-oi-oy-ow',
       ],
       coverageStatus: 'implemented',
+      reviewStatus: 'DRAFT',
+    }))
+    expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.F.1.3d')).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.2.F.1.3d',
+      expectedPatterns: ['common-prefixes', 'common-suffixes'],
+      coveredPatterns: ['common-prefixes'],
+      missingPatterns: ['common-suffixes'],
+      contributingPackIds: ['g2-word-forge-common-prefixes'],
+      coverageStatus: 'partial',
       reviewStatus: 'DRAFT',
     }))
     expect(contentPacks).toEqual(packsSnapshot)
@@ -56,6 +67,15 @@ describe('grade 2 content pack registry', () => {
     const result = getLessonForUnit('wg-unit-2')
 
     expect(result.lesson?.lessonId).toBe('lesson-word-forge-syllable-summit-checkpoint-a')
+    expect(result.lesson?.lessonRole).toBe('CHECKPOINT')
+    expect(result.lesson?.selectionStatus).toBe('active')
+    expect(result.lesson?.questionCount).toBe(7)
+  })
+
+  test('the prefix power unit resolves to the new checkpoint lesson', () => {
+    const result = getLessonForUnit('wg-unit-3')
+
+    expect(result.lesson?.lessonId).toBe('lesson-word-forge-common-prefixes-checkpoint-a')
     expect(result.lesson?.lessonRole).toBe('CHECKPOINT')
     expect(result.lesson?.selectionStatus).toBe('active')
     expect(result.lesson?.questionCount).toBe(7)
