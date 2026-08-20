@@ -250,6 +250,63 @@ export function planUnitQuest(input: PlanUnitQuestInput): UnitQuestPlan {
     }
   }
 
+  if (input.selectedUnitId === 'wg-unit-4') {
+    if (selectedDifficulty < 6) {
+      return {
+        status: 'locked',
+        purpose: 'progression',
+        unitId: input.selectedUnitId,
+        reason: 'Complete Prefix Power to unlock Suffix Station.',
+      }
+    }
+    if (selectedDifficulty >= 7) {
+      if (contentNeededNextQuest && contentNeededNextQuest.difficulty >= 7) {
+        return {
+          status: 'content_needed',
+          purpose: contentNeededNextQuest.purpose,
+          skillId: contentNeededNextQuest.skillId,
+          difficulty: contentNeededNextQuest.difficulty,
+          reason: contentNeededNextQuest.reason,
+          unitId: input.selectedUnitId,
+        }
+      }
+      return {
+        status: 'content_needed',
+        purpose: contentNeededNextQuest?.purpose ?? plannedPurpose,
+        skillId: currentSkill?.skillId ?? 'unknown',
+        difficulty: selectedDifficulty,
+        reason: 'Suffix Station has no fresh content in this phase.',
+        unitId: input.selectedUnitId,
+      }
+    }
+
+    const plan = selectNextLesson({
+      skillId: currentSkill?.skillId ?? 'unknown',
+      difficulty: selectedDifficulty,
+      purpose: availableNextQuest?.purpose ?? 'progression',
+      availableLessons: input.availableLessons.filter((lesson) => lesson.unitId === input.selectedUnitId),
+      recentActivityUsage: currentSkill?.recentActivityUsage ?? [],
+    })
+    if (plan.status === 'available') {
+      return {
+        status: 'available',
+        purpose: plan.purpose,
+        lesson: plan.lesson,
+        lessonId: plan.lesson.lessonId,
+        unitId: plan.lesson.unitId,
+        activityId: plan.lesson.activityId,
+      }
+    }
+    return {
+      status: 'content_needed',
+      purpose: plan.purpose,
+      skillId: plan.skillId,
+      difficulty: plan.difficulty,
+      reason: plan.reason,
+      unitId: input.selectedUnitId,
+    }
+  }
+
   return {
     status: 'locked',
     purpose: 'progression',

@@ -43,10 +43,13 @@ describe('grade 2 common-prefix pack', () => {
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.F.1.3d')).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.F.1.3d',
       expectedPatterns: ['common-prefixes', 'common-suffixes'],
-      coveredPatterns: ['common-prefixes'],
-      missingPatterns: ['common-suffixes'],
-      contributingPackIds: ['g2-word-forge-common-prefixes'],
-      coverageStatus: 'partial',
+      coveredPatterns: ['common-prefixes', 'common-suffixes'],
+      missingPatterns: [],
+      contributingPackIds: [
+        'g2-word-forge-common-prefixes',
+        'g2-word-forge-common-suffixes',
+      ],
+      coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',
     }))
   })

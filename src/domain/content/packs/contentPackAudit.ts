@@ -235,9 +235,12 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
 
     const checkpointPassages = new Set<string>()
     const allTargets = pack.passages.flatMap((passage) => passage.wordSupportTargets ?? [])
+    const questionTypeCounts = new Map<string, number>()
     let hasOpenConsonantLeExample = false
     let hasClosedConsonantLeExample = false
     const prefixFamilyObserved = new Set<string>()
+    const suffixFamilyObserved = new Set<string>()
+    const suffixEdSoundObserved = new Set<string>()
     const prefixWordExpectations = expectation.packId === 'g2-word-forge-common-prefixes'
       ? new Map<string, { prefix: string; baseWord: string; familyTag: string }>([
           ['unhappy', { prefix: 'un', baseWord: 'happy', familyTag: 'prefix-un' }],
@@ -269,6 +272,44 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
     const forbiddenOpaquePrefixWords = expectation.packId === 'g2-word-forge-common-prefixes'
       ? new Set(['uncle', 'under', 'return', 'present', 'distance', 'mistake'])
       : null
+    const suffixWordExpectations = expectation.packId === 'g2-word-forge-common-suffixes'
+      ? new Map<string, { suffix: string; baseWord: string; familyTag: string; edSound?: 't' | 'd' | 'id' }>([
+          ['planted', { suffix: 'ed', baseWord: 'plant', familyTag: 'suffix-ed', edSound: 'id' }],
+          ['watered', { suffix: 'ed', baseWord: 'water', familyTag: 'suffix-ed', edSound: 'd' }],
+          ['helped', { suffix: 'ed', baseWord: 'help', familyTag: 'suffix-ed', edSound: 't' }],
+          ['helpful', { suffix: 'ful', baseWord: 'help', familyTag: 'suffix-ful-less' }],
+          ['boxes', { suffix: 'es', baseWord: 'box', familyTag: 'suffix-s-es' }],
+          ['dishes', { suffix: 'es', baseWord: 'dish', familyTag: 'suffix-s-es' }],
+          ['softly', { suffix: 'ly', baseWord: 'soft', familyTag: 'suffix-ly' }],
+          ['fearless', { suffix: 'less', baseWord: 'fear', familyTag: 'suffix-ful-less' }],
+          ['helping', { suffix: 'ing', baseWord: 'help', familyTag: 'suffix-ing' }],
+          ['quickly', { suffix: 'ly', baseWord: 'quick', familyTag: 'suffix-ly' }],
+          ['faster', { suffix: 'er', baseWord: 'fast', familyTag: 'suffix-er-est' }],
+          ['smallest', { suffix: 'est', baseWord: 'small', familyTag: 'suffix-er-est' }],
+          ['calmer', { suffix: 'er', baseWord: 'calm', familyTag: 'suffix-er-est' }],
+          ['kindly', { suffix: 'ly', baseWord: 'kind', familyTag: 'suffix-ly' }],
+          ['hopeful', { suffix: 'ful', baseWord: 'hope', familyTag: 'suffix-ful-less' }],
+          ['warmer', { suffix: 'er', baseWord: 'warm', familyTag: 'suffix-er-est' }],
+          ['signs', { suffix: 's', baseWord: 'sign', familyTag: 'suffix-s-es' }],
+          ['painted', { suffix: 'ed', baseWord: 'paint', familyTag: 'suffix-ed', edSound: 'id' }],
+          ['smaller', { suffix: 'er', baseWord: 'small', familyTag: 'suffix-er-est' }],
+          ['careless', { suffix: 'less', baseWord: 'care', familyTag: 'suffix-ful-less' }],
+          ['wanted', { suffix: 'ed', baseWord: 'want', familyTag: 'suffix-ed', edSound: 'id' }],
+          ['jumping', { suffix: 'ing', baseWord: 'jump', familyTag: 'suffix-ing' }],
+          ['cleanest', { suffix: 'est', baseWord: 'clean', familyTag: 'suffix-er-est' }],
+          ['kinder', { suffix: 'er', baseWord: 'kind', familyTag: 'suffix-er-est' }],
+          ['wishes', { suffix: 'es', baseWord: 'wish', familyTag: 'suffix-s-es' }],
+          ['cleaned', { suffix: 'ed', baseWord: 'clean', familyTag: 'suffix-ed', edSound: 'd' }],
+          ['fastest', { suffix: 'est', baseWord: 'fast', familyTag: 'suffix-er-est' }],
+          ['careful', { suffix: 'ful', baseWord: 'care', familyTag: 'suffix-ful-less' }],
+        ])
+      : null
+    const forbiddenFalseSuffixWords = expectation.packId === 'g2-word-forge-common-suffixes'
+      ? new Set(['bus', 'gas', 'yes', 'bed', 'red', 'sing', 'ring', 'king', 'tiger', 'water', 'winter', 'forest', 'honest', 'unless', 'family', 'only', 'early'])
+      : null
+    const forbiddenSpellingChangeWords = expectation.packId === 'g2-word-forge-common-suffixes'
+      ? new Set(['making', 'hoping', 'running', 'bigger', 'biggest', 'happier', 'happiest', 'carried', 'cried'])
+      : null
 
     if (allTargets.length < expectation.minSupportTargets || allTargets.length > expectation.maxSupportTargets) {
       pushIssue(
@@ -277,6 +318,23 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
         pack.manifest.packId,
         `Expected between ${expectation.minSupportTargets} and ${expectation.maxSupportTargets} support targets, found ${allTargets.length}.`,
       )
+    }
+
+    for (const question of pack.questions) {
+      questionTypeCounts.set(question.questionType, (questionTypeCounts.get(question.questionType) ?? 0) + 1)
+    }
+    if (expectation.questionTypeCounts) {
+      for (const [questionType, count] of Object.entries(expectation.questionTypeCounts)) {
+        const observed = questionTypeCounts.get(questionType) ?? 0
+        if (observed !== count) {
+          pushIssue(
+            issues,
+            'question_count_mismatch',
+            pack.manifest.packId,
+            `Expected ${count} ${questionType.replace('_', ' ')} questions, found ${observed}.`,
+          )
+        }
+      }
     }
 
     for (const passage of pack.passages) {
@@ -325,6 +383,39 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
             }
           }
         }
+        if (suffixWordExpectations) {
+          if (forbiddenFalseSuffixWords?.has(normalizedWord)) {
+            pushIssue(issues, 'ambiguous_forbidden_homograph', target.targetId, 'False suffix words must not be treated as transparent suffix targets.')
+            continue
+          }
+          if (forbiddenSpellingChangeWords?.has(normalizedWord)) {
+            pushIssue(issues, 'ambiguous_forbidden_homograph', target.targetId, 'Spelling-change words must not be primary suffix targets.')
+            continue
+          }
+          const expectationForWord = suffixWordExpectations.get(normalizedWord)
+          if (expectationForWord) {
+            suffixFamilyObserved.add(expectationForWord.familyTag)
+            const reconstructed = (target.displayChunks ?? []).map((chunk) => chunk.displayText.toLowerCase().replace(/[^a-z]/g, '')).join('')
+            if (reconstructed !== normalizedWord) {
+              pushIssue(issues, 'support_target_structure_invalid', target.targetId, 'Suffix target chunks must reconstruct the surface word.')
+            }
+            const prefixChunk = target.displayChunks?.[0]?.displayText.toLowerCase().replace(/[^a-z]/g, '') ?? ''
+            const suffixChunk = target.displayChunks?.[1]?.displayText.toLowerCase().replace(/[^a-z]/g, '') ?? ''
+            if (prefixChunk !== expectationForWord.baseWord) {
+              pushIssue(issues, 'support_target_structure_invalid', target.targetId, 'Suffix target chunks must preserve the base word.')
+            }
+            if (suffixChunk !== expectationForWord.suffix) {
+              pushIssue(issues, 'support_target_structure_invalid', target.targetId, 'Suffix target chunks must preserve the authored suffix.')
+            }
+            if (expectationForWord.edSound) {
+              const spokenSuffix = target.spokenChunks?.[1]?.speechText.toLowerCase().replace(/[^a-z]/g, '') ?? ''
+              if (spokenSuffix !== expectationForWord.edSound) {
+                pushIssue(issues, 'support_target_structure_invalid', target.targetId, 'Suffix -ed targets must include a defensible spoken ending.')
+              }
+              suffixEdSoundObserved.add(expectationForWord.edSound)
+            }
+          }
+        }
       }
     }
 
@@ -341,6 +432,19 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
       for (const familyTag of ['prefix-un', 'prefix-re', 'prefix-pre', 'prefix-dis', 'prefix-mis'] as const) {
         if (!prefixFamilyObserved.has(familyTag)) {
           pushIssue(issues, 'missing_target_pattern_coverage', pack.manifest.packId, `The pack must include ${familyTag.replace('prefix-', '').replace('-', '-')} support targets.`)
+        }
+      }
+    }
+
+    if (expectation.packId === 'g2-word-forge-common-suffixes') {
+      for (const familyTag of ['suffix-s-es', 'suffix-ed', 'suffix-ing', 'suffix-er-est', 'suffix-ful-less', 'suffix-ly'] as const) {
+        if (!suffixFamilyObserved.has(familyTag)) {
+          pushIssue(issues, 'missing_target_pattern_coverage', pack.manifest.packId, `The pack must include ${familyTag.replace('suffix-', '').replace('-', '-')} support targets.`)
+        }
+      }
+      for (const soundKind of ['t', 'd', 'id'] as const) {
+        if (!suffixEdSoundObserved.has(soundKind)) {
+          pushIssue(issues, 'missing_target_pattern_coverage', pack.manifest.packId, `The pack must include an authored -ed target with the ${soundKind} sound.`,)
         }
       }
     }
@@ -384,6 +488,7 @@ interface BridgePackExpectation {
   openConsonantLeWords: Set<string>
   closedConsonantLeWords: Set<string>
   forbiddenSilentEWords: Set<string>
+  questionTypeCounts?: Partial<Record<string, number>>
 }
 
 function getBridgePackExpectation(pack: ContentPack): BridgePackExpectation | null {
@@ -436,6 +541,34 @@ function getBridgePackExpectation(pack: ContentPack): BridgePackExpectation | nu
       openConsonantLeWords: new Set(),
       closedConsonantLeWords: new Set(),
       forbiddenSilentEWords: new Set(),
+      questionTypeCounts: {
+        multiple_choice: 20,
+        multi_select: 7,
+        hot_text: 7,
+        table_match: 7,
+      },
+    }
+  }
+
+  if (!hasB && !hasC && pack.manifest.benchmarkReferences.includes('ELA.2.F.1.3d') && minDifficulty === 5 && maxDifficulty === 6) {
+    return {
+      packId: pack.manifest.packId,
+      guidedDifficultyA: 5,
+      guidedDifficultyB: 6,
+      checkpointPatterns: ['suffix-s-es', 'suffix-ed', 'suffix-ing', 'suffix-er-est', 'suffix-ful-less', 'suffix-ly'],
+      minSupportTargets: 28,
+      maxSupportTargets: 28,
+      minSupportTargetsPerPassage: 4,
+      maxSupportTargetsPerPassage: 4,
+      openConsonantLeWords: new Set(),
+      closedConsonantLeWords: new Set(),
+      forbiddenSilentEWords: new Set(),
+      questionTypeCounts: {
+        multiple_choice: 20,
+        multi_select: 7,
+        hot_text: 7,
+        table_match: 7,
+      },
     }
   }
 

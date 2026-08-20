@@ -16,6 +16,7 @@ describe('grade 2 content pack registry', () => {
       'g2-word-forge-two-syllable-open-closed',
       'g2-word-forge-consonant-le-integrated',
       'g2-word-forge-common-prefixes',
+      'g2-word-forge-common-suffixes',
       'legacy-word-forge-development-pack',
     ])
     expect(contentPackAudit).toHaveLength(0)
@@ -34,10 +35,13 @@ describe('grade 2 content pack registry', () => {
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.F.1.3d')).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.F.1.3d',
       expectedPatterns: ['common-prefixes', 'common-suffixes'],
-      coveredPatterns: ['common-prefixes'],
-      missingPatterns: ['common-suffixes'],
-      contributingPackIds: ['g2-word-forge-common-prefixes'],
-      coverageStatus: 'partial',
+      coveredPatterns: ['common-prefixes', 'common-suffixes'],
+      missingPatterns: [],
+      contributingPackIds: [
+        'g2-word-forge-common-prefixes',
+        'g2-word-forge-common-suffixes',
+      ],
+      coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',
     }))
     expect(contentPacks).toEqual(packsSnapshot)
@@ -76,6 +80,15 @@ describe('grade 2 content pack registry', () => {
     const result = getLessonForUnit('wg-unit-3')
 
     expect(result.lesson?.lessonId).toBe('lesson-word-forge-common-prefixes-checkpoint-a')
+    expect(result.lesson?.lessonRole).toBe('CHECKPOINT')
+    expect(result.lesson?.selectionStatus).toBe('active')
+    expect(result.lesson?.questionCount).toBe(7)
+  })
+
+  test('the suffix station unit resolves to the new checkpoint lesson', () => {
+    const result = getLessonForUnit('wg-unit-4')
+
+    expect(result.lesson?.lessonId).toBe('lesson-word-forge-common-suffixes-checkpoint-a')
     expect(result.lesson?.lessonRole).toBe('CHECKPOINT')
     expect(result.lesson?.selectionStatus).toBe('active')
     expect(result.lesson?.questionCount).toBe(7)

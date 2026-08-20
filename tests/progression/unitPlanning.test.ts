@@ -41,8 +41,15 @@ describe('unit-aware Word Forge planning', () => {
     const difficultySixWorlds = deriveWorldsForProgress(createProgress(6))
     const wordForgeAtSix = difficultySixWorlds.find((world) => world.id === 'word-forge')!
     expect(['complete', 'review', 'available']).toContain(wordForgeAtSix.units.find((unit) => unit.id === 'wg-unit-3')?.state)
-    expect(wordForgeAtSix.units.find((unit) => unit.id === 'wg-unit-4')?.state).toBe('locked')
-    expect(wordForgeAtSix.units.find((unit) => unit.id === 'wg-unit-4')?.practiceFocus).toContain('prepared')
+    expect(wordForgeAtSix.units.find((unit) => unit.id === 'wg-unit-4')?.state).toBe('available')
+    expect(wordForgeAtSix.units.find((unit) => unit.id === 'wg-unit-4')?.difficultyLabel).toBe('Trail 6')
+    expect(wordForgeAtSix.units.find((unit) => unit.id === 'wg-unit-4')?.practiceFocus).toContain('common suffixes')
+
+    const difficultySevenWorlds = deriveWorldsForProgress(createProgress(7))
+    const wordForgeAtSeven = difficultySevenWorlds.find((world) => world.id === 'word-forge')!
+    expect(['complete', 'review']).toContain(wordForgeAtSeven.units.find((unit) => unit.id === 'wg-unit-3')?.state)
+    expect(['complete', 'review']).toContain(wordForgeAtSeven.units.find((unit) => unit.id === 'wg-unit-4')?.state)
+    expect(wordForgeAtSeven.units.find((unit) => unit.id === 'wg-unit-4')?.practiceFocus).toContain('prepared')
   })
 
   test('unit planning respects unit boundaries and freshness', () => {
@@ -125,7 +132,17 @@ describe('unit-aware Word Forge planning', () => {
       progress: trailSixProgress,
       availableLessons,
     })
-    expect(trailSixSuffixPlan.status).toBe('locked')
+    expect(trailSixSuffixPlan.status).toBe('available')
+    if (trailSixSuffixPlan.status === 'available') {
+      expect(trailSixSuffixPlan.lessonId).toBe('lesson-word-forge-common-suffixes-checkpoint-a')
+    }
+
+    const trailSevenSuffixPlan = planUnitQuest({
+      selectedUnitId: 'wg-unit-4',
+      progress: createProgress(7),
+      availableLessons,
+    })
+    expect(trailSevenSuffixPlan.status).toBe('content_needed')
   })
 
   test('an active session in another unit blocks a fresh unit launch', () => {

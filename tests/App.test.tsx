@@ -153,6 +153,29 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getByText(/common prefixes and base words/i)).toBeTruthy()
   })
 
+  test('shows Suffix Station as available when the current difficulty reaches 6', () => {
+    seedWordForgeDifficulty(6)
+    render(<App />)
+
+    fireEvent.click(getWordForgeCard())
+    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
+
+    expect(screen.getAllByRole('button', { name: /Suffix Station Available/i })).toHaveLength(1)
+    expect(within(screen.getByRole('button', { name: /Suffix Station Available/i })).getByText(/Trail 6/i)).toBeTruthy()
+    expect(screen.getByText(/common suffixes and ending sounds/i)).toBeTruthy()
+  })
+
+  test('shows Suffix Station as complete or review when the current difficulty reaches 7', () => {
+    seedWordForgeDifficulty(7)
+    render(<App />)
+
+    fireEvent.click(getWordForgeCard())
+    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
+
+    expect(screen.getAllByRole('button', { name: /Suffix Station (Complete|Review)/i })).toHaveLength(1)
+    expect(screen.getByText(/New Word Forge quests are being prepared/i)).toBeTruthy()
+  })
+
   test('starts Trail 5 Prefix Power checkpoint content at difficulty 5', () => {
     seedWordForgeDifficulty(5)
     render(<App />)
@@ -188,6 +211,19 @@ describe('Phase 2 lesson flow and child shell', () => {
 
     expect(screen.getByRole('heading', { name: /Syllable Summit/i })).toBeTruthy()
     expect(screen.getByText(/Which word has a consonant-le ending\?/i)).toBeTruthy()
+  })
+
+  test('starts Trail 6 checkpoint content from Suffix Station at difficulty 6', () => {
+    seedWordForgeDifficulty(6)
+    render(<App />)
+
+    fireEvent.click(getWordForgeCard())
+    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Suffix Station Available/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
+
+    expect(screen.getByRole('heading', { name: /Suffix Station/i })).toBeTruthy()
+    expect(screen.getByText(/Which word has the suffix -s or -es\?/i)).toBeTruthy()
   })
 
   test('starts the Word Forge lesson run and shows the first question', () => {

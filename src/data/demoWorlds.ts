@@ -316,14 +316,26 @@ function deriveWordForgeUnit(unit: DemoUnit, focus: ReturnType<typeof resolveWor
   }
 
   if (unit.id === 'wg-unit-4') {
+    const activeOrPlanned = focus.activeUnitId === unit.id || focus.plannedUnitId === unit.id
+    const state = focus.currentDifficulty >= 7
+      ? (activeOrPlanned ? 'available' : (focus.plannedPurpose === 'review' ? 'review' : 'complete'))
+      : focus.currentDifficulty >= 6 || activeOrPlanned
+        ? 'available'
+        : 'locked'
     return {
       ...unit,
-      state: 'locked',
-      difficultyLabel: 'Locked',
-      progressPercent: 0,
-      practiceFocus: focus.currentDifficulty >= 6
-        ? 'Suffix Station quests are being prepared.'
-        : 'Complete Prefix Power to unlock Suffix Station.',
+      state,
+      difficultyLabel: focus.currentDifficulty >= 7
+        ? (state === 'review' ? 'Review' : 'Complete')
+        : focus.currentDifficulty >= 6
+          ? 'Trail 6'
+          : 'Locked',
+      progressPercent: state === 'locked' ? 0 : focus.currentDifficulty >= 7 ? 100 : 75,
+      practiceFocus: state === 'locked'
+        ? 'Complete Prefix Power to unlock Suffix Station.'
+        : focus.currentDifficulty >= 7
+          ? 'New Word Forge quests are being prepared.'
+          : 'common suffixes and ending sounds',
     }
   }
 
