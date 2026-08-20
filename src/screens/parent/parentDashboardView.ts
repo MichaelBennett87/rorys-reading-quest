@@ -16,6 +16,9 @@ const FRIENDLY_SKILL_NAMES: Record<string, string> = {
   'g2-word-forge-word-practice': 'Word Forge',
 }
 
+export const FOUNDATIONAL_SKILLS_BRIDGE_NOTE =
+  'Foundational Skills Bridge is an internal practice category, not an official FAST reporting category.'
+
 export function formatPercent(value: number | null): string {
   return value === null ? 'No practice data yet' : `${value}%`
 }

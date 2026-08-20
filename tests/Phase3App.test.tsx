@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen } from '@testing-library/react'
+import { cleanup, fireEvent, render, screen, within } from '@testing-library/react'
 import { afterEach, describe, expect, test } from 'vitest'
 
 import App from '../src/App'
@@ -29,64 +29,175 @@ function submitAndAdvance(final = false) {
   }))
 }
 
-function completeKiteLesson(firstCorrect = true) {
-  fireEvent.click(screen.getByRole('radio', {
-    name: firstCorrect
-      ? /Packing her kite bag and checking the wind/i
-      : /Jumping twice into the air/i,
-  }))
-  submitAndAdvance()
-  fireEvent.click(screen.getByRole('radio', { name: /Checking the wind and then stepping outside/i }))
-  submitAndAdvance()
-  fireEvent.click(screen.getByRole('checkbox', { name: /She asked her brother to hold the spool/i }))
-  fireEvent.click(screen.getByRole('checkbox', { name: /He called out each number slowly/i }))
-  submitAndAdvance()
-  fireEvent.click(screen.getByRole('radio', { name: /Work safely with a team/i }))
-  fireEvent.click(screen.getByRole('radio', {
-    name: /She asked her brother to hold the spool and to call out each count slowly/i,
-  }))
-  submitAndAdvance(true)
+function getCurrentLegendText() {
+  return screen.queryByRole('group')?.querySelector('legend')?.textContent?.trim() ?? ''
 }
 
-function completeKiteLessonLow() {
-  fireEvent.click(screen.getByRole('radio', { name: /Jumping twice into the air/i }))
-  submitAndAdvance()
-  fireEvent.click(screen.getByRole('radio', { name: /Holding the spool too hard/i }))
-  submitAndAdvance()
-  fireEvent.click(screen.getByRole('checkbox', { name: /She asked her brother to hold the spool/i }))
-  fireEvent.click(screen.getByRole('checkbox', { name: /He called out each number slowly/i }))
-  submitAndAdvance()
-  fireEvent.click(screen.getByRole('radio', { name: /Work safely with a team/i }))
-  fireEvent.click(screen.getByRole('radio', {
-    name: /She asked her brother to hold the spool and to call out each count slowly/i,
-  }))
-  submitAndAdvance(true)
+function answerCurrentMultipleChoice(correct = true) {
+  const group = screen.getByRole('group')
+  fireEvent.click(within(group).getAllByRole('radio')[correct ? 0 : 1])
 }
 
-function completeSeedLesson(correct = true) {
-  if (correct) {
-    fireEvent.click(screen.getByRole('checkbox', {
-      name: /She covered each cup with earth and smiled when each cup had a tiny label/i,
-    }))
-    fireEvent.click(screen.getByRole('checkbox', { name: /She wrote Day 1, Day 2, and Day 3 on the labels/i }))
-  } else {
-    fireEvent.click(screen.getByRole('checkbox', { name: /Nora and Maya planted seeds in three little cups/i }))
-  }
-  submitAndAdvance()
-  const mappings = correct
-    ? ['habit-planned', 'habit-tracked', 'habit-safe']
-    : ['habit-observed', 'habit-skipped', 'habit-rush']
-  screen.getAllByRole('combobox').forEach((select, index) => {
-    fireEvent.change(select, { target: { value: mappings[index] } })
+function answerCurrentMultiselect(indices: number[]) {
+  const group = screen.getByRole('group')
+  const checkboxes = within(group).getAllByRole('checkbox')
+  indices.forEach((index) => {
+    fireEvent.click(checkboxes[index])
   })
-  submitAndAdvance()
-  fireEvent.click(screen.getByRole('checkbox', {
-    name: correct ? /She planted three cups, not one/i : /She ran quickly to class/i,
-  }))
-  if (correct) {
-    fireEvent.click(screen.getByRole('checkbox', { name: /She wrote Day 1, Day 2, and Day 3/i }))
+}
+
+function answerCurrentTableMatch(choiceValue: string) {
+  const region = screen.getByRole('region', { name: /table matching question/i })
+  fireEvent.change(within(region).getByRole('combobox'), { target: { value: choiceValue } })
+}
+
+function answerCurrentQuestionWrong() {
+  const tableRegion = screen.queryByRole('region', { name: /table matching question/i })
+  if (tableRegion) {
+    const select = within(tableRegion).getByRole('combobox')
+    const options = Array.from(select.querySelectorAll('option[value]'))
+      .map((option) => option.getAttribute('value') ?? '')
+      .filter(Boolean)
+    fireEvent.change(select, { target: { value: options[1] ?? options[0] ?? 'book-sound' } })
+    return
   }
+  const group = screen.getByRole('group')
+  const radios = within(group).queryAllByRole('radio')
+  if (radios.length > 0) {
+    fireEvent.click(radios[1] ?? radios[0])
+    return
+  }
+  const checkboxes = within(group).queryAllByRole('checkbox')
+  if (checkboxes.length > 0) {
+    fireEvent.click(checkboxes[0])
+  }
+}
+
+function answerCheckpointQuestion(correct = true) {
+  if (screen.queryByRole('region', { name: /table matching question/i })) {
+    const region = screen.getByRole('region', { name: /table matching question/i })
+    const select = within(region).getByRole('combobox')
+    const options = Array.from(select.querySelectorAll('option[value]')).map((option) => option.getAttribute('value') ?? '')
+    const nextValue = correct ? options.find((value) => value) ?? 'leaf-sound' : options.find((value) => value && value !== options.find((candidate) => candidate)) ?? 'book-sound'
+    fireEvent.change(select, { target: { value: nextValue } })
+    return
+  }
+  const prompt = getCurrentLegendText()
+  if (/Which word has ea like leaf\?/i.test(prompt) || /Which word has oo like pool\?/i.test(prompt) || /Which word has ea like head\?/i.test(prompt)) {
+    answerCurrentMultipleChoice(correct)
+    return
+  }
+  if (/Choose all the ea words in the passage\./i.test(prompt)) {
+    if (/tree room/i.test(screen.getByRole('heading', { name: /Reading Passage/i }).parentElement?.textContent ?? '')) {
+      answerCurrentMultiselect(correct ? [0, 1, 2, 3] : [0])
+      return
+    }
+    if (/pool party/i.test(screen.getByRole('heading', { name: /Reading Passage/i }).parentElement?.textContent ?? '')) {
+      answerCurrentMultiselect(correct ? [0, 1] : [0])
+      return
+    }
+    answerCurrentMultiselect(correct ? [0, 1, 2, 3] : [0])
+    return
+  }
+  if (/Choose all the oo words in the passage\./i.test(prompt)) {
+    if (/tree room/i.test(screen.getByRole('heading', { name: /Reading Passage/i }).parentElement?.textContent ?? '')) {
+      answerCurrentMultiselect(correct ? [0, 1] : [0])
+      return
+    }
+    if (/pool party/i.test(screen.getByRole('heading', { name: /Reading Passage/i }).parentElement?.textContent ?? '')) {
+      answerCurrentMultiselect(correct ? [0, 1, 2, 3] : [0])
+      return
+    }
+    if (/garden morning/i.test(screen.getByRole('heading', { name: /Reading Passage/i }).parentElement?.textContent ?? '')) {
+      answerCurrentMultiselect(correct ? [0, 1, 2] : [0])
+      return
+    }
+    answerCurrentMultiselect(correct ? [0] : [1])
+    return
+  }
+  if (/Select the sentence about the dream\./i.test(prompt)) {
+    const group = screen.getByRole('group')
+    fireEvent.click(within(group).getByRole('radio', { name: /They wrote about a dream, a green branch, and a little pond\./i }))
+    return
+  }
+  if (/Select the sentence that says the food tasted good\./i.test(prompt)) {
+    const group = screen.getByRole('group')
+    fireEvent.click(within(group).getByRole('radio', { name: /The food tasted good, and the room felt bright\./i }))
+    return
+  }
+  if (/Select the sentence that mentions the beach path\./i.test(prompt)) {
+    const group = screen.getByRole('group')
+    fireEvent.click(within(group).getByRole('radio', { name: /A spoon of soil helped one seed sprout near the beach path\./i }))
+    return
+  }
+  if (/Which sound group fits leaf\?/i.test(prompt)) {
+    answerCurrentTableMatch(correct ? 'leaf-sound' : 'team-sound')
+    return
+  }
+  if (/Which sound group fits boot\?/i.test(prompt)) {
+    answerCurrentTableMatch(correct ? 'boot-sound' : 'ea-sound')
+    return
+  }
+  if (/Which sound group fits beach\?/i.test(prompt)) {
+    answerCurrentTableMatch(correct ? 'beach-sound' : 'pool-sound')
+    return
+  }
+  if (/Which word has ea like clean\?/i.test(prompt)) {
+    answerCurrentMultipleChoice(correct)
+    return
+  }
+  if (/Which word has oo like spoon\?/i.test(prompt) || /Which word has oo like good\?/i.test(prompt)) {
+    answerCurrentMultipleChoice(correct)
+    return
+  }
+  if (/Which word has ea like bread\?/i.test(prompt) || /Which word has ea like beach\?/i.test(prompt) || /Which word has ea like weather\?/i.test(prompt) || /Which word has ea like team\?/i.test(prompt)) {
+    answerCurrentMultipleChoice(correct)
+    return
+  }
+  answerCurrentMultipleChoice(correct)
+}
+
+function completeCheckpointLesson(firstCorrect = true) {
+  answerCheckpointQuestion(firstCorrect)
+  submitAndAdvance()
+  answerCheckpointQuestion(firstCorrect)
+  submitAndAdvance()
+  answerCheckpointQuestion(true)
+  submitAndAdvance()
+  answerCheckpointQuestion(true)
+  submitAndAdvance()
+  answerCheckpointQuestion(true)
+  submitAndAdvance()
+  answerCheckpointQuestion(true)
+  submitAndAdvance()
+  answerCheckpointQuestion(true)
   submitAndAdvance(true)
+}
+
+function completeCheckpointLessonLow() {
+  for (let i = 0; i < 7; i += 1) {
+    answerCheckpointQuestion(false)
+    submitAndAdvance(i === 6)
+  }
+}
+
+function completeGuidedLessonLow() {
+  for (let safety = 0; safety < 10; safety += 1) {
+    answerCurrentQuestionWrong()
+    fireEvent.click(screen.getByRole('button', { name: /Submit Answer/i }))
+    const nextQuestionButton = screen.queryByRole('button', { name: /Next Question/i })
+    if (nextQuestionButton) {
+      fireEvent.click(nextQuestionButton)
+      continue
+    }
+    const completeButton = screen.queryByRole('button', { name: /See Quest Complete/i })
+    if (completeButton) {
+      fireEvent.click(completeButton)
+      return
+    }
+    throw new Error('Expected Next Question or See Quest Complete after submitting guided lesson answer')
+  }
+  throw new Error('Guided low helper exceeded the expected question count')
 }
 
 function readProgress(): QuestProgressV1 {
@@ -96,7 +207,7 @@ function readProgress(): QuestProgressV1 {
 describe('Phase 3 adaptive child flow', () => {
   test('completing a strong lesson creates a supportive fresh-verification outcome', () => {
     launchFromMap()
-    completeKiteLesson()
+    completeCheckpointLesson()
     fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
     expect(screen.getByRole('heading', { name: /Almost There/i })).toBeTruthy()
     expect(screen.getByText(/One fresh quest will prove this reading power is ready/i)).toBeTruthy()
@@ -106,11 +217,11 @@ describe('Phase 3 adaptive child flow', () => {
 
   test('selects a fresh activity and a second distinct strong lesson unlocks the next trail', () => {
     launchFromMap()
-    completeKiteLesson()
+    completeCheckpointLesson()
     fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
     fireEvent.click(screen.getByRole('button', { name: /Start Fresh Quest/i }))
-    expect(screen.getByRole('heading', { name: /Seed Clues/i })).toBeTruthy()
-    completeSeedLesson()
+    expect(screen.getByRole('heading', { name: /Beach and Bread Quest/i })).toBeTruthy()
+    completeCheckpointLesson()
     fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
     expect(screen.getByRole('heading', { name: /Trail Complete/i })).toBeTruthy()
     expect(screen.getByText(/You unlocked the next trail/i)).toBeTruthy()
@@ -119,7 +230,7 @@ describe('Phase 3 adaptive child flow', () => {
 
   test('partial performance remains on the same trail with training language', () => {
     launchFromMap()
-    completeKiteLesson(false)
+    completeCheckpointLesson(false)
     fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
     expect(screen.getByRole('heading', { name: /Training Round/i })).toBeTruthy()
     expect(screen.getByText(/new quest will help this skill grow stronger/i)).toBeTruthy()
@@ -128,11 +239,11 @@ describe('Phase 3 adaptive child flow', () => {
 
   test('two consecutive low completions route to a supportive building-block mission', () => {
     launchFromMap()
-    completeKiteLessonLow()
+    completeCheckpointLessonLow()
     fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
     expect(screen.getByRole('heading', { name: /Try a New Route/i })).toBeTruthy()
     fireEvent.click(screen.getByRole('button', { name: /Start Fresh Quest/i }))
-    completeSeedLesson(false)
+    completeGuidedLessonLow()
     fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
     expect(screen.getByRole('heading', { name: /Power-Up Mission/i })).toBeTruthy()
     expect(screen.getByText(/building block to strengthen/i)).toBeTruthy()
@@ -140,7 +251,7 @@ describe('Phase 3 adaptive child flow', () => {
 
   test('persisted XP and stars appear after a reload', () => {
     launchFromMap()
-    completeKiteLesson()
+    completeCheckpointLesson()
     fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
     const state = readProgress()
     cleanup()
@@ -151,7 +262,7 @@ describe('Phase 3 adaptive child flow', () => {
 
   test('a submitted active question resumes at its feedback boundary after reload', () => {
     launchFromMap()
-    fireEvent.click(screen.getByRole('radio', { name: /Packing her kite bag and checking the wind/i }))
+    fireEvent.click(screen.getByRole('radio', { name: /leaf/i }))
     fireEvent.click(screen.getByRole('button', { name: /Submit Answer/i }))
     cleanup()
     render(<App />)
@@ -168,7 +279,7 @@ describe('Phase 3 adaptive child flow', () => {
 
   test('double interaction at completion cannot duplicate an attempt or rewards', () => {
     launchFromMap()
-    completeKiteLesson()
+    completeCheckpointLesson()
     const continueButton = screen.getByRole('button', { name: /Continue Quest/i })
     fireEvent.click(continueButton)
     fireEvent.click(continueButton)
@@ -211,6 +322,6 @@ describe('Phase 3 adaptive child flow', () => {
     window.localStorage.setItem(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(state))
     render(<App />)
     fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
-    expect(screen.getByText(/Question 1 of 4/i)).toBeTruthy()
+    expect(screen.getByText(/Question 1 of 7/i)).toBeTruthy()
   })
 })

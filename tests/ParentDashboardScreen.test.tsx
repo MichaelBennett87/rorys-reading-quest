@@ -84,7 +84,7 @@ function createDashboard(recentAverageAccuracy: number | null = 87): DashboardSn
         unclassifiedQuestionCount: 0,
       },
       {
-        reportingCategory: 'Reading Across Genres and Vocabulary',
+        reportingCategory: 'Foundational Skills Bridge',
         rawCategories: ['vocabulary'],
         totalQuestionAttempts: 3,
         correctResponses: 3,
@@ -102,7 +102,7 @@ function createDashboard(recentAverageAccuracy: number | null = 87): DashboardSn
       {
         benchmarkReference: 'BM-WORD-FORGE-1',
         skillIdentifier: 'g2-word-forge-word-practice',
-        reportingCategory: 'Reading Across Genres and Vocabulary',
+        reportingCategory: 'Foundational Skills Bridge',
         gradeBand: 2,
         questionAttempts: 4,
         accuracy: 100,
@@ -142,7 +142,7 @@ function createDashboard(recentAverageAccuracy: number | null = 87): DashboardSn
       {
         skillId: 'g2-word-forge-word-practice',
         benchmarkReference: 'BM-WORD-FORGE-1',
-        reportingCategory: 'Reading Across Genres and Vocabulary',
+        reportingCategory: 'Foundational Skills Bridge',
         gradeBand: 2,
         questionAttempts: 4,
         accuracy: 100,
@@ -595,8 +595,9 @@ describe('ParentDashboardScreen', () => {
 
     fireEvent.click(screen.getByRole('button', { name: /Progress/i }))
     expect(screen.getByRole('heading', { name: /Progress/i })).toBeTruthy()
-    expect(screen.getByRole('heading', { level: 4, name: /Reading Prose and Poetry/i })).toBeTruthy()
+    expect(screen.getByRole('heading', { level: 4, name: /Foundational Skills Bridge/i })).toBeTruthy()
     expect(screen.getAllByText(/No practice data yet/i).length).toBeGreaterThan(0)
+    expect(screen.getByText(/Foundational Skills Bridge is an internal practice category/i)).toBeTruthy()
 
     fireEvent.change(screen.getByLabelText(/Filter by category/i), { target: { value: 'Reading Informational Text' } })
     expect(screen.getByRole('heading', { level: 4, name: /BM-ARCHIVED-9/i })).toBeTruthy()
@@ -705,6 +706,7 @@ describe('ParentDashboardScreen', () => {
 
     fireEvent.click(screen.getByRole('button', { name: /Print Summary/i }))
     expect(screen.getByRole('heading', { name: /Parent Progress Summary/i })).toBeTruthy()
+    expect(screen.getByText(/Foundational Skills Bridge is an internal practice category/i)).toBeTruthy()
     expect(screen.getByRole('button', { name: /^Print$/i })).toBeTruthy()
     fireEvent.click(screen.getByRole('button', { name: /^Print$/i }))
     expect(print).toHaveBeenCalledTimes(1)

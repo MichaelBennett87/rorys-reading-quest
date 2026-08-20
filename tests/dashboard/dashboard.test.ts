@@ -176,19 +176,21 @@ describe('dashboard analytics', () => {
     ])
 
     const categories = buildCategorySummaries({ progress })
-    const category = categories.find((entry) => entry.reportingCategory === 'Reading Across Genres and Vocabulary')!
+    const category = categories.find((entry) => entry.reportingCategory === 'Foundational Skills Bridge')!
     expect(category.totalQuestionAttempts).toBe(2)
     expect(category.overallAccuracy).toBe(100)
     expect(category.firstAttemptAccuracy).toBe(100)
     expect(category.assistedSessionCount).toBe(1)
 
     const benchmark = buildBenchmarkSummaries({ progress }).find((entry) => entry.skillIdentifier === strongCandidate.skillId)!
+    expect(benchmark.reportingCategory).toBe('Foundational Skills Bridge')
     expect(benchmark.accuracy).toBe(100)
     expect(benchmark.firstAttemptAccuracy).toBe(100)
     expect(benchmark.assistedSessionRate).toBe(100)
     expect(benchmark.currentDifficulty).toBe(1)
 
     const skill = buildSkillSummaries({ progress }).find((entry) => entry.skillId === strongCandidate.skillId)!
+    expect(skill.reportingCategory).toBe('Foundational Skills Bridge')
     expect(skill.currentDifficulty).toBe(1)
     expect(skill.lastMasteredDifficulty).toBe(0)
     expect(skill.distinctIndependentEvidenceCount).toBe(1)

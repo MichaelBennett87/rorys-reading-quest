@@ -100,6 +100,9 @@ export function LessonScreen({
   const [openSupportTargetId, setOpenSupportTargetId] = useState<string | null>(null)
   const [speechActive, setSpeechActive] = useState(false)
   const [speechService] = useState<SpeechService>(() => createSpeechService())
+  const [practiceStarted, setPracticeStarted] = useState(
+    lesson.lessonRole !== 'GUIDED_PRACTICE' || (session?.submittedQuestions.length ?? 0) > 0,
+  )
 
   const sessionRef = useRef<ActiveLessonSession | null>(session)
   const completionSentRef = useRef(false)
@@ -114,6 +117,11 @@ export function LessonScreen({
   const speechSupported = speechService.isSupported()
   const lessonAssistanceSummary = useMemo(() => summarizeAssistance(assistanceEvents), [assistanceEvents])
   const supportLevels = useMemo(() => deriveSupportLevels(assistanceEvents), [assistanceEvents])
+  const showTeachingBlock =
+    lesson.lessonRole === 'GUIDED_PRACTICE' &&
+    !practiceStarted &&
+    (session?.submittedQuestions.length ?? 0) === 0 &&
+    Boolean(lesson.teachingBlock)
   const result = useMemo(
     () =>
       buildLessonResult({
@@ -138,6 +146,10 @@ export function LessonScreen({
   useEffect(() => {
     speechService.cancel()
   }, [step, speechService])
+
+  useEffect(() => {
+    setPracticeStarted(lesson.lessonRole !== 'GUIDED_PRACTICE' || (session?.submittedQuestions.length ?? 0) > 0)
+  }, [lesson.lessonId, lesson.lessonRole, session?.submittedQuestions.length])
 
   if (!lesson.questions.length) {
     return (
@@ -411,27 +423,55 @@ export function LessonScreen({
         <h1>{lesson.lessonTitle}</h1>
         <p>{lesson.lessonObjective}</p>
       </header>
-      <PassageCard
-        passageText={currentPassage?.passageText ?? ''}
-        wordSupportTargets={passageTargets}
-        onOpenWordSupport={onOpenSupport}
-        visibleWordSupport
-        heading="Reading Passage"
-        evidenceSnippets={step === 'feedback' ? evidenceSnippets : []}
-      />
-      {activeSupportTarget && (
-        <WordHelpPanel
-          target={activeSupportTarget}
-          level={supportLevels[activeSupportTarget.targetId] ?? 0}
-          speechSupported={speechSupported}
-          onRequestLevel={onRequestSupportLevel}
-          onStop={() => {
-            speechService.cancel()
-            setSpeechActive(false)
-          }}
-          onClose={onCloseSupport}
-          speechActive={speechActive}
-        />
+      {showTeachingBlock && lesson.teachingBlock ? (
+        <section className="card teaching-block" aria-labelledby="teaching-block-heading">
+          <h2 id="teaching-block-heading">{lesson.teachingBlock.title}</h2>
+          <p>{lesson.teachingBlock.explanation}</p>
+          <ul>
+            {lesson.teachingBlock.examples.map((example) => (
+              <li key={example}>{example}</li>
+            ))}
+          </ul>
+          {lesson.teachingBlock.contrast && <p>{lesson.teachingBlock.contrast}</p>}
+          <p>{lesson.teachingBlock.learnerCue}</p>
+          <section className="screen-actions">
+            <ChildButton
+              type="button"
+              className="primary-action"
+              onClick={() => setPracticeStarted(true)}
+            >
+              Start Practice
+            </ChildButton>
+            <ChildButton type="button" onClick={onBack}>
+              Exit Quest
+            </ChildButton>
+          </section>
+        </section>
+      ) : (
+        <>
+          <PassageCard
+            passageText={currentPassage?.passageText ?? ''}
+            wordSupportTargets={passageTargets}
+            onOpenWordSupport={onOpenSupport}
+            visibleWordSupport
+            heading="Reading Passage"
+            evidenceSnippets={step === 'feedback' ? evidenceSnippets : []}
+          />
+          {activeSupportTarget && (
+            <WordHelpPanel
+              target={activeSupportTarget}
+              level={supportLevels[activeSupportTarget.targetId] ?? 0}
+              speechSupported={speechSupported}
+              onRequestLevel={onRequestSupportLevel}
+              onStop={() => {
+                speechService.cancel()
+                setSpeechActive(false)
+              }}
+              onClose={onCloseSupport}
+              speechActive={speechActive}
+            />
+          )}
+        </>
       )}
 
       {step === 'results' && (

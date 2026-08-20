@@ -1,0 +1,35 @@
+import { describe, expect, test } from 'vitest'
+
+import { contentPackAudit, contentPacks, sampleContent } from '../../src/domain/content'
+import { getLessonById, getLessonCandidates, getLessonForUnit } from '../../src/domain/lesson'
+
+describe('grade 2 content pack registry', () => {
+  test('registered packs aggregate into the existing content export without mutating source packs', () => {
+    const packsSnapshot = structuredClone(contentPacks)
+    const sampleSnapshot = structuredClone(sampleContent)
+
+    expect(new Set(contentPacks.map((pack) => pack.manifest.packId)).size).toBe(contentPacks.length)
+    expect(contentPackAudit).toHaveLength(0)
+    expect(contentPacks).toEqual(packsSnapshot)
+    expect(sampleContent).toEqual(sampleSnapshot)
+  })
+
+  test('legacy content remains resolvable but is excluded from fresh selection', () => {
+    expect(getLessonById('lesson-word-forge-vowel-voyage-a').lesson?.selectionStatus).toBe('legacy')
+    expect(getLessonCandidates().map((candidate) => candidate.lessonId)).not.toEqual(expect.arrayContaining([
+      'lesson-word-forge-vowel-voyage-a',
+      'lesson-word-forge-vowel-voyage-b',
+      'lesson-word-forge-vowel-voyage-c',
+      'lesson-word-forge-building-block',
+    ]))
+  })
+
+  test('the active unit resolves to the new checkpoint lesson', () => {
+    const result = getLessonForUnit('wg-unit-1')
+
+    expect(result.lesson?.lessonId).toBe('lesson-word-forge-oo-ea-checkpoint-a')
+    expect(result.lesson?.lessonRole).toBe('CHECKPOINT')
+    expect(result.lesson?.selectionStatus).toBe('active')
+    expect(result.lesson?.questionCount).toBe(7)
+  })
+})

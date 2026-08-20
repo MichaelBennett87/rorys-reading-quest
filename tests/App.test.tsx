@@ -140,7 +140,7 @@ describe('Phase 2 lesson flow and child shell', () => {
     fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
 
     expect(screen.getByRole('heading', { name: /Vowel Voyage/i })).toBeTruthy()
-    expect(screen.getByText(/Question 1 of 4/i)).toBeTruthy()
+    expect(screen.getByText(/Question 1 of 7/i)).toBeTruthy()
     const submitButton = getSingleByRole('button', /Submit Answer/i)
     expect(submitButton.getAttribute('disabled')).not.toBeNull()
   })
@@ -153,17 +153,17 @@ describe('Phase 2 lesson flow and child shell', () => {
     fireEvent.click(screen.getByRole('button', { name: /Vowel Voyage Available/i }))
     fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
 
-    const firstChoice = screen.getByRole('radio', { name: /Packing her kite bag and checking the wind/i })
+    const firstChoice = screen.getByRole('radio', { name: /leaf/i })
     fireEvent.click(firstChoice)
 
     const submitButton = getSingleByRole('button', /Submit Answer/i)
     expect(submitButton.getAttribute('disabled')).toBeNull()
     fireEvent.click(submitButton)
     expect(screen.getByText(/Great clue-finding!/i)).toBeTruthy()
-    expect(screen.getByText(/She packed her kite bag/i)).toBeTruthy()
+    expect(screen.getByText(/Leaf has the ea sound like leaf/i)).toBeTruthy()
     const nextButton = getSingleByRole('button', /Next Question/i)
     fireEvent.click(nextButton)
-    expect(screen.getByText(/Question 2 of 4/i)).toBeTruthy()
+    expect(screen.getByText(/Question 2 of 7/i)).toBeTruthy()
   })
 
   test('unavailable lesson units show safe read-only state and no launch button', () => {

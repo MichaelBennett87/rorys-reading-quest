@@ -2,7 +2,8 @@ import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, test, vi } from 'vitest'
 
 import { LessonScreen } from '../../src/screens/LessonScreen'
-import type { LessonDefinition, LessonQuestion } from '../../src/domain/lesson'
+import type { LessonDefinition, LessonQuestion, LessonResult } from '../../src/domain/lesson'
+import type { ActiveLessonSession } from '../../src/persistence'
 
 afterEach(() => {
   cleanup()
@@ -18,6 +19,8 @@ const baseLesson: Omit<LessonDefinition, 'questionCount' | 'questions'> = {
   worldId: 'word-forge',
   lessonTitle: 'Vowel Voyage',
   lessonObjective: 'Read for clues',
+  lessonRole: 'CHECKPOINT',
+  selectionStatus: 'active',
   contentVersion: 'test-v1',
   eligiblePurposes: ['progression'],
 }
@@ -39,6 +42,36 @@ const multipleChoiceQuestion: LessonQuestion = {
     { id: 'step-call', text: 'Waving' },
   ],
   correctChoiceIds: ['step-pack'],
+}
+
+const guidedQuestion: LessonQuestion = {
+  ...multipleChoiceQuestion,
+  questionId: 'q-guided',
+  lessonId: 'lesson-word-forge-guided-moon',
+  activityId: 'act-word-forge-guided-moon',
+  prompt: 'Which word uses oo like moon?',
+  evidenceReferenceIds: ['moon'],
+  choices: [
+    { id: 'moon', text: 'moon' },
+    { id: 'bread', text: 'bread' },
+    { id: 'leaf', text: 'leaf' },
+  ],
+  correctChoiceIds: ['moon'],
+}
+
+const guidedQuestionTwo: LessonQuestion = {
+  ...multipleChoiceQuestion,
+  questionId: 'q-guided-2',
+  lessonId: 'lesson-word-forge-guided-moon',
+  activityId: 'act-word-forge-guided-moon-2',
+  prompt: 'Which word uses ea like team?',
+  evidenceReferenceIds: ['team'],
+  choices: [
+    { id: 'team', text: 'team' },
+    { id: 'moon', text: 'moon' },
+    { id: 'bread', text: 'bread' },
+  ],
+  correctChoiceIds: ['team'],
 }
 
 const multiselectQuestion: LessonQuestion = {
@@ -138,6 +171,25 @@ const tableMatchQuestion: LessonQuestion = {
   ],
 }
 
+const guidedLesson: LessonDefinition = {
+  ...baseLesson,
+  lessonId: 'lesson-word-forge-guided-moon',
+  activityId: 'act-word-forge-guided-moon',
+  lessonTitle: 'Guided Practice: Moon Clues',
+  lessonObjective: 'Notice how oo and ea can sound different.',
+  lessonRole: 'GUIDED_PRACTICE',
+  selectionStatus: 'active',
+  teachingBlock: {
+    title: 'Look at the Pattern',
+    explanation: 'The letters oo can sound like moon or book, and ea can sound like team or bread.',
+    examples: ['moon', 'book', 'team', 'bread'],
+    contrast: 'Use the whole word to help you decide which sound fits.',
+    learnerCue: 'Look closely at this word part.',
+  },
+  questionCount: 2,
+  questions: [guidedQuestion, guidedQuestionTwo],
+}
+
 const renderLesson = (question: LessonQuestion, onBack = vi.fn()) => {
   const lesson: LessonDefinition = {
     ...baseLesson,
@@ -149,6 +201,23 @@ const renderLesson = (question: LessonQuestion, onBack = vi.fn()) => {
     onBack,
     ...render(<LessonScreen lesson={lesson} onBack={onBack} />),
   }
+}
+
+const renderGuidedLesson = (options?: {
+  session?: ActiveLessonSession | null
+  onComplete?: (result: LessonResult, completionId: string) => void
+}) => {
+  const onBack = vi.fn()
+  const onComplete = options?.onComplete ?? vi.fn()
+  render(
+    <LessonScreen
+      lesson={guidedLesson}
+      onBack={onBack}
+      session={options?.session ?? null}
+      onComplete={onComplete}
+    />,
+  )
+  return { onBack, onComplete }
 }
 
 describe('LessonScreen', () => {
@@ -210,5 +279,66 @@ describe('LessonScreen', () => {
     expect(screen.getByText(/Stars earned:/i)).toBeTruthy()
     fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
     expect(onBack).toHaveBeenCalledTimes(1)
+  })
+
+  test('shows the guided teaching block before practice begins', () => {
+    renderGuidedLesson()
+
+    expect(screen.getByRole('heading', { name: /Look at the Pattern/i })).toBeTruthy()
+    expect(screen.getByText(/oo can sound like moon or book/i)).toBeTruthy()
+    expect(screen.getByRole('button', { name: /Start Practice/i })).toBeTruthy()
+    expect(screen.getAllByRole('button', { name: /Exit Quest/i }).length).toBeGreaterThan(0)
+    expect(screen.getByRole('button', { name: /Submit Answer/i }).getAttribute('disabled')).not.toBeNull()
+  })
+
+  test('start practice reveals the scored question and checkpoint lessons do not show teaching', () => {
+    renderLesson(multipleChoiceQuestion)
+    expect(screen.queryByRole('button', { name: /Start Practice/i })).toBeNull()
+    expect(screen.getByRole('button', { name: /Submit Answer/i })).toBeTruthy()
+
+    cleanup()
+    renderGuidedLesson()
+    fireEvent.click(screen.getByRole('button', { name: /Start Practice/i }))
+    expect(screen.queryByRole('button', { name: /Start Practice/i })).toBeNull()
+    expect(screen.getByRole('button', { name: /Submit Answer/i })).toBeTruthy()
+    expect(screen.getByText(/Which word uses oo like moon\?/i)).toBeTruthy()
+  })
+
+  test('guided teaching does not complete the lesson or call onComplete before practice', () => {
+    const onComplete = vi.fn()
+    render(<LessonScreen lesson={guidedLesson} onBack={vi.fn()} onComplete={onComplete} />)
+
+    expect(screen.getByText(/Look closely at this word part/i)).toBeTruthy()
+    expect(screen.queryByText(/Quest Complete/i)).toBeNull()
+    expect(onComplete).not.toHaveBeenCalled()
+  })
+
+  test('a resumed guided session skips the teaching block', () => {
+    const session: ActiveLessonSession = {
+      sessionId: 'session-guided',
+      lessonId: guidedLesson.lessonId,
+      activityId: guidedLesson.activityId,
+      contentVersion: guidedLesson.contentVersion,
+      skillId: guidedLesson.skillId,
+      difficulty: guidedLesson.difficulty,
+      currentQuestionIndex: 1,
+      submittedQuestions: [
+        {
+          questionId: guidedQuestion.questionId,
+          isCorrect: true,
+          isFirstAttemptCorrect: true,
+          submittedAnswer: 'moon',
+        },
+      ],
+      assistanceEvents: [],
+      startedAt: '2026-08-20T12:00:00.000Z',
+      updatedAt: '2026-08-20T12:01:00.000Z',
+    }
+
+    render(<LessonScreen lesson={guidedLesson} onBack={vi.fn()} session={session} />)
+
+    expect(screen.queryByRole('button', { name: /Start Practice/i })).toBeNull()
+    expect(screen.getByRole('button', { name: /Submit Answer/i })).toBeTruthy()
+    expect(screen.getByText(/Which word uses ea like team\?/i)).toBeTruthy()
   })
 })

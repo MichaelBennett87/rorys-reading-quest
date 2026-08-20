@@ -13,6 +13,18 @@ export interface LessonChoice {
   text: string
 }
 
+export type LessonRole = 'GUIDED_PRACTICE' | 'CHECKPOINT'
+
+export type LessonSelectionStatus = 'active' | 'legacy'
+
+export interface TeachingBlock {
+  title: string
+  explanation: string
+  examples: string[]
+  contrast?: string
+  learnerCue: string
+}
+
 interface LessonQuestionBase {
   questionId: string
   questionType: LessonQuestionType
@@ -82,6 +94,9 @@ export interface LessonDefinition {
   worldId: string
   lessonTitle: string
   lessonObjective: string
+  lessonRole: LessonRole
+  selectionStatus: LessonSelectionStatus
+  teachingBlock?: TeachingBlock
   questionCount: number
   questions: LessonQuestion[]
   contentVersion: string
@@ -165,6 +180,9 @@ export interface LessonCatalogEntry {
   questionIdentifiers: string[]
   lessonTitle: string
   lessonObjective: string
+  lessonRole: LessonRole
+  selectionStatus: LessonSelectionStatus
+  teachingBlock?: TeachingBlock
   contentVersion: string
   eligiblePurposes: LessonPurpose[]
 }

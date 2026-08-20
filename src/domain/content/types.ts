@@ -75,6 +75,7 @@ export interface Passage {
   readingContext: string
   sourceReference?: string
   contentVersion: string
+  reviewStatus?: ContentReviewStatus
   wordSupportTargets?: WordSupportTarget[]
 }
 

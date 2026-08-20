@@ -28,6 +28,7 @@ import { ParentAssessmentsView } from './ParentAssessmentsView'
 import { ParentPrintSummaryView } from './ParentPrintSummaryView'
 import {
   describePlannedRoute,
+  FOUNDATIONAL_SKILLS_BRIDGE_NOTE,
   formatAssistanceLevel,
   formatParentDate,
   formatPercent,
@@ -311,6 +312,10 @@ export function ParentDashboardScreen({
                 <h3 id="parent-categories-heading">Reporting categories</h3>
                 <span className="parent-muted-copy">Filtered by current lesson data</span>
               </div>
+              <ParentDataNote
+                title="Foundational Skills Bridge"
+                message={FOUNDATIONAL_SKILLS_BRIDGE_NOTE}
+              />
               <div className="parent-card-grid">
                 {visibleCategories.map((summary) => (
                   <CategoryCard key={summary.reportingCategory} summary={summary} />

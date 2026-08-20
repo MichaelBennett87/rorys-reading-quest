@@ -19,13 +19,15 @@ import type {
 import { explainProgressionDecision } from './explainProgressionDecision'
 
 const FIXED_CATEGORY_ORDER = [
+  'Foundational Skills Bridge',
   'Reading Prose and Poetry',
   'Reading Informational Text',
   'Reading Across Genres and Vocabulary',
 ] as const
 
 const CATEGORY_MAP: Record<string, string> = {
-  'Word Forge': 'Reading Across Genres and Vocabulary',
+  'Word Forge': 'Foundational Skills Bridge',
+  'Foundational Skills Bridge': 'Foundational Skills Bridge',
   'Reading Prose and Poetry': 'Reading Prose and Poetry',
   'Reading Informational Text': 'Reading Informational Text',
   'Reading Across Genres and Vocabulary': 'Reading Across Genres and Vocabulary',

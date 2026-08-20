@@ -1,4 +1,4 @@
-import { sampleContent, type ContentSample } from '../content'
+import { contentPacks, sampleContent } from '../content/packs'
 import { validateContent } from '../content/validateContent'
 import type { LessonActivityCandidate } from '../progression/skillProgressTypes'
 import type { LessonCatalogEntry, LessonChoice, LessonDefinition, LessonQuestion } from './lessonTypes'
@@ -10,68 +10,23 @@ import {
   type TableMatchLessonQuestion,
 } from './lessonTypes'
 
-export const lessonCatalog: readonly LessonCatalogEntry[] = [
-  {
-    lessonId: 'lesson-word-forge-vowel-voyage-a',
-    worldId: 'word-forge',
-    unitId: 'wg-unit-1',
-    activityId: 'activity-word-forge-trail-1-a',
-    passageIdentifier: ['passage-word-forge-bridge-a'],
-    questionIdentifiers: [
-      'q-word-forge-vowel-voyage-a-1',
-      'q-word-forge-vowel-voyage-a-2',
-      'q-word-forge-vowel-voyage-a-3',
-      'q-word-forge-vowel-voyage-a-4',
-    ],
-    lessonTitle: 'Vowel Voyage: Kite Clues',
-    lessonObjective: 'Collect clues from a short kite passage and prove each choice with text.',
-    contentVersion: 'r0.1.0',
-    eligiblePurposes: ['progression', 'verification', 'remediation', 'review'],
-  },
-  {
-    lessonId: 'lesson-word-forge-vowel-voyage-b',
-    worldId: 'word-forge',
-    unitId: 'wg-unit-1',
-    activityId: 'activity-word-forge-trail-1-b',
-    passageIdentifier: ['passage-word-forge-bridge-b'],
-    questionIdentifiers: [
-      'q-word-forge-vowel-voyage-b-2',
-      'q-word-forge-vowel-voyage-b-4',
-      'q-word-forge-vowel-voyage-b-5',
-    ],
-    lessonTitle: 'Vowel Voyage: Seed Clues',
-    lessonObjective: 'Use details from a short seed passage to explain careful steps.',
-    contentVersion: 'r0.1.0',
-    eligiblePurposes: ['progression', 'verification', 'remediation', 'review'],
-  },
-  {
-    lessonId: 'lesson-word-forge-vowel-voyage-c',
-    worldId: 'word-forge',
-    unitId: 'wg-unit-1',
-    activityId: 'activity-word-forge-trail-1-c',
-    passageIdentifier: ['passage-word-forge-bridge-a'],
-    questionIdentifiers: [
-      'q-word-forge-vowel-voyage-a-5',
-      'q-word-forge-vowel-voyage-a-6',
-    ],
-    lessonTitle: 'Vowel Voyage: Team Clues',
-    lessonObjective: 'Find what happened and connect a team lesson to passage evidence.',
-    contentVersion: 'r0.1.0',
-    eligiblePurposes: ['progression', 'verification', 'remediation', 'review'],
-  },
-  {
-    lessonId: 'lesson-word-forge-building-block',
-    worldId: 'word-forge',
-    unitId: 'wg-unit-1',
-    activityId: 'activity-word-forge-trail-0-a',
-    passageIdentifier: ['passage-word-forge-bridge-b'],
-    questionIdentifiers: ['q-word-forge-vowel-voyage-b-1'],
-    lessonTitle: 'Building Block: Careful Clues',
-    lessonObjective: 'Practice finding one clear detail before returning to the trail.',
-    contentVersion: 'r0.1.0',
-    eligiblePurposes: ['remediation', 'review'],
-  },
-]
+export const lessonCatalog: readonly LessonCatalogEntry[] = contentPacks.flatMap((pack) =>
+  pack.lessons.map((lesson) => ({
+    lessonId: lesson.lessonId,
+    worldId: lesson.worldId,
+    unitId: lesson.unitId,
+    activityId: lesson.activityId,
+    passageIdentifier: [...lesson.passageIdentifiers],
+    questionIdentifiers: [...lesson.questionIdentifiers],
+    lessonTitle: lesson.lessonTitle,
+    lessonObjective: lesson.lessonObjective,
+    lessonRole: lesson.lessonRole,
+    selectionStatus: lesson.selectionStatus,
+    teachingBlock: lesson.teachingBlock ? { ...lesson.teachingBlock, examples: [...lesson.teachingBlock.examples] } : undefined,
+    contentVersion: lesson.contentVersion,
+    eligiblePurposes: [...lesson.eligiblePurposes],
+  })),
+)
 
 export interface LessonCatalogResult {
   lesson?: LessonDefinition
@@ -80,7 +35,10 @@ export interface LessonCatalogResult {
 
 export function getLessonForUnit(unitId: string): LessonCatalogResult {
   const entry = lessonCatalog.find(
-    (candidate) => candidate.unitId === unitId && candidate.eligiblePurposes.includes('progression'),
+    (candidate) =>
+      candidate.unitId === unitId &&
+      candidate.selectionStatus === 'active' &&
+      candidate.eligiblePurposes.includes('progression'),
   )
   return entry ? buildLesson(entry) : { errors: ['No lesson content assigned to this unit.'] }
 }
@@ -92,9 +50,10 @@ export function getLessonById(lessonId: string): LessonCatalogResult {
 
 export function getLessonCandidates(): LessonActivityCandidate[] {
   return lessonCatalog.flatMap((entry) => {
+    if (entry.selectionStatus !== 'active') return []
     const questions = entry.questionIdentifiers
       .map((questionId) => sampleContent.questions.find((question) => question.questionIdentifier === questionId))
-      .filter((question): question is ContentSample['questions'][number] => Boolean(question))
+      .filter((question): question is typeof sampleContent.questions[number] => Boolean(question))
     const firstQuestion = questions[0]
     if (!firstQuestion || questions.some((question) => (
       question.skillIdentifier !== firstQuestion.skillIdentifier || question.difficulty !== firstQuestion.difficulty
@@ -107,9 +66,7 @@ export function getLessonCandidates(): LessonActivityCandidate[] {
       skillId: firstQuestion.skillIdentifier,
       difficulty: firstQuestion.difficulty,
       eligiblePurposes: [...entry.eligiblePurposes],
-      passageQuestionKeys: questions.map(
-        (question) => `${question.passageIdentifier}::${question.questionIdentifier}`,
-      ),
+      passageQuestionKeys: questions.map((question) => `${question.passageIdentifier}::${question.questionIdentifier}`),
       contentVersion: entry.contentVersion,
     }]
   })
@@ -123,7 +80,7 @@ function buildLesson(entry: LessonCatalogEntry): LessonCatalogResult {
 
   const foundQuestions = entry.questionIdentifiers
     .map((questionId) => sampleContent.questions.find((question) => question.questionIdentifier === questionId))
-    .filter((question): question is ContentSample['questions'][number] => Boolean(question))
+    .filter((question): question is typeof sampleContent.questions[number] => Boolean(question))
   if (foundQuestions.length !== entry.questionIdentifiers.length) {
     return { errors: ['Lesson references unknown question content.'] }
   }
@@ -136,7 +93,7 @@ function buildLesson(entry: LessonCatalogEntry): LessonCatalogResult {
 
   const foundPassages = entry.passageIdentifier
     .map((passageId) => sampleContent.passages.find((passage) => passage.passageIdentifier === passageId))
-    .filter((passage): passage is ContentSample['passages'][number] => Boolean(passage))
+    .filter((passage): passage is typeof sampleContent.passages[number] => Boolean(passage))
   if (foundPassages.length !== entry.passageIdentifier.length) {
     return { errors: ['Lesson references unknown passage content.'] }
   }
@@ -159,6 +116,9 @@ function buildLesson(entry: LessonCatalogEntry): LessonCatalogResult {
       worldId: entry.worldId,
       lessonTitle: entry.lessonTitle,
       lessonObjective: entry.lessonObjective,
+      lessonRole: entry.lessonRole,
+      selectionStatus: entry.selectionStatus,
+      teachingBlock: entry.teachingBlock ? { ...entry.teachingBlock, examples: [...entry.teachingBlock.examples] } : undefined,
       questionCount: questions.length,
       questions,
       contentVersion: entry.contentVersion,
@@ -168,7 +128,7 @@ function buildLesson(entry: LessonCatalogEntry): LessonCatalogResult {
   }
 }
 
-function toLessonQuestion(raw: ContentSample['questions'][number], lessonId: string): LessonQuestion | null {
+function toLessonQuestion(raw: typeof sampleContent.questions[number], lessonId: string): LessonQuestion | null {
   if (!raw.explanation || !raw.questionContent) return null
   const base = {
     questionId: raw.questionIdentifier,

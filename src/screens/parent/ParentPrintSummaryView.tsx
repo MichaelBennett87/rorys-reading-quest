@@ -14,6 +14,7 @@ import { type PrintService } from '../../services/printing'
 import { sortAssessmentRecordsForDisplay } from '../../domain/assessment'
 import {
   describePlannedRoute,
+  FOUNDATIONAL_SKILLS_BRIDGE_NOTE,
   formatAssistanceLevel,
   formatDataAvailability,
   formatParentDate,
@@ -126,6 +127,10 @@ export function ParentPrintSummaryView({
       </section>
 
       <SectionWithHeading title="Reporting categories" description="Florida-style reporting lanes, when current data is available.">
+        <ParentDataNote
+          title="Foundational Skills Bridge"
+          message={FOUNDATIONAL_SKILLS_BRIDGE_NOTE}
+        />
         <div className="parent-card-grid">
           {dashboard.categorySummaries.map((summary) => (
             <article key={summary.reportingCategory} className="card parent-summary-card">
