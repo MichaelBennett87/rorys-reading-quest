@@ -29,3 +29,11 @@
 
 - No router, state-management library, persistence dependency, IndexedDB, backend, cloud sync, telemetry, live AI, external speech provider, microphone capture, parent dashboard, service worker, or PWA behavior was added.
 - All content remains local and DRAFT.
+
+## Phase 5A Parent Foundation
+
+- `src/domain/dashboard/*` stays pure and derives parent-readable summaries from canonical child progress, current content metadata, and an injected timestamp.
+- `src/services/parentAccess/*` wraps browser Web Crypto for PBKDF2-based local PIN setup and verification, with a safe unavailable fallback when crypto is missing.
+- `src/persistence/parentAccessStore.ts` and `src/persistence/parentRecordsStore.ts` keep parent access and official assessment records separate from child progress.
+- `src/screens/ParentPlaceholderScreen.tsx` now serves as the minimal authenticated parent foundation screen and lock gate.
+- Child progression, rewards, assistance, and recovery remain owned by the existing child-progress store and are not altered by parent-state loading failures.

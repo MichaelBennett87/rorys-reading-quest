@@ -26,3 +26,7 @@ It does not persist passage or explanation text, correct-answer text, full answe
 ## Deferred Controls
 
 Parent dashboard/PIN, additional curriculum expansion, PWA behavior, accounts, remote sync, and official assessment reporting remain deferred. Browser speech support is local-only and limited to the browser's own capabilities.
+
+## Phase 5A Parent Data Boundary
+
+Parent access uses a separate local store with hashed PIN material only. Official assessment records use a separate local store. Neither store writes to the child-progress key, and neither store is required for child gameplay to continue. Plaintext PINs, surnames, birth dates, student IDs, school data, report images, and other child-sensitive records stay out of persisted progress. When browser cryptography is unavailable, parent unlocking fails closed and child play remains available.

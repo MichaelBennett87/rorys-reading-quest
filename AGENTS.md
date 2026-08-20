@@ -20,6 +20,7 @@
 - Use only original content with an explicit `DRAFT`, `REVIEWED`, `APPROVED`, or `RETIRED` review state.
 - Do not treat unreviewed DRAFT content as production-ready.
 - Do not add external FAST report images, proprietary passages, or official score claims.
+- Keep parent-access records and official assessment records in separate versioned stores; never persist a plaintext PIN.
 - Keep child-facing feedback supportive and free of punitive or diagnostic labels.
 
 ## Git and Remote Operations

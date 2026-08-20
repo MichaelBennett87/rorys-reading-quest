@@ -65,3 +65,7 @@
 ## Future connection
 
 - Phase 3 can consume `LessonResult` to drive adaptive activity selection and progression without changing question rendering logic.
+
+## Phase 5A Parent Foundation
+
+Phase 5A adds a separate local parent-access gate and parent analytics foundation without changing the child lesson runtime. The child progress store, lesson flow, rewards, and adaptive progression continue to use their existing contracts. Parent summaries are derived from canonical child progress and current authored content metadata only.

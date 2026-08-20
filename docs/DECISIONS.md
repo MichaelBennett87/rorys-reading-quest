@@ -111,3 +111,24 @@
 - Reason: Learners need supportive on-demand clues without introducing an external speech service or microphone dependency.
 - Consequence: Assistance stays local, is persisted as privacy-safe IDs and summaries, and never counts as independent mastery evidence.
 - Status: Applied
+
+## 2026-08-20 - Parent Analytics and Access Foundation
+
+- Decision: Keep parent analytics pure and derived from canonical child progress, assistance summaries, and current authored content metadata.
+- Reason: Phase 5A needs parent-readable summaries without changing child learning behavior or duplicating stored child progress.
+- Consequence: Dashboard snapshots, explanations, review summaries, attention items, and word-help summaries remain deterministic and testable.
+- Status: Applied
+
+## 2026-08-20 - Parent PIN and Record Separation
+
+- Decision: Store local parent access state and official assessment records in separate versioned localStorage keys behind browser-crypto services.
+- Reason: Parent access must not modify child progress and plaintext PINs must never enter persisted state.
+- Consequence: The parent gate is local-only, reload locks it again, and unsupported cryptography fails closed without affecting child gameplay.
+- Status: Applied
+
+## 2026-08-20 - Minimal Parent Area Foundation
+
+- Decision: Ship only a compact authenticated parent foundation screen in Phase 5A.
+- Reason: The detailed dashboard, assessment-entry UI, and print/export flows are deferred to Phase 5B.
+- Consequence: The app can unlock a private parent area, show bounded summary data, and keep the full dashboard scope out of this split.
+- Status: Applied

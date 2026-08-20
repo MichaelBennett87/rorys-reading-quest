@@ -32,3 +32,7 @@ All development content remains original and `DRAFT`. Validation still enforces 
 ## Persisted Content Boundary
 
 Persistence stores content identifiers and versions, not passage text, explanations, correct-answer text, or full submitted-answer text. Active recovery stores only submitted option/segment/mapping IDs needed to reconstruct evaluation against compatible current content.
+
+## Parent Analytics Inputs
+
+Phase 5A does not add new child curriculum. Parent analytics consume the existing lesson, skill, attempt, assistance, and review metadata already produced by the child flow. When historical items cannot be resolved against current content, they remain unclassified rather than guessed.

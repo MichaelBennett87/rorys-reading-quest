@@ -41,7 +41,8 @@
   - [x] Persist assistance with active sessions and completed attempts.
   - [x] Add focused support, persistence, and UI test coverage.
 - [ ] Phase 5: parent dashboard
-  - [ ] Add parent review summaries and milestone visibility.
+  - [x] Phase 5A: analytics and parent-access foundation
+  - [ ] Phase 5B: complete dashboard, assessment entry, and print summary
 - [ ] Phase 6: Grade 2 bridge content
   - [ ] Add broad Grade 2 bridge activity bank.
 - [ ] Phase 7: Grade 3 FAST-aligned content
