@@ -68,8 +68,38 @@ export interface Passage {
   passageIdentifier: string
   gradeBand: GradeBand
   passageText: string
+  sentences?: {
+    sentenceId: string
+    text: string
+  }[]
   readingContext: string
   sourceReference?: string
+  contentVersion: string
+  wordSupportTargets?: WordSupportTarget[]
+}
+
+export interface WordSupportPart {
+  text: string
+  emphasis: boolean
+}
+
+export interface WordSupportChunk {
+  displayText: string
+  speechText: string
+}
+
+export interface WordSupportTarget {
+  targetId: string
+  passageId: string
+  sentenceId: string
+  surfaceWord: string
+  focusParts: WordSupportPart[]
+  displayChunks: WordSupportChunk[]
+  spokenChunks: WordSupportChunk[]
+  blendSpeechText: string
+  wholeWordSpeechText: string
+  sentenceSpeechText: string
+  reviewStatus: ContentReviewStatus
   contentVersion: string
 }
 
@@ -117,13 +147,20 @@ export interface ContentValidationError {
     | 'duplicate_option_id'
     | 'duplicate_hot_text_segment_id'
     | 'missing_hot_text_segments'
-    | 'invalid_evidence_reference'
-    | 'duplicate_activity_identifier'
-    | 'duplicate_question_identifier'
-    | 'unknown_prerequisite'
-    | 'missing_review_status'
-    | 'approved_without_explanation'
-    | 'missing_referenced_passage'
+  | 'invalid_evidence_reference'
+  | 'duplicate_activity_identifier'
+  | 'duplicate_question_identifier'
+  | 'invalid_support_reference'
+  | 'unknown_prerequisite'
+  | 'missing_review_status'
+  | 'approved_without_explanation'
+  | 'missing_referenced_passage'
+  | 'duplicate_support_target_id'
+  | 'duplicate_support_placement'
+  | 'duplicate_target_placement'
+  | 'invalid_support_metadata'
+  | 'missing_support_sentence'
+  | 'duplicate_support_reference'
   message: string
   itemIdentifier: string
 }

@@ -5,6 +5,8 @@ import type {
   TableMatchQuestionData,
   TwoPartQuestionData,
   MultiselectQuestionData,
+  WordSupportChunk,
+  WordSupportTarget,
 } from './types'
 
 const supportedQuestionTypes: QuestionType[] = [
@@ -30,6 +32,9 @@ export function validateContent(sample: ContentSample): ContentValidationError[]
   const questionIds = new Set<string>()
   const skillIds = new Set<string>()
   const passageIds = new Set(sample.passages.map((passage) => passage.passageIdentifier))
+  const supportTargetIds = new Set<string>()
+  const sentenceIds = new Set<string>()
+  const supportPlacements = new Set<string>()
 
   for (const passage of sample.passages) {
     if (!passage.passageIdentifier.trim()) {
@@ -40,6 +45,33 @@ export function validateContent(sample: ContentSample): ContentValidationError[]
     }
     if (!passage.contentVersion.trim()) {
       withError(errors, 'missing_identifier', passage.passageIdentifier, 'Passage content version is required.')
+    }
+    if (passage.sentences && passage.sentences.length > 0) {
+      for (const sentence of passage.sentences) {
+        if (!sentence.sentenceId.trim()) {
+          withError(errors, 'missing_identifier', `${passage.passageIdentifier}:sentenceId`, 'Sentence identifier is required.')
+        }
+        if (sentence.text.trim() === '') {
+          withError(errors, 'missing_identifier', `${passage.passageIdentifier}:${sentence.sentenceId}`, 'Sentence text is required.')
+        }
+        if (sentenceIds.has(`${passage.passageIdentifier}::${sentence.sentenceId}`)) {
+          withError(
+            errors,
+            'duplicate_option_id',
+            `${passage.passageIdentifier}:${sentence.sentenceId}`,
+            'Sentence identifiers must be unique within a passage.',
+          )
+        } else {
+          sentenceIds.add(`${passage.passageIdentifier}::${sentence.sentenceId}`)
+        }
+      }
+    }
+
+    if (Array.isArray(passage.wordSupportTargets)) {
+      for (const target of passage.wordSupportTargets) {
+        const targetErrors = validateSupportTarget(sample, passage, target, supportTargetIds, supportPlacements)
+        errors.push(...targetErrors)
+      }
     }
   }
 
@@ -93,7 +125,7 @@ export function validateContent(sample: ContentSample): ContentValidationError[]
       )
     }
 
-    const payload = question.questionContent
+      const payload = question.questionContent
     if (!payload) {
       withError(errors, 'malformed_question_payload', question.questionIdentifier, `${question.questionType} questions require questionContent.`)
       if (question.reviewStatus === 'APPROVED' && (!question.explanation || !question.explanation.trim())) {
@@ -346,6 +378,10 @@ export function validateContent(sample: ContentSample): ContentValidationError[]
     }
   }
 
+  if (passageIds.size === 0) {
+    withError(errors, 'missing_referenced_passage', 'content', 'No passages are available.')
+  }
+
   return errors
 }
 
@@ -392,4 +428,164 @@ function getContentEvidenceIds(questionType: QuestionType, payload: NonNullable<
     return payload.choices.map((choice) => choice.id)
   }
   return []
+}
+
+function normalizeWord(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '')
+    .trim()
+}
+
+function concatDisplayParts(parts: { text: string }[]): string {
+  return parts.map((part) => part.text).join('')
+}
+
+function normalizeChunks(chunks: WordSupportChunk[]): string {
+  return chunks
+    .map((chunk) => chunk.displayText ?? '')
+    .join('')
+}
+
+function validateSupportTarget(
+  sample: ContentSample,
+  passage: ContentSample['passages'][number],
+  target: WordSupportTarget,
+  supportTargetIds: Set<string>,
+  supportPlacements: Set<string>,
+): ContentValidationError[] {
+  const errors: ContentValidationError[] = []
+  if (!target.targetId.trim()) {
+    withError(errors, 'invalid_support_metadata', `passage:${passage.passageIdentifier}`, 'support targetId is required.')
+    return errors
+  }
+  if (supportTargetIds.has(target.targetId)) {
+    withError(errors, 'duplicate_support_target_id', target.targetId, `Duplicate support target ID: ${target.targetId}`)
+    return errors
+  }
+  supportTargetIds.add(target.targetId)
+
+  if (target.passageId !== passage.passageIdentifier) {
+    withError(
+      errors,
+      'invalid_support_reference',
+      target.targetId,
+      'Support target must reference its owning passage.',
+    )
+  }
+  if (!target.sentenceId.trim()) {
+    withError(errors, 'missing_support_sentence', target.targetId, 'Support target sentenceId is required.')
+  } else if (!passage.sentences || !passage.sentences.some((sentence) => sentence.sentenceId === target.sentenceId)) {
+    withError(
+      errors,
+      'invalid_support_reference',
+      target.targetId,
+      `Support sentenceId is not available in passage ${target.passageId}.`,
+    )
+  }
+
+  if (!target.surfaceWord.trim()) {
+    withError(errors, 'invalid_support_metadata', target.targetId, 'Support target surfaceWord is required.')
+    return errors
+  }
+  if (!Array.isArray(target.focusParts) || target.focusParts.length === 0) {
+    withError(errors, 'invalid_support_metadata', target.targetId, 'Support target focus parts are required.')
+  }
+  if (target.focusParts.some((part) => !part.text.trim())) {
+    withError(errors, 'invalid_support_metadata', target.targetId, 'Focus parts must have non-empty text.')
+  }
+  if (!target.focusParts.some((part) => part.emphasis)) {
+    withError(errors, 'invalid_support_metadata', target.targetId, 'At least one focus part must be emphasized.')
+  }
+
+  if (!Array.isArray(target.displayChunks) || target.displayChunks.length < 2) {
+    withError(errors, 'invalid_support_metadata', target.targetId, 'Display chunks must contain at least two items.')
+  }
+  if (!Array.isArray(target.spokenChunks) || target.spokenChunks.length < 1) {
+    withError(errors, 'invalid_support_metadata', target.targetId, 'Spoken chunks are required.')
+  }
+  if (target.spokenChunks.some((chunk) => !chunk.speechText.trim())) {
+    withError(errors, 'invalid_support_metadata', target.targetId, 'Spoken chunk text is required.')
+  }
+  if (!target.blendSpeechText.trim()) {
+    withError(errors, 'invalid_support_metadata', target.targetId, 'blendSpeechText is required.')
+  }
+  if (!target.wholeWordSpeechText.trim()) {
+    withError(errors, 'invalid_support_metadata', target.targetId, 'wholeWordSpeechText is required.')
+  }
+  if (!target.sentenceSpeechText.trim()) {
+    withError(errors, 'invalid_support_metadata', target.targetId, 'sentenceSpeechText is required.')
+  }
+  if (!target.reviewStatus) {
+    withError(errors, 'missing_review_status', target.targetId, 'Support target review status is required.')
+  }
+  if (!target.contentVersion.trim()) {
+    withError(errors, 'missing_identifier', target.targetId, 'Support target content version is required.')
+  }
+
+  if (target.focusParts.length > 0) {
+    const reconstructed = normalizeWord(concatDisplayParts(target.focusParts))
+    if (reconstructed !== normalizeWord(target.surfaceWord)) {
+      withError(
+        errors,
+        'invalid_support_metadata',
+        target.targetId,
+        `Support focus parts do not reconstruct surface word: ${target.surfaceWord}`,
+      )
+    }
+  }
+  if (target.displayChunks.length >= 2) {
+    const reconstructed = normalizeWord(normalizeChunks(target.displayChunks))
+    if (reconstructed !== normalizeWord(target.surfaceWord)) {
+      withError(
+        errors,
+        'invalid_support_metadata',
+        target.targetId,
+        `Display chunks do not reconstruct surface word: ${target.surfaceWord}`,
+      )
+    }
+  }
+  if (!passage.wordSupportTargets) {
+    return errors
+  }
+
+  const passageWords = `${passage.passageText} ${passage.sentences?.map((entry) => entry.text).join(' ')}`.trim()
+  if (!normalizeWord(passageWords).includes(normalizeWord(target.surfaceWord))) {
+    withError(
+      errors,
+      'invalid_support_reference',
+      target.targetId,
+      `surfaceWord does not appear in the referenced passage: ${target.surfaceWord}`,
+    )
+  }
+
+  const placement = `${target.passageId}::${target.sentenceId}::${normalizeWord(target.surfaceWord)}`
+  if (supportPlacements.has(placement)) {
+    withError(
+      errors,
+      'duplicate_support_placement',
+      target.targetId,
+      `Duplicate support target placement: ${target.sentenceId} in ${target.passageId}.`,
+    )
+  } else {
+    supportPlacements.add(placement)
+  }
+
+  if (
+    sample.questions.some((question) => question.reviewStatus === 'APPROVED' || target.reviewStatus === 'APPROVED')
+    && (
+      target.focusParts.length === 0
+      || target.displayChunks.length === 0
+      || !target.wholeWordSpeechText
+      || !target.sentenceSpeechText
+    )
+  ) {
+    withError(
+      errors,
+      'invalid_support_metadata',
+      target.targetId,
+      'Approved support metadata must be complete.',
+    )
+  }
+  return errors
 }

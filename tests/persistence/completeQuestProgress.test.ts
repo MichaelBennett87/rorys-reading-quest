@@ -21,6 +21,15 @@ const lessonResult: LessonResult = {
   firstAttemptCorrect: 2,
   accuracy: 100,
   assistanceUsed: 0,
+  assistanceSummary: {
+    totalUniqueEvents: 0,
+    targetsHelped: 0,
+    maximumAssistanceLevel: 0,
+    visualHintUsed: false,
+    spokenChunkHelpUsed: false,
+    spokenWordHelpUsed: false,
+    sentenceReadAloudUsed: false,
+  },
   questionResults: [
     {
       questionId: 'question-a',

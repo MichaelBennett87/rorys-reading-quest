@@ -7,8 +7,136 @@ export const sampleContent: ContentSample = {
       gradeBand: 2,
       passageText:
         'Nora packed her small kite bag, tied the string around her wrist, and checked the wind before walking outside. '
-        + 'She asked her brother to hold the spool and to call out each count slowly. '
+        + 'She asked her brother to hold the spool and to call out each count slowly for a preflight check. '
         + 'On the first jump, the kite dipped low, then lifted high and stayed steady in the sky.',
+      sentences: [
+        {
+          sentenceId: 'a-1',
+          text: 'Nora packed her small kite bag, tied the string around her wrist, and checked the wind before walking outside.',
+        },
+        {
+          sentenceId: 'a-2',
+          text: 'She asked her brother to hold the spool and to call out each count slowly for a preflight check.',
+        },
+        {
+          sentenceId: 'a-3',
+          text: 'On the first jump, the kite dipped low, then lifted high and stayed steady in the sky.',
+        },
+      ],
+      wordSupportTargets: [
+        {
+          targetId: 'support-passage-a-wind',
+          passageId: 'passage-word-forge-bridge-a',
+          sentenceId: 'a-1',
+          surfaceWord: 'wind',
+          focusParts: [
+            { text: 'wind', emphasis: true },
+          ],
+          displayChunks: [
+            { displayText: 'w', speechText: 'w' },
+            { displayText: 'i', speechText: 'i' },
+            { displayText: 'nd', speechText: 'nd' },
+          ],
+          spokenChunks: [
+            { displayText: 'wind', speechText: 'wind' },
+          ],
+          blendSpeechText: 'wind',
+          wholeWordSpeechText: 'wind',
+          sentenceSpeechText: 'Nora packed her small kite bag, tied the string around her wrist, and checked the wind before walking outside.',
+          reviewStatus: 'DRAFT',
+          contentVersion: 'r0.1.0',
+        },
+        {
+          targetId: 'support-passage-a-preflight',
+          passageId: 'passage-word-forge-bridge-a',
+          sentenceId: 'a-2',
+          surfaceWord: 'preflight',
+          focusParts: [
+            { text: 'pre', emphasis: true },
+            { text: 'flight', emphasis: false },
+          ],
+          displayChunks: [
+            { displayText: 'pre', speechText: 'pre' },
+            { displayText: 'flight', speechText: 'flight' },
+          ],
+          spokenChunks: [
+            { displayText: 'pre', speechText: 'pre' },
+            { displayText: 'flight', speechText: 'flight' },
+          ],
+          blendSpeechText: 'pre-flight',
+          wholeWordSpeechText: 'preflight',
+          sentenceSpeechText: 'She asked her brother to hold the spool and to call out each count slowly for a preflight check.',
+          reviewStatus: 'DRAFT',
+          contentVersion: 'r0.1.0',
+        },
+        {
+          targetId: 'support-passage-a-brother',
+          passageId: 'passage-word-forge-bridge-a',
+          sentenceId: 'a-2',
+          surfaceWord: 'brother',
+          focusParts: [
+            { text: 'bro', emphasis: false },
+            { text: 'ther', emphasis: true },
+          ],
+          displayChunks: [
+            { displayText: 'bro', speechText: 'bro' },
+            { displayText: 'ther', speechText: 'ther' },
+          ],
+          spokenChunks: [
+            { displayText: 'brother', speechText: 'brother' },
+          ],
+          blendSpeechText: 'bro-ther',
+          wholeWordSpeechText: 'brother',
+          sentenceSpeechText: 'She asked her brother to hold the spool and to call out each count slowly for a preflight check.',
+          reviewStatus: 'DRAFT',
+          contentVersion: 'r0.1.0',
+        },
+        {
+          targetId: 'support-passage-a-slowly',
+          passageId: 'passage-word-forge-bridge-a',
+          sentenceId: 'a-2',
+          surfaceWord: 'slowly',
+          focusParts: [
+            { text: 'slow', emphasis: false },
+            { text: 'ly', emphasis: true },
+          ],
+          displayChunks: [
+            { displayText: 'slow', speechText: 'slow' },
+            { displayText: 'ly', speechText: 'lee' },
+          ],
+          spokenChunks: [
+            { displayText: 'slow', speechText: 'slow' },
+            { displayText: 'ly', speechText: 'ly' },
+          ],
+          blendSpeechText: 's-low-lee',
+          wholeWordSpeechText: 'slowly',
+          sentenceSpeechText: 'She asked her brother to hold the spool and to call out each count slowly for a preflight check.',
+          reviewStatus: 'DRAFT',
+          contentVersion: 'r0.1.0',
+        },
+        {
+          targetId: 'support-passage-a-steady',
+          passageId: 'passage-word-forge-bridge-a',
+          sentenceId: 'a-3',
+          surfaceWord: 'steady',
+          focusParts: [
+            { text: 'ste', emphasis: false },
+            { text: 'ady', emphasis: true },
+          ],
+          displayChunks: [
+            { displayText: 'ste', speechText: 'ste' },
+            { displayText: 'ady', speechText: 'ady' },
+          ],
+          spokenChunks: [
+            { displayText: 'steady', speechText: 'steady' },
+          ],
+          blendSpeechText: 'ste-ad-y',
+          wholeWordSpeechText: 'steady',
+          sentenceSpeechText: 'On the first jump, the kite dipped low, then lifted high and stayed steady in the sky.',
+          reviewStatus: 'DRAFT',
+          contentVersion: 'r0.1.0',
+        },
+      ],
       readingContext: 'Short sentence set for short-vowel decoding.',
       contentVersion: 'r0.1.0',
     },
@@ -17,8 +145,113 @@ export const sampleContent: ContentSample = {
       gradeBand: 2,
       passageText:
         'After school, Nora and Maya planted seeds in three little cups. '
-        + 'Nora measured one cup of soil and then one cup of water for each. '
+        + 'Nora measured one cup of soil and then one cup of water for each cup. '
         + 'She covered each cup with earth and smiled when each cup had a tiny label saying Day 1, Day 2, and Day 3.',
+      sentences: [
+        {
+          sentenceId: 'b-1',
+          text: 'After school, Nora and Maya planted seeds in three little cups.',
+        },
+        {
+          sentenceId: 'b-2',
+          text: 'Nora measured one cup of soil and then one cup of water for each cup.',
+        },
+        {
+          sentenceId: 'b-3',
+          text: 'She covered each cup with earth and smiled when each cup had a tiny label saying Day 1, Day 2, and Day 3.',
+        },
+      ],
+      wordSupportTargets: [
+        {
+          targetId: 'support-passage-b-plants',
+          passageId: 'passage-word-forge-bridge-b',
+          sentenceId: 'b-1',
+          surfaceWord: 'planted',
+          focusParts: [
+            { text: 'pl', emphasis: true },
+            { text: 'anted', emphasis: false },
+          ],
+          displayChunks: [
+            { displayText: 'pl', speechText: 'pl' },
+            { displayText: 'ant', speechText: 'ant' },
+            { displayText: 'ed', speechText: 'ed' },
+          ],
+          spokenChunks: [
+            { displayText: 'planted', speechText: 'planted' },
+          ],
+          blendSpeechText: 'plat-ed',
+          wholeWordSpeechText: 'planted',
+          sentenceSpeechText: 'After school, Nora and Maya planted seeds in three little cups.',
+          reviewStatus: 'DRAFT',
+          contentVersion: 'r0.1.0',
+        },
+        {
+          targetId: 'support-passage-b-seeds',
+          passageId: 'passage-word-forge-bridge-b',
+          sentenceId: 'b-1',
+          surfaceWord: 'seeds',
+          focusParts: [
+            { text: 'seed', emphasis: true },
+            { text: 's', emphasis: false },
+          ],
+          displayChunks: [
+            { displayText: 'seed', speechText: 'seed' },
+            { displayText: 's', speechText: 'z' },
+          ],
+          spokenChunks: [
+            { displayText: 'seeds', speechText: 'seeds' },
+          ],
+          blendSpeechText: 'seeds',
+          wholeWordSpeechText: 'seeds',
+          sentenceSpeechText: 'After school, Nora and Maya planted seeds in three little cups.',
+          reviewStatus: 'DRAFT',
+          contentVersion: 'r0.1.0',
+        },
+        {
+          targetId: 'support-passage-b-measured',
+          passageId: 'passage-word-forge-bridge-b',
+          sentenceId: 'b-2',
+          surfaceWord: 'measured',
+          focusParts: [
+            { text: 'me', emphasis: false },
+            { text: 'asured', emphasis: true },
+          ],
+          displayChunks: [
+            { displayText: 'me', speechText: 'me' },
+            { displayText: 'asured', speechText: 'asured' },
+          ],
+          spokenChunks: [
+            { displayText: 'measured', speechText: 'measured' },
+          ],
+          blendSpeechText: 'me-zured',
+          wholeWordSpeechText: 'measured',
+          sentenceSpeechText: 'Nora measured one cup of soil and then one cup of water for each cup.',
+          reviewStatus: 'DRAFT',
+          contentVersion: 'r0.1.0',
+        },
+        {
+          targetId: 'support-passage-b-label',
+          passageId: 'passage-word-forge-bridge-b',
+          sentenceId: 'b-3',
+          surfaceWord: 'label',
+          focusParts: [
+            { text: 'lab', emphasis: false },
+            { text: 'el', emphasis: true },
+          ],
+          displayChunks: [
+            { displayText: 'lab', speechText: 'lab' },
+            { displayText: 'el', speechText: 'el' },
+          ],
+          spokenChunks: [
+            { displayText: 'label', speechText: 'label' },
+          ],
+          blendSpeechText: 'lay-bel',
+          wholeWordSpeechText: 'label',
+          sentenceSpeechText: 'She covered each cup with earth and smiled when each cup had a tiny label saying Day 1, Day 2, and Day 3.',
+          reviewStatus: 'DRAFT',
+          contentVersion: 'r0.1.0',
+        },
+      ],
       readingContext: 'Short sentence set for multisyllabic pattern review.',
       contentVersion: 'r0.1.0',
     },

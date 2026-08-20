@@ -1,4 +1,5 @@
 import type { QuestionType } from '../content/types'
+import type { AssistanceSummary } from '../assistance'
 
 export type LessonQuestionType =
   | 'MULTIPLE_CHOICE'
@@ -139,6 +140,7 @@ export interface LessonResult {
   firstAttemptCorrect: number
   accuracy: number
   assistanceUsed: number
+  assistanceSummary: AssistanceSummary
   questionResults: LessonResultQuestion[]
   completed: boolean
 }

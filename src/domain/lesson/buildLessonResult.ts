@@ -1,4 +1,5 @@
 import type { LessonResult, LessonResultQuestion, QuestionEvaluationResult } from './lessonTypes'
+import type { AssistanceSummary } from '../assistance'
 
 interface BuildLessonResultInput {
   lessonId: string
@@ -6,6 +7,7 @@ interface BuildLessonResultInput {
   skillId: string
   difficulty: number
   questionEvaluations: QuestionEvaluationResult[]
+  assistanceSummary?: AssistanceSummary
 }
 
 export function buildLessonResult(input: BuildLessonResultInput): LessonResult {
@@ -27,6 +29,16 @@ export function buildLessonResult(input: BuildLessonResultInput): LessonResult {
   const accuracy =
     totalQuestions === 0 ? 0 : Number(((correctAnswers / totalQuestions) * 100).toFixed(2))
 
+  const summary: AssistanceSummary = input.assistanceSummary ?? {
+    totalUniqueEvents: 0,
+    targetsHelped: 0,
+    maximumAssistanceLevel: 0,
+    visualHintUsed: false,
+    spokenChunkHelpUsed: false,
+    spokenWordHelpUsed: false,
+    sentenceReadAloudUsed: false,
+  }
+
   return {
     lessonId: input.lessonId,
     activityId: input.activityId,
@@ -36,7 +48,8 @@ export function buildLessonResult(input: BuildLessonResultInput): LessonResult {
     correctAnswers,
     firstAttemptCorrect: questionResults.filter((question) => question.isFirstAttemptCorrect).length,
     accuracy,
-    assistanceUsed: 0,
+    assistanceUsed: summary.totalUniqueEvents,
+    assistanceSummary: summary,
     questionResults,
     completed: true,
   }

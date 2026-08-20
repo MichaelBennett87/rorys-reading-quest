@@ -47,6 +47,15 @@ const emptyLessonResult: LessonResult = {
   firstAttemptCorrect: 0,
   accuracy: 0,
   assistanceUsed: 0,
+  assistanceSummary: {
+    totalUniqueEvents: 0,
+    targetsHelped: 0,
+    maximumAssistanceLevel: 0,
+    visualHintUsed: false,
+    spokenChunkHelpUsed: false,
+    spokenWordHelpUsed: false,
+    sentenceReadAloudUsed: false,
+  },
   questionResults: [],
   completed: true,
 }

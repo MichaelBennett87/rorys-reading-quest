@@ -50,15 +50,19 @@ export function lessonResultToCheckpoint(
   if (lessonResult.skillId !== context.progress.skillId || lessonResult.difficulty !== context.progress.currentDifficulty) {
     return { status: 'declined', reason: 'Lesson result does not match the active skill trail.' }
   }
+  const maxLevel = lessonResult.assistanceSummary.maximumAssistanceLevel
+  const hintsUsed = maxLevel === 1 || maxLevel === 2 ? 1 : 0
+  const majorHintsUsed = (maxLevel === 3 || maxLevel === 4 || maxLevel === 5) ? 1 : 0
+  const sentenceReadAloudUsed = lessonResult.assistanceSummary.sentenceReadAloudUsed
 
   return {
     status: 'accepted',
     checkpointInput: {
       accuracy: lessonResult.accuracy / 100,
       firstAttemptAccuracy: lessonResult.firstAttemptCorrect / lessonResult.totalQuestions,
-      hintsUsed: 0,
-      majorHintsUsed: 0,
-      sentenceReadAloudUsed: false,
+      hintsUsed,
+      majorHintsUsed,
+      sentenceReadAloudUsed,
       consecutiveUnsuccessfulAtCurrentDifficulty:
         context.progress.consecutiveUnsuccessfulAtCurrentDifficulty,
       priorIndependentSuccessCount: context.progress.qualifyingIndependentActivityIds.length,
