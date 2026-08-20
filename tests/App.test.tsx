@@ -124,6 +124,8 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getAllByRole('heading', { name: /Word Forge: Unit Selection/i })).toHaveLength(1)
     expect(screen.getAllByRole('button', { name: /Vowel Voyage Available/i })).toHaveLength(1)
     expect(screen.getAllByRole('button', { name: /Syllable Summit Locked/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Prefix Power Locked/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Suffix Station Locked/i })).toHaveLength(1)
   })
 
   test('shows Trail 4 Syllable Summit when the current difficulty reaches 4', () => {
@@ -138,7 +140,7 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getByText(/consonant-le syllables and syllable review/i)).toBeTruthy()
   })
 
-  test('shows Prefix Power as preparing when the current difficulty reaches 5', () => {
+  test('shows Prefix Power as available when the current difficulty reaches 5', () => {
     seedWordForgeDifficulty(5)
     render(<App />)
 
@@ -146,7 +148,22 @@ describe('Phase 2 lesson flow and child shell', () => {
     fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
 
     expect(screen.getAllByRole('button', { name: /Syllable Summit (Complete|Review)/i })).toHaveLength(1)
-    expect(screen.getByText(/Prefix Power quests are being prepared\./i)).toBeTruthy()
+    expect(screen.getAllByRole('button', { name: /Prefix Power Available/i })).toHaveLength(1)
+    expect(within(screen.getByRole('button', { name: /Prefix Power Available/i })).getByText(/Trail 5/i)).toBeTruthy()
+    expect(screen.getByText(/common prefixes and base words/i)).toBeTruthy()
+  })
+
+  test('starts Trail 5 Prefix Power checkpoint content at difficulty 5', () => {
+    seedWordForgeDifficulty(5)
+    render(<App />)
+
+    fireEvent.click(getWordForgeCard())
+    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Prefix Power Available/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
+
+    expect(screen.getByRole('heading', { name: /Prefix Power/i })).toBeTruthy()
+    expect(screen.getByText(/Which word means not happy\?/i)).toBeTruthy()
   })
 
   test('opens lesson-ready screen from an available unit', () => {
