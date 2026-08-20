@@ -5,6 +5,7 @@ interface ParentDashboardHeaderProps {
   subtitle: string
   currentTrail?: string | null
   storageNotice?: string | null
+  onOpenPrintSummary?: () => void
   onLock: () => void
   onBackToQuest: () => void
 }
@@ -14,6 +15,7 @@ export function ParentDashboardHeader({
   subtitle,
   currentTrail,
   storageNotice,
+  onOpenPrintSummary,
   onLock,
   onBackToQuest,
 }: ParentDashboardHeaderProps) {
@@ -26,6 +28,11 @@ export function ParentDashboardHeader({
       </div>
 
       <div className="parent-dashboard-header-actions">
+        {onOpenPrintSummary && (
+          <ChildButton type="button" className="secondary-action parent-dashboard-action" onClick={onOpenPrintSummary}>
+            Print Summary
+          </ChildButton>
+        )}
         <ChildButton type="button" className="secondary-action parent-dashboard-action" onClick={onLock}>
           Lock Parent Area
         </ChildButton>

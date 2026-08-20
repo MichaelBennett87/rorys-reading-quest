@@ -1,7 +1,7 @@
 import type { DashboardDataAvailability, DashboardRecentAttemptSummary, DashboardSnapshot } from '../../domain/dashboard'
 import type { QuestProgressV1 } from '../../persistence'
 
-export type ParentDashboardView = 'overview' | 'progress' | 'sessions' | 'reviews' | 'word-help' | 'assessments'
+export type ParentDashboardView = 'overview' | 'progress' | 'sessions' | 'reviews' | 'word-help' | 'assessments' | 'print-summary'
 
 export const parentDashboardViews: readonly ParentDashboardView[] = [
   'overview',

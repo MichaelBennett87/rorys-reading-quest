@@ -13,6 +13,7 @@ import type {
 } from '../../domain/dashboard'
 import type { QuestProgressV1 } from '../../persistence'
 import type { ParentRecordsState } from '../../persistence/parentRecordsStore'
+import type { PrintService } from '../../services/printing'
 import { ChildButton } from '../../components/ChildButton'
 import {
   AccuracyMeter,
@@ -23,6 +24,8 @@ import {
   ParentMetricCard,
   ParentStatusBadge,
 } from '../../components/parent'
+import { ParentAssessmentsView } from './ParentAssessmentsView'
+import { ParentPrintSummaryView } from './ParentPrintSummaryView'
 import {
   describePlannedRoute,
   formatAssistanceLevel,
@@ -34,6 +37,11 @@ import {
   summarizeRecentAttempts,
   type ParentDashboardView,
 } from './parentDashboardView'
+import type {
+  ParentAssessmentCreateHandler,
+  ParentAssessmentDeleteHandler,
+  ParentAssessmentUpdateHandler,
+} from './parentAssessmentActions'
 import '../../styles/parent-dashboard.css'
 
 interface ParentDashboardScreenProps {
@@ -41,6 +49,10 @@ interface ParentDashboardScreenProps {
   dashboard: DashboardSnapshot
   recordsState: ParentRecordsState
   storageNotice?: string | null
+  printService: PrintService
+  onCreateAssessment: ParentAssessmentCreateHandler
+  onUpdateAssessment: ParentAssessmentUpdateHandler
+  onDeleteAssessment: ParentAssessmentDeleteHandler
   onLock: () => void
   onBackToQuest: () => void
 }
@@ -52,6 +64,10 @@ export function ParentDashboardScreen({
   dashboard,
   recordsState,
   storageNotice,
+  printService,
+  onCreateAssessment,
+  onUpdateAssessment,
+  onDeleteAssessment,
   onLock,
   onBackToQuest,
 }: ParentDashboardScreenProps) {
@@ -66,6 +82,7 @@ export function ParentDashboardScreen({
   const reviewsHeadingRef = useRef<HTMLHeadingElement>(null)
   const wordHelpHeadingRef = useRef<HTMLHeadingElement>(null)
   const assessmentsHeadingRef = useRef<HTMLHeadingElement>(null)
+  const printSummaryHeadingRef = useRef<HTMLHeadingElement>(null)
   const skillDetailHeadingRef = useRef<HTMLHeadingElement>(null)
   const sessionDetailHeadingRef = useRef<HTMLHeadingElement>(null)
 
@@ -113,6 +130,10 @@ export function ParentDashboardScreen({
     }
     if (activeView === 'assessments') {
       assessmentsHeadingRef.current?.focus()
+      return
+    }
+    if (activeView === 'print-summary') {
+      printSummaryHeadingRef.current?.focus()
     }
   }, [activeView, selectedSessionKey, selectedSkillId])
 
@@ -151,6 +172,7 @@ export function ParentDashboardScreen({
         subtitle="Local-only progress, review, and support summaries."
         currentTrail={currentTrailLabel}
         storageNotice={storageNotice ?? null}
+        onOpenPrintSummary={() => handleChangeView('print-summary')}
         onLock={onLock}
         onBackToQuest={onBackToQuest}
       />
@@ -415,6 +437,20 @@ export function ParentDashboardScreen({
           <AssessmentsPlaceholderView
             recordsState={recordsState}
             headingRef={assessmentsHeadingRef}
+            onCreateAssessment={onCreateAssessment}
+            onUpdateAssessment={onUpdateAssessment}
+            onDeleteAssessment={onDeleteAssessment}
+          />
+        )}
+
+        {activeView === 'print-summary' && (
+          <ParentPrintSummaryView
+            progress={progress}
+            dashboard={dashboard}
+            recordsState={recordsState}
+            printService={printService}
+            onBackToDashboard={() => handleChangeView('overview')}
+            headingRef={printSummaryHeadingRef}
           />
         )}
       </main>
@@ -758,50 +794,24 @@ function WordHelpView({
 function AssessmentsPlaceholderView({
   recordsState,
   headingRef,
+  onCreateAssessment,
+  onUpdateAssessment,
+  onDeleteAssessment,
 }: {
   recordsState: ParentRecordsState
   headingRef: RefObject<HTMLHeadingElement | null>
+  onCreateAssessment: ParentAssessmentCreateHandler
+  onUpdateAssessment: ParentAssessmentUpdateHandler
+  onDeleteAssessment: ParentAssessmentDeleteHandler
 }) {
   return (
-    <section className="parent-dashboard-panel" aria-labelledby="parent-assessments-heading">
-      <header className="parent-panel-header">
-        <h2 id="parent-assessments-heading" ref={headingRef} tabIndex={-1}>Assessments</h2>
-        <p>Official assessments are read-only in Phase 5B1.</p>
-      </header>
-
-      <section className="card parent-detail-card">
-        <h3>Official Assessments</h3>
-        <p>Stored assessment records: {recordsState.officialAssessments.length}</p>
-        <p className="parent-muted-copy">Assessment entry and editing arrive in Phase 5B2.</p>
-        <p>This area stays local to the device and never changes child progress.</p>
-      </section>
-
-      {recordsState.officialAssessments.length === 0 ? (
-        <ParentEmptyState
-          title="No official assessments are stored yet."
-          message="If a parent adds records later, they will appear here without changing child progress."
-        />
-      ) : (
-        <section className="card" aria-label="Stored official assessments">
-          <div className="parent-card-heading-row">
-            <h3>Stored records</h3>
-            <span className="parent-muted-copy">{recordsState.officialAssessments.length}</span>
-          </div>
-          <ul className="parent-summary-list">
-            {recordsState.officialAssessments.map((record) => (
-              <li key={record.assessmentId} className="parent-summary-list-item">
-                <span>{record.assessmentWindow}</span>
-                <span>Grade {record.gradeBand}</span>
-                <span>Scale score {record.scaleScore}</span>
-                <span>{formatParentDate(record.testedOn)}</span>
-                <span>{record.reportedAchievementLevel ?? '—'}</span>
-                <span>{record.reportedPercentileRank ?? '—'}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-    </section>
+    <ParentAssessmentsView
+      recordsState={recordsState}
+      headingRef={headingRef}
+      onCreateAssessment={onCreateAssessment}
+      onUpdateAssessment={onUpdateAssessment}
+      onDeleteAssessment={onDeleteAssessment}
+    />
   )
 }
 

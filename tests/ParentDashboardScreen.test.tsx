@@ -1,10 +1,20 @@
 import { cleanup, fireEvent, render, screen, within } from '@testing-library/react'
-import { afterEach, describe, expect, test } from 'vitest'
+import { afterEach, describe, expect, test, vi } from 'vitest'
+import { useRef, useState } from 'react'
 
 import { ParentDashboardScreen } from '../src/screens/parent/ParentDashboardScreen'
 import { createDefaultQuestProgress, type QuestProgressV1 } from '../src/persistence'
 import type { ParentRecordsState } from '../src/persistence/parentRecordsStore'
 import type { DashboardSnapshot } from '../src/domain/dashboard'
+import {
+  createAssessmentRecord,
+  deleteAssessmentRecord,
+  parseAssessmentForm,
+  updateAssessmentRecord,
+} from '../src/domain/assessment'
+import type { AssessmentFormValues } from '../src/domain/assessment'
+import type { PrintService } from '../src/services/printing'
+import type { ParentAssessmentMutationResult } from '../src/screens/parent/parentAssessmentActions'
 
 const now = '2026-08-20T12:00:00.000Z'
 
@@ -354,17 +364,190 @@ function createRecordsState(): ParentRecordsState {
   }
 }
 
+function createUnavailablePrintService(): PrintService {
+  return {
+    isSupported: () => false,
+    print: () => ({ status: 'unavailable', reason: 'Printing is not available in this browser.' }),
+  }
+}
+
+function createNoopMutationResult(recordsState: ParentRecordsState, message: string): ParentAssessmentMutationResult {
+  return {
+    status: 'unavailable',
+    message,
+    fieldErrors: [],
+    records: recordsState.officialAssessments,
+  }
+}
+
 function renderDashboard(recentAverageAccuracy: number | null = 87) {
+  const recordsState = createRecordsState()
   return render(
     <ParentDashboardScreen
       progress={createProgress()}
       dashboard={createDashboard(recentAverageAccuracy)}
-      recordsState={createRecordsState()}
+      recordsState={recordsState}
       storageNotice="Parent storage is ready."
+      printService={createUnavailablePrintService()}
+      onCreateAssessment={() => createNoopMutationResult(recordsState, 'Assessment actions are not used in this test.')}
+      onUpdateAssessment={() => createNoopMutationResult(recordsState, 'Assessment actions are not used in this test.')}
+      onDeleteAssessment={() => createNoopMutationResult(recordsState, 'Assessment actions are not used in this test.')}
       onLock={() => {}}
       onBackToQuest={() => {}}
     />,
   )
+}
+
+function createSupportedPrintService() {
+  const print = vi.fn(() => ({ status: 'printed' as const }))
+  return {
+    print,
+    service: {
+      isSupported: () => true,
+      print,
+    } as PrintService,
+  }
+}
+
+function renderInteractiveDashboard(initialRecordsState = createRecordsState()) {
+  const printService = createSupportedPrintService()
+
+  function Harness() {
+    const [recordsState, setRecordsState] = useState(initialRecordsState)
+    const nextAssessmentId = useRef(2)
+
+    const handleCreateAssessment = (values: AssessmentFormValues): ParentAssessmentMutationResult => {
+      const parsed = parseAssessmentForm(values, now)
+      if (parsed.status !== 'valid') {
+        return {
+          status: 'invalid',
+          message: 'Please fix the highlighted fields.',
+          fieldErrors: parsed.errors,
+          records: recordsState.officialAssessments,
+        }
+      }
+
+      const mutation = createAssessmentRecord({
+        records: recordsState.officialAssessments,
+        parsedForm: parsed.value,
+        assessmentId: `assessment-${nextAssessmentId.current++}`,
+        now,
+      })
+      if (mutation.status !== 'saved') {
+        return {
+          status: 'invalid',
+          message: mutation.message,
+          fieldErrors: [],
+          records: recordsState.officialAssessments,
+        }
+      }
+
+      const nextState: ParentRecordsState = {
+        ...recordsState,
+        officialAssessments: mutation.records,
+        updatedAt: now,
+      }
+      setRecordsState(nextState)
+      return {
+        status: 'saved',
+        message: 'Assessment saved.',
+        fieldErrors: [],
+        records: nextState.officialAssessments,
+        record: mutation.record,
+      }
+    }
+
+    const handleUpdateAssessment = (assessmentId: string, values: AssessmentFormValues): ParentAssessmentMutationResult => {
+      const parsed = parseAssessmentForm(values, now)
+      if (parsed.status !== 'valid') {
+        return {
+          status: 'invalid',
+          message: 'Please fix the highlighted fields.',
+          fieldErrors: parsed.errors,
+          records: recordsState.officialAssessments,
+        }
+      }
+
+      const mutation = updateAssessmentRecord({
+        records: recordsState.officialAssessments,
+        assessmentId,
+        parsedForm: parsed.value,
+        now,
+      })
+      if (mutation.status !== 'saved') {
+        return {
+          status: mutation.status,
+          message: mutation.message,
+          fieldErrors: [],
+          records: recordsState.officialAssessments,
+        }
+      }
+
+      const nextState: ParentRecordsState = {
+        ...recordsState,
+        officialAssessments: mutation.records,
+        updatedAt: now,
+      }
+      setRecordsState(nextState)
+      return {
+        status: 'saved',
+        message: 'Assessment updated.',
+        fieldErrors: [],
+        records: nextState.officialAssessments,
+        record: mutation.record,
+      }
+    }
+
+    const handleDeleteAssessment = (assessmentId: string): ParentAssessmentMutationResult => {
+      const mutation = deleteAssessmentRecord({
+        records: recordsState.officialAssessments,
+        assessmentId,
+        now,
+      })
+      if (mutation.status !== 'saved') {
+        return {
+          status: mutation.status,
+          message: mutation.message,
+          fieldErrors: [],
+          records: recordsState.officialAssessments,
+        }
+      }
+
+      const nextState: ParentRecordsState = {
+        ...recordsState,
+        officialAssessments: mutation.records,
+        updatedAt: now,
+      }
+      setRecordsState(nextState)
+      return {
+        status: 'saved',
+        message: 'Assessment deleted.',
+        fieldErrors: [],
+        records: nextState.officialAssessments,
+        record: mutation.record,
+      }
+    }
+
+    return (
+      <ParentDashboardScreen
+        progress={createProgress()}
+        dashboard={createDashboard()}
+        recordsState={recordsState}
+        storageNotice="Parent storage is ready."
+        printService={printService.service}
+        onCreateAssessment={handleCreateAssessment}
+        onUpdateAssessment={handleUpdateAssessment}
+        onDeleteAssessment={handleDeleteAssessment}
+        onLock={() => {}}
+        onBackToQuest={() => {}}
+      />
+    )
+  }
+
+  return {
+    ...render(<Harness />),
+    printService,
+  }
 }
 
 function getDetailButton(article: HTMLElement, name: RegExp) {
@@ -373,12 +556,17 @@ function getDetailButton(article: HTMLElement, name: RegExp) {
 
 describe('ParentDashboardScreen', () => {
   test('overview is the initial authenticated view and no-data sessions do not show 0 percent', () => {
+    const recordsState = createRecordsState()
     render(
       <ParentDashboardScreen
         progress={createProgress()}
         dashboard={createNoDataDashboard()}
-        recordsState={createRecordsState()}
+        recordsState={recordsState}
         storageNotice="Parent storage is ready."
+        printService={createUnavailablePrintService()}
+        onCreateAssessment={() => createNoopMutationResult(recordsState, 'Assessment actions are not used in this test.')}
+        onUpdateAssessment={() => createNoopMutationResult(recordsState, 'Assessment actions are not used in this test.')}
+        onDeleteAssessment={() => createNoopMutationResult(recordsState, 'Assessment actions are not used in this test.')}
         onLock={() => {}}
         onBackToQuest={() => {}}
       />,
@@ -439,7 +627,7 @@ describe('ParentDashboardScreen', () => {
     expect(screen.getByRole('button', { name: /Back to Sessions/i })).toBeTruthy()
   })
 
-  test('reviews, word help, and assessments remain readable and read-only', () => {
+  test('reviews, word help, and assessments remain readable with assessment management controls', () => {
     renderDashboard()
 
     fireEvent.click(screen.getByRole('button', { name: /Reviews/i }))
@@ -453,9 +641,74 @@ describe('ParentDashboardScreen', () => {
     expect(screen.getByText(/Archived word target/i)).toBeTruthy()
 
     fireEvent.click(screen.getByRole('button', { name: /Assessments/i }))
+    expect(screen.getByRole('heading', { name: /Official Assessments/i })).toBeTruthy()
     expect(screen.getByText(/Assessment entry and editing arrive in Phase 5B2/i)).toBeTruthy()
-    expect(screen.queryByRole('button', { name: /Create/i })).toBeNull()
-    expect(screen.queryByRole('button', { name: /Edit/i })).toBeNull()
-    expect(screen.queryByRole('button', { name: /Delete/i })).toBeNull()
+    expect(screen.getByRole('button', { name: /Add Assessment/i })).toBeTruthy()
+    expect(screen.getAllByRole('button', { name: /Edit/i }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('button', { name: /Delete/i }).length).toBeGreaterThan(0)
+    expect(screen.queryByText(/upload report/i)).toBeNull()
+  })
+
+  test('assessment management can create, edit, and delete a local record', () => {
+    const { printService } = renderInteractiveDashboard()
+
+    fireEvent.click(screen.getByRole('button', { name: /Assessments/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Add Assessment/i }))
+
+    fireEvent.change(screen.getByLabelText(/Assessment Window/i), { target: { value: 'PM2' } })
+    fireEvent.change(screen.getByLabelText(/^Grade$/i), { target: { value: '3' } })
+    fireEvent.change(screen.getByLabelText(/Scale Score/i), { target: { value: '415' } })
+    fireEvent.change(screen.getByLabelText(/Tested On/i), { target: { value: '2026-08-19' } })
+    fireEvent.change(screen.getByLabelText(/Reported Achievement Level/i), { target: { value: '2' } })
+    fireEvent.change(screen.getByLabelText(/Reported Percentile Rank/i), { target: { value: '50' } })
+    fireEvent.click(screen.getByRole('button', { name: /Save Assessment/i }))
+
+    expect(screen.getByText(/Assessment saved/i)).toBeTruthy()
+    expect(screen.getByRole('heading', { name: /PM2 · Grade 3/i })).toBeTruthy()
+    expect(screen.getByText(/Scale score 415/i)).toBeTruthy()
+
+    const createdCard = screen.getByRole('heading', { name: /PM2 · Grade 3/i }).closest('article')
+    expect(createdCard).not.toBeNull()
+    fireEvent.click(within(createdCard!).getByRole('button', { name: /Edit/i }))
+
+    fireEvent.change(screen.getByLabelText(/Scale Score/i), { target: { value: '420' } })
+    fireEvent.click(screen.getByRole('button', { name: /Save Changes/i }))
+    expect(screen.getByText(/Assessment updated/i)).toBeTruthy()
+    expect(screen.getByText(/Scale score 420/i)).toBeTruthy()
+
+    const updatedCard = screen.getByRole('heading', { name: /PM2 · Grade 3/i }).closest('article')
+    expect(updatedCard).not.toBeNull()
+    fireEvent.click(within(updatedCard!).getByRole('button', { name: /Delete/i }))
+    expect(screen.getByRole('heading', { name: /Delete Assessment\?/i })).toBeTruthy()
+    fireEvent.click(screen.getByRole('button', { name: /Delete Assessment/i }))
+    expect(screen.getByText(/Assessment deleted/i)).toBeTruthy()
+    expect(screen.queryByText(/Scale score 420/i)).toBeNull()
+    expect(printService.print).toHaveBeenCalledTimes(0)
+  })
+
+  test('print summary opens a preview and uses the injected print service only on explicit print', () => {
+    const { service: printService, print } = createSupportedPrintService()
+    render(
+      <ParentDashboardScreen
+        progress={createProgress()}
+        dashboard={createDashboard()}
+        recordsState={createRecordsState()}
+        storageNotice="Parent storage is ready."
+        printService={printService}
+        onCreateAssessment={(values) => createNoopMutationResult(createRecordsState(), values.assessmentWindow)}
+        onUpdateAssessment={() => createNoopMutationResult(createRecordsState(), 'update')}
+        onDeleteAssessment={() => createNoopMutationResult(createRecordsState(), 'delete')}
+        onLock={() => {}}
+        onBackToQuest={() => {}}
+      />,
+    )
+
+    fireEvent.click(screen.getByRole('button', { name: /Print Summary/i }))
+    expect(screen.getByRole('heading', { name: /Parent Progress Summary/i })).toBeTruthy()
+    expect(screen.getByRole('button', { name: /^Print$/i })).toBeTruthy()
+    fireEvent.click(screen.getByRole('button', { name: /^Print$/i }))
+    expect(print).toHaveBeenCalledTimes(1)
+    fireEvent.click(screen.getByRole('button', { name: /Back to Dashboard/i }))
+    expect(screen.getByRole('heading', { name: /Overview/i })).toBeTruthy()
   })
 })

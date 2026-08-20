@@ -2,6 +2,13 @@ import { useEffect, useMemo, useRef, useState, type FormEvent } from 'react'
 
 import { ChildButton } from '../components/ChildButton'
 import { buildDashboardSnapshot } from '../domain/dashboard'
+import {
+  createAssessmentRecord,
+  deleteAssessmentRecord,
+  parseAssessmentForm,
+  type AssessmentFormValues,
+  updateAssessmentRecord,
+} from '../domain/assessment'
 import { sampleContent } from '../domain/content'
 import type { QuestProgressV1 } from '../persistence'
 import {
@@ -12,8 +19,11 @@ import {
   type ParentRecordsLoadResult,
   type ParentRecordsState,
 } from '../persistence'
+import { createBrowserAssessmentIdService, type AssessmentIdService } from '../services/assessmentId'
 import { createBrowserParentPinService, type ParentPinRecord, type ParentPinService } from '../services/parentAccess'
+import { createBrowserPrintService, type PrintService } from '../services/printing'
 import { ParentDashboardScreen } from './parent/ParentDashboardScreen'
+import type { ParentAssessmentMutationResult } from './parent/parentAssessmentActions'
 
 interface ParentPlaceholderScreenProps {
   progress: QuestProgressV1
@@ -23,12 +33,14 @@ interface ParentPlaceholderScreenProps {
 export function ParentPlaceholderScreen({ progress, onBack }: ParentPlaceholderScreenProps) {
   const [now] = useState(() => new Date().toISOString())
   const [pinService] = useState<ParentPinService>(() => createBrowserParentPinService())
+  const [assessmentIdService] = useState<AssessmentIdService>(() => createBrowserAssessmentIdService())
+  const [printService] = useState<PrintService>(() => createBrowserPrintService())
   const [accessStore] = useState(() => createLocalStorageParentAccessStore(getBrowserLocalStorage()))
   const [recordsStore] = useState(() => createLocalStorageParentRecordsStore(getBrowserLocalStorage(), () => now))
   const [accessLoad] = useState<ParentAccessLoadResult>(() => accessStore.load())
   const [recordsLoad] = useState<ParentRecordsLoadResult>(() => recordsStore.load(now))
   const [accessRecord, setAccessRecord] = useState<ParentPinRecord | null>(accessLoad.state)
-  const [recordsState] = useState<ParentRecordsState>(recordsLoad.state)
+  const [recordsState, setRecordsState] = useState<ParentRecordsState>(recordsLoad.state)
   const [unlocked, setUnlocked] = useState(false)
   const [setupPin, setSetupPin] = useState('')
   const [confirmPin, setConfirmPin] = useState('')
@@ -117,6 +129,158 @@ export function ParentPlaceholderScreen({ progress, onBack }: ParentPlaceholderS
     onBack()
   }
 
+  const createAssessment = (values: AssessmentFormValues): ParentAssessmentMutationResult => {
+    const parsed = parseAssessmentForm(values, now)
+    if (parsed.status !== 'valid') {
+      return {
+        status: 'invalid',
+        message: 'Please fix the highlighted fields.',
+        fieldErrors: parsed.errors,
+        records: recordsState.officialAssessments,
+      }
+    }
+    const idResult = assessmentIdService.createAssessmentId()
+    if (idResult.status !== 'created') {
+      return {
+        status: 'unavailable',
+        message: idResult.reason,
+        fieldErrors: [],
+        records: recordsState.officialAssessments,
+      }
+    }
+    const mutation = createAssessmentRecord({
+      records: recordsState.officialAssessments,
+      parsedForm: parsed.value,
+      assessmentId: idResult.assessmentId,
+      now,
+    })
+    if (mutation.status !== 'saved') {
+      return {
+        status: 'invalid',
+        message: mutation.message,
+        fieldErrors: [],
+        records: mutation.records,
+        record: mutation.record,
+      }
+    }
+    const nextState: ParentRecordsState = {
+      ...recordsState,
+      officialAssessments: mutation.records,
+      updatedAt: now,
+    }
+    const saveResult = recordsStore.save(nextState)
+    if (saveResult.status !== 'saved') {
+      setStorageNotice('This assessment could not be saved in this browser. No existing records were changed.')
+      return {
+        status: 'storage_error',
+        message: 'This assessment could not be saved in this browser. No existing records were changed.',
+        fieldErrors: [],
+        records: recordsState.officialAssessments,
+        record: mutation.record,
+      }
+    }
+    setRecordsState(saveResult.state)
+    return {
+      status: 'saved',
+      message: 'Assessment saved.',
+      fieldErrors: [],
+      records: saveResult.state.officialAssessments,
+      record: mutation.record,
+    }
+  }
+
+  const updateAssessment = (assessmentId: string, values: AssessmentFormValues): ParentAssessmentMutationResult => {
+    const parsed = parseAssessmentForm(values, now)
+    if (parsed.status !== 'valid') {
+      return {
+        status: 'invalid',
+        message: 'Please fix the highlighted fields.',
+        fieldErrors: parsed.errors,
+        records: recordsState.officialAssessments,
+      }
+    }
+    const mutation = updateAssessmentRecord({
+      records: recordsState.officialAssessments,
+      assessmentId,
+      parsedForm: parsed.value,
+      now,
+    })
+    if (mutation.status !== 'saved') {
+      return {
+        status: mutation.status,
+        message: mutation.message,
+        fieldErrors: [],
+        records: mutation.records,
+        record: mutation.record,
+      }
+    }
+    const nextState: ParentRecordsState = {
+      ...recordsState,
+      officialAssessments: mutation.records,
+      updatedAt: now,
+    }
+    const saveResult = recordsStore.save(nextState)
+    if (saveResult.status !== 'saved') {
+      setStorageNotice('This assessment could not be saved in this browser. No existing records were changed.')
+      return {
+        status: 'storage_error',
+        message: 'This assessment could not be saved in this browser. No existing records were changed.',
+        fieldErrors: [],
+        records: recordsState.officialAssessments,
+        record: mutation.record,
+      }
+    }
+    setRecordsState(saveResult.state)
+    return {
+      status: 'saved',
+      message: 'Assessment updated.',
+      fieldErrors: [],
+      records: saveResult.state.officialAssessments,
+      record: mutation.record,
+    }
+  }
+
+  const deleteAssessment = (assessmentId: string): ParentAssessmentMutationResult => {
+    const mutation = deleteAssessmentRecord({
+      records: recordsState.officialAssessments,
+      assessmentId,
+      now,
+    })
+    if (mutation.status !== 'saved') {
+      return {
+        status: mutation.status,
+        message: mutation.message,
+        fieldErrors: [],
+        records: mutation.records,
+        record: mutation.record,
+      }
+    }
+    const nextState: ParentRecordsState = {
+      ...recordsState,
+      officialAssessments: mutation.records,
+      updatedAt: now,
+    }
+    const saveResult = recordsStore.save(nextState)
+    if (saveResult.status !== 'saved') {
+      setStorageNotice('This assessment could not be deleted in this browser. The record remains unchanged.')
+      return {
+        status: 'storage_error',
+        message: 'This assessment could not be deleted in this browser. The record remains unchanged.',
+        fieldErrors: [],
+        records: recordsState.officialAssessments,
+        record: mutation.record,
+      }
+    }
+    setRecordsState(saveResult.state)
+    return {
+      status: 'saved',
+      message: 'Assessment deleted.',
+      fieldErrors: [],
+      records: saveResult.state.officialAssessments,
+      record: mutation.record,
+    }
+  }
+
   if (pinUnavailable) {
     return (
       <section className="screen-shell" aria-labelledby="parent-area-title">
@@ -143,6 +307,10 @@ export function ParentPlaceholderScreen({ progress, onBack }: ParentPlaceholderS
         dashboard={dashboard}
         recordsState={recordsState}
         storageNotice={storageNotice}
+        printService={printService}
+        onCreateAssessment={createAssessment}
+        onUpdateAssessment={updateAssessment}
+        onDeleteAssessment={deleteAssessment}
         onLock={handleLock}
         onBackToQuest={handleBackToQuest}
       />
