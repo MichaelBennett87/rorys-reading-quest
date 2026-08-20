@@ -12,6 +12,7 @@ describe('grade 2 content pack registry', () => {
     expect(contentPacks.map((pack) => pack.manifest.packId)).toEqual([
       'g2-word-forge-variable-vowels-oo-ea',
       'g2-word-forge-variable-vowels-ou-oi-oy-ow',
+      'g2-word-forge-two-syllable-open-closed',
       'legacy-word-forge-development-pack',
     ])
     expect(contentPackAudit).toHaveLength(0)
@@ -45,6 +46,15 @@ describe('grade 2 content pack registry', () => {
     const result = getLessonForUnit('wg-unit-1')
 
     expect(result.lesson?.lessonId).toBe('lesson-word-forge-oo-ea-checkpoint-a')
+    expect(result.lesson?.lessonRole).toBe('CHECKPOINT')
+    expect(result.lesson?.selectionStatus).toBe('active')
+    expect(result.lesson?.questionCount).toBe(7)
+  })
+
+  test('the new syllable summit unit resolves to the new checkpoint lesson', () => {
+    const result = getLessonForUnit('wg-unit-2')
+
+    expect(result.lesson?.lessonId).toBe('lesson-word-forge-syllable-summit-checkpoint-a')
     expect(result.lesson?.lessonRole).toBe('CHECKPOINT')
     expect(result.lesson?.selectionStatus).toBe('active')
     expect(result.lesson?.questionCount).toBe(7)

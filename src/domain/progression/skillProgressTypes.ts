@@ -6,6 +6,10 @@ export interface LessonActivityCandidate {
   activityId: string
   skillId: string
   difficulty: number
+  worldId: string
+  unitId: string
+  packId: string
+  benchmarkReferences: string[]
   eligiblePurposes: LessonPurpose[]
   passageQuestionKeys: string[]
   contentVersion: string

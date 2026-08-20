@@ -74,6 +74,11 @@ export function resolveFriendlySkillName(skillId: string): string {
   return FRIENDLY_SKILL_NAMES[skillId] ?? 'Archived skill'
 }
 
+export function formatBenchmarkReferences(references: readonly string[]): string {
+  if (references.length === 0) return 'Archived benchmark'
+  return [...new Set(references)].sort((left, right) => left.localeCompare(right)).join(' · ')
+}
+
 export function resolveCurrentTrailLabel(progress: QuestProgressV1, dashboard: DashboardSnapshot): string {
   const plannedNextQuest = progress.plannedNextQuest
   const selectedSkillId = plannedNextQuest && 'skillId' in plannedNextQuest

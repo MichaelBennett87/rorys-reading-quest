@@ -220,3 +220,80 @@ export const getDemoWorldById = (worldId: string): DemoWorld | undefined =>
 export const getRecommendedWorldId = (): string =>
   demoWorlds.find((world) => world.status === 'available')?.id ?? demoWorlds[0].id
 
+export function deriveWorldsForProgress(progress: { skillProgress: Record<string, { currentDifficulty: number; currentLearningState: string }>; plannedNextQuest: { status: 'available'; purpose: string; lesson: { lessonId: string } } | { status: 'content_needed'; purpose: string; skillId: string; difficulty: number; reason: string } | null; activeLessonSession: { lessonId: string } | null }): DemoWorld[] {
+  const focus = resolveWordForgeFocus(progress)
+  return demoWorlds.map((world) => {
+    if (world.id !== 'word-forge') return cloneWorld(world)
+    return {
+      ...world,
+      units: world.units.map((unit) => deriveWordForgeUnit(unit, focus)),
+    }
+  })
+}
+
+function resolveWordForgeFocus(progress: { skillProgress: Record<string, { currentDifficulty: number; currentLearningState: string }>; plannedNextQuest: { status: 'available'; purpose: string; lesson: { lessonId: string } } | { status: 'content_needed'; purpose: string; skillId: string; difficulty: number; reason: string } | null; activeLessonSession: { lessonId: string } | null }) {
+  const skill = Object.values(progress.skillProgress)[0]
+  const currentDifficulty = skill?.currentDifficulty ?? 1
+  const activeUnitId = progress.activeLessonSession ? getUnitIdForLesson(progress.activeLessonSession.lessonId) : null
+  const plannedUnitId = progress.plannedNextQuest?.status === 'available'
+    ? getUnitIdForLesson(progress.plannedNextQuest.lesson.lessonId)
+    : null
+  return {
+    currentDifficulty,
+    currentLearningState: skill?.currentLearningState ?? 'CHECKPOINT',
+    activeUnitId,
+    plannedUnitId,
+    plannedPurpose: progress.plannedNextQuest?.status === 'available' ? progress.plannedNextQuest.purpose : null,
+  }
+}
+
+function deriveWordForgeUnit(unit: DemoUnit, focus: ReturnType<typeof resolveWordForgeFocus>): DemoUnit {
+  if (unit.id === 'wg-unit-1') {
+    const state = focus.currentDifficulty >= 3 ? (focus.plannedUnitId === unit.id && focus.plannedPurpose === 'review' ? 'review' : 'complete') : 'available'
+    return {
+      ...unit,
+      state,
+      progressPercent: focus.currentDifficulty >= 3 ? 100 : focus.currentDifficulty === 2 ? 75 : 50,
+      practiceFocus: focus.currentDifficulty >= 3
+        ? 'Review the vowel patterns you already know.'
+        : 'vowel patterns and short decoding',
+    }
+  }
+
+  if (unit.id === 'wg-unit-2') {
+    const unlocked = focus.currentDifficulty >= 3 || focus.activeUnitId === unit.id || focus.plannedUnitId === unit.id
+    const state = focus.currentDifficulty >= 4 && focus.activeUnitId !== unit.id && focus.plannedUnitId !== unit.id
+      ? 'complete'
+      : unlocked
+        ? 'available'
+        : 'locked'
+    return {
+      ...unit,
+      state,
+      progressPercent: state === 'locked' ? 0 : focus.currentDifficulty >= 4 ? 100 : 50,
+      practiceFocus: state === 'locked'
+        ? 'Complete Vowel Voyage to unlock Syllable Summit.'
+        : 'breaking words into beat units',
+    }
+  }
+
+  return {
+    ...unit,
+    state: unit.id === 'wg-unit-3' ? 'locked' : unit.state,
+  }
+}
+
+function getUnitIdForLesson(lessonId: string): string | null {
+  if (lessonId.startsWith('lesson-word-forge-oo-ea-')) return 'wg-unit-1'
+  if (lessonId.startsWith('lesson-word-forge-ou-oi-oy-ow-')) return 'wg-unit-1'
+  if (lessonId.startsWith('lesson-word-forge-syllable-summit-')) return 'wg-unit-2'
+  if (lessonId.startsWith('lesson-word-forge-')) return 'wg-unit-1'
+  return null
+}
+
+function cloneWorld(world: DemoWorld): DemoWorld {
+  return {
+    ...world,
+    units: world.units.map((unit) => ({ ...unit })),
+  }
+}

@@ -173,6 +173,7 @@ export interface LessonFlowState {
 
 export interface LessonCatalogEntry {
   lessonId: string
+  packId: string
   worldId: string
   unitId: string
   activityId: string
@@ -185,6 +186,7 @@ export interface LessonCatalogEntry {
   teachingBlock?: TeachingBlock
   contentVersion: string
   eligiblePurposes: LessonPurpose[]
+  benchmarkReferences: string[]
 }
 
 export interface QuestionTypeMap {

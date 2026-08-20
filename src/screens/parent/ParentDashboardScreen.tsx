@@ -29,6 +29,7 @@ import { ParentPrintSummaryView } from './ParentPrintSummaryView'
 import {
   describePlannedRoute,
   FOUNDATIONAL_SKILLS_BRIDGE_NOTE,
+  formatBenchmarkReferences,
   formatAssistanceLevel,
   formatParentDate,
   formatPercent,
@@ -523,7 +524,7 @@ function SkillSummaryCard({
         </ParentStatusBadge>
       </div>
       <p className="parent-muted-copy">Skill ID: {summary.skillId}</p>
-      <p className="parent-muted-copy">Benchmark: {summary.benchmarkReference ?? 'Archived benchmark'}</p>
+      <p className="parent-muted-copy">Benchmark references: {formatBenchmarkReferences(summary.benchmarkReferences)}</p>
       <p className="parent-muted-copy">Category: {summary.reportingCategory}</p>
       <p>Current trail: {formatTrailLabel(summary.currentDifficulty)}</p>
       <p>Last mastered trail: {formatTrailLabel(summary.lastMasteredDifficulty)}</p>
@@ -562,7 +563,7 @@ function SkillDetailView({
 
       <section className="card parent-detail-card">
         <p className="parent-muted-copy">Skill ID: {skill.skillId}</p>
-        <p className="parent-muted-copy">Benchmark: {skill.benchmarkReference ?? 'Archived benchmark'}</p>
+        <p className="parent-muted-copy">Benchmark references: {formatBenchmarkReferences(skill.benchmarkReferences)}</p>
         <p className="parent-muted-copy">Reporting category: {skill.reportingCategory}</p>
         <p>Grade band: {skill.gradeBand ?? 'Archived'}</p>
         <p>Question attempts: {skill.questionAttempts}</p>

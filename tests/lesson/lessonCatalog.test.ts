@@ -26,9 +26,10 @@ describe('getLessonForUnit', () => {
     const candidates = getLessonCandidates()
     expect(candidates.filter((candidate) => candidate.difficulty === 0)).toHaveLength(2)
     expect(candidates.filter((candidate) => candidate.difficulty === 1)).toHaveLength(7)
-    expect(candidates.filter((candidate) => candidate.difficulty === 2)).toHaveLength(5)
-    expect(candidates).toHaveLength(14)
-    expect(new Set(candidates.map((candidate) => candidate.activityId)).size).toBe(14)
+    expect(candidates.filter((candidate) => candidate.difficulty === 2)).toHaveLength(7)
+    expect(candidates.filter((candidate) => candidate.difficulty === 3)).toHaveLength(5)
+    expect(candidates).toHaveLength(21)
+    expect(new Set(candidates.map((candidate) => candidate.activityId)).size).toBe(21)
     expect(candidates.map((candidate) => candidate.lessonId)).not.toEqual(expect.arrayContaining([
       'lesson-word-forge-vowel-voyage-a',
       'lesson-word-forge-vowel-voyage-b',

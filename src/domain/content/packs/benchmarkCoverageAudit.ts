@@ -1,5 +1,9 @@
 import type { ContentPack } from './contentPackTypes'
-import { STANDARD_VARIABLE_VOWEL_PATTERNS, collectObservedStandardPatterns } from './patternCoverage'
+import {
+  collectObservedBenchmarkPatterns,
+  combineBenchmarkReviewStatus,
+  getExpectedBenchmarkPatterns,
+} from './benchmarkPatternCatalog'
 
 export type BenchmarkCoverageStatus = 'partial' | 'implemented'
 
@@ -17,18 +21,17 @@ export function buildBenchmarkCoverageAudit(
   packs: readonly ContentPack[],
   benchmarkReference: string,
 ): BenchmarkCoverageAudit {
-  const contributingPacks = packs.filter((pack) => pack.manifest.benchmarkReferences.includes(benchmarkReference))
-  const expectedPatterns = [...STANDARD_VARIABLE_VOWEL_PATTERNS]
+  const contributingPacks = packs
+    .filter((pack) => pack.manifest.benchmarkReferences.includes(benchmarkReference))
+    .slice()
+    .sort((left, right) => left.manifest.packId.localeCompare(right.manifest.packId))
+  const expectedPatterns = getExpectedBenchmarkPatterns(benchmarkReference)
   const coveredPatterns = new Set<string>()
-  const contributingPackIds: string[] = []
-  let reviewStatus: BenchmarkCoverageAudit['reviewStatus'] = 'DRAFT'
+  const contributingPackIds = contributingPacks.map((pack) => pack.manifest.packId)
+  const reviewStatus = combineBenchmarkReviewStatus(contributingPacks.map((pack) => pack.manifest.reviewStatus))
 
   for (const pack of contributingPacks) {
-    contributingPackIds.push(pack.manifest.packId)
-    if (pack.manifest.reviewStatus === 'REVIEWED' || pack.manifest.reviewStatus === 'APPROVED') {
-      reviewStatus = pack.manifest.reviewStatus
-    }
-    for (const pattern of collectObservedStandardPatterns(pack)) {
+    for (const pattern of collectObservedBenchmarkPatterns(pack, benchmarkReference)) {
       coveredPatterns.add(pattern)
     }
   }

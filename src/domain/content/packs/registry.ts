@@ -1,5 +1,6 @@
 import { grade2WordForgeVariableVowelsOoEaPack } from './grade2/wordForge/variableVowelsOoEa'
 import { grade2WordForgeVariableVowelsOuOiOyOwPack } from './grade2/wordForge/variableVowelsOuOiOyOw'
+import { grade2WordForgeTwoSyllableOpenClosedPack } from './grade2/wordForge/twoSyllableOpenClosed'
 import { legacyDevelopmentPack } from './legacyDevelopmentPack'
 import type { ContentPack } from './contentPackTypes'
 import type { ContentSample } from '../types'
@@ -9,6 +10,7 @@ import { buildContentPackAudit } from './contentPackAudit'
 export const contentPacks: readonly ContentPack[] = [
   grade2WordForgeVariableVowelsOoEaPack,
   grade2WordForgeVariableVowelsOuOiOyOwPack,
+  grade2WordForgeTwoSyllableOpenClosedPack,
   legacyDevelopmentPack,
 ]
 

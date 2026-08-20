@@ -393,7 +393,7 @@ describe('Phase 3 adaptive child flow', () => {
     expect(screen.queryByText(/Which word has ea like leaf\?/i)).toBeNull()
   })
 
-  test('a strong Trail 2 checkpoint requests verification and a second distinct success reaches content-needed', () => {
+  test('a strong Trail 2 checkpoint requests verification and a second distinct success reaches Trail 3', () => {
     seedTrailDifficulty(2)
     launchFromMap()
     completeTrail2CheckpointLesson()
@@ -404,7 +404,9 @@ describe('Phase 3 adaptive child flow', () => {
     completeTrail2CheckpointLesson()
     fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
     expect(screen.getByRole('heading', { name: /Trail Complete!/i })).toBeTruthy()
-    expect(screen.queryByRole('button', { name: /Start Fresh Quest/i })).toBeNull()
+    expect(screen.getByRole('button', { name: /Start Fresh Quest/i })).toBeTruthy()
+    fireEvent.click(screen.getByRole('button', { name: /Start Fresh Quest/i }))
+    expect(screen.getByText(/Which word has two short vowels like picnic\?/i)).toBeTruthy()
     expect(readProgress().skillProgress['g2-word-forge-word-practice'].currentDifficulty).toBe(3)
   })
 

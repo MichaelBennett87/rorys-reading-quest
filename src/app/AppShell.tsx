@@ -1,8 +1,9 @@
 import { useState } from 'react'
 
 import { demoLearner } from '../data/demoLearner'
-import { demoWorlds, getDemoWorldById, getRecommendedWorldId } from '../data/demoWorlds'
-import { getLessonById, type LessonDefinition } from '../domain/lesson'
+import { deriveWorldsForProgress, getRecommendedWorldId } from '../data/demoWorlds'
+import { getLessonById, getLessonCandidates, type LessonDefinition } from '../domain/lesson'
+import { planUnitQuest } from '../domain/progression'
 import type { ActiveLessonSession } from '../persistence'
 import { HomeScreen } from '../screens/HomeScreen'
 import { LessonReadyScreen } from '../screens/LessonReadyScreen'
@@ -28,6 +29,7 @@ interface LessonLaunchState {
 
 export function AppShell() {
   const questProgress = useQuestProgress()
+  const worlds = deriveWorldsForProgress(questProgress.progress)
   const [state, setState] = useState<AppShellState>({
     screen: 'home',
     selectedWorldId: getRecommendedWorldId(),
@@ -41,9 +43,29 @@ export function AppShell() {
   })
   const [outcome, setOutcome] = useState<ProgressionOutcomeViewModel | null>(null)
 
-  const selectedWorld = state.selectedWorldId ? getDemoWorldById(state.selectedWorldId) : null
+  const selectedWorld = state.selectedWorldId ? worlds.find((world) => world.id === state.selectedWorldId) ?? null : null
   const selectedUnit = selectedWorld ? selectedWorld.units.find((unit) => unit.id === state.selectedUnitId) : null
-  const resolveLaunchState = (): LessonLaunchState => {
+  const availableLessons = getLessonCandidates()
+  const resolveLaunchState = (selectedUnitId?: string | null): LessonLaunchState => {
+    if (selectedUnitId) {
+      const plannedUnitQuest = planUnitQuest({
+        selectedUnitId,
+        progress: questProgress.progress,
+        availableLessons,
+      })
+
+      if (plannedUnitQuest.status === 'locked' || plannedUnitQuest.status === 'content_needed') {
+        return { lesson: null, session: null, errors: [plannedUnitQuest.reason] }
+      }
+
+      const selected = getLessonById(plannedUnitQuest.lesson.lessonId)
+      if (selected.lesson) {
+        return { lesson: selected.lesson, session: null, errors: [] }
+      }
+
+      return { lesson: null, session: null, errors: [selected.errors[0] ?? 'The planned quest is unavailable.'] }
+    }
+
     const active = questProgress.progress.activeLessonSession
     if (active) {
       const resumed = getLessonById(active.lessonId)
@@ -65,7 +87,7 @@ export function AppShell() {
     return { lesson: null, session: null, errors: [selected.errors[0] ?? 'The planned quest is unavailable.'] }
   }
 
-  const lessonPreview = selectedUnit ? resolveLaunchState() : null
+  const lessonPreview = selectedUnit ? resolveLaunchState(selectedUnit.id) : null
   const activeSkill = Object.values(questProgress.progress.skillProgress)[0]
   const learner = {
     ...demoLearner,
@@ -141,7 +163,7 @@ export function AppShell() {
   }
 
   const openWorld = (worldId: string) => {
-    const world = getDemoWorldById(worldId)
+    const world = worlds.find((entry) => entry.id === worldId)
     if (!world || world.status !== 'available') return
     setState((previous) => ({ ...previous, selectedWorldId: worldId, selectedUnitId: null }))
     navigate('world')
@@ -159,7 +181,7 @@ export function AppShell() {
   }
 
   const startQuest = () => {
-    const launch = resolveLaunchState()
+    const launch = resolveLaunchState(selectedUnit?.id ?? null)
     if (launch.lesson) {
       launchLesson(launch.lesson)
       return
@@ -261,12 +283,12 @@ export function AppShell() {
     ? 'Your quest can continue safely, but this browser could not restore saved progress.'
     : undefined
   return (
-    <HomeScreen
-      learner={learner}
-      worlds={demoWorlds}
-      storageNotice={storageNotice}
-      onContinue={handleContinue}
-      onWorldSelect={openWorld}
+      <HomeScreen
+        learner={learner}
+        worlds={worlds}
+        storageNotice={storageNotice}
+        onContinue={handleContinue}
+        onWorldSelect={openWorld}
       onOpenParentArea={() => navigate('parent_gate')}
     />
   )

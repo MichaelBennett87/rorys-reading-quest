@@ -48,6 +48,8 @@ export interface ContentPackAuditIssue {
   code:
     | 'missing_manifest_field'
     | 'duplicate_pack_id'
+    | 'lesson_count_mismatch'
+    | 'passage_count_mismatch'
     | 'duplicate_lesson_id'
     | 'duplicate_lesson_activity_id'
     | 'duplicate_passage_id'
@@ -73,6 +75,7 @@ export interface ContentPackAuditIssue {
     | 'missing_draft_status'
     | 'mismatched_content_version'
     | 'missing_target_pattern_coverage'
+    | 'lesson_with_invalid_eligible_purpose'
     | 'duplicate_prompt_in_lesson'
     | 'duplicate_visible_choice_text'
     | 'correct_answer_absent'

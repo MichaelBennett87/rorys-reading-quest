@@ -24,18 +24,22 @@ afterEach(() => {
 
 function createProgress(): QuestProgressV1 {
   const progress = createDefaultQuestProgress(now)
-  progress.plannedNextQuest = {
-    status: 'available',
-    purpose: 'verification',
-    lesson: {
-      lessonId: 'lesson-word-forge-b',
-      activityId: 'activity-word-forge-b',
-      skillId: 'g2-word-forge-word-practice',
-      difficulty: 1,
-      eligiblePurposes: ['verification'],
-      passageQuestionKeys: ['q-word-forge-vowel-voyage-a-1'],
-      contentVersion: 'v1',
-    },
+    progress.plannedNextQuest = {
+      status: 'available',
+      purpose: 'verification',
+      lesson: {
+        lessonId: 'lesson-word-forge-b',
+        activityId: 'activity-word-forge-b',
+        skillId: 'g2-word-forge-word-practice',
+        difficulty: 1,
+        worldId: 'word-forge',
+        unitId: 'wg-unit-1',
+        packId: 'g2-word-forge-variable-vowels-oo-ea',
+        benchmarkReferences: ['ELA.2.F.1.3a'],
+        eligiblePurposes: ['verification'],
+        passageQuestionKeys: ['q-word-forge-vowel-voyage-a-1'],
+        contentVersion: 'v1',
+      },
   }
   return progress
 }
@@ -142,6 +146,7 @@ function createDashboard(recentAverageAccuracy: number | null = 87): DashboardSn
       {
         skillId: 'g2-word-forge-word-practice',
         benchmarkReference: 'BM-WORD-FORGE-1',
+        benchmarkReferences: ['BM-WORD-FORGE-1', 'BM-WORD-FORGE-2'],
         reportingCategory: 'Foundational Skills Bridge',
         gradeBand: 2,
         questionAttempts: 4,
@@ -161,6 +166,7 @@ function createDashboard(recentAverageAccuracy: number | null = 87): DashboardSn
       {
         skillId: 'archived-skill',
         benchmarkReference: 'BM-ARCHIVED-9',
+        benchmarkReferences: ['BM-ARCHIVED-9'],
         reportingCategory: 'Reading Informational Text',
         gradeBand: null,
         questionAttempts: 0,
@@ -607,6 +613,7 @@ describe('ParentDashboardScreen', () => {
     expect(skillCard).not.toBeNull()
     fireEvent.click(getDetailButton(skillCard!, /View Skill Details/i))
     expect(screen.getByRole('heading', { level: 2, name: /Word Forge/i })).toBeTruthy()
+    expect(screen.getByText(/Benchmark references: BM-WORD-FORGE-1 · BM-WORD-FORGE-2/i)).toBeTruthy()
     expect(screen.getByText(/Distinct independent evidence count: 2/i)).toBeTruthy()
     expect(screen.getByRole('button', { name: /Back to Progress/i })).toBeTruthy()
   })
@@ -707,6 +714,7 @@ describe('ParentDashboardScreen', () => {
     fireEvent.click(screen.getByRole('button', { name: /Print Summary/i }))
     expect(screen.getByRole('heading', { name: /Parent Progress Summary/i })).toBeTruthy()
     expect(screen.getByText(/Foundational Skills Bridge is an internal practice category/i)).toBeTruthy()
+    expect(screen.getByText(/Benchmark references: BM-WORD-FORGE-1 · BM-WORD-FORGE-2/i)).toBeTruthy()
     expect(screen.getByRole('button', { name: /^Print$/i })).toBeTruthy()
     fireEvent.click(screen.getByRole('button', { name: /^Print$/i }))
     expect(print).toHaveBeenCalledTimes(1)

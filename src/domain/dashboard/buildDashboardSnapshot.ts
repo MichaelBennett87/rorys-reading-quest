@@ -192,6 +192,7 @@ export function buildBenchmarkSummaries(input: {
       const skillProgress = input.progress.skillProgress[bucket.skillIdentifier]
       return {
         benchmarkReference: bucket.benchmarkReference,
+        benchmarkReferences: findBenchmarkReferencesForSkill(questionIndex, bucket.skillIdentifier),
         skillIdentifier: bucket.skillIdentifier,
         reportingCategory: bucket.reportingCategory,
         gradeBand: bucket.gradeBand,
@@ -230,10 +231,12 @@ export function buildSkillSummaries(input: {
       const correctResponses = attempts.reduce((sum, attempt) => sum + attempt.questionResults.filter((result) => result.isCorrect).length, 0)
       const firstAttemptCorrectResponses = attempts.reduce((sum, attempt) => sum + attempt.questionResults.filter((result) => result.isFirstAttemptCorrect).length, 0)
       const assistedSessions = attempts.filter((attempt) => attempt.assistanceSummary.totalUniqueEvents > 0).length
+      const benchmarkReferences = findBenchmarkReferencesForSkill(questionIndex, skillProgress.skillId)
       const firstQuestion = findFirstQuestionForSkill(questionIndex, skillProgress.skillId)
       return {
         skillId: skillProgress.skillId,
         benchmarkReference: firstQuestion?.benchmarkReference ?? null,
+        benchmarkReferences,
         reportingCategory: firstQuestion ? normalizeCategory(firstQuestion.reportingCategory) : 'Unclassified',
         gradeBand: firstQuestion?.gradeBand ?? null,
         questionAttempts,
@@ -528,6 +531,14 @@ function findFirstQuestionForSkill(questionIndex: Map<string, ReadingQuestion>, 
     if (question.skillIdentifier === skillId) return question
   }
   return null
+}
+
+function findBenchmarkReferencesForSkill(questionIndex: Map<string, ReadingQuestion>, skillId: string): string[] {
+  const benchmarkReferences = new Set<string>()
+  for (const question of questionIndex.values()) {
+    if (question.skillIdentifier === skillId) benchmarkReferences.add(question.benchmarkReference)
+  }
+  return [...benchmarkReferences].sort((left, right) => left.localeCompare(right))
 }
 
 function latestAttemptDate(attempts: { completedAt: string }[]): string | null {

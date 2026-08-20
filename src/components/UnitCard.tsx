@@ -15,7 +15,7 @@ const unitStatusText: Record<DemoUnit['state'], string> = {
 }
 
 export function UnitCard({ unit, onSelect }: UnitCardProps) {
-  const isAvailable = unit.state === 'available'
+  const isSelectable = unit.state !== 'locked'
 
   return (
     <article className="unit-card">
@@ -23,12 +23,12 @@ export function UnitCard({ unit, onSelect }: UnitCardProps) {
         type="button"
         className={`unit-card-inner unit-${unit.state}`}
         onClick={() => {
-          if (isAvailable) {
+          if (isSelectable) {
             onSelect(unit.id)
           }
         }}
         aria-label={`${unit.title} ${unitStatusText[unit.state]}`}
-        disabled={!isAvailable}
+        disabled={!isSelectable}
       >
         <div className="unit-title-row">
           <h3>{unit.title}</h3>
@@ -45,4 +45,3 @@ export function UnitCard({ unit, onSelect }: UnitCardProps) {
     </article>
   )
 }
-

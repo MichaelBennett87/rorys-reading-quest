@@ -13,6 +13,7 @@ import {
 export const lessonCatalog: readonly LessonCatalogEntry[] = contentPacks.flatMap((pack) =>
   pack.lessons.map((lesson) => ({
     lessonId: lesson.lessonId,
+    packId: pack.manifest.packId,
     worldId: lesson.worldId,
     unitId: lesson.unitId,
     activityId: lesson.activityId,
@@ -25,6 +26,7 @@ export const lessonCatalog: readonly LessonCatalogEntry[] = contentPacks.flatMap
     teachingBlock: lesson.teachingBlock ? { ...lesson.teachingBlock, examples: [...lesson.teachingBlock.examples] } : undefined,
     contentVersion: lesson.contentVersion,
     eligiblePurposes: [...lesson.eligiblePurposes],
+    benchmarkReferences: [...pack.manifest.benchmarkReferences],
   })),
 )
 
@@ -65,6 +67,10 @@ export function getLessonCandidates(): LessonActivityCandidate[] {
       activityId: entry.activityId,
       skillId: firstQuestion.skillIdentifier,
       difficulty: firstQuestion.difficulty,
+      worldId: entry.worldId,
+      unitId: entry.unitId,
+      packId: entry.packId,
+      benchmarkReferences: [...entry.benchmarkReferences],
       eligiblePurposes: [...entry.eligiblePurposes],
       passageQuestionKeys: questions.map((question) => `${question.passageIdentifier}::${question.questionIdentifier}`),
       contentVersion: entry.contentVersion,

@@ -1,5 +1,5 @@
 import type { ContentPack, ContentPackAuditIssue } from './contentPackTypes'
-import { collectObservedStandardPatterns, getClaimedStandardPatterns } from './patternCoverage'
+import { collectObservedBenchmarkPatterns, getClaimedBenchmarkPatterns, getExpectedBenchmarkPatterns } from './benchmarkPatternCatalog'
 
 export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPackAuditIssue[] {
   const issues: ContentPackAuditIssue[] = []
@@ -37,17 +37,21 @@ export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPac
       pushIssue(issues, 'missing_target_pattern_coverage', pack.manifest.packId, 'Each pack must declare at least one covered pattern.')
     }
 
-    const claimedStandardPatterns = getClaimedStandardPatterns(pack)
-    if (claimedStandardPatterns.length > 0) {
-      const observedPatterns = new Set(collectObservedStandardPatterns(pack))
-      const missingPatterns = claimedStandardPatterns.filter((pattern) => !observedPatterns.has(pattern))
-      if (missingPatterns.length > 0) {
-        pushIssue(
-          issues,
-          'missing_target_pattern_coverage',
-          pack.manifest.packId,
-          `The pack must cover its claimed patterns: ${missingPatterns.join(', ')}.`,
-        )
+    for (const benchmarkReference of pack.manifest.benchmarkReferences) {
+      const expectedPatterns = getExpectedBenchmarkPatterns(benchmarkReference)
+      if (expectedPatterns.length === 0) continue
+      const claimedPatterns = getClaimedBenchmarkPatterns(pack, benchmarkReference)
+      if (claimedPatterns.length > 0) {
+        const observedPatterns = new Set(collectObservedBenchmarkPatterns(pack, benchmarkReference))
+        const missingPatterns = claimedPatterns.filter((pattern) => !observedPatterns.has(pattern))
+        if (missingPatterns.length > 0) {
+          pushIssue(
+            issues,
+            'missing_target_pattern_coverage',
+            pack.manifest.packId,
+            `The pack must cover its claimed patterns: ${missingPatterns.join(', ')}.`,
+          )
+        }
       }
     }
 
@@ -129,6 +133,16 @@ export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPac
       if (lesson.lessonRole === 'CHECKPOINT' && lesson.teachingBlock) {
         pushIssue(issues, 'checkpoint_lesson_with_teaching_block', lesson.lessonId, 'Checkpoint lessons must not include a teaching block.')
       }
+      if (
+        lesson.selectionStatus === 'active'
+        && lesson.lessonRole === 'GUIDED_PRACTICE'
+        && lesson.eligiblePurposes.some((purpose) => purpose === 'progression' || purpose === 'verification')
+      ) {
+        pushIssue(issues, 'lesson_with_invalid_eligible_purpose', lesson.lessonId, 'Guided lessons may only be used for remediation or review.')
+      }
+      if (lesson.selectionStatus === 'active' && lesson.lessonRole === 'CHECKPOINT' && lesson.eligiblePurposes.includes('remediation')) {
+        pushIssue(issues, 'lesson_with_invalid_eligible_purpose', lesson.lessonId, 'Checkpoint lessons may not be used for remediation.')
+      }
       if (lesson.contentVersion !== pack.manifest.contentVersion) {
         pushIssue(issues, 'mismatched_content_version', lesson.lessonId, 'Lesson content version must match pack version.')
       }
@@ -170,6 +184,8 @@ export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPac
     pushIssue(issues, 'repeated_active_passage', 'content-pack', 'Checkpoint lessons should use distinct active passages.')
   }
 
+  validateBridgePackStructure(packs, issues)
+
   return issues
 }
 
@@ -180,4 +196,67 @@ function pushIssue(
   message: string,
 ) {
   issues.push({ code, itemIdentifier, message })
+}
+
+function validateBridgePackStructure(packs: readonly ContentPack[], issues: ContentPackAuditIssue[]) {
+  for (const pack of packs) {
+    if (!pack.manifest.benchmarkReferences.some((benchmark) => benchmark === 'ELA.2.F.1.3b' || benchmark === 'ELA.2.F.1.3c')) continue
+
+    const activeLessons = pack.lessons.filter((lesson) => lesson.selectionStatus === 'active')
+    const guidedLessons = activeLessons.filter((lesson) => lesson.lessonRole === 'GUIDED_PRACTICE')
+    const checkpointLessons = activeLessons.filter((lesson) => lesson.lessonRole === 'CHECKPOINT')
+    const minDifficulty = pack.manifest.difficultyRange[0]
+    const maxDifficulty = pack.manifest.difficultyRange[1]
+
+    if (activeLessons.length !== 7) {
+      pushIssue(issues, 'lesson_count_mismatch', pack.manifest.packId, `Expected 7 active lessons, found ${activeLessons.length}.`)
+    }
+    if (pack.passages.length !== 7) {
+      pushIssue(issues, 'passage_count_mismatch', pack.manifest.packId, `Expected 7 passages, found ${pack.passages.length}.`)
+    }
+    if (pack.questions.length !== 41) {
+      pushIssue(issues, 'question_count_mismatch', pack.manifest.packId, `Expected 41 questions, found ${pack.questions.length}.`)
+    }
+    if (guidedLessons.length !== 4) {
+      pushIssue(issues, 'lesson_count_mismatch', pack.manifest.packId, `Expected 4 active guided lessons, found ${guidedLessons.length}.`)
+    }
+    if (checkpointLessons.length !== 3) {
+      pushIssue(issues, 'lesson_count_mismatch', pack.manifest.packId, `Expected 3 active checkpoint lessons, found ${checkpointLessons.length}.`)
+    }
+    if (guidedLessons.filter((lesson) => lesson.difficulty === minDifficulty).length !== 2) {
+      pushIssue(issues, 'lesson_count_mismatch', pack.manifest.packId, `Expected 2 guided lessons at difficulty ${minDifficulty}.`)
+    }
+    if (guidedLessons.filter((lesson) => lesson.difficulty === minDifficulty + 1).length !== 2) {
+      pushIssue(issues, 'lesson_count_mismatch', pack.manifest.packId, `Expected 2 guided lessons at difficulty ${minDifficulty + 1}.`)
+    }
+    if (checkpointLessons.filter((lesson) => lesson.difficulty === maxDifficulty).length !== 3) {
+      pushIssue(issues, 'lesson_count_mismatch', pack.manifest.packId, `Expected 3 checkpoint lessons at difficulty ${maxDifficulty}.`)
+    }
+
+    const checkpointPassages = new Set<string>()
+    for (const lesson of checkpointLessons) {
+      if (lesson.passageIdentifiers.length !== 3) {
+        pushIssue(issues, 'lesson_referencing_missing_content', lesson.lessonId, 'Checkpoint lessons in this pack must reference exactly three passages.')
+      }
+      for (const passageId of lesson.passageIdentifiers) {
+        checkpointPassages.add(passageId)
+      }
+      const lessonQuestions = pack.questions.filter((question) => question.lessonIdentifier === lesson.lessonId)
+      const lessonTags = new Set(lessonQuestions.flatMap((question) => question.tags ?? []))
+      for (const requiredPattern of ['two-syllable-short-vowels', 'two-syllable-long-vowels', 'open-syllable', 'closed-syllable']) {
+        if (!lessonTags.has(requiredPattern)) {
+          pushIssue(
+            issues,
+            'missing_target_pattern_coverage',
+            lesson.lessonId,
+            `Checkpoint lessons in this pack must include ${requiredPattern.replaceAll('-', ' ')} coverage.`,
+          )
+        }
+      }
+    }
+
+    if (checkpointPassages.size < 3) {
+      pushIssue(issues, 'repeated_active_passage', pack.manifest.packId, 'Checkpoint lessons should use at least three distinct passages.')
+    }
+  }
 }

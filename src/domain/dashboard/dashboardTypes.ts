@@ -66,6 +66,7 @@ export interface DashboardBenchmarkSummary {
 export interface DashboardSkillSummary {
   skillId: string
   benchmarkReference: string | null
+  benchmarkReferences: string[]
   reportingCategory: string
   gradeBand: number | null
   questionAttempts: number

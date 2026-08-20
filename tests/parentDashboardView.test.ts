@@ -2,6 +2,7 @@ import { describe, expect, test } from 'vitest'
 
 import {
   formatAssistanceLevel,
+  formatBenchmarkReferences,
   formatParentDate,
   formatPercent,
   formatTrailLabel,
@@ -41,5 +42,11 @@ describe('parent dashboard presentation helpers', () => {
     expect(resolveFriendlySkillName(input.skillId)).toBe('Word Forge')
     expect(resolveFriendlySkillName('retired-skill-id')).toBe('Archived skill')
     expect(input).toEqual(snapshot)
+  })
+
+  test('formats benchmark references deterministically', () => {
+    expect(formatBenchmarkReferences([])).toBe('Archived benchmark')
+    expect(formatBenchmarkReferences(['ELA.2.F.1.3c'])).toBe('ELA.2.F.1.3c')
+    expect(formatBenchmarkReferences(['ELA.2.F.1.3c', 'ELA.2.F.1.3b'])).toBe('ELA.2.F.1.3b · ELA.2.F.1.3c')
   })
 })

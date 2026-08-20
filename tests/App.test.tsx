@@ -117,7 +117,7 @@ describe('Phase 2 lesson flow and child shell', () => {
     fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
     expect(screen.getAllByRole('heading', { name: /Word Forge: Unit Selection/i })).toHaveLength(1)
     expect(screen.getAllByRole('button', { name: /Vowel Voyage Available/i })).toHaveLength(1)
-    expect(screen.getAllByRole('button', { name: /Syllable Summit Available/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Syllable Summit Locked/i })).toHaveLength(1)
   })
 
   test('opens lesson-ready screen from an available unit', () => {
@@ -171,9 +171,10 @@ describe('Phase 2 lesson flow and child shell', () => {
 
     fireEvent.click(getWordForgeCard())
     fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Syllable Summit Available/i }))
-    expect(screen.getByText(/This quest is almost ready; we can open the lesson route in a later phase\./i)).toBeTruthy()
-    expect(screen.getByRole('button', { name: /Start Quest/i })).toBeTruthy()
+    const lockedUnit = screen.getByRole('button', { name: /Syllable Summit Locked/i })
+    expect(lockedUnit.getAttribute('disabled')).not.toBeNull()
+    fireEvent.click(lockedUnit)
+    expect(screen.getAllByRole('heading', { name: /Word Forge: Unit Selection/i })).toHaveLength(1)
   })
 
   test('returns from lesson-ready screen using back navigation', () => {

@@ -126,6 +126,10 @@ describe('applyLessonResult', () => {
       activityId: 'activity-prerequisite',
       skillId: 'skill-prerequisite',
       difficulty: 0,
+      worldId: 'word-forge',
+      unitId: 'wg-unit-1',
+      packId: 'pack-a',
+      benchmarkReferences: ['ELA.2.F.1.3a'],
       eligiblePurposes: ['remediation'],
       passageQuestionKeys: ['passage-prerequisite::question-prerequisite'],
       contentVersion: 'v1',
@@ -157,6 +161,10 @@ describe('applyLessonResult', () => {
       ...lowerCandidate,
       lessonId: 'lesson-lower-b',
       activityId: 'activity-lower-b',
+      worldId: 'word-forge',
+      unitId: 'wg-unit-1',
+      packId: 'pack-a',
+      benchmarkReferences: ['ELA.2.F.1.3a'],
       passageQuestionKeys: ['passage-lower-b::question-lower-b'],
     }
     const allCandidates = [...candidates, secondLower]
