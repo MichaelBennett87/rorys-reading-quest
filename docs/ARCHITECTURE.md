@@ -58,4 +58,5 @@
 - `GUIDED_PRACTICE` lessons can include teaching blocks before scored questions; `CHECKPOINT` lessons remain fresh, scored progression material.
 - The benchmark-pattern catalog is benchmark-specific, so `ELA.2.F.1.3a`, `ELA.2.F.1.3b`, and `ELA.2.F.1.3c` can each report their own expected patterns and coverage status.
 - `planUnitQuest` keeps selected-unit planning unit-aware so fresh content and active-session recovery do not silently cross from one Word Forge trail to another.
-- The active Grade 2 bridge packs cover `oo`, `ea`, `ou`, `oi`, `oy`, and `ow` across Phase 6A1 and Phase 6A2, implement `ELA.2.F.1.3b` in DRAFT form in Phase 6B1, and leave `ELA.2.F.1.3c` partial in DRAFT form until consonant-le arrives in Phase 6B2.
+- The active Grade 2 bridge packs cover `oo`, `ea`, `ou`, `oi`, `oy`, and `ow` across Phase 6A1 and Phase 6A2, implement `ELA.2.F.1.3b` in DRAFT form in Phase 6B1, and implement `ELA.2.F.1.3c` in DRAFT form across Phase 6B1 and Phase 6B2.
+- Lesson ownership now comes from catalog metadata, not brittle lesson-ID prefixes, so unit gating and recovery stay aligned as later packs land.

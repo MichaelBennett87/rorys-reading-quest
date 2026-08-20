@@ -48,9 +48,9 @@
 - [ ] Phase 6: Grade 2 bridge content
   - [x] Phase 6A1: content framework and variable vowel teams `oo`/`ea`
   - [x] Phase 6A2: `ou`, `oi`, `oy`, and `ow`
-  - [ ] Phase 6B: two-syllable, open, closed, and consonant-`le`
+  - [x] Phase 6B: two-syllable, open, closed, and consonant-`le`
     - [x] Phase 6B1: two-syllable words plus open and closed syllables
-    - [ ] Phase 6B2: consonant-`le` and final ELA.2.F.1.3c integration
+    - [x] Phase 6B2: consonant-`le` and final ELA.2.F.1.3c integration
   - [ ] Phase 6C: prefixes, suffixes, silent letters, and fluency foundations
   - [ ] Phase 6D: Grade 2 prose and poetry
   - [ ] Phase 6E: informational reading and vocabulary

@@ -6,12 +6,12 @@ Rory's Reading Quest is a local-first, child-safe reading-learning foundation fo
 
 ## Current Status
 
-- Status: `Phase 6B1 complete`.
+- Status: `Phase 6B2 complete`.
 - A completed `LessonResult` now drives verification, advancement, fresh practice, same-level remediation, prerequisite rebuilding, spaced review, or a structured content-needed outcome.
 - Progress, rewards, bounded attempt history, review scheduling, submitted active-session checkpoints, and assistance summaries persist locally.
 - Curated word-help controls reveal authored patterns and optional browser speech without using an external service or microphone.
 - The parent area now opens a polished local-only dashboard with overview, progress drill-downs, sessions, reviews, word help, editable official assessments, and a print-summary preview.
-- Phase 6A1 adds a scalable Grade 2 content-pack registry, guided-teaching lessons, and a partial bridge pack for `oo` and `ea` variable vowel teams. Phase 6A2 adds the remaining `ou`, `oi`, `oy`, and `ow` patterns, and Phase 6B1 adds regularly spelled two-syllable words plus open and closed syllables. `ELA.2.F.1.3a` is implemented in DRAFT across the vowel packs, `ELA.2.F.1.3b` is implemented in DRAFT in Syllable Summit, and `ELA.2.F.1.3c` is partial in DRAFT until consonant-le arrives in Phase 6B2. Audio, later Grade 2 benchmarks, PWA behavior, backend services, accounts, analytics, and live AI remain deferred.
+- Phase 6A1 adds a scalable Grade 2 content-pack registry, guided-teaching lessons, and a partial bridge pack for `oo` and `ea` variable vowel teams. Phase 6A2 adds the remaining `ou`, `oi`, `oy`, and `ow` patterns, Phase 6B1 adds regularly spelled two-syllable words plus open and closed syllables, and Phase 6B2 completes authored DRAFT coverage for consonant-`le` in `ELA.2.F.1.3c`. `ELA.2.F.1.3a` is implemented in DRAFT across the vowel packs, `ELA.2.F.1.3b` is implemented in DRAFT in Syllable Summit, and `ELA.2.F.1.3c` is implemented in DRAFT across the Syllable Summit packs. Audio, later Grade 2 benchmarks, PWA behavior, backend services, accounts, analytics, and live AI remain deferred.
 
 ## Commands
 

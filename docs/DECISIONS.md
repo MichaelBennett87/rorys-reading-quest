@@ -173,6 +173,20 @@
 - Consequence: Benchmark coverage audits can report implemented coverage without implying approval, mastery, or official FAST results.
 - Status: Applied
 
+## 2026-08-20 - Catalog-Derived Lesson Ownership
+
+- Decision: Resolve lesson unit and world ownership from catalog metadata instead of brittle lesson-ID prefixes.
+- Reason: Trail 4 unit gating and legacy-history recovery need metadata-driven ownership as the curriculum grows.
+- Consequence: Selected-unit planning, unit badges, and parent reporting remain stable even when lesson IDs do not follow a simple prefix pattern.
+- Status: Applied
+
+## 2026-08-20 - Phase 6B2 Consonant-LE Completion
+
+- Decision: Treat `ELA.2.F.1.3c` as implemented in DRAFT form after Phase 6B2 registers consonant-`le` content alongside the Phase 6B1 open/closed work.
+- Reason: The benchmark now has authored DRAFT coverage for open, closed, and consonant-`le` syllables across the registered Syllable Summit packs.
+- Consequence: Curriculum and parent docs can report implemented DRAFT coverage without implying human approval, mastery, or official FAST results.
+- Status: Applied
+
 ## 2026-08-20 - Benchmark-Specific Coverage Catalog
 
 - Decision: Drive coverage audits from benchmark-specific expected pattern catalogs instead of reusing the `ELA.2.F.1.3a` vowel list everywhere.
