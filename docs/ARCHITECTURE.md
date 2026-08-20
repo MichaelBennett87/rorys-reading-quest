@@ -42,6 +42,7 @@
 
 - `src/screens/parent/ParentDashboardScreen.tsx` consumes the existing `DashboardSnapshot` contract and renders the authenticated parent overview, progress drill-downs, recent sessions, reviews, word-help summaries, and the read-only assessments placeholder.
 - `src/components/parent/*` provides small reusable presentation primitives for headers, navigation, metric cards, data notes, empty states, status badges, and accuracy meters.
+- Skill summaries and print summaries can display multiple benchmark references when a skill spans more than one benchmark.
 - The dashboard is responsive and local-only, with no new persistence layer, charting dependency, router, or mutation path added.
 
 ## Phase 5B2 Parent Dashboard Completion
@@ -50,9 +51,11 @@
 - `src/screens/parent/ParentPrintSummaryView.tsx` renders the print-ready parent summary from `DashboardSnapshot` and `ParentRecordsState`, then calls the injected browser print service only after an explicit parent action.
 - `src/screens/ParentPlaceholderScreen.tsx` remains the single owner of parent-access state, parent-record state, and transactional persistence. Assessment mutations and print actions never touch child progress.
 
-## Phase 6A1 and Phase 6A2 Grade 2 Content Pack Architecture
+## Phase 6A1, Phase 6A2, and Phase 6B1 Grade 2 Content Pack Architecture
 
 - `src/domain/content/packs/*` registers local content packs so the bridge curriculum can grow in bounded units without breaking existing imports.
 - `sampleContent` now aggregates registered packs, while legacy lesson IDs remain resolvable for recovery and history.
 - `GUIDED_PRACTICE` lessons can include teaching blocks before scored questions; `CHECKPOINT` lessons remain fresh, scored progression material.
-- The active Grade 2 bridge packs cover `oo`, `ea`, `ou`, `oi`, `oy`, and `ow` across Phase 6A1 and Phase 6A2, so `ELA.2.F.1.3a` is implemented in DRAFT form while still remaining a local, auditable bridge layer.
+- The benchmark-pattern catalog is benchmark-specific, so `ELA.2.F.1.3a`, `ELA.2.F.1.3b`, and `ELA.2.F.1.3c` can each report their own expected patterns and coverage status.
+- `planUnitQuest` keeps selected-unit planning unit-aware so fresh content and active-session recovery do not silently cross from one Word Forge trail to another.
+- The active Grade 2 bridge packs cover `oo`, `ea`, `ou`, `oi`, `oy`, and `ow` across Phase 6A1 and Phase 6A2, implement `ELA.2.F.1.3b` in DRAFT form in Phase 6B1, and leave `ELA.2.F.1.3c` partial in DRAFT form until consonant-le arrives in Phase 6B2.

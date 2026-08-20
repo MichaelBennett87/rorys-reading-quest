@@ -173,6 +173,27 @@
 - Consequence: Benchmark coverage audits can report implemented coverage without implying approval, mastery, or official FAST results.
 - Status: Applied
 
+## 2026-08-20 - Benchmark-Specific Coverage Catalog
+
+- Decision: Drive coverage audits from benchmark-specific expected pattern catalogs instead of reusing the `ELA.2.F.1.3a` vowel list everywhere.
+- Reason: The bridge curriculum now spans `ELA.2.F.1.3a`, `ELA.2.F.1.3b`, and `ELA.2.F.1.3c`, and each benchmark needs its own deterministic coverage shape.
+- Consequence: Coverage audits can report implemented or partial status accurately, and review status can remain conservative across multiple packs.
+- Status: Applied
+
+## 2026-08-20 - Unit-Aware Word Forge Planning
+
+- Decision: Make selected-unit planning unit-aware so fresh lesson selection and active-session recovery respect the chosen Word Forge trail.
+- Reason: The curriculum now has multiple bridge units, and the app must not silently replace an active quest with content from another unit.
+- Consequence: Vowel Voyage, Syllable Summit, and future bridge units can be derived from progress and locked or unlocked deterministically.
+- Status: Applied
+
+## 2026-08-20 - Multi-Benchmark Parent Reporting
+
+- Decision: Allow parent skill summaries and print summaries to display multiple benchmark references for one skill.
+- Reason: The broad `g2-word-forge-word-practice` skill now spans more than one benchmark, so showing only one reference would be misleading.
+- Consequence: Parent views can present the represented benchmark set deterministically without implying an official FAST result.
+- Status: Applied
+
 ## 2026-08-20 - Guided Practice and Checkpoint Lesson Roles
 
 - Decision: Allow guided-teaching lessons and scored checkpoint lessons to coexist in the same curriculum pack.
