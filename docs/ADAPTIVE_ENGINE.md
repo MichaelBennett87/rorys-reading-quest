@@ -1,88 +1,38 @@
-# Adaptive Engine (Phase 0)
+# Adaptive Engine (Phase 3)
 
-## State Machine
+## Score Contract
 
-`TEACH` -> `GUIDED_PRACTICE` -> `CHECKPOINT` -> decision branch:
+`LessonResult.accuracy` is a percentage from `0` through `100`. The checkpoint engine receives `accuracy / 100`. First-attempt accuracy is `firstAttemptCorrect / totalQuestions`; incomplete, zero-question, malformed, unknown-skill, mismatched-trail, and unsupported-difficulty results are declined.
 
-- `VERIFY_MASTERY`
-- `ADVANCE`
-- `RETRY_SAME_DIFFICULTY`
-- `REMEDIATE_PREREQUISITE`
-- `SPACED_REVIEW`
-- `MASTERED` (target state)
+## Distinct Independent Evidence
 
-Parent-facing and parent-review states are represented in the interface contract even when not implemented in shell UI.
+- Strong independent evidence requires at least 85% accuracy and first-attempt accuracy with no disqualifying assistance.
+- The first distinct qualifying activity stays at the same difficulty and returns `VERIFY_MASTERY`.
+- A replayed activity ID is recorded as an attempt but cannot increase mastery evidence.
+- A second distinct qualifying activity returns `ADVANCE`, increases difficulty by exactly one, records the prior difficulty as mastered, clears current evidence/failure counters, and schedules review one day later.
 
-## Thresholds
+## Partial and Unsuccessful Outcomes
 
-- Strong threshold: `>= 85%`
-- Partial threshold: `>= 70%` and `< 85%`
-- Retry threshold: `< 70%`
-- Assistance gating:
-  - no more than one major hint,
-  - no sentence-level read-aloud,
-  - first-attempt quality must also be strong for independent evidence.
+- 70-84%: `RETRY_SAME_DIFFICULTY`, fresh practice, same difficulty, and unsuccessful count reset.
+- First result below 70%: `GUIDED_PRACTICE`, targeted fresh same-level remediation, and unsuccessful count one.
+- Second consecutive result below 70%: `REMEDIATE_PREREQUISITE`. A playable explicit prerequisite is preferred; otherwise the last mastered difficulty for the same skill is used.
+- Rewards and unrelated skill progress are preserved during remediation.
 
-## Assistance Effects
+## Remediation Return
 
-- Assistance is recorded and never treated as failure by itself.
-- Heavy assistance prevents automatic independent mastery advancement.
-- A supported assistance path can still return a child-safe "next-step" message and request an additional independent verification.
+The remediation context retains original skill/difficulty, remediation skill/difficulty, and route reason. Rebuilding the remediation level clears the context and returns to the original target with its unsuccessful count reset. The original target is not marked mastered, and its retry still requires fresh material.
 
-## Two Distinct Success Rule
+## Fresh Lesson Selection
 
-- The first strong independent checkpoint sets `needsIndependentVerification = true` and retains difficulty.
-- The second qualifying independent success at the same difficulty advances difficulty by one.
-
-## Failure Behavior
-
-- Partial result:
-  - same difficulty,
-  - fresh practice and targeted explanation,
-  - review opportunity remains available.
-- First unsuccessful checkpoint:
-  - `GUIDED_PRACTICE`,
-  - remediation activity at same difficulty,
-  - do not repeat same passage-question pair.
-- Second consecutive unsuccessful checkpoint:
-  - identify prerequisite (or last mastered point),
-  - return to rebuild prerequisite first,
-  - preserve existing rewards and achievements.
-
-## Fresh Material Rule
-
-- Repetition is allowed for skill/grade/difficulty/format.
-- Immediate repetition is blocked for:
-  - activity identifier,
-  - passage-question pair.
+Lesson candidates include lesson/activity IDs, skill, difficulty, purposes, passage-question keys, and content version. Selection is sorted and deterministic. Recent activity IDs and an exact immediate passage-question repeat are excluded. No candidate produces structured `content_needed`; no fallback silently repeats exhausted content.
 
 ## Spaced Review
 
-Initial sequence: `1, 3, 7, 14, 30` days.
+- Intervals remain 1, 3, 7, 14, and 30 days.
+- Mastery schedules the first review one day later.
+- Successful review moves one step later; an unsuccessful review moves one step closer.
+- Date calculations receive a timestamp so pure tests remain deterministic.
 
-- Correct review advances one step in sequence.
-- Missed review returns one step sooner.
+## Rewards and Summary
 
-## Parent-Facing Explanations
-
-Parent explanations are structured short messages describing:
-
-- checkpoint interpretation,
-- whether independent evidence is still required,
-- if prerequisite remediation is required,
-- whether difficulty changed.
-
-## Configurable Points
-
-- Threshold values
-- Hint severity thresholds
-- Mastery evidence requirement count
-- Review spacing sequence
-- Remediation fallback rules
-
-## Known Future Calibration Questions
-
-- How strict should first-attempt criteria be for long passages?
-- Whether independent evidence should enforce unique passage families before advancement.
-- Whether review sequence should vary by skill age and family difficulty.
-- How much support counts as independent for mixed assistance traces.
+Stars remain 3 for 90-100%, 2 for 70-89%, and 1 below 70% for completion. XP is 10 per completed question plus 5 per correct answer. Rewards never prove mastery and never decrease. A pure telemetry-free summary reports local educational progress without claiming an official diagnosis, reading level, FAST score, or calibrated probability.

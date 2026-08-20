@@ -26,9 +26,14 @@
   - [x] Add and wire lesson validator extensions.
   - [x] Add focused lesson-domain and UI tests.
   - [x] Update architecture/content/product docs and phase report.
-- [ ] Phase 3: adaptive progression and persistence
-  - [ ] Add learner session persistence and history.
-  - [ ] Add confidence tuning and progression telemetry-free analytics summaries.
+- [x] Phase 3: adaptive progression and persistence
+  - [x] Adapt LessonResult percentages into validated checkpoint inputs.
+  - [x] Require distinct activity IDs for independent mastery evidence.
+  - [x] Add immutable skill progression, remediation return, fresh lesson planning, and spaced review.
+  - [x] Add version-1 local persistence, bounded history, safe fallback, and active-session recovery.
+  - [x] Make completion idempotent and persist deterministic XP and stars.
+  - [x] Wire supportive progression outcomes and adaptive Continue Quest behavior.
+  - [x] Add a telemetry-free local progress summary and focused test coverage.
 - [ ] Phase 4: sound-out support
   - [ ] Implement assist ladder without speech synthesis in this phase.
 - [ ] Phase 5: parent dashboard

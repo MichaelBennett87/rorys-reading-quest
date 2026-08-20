@@ -2,54 +2,32 @@
 
 ## Purpose
 
-Rory's Reading Quest is a local-first, child-safe reading-learning foundation for Grade 2–4 progression.
-
-The current work is **Phase 2 (Lesson and Question Engine)**. It builds from:
-
-- a minimal React shell,
-- deterministic progression and lesson-domain modules from earlier phases,
-- a local question runtime with five supported question types,
-- child-friendly passage display, feedback, and completion result computation,
-- updated architecture documentation and test coverage.
-
-This repository intentionally uses only original sample material and does not deliver official FAST scores.
+Rory's Reading Quest is a local-first, child-safe reading-learning foundation for Grade 2-4 progression. Phase 3 connects the playable Phase 2 lesson engine to deterministic adaptive progression and versioned browser persistence.
 
 ## Current Status
 
-- Status: `Phase 2 complete` (deterministic in-memory lesson runtime).
-- Still no persistence, parent dashboard, or adaptive progression connection.
-- No audio, sound-out engine, or backend/router services yet.
-- No account system, no remote services, and no official FAST reporting.
-
-## Privacy Warning
-
-This version contains no student identifiers, no school credentials, and no private child data.
-Only original sample content marked as DRAFT is included.
+- Status: `Phase 3 complete`.
+- A completed `LessonResult` now drives verification, advancement, fresh practice, same-level remediation, prerequisite rebuilding, spaced review, or a structured content-needed outcome.
+- Progress, rewards, bounded attempt history, review scheduling, and submitted active-session checkpoints persist locally.
+- The parent area remains a placeholder. Audio, sound-out support, PWA behavior, backend services, accounts, analytics, and live AI remain deferred.
 
 ## Commands
 
-- `npm install` — install dependencies.
-- `npm run dev` — start local development server.
-- `npm run build` — TypeScript + production build.
-- `npm run lint` — run lint checks.
-- `npm run typecheck` — TypeScript type checking.
-- `npm run test` — run focused lesson-phase tests.
-- `npm run preview` — preview production build artifacts.
+- `npm install` - install local dependencies.
+- `npm run dev` - start the local development server.
+- `npm run lint` - run lint checks.
+- `npm run typecheck` - run TypeScript checks.
+- `npm run test` - run domain, persistence, and UI tests.
+- `npm run build` - create the production build.
 
 ## Architecture Summary
 
-- **Presentation**: small React/TypeScript shell (`src/App.tsx`) with no router or backend dependency.
-- **Domain**: deterministic progression, lesson runtime, and content modules under `src/domain`.
-- **Content**: typed sample content with 2 passages and 10 development questions across 5 question types plus validator.
-- **Storage**: none in early phases.
-- **Runtime services**: browser only, no external requests.
+- Presentation: React/TypeScript shell with explicit local screen state and a small progress hook.
+- Domain: pure lesson evaluation, adaptive progression, deterministic lesson selection, remediation return, and review scheduling.
+- Content: 2 original DRAFT passages and 10 DRAFT questions arranged as one lower-trail lesson and three current-trail variants.
+- Persistence: version-1 `localStorage` adapter behind a small interface, with safe in-memory fallback.
+- Runtime services: browser only; no telemetry, advertising, cloud service, backend, or remote content request.
 
-## Content Integrity
+## Privacy and Assessment Boundary
 
-- All content is original and explicitly marked with review status.
-- Only DRAFT sample content is present in this phase.
-- No real-child outcome is claimed by this phase.
-
-## FAST/FAST Score Guidance
-
-This phase is not an official assessment system. It does not claim to produce official FAST scores.
+Persisted records contain stable local IDs and educational summaries only. Passage text, explanation text, correct-answer text, private child identifiers, official FAST reports, and official FAST scores are not persisted. This application is not an official assessment or diagnostic system.

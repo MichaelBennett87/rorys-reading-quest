@@ -76,3 +76,31 @@
 - Reason: child safety and motivation are core product constraints for this phase.
 - Consequence: forbidden terms are rejected in tests; feedback emphasizes correction and evidence-based explanations.
 - Status: Applied
+
+## 2026-08-20 - Distinct Adaptive Evidence
+
+- Decision: Track qualifying independent activity IDs rather than trusting a numeric success count alone.
+- Reason: Replaying one lesson must not satisfy both mastery proofs.
+- Consequence: Duplicate strong attempts remain in history but cannot advance difficulty.
+- Status: Applied
+
+## 2026-08-20 - Lesson-Level Fresh Selection
+
+- Decision: Select deterministic lesson candidates by skill, difficulty, purpose, recent activity ID, and passage-question keys.
+- Reason: Phase 3 progression needs coherent complete lessons and must never silently repeat exhausted material.
+- Consequence: The DRAFT catalog is split into one lower lesson and three current-difficulty variants; exhaustion returns `content_needed`.
+- Status: Applied
+
+## 2026-08-20 - Versioned Local Persistence
+
+- Decision: Use `localStorage` behind a version-1 persistence interface with safe in-memory fallback.
+- Reason: It is reversible, browser-local, and adds no dependency while preserving a future migration boundary.
+- Consequence: Only schema version 1 is supported; malformed data is not overwritten during load, history is bounded, and no private assessment fields are stored.
+- Status: Applied
+
+## 2026-08-20 - Recoverable and Idempotent Lesson Sessions
+
+- Decision: Persist stable active-session IDs after submission and navigation checkpoints, and use the session ID as completion ID.
+- Reason: Submitted work must survive reload while one completion must award progress and rewards exactly once.
+- Consequence: Compatible sessions reconstruct evaluation from current local content; incompatible sessions alone are discarded.
+- Status: Applied

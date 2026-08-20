@@ -1,34 +1,26 @@
 # Privacy and Safety
 
-## Principles
+## Local-First Principles
 
-- Local-first by design in Version 1.
-- Minimal data collection; no student identity in this phase.
-- No telemetry, analytics, or advertising.
-- No child account requirement in Version 1.
-- No external service calls are used in runtime for Phase 0.
-- No child-facing live AI interaction.
-- No private FAST or other assessment images are stored in the repository.
+- Progress is stored only in browser localStorage behind a versioned interface.
+- No telemetry, analytics, advertising, backend, cloud sync, runtime API, or child-facing live AI is used.
+- The application continues in memory if localStorage is unavailable, malformed, unsupported, or throws.
+- Technical storage detail stays in development/test contracts; child-facing notices are calm and do not expose raw JSON or stack traces.
 
 ## Data Minimization
 
-- No API keys, credentials, or external secrets in source.
-- No school login information.
-- No addresses, birth dates, or full records.
-- No family or private account identifiers.
+Persisted version-1 state uses a generic `local-learner` ID and may contain stable lesson/activity/question IDs, correctness summaries, submitted option/segment IDs needed for active recovery, accuracy, assistance count, progression outcomes, review dates, rewards, and timestamps.
 
-## Future Parent PIN
+It does not persist passage or explanation text, correct-answer text, full answer text, surname, birth date, school, student ID, official FAST report or score, address, credentials, remote identifiers, analytics identifiers, or advertising identifiers.
 
-- A parent PIN feature is considered for future phases.
-- It is not implemented in Phase 0.
+## Safety Controls
 
-## Content Safety
+- Completed history is capped at 250 attempts and recent use at 12 entries per trail.
+- Completion IDs prevent duplicate attempts, XP, stars, mastery evidence, and failure counters.
+- Incompatible active content discards only the active session and preserves completed progress and rewards.
+- Rewards are deterministic, never subtracted, and are not evidence of mastery.
+- Child-facing progression copy avoids punitive, diagnostic, or demoting language.
 
-- All phase samples are original and non-copyrighted by design.
-- Every content item is tagged with `DRAFT`, `REVIEWED`, `APPROVED`, or `RETIRED`.
-- Unreviewed draft material is not treated as production-ready.
+## Deferred Controls
 
-## Language Safety
-
-- Child-facing copy avoids punitive terms such as "failed", "bad", "behind", and "wrong level".
-- Parent-facing explanations remain neutral and encouraging.
+Parent dashboard/PIN, audio and sound-out support, PWA behavior, accounts, remote sync, and official assessment reporting remain outside Phase 3.
