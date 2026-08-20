@@ -49,3 +49,10 @@
 - `src/screens/parent/ParentAssessmentsView.tsx` owns the authenticated assessment-management UI. It keeps local form state, renders create/edit/delete flows, and delegates storage mutations through callbacks owned by the parent gate.
 - `src/screens/parent/ParentPrintSummaryView.tsx` renders the print-ready parent summary from `DashboardSnapshot` and `ParentRecordsState`, then calls the injected browser print service only after an explicit parent action.
 - `src/screens/ParentPlaceholderScreen.tsx` remains the single owner of parent-access state, parent-record state, and transactional persistence. Assessment mutations and print actions never touch child progress.
+
+## Phase 6A1 Grade 2 Content Pack Architecture
+
+- `src/domain/content/packs/*` registers local content packs so the bridge curriculum can grow in bounded units without breaking existing imports.
+- `sampleContent` now aggregates registered packs, while legacy lesson IDs remain resolvable for recovery and history.
+- `GUIDED_PRACTICE` lessons can include teaching blocks before scored questions; `CHECKPOINT` lessons remain fresh, scored progression material.
+- The active Grade 2 bridge pack covers `oo` and `ea` only in Phase 6A1, so `ELA.2.F.1.3a` stays explicitly partial until later packs add `ou`, `oi`, `oy`, and `ow`.

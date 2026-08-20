@@ -38,3 +38,7 @@ The read-only parent dashboard reuses the same local progress and assessment sto
 ## Phase 5B2 Assessment and Print Boundary
 
 Assessment records stay local, use the separate parent-record store, and store only stable IDs plus official report values entered by a parent. The UI never stores report images, uploaded files, or narrative notes. Print Summary uses the browser print dialog only after explicit parent action and does not send content to an external service or create a PDF download artifact.
+
+## Phase 6A1 Curriculum Boundary
+
+Phase 6A1 keeps all new Grade 2 content local, original, and DRAFT-only. The bridge pack does not call a runtime content-generation service, does not browse external curriculum sources at runtime, and does not add official fluency scoring. Audio remains optional and browser-provided only, with no microphone access or speech recognition. Legacy lesson history remains local and readable without exposing child-sensitive identifiers or persisted raw passage text.

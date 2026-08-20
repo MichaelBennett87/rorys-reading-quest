@@ -46,7 +46,13 @@
     - [x] Phase 5B1: dashboard presentation and progress drill-downs
     - [x] Phase 5B2: assessment management, print summary, and Phase 5 completion
 - [ ] Phase 6: Grade 2 bridge content
-  - [ ] Add broad Grade 2 bridge activity bank.
+  - [x] Phase 6A1: content framework and variable vowel teams `oo`/`ea`
+  - [ ] Phase 6A2: `ou`, `oi`, `oy`, and `ow`
+  - [ ] Phase 6B: two-syllable, open, closed, and consonant-`le`
+  - [ ] Phase 6C: prefixes, suffixes, silent letters, and fluency foundations
+  - [ ] Phase 6D: Grade 2 prose and poetry
+  - [ ] Phase 6E: informational reading and vocabulary
+  - [ ] Phase 6F: across-genres reading and final Grade 2 audit
 - [ ] Phase 7: Grade 3 FAST-aligned content
   - [ ] Expand to mastery-level Grade 3 sequences.
 - [ ] Phase 8: Grade 4 stretch content

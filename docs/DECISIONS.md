@@ -153,3 +153,24 @@
 - Reason: The phase needs a readable paper-friendly summary without adding a file-generation dependency or remote service.
 - Consequence: The dashboard renders a dedicated print preview view and delegates the actual dialog to the injected browser print service.
 - Status: Applied
+
+## 2026-08-20 - Registered Grade 2 Bridge Pack
+
+- Decision: Add Phase 6A1 curriculum through a registered content-pack layer rather than expanding the legacy development content file.
+- Reason: The bridge curriculum needs a stable place for future packs, partial coverage markers, and recovery-safe legacy IDs.
+- Consequence: `sampleContent` aggregates registered packs, fresh selection prefers the active bridge pack, and legacy lessons remain resolvable for history.
+- Status: Applied
+
+## 2026-08-20 - Explicit Partial Coverage for ELA.2.F.1.3a
+
+- Decision: Mark `ELA.2.F.1.3a` as partial in Phase 6A1 until the remaining vowel-team packs are added.
+- Reason: Only `oo` and `ea` are implemented in this phase, so complete benchmark coverage would be inaccurate.
+- Consequence: Parent reporting and curriculum docs can distinguish benchmark-aligned exposure from complete coverage.
+- Status: Applied
+
+## 2026-08-20 - Guided Practice and Checkpoint Lesson Roles
+
+- Decision: Allow guided-teaching lessons and scored checkpoint lessons to coexist in the same curriculum pack.
+- Reason: Remediation needs a teaching block before practice, while progression requires fresh scored material.
+- Consequence: Teaching blocks can support decoding practice without being scored or counted as assistance or mastery evidence.
+- Status: Applied

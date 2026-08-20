@@ -16,14 +16,9 @@ Each playable lesson candidate contains:
 - passage-question keys
 - `contentVersion`
 
-The development catalog contains four coherent lessons:
+The development catalog now aggregates registered local packs instead of a single monolithic development set. Phase 6A1 adds one active Grade 2 bridge pack with 7 lessons, 7 passages, 41 scored questions, and 33 DRAFT word-support targets. Legacy lesson IDs remain resolvable for recovery and parent history, but they are excluded from fresh selection so new learners enter the active bridge pack.
 
-- one difficulty-0 building-block lesson
-- three distinct difficulty-1 Word Forge variants
-
-All 2 passages and all 10 questions are reused from Phase 2. No new passage or question was added, and no lesson mixes difficulty 0 and 1.
-
-The same two passages now also carry 9 DRAFT support targets across the existing lesson content. Support is authored, not generated, and passage rendering keeps the readable sentence flow while exposing target words as controls.
+The active bridge pack remains DRAFT-only. Support is authored, not generated, and passage rendering keeps the readable sentence flow while exposing target words as controls. The pack is aligned to `ELA.2.F.1.3a` partially, covering `oo` and `ea` only in Phase 6A1.
 
 ## Review and Safety
 
@@ -40,3 +35,11 @@ Phase 5A does not add new child curriculum. Parent analytics consume the existin
 ## Phase 5B2 Parent Records Boundary
 
 Official assessment records remain separate from lesson/content authoring. Phase 5B2 does not add new passages, questions, or curriculum content. The print summary reuses existing dashboard snapshots and parent records only; it does not mutate content or persist raw report text.
+
+## Phase 6A1 Bridge Pack Boundary
+
+Phase 6A1 introduces a local bridge pack for `word-forge` and `wg-unit-1`. The pack is composed of original DRAFT passages, original DRAFT questions, and authored word-help targets that can be reviewed deterministically. It does not reuse the Phase 2 lesson engine as a content source, and it does not promote the legacy development lessons into the fresh selection path. `sampleContent` now aggregates registered packs so existing imports continue to work while the curriculum grows in bounded packs.
+
+## Phase 6A1 Curriculum Scope Boundary
+
+Phase 6A1 is partial benchmark coverage only. `ELA.2.F.1.3a` is not complete until later phases add `ou`, `oi`, `oy`, and `ow`. Phase 6A1 can support fluency-adjacent reading practice, but it does not assess or score oral fluency. Parent analytics should label this work as `Foundational Skills Bridge`, which is an internal practice category and not an official FAST reporting lane.

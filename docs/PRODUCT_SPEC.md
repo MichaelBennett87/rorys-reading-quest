@@ -77,3 +77,9 @@ Phase 5B1 keeps the same local data sources and adds a read-only Parent Dashboar
 ## Phase 5B2 Parent Dashboard Completion
 
 Phase 5B2 adds local official-assessment management and a print-summary preview to the authenticated parent area. Assessment records are entered manually from official reports, stored only in the browser, and never affect child progression, XP, stars, or review scheduling. Print Summary is an explicit parent action that opens a local preview before calling the browser print dialog; it does not create a download or PDF artifact.
+
+## Phase 6A1 Grade 2 Bridge Content
+
+Phase 6A1 adds the first scalable Grade 2 content pack without changing the lesson engine or parent systems. The new bridge pack is DRAFT-only, locally authored, and registered as one active Word Forge unit plus legacy history-preserving content. It covers a partial slice of `ELA.2.F.1.3a` through `oo` and `ea` variable vowel teams, and it introduces guided-teaching lessons that support practice without pretending to score oral fluency. Phase 6A1 is supportive exposure and partial benchmark coverage, not complete benchmark mastery.
+
+Parent reporting treats this work as `Foundational Skills Bridge`, an internal practice category that stays separate from the official Grade 3 FAST reporting lanes.
