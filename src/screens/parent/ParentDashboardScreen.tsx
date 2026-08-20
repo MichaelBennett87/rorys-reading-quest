@@ -858,5 +858,3 @@ function formatReviewStatusLabel(status: DashboardReviewEntry['status']): string
 function sessionKey(attempt: DashboardRecentAttemptSummary): SessionKey {
   return `${attempt.completionDate}::${attempt.lessonId}::${attempt.activityId}::${attempt.difficulty}`
 }
-
-
