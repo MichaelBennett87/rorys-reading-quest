@@ -145,7 +145,17 @@ export function planUnitQuest(input: PlanUnitQuestInput): UnitQuestPlan {
         reason: 'Complete Vowel Voyage to unlock Syllable Summit.',
       }
     }
-    if (selectedDifficulty >= 4) {
+    if (selectedDifficulty >= 5) {
+      if (contentNeededNextQuest && contentNeededNextQuest.difficulty >= 5) {
+        return {
+          status: 'content_needed',
+          purpose: contentNeededNextQuest.purpose,
+          skillId: contentNeededNextQuest.skillId,
+          difficulty: contentNeededNextQuest.difficulty,
+          reason: contentNeededNextQuest.reason,
+          unitId: input.selectedUnitId,
+        }
+      }
       return {
         status: 'content_needed',
         purpose: contentNeededNextQuest?.purpose ?? plannedPurpose,

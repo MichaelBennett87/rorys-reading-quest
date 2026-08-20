@@ -200,12 +200,12 @@ function pushIssue(
 
 function validateBridgePackStructure(packs: readonly ContentPack[], issues: ContentPackAuditIssue[]) {
   for (const pack of packs) {
-    if (!pack.manifest.benchmarkReferences.some((benchmark) => benchmark === 'ELA.2.F.1.3b' || benchmark === 'ELA.2.F.1.3c')) continue
+    const expectation = getBridgePackExpectation(pack)
+    if (!expectation) continue
 
     const activeLessons = pack.lessons.filter((lesson) => lesson.selectionStatus === 'active')
     const guidedLessons = activeLessons.filter((lesson) => lesson.lessonRole === 'GUIDED_PRACTICE')
     const checkpointLessons = activeLessons.filter((lesson) => lesson.lessonRole === 'CHECKPOINT')
-    const minDifficulty = pack.manifest.difficultyRange[0]
     const maxDifficulty = pack.manifest.difficultyRange[1]
 
     if (activeLessons.length !== 7) {
@@ -223,17 +223,66 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
     if (checkpointLessons.length !== 3) {
       pushIssue(issues, 'lesson_count_mismatch', pack.manifest.packId, `Expected 3 active checkpoint lessons, found ${checkpointLessons.length}.`)
     }
-    if (guidedLessons.filter((lesson) => lesson.difficulty === minDifficulty).length !== 2) {
-      pushIssue(issues, 'lesson_count_mismatch', pack.manifest.packId, `Expected 2 guided lessons at difficulty ${minDifficulty}.`)
+    if (guidedLessons.filter((lesson) => lesson.difficulty === expectation.guidedDifficultyA).length !== 2) {
+      pushIssue(issues, 'lesson_count_mismatch', pack.manifest.packId, `Expected 2 guided lessons at difficulty ${expectation.guidedDifficultyA}.`)
     }
-    if (guidedLessons.filter((lesson) => lesson.difficulty === minDifficulty + 1).length !== 2) {
-      pushIssue(issues, 'lesson_count_mismatch', pack.manifest.packId, `Expected 2 guided lessons at difficulty ${minDifficulty + 1}.`)
+    if (guidedLessons.filter((lesson) => lesson.difficulty === expectation.guidedDifficultyB).length !== 2) {
+      pushIssue(issues, 'lesson_count_mismatch', pack.manifest.packId, `Expected 2 guided lessons at difficulty ${expectation.guidedDifficultyB}.`)
     }
     if (checkpointLessons.filter((lesson) => lesson.difficulty === maxDifficulty).length !== 3) {
       pushIssue(issues, 'lesson_count_mismatch', pack.manifest.packId, `Expected 3 checkpoint lessons at difficulty ${maxDifficulty}.`)
     }
 
     const checkpointPassages = new Set<string>()
+    const allTargets = pack.passages.flatMap((passage) => passage.wordSupportTargets ?? [])
+    let hasOpenConsonantLeExample = false
+    let hasClosedConsonantLeExample = false
+
+    if (allTargets.length < expectation.minSupportTargets || allTargets.length > expectation.maxSupportTargets) {
+      pushIssue(
+        issues,
+        'support_target_count_mismatch',
+        pack.manifest.packId,
+        `Expected between ${expectation.minSupportTargets} and ${expectation.maxSupportTargets} support targets, found ${allTargets.length}.`,
+      )
+    }
+
+    for (const passage of pack.passages) {
+      const targets = passage.wordSupportTargets ?? []
+      if (targets.length < expectation.minSupportTargetsPerPassage || targets.length > expectation.maxSupportTargetsPerPassage) {
+        pushIssue(
+          issues,
+          'support_target_count_mismatch',
+          passage.passageIdentifier,
+          `Expected between ${expectation.minSupportTargetsPerPassage} and ${expectation.maxSupportTargetsPerPassage} support targets per passage.`,
+        )
+      }
+      for (const target of targets) {
+        if ((target.displayChunks ?? []).length < 2) {
+          pushIssue(issues, 'support_target_structure_invalid', target.targetId, 'Support targets need at least two authored chunks.')
+        }
+        const normalizedWord = target.surfaceWord.toLowerCase()
+        if (expectation.forbiddenSilentEWords.has(normalizedWord)) {
+          pushIssue(issues, 'forbidden_silent_e_target', target.targetId, 'One-syllable silent-e words are not valid consonant-le targets.')
+        }
+        if (expectation.openConsonantLeWords.has(normalizedWord)) {
+          hasOpenConsonantLeExample = true
+        }
+        if (expectation.closedConsonantLeWords.has(normalizedWord)) {
+          hasClosedConsonantLeExample = true
+        }
+      }
+    }
+
+    if (expectation.packId === 'g2-word-forge-consonant-le-integrated') {
+      if (!hasOpenConsonantLeExample) {
+        pushIssue(issues, 'missing_target_pattern_coverage', pack.manifest.packId, 'The pack must include open syllables before consonant-le.')
+      }
+      if (!hasClosedConsonantLeExample) {
+        pushIssue(issues, 'missing_target_pattern_coverage', pack.manifest.packId, 'The pack must include closed syllables before consonant-le.')
+      }
+    }
+
     for (const lesson of checkpointLessons) {
       if (lesson.passageIdentifiers.length !== 3) {
         pushIssue(issues, 'lesson_referencing_missing_content', lesson.lessonId, 'Checkpoint lessons in this pack must reference exactly three passages.')
@@ -243,7 +292,7 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
       }
       const lessonQuestions = pack.questions.filter((question) => question.lessonIdentifier === lesson.lessonId)
       const lessonTags = new Set(lessonQuestions.flatMap((question) => question.tags ?? []))
-      for (const requiredPattern of ['two-syllable-short-vowels', 'two-syllable-long-vowels', 'open-syllable', 'closed-syllable']) {
+      for (const requiredPattern of expectation.checkpointPatterns) {
         if (!lessonTags.has(requiredPattern)) {
           pushIssue(
             issues,
@@ -259,4 +308,58 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
       pushIssue(issues, 'repeated_active_passage', pack.manifest.packId, 'Checkpoint lessons should use at least three distinct passages.')
     }
   }
+}
+
+interface BridgePackExpectation {
+  packId: string
+  guidedDifficultyA: number
+  guidedDifficultyB: number
+  checkpointPatterns: string[]
+  minSupportTargets: number
+  maxSupportTargets: number
+  minSupportTargetsPerPassage: number
+  maxSupportTargetsPerPassage: number
+  openConsonantLeWords: Set<string>
+  closedConsonantLeWords: Set<string>
+  forbiddenSilentEWords: Set<string>
+}
+
+function getBridgePackExpectation(pack: ContentPack): BridgePackExpectation | null {
+  const hasB = pack.manifest.benchmarkReferences.includes('ELA.2.F.1.3b')
+  const hasC = pack.manifest.benchmarkReferences.includes('ELA.2.F.1.3c')
+  const [minDifficulty, maxDifficulty] = pack.manifest.difficultyRange
+
+  if (hasB && hasC && minDifficulty === 2 && maxDifficulty === 3) {
+    return {
+      packId: pack.manifest.packId,
+      guidedDifficultyA: 2,
+      guidedDifficultyB: 3,
+      checkpointPatterns: ['two-syllable-short-vowels', 'two-syllable-long-vowels', 'open-syllable', 'closed-syllable'],
+      minSupportTargets: 0,
+      maxSupportTargets: Number.POSITIVE_INFINITY,
+      minSupportTargetsPerPassage: 0,
+      maxSupportTargetsPerPassage: Number.POSITIVE_INFINITY,
+      openConsonantLeWords: new Set<string>(),
+      closedConsonantLeWords: new Set<string>(),
+      forbiddenSilentEWords: new Set<string>(),
+    }
+  }
+
+  if (hasC && !hasB && minDifficulty === 3 && maxDifficulty === 4) {
+    return {
+      packId: pack.manifest.packId,
+      guidedDifficultyA: 3,
+      guidedDifficultyB: 4,
+      checkpointPatterns: ['consonant-le', 'open-syllable', 'closed-syllable'],
+      minSupportTargets: 28,
+      maxSupportTargets: 35,
+      minSupportTargetsPerPassage: 3,
+      maxSupportTargetsPerPassage: 5,
+      openConsonantLeWords: new Set(['table', 'maple', 'cable', 'title', 'noble', 'bugle', 'stable']),
+      closedConsonantLeWords: new Set(['apple', 'candle', 'little', 'bottle', 'simple', 'puzzle', 'middle', 'rattle', 'bubble', 'jungle', 'pebble', 'giggle', 'sample', 'temple', 'dimple', 'tumble', 'handle', 'bundle']),
+      forbiddenSilentEWords: new Set(['sale', 'mile', 'hole', 'rule', 'pale', 'smile']),
+    }
+  }
+
+  return null
 }

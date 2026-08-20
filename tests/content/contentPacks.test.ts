@@ -13,6 +13,7 @@ describe('grade 2 content pack registry', () => {
       'g2-word-forge-variable-vowels-oo-ea',
       'g2-word-forge-variable-vowels-ou-oi-oy-ow',
       'g2-word-forge-two-syllable-open-closed',
+      'g2-word-forge-consonant-le-integrated',
       'legacy-word-forge-development-pack',
     ])
     expect(contentPackAudit).toHaveLength(0)

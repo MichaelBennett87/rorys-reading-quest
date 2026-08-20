@@ -30,9 +30,47 @@ export const lessonCatalog: readonly LessonCatalogEntry[] = contentPacks.flatMap
   })),
 )
 
+export interface LessonCatalogMetadata {
+  lessonId: string
+  packId: string
+  worldId: string
+  unitId: string
+  activityId: string
+  contentVersion: string
+  benchmarkReferences: string[]
+  lessonRole: LessonCatalogEntry['lessonRole']
+  selectionStatus: LessonCatalogEntry['selectionStatus']
+  eligiblePurposes: LessonCatalogEntry['eligiblePurposes']
+}
+
 export interface LessonCatalogResult {
   lesson?: LessonDefinition
   errors: string[]
+}
+
+export function getLessonCatalogMetadata(lessonId: string): LessonCatalogMetadata | null {
+  const entry = lessonCatalog.find((candidate) => candidate.lessonId === lessonId)
+  if (!entry) return null
+  return {
+    lessonId: entry.lessonId,
+    packId: entry.packId,
+    worldId: entry.worldId,
+    unitId: entry.unitId,
+    activityId: entry.activityId,
+    contentVersion: entry.contentVersion,
+    benchmarkReferences: [...entry.benchmarkReferences],
+    lessonRole: entry.lessonRole,
+    selectionStatus: entry.selectionStatus,
+    eligiblePurposes: [...entry.eligiblePurposes],
+  }
+}
+
+export function getLessonUnitId(lessonId: string): string | null {
+  return getLessonCatalogMetadata(lessonId)?.unitId ?? null
+}
+
+export function getLessonWorldId(lessonId: string): string | null {
+  return getLessonCatalogMetadata(lessonId)?.worldId ?? null
 }
 
 export function getLessonForUnit(unitId: string): LessonCatalogResult {

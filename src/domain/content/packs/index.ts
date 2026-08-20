@@ -1,4 +1,5 @@
 export * from './contentPackTypes'
 export * from './contentPackAudit'
 export * from './legacyDevelopmentPack'
+export * from './grade2/wordForge/consonantLeIntegrated'
 export * from './registry'

@@ -25,6 +25,15 @@ describe('unit-aware Word Forge planning', () => {
     const wordForgeAtThree = difficultyThreeWorlds.find((world) => world.id === 'word-forge')!
     expect(['complete', 'review']).toContain(wordForgeAtThree.units.find((unit) => unit.id === 'wg-unit-1')?.state)
     expect(wordForgeAtThree.units.find((unit) => unit.id === 'wg-unit-2')?.state).toBe('available')
+
+    const difficultyFourWorlds = deriveWorldsForProgress(createProgress(4))
+    const wordForgeAtFour = difficultyFourWorlds.find((world) => world.id === 'word-forge')!
+    expect(wordForgeAtFour.units.find((unit) => unit.id === 'wg-unit-2')?.state).toBe('available')
+    expect(wordForgeAtFour.units.find((unit) => unit.id === 'wg-unit-2')?.difficultyLabel).toBe('Trail 4')
+
+    const difficultyFiveWorlds = deriveWorldsForProgress(createProgress(5))
+    const wordForgeAtFive = difficultyFiveWorlds.find((world) => world.id === 'word-forge')!
+    expect(['complete', 'review']).toContain(wordForgeAtFive.units.find((unit) => unit.id === 'wg-unit-2')?.state)
   })
 
   test('unit planning respects unit boundaries and freshness', () => {
@@ -59,9 +68,20 @@ describe('unit-aware Word Forge planning', () => {
     }
 
     const trailFourProgress = createProgress(4)
-    const exhaustedPlan = planUnitQuest({
+    const trailFiveProgress = createProgress(5)
+    const trailFourPlan = planUnitQuest({
       selectedUnitId: 'wg-unit-2',
       progress: trailFourProgress,
+      availableLessons,
+    })
+    expect(trailFourPlan.status).toBe('available')
+    if (trailFourPlan.status === 'available') {
+      expect(trailFourPlan.lessonId).toBe('lesson-word-forge-consonant-le-checkpoint-a')
+    }
+
+    const exhaustedPlan = planUnitQuest({
+      selectedUnitId: 'wg-unit-2',
+      progress: trailFiveProgress,
       availableLessons,
     })
     expect(exhaustedPlan.status).toBe('content_needed')

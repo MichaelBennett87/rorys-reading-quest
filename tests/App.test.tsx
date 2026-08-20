@@ -1,8 +1,8 @@
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
+import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import { afterEach, describe, expect, test, vi } from 'vitest'
 
 import App from '../src/App'
-import { QUEST_PROGRESS_STORAGE_KEY } from '../src/persistence'
+import { QUEST_PROGRESS_STORAGE_KEY, createDefaultQuestProgress } from '../src/persistence'
 import { PARENT_ACCESS_STORAGE_KEY, PARENT_RECORDS_STORAGE_KEY } from '../src/persistence'
 import * as parentAccess from '../src/services/parentAccess'
 import type { ParentPinRecord } from '../src/services/parentAccess'
@@ -67,6 +67,12 @@ const getPoetryCard = () => getSingleByRole('button', /Poetry Planet world - Com
 const getContinueButton = () => getSingleByRole('button', /Continue Quest/i)
 const getOpenParentButton = () => getSingleByRole('button', /Grown-Up Area/i)
 
+function seedWordForgeDifficulty(difficulty: number) {
+  const progress = createDefaultQuestProgress('2026-08-20T12:00:00.000Z')
+  progress.skillProgress['g2-word-forge-word-practice'].currentDifficulty = difficulty
+  window.localStorage.setItem(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(progress))
+}
+
 describe('Phase 2 lesson flow and child shell', () => {
   test('renders home title', () => {
     render(<App />)
@@ -120,6 +126,29 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getAllByRole('button', { name: /Syllable Summit Locked/i })).toHaveLength(1)
   })
 
+  test('shows Trail 4 Syllable Summit when the current difficulty reaches 4', () => {
+    seedWordForgeDifficulty(4)
+    render(<App />)
+
+    fireEvent.click(getWordForgeCard())
+    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
+
+    expect(screen.getAllByRole('button', { name: /Syllable Summit Available/i })).toHaveLength(1)
+    expect(within(screen.getByRole('button', { name: /Syllable Summit Available/i })).getByText(/Trail 4/i)).toBeTruthy()
+    expect(screen.getByText(/consonant-le syllables and syllable review/i)).toBeTruthy()
+  })
+
+  test('shows Prefix Power as preparing when the current difficulty reaches 5', () => {
+    seedWordForgeDifficulty(5)
+    render(<App />)
+
+    fireEvent.click(getWordForgeCard())
+    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
+
+    expect(screen.getAllByRole('button', { name: /Syllable Summit (Complete|Review)/i })).toHaveLength(1)
+    expect(screen.getByText(/Prefix Power quests are being prepared\./i)).toBeTruthy()
+  })
+
   test('opens lesson-ready screen from an available unit', () => {
     render(<App />)
 
@@ -129,6 +158,19 @@ describe('Phase 2 lesson flow and child shell', () => {
 
     expect(screen.getAllByRole('heading', { name: /Vowel Voyage/i })).toHaveLength(1)
     expect(screen.getByText(/Potential reward: up to 3 stars/i)).toBeTruthy()
+  })
+
+  test('starts Trail 4 checkpoint content from Syllable Summit at difficulty 4', () => {
+    seedWordForgeDifficulty(4)
+    render(<App />)
+
+    fireEvent.click(getWordForgeCard())
+    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Syllable Summit Available/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
+
+    expect(screen.getByRole('heading', { name: /Syllable Summit/i })).toBeTruthy()
+    expect(screen.getByText(/Which word has a consonant-le ending\?/i)).toBeTruthy()
   })
 
   test('starts the Word Forge lesson run and shows the first question', () => {

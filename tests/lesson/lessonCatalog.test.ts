@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, test } from 'vitest'
 
 import { sampleContent } from '../../src/domain/content'
-import { getLessonById, getLessonCandidates, getLessonForUnit } from '../../src/domain/lesson'
+import { getLessonById, getLessonCandidates, getLessonCatalogMetadata, getLessonForUnit } from '../../src/domain/lesson'
 
 const snapshotQuestions = JSON.parse(JSON.stringify(sampleContent.questions))
 
@@ -27,9 +27,10 @@ describe('getLessonForUnit', () => {
     expect(candidates.filter((candidate) => candidate.difficulty === 0)).toHaveLength(2)
     expect(candidates.filter((candidate) => candidate.difficulty === 1)).toHaveLength(7)
     expect(candidates.filter((candidate) => candidate.difficulty === 2)).toHaveLength(7)
-    expect(candidates.filter((candidate) => candidate.difficulty === 3)).toHaveLength(5)
-    expect(candidates).toHaveLength(21)
-    expect(new Set(candidates.map((candidate) => candidate.activityId)).size).toBe(21)
+    expect(candidates.filter((candidate) => candidate.difficulty === 3)).toHaveLength(7)
+    expect(candidates.filter((candidate) => candidate.difficulty === 4)).toHaveLength(5)
+    expect(candidates).toHaveLength(28)
+    expect(new Set(candidates.map((candidate) => candidate.activityId)).size).toBe(28)
     expect(candidates.map((candidate) => candidate.lessonId)).not.toEqual(expect.arrayContaining([
       'lesson-word-forge-vowel-voyage-a',
       'lesson-word-forge-vowel-voyage-b',
@@ -64,5 +65,15 @@ describe('getLessonForUnit', () => {
     const result = getLessonForUnit('non-existent-unit')
     expect(result.lesson).toBeUndefined()
     expect(result.errors).toEqual(['No lesson content assigned to this unit.'])
+  })
+
+  test('resolves lesson ownership from catalog metadata', () => {
+    expect(getLessonCatalogMetadata('lesson-word-forge-consonant-le-checkpoint-a')).toEqual(expect.objectContaining({
+      lessonId: 'lesson-word-forge-consonant-le-checkpoint-a',
+      packId: 'g2-word-forge-consonant-le-integrated',
+      worldId: 'word-forge',
+      unitId: 'wg-unit-2',
+    }))
+    expect(getLessonCatalogMetadata('missing-lesson-id')).toBeNull()
   })
 })

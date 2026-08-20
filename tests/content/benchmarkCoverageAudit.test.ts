@@ -31,14 +31,17 @@ describe('benchmark coverage audit', () => {
     }))
   })
 
-  test('reports partial coverage for 1.3c without inheriting 1.3a patterns', () => {
+  test('reports implemented coverage for 1.3c across both consonant-le packs', () => {
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.F.1.3c')).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.F.1.3c',
       expectedPatterns: ['open-syllable', 'closed-syllable', 'consonant-le'],
-      coveredPatterns: ['open-syllable', 'closed-syllable'],
-      missingPatterns: ['consonant-le'],
-      contributingPackIds: ['g2-word-forge-two-syllable-open-closed'],
-      coverageStatus: 'partial',
+      coveredPatterns: ['open-syllable', 'closed-syllable', 'consonant-le'],
+      missingPatterns: [],
+      contributingPackIds: [
+        'g2-word-forge-consonant-le-integrated',
+        'g2-word-forge-two-syllable-open-closed',
+      ],
+      coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',
     }))
   })

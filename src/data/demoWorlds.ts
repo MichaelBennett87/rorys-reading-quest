@@ -1,3 +1,5 @@
+import { getLessonCatalogMetadata } from '../domain/lesson'
+
 export type WorldStatus = 'available' | 'locked' | 'coming-later'
 
 export type UnitState = 'available' | 'complete' | 'locked' | 'review'
@@ -234,9 +236,9 @@ export function deriveWorldsForProgress(progress: { skillProgress: Record<string
 function resolveWordForgeFocus(progress: { skillProgress: Record<string, { currentDifficulty: number; currentLearningState: string }>; plannedNextQuest: { status: 'available'; purpose: string; lesson: { lessonId: string } } | { status: 'content_needed'; purpose: string; skillId: string; difficulty: number; reason: string } | null; activeLessonSession: { lessonId: string } | null }) {
   const skill = Object.values(progress.skillProgress)[0]
   const currentDifficulty = skill?.currentDifficulty ?? 1
-  const activeUnitId = progress.activeLessonSession ? getUnitIdForLesson(progress.activeLessonSession.lessonId) : null
+  const activeUnitId = progress.activeLessonSession ? getLessonCatalogMetadata(progress.activeLessonSession.lessonId)?.unitId ?? null : null
   const plannedUnitId = progress.plannedNextQuest?.status === 'available'
-    ? getUnitIdForLesson(progress.plannedNextQuest.lesson.lessonId)
+    ? getLessonCatalogMetadata(progress.plannedNextQuest.lesson.lessonId)?.unitId ?? null
     : null
   return {
     currentDifficulty,
@@ -249,11 +251,14 @@ function resolveWordForgeFocus(progress: { skillProgress: Record<string, { curre
 
 function deriveWordForgeUnit(unit: DemoUnit, focus: ReturnType<typeof resolveWordForgeFocus>): DemoUnit {
   if (unit.id === 'wg-unit-1') {
-    const state = focus.currentDifficulty >= 3 ? (focus.plannedUnitId === unit.id && focus.plannedPurpose === 'review' ? 'review' : 'complete') : 'available'
+    const state = focus.currentDifficulty >= 3
+      ? (focus.plannedUnitId === unit.id && focus.plannedPurpose === 'review' ? 'review' : 'complete')
+      : 'available'
     return {
       ...unit,
       state,
       progressPercent: focus.currentDifficulty >= 3 ? 100 : focus.currentDifficulty === 2 ? 75 : 50,
+      difficultyLabel: focus.currentDifficulty >= 3 ? (state === 'review' ? 'Review' : 'Complete') : 'Trail 1',
       practiceFocus: focus.currentDifficulty >= 3
         ? 'Review the vowel patterns you already know.'
         : 'vowel patterns and short decoding',
@@ -261,34 +266,37 @@ function deriveWordForgeUnit(unit: DemoUnit, focus: ReturnType<typeof resolveWor
   }
 
   if (unit.id === 'wg-unit-2') {
-    const unlocked = focus.currentDifficulty >= 3 || focus.activeUnitId === unit.id || focus.plannedUnitId === unit.id
-    const state = focus.currentDifficulty >= 4 && focus.activeUnitId !== unit.id && focus.plannedUnitId !== unit.id
-      ? 'complete'
-      : unlocked
+    const activeOrPlanned = focus.activeUnitId === unit.id || focus.plannedUnitId === unit.id
+    const state = focus.currentDifficulty >= 5 && !activeOrPlanned
+      ? (focus.plannedPurpose === 'review' ? 'review' : 'complete')
+      : focus.currentDifficulty >= 3 || activeOrPlanned
         ? 'available'
         : 'locked'
     return {
       ...unit,
       state,
-      progressPercent: state === 'locked' ? 0 : focus.currentDifficulty >= 4 ? 100 : 50,
+      difficultyLabel: focus.currentDifficulty >= 5
+        ? (state === 'review' ? 'Review' : 'Complete')
+        : focus.currentDifficulty >= 4
+          ? 'Trail 4'
+          : 'Trail 3',
+      progressPercent: state === 'locked' ? 0 : focus.currentDifficulty >= 5 ? 100 : focus.currentDifficulty >= 4 ? 75 : 50,
       practiceFocus: state === 'locked'
         ? 'Complete Vowel Voyage to unlock Syllable Summit.'
-        : 'breaking words into beat units',
+        : focus.currentDifficulty >= 4
+          ? 'consonant-le syllables and syllable review'
+          : 'regularly spelled two-syllable words, open syllables, and closed syllables',
     }
   }
 
   return {
     ...unit,
     state: unit.id === 'wg-unit-3' ? 'locked' : unit.state,
+    difficultyLabel: unit.id === 'wg-unit-3' && focus.currentDifficulty >= 5 ? 'Trail 5' : unit.difficultyLabel,
+    practiceFocus: unit.id === 'wg-unit-3' && focus.currentDifficulty >= 5
+      ? 'Prefix Power quests are being prepared.'
+      : unit.practiceFocus,
   }
-}
-
-function getUnitIdForLesson(lessonId: string): string | null {
-  if (lessonId.startsWith('lesson-word-forge-oo-ea-')) return 'wg-unit-1'
-  if (lessonId.startsWith('lesson-word-forge-ou-oi-oy-ow-')) return 'wg-unit-1'
-  if (lessonId.startsWith('lesson-word-forge-syllable-summit-')) return 'wg-unit-2'
-  if (lessonId.startsWith('lesson-word-forge-')) return 'wg-unit-1'
-  return null
 }
 
 function cloneWorld(world: DemoWorld): DemoWorld {

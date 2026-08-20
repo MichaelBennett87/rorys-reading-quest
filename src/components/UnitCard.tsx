@@ -37,6 +37,7 @@ export function UnitCard({ unit, onSelect }: UnitCardProps) {
           </span>
         </div>
         <p>{unit.difficultyLabel}</p>
+        <p className="unit-practice-focus">{unit.practiceFocus}</p>
         <ProgressMeter label="Stars and progress" value={unit.progressPercent} />
         <div className="unit-meta">
           <span aria-label={`${unit.stars} stars earned`}>{'🌟'.repeat(unit.stars) || 'No stars yet'}</span>
