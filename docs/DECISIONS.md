@@ -139,3 +139,17 @@
 - Reason: The phase needs a polished parent-facing presentation layer without adding record mutation or print/export behavior.
 - Consequence: Parent navigation, overview, drill-downs, session details, reviews, word help, and the assessments placeholder can be delivered now while Phase 5B2 retains the remaining mutation and print flows.
 - Status: Applied
+
+## 2026-08-20 - Transactional Parent Assessment Records
+
+- Decision: Route assessment create/update/delete through the parent gate and only promote state after a successful local store save.
+- Reason: Parent assessment edits must be isolated from child progress and must not claim durability when storage fails.
+- Consequence: Failed save/delete operations preserve the previous assessment collection and surface a calm browser-local notice.
+- Status: Applied
+
+## 2026-08-20 - Local Print Summary Preview
+
+- Decision: Keep print as a parent-only preview plus explicit browser print action, with no PDF or download feature.
+- Reason: The phase needs a readable paper-friendly summary without adding a file-generation dependency or remote service.
+- Consequence: The dashboard renders a dedicated print preview view and delegates the actual dialog to the injected browser print service.
+- Status: Applied

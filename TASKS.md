@@ -40,11 +40,11 @@
   - [x] Add optional browser speech support and accessible word-help controls.
   - [x] Persist assistance with active sessions and completed attempts.
   - [x] Add focused support, persistence, and UI test coverage.
-- [ ] Phase 5: parent dashboard
+- [x] Phase 5: parent dashboard
   - [x] Phase 5A: analytics and parent-access foundation
-  - [ ] Phase 5B: complete dashboard, assessment entry, and print summary
+  - [x] Phase 5B: complete dashboard, assessment entry, and print summary
     - [x] Phase 5B1: dashboard presentation and progress drill-downs
-    - [ ] Phase 5B2: assessment management, print summary, and Phase 5 completion
+    - [x] Phase 5B2: assessment management, print summary, and Phase 5 completion
 - [ ] Phase 6: Grade 2 bridge content
   - [ ] Add broad Grade 2 bridge activity bank.
 - [ ] Phase 7: Grade 3 FAST-aligned content

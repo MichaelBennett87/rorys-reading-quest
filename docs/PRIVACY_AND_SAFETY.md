@@ -34,3 +34,7 @@ Parent access uses a separate local store with hashed PIN material only. Officia
 ## Phase 5B1 Parent Dashboard Privacy
 
 The read-only parent dashboard reuses the same local progress and assessment stores. It presents aggregate summaries, privacy-safe session metadata, and read-only assessment counts without exposing passage text, answers, spoken text, PIN material, or raw assistance events. Dashboard navigation never writes to child progress or parent assessment records.
+
+## Phase 5B2 Assessment and Print Boundary
+
+Assessment records stay local, use the separate parent-record store, and store only stable IDs plus official report values entered by a parent. The UI never stores report images, uploaded files, or narrative notes. Print Summary uses the browser print dialog only after explicit parent action and does not send content to an external service or create a PDF download artifact.

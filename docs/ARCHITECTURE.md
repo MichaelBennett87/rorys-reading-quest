@@ -43,3 +43,9 @@
 - `src/screens/parent/ParentDashboardScreen.tsx` consumes the existing `DashboardSnapshot` contract and renders the authenticated parent overview, progress drill-downs, recent sessions, reviews, word-help summaries, and the read-only assessments placeholder.
 - `src/components/parent/*` provides small reusable presentation primitives for headers, navigation, metric cards, data notes, empty states, status badges, and accuracy meters.
 - The dashboard is responsive and local-only, with no new persistence layer, charting dependency, router, or mutation path added.
+
+## Phase 5B2 Parent Dashboard Completion
+
+- `src/screens/parent/ParentAssessmentsView.tsx` owns the authenticated assessment-management UI. It keeps local form state, renders create/edit/delete flows, and delegates storage mutations through callbacks owned by the parent gate.
+- `src/screens/parent/ParentPrintSummaryView.tsx` renders the print-ready parent summary from `DashboardSnapshot` and `ParentRecordsState`, then calls the injected browser print service only after an explicit parent action.
+- `src/screens/ParentPlaceholderScreen.tsx` remains the single owner of parent-access state, parent-record state, and transactional persistence. Assessment mutations and print actions never touch child progress.

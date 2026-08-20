@@ -73,3 +73,7 @@ Phase 5A adds a separate local parent-access gate and parent analytics foundatio
 ## Phase 5B1 Parent Dashboard Presentation
 
 Phase 5B1 keeps the same local data sources and adds a read-only Parent Dashboard shell. The dashboard exposes overview metrics, reporting categories, benchmark and skill drill-downs, recent sessions, review summaries, word-help summaries, and a read-only assessments placeholder. It does not add parent record mutation, print/export, or any child-learning changes.
+
+## Phase 5B2 Parent Dashboard Completion
+
+Phase 5B2 adds local official-assessment management and a print-summary preview to the authenticated parent area. Assessment records are entered manually from official reports, stored only in the browser, and never affect child progression, XP, stars, or review scheduling. Print Summary is an explicit parent action that opens a local preview before calling the browser print dialog; it does not create a download or PDF artifact.

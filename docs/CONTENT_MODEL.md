@@ -36,3 +36,7 @@ Persistence stores content identifiers and versions, not passage text, explanati
 ## Parent Analytics Inputs
 
 Phase 5A does not add new child curriculum. Parent analytics consume the existing lesson, skill, attempt, assistance, and review metadata already produced by the child flow. When historical items cannot be resolved against current content, they remain unclassified rather than guessed.
+
+## Phase 5B2 Parent Records Boundary
+
+Official assessment records remain separate from lesson/content authoring. Phase 5B2 does not add new passages, questions, or curriculum content. The print summary reuses existing dashboard snapshots and parent records only; it does not mutate content or persist raw report text.
