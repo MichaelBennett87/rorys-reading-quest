@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 
 import {
   type EvidencePairLessonQuestion,
@@ -20,12 +20,21 @@ import { TableMatchQuestion } from '../components/lesson/TableMatchQuestion'
 import { AnswerFeedback } from '../components/lesson/AnswerFeedback'
 import { PassageCard } from '../components/lesson/PassageCard'
 import { LessonResults } from '../components/lesson/LessonResults'
+import {
+  advanceActiveLessonSession,
+  checkpointSubmittedQuestion,
+  restoreLessonEvaluations,
+  type ActiveLessonSession,
+} from '../persistence'
 
 type LessonState = 'question' | 'feedback' | 'results'
 
 interface LessonScreenProps {
   lesson: LessonDefinition
   onBack: () => void
+  session?: ActiveLessonSession | null
+  onSessionCheckpoint?: (session: ActiveLessonSession) => void
+  onComplete?: (result: LessonResult, completionId: string) => void
 }
 
 const emptyLessonResult: LessonResult = {
@@ -42,17 +51,33 @@ const emptyLessonResult: LessonResult = {
   completed: true,
 }
 
-export function LessonScreen({ lesson, onBack }: LessonScreenProps) {
-  const [step, setStep] = useState<LessonState>('question')
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [questionEvaluations, setQuestionEvaluations] = useState<QuestionEvaluationResult[]>([])
+export function LessonScreen({
+  lesson,
+  onBack,
+  session = null,
+  onSessionCheckpoint,
+  onComplete,
+}: LessonScreenProps) {
+  const restoredEvaluations = useMemo(
+    () => restoreLessonEvaluations(lesson, session),
+    [lesson, session],
+  )
+  const restoredIndex = Math.min(session?.currentQuestionIndex ?? 0, Math.max(0, lesson.questions.length - 1))
+  const restoredFeedback = restoredEvaluations.find(
+    (evaluation) => evaluation.questionId === lesson.questions[restoredIndex]?.questionId,
+  ) ?? null
+  const [step, setStep] = useState<LessonState>(restoredFeedback ? 'feedback' : 'question')
+  const [currentIndex, setCurrentIndex] = useState(restoredIndex)
+  const [questionEvaluations, setQuestionEvaluations] = useState<QuestionEvaluationResult[]>(restoredEvaluations)
   const [selectedChoiceId, setSelectedChoiceId] = useState('')
   const [selectedChoiceIds, setSelectedChoiceIds] = useState<string[]>([])
   const [selectedSegmentIds, setSelectedSegmentIds] = useState<string[]>([])
   const [selectedPartAChoiceId, setSelectedPartAChoiceId] = useState('')
   const [selectedPartBChoiceId, setSelectedPartBChoiceId] = useState('')
   const [selectedMappings, setSelectedMappings] = useState<Record<string, string>>({})
-  const [pendingFeedback, setPendingFeedback] = useState<QuestionEvaluationResult | null>(null)
+  const [pendingFeedback, setPendingFeedback] = useState<QuestionEvaluationResult | null>(restoredFeedback)
+  const sessionRef = useRef(session)
+  const completionSentRef = useRef(false)
 
   const currentQuestion = lesson.questions[currentIndex]
 
@@ -181,16 +206,55 @@ export function LessonScreen({ lesson, onBack }: LessonScreenProps) {
     setQuestionEvaluations((prev) => [...prev, result])
     setPendingFeedback(result)
     setStep('feedback')
+    if (sessionRef.current) {
+      const checkpoint = checkpointSubmittedQuestion(
+        sessionRef.current,
+        result,
+        currentIndex,
+        new Date().toISOString(),
+      )
+      sessionRef.current = checkpoint
+      onSessionCheckpoint?.(checkpoint)
+    }
   }
 
   const onNext = () => {
     if (currentIndex + 1 >= lesson.questions.length) {
       setStep('results')
+      if (sessionRef.current) {
+        const checkpoint = advanceActiveLessonSession(
+          sessionRef.current,
+          currentIndex,
+          new Date().toISOString(),
+        )
+        sessionRef.current = checkpoint
+        onSessionCheckpoint?.(checkpoint)
+      }
       return
     }
 
-    setCurrentIndex((prev) => prev + 1)
+    const nextIndex = currentIndex + 1
+    setCurrentIndex(nextIndex)
     resetCurrentQuestionState()
+    if (sessionRef.current) {
+      const checkpoint = advanceActiveLessonSession(
+        sessionRef.current,
+        nextIndex,
+        new Date().toISOString(),
+      )
+      sessionRef.current = checkpoint
+      onSessionCheckpoint?.(checkpoint)
+    }
+  }
+
+  const continueFromResults = () => {
+    if (completionSentRef.current) return
+    completionSentRef.current = true
+    if (onComplete && sessionRef.current) {
+      onComplete(result, sessionRef.current.sessionId)
+      return
+    }
+    onBack()
   }
 
   const toggleChoice = (choiceId: string) => {
@@ -230,7 +294,7 @@ export function LessonScreen({ lesson, onBack }: LessonScreenProps) {
       {step === 'results' && (
         <LessonResults
           result={questionEvaluations.length ? result : emptyLessonResult}
-          onReturn={onBack}
+          onContinue={continueFromResults}
         />
       )}
 

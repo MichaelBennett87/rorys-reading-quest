@@ -2,9 +2,11 @@ import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, test } from 'vitest'
 
 import App from '../src/App'
+import { QUEST_PROGRESS_STORAGE_KEY } from '../src/persistence'
 
 afterEach(() => {
   cleanup()
+  window.localStorage.removeItem(QUEST_PROGRESS_STORAGE_KEY)
 })
 
 const getSingleByRole = (
@@ -159,7 +161,7 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getAllByRole('region', { name: /Quest rewards/i })).toHaveLength(1)
     expect(screen.getByLabelText(/120 experience points/i)).toBeTruthy()
     expect(screen.getByLabelText(/8 stars earned/i)).toBeTruthy()
-    expect(screen.getByLabelText(/Quest streak 3 sessions/i)).toBeTruthy()
+    expect(screen.getByLabelText(/Quest streak 0 sessions/i)).toBeTruthy()
   })
 
   test('does not show forbidden failure wording', () => {

@@ -12,6 +12,7 @@ interface HomeScreenProps {
   onContinue: () => void
   onWorldSelect: (worldId: string) => void
   onOpenParentArea: () => void
+  storageNotice?: string
 }
 
 export function HomeScreen({
@@ -20,6 +21,7 @@ export function HomeScreen({
   onContinue,
   onWorldSelect,
   onOpenParentArea,
+  storageNotice,
 }: HomeScreenProps) {
   return (
     <div className="screen-shell">
@@ -39,6 +41,8 @@ export function HomeScreen({
         <p className="small-copy">
           Current path: {learner.currentPath} · Level {learner.level}
         </p>
+        <p className="small-copy">Completed quests: {learner.questStreak}</p>
+        {storageNotice && <p className="storage-notice" role="status">{storageNotice}</p>}
         <ChildButton type="button" className="primary-action" onClick={onContinue}>
           Continue Quest
         </ChildButton>
@@ -67,4 +71,3 @@ export function HomeScreen({
     </div>
   )
 }
-

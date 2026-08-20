@@ -3,7 +3,7 @@ import { ChildButton } from '../ChildButton'
 
 interface LessonResultsProps {
   result: LessonResult
-  onReturn: () => void
+  onContinue: () => void
 }
 
 const starCount = (accuracy: number): number => {
@@ -16,7 +16,7 @@ const starCount = (accuracy: number): number => {
   return 1
 }
 
-export function LessonResults({ result, onReturn }: LessonResultsProps) {
+export function LessonResults({ result, onContinue }: LessonResultsProps) {
   const stars = starCount(result.accuracy)
 
   return (
@@ -28,8 +28,8 @@ export function LessonResults({ result, onReturn }: LessonResultsProps) {
       <p>Stars earned: {stars}</p>
       <p>{'★'.repeat(stars)}{'☆'.repeat(Math.max(0, 3 - stars))}</p>
       <section className="screen-actions">
-        <ChildButton type="button" className="primary-action" onClick={onReturn}>
-          Return to Unit
+        <ChildButton type="button" className="primary-action" onClick={onContinue}>
+          Continue Quest
         </ChildButton>
       </section>
     </section>

@@ -4,6 +4,7 @@ export type AppScreen =
   | 'unit_select'
   | 'lesson_ready'
   | 'lesson_run'
+  | 'progression_outcome'
   | 'parent_gate'
 
 export interface AppViewState {

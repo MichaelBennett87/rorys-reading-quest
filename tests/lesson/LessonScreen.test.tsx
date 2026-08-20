@@ -208,7 +208,7 @@ describe('LessonScreen', () => {
     fireEvent.click(screen.getByRole('button', { name: /See Quest Complete/i }))
     expect(screen.getByText(/Quest Complete/i)).toBeTruthy()
     expect(screen.getByText(/Stars earned:/i)).toBeTruthy()
-    fireEvent.click(screen.getByRole('button', { name: /Return to Unit/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
     expect(onBack).toHaveBeenCalledTimes(1)
   })
 })

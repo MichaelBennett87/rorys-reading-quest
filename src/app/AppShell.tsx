@@ -2,14 +2,17 @@ import { useState } from 'react'
 
 import { demoLearner } from '../data/demoLearner'
 import { demoWorlds, getDemoWorldById, getRecommendedWorldId } from '../data/demoWorlds'
-import { getLessonForUnit, type LessonDefinition } from '../domain/lesson'
-import type { AppScreen } from './appView'
+import { getLessonById, getLessonForUnit, type LessonDefinition } from '../domain/lesson'
+import type { ActiveLessonSession } from '../persistence'
 import { HomeScreen } from '../screens/HomeScreen'
 import { LessonReadyScreen } from '../screens/LessonReadyScreen'
 import { LessonScreen } from '../screens/LessonScreen'
 import { ParentPlaceholderScreen } from '../screens/ParentPlaceholderScreen'
+import { ProgressionOutcomeScreen } from '../screens/ProgressionOutcomeScreen'
 import { UnitSelectScreen } from '../screens/UnitSelectScreen'
 import { WorldScreen } from '../screens/WorldScreen'
+import type { AppScreen } from './appView'
+import { type ProgressionOutcomeViewModel, useQuestProgress } from './useQuestProgress'
 
 interface AppShellState {
   screen: AppScreen
@@ -19,92 +22,154 @@ interface AppShellState {
 
 interface LessonLaunchState {
   lesson: LessonDefinition | null
+  session: ActiveLessonSession | null
   errors: string[]
 }
 
 export function AppShell() {
+  const questProgress = useQuestProgress()
   const [state, setState] = useState<AppShellState>({
     screen: 'home',
     selectedWorldId: getRecommendedWorldId(),
     selectedUnitId: null,
   })
   const [, setHistory] = useState<AppScreen[]>([])
-  const [lessonState, setLessonState] = useState<LessonLaunchState>({ lesson: null, errors: [] })
+  const [lessonState, setLessonState] = useState<LessonLaunchState>({
+    lesson: null,
+    session: null,
+    errors: [],
+  })
+  const [outcome, setOutcome] = useState<ProgressionOutcomeViewModel | null>(null)
 
   const selectedWorld = state.selectedWorldId ? getDemoWorldById(state.selectedWorldId) : null
   const selectedUnit = selectedWorld ? selectedWorld.units.find((unit) => unit.id === state.selectedUnitId) : null
   const lessonPreview = selectedUnit ? getLessonForUnit(selectedUnit.id) : null
+  const activeSkill = Object.values(questProgress.progress.skillProgress)[0]
+  const learner = {
+    ...demoLearner,
+    currentPath: activeSkill?.currentDifficulty === 0
+      ? 'Word Forge Building Block'
+      : `Word Forge Trail ${activeSkill?.currentDifficulty ?? 1}`,
+    level: activeSkill?.currentDifficulty ?? 1,
+    xp: questProgress.progress.totalXp,
+    stars: questProgress.progress.totalStars,
+    questStreak: questProgress.progress.completedSessionCount,
+  }
 
   const navigate = (screen: AppScreen) => {
-    setHistory((prev) => [...prev, state.screen])
-    setState((prev) => ({ ...prev, screen }))
+    setHistory((previous) => [...previous, state.screen])
+    setState((previous) => ({ ...previous, screen }))
   }
 
   const navigateBack = () => {
-    setHistory((prev) => {
-      const nextHistory = prev.slice(0, -1)
-      const previous = prev.at(-1) ?? 'home'
-      setState((currentState) => ({
-        ...currentState,
-        screen: previous,
-      }))
+    setHistory((previous) => {
+      const nextHistory = previous.slice(0, -1)
+      const previousScreen = previous.at(-1) ?? 'home'
+      setState((current) => ({ ...current, screen: previousScreen }))
       return nextHistory
     })
   }
 
+  const launchLesson = (lesson: LessonDefinition) => {
+    const session = questProgress.beginLesson(lesson)
+    setLessonState({ lesson, session, errors: [] })
+    setState((previous) => ({
+      ...previous,
+      screen: 'lesson_run',
+      selectedWorldId: lesson.worldId,
+      selectedUnitId: lesson.unitId,
+    }))
+  }
+
+  const showContentNeeded = (reason: string, difficulty: number) => {
+    setOutcome({
+      kind: 'CONTENT_NEEDED',
+      earnedXp: 0,
+      earnedStars: 0,
+      currentDifficulty: difficulty,
+      completionId: 'content-needed',
+      nextQuest: {
+        status: 'content_needed',
+        purpose: 'progression',
+        skillId: activeSkill?.skillId ?? 'unknown',
+        difficulty,
+        reason,
+      },
+    })
+    setState((previous) => ({ ...previous, screen: 'progression_outcome' }))
+  }
+
   const handleContinue = () => {
-    const recommendedWorld = getDemoWorldById(getRecommendedWorldId())
-    if (!recommendedWorld) {
+    const active = questProgress.progress.activeLessonSession
+    if (active) {
+      const resumed = getLessonById(active.lessonId)
+      if (resumed.lesson) {
+        launchLesson(resumed.lesson)
+        return
+      }
+    }
+    const plan = questProgress.planContinue()
+    if (plan.status === 'content_needed') {
+      showContentNeeded(plan.reason, plan.difficulty)
       return
     }
-    if (recommendedWorld.status === 'available') {
-      setState((prev) => ({ ...prev, selectedWorldId: recommendedWorld.id }))
-      navigate('world')
-    }
+    const selected = getLessonById(plan.lesson.lessonId)
+    if (selected.lesson) launchLesson(selected.lesson)
+    else showContentNeeded(selected.errors[0] ?? 'The planned quest is unavailable.', plan.lesson.difficulty)
   }
 
   const openWorld = (worldId: string) => {
     const world = getDemoWorldById(worldId)
-    if (!world || world.status !== 'available') {
-      return
-    }
-    setState((prev) => ({ ...prev, selectedWorldId: worldId, selectedUnitId: null }))
+    if (!world || world.status !== 'available') return
+    setState((previous) => ({ ...previous, selectedWorldId: worldId, selectedUnitId: null }))
     navigate('world')
   }
 
   const openUnitSelect = () => {
-    if (!selectedWorld) {
-      return
-    }
-    setState((prev) => ({ ...prev, selectedUnitId: null }))
+    if (!selectedWorld) return
+    setState((previous) => ({ ...previous, selectedUnitId: null }))
     navigate('unit_select')
   }
 
   const openLessonReady = (unitId: string) => {
-    setState((prev) => ({ ...prev, selectedUnitId: unitId }))
+    setState((previous) => ({ ...previous, selectedUnitId: unitId }))
     navigate('lesson_ready')
   }
 
-  const openParentGate = () => {
-    navigate('parent_gate')
+  const startQuest = () => {
+    const launch = getLessonForUnit(state.selectedUnitId ?? '')
+    if (launch.lesson) {
+      launchLesson(launch.lesson)
+      return
+    }
+    setLessonState({ lesson: null, session: null, errors: launch.errors })
+    navigate('lesson_run')
   }
 
-  const startQuest = () => {
-    const launchResult = getLessonForUnit(state.selectedUnitId ?? '')
-    if (launchResult.lesson) {
-      setLessonState({ lesson: launchResult.lesson, errors: [] })
-    } else {
-      setLessonState({ lesson: null, errors: launchResult.errors })
-    }
-    navigate('lesson_run')
+  const startOutcomeQuest = () => {
+    if (!outcome || outcome.nextQuest.status !== 'available') return
+    const selected = getLessonById(outcome.nextQuest.lesson.lessonId)
+    if (selected.lesson) launchLesson(selected.lesson)
+    else showContentNeeded(selected.errors[0] ?? 'The next fresh quest is unavailable.', outcome.currentDifficulty)
   }
 
   if (state.screen === 'parent_gate') {
     return (
-      <ParentPlaceholderScreen
-        onBack={() => {
+      <ParentPlaceholderScreen onBack={() => {
+        setHistory([])
+        setState((previous) => ({ ...previous, screen: 'home' }))
+      }} />
+    )
+  }
+
+  if (state.screen === 'progression_outcome' && outcome) {
+    return (
+      <ProgressionOutcomeScreen
+        outcome={outcome}
+        onStartNext={startOutcomeQuest}
+        onReturnToMap={() => {
           setHistory([])
-          setState((prev) => ({ ...prev, screen: 'home' }))
+          setState((previous) => ({ ...previous, screen: 'unit_select', selectedWorldId: 'word-forge' }))
         }}
       />
     )
@@ -124,14 +189,25 @@ export function AppShell() {
     )
   }
 
-  if (state.screen === 'lesson_run' && selectedWorld && selectedUnit) {
-    if (lessonState.lesson) {
+  if (state.screen === 'lesson_run') {
+    if (lessonState.lesson && lessonState.session) {
       return (
         <LessonScreen
+          key={lessonState.session.sessionId}
           lesson={lessonState.lesson}
+          session={lessonState.session}
+          onSessionCheckpoint={(session) => {
+            setLessonState((previous) => ({ ...previous, session }))
+            questProgress.saveActiveSession(session)
+          }}
+          onComplete={(result, completionId) => {
+            const nextOutcome = questProgress.completeLesson(result, completionId)
+            setOutcome(nextOutcome)
+            setState((previous) => ({ ...previous, screen: 'progression_outcome' }))
+          }}
           onBack={() => {
             setHistory([])
-            setState((prev) => ({ ...prev, screen: 'unit_select' }))
+            setState((previous) => ({ ...previous, screen: 'unit_select' }))
           }}
         />
       )
@@ -139,52 +215,37 @@ export function AppShell() {
 
     return (
       <section className="screen-shell">
-        <header className="screen-header">
-          <h1>{selectedUnit.title}</h1>
-          <p>{selectedWorld.name}</p>
-        </header>
+        <header className="screen-header"><h1>Lesson content is not available</h1></header>
         <section className="card">
-          <h2>Lesson content is not available</h2>
-          <p>
-            {lessonState.errors[0] ?? 'This unit has no configured lesson data for this phase.'}
-          </p>
+          <p>{lessonState.errors[0] ?? 'This unit has no configured lesson data for this phase.'}</p>
         </section>
         <section className="screen-actions">
-          <button type="button" className="child-button primary-action" onClick={navigateBack}>
-            Return to Unit
-          </button>
+          <button type="button" className="child-button primary-action" onClick={navigateBack}>Return to Unit</button>
         </section>
       </section>
     )
   }
 
   if (state.screen === 'unit_select' && selectedWorld) {
-    return (
-      <UnitSelectScreen
-        world={selectedWorld}
-        onBack={navigateBack}
-        onSelectUnit={openLessonReady}
-      />
-    )
+    return <UnitSelectScreen world={selectedWorld} onBack={navigateBack} onSelectUnit={openLessonReady} />
   }
 
   if (state.screen === 'world' && selectedWorld) {
-    return (
-      <WorldScreen
-        world={selectedWorld}
-        onBack={navigateBack}
-        onOpenUnitSelect={openUnitSelect}
-      />
-    )
+    return <WorldScreen world={selectedWorld} onBack={navigateBack} onOpenUnitSelect={openUnitSelect} />
   }
 
+  const storageNotice = ['unavailable', 'invalid_json', 'unsupported_version', 'invalid_state', 'storage_error']
+    .includes(questProgress.storageStatus)
+    ? 'Your quest can continue safely, but this browser could not restore saved progress.'
+    : undefined
   return (
     <HomeScreen
-      learner={demoLearner}
+      learner={learner}
       worlds={demoWorlds}
+      storageNotice={storageNotice}
       onContinue={handleContinue}
       onWorldSelect={openWorld}
-      onOpenParentArea={openParentGate}
+      onOpenParentArea={() => navigate('parent_gate')}
     />
   )
 }
