@@ -42,22 +42,20 @@
 
 ## Verification summary
 
-- Lint: pending final rerun
-- Typecheck: pending final rerun
-- Tests: pending final rerun
-- Build: pending final rerun
-- git diff --check: pending final rerun
+- Lint: passed, zero warnings
+- Typecheck: passed
+- Tests: 34 files, 196 tests passed
+- Build: passed
+- git diff --check: passed
 
 ## Git state
 
 - Starting local SHA: `e7371a16304751a8bcb20668777c46c492193844`
 - Starting remote SHA: `e7371a16304751a8bcb20668777c46c492193844`
-- Final local HEAD: pending final push
-- Final remote HEAD: pending final push
-- Local and remote SHA match: pending final push
+- Final local HEAD: `3c3f1e923dba7b27bf0ed1feec6f781492e49204`
+- Final remote HEAD: `3c3f1e923dba7b27bf0ed1feec6f781492e49204`
+- Local and remote SHA match: yes
 
 ## Remaining concerns
 
 - Phase 6C4 fluency foundations remain deferred.
-- Final SHA fields will be filled after the authorized push completes.
-

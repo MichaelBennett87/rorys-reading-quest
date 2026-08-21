@@ -222,6 +222,13 @@
 - Consequence: Selected-unit planning can unlock Quiet Letter Quest at difficulty 7 while keeping Fluency Flight locked until Phase 6C4.
 - Status: Applied
 
+## 2026-08-21 - Phase 6C4 Fluency Practice Foundations
+
+- Decision: Treat `ELA.2.F.1.4` as supportive practice only in Phase 6C4 and keep it distinct from benchmark coverage.
+- Reason: Fluency Flight needs modeled reading, phrase-cued reading, repeated reading, self-monitoring, and understanding checks without recording or certifying oral reading.
+- Consequence: Parent, curriculum, and adaptive docs can report supportive practice while clearly saying the app does not measure oral fluency or claim benchmark mastery.
+- Status: Applied
+
 ## 2026-08-20 - Unit-Aware Word Forge Planning
 
 - Decision: Make selected-unit planning unit-aware so fresh lesson selection and active-session recovery respect the chosen Word Forge trail.

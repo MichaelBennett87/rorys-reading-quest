@@ -45,17 +45,17 @@
   - [x] Phase 5B: complete dashboard, assessment entry, and print summary
     - [x] Phase 5B1: dashboard presentation and progress drill-downs
     - [x] Phase 5B2: assessment management, print summary, and Phase 5 completion
-- [ ] Phase 6: Grade 2 bridge content
+- [x] Phase 6: Grade 2 bridge content
   - [x] Phase 6A1: content framework and variable vowel teams `oo`/`ea`
   - [x] Phase 6A2: `ou`, `oi`, `oy`, and `ow`
   - [x] Phase 6B: two-syllable, open, closed, and consonant-`le`
     - [x] Phase 6B1: two-syllable words plus open and closed syllables
     - [x] Phase 6B2: consonant-`le` and final ELA.2.F.1.3c integration
-  - [ ] Phase 6C: prefixes, suffixes, silent letters, and fluency foundations
+  - [x] Phase 6C: prefixes, suffixes, silent letters, and fluency foundations
     - [x] Phase 6C1: common prefixes and Prefix Power
     - [x] Phase 6C2: common suffixes and final ELA.2.F.1.3d integration
     - [x] Phase 6C3: silent-letter combinations and ELA.2.F.1.3e
-    - [ ] Phase 6C4: fluency foundations and final Phase 6C audit
+    - [x] Phase 6C4: fluency-practice foundations and final Phase 6C audit
   - [ ] Phase 6D: Grade 2 prose and poetry
   - [ ] Phase 6E: informational reading and vocabulary
   - [ ] Phase 6F: across-genres reading and final Grade 2 audit
