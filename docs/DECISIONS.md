@@ -236,6 +236,13 @@
 - Consequence: Later Story Scouts and Poetry Planet packs can land without changing persistence keys, track ordering by object insertion, or the existing Word Forge flow.
 - Status: Applied
 
+## 2026-08-21 - Phase 6D1 Story Scouts Activation
+
+- Decision: Activate `g2-story-scouts-prose` when the first Story Scouts pack is registered, while keeping Theme Trail, Perspective Portal, and Poetry Planet planned.
+- Reason: Phase 6D1 is the first active Story Scouts curriculum-authoring phase and needs a bounded prose pack without theme, perspective, or poetry content.
+- Consequence: The curriculum map can show `ELA.2.R.1.1` as implemented in DRAFT form without implying mastery or opening later prose and poetry phases.
+- Status: Applied
+
 ## 2026-08-20 - Unit-Aware Word Forge Planning
 
 - Decision: Make selected-unit planning unit-aware so fresh lesson selection and active-session recovery respect the chosen Word Forge trail.

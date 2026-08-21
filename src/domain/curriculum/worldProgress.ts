@@ -23,7 +23,10 @@ export function deriveWorldsForProgress(
     if (world.id === 'word-forge') {
       return deriveWordForgeWorld(world, skillProgress, activeUnitId, plannedUnitId)
     }
-    if (world.id === 'story-scouts' || world.id === 'poetry-planet') {
+    if (world.id === 'story-scouts') {
+      return deriveStoryScoutsWorld(world, skillProgress, activeUnitId, plannedUnitId, playableTrackIds)
+    }
+    if (world.id === 'poetry-planet') {
       return deriveTrackWorld(world, skillProgress, playableTrackIds)
     }
     return deriveNonPlayableWorld(world)
@@ -88,6 +91,101 @@ function deriveTrackWorld(
     progressionLabel: playable ? `Trail ${currentDifficulty} active` : `${world.name} quests are being prepared.`,
     currentProgress: playable ? Math.min(100, currentDifficulty * 10) : 0,
     units,
+  }
+}
+
+function deriveStoryScoutsWorld(
+  world: DemoWorld,
+  skillProgress: QuestProgressV1['skillProgress'],
+  activeUnitId: string | null,
+  plannedUnitId: string | null,
+  playableTrackIds: Set<string>,
+): DemoWorld {
+  const track = getTrackByWorldId(world.id)
+  const playable = Boolean(track && playableTrackIds.has(track.trackId))
+  const progress = track
+    ? skillProgress[track.skillId] ?? createInitialSkillProgress(track.skillId, track.initialDifficulty, track.initialLastMasteredDifficulty)
+    : null
+  const currentDifficulty = progress?.currentDifficulty ?? 1
+  const currentLearningState = progress?.currentLearningState ?? null
+  const storyMapActive = activeUnitId === 'ss-unit-1' || plannedUnitId === 'ss-unit-1'
+  const units = world.units.map((unit) => {
+    if (unit.id === 'ss-unit-1') return deriveStoryMapUnit(unit, currentDifficulty, currentLearningState, storyMapActive)
+    if (unit.id === 'ss-unit-2') return deriveThemeTrailUnit(unit, currentDifficulty)
+    return derivePerspectivePortalUnit(unit)
+  })
+
+  return {
+    ...world,
+    status: playable ? 'available' : 'coming-later',
+    progressionLabel: playable
+      ? currentDifficulty >= 2
+        ? currentLearningState === 'SPACED_REVIEW'
+          ? 'Story Map review available'
+          : 'Story Map complete'
+        : currentDifficulty <= 0
+          ? 'Building Block Trail active'
+          : 'Trail 1 active'
+      : 'Story Scouts quests are being prepared.',
+    currentProgress: playable ? Math.min(100, Math.max(0, currentDifficulty) * 50) : 0,
+    units,
+  }
+}
+
+function deriveStoryMapUnit(
+  unit: DemoUnit,
+  currentDifficulty: number,
+  currentLearningState: SkillProgressState['currentLearningState'] | null,
+  activeOrPlanned: boolean,
+): DemoUnit {
+  const state: UnitState = currentDifficulty >= 2
+    ? (currentLearningState === 'SPACED_REVIEW' ? 'review' : 'complete')
+    : 'available'
+
+  return {
+    ...unit,
+    state,
+    difficultyLabel: currentDifficulty <= 0
+      ? 'Building Block Trail'
+      : currentDifficulty >= 2
+        ? (state === 'review' ? 'Review' : 'Complete')
+        : 'Trail 1',
+    progressPercent: currentDifficulty <= 0 ? 25 : currentDifficulty === 1 ? 50 : 100,
+    stars: currentDifficulty <= 0 ? 0 : currentDifficulty === 1 ? 1 : 3,
+    practiceFocus: currentDifficulty <= 0
+      ? 'building block story pieces and sequence'
+      : currentDifficulty === 1
+        ? 'plot structure, setting, characters, and sequence of events'
+        : state === 'review'
+          ? 'Review the story map clues and events.'
+          : activeOrPlanned
+            ? 'Story Map quests are ready to resume.'
+            : 'Story Map quests are complete. Theme Trail quests are being prepared.',
+  }
+}
+
+function deriveThemeTrailUnit(unit: DemoUnit, currentDifficulty: number): DemoUnit {
+  const lockedMessage = currentDifficulty < 2
+    ? 'Complete Story Map to unlock Theme Trail.'
+    : 'Theme Trail quests are being prepared.'
+  return {
+    ...unit,
+    state: 'locked',
+    difficultyLabel: 'Locked',
+    progressPercent: 0,
+    stars: 0,
+    practiceFocus: lockedMessage,
+  }
+}
+
+function derivePerspectivePortalUnit(unit: DemoUnit): DemoUnit {
+  return {
+    ...unit,
+    state: 'locked',
+    difficultyLabel: 'Locked',
+    progressPercent: 0,
+    stars: 0,
+    practiceFocus: 'Perspective Portal quests are being prepared.',
   }
 }
 

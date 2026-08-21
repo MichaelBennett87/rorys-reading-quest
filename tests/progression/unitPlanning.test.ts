@@ -3,6 +3,7 @@ import { describe, expect, test } from 'vitest'
 import { deriveWorldsForProgress } from '../../src/data/demoWorlds'
 import { getLessonById, getLessonCandidates } from '../../src/domain/lesson'
 import { planUnitQuest } from '../../src/domain/progression'
+import { createInitialSkillProgress } from '../../src/domain/progression/skillProgressTypes'
 import { createActiveLessonSession, createDefaultQuestProgress } from '../../src/persistence'
 
 const now = '2026-08-20T12:00:00.000Z'
@@ -212,6 +213,67 @@ describe('unit-aware Word Forge planning', () => {
       availableLessons,
     })
     expect(exhaustedFluencyPlan.status).toBe('locked')
+  })
+
+  test('story scouts unit planning respects story map progress and future locks', () => {
+    const availableLessons = getLessonCandidates()
+
+    const storyProgress = createDefaultQuestProgress(now)
+    storyProgress.skillProgress['g2-story-scouts-prose'] = createInitialSkillProgress('g2-story-scouts-prose', 1, 0)
+
+    const storyMapPlan = planUnitQuest({
+      selectedUnitId: 'ss-unit-1',
+      progress: storyProgress,
+      availableLessons,
+    })
+    expect(storyMapPlan.status).toBe('available')
+    if (storyMapPlan.status === 'available') {
+      expect(storyMapPlan.lesson.skillId).toBe('g2-story-scouts-prose')
+      expect(storyMapPlan.lesson.lessonId).toBe('g2-story-scouts-plot-structure-elements-lesson-checkpoint-a')
+    }
+
+    const storyExhaustedProgress = createDefaultQuestProgress(now)
+    storyExhaustedProgress.skillProgress['g2-story-scouts-prose'] = createInitialSkillProgress('g2-story-scouts-prose', 2, 0)
+
+    const storyMapExhaustedPlan = planUnitQuest({
+      selectedUnitId: 'ss-unit-1',
+      progress: storyExhaustedProgress,
+      availableLessons,
+    })
+    expect(storyMapExhaustedPlan.status).toBe('content_needed')
+    if (storyMapExhaustedPlan.status === 'content_needed') {
+      expect(storyMapExhaustedPlan.reason).toMatch(/Theme Trail quests are being prepared/i)
+    }
+
+    const themeTrailLocked = planUnitQuest({
+      selectedUnitId: 'ss-unit-2',
+      progress: storyProgress,
+      availableLessons,
+    })
+    expect(themeTrailLocked.status).toBe('locked')
+    if (themeTrailLocked.status === 'locked') {
+      expect(themeTrailLocked.reason).toMatch(/Complete Story Map to unlock Theme Trail/i)
+    }
+
+    const themeTrailPreparing = planUnitQuest({
+      selectedUnitId: 'ss-unit-2',
+      progress: storyExhaustedProgress,
+      availableLessons,
+    })
+    expect(themeTrailPreparing.status).toBe('locked')
+    if (themeTrailPreparing.status === 'locked') {
+      expect(themeTrailPreparing.reason).toMatch(/Theme Trail quests are being prepared/i)
+    }
+
+    const perspectivePortalLocked = planUnitQuest({
+      selectedUnitId: 'ss-unit-3',
+      progress: storyProgress,
+      availableLessons,
+    })
+    expect(perspectivePortalLocked.status).toBe('locked')
+    if (perspectivePortalLocked.status === 'locked') {
+      expect(perspectivePortalLocked.reason).toMatch(/Perspective Portal quests are being prepared/i)
+    }
   })
 
   test('an active session in another unit blocks a fresh unit launch', () => {

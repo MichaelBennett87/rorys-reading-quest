@@ -62,6 +62,7 @@ const getSingleByRole = (
 }
 
 const getWordForgeCard = () => getSingleByRole('button', /Word Forge world - Available/i)
+const getStoryScoutsCard = () => getSingleByRole('button', /Story Scouts world - Available/i)
 const getLockedCard = () => getSingleByRole('button', /Context Cavern world - Locked/i)
 const getPoetryCard = () => getSingleByRole('button', /Poetry Planet world - Coming Later/i)
 const getContinueButton = () => getSingleByRole('button', /Continue Quest/i)
@@ -86,7 +87,7 @@ describe('Phase 2 lesson flow and child shell', () => {
 
     expect(screen.getAllByRole('heading', { name: /Curriculum Worlds/i })).toHaveLength(1)
     expect(screen.getAllByRole('button', { name: /Word Forge world - Available/i })).toHaveLength(1)
-    expect(screen.getAllByRole('button', { name: /Story Scouts world - Coming Later/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Story Scouts world - Available/i })).toHaveLength(1)
     expect(screen.getAllByRole('button', { name: /Information Detectives world - Coming Later/i })).toHaveLength(1)
     expect(screen.getAllByRole('button', { name: /Poetry Planet world - Coming Later/i })).toHaveLength(1)
   })
@@ -123,6 +124,14 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getByText(/Skills trained/i)).toBeTruthy()
   })
 
+  test('opens world screen from Story Scouts', () => {
+    render(<App />)
+
+    fireEvent.click(getStoryScoutsCard())
+    expect(screen.getAllByRole('heading', { name: /^Story Scouts$/i })).toHaveLength(1)
+    expect(screen.getByText(/Skills trained/i)).toBeTruthy()
+  })
+
   test('renders unit cards in unit selection', () => {
     render(<App />)
 
@@ -133,6 +142,17 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getAllByRole('button', { name: /Syllable Summit Locked/i })).toHaveLength(1)
     expect(screen.getAllByRole('button', { name: /Prefix Power Locked/i })).toHaveLength(1)
     expect(screen.getAllByRole('button', { name: /Suffix Station Locked/i })).toHaveLength(1)
+  })
+
+  test('renders story scouts unit cards in unit selection', () => {
+    render(<App />)
+
+    fireEvent.click(getStoryScoutsCard())
+    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
+    expect(screen.getAllByRole('heading', { name: /Story Scouts: Unit Selection/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Story Map Available/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Theme Trail Locked/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Perspective Portal Locked/i })).toHaveLength(1)
   })
 
   test('shows Trail 4 Syllable Summit when the current difficulty reaches 4', async () => {

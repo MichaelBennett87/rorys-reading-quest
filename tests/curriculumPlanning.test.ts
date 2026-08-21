@@ -101,6 +101,8 @@ describe('curriculum planning foundation', () => {
       'g2-story-scouts-prose',
       'g2-poetry-planet',
     ])
+    expect(curriculumTracks.find((track) => track.trackId === 'g2-story-scouts-prose')?.status).toBe('active')
+    expect(curriculumTracks.find((track) => track.trackId === 'g2-poetry-planet')?.status).toBe('planned_until_content_exists')
     expect(new Set(curriculumTracks.map((track) => track.trackId)).size).toBe(curriculumTracks.length)
     expect(new Set(curriculumTracks.map((track) => track.skillId)).size).toBe(curriculumTracks.length)
   })

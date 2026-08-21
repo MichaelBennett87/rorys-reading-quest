@@ -942,5 +942,41 @@ function getBridgePackExpectation(pack: ContentPack): BridgePackExpectation | nu
     }
   }
 
+  if (!hasB && !hasC && pack.manifest.benchmarkReferences.includes('ELA.2.R.1.1') && minDifficulty === 0 && maxDifficulty === 1) {
+    return {
+      packId: pack.manifest.packId,
+      guidedDifficultyA: 0,
+      guidedDifficultyB: 1,
+      checkpointPatterns: [
+        'plot-structure',
+        'setting',
+        'characters',
+        'sequence-of-events',
+        'plot-beginning-middle-end',
+        'plot-problem-resolution',
+        'setting-where',
+        'setting-when',
+        'character-traits',
+        'character-feelings',
+        'character-behaviors',
+        'event-sequencing',
+      ],
+      minSupportTargets: 28,
+      maxSupportTargets: 28,
+      minSupportTargetsPerPassage: 4,
+      maxSupportTargetsPerPassage: 4,
+      openConsonantLeWords: new Set(),
+      closedConsonantLeWords: new Set(),
+      forbiddenSilentEWords: new Set(),
+      questionTypeCounts: {
+        multiple_choice: 17,
+        multi_select: 7,
+        hot_text: 7,
+        table_match: 7,
+        two_part: 3,
+      },
+    }
+  }
+
   return null
 }

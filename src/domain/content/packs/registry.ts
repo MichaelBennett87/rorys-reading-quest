@@ -6,6 +6,7 @@ import { grade2WordForgeCommonPrefixesPack } from './grade2/wordForge/commonPref
 import { grade2WordForgeCommonSuffixesPack } from './grade2/wordForge/commonSuffixes'
 import { grade2WordForgeSilentLetterCombinationsPack } from './grade2/wordForge/silentLetterCombinations'
 import { grade2WordForgeFluencyPracticePack } from './grade2/wordForge/fluencyPracticeFoundations'
+import { grade2StoryScoutsPlotStructureElementsPack } from './grade2/storyScouts/plotStructureElements'
 import { legacyDevelopmentPack } from './legacyDevelopmentPack'
 import type { ContentPack } from './contentPackTypes'
 import type { ContentSample } from '../types'
@@ -21,6 +22,7 @@ export const contentPacks: readonly ContentPack[] = [
   grade2WordForgeCommonSuffixesPack,
   grade2WordForgeSilentLetterCombinationsPack,
   grade2WordForgeFluencyPracticePack,
+  grade2StoryScoutsPlotStructureElementsPack,
   legacyDevelopmentPack,
 ]
 

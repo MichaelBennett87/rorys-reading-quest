@@ -391,7 +391,7 @@ function buildPlanFromLesson(
   const track = getTrackBySkillId(lesson.skillId)
     ?? getTrackByWorldId(lesson.worldId)
     ?? getTrackByUnitId(lesson.unitId)
-  const displayName = track ? `${track.displayName} Trail ${lesson.difficulty}` : `Trail ${lesson.difficulty}`
+  const displayName = track ? `${track.displayName} ${formatTrailDisplayLabel(lesson.difficulty)}` : formatTrailDisplayLabel(lesson.difficulty)
   return {
     status: 'available',
     purpose,
@@ -437,7 +437,7 @@ function buildContentNeededPlan(
     worldId: firstPlayableTrack?.worldId ?? null,
     unitId: firstPlayableTrack?.entryUnitId ?? null,
     difficulty,
-    displayName: firstPlayableTrack ? `${firstPlayableTrack.displayName} Trail ${difficulty}` : 'Reading Quest Ready',
+    displayName: firstPlayableTrack ? `${firstPlayableTrack.displayName} ${formatTrailDisplayLabel(difficulty)}` : 'Reading Quest Ready',
     source: 'safe_fallback',
     lesson: null,
     reason,
@@ -456,7 +456,7 @@ function buildTrackFocus(
       worldId: null,
       unitId: null,
       difficulty,
-      displayName: `Trail ${difficulty}`,
+      displayName: formatTrailDisplayLabel(difficulty),
       source,
     }
   }
@@ -466,7 +466,7 @@ function buildTrackFocus(
     worldId: track.worldId,
     unitId: track.entryUnitId,
     difficulty,
-    displayName: `${track.displayName} Trail ${difficulty}`,
+    displayName: `${track.displayName} ${formatTrailDisplayLabel(difficulty)}`,
     source,
   }
 }
@@ -486,9 +486,13 @@ function buildFocusForLesson(
     worldId,
     unitId,
     difficulty,
-    displayName: track ? `${track.displayName} Trail ${difficulty}` : `Trail ${difficulty}`,
+    displayName: track ? `${track.displayName} ${formatTrailDisplayLabel(difficulty)}` : formatTrailDisplayLabel(difficulty),
     source,
   }
+}
+
+function formatTrailDisplayLabel(difficulty: number): string {
+  return difficulty <= 0 ? 'Building Block Trail' : `Trail ${difficulty}`
 }
 
 function isValidPlannedQuest(

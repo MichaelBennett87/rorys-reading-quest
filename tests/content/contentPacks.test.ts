@@ -25,6 +25,7 @@ describe('grade 2 content pack registry', () => {
       'g2-word-forge-common-suffixes',
       'g2-word-forge-silent-letter-combinations',
       'g2-word-forge-fluency-practice-foundations',
+      'g2-story-scouts-plot-structure-elements',
       'legacy-word-forge-development-pack',
     ])
     expect(contentPackAudit).toHaveLength(0)
@@ -58,6 +59,15 @@ describe('grade 2 content pack registry', () => {
       coveredPatterns: ['silent-letter-combinations'],
       missingPatterns: [],
       contributingPackIds: ['g2-word-forge-silent-letter-combinations'],
+      coverageStatus: 'implemented',
+      reviewStatus: 'DRAFT',
+    }))
+    expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.1.1')).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.2.R.1.1',
+      expectedPatterns: ['plot-structure', 'setting', 'characters', 'sequence-of-events'],
+      coveredPatterns: ['plot-structure', 'setting', 'characters', 'sequence-of-events'],
+      missingPatterns: [],
+      contributingPackIds: ['g2-story-scouts-plot-structure-elements'],
       coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',
     }))
@@ -136,6 +146,15 @@ describe('grade 2 content pack registry', () => {
     const result = getLessonForUnit('wg-unit-5')
 
     expect(result.lesson?.lessonId).toBe('lesson-word-forge-silent-letter-combinations-checkpoint-a')
+    expect(result.lesson?.lessonRole).toBe('CHECKPOINT')
+    expect(result.lesson?.selectionStatus).toBe('active')
+    expect(result.lesson?.questionCount).toBe(7)
+  })
+
+  test('the story scouts unit resolves to the story map checkpoint lesson', () => {
+    const result = getLessonForUnit('ss-unit-1')
+
+    expect(result.lesson?.lessonId).toBe('g2-story-scouts-plot-structure-elements-lesson-checkpoint-a')
     expect(result.lesson?.lessonRole).toBe('CHECKPOINT')
     expect(result.lesson?.selectionStatus).toBe('active')
     expect(result.lesson?.questionCount).toBe(7)

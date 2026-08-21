@@ -43,6 +43,18 @@ describe('benchmark coverage audit', () => {
     }))
   })
 
+  test('selects benchmark-specific expected patterns for 1.1', () => {
+    expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.1.1')).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.2.R.1.1',
+      expectedPatterns: ['plot-structure', 'setting', 'characters', 'sequence-of-events'],
+      coveredPatterns: ['plot-structure', 'setting', 'characters', 'sequence-of-events'],
+      missingPatterns: [],
+      contributingPackIds: ['g2-story-scouts-plot-structure-elements'],
+      coverageStatus: 'implemented',
+      reviewStatus: 'DRAFT',
+    }))
+  })
+
   test('reports implemented coverage for 1.3c across both consonant-le packs', () => {
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.F.1.3c')).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.F.1.3c',

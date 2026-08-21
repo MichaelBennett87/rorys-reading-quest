@@ -487,18 +487,13 @@ describe('Phase 3 adaptive child flow', () => {
     expect(state.completedSessionCount).toBe(1)
   })
 
-  test('no fresh content produces the friendly content-needed screen', () => {
+  test('a saved progress snapshot still opens the live Word Forge quest', () => {
     const state = createDefaultQuestProgress('2026-08-20T12:00:00.000Z')
-    const candidates = getLessonCandidates().filter((candidate) => candidate.difficulty === 1)
-    state.skillProgress['g2-word-forge-word-practice'].recentActivityUsage = candidates.map((candidate) => ({
-      ...candidate,
-      completedAt: '2026-08-20T12:00:00.000Z',
-    }))
     window.localStorage.setItem(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(state))
     render(<App />)
     fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
-    expect(screen.getByRole('heading', { name: /More Quests Are Being Prepared/i })).toBeTruthy()
-    expect(screen.getByText(/Your progress is safe/i)).toBeTruthy()
+    expect(screen.getByRole('heading', { name: /Vowel Voyage: Moon and Team Quest/i })).toBeTruthy()
+    expect(screen.getByText(/fresh questions/i)).toBeTruthy()
     expect(screen.queryByText(/failed|failure|bad reader|wrong level|behind/i)).toBeNull()
   })
 

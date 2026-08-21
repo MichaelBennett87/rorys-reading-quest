@@ -11,15 +11,18 @@
 
 - Starting local HEAD: `d6d16451e4615eb3d237bf049cbaf5d1a341795d`
 - Starting remote HEAD: `d6d16451e4615eb3d237bf049cbaf5d1a341795d`
-- Current verified local HEAD before the final documentation commit: `d6d16451e4615eb3d237bf049cbaf5d1a341795d`
-- Current verified remote HEAD before the final documentation commit: `d6d16451e4615eb3d237bf049cbaf5d1a341795d`
-- Local and remote SHA match during the verified checkpoint: `yes`
+- Final local HEAD: `7caea973136d22de8bc32b361f23411f44a89148`
+- Final remote HEAD: `7caea973136d22de8bc32b361f23411f44a89148`
+- Local and remote SHA match: `yes`
 - Lint: passed, zero warnings
 - Typecheck: passed
 - Tests: 37 files, 215 tests passed
 - Build: passed
 - `git diff --check`: passed
 - Security review: passed
+- Commits:
+  - `e389f7c feat: add multi-world progression foundation`
+  - `7caea97 docs: complete phase 6d0 architecture`
 - Final bundle: `939.76 kB` raw, `180.17 kB` gzip
 - Vite chunk warning: remained present
 
@@ -66,7 +69,8 @@
 - `ss-unit-1`: Story Map
 - `ss-unit-2`: Theme Trail
 - `ss-unit-3`: Perspective Portal
-- These units remain planned for Phase 6D1 through Phase 6D3.
+- Story Map is the first active Story Scouts curriculum pack in Phase 6D1.
+- Theme Trail and Perspective Portal remain planned for Phase 6D2 and Phase 6D3.
 
 ## Poetry Planet roadmap shell
 

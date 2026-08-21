@@ -32,6 +32,7 @@ export function validateContent(sample: ContentSample): ContentValidationError[]
   const questionIds = new Set<string>()
   const skillIds = new Set<string>()
   const passageIds = new Set(sample.passages.map((passage) => passage.passageIdentifier))
+  const passagesById = new Map(sample.passages.map((passage) => [passage.passageIdentifier, passage] as const))
   const supportTargetIds = new Set<string>()
   const sentenceIds = new Set<string>()
   const supportPlacements = new Set<string>()
@@ -351,6 +352,7 @@ export function validateContent(sample: ContentSample): ContentValidationError[]
       const evidenceIds = question.evidenceReferenceIds
       const validEvidenceIds = new Set<string>([
         ...(payload ? getContentEvidenceIds(question.questionType, payload) : []),
+        ...(passagesById.get(question.passageIdentifier)?.sentences?.map((sentence) => sentence.sentenceId) ?? []),
       ])
       for (const evidenceId of evidenceIds) {
         if (evidenceId.trim() && !validEvidenceIds.has(evidenceId.trim())) {
