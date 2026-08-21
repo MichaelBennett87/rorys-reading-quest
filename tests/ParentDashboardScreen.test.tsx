@@ -260,6 +260,7 @@ function createDashboard(recentAverageAccuracy: number | null = 87): DashboardSn
       upcomingReviews: 1,
       overdueReviews: 1,
       nextReviewDate: '2026-08-21T12:00:00.000Z',
+      dataQualityNote: null,
       entries: [
         {
           skillId: 'g2-word-forge-word-practice',
@@ -361,6 +362,7 @@ function createNoDataDashboard(): DashboardSnapshot {
       upcomingReviews: 0,
       overdueReviews: 0,
       nextReviewDate: null,
+      dataQualityNote: null,
       entries: [],
     },
     attentionItems: [],

@@ -761,6 +761,12 @@ function ReviewsView({
         <ParentMetricCard label="Upcoming" value={reviewSummary.upcomingReviews} />
         <ParentMetricCard label="Next review date" value={formatParentDate(reviewSummary.nextReviewDate)} />
       </section>
+      {reviewSummary.dataQualityNote && (
+        <ParentDataNote
+          title="Review affinity note"
+          message={reviewSummary.dataQualityNote}
+        />
+      )}
 
       {reviewSummary.entries.length === 0 ? (
         <ParentEmptyState

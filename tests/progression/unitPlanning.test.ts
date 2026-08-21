@@ -274,7 +274,7 @@ describe('unit-aware Word Forge planning', () => {
     })
     expect(perspectivePortalLocked.status).toBe('locked')
     if (perspectivePortalLocked.status === 'locked') {
-      expect(perspectivePortalLocked.reason).toMatch(/Perspective Portal quests are being prepared/i)
+      expect(perspectivePortalLocked.reason).toMatch(/Complete Theme Trail to unlock Perspective Portal/i)
     }
   })
 

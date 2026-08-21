@@ -1,8 +1,9 @@
-import { lessonCatalog } from '../lesson'
+import { lessonCatalog, getLessonCandidates } from '../lesson'
 import { sampleContent, type ContentSample, type ReadingQuestion } from '../content'
 import { getTrackByUnitId } from '../curriculum'
 import type { QuestProgressV1 } from '../../persistence'
 import { deriveWorldsForProgress } from '../../data/demoWorlds'
+import { buildReviewAffinityDataQualityNote } from '../progression/reviewQueueAffinity'
 import type {
   DashboardAttentionItem,
   DashboardBenchmarkSummary,
@@ -347,6 +348,7 @@ export function buildWordHelpSummaries(input: {
 
 export function buildReviewSummary(progress: QuestProgressV1, now: string): DashboardReviewSummary {
   const worlds = deriveWorldsForProgress(progress)
+  const availableLessons = getLessonCandidates()
   const entries = [...progress.reviewQueue]
     .map((entry) => ({
       ...entry,
@@ -365,6 +367,7 @@ export function buildReviewSummary(progress: QuestProgressV1, now: string): Dash
     overdueReviews: entries.filter((entry) => entry.status === 'overdue').length,
     nextReviewDate: entries[0]?.dueAt ?? null,
     entries,
+    dataQualityNote: buildReviewAffinityDataQualityNote(progress, availableLessons),
   }
 }
 

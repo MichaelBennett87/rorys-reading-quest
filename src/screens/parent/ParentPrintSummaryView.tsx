@@ -236,12 +236,18 @@ export function ParentPrintSummaryView({
       </SectionWithHeading>
 
       <SectionWithHeading title="Review schedule" description="Overdue, due now, and upcoming review quests.">
-        <section className="parent-metric-grid" aria-label="Review summary">
-          <ParentMetricCard label="Overdue" value={dashboard.reviewSummary.overdueReviews} />
-          <ParentMetricCard label="Due now" value={dashboard.reviewSummary.dueReviews - dashboard.reviewSummary.overdueReviews} />
-          <ParentMetricCard label="Upcoming" value={dashboard.reviewSummary.upcomingReviews} />
-          <ParentMetricCard label="Next review date" value={formatParentDate(dashboard.reviewSummary.nextReviewDate)} />
-        </section>
+      <section className="parent-metric-grid" aria-label="Review summary">
+        <ParentMetricCard label="Overdue" value={dashboard.reviewSummary.overdueReviews} />
+        <ParentMetricCard label="Due now" value={dashboard.reviewSummary.dueReviews - dashboard.reviewSummary.overdueReviews} />
+        <ParentMetricCard label="Upcoming" value={dashboard.reviewSummary.upcomingReviews} />
+        <ParentMetricCard label="Next review date" value={formatParentDate(dashboard.reviewSummary.nextReviewDate)} />
+      </section>
+      {dashboard.reviewSummary.dataQualityNote && (
+        <ParentDataNote
+          title="Review affinity note"
+          message={dashboard.reviewSummary.dataQualityNote}
+        />
+      )}
         {dashboard.reviewSummary.entries.length === 0 ? (
           <ParentEmptyState title="No reviews are scheduled yet." message="Review entries will appear after the learner earns review dates." />
         ) : (

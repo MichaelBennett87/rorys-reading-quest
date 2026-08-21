@@ -144,6 +144,7 @@ export interface DashboardReviewSummary {
   overdueReviews: number
   nextReviewDate: string | null
   entries: DashboardReviewEntry[]
+  dataQualityNote: string | null
 }
 
 export interface DashboardAttentionItem {

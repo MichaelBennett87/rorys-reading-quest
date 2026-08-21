@@ -6,6 +6,7 @@ import {
   type NextQuestPlan,
   type SkillProgressState,
 } from '../progression'
+import { resolveReviewAffinity } from '../progression/reviewQueueAffinity'
 import type { QuestProgressV1 } from '../../persistence'
 import type {
   ActiveLearningFocus,
@@ -269,6 +270,13 @@ function chooseDueReview(
       || left.skillId.localeCompare(right.skillId))
 
   for (const entry of dueEntries) {
+    const affinity = resolveReviewAffinity(entry, {
+      completedAttempts: state.completedAttempts,
+      availableLessons,
+    })
+    if (affinity.status === 'ambiguous' || affinity.status === 'missing') {
+      continue
+    }
     const progress = state.skillProgress[entry.skillId]
       ?? createInitialSkillProgress(
         entry.skillId,
@@ -281,8 +289,8 @@ function chooseDueReview(
       purpose: 'review',
       availableLessons,
       recentActivityUsage: progress.recentActivityUsage,
-      preferredUnitId: entry.unitId ?? null,
-      preferredContentVersion: entry.contentVersion ?? null,
+      preferredUnitId: affinity.unitId,
+      preferredContentVersion: affinity.contentVersion,
     })
     if (plan.status === 'available') {
       return buildPlanFromLesson(plan.lesson, 'review', 'global_planned_quest')

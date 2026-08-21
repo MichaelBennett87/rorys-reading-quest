@@ -7,6 +7,7 @@ import {
   type QuestProgressV1,
 } from './questProgressTypes'
 import { normalizeQuestProgressForSave } from './validatePersistedQuestProgress'
+import { buildReviewQueueIdentity, sameReviewQueueIdentity } from '../domain/progression/reviewQueueAffinity'
 
 export interface CompleteQuestProgressInput {
   state: QuestProgressV1
@@ -67,18 +68,18 @@ export function completeQuestProgress(input: CompleteQuestProgressInput): Comple
     nextReviewDate: input.progression.progress.nextReviewDate,
   }
   const usageKey = `${input.lessonResult.skillId}::${input.lessonResult.difficulty}`
+  const nextReviewEntry = input.progression.progress.nextReviewDate
+    ? {
+        skillId: input.lessonResult.skillId,
+        difficulty: input.progression.progress.lastMasteredDifficulty,
+        reviewStep: input.progression.progress.reviewStep,
+        dueAt: input.progression.progress.nextReviewDate,
+        unitId: lessonMetadata?.unitId,
+        contentVersion: lessonMetadata?.contentVersion,
+      }
+    : null
   const reviewQueue = input.progression.progress.nextReviewDate
-    ? [
-        ...input.state.reviewQueue.filter((entry) => entry.skillId !== input.lessonResult.skillId),
-        {
-          skillId: input.lessonResult.skillId,
-          difficulty: input.progression.progress.lastMasteredDifficulty,
-          reviewStep: input.progression.progress.reviewStep,
-          dueAt: input.progression.progress.nextReviewDate,
-          unitId: lessonMetadata?.unitId,
-          contentVersion: lessonMetadata?.contentVersion,
-        },
-      ]
+    ? upsertReviewQueueEntry(input.state.reviewQueue, nextReviewEntry!)
     : input.state.reviewQueue.map((entry) => ({ ...entry }))
 
   const state = normalizeQuestProgressForSave({
@@ -114,4 +115,30 @@ export function completeQuestProgress(input: CompleteQuestProgressInput): Comple
 
 function cloneAssistanceEvents(events: PersistedAssistanceEvent[]): PersistedAssistanceEvent[] {
   return events.map((event) => ({ ...event }))
+}
+
+function upsertReviewQueueEntry(
+  queue: QuestProgressV1['reviewQueue'],
+  entry: NonNullable<typeof queue>[number],
+): QuestProgressV1['reviewQueue'] {
+  const identity = buildReviewQueueIdentity(entry)
+  const nextQueue: QuestProgressV1['reviewQueue'] = []
+  let inserted = false
+
+  for (const existing of queue) {
+    if (sameReviewQueueIdentity(buildReviewQueueIdentity(existing), identity)) {
+      if (!inserted) {
+        nextQueue.push({ ...entry })
+        inserted = true
+      }
+      continue
+    }
+    nextQueue.push({ ...existing })
+  }
+
+  if (!inserted) {
+    nextQueue.push({ ...entry })
+  }
+
+  return nextQueue
 }
