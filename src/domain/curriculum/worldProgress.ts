@@ -109,25 +109,29 @@ function deriveStoryScoutsWorld(
   const currentDifficulty = progress?.currentDifficulty ?? 1
   const currentLearningState = progress?.currentLearningState ?? null
   const storyMapActive = activeUnitId === 'ss-unit-1' || plannedUnitId === 'ss-unit-1'
+  const themeTrailActive = activeUnitId === 'ss-unit-2' || plannedUnitId === 'ss-unit-2'
+  const perspectivePortalActive = activeUnitId === 'ss-unit-3' || plannedUnitId === 'ss-unit-3'
   const units = world.units.map((unit) => {
     if (unit.id === 'ss-unit-1') return deriveStoryMapUnit(unit, currentDifficulty, currentLearningState, storyMapActive)
-    if (unit.id === 'ss-unit-2') return deriveThemeTrailUnit(unit, currentDifficulty, currentLearningState)
-    return derivePerspectivePortalUnit(unit)
+    if (unit.id === 'ss-unit-2') return deriveThemeTrailUnit(unit, currentDifficulty, currentLearningState, themeTrailActive)
+    return derivePerspectivePortalUnit(unit, currentDifficulty, currentLearningState, perspectivePortalActive)
   })
 
   return {
     ...world,
     status: playable ? 'available' : 'coming-later',
     progressionLabel: playable
-      ? currentDifficulty >= 3
+      ? currentDifficulty >= 4
         ? currentLearningState === 'SPACED_REVIEW'
-          ? 'Theme Trail review available'
-          : 'Theme Trail complete'
-        : currentDifficulty === 2
-          ? 'Theme Trail active'
-          : currentDifficulty <= 0
-            ? 'Building Block Trail active'
-            : 'Story Map Trail 1 active'
+          ? 'Perspective Portal review available'
+          : 'Perspective Portal complete'
+        : currentDifficulty === 3
+          ? 'Perspective Portal active'
+          : currentDifficulty === 2
+            ? 'Theme Trail active'
+            : currentDifficulty <= 0
+              ? 'Building Block Trail active'
+              : 'Story Map Trail 1 active'
       : 'Story Scouts quests are being prepared.',
     currentProgress: playable ? Math.min(100, Math.max(0, currentDifficulty) * 25 + 25) : 0,
     units,
@@ -170,6 +174,7 @@ function deriveThemeTrailUnit(
   unit: DemoUnit,
   currentDifficulty: number,
   currentLearningState: SkillProgressState['currentLearningState'] | null,
+  activeOrPlanned: boolean,
 ): DemoUnit {
   const state: UnitState = currentDifficulty < 2
     ? 'locked'
@@ -185,21 +190,41 @@ function deriveThemeTrailUnit(
     practiceFocus: currentDifficulty < 2
       ? 'Complete Story Map to unlock Theme Trail.'
       : state === 'available'
-        ? 'theme, topic, summary, and literary details'
+        ? activeOrPlanned
+          ? 'Theme Trail quests are ready to resume.'
+          : 'theme, topic, summary, and literary details'
         : state === 'review'
           ? 'Review theme clues and supporting story details.'
           : 'Theme Trail quests are complete. Perspective Portal quests are being prepared.',
   }
 }
 
-function derivePerspectivePortalUnit(unit: DemoUnit): DemoUnit {
+function derivePerspectivePortalUnit(
+  unit: DemoUnit,
+  currentDifficulty: number,
+  currentLearningState: SkillProgressState['currentLearningState'] | null,
+  activeOrPlanned: boolean,
+): DemoUnit {
+  const state: UnitState = currentDifficulty < 3
+    ? 'locked'
+    : currentDifficulty >= 4
+      ? (currentLearningState === 'SPACED_REVIEW' ? 'review' : 'complete')
+      : 'available'
   return {
     ...unit,
-    state: 'locked',
-    difficultyLabel: 'Locked',
-    progressPercent: 0,
-    stars: 0,
-    practiceFocus: 'Perspective Portal quests are being prepared.',
+    state,
+    difficultyLabel: state === 'locked' ? 'Locked' : state === 'review' ? 'Review' : state === 'complete' ? 'Complete' : 'Trail 3',
+    progressPercent: state === 'locked' ? 0 : state === 'available' ? 75 : 100,
+    stars: state === 'locked' ? 0 : state === 'available' ? 2 : 3,
+    practiceFocus: currentDifficulty < 3
+      ? 'Complete Theme Trail to unlock Perspective Portal.'
+      : state === 'available'
+        ? activeOrPlanned
+          ? 'Perspective Portal quests are ready to resume.'
+          : 'character perspectives and supporting story clues'
+        : state === 'review'
+          ? 'Review character perspective clues and supporting details.'
+          : 'Perspective Portal quests are complete. Poetry Planet quests are being prepared.',
   }
 }
 
