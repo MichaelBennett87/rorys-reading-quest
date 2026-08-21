@@ -1,3 +1,4 @@
+import { getTrackBySkillId } from '../../domain/curriculum'
 import type { DashboardDataAvailability, DashboardRecentAttemptSummary, DashboardSnapshot } from '../../domain/dashboard'
 import type { QuestProgressV1 } from '../../persistence'
 
@@ -11,10 +12,6 @@ export const parentDashboardViews: readonly ParentDashboardView[] = [
   'word-help',
   'assessments',
 ] as const
-
-const FRIENDLY_SKILL_NAMES: Record<string, string> = {
-  'g2-word-forge-word-practice': 'Word Forge',
-}
 
 export const FOUNDATIONAL_SKILLS_BRIDGE_NOTE =
   'Foundational Skills Bridge is an internal practice category, not an official FAST reporting category.'
@@ -74,7 +71,7 @@ export function formatDataAvailability(availability: DashboardDataAvailability):
 }
 
 export function resolveFriendlySkillName(skillId: string): string {
-  return FRIENDLY_SKILL_NAMES[skillId] ?? 'Archived skill'
+  return getTrackBySkillId(skillId)?.displayName ?? 'Archived skill'
 }
 
 export function formatBenchmarkReferences(references: readonly string[]): string {
@@ -84,9 +81,14 @@ export function formatBenchmarkReferences(references: readonly string[]): string
 
 export function resolveCurrentTrailLabel(progress: QuestProgressV1, dashboard: DashboardSnapshot): string {
   const plannedNextQuest = progress.plannedNextQuest
-  const selectedSkillId = plannedNextQuest && 'skillId' in plannedNextQuest
-    ? plannedNextQuest.skillId
-    : dashboard.skillSummaries[0]?.skillId ?? null
+  const selectedSkillId = progress.activeLessonSession?.skillId
+    ?? (plannedNextQuest?.status === 'available' ? plannedNextQuest.lesson.skillId : null)
+    ?? (plannedNextQuest?.status === 'content_needed' ? plannedNextQuest.skillId : null)
+    ?? dashboard.recentAttempts[0]?.skillId
+    ?? dashboard.skillSummaries
+      .slice()
+      .sort((left, right) => compareSkillSummariesByCurriculum(left.skillId, right.skillId))[0]?.skillId
+    ?? null
   if (!selectedSkillId) return 'No trail available'
   const summary = dashboard.skillSummaries.find((entry) => entry.skillId === selectedSkillId)
   return formatTrailLabel(summary?.currentDifficulty ?? null)
@@ -113,4 +115,12 @@ export function describePlannedRoute(progress: QuestProgressV1): string {
 export function summarizeRecentAttempts(attempts: readonly DashboardRecentAttemptSummary[]): string {
   if (attempts.length === 0) return 'No completed reading quests yet.'
   return `${attempts.length} recent session${attempts.length === 1 ? '' : 's'}`
+}
+
+function compareSkillSummariesByCurriculum(leftSkillId: string, rightSkillId: string): number {
+  const leftTrack = getTrackBySkillId(leftSkillId)
+  const rightTrack = getTrackBySkillId(rightSkillId)
+  return (leftTrack?.curriculumOrder ?? Number.MAX_SAFE_INTEGER)
+    - (rightTrack?.curriculumOrder ?? Number.MAX_SAFE_INTEGER)
+    || leftSkillId.localeCompare(rightSkillId)
 }

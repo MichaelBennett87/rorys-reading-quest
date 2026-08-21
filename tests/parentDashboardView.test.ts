@@ -39,7 +39,9 @@ describe('parent dashboard presentation helpers', () => {
     const input = { skillId: 'g2-word-forge-word-practice' }
     const snapshot = structuredClone(input)
 
-    expect(resolveFriendlySkillName(input.skillId)).toBe('Word Forge')
+    expect(resolveFriendlySkillName(input.skillId)).toBe('Word Forge Foundations')
+    expect(resolveFriendlySkillName('g2-story-scouts-prose')).toBe('Story Scouts Prose')
+    expect(resolveFriendlySkillName('g2-poetry-planet-poetry')).toBe('Poetry Planet')
     expect(resolveFriendlySkillName('retired-skill-id')).toBe('Archived skill')
     expect(input).toEqual(snapshot)
   })

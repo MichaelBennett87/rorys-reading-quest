@@ -1,7 +1,8 @@
 import { useState } from 'react'
 
+import { resolveActiveLearningFocus } from '../domain/curriculum'
 import { demoLearner } from '../data/demoLearner'
-import { deriveWorldsForProgress, getRecommendedWorldId } from '../data/demoWorlds'
+import { deriveWorldsForProgress } from '../data/demoWorlds'
 import { getLessonById, getLessonCandidates, type LessonDefinition } from '../domain/lesson'
 import { planUnitQuest } from '../domain/progression'
 import type { ActiveLessonSession } from '../persistence'
@@ -29,10 +30,17 @@ interface LessonLaunchState {
 
 export function AppShell() {
   const questProgress = useQuestProgress()
+  const availableLessons = getLessonCandidates()
+  const activeFocus = resolveActiveLearningFocus({
+    progress: questProgress.progress,
+    availableLessons,
+    now: new Date().toISOString(),
+  })
   const worlds = deriveWorldsForProgress(questProgress.progress)
+  const initialWorldId = worlds.find((world) => world.status === 'available')?.id ?? worlds[0]?.id ?? 'word-forge'
   const [state, setState] = useState<AppShellState>({
     screen: 'home',
-    selectedWorldId: getRecommendedWorldId(),
+    selectedWorldId: initialWorldId,
     selectedUnitId: null,
   })
   const [, setHistory] = useState<AppScreen[]>([])
@@ -45,7 +53,6 @@ export function AppShell() {
 
   const selectedWorld = state.selectedWorldId ? worlds.find((world) => world.id === state.selectedWorldId) ?? null : null
   const selectedUnit = selectedWorld ? selectedWorld.units.find((unit) => unit.id === state.selectedUnitId) : null
-  const availableLessons = getLessonCandidates()
   const resolveLaunchState = (selectedUnitId?: string | null): LessonLaunchState => {
     if (selectedUnitId) {
       const plannedUnitQuest = planUnitQuest({
@@ -88,13 +95,10 @@ export function AppShell() {
   }
 
   const lessonPreview = selectedUnit ? resolveLaunchState(selectedUnit.id) : null
-  const activeSkill = Object.values(questProgress.progress.skillProgress)[0]
   const learner = {
     ...demoLearner,
-    currentPath: activeSkill?.currentDifficulty === 0
-      ? 'Word Forge Building Block'
-      : `Word Forge Trail ${activeSkill?.currentDifficulty ?? 1}`,
-    level: activeSkill?.currentDifficulty ?? 1,
+    currentPath: activeFocus.displayName,
+    level: activeFocus.difficulty || 1,
     xp: questProgress.progress.totalXp,
     stars: questProgress.progress.totalStars,
     questStreak: questProgress.progress.completedSessionCount,
@@ -135,7 +139,7 @@ export function AppShell() {
       nextQuest: {
         status: 'content_needed',
         purpose: 'progression',
-        skillId: activeSkill?.skillId ?? 'unknown',
+        skillId: activeFocus.skillId ?? 'unknown',
         difficulty,
         reason,
       },
@@ -213,7 +217,7 @@ export function AppShell() {
         onStartNext={startOutcomeQuest}
         onReturnToMap={() => {
           setHistory([])
-          setState((previous) => ({ ...previous, screen: 'unit_select', selectedWorldId: 'word-forge' }))
+          setState((previous) => ({ ...previous, screen: 'unit_select', selectedWorldId: activeFocus.worldId ?? initialWorldId }))
         }}
       />
     )

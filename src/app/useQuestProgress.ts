@@ -1,11 +1,10 @@
 import { useRef, useState } from 'react'
 
+import { normalizeQuestProgressForPlanning, planGlobalQuest } from '../domain/curriculum'
 import type { LessonDefinition, LessonResult } from '../domain/lesson'
 import { completeFluencyPractice } from '../domain/progression/fluencyPractice'
 import {
   applyLessonResult,
-  getReviewIntervalForStep,
-  planNextQuest,
   type NextQuestPlan,
   type SkillProgressState,
 } from '../domain/progression'
@@ -45,11 +44,14 @@ export function useQuestProgress() {
     const store = createLocalStorageQuestProgressStore(getBrowserLocalStorage())
     const loaded = store.load()
     const recovered = recoverActiveLessonSession({ state: loaded.state, availableLessons })
+    const normalized = normalizeQuestProgressForPlanning(recovered.state, availableLessons)
+    const normalizedState = normalized.changed ? normalized.state : recovered.state
+    const saved = normalized.changed ? store.save(normalizedState) : null
     return {
       store,
-      state: recovered.state,
-      storageStatus: loaded.status,
-      technicalDetail: recovered.technicalDetail ?? loaded.technicalDetail,
+      state: saved?.status === 'saved' ? saved.state : normalizedState,
+      storageStatus: saved?.status === 'saved' ? 'loaded' : loaded.status,
+      technicalDetail: recovered.technicalDetail ?? loaded.technicalDetail ?? saved?.technicalDetail,
     }
   })
   const storeRef = useRef(initial.store)
@@ -190,13 +192,11 @@ export function useQuestProgress() {
 
   const planContinue = (): NextQuestPlan => {
     const state = progressRef.current
-    if (state.plannedNextQuest?.status === 'available') return state.plannedNextQuest
-    const skill = Object.values(state.skillProgress)[0]
-    if (!skill) {
-      return { status: 'content_needed', purpose: 'progression', skillId: 'unknown', difficulty: 0, reason: 'No skill trail is configured.' }
-    }
-    const purpose = purposeForProgress(skill, state)
-    return planNextQuest({ progress: skill, availableLessons, purpose })
+    return planGlobalQuest({
+      progress: state,
+      availableLessons,
+      now: new Date().toISOString(),
+    }).nextQuest
   }
 
   return {
@@ -214,14 +214,4 @@ function findActiveSkillProgress(state: QuestProgressV1, result: LessonResult): 
   return Object.values(state.skillProgress).find((progress) => (
     progress.skillId === result.skillId && progress.currentDifficulty === result.difficulty
   )) ?? state.skillProgress[result.skillId]
-}
-
-function purposeForProgress(skill: SkillProgressState, state: QuestProgressV1) {
-  if (skill.remediationContext || skill.currentLearningState === 'GUIDED_PRACTICE') return 'remediation' as const
-  if (skill.currentLearningState === 'VERIFY_MASTERY') return 'verification' as const
-  const dueReview = state.reviewQueue.find((entry) => (
-    entry.skillId === skill.skillId && new Date(entry.dueAt).getTime() <= Date.now()
-  ))
-  if (dueReview && getReviewIntervalForStep(dueReview.reviewStep) >= 1) return 'review' as const
-  return 'progression' as const
 }

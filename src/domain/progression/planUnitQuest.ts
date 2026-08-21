@@ -2,6 +2,8 @@ import { getLessonById } from '../lesson'
 import type { LessonActivityCandidate, NextQuestPlan } from './skillProgressTypes'
 import type { QuestProgressV1 } from '../../persistence'
 import { selectNextLesson } from './selectNextLesson'
+import { createInitialSkillProgress } from './skillProgressTypes'
+import { getTrackByUnitId } from '../curriculum'
 
 export interface PlanUnitQuestInput {
   selectedUnitId: string
@@ -34,7 +36,14 @@ export type UnitQuestPlan =
     }
 
 export function planUnitQuest(input: PlanUnitQuestInput): UnitQuestPlan {
-  const currentSkill = Object.values(input.progress.skillProgress)[0]
+  const selectedTrack = getTrackByUnitId(input.selectedUnitId)
+  const currentSkill = selectedTrack
+    ? input.progress.skillProgress[selectedTrack.skillId] ?? createInitialSkillProgress(
+      selectedTrack.skillId,
+      selectedTrack.initialDifficulty,
+      selectedTrack.initialLastMasteredDifficulty,
+    )
+    : null
   const activeSession = input.progress.activeLessonSession
   const plannedNextQuest = input.progress.plannedNextQuest
   const availableNextQuest = plannedNextQuest?.status === 'available' ? plannedNextQuest : null
@@ -401,6 +410,52 @@ export function planUnitQuest(input: PlanUnitQuestInput): UnitQuestPlan {
         unitId: input.selectedUnitId,
       }
     }
+    return {
+      status: 'content_needed',
+      purpose: plan.purpose,
+      skillId: plan.skillId,
+      difficulty: plan.difficulty,
+      reason: plan.reason,
+      unitId: input.selectedUnitId,
+    }
+  }
+
+  if (selectedTrack) {
+    const selectedLessons = input.availableLessons.filter((lesson) => lesson.unitId === input.selectedUnitId)
+    if (selectedLessons.length === 0) {
+      return {
+        status: 'locked',
+        purpose: plannedPurpose,
+        unitId: input.selectedUnitId,
+        reason: selectedTrack.status === 'planned_until_content_exists'
+          ? `${selectedTrack.displayName} quests are being prepared.`
+          : 'This unit has no active lesson content yet.',
+      }
+    }
+
+    const selectedProgress = currentSkill ?? createInitialSkillProgress(
+      selectedTrack.skillId,
+      selectedTrack.initialDifficulty,
+      selectedTrack.initialLastMasteredDifficulty,
+    )
+    const plan = selectNextLesson({
+      skillId: selectedProgress.skillId,
+      difficulty: selectedProgress.currentDifficulty,
+      purpose: availableNextQuest?.purpose ?? 'progression',
+      availableLessons: selectedLessons,
+      recentActivityUsage: selectedProgress.recentActivityUsage,
+    })
+    if (plan.status === 'available') {
+      return {
+        status: 'available',
+        purpose: plan.purpose,
+        lesson: plan.lesson,
+        lessonId: plan.lesson.lessonId,
+        unitId: plan.lesson.unitId,
+        activityId: plan.lesson.activityId,
+      }
+    }
+
     return {
       status: 'content_needed',
       purpose: plan.purpose,

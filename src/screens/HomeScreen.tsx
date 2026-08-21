@@ -59,7 +59,7 @@ export function HomeScreen({
 
       <section className="quest-panel" aria-labelledby="daily-quest-heading">
         <h2 id="daily-quest-heading">Today&apos;s Quest</h2>
-        <p>Practice 1 Word Forge unit</p>
+        <p>Practice 1 available unit</p>
         <p>Earn up to 3 stars</p>
       </section>
 

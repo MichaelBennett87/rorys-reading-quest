@@ -9,7 +9,7 @@ const now = '2026-08-20T12:00:00.000Z'
 
 function createProgress(currentDifficulty: number) {
   const progress = createDefaultQuestProgress(now)
-  const skill = Object.values(progress.skillProgress)[0]
+  const skill = progress.skillProgress['g2-word-forge-word-practice']
   skill.currentDifficulty = currentDifficulty
   return progress
 }
@@ -96,11 +96,8 @@ describe('unit-aware Word Forge planning', () => {
       progress: trailThreeProgress,
       availableLessons,
     })
-    expect(trailTwoPlan.status).toBe('available')
+    expect(trailTwoPlan.status).toBe('locked')
     expect(trailTwoPlan.unitId).toBe('wg-unit-2')
-    if (trailTwoPlan.status === 'available') {
-      expect(getLessonById(trailTwoPlan.lessonId).lesson).toBeTruthy()
-    }
 
     const trailFourProgress = createProgress(4)
     const trailFiveProgress = createProgress(5)
@@ -110,17 +107,15 @@ describe('unit-aware Word Forge planning', () => {
       progress: trailFourProgress,
       availableLessons,
     })
-    expect(trailFourPlan.status).toBe('available')
-    if (trailFourPlan.status === 'available') {
-      expect(trailFourPlan.lessonId).toBe('lesson-word-forge-consonant-le-checkpoint-a')
-    }
+    expect(trailFourPlan.status).toBe('locked')
+    expect(trailFourPlan.unitId).toBe('wg-unit-2')
 
     const exhaustedPlan = planUnitQuest({
       selectedUnitId: 'wg-unit-2',
       progress: trailFiveProgress,
       availableLessons,
     })
-    expect(exhaustedPlan.status).toBe('content_needed')
+    expect(exhaustedPlan.status).toBe('locked')
 
     const trailFourPrefixLock = planUnitQuest({
       selectedUnitId: 'wg-unit-3',
@@ -134,34 +129,30 @@ describe('unit-aware Word Forge planning', () => {
       progress: trailFiveProgress,
       availableLessons,
     })
-    expect(trailFivePrefixPlan.status).toBe('available')
-    if (trailFivePrefixPlan.status === 'available') {
-      expect(trailFivePrefixPlan.lessonId).toBe('lesson-word-forge-common-prefixes-checkpoint-a')
-    }
+    expect(trailFivePrefixPlan.status).toBe('locked')
+    expect(trailFivePrefixPlan.unitId).toBe('wg-unit-3')
 
     const trailSixPrefixPlan = planUnitQuest({
       selectedUnitId: 'wg-unit-3',
       progress: trailSixProgress,
       availableLessons,
     })
-    expect(trailSixPrefixPlan.status).toBe('content_needed')
+    expect(trailSixPrefixPlan.status).toBe('locked')
 
     const trailSixSuffixPlan = planUnitQuest({
       selectedUnitId: 'wg-unit-4',
       progress: trailSixProgress,
       availableLessons,
     })
-    expect(trailSixSuffixPlan.status).toBe('available')
-    if (trailSixSuffixPlan.status === 'available') {
-      expect(trailSixSuffixPlan.lessonId).toBe('lesson-word-forge-common-suffixes-checkpoint-a')
-    }
+    expect(trailSixSuffixPlan.status).toBe('locked')
+    expect(trailSixSuffixPlan.unitId).toBe('wg-unit-4')
 
     const trailSevenSuffixPlan = planUnitQuest({
       selectedUnitId: 'wg-unit-4',
       progress: createProgress(7),
       availableLessons,
     })
-    expect(trailSevenSuffixPlan.status).toBe('content_needed')
+    expect(trailSevenSuffixPlan.status).toBe('locked')
 
     const trailSixSilentLock = planUnitQuest({
       selectedUnitId: 'wg-unit-5',
@@ -178,17 +169,15 @@ describe('unit-aware Word Forge planning', () => {
       progress: createProgress(7),
       availableLessons,
     })
-    expect(trailSevenSilentPlan.status).toBe('available')
-    if (trailSevenSilentPlan.status === 'available') {
-      expect(trailSevenSilentPlan.lessonId).toBe('lesson-word-forge-silent-letter-combinations-checkpoint-a')
-    }
+    expect(trailSevenSilentPlan.status).toBe('locked')
+    expect(trailSevenSilentPlan.unitId).toBe('wg-unit-5')
 
     const trailEightSilentPlan = planUnitQuest({
       selectedUnitId: 'wg-unit-5',
       progress: createProgress(8),
       availableLessons,
     })
-    expect(trailEightSilentPlan.status).toBe('content_needed')
+    expect(trailEightSilentPlan.status).toBe('locked')
 
     const trailSevenFluencyLock = planUnitQuest({
       selectedUnitId: 'wg-unit-6',
@@ -205,7 +194,7 @@ describe('unit-aware Word Forge planning', () => {
       progress: createProgress(8),
       availableLessons,
     })
-    expect(trailEightFluencyPlan.status).toBe('available')
+    expect(trailEightFluencyPlan.status).toBe('locked')
     if (trailEightFluencyPlan.status === 'available') {
       expect(trailEightFluencyPlan.lessonId).toBe('lesson-word-forge-fluency-practice-community-announcement')
     }
@@ -222,7 +211,7 @@ describe('unit-aware Word Forge planning', () => {
       progress: exhaustedFluencyProgress,
       availableLessons,
     })
-    expect(exhaustedFluencyPlan.status).toBe('content_needed')
+    expect(exhaustedFluencyPlan.status).toBe('locked')
   })
 
   test('an active session in another unit blocks a fresh unit launch', () => {

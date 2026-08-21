@@ -1,4 +1,5 @@
-import { getLessonCatalogMetadata } from '../domain/lesson'
+import { deriveWorldsForProgress as deriveCurriculumWorlds } from '../domain/curriculum'
+import { getLessonCandidates } from '../domain/lesson'
 
 export type WorldStatus = 'available' | 'locked' | 'coming-later'
 
@@ -86,25 +87,25 @@ const wordForgeUnits: DemoUnit[] = [
 const storyScoutsUnits: DemoUnit[] = [
   {
     id: 'ss-unit-1',
-    title: "Who’s in the Story?",
+    title: 'Story Map',
     difficultyLabel: 'Trail 1',
     progressPercent: 40,
     stars: 1,
-    state: 'available',
+    state: 'locked',
     practiceFocus: 'finding characters and clues',
   },
   {
     id: 'ss-unit-2',
-    title: 'What Happened Next?',
+    title: 'Theme Trail',
     difficultyLabel: 'Trail 2',
     progressPercent: 10,
     stars: 0,
-    state: 'available',
+    state: 'locked',
     practiceFocus: 'sequencing story events',
   },
   {
     id: 'ss-unit-3',
-    title: 'Character Clues',
+    title: 'Perspective Portal',
     difficultyLabel: 'Trail 3',
     progressPercent: 0,
     stars: 0,
@@ -159,9 +160,9 @@ export const demoWorlds: DemoWorld[] = [
     id: 'story-scouts',
     name: 'Story Scouts',
     iconLabel: '📖',
-    status: 'available',
+    status: 'coming-later',
     description: 'Track clues in stories and solve the plot.',
-    progressionLabel: 'Trail 1 beginning',
+    progressionLabel: 'Story Scouts quests are being prepared.',
     skills: ['character', 'setting', 'sequence', 'problem and solution'],
     currentProgress: 16,
     units: storyScoutsUnits,
@@ -170,9 +171,9 @@ export const demoWorlds: DemoWorld[] = [
     id: 'information-detectives',
     name: 'Information Detectives',
     iconLabel: '🔎',
-    status: 'available',
+    status: 'coming-later',
     description: 'Inspect facts, topic points, and evidence.',
-    progressionLabel: 'Trail 1 beginning',
+    progressionLabel: 'Information Detectives quests are being prepared.',
     skills: ['topic and key details', 'text features', 'central idea'],
     currentProgress: 8,
     units: infoDetectivesUnits,
@@ -240,180 +241,6 @@ export const getDemoWorldById = (worldId: string): DemoWorld | undefined =>
 export const getRecommendedWorldId = (): string =>
   demoWorlds.find((world) => world.status === 'available')?.id ?? demoWorlds[0].id
 
-export function deriveWorldsForProgress(progress: { skillProgress: Record<string, { currentDifficulty: number; currentLearningState: string }>; plannedNextQuest: { status: 'available'; purpose: string; lesson: { lessonId: string } } | { status: 'content_needed'; purpose: string; skillId: string; difficulty: number; reason: string } | null; activeLessonSession: { lessonId: string } | null }): DemoWorld[] {
-  const focus = resolveWordForgeFocus(progress)
-  return demoWorlds.map((world) => {
-    if (world.id !== 'word-forge') return cloneWorld(world)
-    return {
-      ...world,
-      units: world.units.map((unit) => deriveWordForgeUnit(unit, focus)),
-    }
-  })
-}
-
-function resolveWordForgeFocus(progress: { skillProgress: Record<string, { currentDifficulty: number; currentLearningState: string }>; plannedNextQuest: { status: 'available'; purpose: string; lesson: { lessonId: string } } | { status: 'content_needed'; purpose: string; skillId: string; difficulty: number; reason: string } | null; activeLessonSession: { lessonId: string } | null }) {
-  const skill = Object.values(progress.skillProgress)[0]
-  const currentDifficulty = skill?.currentDifficulty ?? 1
-  const activeUnitId = progress.activeLessonSession ? getLessonCatalogMetadata(progress.activeLessonSession.lessonId)?.unitId ?? null : null
-  const plannedUnitId = progress.plannedNextQuest?.status === 'available'
-    ? getLessonCatalogMetadata(progress.plannedNextQuest.lesson.lessonId)?.unitId ?? null
-    : null
-  return {
-    currentDifficulty,
-    currentLearningState: skill?.currentLearningState ?? 'CHECKPOINT',
-    activeUnitId,
-    plannedUnitId,
-    plannedPurpose: progress.plannedNextQuest?.status === 'available' ? progress.plannedNextQuest.purpose : null,
-  }
-}
-
-function deriveWordForgeUnit(unit: DemoUnit, focus: ReturnType<typeof resolveWordForgeFocus>): DemoUnit {
-  if (unit.id === 'wg-unit-1') {
-    const state = focus.currentDifficulty >= 3
-      ? (focus.plannedUnitId === unit.id && focus.plannedPurpose === 'review' ? 'review' : 'complete')
-      : 'available'
-    return {
-      ...unit,
-      state,
-      progressPercent: focus.currentDifficulty >= 3 ? 100 : focus.currentDifficulty === 2 ? 75 : 50,
-      difficultyLabel: focus.currentDifficulty >= 3 ? (state === 'review' ? 'Review' : 'Complete') : 'Trail 1',
-      practiceFocus: focus.currentDifficulty >= 3
-        ? 'Review the vowel patterns you already know.'
-        : 'vowel patterns and short decoding',
-    }
-  }
-
-  if (unit.id === 'wg-unit-2') {
-    const activeOrPlanned = focus.activeUnitId === unit.id || focus.plannedUnitId === unit.id
-    const state = focus.currentDifficulty >= 5 && !activeOrPlanned
-      ? (focus.plannedPurpose === 'review' ? 'review' : 'complete')
-      : focus.currentDifficulty >= 3 || activeOrPlanned
-        ? 'available'
-        : 'locked'
-    return {
-      ...unit,
-      state,
-      difficultyLabel: focus.currentDifficulty >= 5
-        ? (state === 'review' ? 'Review' : 'Complete')
-        : focus.currentDifficulty >= 4
-          ? 'Trail 4'
-          : 'Trail 3',
-      progressPercent: state === 'locked' ? 0 : focus.currentDifficulty >= 5 ? 100 : focus.currentDifficulty >= 4 ? 75 : 50,
-      practiceFocus: state === 'locked'
-        ? 'Complete Vowel Voyage to unlock Syllable Summit.'
-        : focus.currentDifficulty >= 4
-          ? 'consonant-le syllables and syllable review'
-          : 'regularly spelled two-syllable words, open syllables, and closed syllables',
-    }
-  }
-
-  if (unit.id === 'wg-unit-3') {
-    const activeOrPlanned = focus.activeUnitId === unit.id || focus.plannedUnitId === unit.id
-    const state = focus.currentDifficulty >= 6
-      ? (activeOrPlanned ? 'available' : (focus.plannedPurpose === 'review' ? 'review' : 'complete'))
-      : focus.currentDifficulty >= 5 || activeOrPlanned
-        ? 'available'
-        : 'locked'
-    return {
-      ...unit,
-      state,
-      difficultyLabel: focus.currentDifficulty >= 6
-        ? (state === 'review' ? 'Review' : 'Complete')
-        : focus.currentDifficulty >= 5
-          ? 'Trail 5'
-          : activeOrPlanned
-            ? 'Trail 4'
-            : 'Locked',
-      progressPercent: state === 'locked' ? 0 : focus.currentDifficulty >= 6 ? 100 : 75,
-      practiceFocus: state === 'locked'
-        ? 'Complete Syllable Summit to unlock Prefix Power.'
-        : focus.currentDifficulty >= 6
-          ? 'Review common prefixes and base words.'
-          : 'common prefixes and base words',
-    }
-  }
-
-  if (unit.id === 'wg-unit-4') {
-    const activeOrPlanned = focus.activeUnitId === unit.id || focus.plannedUnitId === unit.id
-    const state = focus.currentDifficulty >= 7
-      ? (activeOrPlanned ? 'available' : (focus.plannedPurpose === 'review' ? 'review' : 'complete'))
-      : focus.currentDifficulty >= 6 || activeOrPlanned
-        ? 'available'
-        : 'locked'
-    return {
-      ...unit,
-      state,
-      difficultyLabel: focus.currentDifficulty >= 7
-        ? (state === 'review' ? 'Review' : 'Complete')
-        : focus.currentDifficulty >= 6
-          ? 'Trail 6'
-          : 'Locked',
-      progressPercent: state === 'locked' ? 0 : focus.currentDifficulty >= 7 ? 100 : 75,
-      practiceFocus: state === 'locked'
-        ? 'Complete Prefix Power to unlock Suffix Station.'
-        : focus.currentDifficulty >= 7
-          ? 'New Word Forge quests are being prepared.'
-        : 'common suffixes and ending sounds',
-    }
-  }
-
-  if (unit.id === 'wg-unit-5') {
-    const activeOrPlanned = focus.activeUnitId === unit.id || focus.plannedUnitId === unit.id
-    const state = focus.currentDifficulty >= 8
-      ? (activeOrPlanned ? 'available' : (focus.plannedPurpose === 'review' ? 'review' : 'complete'))
-      : focus.currentDifficulty >= 7 || activeOrPlanned
-        ? 'available'
-        : 'locked'
-    return {
-      ...unit,
-      state,
-      difficultyLabel: focus.currentDifficulty >= 8
-        ? (state === 'review' ? 'Review' : 'Complete')
-        : focus.currentDifficulty >= 7
-          ? 'Trail 7'
-          : 'Locked',
-      progressPercent: state === 'locked' ? 0 : focus.currentDifficulty >= 8 ? 100 : 75,
-      practiceFocus: state === 'locked'
-        ? 'Complete Suffix Station to unlock Quiet Letter Quest.'
-        : focus.currentDifficulty >= 8
-          ? 'Review silent-letter combinations and careful blending.'
-          : 'silent-letter combinations and careful blending',
-    }
-  }
-
-  if (unit.id === 'wg-unit-6') {
-    const activeOrPlanned = focus.activeUnitId === unit.id || focus.plannedUnitId === unit.id
-    const isPracticeComplete = focus.currentLearningState === 'FLUENCY_PRACTICE'
-    const state = focus.currentDifficulty >= 8
-      ? (activeOrPlanned
-        ? 'available'
-        : (focus.plannedPurpose === 'review'
-          ? 'review'
-          : isPracticeComplete
-            ? 'complete'
-            : 'available'))
-      : 'locked'
-    return {
-      ...unit,
-      state,
-      difficultyLabel: focus.currentDifficulty >= 8
-        ? (state === 'review' ? 'Review' : state === 'complete' ? 'Practice Complete' : 'Fluency Practice')
-        : 'Locked',
-      progressPercent: state === 'locked' ? 0 : state === 'complete' ? 100 : 75,
-      practiceFocus: state === 'locked'
-        ? 'Complete Quiet Letter Quest to unlock Fluency Flight.'
-        : state === 'complete'
-          ? 'Fluency Flight supports practice only while new reading worlds are prepared.'
-          : 'modeled reading, phrase-cued reading, rereading, and self-monitoring',
-    }
-  }
-
-  return { ...unit }
-}
-
-function cloneWorld(world: DemoWorld): DemoWorld {
-  return {
-    ...world,
-    units: world.units.map((unit) => ({ ...unit })),
-  }
+export function deriveWorldsForProgress(progress: Parameters<typeof deriveCurriculumWorlds>[1]): DemoWorld[] {
+  return deriveCurriculumWorlds(demoWorlds, progress, getLessonCandidates())
 }

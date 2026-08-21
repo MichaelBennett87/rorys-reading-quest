@@ -86,7 +86,8 @@ describe('Phase 2 lesson flow and child shell', () => {
 
     expect(screen.getAllByRole('heading', { name: /Curriculum Worlds/i })).toHaveLength(1)
     expect(screen.getAllByRole('button', { name: /Word Forge world - Available/i })).toHaveLength(1)
-    expect(screen.getAllByRole('button', { name: /Story Scouts world - Available/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Story Scouts world - Coming Later/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Information Detectives world - Coming Later/i })).toHaveLength(1)
     expect(screen.getAllByRole('button', { name: /Poetry Planet world - Coming Later/i })).toHaveLength(1)
   })
 
@@ -95,6 +96,12 @@ describe('Phase 2 lesson flow and child shell', () => {
 
     const worldCard = getWordForgeCard()
     expect(worldCard.getAttribute('disabled')).toBeNull()
+  })
+
+  test('shows the current learning focus without a Word Forge-only fallback', () => {
+    render(<App />)
+
+    expect(screen.getByText(/Current path: Word Forge Foundations Trail 1/i)).toBeTruthy()
   })
 
   test('locked world cannot launch a unit screen', () => {
@@ -128,10 +135,11 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getAllByRole('button', { name: /Suffix Station Locked/i })).toHaveLength(1)
   })
 
-  test('shows Trail 4 Syllable Summit when the current difficulty reaches 4', () => {
+  test('shows Trail 4 Syllable Summit when the current difficulty reaches 4', async () => {
     seedWordForgeDifficulty(4)
     render(<App />)
 
+    await waitFor(() => expect(screen.getByText(/Current path: Word Forge Foundations Trail 4/i)).toBeTruthy())
     fireEvent.click(getWordForgeCard())
     fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
 
@@ -140,10 +148,11 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getByText(/consonant-le syllables and syllable review/i)).toBeTruthy()
   })
 
-  test('shows Prefix Power as available when the current difficulty reaches 5', () => {
+  test('shows Prefix Power as available when the current difficulty reaches 5', async () => {
     seedWordForgeDifficulty(5)
     render(<App />)
 
+    await waitFor(() => expect(screen.getByText(/Current path: Word Forge Foundations Trail 5/i)).toBeTruthy())
     fireEvent.click(getWordForgeCard())
     fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
 
@@ -153,10 +162,11 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getByText(/common prefixes and base words/i)).toBeTruthy()
   })
 
-  test('shows Suffix Station as available when the current difficulty reaches 6', () => {
+  test('shows Suffix Station as available when the current difficulty reaches 6', async () => {
     seedWordForgeDifficulty(6)
     render(<App />)
 
+    await waitFor(() => expect(screen.getByText(/Current path: Word Forge Foundations Trail 6/i)).toBeTruthy())
     fireEvent.click(getWordForgeCard())
     fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
 
@@ -188,10 +198,11 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getByText(/Complete Quiet Letter Quest to unlock Fluency Flight/i)).toBeTruthy()
   })
 
-  test('shows Quiet Letter Quest as available at difficulty 7 and launches the Trail 7 checkpoint', () => {
+  test('shows Quiet Letter Quest as a locked preview at difficulty 7', async () => {
     seedWordForgeDifficulty(7)
     render(<App />)
 
+    await waitFor(() => expect(screen.getByText(/Current path: Word Forge Foundations Trail 7/i)).toBeTruthy())
     fireEvent.click(getWordForgeCard())
     fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
 
@@ -202,18 +213,17 @@ describe('Phase 2 lesson flow and child shell', () => {
 
     fireEvent.click(quietLetterQuest)
     expect(screen.getByRole('heading', { name: /Quiet Letter Quest/i })).toBeTruthy()
-    expect(screen.getByText(/Potential reward: up to 3 stars/i)).toBeTruthy()
-
-    fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
-    expect(screen.getByRole('heading', { name: /Quiet Letter Quest/i })).toBeTruthy()
-    expect(screen.getByText(/Question 1 of 7/i)).toBeTruthy()
-    expect(screen.getByText(/Which word in the museum passage begins with quiet kn and names the statue\?/i)).toBeTruthy()
+    expect(screen.getByText(/This quest is almost ready; we can open the lesson route in a later phase\./i)).toBeTruthy()
+    expect(screen.getByText(/This quest is not available yet/i)).toBeTruthy()
+    expect(screen.getByText(/Complete Suffix Station to unlock Quiet Letter Quest/i)).toBeTruthy()
+    expect(screen.queryByRole('button', { name: /Start Quest/i })).toBeNull()
   })
 
-  test('shows Quiet Letter Quest as complete or review at difficulty 8 and keeps Fluency Flight locked', () => {
+  test('shows Quiet Letter Quest as complete or review at difficulty 8 and keeps Fluency Flight locked', async () => {
     seedWordForgeDifficulty(8)
     render(<App />)
 
+    await waitFor(() => expect(screen.getByText(/Current path: Word Forge Foundations Trail 8/i)).toBeTruthy())
     fireEvent.click(getWordForgeCard())
     fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
 
@@ -223,21 +233,26 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getByText(/Fluency Practice/i)).toBeTruthy()
 
     fireEvent.click(screen.getByRole('button', { name: /Quiet Letter Quest (Complete|Review)/i }))
+    expect(screen.getByRole('heading', { name: /Quiet Letter Quest/i })).toBeTruthy()
+    expect(screen.getByText(/This quest is almost ready; we can open the lesson route in a later phase\./i)).toBeTruthy()
     expect(screen.getByText(/This quest is not available yet/i)).toBeTruthy()
-    expect(screen.getByText(/Quiet Letter Quest has no fresh content in this phase/i)).toBeTruthy()
+    expect(screen.getByText(/Complete Suffix Station to unlock Quiet Letter Quest/i)).toBeTruthy()
+    expect(screen.queryByRole('button', { name: /Start Quest/i })).toBeNull()
   })
 
-  test('starts Trail 5 Prefix Power checkpoint content at difficulty 5', () => {
+  test('shows Trail 5 Prefix Power as a locked preview at difficulty 5', async () => {
     seedWordForgeDifficulty(5)
     render(<App />)
 
+    await waitFor(() => expect(screen.getByText(/Current path: Word Forge Foundations Trail 5/i)).toBeTruthy())
     fireEvent.click(getWordForgeCard())
     fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
     fireEvent.click(screen.getByRole('button', { name: /Prefix Power Available/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
-
     expect(screen.getByRole('heading', { name: /Prefix Power/i })).toBeTruthy()
-    expect(screen.getByText(/Which word means not happy\?/i)).toBeTruthy()
+    expect(screen.getByText(/This quest is almost ready; we can open the lesson route in a later phase\./i)).toBeTruthy()
+    expect(screen.getByText(/This quest is not available yet/i)).toBeTruthy()
+    expect(screen.getByText(/Complete Syllable Summit to unlock Prefix Power/i)).toBeTruthy()
+    expect(screen.queryByRole('button', { name: /Start Quest/i })).toBeNull()
   })
 
   test('opens lesson-ready screen from an available unit', () => {
@@ -251,44 +266,49 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getByText(/Potential reward: up to 3 stars/i)).toBeTruthy()
   })
 
-  test('starts Trail 4 checkpoint content from Syllable Summit at difficulty 4', () => {
+  test('shows Trail 4 Syllable Summit as a locked preview at difficulty 4', async () => {
     seedWordForgeDifficulty(4)
     render(<App />)
 
+    await waitFor(() => expect(screen.getByText(/Current path: Word Forge Foundations Trail 4/i)).toBeTruthy())
     fireEvent.click(getWordForgeCard())
     fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
     fireEvent.click(screen.getByRole('button', { name: /Syllable Summit Available/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
-
     expect(screen.getByRole('heading', { name: /Syllable Summit/i })).toBeTruthy()
-    expect(screen.getByText(/Which word has a consonant-le ending\?/i)).toBeTruthy()
+    expect(screen.getByText(/This quest is almost ready; we can open the lesson route in a later phase\./i)).toBeTruthy()
+    expect(screen.getByText(/This quest is not available yet/i)).toBeTruthy()
+    expect(screen.getByText(/Complete Vowel Voyage to unlock Syllable Summit/i)).toBeTruthy()
+    expect(screen.queryByRole('button', { name: /Start Quest/i })).toBeNull()
   })
 
-  test('starts Trail 6 checkpoint content from Suffix Station at difficulty 6', () => {
+  test('shows Trail 6 Suffix Station as a locked preview at difficulty 6', async () => {
     seedWordForgeDifficulty(6)
     render(<App />)
 
+    await waitFor(() => expect(screen.getByText(/Current path: Word Forge Foundations Trail 6/i)).toBeTruthy())
     fireEvent.click(getWordForgeCard())
     fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
     fireEvent.click(screen.getByRole('button', { name: /Suffix Station Available/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
-
     expect(screen.getByRole('heading', { name: /Suffix Station/i })).toBeTruthy()
-    expect(screen.getByText(/Which word has the suffix -s or -es\?/i)).toBeTruthy()
+    expect(screen.getByText(/This quest is almost ready; we can open the lesson route in a later phase\./i)).toBeTruthy()
+    expect(screen.getByText(/This quest is not available yet/i)).toBeTruthy()
+    expect(screen.getByText(/Complete Prefix Power to unlock Suffix Station/i)).toBeTruthy()
+    expect(screen.queryByRole('button', { name: /Start Quest/i })).toBeNull()
   })
 
-  test('starts Trail 7 Quiet Letter Quest checkpoint content at difficulty 7', () => {
+  test('shows Trail 7 Quiet Letter Quest as a locked preview at difficulty 7', async () => {
     seedWordForgeDifficulty(7)
     render(<App />)
 
+    await waitFor(() => expect(screen.getByText(/Current path: Word Forge Foundations Trail 7/i)).toBeTruthy())
     fireEvent.click(getWordForgeCard())
     fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
     fireEvent.click(screen.getByRole('button', { name: /Quiet Letter Quest Available/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
-
     expect(screen.getByRole('heading', { name: /Quiet Letter Quest/i })).toBeTruthy()
-    expect(screen.getByText(/Question 1 of 7/i)).toBeTruthy()
-    expect(screen.getByText(/Which word in the museum passage begins with quiet kn and names the statue\?/i)).toBeTruthy()
+    expect(screen.getByText(/This quest is almost ready; we can open the lesson route in a later phase\./i)).toBeTruthy()
+    expect(screen.getByText(/This quest is not available yet/i)).toBeTruthy()
+    expect(screen.getByText(/Complete Suffix Station to unlock Quiet Letter Quest/i)).toBeTruthy()
+    expect(screen.queryByRole('button', { name: /Start Quest/i })).toBeNull()
   })
 
   test('starts the Word Forge lesson run and shows the first question', () => {
