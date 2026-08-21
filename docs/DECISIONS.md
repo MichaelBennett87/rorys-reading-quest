@@ -270,3 +270,7 @@
 - Reason: Remediation needs a teaching block before practice, while progression requires fresh scored material.
 - Consequence: Teaching blocks can support decoding practice without being scored or counted as assistance or mastery evidence.
 - Status: Applied
+## 2026-08-21 - Phase 6D3 Perspective Portal Activation
+- Decision: Activate `ELA.2.R.1.3` and the Perspective Portal pack when the first Story Scouts perspective pack is registered, while keeping Poetry Planet planned.
+- Reason: Phase 6D3 is the first active Story Scouts perspective-authoring phase and needs bounded character-perspective practice with unit-affine review scheduling across all Story Scouts units.
+- Consequence: Story Scouts continues to use one skill track with separate Story Map, Theme Trail, and Perspective Portal review content, and later poetry content can land without stealing one another's reviews.
