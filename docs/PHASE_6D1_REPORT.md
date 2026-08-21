@@ -11,8 +11,9 @@
 
 - Starting local HEAD: `7caea973136d22de8bc32b361f23411f44a89148`
 - Starting remote HEAD: `7caea973136d22de8bc32b361f23411f44a89148`
-- Final local HEAD: `9357dd65cdb4d7816b5429353633c8d29031a618`
-- Final remote HEAD: `9357dd65cdb4d7816b5429353633c8d29031a618`
+- Implementation checkpoint: `9357dd65cdb4d7816b5429353633c8d29031a618`
+- Final local HEAD: `577f8ef3a4ff0e5d9c67be4f1a264a98e7925183`
+- Final remote HEAD: `577f8ef3a4ff0e5d9c67be4f1a264a98e7925183`
 - Local and remote SHA match: `yes`
 - Lint: passed, zero warnings
 - Typecheck: passed

@@ -59,7 +59,7 @@
   - [ ] Phase 6D: Grade 2 prose and poetry
     - [x] Phase 6D0: multi-world and multi-skill progression foundation
     - [x] Phase 6D1: plot structure and main story elements
-    - [ ] Phase 6D2: theme
+    - [x] Phase 6D2: theme
     - [ ] Phase 6D3: character perspectives
     - [ ] Phase 6D4: rhyme schemes, Poetry Planet, and final Phase 6D audit
   - [ ] Phase 6E: informational reading and vocabulary

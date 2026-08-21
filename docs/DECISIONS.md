@@ -243,6 +243,13 @@
 - Consequence: The curriculum map can show `ELA.2.R.1.1` as implemented in DRAFT form without implying mastery or opening later prose and poetry phases.
 - Status: Applied
 
+## 2026-08-21 - Phase 6D2 Theme Trail Activation
+
+- Decision: Activate `ELA.2.R.1.2` and the Theme Trail pack when the first Story Scouts theme pack is registered, while keeping Perspective Portal and Poetry Planet planned.
+- Reason: Phase 6D2 is the first active Story Scouts theme-authoring phase and needs bounded theme practice with unit-affine review scheduling.
+- Consequence: Story Scouts continues to use one skill track with separate Story Map and Theme Trail review content, and later units can land without stealing one another's reviews.
+- Status: Applied
+
 ## 2026-08-20 - Unit-Aware Word Forge Planning
 
 - Decision: Make selected-unit planning unit-aware so fresh lesson selection and active-session recovery respect the chosen Word Forge trail.
