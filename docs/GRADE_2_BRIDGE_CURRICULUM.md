@@ -1,6 +1,6 @@
 # Grade 2 Bridge Curriculum
 
-This roadmap describes the bounded Grade 2 bridge plan for Rory's Reading Quest. Phase 6A1, Phase 6A2, Phase 6B1, Phase 6B2, Phase 6C1, and Phase 6C2 provide authored DRAFT coverage for the listed Grade 2 bridge patterns, not complete Grade 2 instruction, and they keep all new material DRAFT-only.
+This roadmap describes the bounded Grade 2 bridge plan for Rory's Reading Quest. Phase 6A1, Phase 6A2, Phase 6B1, Phase 6B2, Phase 6C1, Phase 6C2, and Phase 6C3 provide authored DRAFT coverage for the listed Grade 2 bridge patterns, not complete Grade 2 instruction, and they keep all new material DRAFT-only.
 
 ## Foundations
 
@@ -10,8 +10,8 @@ This roadmap describes the bounded Grade 2 bridge plan for Rory's Reading Quest.
 | `ELA.2.F.1.3b` | Word Forge | `wg-unit-2` | `ELA.2.F.1.3a` | 3 | 6B1 | implemented |
 | `ELA.2.F.1.3c` | Word Forge | `wg-unit-2` | `ELA.2.F.1.3b` | 2-4 | 6B1-6B2 | implemented |
 | `ELA.2.F.1.3d` | Word Forge | `wg-unit-3` and `wg-unit-4` | `ELA.2.F.1.3c` | 4-6 | 6C1-6C2 | implemented |
-| `ELA.2.F.1.3e` | Word Forge | `wg-unit-5` | `ELA.2.F.1.3d` | 1-2 | 6C | planned |
-| `ELA.2.F.1.4` | Word Forge | `wg-unit-6` | `ELA.2.F.1.3e` | 1-2 | 6C | planned |
+| `ELA.2.F.1.3e` | Word Forge | `wg-unit-5` | `ELA.2.F.1.3d` | 6-7 | 6C3 | implemented |
+| `ELA.2.F.1.4` | Word Forge | `wg-unit-6` | `ELA.2.F.1.3e` | 1-2 | 6C4 | planned |
 
 ## Reading Prose and Poetry
 
@@ -48,6 +48,7 @@ This roadmap describes the bounded Grade 2 bridge plan for Rory's Reading Quest.
 - `ELA.2.F.1.3b` is implemented in DRAFT in Phase 6B1.
 - `ELA.2.F.1.3c` is implemented in DRAFT across Phase 6B1 and Phase 6B2.
 - `ELA.2.F.1.3d` is implemented in DRAFT across Phase 6C1 and Phase 6C2; Phase 6C1 covers common prefixes and Phase 6C2 covers common suffixes.
+- `ELA.2.F.1.3e` is implemented in DRAFT in Phase 6C3; it covers a bounded silent-letter set for Quiet Letter Quest.
 - Implemented means the listed patterns have authored DRAFT coverage only; it does not mean human approval or learner mastery.
 - No benchmark is marked approved.
 - Bridge planning keeps exposure, partial coverage, implemented coverage, and approved coverage distinct so future phases can stay bounded and auditable.

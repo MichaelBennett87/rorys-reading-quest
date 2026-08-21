@@ -310,6 +310,46 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
     const forbiddenSpellingChangeWords = expectation.packId === 'g2-word-forge-common-suffixes'
       ? new Set(['making', 'hoping', 'running', 'bigger', 'biggest', 'happier', 'happiest', 'carried', 'cried'])
       : null
+    const silentWordExpectations = expectation.packId === 'g2-word-forge-silent-letter-combinations'
+      ? new Map<string, { familyTag: string; leadingChunk?: string; trailingChunk?: string }>([
+          ['knight', { familyTag: 'silent-kn', leadingChunk: 'kn' }],
+          ['knee', { familyTag: 'silent-kn', leadingChunk: 'kn' }],
+          ['knock', { familyTag: 'silent-kn', leadingChunk: 'kn' }],
+          ['knit', { familyTag: 'silent-kn', leadingChunk: 'kn' }],
+          ['kneel', { familyTag: 'silent-kn', leadingChunk: 'kn' }],
+          ['knob', { familyTag: 'silent-kn', leadingChunk: 'kn' }],
+          ['know', { familyTag: 'silent-kn', leadingChunk: 'kn' }],
+          ['knot', { familyTag: 'silent-kn', leadingChunk: 'kn' }],
+          ['wrap', { familyTag: 'silent-wr', leadingChunk: 'wr' }],
+          ['wrist', { familyTag: 'silent-wr', leadingChunk: 'wr' }],
+          ['write', { familyTag: 'silent-wr', leadingChunk: 'wr' }],
+          ['wrong', { familyTag: 'silent-wr', leadingChunk: 'wr' }],
+          ['wren', { familyTag: 'silent-wr', leadingChunk: 'wr' }],
+          ['wreck', { familyTag: 'silent-wr', leadingChunk: 'wr' }],
+          ['lamb', { familyTag: 'silent-mb', trailingChunk: 'mb' }],
+          ['comb', { familyTag: 'silent-mb', trailingChunk: 'mb' }],
+          ['thumb', { familyTag: 'silent-mb', trailingChunk: 'mb' }],
+          ['climb', { familyTag: 'silent-mb', trailingChunk: 'mb' }],
+          ['crumb', { familyTag: 'silent-mb', trailingChunk: 'mb' }],
+          ['ghost', { familyTag: 'silent-gh' }],
+          ['night', { familyTag: 'silent-gh' }],
+          ['bright', { familyTag: 'silent-gh' }],
+          ['light', { familyTag: 'silent-gh' }],
+          ['high', { familyTag: 'silent-gh' }],
+          ['island', { familyTag: 'silent-s-island' }],
+          ['islander', { familyTag: 'silent-s-island' }],
+          ['isle', { familyTag: 'silent-s-island' }],
+          ['aisle', { familyTag: 'silent-s-island' }],
+        ])
+      : null
+    const forbiddenFalseSilentGhWords = expectation.packId === 'g2-word-forge-silent-letter-combinations'
+      ? new Set(['cough', 'laugh', 'enough', 'rough', 'tough'])
+      : null
+    const forbiddenFalseSilentMbWords = expectation.packId === 'g2-word-forge-silent-letter-combinations'
+      ? new Set(['number', 'timber', 'member', 'bamboo'])
+      : null
+    const silentFamilyObserved = new Set<string>()
+    const silentRequiredWordsObserved = new Set<string>()
 
     if (allTargets.length < expectation.minSupportTargets || allTargets.length > expectation.maxSupportTargets) {
       pushIssue(
@@ -393,8 +433,8 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
             continue
           }
           const expectationForWord = suffixWordExpectations.get(normalizedWord)
-          if (expectationForWord) {
-            suffixFamilyObserved.add(expectationForWord.familyTag)
+        if (expectationForWord) {
+          suffixFamilyObserved.add(expectationForWord.familyTag)
             const reconstructed = (target.displayChunks ?? []).map((chunk) => chunk.displayText.toLowerCase().replace(/[^a-z]/g, '')).join('')
             if (reconstructed !== normalizedWord) {
               pushIssue(issues, 'support_target_structure_invalid', target.targetId, 'Suffix target chunks must reconstruct the surface word.')
@@ -413,6 +453,36 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
                 pushIssue(issues, 'support_target_structure_invalid', target.targetId, 'Suffix -ed targets must include a defensible spoken ending.')
               }
               suffixEdSoundObserved.add(expectationForWord.edSound)
+            }
+          }
+        }
+        if (silentWordExpectations) {
+          if (forbiddenFalseSilentGhWords?.has(normalizedWord) || forbiddenFalseSilentMbWords?.has(normalizedWord)) {
+            pushIssue(issues, 'ambiguous_forbidden_homograph', target.targetId, 'False silent-letter examples must not be treated as transparent silent-letter targets.')
+            continue
+          }
+          const expectationForWord = silentWordExpectations.get(normalizedWord)
+          if (expectationForWord) {
+            silentFamilyObserved.add(expectationForWord.familyTag)
+            silentRequiredWordsObserved.add(normalizedWord)
+            const reconstructed = (target.displayChunks ?? []).map((chunk) => chunk.displayText.toLowerCase().replace(/[^a-z]/g, '')).join('')
+            if (reconstructed !== normalizedWord) {
+              pushIssue(issues, 'support_target_structure_invalid', target.targetId, 'Silent-letter target chunks must reconstruct the surface word.')
+            }
+            if ((target.displayChunks ?? []).length < 2) {
+              pushIssue(issues, 'support_target_structure_invalid', target.targetId, 'Silent-letter targets need at least two authored chunks.')
+            }
+            if (expectationForWord.leadingChunk) {
+              const leadingChunk = target.displayChunks?.[0]?.displayText.toLowerCase().replace(/[^a-z]/g, '') ?? ''
+              if (leadingChunk !== expectationForWord.leadingChunk) {
+                pushIssue(issues, 'support_target_structure_invalid', target.targetId, 'Silent-letter target chunks must preserve the quiet onset.')
+              }
+            }
+            if (expectationForWord.trailingChunk) {
+              const trailingChunk = target.displayChunks?.[target.displayChunks.length - 1]?.displayText.toLowerCase().replace(/[^a-z]/g, '') ?? ''
+              if (trailingChunk !== expectationForWord.trailingChunk) {
+                pushIssue(issues, 'support_target_structure_invalid', target.targetId, 'Silent-letter target chunks must preserve the quiet ending.')
+              }
             }
           }
         }
@@ -445,6 +515,19 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
       for (const soundKind of ['t', 'd', 'id'] as const) {
         if (!suffixEdSoundObserved.has(soundKind)) {
           pushIssue(issues, 'missing_target_pattern_coverage', pack.manifest.packId, `The pack must include an authored -ed target with the ${soundKind} sound.`,)
+        }
+      }
+    }
+
+    if (expectation.packId === 'g2-word-forge-silent-letter-combinations') {
+      for (const familyTag of ['silent-kn', 'silent-wr', 'silent-mb', 'silent-gh', 'silent-s-island'] as const) {
+        if (!silentFamilyObserved.has(familyTag)) {
+          pushIssue(issues, 'missing_target_pattern_coverage', pack.manifest.packId, `The pack must include ${familyTag.replace('silent-', '').replace('-', '-')} support targets.`)
+        }
+      }
+      for (const requiredWord of ['knight', 'comb', 'island', 'ghost'] as const) {
+        if (!silentRequiredWordsObserved.has(requiredWord)) {
+          pushIssue(issues, 'missing_target_pattern_coverage', pack.manifest.packId, `The pack must include ${requiredWord} somewhere in authored support.`)
         }
       }
     }
@@ -556,6 +639,28 @@ function getBridgePackExpectation(pack: ContentPack): BridgePackExpectation | nu
       guidedDifficultyA: 5,
       guidedDifficultyB: 6,
       checkpointPatterns: ['suffix-s-es', 'suffix-ed', 'suffix-ing', 'suffix-er-est', 'suffix-ful-less', 'suffix-ly'],
+      minSupportTargets: 28,
+      maxSupportTargets: 28,
+      minSupportTargetsPerPassage: 4,
+      maxSupportTargetsPerPassage: 4,
+      openConsonantLeWords: new Set(),
+      closedConsonantLeWords: new Set(),
+      forbiddenSilentEWords: new Set(),
+      questionTypeCounts: {
+        multiple_choice: 20,
+        multi_select: 7,
+        hot_text: 7,
+        table_match: 7,
+      },
+    }
+  }
+
+  if (!hasB && !hasC && pack.manifest.benchmarkReferences.includes('ELA.2.F.1.3e') && minDifficulty === 6 && maxDifficulty === 7) {
+    return {
+      packId: pack.manifest.packId,
+      guidedDifficultyA: 6,
+      guidedDifficultyB: 7,
+      checkpointPatterns: ['silent-kn', 'silent-wr', 'silent-mb', 'silent-gh', 'silent-s-island'],
       minSupportTargets: 28,
       maxSupportTargets: 28,
       minSupportTargetsPerPassage: 4,

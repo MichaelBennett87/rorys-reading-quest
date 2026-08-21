@@ -51,5 +51,5 @@
 
 ## Remaining risks
 
-- Phase 6C3 and later units remain deferred.
+- Phase 6C3 is implemented in DRAFT; Phase 6C4 and later units remain deferred.
 - The curriculum is still DRAFT-only and not a mastery or certification signal.

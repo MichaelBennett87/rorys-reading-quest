@@ -176,6 +176,57 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getByText(/New Word Forge quests are being prepared/i)).toBeTruthy()
   })
 
+  test('shows Quiet Letter Quest as locked before difficulty 7 with readable guidance', () => {
+    render(<App />)
+
+    fireEvent.click(getWordForgeCard())
+    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
+
+    expect(screen.getAllByRole('button', { name: /Quiet Letter Quest Locked/i })).toHaveLength(1)
+    expect(screen.getByText(/Complete Suffix Station to unlock Quiet Letter Quest/i)).toBeTruthy()
+    expect(screen.getAllByRole('button', { name: /Fluency Flight Locked/i })).toHaveLength(1)
+    expect(screen.getByText(/Fluency Flight quests are being prepared/i)).toBeTruthy()
+  })
+
+  test('shows Quiet Letter Quest as available at difficulty 7 and launches the Trail 7 checkpoint', () => {
+    seedWordForgeDifficulty(7)
+    render(<App />)
+
+    fireEvent.click(getWordForgeCard())
+    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
+
+    const quietLetterQuest = screen.getByRole('button', { name: /Quiet Letter Quest Available/i })
+    expect(quietLetterQuest).toBeTruthy()
+    expect(within(quietLetterQuest).getByText(/Trail 7/i)).toBeTruthy()
+    expect(screen.getByText(/silent-letter combinations and careful blending/i)).toBeTruthy()
+
+    fireEvent.click(quietLetterQuest)
+    expect(screen.getByRole('heading', { name: /Quiet Letter Quest/i })).toBeTruthy()
+    expect(screen.getByText(/Potential reward: up to 3 stars/i)).toBeTruthy()
+
+    fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
+    expect(screen.getByRole('heading', { name: /Quiet Letter Quest/i })).toBeTruthy()
+    expect(screen.getByText(/Question 1 of 7/i)).toBeTruthy()
+    expect(screen.getByText(/Which word in the museum passage begins with quiet kn and names the statue\?/i)).toBeTruthy()
+  })
+
+  test('shows Quiet Letter Quest as complete or review at difficulty 8 and keeps Fluency Flight locked', () => {
+    seedWordForgeDifficulty(8)
+    render(<App />)
+
+    fireEvent.click(getWordForgeCard())
+    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
+
+    expect(screen.getAllByRole('button', { name: /Quiet Letter Quest (Complete|Review)/i })).toHaveLength(1)
+    expect(screen.getByText(/Review silent-letter combinations and careful blending/i)).toBeTruthy()
+    expect(screen.getAllByRole('button', { name: /Fluency Flight Locked/i })).toHaveLength(1)
+    expect(screen.getByText(/Fluency Flight quests are being prepared/i)).toBeTruthy()
+
+    fireEvent.click(screen.getByRole('button', { name: /Quiet Letter Quest (Complete|Review)/i }))
+    expect(screen.getByText(/This quest is not available yet/i)).toBeTruthy()
+    expect(screen.getByText(/Quiet Letter Quest has no fresh content in this phase/i)).toBeTruthy()
+  })
+
   test('starts Trail 5 Prefix Power checkpoint content at difficulty 5', () => {
     seedWordForgeDifficulty(5)
     render(<App />)
@@ -224,6 +275,20 @@ describe('Phase 2 lesson flow and child shell', () => {
 
     expect(screen.getByRole('heading', { name: /Suffix Station/i })).toBeTruthy()
     expect(screen.getByText(/Which word has the suffix -s or -es\?/i)).toBeTruthy()
+  })
+
+  test('starts Trail 7 Quiet Letter Quest checkpoint content at difficulty 7', () => {
+    seedWordForgeDifficulty(7)
+    render(<App />)
+
+    fireEvent.click(getWordForgeCard())
+    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Quiet Letter Quest Available/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
+
+    expect(screen.getByRole('heading', { name: /Quiet Letter Quest/i })).toBeTruthy()
+    expect(screen.getByText(/Question 1 of 7/i)).toBeTruthy()
+    expect(screen.getByText(/Which word in the museum passage begins with quiet kn and names the statue\?/i)).toBeTruthy()
   })
 
   test('starts the Word Forge lesson run and shows the first question', () => {

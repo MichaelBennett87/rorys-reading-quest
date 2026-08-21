@@ -9,6 +9,7 @@ const BENCHMARK_PATTERN_CATALOG: Record<string, readonly string[]> = {
   'ELA.2.F.1.3b': ['two-syllable-short-vowels', 'two-syllable-long-vowels'],
   'ELA.2.F.1.3c': ['open-syllable', 'closed-syllable', 'consonant-le'],
   'ELA.2.F.1.3d': ['common-prefixes', 'common-suffixes'],
+  'ELA.2.F.1.3e': ['silent-letter-combinations'],
 }
 
 const REVIEW_ORDER: Record<BenchmarkReviewStatus, number> = {

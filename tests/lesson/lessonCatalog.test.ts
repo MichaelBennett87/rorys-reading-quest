@@ -24,10 +24,11 @@ describe('getLessonForUnit', () => {
 
   test('exposes the active trail and bridge lessons while excluding legacy lessons', () => {
     const candidates = getLessonCandidates()
-    expect(candidates).toHaveLength(42)
-    expect(new Set(candidates.map((candidate) => candidate.activityId)).size).toBe(42)
+    expect(candidates).toHaveLength(49)
+    expect(new Set(candidates.map((candidate) => candidate.activityId)).size).toBe(49)
     expect(candidates.filter((candidate) => candidate.lessonId.startsWith('lesson-word-forge-common-prefixes-'))).toHaveLength(7)
     expect(candidates.filter((candidate) => candidate.lessonId.startsWith('lesson-word-forge-common-suffixes-'))).toHaveLength(7)
+    expect(candidates.filter((candidate) => candidate.lessonId.startsWith('lesson-word-forge-silent-letter-combinations-'))).toHaveLength(7)
     expect(candidates.map((candidate) => candidate.lessonId)).not.toEqual(expect.arrayContaining([
       'lesson-word-forge-vowel-voyage-a',
       'lesson-word-forge-vowel-voyage-b',
@@ -83,6 +84,12 @@ describe('getLessonForUnit', () => {
       worldId: 'word-forge',
       unitId: 'wg-unit-4',
     }))
+    expect(getLessonCatalogMetadata('lesson-word-forge-silent-letter-combinations-checkpoint-a')).toEqual(expect.objectContaining({
+      lessonId: 'lesson-word-forge-silent-letter-combinations-checkpoint-a',
+      packId: 'g2-word-forge-silent-letter-combinations',
+      worldId: 'word-forge',
+      unitId: 'wg-unit-5',
+    }))
     expect(getLessonCatalogMetadata('missing-lesson-id')).toBeNull()
   })
 
@@ -90,6 +97,16 @@ describe('getLessonForUnit', () => {
     const result = getLessonForUnit('wg-unit-3')
     expect(result.lesson).toBeDefined()
     expect(result.lesson?.lessonId).toBe('lesson-word-forge-common-prefixes-checkpoint-a')
+    expect(result.lesson?.lessonRole).toBe('CHECKPOINT')
+    expect(result.lesson?.selectionStatus).toBe('active')
+    expect(result.lesson?.questionCount).toBe(7)
+    expect(result.lesson?.teachingBlock).toBeUndefined()
+  })
+
+  test('the quiet letter quest trail resolves to the new checkpoint lesson', () => {
+    const result = getLessonForUnit('wg-unit-5')
+    expect(result.lesson).toBeDefined()
+    expect(result.lesson?.lessonId).toBe('lesson-word-forge-silent-letter-combinations-checkpoint-a')
     expect(result.lesson?.lessonRole).toBe('CHECKPOINT')
     expect(result.lesson?.selectionStatus).toBe('active')
     expect(result.lesson?.questionCount).toBe(7)

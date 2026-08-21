@@ -63,6 +63,24 @@ const wordForgeUnits: DemoUnit[] = [
     state: 'review',
     practiceFocus: 'suffix clues and fluency',
   },
+  {
+    id: 'wg-unit-5',
+    title: 'Quiet Letter Quest',
+    difficultyLabel: 'Locked',
+    progressPercent: 0,
+    stars: 0,
+    state: 'locked',
+    practiceFocus: 'Complete Suffix Station to unlock Quiet Letter Quest.',
+  },
+  {
+    id: 'wg-unit-6',
+    title: 'Fluency Flight',
+    difficultyLabel: 'Locked',
+    progressPercent: 0,
+    stars: 0,
+    state: 'locked',
+    practiceFocus: 'Fluency Flight quests are being prepared.',
+  },
 ]
 
 const storyScoutsUnits: DemoUnit[] = [
@@ -335,7 +353,41 @@ function deriveWordForgeUnit(unit: DemoUnit, focus: ReturnType<typeof resolveWor
         ? 'Complete Prefix Power to unlock Suffix Station.'
         : focus.currentDifficulty >= 7
           ? 'New Word Forge quests are being prepared.'
-          : 'common suffixes and ending sounds',
+        : 'common suffixes and ending sounds',
+    }
+  }
+
+  if (unit.id === 'wg-unit-5') {
+    const activeOrPlanned = focus.activeUnitId === unit.id || focus.plannedUnitId === unit.id
+    const state = focus.currentDifficulty >= 8
+      ? (activeOrPlanned ? 'available' : (focus.plannedPurpose === 'review' ? 'review' : 'complete'))
+      : focus.currentDifficulty >= 7 || activeOrPlanned
+        ? 'available'
+        : 'locked'
+    return {
+      ...unit,
+      state,
+      difficultyLabel: focus.currentDifficulty >= 8
+        ? (state === 'review' ? 'Review' : 'Complete')
+        : focus.currentDifficulty >= 7
+          ? 'Trail 7'
+          : 'Locked',
+      progressPercent: state === 'locked' ? 0 : focus.currentDifficulty >= 8 ? 100 : 75,
+      practiceFocus: state === 'locked'
+        ? 'Complete Suffix Station to unlock Quiet Letter Quest.'
+        : focus.currentDifficulty >= 8
+          ? 'Review silent-letter combinations and careful blending.'
+          : 'silent-letter combinations and careful blending',
+    }
+  }
+
+  if (unit.id === 'wg-unit-6') {
+    return {
+      ...unit,
+      state: 'locked',
+      difficultyLabel: 'Locked',
+      progressPercent: 0,
+      practiceFocus: 'Fluency Flight quests are being prepared.',
     }
   }
 

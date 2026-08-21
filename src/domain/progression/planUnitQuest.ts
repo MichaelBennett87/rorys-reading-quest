@@ -307,6 +307,72 @@ export function planUnitQuest(input: PlanUnitQuestInput): UnitQuestPlan {
     }
   }
 
+  if (input.selectedUnitId === 'wg-unit-5') {
+    if (selectedDifficulty < 7) {
+      return {
+        status: 'locked',
+        purpose: 'progression',
+        unitId: input.selectedUnitId,
+        reason: 'Complete Suffix Station to unlock Quiet Letter Quest.',
+      }
+    }
+    if (selectedDifficulty >= 8) {
+      if (contentNeededNextQuest && contentNeededNextQuest.difficulty >= 8) {
+        return {
+          status: 'content_needed',
+          purpose: contentNeededNextQuest.purpose,
+          skillId: contentNeededNextQuest.skillId,
+          difficulty: contentNeededNextQuest.difficulty,
+          reason: contentNeededNextQuest.reason,
+          unitId: input.selectedUnitId,
+        }
+      }
+      return {
+        status: 'content_needed',
+        purpose: contentNeededNextQuest?.purpose ?? plannedPurpose,
+        skillId: currentSkill?.skillId ?? 'unknown',
+        difficulty: selectedDifficulty,
+        reason: 'Quiet Letter Quest has no fresh content in this phase.',
+        unitId: input.selectedUnitId,
+      }
+    }
+
+    const plan = selectNextLesson({
+      skillId: currentSkill?.skillId ?? 'unknown',
+      difficulty: selectedDifficulty,
+      purpose: availableNextQuest?.purpose ?? 'progression',
+      availableLessons: input.availableLessons.filter((lesson) => lesson.unitId === input.selectedUnitId),
+      recentActivityUsage: currentSkill?.recentActivityUsage ?? [],
+    })
+    if (plan.status === 'available') {
+      return {
+        status: 'available',
+        purpose: plan.purpose,
+        lesson: plan.lesson,
+        lessonId: plan.lesson.lessonId,
+        unitId: plan.lesson.unitId,
+        activityId: plan.lesson.activityId,
+      }
+    }
+    return {
+      status: 'content_needed',
+      purpose: plan.purpose,
+      skillId: plan.skillId,
+      difficulty: plan.difficulty,
+      reason: plan.reason,
+      unitId: input.selectedUnitId,
+    }
+  }
+
+  if (input.selectedUnitId === 'wg-unit-6') {
+    return {
+      status: 'locked',
+      purpose: 'progression',
+      unitId: input.selectedUnitId,
+      reason: 'Fluency Flight quests are being prepared.',
+    }
+  }
+
   return {
     status: 'locked',
     purpose: 'progression',

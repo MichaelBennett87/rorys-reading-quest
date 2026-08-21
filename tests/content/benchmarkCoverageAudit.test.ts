@@ -31,6 +31,18 @@ describe('benchmark coverage audit', () => {
     }))
   })
 
+  test('selects benchmark-specific expected patterns for 1.3e', () => {
+    expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.F.1.3e')).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.2.F.1.3e',
+      expectedPatterns: ['silent-letter-combinations'],
+      coveredPatterns: ['silent-letter-combinations'],
+      missingPatterns: [],
+      contributingPackIds: ['g2-word-forge-silent-letter-combinations'],
+      coverageStatus: 'implemented',
+      reviewStatus: 'DRAFT',
+    }))
+  })
+
   test('reports implemented coverage for 1.3c across both consonant-le packs', () => {
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.F.1.3c')).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.F.1.3c',

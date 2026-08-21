@@ -4,6 +4,7 @@ import { grade2WordForgeTwoSyllableOpenClosedPack } from './grade2/wordForge/two
 import { grade2WordForgeConsonantLePack } from './grade2/wordForge/consonantLeIntegrated'
 import { grade2WordForgeCommonPrefixesPack } from './grade2/wordForge/commonPrefixes'
 import { grade2WordForgeCommonSuffixesPack } from './grade2/wordForge/commonSuffixes'
+import { grade2WordForgeSilentLetterCombinationsPack } from './grade2/wordForge/silentLetterCombinations'
 import { legacyDevelopmentPack } from './legacyDevelopmentPack'
 import type { ContentPack } from './contentPackTypes'
 import type { ContentSample } from '../types'
@@ -17,6 +18,7 @@ export const contentPacks: readonly ContentPack[] = [
   grade2WordForgeConsonantLePack,
   grade2WordForgeCommonPrefixesPack,
   grade2WordForgeCommonSuffixesPack,
+  grade2WordForgeSilentLetterCombinationsPack,
   legacyDevelopmentPack,
 ]
 

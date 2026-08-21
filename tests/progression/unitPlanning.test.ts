@@ -50,6 +50,17 @@ describe('unit-aware Word Forge planning', () => {
     expect(['complete', 'review']).toContain(wordForgeAtSeven.units.find((unit) => unit.id === 'wg-unit-3')?.state)
     expect(['complete', 'review']).toContain(wordForgeAtSeven.units.find((unit) => unit.id === 'wg-unit-4')?.state)
     expect(wordForgeAtSeven.units.find((unit) => unit.id === 'wg-unit-4')?.practiceFocus).toContain('prepared')
+    expect(wordForgeAtSeven.units.find((unit) => unit.id === 'wg-unit-5')?.state).toBe('available')
+    expect(wordForgeAtSeven.units.find((unit) => unit.id === 'wg-unit-5')?.difficultyLabel).toBe('Trail 7')
+    expect(wordForgeAtSeven.units.find((unit) => unit.id === 'wg-unit-5')?.practiceFocus).toContain('silent-letter combinations')
+    expect(wordForgeAtSeven.units.find((unit) => unit.id === 'wg-unit-6')?.state).toBe('locked')
+    expect(wordForgeAtSeven.units.find((unit) => unit.id === 'wg-unit-6')?.practiceFocus).toContain('Fluency Flight quests are being prepared')
+
+    const difficultyEightWorlds = deriveWorldsForProgress(createProgress(8))
+    const wordForgeAtEight = difficultyEightWorlds.find((world) => world.id === 'word-forge')!
+    expect(['complete', 'review']).toContain(wordForgeAtEight.units.find((unit) => unit.id === 'wg-unit-5')?.state)
+    expect(wordForgeAtEight.units.find((unit) => unit.id === 'wg-unit-5')?.difficultyLabel).toMatch(/Complete|Review/)
+    expect(wordForgeAtEight.units.find((unit) => unit.id === 'wg-unit-6')?.state).toBe('locked')
   })
 
   test('unit planning respects unit boundaries and freshness', () => {
@@ -143,6 +154,43 @@ describe('unit-aware Word Forge planning', () => {
       availableLessons,
     })
     expect(trailSevenSuffixPlan.status).toBe('content_needed')
+
+    const trailSixSilentLock = planUnitQuest({
+      selectedUnitId: 'wg-unit-5',
+      progress: trailSixProgress,
+      availableLessons,
+    })
+    expect(trailSixSilentLock.status).toBe('locked')
+    if (trailSixSilentLock.status === 'locked') {
+      expect(trailSixSilentLock.reason).toMatch(/Complete Suffix Station to unlock Quiet Letter Quest/i)
+    }
+
+    const trailSevenSilentPlan = planUnitQuest({
+      selectedUnitId: 'wg-unit-5',
+      progress: createProgress(7),
+      availableLessons,
+    })
+    expect(trailSevenSilentPlan.status).toBe('available')
+    if (trailSevenSilentPlan.status === 'available') {
+      expect(trailSevenSilentPlan.lessonId).toBe('lesson-word-forge-silent-letter-combinations-checkpoint-a')
+    }
+
+    const trailEightSilentPlan = planUnitQuest({
+      selectedUnitId: 'wg-unit-5',
+      progress: createProgress(8),
+      availableLessons,
+    })
+    expect(trailEightSilentPlan.status).toBe('content_needed')
+
+    const trailSevenFluencyLock = planUnitQuest({
+      selectedUnitId: 'wg-unit-6',
+      progress: createProgress(7),
+      availableLessons,
+    })
+    expect(trailSevenFluencyLock.status).toBe('locked')
+    if (trailSevenFluencyLock.status === 'locked') {
+      expect(trailSevenFluencyLock.reason).toMatch(/Fluency Flight quests are being prepared/i)
+    }
   })
 
   test('an active session in another unit blocks a fresh unit launch', () => {

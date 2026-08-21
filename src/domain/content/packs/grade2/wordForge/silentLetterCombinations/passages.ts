@@ -1,0 +1,433 @@
+import type { Passage, WordSupportChunk, WordSupportPart, WordSupportTarget } from '../../../../types'
+import { SILENT_LETTER_CONTENT_VERSION, SILENT_LETTER_PASSAGE_IDS } from './ids'
+
+interface TargetSpec {
+  targetId: string
+  sentenceId: string
+  surfaceWord: string
+  focusParts: WordSupportPart[]
+  displayChunks: WordSupportChunk[]
+  spokenChunks: WordSupportChunk[]
+  blendSpeechText: string
+  wholeWordSpeechText: string
+  sentenceSpeechText: string
+}
+
+interface PassageSpec {
+  passageIdentifier: string
+  readingContext: string
+  sentences: { sentenceId: string; text: string }[]
+  targets: TargetSpec[]
+}
+
+const part = (text: string, emphasis: boolean): WordSupportPart => ({ text, emphasis })
+const chunk = (displayText: string, speechText = displayText): WordSupportChunk => ({ displayText, speechText })
+const sentence = (sentenceId: string, text: string) => ({ sentenceId, text })
+
+const createTarget = (passageId: string, spec: TargetSpec): WordSupportTarget => ({
+  passageId,
+  ...spec,
+  reviewStatus: 'DRAFT',
+  contentVersion: SILENT_LETTER_CONTENT_VERSION,
+})
+
+const createPassage = (spec: PassageSpec): Passage => ({
+  passageIdentifier: spec.passageIdentifier,
+  gradeBand: 2,
+  passageText: spec.sentences.map((entry) => entry.text).join(' '),
+  sentences: spec.sentences,
+  readingContext: spec.readingContext,
+  reviewStatus: 'DRAFT',
+  contentVersion: SILENT_LETTER_CONTENT_VERSION,
+  wordSupportTargets: spec.targets.map((target) => createTarget(spec.passageIdentifier, target)),
+})
+
+const passageSpecs: PassageSpec[] = [
+  {
+    passageIdentifier: SILENT_LETTER_PASSAGE_IDS.museumKnight,
+    readingContext: 'A museum display with quiet letters at the start of words.',
+    sentences: [
+      sentence('silent-letter-combinations-1-s1', 'At the museum, a knight statue stood by a knee-high shield.'),
+      sentence('silent-letter-combinations-1-s2', 'Visitors would knock softly before they stepped closer.'),
+      sentence('silent-letter-combinations-1-s3', 'The class decided to knit paper banners for the hall.'),
+    ],
+    targets: [
+      {
+        targetId: 'silent-letter-combinations-1-target-1',
+        sentenceId: 'silent-letter-combinations-1-s1',
+        surfaceWord: 'knight',
+        focusParts: [part('kn', true), part('ight', false)],
+        displayChunks: [chunk('kn'), chunk('ight')],
+        spokenChunks: [chunk('n'), chunk('ite')],
+        blendSpeechText: 'nite',
+        wholeWordSpeechText: 'knight',
+        sentenceSpeechText: 'At the museum, a knight statue stood by a knee-high shield.',
+      },
+      {
+        targetId: 'silent-letter-combinations-1-target-2',
+        sentenceId: 'silent-letter-combinations-1-s1',
+        surfaceWord: 'knee',
+        focusParts: [part('kn', true), part('ee', false)],
+        displayChunks: [chunk('kn'), chunk('ee')],
+        spokenChunks: [chunk('n'), chunk('ee')],
+        blendSpeechText: 'nee',
+        wholeWordSpeechText: 'knee',
+        sentenceSpeechText: 'At the museum, a knight statue stood by a knee-high shield.',
+      },
+      {
+        targetId: 'silent-letter-combinations-1-target-3',
+        sentenceId: 'silent-letter-combinations-1-s2',
+        surfaceWord: 'knock',
+        focusParts: [part('kn', true), part('ock', false)],
+        displayChunks: [chunk('kn'), chunk('ock')],
+        spokenChunks: [chunk('n'), chunk('ock')],
+        blendSpeechText: 'nock',
+        wholeWordSpeechText: 'knock',
+        sentenceSpeechText: 'Visitors would knock softly before they stepped closer.',
+      },
+      {
+        targetId: 'silent-letter-combinations-1-target-4',
+        sentenceId: 'silent-letter-combinations-1-s3',
+        surfaceWord: 'knit',
+        focusParts: [part('kn', true), part('it', false)],
+        displayChunks: [chunk('kn'), chunk('it')],
+        spokenChunks: [chunk('n'), chunk('it')],
+        blendSpeechText: 'nit',
+        wholeWordSpeechText: 'knit',
+        sentenceSpeechText: 'The class decided to knit paper banners for the hall.',
+      },
+    ],
+  },
+  {
+    passageIdentifier: SILENT_LETTER_PASSAGE_IDS.workshopQuiet,
+    readingContext: 'A workshop where quiet letter groups help with careful tools.',
+    sentences: [
+      sentence('silent-letter-combinations-2-s1', 'At the workshop, Maya will kneel by a box of tools.'),
+      sentence('silent-letter-combinations-2-s2', 'She can know which knob fits the wooden chest.'),
+      sentence('silent-letter-combinations-2-s3', 'Later, she will tie the knot with care.'),
+    ],
+    targets: [
+      {
+        targetId: 'silent-letter-combinations-2-target-1',
+        sentenceId: 'silent-letter-combinations-2-s1',
+        surfaceWord: 'kneel',
+        focusParts: [part('kn', true), part('eel', false)],
+        displayChunks: [chunk('kn'), chunk('eel')],
+        spokenChunks: [chunk('n'), chunk('eel')],
+        blendSpeechText: 'neel',
+        wholeWordSpeechText: 'kneel',
+        sentenceSpeechText: 'At the workshop, Maya will kneel by a box of tools.',
+      },
+      {
+        targetId: 'silent-letter-combinations-2-target-2',
+        sentenceId: 'silent-letter-combinations-2-s2',
+        surfaceWord: 'knob',
+        focusParts: [part('kn', true), part('ob', false)],
+        displayChunks: [chunk('kn'), chunk('ob')],
+        spokenChunks: [chunk('n'), chunk('ob')],
+        blendSpeechText: 'nob',
+        wholeWordSpeechText: 'knob',
+        sentenceSpeechText: 'She can know which knob fits the wooden chest.',
+      },
+      {
+        targetId: 'silent-letter-combinations-2-target-3',
+        sentenceId: 'silent-letter-combinations-2-s2',
+        surfaceWord: 'know',
+        focusParts: [part('kn', true), part('ow', false)],
+        displayChunks: [chunk('kn'), chunk('ow')],
+        spokenChunks: [chunk('n'), chunk('ow')],
+        blendSpeechText: 'noh',
+        wholeWordSpeechText: 'know',
+        sentenceSpeechText: 'She can know which knob fits the wooden chest.',
+      },
+      {
+        targetId: 'silent-letter-combinations-2-target-4',
+        sentenceId: 'silent-letter-combinations-2-s3',
+        surfaceWord: 'knot',
+        focusParts: [part('kn', true), part('ot', false)],
+        displayChunks: [chunk('kn'), chunk('ot')],
+        spokenChunks: [chunk('n'), chunk('ot')],
+        blendSpeechText: 'not',
+        wholeWordSpeechText: 'knot',
+        sentenceSpeechText: 'Later, she will tie the knot with care.',
+      },
+    ],
+  },
+  {
+    passageIdentifier: SILENT_LETTER_PASSAGE_IDS.wrapStation,
+    readingContext: 'A gift station where quiet wr words help with labels and directions.',
+    sentences: [
+      sentence('silent-letter-combinations-3-s1', 'At the gift station, we wrap each map with a band.'),
+      sentence('silent-letter-combinations-3-s2', 'A wrist card helps the helper write the right label.'),
+      sentence('silent-letter-combinations-3-s3', 'No wrong box should go on top.'),
+    ],
+    targets: [
+      {
+        targetId: 'silent-letter-combinations-3-target-1',
+        sentenceId: 'silent-letter-combinations-3-s1',
+        surfaceWord: 'wrap',
+        focusParts: [part('wr', true), part('ap', false)],
+        displayChunks: [chunk('wr'), chunk('ap')],
+        spokenChunks: [chunk('r'), chunk('ap')],
+        blendSpeechText: 'rap',
+        wholeWordSpeechText: 'wrap',
+        sentenceSpeechText: 'At the gift station, we wrap each map with a band.',
+      },
+      {
+        targetId: 'silent-letter-combinations-3-target-2',
+        sentenceId: 'silent-letter-combinations-3-s2',
+        surfaceWord: 'wrist',
+        focusParts: [part('wr', true), part('ist', false)],
+        displayChunks: [chunk('wr'), chunk('ist')],
+        spokenChunks: [chunk('r'), chunk('ist')],
+        blendSpeechText: 'rist',
+        wholeWordSpeechText: 'wrist',
+        sentenceSpeechText: 'A wrist card helps the helper write the right label.',
+      },
+      {
+        targetId: 'silent-letter-combinations-3-target-3',
+        sentenceId: 'silent-letter-combinations-3-s2',
+        surfaceWord: 'write',
+        focusParts: [part('wr', true), part('ite', false)],
+        displayChunks: [chunk('wr'), chunk('ite')],
+        spokenChunks: [chunk('r'), chunk('ite')],
+        blendSpeechText: 'rite',
+        wholeWordSpeechText: 'write',
+        sentenceSpeechText: 'A wrist card helps the helper write the right label.',
+      },
+      {
+        targetId: 'silent-letter-combinations-3-target-4',
+        sentenceId: 'silent-letter-combinations-3-s3',
+        surfaceWord: 'wrong',
+        focusParts: [part('wr', true), part('ong', false)],
+        displayChunks: [chunk('wr'), chunk('ong')],
+        spokenChunks: [chunk('r'), chunk('ong')],
+        blendSpeechText: 'rong',
+        wholeWordSpeechText: 'wrong',
+        sentenceSpeechText: 'No wrong box should go on top.',
+      },
+    ],
+  },
+  {
+    passageIdentifier: SILENT_LETTER_PASSAGE_IDS.shelterCare,
+    readingContext: 'A shelter day with quiet mb words and careful care.',
+    sentences: [
+      sentence('silent-letter-combinations-4-s1', 'At the shelter, a lamb waits beside a comb and a soft blanket.'),
+      sentence('silent-letter-combinations-4-s2', 'The team will thumb through the list, then climb the ramp.'),
+      sentence('silent-letter-combinations-4-s3', 'Each pet gets a calm hello.'),
+    ],
+    targets: [
+      {
+        targetId: 'silent-letter-combinations-4-target-1',
+        sentenceId: 'silent-letter-combinations-4-s1',
+        surfaceWord: 'lamb',
+        focusParts: [part('la', false), part('mb', true)],
+        displayChunks: [chunk('la'), chunk('mb')],
+        spokenChunks: [chunk('lam')],
+        blendSpeechText: 'lam',
+        wholeWordSpeechText: 'lamb',
+        sentenceSpeechText: 'At the shelter, a lamb waits beside a comb and a soft blanket.',
+      },
+      {
+        targetId: 'silent-letter-combinations-4-target-2',
+        sentenceId: 'silent-letter-combinations-4-s1',
+        surfaceWord: 'comb',
+        focusParts: [part('co', false), part('mb', true)],
+        displayChunks: [chunk('co'), chunk('mb')],
+        spokenChunks: [chunk('com')],
+        blendSpeechText: 'com',
+        wholeWordSpeechText: 'comb',
+        sentenceSpeechText: 'At the shelter, a lamb waits beside a comb and a soft blanket.',
+      },
+      {
+        targetId: 'silent-letter-combinations-4-target-3',
+        sentenceId: 'silent-letter-combinations-4-s2',
+        surfaceWord: 'thumb',
+        focusParts: [part('thu', false), part('mb', true)],
+        displayChunks: [chunk('thu'), chunk('mb')],
+        spokenChunks: [chunk('thum')],
+        blendSpeechText: 'thum',
+        wholeWordSpeechText: 'thumb',
+        sentenceSpeechText: 'The team will thumb through the list, then climb the ramp.',
+      },
+      {
+        targetId: 'silent-letter-combinations-4-target-4',
+        sentenceId: 'silent-letter-combinations-4-s2',
+        surfaceWord: 'climb',
+        focusParts: [part('cli', false), part('mb', true)],
+        displayChunks: [chunk('cli'), chunk('mb')],
+        spokenChunks: [chunk('clim')],
+        blendSpeechText: 'clim',
+        wholeWordSpeechText: 'climb',
+        sentenceSpeechText: 'The team will thumb through the list, then climb the ramp.',
+      },
+    ],
+  },
+  {
+    passageIdentifier: SILENT_LETTER_PASSAGE_IDS.nightPicnic,
+    readingContext: 'A night picnic with quiet gh words in the sky and on the table.',
+    sentences: [
+      sentence('silent-letter-combinations-5-s1', 'At the night picnic, a ghost story starts by the lantern.'),
+      sentence('silent-letter-combinations-5-s2', 'A bright lantern lights a crumb trail near the table.'),
+      sentence('silent-letter-combinations-5-s3', 'The class listens while the night breeze moves the leaves.'),
+    ],
+    targets: [
+      {
+        targetId: 'silent-letter-combinations-5-target-1',
+        sentenceId: 'silent-letter-combinations-5-s2',
+        surfaceWord: 'crumb',
+        focusParts: [part('cru', false), part('mb', true)],
+        displayChunks: [chunk('cru'), chunk('mb')],
+        spokenChunks: [chunk('crum')],
+        blendSpeechText: 'crum',
+        wholeWordSpeechText: 'crumb',
+        sentenceSpeechText: 'A bright lantern lights a crumb trail near the table.',
+      },
+      {
+        targetId: 'silent-letter-combinations-5-target-2',
+        sentenceId: 'silent-letter-combinations-5-s1',
+        surfaceWord: 'ghost',
+        focusParts: [part('gh', true), part('ost', false)],
+        displayChunks: [chunk('gh'), chunk('ost')],
+        spokenChunks: [chunk('g'), chunk('ost')],
+        blendSpeechText: 'gost',
+        wholeWordSpeechText: 'ghost',
+        sentenceSpeechText: 'At the night picnic, a ghost story starts by the lantern.',
+      },
+      {
+        targetId: 'silent-letter-combinations-5-target-3',
+        sentenceId: 'silent-letter-combinations-5-s3',
+        surfaceWord: 'night',
+        focusParts: [part('ni', false), part('ght', true)],
+        displayChunks: [chunk('ni'), chunk('ght')],
+        spokenChunks: [chunk('nite')],
+        blendSpeechText: 'nite',
+        wholeWordSpeechText: 'night',
+        sentenceSpeechText: 'The class listens while the night breeze moves the leaves.',
+      },
+      {
+        targetId: 'silent-letter-combinations-5-target-4',
+        sentenceId: 'silent-letter-combinations-5-s2',
+        surfaceWord: 'bright',
+        focusParts: [part('bri', false), part('ght', true)],
+        displayChunks: [chunk('bri'), chunk('ght')],
+        spokenChunks: [chunk('brite')],
+        blendSpeechText: 'brite',
+        wholeWordSpeechText: 'bright',
+        sentenceSpeechText: 'A bright lantern lights a crumb trail near the table.',
+      },
+    ],
+  },
+  {
+    passageIdentifier: SILENT_LETTER_PASSAGE_IDS.gardenWatch,
+    readingContext: 'A garden walk with quiet wr and gh clues in the world around us.',
+    sentences: [
+      sentence('silent-letter-combinations-6-s1', 'In the garden, a wren sat near a wrecked wheelbarrow.'),
+      sentence('silent-letter-combinations-6-s2', 'A light shone on a high path.'),
+      sentence('silent-letter-combinations-6-s3', 'The class watched the tall beans sway.'),
+    ],
+    targets: [
+      {
+        targetId: 'silent-letter-combinations-6-target-1',
+        sentenceId: 'silent-letter-combinations-6-s2',
+        surfaceWord: 'light',
+        focusParts: [part('li', false), part('ght', true)],
+        displayChunks: [chunk('li'), chunk('ght')],
+        spokenChunks: [chunk('lite')],
+        blendSpeechText: 'lite',
+        wholeWordSpeechText: 'light',
+        sentenceSpeechText: 'A light shone on a high path.',
+      },
+      {
+        targetId: 'silent-letter-combinations-6-target-2',
+        sentenceId: 'silent-letter-combinations-6-s2',
+        surfaceWord: 'high',
+        focusParts: [part('hi', false), part('gh', true)],
+        displayChunks: [chunk('hi'), chunk('gh')],
+        spokenChunks: [chunk('hi')],
+        blendSpeechText: 'hi',
+        wholeWordSpeechText: 'high',
+        sentenceSpeechText: 'A light shone on a high path.',
+      },
+      {
+        targetId: 'silent-letter-combinations-6-target-3',
+        sentenceId: 'silent-letter-combinations-6-s1',
+        surfaceWord: 'wren',
+        focusParts: [part('wr', true), part('en', false)],
+        displayChunks: [chunk('wr'), chunk('en')],
+        spokenChunks: [chunk('ren')],
+        blendSpeechText: 'ren',
+        wholeWordSpeechText: 'wren',
+        sentenceSpeechText: 'In the garden, a wren sat near a wrecked wheelbarrow.',
+      },
+      {
+        targetId: 'silent-letter-combinations-6-target-4',
+        sentenceId: 'silent-letter-combinations-6-s1',
+        surfaceWord: 'wreck',
+        focusParts: [part('wr', true), part('eck', false)],
+        displayChunks: [chunk('wr'), chunk('eck')],
+        spokenChunks: [chunk('rek')],
+        blendSpeechText: 'rek',
+        wholeWordSpeechText: 'wreck',
+        sentenceSpeechText: 'In the garden, a wren sat near a wrecked wheelbarrow.',
+      },
+    ],
+  },
+  {
+    passageIdentifier: SILENT_LETTER_PASSAGE_IDS.islandStudy,
+    readingContext: 'An island map that shows the island family in an original study scene.',
+    sentences: [
+      sentence('silent-letter-combinations-7-s1', 'On the island map, an islander traced the isle with a finger.'),
+      sentence('silent-letter-combinations-7-s2', 'The class saw an aisle drawn in the small model.'),
+      sentence('silent-letter-combinations-7-s3', 'They talked about the shore and the path.'),
+    ],
+    targets: [
+      {
+        targetId: 'silent-letter-combinations-7-target-1',
+        sentenceId: 'silent-letter-combinations-7-s1',
+        surfaceWord: 'island',
+        focusParts: [part('is', true), part('land', false)],
+        displayChunks: [chunk('is'), chunk('land')],
+        spokenChunks: [chunk('i'), chunk('land')],
+        blendSpeechText: 'iland',
+        wholeWordSpeechText: 'island',
+        sentenceSpeechText: 'On the island map, an islander traced the isle with a finger.',
+      },
+      {
+        targetId: 'silent-letter-combinations-7-target-2',
+        sentenceId: 'silent-letter-combinations-7-s1',
+        surfaceWord: 'islander',
+        focusParts: [part('is', true), part('lander', false)],
+        displayChunks: [chunk('is'), chunk('lander')],
+        spokenChunks: [chunk('i'), chunk('lander')],
+        blendSpeechText: 'ilander',
+        wholeWordSpeechText: 'islander',
+        sentenceSpeechText: 'On the island map, an islander traced the isle with a finger.',
+      },
+      {
+        targetId: 'silent-letter-combinations-7-target-3',
+        sentenceId: 'silent-letter-combinations-7-s1',
+        surfaceWord: 'isle',
+        focusParts: [part('is', true), part('le', false)],
+        displayChunks: [chunk('is'), chunk('le')],
+        spokenChunks: [chunk('i'), chunk('le')],
+        blendSpeechText: 'isle',
+        wholeWordSpeechText: 'isle',
+        sentenceSpeechText: 'On the island map, an islander traced the isle with a finger.',
+      },
+      {
+        targetId: 'silent-letter-combinations-7-target-4',
+        sentenceId: 'silent-letter-combinations-7-s2',
+        surfaceWord: 'aisle',
+        focusParts: [part('ai', false), part('sle', true)],
+        displayChunks: [chunk('ai'), chunk('sle')],
+        spokenChunks: [chunk('i'), chunk('sle')],
+        blendSpeechText: 'isle',
+        wholeWordSpeechText: 'aisle',
+        sentenceSpeechText: 'The class saw an aisle drawn in the small model.',
+      },
+    ],
+  },
+]
+
+export const grade2WordForgeSilentLetterCombinationsPassages: Passage[] = passageSpecs.map(createPassage)

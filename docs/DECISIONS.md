@@ -199,12 +199,27 @@
 - Decision: Mark `ELA.2.F.1.3d` as partial in DRAFT form after Phase 6C1 registers common-prefix practice for Prefix Power.
 - Reason: The benchmark now has authored common-prefix coverage, but common suffixes remain deferred to Phase 6C2.
 - Consequence: Parent and curriculum docs can report partial coverage without implying approval, mastery, or official FAST results.
+- Status: Applied
 
 ## 2026-08-20 - Phase 6C2 Common-Suffix Coverage
 
 - Decision: Mark `ELA.2.F.1.3d` as implemented in DRAFT form after Phase 6C2 registers common-suffix practice for Suffix Station.
 - Reason: The benchmark now has authored common-prefix and common-suffix coverage across the two bridge packs.
 - Consequence: Parent and curriculum docs can report implemented coverage without implying approval, mastery, or official FAST results.
+- Status: Applied
+
+## 2026-08-21 - Phase 6C3 Silent-Letter Coverage
+
+- Decision: Mark `ELA.2.F.1.3e` as implemented in DRAFT form after Phase 6C3 registers bounded silent-letter practice for Quiet Letter Quest.
+- Reason: The benchmark now has authored DRAFT coverage for the app's defined silent-letter set while fluency practice remains deferred.
+- Consequence: Parent and curriculum docs can report implemented DRAFT coverage without implying exhaustive English silent-letter mastery, human approval, or oral fluency.
+- Status: Applied
+
+## 2026-08-21 - Quiet Letter Quest and Fluency Flight Shells
+
+- Decision: Add Quiet Letter Quest as `wg-unit-5` and Fluency Flight as a locked `wg-unit-6` shell.
+- Reason: The app needs deterministic gating for Trail 7 and a visible future shell while Phase 6C4 remains deferred.
+- Consequence: Selected-unit planning can unlock Quiet Letter Quest at difficulty 7 while keeping Fluency Flight locked until Phase 6C4.
 - Status: Applied
 
 ## 2026-08-20 - Unit-Aware Word Forge Planning
