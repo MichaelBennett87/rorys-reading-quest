@@ -7,6 +7,7 @@ export interface CurriculumTrackDefinition {
   skillId: string
   worldId: string
   entryUnitId: string
+  unitIds?: readonly string[]
   curriculumOrder: number
   initialDifficulty: number
   initialLastMasteredDifficulty: number
@@ -35,4 +36,3 @@ export interface ActiveLearningFocus {
   displayName: string
   source: ActiveLearningFocusSource
 }
-

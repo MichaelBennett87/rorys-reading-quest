@@ -26,6 +26,7 @@ describe('grade 2 content pack registry', () => {
       'g2-word-forge-silent-letter-combinations',
       'g2-word-forge-fluency-practice-foundations',
       'g2-story-scouts-plot-structure-elements',
+      'g2-story-scouts-theme-trail',
       'legacy-word-forge-development-pack',
     ])
     expect(contentPackAudit).toHaveLength(0)

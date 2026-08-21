@@ -234,9 +234,8 @@ describe('Phase 2 lesson flow and child shell', () => {
     fireEvent.click(quietLetterQuest)
     expect(screen.getByRole('heading', { name: /Quiet Letter Quest/i })).toBeTruthy()
     expect(screen.getByText(/This quest is almost ready; we can open the lesson route in a later phase\./i)).toBeTruthy()
-    expect(screen.getByText(/This quest is not available yet/i)).toBeTruthy()
-    expect(screen.getByText(/Complete Suffix Station to unlock Quiet Letter Quest/i)).toBeTruthy()
-    expect(screen.queryByRole('button', { name: /Start Quest/i })).toBeNull()
+    expect(screen.queryByText(/This quest is not available yet/i)).toBeNull()
+    expect(screen.getByRole('button', { name: /Start Quest/i })).toBeTruthy()
   })
 
   test('shows Quiet Letter Quest as complete or review at difficulty 8 and keeps Fluency Flight locked', async () => {
@@ -256,7 +255,7 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getByRole('heading', { name: /Quiet Letter Quest/i })).toBeTruthy()
     expect(screen.getByText(/This quest is almost ready; we can open the lesson route in a later phase\./i)).toBeTruthy()
     expect(screen.getByText(/This quest is not available yet/i)).toBeTruthy()
-    expect(screen.getByText(/Complete Suffix Station to unlock Quiet Letter Quest/i)).toBeTruthy()
+    expect(screen.getByText(/Quiet Letter Quest has no fresh content in this phase\./i)).toBeTruthy()
     expect(screen.queryByRole('button', { name: /Start Quest/i })).toBeNull()
   })
 
@@ -270,9 +269,8 @@ describe('Phase 2 lesson flow and child shell', () => {
     fireEvent.click(screen.getByRole('button', { name: /Prefix Power Available/i }))
     expect(screen.getByRole('heading', { name: /Prefix Power/i })).toBeTruthy()
     expect(screen.getByText(/This quest is almost ready; we can open the lesson route in a later phase\./i)).toBeTruthy()
-    expect(screen.getByText(/This quest is not available yet/i)).toBeTruthy()
-    expect(screen.getByText(/Complete Syllable Summit to unlock Prefix Power/i)).toBeTruthy()
-    expect(screen.queryByRole('button', { name: /Start Quest/i })).toBeNull()
+    expect(screen.queryByText(/This quest is not available yet/i)).toBeNull()
+    expect(screen.getByRole('button', { name: /Start Quest/i })).toBeTruthy()
   })
 
   test('opens lesson-ready screen from an available unit', () => {
@@ -296,9 +294,8 @@ describe('Phase 2 lesson flow and child shell', () => {
     fireEvent.click(screen.getByRole('button', { name: /Syllable Summit Available/i }))
     expect(screen.getByRole('heading', { name: /Syllable Summit/i })).toBeTruthy()
     expect(screen.getByText(/This quest is almost ready; we can open the lesson route in a later phase\./i)).toBeTruthy()
-    expect(screen.getByText(/This quest is not available yet/i)).toBeTruthy()
-    expect(screen.getByText(/Complete Vowel Voyage to unlock Syllable Summit/i)).toBeTruthy()
-    expect(screen.queryByRole('button', { name: /Start Quest/i })).toBeNull()
+    expect(screen.queryByText(/This quest is not available yet/i)).toBeNull()
+    expect(screen.getByRole('button', { name: /Start Quest/i })).toBeTruthy()
   })
 
   test('shows Trail 6 Suffix Station as a locked preview at difficulty 6', async () => {
@@ -311,9 +308,8 @@ describe('Phase 2 lesson flow and child shell', () => {
     fireEvent.click(screen.getByRole('button', { name: /Suffix Station Available/i }))
     expect(screen.getByRole('heading', { name: /Suffix Station/i })).toBeTruthy()
     expect(screen.getByText(/This quest is almost ready; we can open the lesson route in a later phase\./i)).toBeTruthy()
-    expect(screen.getByText(/This quest is not available yet/i)).toBeTruthy()
-    expect(screen.getByText(/Complete Prefix Power to unlock Suffix Station/i)).toBeTruthy()
-    expect(screen.queryByRole('button', { name: /Start Quest/i })).toBeNull()
+    expect(screen.queryByText(/This quest is not available yet/i)).toBeNull()
+    expect(screen.getByRole('button', { name: /Start Quest/i })).toBeTruthy()
   })
 
   test('shows Trail 7 Quiet Letter Quest as a locked preview at difficulty 7', async () => {
@@ -326,9 +322,8 @@ describe('Phase 2 lesson flow and child shell', () => {
     fireEvent.click(screen.getByRole('button', { name: /Quiet Letter Quest Available/i }))
     expect(screen.getByRole('heading', { name: /Quiet Letter Quest/i })).toBeTruthy()
     expect(screen.getByText(/This quest is almost ready; we can open the lesson route in a later phase\./i)).toBeTruthy()
-    expect(screen.getByText(/This quest is not available yet/i)).toBeTruthy()
-    expect(screen.getByText(/Complete Suffix Station to unlock Quiet Letter Quest/i)).toBeTruthy()
-    expect(screen.queryByRole('button', { name: /Start Quest/i })).toBeNull()
+    expect(screen.queryByText(/This quest is not available yet/i)).toBeNull()
+    expect(screen.getByRole('button', { name: /Start Quest/i })).toBeTruthy()
   })
 
   test('starts the Word Forge lesson run and shows the first question', () => {

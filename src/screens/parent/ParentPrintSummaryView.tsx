@@ -245,10 +245,10 @@ export function ParentPrintSummaryView({
         {dashboard.reviewSummary.entries.length === 0 ? (
           <ParentEmptyState title="No reviews are scheduled yet." message="Review entries will appear after the learner earns review dates." />
         ) : (
-          <ul className="parent-summary-list">
+            <ul className="parent-summary-list">
             {dashboard.reviewSummary.entries.slice(0, 10).map((entry) => (
               <li key={`${entry.skillId}::${entry.difficulty}::${entry.dueAt}`} className="parent-summary-list-item">
-                <span>{resolveFriendlySkillName(entry.skillId)}</span>
+                <span>{entry.unitLabel ?? resolveFriendlySkillName(entry.skillId)}</span>
                 <span>{formatTrailLabel(entry.difficulty)}</span>
                 <span>Step {entry.reviewStep}</span>
                 <span>{formatParentDate(entry.dueAt)}</span>

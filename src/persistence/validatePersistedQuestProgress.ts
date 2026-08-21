@@ -49,6 +49,9 @@ export function validatePersistedQuestProgress(value: unknown): PersistedStateVa
   ))) {
     return { status: 'invalid_state', reason: 'Persisted recent activity usage is malformed.' }
   }
+  if (!value.reviewQueue.every(isReviewQueueEntry)) {
+    return { status: 'invalid_state', reason: 'Persisted review queue is malformed.' }
+  }
   if (value.activeLessonSession !== null && !isActiveLessonSession(value.activeLessonSession)) {
     return { status: 'invalid_state', reason: 'Persisted active lesson session is malformed.' }
   }
@@ -177,6 +180,16 @@ function isActiveLessonSession(value: unknown): value is ActiveLessonSession {
     ))
     && typeof value.startedAt === 'string'
     && typeof value.updatedAt === 'string'
+}
+
+function isReviewQueueEntry(value: unknown): boolean {
+  return isRecord(value)
+    && typeof value.skillId === 'string'
+    && Number.isInteger(value.difficulty)
+    && Number.isInteger(value.reviewStep)
+    && typeof value.dueAt === 'string'
+    && (value.unitId === undefined || typeof value.unitId === 'string')
+    && (value.contentVersion === undefined || typeof value.contentVersion === 'string')
 }
 
 function isAssistanceEvent(value: unknown): value is PersistedAssistanceEvent {

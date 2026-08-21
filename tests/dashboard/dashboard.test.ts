@@ -219,6 +219,36 @@ describe('dashboard analytics', () => {
     expect(reviewSummary.entries[2].status).toBe('upcoming')
   })
 
+  test('review summaries preserve Story Map and Theme Trail unit affinity labels', () => {
+    const progress = createProgress([])
+    progress.reviewQueue = [
+      {
+        skillId: 'g2-story-scouts-prose',
+        difficulty: 1,
+        reviewStep: 0,
+        dueAt: '2026-08-21T08:00:00.000Z',
+        unitId: 'ss-unit-1',
+        contentVersion: 'g2-ss-plot-elements-r0.1.0',
+      },
+      {
+        skillId: 'g2-story-scouts-prose',
+        difficulty: 2,
+        reviewStep: 0,
+        dueAt: '2026-08-21T09:00:00.000Z',
+        unitId: 'ss-unit-2',
+        contentVersion: 'g2-ss-theme-r0.1.0',
+      },
+    ] as never
+
+    const reviewSummary = buildReviewSummary(progress, now)
+
+    expect(reviewSummary.entries).toHaveLength(2)
+    expect(reviewSummary.entries[0].unitLabel).toMatch(/Story Map/i)
+    expect(reviewSummary.entries[1].unitLabel).toMatch(/Theme Trail/i)
+    expect(reviewSummary.entries[0].contentVersion).toBe('g2-ss-plot-elements-r0.1.0')
+    expect(reviewSummary.entries[1].contentVersion).toBe('g2-ss-theme-r0.1.0')
+  })
+
   test('recent attempts are newest first and capped at ten entries', () => {
     const attempts = Array.from({ length: 12 }, (_, index) => buildAttempt({
       completionId: `completion-${index}`,

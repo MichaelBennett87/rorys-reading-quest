@@ -355,4 +355,45 @@ describe('curriculum planning foundation', () => {
     expect(plan.skillId).toBe('g2-story-scouts-prose')
     expect(plan.source).toBe('global_planned_quest')
   })
+
+  test('initializes playable Story Scouts progress without resetting Word Forge or creating planned tracks', () => {
+    const progress = createDefaultQuestProgress(now)
+
+    const result = ensureProgressForPlayableTracks(progress, getLessonCandidates())
+
+    expect(result.changed).toBe(true)
+    expect(result.state.skillProgress['g2-word-forge-word-practice']).toEqual(progress.skillProgress['g2-word-forge-word-practice'])
+    expect(result.state.skillProgress['g2-story-scouts-prose']).toBeDefined()
+    expect(result.state.skillProgress['g2-poetry-planet-poetry']).toBeUndefined()
+  })
+
+  test('balances fresh progression across Word Forge and Story Scouts deterministically', () => {
+    const lessons = getLessonCandidates()
+    const progress = createDefaultQuestProgress(now)
+    const normalized = ensureProgressForPlayableTracks(progress, lessons).state
+
+    normalized.skillProgress['g2-word-forge-word-practice'].currentDifficulty = 1
+    normalized.skillProgress['g2-story-scouts-prose'].currentDifficulty = 1
+
+    const firstPlan = planGlobalQuest({
+      progress: normalized,
+      availableLessons: lessons,
+      now,
+    })
+    expect(firstPlan.status).toBe('available')
+    expect(firstPlan.skillId).toBe('g2-word-forge-word-practice')
+
+    normalized.completedAttempts = [
+      createCompletedAttempt('g2-word-forge-word-practice', '2026-08-19T12:00:00.000Z') as never,
+      createCompletedAttempt('g2-word-forge-word-practice', '2026-08-20T09:00:00.000Z') as never,
+    ]
+
+    const secondPlan = planGlobalQuest({
+      progress: normalized,
+      availableLessons: lessons,
+      now,
+    })
+    expect(secondPlan.status).toBe('available')
+    expect(secondPlan.skillId).toBe('g2-story-scouts-prose')
+  })
 })

@@ -1,6 +1,8 @@
 import { lessonCatalog } from '../lesson'
 import { sampleContent, type ContentSample, type ReadingQuestion } from '../content'
+import { getTrackByUnitId } from '../curriculum'
 import type { QuestProgressV1 } from '../../persistence'
+import { deriveWorldsForProgress } from '../../data/demoWorlds'
 import type {
   DashboardAttentionItem,
   DashboardBenchmarkSummary,
@@ -344,9 +346,13 @@ export function buildWordHelpSummaries(input: {
 }
 
 export function buildReviewSummary(progress: QuestProgressV1, now: string): DashboardReviewSummary {
+  const worlds = deriveWorldsForProgress(progress)
   const entries = [...progress.reviewQueue]
     .map((entry) => ({
       ...entry,
+      unitId: entry.unitId ?? null,
+      unitLabel: entry.unitId ? resolveReviewUnitLabel(entry.unitId, worlds) : null,
+      contentVersion: entry.contentVersion ?? null,
       status: reviewStatus(entry.dueAt, now),
     }))
     .sort((left, right) => reviewSort(left.status) - reviewSort(right.status)
@@ -360,6 +366,17 @@ export function buildReviewSummary(progress: QuestProgressV1, now: string): Dash
     nextReviewDate: entries[0]?.dueAt ?? null,
     entries,
   }
+}
+
+function resolveReviewUnitLabel(unitId: string, worlds = deriveWorldsForProgress({} as QuestProgressV1)): string | null {
+  for (const world of worlds) {
+    const unit = world.units.find((candidate) => candidate.id === unitId)
+    if (unit) {
+      return unit.title
+    }
+  }
+
+  return getTrackByUnitId(unitId)?.displayName ?? null
 }
 
 export function buildAttentionItems(input: {

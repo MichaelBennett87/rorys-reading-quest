@@ -175,7 +175,7 @@ export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPac
       }
       if (lesson.selectionStatus === 'active' && lesson.lessonRole === 'GUIDED_PRACTICE') {
         guidedCount += 1
-        if (lesson.difficulty === 0) {
+        if (lesson.difficulty === pack.manifest.difficultyRange[0]) {
           lowerDifficultyCount += 1
         }
       }
@@ -193,7 +193,12 @@ export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPac
     pushIssue(issues, 'insufficient_guided_remediation_variants', 'content-pack', 'At least four guided remediation lessons are required.')
   }
   if (lowerDifficultyCount < 2) {
-    pushIssue(issues, 'insufficient_lower_difficulty_variants', 'content-pack', 'At least two difficulty-0 guided lessons are required.')
+    pushIssue(
+      issues,
+      'insufficient_lower_difficulty_variants',
+      'content-pack',
+      'At least two guided lessons at the pack\'s lower difficulty are required.',
+    )
   }
   if (activeProgressionPassages.size < 3) {
     pushIssue(issues, 'repeated_active_passage', 'content-pack', 'Checkpoint lessons should use distinct active passages.')
@@ -571,6 +576,10 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
     if (checkpointPassages.size < 3) {
       pushIssue(issues, 'repeated_active_passage', pack.manifest.packId, 'Checkpoint lessons should use at least three distinct passages.')
     }
+
+    if (pack.manifest.benchmarkReferences.includes('ELA.2.R.1.2')) {
+      validateThemeTrailGuideStructure(pack, issues)
+    }
   }
 }
 
@@ -770,6 +779,106 @@ function validateSupportivePracticePackStructure(pack: ContentPack, issues: Cont
   validateFluencySupportMetadata(pack, issues)
 }
 
+function validateThemeTrailGuideStructure(pack: ContentPack, issues: ContentPackAuditIssue[]) {
+  const guides = pack.themeGuides ?? []
+  const passageById = new Map(pack.passages.map((passage) => [passage.passageIdentifier, passage] as const))
+  const guideByPassageId = new Map<string, NonNullable<ContentPack['themeGuides']>[number]>()
+
+  if (guides.length !== pack.passages.length) {
+    pushIssue(
+      issues,
+      'theme_guide_count_mismatch',
+      pack.manifest.packId,
+      `Expected ${pack.passages.length} theme guides, found ${guides.length}.`,
+    )
+  }
+
+  for (const guide of guides) {
+    if (guideByPassageId.has(guide.passageId)) {
+      pushIssue(issues, 'theme_guide_structure_invalid', guide.passageId, 'Theme guides must not duplicate a passage ID.')
+      continue
+    }
+    guideByPassageId.set(guide.passageId, guide)
+    const passage = passageById.get(guide.passageId)
+    if (!passage) {
+      pushIssue(issues, 'missing_theme_guide', guide.passageId, 'Every theme guide must point to a real passage.')
+      continue
+    }
+
+    validateThemeGuideAgainstPassage(pack, passage, guide, issues)
+  }
+
+  for (const passage of pack.passages) {
+    if (!guideByPassageId.has(passage.passageIdentifier)) {
+      pushIssue(issues, 'missing_theme_guide', passage.passageIdentifier, 'Every passage needs exactly one theme guide.')
+    }
+  }
+}
+
+function validateThemeGuideAgainstPassage(
+  pack: ContentPack,
+  passage: ContentPack['passages'][number],
+  guide: NonNullable<ContentPack['themeGuides']>[number],
+  issues: ContentPackAuditIssue[],
+) {
+  const sentenceIds = new Set((passage.sentences ?? []).map((sentence) => sentence.sentenceId))
+  const normalizedTheme = normalizeThemeGuideText(guide.bestSupportedTheme)
+  const normalizedTopic = normalizeThemeGuideText(guide.topicLabel)
+  const normalizedTopicDistractor = normalizeThemeGuideText(guide.topicDistractor)
+  const normalizedSummaryDistractor = normalizeThemeGuideText(guide.summaryDistractor)
+
+  if (!guide.topicLabel || !guide.bestSupportedTheme || !guide.topicDistractor || !guide.summaryDistractor) {
+    pushIssue(issues, 'theme_guide_structure_invalid', guide.passageId, 'Theme guides need topic, theme, and distractor text.')
+  }
+  if (normalizedTheme === normalizedTopic) {
+    pushIssue(issues, 'theme_guide_structure_invalid', guide.passageId, 'The best-supported theme must not repeat the topic.')
+  }
+  if (normalizedTheme === normalizedTopicDistractor) {
+    pushIssue(issues, 'theme_guide_structure_invalid', guide.passageId, 'The best-supported theme must be distinct from the topic distractor.')
+  }
+  if (normalizedTheme === normalizedSummaryDistractor) {
+    pushIssue(issues, 'theme_guide_structure_invalid', guide.passageId, 'The best-supported theme must be distinct from the summary distractor.')
+  }
+  if (normalizeThemeGuideText(guide.bestSupportedTheme).split(' ').filter(Boolean).length < 4) {
+    pushIssue(issues, 'theme_guide_structure_invalid', guide.passageId, 'The best-supported theme should be a complete thought.')
+  }
+
+  if (guide.supportingSentenceIds.length < 2) {
+    pushIssue(issues, 'theme_guide_structure_invalid', guide.passageId, 'Each theme needs at least two supporting sentences.')
+  }
+  if (guide.characterActionSentenceIds.length < 1) {
+    pushIssue(issues, 'theme_guide_structure_invalid', guide.passageId, 'Each theme needs at least one supporting character action.')
+  }
+  if (guide.importantEventSentenceIds.length < 1) {
+    pushIssue(issues, 'theme_guide_structure_invalid', guide.passageId, 'Each theme needs at least one supporting event.')
+  }
+  if (!guide.outcomeSentenceId) {
+    pushIssue(issues, 'theme_guide_structure_invalid', guide.passageId, 'Each theme needs an outcome sentence.')
+  }
+
+  for (const sentenceId of [
+    ...guide.supportingSentenceIds,
+    ...guide.characterActionSentenceIds,
+    ...guide.importantEventSentenceIds,
+    guide.outcomeSentenceId,
+  ]) {
+    if (!sentenceId || !sentenceIds.has(sentenceId)) {
+      pushIssue(issues, 'missing_support_sentence', guide.passageId, 'Theme guide sentence IDs must resolve to the authored passage.')
+    }
+  }
+
+  if (guide.reviewStatus !== 'DRAFT') {
+    pushIssue(issues, 'missing_draft_status', guide.passageId, 'Theme guides in this pack must remain DRAFT.')
+  }
+  if (guide.contentVersion !== pack.manifest.contentVersion) {
+    pushIssue(issues, 'mismatched_content_version', guide.passageId, 'Theme guide content version must match the pack version.')
+  }
+}
+
+function normalizeThemeGuideText(text: string): string {
+  return text.trim().replace(/\s+/g, ' ').toLowerCase()
+}
+
 function normalizeFluencySpacing(text: string): string {
   return text.trim().replace(/\s+/g, ' ')
 }
@@ -938,6 +1047,40 @@ function getBridgePackExpectation(pack: ContentPack): BridgePackExpectation | nu
         multi_select: 7,
         hot_text: 7,
         table_match: 7,
+      },
+    }
+  }
+
+  if (!hasB && !hasC && pack.manifest.benchmarkReferences.includes('ELA.2.R.1.2') && minDifficulty === 1 && maxDifficulty === 2) {
+    return {
+      packId: pack.manifest.packId,
+      guidedDifficultyA: 1,
+      guidedDifficultyB: 2,
+      checkpointPatterns: [
+        'theme-identification',
+        'theme-explanation',
+        'theme-as-complete-thought',
+        'theme-vs-topic',
+        'theme-vs-summary',
+        'best-supported-theme',
+        'theme-supported-by-character-actions',
+        'theme-supported-by-events',
+        'theme-supported-by-outcome',
+        'theme-supported-by-details',
+      ],
+      minSupportTargets: 28,
+      maxSupportTargets: 28,
+      minSupportTargetsPerPassage: 4,
+      maxSupportTargetsPerPassage: 4,
+      openConsonantLeWords: new Set(),
+      closedConsonantLeWords: new Set(),
+      forbiddenSilentEWords: new Set(),
+      questionTypeCounts: {
+        multiple_choice: 17,
+        multi_select: 7,
+        hot_text: 7,
+        table_match: 7,
+        two_part: 3,
       },
     }
   }

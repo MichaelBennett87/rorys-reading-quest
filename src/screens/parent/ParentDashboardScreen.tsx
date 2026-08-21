@@ -309,7 +309,8 @@ export function ParentDashboardScreen({
                   <ul className="parent-summary-list">
                     {reviewPreview.map((entry) => (
                       <li key={`${entry.skillId}::${entry.difficulty}::${entry.dueAt}`} className="parent-summary-list-item">
-                        <span>{formatTrailLabel(entry.difficulty)} · {formatParentDate(entry.dueAt)}</span>
+                        <span>{resolveReviewLabel(entry)} · {formatTrailLabel(entry.difficulty)}</span>
+                        <span className="parent-muted-copy">{formatParentDate(entry.dueAt)}</span>
                         <span className="parent-muted-copy">{formatReviewStatusLabel(entry.status)}</span>
                       </li>
                     ))}
@@ -775,7 +776,7 @@ function ReviewsView({
           <ul className="parent-summary-list">
             {reviewSummary.entries.map((entry) => (
               <li key={`${entry.skillId}::${entry.difficulty}::${entry.dueAt}`} className="parent-summary-list-item">
-                <span>{resolveFriendlySkillName(entry.skillId)}</span>
+                <span>{resolveReviewLabel(entry)}</span>
                 <span>{formatTrailLabel(entry.difficulty)}</span>
                 <span>Step {entry.reviewStep}</span>
                 <span>{formatParentDate(entry.dueAt)}</span>
@@ -900,6 +901,10 @@ function formatReviewStatusLabel(status: DashboardReviewEntry['status']): string
   if (status === 'overdue') return 'Overdue'
   if (status === 'due_now') return 'Due now'
   return 'Upcoming'
+}
+
+function resolveReviewLabel(entry: DashboardReviewEntry): string {
+  return entry.unitLabel ?? resolveFriendlySkillName(entry.skillId)
 }
 
 function sessionKey(attempt: DashboardRecentAttemptSummary): SessionKey {

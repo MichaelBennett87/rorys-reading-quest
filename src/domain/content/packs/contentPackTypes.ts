@@ -2,6 +2,20 @@ import type { ContentReviewStatus, GradeBand, Passage, ReadingQuestion } from '.
 import type { LessonPurpose } from '../../lesson'
 import type { FluencyPracticeBlock, LessonRole, TeachingBlock } from '../../lesson/lessonTypes'
 
+export interface ThemeGuide {
+  passageId: string
+  topicLabel: string
+  bestSupportedTheme: string
+  supportingSentenceIds: string[]
+  characterActionSentenceIds: string[]
+  importantEventSentenceIds: string[]
+  outcomeSentenceId: string
+  topicDistractor: string
+  summaryDistractor: string
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
 export interface ContentPackManifest {
   packId: string
   packTitle: string
@@ -46,6 +60,7 @@ export interface ContentPack {
   passages: Passage[]
   questions: ReadingQuestion[]
   lessons: ContentPackLesson[]
+  themeGuides?: ThemeGuide[]
 }
 
 export interface ContentPackAuditIssue {
@@ -90,6 +105,9 @@ export interface ContentPackAuditIssue {
     | 'correct_answer_absent'
     | 'correct_answer_position_concentration'
     | 'ambiguous_forbidden_homograph'
+    | 'missing_theme_guide'
+    | 'theme_guide_count_mismatch'
+    | 'theme_guide_structure_invalid'
   message: string
   itemIdentifier: string
 }

@@ -1,4 +1,4 @@
-import { getLessonById } from '../lesson'
+import { getLessonById, getLessonCatalogMetadata } from '../lesson'
 import {
   createInitialSkillProgress,
   selectNextLesson,
@@ -281,6 +281,8 @@ function chooseDueReview(
       purpose: 'review',
       availableLessons,
       recentActivityUsage: progress.recentActivityUsage,
+      preferredUnitId: entry.unitId ?? null,
+      preferredContentVersion: entry.contentVersion ?? null,
     })
     if (plan.status === 'available') {
       return buildPlanFromLesson(plan.lesson, 'review', 'global_planned_quest')
@@ -295,6 +297,9 @@ function chooseActiveStatePlan(
   availableLessons: readonly LessonActivityCandidate[],
   playableTracks: readonly PlayableTrackDiscovery[],
 ): GlobalQuestPlan | null {
+  const lastCompletedLessonMetadata = state.completedAttempts.at(-1)
+    ? getLessonCatalogMetadata(state.completedAttempts.at(-1)!.lessonId)
+    : null
   const candidates = playableTracks
     .map((entry) => {
       const progress = state.skillProgress[entry.track.skillId]
@@ -315,6 +320,8 @@ function chooseActiveStatePlan(
       purpose,
       availableLessons,
       recentActivityUsage: candidate.progress.recentActivityUsage,
+      preferredUnitId: lastCompletedLessonMetadata?.unitId ?? null,
+      preferredContentVersion: lastCompletedLessonMetadata?.contentVersion ?? null,
     })
     if (plan.status === 'available') {
       return buildPlanFromLesson(plan.lesson, purpose, 'global_planned_quest')

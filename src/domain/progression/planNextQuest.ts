@@ -8,6 +8,8 @@ export interface PlanNextQuestInput {
   purpose: LessonPurpose
   targetSkillId?: string
   targetDifficulty?: number
+  preferredUnitId?: string | null
+  preferredContentVersion?: string | null
 }
 
 export function planNextQuest(input: PlanNextQuestInput): NextQuestPlan {
@@ -17,5 +19,7 @@ export function planNextQuest(input: PlanNextQuestInput): NextQuestPlan {
     purpose: input.purpose,
     availableLessons: input.availableLessons,
     recentActivityUsage: input.progress.recentActivityUsage,
+    preferredUnitId: input.preferredUnitId ?? null,
+    preferredContentVersion: input.preferredContentVersion ?? null,
   })
 }

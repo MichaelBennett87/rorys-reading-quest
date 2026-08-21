@@ -111,7 +111,7 @@ function deriveStoryScoutsWorld(
   const storyMapActive = activeUnitId === 'ss-unit-1' || plannedUnitId === 'ss-unit-1'
   const units = world.units.map((unit) => {
     if (unit.id === 'ss-unit-1') return deriveStoryMapUnit(unit, currentDifficulty, currentLearningState, storyMapActive)
-    if (unit.id === 'ss-unit-2') return deriveThemeTrailUnit(unit, currentDifficulty)
+    if (unit.id === 'ss-unit-2') return deriveThemeTrailUnit(unit, currentDifficulty, currentLearningState)
     return derivePerspectivePortalUnit(unit)
   })
 
@@ -119,15 +119,17 @@ function deriveStoryScoutsWorld(
     ...world,
     status: playable ? 'available' : 'coming-later',
     progressionLabel: playable
-      ? currentDifficulty >= 2
+      ? currentDifficulty >= 3
         ? currentLearningState === 'SPACED_REVIEW'
-          ? 'Story Map review available'
-          : 'Story Map complete'
-        : currentDifficulty <= 0
-          ? 'Building Block Trail active'
-          : 'Trail 1 active'
+          ? 'Theme Trail review available'
+          : 'Theme Trail complete'
+        : currentDifficulty === 2
+          ? 'Theme Trail active'
+          : currentDifficulty <= 0
+            ? 'Building Block Trail active'
+            : 'Story Map Trail 1 active'
       : 'Story Scouts quests are being prepared.',
-    currentProgress: playable ? Math.min(100, Math.max(0, currentDifficulty) * 50) : 0,
+    currentProgress: playable ? Math.min(100, Math.max(0, currentDifficulty) * 25 + 25) : 0,
     units,
   }
 }
@@ -164,17 +166,29 @@ function deriveStoryMapUnit(
   }
 }
 
-function deriveThemeTrailUnit(unit: DemoUnit, currentDifficulty: number): DemoUnit {
-  const lockedMessage = currentDifficulty < 2
-    ? 'Complete Story Map to unlock Theme Trail.'
-    : 'Theme Trail quests are being prepared.'
+function deriveThemeTrailUnit(
+  unit: DemoUnit,
+  currentDifficulty: number,
+  currentLearningState: SkillProgressState['currentLearningState'] | null,
+): DemoUnit {
+  const state: UnitState = currentDifficulty < 2
+    ? 'locked'
+    : currentDifficulty >= 3
+      ? (currentLearningState === 'SPACED_REVIEW' ? 'review' : 'complete')
+      : 'available'
   return {
     ...unit,
-    state: 'locked',
-    difficultyLabel: 'Locked',
-    progressPercent: 0,
-    stars: 0,
-    practiceFocus: lockedMessage,
+    state,
+    difficultyLabel: state === 'locked' ? 'Locked' : state === 'review' ? 'Review' : state === 'complete' ? 'Complete' : 'Trail 2',
+    progressPercent: state === 'locked' ? 0 : state === 'available' ? 75 : 100,
+    stars: state === 'locked' ? 0 : state === 'available' ? 2 : 3,
+    practiceFocus: currentDifficulty < 2
+      ? 'Complete Story Map to unlock Theme Trail.'
+      : state === 'available'
+        ? 'theme, topic, summary, and literary details'
+        : state === 'review'
+          ? 'Review theme clues and supporting story details.'
+          : 'Theme Trail quests are complete. Perspective Portal quests are being prepared.',
   }
 }
 

@@ -1,4 +1,5 @@
 import type { LessonResult } from '../domain/lesson'
+import { getLessonCatalogMetadata } from '../domain/lesson'
 import type { AppliedLessonProgression } from '../domain/progression'
 import {
   type CompletedLessonAttempt,
@@ -41,6 +42,7 @@ export function completeQuestProgress(input: CompleteQuestProgressInput): Comple
   const earnedStars = starsForAccuracy(input.lessonResult.accuracy)
   const progressKey = input.progression.progress.remediationContext?.originalSkillId
     ?? input.progression.progress.skillId
+  const lessonMetadata = getLessonCatalogMetadata(input.lessonResult.lessonId)
   const attempt: CompletedLessonAttempt = {
     attemptId: input.completionId,
     completionId: input.completionId,
@@ -73,6 +75,8 @@ export function completeQuestProgress(input: CompleteQuestProgressInput): Comple
           difficulty: input.progression.progress.lastMasteredDifficulty,
           reviewStep: input.progression.progress.reviewStep,
           dueAt: input.progression.progress.nextReviewDate,
+          unitId: lessonMetadata?.unitId,
+          contentVersion: lessonMetadata?.contentVersion,
         },
       ]
     : input.state.reviewQueue.map((entry) => ({ ...entry }))

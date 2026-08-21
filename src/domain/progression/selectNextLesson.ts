@@ -11,6 +11,8 @@ export interface SelectNextLessonInput {
   purpose: LessonPurpose
   availableLessons: readonly LessonActivityCandidate[]
   recentActivityUsage: readonly RecentLessonActivityUsage[]
+  preferredUnitId?: string | null
+  preferredContentVersion?: string | null
 }
 
 export function selectNextLesson(input: SelectNextLessonInput): NextQuestPlan {
@@ -18,6 +20,8 @@ export function selectNextLesson(input: SelectNextLessonInput): NextQuestPlan {
     .filter((lesson) => lesson.skillId === input.skillId)
     .filter((lesson) => lesson.difficulty === input.difficulty)
     .filter((lesson) => lesson.eligiblePurposes.includes(input.purpose))
+    .filter((lesson) => input.preferredUnitId ? lesson.unitId === input.preferredUnitId : true)
+    .filter((lesson) => input.preferredContentVersion ? lesson.contentVersion === input.preferredContentVersion : true)
     .slice()
     .sort((left, right) => left.activityId.localeCompare(right.activityId))
 

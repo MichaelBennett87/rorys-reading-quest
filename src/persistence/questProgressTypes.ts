@@ -79,6 +79,8 @@ export interface ReviewQueueEntry {
   difficulty: number
   reviewStep: number
   dueAt: string
+  unitId?: string
+  contentVersion?: string
 }
 
 export interface LastProgressionOutcome {

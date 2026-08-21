@@ -97,7 +97,7 @@ describe('unit-aware Word Forge planning', () => {
       progress: trailThreeProgress,
       availableLessons,
     })
-    expect(trailTwoPlan.status).toBe('locked')
+    expect(trailTwoPlan.status).toBe('available')
     expect(trailTwoPlan.unitId).toBe('wg-unit-2')
 
     const trailFourProgress = createProgress(4)
@@ -108,7 +108,7 @@ describe('unit-aware Word Forge planning', () => {
       progress: trailFourProgress,
       availableLessons,
     })
-    expect(trailFourPlan.status).toBe('locked')
+    expect(trailFourPlan.status).toBe('available')
     expect(trailFourPlan.unitId).toBe('wg-unit-2')
 
     const exhaustedPlan = planUnitQuest({
@@ -116,7 +116,7 @@ describe('unit-aware Word Forge planning', () => {
       progress: trailFiveProgress,
       availableLessons,
     })
-    expect(exhaustedPlan.status).toBe('locked')
+    expect(exhaustedPlan.status).toBe('content_needed')
 
     const trailFourPrefixLock = planUnitQuest({
       selectedUnitId: 'wg-unit-3',
@@ -130,7 +130,7 @@ describe('unit-aware Word Forge planning', () => {
       progress: trailFiveProgress,
       availableLessons,
     })
-    expect(trailFivePrefixPlan.status).toBe('locked')
+    expect(trailFivePrefixPlan.status).toBe('available')
     expect(trailFivePrefixPlan.unitId).toBe('wg-unit-3')
 
     const trailSixPrefixPlan = planUnitQuest({
@@ -138,14 +138,14 @@ describe('unit-aware Word Forge planning', () => {
       progress: trailSixProgress,
       availableLessons,
     })
-    expect(trailSixPrefixPlan.status).toBe('locked')
+    expect(trailSixPrefixPlan.status).toBe('content_needed')
 
     const trailSixSuffixPlan = planUnitQuest({
       selectedUnitId: 'wg-unit-4',
       progress: trailSixProgress,
       availableLessons,
     })
-    expect(trailSixSuffixPlan.status).toBe('locked')
+    expect(trailSixSuffixPlan.status).toBe('available')
     expect(trailSixSuffixPlan.unitId).toBe('wg-unit-4')
 
     const trailSevenSuffixPlan = planUnitQuest({
@@ -153,7 +153,7 @@ describe('unit-aware Word Forge planning', () => {
       progress: createProgress(7),
       availableLessons,
     })
-    expect(trailSevenSuffixPlan.status).toBe('locked')
+    expect(trailSevenSuffixPlan.status).toBe('content_needed')
 
     const trailSixSilentLock = planUnitQuest({
       selectedUnitId: 'wg-unit-5',
@@ -170,7 +170,7 @@ describe('unit-aware Word Forge planning', () => {
       progress: createProgress(7),
       availableLessons,
     })
-    expect(trailSevenSilentPlan.status).toBe('locked')
+    expect(trailSevenSilentPlan.status).toBe('available')
     expect(trailSevenSilentPlan.unitId).toBe('wg-unit-5')
 
     const trailEightSilentPlan = planUnitQuest({
@@ -178,7 +178,7 @@ describe('unit-aware Word Forge planning', () => {
       progress: createProgress(8),
       availableLessons,
     })
-    expect(trailEightSilentPlan.status).toBe('locked')
+    expect(trailEightSilentPlan.status).toBe('content_needed')
 
     const trailSevenFluencyLock = planUnitQuest({
       selectedUnitId: 'wg-unit-6',
@@ -195,7 +195,7 @@ describe('unit-aware Word Forge planning', () => {
       progress: createProgress(8),
       availableLessons,
     })
-    expect(trailEightFluencyPlan.status).toBe('locked')
+    expect(trailEightFluencyPlan.status).toBe('available')
     if (trailEightFluencyPlan.status === 'available') {
       expect(trailEightFluencyPlan.lessonId).toBe('lesson-word-forge-fluency-practice-community-announcement')
     }
@@ -212,7 +212,7 @@ describe('unit-aware Word Forge planning', () => {
       progress: exhaustedFluencyProgress,
       availableLessons,
     })
-    expect(exhaustedFluencyPlan.status).toBe('locked')
+    expect(exhaustedFluencyPlan.status).toBe('content_needed')
   })
 
   test('story scouts unit planning respects story map progress and future locks', () => {
@@ -242,7 +242,7 @@ describe('unit-aware Word Forge planning', () => {
     })
     expect(storyMapExhaustedPlan.status).toBe('content_needed')
     if (storyMapExhaustedPlan.status === 'content_needed') {
-      expect(storyMapExhaustedPlan.reason).toMatch(/Theme Trail quests are being prepared/i)
+      expect(storyMapExhaustedPlan.reason).toMatch(/Theme Trail is available/i)
     }
 
     const themeTrailLocked = planUnitQuest({
@@ -260,9 +260,11 @@ describe('unit-aware Word Forge planning', () => {
       progress: storyExhaustedProgress,
       availableLessons,
     })
-    expect(themeTrailPreparing.status).toBe('locked')
-    if (themeTrailPreparing.status === 'locked') {
-      expect(themeTrailPreparing.reason).toMatch(/Theme Trail quests are being prepared/i)
+    expect(themeTrailPreparing.status).toBe('available')
+    if (themeTrailPreparing.status === 'available') {
+      expect(themeTrailPreparing.lesson.lessonId).toBe('g2-story-scouts-theme-trail-lesson-checkpoint-a')
+      expect(themeTrailPreparing.lesson.unitId).toBe('ss-unit-2')
+      expect(themeTrailPreparing.lesson.difficulty).toBe(2)
     }
 
     const perspectivePortalLocked = planUnitQuest({

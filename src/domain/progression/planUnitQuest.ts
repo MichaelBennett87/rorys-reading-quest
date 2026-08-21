@@ -96,11 +96,6 @@ export function planUnitQuest(input: PlanUnitQuestInput): UnitQuestPlan {
   }
 
   const selectedDifficulty = currentSkill?.currentDifficulty ?? 1
-  const storyScoutsProgress = input.progress.skillProgress['g2-story-scouts-prose'] ?? createInitialSkillProgress(
-    'g2-story-scouts-prose',
-    1,
-    0,
-  )
   if (input.selectedUnitId === 'wg-unit-1') {
     if (selectedDifficulty >= 3) {
       if (contentNeededNextQuest && contentNeededNextQuest.difficulty >= 3) {
@@ -442,7 +437,7 @@ export function planUnitQuest(input: PlanUnitQuestInput): UnitQuestPlan {
         purpose: plannedPurpose,
         skillId: currentSkill?.skillId ?? 'unknown',
         difficulty: selectedDifficulty,
-        reason: 'Story Map quests are complete. Theme Trail quests are being prepared.',
+        reason: 'Story Map quests are complete. Theme Trail is available.',
         unitId: input.selectedUnitId,
       }
     }
@@ -475,13 +470,61 @@ export function planUnitQuest(input: PlanUnitQuestInput): UnitQuestPlan {
   }
 
   if (input.selectedUnitId === 'ss-unit-2') {
+    if (selectedDifficulty < 2) {
+      return {
+        status: 'locked',
+        purpose: 'progression',
+        unitId: input.selectedUnitId,
+        reason: 'Complete Story Map to unlock Theme Trail.',
+      }
+    }
+
+    if (selectedDifficulty >= 3) {
+      if (contentNeededNextQuest && contentNeededNextQuest.difficulty >= 3) {
+        return {
+          status: 'content_needed',
+          purpose: contentNeededNextQuest.purpose,
+          skillId: contentNeededNextQuest.skillId,
+          difficulty: contentNeededNextQuest.difficulty,
+          reason: contentNeededNextQuest.reason,
+          unitId: input.selectedUnitId,
+        }
+      }
+      return {
+        status: 'content_needed',
+        purpose: contentNeededNextQuest?.purpose ?? plannedPurpose,
+        skillId: currentSkill?.skillId ?? 'unknown',
+        difficulty: selectedDifficulty,
+        reason: 'Theme Trail quests are complete. Perspective Portal quests are being prepared.',
+        unitId: input.selectedUnitId,
+      }
+    }
+
+    const plan = selectNextLesson({
+      skillId: currentSkill?.skillId ?? 'unknown',
+      difficulty: selectedDifficulty,
+      purpose: availableNextQuest?.purpose ?? 'progression',
+      availableLessons: input.availableLessons.filter((lesson) => lesson.unitId === input.selectedUnitId),
+      recentActivityUsage: currentSkill?.recentActivityUsage ?? [],
+      preferredUnitId: input.selectedUnitId,
+    })
+    if (plan.status === 'available') {
+      return {
+        status: 'available',
+        purpose: plan.purpose,
+        lesson: plan.lesson,
+        lessonId: plan.lesson.lessonId,
+        unitId: plan.lesson.unitId,
+        activityId: plan.lesson.activityId,
+      }
+    }
     return {
-      status: 'locked',
-      purpose: 'progression',
+      status: 'content_needed',
+      purpose: plan.purpose,
+      skillId: plan.skillId,
+      difficulty: plan.difficulty,
+      reason: plan.reason,
       unitId: input.selectedUnitId,
-      reason: storyScoutsProgress.currentDifficulty < 2
-        ? 'Complete Story Map to unlock Theme Trail.'
-        : 'Theme Trail quests are being prepared.',
     }
   }
 

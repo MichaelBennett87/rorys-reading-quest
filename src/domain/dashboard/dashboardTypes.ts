@@ -129,6 +129,9 @@ export interface DashboardWordHelpSummary {
 
 export interface DashboardReviewEntry {
   skillId: string
+  unitId: string | null
+  unitLabel: string | null
+  contentVersion: string | null
   difficulty: number
   reviewStep: number
   dueAt: string

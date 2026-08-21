@@ -1,3 +1,4 @@
+import { getLessonCatalogMetadata } from '../lesson'
 import { evaluateCheckpoint } from './evaluateCheckpoint'
 import { applyProgressionDecision, purposeForDecision } from './applyProgressionDecision'
 import { lessonResultToCheckpoint } from './lessonResultToCheckpoint'
@@ -31,6 +32,7 @@ export function applyLessonResult(input: ApplyLessonResultInput): ApplyLessonRes
     candidate.lessonId === input.lessonResult.lessonId
     && candidate.activityId === input.lessonResult.activityId
   ))
+  const lessonMetadata = getLessonCatalogMetadata(input.lessonResult.lessonId)
   progress = recordCompletion(progress, input, lesson)
 
   if (
@@ -58,7 +60,13 @@ export function applyLessonResult(input: ApplyLessonResultInput): ApplyLessonRes
       status: 'applied',
       progress,
       decision,
-      nextQuest: planNextQuest({ progress, availableLessons: input.availableLessons, purpose: 'progression' }),
+      nextQuest: planNextQuest({
+        progress,
+        availableLessons: input.availableLessons,
+        purpose: 'progression',
+        preferredUnitId: lessonMetadata?.unitId ?? lesson?.unitId ?? null,
+        preferredContentVersion: lessonMetadata?.contentVersion ?? lesson?.contentVersion ?? null,
+      }),
     }
   }
 
@@ -102,7 +110,13 @@ export function applyLessonResult(input: ApplyLessonResultInput): ApplyLessonRes
     status: 'applied',
     progress,
     decision,
-    nextQuest: planNextQuest({ progress, availableLessons: input.availableLessons, purpose }),
+    nextQuest: planNextQuest({
+      progress,
+      availableLessons: input.availableLessons,
+      purpose,
+      preferredUnitId: lessonMetadata?.unitId ?? lesson?.unitId ?? null,
+      preferredContentVersion: lessonMetadata?.contentVersion ?? lesson?.contentVersion ?? null,
+    }),
   }
 }
 
