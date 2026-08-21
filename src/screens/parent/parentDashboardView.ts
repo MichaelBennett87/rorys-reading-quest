@@ -19,6 +19,9 @@ const FRIENDLY_SKILL_NAMES: Record<string, string> = {
 export const FOUNDATIONAL_SKILLS_BRIDGE_NOTE =
   'Foundational Skills Bridge is an internal practice category, not an official FAST reporting category.'
 
+export const FLUENCY_PRACTICE_NOTE =
+  'Fluency Flight supports practice only. The app does not record or score oral reading.'
+
 export function formatPercent(value: number | null): string {
   return value === null ? 'No practice data yet' : `${value}%`
 }

@@ -1,6 +1,12 @@
 import { describe, expect, test } from 'vitest'
 
-import { benchmarkCoverageAudit, contentPackAudit, contentPacks, sampleContent } from '../../src/domain/content'
+import {
+  benchmarkCoverageAudit,
+  contentPackAudit,
+  contentPacks,
+  fluencyPracticeAudit,
+  sampleContent,
+} from '../../src/domain/content'
 import { buildBenchmarkCoverageAudit } from '../../src/domain/content/packs/benchmarkCoverageAudit'
 import { getLessonById, getLessonCandidates, getLessonForUnit } from '../../src/domain/lesson'
 
@@ -18,6 +24,7 @@ describe('grade 2 content pack registry', () => {
       'g2-word-forge-common-prefixes',
       'g2-word-forge-common-suffixes',
       'g2-word-forge-silent-letter-combinations',
+      'g2-word-forge-fluency-practice-foundations',
       'legacy-word-forge-development-pack',
     ])
     expect(contentPackAudit).toHaveLength(0)
@@ -53,6 +60,27 @@ describe('grade 2 content pack registry', () => {
       contributingPackIds: ['g2-word-forge-silent-letter-combinations'],
       coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',
+    }))
+    expect(fluencyPracticeAudit).toEqual(expect.objectContaining({
+      supportingBenchmarkReference: 'ELA.2.F.1.4',
+      expectedSupportComponents: expect.arrayContaining([
+        'model-reading',
+        'phrase-cued-reading',
+        'punctuation-pauses',
+        'question-expression',
+        'exclamation-expression',
+        'dialogue-expression',
+        'repeated-reading',
+        'self-monitoring',
+        'understanding-check',
+      ]),
+      missingSupportComponents: [],
+      contributingPackIds: ['g2-word-forge-fluency-practice-foundations'],
+      supportStatus: 'supportive_practice',
+      reviewStatus: 'DRAFT',
+      oralReadingMeasured: false,
+      timerUsed: false,
+      microphoneUsed: false,
     }))
     expect(contentPacks).toEqual(packsSnapshot)
     expect(sampleContent).toEqual(sampleSnapshot)

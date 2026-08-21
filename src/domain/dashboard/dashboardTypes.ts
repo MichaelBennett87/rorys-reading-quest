@@ -28,6 +28,22 @@ export interface DashboardOverview {
   activeRemediationRoutes: number
 }
 
+export interface DashboardFluencyPracticeSummary {
+  completedFluencyPracticeSessions: number
+  distinctFluencyActivitiesCompleted: number
+  modelReadSessions: number
+  phrasePracticeSessions: number
+  totalCompletedReads: number
+  reflectionCounts: {
+    smooth: number
+    some_pauses: number
+    try_again: number
+  }
+  lastFluencyPracticeDate: string | null
+  practiceComplete: boolean
+  oralReadingMeasured: false
+}
+
 export interface DashboardCategorySummary {
   reportingCategory: string
   rawCategories: string[]
@@ -146,6 +162,7 @@ export interface DashboardDataQuality {
 export interface DashboardSnapshot {
   generatedAt: string
   overview: DashboardOverview
+  fluencyPracticeSummary: DashboardFluencyPracticeSummary
   categorySummaries: DashboardCategorySummary[]
   benchmarkSummaries: DashboardBenchmarkSummary[]
   skillSummaries: DashboardSkillSummary[]

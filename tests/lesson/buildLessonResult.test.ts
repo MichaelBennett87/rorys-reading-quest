@@ -8,6 +8,7 @@ describe('buildLessonResult', () => {
     activityId: 'act-word-forge-vowel-voyage',
     skillId: 'g2-word-forge-word-practice',
     difficulty: 1,
+    lessonRole: 'GUIDED_PRACTICE' as const,
   }
 
   test('tracks correct count and accuracy', () => {

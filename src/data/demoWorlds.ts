@@ -382,12 +382,29 @@ function deriveWordForgeUnit(unit: DemoUnit, focus: ReturnType<typeof resolveWor
   }
 
   if (unit.id === 'wg-unit-6') {
+    const activeOrPlanned = focus.activeUnitId === unit.id || focus.plannedUnitId === unit.id
+    const isPracticeComplete = focus.currentLearningState === 'FLUENCY_PRACTICE'
+    const state = focus.currentDifficulty >= 8
+      ? (activeOrPlanned
+        ? 'available'
+        : (focus.plannedPurpose === 'review'
+          ? 'review'
+          : isPracticeComplete
+            ? 'complete'
+            : 'available'))
+      : 'locked'
     return {
       ...unit,
-      state: 'locked',
-      difficultyLabel: 'Locked',
-      progressPercent: 0,
-      practiceFocus: 'Fluency Flight quests are being prepared.',
+      state,
+      difficultyLabel: focus.currentDifficulty >= 8
+        ? (state === 'review' ? 'Review' : state === 'complete' ? 'Practice Complete' : 'Fluency Practice')
+        : 'Locked',
+      progressPercent: state === 'locked' ? 0 : state === 'complete' ? 100 : 75,
+      practiceFocus: state === 'locked'
+        ? 'Complete Quiet Letter Quest to unlock Fluency Flight.'
+        : state === 'complete'
+          ? 'Fluency Flight supports practice only while new reading worlds are prepared.'
+          : 'modeled reading, phrase-cued reading, rereading, and self-monitoring',
     }
   }
 

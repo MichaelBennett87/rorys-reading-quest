@@ -32,6 +32,10 @@ const copy: Record<string, { title: string; message: string }> = {
     title: 'Clue Practice',
     message: 'A fresh quest will help you show this reading power on your own.',
   },
+  FLUENCY_PRACTICE: {
+    title: 'Reading Flight Practice Complete!',
+    message: 'You practiced modeled reading, phrase groups, rereading, and self-monitoring. The app did not record or score oral reading.',
+  },
   CONTENT_NEEDED: {
     title: 'More Quests Are Being Prepared',
     message: 'You completed the available adventures for this trail. Your progress is safe.',

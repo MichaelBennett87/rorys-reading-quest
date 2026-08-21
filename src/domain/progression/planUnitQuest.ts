@@ -365,11 +365,49 @@ export function planUnitQuest(input: PlanUnitQuestInput): UnitQuestPlan {
   }
 
   if (input.selectedUnitId === 'wg-unit-6') {
+    if (selectedDifficulty < 8) {
+      return {
+        status: 'locked',
+        purpose: 'progression',
+        unitId: input.selectedUnitId,
+        reason: 'Complete Quiet Letter Quest to unlock Fluency Flight.',
+      }
+    }
+
+    const plan = selectNextLesson({
+      skillId: currentSkill?.skillId ?? 'unknown',
+      difficulty: selectedDifficulty,
+      purpose: availableNextQuest?.purpose ?? 'progression',
+      availableLessons: input.availableLessons.filter((lesson) => lesson.unitId === input.selectedUnitId),
+      recentActivityUsage: currentSkill?.recentActivityUsage ?? [],
+    })
+    if (plan.status === 'available') {
+      return {
+        status: 'available',
+        purpose: plan.purpose,
+        lesson: plan.lesson,
+        lessonId: plan.lesson.lessonId,
+        unitId: plan.lesson.unitId,
+        activityId: plan.lesson.activityId,
+      }
+    }
+    if (contentNeededNextQuest && contentNeededNextQuest.difficulty >= 8) {
+      return {
+        status: 'content_needed',
+        purpose: contentNeededNextQuest.purpose,
+        skillId: contentNeededNextQuest.skillId,
+        difficulty: contentNeededNextQuest.difficulty,
+        reason: contentNeededNextQuest.reason,
+        unitId: input.selectedUnitId,
+      }
+    }
     return {
-      status: 'locked',
-      purpose: 'progression',
+      status: 'content_needed',
+      purpose: plan.purpose,
+      skillId: plan.skillId,
+      difficulty: plan.difficulty,
+      reason: plan.reason,
       unitId: input.selectedUnitId,
-      reason: 'Fluency Flight quests are being prepared.',
     }
   }
 

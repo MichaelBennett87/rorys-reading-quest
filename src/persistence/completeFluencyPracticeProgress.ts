@@ -1,46 +1,38 @@
 import type { LessonResult } from '../domain/lesson'
-import type { AppliedLessonProgression } from '../domain/progression'
+import type { FluencyPracticeCompletionResult } from '../domain/progression/fluencyPractice'
 import {
   type CompletedLessonAttempt,
   type PersistedAssistanceEvent,
   type QuestProgressV1,
 } from './questProgressTypes'
 import { normalizeQuestProgressForSave } from './validatePersistedQuestProgress'
+import { starsForAccuracy, xpForLesson } from './completeQuestProgress'
 
-export interface CompleteQuestProgressInput {
+export interface CompleteFluencyPracticeProgressInput {
   state: QuestProgressV1
   completionId: string
   lessonResult: LessonResult
-  progression: AppliedLessonProgression
+  fluencyProgress: FluencyPracticeCompletionResult
   completedAt: string
 }
 
-export interface CompleteQuestProgressResult {
+export interface CompleteFluencyPracticeProgressResult {
   state: QuestProgressV1
   duplicate: boolean
   earnedXp: number
   earnedStars: number
 }
 
-export function starsForAccuracy(accuracy: number): number {
-  if (accuracy >= 90) return 3
-  if (accuracy >= 70) return 2
-  return 1
-}
-
-export function xpForLesson(result: LessonResult): number {
-  return result.totalQuestions * 10 + result.correctAnswers * 5
-}
-
-export function completeQuestProgress(input: CompleteQuestProgressInput): CompleteQuestProgressResult {
+export function completeFluencyPracticeProgress(
+  input: CompleteFluencyPracticeProgressInput,
+): CompleteFluencyPracticeProgressResult {
   if (input.state.completedAttempts.some((attempt) => attempt.completionId === input.completionId)) {
     return { state: normalizeQuestProgressForSave(input.state), duplicate: true, earnedXp: 0, earnedStars: 0 }
   }
 
   const earnedXp = xpForLesson(input.lessonResult)
   const earnedStars = starsForAccuracy(input.lessonResult.accuracy)
-  const progressKey = input.progression.progress.remediationContext?.originalSkillId
-    ?? input.progression.progress.skillId
+  const progressKey = input.fluencyProgress.progress.skillId
   const attempt: CompletedLessonAttempt = {
     attemptId: input.completionId,
     completionId: input.completionId,
@@ -60,23 +52,12 @@ export function completeQuestProgress(input: CompleteQuestProgressInput): Comple
     fluencyPracticeSummary: input.lessonResult.fluencyPracticeSummary ? { ...input.lessonResult.fluencyPracticeSummary } : null,
     assistanceEvents: cloneAssistanceEvents(input.state.activeLessonSession?.assistanceEvents ?? []),
     completedAt: input.completedAt,
-    progressionDecisionState: input.progression.decision.decisionState,
-    reasonCodes: [...input.progression.decision.reasonCodes],
-    nextReviewDate: input.progression.progress.nextReviewDate,
+    progressionDecisionState: input.fluencyProgress.reasonCodes.includes('fluency_practice_exhausted')
+      ? 'FLUENCY_PRACTICE'
+      : 'FLUENCY_PRACTICE',
+    reasonCodes: [...input.fluencyProgress.reasonCodes],
+    nextReviewDate: null,
   }
-  const usageKey = `${input.lessonResult.skillId}::${input.lessonResult.difficulty}`
-  const reviewQueue = input.progression.progress.nextReviewDate
-    ? [
-        ...input.state.reviewQueue.filter((entry) => entry.skillId !== input.lessonResult.skillId),
-        {
-          skillId: input.lessonResult.skillId,
-          difficulty: input.progression.progress.lastMasteredDifficulty,
-          reviewStep: input.progression.progress.reviewStep,
-          dueAt: input.progression.progress.nextReviewDate,
-        },
-      ]
-    : input.state.reviewQueue.map((entry) => ({ ...entry }))
-
   const state = normalizeQuestProgressForSave({
     ...input.state,
     totalXp: Math.max(input.state.totalXp, 0) + earnedXp,
@@ -84,20 +65,20 @@ export function completeQuestProgress(input: CompleteQuestProgressInput): Comple
     completedSessionCount: input.state.completedSessionCount + 1,
     skillProgress: {
       ...input.state.skillProgress,
-      [progressKey]: input.progression.progress,
+      [progressKey]: input.fluencyProgress.progress,
     },
     completedAttempts: [...input.state.completedAttempts, attempt],
     recentActivityUsage: {
       ...input.state.recentActivityUsage,
-      [usageKey]: input.progression.progress.recentActivityUsage,
+      [progressKey]: input.fluencyProgress.progress.recentActivityUsage,
     },
-    reviewQueue,
+    reviewQueue: input.state.reviewQueue.map((entry) => ({ ...entry })),
     activeLessonSession: null,
-    plannedNextQuest: input.progression.nextQuest,
+    plannedNextQuest: input.fluencyProgress.nextQuest,
     lastProgressionOutcome: {
       completionId: input.completionId,
-      decisionState: input.progression.decision.decisionState,
-      reasonCodes: [...input.progression.decision.reasonCodes],
+      decisionState: 'FLUENCY_PRACTICE',
+      reasonCodes: [...input.fluencyProgress.reasonCodes],
       earnedXp,
       earnedStars,
       completedAt: input.completedAt,
@@ -105,6 +86,7 @@ export function completeQuestProgress(input: CompleteQuestProgressInput): Comple
     },
     metadata: { ...input.state.metadata, updatedAt: input.completedAt },
   })
+
   return { state, duplicate: false, earnedXp, earnedStars }
 }
 

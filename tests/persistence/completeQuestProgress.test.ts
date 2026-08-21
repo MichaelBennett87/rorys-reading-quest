@@ -16,6 +16,7 @@ const lessonResult: LessonResult = {
   activityId: candidate.activityId,
   skillId: candidate.skillId,
   difficulty: candidate.difficulty,
+  lessonRole: 'GUIDED_PRACTICE',
   totalQuestions: 2,
   correctAnswers: 2,
   firstAttemptCorrect: 2,
@@ -50,6 +51,8 @@ const lessonResult: LessonResult = {
       evidenceReference: [],
     },
   ],
+  fluencyPracticeSummary: null,
+  oralFluencyMeasured: false,
   completed: true,
 }
 

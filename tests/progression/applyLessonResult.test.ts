@@ -25,6 +25,7 @@ function lessonResult(
     activityId: candidate.activityId,
     skillId: candidate.skillId,
     difficulty: candidate.difficulty,
+    lessonRole: 'GUIDED_PRACTICE',
     totalQuestions,
     correctAnswers: correct,
     firstAttemptCorrect: correct,
@@ -48,6 +49,8 @@ function lessonResult(
       explanation: 'Private teaching text is not persisted.',
       evidenceReference: [],
     })),
+    fluencyPracticeSummary: null,
+    oralFluencyMeasured: false,
     completed: true,
   }
 }

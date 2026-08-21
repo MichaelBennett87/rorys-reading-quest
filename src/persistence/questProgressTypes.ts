@@ -6,6 +6,7 @@ import type {
 } from '../domain/progression'
 import type { LearningState } from '../domain/progression'
 import type { AssistanceEvent, AssistanceSummary } from '../domain/assistance'
+import type { ActiveFluencyPracticeState, FluencyPracticeSummary, LessonRole } from '../domain/lesson'
 
 export const QUEST_PROGRESS_SCHEMA_VERSION = 1 as const
 export const QUEST_PROGRESS_STORAGE_KEY = 'rorys-reading-quest.progress.v1'
@@ -24,6 +25,7 @@ export interface CompletedLessonAttempt {
   attemptId: string
   completionId: string
   lessonId: string
+  lessonRole?: LessonRole
   activityId: string
   skillId: string
   difficulty: number
@@ -31,6 +33,7 @@ export interface CompletedLessonAttempt {
   accuracy: number
   assistanceCount: number
   assistanceSummary: AssistanceSummary
+  fluencyPracticeSummary?: FluencyPracticeSummary | null
   assistanceEvents: PersistedAssistanceEvent[]
   completedAt: string
   progressionDecisionState: LearningState
@@ -45,6 +48,7 @@ export interface PersistedSubmittedQuestion extends PersistedQuestionSummary {
 export interface ActiveLessonSession {
   sessionId: string
   lessonId: string
+  lessonRole?: LessonRole
   activityId: string
   contentVersion: string
   skillId: string
@@ -52,6 +56,7 @@ export interface ActiveLessonSession {
   currentQuestionIndex: number
   submittedQuestions: PersistedSubmittedQuestion[]
   assistanceEvents: PersistedAssistanceEvent[]
+  fluencyPracticeState?: ActiveFluencyPracticeState | null
   startedAt: string
   updatedAt: string
 }
@@ -83,6 +88,7 @@ export interface LastProgressionOutcome {
   earnedXp: number
   earnedStars: number
   completedAt: string
+  lessonRole?: LessonRole
 }
 
 export interface QuestProgressMetadata {

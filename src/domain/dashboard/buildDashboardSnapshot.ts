@@ -6,6 +6,7 @@ import type {
   DashboardBenchmarkSummary,
   DashboardBuildInput,
   DashboardCategorySummary,
+  DashboardFluencyPracticeSummary,
   DashboardDataAvailability,
   DashboardDataQuality,
   DashboardOverview,
@@ -79,6 +80,7 @@ export function buildDashboardSnapshot(input: DashboardBuildInput): DashboardSna
   return {
     generatedAt: input.now,
     overview: buildOverview(progress, reviewSummary),
+    fluencyPracticeSummary: buildFluencyPracticeSummary(progress),
     categorySummaries,
     benchmarkSummaries,
     skillSummaries,
@@ -476,6 +478,33 @@ export function buildDataQuality(progress: QuestProgressV1, questionIndex: Map<s
     classifiedQuestionCount,
     unclassifiedQuestionCount,
     missingContentReferenceCount: unclassifiedQuestionCount,
+  }
+}
+
+function buildFluencyPracticeSummary(progress: QuestProgressV1): DashboardFluencyPracticeSummary {
+  const fluencyAttempts = progress.completedAttempts.filter((attempt) => attempt.lessonRole === 'FLUENCY_PRACTICE')
+  const reflectionCounts = fluencyAttempts.reduce((counts, attempt) => {
+    const reflection = attempt.fluencyPracticeSummary?.reflection ?? null
+    if (reflection === 'smooth') counts.smooth += 1
+    else if (reflection === 'some_pauses') counts.some_pauses += 1
+    else if (reflection === 'try_again') counts.try_again += 1
+    return counts
+  }, {
+    smooth: 0,
+    some_pauses: 0,
+    try_again: 0,
+  })
+
+  return {
+    completedFluencyPracticeSessions: fluencyAttempts.length,
+    distinctFluencyActivitiesCompleted: new Set(fluencyAttempts.map((attempt) => attempt.activityId)).size,
+    modelReadSessions: fluencyAttempts.filter((attempt) => attempt.fluencyPracticeSummary?.modelReadUsed).length,
+    phrasePracticeSessions: fluencyAttempts.filter((attempt) => attempt.fluencyPracticeSummary?.phrasePracticeCompleted).length,
+    totalCompletedReads: fluencyAttempts.reduce((sum, attempt) => sum + (attempt.fluencyPracticeSummary?.completedReadCount ?? 0), 0),
+    reflectionCounts,
+    lastFluencyPracticeDate: latestAttemptDate(fluencyAttempts),
+    practiceComplete: new Set(fluencyAttempts.map((attempt) => attempt.activityId)).size >= 7,
+    oralReadingMeasured: false,
   }
 }
 

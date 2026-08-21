@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 
 import type { LessonDefinition, LessonResult } from '../domain/lesson'
+import { completeFluencyPractice } from '../domain/progression/fluencyPractice'
 import {
   applyLessonResult,
   getReviewIntervalForStep,
@@ -11,6 +12,7 @@ import {
 import { getLessonCandidates } from '../domain/lesson'
 import {
   completeQuestProgress,
+  completeFluencyPracticeProgress,
   createActiveLessonSession,
   createLocalStorageQuestProgressStore,
   getBrowserLocalStorage,
@@ -112,6 +114,34 @@ export function useQuestProgress() {
 
     const progressEntry = findActiveSkillProgress(progressRef.current, lessonResult)
     const completedAt = new Date().toISOString()
+
+    if (lessonResult.lessonRole === 'FLUENCY_PRACTICE') {
+      const fluencyProgress = completeFluencyPractice({
+        progress: progressEntry,
+        lessonResult,
+        availableLessons,
+        completedAt,
+      })
+      const completed = completeFluencyPracticeProgress({
+        state: progressRef.current,
+        completionId,
+        lessonResult,
+        fluencyProgress,
+        completedAt,
+      })
+      persist(completed.state)
+      return {
+        kind: fluencyProgress.nextQuest.status === 'content_needed'
+          ? 'CONTENT_NEEDED'
+          : 'FLUENCY_PRACTICE',
+        earnedXp: completed.earnedXp,
+        earnedStars: completed.earnedStars,
+        currentDifficulty: fluencyProgress.progress.currentDifficulty,
+        nextQuest: fluencyProgress.nextQuest,
+        completionId,
+      }
+    }
+
     const progression = applyLessonResult({
       progress: progressEntry,
       lessonResult,

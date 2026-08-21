@@ -54,13 +54,21 @@ describe('unit-aware Word Forge planning', () => {
     expect(wordForgeAtSeven.units.find((unit) => unit.id === 'wg-unit-5')?.difficultyLabel).toBe('Trail 7')
     expect(wordForgeAtSeven.units.find((unit) => unit.id === 'wg-unit-5')?.practiceFocus).toContain('silent-letter combinations')
     expect(wordForgeAtSeven.units.find((unit) => unit.id === 'wg-unit-6')?.state).toBe('locked')
-    expect(wordForgeAtSeven.units.find((unit) => unit.id === 'wg-unit-6')?.practiceFocus).toContain('Fluency Flight quests are being prepared')
+    expect(wordForgeAtSeven.units.find((unit) => unit.id === 'wg-unit-6')?.practiceFocus).toContain('Complete Quiet Letter Quest to unlock Fluency Flight.')
 
     const difficultyEightWorlds = deriveWorldsForProgress(createProgress(8))
     const wordForgeAtEight = difficultyEightWorlds.find((world) => world.id === 'word-forge')!
     expect(['complete', 'review']).toContain(wordForgeAtEight.units.find((unit) => unit.id === 'wg-unit-5')?.state)
     expect(wordForgeAtEight.units.find((unit) => unit.id === 'wg-unit-5')?.difficultyLabel).toMatch(/Complete|Review/)
-    expect(wordForgeAtEight.units.find((unit) => unit.id === 'wg-unit-6')?.state).toBe('locked')
+    expect(wordForgeAtEight.units.find((unit) => unit.id === 'wg-unit-6')?.state).toBe('available')
+    expect(wordForgeAtEight.units.find((unit) => unit.id === 'wg-unit-6')?.difficultyLabel).toBe('Fluency Practice')
+
+    const completedFluencyProgress = createProgress(8)
+    Object.values(completedFluencyProgress.skillProgress)[0].currentLearningState = 'FLUENCY_PRACTICE'
+    const completedFluencyWorlds = deriveWorldsForProgress(completedFluencyProgress)
+    const wordForgeAfterFluency = completedFluencyWorlds.find((world) => world.id === 'word-forge')!
+    expect(['complete', 'review']).toContain(wordForgeAfterFluency.units.find((unit) => unit.id === 'wg-unit-6')?.state)
+    expect(wordForgeAfterFluency.units.find((unit) => unit.id === 'wg-unit-6')?.difficultyLabel).toBe('Practice Complete')
   })
 
   test('unit planning respects unit boundaries and freshness', () => {
@@ -189,8 +197,32 @@ describe('unit-aware Word Forge planning', () => {
     })
     expect(trailSevenFluencyLock.status).toBe('locked')
     if (trailSevenFluencyLock.status === 'locked') {
-      expect(trailSevenFluencyLock.reason).toMatch(/Fluency Flight quests are being prepared/i)
+      expect(trailSevenFluencyLock.reason).toMatch(/Complete Quiet Letter Quest to unlock Fluency Flight/i)
     }
+
+    const trailEightFluencyPlan = planUnitQuest({
+      selectedUnitId: 'wg-unit-6',
+      progress: createProgress(8),
+      availableLessons,
+    })
+    expect(trailEightFluencyPlan.status).toBe('available')
+    if (trailEightFluencyPlan.status === 'available') {
+      expect(trailEightFluencyPlan.lessonId).toBe('lesson-word-forge-fluency-practice-community-announcement')
+    }
+
+    const exhaustedFluencyProgress = createProgress(8)
+    exhaustedFluencyProgress.skillProgress[Object.keys(exhaustedFluencyProgress.skillProgress)[0]].recentActivityUsage = availableLessons
+      .filter((lesson) => lesson.unitId === 'wg-unit-6')
+      .map((lesson) => ({
+        ...lesson,
+        completedAt: now,
+      }))
+    const exhaustedFluencyPlan = planUnitQuest({
+      selectedUnitId: 'wg-unit-6',
+      progress: exhaustedFluencyProgress,
+      availableLessons,
+    })
+    expect(exhaustedFluencyPlan.status).toBe('content_needed')
   })
 
   test('an active session in another unit blocks a fresh unit launch', () => {

@@ -185,7 +185,7 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getAllByRole('button', { name: /Quiet Letter Quest Locked/i })).toHaveLength(1)
     expect(screen.getByText(/Complete Suffix Station to unlock Quiet Letter Quest/i)).toBeTruthy()
     expect(screen.getAllByRole('button', { name: /Fluency Flight Locked/i })).toHaveLength(1)
-    expect(screen.getByText(/Fluency Flight quests are being prepared/i)).toBeTruthy()
+    expect(screen.getByText(/Complete Quiet Letter Quest to unlock Fluency Flight/i)).toBeTruthy()
   })
 
   test('shows Quiet Letter Quest as available at difficulty 7 and launches the Trail 7 checkpoint', () => {
@@ -219,8 +219,8 @@ describe('Phase 2 lesson flow and child shell', () => {
 
     expect(screen.getAllByRole('button', { name: /Quiet Letter Quest (Complete|Review)/i })).toHaveLength(1)
     expect(screen.getByText(/Review silent-letter combinations and careful blending/i)).toBeTruthy()
-    expect(screen.getAllByRole('button', { name: /Fluency Flight Locked/i })).toHaveLength(1)
-    expect(screen.getByText(/Fluency Flight quests are being prepared/i)).toBeTruthy()
+    expect(screen.getAllByRole('button', { name: /Fluency Flight Available/i })).toHaveLength(1)
+    expect(screen.getByText(/Fluency Practice/i)).toBeTruthy()
 
     fireEvent.click(screen.getByRole('button', { name: /Quiet Letter Quest (Complete|Review)/i }))
     expect(screen.getByText(/This quest is not available yet/i)).toBeTruthy()

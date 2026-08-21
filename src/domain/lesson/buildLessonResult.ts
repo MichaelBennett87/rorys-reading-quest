@@ -1,13 +1,16 @@
 import type { LessonResult, LessonResultQuestion, QuestionEvaluationResult } from './lessonTypes'
 import type { AssistanceSummary } from '../assistance'
+import type { LessonRole, FluencyPracticeSummary } from './lessonTypes'
 
 interface BuildLessonResultInput {
   lessonId: string
   activityId: string
   skillId: string
   difficulty: number
+  lessonRole: LessonRole
   questionEvaluations: QuestionEvaluationResult[]
   assistanceSummary?: AssistanceSummary
+  fluencyPracticeSummary?: FluencyPracticeSummary | null
 }
 
 export function buildLessonResult(input: BuildLessonResultInput): LessonResult {
@@ -44,12 +47,15 @@ export function buildLessonResult(input: BuildLessonResultInput): LessonResult {
     activityId: input.activityId,
     skillId: input.skillId,
     difficulty: input.difficulty,
+    lessonRole: input.lessonRole,
     totalQuestions,
     correctAnswers,
     firstAttemptCorrect: questionResults.filter((question) => question.isFirstAttemptCorrect).length,
     accuracy,
     assistanceUsed: summary.totalUniqueEvents,
     assistanceSummary: summary,
+    fluencyPracticeSummary: input.fluencyPracticeSummary ?? null,
+    oralFluencyMeasured: false,
     questionResults,
     completed: true,
   }

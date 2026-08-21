@@ -1,6 +1,6 @@
 import type { ContentReviewStatus, GradeBand, Passage, ReadingQuestion } from '../types'
 import type { LessonPurpose } from '../../lesson'
-import type { LessonRole, TeachingBlock } from '../../lesson/lessonTypes'
+import type { FluencyPracticeBlock, LessonRole, TeachingBlock } from '../../lesson/lessonTypes'
 
 export interface ContentPackManifest {
   packId: string
@@ -10,11 +10,14 @@ export interface ContentPackManifest {
   unitId: string
   primarySkillId: string
   benchmarkReferences: string[]
+  supportingBenchmarkReferences?: string[]
+  coverageKind?: 'benchmark' | 'supportive_practice'
   partialBenchmarkCoverage: string
   difficultyRange: [number, number]
   contentVersion: string
   reviewStatus: ContentReviewStatus
   coveredPatterns: string[]
+  coveredSupportComponents?: string[]
   passageIds: string[]
   questionIds: string[]
   lessonIds: string[]
@@ -33,6 +36,7 @@ export interface ContentPackLesson {
   lessonRole: LessonRole
   selectionStatus: 'active' | 'legacy'
   teachingBlock?: TeachingBlock
+  fluencyPracticeBlock?: FluencyPracticeBlock
   contentVersion: string
   eligiblePurposes: LessonPurpose[]
 }
@@ -46,11 +50,12 @@ export interface ContentPack {
 
 export interface ContentPackAuditIssue {
   code:
-    | 'missing_manifest_field'
-    | 'duplicate_pack_id'
-    | 'lesson_count_mismatch'
-    | 'passage_count_mismatch'
-    | 'duplicate_lesson_id'
+  | 'missing_manifest_field'
+  | 'duplicate_pack_id'
+  | 'missing_supporting_benchmark_mapping'
+  | 'lesson_count_mismatch'
+  | 'passage_count_mismatch'
+  | 'duplicate_lesson_id'
     | 'duplicate_lesson_activity_id'
     | 'duplicate_passage_id'
     | 'duplicate_question_id'
@@ -81,6 +86,7 @@ export interface ContentPackAuditIssue {
     | 'lesson_with_invalid_eligible_purpose'
     | 'duplicate_prompt_in_lesson'
     | 'duplicate_visible_choice_text'
+    | 'missing_support_sentence'
     | 'correct_answer_absent'
     | 'correct_answer_position_concentration'
     | 'ambiguous_forbidden_homograph'

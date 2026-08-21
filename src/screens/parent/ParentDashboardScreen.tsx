@@ -29,6 +29,7 @@ import { ParentPrintSummaryView } from './ParentPrintSummaryView'
 import {
   describePlannedRoute,
   FOUNDATIONAL_SKILLS_BRIDGE_NOTE,
+  FLUENCY_PRACTICE_NOTE,
   formatBenchmarkReferences,
   formatAssistanceLevel,
   formatParentDate,
@@ -209,6 +210,36 @@ export function ParentDashboardScreen({
               </div>
               <p>{dashboard.nextQuestExplanation}</p>
               <p className="parent-muted-copy">Current trail: {currentTrailLabel}</p>
+            </section>
+
+            <section className="parent-section-stack" aria-labelledby="parent-fluency-heading">
+              <div className="parent-card-heading-row">
+                <h3 id="parent-fluency-heading">Fluency practice</h3>
+                <span className="parent-muted-copy">Practice only, no oral scoring</span>
+              </div>
+              <ParentDataNote
+                title="Fluency Flight"
+                message={`${FLUENCY_PRACTICE_NOTE} Supports ELA.2.F.1.4 as practice only.`}
+              />
+              <div className="parent-card-grid">
+                <article className="card parent-summary-card">
+                  <h4>Practice summary</h4>
+                  <p>Completed sessions: {dashboard.fluencyPracticeSummary.completedFluencyPracticeSessions}</p>
+                  <p>Distinct activities: {dashboard.fluencyPracticeSummary.distinctFluencyActivitiesCompleted}</p>
+                  <p>Model reads: {dashboard.fluencyPracticeSummary.modelReadSessions}</p>
+                  <p>Phrase practice uses: {dashboard.fluencyPracticeSummary.phrasePracticeSessions}</p>
+                  <p>Completed rereads: {dashboard.fluencyPracticeSummary.totalCompletedReads}</p>
+                  <p>Last practice date: {formatParentDate(dashboard.fluencyPracticeSummary.lastFluencyPracticeDate)}</p>
+                  <p>Practice complete: {dashboard.fluencyPracticeSummary.practiceComplete ? 'Yes' : 'No'}</p>
+                  <p className="parent-muted-copy">Oral reading measured: No</p>
+                </article>
+                <article className="card parent-summary-card">
+                  <h4>Reflection mix</h4>
+                  <p>Smooth: {dashboard.fluencyPracticeSummary.reflectionCounts.smooth}</p>
+                  <p>Some pauses: {dashboard.fluencyPracticeSummary.reflectionCounts.some_pauses}</p>
+                  <p>Try again: {dashboard.fluencyPracticeSummary.reflectionCounts.try_again}</p>
+                </article>
+              </div>
             </section>
 
             <section className="parent-section-stack" aria-labelledby="parent-attention-heading">

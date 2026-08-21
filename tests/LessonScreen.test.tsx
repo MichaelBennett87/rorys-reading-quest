@@ -78,4 +78,23 @@ describe('LessonScreen guided teaching flow', () => {
     expect(screen.queryByRole('button', { name: /Start Practice/i })).toBeNull()
     expect(screen.getByRole('heading', { name: /Reading Passage/i })).toBeTruthy()
   })
+
+  test('a fluency lesson routes into practice controls from the lesson shell', () => {
+    const lesson = getLessonById('lesson-word-forge-fluency-practice-punctuation-pauses').lesson
+    expect(lesson).toBeDefined()
+
+    render(
+      <LessonScreen
+        lesson={lesson!}
+        onBack={() => undefined}
+        onSessionCheckpoint={() => undefined}
+        onComplete={() => undefined}
+      />,
+    )
+
+    expect(screen.getByRole('heading', { level: 1, name: /Punctuation Pauses/i })).toBeTruthy()
+    fireEvent.click(screen.getByRole('button', { name: /Start Practice/i }))
+    expect(screen.getByRole('button', { name: /Hear a Model Read/i })).toBeTruthy()
+    expect(screen.getByRole('button', { name: /Read It Once/i })).toBeTruthy()
+  })
 })

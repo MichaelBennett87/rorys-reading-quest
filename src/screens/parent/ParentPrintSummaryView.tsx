@@ -15,6 +15,7 @@ import { sortAssessmentRecordsForDisplay } from '../../domain/assessment'
 import {
   describePlannedRoute,
   FOUNDATIONAL_SKILLS_BRIDGE_NOTE,
+  FLUENCY_PRACTICE_NOTE,
   formatBenchmarkReferences,
   formatAssistanceLevel,
   formatDataAvailability,
@@ -126,6 +127,32 @@ export function ParentPrintSummaryView({
         <p>{dashboard.nextQuestExplanation}</p>
         <p className="parent-muted-copy">Current trail: {resolveCurrentTrailLabel(progress, dashboard)}</p>
       </section>
+
+      <SectionWithHeading title="Fluency practice" description="Practice-only fluency support with no oral measurement.">
+        <ParentDataNote
+          title="Fluency Flight"
+          message={`${FLUENCY_PRACTICE_NOTE} Supports ELA.2.F.1.4 as practice only.`}
+        />
+        <div className="parent-card-grid">
+          <article className="card parent-summary-card">
+            <h4>Practice summary</h4>
+            <p>Completed sessions: {dashboard.fluencyPracticeSummary.completedFluencyPracticeSessions}</p>
+            <p>Distinct activities: {dashboard.fluencyPracticeSummary.distinctFluencyActivitiesCompleted}</p>
+            <p>Model reads: {dashboard.fluencyPracticeSummary.modelReadSessions}</p>
+            <p>Phrase practice uses: {dashboard.fluencyPracticeSummary.phrasePracticeSessions}</p>
+            <p>Completed rereads: {dashboard.fluencyPracticeSummary.totalCompletedReads}</p>
+            <p>Last practice date: {formatParentDate(dashboard.fluencyPracticeSummary.lastFluencyPracticeDate)}</p>
+            <p>Practice complete: {dashboard.fluencyPracticeSummary.practiceComplete ? 'Yes' : 'No'}</p>
+            <p className="parent-muted-copy">Oral reading measured: No</p>
+          </article>
+          <article className="card parent-summary-card">
+            <h4>Reflection mix</h4>
+            <p>Smooth: {dashboard.fluencyPracticeSummary.reflectionCounts.smooth}</p>
+            <p>Some pauses: {dashboard.fluencyPracticeSummary.reflectionCounts.some_pauses}</p>
+            <p>Try again: {dashboard.fluencyPracticeSummary.reflectionCounts.try_again}</p>
+          </article>
+        </div>
+      </SectionWithHeading>
 
       <SectionWithHeading title="Reporting categories" description="Florida-style reporting lanes, when current data is available.">
         <ParentDataNote

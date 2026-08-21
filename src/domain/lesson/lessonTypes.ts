@@ -13,7 +13,7 @@ export interface LessonChoice {
   text: string
 }
 
-export type LessonRole = 'GUIDED_PRACTICE' | 'CHECKPOINT'
+export type LessonRole = 'GUIDED_PRACTICE' | 'CHECKPOINT' | 'FLUENCY_PRACTICE'
 
 export type LessonSelectionStatus = 'active' | 'legacy'
 
@@ -23,6 +23,49 @@ export interface TeachingBlock {
   examples: string[]
   contrast?: string
   learnerCue: string
+}
+
+export interface FluencyPhrase {
+  phraseId: string
+  text: string
+  cue?: string
+}
+
+export interface FluencyExpressionCue {
+  cueId: string
+  sentenceId: string
+  label: string
+  explanation: string
+}
+
+export interface FluencyPracticeBlock {
+  title: string
+  learnerCue: string
+  phraseGroups: FluencyPhrase[]
+  expressionCues: FluencyExpressionCue[]
+  requiredReadCount: number
+  modelReadingAvailable: boolean
+  oralReadingMeasured: false
+  timerUsed: false
+  microphoneUsed: false
+  practiceMode: 'guided' | 'independent'
+}
+
+export interface ActiveFluencyPracticeState {
+  modelReadUsed: boolean
+  phrasePracticeCompleted: boolean
+  completedReadCount: number
+  reflection: 'smooth' | 'some_pauses' | 'try_again' | null
+}
+
+export interface FluencyPracticeSummary {
+  modelReadUsed: boolean
+  phrasePracticeCompleted: boolean
+  completedReadCount: number
+  reflection: 'smooth' | 'some_pauses' | 'try_again' | null
+  oralReadingMeasured: false
+  timerUsed: false
+  microphoneUsed: false
 }
 
 interface LessonQuestionBase {
@@ -97,6 +140,7 @@ export interface LessonDefinition {
   lessonRole: LessonRole
   selectionStatus: LessonSelectionStatus
   teachingBlock?: TeachingBlock
+  fluencyPracticeBlock?: FluencyPracticeBlock
   questionCount: number
   questions: LessonQuestion[]
   contentVersion: string
@@ -150,12 +194,15 @@ export interface LessonResult {
   activityId: string
   skillId: string
   difficulty: number
+  lessonRole: LessonRole
   totalQuestions: number
   correctAnswers: number
   firstAttemptCorrect: number
   accuracy: number
   assistanceUsed: number
   assistanceSummary: AssistanceSummary
+  fluencyPracticeSummary?: FluencyPracticeSummary | null
+  oralFluencyMeasured: false
   questionResults: LessonResultQuestion[]
   completed: boolean
 }
@@ -184,6 +231,7 @@ export interface LessonCatalogEntry {
   lessonRole: LessonRole
   selectionStatus: LessonSelectionStatus
   teachingBlock?: TeachingBlock
+  fluencyPracticeBlock?: FluencyPracticeBlock
   contentVersion: string
   eligiblePurposes: LessonPurpose[]
   benchmarkReferences: string[]

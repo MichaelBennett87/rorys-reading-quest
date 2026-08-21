@@ -11,6 +11,7 @@ const result: LessonResult = {
   activityId: 'activity-a',
   skillId: 'skill-a',
   difficulty: 1,
+  lessonRole: 'GUIDED_PRACTICE',
   totalQuestions: 10,
   correctAnswers: 9,
   firstAttemptCorrect: 8,
@@ -31,9 +32,11 @@ const result: LessonResult = {
     isFirstAttemptCorrect: index < 8,
     submittedAnswer: 'answer',
     correctAnswer: 'answer',
-    explanation: 'Private teaching text is not persisted.',
-    evidenceReference: [],
-  })),
+      explanation: 'Private teaching text is not persisted.',
+      evidenceReference: [],
+    })),
+  fluencyPracticeSummary: null,
+  oralFluencyMeasured: false,
   completed: true,
 }
 

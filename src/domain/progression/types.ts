@@ -2,6 +2,7 @@ export type LearningState =
   | 'TEACH'
   | 'GUIDED_PRACTICE'
   | 'CHECKPOINT'
+  | 'FLUENCY_PRACTICE'
   | 'VERIFY_MASTERY'
   | 'ADVANCE'
   | 'RETRY_SAME_DIFFICULTY'
@@ -16,6 +17,7 @@ export type ChildSafeMessageKey =
   | 'clue_practice'
   | 'almost_there'
   | 'trail_complete'
+  | 'smooth_reading_practice'
 
 export type ReviewActionKind =
   | 'none'

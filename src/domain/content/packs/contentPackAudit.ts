@@ -20,7 +20,18 @@ export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPac
     if (!pack.manifest.worldId) pushIssue(issues, 'missing_manifest_field', `manifest:${pack.manifest.packId}`, 'World ID is required.')
     if (!pack.manifest.unitId) pushIssue(issues, 'missing_manifest_field', `manifest:${pack.manifest.packId}`, 'Unit ID is required.')
     if (!pack.manifest.primarySkillId) pushIssue(issues, 'missing_manifest_field', `manifest:${pack.manifest.packId}`, 'Primary skill ID is required.')
-    if (!pack.manifest.benchmarkReferences.length) pushIssue(issues, 'missing_benchmark_mapping', `manifest:${pack.manifest.packId}`, 'At least one benchmark reference is required.')
+    if (pack.manifest.coverageKind === 'supportive_practice') {
+      if (!pack.manifest.supportingBenchmarkReferences?.length) {
+        pushIssue(
+          issues,
+          'missing_supporting_benchmark_mapping',
+          `manifest:${pack.manifest.packId}`,
+          'Supportive-practice packs require supporting benchmark references.',
+        )
+      }
+    } else if (!pack.manifest.benchmarkReferences.length) {
+      pushIssue(issues, 'missing_benchmark_mapping', `manifest:${pack.manifest.packId}`, 'At least one benchmark reference is required.')
+    }
     if (!pack.manifest.partialBenchmarkCoverage) pushIssue(issues, 'missing_manifest_field', `manifest:${pack.manifest.packId}`, 'Partial benchmark coverage is required.')
     if (!pack.manifest.contentVersion) pushIssue(issues, 'missing_manifest_field', `manifest:${pack.manifest.packId}`, 'Content version is required.')
     if (!pack.manifest.reviewStatus) pushIssue(issues, 'missing_manifest_field', `manifest:${pack.manifest.packId}`, 'Review status is required.')
@@ -168,6 +179,10 @@ export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPac
           lowerDifficultyCount += 1
         }
       }
+    }
+
+    if (pack.manifest.coverageKind === 'supportive_practice') {
+      validateSupportivePracticePackStructure(pack, issues)
     }
   }
 
@@ -555,6 +570,256 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
 
     if (checkpointPassages.size < 3) {
       pushIssue(issues, 'repeated_active_passage', pack.manifest.packId, 'Checkpoint lessons should use at least three distinct passages.')
+    }
+  }
+}
+
+function validateSupportivePracticePackStructure(pack: ContentPack, issues: ContentPackAuditIssue[]) {
+  if (pack.manifest.supportingBenchmarkReferences?.includes('ELA.2.F.1.4') !== true) {
+    pushIssue(
+      issues,
+      'missing_supporting_benchmark_mapping',
+      pack.manifest.packId,
+      'Supportive-practice packs must support ELA.2.F.1.4.',
+    )
+  }
+
+  const activeLessons = pack.lessons.filter((lesson) => lesson.selectionStatus === 'active')
+  const fluencyLessons = activeLessons.filter((lesson) => lesson.lessonRole === 'FLUENCY_PRACTICE')
+  const guidedLessons = fluencyLessons.filter((lesson) => lesson.fluencyPracticeBlock?.practiceMode === 'guided')
+  const independentLessons = fluencyLessons.filter((lesson) => lesson.fluencyPracticeBlock?.practiceMode === 'independent')
+
+  if (activeLessons.length !== 7) {
+    pushIssue(issues, 'lesson_count_mismatch', pack.manifest.packId, `Expected 7 active lessons, found ${activeLessons.length}.`)
+  }
+  if (pack.passages.length !== 7) {
+    pushIssue(issues, 'passage_count_mismatch', pack.manifest.packId, `Expected 7 passages, found ${pack.passages.length}.`)
+  }
+  if (pack.questions.length !== 28) {
+    pushIssue(issues, 'question_count_mismatch', pack.manifest.packId, `Expected 28 questions, found ${pack.questions.length}.`)
+  }
+  if (fluencyLessons.length !== 7) {
+    pushIssue(issues, 'missing_lesson_role', pack.manifest.packId, `Expected 7 FLUENCY_PRACTICE lessons, found ${fluencyLessons.length}.`)
+  }
+  if (guidedLessons.length !== 4) {
+    pushIssue(issues, 'lesson_count_mismatch', pack.manifest.packId, `Expected 4 guided fluency lessons, found ${guidedLessons.length}.`)
+  }
+  if (independentLessons.length !== 3) {
+    pushIssue(issues, 'lesson_count_mismatch', pack.manifest.packId, `Expected 3 independent fluency lessons, found ${independentLessons.length}.`)
+  }
+
+  const questionTypeCounts = new Map<string, number>()
+  const expressionCueKinds = new Set<string>()
+  let firstCorrectPositions = 0
+  let checkedCorrectPositions = 0
+
+  for (const lesson of activeLessons) {
+    if (lesson.lessonRole !== 'FLUENCY_PRACTICE') {
+      pushIssue(issues, 'missing_lesson_role', lesson.lessonId, 'Fluency lessons must use the FLUENCY_PRACTICE lesson role.')
+    }
+    if (lesson.difficulty !== 8) {
+      pushIssue(issues, 'mixed_difficulty_within_lesson', lesson.lessonId, 'Fluency lessons must remain at difficulty 8.')
+    }
+    if (!lesson.fluencyPracticeBlock) {
+      pushIssue(issues, 'missing_manifest_field', lesson.lessonId, 'Fluency lessons require a fluency practice block.')
+      continue
+    }
+    if (lesson.eligiblePurposes.includes('verification') || lesson.eligiblePurposes.includes('remediation')) {
+      pushIssue(issues, 'lesson_with_invalid_eligible_purpose', lesson.lessonId, 'Fluency practice lessons are review and progression only.')
+    }
+    if (lesson.fluencyPracticeBlock.oralReadingMeasured !== false) {
+      pushIssue(issues, 'missing_manifest_field', lesson.lessonId, 'Fluency practice must not measure oral reading.')
+    }
+    if (lesson.fluencyPracticeBlock.timerUsed !== false) {
+      pushIssue(issues, 'missing_manifest_field', lesson.lessonId, 'Fluency practice must not use a timer.')
+    }
+    if (lesson.fluencyPracticeBlock.microphoneUsed !== false) {
+      pushIssue(issues, 'missing_manifest_field', lesson.lessonId, 'Fluency practice must not use a microphone.')
+    }
+    if (!lesson.fluencyPracticeBlock.phraseGroups.length) {
+      pushIssue(issues, 'missing_manifest_field', lesson.lessonId, 'Fluency practice requires phrase groups.')
+    }
+    if (!lesson.fluencyPracticeBlock.expressionCues.length) {
+      pushIssue(issues, 'missing_manifest_field', lesson.lessonId, 'Fluency practice requires expression cues.')
+    }
+    if (lesson.fluencyPracticeBlock.requiredReadCount < 1 || lesson.fluencyPracticeBlock.requiredReadCount > 3) {
+      pushIssue(issues, 'missing_manifest_field', lesson.lessonId, 'Fluency practice requiredReadCount must stay between 1 and 3.')
+    }
+    if (lesson.lessonRole === 'FLUENCY_PRACTICE' && lesson.fluencyPracticeBlock.practiceMode === 'guided' && !lesson.teachingBlock) {
+      pushIssue(issues, 'guided_lesson_without_teaching_block', lesson.lessonId, 'Guided fluency lessons require a teaching block.')
+    }
+    if (lesson.lessonRole === 'FLUENCY_PRACTICE' && lesson.fluencyPracticeBlock.practiceMode === 'independent' && lesson.teachingBlock) {
+      pushIssue(issues, 'checkpoint_lesson_with_teaching_block', lesson.lessonId, 'Independent fluency lessons must not include a teaching block.')
+    }
+
+    const passage = pack.passages.find((entry) => entry.passageIdentifier === lesson.passageIdentifiers[0])
+    if (!passage) {
+      pushIssue(issues, 'lesson_referencing_missing_content', lesson.lessonId, 'Fluency lessons must reference a valid passage.')
+      continue
+    }
+
+    const reconstructedPhrases = lesson.fluencyPracticeBlock.phraseGroups.map((phrase) => phrase.text).join(' ')
+    if (normalizeFluencySpacing(reconstructedPhrases) !== normalizeFluencySpacing(passage.passageText)) {
+      pushIssue(issues, 'support_target_structure_invalid', lesson.lessonId, 'Fluency phrase groups must reconstruct the passage text.')
+    }
+    for (const cue of lesson.fluencyPracticeBlock.expressionCues) {
+      if (!passage.sentences?.some((sentence) => sentence.sentenceId === cue.sentenceId)) {
+        pushIssue(issues, 'missing_support_sentence', cue.cueId, 'Fluency expression cues must reference a valid sentence.')
+      }
+      expressionCueKinds.add(normalizeCueLabel(cue.label))
+    }
+
+    const lessonQuestions = pack.questions.filter((question) => question.lessonIdentifier === lesson.lessonId)
+    if (lessonQuestions.length !== 4) {
+      pushIssue(issues, 'question_count_mismatch', lesson.lessonId, `Expected 4 questions for ${lesson.lessonId}.`)
+    }
+    for (const question of lessonQuestions) {
+      questionTypeCounts.set(question.questionType, (questionTypeCounts.get(question.questionType) ?? 0) + 1)
+      if (question.gradeBand !== 2) {
+        pushIssue(issues, 'missing_manifest_field', question.questionIdentifier, 'Fluency questions must remain Grade 2.')
+      }
+      if (question.skillIdentifier !== pack.manifest.primarySkillId) {
+        pushIssue(issues, 'wrong_primary_skill', question.questionIdentifier, 'Fluency questions must stay on the bridge skill.')
+      }
+      if (question.reportingCategory !== 'Foundational Skills Bridge') {
+        pushIssue(issues, 'missing_manifest_field', question.questionIdentifier, 'Fluency questions must use the Foundational Skills Bridge category.')
+      }
+      if (question.benchmarkReference !== 'RR-G2-FLUENCY-PRACTICE') {
+        pushIssue(issues, 'missing_manifest_field', question.questionIdentifier, 'Fluency questions must use the internal fluency practice reference.')
+      }
+      if (question.reviewStatus !== 'DRAFT') {
+        pushIssue(issues, 'missing_draft_status', question.questionIdentifier, 'Fluency questions must remain DRAFT.')
+      }
+      if (!question.explanation) {
+        pushIssue(issues, 'missing_explanation', question.questionIdentifier, 'Fluency questions need explanations.')
+      }
+      if (!question.evidenceReference || (question.evidenceReferenceIds?.length ?? 0) === 0) {
+        pushIssue(issues, 'missing_evidence_reference', question.questionIdentifier, 'Fluency questions need evidence references.')
+      }
+      if (!question.questionContent) {
+        pushIssue(issues, 'unsupported_question_payload', question.questionIdentifier, 'Fluency questions require question content.')
+      }
+      if (new Set(question.answerChoices).size !== question.answerChoices.length) {
+        pushIssue(issues, 'duplicate_visible_choice_text', question.questionIdentifier, 'Visible answer text must not be duplicated within a question.')
+      }
+      if (!question.correctAnswers.length) {
+        pushIssue(issues, 'correct_answer_absent', question.questionIdentifier, 'Fluency questions need a correct answer.')
+      }
+      const firstPosition = getFirstCorrectPosition(question)
+      if (firstPosition !== null) {
+        checkedCorrectPositions += 1
+        if (firstPosition === 0) {
+          firstCorrectPositions += 1
+        }
+      }
+    }
+
+    const targetCount = passage.wordSupportTargets?.length ?? 0
+    if (targetCount !== 3) {
+      pushIssue(issues, 'support_target_count_mismatch', passage.passageIdentifier, `Expected exactly 3 support targets, found ${targetCount}.`)
+    }
+  }
+
+  if (pack.questions.length !== 28) {
+    pushIssue(issues, 'question_count_mismatch', pack.manifest.packId, `Expected 28 fluency questions, found ${pack.questions.length}.`)
+  }
+  if (questionTypeCounts.get('multiple_choice') !== 14) {
+    pushIssue(issues, 'question_count_mismatch', pack.manifest.packId, `Expected 14 multiple choice questions, found ${questionTypeCounts.get('multiple_choice') ?? 0}.`)
+  }
+  if (questionTypeCounts.get('multi_select') !== 5) {
+    pushIssue(issues, 'question_count_mismatch', pack.manifest.packId, `Expected 5 multiselect questions, found ${questionTypeCounts.get('multi_select') ?? 0}.`)
+  }
+  if (questionTypeCounts.get('hot_text') !== 5) {
+    pushIssue(issues, 'question_count_mismatch', pack.manifest.packId, `Expected 5 hot text questions, found ${questionTypeCounts.get('hot_text') ?? 0}.`)
+  }
+  if (questionTypeCounts.get('table_match') !== 4) {
+    pushIssue(issues, 'question_count_mismatch', pack.manifest.packId, `Expected 4 table match questions, found ${questionTypeCounts.get('table_match') ?? 0}.`)
+  }
+
+  const supportTargets = pack.passages.flatMap((passage) => passage.wordSupportTargets ?? [])
+  if (supportTargets.length !== 21) {
+    pushIssue(issues, 'support_target_count_mismatch', pack.manifest.packId, `Expected 21 support targets, found ${supportTargets.length}.`)
+  }
+  if (supportTargets.length && supportTargets.length / pack.passages.length !== 3) {
+    pushIssue(issues, 'support_target_count_mismatch', pack.manifest.packId, 'Each fluency passage must have exactly 3 support targets.')
+  }
+
+  for (const passage of pack.passages) {
+    const targetCount = passage.wordSupportTargets?.length ?? 0
+    if (targetCount !== 3) {
+      pushIssue(issues, 'support_target_count_mismatch', passage.passageIdentifier, `Expected exactly 3 support targets, found ${targetCount}.`)
+    }
+    for (const target of passage.wordSupportTargets ?? []) {
+      if (target.reviewStatus !== 'DRAFT') {
+        pushIssue(issues, 'missing_draft_status', target.targetId, 'Fluency support targets must remain DRAFT.')
+      }
+      if (target.contentVersion !== pack.manifest.contentVersion) {
+        pushIssue(issues, 'mismatched_content_version', target.targetId, 'Fluency support targets must match the pack version.')
+      }
+    }
+  }
+
+  if (checkedCorrectPositions > 0 && firstCorrectPositions / checkedCorrectPositions > 0.75) {
+    pushIssue(issues, 'correct_answer_position_concentration', pack.manifest.packId, 'Correct answers are too concentrated in the first position.')
+  }
+
+  if (expressionCueKinds.size === 0) {
+    pushIssue(issues, 'missing_manifest_field', pack.manifest.packId, 'Fluency practice requires expression cues.')
+  }
+
+  validateFluencySupportMetadata(pack, issues)
+}
+
+function normalizeFluencySpacing(text: string): string {
+  return text.trim().replace(/\s+/g, ' ')
+}
+
+function normalizeCueLabel(label: string): string {
+  return label.trim().toLowerCase().replace(/[^a-z]+/g, '')
+}
+
+function getFirstCorrectPosition(question: ContentPack['questions'][number]): number | null {
+  if (question.questionContent?.type === 'multiple_choice') {
+    const choiceId = question.questionContent.correctChoiceIds[0]
+    return question.questionContent.choices.findIndex((choice) => choice.id === choiceId)
+  }
+  if (question.questionContent?.type === 'multi_select') {
+    const choiceId = question.questionContent.correctChoiceIds[0]
+    return question.questionContent.choices.findIndex((choice) => choice.id === choiceId)
+  }
+  if (question.questionContent?.type === 'hot_text') {
+    const segmentId = question.questionContent.correctSegmentIds[0]
+    return question.questionContent.selectableSegments.findIndex((segment) => segment.id === segmentId)
+  }
+  if (question.questionContent?.type === 'table_match') {
+    const row = question.questionContent.rows[0]
+    return row?.options.findIndex((option) => option.id === row.correctChoiceId) ?? null
+  }
+  return null
+}
+
+function validateFluencySupportMetadata(pack: ContentPack, issues: ContentPackAuditIssue[]) {
+  const requiredCueKinds = new Set([
+    'questioncue',
+    'exclamationcue',
+    'dialoguecue',
+    'listphrasingcue',
+    'calminformationaltone',
+    'excitedannouncementtone',
+  ])
+  const observedCueKinds = new Set<string>()
+
+  for (const lesson of pack.lessons) {
+    const block = lesson.fluencyPracticeBlock
+    if (!block) continue
+    for (const cue of block.expressionCues) {
+      observedCueKinds.add(normalizeCueLabel(cue.label))
+    }
+  }
+
+  for (const requiredCueKind of requiredCueKinds) {
+    if (!observedCueKinds.has(requiredCueKind)) {
+      pushIssue(issues, 'missing_manifest_field', pack.manifest.packId, `Fluency practice requires ${requiredCueKind} expression cues.`)
     }
   }
 }

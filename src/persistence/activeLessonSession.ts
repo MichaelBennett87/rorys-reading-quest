@@ -20,6 +20,7 @@ export function createActiveLessonSession(
   return {
     sessionId,
     lessonId: lesson.lessonId,
+    lessonRole: lesson.lessonRole,
     activityId: lesson.activityId,
     contentVersion: lesson.contentVersion,
     skillId: lesson.skillId,
@@ -27,6 +28,14 @@ export function createActiveLessonSession(
     currentQuestionIndex: 0,
     submittedQuestions: [],
     assistanceEvents: [],
+    fluencyPracticeState: lesson.lessonRole === 'FLUENCY_PRACTICE'
+      ? {
+          modelReadUsed: false,
+          phrasePracticeCompleted: false,
+          completedReadCount: 0,
+          reflection: null,
+        }
+      : null,
     startedAt: timestamp,
     updatedAt: timestamp,
   }

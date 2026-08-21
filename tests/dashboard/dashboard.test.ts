@@ -33,6 +33,8 @@ function buildAttempt(params: {
   difficulty?: number
   lessonId?: string
   activityId?: string
+  lessonRole?: CompletedLessonAttempt['lessonRole']
+  fluencyPracticeSummary?: CompletedLessonAttempt['fluencyPracticeSummary']
 }): CompletedLessonAttempt {
   const questionResults = params.questionIds.map((questionId, index) => ({
     questionId,
@@ -60,6 +62,7 @@ function buildAttempt(params: {
     activityId: params.activityId ?? strongCandidate.activityId,
     skillId: params.skillId ?? strongCandidate.skillId,
     difficulty: params.difficulty ?? strongCandidate.difficulty,
+    lessonRole: params.lessonRole,
     questionResults,
     accuracy: params.accuracy,
     assistanceCount: params.assistanceSummary?.totalUniqueEvents ?? (assistanceEvent ? 1 : 0),
@@ -72,6 +75,7 @@ function buildAttempt(params: {
       spokenWordHelpUsed: false,
       sentenceReadAloudUsed: false,
     },
+    fluencyPracticeSummary: params.fluencyPracticeSummary ?? null,
     assistanceEvents: assistanceEvent ? [assistanceEvent] : [],
     completedAt: params.completedAt,
     progressionDecisionState: params.decisionState,
@@ -306,5 +310,65 @@ describe('dashboard analytics', () => {
 
     expect(progress).toEqual(progressSnapshot)
     expect(sampleContent).toEqual(contentSnapshot)
+  })
+
+  test('fluency practice summary aggregates practice-only sessions without oral measurement', () => {
+    const progress = createProgress([
+      buildAttempt({
+        completionId: 'fluency-completion-a',
+        completedAt: now,
+        accuracy: 100,
+        questionIds: ['q-word-forge-fluency-practice-punctuation-pauses-1'],
+        decisionState: 'FLUENCY_PRACTICE',
+        lessonId: 'lesson-word-forge-fluency-practice-punctuation-pauses',
+        activityId: 'activity-word-forge-fluency-practice-punctuation-pauses',
+        lessonRole: 'FLUENCY_PRACTICE',
+        fluencyPracticeSummary: {
+          modelReadUsed: true,
+          phrasePracticeCompleted: true,
+          completedReadCount: 2,
+          reflection: 'smooth',
+          oralReadingMeasured: false,
+          timerUsed: false,
+          microphoneUsed: false,
+        },
+      }),
+      buildAttempt({
+        completionId: 'fluency-completion-b',
+        completedAt: old,
+        accuracy: 75,
+        questionIds: ['q-word-forge-fluency-practice-phrase-groups-1'],
+        decisionState: 'FLUENCY_PRACTICE',
+        lessonId: 'lesson-word-forge-fluency-practice-phrase-groups',
+        activityId: 'activity-word-forge-fluency-practice-phrase-groups',
+        lessonRole: 'FLUENCY_PRACTICE',
+        fluencyPracticeSummary: {
+          modelReadUsed: false,
+          phrasePracticeCompleted: true,
+          completedReadCount: 1,
+          reflection: 'some_pauses',
+          oralReadingMeasured: false,
+          timerUsed: false,
+          microphoneUsed: false,
+        },
+      }),
+    ])
+
+    const snapshot = buildDashboardSnapshot({ progress, now })
+    expect(snapshot.fluencyPracticeSummary).toEqual(expect.objectContaining({
+      completedFluencyPracticeSessions: 2,
+      distinctFluencyActivitiesCompleted: 2,
+      modelReadSessions: 1,
+      phrasePracticeSessions: 2,
+      totalCompletedReads: 3,
+      lastFluencyPracticeDate: now,
+      practiceComplete: false,
+      oralReadingMeasured: false,
+    }))
+    expect(snapshot.fluencyPracticeSummary.reflectionCounts).toEqual({
+      smooth: 1,
+      some_pauses: 1,
+      try_again: 0,
+    })
   })
 })

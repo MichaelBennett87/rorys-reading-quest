@@ -304,6 +304,21 @@ function createDashboard(recentAverageAccuracy: number | null = 87): DashboardSn
         evidenceSummary: '2 recent sessions used the same target',
       },
     ],
+    fluencyPracticeSummary: {
+      completedFluencyPracticeSessions: 2,
+      distinctFluencyActivitiesCompleted: 2,
+      modelReadSessions: 1,
+      phrasePracticeSessions: 2,
+      totalCompletedReads: 3,
+      reflectionCounts: {
+        smooth: 1,
+        some_pauses: 1,
+        try_again: 0,
+      },
+      lastFluencyPracticeDate: '2026-08-20T11:30:00.000Z',
+      practiceComplete: false,
+      oralReadingMeasured: false,
+    },
     nextQuestExplanation: 'Fresh verification is next for Word Forge.',
     dataQuality: {
       classifiedQuestionCount: 5,
@@ -340,6 +355,21 @@ function createNoDataDashboard(): DashboardSnapshot {
       entries: [],
     },
     attentionItems: [],
+    fluencyPracticeSummary: {
+      completedFluencyPracticeSessions: 0,
+      distinctFluencyActivitiesCompleted: 0,
+      modelReadSessions: 0,
+      phrasePracticeSessions: 0,
+      totalCompletedReads: 0,
+      reflectionCounts: {
+        smooth: 0,
+        some_pauses: 0,
+        try_again: 0,
+      },
+      lastFluencyPracticeDate: null,
+      practiceComplete: false,
+      oralReadingMeasured: false,
+    },
     nextQuestExplanation: 'Fresh content is being prepared.',
     dataQuality: {
       classifiedQuestionCount: 0,
@@ -593,6 +623,8 @@ describe('ParentDashboardScreen', () => {
     expect(screen.getByText(/3 recent sessions/i)).toBeTruthy()
     expect(screen.getByText(/Fresh verification is next for Word Forge/i)).toBeTruthy()
     expect(screen.getByText(/1 overdue · 2 due · 1 upcoming/i)).toBeTruthy()
+    expect(screen.getByRole('heading', { name: /Fluency practice/i })).toBeTruthy()
+    expect(screen.getByText(/Fluency Flight supports practice only/i)).toBeTruthy()
     expect(screen.getByText(/Data quality note/i)).toBeTruthy()
   })
 
