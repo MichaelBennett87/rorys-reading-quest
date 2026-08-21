@@ -45,7 +45,7 @@
   - [x] Phase 5B: complete dashboard, assessment entry, and print summary
     - [x] Phase 5B1: dashboard presentation and progress drill-downs
     - [x] Phase 5B2: assessment management, print summary, and Phase 5 completion
-- [x] Phase 6: Grade 2 bridge content
+- [ ] Phase 6: Grade 2 bridge content
   - [x] Phase 6A1: content framework and variable vowel teams `oo`/`ea`
   - [x] Phase 6A2: `ou`, `oi`, `oy`, and `ow`
   - [x] Phase 6B: two-syllable, open, closed, and consonant-`le`
@@ -57,6 +57,11 @@
     - [x] Phase 6C3: silent-letter combinations and ELA.2.F.1.3e
     - [x] Phase 6C4: fluency-practice foundations and final Phase 6C audit
   - [ ] Phase 6D: Grade 2 prose and poetry
+    - [x] Phase 6D0: multi-world and multi-skill progression foundation
+    - [ ] Phase 6D1: plot structure and main story elements
+    - [ ] Phase 6D2: theme
+    - [ ] Phase 6D3: character perspectives
+    - [ ] Phase 6D4: rhyme schemes, Poetry Planet, and final Phase 6D audit
   - [ ] Phase 6E: informational reading and vocabulary
   - [ ] Phase 6F: across-genres reading and final Grade 2 audit
 - [ ] Phase 7: Grade 3 FAST-aligned content

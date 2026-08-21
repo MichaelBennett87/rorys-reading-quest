@@ -1,6 +1,6 @@
 # Grade 2 Bridge Curriculum
 
-This roadmap describes the bounded Grade 2 bridge plan for Rory's Reading Quest. Phase 6A1, Phase 6A2, Phase 6B1, Phase 6B2, Phase 6C1, Phase 6C2, and Phase 6C3 provide authored DRAFT coverage for the listed Grade 2 bridge patterns, and Phase 6C4 provides supportive practice for fluency foundations without claiming benchmark mastery. All new material stays DRAFT-only.
+This roadmap describes the bounded Grade 2 bridge plan for Rory's Reading Quest. Phase 6A1, Phase 6A2, Phase 6B1, Phase 6B2, Phase 6C1, Phase 6C2, and Phase 6C3 provide authored DRAFT coverage for the listed Grade 2 bridge patterns, Phase 6C4 provides supportive practice for fluency foundations without claiming benchmark mastery, and Phase 6D0 prepares the multi-world progression foundation for later prose and poetry work. All new material stays DRAFT-only.
 
 ## Foundations
 
@@ -17,10 +17,10 @@ This roadmap describes the bounded Grade 2 bridge plan for Rory's Reading Quest.
 
 | Benchmark | Planned world | Planned unit | Prerequisite | Intended difficulty range | Phase | Status |
 | --- | --- | --- | --- | --- | --- | --- |
-| `ELA.2.R.1.1` | Story Lab | `sl-unit-1` | Bridge decoding support | 1-2 | 6D | planned |
-| `ELA.2.R.1.2` | Story Lab | `sl-unit-2` | `ELA.2.R.1.1` | 1-2 | 6D | planned |
-| `ELA.2.R.1.3` | Story Lab | `sl-unit-3` | `ELA.2.R.1.1` | 1-2 | 6D | planned |
-| `ELA.2.R.1.4` | Story Lab | `sl-unit-4` | `ELA.2.R.1.2` | 1-2 | 6D | planned |
+| `ELA.2.R.1.1` | Story Scouts | `ss-unit-1` | Story Map | 1-2 | 6D1 | planned |
+| `ELA.2.R.1.2` | Story Scouts | `ss-unit-2` | Theme Trail | 1-2 | 6D2 | planned |
+| `ELA.2.R.1.3` | Story Scouts | `ss-unit-3` | Perspective Portal | 1-2 | 6D3 | planned |
+| `ELA.2.R.1.4` | Poetry Planet | `pp-unit-1` | Rhyme Routes | 1-2 | 6D4 | planned |
 
 ## Reading Informational Text
 
@@ -50,6 +50,7 @@ This roadmap describes the bounded Grade 2 bridge plan for Rory's Reading Quest.
 - `ELA.2.F.1.3d` is implemented in DRAFT across Phase 6C1 and Phase 6C2; Phase 6C1 covers common prefixes and Phase 6C2 covers common suffixes.
 - `ELA.2.F.1.3e` is implemented in DRAFT in Phase 6C3; it covers a bounded silent-letter set for Quiet Letter Quest.
 - `ELA.2.F.1.4` is supportive practice only in Phase 6C4; it keeps Fluency Flight local, child-controlled, and free of oral measurement.
+- `ELA.2.R.1.1` through `ELA.2.R.1.4` remain planned while Phase 6D0 establishes the multi-world and multi-skill progression foundation.
 - Implemented means the listed patterns have authored DRAFT coverage only; it does not mean human approval or learner mastery.
 - No benchmark is marked approved.
 - Bridge planning keeps exposure, partial coverage, implemented coverage, and approved coverage distinct so future phases can stay bounded and auditable.

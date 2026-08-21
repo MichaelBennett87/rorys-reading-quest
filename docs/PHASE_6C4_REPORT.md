@@ -8,16 +8,21 @@
 
 ## Verified completion facts
 
-- Final local HEAD: `3c3f1e923dba7b27bf0ed1feec6f781492e49204`
-- Final remote HEAD: `3c3f1e923dba7b27bf0ed1feec6f781492e49204`
+- Starting local HEAD: `3c3f1e923dba7b27bf0ed1feec6f781492e49204`
+- Starting remote HEAD: `3c3f1e923dba7b27bf0ed1feec6f781492e49204`
+- Final local HEAD: `d6d16451e4615eb3d237bf049cbaf5d1a341795d`
+- Final remote HEAD: `d6d16451e4615eb3d237bf049cbaf5d1a341795d`
 - Local and remote SHA match: `yes`
+- Commits:
+  - `b6e7890 feat: add fluency practice foundations`
+  - `d6d1645 docs: complete phase 6c4 review`
 - Lint: passed, zero warnings
 - Typecheck: passed
 - Tests: 36 files, 203 tests passed
 - Build: passed
 - `git diff --check`: passed
 - Security audit: passed
-- Largest bundle: `830.79 kB` raw, `161.32 kB` gzip
+- Largest bundle: `929.40 kB` raw, `177.75 kB` gzip
 - Vite chunk warning: remained present
 
 ## Fluency-practice scope

@@ -229,6 +229,13 @@
 - Consequence: Parent, curriculum, and adaptive docs can report supportive practice while clearly saying the app does not measure oral fluency or claim benchmark mastery.
 - Status: Applied
 
+## 2026-08-21 - Phase 6D0 Multi-World Progression Foundation
+
+- Decision: Add a small curriculum-track registry plus world-aware and unit-aware planning before prose content exists.
+- Reason: Phase 6D needs deterministic multi-skill progression, safe initialization for new tracks, and child-facing labels that no longer assume every route is Word Forge.
+- Consequence: Later Story Scouts and Poetry Planet packs can land without changing persistence keys, track ordering by object insertion, or the existing Word Forge flow.
+- Status: Applied
+
 ## 2026-08-20 - Unit-Aware Word Forge Planning
 
 - Decision: Make selected-unit planning unit-aware so fresh lesson selection and active-session recovery respect the chosen Word Forge trail.
