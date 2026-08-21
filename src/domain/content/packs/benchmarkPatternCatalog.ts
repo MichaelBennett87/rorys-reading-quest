@@ -12,6 +12,7 @@ const BENCHMARK_PATTERN_CATALOG: Record<string, readonly string[]> = {
   'ELA.2.F.1.3e': ['silent-letter-combinations'],
   'ELA.2.R.1.1': ['plot-structure', 'setting', 'characters', 'sequence-of-events'],
   'ELA.2.R.1.2': ['theme-identification', 'theme-explanation'],
+  'ELA.2.R.1.3': ['character-perspective-identification', 'different-character-perspectives'],
 }
 
 const REVIEW_ORDER: Record<BenchmarkReviewStatus, number> = {

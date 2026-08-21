@@ -580,6 +580,9 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
     if (pack.manifest.benchmarkReferences.includes('ELA.2.R.1.2')) {
       validateThemeTrailGuideStructure(pack, issues)
     }
+    if (pack.manifest.benchmarkReferences.includes('ELA.2.R.1.3')) {
+      validatePerspectivePortalGuideStructure(pack, issues)
+    }
   }
 }
 
@@ -875,6 +878,112 @@ function validateThemeGuideAgainstPassage(
   }
 }
 
+function validatePerspectivePortalGuideStructure(pack: ContentPack, issues: ContentPackAuditIssue[]) {
+  const guides = pack.perspectiveGuides ?? []
+  const passageById = new Map(pack.passages.map((passage) => [passage.passageIdentifier, passage] as const))
+  const guideByPassageId = new Map<string, NonNullable<ContentPack['perspectiveGuides']>[number]>()
+
+  if (guides.length !== pack.passages.length) {
+    pushIssue(
+      issues,
+      'perspective_guide_count_mismatch',
+      pack.manifest.packId,
+      `Expected ${pack.passages.length} perspective guides, found ${guides.length}.`,
+    )
+  }
+
+  for (const guide of guides) {
+    if (guideByPassageId.has(guide.passageId)) {
+      pushIssue(issues, 'perspective_guide_structure_invalid', guide.passageId, 'Perspective guides must not duplicate a passage ID.')
+      continue
+    }
+    guideByPassageId.set(guide.passageId, guide)
+    const passage = passageById.get(guide.passageId)
+    if (!passage) {
+      pushIssue(issues, 'missing_perspective_guide', guide.passageId, 'Every perspective guide must point to a real passage.')
+      continue
+    }
+
+    validatePerspectiveGuideAgainstPassage(pack, passage, guide, issues)
+  }
+
+  for (const passage of pack.passages) {
+    if (!guideByPassageId.has(passage.passageIdentifier)) {
+      pushIssue(issues, 'missing_perspective_guide', passage.passageIdentifier, 'Every passage needs exactly one perspective guide.')
+    }
+  }
+}
+
+function validatePerspectiveGuideAgainstPassage(
+  pack: ContentPack,
+  passage: ContentPack['passages'][number],
+  guide: NonNullable<ContentPack['perspectiveGuides']>[number],
+  issues: ContentPackAuditIssue[],
+) {
+  const sentenceIds = new Set((passage.sentences ?? []).map((sentence) => sentence.sentenceId))
+  const characters = guide.characters ?? []
+
+  if (!guide.sharedSituation || !guide.contrastSummary) {
+    pushIssue(issues, 'perspective_guide_structure_invalid', guide.passageId, 'Perspective guides need a shared situation and contrast summary.')
+  }
+  if (guide.narratorPointOfViewExcluded !== true) {
+    pushIssue(issues, 'perspective_guide_structure_invalid', guide.passageId, 'Perspective guides must exclude narrator point of view.')
+  }
+  if (characters.length !== 2) {
+    pushIssue(issues, 'perspective_guide_structure_invalid', guide.passageId, 'Perspective guides need exactly two focal characters.')
+  }
+
+  const characterIds = new Set<string>()
+  for (const character of characters) {
+    if (characterIds.has(character.characterId)) {
+      pushIssue(issues, 'perspective_guide_structure_invalid', guide.passageId, 'Perspective guide characters must have unique IDs.')
+      continue
+    }
+    characterIds.add(character.characterId)
+
+    if (!character.characterName || !character.perspectiveStatement) {
+      pushIssue(issues, 'perspective_guide_structure_invalid', guide.passageId, 'Each perspective guide character needs a name and a perspective statement.')
+    }
+    if (normalizePerspectiveGuideText(character.perspectiveStatement).split(' ').filter(Boolean).length < 4) {
+      pushIssue(issues, 'perspective_guide_structure_invalid', guide.passageId, 'Perspective statements should be complete thoughts.')
+    }
+    if (character.supportingSentenceIds.length < 2) {
+      pushIssue(issues, 'perspective_guide_structure_invalid', guide.passageId, 'Each perspective needs at least two supporting sentences.')
+    }
+    if (
+      character.wordsSentenceIds.length === 0
+      && character.actionSentenceIds.length === 0
+      && character.feelingSentenceIds.length === 0
+      && character.choiceSentenceIds.length === 0
+    ) {
+      pushIssue(issues, 'perspective_guide_structure_invalid', guide.passageId, 'Each perspective needs at least one evidence clue.')
+    }
+
+    for (const sentenceId of [
+      ...character.supportingSentenceIds,
+      ...character.wordsSentenceIds,
+      ...character.actionSentenceIds,
+      ...character.feelingSentenceIds,
+      ...character.choiceSentenceIds,
+    ]) {
+      if (!sentenceId || !sentenceIds.has(sentenceId)) {
+        pushIssue(issues, 'missing_support_sentence', guide.passageId, 'Perspective guide sentence IDs must resolve to the authored passage.')
+      }
+    }
+  }
+
+  if (guide.reviewStatus !== 'DRAFT') {
+    pushIssue(issues, 'missing_draft_status', guide.passageId, 'Perspective guides in this pack must remain DRAFT.')
+  }
+  if (guide.contentVersion !== pack.manifest.contentVersion) {
+    pushIssue(issues, 'mismatched_content_version', guide.passageId, 'Perspective guide content version must match the pack version.')
+  }
+}
+
+function normalizePerspectiveGuideText(text: string): string {
+  return text.trim().replace(/\s+/g, ' ').toLowerCase()
+}
+
 function normalizeThemeGuideText(text: string): string {
   return text.trim().replace(/\s+/g, ' ').toLowerCase()
 }
@@ -1067,6 +1176,41 @@ function getBridgePackExpectation(pack: ContentPack): BridgePackExpectation | nu
         'theme-supported-by-events',
         'theme-supported-by-outcome',
         'theme-supported-by-details',
+      ],
+      minSupportTargets: 28,
+      maxSupportTargets: 28,
+      minSupportTargetsPerPassage: 4,
+      maxSupportTargetsPerPassage: 4,
+      openConsonantLeWords: new Set(),
+      closedConsonantLeWords: new Set(),
+      forbiddenSilentEWords: new Set(),
+      questionTypeCounts: {
+        multiple_choice: 17,
+        multi_select: 7,
+        hot_text: 7,
+        table_match: 7,
+        two_part: 3,
+      },
+    }
+  }
+
+  if (!hasB && !hasC && pack.manifest.benchmarkReferences.includes('ELA.2.R.1.3') && minDifficulty === 2 && maxDifficulty === 3) {
+    return {
+      packId: pack.manifest.packId,
+      guidedDifficultyA: 2,
+      guidedDifficultyB: 3,
+      checkpointPatterns: [
+        'character-perspective-identification',
+        'different-character-perspectives',
+        'perspective-as-attitude',
+        'shared-event-different-views',
+        'perspective-from-words',
+        'perspective-from-actions',
+        'perspective-from-feelings',
+        'perspective-from-choices',
+        'perspective-from-noticing',
+        'perspective-supported-by-details',
+        'perspective-vs-narrator-point-of-view',
       ],
       minSupportTargets: 28,
       maxSupportTargets: 28,

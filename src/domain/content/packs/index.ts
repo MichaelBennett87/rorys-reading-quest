@@ -10,6 +10,7 @@ export * from './grade2/wordForge/silentLetterCombinations'
 export * from './grade2/wordForge/fluencyPracticeFoundations'
 export * from './grade2/storyScouts/plotStructureElements'
 export * from './grade2/storyScouts/themeTrail'
+export * from './grade2/storyScouts/perspectivePortal'
 export * from './registry'
 
 export const fluencyPracticeAudit = buildFluencyPracticeAudit(contentPacks)

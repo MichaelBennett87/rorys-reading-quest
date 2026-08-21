@@ -14,6 +14,7 @@ describe('grade 2 content pack registry', () => {
   test('registered packs aggregate into the existing content export without mutating source packs', () => {
     const packsSnapshot = structuredClone(contentPacks)
     const sampleSnapshot = structuredClone(sampleContent)
+    const activePacks = contentPacks.filter((pack) => pack.manifest.packId !== 'legacy-word-forge-development-pack')
 
     expect(new Set(contentPacks.map((pack) => pack.manifest.packId)).size).toBe(contentPacks.length)
     expect(contentPacks.map((pack) => pack.manifest.packId)).toEqual([
@@ -27,8 +28,14 @@ describe('grade 2 content pack registry', () => {
       'g2-word-forge-fluency-practice-foundations',
       'g2-story-scouts-plot-structure-elements',
       'g2-story-scouts-theme-trail',
+      'g2-story-scouts-perspective-portal',
       'legacy-word-forge-development-pack',
     ])
+    expect(activePacks).toHaveLength(11)
+    expect(activePacks.reduce((sum, pack) => sum + pack.lessons.length, 0)).toBe(77)
+    expect(activePacks.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(77)
+    expect(activePacks.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(438)
+    expect(activePacks.reduce((sum, pack) => sum + pack.passages.reduce((passageSum, passage) => passageSum + (passage.wordSupportTargets?.length ?? 0), 0), 0)).toBe(306)
     expect(contentPackAudit).toHaveLength(0)
     expect(benchmarkCoverageAudit).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.F.1.3a',
