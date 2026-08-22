@@ -12,6 +12,7 @@ import {
 import { getLessonById, getLessonCandidates } from '../src/domain/lesson'
 import { planUnitQuest } from '../src/domain/progression'
 import type { LessonActivityCandidate } from '../src/domain/progression'
+import { createInitialSkillProgress } from '../src/domain/progression'
 import { createActiveLessonSession, createDefaultQuestProgress } from '../src/persistence'
 
 const now = '2026-08-20T12:00:00.000Z'
@@ -102,7 +103,7 @@ describe('curriculum planning foundation', () => {
       'g2-poetry-planet',
     ])
     expect(curriculumTracks.find((track) => track.trackId === 'g2-story-scouts-prose')?.status).toBe('active')
-    expect(curriculumTracks.find((track) => track.trackId === 'g2-poetry-planet')?.status).toBe('planned_until_content_exists')
+    expect(curriculumTracks.find((track) => track.trackId === 'g2-poetry-planet')?.status).toBe('active')
     expect(new Set(curriculumTracks.map((track) => track.trackId)).size).toBe(curriculumTracks.length)
     expect(new Set(curriculumTracks.map((track) => track.skillId)).size).toBe(curriculumTracks.length)
   })
@@ -136,7 +137,11 @@ describe('curriculum planning foundation', () => {
       currentDifficulty: 1,
       lastMasteredDifficulty: 0,
     })
-    expect(result.state.skillProgress['g2-poetry-planet-poetry']).toBeUndefined()
+    expect(result.state.skillProgress['g2-poetry-planet-poetry']).toMatchObject({
+      skillId: 'g2-poetry-planet-poetry',
+      currentDifficulty: 1,
+      lastMasteredDifficulty: 0,
+    })
   })
 
   test('normalizes stale planned quests and preserves valid ones', () => {
@@ -313,6 +318,26 @@ describe('curriculum planning foundation', () => {
     }
   })
 
+  test('plans Poetry Planet through the selected unit when its track is playable', () => {
+    const poetryLesson = getLessonCandidates().find((lesson) => lesson.lessonId === 'g2-poetry-planet-rhyme-routes-lesson-checkpoint-a')!
+    const progress = ensureProgressForPlayableTracks(createDefaultQuestProgress(now), [poetryLesson]).state
+
+    progress.skillProgress['g2-poetry-planet-poetry'] = createInitialSkillProgress('g2-poetry-planet-poetry', 1, 0)
+
+    const plan = planUnitQuest({
+      selectedUnitId: 'pp-unit-1',
+      progress,
+      availableLessons: [poetryLesson],
+    })
+
+    expect(plan.status).toBe('available')
+    expect(plan.unitId).toBe('pp-unit-1')
+    if (plan.status === 'available') {
+      expect(plan.lesson.skillId).toBe('g2-poetry-planet-poetry')
+      expect(plan.lesson.lessonId).toBe('g2-poetry-planet-rhyme-routes-lesson-checkpoint-a')
+    }
+  })
+
   test('does not create playable progress for review-only or legacy tracks', () => {
     const progress = createDefaultQuestProgress(now)
     const result = normalizeQuestProgressForPlanning(progress, [
@@ -364,7 +389,7 @@ describe('curriculum planning foundation', () => {
     expect(result.changed).toBe(true)
     expect(result.state.skillProgress['g2-word-forge-word-practice']).toEqual(progress.skillProgress['g2-word-forge-word-practice'])
     expect(result.state.skillProgress['g2-story-scouts-prose']).toBeDefined()
-    expect(result.state.skillProgress['g2-poetry-planet-poetry']).toBeUndefined()
+    expect(result.state.skillProgress['g2-poetry-planet-poetry']).toBeDefined()
   })
 
   test('balances fresh progression across Word Forge and Story Scouts deterministically', () => {

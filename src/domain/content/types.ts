@@ -68,15 +68,36 @@ export interface Passage {
   passageIdentifier: string
   gradeBand: GradeBand
   passageText: string
+  contentKind?: 'prose' | 'poem'
   sentences?: {
     sentenceId: string
+    lineNumber?: number
+    stanzaId?: string
     text: string
   }[]
+  poemStructure?: PoemStructure
   readingContext: string
   sourceReference?: string
   contentVersion: string
   reviewStatus?: ContentReviewStatus
   wordSupportTargets?: WordSupportTarget[]
+}
+
+export interface PoemLine {
+  lineId: string
+  lineNumber: number
+  stanzaId: string
+  text: string
+}
+
+export interface PoemStanza {
+  stanzaId: string
+  lineIds: string[]
+}
+
+export interface PoemStructure {
+  lines: PoemLine[]
+  stanzas: PoemStanza[]
 }
 
 export interface WordSupportPart {

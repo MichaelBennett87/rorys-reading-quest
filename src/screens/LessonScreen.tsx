@@ -27,6 +27,7 @@ import { EvidencePairQuestion } from '../components/lesson/EvidencePairQuestion'
 import { TableMatchQuestion } from '../components/lesson/TableMatchQuestion'
 import { AnswerFeedback } from '../components/lesson/AnswerFeedback'
 import { PassageCard } from '../components/lesson/PassageCard'
+import { PoemCard } from '../components/lesson/PoemCard'
 import { LessonResults } from '../components/lesson/LessonResults'
 import { FluencyPracticeScreen } from './FluencyPracticeScreen'
 import { WordHelpPanel } from '../components/wordSupport'
@@ -205,33 +206,49 @@ export function LessonScreen({
     if (evidenceIds.length === 0) {
       return []
     }
+    const sentenceLookup = new Map(
+      currentPassage?.sentences?.map((sentence) => [sentence.sentenceId, sentence.text] as const) ?? [],
+    )
     if (currentQuestion.questionType === 'TABLE_MATCH') {
       return evidenceIds
         .map((id) => {
           const optionText = currentQuestion.rows
             .flatMap((row) => row.options)
             .find((option) => option.id === id)?.text
-          return optionText ? `${id}: ${optionText}` : undefined
+          const sentenceText = sentenceLookup.get(id)
+          return optionText ? `${id}: ${optionText}` : sentenceText ? `${id}: ${sentenceText}` : undefined
         })
         .filter((entry): entry is string => Boolean(entry))
     }
     if (currentQuestion.questionType === 'MULTISELECT' || currentQuestion.questionType === 'MULTIPLE_CHOICE') {
-      return currentQuestion.choices
-        .filter((choice) => evidenceIds.includes(choice.id))
-        .map((choice) => choice.text)
+      return [
+        ...currentQuestion.choices
+          .filter((choice) => evidenceIds.includes(choice.id))
+          .map((choice) => choice.text),
+        ...evidenceIds.map((id) => sentenceLookup.get(id)).filter((entry): entry is string => Boolean(entry)),
+      ]
     }
     if (currentQuestion.questionType === 'HOT_TEXT') {
-      return currentQuestion.segments
-        .filter((segment) => evidenceIds.includes(segment.id))
-        .map((segment) => segment.text)
+      return [
+        ...currentQuestion.segments
+          .filter((segment) => evidenceIds.includes(segment.id))
+          .map((segment) => segment.text),
+        ...evidenceIds.map((id) => sentenceLookup.get(id)).filter((entry): entry is string => Boolean(entry)),
+      ]
     }
     if (currentQuestion.questionType === 'EVIDENCE_PAIR') {
       const allChoices = [...currentQuestion.partAChoices, ...currentQuestion.partBChoices]
-      return allChoices
-        .filter((choice) => evidenceIds.includes(choice.id))
-        .map((choice) => choice.text)
+      return [
+        ...allChoices
+          .filter((choice) => evidenceIds.includes(choice.id))
+          .map((choice) => choice.text),
+        ...evidenceIds.map((id) => sentenceLookup.get(id)).filter((entry): entry is string => Boolean(entry)),
+      ]
     }
-    return evidenceIds
+    return evidenceIds.map((id) => {
+      const sentenceText = sentenceLookup.get(id)
+      return sentenceText ? `${id}: ${sentenceText}` : id
+    })
   })()
 
   const submissionReady = (() => {
@@ -462,14 +479,26 @@ export function LessonScreen({
         </section>
       ) : (
         <>
-          <PassageCard
-            passageText={currentPassage?.passageText ?? ''}
-            wordSupportTargets={passageTargets}
-            onOpenWordSupport={onOpenSupport}
-            visibleWordSupport
-            heading="Reading Passage"
-            evidenceSnippets={step === 'feedback' ? evidenceSnippets : []}
-          />
+          {currentPassage?.contentKind === 'poem' && currentPassage.poemStructure ? (
+            <PoemCard
+              poemText={currentPassage.passageText}
+              poemStructure={currentPassage.poemStructure}
+              wordSupportTargets={passageTargets}
+              onOpenWordSupport={onOpenSupport}
+              visibleWordSupport
+              heading="Reading Poem"
+              evidenceSnippets={step === 'feedback' ? evidenceSnippets : []}
+            />
+          ) : (
+            <PassageCard
+              passageText={currentPassage?.passageText ?? ''}
+              wordSupportTargets={passageTargets}
+              onOpenWordSupport={onOpenSupport}
+              visibleWordSupport
+              heading="Reading Passage"
+              evidenceSnippets={step === 'feedback' ? evidenceSnippets : []}
+            />
+          )}
           {activeSupportTarget && (
             <WordHelpPanel
               target={activeSupportTarget}

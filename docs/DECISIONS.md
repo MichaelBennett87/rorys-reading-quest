@@ -273,4 +273,9 @@
 ## 2026-08-21 - Phase 6D3 Perspective Portal Activation
 - Decision: Activate `ELA.2.R.1.3` and the Perspective Portal pack when the first Story Scouts perspective pack is registered, while keeping Poetry Planet planned.
 - Reason: Phase 6D3 is the first active Story Scouts perspective-authoring phase and needs bounded character-perspective practice with unit-affine review scheduling across all Story Scouts units.
-- Consequence: Story Scouts continues to use one skill track with separate Story Map, Theme Trail, and Perspective Portal review content, and later poetry content can land without stealing one another's reviews.
+- Consequence: Story Scouts continues to use one skill track with separate Story Map, Theme Trail, and Perspective Portal review content, and later poetry content can land without stealing one another’s reviews.
+
+## 2026-08-22 - Phase 6D4 Poetry Planet Activation
+- Decision: Activate `ELA.2.R.1.4` and the Rhyme Routes pack when the first Poetry Planet pack is registered, while keeping later Grade 2 informational and vocabulary phases planned.
+- Reason: Phase 6D4 is the first active Poetry Planet rhyme-scheme phase and needs bounded end-rhyme practice with unit-affine review scheduling alongside the existing Story Scouts tracks.
+- Consequence: Poetry Planet becomes an active independent track with its own review content, Story Scouts review isolation remains intact, and later Grade 2 bridge phases stay deferred.

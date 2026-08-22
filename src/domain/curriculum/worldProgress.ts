@@ -1,4 +1,4 @@
-import type { DemoUnit, DemoWorld, UnitState, WorldStatus } from '../../data/demoWorlds'
+import type { DemoUnit, DemoWorld, UnitState } from '../../data/demoWorlds'
 import { getLessonCatalogMetadata } from '../lesson'
 import type { LessonActivityCandidate, SkillProgressState } from '../progression'
 import { createInitialSkillProgress } from '../progression'
@@ -27,7 +27,7 @@ export function deriveWorldsForProgress(
       return deriveStoryScoutsWorld(world, skillProgress, activeUnitId, plannedUnitId, playableTrackIds)
     }
     if (world.id === 'poetry-planet') {
-      return deriveTrackWorld(world, skillProgress, playableTrackIds)
+      return derivePoetryPlanetWorld(world, skillProgress, activeUnitId, plannedUnitId, playableTrackIds)
     }
     return deriveNonPlayableWorld(world)
   })
@@ -63,9 +63,11 @@ function deriveWordForgeWorld(
   }
 }
 
-function deriveTrackWorld(
+function derivePoetryPlanetWorld(
   world: DemoWorld,
   skillProgress: QuestProgressV1['skillProgress'],
+  activeUnitId: string | null,
+  plannedUnitId: string | null,
   playableTrackIds: Set<string>,
 ): DemoWorld {
   const track = getTrackByWorldId(world.id)
@@ -74,22 +76,26 @@ function deriveTrackWorld(
     ? skillProgress[track.skillId] ?? createInitialSkillProgress(track.skillId, track.initialDifficulty, track.initialLastMasteredDifficulty)
     : null
   const currentDifficulty = progress?.currentDifficulty ?? 1
-  const status: WorldStatus = playable ? 'available' : 'coming-later'
-  const units = world.units.map((unit, index) => {
-    const unitState: UnitState = playable && index === 0 ? 'available' : 'locked'
-    return {
-      ...unit,
-      state: unitState,
-      difficultyLabel: playable && index === 0 ? `Trail ${currentDifficulty}` : 'Locked',
-      progressPercent: playable && index === 0 ? 50 : 0,
-      stars: playable && index === 0 ? 1 : 0,
-    }
+  const currentLearningState = progress?.currentLearningState ?? null
+  const poetryRoutesActive = activeUnitId === 'pp-unit-1' || plannedUnitId === 'pp-unit-1'
+  const units = world.units.map((unit) => {
+    if (unit.id !== 'pp-unit-1') return { ...unit }
+    return deriveRhymeRoutesUnit(unit, currentDifficulty, currentLearningState, poetryRoutesActive)
   })
+
   return {
     ...world,
-    status,
-    progressionLabel: playable ? `Trail ${currentDifficulty} active` : `${world.name} quests are being prepared.`,
-    currentProgress: playable ? Math.min(100, currentDifficulty * 10) : 0,
+    status: playable ? 'available' : 'coming-later',
+    progressionLabel: playable
+      ? currentDifficulty >= 2
+        ? currentLearningState === 'SPACED_REVIEW'
+          ? 'Rhyme Routes review available'
+          : 'Rhyme Routes complete'
+        : currentDifficulty === 1
+          ? 'Rhyme Routes active'
+          : 'Rhyme Routes Building Block active'
+      : 'Poetry Planet quests are being prepared.',
+    currentProgress: playable ? Math.min(100, Math.max(0, currentDifficulty) * 25 + 25) : 0,
     units,
   }
 }
@@ -225,6 +231,42 @@ function derivePerspectivePortalUnit(
         : state === 'review'
           ? 'Review character perspective clues and supporting details.'
           : 'Perspective Portal quests are complete. Poetry Planet quests are being prepared.',
+  }
+}
+
+function deriveRhymeRoutesUnit(
+  unit: DemoUnit,
+  currentDifficulty: number,
+  currentLearningState: SkillProgressState['currentLearningState'] | null,
+  activeOrPlanned: boolean,
+): DemoUnit {
+  const state: UnitState = currentDifficulty < 2
+    ? 'available'
+    : currentDifficulty >= 2
+      ? (currentLearningState === 'SPACED_REVIEW' ? 'review' : 'complete')
+      : 'locked'
+
+  return {
+    ...unit,
+    state,
+    difficultyLabel: currentDifficulty <= 0
+      ? 'Building Block'
+      : currentDifficulty === 1
+        ? 'Trail 1'
+        : state === 'review'
+          ? 'Review'
+          : 'Complete',
+    progressPercent: currentDifficulty <= 0 ? 25 : currentDifficulty === 1 ? 50 : 100,
+    stars: currentDifficulty <= 0 ? 0 : currentDifficulty === 1 ? 1 : 3,
+    practiceFocus: currentDifficulty <= 0
+      ? 'end rhymes and line endings'
+      : currentDifficulty === 1
+        ? activeOrPlanned
+          ? 'Rhyme Routes quests are ready to resume.'
+          : 'line-end words, rhyme letters, and poem patterns'
+        : state === 'review'
+          ? 'Review rhyme letters and line-end clues.'
+          : 'Rhyme Routes quests are complete. More poetry quests are being prepared.',
   }
 }
 

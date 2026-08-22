@@ -95,6 +95,46 @@ main {
   font-size: 1.05rem;
 }
 
+.poem-structure {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.poem-stanza {
+  display: grid;
+  gap: 0.3rem;
+  padding: 0.35rem 0;
+}
+
+.poem-line {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 0.6rem;
+  align-items: start;
+}
+
+.poem-line-number {
+  color: var(--text-soft);
+  font-weight: 700;
+  text-align: right;
+  min-width: 2rem;
+}
+
+.poem-line-text {
+  margin: 0;
+  line-height: 1.8;
+  font-size: 1.06rem;
+  overflow-wrap: anywhere;
+}
+
+.poem-card {
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.supported-text {
+  display: inline;
+}
+
 .evidence-snippet {
   margin-bottom: 0.35rem;
   padding: 0.45rem 0.55rem;

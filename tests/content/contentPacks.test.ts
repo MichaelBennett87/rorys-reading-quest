@@ -29,13 +29,14 @@ describe('grade 2 content pack registry', () => {
       'g2-story-scouts-plot-structure-elements',
       'g2-story-scouts-theme-trail',
       'g2-story-scouts-perspective-portal',
+      'g2-poetry-planet-rhyme-routes',
       'legacy-word-forge-development-pack',
     ])
-    expect(activePacks).toHaveLength(11)
-    expect(activePacks.reduce((sum, pack) => sum + pack.lessons.length, 0)).toBe(77)
-    expect(activePacks.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(77)
-    expect(activePacks.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(438)
-    expect(activePacks.reduce((sum, pack) => sum + pack.passages.reduce((passageSum, passage) => passageSum + (passage.wordSupportTargets?.length ?? 0), 0), 0)).toBe(306)
+    expect(activePacks).toHaveLength(12)
+    expect(activePacks.reduce((sum, pack) => sum + pack.lessons.length, 0)).toBe(84)
+    expect(activePacks.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(84)
+    expect(activePacks.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(479)
+    expect(activePacks.reduce((sum, pack) => sum + pack.passages.reduce((passageSum, passage) => passageSum + (passage.wordSupportTargets?.length ?? 0), 0), 0)).toBe(334)
     expect(contentPackAudit).toHaveLength(0)
     expect(benchmarkCoverageAudit).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.F.1.3a',
@@ -76,6 +77,15 @@ describe('grade 2 content pack registry', () => {
       coveredPatterns: ['plot-structure', 'setting', 'characters', 'sequence-of-events'],
       missingPatterns: [],
       contributingPackIds: ['g2-story-scouts-plot-structure-elements'],
+      coverageStatus: 'implemented',
+      reviewStatus: 'DRAFT',
+    }))
+    expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.1.4')).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.2.R.1.4',
+      expectedPatterns: ['rhyme-scheme-identification', 'rhyme-scheme-notation'],
+      coveredPatterns: ['rhyme-scheme-identification', 'rhyme-scheme-notation'],
+      missingPatterns: [],
+      contributingPackIds: ['g2-poetry-planet-rhyme-routes'],
       coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',
     }))
@@ -163,6 +173,15 @@ describe('grade 2 content pack registry', () => {
     const result = getLessonForUnit('ss-unit-1')
 
     expect(result.lesson?.lessonId).toBe('g2-story-scouts-plot-structure-elements-lesson-checkpoint-a')
+    expect(result.lesson?.lessonRole).toBe('CHECKPOINT')
+    expect(result.lesson?.selectionStatus).toBe('active')
+    expect(result.lesson?.questionCount).toBe(7)
+  })
+
+  test('the poetry planet unit resolves to the rhyme routes checkpoint lesson', () => {
+    const result = getLessonForUnit('pp-unit-1')
+
+    expect(result.lesson?.lessonId).toBe('g2-poetry-planet-rhyme-routes-lesson-checkpoint-a')
     expect(result.lesson?.lessonRole).toBe('CHECKPOINT')
     expect(result.lesson?.selectionStatus).toBe('active')
     expect(result.lesson?.questionCount).toBe(7)

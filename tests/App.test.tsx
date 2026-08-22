@@ -64,7 +64,7 @@ const getSingleByRole = (
 const getWordForgeCard = () => getSingleByRole('button', /Word Forge world - Available/i)
 const getStoryScoutsCard = () => getSingleByRole('button', /Story Scouts world - Available/i)
 const getLockedCard = () => getSingleByRole('button', /Context Cavern world - Locked/i)
-const getPoetryCard = () => getSingleByRole('button', /Poetry Planet world - Coming Later/i)
+const getPoetryCard = () => getSingleByRole('button', /Poetry Planet world - Available/i)
 const getContinueButton = () => getSingleByRole('button', /Continue Quest/i)
 const getOpenParentButton = () => getSingleByRole('button', /Grown-Up Area/i)
 
@@ -89,7 +89,7 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getAllByRole('button', { name: /Word Forge world - Available/i })).toHaveLength(1)
     expect(screen.getAllByRole('button', { name: /Story Scouts world - Available/i })).toHaveLength(1)
     expect(screen.getAllByRole('button', { name: /Information Detectives world - Coming Later/i })).toHaveLength(1)
-    expect(screen.getAllByRole('button', { name: /Poetry Planet world - Coming Later/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Poetry Planet world - Available/i })).toHaveLength(1)
   })
 
   test('shows Word Forge as available world', () => {
@@ -132,6 +132,14 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getByText(/Skills trained/i)).toBeTruthy()
   })
 
+  test('opens world screen from Poetry Planet', () => {
+    render(<App />)
+
+    fireEvent.click(getPoetryCard())
+    expect(screen.getAllByRole('heading', { name: /^Poetry Planet$/i })).toHaveLength(1)
+    expect(screen.getByText(/Skills trained/i)).toBeTruthy()
+  })
+
   test('renders unit cards in unit selection', () => {
     render(<App />)
 
@@ -153,6 +161,16 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getAllByRole('button', { name: /Story Map Available/i })).toHaveLength(1)
     expect(screen.getAllByRole('button', { name: /Theme Trail Locked/i })).toHaveLength(1)
     expect(screen.getAllByRole('button', { name: /Perspective Portal Locked/i })).toHaveLength(1)
+  })
+
+  test('renders poetry planet unit cards in unit selection', () => {
+    render(<App />)
+
+    fireEvent.click(getPoetryCard())
+    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
+    expect(screen.getAllByRole('heading', { name: /Poetry Planet: Unit Selection/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Rhyme Routes Available/i })).toHaveLength(1)
+    expect(within(screen.getByRole('button', { name: /Rhyme Routes Available/i })).getByText(/Trail 1/i)).toBeTruthy()
   })
 
   test('shows Trail 4 Syllable Summit when the current difficulty reaches 4', async () => {
@@ -502,10 +520,10 @@ describe('Phase 2 lesson flow and child shell', () => {
   test('locks unavailable worlds with non-available state', () => {
     render(<App />)
 
-    const comingSoon = getPoetryCard()
     const locked = getLockedCard()
+    const comingSoon = getSingleByRole('button', /Information Detectives world - Coming Later/i)
 
-    expect(comingSoon.getAttribute('disabled')).not.toBeNull()
     expect(locked.getAttribute('disabled')).not.toBeNull()
+    expect(comingSoon.getAttribute('disabled')).not.toBeNull()
   })
 })

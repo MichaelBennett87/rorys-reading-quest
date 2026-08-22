@@ -74,6 +74,10 @@ export function validateContent(sample: ContentSample): ContentValidationError[]
         errors.push(...targetErrors)
       }
     }
+
+    if (passage.contentKind === 'poem') {
+      validatePoemStructure(passage, errors)
+    }
   }
 
   for (const question of sample.questions) {
@@ -439,6 +443,10 @@ function normalizeWord(text: string): string {
     .trim()
 }
 
+function normalizePoemText(text: string): string {
+  return text.replace(/\r\n?/g, '\n').trim()
+}
+
 function concatDisplayParts(parts: { text: string }[]): string {
   return parts.map((part) => part.text).join('')
 }
@@ -447,6 +455,99 @@ function normalizeChunks(chunks: WordSupportChunk[]): string {
   return chunks
     .map((chunk) => chunk.displayText ?? '')
     .join('')
+}
+
+function validatePoemStructure(
+  passage: ContentSample['passages'][number],
+  errors: ContentValidationError[],
+) {
+  const structure = passage.poemStructure
+  if (!structure) {
+    withError(errors, 'invalid_support_metadata', passage.passageIdentifier, 'Poem passages require poemStructure.')
+    return
+  }
+
+  const lines = structure.lines ?? []
+  const stanzas = structure.stanzas ?? []
+  if (lines.length < 4 || lines.length > 8) {
+    withError(errors, 'invalid_support_metadata', passage.passageIdentifier, 'Poem passages must contain 4 to 8 lines.')
+  }
+  if (stanzas.length < 1 || stanzas.length > 2) {
+    withError(errors, 'invalid_support_metadata', passage.passageIdentifier, 'Poem passages must contain 1 or 2 stanzas.')
+  }
+
+  const sentenceById = new Map((passage.sentences ?? []).map((sentence) => [sentence.sentenceId, sentence] as const))
+  const stanzaById = new Map<string, { stanzaId: string; lineIds: string[] }>()
+  const seenLineIds = new Set<string>()
+  const expectedText = normalizePoemText(lines.map((line) => line.text).join('\n'))
+  const actualText = normalizePoemText(passage.passageText)
+
+  if (expectedText !== actualText) {
+    withError(errors, 'invalid_support_metadata', passage.passageIdentifier, 'Poem passage text must match the authored line structure.')
+  }
+
+  for (const stanza of stanzas) {
+    if (!stanza.stanzaId.trim()) {
+      withError(errors, 'invalid_support_metadata', passage.passageIdentifier, 'Poem stanza identifiers are required.')
+      continue
+    }
+    if (stanzaById.has(stanza.stanzaId)) {
+      withError(errors, 'invalid_support_metadata', passage.passageIdentifier, 'Poem stanza identifiers must be unique.')
+      continue
+    }
+    stanzaById.set(stanza.stanzaId, stanza)
+    if (!Array.isArray(stanza.lineIds) || stanza.lineIds.length === 0) {
+      withError(errors, 'invalid_support_metadata', passage.passageIdentifier, 'Each poem stanza must reference at least one line.')
+      continue
+    }
+    if (new Set(stanza.lineIds).size !== stanza.lineIds.length) {
+      withError(errors, 'invalid_support_metadata', passage.passageIdentifier, 'Poem stanzas must not repeat line IDs.')
+    }
+    for (const lineId of stanza.lineIds) {
+      const line = lines.find((candidate) => candidate.lineId === lineId)
+      if (!line) {
+        withError(errors, 'invalid_support_metadata', passage.passageIdentifier, 'Poem stanza line IDs must resolve to authored lines.')
+        continue
+      }
+      if (line.stanzaId !== stanza.stanzaId) {
+        withError(errors, 'invalid_support_metadata', passage.passageIdentifier, 'Poem line stanza IDs must match their stanza.')
+      }
+    }
+  }
+
+  for (let index = 0; index < lines.length; index += 1) {
+    const line = lines[index]
+    const sentence = sentenceById.get(line.lineId)
+
+    if (!line.lineId.trim()) {
+      withError(errors, 'invalid_support_metadata', passage.passageIdentifier, 'Poem line identifiers are required.')
+      continue
+    }
+    if (seenLineIds.has(line.lineId)) {
+      withError(errors, 'invalid_support_metadata', passage.passageIdentifier, 'Poem line identifiers must be unique.')
+    } else {
+      seenLineIds.add(line.lineId)
+    }
+    if (line.lineNumber !== index + 1) {
+      withError(errors, 'invalid_support_metadata', passage.passageIdentifier, 'Poem line numbers must be contiguous starting at 1.')
+    }
+    if (!line.stanzaId.trim() || !stanzaById.has(line.stanzaId)) {
+      withError(errors, 'invalid_support_metadata', passage.passageIdentifier, 'Poem lines must belong to a real stanza.')
+    }
+    if (!sentence) {
+      withError(errors, 'invalid_support_metadata', passage.passageIdentifier, 'Poem line IDs must resolve to passage sentences.')
+      continue
+    }
+    if (sentence.text !== line.text) {
+      withError(errors, 'invalid_support_metadata', passage.passageIdentifier, 'Poem sentences must match their authored lines.')
+    }
+    if (sentence.lineNumber !== line.lineNumber) {
+      withError(errors, 'invalid_support_metadata', passage.passageIdentifier, 'Poem sentence line numbers must match the poem structure.')
+    }
+    if (sentence.stanzaId !== line.stanzaId) {
+      withError(errors, 'invalid_support_metadata', passage.passageIdentifier, 'Poem sentence stanza IDs must match the poem structure.')
+    }
+  }
 }
 
 function validateSupportTarget(

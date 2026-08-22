@@ -583,6 +583,9 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
     if (pack.manifest.benchmarkReferences.includes('ELA.2.R.1.3')) {
       validatePerspectivePortalGuideStructure(pack, issues)
     }
+    if (pack.manifest.benchmarkReferences.includes('ELA.2.R.1.4')) {
+      validatePoetryPlanetGuideStructure(pack, issues)
+    }
   }
 }
 
@@ -980,6 +983,263 @@ function validatePerspectiveGuideAgainstPassage(
   }
 }
 
+function validatePoetryPlanetGuideStructure(pack: ContentPack, issues: ContentPackAuditIssue[]) {
+  const passages = pack.passages
+  const rhymeGuides = pack.rhymeSchemeGuides ?? []
+  const passageById = new Map(passages.map((passage) => [passage.passageIdentifier, passage] as const))
+  const guideByPassageId = new Map<string, NonNullable<ContentPack['rhymeSchemeGuides']>[number]>()
+  const observedTags = new Set(pack.questions.flatMap((question) => question.tags ?? []))
+  const requiredDetailedPatterns = [
+    'line-end-word-identification',
+    'end-rhyme-identification',
+    'rhyme-by-sound',
+    'notation-starts-with-a',
+    'same-rhyme-same-letter',
+    'new-rhyme-next-letter',
+    'uppercase-rhyme-labels',
+    'whole-poem-scheme',
+    'scheme-supported-by-end-words',
+  ]
+  const forbiddenTags = [
+    'poem-type-identification',
+    'free-verse',
+    'haiku',
+    'limerick',
+    'meter',
+    'poetic-rhythm-analysis',
+    'figurative-language-analysis',
+    'rhyme-creates-meaning',
+    'poetry-theme-analysis',
+  ]
+
+  if (passages.length !== 7) {
+    pushIssue(issues, 'poem_structure_invalid', pack.manifest.packId, `Expected 7 poem passages, found ${passages.length}.`)
+  }
+  if (rhymeGuides.length !== passages.length) {
+    pushIssue(
+      issues,
+      'rhyme_scheme_guide_count_mismatch',
+      pack.manifest.packId,
+      `Expected ${passages.length} rhyme scheme guides, found ${rhymeGuides.length}.`,
+    )
+  }
+
+  for (const passage of passages) {
+    if (passage.contentKind !== 'poem') {
+      pushIssue(issues, 'missing_poem_structure', passage.passageIdentifier, 'Poetry passages must use poem contentKind.')
+    }
+    validatePoetryPassageStructure(pack, passage, issues)
+  }
+
+  for (const guide of rhymeGuides) {
+    if (guideByPassageId.has(guide.passageId)) {
+      pushIssue(issues, 'rhyme_scheme_guide_invalid', guide.passageId, 'Rhyme scheme guides must not duplicate a passage ID.')
+      continue
+    }
+    guideByPassageId.set(guide.passageId, guide)
+    const passage = passageById.get(guide.passageId)
+    if (!passage) {
+      pushIssue(issues, 'missing_rhyme_scheme_guide', guide.passageId, 'Every rhyme scheme guide must point to a real poem.')
+      continue
+    }
+
+    validateRhymeSchemeGuideAgainstPassage(pack, passage, guide, issues)
+  }
+
+  for (const passage of passages) {
+    if (!guideByPassageId.has(passage.passageIdentifier)) {
+      pushIssue(issues, 'missing_rhyme_scheme_guide', passage.passageIdentifier, 'Every poem needs exactly one rhyme scheme guide.')
+    }
+  }
+
+  for (const requiredPattern of requiredDetailedPatterns) {
+    if (!observedTags.has(requiredPattern)) {
+      pushIssue(issues, 'missing_target_pattern_coverage', pack.manifest.packId, `Poetry pack must include ${requiredPattern.replaceAll('-', ' ')} coverage.`)
+    }
+  }
+
+  for (const forbiddenTag of forbiddenTags) {
+    if (observedTags.has(forbiddenTag)) {
+      pushIssue(issues, 'missing_target_pattern_coverage', pack.manifest.packId, `Poetry pack must not include ${forbiddenTag.replaceAll('-', ' ')} tags.`)
+    }
+  }
+}
+
+function validatePoetryPassageStructure(
+  _pack: ContentPack,
+  passage: ContentPack['passages'][number],
+  issues: ContentPackAuditIssue[],
+) {
+  const structure = passage.poemStructure
+  if (!structure) {
+    pushIssue(issues, 'missing_poem_structure', passage.passageIdentifier, 'Poem passages require poemStructure.')
+    return
+  }
+
+  const lines = structure.lines ?? []
+  const stanzas = structure.stanzas ?? []
+  if (lines.length < 4 || lines.length > 8) {
+    pushIssue(issues, 'poem_structure_invalid', passage.passageIdentifier, 'Poem passages must contain 4 to 8 lines.')
+  }
+  if (stanzas.length < 1 || stanzas.length > 2) {
+    pushIssue(issues, 'poem_structure_invalid', passage.passageIdentifier, 'Poem passages must contain 1 or 2 stanzas.')
+  }
+
+  const sentenceById = new Map((passage.sentences ?? []).map((sentence) => [sentence.sentenceId, sentence] as const))
+  const stanzaById = new Map<string, { stanzaId: string; lineIds: string[] }>()
+  const seenLineIds = new Set<string>()
+  const expectedText = normalizePoetryText(lines.map((line) => line.text).join('\n'))
+  const actualText = normalizePoetryText(passage.passageText)
+
+  if (expectedText !== actualText) {
+    pushIssue(issues, 'poem_structure_invalid', passage.passageIdentifier, 'Poem passage text must match the authored line structure.')
+  }
+
+  for (const stanza of stanzas) {
+    if (!stanza.stanzaId.trim()) {
+      pushIssue(issues, 'poem_structure_invalid', passage.passageIdentifier, 'Poem stanza identifiers are required.')
+      continue
+    }
+    if (stanzaById.has(stanza.stanzaId)) {
+      pushIssue(issues, 'poem_structure_invalid', passage.passageIdentifier, 'Poem stanza identifiers must be unique.')
+      continue
+    }
+    stanzaById.set(stanza.stanzaId, stanza)
+    if (!Array.isArray(stanza.lineIds) || stanza.lineIds.length === 0) {
+      pushIssue(issues, 'poem_structure_invalid', passage.passageIdentifier, 'Each poem stanza must reference at least one line.')
+      continue
+    }
+    if (new Set(stanza.lineIds).size !== stanza.lineIds.length) {
+      pushIssue(issues, 'poem_structure_invalid', passage.passageIdentifier, 'Poem stanzas must not repeat line IDs.')
+    }
+    for (const lineId of stanza.lineIds) {
+      const line = lines.find((candidate) => candidate.lineId === lineId)
+      if (!line) {
+        pushIssue(issues, 'poem_structure_invalid', passage.passageIdentifier, 'Poem stanza line IDs must resolve to authored lines.')
+        continue
+      }
+      if (line.stanzaId !== stanza.stanzaId) {
+        pushIssue(issues, 'poem_structure_invalid', passage.passageIdentifier, 'Poem line stanza IDs must match their stanza.')
+      }
+    }
+  }
+
+  for (let index = 0; index < lines.length; index += 1) {
+    const line = lines[index]
+    const sentence = sentenceById.get(line.lineId)
+
+    if (!line.lineId.trim()) {
+      pushIssue(issues, 'poem_structure_invalid', passage.passageIdentifier, 'Poem line identifiers are required.')
+      continue
+    }
+    if (seenLineIds.has(line.lineId)) {
+      pushIssue(issues, 'poem_structure_invalid', passage.passageIdentifier, 'Poem line identifiers must be unique.')
+    } else {
+      seenLineIds.add(line.lineId)
+    }
+    if (line.lineNumber !== index + 1) {
+      pushIssue(issues, 'poem_structure_invalid', passage.passageIdentifier, 'Poem line numbers must be contiguous starting at 1.')
+    }
+    if (!line.stanzaId.trim() || !stanzaById.has(line.stanzaId)) {
+      pushIssue(issues, 'poem_structure_invalid', passage.passageIdentifier, 'Poem lines must belong to a real stanza.')
+    }
+    if (!sentence) {
+      pushIssue(issues, 'poem_structure_invalid', passage.passageIdentifier, 'Poem line IDs must resolve to passage sentences.')
+      continue
+    }
+    if (sentence.text !== line.text) {
+      pushIssue(issues, 'poem_structure_invalid', passage.passageIdentifier, 'Poem sentences must match their authored lines.')
+    }
+    if (sentence.lineNumber !== line.lineNumber) {
+      pushIssue(issues, 'poem_structure_invalid', passage.passageIdentifier, 'Poem sentence line numbers must match the poem structure.')
+    }
+    if (sentence.stanzaId !== line.stanzaId) {
+      pushIssue(issues, 'poem_structure_invalid', passage.passageIdentifier, 'Poem sentence stanza IDs must match the poem structure.')
+    }
+  }
+}
+
+function validateRhymeSchemeGuideAgainstPassage(
+  pack: ContentPack,
+  passage: ContentPack['passages'][number],
+  guide: NonNullable<ContentPack['rhymeSchemeGuides']>[number],
+  issues: ContentPackAuditIssue[],
+) {
+  const lines = passage.poemStructure?.lines ?? []
+  const linesById = new Map(lines.map((line) => [line.lineId, line] as const))
+  const lineIds = new Set(lines.map((line) => line.lineId))
+  const schemeLabels: string[] = []
+  const rhymeKeyToLabel = new Map<string, string>()
+  const labelToRhymeKey = new Map<string, string>()
+  let expectedLetterIndex = 0
+
+  if (guide.reviewStatus !== 'DRAFT') {
+    pushIssue(issues, 'rhyme_scheme_guide_invalid', guide.passageId, 'Rhyme scheme guides in this pack must remain DRAFT.')
+  }
+  if (guide.contentVersion !== pack.manifest.contentVersion) {
+    pushIssue(issues, 'rhyme_scheme_guide_invalid', guide.passageId, 'Rhyme scheme guide content version must match the pack version.')
+  }
+  if (!guide.scheme.trim()) {
+    pushIssue(issues, 'rhyme_scheme_guide_invalid', guide.passageId, 'Rhyme scheme guides need a scheme string.')
+  }
+  if (guide.lines.length !== lines.length) {
+    pushIssue(issues, 'rhyme_scheme_guide_invalid', guide.passageId, 'Rhyme scheme guides must include every poem line exactly once.')
+  }
+
+  const guideLineIds = new Set<string>()
+  for (const guideLine of guide.lines) {
+    const line = linesById.get(guideLine.lineId)
+    if (!guideLine.lineId.trim() || guideLineIds.has(guideLine.lineId)) {
+      pushIssue(issues, 'rhyme_scheme_guide_invalid', guide.passageId, 'Rhyme scheme guide line IDs must be unique.')
+      continue
+    }
+    guideLineIds.add(guideLine.lineId)
+    if (!line || !lineIds.has(guideLine.lineId)) {
+      pushIssue(issues, 'rhyme_scheme_guide_invalid', guide.passageId, 'Rhyme scheme guide line IDs must resolve to authored poem lines.')
+      continue
+    }
+    if (guideLine.endWord.trim().toLowerCase() !== extractPoetryEndWord(line.text).toLowerCase()) {
+      pushIssue(issues, 'rhyme_scheme_guide_invalid', guide.passageId, 'Rhyme scheme guide end words must match the authored poem lines.')
+    }
+    if (!/^[A-Z]$/.test(guideLine.rhymeLabel)) {
+      pushIssue(issues, 'rhyme_scheme_guide_invalid', guide.passageId, 'Rhyme scheme labels must be single uppercase letters.')
+    }
+    const existingLabel = rhymeKeyToLabel.get(guideLine.rhymeKey)
+    if (!existingLabel) {
+      const expectedLabel = String.fromCharCode(65 + expectedLetterIndex)
+      if (guideLine.rhymeLabel !== expectedLabel) {
+        pushIssue(issues, 'rhyme_scheme_guide_invalid', guide.passageId, 'New rhyme keys must receive the next unused uppercase letter.')
+      } else {
+        expectedLetterIndex += 1
+      }
+      rhymeKeyToLabel.set(guideLine.rhymeKey, guideLine.rhymeLabel)
+    } else if (existingLabel !== guideLine.rhymeLabel) {
+      pushIssue(issues, 'rhyme_scheme_guide_invalid', guide.passageId, 'Repeated rhyme keys must reuse the same letter.')
+    }
+    if (labelToRhymeKey.has(guideLine.rhymeLabel) && labelToRhymeKey.get(guideLine.rhymeLabel) !== guideLine.rhymeKey) {
+      pushIssue(issues, 'rhyme_scheme_guide_invalid', guide.passageId, 'Different rhyme keys must not share the same letter.')
+    }
+    labelToRhymeKey.set(guideLine.rhymeLabel, guideLine.rhymeKey)
+    schemeLabels.push(guideLine.rhymeLabel)
+  }
+
+  if (guide.scheme !== schemeLabels.join('')) {
+    pushIssue(issues, 'rhyme_scheme_guide_invalid', guide.passageId, 'Rhyme scheme text must match the line labels.')
+  }
+  if (!guide.lines.length || guide.lines[0]?.rhymeLabel !== 'A') {
+    pushIssue(issues, 'rhyme_scheme_guide_invalid', guide.passageId, 'Rhyme schemes must begin with A.')
+  }
+}
+
+function normalizePoetryText(text: string): string {
+  return text.replace(/\r\n?/g, '\n').trim()
+}
+
+function extractPoetryEndWord(text: string): string {
+  const words = text.trim().match(/[A-Za-z0-9']+/g)
+  return words?.at(-1) ?? ''
+}
+
 function normalizePerspectiveGuideText(text: string): string {
   return text.trim().replace(/\s+/g, ' ').toLowerCase()
 }
@@ -1156,6 +1416,32 @@ function getBridgePackExpectation(pack: ContentPack): BridgePackExpectation | nu
         multi_select: 7,
         hot_text: 7,
         table_match: 7,
+      },
+    }
+  }
+
+  if (!hasB && !hasC && pack.manifest.benchmarkReferences.includes('ELA.2.R.1.4') && minDifficulty === 0 && maxDifficulty === 1) {
+    return {
+      packId: pack.manifest.packId,
+      guidedDifficultyA: 0,
+      guidedDifficultyB: 1,
+      checkpointPatterns: [
+        'rhyme-scheme-identification',
+        'rhyme-scheme-notation',
+      ],
+      minSupportTargets: 28,
+      maxSupportTargets: 28,
+      minSupportTargetsPerPassage: 4,
+      maxSupportTargetsPerPassage: 4,
+      openConsonantLeWords: new Set(),
+      closedConsonantLeWords: new Set(),
+      forbiddenSilentEWords: new Set(),
+      questionTypeCounts: {
+        multiple_choice: 17,
+        multi_select: 7,
+        hot_text: 7,
+        table_match: 7,
+        two_part: 3,
       },
     }
   }

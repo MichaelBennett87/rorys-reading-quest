@@ -37,6 +37,21 @@ export interface PerspectiveGuide {
   contentVersion: string
 }
 
+export interface RhymeSchemeLineGuide {
+  lineId: string
+  endWord: string
+  rhymeKey: string
+  rhymeLabel: string
+}
+
+export interface RhymeSchemeGuide {
+  passageId: string
+  scheme: string
+  lines: RhymeSchemeLineGuide[]
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
 export interface ContentPackManifest {
   packId: string
   packTitle: string
@@ -83,6 +98,7 @@ export interface ContentPack {
   lessons: ContentPackLesson[]
   themeGuides?: ThemeGuide[]
   perspectiveGuides?: PerspectiveGuide[]
+  rhymeSchemeGuides?: RhymeSchemeGuide[]
 }
 
 export interface ContentPackAuditIssue {
@@ -133,6 +149,11 @@ export interface ContentPackAuditIssue {
   | 'missing_perspective_guide'
   | 'perspective_guide_count_mismatch'
   | 'perspective_guide_structure_invalid'
+  | 'missing_poem_structure'
+  | 'poem_structure_invalid'
+  | 'missing_rhyme_scheme_guide'
+  | 'rhyme_scheme_guide_count_mismatch'
+  | 'rhyme_scheme_guide_invalid'
   message: string
   itemIdentifier: string
 }

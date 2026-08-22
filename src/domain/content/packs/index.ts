@@ -11,6 +11,7 @@ export * from './grade2/wordForge/fluencyPracticeFoundations'
 export * from './grade2/storyScouts/plotStructureElements'
 export * from './grade2/storyScouts/themeTrail'
 export * from './grade2/storyScouts/perspectivePortal'
+export * from './grade2/poetryPlanet/rhymeRoutes'
 export * from './registry'
 
 export const fluencyPracticeAudit = buildFluencyPracticeAudit(contentPacks)

@@ -587,6 +587,96 @@ export function planUnitQuest(input: PlanUnitQuestInput): UnitQuestPlan {
     }
   }
 
+  if (input.selectedUnitId === 'pp-unit-1') {
+    if (selectedDifficulty < 1) {
+      const plan = selectNextLesson({
+        skillId: currentSkill?.skillId ?? 'unknown',
+        difficulty: 0,
+        purpose: availableNextQuest?.purpose ?? 'remediation',
+        availableLessons: input.availableLessons.filter((lesson) => lesson.unitId === input.selectedUnitId),
+        recentActivityUsage: currentSkill?.recentActivityUsage ?? [],
+        preferredUnitId: input.selectedUnitId,
+      })
+      if (plan.status === 'available') {
+        return {
+          status: 'available',
+          purpose: plan.purpose,
+          lesson: plan.lesson,
+          lessonId: plan.lesson.lessonId,
+          unitId: plan.lesson.unitId,
+          activityId: plan.lesson.activityId,
+        }
+      }
+      return {
+        status: 'content_needed',
+        purpose: plan.purpose,
+        skillId: plan.skillId,
+        difficulty: plan.difficulty,
+        reason: plan.reason,
+        unitId: input.selectedUnitId,
+      }
+    }
+
+    if (selectedDifficulty >= 2) {
+      if (availableNextQuest?.purpose === 'review') {
+        const reviewPlan = selectNextLesson({
+          skillId: currentSkill?.skillId ?? 'unknown',
+          difficulty: selectedDifficulty,
+          purpose: 'review',
+          availableLessons: input.availableLessons.filter((lesson) => lesson.unitId === input.selectedUnitId),
+          recentActivityUsage: currentSkill?.recentActivityUsage ?? [],
+          preferredUnitId: input.selectedUnitId,
+        })
+        if (reviewPlan.status === 'available') {
+          return {
+            status: 'available',
+            purpose: reviewPlan.purpose,
+            lesson: reviewPlan.lesson,
+            lessonId: reviewPlan.lesson.lessonId,
+            unitId: reviewPlan.lesson.unitId,
+            activityId: reviewPlan.lesson.activityId,
+          }
+        }
+      }
+
+      return {
+        status: 'content_needed',
+        purpose: contentNeededNextQuest?.purpose ?? 'review',
+        skillId: currentSkill?.skillId ?? 'unknown',
+        difficulty: selectedDifficulty,
+        reason: 'Rhyme Routes quests are complete. More poetry quests are being prepared.',
+        unitId: input.selectedUnitId,
+      }
+    }
+
+    const plan = selectNextLesson({
+      skillId: currentSkill?.skillId ?? 'unknown',
+      difficulty: selectedDifficulty,
+      purpose: availableNextQuest?.purpose ?? 'progression',
+      availableLessons: input.availableLessons.filter((lesson) => lesson.unitId === input.selectedUnitId),
+      recentActivityUsage: currentSkill?.recentActivityUsage ?? [],
+      preferredUnitId: input.selectedUnitId,
+    })
+    if (plan.status === 'available') {
+      return {
+        status: 'available',
+        purpose: plan.purpose,
+        lesson: plan.lesson,
+        lessonId: plan.lesson.lessonId,
+        unitId: plan.lesson.unitId,
+        activityId: plan.lesson.activityId,
+      }
+    }
+    return {
+      status: 'content_needed',
+      purpose: plan.purpose,
+      skillId: plan.skillId,
+      difficulty: plan.difficulty,
+      reason: plan.reason,
+      unitId: input.selectedUnitId,
+    }
+  }
+
   if (selectedTrack) {
     const selectedLessons = input.availableLessons.filter((lesson) => lesson.unitId === input.selectedUnitId)
     if (selectedLessons.length === 0) {

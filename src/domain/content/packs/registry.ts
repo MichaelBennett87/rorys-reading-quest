@@ -9,6 +9,7 @@ import { grade2WordForgeFluencyPracticePack } from './grade2/wordForge/fluencyPr
 import { grade2StoryScoutsPlotStructureElementsPack } from './grade2/storyScouts/plotStructureElements'
 import { grade2StoryScoutsThemeTrailPack } from './grade2/storyScouts/themeTrail'
 import { grade2StoryScoutsPerspectivePortalPack } from './grade2/storyScouts/perspectivePortal'
+import { grade2PoetryPlanetRhymeRoutesPack } from './grade2/poetryPlanet/rhymeRoutes'
 import { legacyDevelopmentPack } from './legacyDevelopmentPack'
 import type { ContentPack } from './contentPackTypes'
 import type { ContentSample } from '../types'
@@ -27,6 +28,7 @@ export const contentPacks: readonly ContentPack[] = [
   grade2StoryScoutsPlotStructureElementsPack,
   grade2StoryScoutsThemeTrailPack,
   grade2StoryScoutsPerspectivePortalPack,
+  grade2PoetryPlanetRhymeRoutesPack,
   legacyDevelopmentPack,
 ]
 
@@ -34,6 +36,24 @@ export const sampleContent: ContentSample = aggregateSampleContent(contentPacks)
 
 export const contentPackAudit = buildContentPackAudit(contentPacks)
 export const benchmarkCoverageAudit = buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.F.1.3a')
+
+export function getActiveContentPacks(): readonly ContentPack[] {
+  return contentPacks.filter((pack) => !pack.manifest.packId.startsWith('legacy-'))
+}
+
+export function getActiveContentRegistryTotals() {
+  const activePacks = getActiveContentPacks()
+  return {
+    activePackCount: activePacks.length,
+    activeLessonCount: activePacks.reduce((sum, pack) => sum + pack.lessons.length, 0),
+    activePassageCount: activePacks.reduce((sum, pack) => sum + pack.passages.length, 0),
+    activeQuestionCount: activePacks.reduce((sum, pack) => sum + pack.questions.length, 0),
+    activeSupportTargetCount: activePacks.reduce(
+      (sum, pack) => sum + pack.passages.reduce((passageSum, passage) => passageSum + (passage.wordSupportTargets?.length ?? 0), 0),
+      0,
+    ),
+  }
+}
 
 function aggregateSampleContent(packs: readonly ContentPack[]): ContentSample {
   return {

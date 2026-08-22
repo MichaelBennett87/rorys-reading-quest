@@ -34,7 +34,7 @@ const curriculumTrackDefinitions: CurriculumTrackDefinition[] = [
     curriculumOrder: 30,
     initialDifficulty: 1,
     initialLastMasteredDifficulty: 0,
-    status: 'planned_until_content_exists',
+    status: 'active',
     displayName: 'Poetry Planet',
   },
 ]

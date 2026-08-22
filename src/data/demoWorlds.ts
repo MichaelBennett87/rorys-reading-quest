@@ -114,6 +114,18 @@ const storyScoutsUnits: DemoUnit[] = [
   },
 ]
 
+const poetryPlanetUnits: DemoUnit[] = [
+  {
+    id: 'pp-unit-1',
+    title: 'Rhyme Routes',
+    difficultyLabel: 'Trail 1',
+    progressPercent: 50,
+    stars: 1,
+    state: 'available',
+    practiceFocus: 'line-end words, rhyme letters, and poem patterns',
+  },
+]
+
 const infoDetectivesUnits: DemoUnit[] = [
   {
     id: 'id-unit-1',
@@ -182,12 +194,12 @@ export const demoWorlds: DemoWorld[] = [
     id: 'poetry-planet',
     name: 'Poetry Planet',
     iconLabel: '🌙',
-    status: 'coming-later',
-    description: 'Explore rhythm, rhyme, and imagery in short poems.',
-    progressionLabel: 'Opening soon',
-    skills: ['rhyme', 'rhythm', 'stanzas'],
-    currentProgress: 0,
-    units: [],
+    status: 'available',
+    description: 'Explore rhyme schemes and line patterns in short poems.',
+    progressionLabel: 'Trail 1 active',
+    skills: ['rhyme schemes', 'line endings', 'stanzas'],
+    currentProgress: 25,
+    units: poetryPlanetUnits,
   },
   {
     id: 'context-cavern',
