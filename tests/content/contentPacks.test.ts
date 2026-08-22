@@ -8,6 +8,7 @@ import {
   sampleContent,
 } from '../../src/domain/content'
 import { buildBenchmarkCoverageAudit } from '../../src/domain/content/packs/benchmarkCoverageAudit'
+import { getActiveContentRegistryTotals } from '../../src/domain/content/packs/registry'
 import { getLessonById, getLessonCandidates, getLessonForUnit } from '../../src/domain/lesson'
 
 describe('grade 2 content pack registry', () => {
@@ -37,6 +38,13 @@ describe('grade 2 content pack registry', () => {
     expect(activePacks.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(84)
     expect(activePacks.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(479)
     expect(activePacks.reduce((sum, pack) => sum + pack.passages.reduce((passageSum, passage) => passageSum + (passage.wordSupportTargets?.length ?? 0), 0), 0)).toBe(334)
+    expect(getActiveContentRegistryTotals()).toEqual({
+      activePackCount: 12,
+      activeLessonCount: 84,
+      activePassageCount: 84,
+      activeQuestionCount: 479,
+      activeSupportTargetCount: 334,
+    })
     expect(contentPackAudit).toHaveLength(0)
     expect(benchmarkCoverageAudit).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.F.1.3a',

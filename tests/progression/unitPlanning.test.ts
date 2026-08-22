@@ -1,8 +1,10 @@
 import { describe, expect, test } from 'vitest'
 
-import { deriveWorldsForProgress } from '../../src/data/demoWorlds'
+import { demoWorlds, deriveWorldsForProgress } from '../../src/data/demoWorlds'
+import { deriveWorldsForProgress as deriveCurriculumWorlds } from '../../src/domain/curriculum'
 import { getLessonById, getLessonCandidates } from '../../src/domain/lesson'
 import { planUnitQuest } from '../../src/domain/progression'
+import type { LessonActivityCandidate } from '../../src/domain/progression'
 import { createInitialSkillProgress } from '../../src/domain/progression/skillProgressTypes'
 import { createActiveLessonSession, createDefaultQuestProgress } from '../../src/persistence'
 
@@ -13,6 +15,40 @@ function createProgress(currentDifficulty: number) {
   const skill = progress.skillProgress['g2-word-forge-word-practice']
   skill.currentDifficulty = currentDifficulty
   return progress
+}
+
+function createInformationDetectivesLesson(overrides: Partial<LessonActivityCandidate> = {}): LessonActivityCandidate {
+  return {
+    lessonId: 'lesson-information-detectives-text-feature-hunt-checkpoint-a',
+    activityId: 'activity-information-detectives-text-feature-hunt-checkpoint-a',
+    skillId: 'g2-information-detectives-reading',
+    difficulty: 1,
+    worldId: 'information-detectives',
+    unitId: 'id-unit-1',
+    packId: 'fixture-information-detectives-pack',
+    benchmarkReferences: ['ELA.2.R.2.1'],
+    eligiblePurposes: ['progression', 'review', 'verification', 'remediation'],
+    passageQuestionKeys: ['information-detectives-text-feature-hunt-a|q1'],
+    contentVersion: 'fixture-information-detectives-v1',
+    ...overrides,
+  }
+}
+
+function createContextCavernLesson(overrides: Partial<LessonActivityCandidate> = {}): LessonActivityCandidate {
+  return {
+    lessonId: 'lesson-context-cavern-academic-word-workshop-checkpoint-a',
+    activityId: 'activity-context-cavern-academic-word-workshop-checkpoint-a',
+    skillId: 'g2-context-cavern-vocabulary',
+    difficulty: 1,
+    worldId: 'context-cavern',
+    unitId: 'cc-unit-1',
+    packId: 'fixture-context-cavern-pack',
+    benchmarkReferences: ['ELA.2.V.1.1'],
+    eligiblePurposes: ['progression', 'review', 'verification', 'remediation'],
+    passageQuestionKeys: ['context-cavern-academic-word-workshop-a|q1'],
+    contentVersion: 'fixture-context-cavern-v1',
+    ...overrides,
+  }
 }
 
 describe('unit-aware Word Forge planning', () => {
@@ -275,6 +311,62 @@ describe('unit-aware Word Forge planning', () => {
     expect(perspectivePortalLocked.status).toBe('locked')
     if (perspectivePortalLocked.status === 'locked') {
       expect(perspectivePortalLocked.reason).toMatch(/Complete Theme Trail to unlock Perspective Portal/i)
+    }
+  })
+
+  test('future Information Detectives and Context Cavern units stay locked without content and become playable with fixture lessons', () => {
+    const noContentProgress = createDefaultQuestProgress(now)
+
+    const informationLocked = planUnitQuest({
+      selectedUnitId: 'id-unit-1',
+      progress: noContentProgress,
+      availableLessons: [],
+    })
+    expect(informationLocked.status).toBe('locked')
+    if (informationLocked.status === 'locked') {
+      expect(informationLocked.reason).toMatch(/Information Detectives quests are being prepared/i)
+    }
+
+    const contextLocked = planUnitQuest({
+      selectedUnitId: 'cc-unit-1',
+      progress: noContentProgress,
+      availableLessons: [],
+    })
+    expect(contextLocked.status).toBe('locked')
+    if (contextLocked.status === 'locked') {
+      expect(contextLocked.reason).toMatch(/Context Cavern Vocabulary quests are being prepared/i)
+    }
+
+    const fixtureLessons = [createInformationDetectivesLesson(), createContextCavernLesson()]
+    const playableWorlds = deriveCurriculumWorlds(demoWorlds, createDefaultQuestProgress(now), fixtureLessons)
+    const informationWorld = playableWorlds.find((world) => world.id === 'information-detectives')!
+    const contextWorld = playableWorlds.find((world) => world.id === 'context-cavern')!
+
+    expect(informationWorld.status).toBe('available')
+    expect(informationWorld.units.find((unit) => unit.id === 'id-unit-1')?.state).toBe('available')
+    expect(contextWorld.status).toBe('available')
+    expect(contextWorld.units.find((unit) => unit.id === 'cc-unit-1')?.state).toBe('available')
+
+    const informationPlayable = planUnitQuest({
+      selectedUnitId: 'id-unit-1',
+      progress: createDefaultQuestProgress(now),
+      availableLessons: [createInformationDetectivesLesson()],
+    })
+    expect(informationPlayable.status).toBe('available')
+    if (informationPlayable.status === 'available') {
+      expect(informationPlayable.lesson.skillId).toBe('g2-information-detectives-reading')
+      expect(informationPlayable.lesson.unitId).toBe('id-unit-1')
+    }
+
+    const contextPlayable = planUnitQuest({
+      selectedUnitId: 'cc-unit-1',
+      progress: createDefaultQuestProgress(now),
+      availableLessons: [createContextCavernLesson()],
+    })
+    expect(contextPlayable.status).toBe('available')
+    if (contextPlayable.status === 'available') {
+      expect(contextPlayable.lesson.skillId).toBe('g2-context-cavern-vocabulary')
+      expect(contextPlayable.lesson.unitId).toBe('cc-unit-1')
     }
   })
 

@@ -70,6 +70,40 @@ describe('benchmark coverage audit', () => {
     }))
   })
 
+  test('keeps future information and vocabulary benchmarks planned but not implemented', () => {
+    expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.2.1')).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.2.R.2.1',
+      expectedPatterns: ['informational-text-features', 'feature-meaning'],
+      coveredPatterns: [],
+      missingPatterns: ['informational-text-features', 'feature-meaning'],
+      contributingPackIds: [],
+      coverageStatus: 'partial',
+      reviewStatus: 'DRAFT',
+    }))
+
+    expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.V.1.1')).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.2.V.1.1',
+      expectedPatterns: ['academic-vocabulary-use'],
+      coveredPatterns: [],
+      missingPatterns: ['academic-vocabulary-use'],
+      contributingPackIds: [],
+      coverageStatus: 'partial',
+      reviewStatus: 'DRAFT',
+    }))
+  })
+
+  test('unknown benchmark references fail safely without pretending to be implemented', () => {
+    expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.9.Z.9.9')).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.9.Z.9.9',
+      expectedPatterns: [],
+      coveredPatterns: [],
+      missingPatterns: [],
+      contributingPackIds: [],
+      coverageStatus: 'partial',
+      reviewStatus: 'DRAFT',
+    }))
+  })
+
   test('reports partial coverage for 1.3d and keeps the least mature review status', () => {
     const prefixPack = contentPacks.find((pack) => pack.manifest.packId === 'g2-word-forge-common-prefixes')
     expect(prefixPack).toBeDefined()

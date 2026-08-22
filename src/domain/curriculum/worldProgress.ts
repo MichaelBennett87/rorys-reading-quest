@@ -5,6 +5,7 @@ import { createInitialSkillProgress } from '../progression'
 import type { QuestProgressV1 } from '../../persistence'
 import { discoverPlayableTracks, normalizeQuestProgressForPlanning } from './curriculumPlanning'
 import { getTrackBySkillId, getTrackByWorldId } from './curriculumTracks'
+import { getSequentialWorldRoadmapByWorldId } from './sequentialWorlds'
 
 export function deriveWorldsForProgress(
   worlds: readonly DemoWorld[],
@@ -28,6 +29,9 @@ export function deriveWorldsForProgress(
     }
     if (world.id === 'poetry-planet') {
       return derivePoetryPlanetWorld(world, skillProgress, activeUnitId, plannedUnitId, playableTrackIds)
+    }
+    if (world.id === 'information-detectives' || world.id === 'context-cavern') {
+      return deriveSequentialTrackWorld(world, skillProgress, activeUnitId, plannedUnitId, playableTrackIds)
     }
     return deriveNonPlayableWorld(world)
   })
@@ -95,6 +99,49 @@ function derivePoetryPlanetWorld(
           ? 'Rhyme Routes active'
           : 'Rhyme Routes Building Block active'
       : 'Poetry Planet quests are being prepared.',
+    currentProgress: playable ? Math.min(100, Math.max(0, currentDifficulty) * 25 + 25) : 0,
+    units,
+  }
+}
+
+function deriveSequentialTrackWorld(
+  world: DemoWorld,
+  skillProgress: QuestProgressV1['skillProgress'],
+  activeUnitId: string | null,
+  plannedUnitId: string | null,
+  playableTrackIds: Set<string>,
+): DemoWorld {
+  const track = getTrackByWorldId(world.id)
+  const roadmap = getSequentialWorldRoadmapByWorldId(world.id)
+  if (!track || !roadmap) return deriveNonPlayableWorld(world)
+
+  const playable = playableTrackIds.has(track.trackId)
+  if (!playable) return deriveNonPlayableWorld(world)
+
+  const progress = skillProgress[track.skillId]
+    ?? createInitialSkillProgress(track.skillId, track.initialDifficulty, track.initialLastMasteredDifficulty)
+  const currentDifficulty = progress.currentDifficulty
+  const currentLearningState = progress.currentLearningState
+  const currentUnitIndex = Math.max(0, Math.min(roadmap.units.length - 1, currentDifficulty - 1))
+  const currentUnit = roadmap.units[currentUnitIndex] ?? roadmap.units[0]
+  const activeOrPlanned = roadmap.units.some((unit) => unit.unitId === activeUnitId || unit.unitId === plannedUnitId)
+
+  const units = world.units.map((unit, index) => {
+    const roadmapUnit = roadmap.units[index]
+    if (!roadmapUnit) return { ...unit }
+    return deriveSequentialRoadmapUnit(unit, roadmapUnit, currentDifficulty, currentLearningState, activeOrPlanned)
+  })
+
+  return {
+    ...world,
+    status: playable ? 'available' : world.status === 'locked' ? 'locked' : 'coming-later',
+    progressionLabel: playable
+      ? currentDifficulty >= roadmap.units.length + 1
+        ? currentLearningState === 'SPACED_REVIEW'
+          ? `${world.name} review available`
+          : `${world.name} complete`
+        : `${currentUnit.title} active`
+      : `${world.name} quests are being prepared.`,
     currentProgress: playable ? Math.min(100, Math.max(0, currentDifficulty) * 25 + 25) : 0,
     units,
   }
@@ -267,6 +314,45 @@ function deriveRhymeRoutesUnit(
         : state === 'review'
           ? 'Review rhyme letters and line-end clues.'
           : 'Rhyme Routes quests are complete. More poetry quests are being prepared.',
+  }
+}
+
+function deriveSequentialRoadmapUnit(
+  unit: DemoUnit,
+  roadmapUnit: { unitId: string; title: string; activeDifficulty: number; completionDifficulty: number; lockedMessage: string; futureContentMessage: string; activeLabel: string; practiceFocus: string },
+  currentDifficulty: number,
+  currentLearningState: SkillProgressState['currentLearningState'] | null,
+  activeOrPlanned: boolean,
+): DemoUnit {
+  const state: UnitState = currentDifficulty < roadmapUnit.activeDifficulty
+    ? 'locked'
+    : currentDifficulty < roadmapUnit.completionDifficulty
+      ? 'available'
+      : currentLearningState === 'SPACED_REVIEW'
+        ? 'review'
+        : 'complete'
+
+  return {
+    ...unit,
+    state,
+    difficultyLabel: state === 'locked'
+      ? 'Locked'
+      : state === 'available'
+        ? roadmapUnit.activeLabel
+        : state === 'review'
+          ? 'Review'
+          : 'Complete',
+    progressPercent: state === 'locked' ? 0 : state === 'available' ? 75 : 100,
+    stars: state === 'locked' ? 0 : state === 'available' ? 2 : 3,
+    practiceFocus: state === 'locked'
+      ? roadmapUnit.lockedMessage
+      : state === 'available'
+        ? activeOrPlanned
+          ? `${roadmapUnit.title} quests are ready to resume.`
+          : roadmapUnit.practiceFocus
+        : state === 'review'
+          ? roadmapUnit.futureContentMessage
+          : `${roadmapUnit.title} quests are complete. ${roadmapUnit.futureContentMessage}`,
   }
 }
 

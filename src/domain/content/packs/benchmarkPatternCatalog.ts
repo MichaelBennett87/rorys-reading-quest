@@ -14,6 +14,13 @@ const BENCHMARK_PATTERN_CATALOG: Record<string, readonly string[]> = {
   'ELA.2.R.1.2': ['theme-identification', 'theme-explanation'],
   'ELA.2.R.1.3': ['character-perspective-identification', 'different-character-perspectives'],
   'ELA.2.R.1.4': ['rhyme-scheme-identification', 'rhyme-scheme-notation'],
+  'ELA.2.R.2.1': ['informational-text-features', 'feature-meaning'],
+  'ELA.2.R.2.2': ['central-idea', 'relevant-details'],
+  'ELA.2.R.2.3': ['informational-author-purpose'],
+  'ELA.2.R.2.4': ['opinion', 'supporting-evidence'],
+  'ELA.2.V.1.1': ['academic-vocabulary-use'],
+  'ELA.2.V.1.2': ['base-words', 'affixes'],
+  'ELA.2.V.1.3': ['context-clues', 'word-relationships', 'reference-materials', 'background-knowledge'],
 }
 
 const REVIEW_ORDER: Record<BenchmarkReviewStatus, number> = {

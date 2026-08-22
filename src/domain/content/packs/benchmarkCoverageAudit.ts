@@ -3,6 +3,7 @@ import {
   collectObservedBenchmarkPatterns,
   combineBenchmarkReviewStatus,
   getExpectedBenchmarkPatterns,
+  isKnownBenchmarkReference,
 } from './benchmarkPatternCatalog'
 
 export type BenchmarkCoverageStatus = 'partial' | 'implemented'
@@ -45,7 +46,7 @@ export function buildBenchmarkCoverageAudit(
     coveredPatterns: coveredPatternList,
     missingPatterns,
     contributingPackIds,
-    coverageStatus: missingPatterns.length === 0 ? 'implemented' : 'partial',
+    coverageStatus: isKnownBenchmarkReference(benchmarkReference) && missingPatterns.length === 0 ? 'implemented' : 'partial',
     reviewStatus,
   }
 }

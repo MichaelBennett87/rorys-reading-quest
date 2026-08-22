@@ -34,6 +34,40 @@ function createStoryScoutsLesson(overrides: Partial<LessonActivityCandidate> = {
   }
 }
 
+function createInformationDetectivesLesson(overrides: Partial<LessonActivityCandidate> = {}): LessonActivityCandidate {
+  return {
+    lessonId: 'lesson-information-detectives-text-feature-hunt-checkpoint-a',
+    activityId: 'activity-information-detectives-text-feature-hunt-checkpoint-a',
+    skillId: 'g2-information-detectives-reading',
+    difficulty: 1,
+    worldId: 'information-detectives',
+    unitId: 'id-unit-1',
+    packId: 'fixture-information-detectives-pack',
+    benchmarkReferences: ['ELA.2.R.2.1'],
+    eligiblePurposes: ['progression', 'review', 'verification', 'remediation'],
+    passageQuestionKeys: ['information-detectives-text-feature-hunt-a|q1'],
+    contentVersion: 'fixture-information-detectives-v1',
+    ...overrides,
+  }
+}
+
+function createContextCavernLesson(overrides: Partial<LessonActivityCandidate> = {}): LessonActivityCandidate {
+  return {
+    lessonId: 'lesson-context-cavern-academic-word-workshop-checkpoint-a',
+    activityId: 'activity-context-cavern-academic-word-workshop-checkpoint-a',
+    skillId: 'g2-context-cavern-vocabulary',
+    difficulty: 1,
+    worldId: 'context-cavern',
+    unitId: 'cc-unit-1',
+    packId: 'fixture-context-cavern-pack',
+    benchmarkReferences: ['ELA.2.V.1.1'],
+    eligiblePurposes: ['progression', 'review', 'verification', 'remediation'],
+    passageQuestionKeys: ['context-cavern-academic-word-workshop-a|q1'],
+    contentVersion: 'fixture-context-cavern-v1',
+    ...overrides,
+  }
+}
+
 function createWordForgeLesson(overrides: Partial<LessonActivityCandidate> = {}): LessonActivityCandidate {
   return {
     lessonId: 'lesson-word-forge-trail-1-checkpoint-a',
@@ -101,9 +135,13 @@ describe('curriculum planning foundation', () => {
       'g2-word-forge-foundations',
       'g2-story-scouts-prose',
       'g2-poetry-planet',
+      'g2-information-detectives-reading',
+      'g2-context-cavern-vocabulary',
     ])
     expect(curriculumTracks.find((track) => track.trackId === 'g2-story-scouts-prose')?.status).toBe('active')
     expect(curriculumTracks.find((track) => track.trackId === 'g2-poetry-planet')?.status).toBe('active')
+    expect(curriculumTracks.find((track) => track.trackId === 'g2-information-detectives-reading')?.status).toBe('planned_until_content_exists')
+    expect(curriculumTracks.find((track) => track.trackId === 'g2-context-cavern-vocabulary')?.status).toBe('planned_until_content_exists')
     expect(new Set(curriculumTracks.map((track) => track.trackId)).size).toBe(curriculumTracks.length)
     expect(new Set(curriculumTracks.map((track) => track.skillId)).size).toBe(curriculumTracks.length)
   })
@@ -119,6 +157,19 @@ describe('curriculum planning foundation', () => {
 
     expect(discoverPlayableTracks([storyScoutsLesson]).map((entry) => entry.track.skillId)).toEqual([
       'g2-story-scouts-prose',
+    ])
+    expect(discoverPlayableTracks([createInformationDetectivesLesson()]).map((entry) => entry.track.skillId)).toEqual([
+      'g2-information-detectives-reading',
+    ])
+    expect(discoverPlayableTracks([createContextCavernLesson()]).map((entry) => entry.track.skillId)).toEqual([
+      'g2-context-cavern-vocabulary',
+    ])
+    expect(discoverPlayableTracks([
+      createContextCavernLesson(),
+      createInformationDetectivesLesson(),
+    ]).map((entry) => entry.track.skillId)).toEqual([
+      'g2-information-detectives-reading',
+      'g2-context-cavern-vocabulary',
     ])
     expect(discoverPlayableTracks([reviewOnlyStoryScoutsLesson])).toHaveLength(0)
     expect(discoverPlayableTracks([legacyLesson])).toHaveLength(0)
@@ -137,11 +188,7 @@ describe('curriculum planning foundation', () => {
       currentDifficulty: 1,
       lastMasteredDifficulty: 0,
     })
-    expect(result.state.skillProgress['g2-poetry-planet-poetry']).toMatchObject({
-      skillId: 'g2-poetry-planet-poetry',
-      currentDifficulty: 1,
-      lastMasteredDifficulty: 0,
-    })
+    expect(result.state.skillProgress['g2-poetry-planet-poetry']).toBeUndefined()
   })
 
   test('normalizes stale planned quests and preserves valid ones', () => {
@@ -390,6 +437,53 @@ describe('curriculum planning foundation', () => {
     expect(result.state.skillProgress['g2-word-forge-word-practice']).toEqual(progress.skillProgress['g2-word-forge-word-practice'])
     expect(result.state.skillProgress['g2-story-scouts-prose']).toBeDefined()
     expect(result.state.skillProgress['g2-poetry-planet-poetry']).toBeDefined()
+  })
+
+  test('initializes fixture Information Detectives and Context Cavern progress without touching existing tracks', () => {
+    const progress = createDefaultQuestProgress(now)
+
+    const result = ensureProgressForPlayableTracks(progress, [
+      createInformationDetectivesLesson(),
+      createContextCavernLesson(),
+    ])
+
+    expect(result.changed).toBe(true)
+    expect(result.state.skillProgress['g2-word-forge-word-practice']).toEqual(progress.skillProgress['g2-word-forge-word-practice'])
+    expect(result.state.skillProgress['g2-information-detectives-reading']).toMatchObject({
+      skillId: 'g2-information-detectives-reading',
+      currentDifficulty: 1,
+      lastMasteredDifficulty: 0,
+    })
+    expect(result.state.skillProgress['g2-context-cavern-vocabulary']).toMatchObject({
+      skillId: 'g2-context-cavern-vocabulary',
+      currentDifficulty: 1,
+      lastMasteredDifficulty: 0,
+    })
+  })
+
+  test('does not initialize planned future tracks without active content', () => {
+    const progress = createDefaultQuestProgress(now)
+
+    const result = ensureProgressForPlayableTracks(progress, [])
+
+    expect(result.changed).toBe(false)
+    expect(result.state.skillProgress['g2-information-detectives-reading']).toBeUndefined()
+    expect(result.state.skillProgress['g2-context-cavern-vocabulary']).toBeUndefined()
+  })
+
+  test('uses future track curriculum order when fixture information and vocabulary lessons are available', () => {
+    const plan = planGlobalQuest({
+      progress: createDefaultQuestProgress(now),
+      availableLessons: [
+        createContextCavernLesson(),
+        createInformationDetectivesLesson(),
+      ],
+      now,
+    })
+
+    expect(plan.status).toBe('available')
+    expect(plan.skillId).toBe('g2-information-detectives-reading')
+    expect(plan.lesson?.unitId).toBe('id-unit-1')
   })
 
   test('balances fresh progression across Word Forge and Story Scouts deterministically', () => {

@@ -74,11 +74,11 @@ export function ensureProgressForPlayableTracks(
   _availableLessons: readonly LessonActivityCandidate[],
   tracks: readonly CurriculumTrackDefinition[] = curriculumTracks,
 ): NormalizeQuestProgressForPlanningResult {
-  if (discoverPlayableTracks(_availableLessons, tracks).length === 0) {
+  const playableTracks = discoverPlayableTracks(_availableLessons, tracks).map((entry) => entry.track)
+  if (playableTracks.length === 0) {
     return { state, changed: false }
   }
 
-  const playableTracks = tracks.filter((track) => track.status === 'active')
   const nextSkillProgress: QuestProgressV1['skillProgress'] = { ...state.skillProgress }
   let changed = false
 

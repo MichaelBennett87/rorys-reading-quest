@@ -37,6 +37,30 @@ const curriculumTrackDefinitions: CurriculumTrackDefinition[] = [
     status: 'active',
     displayName: 'Poetry Planet',
   },
+  {
+    trackId: 'g2-information-detectives-reading',
+    skillId: 'g2-information-detectives-reading',
+    worldId: 'information-detectives',
+    entryUnitId: 'id-unit-1',
+    unitIds: ['id-unit-1', 'id-unit-2', 'id-unit-3', 'id-unit-4'],
+    curriculumOrder: 40,
+    initialDifficulty: 1,
+    initialLastMasteredDifficulty: 0,
+    status: 'planned_until_content_exists',
+    displayName: 'Information Detectives',
+  },
+  {
+    trackId: 'g2-context-cavern-vocabulary',
+    skillId: 'g2-context-cavern-vocabulary',
+    worldId: 'context-cavern',
+    entryUnitId: 'cc-unit-1',
+    unitIds: ['cc-unit-1', 'cc-unit-2', 'cc-unit-3'],
+    curriculumOrder: 50,
+    initialDifficulty: 1,
+    initialLastMasteredDifficulty: 0,
+    status: 'planned_until_content_exists',
+    displayName: 'Context Cavern Vocabulary',
+  },
 ]
 
 export const curriculumTracks: readonly CurriculumTrackDefinition[] = Object.freeze(

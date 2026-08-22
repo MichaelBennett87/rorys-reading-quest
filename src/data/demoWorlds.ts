@@ -1,4 +1,4 @@
-import { deriveWorldsForProgress as deriveCurriculumWorlds } from '../domain/curriculum'
+import { buildSequentialWorldUnitShells, deriveWorldsForProgress as deriveCurriculumWorlds } from '../domain/curriculum'
 import { getLessonCandidates } from '../domain/lesson'
 
 export type WorldStatus = 'available' | 'locked' | 'coming-later'
@@ -127,34 +127,19 @@ const poetryPlanetUnits: DemoUnit[] = [
 ]
 
 const infoDetectivesUnits: DemoUnit[] = [
+  ...buildSequentialWorldUnitShells('information-detectives'),
   {
-    id: 'id-unit-1',
-    title: 'Find the Main Topic',
-    difficultyLabel: 'Trail 1',
-    progressPercent: 20,
-    stars: 0,
-    state: 'available',
-    practiceFocus: 'main idea in short passages',
-  },
-  {
-    id: 'id-unit-2',
-    title: 'Detail Detective',
-    difficultyLabel: 'Trail 2',
+    id: 'id-unit-4',
+    title: 'Opinion & Evidence Desk',
+    difficultyLabel: 'Locked',
     progressPercent: 0,
     stars: 0,
     state: 'locked',
-    practiceFocus: 'key supporting details',
-  },
-  {
-    id: 'id-unit-3',
-    title: 'Text Feature Hunt',
-    difficultyLabel: 'Trail 3',
-    progressPercent: 0,
-    stars: 0,
-    state: 'locked',
-    practiceFocus: 'headings, captions, and clues',
+    practiceFocus: "an author's opinion and supporting evidence",
   },
 ]
+
+const contextCavernUnits: DemoUnit[] = [...buildSequentialWorldUnitShells('context-cavern')]
 
 export const demoWorlds: DemoWorld[] = [
   {
@@ -184,10 +169,10 @@ export const demoWorlds: DemoWorld[] = [
     name: 'Information Detectives',
     iconLabel: '🔎',
     status: 'coming-later',
-    description: 'Inspect facts, topic points, and evidence.',
+    description: 'Inspect features, central ideas, and evidence.',
     progressionLabel: 'Information Detectives quests are being prepared.',
-    skills: ['topic and key details', 'text features', 'central idea'],
-    currentProgress: 8,
+    skills: ['text features', 'central idea', 'author purpose', 'opinion and evidence'],
+    currentProgress: 0,
     units: infoDetectivesUnits,
   },
   {
@@ -207,10 +192,10 @@ export const demoWorlds: DemoWorld[] = [
     iconLabel: '🗝️',
     status: 'locked',
     description: 'Use clues around a word to find meaning.',
-    progressionLabel: 'Locked',
-    skills: ['context clues', 'synonyms and antonyms'],
+    progressionLabel: 'Context Cavern quests are being prepared.',
+    skills: ['academic words', 'word parts', 'context clues'],
     currentProgress: 0,
-    units: [],
+    units: contextCavernUnits,
   },
   {
     id: 'compare-castle',
