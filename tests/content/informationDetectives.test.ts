@@ -14,6 +14,10 @@ import {
   authorPurposeGuides,
   grade2InformationDetectivesPurposePathPack,
 } from '../../src/domain/content/packs/grade2/informationDetectives/purposePath'
+import {
+  authorOpinionGuides as opinionEvidenceDeskGuides,
+  grade2InformationDetectivesOpinionEvidenceDeskPack,
+} from '../../src/domain/content/packs/grade2/informationDetectives/opinionEvidenceDesk'
 import { resolvePassageEvidence, sampleContent, validateContent } from '../../src/domain/content'
 import { buildBenchmarkCoverageAudit } from '../../src/domain/content/packs/benchmarkCoverageAudit'
 import { getLessonForUnit } from '../../src/domain/lesson'
@@ -59,13 +63,14 @@ describe('grade 2 information detectives text feature hunt pack', () => {
       'g2-information-detectives-text-feature-hunt',
       'g2-information-detectives-central-idea-center',
       'g2-information-detectives-purpose-path',
+      'g2-information-detectives-opinion-evidence-desk',
     ])
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 15,
-      activeLessonCount: 105,
-      activePassageCount: 105,
-      activeQuestionCount: 602,
-      activeSupportTargetCount: 418,
+      activePackCount: 16,
+      activeLessonCount: 112,
+      activePassageCount: 112,
+      activeQuestionCount: 643,
+      activeSupportTargetCount: 446,
     })
     expect(contentPackAudit).toHaveLength(0)
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.2.1')).toEqual(expect.objectContaining({
@@ -92,6 +97,15 @@ describe('grade 2 information detectives text feature hunt pack', () => {
       coveredPatterns: ['informational-author-purpose'],
       missingPatterns: [],
       contributingPackIds: ['g2-information-detectives-purpose-path'],
+      coverageStatus: 'implemented',
+      reviewStatus: 'DRAFT',
+    }))
+    expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.2.4')).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.2.R.2.4',
+      expectedPatterns: ['opinion', 'supporting-evidence'],
+      coveredPatterns: ['opinion', 'supporting-evidence'],
+      missingPatterns: [],
+      contributingPackIds: ['g2-information-detectives-opinion-evidence-desk'],
       coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',
     }))
@@ -538,6 +552,144 @@ describe('grade 2 information detectives purpose path pack', () => {
     const result = getLessonForUnit('id-unit-3')
 
     expect(result.lesson?.lessonId).toBe('lesson-purpose-checkpoint-a')
+    expect(result.lesson?.lessonRole).toBe('CHECKPOINT')
+    expect(result.lesson?.selectionStatus).toBe('active')
+    expect(result.lesson?.questionCount).toBe(7)
+  })
+})
+
+describe('grade 2 information detectives opinion evidence desk pack', () => {
+  test('registers as the active opinion pack with the expected totals', () => {
+    const pack = grade2InformationDetectivesOpinionEvidenceDeskPack
+
+    expect(pack.manifest.packId).toBe('g2-information-detectives-opinion-evidence-desk')
+    expect(pack.manifest.packTitle).toBe('Grade 2 Information Detectives: Opinion & Evidence Desk')
+    expect(pack.manifest.worldId).toBe('information-detectives')
+    expect(pack.manifest.unitId).toBe('id-unit-4')
+    expect(pack.manifest.primarySkillId).toBe('g2-information-detectives-reading')
+    expect(pack.manifest.reviewStatus).toBe('DRAFT')
+    expect(pack.manifest.contentVersion).toBe('g2-id-opinion-evidence-r0.1.0')
+    expect(pack.lessons).toHaveLength(7)
+    expect(pack.passages).toHaveLength(7)
+    expect(pack.questions).toHaveLength(41)
+    expect(opinionEvidenceDeskGuides).toHaveLength(7)
+    expect(pack.lessons.filter((lesson) => lesson.lessonRole === 'GUIDED_PRACTICE')).toHaveLength(4)
+    expect(pack.lessons.filter((lesson) => lesson.lessonRole === 'CHECKPOINT')).toHaveLength(3)
+    expect(pack.lessons.filter((lesson) => lesson.difficulty === 3)).toHaveLength(2)
+    expect(pack.lessons.filter((lesson) => lesson.difficulty === 4)).toHaveLength(5)
+    expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.2.4')).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.2.R.2.4',
+      expectedPatterns: ['opinion', 'supporting-evidence'],
+      coveredPatterns: ['opinion', 'supporting-evidence'],
+      missingPatterns: [],
+      contributingPackIds: ['g2-information-detectives-opinion-evidence-desk'],
+      coverageStatus: 'implemented',
+      reviewStatus: 'DRAFT',
+    }))
+    expect(validateContent(sampleContent)).toHaveLength(0)
+    expect(contentPackAudit).toHaveLength(0)
+  })
+
+  test('every informational passage has a valid structure, guide, and support targets', () => {
+    const pack = grade2InformationDetectivesOpinionEvidenceDeskPack
+    let twoOpinionPassageCount = 0
+
+    for (const passage of pack.passages) {
+      expect(passage.contentKind).toBe('informational')
+      expect(passage.reviewStatus).toBe('DRAFT')
+      expect(passage.contentVersion).toBe('g2-id-opinion-evidence-r0.1.0')
+      expect(passage.wordSupportTargets).toHaveLength(4)
+      expect(passage.informationalStructure).toBeTruthy()
+
+      const structure = passage.informationalStructure!
+      const title = structure.features.find((feature) => feature.kind === 'title')
+      const headings = structure.features.filter((feature) => feature.kind === 'heading')
+      const visuals = structure.features.filter((feature) => feature.kind === 'graph' || feature.kind === 'map' || feature.kind === 'illustration')
+      const captions = structure.features.filter((feature) => feature.kind === 'caption')
+
+      expect(title).toBeTruthy()
+      expect(headings.length).toBeGreaterThanOrEqual(2)
+      expect(visuals.length).toBeGreaterThanOrEqual(1)
+      expect(captions).toHaveLength(1)
+      expect(structure.sections.length).toBeGreaterThanOrEqual(2)
+      expect(new Set(structure.features.map((feature) => feature.featureId)).size).toBe(structure.features.length)
+
+      const guide = opinionEvidenceDeskGuides.find((entry) => entry.passageId === passage.passageIdentifier)
+      expect(guide).toBeTruthy()
+      expect(guide?.reviewStatus).toBe('DRAFT')
+      expect(guide?.contentVersion).toBe('g2-id-opinion-evidence-r0.1.0')
+      expect(guide?.topicLabel).toMatch(/\S/)
+      expect(guide?.opinions.length).toBeGreaterThanOrEqual(1)
+      expect(guide?.factEvidenceIds.length).toBeGreaterThanOrEqual(1)
+      expect(guide?.otherDetailIds.length).toBeGreaterThanOrEqual(1)
+      expect(new Set((guide?.factEvidenceIds ?? [])).size).toBe(guide?.factEvidenceIds.length ?? 0)
+      expect(new Set((guide?.otherDetailIds ?? [])).size).toBe(guide?.otherDetailIds.length ?? 0)
+      if ((guide?.opinions.length ?? 0) === 2) {
+        twoOpinionPassageCount += 1
+      }
+
+      for (const opinion of guide?.opinions ?? []) {
+        expect(opinion.opinionStatement).toMatch(/\S/)
+        expect(opinion.evidenceConnectionStatement).toMatch(/\S/)
+        expect(opinion.supportingEvidenceIds.length).toBeGreaterThanOrEqual(2)
+        expect(resolvePassageEvidence(passage, opinion.opinionSentenceId)).toBeTruthy()
+        expect(resolvePassageEvidence(passage, opinion.opinionSentenceId)?.text).toMatch(/\S/)
+        for (const evidenceId of opinion.supportingEvidenceIds) {
+          expect(resolvePassageEvidence(passage, evidenceId)).toBeTruthy()
+        }
+      }
+
+      for (const evidenceId of [...(guide?.factEvidenceIds ?? []), ...(guide?.otherDetailIds ?? [])]) {
+        expect(resolvePassageEvidence(passage, evidenceId)).toBeTruthy()
+      }
+
+      for (const target of passage.wordSupportTargets ?? []) {
+        expect(target.reviewStatus).toBe('DRAFT')
+        expect(target.contentVersion).toBe('g2-id-opinion-evidence-r0.1.0')
+        expect(passage.sentences?.some((sentence) => sentence.sentenceId === target.sentenceId)).toBe(true)
+        expect(resolvePassageEvidence(passage, target.sentenceId)?.text).toMatch(/\S/)
+      }
+    }
+
+    expect(twoOpinionPassageCount).toBeGreaterThanOrEqual(2)
+  })
+
+  test('every question uses the Phase 6E4 benchmark contract and resolves its evidence', () => {
+    const pack = grade2InformationDetectivesOpinionEvidenceDeskPack
+    const visibleAnswerText = new Set<string>()
+
+    for (const question of pack.questions) {
+      expect(question.gradeBand).toBe(2)
+      expect(question.benchmarkReference).toBe('ELA.2.R.2.4')
+      expect(question.skillIdentifier).toBe('g2-information-detectives-reading')
+      expect(question.reportingCategory).toBe('Reading Informational Text')
+      expect(question.contentVersion).toBe('g2-id-opinion-evidence-r0.1.0')
+      expect(question.reviewStatus).toBe('DRAFT')
+      expect(question.explanation).toMatch(/\S/)
+      const evidenceReferenceIds = question.evidenceReferenceIds ?? []
+      expect(evidenceReferenceIds.length).toBeGreaterThan(0)
+
+      const passage = pack.passages.find((entry) => entry.passageIdentifier === question.passageIdentifier)
+      expect(passage).toBeTruthy()
+
+      for (const evidenceId of evidenceReferenceIds) {
+        expect(resolvePassageEvidence(passage!, evidenceId)).toBeTruthy()
+      }
+
+      if (question.questionContent && 'choices' in question.questionContent) {
+        for (const choice of question.questionContent.choices) {
+          visibleAnswerText.add(choice.text)
+        }
+      }
+    }
+
+    expect(visibleAnswerText.size).toBeGreaterThan(0)
+  })
+
+  test('resolves the Opinion & Evidence Desk unit to the new checkpoint lesson', () => {
+    const result = getLessonForUnit('id-unit-4')
+
+    expect(result.lesson?.lessonId).toBe('lesson-opinion-checkpoint-a')
     expect(result.lesson?.lessonRole).toBe('CHECKPOINT')
     expect(result.lesson?.selectionStatus).toBe('active')
     expect(result.lesson?.questionCount).toBe(7)

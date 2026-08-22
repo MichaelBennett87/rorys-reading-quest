@@ -34,19 +34,20 @@ describe('grade 2 content pack registry', () => {
       'g2-information-detectives-text-feature-hunt',
       'g2-information-detectives-central-idea-center',
       'g2-information-detectives-purpose-path',
+      'g2-information-detectives-opinion-evidence-desk',
       'legacy-word-forge-development-pack',
     ])
-    expect(activePacks).toHaveLength(15)
-    expect(activePacks.reduce((sum, pack) => sum + pack.lessons.length, 0)).toBe(105)
-    expect(activePacks.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(105)
-    expect(activePacks.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(602)
-    expect(activePacks.reduce((sum, pack) => sum + pack.passages.reduce((passageSum, passage) => passageSum + (passage.wordSupportTargets?.length ?? 0), 0), 0)).toBe(418)
+    expect(activePacks).toHaveLength(16)
+    expect(activePacks.reduce((sum, pack) => sum + pack.lessons.length, 0)).toBe(112)
+    expect(activePacks.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(112)
+    expect(activePacks.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(643)
+    expect(activePacks.reduce((sum, pack) => sum + pack.passages.reduce((passageSum, passage) => passageSum + (passage.wordSupportTargets?.length ?? 0), 0), 0)).toBe(446)
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 15,
-      activeLessonCount: 105,
-      activePassageCount: 105,
-      activeQuestionCount: 602,
-      activeSupportTargetCount: 418,
+      activePackCount: 16,
+      activeLessonCount: 112,
+      activePassageCount: 112,
+      activeQuestionCount: 643,
+      activeSupportTargetCount: 446,
     })
     expect(contentPackAudit).toHaveLength(0)
     expect(benchmarkCoverageAudit).toEqual(expect.objectContaining({
@@ -115,6 +116,24 @@ describe('grade 2 content pack registry', () => {
       coveredPatterns: ['central-idea', 'relevant-details'],
       missingPatterns: [],
       contributingPackIds: ['g2-information-detectives-central-idea-center'],
+      coverageStatus: 'implemented',
+      reviewStatus: 'DRAFT',
+    }))
+    expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.2.3')).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.2.R.2.3',
+      expectedPatterns: ['informational-author-purpose'],
+      coveredPatterns: ['informational-author-purpose'],
+      missingPatterns: [],
+      contributingPackIds: ['g2-information-detectives-purpose-path'],
+      coverageStatus: 'implemented',
+      reviewStatus: 'DRAFT',
+    }))
+    expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.2.4')).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.2.R.2.4',
+      expectedPatterns: ['opinion', 'supporting-evidence'],
+      coveredPatterns: ['opinion', 'supporting-evidence'],
+      missingPatterns: [],
+      contributingPackIds: ['g2-information-detectives-opinion-evidence-desk'],
       coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',
     }))

@@ -1,0 +1,7 @@
+export { grade2InformationDetectivesOpinionEvidenceDeskManifest, opinionEvidenceDeskLessons } from './manifest'
+export { grade2InformationDetectivesOpinionEvidenceDeskPack } from './pack'
+export { opinionEvidenceDeskCheckpointQuestions } from './questionsCheckpoint'
+export { opinionEvidenceDeskGuidedQuestions } from './questionsGuided'
+export { opinionEvidenceDeskPrerequisiteQuestions } from './questionsPrerequisite'
+export { opinionEvidenceDeskPassages } from './passages'
+export { authorOpinionGuides } from './authorOpinionGuides'
