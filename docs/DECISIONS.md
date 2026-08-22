@@ -309,3 +309,8 @@
 - Decision: Activate Information Detectives Opinion & Evidence Desk for `ELA.2.R.2.4` while preserving unit-specific review isolation and the existing no-argument-analysis boundary.
 - Reason: Phase 6E4 needs a bounded informational-text pack that teaches author opinion, fact versus opinion, and supporting evidence without moving into formal argument analysis, source reliability, or bias analysis.
 - Consequence: The active curriculum gains a fourth informational pack, the bridge roadmap now includes implemented DRAFT coverage for `ELA.2.R.2.4`, and later vocabulary phases stay planned.
+
+## 2026-08-22 - Phase 6E5 Academic Word Workshop Activation
+- Decision: Activate Context Cavern Academic Word Workshop for `ELA.2.V.1.1` while preserving Morphology Mine and Meaning Clue Chamber as planned later units.
+- Reason: Phase 6E5 needs bounded academic-vocabulary practice in speaking and writing without moving into morphology, context clues, reference-material work, or live speech evaluation.
+- Consequence: The active curriculum gains a fifth track, the bridge roadmap now includes implemented DRAFT coverage for `ELA.2.V.1.1`, and later Context Cavern phases stay planned.

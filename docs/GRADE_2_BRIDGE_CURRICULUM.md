@@ -1,6 +1,6 @@
 # Grade 2 Bridge Curriculum
 
-This roadmap describes the bounded Grade 2 bridge plan for Rory's Reading Quest. Phase 6A1, Phase 6A2, Phase 6B1, Phase 6B2, Phase 6C1, Phase 6C2, and Phase 6C3 provide authored DRAFT coverage for the listed Grade 2 bridge patterns, Phase 6C4 provides supportive practice for fluency foundations without claiming benchmark mastery, Phase 6D0 prepares the multi-world progression foundation for later prose and poetry work, Phase 6D1 adds the first active Story Scouts prose pack, Phase 6D2 adds the first active Story Scouts theme pack, Phase 6D3 adds the first active Story Scouts perspective pack, Phase 6E0 adds planned Information Detectives and Context Cavern shells without active content, Phase 6E1 adds Text Feature Hunt for `ELA.2.R.2.1`, Phase 6E2 adds Central Idea Center for `ELA.2.R.2.2`, Phase 6E3 adds Purpose Path for `ELA.2.R.2.3`, and Phase 6E4 adds Opinion & Evidence Desk for `ELA.2.R.2.4`. All new material stays DRAFT-only.
+This roadmap describes the bounded Grade 2 bridge plan for Rory's Reading Quest. Phase 6A1, Phase 6A2, Phase 6B1, Phase 6B2, Phase 6C1, Phase 6C2, and Phase 6C3 provide authored DRAFT coverage for the listed Grade 2 bridge patterns, Phase 6C4 provides supportive practice for fluency foundations without claiming benchmark mastery, Phase 6D0 prepares the multi-world progression foundation for later prose and poetry work, Phase 6D1 adds the first active Story Scouts prose pack, Phase 6D2 adds the first active Story Scouts theme pack, Phase 6D3 adds the first active Story Scouts perspective pack, Phase 6E0 adds planned Information Detectives and Context Cavern shells without active content, Phase 6E1 adds Text Feature Hunt for `ELA.2.R.2.1`, Phase 6E2 adds Central Idea Center for `ELA.2.R.2.2`, Phase 6E3 adds Purpose Path for `ELA.2.R.2.3`, Phase 6E4 adds Opinion & Evidence Desk for `ELA.2.R.2.4`, and Phase 6E5 adds Academic Word Workshop for `ELA.2.V.1.1`. All new material stays DRAFT-only.
 
 ## Foundations
 
@@ -38,9 +38,9 @@ This roadmap describes the bounded Grade 2 bridge plan for Rory's Reading Quest.
 | `ELA.2.R.3.1` | Cross-Genre Lab | `cg-unit-1` | Bridge decoding support | 1-2 | 6F | planned |
 | `ELA.2.R.3.2` | Cross-Genre Lab | `cg-unit-2` | `ELA.2.R.3.1` | 1-2 | 6F | planned |
 | `ELA.2.R.3.3` | Cross-Genre Lab | `cg-unit-3` | `ELA.2.R.3.2` | 1-2 | 6F | planned |
-| `ELA.2.V.1.1` | Context Cavern | `cc-unit-1` | Bridge decoding support | 1-2 | 6E | planned |
-| `ELA.2.V.1.2` | Context Cavern | `cc-unit-2` | `ELA.2.V.1.1` | 1-2 | 6E | planned |
-| `ELA.2.V.1.3` | Context Cavern | `cc-unit-3` | `ELA.2.V.1.2` | 1-2 | 6E | planned |
+| `ELA.2.V.1.1` | Context Cavern | `cc-unit-1` | Academic Word Workshop | 0-1 | 6E5 | implemented |
+| `ELA.2.V.1.2` | Context Cavern | `cc-unit-2` | `ELA.2.V.1.1` | 1-2 | 6E6 | planned |
+| `ELA.2.V.1.3` | Context Cavern | `cc-unit-3` | `ELA.2.V.1.2` | 1-2 | 6E7 | planned |
 
 ## Notes
 
@@ -56,6 +56,7 @@ This roadmap describes the bounded Grade 2 bridge plan for Rory's Reading Quest.
 - Phase 6E2 activates `ELA.2.R.2.2` through Information Detectives Central Idea Center while Context Cavern remains planned.
 - Phase 6E3 activates `ELA.2.R.2.3` through Information Detectives Purpose Path while Context Cavern remains planned.
 - Phase 6E4 activates `ELA.2.R.2.4` through Information Detectives Opinion & Evidence Desk while Context Cavern remains planned.
+- Phase 6E5 activates `ELA.2.V.1.1` through Context Cavern Academic Word Workshop while `ELA.2.V.1.2` and `ELA.2.V.1.3` remain planned.
 - Implemented means the listed patterns have authored DRAFT coverage only; it does not mean human approval or learner mastery.
 - No benchmark is marked approved.
 - Bridge planning keeps exposure, partial coverage, implemented coverage, and approved coverage distinct so future phases can stay bounded and auditable.
