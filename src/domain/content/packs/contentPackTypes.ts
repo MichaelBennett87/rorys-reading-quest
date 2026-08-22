@@ -135,6 +135,34 @@ export interface AcademicVocabularyGuide {
   contentVersion: string
 }
 
+export type MorphologyAffixKind = 'prefix' | 'suffix'
+
+export interface MorphologyAffixAnalysis {
+  affixId: string
+  kind: MorphologyAffixKind
+  surfaceForm: string
+  displayLabel: string
+  commonMeaning: string
+}
+
+export interface MorphologyTarget {
+  targetId: string
+  surfaceWord: string
+  sentenceId: string
+  baseWord: string
+  baseMeaning: string
+  affixes: [MorphologyAffixAnalysis]
+  composedMeaning: string
+  transparentComposition: true
+}
+
+export interface MorphologyGuide {
+  passageId: string
+  targets: MorphologyTarget[]
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
 export interface ContentPackManifest {
   packId: string
   packTitle: string
@@ -184,6 +212,7 @@ export interface ContentPack {
   authorPurposeGuides?: AuthorPurposeGuide[]
   authorOpinionGuides?: AuthorOpinionGuide[]
   academicVocabularyGuides?: AcademicVocabularyGuide[]
+  morphologyGuides?: MorphologyGuide[]
   themeGuides?: ThemeGuide[]
   perspectiveGuides?: PerspectiveGuide[]
   rhymeSchemeGuides?: RhymeSchemeGuide[]
@@ -249,6 +278,9 @@ export interface ContentPackAuditIssue {
    | 'missing_academic_vocabulary_guide'
    | 'academic_vocabulary_guide_count_mismatch'
    | 'academic_vocabulary_guide_invalid'
+   | 'missing_morphology_guide'
+   | 'morphology_guide_count_mismatch'
+   | 'morphology_guide_invalid'
    | 'invalid_author_opinion_feature_reference'
    | 'invalid_informational_feature_reference'
    | 'missing_perspective_guide'

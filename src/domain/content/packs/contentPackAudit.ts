@@ -596,6 +596,9 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
     if (pack.manifest.benchmarkReferences.includes('ELA.2.V.1.1')) {
       validateAcademicVocabularyGuideStructure(pack, issues)
     }
+    if (pack.manifest.benchmarkReferences.includes('ELA.2.V.1.2')) {
+      validateMorphologyGuideStructure(pack, issues)
+    }
     if (pack.manifest.benchmarkReferences.includes('ELA.2.R.1.3')) {
       validatePerspectivePortalGuideStructure(pack, issues)
     }
@@ -1627,8 +1630,279 @@ function validateAcademicVocabularyGuideStructure(pack: ContentPack, issues: Con
   }
 }
 
+function validateMorphologyGuideStructure(pack: ContentPack, issues: ContentPackAuditIssue[]) {
+  const guides = pack.morphologyGuides ?? []
+  const passageById = new Map(pack.passages.map((passage) => [passage.passageIdentifier, passage] as const))
+  const guideByPassageId = new Map<string, NonNullable<ContentPack['morphologyGuides']>[number]>()
+  const sentenceIdsByPassageId = new Map(
+    pack.passages.map((passage) => [passage.passageIdentifier, new Set((passage.sentences ?? []).map((sentence) => sentence.sentenceId))] as const),
+  )
+  const allowedWords = new Set([
+    'unpack',
+    'rebuild',
+    'preheat',
+    'disagree',
+    'miscount',
+    'helped',
+    'helping',
+    'slowly',
+    'helpful',
+    'plants',
+    'boxes',
+    'preview',
+    'fastest',
+    'faster',
+    'tallest',
+    'careless',
+  ])
+  const requiredPrefixFamilies = new Set(['prefix-un', 'prefix-re', 'prefix-pre', 'prefix-dis', 'prefix-mis'])
+  const requiredSuffixFamilies = new Set(['suffix-s-es', 'suffix-ed', 'suffix-ing', 'suffix-er-est', 'suffix-ful-less', 'suffix-ly'])
+  const observedPrefixFamilies = new Set<string>()
+  const observedSuffixFamilies = new Set<string>()
+  const checkpointPassageIds = new Set(
+    pack.lessons
+      .filter((lesson) => lesson.lessonRole === 'CHECKPOINT')
+      .flatMap((lesson) => lesson.passageIdentifiers),
+  )
+  const checkpointPassagePrefixFamilyCounts = new Map<string, Set<string>>()
+  const checkpointPassageSuffixKinds = new Map<string, { inflectional: boolean; derivational: boolean }>()
+  const wordCounts = new Map<string, number>()
+
+  if (guides.length !== pack.passages.length) {
+    pushIssue(
+      issues,
+      'morphology_guide_count_mismatch',
+      pack.manifest.packId,
+      `Expected ${pack.passages.length} morphology guides, found ${guides.length}.`,
+    )
+  }
+
+  for (const guide of guides) {
+    if (guideByPassageId.has(guide.passageId)) {
+      pushIssue(issues, 'morphology_guide_invalid', guide.passageId, 'Morphology guides must not duplicate a passage ID.')
+      continue
+    }
+    guideByPassageId.set(guide.passageId, guide)
+    const passage = passageById.get(guide.passageId)
+    if (!passage) {
+      pushIssue(issues, 'missing_morphology_guide', guide.passageId, 'Every morphology guide must point to a real passage.')
+      continue
+    }
+    const sentenceIds = sentenceIdsByPassageId.get(guide.passageId) ?? new Set<string>()
+
+    if (guide.targets.length !== 4) {
+      pushIssue(issues, 'morphology_guide_invalid', guide.passageId, 'Morphology guides must contain exactly four targets.')
+    }
+    if (guide.reviewStatus !== 'DRAFT') {
+      pushIssue(issues, 'missing_draft_status', guide.passageId, 'Morphology guides in this pack must remain DRAFT.')
+    }
+    if (guide.contentVersion !== pack.manifest.contentVersion) {
+      pushIssue(issues, 'morphology_guide_invalid', guide.passageId, 'Morphology guide content version must match the pack version.')
+    }
+    if (
+      [guide.passageId, ...guide.targets.flatMap((target) => [
+        target.targetId,
+        target.surfaceWord,
+        target.sentenceId,
+        target.baseWord,
+        target.baseMeaning,
+        target.composedMeaning,
+        target.affixes[0]?.affixId ?? '',
+        target.affixes[0]?.surfaceForm ?? '',
+        target.affixes[0]?.displayLabel ?? '',
+        target.affixes[0]?.commonMeaning ?? '',
+      ])].some((text) => text.includes('<') || text.includes('http://') || text.includes('https://'))
+    ) {
+      pushIssue(issues, 'morphology_guide_invalid', guide.passageId, 'Morphology guide text must not contain raw HTML or remote URLs.')
+    }
+
+    const seenTargetIds = new Set<string>()
+    for (const target of guide.targets) {
+      if (seenTargetIds.has(target.targetId)) {
+        pushIssue(issues, 'morphology_guide_invalid', target.targetId, 'Morphology target IDs must be unique within a guide.')
+      } else {
+        seenTargetIds.add(target.targetId)
+      }
+
+      const word = normalizeGuideText(target.surfaceWord)
+      if (!allowedWords.has(word)) {
+        pushIssue(issues, 'morphology_guide_invalid', target.targetId, 'Morphology targets must use approved Phase 6E6 words.')
+      }
+      wordCounts.set(word, (wordCounts.get(word) ?? 0) + 1)
+
+      if (!target.baseWord.trim()) {
+        pushIssue(issues, 'morphology_guide_invalid', target.targetId, 'Morphology targets need a base word.')
+      }
+      if (!target.baseMeaning.trim()) {
+        pushIssue(issues, 'morphology_guide_invalid', target.targetId, 'Morphology targets need a base-word meaning.')
+      } else if (!looksLikeCompleteThought(target.baseMeaning)) {
+        pushIssue(issues, 'morphology_guide_invalid', target.targetId, 'Morphology base-word meanings must be complete thoughts.')
+      }
+      if (!target.composedMeaning.trim()) {
+        pushIssue(issues, 'morphology_guide_invalid', target.targetId, 'Morphology targets need a composed meaning.')
+      } else if (!looksLikeCompleteThought(target.composedMeaning)) {
+        pushIssue(issues, 'morphology_guide_invalid', target.targetId, 'Morphology composed meanings must be complete thoughts.')
+      }
+      if (target.transparentComposition !== true) {
+        pushIssue(issues, 'morphology_guide_invalid', target.targetId, 'Morphology targets must declare transparentComposition true.')
+      }
+      if (!Array.isArray(target.affixes) || target.affixes.length !== 1) {
+        pushIssue(issues, 'morphology_guide_invalid', target.targetId, 'Morphology targets must contain exactly one affix.')
+        continue
+      }
+
+      const affix = target.affixes[0]
+      if (!affix.affixId.trim()) {
+        pushIssue(issues, 'morphology_guide_invalid', target.targetId, 'Morphology affixes need an affix ID.')
+      }
+      if (affix.kind !== 'prefix' && affix.kind !== 'suffix') {
+        pushIssue(issues, 'morphology_guide_invalid', target.targetId, 'Morphology affix kind must be prefix or suffix.')
+      }
+      if (!affix.surfaceForm.trim()) {
+        pushIssue(issues, 'morphology_guide_invalid', target.targetId, 'Morphology affixes need a surface form.')
+      }
+      if (!affix.displayLabel.trim()) {
+        pushIssue(issues, 'morphology_guide_invalid', target.targetId, 'Morphology affixes need a display label.')
+      }
+      if (!affix.commonMeaning.trim()) {
+        pushIssue(issues, 'morphology_guide_invalid', target.targetId, 'Morphology affixes need a common meaning.')
+      } else if (!looksLikeCompleteThought(affix.commonMeaning)) {
+        pushIssue(issues, 'morphology_guide_invalid', target.targetId, 'Morphology affix meanings must be complete thoughts.')
+      }
+
+      const expectedWord = affix.kind === 'prefix'
+        ? `${normalizeGuideText(affix.surfaceForm)}${normalizeGuideText(target.baseWord)}`
+        : `${normalizeGuideText(target.baseWord)}${normalizeGuideText(affix.surfaceForm)}`
+      if (expectedWord !== word) {
+        pushIssue(issues, 'morphology_guide_invalid', target.targetId, 'Morphology targets must reconstruct their surface word exactly.')
+      }
+      if (affix.kind === 'prefix') {
+        observedPrefixFamilies.add(`prefix-${normalizeGuideText(affix.surfaceForm)}`)
+      } else {
+        observedSuffixFamilies.add(`suffix-${getMorphologySuffixFamilyTag(normalizeGuideText(affix.surfaceForm))}`)
+      }
+
+      const passageEvidence = resolvePassageEvidence(passage, target.sentenceId)
+      if (!passageEvidence) {
+        pushIssue(issues, 'invalid_informational_feature_reference', target.sentenceId, 'Morphology target sentences must resolve to authored passage evidence.')
+        continue
+      }
+      if (!sentenceIds.has(target.sentenceId)) {
+        pushIssue(issues, 'missing_support_sentence', target.targetId, 'Morphology target sentence IDs must resolve to the passage.')
+      }
+      if (!normalizeGuideText(passageEvidence.text).includes(word)) {
+        pushIssue(issues, 'morphology_guide_invalid', target.targetId, 'Morphology target sentences must contain the target word.')
+      }
+
+      if (checkpointPassageIds.has(guide.passageId)) {
+        const prefixFamilies = checkpointPassagePrefixFamilyCounts.get(guide.passageId) ?? new Set<string>()
+        const suffixKinds = checkpointPassageSuffixKinds.get(guide.passageId) ?? { inflectional: false, derivational: false }
+        const familyTag = getMorphologyFamilyTag(affix.kind, normalizeGuideText(affix.surfaceForm))
+        if (affix.kind === 'prefix') {
+          prefixFamilies.add(familyTag)
+        } else {
+          const normalizedSurfaceForm = normalizeGuideText(affix.surfaceForm)
+          if (isMorphologyInflectionalSuffix(normalizedSurfaceForm)) {
+            suffixKinds.inflectional = true
+          }
+          if (normalizedSurfaceForm === 'er' || normalizedSurfaceForm === 'est' || normalizedSurfaceForm === 'ful' || normalizedSurfaceForm === 'less' || normalizedSurfaceForm === 'ly') {
+            suffixKinds.derivational = true
+          }
+          if (!isMorphologyInflectionalSuffix(normalizedSurfaceForm) && normalizedSurfaceForm !== 'er' && normalizedSurfaceForm !== 'est') {
+            suffixKinds.derivational = true
+          }
+        }
+        checkpointPassagePrefixFamilyCounts.set(guide.passageId, prefixFamilies)
+        checkpointPassageSuffixKinds.set(guide.passageId, suffixKinds)
+      }
+    }
+  }
+
+  if (wordCounts.size !== 14) {
+    pushIssue(issues, 'morphology_guide_invalid', pack.manifest.packId, 'Morphology packs must use exactly 14 distinct target words.')
+  }
+  for (const [word, count] of wordCounts) {
+    if (count !== 2) {
+      pushIssue(issues, 'morphology_guide_invalid', word, 'Each Morphology target word must appear exactly twice across the pack.')
+    }
+  }
+
+  for (const family of requiredPrefixFamilies) {
+    if (!observedPrefixFamilies.has(family)) {
+      pushIssue(issues, 'morphology_guide_invalid', pack.manifest.packId, `Morphology packs must include ${family}.`)
+    }
+  }
+  for (const family of requiredSuffixFamilies) {
+    if (!observedSuffixFamilies.has(family)) {
+      pushIssue(issues, 'morphology_guide_invalid', pack.manifest.packId, `Morphology packs must include ${family}.`)
+    }
+  }
+
+  let checkpointPassagesWithMultiplePrefixFamilies = 0
+  let checkpointPassagesWithDerivationalAndInflectionalSuffixes = 0
+  for (const passageId of checkpointPassageIds) {
+    const prefixFamilies = checkpointPassagePrefixFamilyCounts.get(passageId) ?? new Set<string>()
+    const suffixKinds = checkpointPassageSuffixKinds.get(passageId) ?? { inflectional: false, derivational: false }
+    if (prefixFamilies.size === 0) {
+      pushIssue(issues, 'morphology_guide_invalid', passageId, 'Checkpoint passages must include at least one prefix target.')
+    }
+    if (prefixFamilies.size > 1) checkpointPassagesWithMultiplePrefixFamilies += 1
+    if (suffixKinds.inflectional && suffixKinds.derivational) checkpointPassagesWithDerivationalAndInflectionalSuffixes += 1
+    if (!suffixKinds.inflectional || !suffixKinds.derivational) {
+      pushIssue(issues, 'morphology_guide_invalid', passageId, 'Checkpoint passages must include both inflectional and derivational suffix targets.')
+    }
+    const targetCount = guideByPassageId.get(passageId)?.targets.length ?? 0
+    if (targetCount > 0 && targetCount < 4) {
+      pushIssue(issues, 'morphology_guide_invalid', passageId, 'Checkpoint passages must retain exactly four morphology targets.')
+    }
+  }
+
+  if (checkpointPassagesWithMultiplePrefixFamilies < 2) {
+    pushIssue(issues, 'morphology_guide_invalid', pack.manifest.packId, 'At least two checkpoint passages must include more than one prefix family.')
+  }
+  if (checkpointPassagesWithDerivationalAndInflectionalSuffixes < 2) {
+    pushIssue(issues, 'morphology_guide_invalid', pack.manifest.packId, 'At least two checkpoint passages must include both derivational and inflectional suffixes.')
+  }
+
+  for (const passage of pack.passages) {
+    if (!guideByPassageId.has(passage.passageIdentifier)) {
+      pushIssue(issues, 'missing_morphology_guide', passage.passageIdentifier, 'Every passage needs exactly one morphology guide.')
+    }
+  }
+}
+
 function normalizeGuideText(text: string): string {
   return text.trim().toLowerCase().replace(/\s+/g, ' ')
+}
+
+function getMorphologyFamilyTag(kind: 'prefix' | 'suffix', surfaceForm: string): string {
+  return `${kind === 'prefix' ? 'prefix' : 'suffix'}-${surfaceForm}`
+}
+
+function getMorphologySuffixFamilyTag(surfaceForm: string): string {
+  switch (surfaceForm) {
+    case 's':
+    case 'es':
+      return 's-es'
+    case 'ed':
+      return 'ed'
+    case 'ing':
+      return 'ing'
+    case 'er':
+    case 'est':
+      return 'er-est'
+    case 'ful':
+    case 'less':
+      return 'ful-less'
+    case 'ly':
+      return 'ly'
+    default:
+      return surfaceForm
+  }
+}
+
+function isMorphologyInflectionalSuffix(surfaceForm: string): boolean {
+  return ['s', 'es', 'ed', 'ing', 'er', 'est'].includes(surfaceForm)
 }
 
 function looksLikeCompleteThought(text: string): boolean {
@@ -2209,6 +2483,52 @@ function getBridgePackExpectation(pack: ContentPack): BridgePackExpectation | nu
       guidedDifficultyA: 0,
       guidedDifficultyB: 1,
       checkpointPatterns: ['academic-vocabulary-use', 'speaking-vocabulary-use', 'writing-vocabulary-use', 'cross-subject-vocabulary-use'],
+      minSupportTargets: 28,
+      maxSupportTargets: 28,
+      minSupportTargetsPerPassage: 4,
+      maxSupportTargetsPerPassage: 4,
+      openConsonantLeWords: new Set<string>(),
+      closedConsonantLeWords: new Set<string>(),
+      forbiddenSilentEWords: new Set<string>(),
+      questionTypeCounts: {
+        multiple_choice: 17,
+        multi_select: 7,
+        hot_text: 7,
+        table_match: 7,
+        two_part: 3,
+      },
+    }
+  }
+
+  if (pack.manifest.benchmarkReferences.includes('ELA.2.V.1.2') && pack.manifest.difficultyRange[0] === 1 && pack.manifest.difficultyRange[1] === 2) {
+    return {
+      packId: pack.manifest.packId,
+      guidedDifficultyA: 1,
+      guidedDifficultyB: 2,
+      checkpointPatterns: [
+        'base-words',
+        'affixes',
+        'base-word-identification',
+        'base-word-meaning',
+        'prefix-identification',
+        'suffix-identification',
+        'affix-meaning',
+        'word-meaning-from-parts',
+        'affix-changes-meaning',
+        'word-building-for-meaning',
+        'transparent-word-composition',
+        'prefix-un',
+        'prefix-re',
+        'prefix-pre',
+        'prefix-dis',
+        'prefix-mis',
+        'suffix-s-es',
+        'suffix-ed',
+        'suffix-ing',
+        'suffix-er-est',
+        'suffix-ful-less',
+        'suffix-ly',
+      ],
       minSupportTargets: 28,
       maxSupportTargets: 28,
       minSupportTargetsPerPassage: 4,

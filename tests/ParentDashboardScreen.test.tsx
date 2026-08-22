@@ -338,6 +338,116 @@ function createDashboard(recentAverageAccuracy: number | null = 87): DashboardSn
   }
 }
 
+function createVocabularyDashboard(): DashboardSnapshot {
+  const dashboard = createDashboard()
+  dashboard.categorySummaries.push({
+    reportingCategory: 'Vocabulary',
+    rawCategories: ['vocabulary'],
+    totalQuestionAttempts: 4,
+    correctResponses: 4,
+    firstAttemptCorrectResponses: 4,
+    overallAccuracy: 100,
+    firstAttemptAccuracy: 100,
+    assistedSessionCount: 0,
+    assistedSessionRate: 0,
+    mostRecentActivityDate: '2026-08-20T12:00:00.000Z',
+    dataAvailability: 'ready',
+    unclassifiedQuestionCount: 0,
+  })
+  dashboard.benchmarkSummaries.push(
+    {
+      benchmarkReference: 'ELA.2.V.1.1',
+      skillIdentifier: 'g2-context-cavern-vocabulary',
+      reportingCategory: 'Vocabulary',
+      gradeBand: 2,
+      questionAttempts: 2,
+      accuracy: 100,
+      firstAttemptAccuracy: 100,
+      assistedSessionRate: 0,
+      mostRecentActivityDate: '2026-08-20T12:00:00.000Z',
+      currentDifficulty: 1,
+      lastMasteredDifficulty: 0,
+      distinctIndependentEvidenceCount: 1,
+      currentLearningState: 'ADVANCE',
+      nextReviewDate: '2026-08-21T12:00:00.000Z',
+      activeRemediationTarget: null,
+      parentStatusExplanation: 'Context Cavern Academic Word Workshop is ready for the next vocabulary trail.',
+      dataAvailability: 'ready',
+    },
+    {
+      benchmarkReference: 'ELA.2.V.1.2',
+      skillIdentifier: 'g2-context-cavern-vocabulary',
+      reportingCategory: 'Vocabulary',
+      gradeBand: 2,
+      questionAttempts: 2,
+      accuracy: 100,
+      firstAttemptAccuracy: 100,
+      assistedSessionRate: 0,
+      mostRecentActivityDate: '2026-08-20T12:00:00.000Z',
+      currentDifficulty: 2,
+      lastMasteredDifficulty: 1,
+      distinctIndependentEvidenceCount: 2,
+      currentLearningState: 'ADVANCE',
+      nextReviewDate: '2026-08-21T12:00:00.000Z',
+      activeRemediationTarget: null,
+      parentStatusExplanation: 'Context Cavern Morphology Mine is ready for review and next-step practice.',
+      dataAvailability: 'ready',
+    },
+  )
+  dashboard.skillSummaries.push({
+    skillId: 'g2-context-cavern-vocabulary',
+    benchmarkReference: 'ELA.2.V.1.1',
+    benchmarkReferences: ['ELA.2.V.1.1', 'ELA.2.V.1.2'],
+    reportingCategory: 'Vocabulary',
+    gradeBand: 2,
+    questionAttempts: 4,
+    accuracy: 100,
+    firstAttemptAccuracy: 100,
+    assistedSessionRate: 0,
+    mostRecentActivityDate: '2026-08-20T12:00:00.000Z',
+    currentDifficulty: 2,
+    lastMasteredDifficulty: 1,
+    distinctIndependentEvidenceCount: 2,
+    currentLearningState: 'ADVANCE',
+    nextReviewDate: '2026-08-21T12:00:00.000Z',
+    activeRemediationTarget: null,
+    parentStatusExplanation: 'Context Cavern Morphology Mine is ready for review and next-step practice.',
+    dataAvailability: 'ready',
+  })
+  dashboard.recentAttempts.unshift({
+    completionDate: '2026-08-20T12:00:00.000Z',
+    lessonId: 'lesson-context-cavern-morphology-mine-checkpoint-a',
+    lessonTitle: 'Context Cavern: Morphology Mine',
+    activityId: 'activity-context-cavern-morphology-mine-checkpoint-a',
+    skillId: 'g2-context-cavern-vocabulary',
+    difficulty: 2,
+    accuracy: 100,
+    firstAttemptAccuracy: 100,
+    assistanceUsed: 0,
+    supportedTargetCount: 0,
+    maximumAssistanceLevel: 0,
+    progressionDecision: 'ADVANCE',
+    parentFriendlyExplanation: 'Context Cavern Morphology Mine is ready for review and next-step practice.',
+    nextReviewDate: '2026-08-21T12:00:00.000Z',
+    classificationStatus: 'classified',
+  })
+  dashboard.reviewSummary.entries.push({
+    skillId: 'g2-context-cavern-vocabulary',
+    difficulty: 2,
+    reviewStep: 0,
+    dueAt: '2026-08-21T12:00:00.000Z',
+    unitId: 'cc-unit-2',
+    unitLabel: 'Morphology Mine',
+    contentVersion: 'g2-cc-morphology-r0.1.0',
+    status: 'upcoming',
+  })
+  dashboard.reviewSummary.upcomingReviews = 2
+  dashboard.overview.skillsRepresented = 3
+  dashboard.overview.completedSessions = 5
+  dashboard.overview.reviewsCurrentlyDue = 2
+  return dashboard
+}
+
 function createNoDataDashboard(): DashboardSnapshot {
   return {
     generatedAt: now,
@@ -763,5 +873,61 @@ describe('ParentDashboardScreen', () => {
     expect(print).toHaveBeenCalledTimes(1)
     fireEvent.click(screen.getByRole('button', { name: /Back to Dashboard/i }))
     expect(screen.getByRole('heading', { name: /Overview/i })).toBeTruthy()
+  })
+
+  test('vocabulary progress and print summary surface Context Cavern morphology details', () => {
+    const { service: printService, print } = createSupportedPrintService()
+    const progress = createProgress()
+    progress.skillProgress['g2-context-cavern-vocabulary'] = {
+      skillId: 'g2-context-cavern-vocabulary',
+      currentDifficulty: 2,
+      lastMasteredDifficulty: 1,
+      currentLearningState: 'ADVANCE',
+      qualifyingIndependentActivityIds: ['activity-context-cavern-academic-word-workshop-checkpoint-a', 'activity-context-cavern-morphology-mine-checkpoint-a'],
+      consecutiveUnsuccessfulAtCurrentDifficulty: 0,
+      lastCompletedActivityId: 'activity-context-cavern-morphology-mine-checkpoint-a',
+      recentActivityUsage: [],
+      reviewStep: 0,
+      nextReviewDate: '2026-08-21T12:00:00.000Z',
+      lastDecisionReasonCodes: ['independent_evidence'],
+      remediationContext: null,
+    }
+
+    render(
+      <ParentDashboardScreen
+        progress={progress}
+        dashboard={createVocabularyDashboard()}
+        recordsState={createRecordsState()}
+        storageNotice="Parent storage is ready."
+        printService={printService}
+        onCreateAssessment={(values) => createNoopMutationResult(createRecordsState(), values.assessmentWindow)}
+        onUpdateAssessment={() => createNoopMutationResult(createRecordsState(), 'update')}
+        onDeleteAssessment={() => createNoopMutationResult(createRecordsState(), 'delete')}
+        onLock={() => {}}
+        onBackToQuest={() => {}}
+      />,
+    )
+
+    fireEvent.click(screen.getByRole('button', { name: /Progress/i }))
+    fireEvent.change(screen.getByLabelText(/Filter by category/i), { target: { value: 'Vocabulary' } })
+    expect(screen.getByRole('heading', { name: /ELA\.2\.V\.1\.1/i })).toBeTruthy()
+    expect(screen.getAllByText(/Context Cavern Vocabulary/i).length).toBeGreaterThan(0)
+    fireEvent.click(screen.getByRole('heading', { name: /Context Cavern Vocabulary/i }).closest('article')!.querySelector('button')!)
+    expect(screen.getByRole('heading', { level: 2, name: /Context Cavern Vocabulary/i })).toBeTruthy()
+    expect(screen.getByText(/Benchmark references: ELA\.2\.V\.1\.1 · ELA\.2\.V\.1\.2/i)).toBeTruthy()
+    expect(screen.getByText(/Current trail: Trail 2/i)).toBeTruthy()
+    expect(screen.getByText(/Distinct independent evidence count: 2/i)).toBeTruthy()
+    expect(screen.getByText(/Context Cavern Morphology Mine is ready for review and next-step practice/i)).toBeTruthy()
+
+    fireEvent.click(screen.getByRole('button', { name: /Back to Progress/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Print Summary/i }))
+    expect(screen.getByRole('heading', { name: /Parent Progress Summary/i })).toBeTruthy()
+    expect(screen.getAllByText(/Context Cavern Vocabulary/i).length).toBeGreaterThan(0)
+    expect(screen.getByText(/Benchmark references: ELA\.2\.V\.1\.1 · ELA\.2\.V\.1\.2/i)).toBeTruthy()
+    expect(screen.getByText(/Context Cavern: Morphology Mine/i)).toBeTruthy()
+    expect(screen.queryByText(/passage text/i)).toBeNull()
+    expect(screen.queryByText(/MorphologyGuide/i)).toBeNull()
+    fireEvent.click(screen.getByRole('button', { name: /^Print$/i }))
+    expect(print).toHaveBeenCalledTimes(1)
   })
 })

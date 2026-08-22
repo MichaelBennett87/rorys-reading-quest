@@ -68,6 +68,23 @@ function createContextCavernLesson(overrides: Partial<LessonActivityCandidate> =
   }
 }
 
+function createMorphologyMineLesson(overrides: Partial<LessonActivityCandidate> = {}): LessonActivityCandidate {
+  return {
+    lessonId: 'lesson-context-cavern-morphology-mine-checkpoint-a',
+    activityId: 'activity-context-cavern-morphology-mine-checkpoint-a',
+    skillId: 'g2-context-cavern-vocabulary',
+    difficulty: 2,
+    worldId: 'context-cavern',
+    unitId: 'cc-unit-2',
+    packId: 'fixture-context-cavern-pack',
+    benchmarkReferences: ['ELA.2.V.1.2'],
+    eligiblePurposes: ['progression', 'review', 'verification', 'remediation'],
+    passageQuestionKeys: ['context-cavern-morphology-mine-a|q1'],
+    contentVersion: 'fixture-context-cavern-v2',
+    ...overrides,
+  }
+}
+
 describe('unit-aware Word Forge planning', () => {
   test('derives Vowel Voyage and Syllable Summit states from progress', () => {
     const difficultyOneWorlds = deriveWorldsForProgress(createProgress(1))
@@ -349,12 +366,53 @@ describe('unit-aware Word Forge planning', () => {
       progress: noContentProgress,
       availableLessons: [],
     })
-    expect(contextLocked.status).toBe('locked')
-    if (contextLocked.status === 'locked') {
-      expect(contextLocked.reason).toMatch(/Context Cavern Vocabulary quests are being prepared/i)
+    expect(contextLocked.status).toBe('content_needed')
+    if (contextLocked.status === 'content_needed') {
+      expect(contextLocked.reason).toMatch(/No lesson exists for this skill/i)
     }
 
-    const fixtureLessons = [createInformationDetectivesLesson(), createContextCavernLesson()]
+    const morphologyLocked = planUnitQuest({
+      selectedUnitId: 'cc-unit-2',
+      progress: noContentProgress,
+      availableLessons: [],
+    })
+    expect(morphologyLocked.status).toBe('locked')
+    if (morphologyLocked.status === 'locked') {
+      expect(morphologyLocked.reason).toMatch(/Complete Academic Word Workshop to unlock Morphology Mine/i)
+    }
+
+    const morphologyRemediationProgress = createDefaultQuestProgress(now)
+    morphologyRemediationProgress.skillProgress['g2-context-cavern-vocabulary'] = createInitialSkillProgress('g2-context-cavern-vocabulary', 1, 0)
+    morphologyRemediationProgress.plannedNextQuest = {
+      status: 'available',
+      purpose: 'remediation',
+      lesson: createMorphologyMineLesson({ difficulty: 1, eligiblePurposes: ['remediation', 'review'] }),
+    }
+
+    const morphologyRemediationWorlds = deriveCurriculumWorlds(
+      demoWorlds,
+      morphologyRemediationProgress,
+      [createMorphologyMineLesson({ difficulty: 1, eligiblePurposes: ['remediation', 'review'] })],
+    )
+    const morphologyRemediationWorld = morphologyRemediationWorlds.find((world) => world.id === 'context-cavern')!
+
+    expect(morphologyRemediationWorld.status).toBe('available')
+    expect(morphologyRemediationWorld.units.find((unit) => unit.id === 'cc-unit-2')?.state).toBe('available')
+    expect(morphologyRemediationWorld.units.find((unit) => unit.id === 'cc-unit-2')?.difficultyLabel).toBe('Power-Up Mission')
+
+    const morphologyRemediation = planUnitQuest({
+      selectedUnitId: 'cc-unit-2',
+      progress: morphologyRemediationProgress,
+      availableLessons: [createMorphologyMineLesson({ difficulty: 1, eligiblePurposes: ['remediation', 'review'] })],
+    })
+    expect(morphologyRemediation.status).toBe('available')
+    if (morphologyRemediation.status === 'available') {
+      expect(morphologyRemediation.lesson.skillId).toBe('g2-context-cavern-vocabulary')
+      expect(morphologyRemediation.lesson.unitId).toBe('cc-unit-2')
+      expect(morphologyRemediation.lesson.benchmarkReferences).toEqual(['ELA.2.V.1.2'])
+    }
+
+    const fixtureLessons = [createInformationDetectivesLesson(), createContextCavernLesson(), createMorphologyMineLesson()]
     const playableWorlds = deriveCurriculumWorlds(demoWorlds, createDefaultQuestProgress(now), fixtureLessons)
     const informationWorld = playableWorlds.find((world) => world.id === 'information-detectives')!
     const contextWorld = playableWorlds.find((world) => world.id === 'context-cavern')!
@@ -363,6 +421,7 @@ describe('unit-aware Word Forge planning', () => {
     expect(informationWorld.units.find((unit) => unit.id === 'id-unit-1')?.state).toBe('available')
     expect(contextWorld.status).toBe('available')
     expect(contextWorld.units.find((unit) => unit.id === 'cc-unit-1')?.state).toBe('available')
+    expect(contextWorld.units.find((unit) => unit.id === 'cc-unit-2')?.state).toBe('locked')
 
     const informationPlayable = planUnitQuest({
       selectedUnitId: 'id-unit-1',
@@ -384,6 +443,47 @@ describe('unit-aware Word Forge planning', () => {
     if (contextPlayable.status === 'available') {
       expect(contextPlayable.lesson.skillId).toBe('g2-context-cavern-vocabulary')
       expect(contextPlayable.lesson.unitId).toBe('cc-unit-1')
+    }
+  })
+
+  test('morphology mine becomes available at difficulty 2 and review-ready at difficulty 3', () => {
+    const progress = createDefaultQuestProgress(now)
+    progress.skillProgress['g2-context-cavern-vocabulary'] = createInitialSkillProgress('g2-context-cavern-vocabulary', 2, 1)
+
+    const worldsAtTwo = deriveCurriculumWorlds(
+      demoWorlds,
+      progress,
+      [createContextCavernLesson(), createMorphologyMineLesson()],
+    )
+    const contextWorldAtTwo = worldsAtTwo.find((world) => world.id === 'context-cavern')!
+
+    expect(contextWorldAtTwo.status).toBe('available')
+    expect(contextWorldAtTwo.units.find((unit) => unit.id === 'cc-unit-1')?.state).toBe('complete')
+    expect(contextWorldAtTwo.units.find((unit) => unit.id === 'cc-unit-2')?.state).toBe('available')
+    expect(contextWorldAtTwo.units.find((unit) => unit.id === 'cc-unit-2')?.difficultyLabel).toBe('Trail 2')
+
+    const reviewProgress = createDefaultQuestProgress(now)
+    reviewProgress.skillProgress['g2-context-cavern-vocabulary'] = createInitialSkillProgress('g2-context-cavern-vocabulary', 3, 2)
+    reviewProgress.skillProgress['g2-context-cavern-vocabulary'].currentLearningState = 'SPACED_REVIEW'
+
+    const worldsAtThree = deriveCurriculumWorlds(
+      demoWorlds,
+      reviewProgress,
+      [createContextCavernLesson(), createMorphologyMineLesson()],
+    )
+    const contextWorldAtThree = worldsAtThree.find((world) => world.id === 'context-cavern')!
+
+    expect(contextWorldAtThree.units.find((unit) => unit.id === 'cc-unit-2')?.state).toBe('review')
+    expect(contextWorldAtThree.units.find((unit) => unit.id === 'cc-unit-2')?.difficultyLabel).toBe('Review')
+
+    const reviewPlan = planUnitQuest({
+      selectedUnitId: 'cc-unit-2',
+      progress: reviewProgress,
+      availableLessons: [createMorphologyMineLesson({ eligiblePurposes: ['review'] })],
+    })
+    expect(reviewPlan.status).toBe('content_needed')
+    if (reviewPlan.status === 'content_needed') {
+      expect(reviewPlan.reason).toMatch(/Meaning Clue Chamber quests are being prepared/i)
     }
   })
 

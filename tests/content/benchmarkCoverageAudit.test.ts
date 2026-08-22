@@ -99,6 +99,15 @@ describe('benchmark coverage audit', () => {
       coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',
     }))
+    expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.V.1.2')).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.2.V.1.2',
+      expectedPatterns: ['base-words', 'affixes'],
+      coveredPatterns: ['base-words', 'affixes'],
+      missingPatterns: [],
+      contributingPackIds: ['g2-context-cavern-morphology-mine'],
+      coverageStatus: 'implemented',
+      reviewStatus: 'DRAFT',
+    }))
   })
 
   test('unknown benchmark references fail safely without pretending to be implemented', () => {

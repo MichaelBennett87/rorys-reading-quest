@@ -15,6 +15,7 @@ import { grade2InformationDetectivesCentralIdeaCenterPack } from './grade2/infor
 import { grade2InformationDetectivesPurposePathPack } from './grade2/informationDetectives/purposePath'
 import { grade2InformationDetectivesOpinionEvidenceDeskPack } from './grade2/informationDetectives/opinionEvidenceDesk'
 import { grade2ContextCavernAcademicWordWorkshopPack } from './grade2/contextCavern/academicWordWorkshop'
+import { grade2ContextCavernMorphologyMinePack } from './grade2/contextCavern/morphologyMine'
 import { legacyDevelopmentPack } from './legacyDevelopmentPack'
 import type { ContentPack } from './contentPackTypes'
 import type { ContentSample } from '../types'
@@ -39,6 +40,7 @@ export const contentPacks: readonly ContentPack[] = [
   grade2InformationDetectivesPurposePathPack,
   grade2InformationDetectivesOpinionEvidenceDeskPack,
   grade2ContextCavernAcademicWordWorkshopPack,
+  grade2ContextCavernMorphologyMinePack,
   legacyDevelopmentPack,
 ]
 

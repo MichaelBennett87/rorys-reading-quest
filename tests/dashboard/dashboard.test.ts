@@ -2,6 +2,8 @@ import { describe, expect, test } from 'vitest'
 
 import { createAssistanceEvent } from '../../src/domain/assistance'
 import { sampleContent } from '../../src/domain/content'
+import { grade2ContextCavernAcademicWordWorkshopPack } from '../../src/domain/content/packs/grade2/contextCavern/academicWordWorkshop'
+import { grade2ContextCavernMorphologyMinePack } from '../../src/domain/content/packs/grade2/contextCavern/morphologyMine'
 import {
   buildAttentionItems,
   buildBenchmarkSummaries,
@@ -199,6 +201,70 @@ describe('dashboard analytics', () => {
     expect(skill.lastMasteredDifficulty).toBe(0)
     expect(skill.distinctIndependentEvidenceCount).toBe(1)
     expect(skill.activeRemediationTarget).toBeNull()
+  })
+
+  test('vocabulary summaries include Context Cavern academic-word and morphology benchmarks', () => {
+    const academicQuestionIds = grade2ContextCavernAcademicWordWorkshopPack.questions.slice(0, 2).map((question) => question.questionIdentifier)
+    const morphologyQuestionIds = grade2ContextCavernMorphologyMinePack.questions.slice(0, 2).map((question) => question.questionIdentifier)
+    const progress = createDefaultQuestProgress(now)
+    progress.completedAttempts = [
+      buildAttempt({
+        completionId: 'completion-context-academic',
+        completedAt: now,
+        accuracy: 100,
+        questionIds: academicQuestionIds,
+        decisionState: 'ADVANCE',
+        skillId: 'g2-context-cavern-vocabulary',
+        difficulty: 1,
+        lessonId: 'lesson-context-cavern-academic-word-workshop-checkpoint-a',
+        activityId: 'activity-context-cavern-academic-word-workshop-checkpoint-a',
+      }),
+      buildAttempt({
+        completionId: 'completion-context-morphology',
+        completedAt: now,
+        accuracy: 100,
+        questionIds: morphologyQuestionIds,
+        decisionState: 'ADVANCE',
+        skillId: 'g2-context-cavern-vocabulary',
+        difficulty: 2,
+        lessonId: 'lesson-context-cavern-morphology-mine-checkpoint-a',
+        activityId: 'activity-context-cavern-morphology-mine-checkpoint-a',
+      }),
+    ]
+    progress.completedSessionCount = progress.completedAttempts.length
+    progress.skillProgress['g2-context-cavern-vocabulary'] = {
+      skillId: 'g2-context-cavern-vocabulary',
+      currentDifficulty: 2,
+      lastMasteredDifficulty: 1,
+      currentLearningState: 'ADVANCE',
+      qualifyingIndependentActivityIds: ['activity-context-cavern-academic-word-workshop-checkpoint-a', 'activity-context-cavern-morphology-mine-checkpoint-a'],
+      consecutiveUnsuccessfulAtCurrentDifficulty: 0,
+      lastCompletedActivityId: 'activity-context-cavern-morphology-mine-checkpoint-a',
+      recentActivityUsage: [],
+      reviewStep: 0,
+      nextReviewDate: '2026-08-21T12:00:00.000Z',
+      lastDecisionReasonCodes: ['independent_evidence'],
+      remediationContext: null,
+    }
+
+    const category = buildCategorySummaries({ progress }).find((entry) => entry.reportingCategory === 'Vocabulary')!
+    expect(category.totalQuestionAttempts).toBe(4)
+    expect(category.correctResponses).toBe(4)
+    expect(category.firstAttemptCorrectResponses).toBe(4)
+    expect(category.assistedSessionCount).toBe(0)
+
+    const benchmarkSummaries = buildBenchmarkSummaries({ progress }).filter((entry) => entry.skillIdentifier === 'g2-context-cavern-vocabulary')
+    expect(benchmarkSummaries.map((entry) => entry.benchmarkReference)).toEqual(['ELA.2.V.1.1', 'ELA.2.V.1.2'])
+    expect(benchmarkSummaries).toHaveLength(2)
+
+    const skill = buildSkillSummaries({ progress }).find((entry) => entry.skillId === 'g2-context-cavern-vocabulary')!
+    expect(skill.reportingCategory).toBe('Vocabulary')
+    expect(skill.benchmarkReference).toBe('ELA.2.V.1.1')
+    expect(skill.benchmarkReferences).toEqual(['ELA.2.V.1.1', 'ELA.2.V.1.2'])
+    expect(skill.currentDifficulty).toBe(2)
+    expect(skill.lastMasteredDifficulty).toBe(1)
+    expect(skill.distinctIndependentEvidenceCount).toBe(2)
+    expect(skill.currentLearningState).toBe('ADVANCE')
   })
 
   test('review summaries sort deterministically and use injected time', () => {

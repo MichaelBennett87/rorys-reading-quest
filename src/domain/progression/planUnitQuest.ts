@@ -50,7 +50,7 @@ export function planUnitQuest(input: PlanUnitQuestInput): UnitQuestPlan {
   const contentNeededNextQuest = plannedNextQuest?.status === 'content_needed' ? plannedNextQuest : null
   const plannedPurpose = plannedNextQuest?.purpose ?? 'progression'
   const activeLesson = activeSession ? getLessonById(activeSession.lessonId).lesson : null
-  const plannedLesson = availableNextQuest ? getLessonById(availableNextQuest.lesson.lessonId).lesson : null
+  const plannedLesson = availableNextQuest?.lesson ?? null
 
   if (activeLesson && activeLesson.unitId === input.selectedUnitId) {
     const matchingLesson = input.availableLessons.find((lesson) => lesson.lessonId === activeLesson.lessonId)
@@ -791,6 +791,134 @@ export function planUnitQuest(input: PlanUnitQuestInput): UnitQuestPlan {
       difficulty: plan.difficulty,
       reason: plan.reason,
       unitId: input.selectedUnitId,
+    }
+  }
+
+  if (selectedTrack?.worldId === 'context-cavern') {
+    const selectedLessons = input.availableLessons.filter((lesson) => lesson.unitId === input.selectedUnitId)
+    const canResumePlannedLesson =
+      !!availableNextQuest &&
+      !!plannedLesson &&
+      plannedLesson.unitId === input.selectedUnitId
+
+    if (input.selectedUnitId === 'cc-unit-1') {
+      if (selectedDifficulty >= 2) {
+        if (canResumePlannedLesson && availableNextQuest && availableNextQuest.purpose === 'review') {
+          return {
+            status: 'available',
+            purpose: availableNextQuest.purpose,
+            lesson: availableNextQuest.lesson,
+            lessonId: availableNextQuest.lesson.lessonId,
+            unitId: plannedLesson.unitId,
+            activityId: availableNextQuest.lesson.activityId,
+          }
+        }
+
+        return {
+          status: 'content_needed',
+          purpose: contentNeededNextQuest?.purpose ?? 'review',
+          skillId: currentSkill?.skillId ?? 'unknown',
+          difficulty: selectedDifficulty,
+          reason: 'Academic Word Workshop quests are complete. More vocabulary review may appear when needed.',
+          unitId: input.selectedUnitId,
+        }
+      }
+
+      const plan = selectNextLesson({
+        skillId: currentSkill?.skillId ?? 'unknown',
+        difficulty: selectedDifficulty,
+        purpose: availableNextQuest?.purpose ?? 'progression',
+        availableLessons: selectedLessons,
+        recentActivityUsage: currentSkill?.recentActivityUsage ?? [],
+      })
+      if (plan.status === 'available') {
+        return {
+          status: 'available',
+          purpose: plan.purpose,
+          lesson: plan.lesson,
+          lessonId: plan.lesson.lessonId,
+          unitId: plan.lesson.unitId,
+          activityId: plan.lesson.activityId,
+        }
+      }
+      return {
+        status: 'content_needed',
+        purpose: plan.purpose,
+        skillId: plan.skillId,
+        difficulty: plan.difficulty,
+        reason: plan.reason,
+        unitId: input.selectedUnitId,
+      }
+    }
+
+    if (input.selectedUnitId === 'cc-unit-2') {
+      if (selectedDifficulty < 2) {
+        if (canResumePlannedLesson && availableNextQuest && ['remediation', 'review'].includes(availableNextQuest.purpose)) {
+          return {
+            status: 'available',
+            purpose: availableNextQuest.purpose,
+            lesson: availableNextQuest.lesson,
+            lessonId: availableNextQuest.lesson.lessonId,
+            unitId: plannedLesson.unitId,
+            activityId: availableNextQuest.lesson.activityId,
+          }
+        }
+
+        return {
+          status: 'locked',
+          purpose: 'progression',
+          unitId: input.selectedUnitId,
+          reason: 'Complete Academic Word Workshop to unlock Morphology Mine.',
+        }
+      }
+
+      if (selectedDifficulty >= 3) {
+        if (canResumePlannedLesson && availableNextQuest && availableNextQuest.purpose === 'review') {
+          return {
+            status: 'available',
+            purpose: availableNextQuest.purpose,
+            lesson: availableNextQuest.lesson,
+            lessonId: availableNextQuest.lesson.lessonId,
+            unitId: plannedLesson.unitId,
+            activityId: availableNextQuest.lesson.activityId,
+          }
+        }
+
+        return {
+          status: 'content_needed',
+          purpose: contentNeededNextQuest?.purpose ?? 'review',
+          skillId: currentSkill?.skillId ?? 'unknown',
+          difficulty: selectedDifficulty,
+          reason: 'Meaning Clue Chamber quests are being prepared.',
+          unitId: input.selectedUnitId,
+        }
+      }
+
+      const plan = selectNextLesson({
+        skillId: currentSkill?.skillId ?? 'unknown',
+        difficulty: selectedDifficulty,
+        purpose: availableNextQuest?.purpose ?? 'progression',
+        availableLessons: selectedLessons,
+        recentActivityUsage: currentSkill?.recentActivityUsage ?? [],
+      })
+      if (plan.status === 'available') {
+        return {
+          status: 'available',
+          purpose: plan.purpose,
+          lesson: plan.lesson,
+          lessonId: plan.lesson.lessonId,
+          unitId: plan.lesson.unitId,
+          activityId: plan.lesson.activityId,
+        }
+      }
+      return {
+        status: 'content_needed',
+        purpose: plan.purpose,
+        skillId: plan.skillId,
+        difficulty: plan.difficulty,
+        reason: plan.reason,
+        unitId: input.selectedUnitId,
+      }
     }
   }
 

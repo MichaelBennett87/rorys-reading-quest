@@ -17,7 +17,7 @@ export function deriveWorldsForProgress(
   const playableTrackIds = new Set(discoverPlayableTracks(availableLessons).map((entry) => entry.track.trackId))
   const activeUnitId = progress.activeLessonSession ? getLessonCatalogMetadata(progress.activeLessonSession.lessonId)?.unitId ?? null : null
   const plannedUnitId = progress.plannedNextQuest?.status === 'available'
-    ? getLessonCatalogMetadata(progress.plannedNextQuest.lesson.lessonId)?.unitId ?? null
+    ? progress.plannedNextQuest.lesson.unitId
     : null
 
   return worlds.map((world) => {
@@ -116,7 +116,8 @@ function deriveSequentialTrackWorld(
   const roadmap = getSequentialWorldRoadmapByWorldId(world.id)
   if (!track || !roadmap) return deriveNonPlayableWorld(world)
 
-  const playable = playableTrackIds.has(track.trackId)
+  const worldHasActiveOrPlannedUnit = world.units.some((unit) => unit.id === activeUnitId || unit.id === plannedUnitId)
+  const playable = playableTrackIds.has(track.trackId) || worldHasActiveOrPlannedUnit
   if (!playable) return deriveNonPlayableWorld(world)
 
   const progress = skillProgress[track.skillId]

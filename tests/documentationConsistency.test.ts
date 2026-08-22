@@ -16,9 +16,10 @@ describe('documentation consistency', () => {
     const architecture = readRepoFile('docs/ARCHITECTURE.md')
     const contentModel = readRepoFile('docs/CONTENT_MODEL.md')
     const curriculum = readRepoFile('docs/GRADE_2_BRIDGE_CURRICULUM.md')
-    const review = readRepoFile('docs/content/GRADE_2_CONTEXT_CAVERN_ACADEMIC_WORD_WORKSHOP_REVIEW.md')
-    const coverageAudit = readRepoFile('docs/content/GRADE_2_R_2_4_COVERAGE_AUDIT.md')
-    const finalAudit = readRepoFile('docs/content/GRADE_2_CONTEXT_CAVERN_FINAL_AUDIT.md')
+    const review = readRepoFile('docs/content/GRADE_2_CONTEXT_CAVERN_MORPHOLOGY_MINE_REVIEW.md')
+    const coverageAudit = readRepoFile('docs/content/GRADE_2_V_1_2_COVERAGE_AUDIT.md')
+    const phase6e5Report = readRepoFile('docs/PHASE_6E5_REPORT.md')
+    const phase6e6Report = readRepoFile('docs/PHASE_6E6_REPORT.md')
 
     expect(tasks).toContain('- [x] Phase 6D: Grade 2 prose and poetry')
     expect(tasks).toContain('  - [ ] Phase 6E: informational reading and vocabulary')
@@ -28,29 +29,33 @@ describe('documentation consistency', () => {
     expect(tasks).toContain("    - [x] Phase 6E3: author's purpose for ELA.2.R.2.3")
     expect(tasks).toContain('    - [x] Phase 6E4: opinion and supporting evidence for ELA.2.R.2.4')
     expect(tasks).toContain('    - [x] Phase 6E5: academic-vocabulary practice and Context Cavern foundation')
-    expect(tasks).toContain('    - [ ] Phase 6E6: morphology and ELA.2.V.1.2')
+    expect(tasks).toContain('    - [x] Phase 6E6: morphology and ELA.2.V.1.2')
     expect(tasks).toContain('    - [ ] Phase 6E7: context, word relationships, reference materials, background knowledge, and final Phase 6E audit')
-    expect(readme).toContain('Phase 6D complete; Phase 6E0 through Phase 6E5 complete; Information Detectives informational-reading sequence complete; Phase 6 remains in progress; Phase 6E6 is next; Context Cavern is active')
-    expect(architecture).toContain('seventeen registered packs, 119 lessons, 119 passages, 684 questions, and 474 support targets')
-    expect(contentModel).toContain('seventeen active Grade 2 bridge packs with 119 lessons, 119 passages, 684 scored questions, and 474 authored word-support targets')
+    expect(readme).toContain('Phase 6D complete; Phase 6E0 through Phase 6E6 complete; Information Detectives informational-reading sequence complete; Academic Word Workshop complete; Morphology Mine complete; Phase 6 remains in progress; Phase 6E7 is next; Meaning Clue Chamber remains without production curriculum; Context Cavern is active')
+    expect(architecture).toContain('eighteen registered packs, 126 lessons, 126 passages, 725 questions, and 502 support targets')
+    expect(contentModel).toContain('eighteen active Grade 2 bridge packs with 126 lessons, 126 passages, 725 scored questions, and 502 authored word-support targets')
     expect(curriculum).toContain('Information Detectives')
     expect(curriculum).toContain('Context Cavern')
     expect(curriculum).toContain('Text Feature Hunt')
     expect(curriculum).toContain('Central Idea Center')
     expect(curriculum).toContain('Opinion & Evidence Desk')
     expect(curriculum).toContain('Academic Word Workshop')
+    expect(curriculum).toContain('Morphology Mine')
     expect(curriculum).not.toContain('Info Lab')
     expect(curriculum).not.toContain('Vocabulary Lab')
-    expect(review).toContain('Pack ID: `g2-context-cavern-academic-word-workshop`')
-    expect(review).toContain('Benchmark alignment: `ELA.2.V.1.1`')
-    expect(review).toContain('Review status: `DRAFT`')
-    expect(coverageAudit).toContain('Contributing pack')
-    expect(coverageAudit).toContain('g2-context-cavern-academic-word-workshop')
+    expect(review).toContain('Pack ID: `g2-context-cavern-morphology-mine`')
+    expect(review).toContain('Benchmark alignment: `ELA.2.V.1.2`')
+    expect(review).toContain('Approval status: `DRAFT - human approval pending`')
+    expect(coverageAudit).toContain('Benchmark reference: `ELA.2.V.1.2`')
+    expect(coverageAudit).toContain('g2-context-cavern-morphology-mine')
     expect(coverageAudit).toContain('Coverage status')
     expect(coverageAudit).toContain('implemented')
-    expect(finalAudit).toContain('Context Cavern is the fifth playable curriculum track.')
-    expect(finalAudit).toContain('`ELA.2.V.1.1`: implemented, DRAFT.')
-    expect(finalAudit).toContain('Morphology Mine remains next.')
+    expect(phase6e5Report).toContain('Final local HEAD: `c3b1c3a605fe6d2280856547eb52100cc8496836`')
+    expect(phase6e5Report).toContain('Final remote HEAD: `c3b1c3a605fe6d2280856547eb52100cc8496836`')
+    expect(phase6e5Report).not.toContain('Final local HEAD: `200948c342fc8b9e8e5c8eca3f21a814f7721d19`')
+    expect(phase6e6Report).toContain('Starting local HEAD: `c3b1c3a605fe6d2280856547eb52100cc8496836`')
+    expect(phase6e6Report).toContain('Morphology Mine remains the next-step Context Cavern unit while Meaning Clue Chamber stays deferred.')
+    expect(phase6e6Report).toContain('This report intentionally does not claim a final synchronized repository SHA.')
   })
 
   test('keeps the Phase 6D4 reconciliation report synchronized with the final repository state', () => {
@@ -129,11 +134,11 @@ describe('documentation consistency', () => {
 
   test('keeps active curriculum totals aligned with the registry helper', () => {
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 17,
-      activeLessonCount: 119,
-      activePassageCount: 119,
-      activeQuestionCount: 684,
-      activeSupportTargetCount: 474,
+      activePackCount: 18,
+      activeLessonCount: 126,
+      activePassageCount: 126,
+      activeQuestionCount: 725,
+      activeSupportTargetCount: 502,
     })
   })
 })

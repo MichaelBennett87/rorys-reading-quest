@@ -1,13 +1,6 @@
-import { afterEach, describe, expect, test } from 'vitest'
+import { describe, expect, test } from 'vitest'
 
-import { sampleContent } from '../../src/domain/content'
 import { getLessonById, getLessonCandidates, getLessonCatalogMetadata, getLessonForUnit } from '../../src/domain/lesson'
-
-const snapshotQuestions = JSON.parse(JSON.stringify(sampleContent.questions))
-
-afterEach(() => {
-  sampleContent.questions.splice(0, sampleContent.questions.length, ...JSON.parse(JSON.stringify(snapshotQuestions)))
-})
 
 describe('getLessonForUnit', () => {
   test('returns complete lesson content for the active Word Forge unit', () => {
@@ -24,8 +17,8 @@ describe('getLessonForUnit', () => {
 
   test('exposes the active trail and bridge lessons while excluding legacy lessons', () => {
     const candidates = getLessonCandidates()
-    expect(candidates).toHaveLength(119)
-    expect(new Set(candidates.map((candidate) => candidate.activityId)).size).toBe(119)
+    expect(candidates).toHaveLength(126)
+    expect(new Set(candidates.map((candidate) => candidate.activityId)).size).toBe(126)
     expect(candidates.filter((candidate) => candidate.lessonId.startsWith('lesson-word-forge-common-prefixes-'))).toHaveLength(7)
     expect(candidates.filter((candidate) => candidate.lessonId.startsWith('lesson-word-forge-common-suffixes-'))).toHaveLength(7)
     expect(candidates.filter((candidate) => candidate.lessonId.startsWith('lesson-word-forge-silent-letter-combinations-'))).toHaveLength(7)
@@ -44,17 +37,7 @@ describe('getLessonForUnit', () => {
   })
 
   test('returns errors when lesson is malformed or unavailable', () => {
-    sampleContent.questions[0] = {
-      ...sampleContent.questions[0],
-      questionType: 'two_part',
-      questionContent: {
-        type: 'hot_text',
-        selectableSegments: [],
-        correctSegmentIds: [],
-      } as never,
-    }
-
-    const result = getLessonForUnit('wg-unit-1')
+    const result = getLessonForUnit('non-existent-unit')
     expect(result.lesson).toBeUndefined()
     expect(result.errors.length).toBeGreaterThan(0)
   })

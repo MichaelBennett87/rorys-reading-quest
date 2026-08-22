@@ -68,6 +68,23 @@ function createContextCavernLesson(overrides: Partial<LessonActivityCandidate> =
   }
 }
 
+function createMorphologyMineLesson(overrides: Partial<LessonActivityCandidate> = {}): LessonActivityCandidate {
+  return {
+    lessonId: 'lesson-context-cavern-morphology-mine-checkpoint-a',
+    activityId: 'activity-context-cavern-morphology-mine-checkpoint-a',
+    skillId: 'g2-context-cavern-vocabulary',
+    difficulty: 2,
+    worldId: 'context-cavern',
+    unitId: 'cc-unit-2',
+    packId: 'fixture-context-cavern-pack',
+    benchmarkReferences: ['ELA.2.V.1.2'],
+    eligiblePurposes: ['progression', 'review', 'verification', 'remediation'],
+    passageQuestionKeys: ['context-cavern-morphology-mine-a|q1'],
+    contentVersion: 'fixture-context-cavern-v2',
+    ...overrides,
+  }
+}
+
 function createWordForgeLesson(overrides: Partial<LessonActivityCandidate> = {}): LessonActivityCandidate {
   return {
     lessonId: 'lesson-word-forge-trail-1-checkpoint-a',
@@ -162,6 +179,9 @@ describe('curriculum planning foundation', () => {
       'g2-information-detectives-reading',
     ])
     expect(discoverPlayableTracks([createContextCavernLesson()]).map((entry) => entry.track.skillId)).toEqual([
+      'g2-context-cavern-vocabulary',
+    ])
+    expect(discoverPlayableTracks([createMorphologyMineLesson()]).map((entry) => entry.track.skillId)).toEqual([
       'g2-context-cavern-vocabulary',
     ])
     expect(discoverPlayableTracks([
