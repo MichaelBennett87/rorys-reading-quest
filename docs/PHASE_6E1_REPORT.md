@@ -4,11 +4,10 @@
 
 - Starting local HEAD: `d5eba859d6292a830d3acc7472e9ecd5f18e67fb`
 - Starting remote HEAD: `d5eba859d6292a830d3acc7472e9ecd5f18e67fb`
-- Implementation checkpoint: `623343c feat: add phase 6e curriculum roadmap`
-- Documentation commit: `pending final Phase 6E1 documentation commit`
-- Final local HEAD: `pending final verification`
-- Final remote HEAD: `pending final verification`
-- Local and remote SHA match: pending final verification
+- Combined Phase 6E1 implementation and documentation commit: `4edae57 docs: complete phase 6e1 review`
+- Final local HEAD: `4edae570d5609013f3d28aa62c64e4dc462364c4`
+- Final remote HEAD: `4edae570d5609013f3d28aa62c64e4dc462364c4`
+- Local and remote SHA match: yes
 
 ## Verification facts
 
@@ -25,6 +24,8 @@
 - `docs/PHASE_6D4_REPORT.md` remains synchronized with the final Phase 6D4 facts.
 - Phase 6D4 stays separate from Phase 6E1 planning.
 - The report keeps the Phase 6D4 boundary intact, including Poetry Planet coverage and the note that Phase 6E1 is now active.
+- Phase 6E1 completed in a single combined implementation-and-documentation commit.
+- The report does not treat any earlier roadmap commit as a separate Phase 6E1 implementation checkpoint.
 
 ## TASKS indentation correction
 

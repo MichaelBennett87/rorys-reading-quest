@@ -294,3 +294,8 @@
 - Decision: Activate Information Detectives Text Feature Hunt for `ELA.2.R.2.1` while keeping Context Cavern planned.
 - Reason: Phase 6E1 needs a bounded informational-text pack with authored text features, evidence, and deterministic unit-gated progression.
 - Consequence: The active curriculum gains one informational pack and the bridge roadmap now includes implemented DRAFT coverage for `ELA.2.R.2.1`.
+
+## 2026-08-22 - Phase 6E2 Central Idea Center Activation
+- Decision: Activate Information Detectives Central Idea Center for `ELA.2.R.2.2` while preserving unit-specific review isolation and the existing no-Grade-3-explanation boundary.
+- Reason: Phase 6E2 needs a bounded informational-text pack that teaches topic versus central idea, complete central-idea statements, and relevant details without moving into Grade 3 explanation or cross-text analysis.
+- Consequence: The active curriculum gains a second informational pack, the bridge roadmap now includes implemented DRAFT coverage for `ELA.2.R.2.2`, and later informational and vocabulary phases stay planned.

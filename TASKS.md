@@ -65,7 +65,7 @@
   - [ ] Phase 6E: informational reading and vocabulary
     - [x] Phase 6E0: Information Detectives and vocabulary-world foundation
     - [x] Phase 6E1: text features and ELA.2.R.2.1
-    - [ ] Phase 6E2: central idea and relevant details for ELA.2.R.2.2
+    - [x] Phase 6E2: central idea and relevant details for ELA.2.R.2.2
     - [ ] Phase 6E3: author's purpose for ELA.2.R.2.3
     - [ ] Phase 6E4: opinion and supporting evidence for ELA.2.R.2.4
     - [ ] Phase 6E5: academic-vocabulary practice and Context Cavern foundation

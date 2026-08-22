@@ -6,7 +6,7 @@ Rory's Reading Quest is a local-first, child-safe reading-learning foundation fo
 
 ## Current Status
 
-- Status: `Phase 6D complete; Phase 6E0 complete; Phase 6E1 complete; Phase 6 remains in progress; Phase 6E2 is next`.
+- Status: `Phase 6D complete; Phase 6E0 complete; Phase 6E1 complete; Phase 6E2 complete; Phase 6 remains in progress; Phase 6E3 is next`.
 - A completed `LessonResult` now drives verification, advancement, fresh practice, same-level remediation, prerequisite rebuilding, spaced review, or a structured content-needed outcome.
 - Progress, rewards, bounded attempt history, review scheduling, submitted active-session checkpoints, and assistance summaries persist locally.
 - Curated word-help controls reveal authored patterns and optional browser speech without using an external service or microphone.
