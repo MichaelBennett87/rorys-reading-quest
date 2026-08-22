@@ -439,6 +439,23 @@ describe('curriculum planning foundation', () => {
     expect(result.state.skillProgress['g2-poetry-planet-poetry']).toBeDefined()
   })
 
+  test('initializes playable Information Detectives progress without resetting existing tracks or creating Context Cavern progress', () => {
+    const progress = createDefaultQuestProgress(now)
+
+    const result = ensureProgressForPlayableTracks(progress, getLessonCandidates())
+
+    expect(result.changed).toBe(true)
+    expect(result.state.skillProgress['g2-word-forge-word-practice']).toEqual(progress.skillProgress['g2-word-forge-word-practice'])
+    expect(result.state.skillProgress['g2-story-scouts-prose']).toBeDefined()
+    expect(result.state.skillProgress['g2-poetry-planet-poetry']).toBeDefined()
+    expect(result.state.skillProgress['g2-information-detectives-reading']).toMatchObject({
+      skillId: 'g2-information-detectives-reading',
+      currentDifficulty: 1,
+      lastMasteredDifficulty: 0,
+    })
+    expect(result.state.skillProgress['g2-context-cavern-vocabulary']).toBeUndefined()
+  })
+
   test('initializes fixture Information Detectives and Context Cavern progress without touching existing tracks', () => {
     const progress = createDefaultQuestProgress(now)
 

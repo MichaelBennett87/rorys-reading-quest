@@ -67,6 +67,20 @@ export interface TextFeatureGuide {
   contentVersion: string
 }
 
+export type CentralIdeaMode = 'stated' | 'inferred'
+
+export interface CentralIdeaGuide {
+  passageId: string
+  topicLabel: string
+  centralIdeaStatement: string
+  centralIdeaMode: CentralIdeaMode
+  explicitCentralIdeaSentenceId?: string
+  relevantEvidenceIds: string[]
+  otherEvidenceIds: string[]
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
 export interface ContentPackManifest {
   packId: string
   packTitle: string
@@ -112,6 +126,7 @@ export interface ContentPack {
   questions: ReadingQuestion[]
   lessons: ContentPackLesson[]
   textFeatureGuides?: TextFeatureGuide[]
+  centralIdeaGuides?: CentralIdeaGuide[]
   themeGuides?: ThemeGuide[]
   perspectiveGuides?: PerspectiveGuide[]
   rhymeSchemeGuides?: RhymeSchemeGuide[]
@@ -162,11 +177,15 @@ export interface ContentPackAuditIssue {
     | 'missing_theme_guide'
     | 'theme_guide_count_mismatch'
     | 'theme_guide_structure_invalid'
-    | 'missing_text_feature_guide'
-    | 'text_feature_guide_count_mismatch'
-    | 'text_feature_guide_invalid'
-  | 'missing_perspective_guide'
-  | 'perspective_guide_count_mismatch'
+     | 'missing_text_feature_guide'
+     | 'text_feature_guide_count_mismatch'
+     | 'text_feature_guide_invalid'
+   | 'missing_central_idea_guide'
+   | 'central_idea_guide_count_mismatch'
+   | 'central_idea_guide_invalid'
+   | 'invalid_informational_feature_reference'
+   | 'missing_perspective_guide'
+   | 'perspective_guide_count_mismatch'
   | 'perspective_guide_structure_invalid'
   | 'missing_poem_structure'
   | 'poem_structure_invalid'

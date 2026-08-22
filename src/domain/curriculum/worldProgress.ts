@@ -129,12 +129,12 @@ function deriveSequentialTrackWorld(
       .map((lesson) => lesson.unitId),
   )
 
-  const units = world.units.map((unit, index) => {
-    const roadmapUnit = roadmap.units[index]
-    if (!roadmapUnit) return { ...unit }
-    const hasContent = contentUnitIds.has(unit.id)
-    const isOwned = unit.id === activeUnitId || unit.id === plannedUnitId
-    return deriveSequentialRoadmapUnit(unit, roadmapUnit, currentDifficulty, currentLearningState, hasContent, isOwned, index)
+   const units = world.units.map((unit, index) => {
+     const roadmapUnit = roadmap.units[index]
+     if (!roadmapUnit) return { ...unit }
+     const hasContent = contentUnitIds.has(unit.id)
+     const isOwned = unit.id === activeUnitId || unit.id === plannedUnitId
+     return deriveSequentialRoadmapUnit(unit, roadmapUnit, currentDifficulty, currentLearningState, hasContent, isOwned, index)
   })
   const currentUnit = [...units].reverse().find((unit) => unit.state !== 'locked') ?? units[0]
 
@@ -332,11 +332,13 @@ function deriveSequentialRoadmapUnit(
   isOwned: boolean,
   unitIndex: number,
 ): DemoUnit {
+  const exactReview = currentDifficulty >= roadmapUnit.completionDifficulty && currentLearningState === 'SPACED_REVIEW'
+  const completedState: UnitState = exactReview ? 'review' : 'complete'
   const state: UnitState = !hasContent && !isOwned
     ? 'locked'
     : isOwned
       ? currentDifficulty >= roadmapUnit.completionDifficulty
-        ? (currentLearningState === 'SPACED_REVIEW' ? 'review' : 'complete')
+        ? completedState
         : 'available'
       : unitIndex === 0 && currentDifficulty <= 0
         ? 'available'
@@ -344,9 +346,7 @@ function deriveSequentialRoadmapUnit(
           ? 'locked'
           : currentDifficulty < roadmapUnit.completionDifficulty
             ? 'available'
-            : currentLearningState === 'SPACED_REVIEW'
-              ? 'review'
-              : 'complete'
+            : completedState
 
   return {
     ...unit,
@@ -355,6 +355,8 @@ function deriveSequentialRoadmapUnit(
       ? 'Locked'
       : unitIndex === 0 && currentDifficulty <= 0
         ? 'Building Block'
+        : state === 'available' && currentDifficulty < roadmapUnit.activeDifficulty
+          ? 'Power-Up Mission'
         : state === 'available'
           ? roadmapUnit.activeLabel
           : state === 'review'

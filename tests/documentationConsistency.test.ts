@@ -21,13 +21,15 @@ describe('documentation consistency', () => {
     expect(tasks).toContain('  - [ ] Phase 6E: informational reading and vocabulary')
     expect(tasks).toContain('    - [x] Phase 6E0: Information Detectives and vocabulary-world foundation')
     expect(tasks).toContain('    - [x] Phase 6E1: text features and ELA.2.R.2.1')
+    expect(tasks).toContain('    - [x] Phase 6E2: central idea and relevant details for ELA.2.R.2.2')
     expect(tasks).toContain('    - [ ] Phase 6E7: context, word relationships, reference materials, background knowledge, and final Phase 6E audit')
-    expect(readme).toContain('Phase 6D complete; Phase 6E0 complete; Phase 6E1 complete; Phase 6 remains in progress; Phase 6E2 is next')
-    expect(architecture).toContain('thirteen registered packs, 91 lessons, 91 passages, 520 questions, and 362 support targets')
-    expect(contentModel).toContain('thirteen active Grade 2 bridge packs with 91 lessons, 91 passages, 520 scored questions, and 362 authored word-support targets')
+    expect(readme).toContain('Phase 6D complete; Phase 6E0 complete; Phase 6E1 complete; Phase 6E2 complete; Phase 6 remains in progress; Phase 6E3 is next')
+    expect(architecture).toContain('fourteen registered packs, 98 lessons, 98 passages, 561 questions, and 390 support targets')
+    expect(contentModel).toContain('fourteen active Grade 2 bridge packs with 98 lessons, 98 passages, 561 scored questions, and 390 authored word-support targets')
     expect(curriculum).toContain('Information Detectives')
     expect(curriculum).toContain('Context Cavern')
     expect(curriculum).toContain('Text Feature Hunt')
+    expect(curriculum).toContain('Central Idea Center')
     expect(curriculum).not.toContain('Info Lab')
     expect(curriculum).not.toContain('Vocabulary Lab')
   })
@@ -55,13 +57,38 @@ describe('documentation consistency', () => {
     expect(report).toContain('Local and remote SHA match: yes')
   })
 
+  test('keeps the Phase 6E1 reconciliation report synchronized with the documented completion facts', () => {
+    const report = readRepoFile('docs/PHASE_6E1_REPORT.md')
+
+    expect(report).toContain('Starting local HEAD: `d5eba859d6292a830d3acc7472e9ecd5f18e67fb`')
+    expect(report).toContain('Starting remote HEAD: `d5eba859d6292a830d3acc7472e9ecd5f18e67fb`')
+    expect(report).toContain('Combined Phase 6E1 implementation and documentation commit: `4edae57 docs: complete phase 6e1 review`')
+    expect(report).toContain('Final local HEAD: `4edae570d5609013f3d28aa62c64e4dc462364c4`')
+    expect(report).toContain('Final remote HEAD: `4edae570d5609013f3d28aa62c64e4dc462364c4`')
+    expect(report).toContain('Local and remote SHA match: yes')
+    expect(report).not.toContain('Implementation checkpoint: `623343c feat: add phase 6e curriculum roadmap`')
+    expect(report).not.toContain('623343c feat: add phase 6e curriculum roadmap')
+  })
+
+  test('keeps the Phase 6E2 reconciliation report synchronized with the documented completion facts', () => {
+    const report = readRepoFile('docs/PHASE_6E2_REPORT.md')
+
+    expect(report).toContain('Starting local HEAD: `4edae570d5609013f3d28aa62c64e4dc462364c4`')
+    expect(report).toContain('Starting remote HEAD: `4edae570d5609013f3d28aa62c64e4dc462364c4`')
+    expect(report).toContain('Implementation checkpoint')
+    expect(report).toContain('Verification facts')
+    expect(report).toContain('Final synchronized SHA reconciliation is deferred to the external completion report.')
+    expect(report).not.toContain('Final local HEAD:')
+    expect(report).not.toContain('Final remote HEAD:')
+  })
+
   test('keeps active curriculum totals aligned with the registry helper', () => {
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 13,
-      activeLessonCount: 91,
-      activePassageCount: 91,
-      activeQuestionCount: 520,
-      activeSupportTargetCount: 362,
+      activePackCount: 14,
+      activeLessonCount: 98,
+      activePassageCount: 98,
+      activeQuestionCount: 561,
+      activeSupportTargetCount: 390,
     })
   })
 })

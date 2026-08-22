@@ -2,6 +2,7 @@ import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-li
 import { afterEach, describe, expect, test, vi } from 'vitest'
 
 import App from '../src/App'
+import { createInitialSkillProgress } from '../src/domain/progression'
 import { QUEST_PROGRESS_STORAGE_KEY, createDefaultQuestProgress } from '../src/persistence'
 import { PARENT_ACCESS_STORAGE_KEY, PARENT_RECORDS_STORAGE_KEY } from '../src/persistence'
 import * as parentAccess from '../src/services/parentAccess'
@@ -74,6 +75,16 @@ function seedWordForgeDifficulty(difficulty: number) {
   window.localStorage.setItem(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(progress))
 }
 
+function seedInformationDifficulty(difficulty: number) {
+  const progress = createDefaultQuestProgress('2026-08-20T12:00:00.000Z')
+  progress.skillProgress['g2-information-detectives-reading'] = createInitialSkillProgress(
+    'g2-information-detectives-reading',
+    difficulty,
+    Math.max(0, difficulty - 1),
+  )
+  window.localStorage.setItem(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(progress))
+}
+
 describe('Phase 2 lesson flow and child shell', () => {
   test('renders home title', () => {
     render(<App />)
@@ -132,6 +143,14 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getByText(/Skills trained/i)).toBeTruthy()
   })
 
+  test('opens world screen from Information Detectives', () => {
+    render(<App />)
+
+    fireEvent.click(getSingleByRole('button', /Information Detectives world - Available/i))
+    expect(screen.getAllByRole('heading', { name: /^Information Detectives$/i })).toHaveLength(1)
+    expect(screen.getByText(/Skills trained/i)).toBeTruthy()
+  })
+
   test('opens world screen from Poetry Planet', () => {
     render(<App />)
 
@@ -161,6 +180,29 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getAllByRole('button', { name: /Story Map Available/i })).toHaveLength(1)
     expect(screen.getAllByRole('button', { name: /Theme Trail Locked/i })).toHaveLength(1)
     expect(screen.getAllByRole('button', { name: /Perspective Portal Locked/i })).toHaveLength(1)
+  })
+
+  test('renders information detectives unit cards in unit selection', () => {
+    render(<App />)
+
+    fireEvent.click(getSingleByRole('button', /Information Detectives world - Available/i))
+    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
+    expect(screen.getAllByRole('heading', { name: /Information Detectives: Unit Selection/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Text Feature Hunt Available/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Central Idea Center Locked/i })).toHaveLength(1)
+    expect(screen.getByText(/Complete Text Feature Hunt to unlock Central Idea Center/i)).toBeTruthy()
+  })
+
+  test('shows Central Idea Center as available when the Information Detectives difficulty reaches 2', async () => {
+    seedInformationDifficulty(2)
+    render(<App />)
+
+    fireEvent.click(getSingleByRole('button', /Information Detectives world - Available/i))
+    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
+
+    expect(screen.getAllByRole('button', { name: /Text Feature Hunt (Complete|Review)/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Central Idea Center Available/i })).toHaveLength(1)
+    expect(within(screen.getByRole('button', { name: /Central Idea Center Available/i })).getByText(/Trail 2/i)).toBeTruthy()
   })
 
   test('renders poetry planet unit cards in unit selection', () => {

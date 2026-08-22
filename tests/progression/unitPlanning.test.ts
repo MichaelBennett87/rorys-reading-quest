@@ -34,6 +34,23 @@ function createInformationDetectivesLesson(overrides: Partial<LessonActivityCand
   }
 }
 
+function createCentralIdeaCenterLesson(overrides: Partial<LessonActivityCandidate> = {}): LessonActivityCandidate {
+  return {
+    lessonId: 'lesson-central-idea-checkpoint-a',
+    activityId: 'activity-central-idea-checkpoint-a',
+    skillId: 'g2-information-detectives-reading',
+    difficulty: 2,
+    worldId: 'information-detectives',
+    unitId: 'id-unit-2',
+    packId: 'fixture-information-detectives-pack',
+    benchmarkReferences: ['ELA.2.R.2.2'],
+    eligiblePurposes: ['progression', 'review', 'verification', 'remediation'],
+    passageQuestionKeys: ['central-idea-checkpoint-a|q1'],
+    contentVersion: 'fixture-information-detectives-v2',
+    ...overrides,
+  }
+}
+
 function createContextCavernLesson(overrides: Partial<LessonActivityCandidate> = {}): LessonActivityCandidate {
   return {
     lessonId: 'lesson-context-cavern-academic-word-workshop-checkpoint-a',
@@ -368,6 +385,54 @@ describe('unit-aware Word Forge planning', () => {
       expect(contextPlayable.lesson.skillId).toBe('g2-context-cavern-vocabulary')
       expect(contextPlayable.lesson.unitId).toBe('cc-unit-1')
     }
+  })
+
+  test('keeps Information Detectives review labels unit-specific when one unit is in spaced review', () => {
+    const progress = createDefaultQuestProgress(now)
+    progress.skillProgress['g2-information-detectives-reading'] = createInitialSkillProgress('g2-information-detectives-reading', 2, 1)
+    progress.skillProgress['g2-information-detectives-reading'].currentLearningState = 'SPACED_REVIEW'
+    progress.activeLessonSession = createActiveLessonSession(
+      getLessonById('lesson-central-idea-topic-vs-central-idea').lesson!,
+      'session-info-review',
+      now,
+    )
+
+    const worlds = deriveCurriculumWorlds(
+      demoWorlds,
+      progress,
+      [createInformationDetectivesLesson(), createCentralIdeaCenterLesson()],
+    )
+    const informationWorld = worlds.find((world) => world.id === 'information-detectives')!
+
+    expect(informationWorld.status).toBe('available')
+    expect(informationWorld.units.find((unit) => unit.id === 'id-unit-1')?.state).toBe('review')
+    expect(informationWorld.units.find((unit) => unit.id === 'id-unit-2')?.state).toBe('available')
+    expect(informationWorld.units.find((unit) => unit.id === 'id-unit-2')?.difficultyLabel).toBe('Trail 2')
+    expect(informationWorld.units.find((unit) => unit.id === 'id-unit-2')?.practiceFocus).toContain('central idea')
+    expect(informationWorld.units.find((unit) => unit.id === 'id-unit-3')?.state).toBe('locked')
+  })
+
+  test('uses Power-Up Mission for Central Idea Center remediation owned below its active difficulty', () => {
+    const progress = createDefaultQuestProgress(now)
+    progress.skillProgress['g2-information-detectives-reading'] = createInitialSkillProgress('g2-information-detectives-reading', 1, 0)
+    progress.activeLessonSession = createActiveLessonSession(
+      getLessonById('lesson-central-idea-checkpoint-a').lesson!,
+      'session-info-remediation',
+      now,
+    )
+
+    const worlds = deriveCurriculumWorlds(
+      demoWorlds,
+      progress,
+      [createInformationDetectivesLesson(), createCentralIdeaCenterLesson({ difficulty: 1 })],
+    )
+    const informationWorld = worlds.find((world) => world.id === 'information-detectives')!
+
+    expect(informationWorld.status).toBe('available')
+    expect(informationWorld.units.find((unit) => unit.id === 'id-unit-1')?.state).toBe('available')
+    expect(informationWorld.units.find((unit) => unit.id === 'id-unit-2')?.state).toBe('available')
+    expect(informationWorld.units.find((unit) => unit.id === 'id-unit-2')?.difficultyLabel).toBe('Power-Up Mission')
+    expect(informationWorld.units.find((unit) => unit.id === 'id-unit-2')?.practiceFocus).toContain('central idea')
   })
 
   test('an active session in another unit blocks a fresh unit launch', () => {
