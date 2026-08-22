@@ -677,6 +677,82 @@ export function planUnitQuest(input: PlanUnitQuestInput): UnitQuestPlan {
     }
   }
 
+  if (input.selectedUnitId === 'id-unit-3') {
+    if (selectedDifficulty < 3) {
+      return {
+        status: 'locked',
+        purpose: 'progression',
+        unitId: input.selectedUnitId,
+        reason: 'Complete Central Idea Center to unlock Purpose Path.',
+      }
+    }
+
+    if (selectedDifficulty >= 4) {
+      if (contentNeededNextQuest && contentNeededNextQuest.difficulty >= 4) {
+        return {
+          status: 'content_needed',
+          purpose: contentNeededNextQuest.purpose,
+          skillId: contentNeededNextQuest.skillId,
+          difficulty: contentNeededNextQuest.difficulty,
+          reason: contentNeededNextQuest.reason,
+          unitId: input.selectedUnitId,
+        }
+      }
+      return {
+        status: 'content_needed',
+        purpose: contentNeededNextQuest?.purpose ?? plannedPurpose,
+        skillId: currentSkill?.skillId ?? 'unknown',
+        difficulty: selectedDifficulty,
+        reason: 'Purpose Path quests are complete. Opinion & Evidence Desk quests are being prepared.',
+        unitId: input.selectedUnitId,
+      }
+    }
+
+    const plan = selectNextLesson({
+      skillId: currentSkill?.skillId ?? 'unknown',
+      difficulty: selectedDifficulty,
+      purpose: availableNextQuest?.purpose ?? 'progression',
+      availableLessons: input.availableLessons.filter((lesson) => lesson.unitId === input.selectedUnitId),
+      recentActivityUsage: currentSkill?.recentActivityUsage ?? [],
+      preferredUnitId: input.selectedUnitId,
+    })
+    if (plan.status === 'available') {
+      return {
+        status: 'available',
+        purpose: plan.purpose,
+        lesson: plan.lesson,
+        lessonId: plan.lesson.lessonId,
+        unitId: plan.lesson.unitId,
+        activityId: plan.lesson.activityId,
+      }
+    }
+    return {
+      status: 'content_needed',
+      purpose: plan.purpose,
+      skillId: plan.skillId,
+      difficulty: plan.difficulty,
+      reason: plan.reason,
+      unitId: input.selectedUnitId,
+    }
+  }
+
+  if (input.selectedUnitId === 'id-unit-4') {
+    if (selectedDifficulty < 4) {
+      return {
+        status: 'locked',
+        purpose: 'progression',
+        unitId: input.selectedUnitId,
+        reason: 'Complete Purpose Path to unlock Opinion & Evidence Desk.',
+      }
+    }
+    return {
+      status: 'locked',
+      purpose: 'progression',
+      unitId: input.selectedUnitId,
+      reason: 'Opinion & Evidence Desk quests are being prepared.',
+    }
+  }
+
   if (selectedTrack) {
     const selectedLessons = input.availableLessons.filter((lesson) => lesson.unitId === input.selectedUnitId)
     if (selectedLessons.length === 0) {

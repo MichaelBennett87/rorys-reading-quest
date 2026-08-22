@@ -299,3 +299,8 @@
 - Decision: Activate Information Detectives Central Idea Center for `ELA.2.R.2.2` while preserving unit-specific review isolation and the existing no-Grade-3-explanation boundary.
 - Reason: Phase 6E2 needs a bounded informational-text pack that teaches topic versus central idea, complete central-idea statements, and relevant details without moving into Grade 3 explanation or cross-text analysis.
 - Consequence: The active curriculum gains a second informational pack, the bridge roadmap now includes implemented DRAFT coverage for `ELA.2.R.2.2`, and later informational and vocabulary phases stay planned.
+
+## 2026-08-22 - Phase 6E3 Purpose Path Activation
+- Decision: Activate Information Detectives Purpose Path for `ELA.2.R.2.3` while preserving unit-specific review isolation and the existing no-Grade-3-purpose-development boundary.
+- Reason: Phase 6E3 needs a bounded informational-text pack that teaches specific author purpose from whole-text clues without moving into Grade 3 purpose-development analysis or opinion scoring.
+- Consequence: The active curriculum gains a third informational pack, the bridge roadmap now includes implemented DRAFT coverage for `ELA.2.R.2.3`, and later informational and vocabulary phases stay planned.

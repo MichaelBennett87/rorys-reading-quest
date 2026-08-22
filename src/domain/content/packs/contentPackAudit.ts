@@ -587,6 +587,9 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
     if (pack.manifest.benchmarkReferences.includes('ELA.2.R.2.2')) {
       validateCentralIdeaGuideStructure(pack, issues)
     }
+    if (pack.manifest.benchmarkReferences.includes('ELA.2.R.2.3')) {
+      validateAuthorPurposeGuideStructure(pack, issues)
+    }
     if (pack.manifest.benchmarkReferences.includes('ELA.2.R.1.3')) {
       validatePerspectivePortalGuideStructure(pack, issues)
     }
@@ -1132,6 +1135,155 @@ function validateCentralIdeaGuideAgainstPassage(
   }
 }
 
+function validateAuthorPurposeGuideStructure(pack: ContentPack, issues: ContentPackAuditIssue[]) {
+  const guides = pack.authorPurposeGuides ?? []
+  const passageById = new Map(pack.passages.map((passage) => [passage.passageIdentifier, passage] as const))
+  const guideByPassageId = new Map<string, NonNullable<ContentPack['authorPurposeGuides']>[number]>()
+  const checkpointPassageIds = new Set(
+    pack.lessons
+      .filter((lesson) => lesson.selectionStatus === 'active' && lesson.lessonRole === 'CHECKPOINT')
+      .flatMap((lesson) => lesson.passageIdentifiers),
+  )
+
+  if (guides.length !== pack.passages.length) {
+    pushIssue(
+      issues,
+      'author_purpose_guide_count_mismatch',
+      pack.manifest.packId,
+      `Expected ${pack.passages.length} author purpose guides, found ${guides.length}.`,
+    )
+  }
+
+  for (const guide of guides) {
+    if (guideByPassageId.has(guide.passageId)) {
+      pushIssue(issues, 'author_purpose_guide_invalid', guide.passageId, 'Author purpose guides must not duplicate a passage ID.')
+      continue
+    }
+    guideByPassageId.set(guide.passageId, guide)
+    const passage = passageById.get(guide.passageId)
+    if (!passage) {
+      pushIssue(issues, 'missing_author_purpose_guide', guide.passageId, 'Every author purpose guide must point to a real passage.')
+      continue
+    }
+
+    validateAuthorPurposeGuideAgainstPassage(pack, passage, guide, checkpointPassageIds, issues)
+  }
+
+  for (const passage of pack.passages) {
+    if (!guideByPassageId.has(passage.passageIdentifier)) {
+      pushIssue(issues, 'missing_author_purpose_guide', passage.passageIdentifier, 'Every passage needs exactly one author purpose guide.')
+    }
+  }
+}
+
+function validateAuthorPurposeGuideAgainstPassage(
+  pack: ContentPack,
+  passage: ContentPack['passages'][number],
+  guide: NonNullable<ContentPack['authorPurposeGuides']>[number],
+  checkpointPassageIds: Set<string>,
+  issues: ContentPackAuditIssue[],
+) {
+  const structure = passage.informationalStructure
+  const features = structure?.features ?? []
+  const titleFeature = features.find((feature) => feature.kind === 'title')
+  const sentenceIds = new Set((passage.sentences ?? []).map((sentence) => sentence.sentenceId))
+  const sectionBySentenceId = new Map<string, string>()
+  for (const section of structure?.sections ?? []) {
+    for (const sentenceId of section.sentenceIds) {
+      sectionBySentenceId.set(sentenceId, section.sectionId)
+    }
+  }
+
+  if (passage.contentKind !== 'informational' || !structure || !titleFeature) {
+    pushIssue(issues, 'author_purpose_guide_invalid', guide.passageId, 'Author purpose guides require an informational passage structure with a title.')
+    return
+  }
+  if (!guide.topicLabel.trim()) {
+    pushIssue(issues, 'author_purpose_guide_invalid', guide.passageId, 'Author purpose guides need a topic label.')
+  }
+  if (!guide.specificPurposeStatement.trim()) {
+    pushIssue(issues, 'author_purpose_guide_invalid', guide.passageId, 'Author purpose guides need a specific purpose statement.')
+  }
+
+  const normalizedTopic = normalizeGuideText(guide.topicLabel)
+  const normalizedPurpose = normalizeGuideText(guide.specificPurposeStatement)
+  const normalizedTitle = normalizeGuideText(titleFeature.text)
+  if (normalizedTopic && normalizedTopic === normalizedPurpose) {
+    pushIssue(issues, 'author_purpose_guide_invalid', guide.passageId, 'Purpose statements must differ from the topic.')
+  }
+  if (normalizedPurpose && normalizedPurpose === normalizedTitle) {
+    pushIssue(issues, 'author_purpose_guide_invalid', guide.passageId, 'Purpose statements must differ from the title.')
+  }
+  if (!normalizedPurpose.startsWith('to ')) {
+    pushIssue(issues, 'author_purpose_guide_invalid', guide.passageId, 'Purpose statements should begin with to and name the author goal.')
+  }
+  if (normalizedPurpose === 'to inform' || normalizedPurpose === 'to entertain' || normalizedPurpose === 'to persuade') {
+    pushIssue(issues, 'author_purpose_guide_invalid', guide.passageId, 'Purpose statements must be more specific than a generic label.')
+  }
+  if (!looksLikeCompleteThought(guide.specificPurposeStatement)) {
+    pushIssue(issues, 'author_purpose_guide_invalid', guide.passageId, 'Purpose statements must be complete thoughts.')
+  }
+  if (
+    guide.purposeKind !== 'explain-how' &&
+    guide.purposeKind !== 'describe' &&
+    guide.purposeKind !== 'teach-about' &&
+    guide.purposeKind !== 'explain-process' &&
+    guide.purposeKind !== 'explain-why' &&
+    guide.purposeKind !== 'provide-facts'
+  ) {
+    pushIssue(issues, 'author_purpose_guide_invalid', guide.passageId, 'Author purpose guides must use a valid purpose kind.')
+  }
+  if (guide.reviewStatus !== 'DRAFT') {
+    pushIssue(issues, 'missing_draft_status', guide.passageId, 'Author purpose guides in this pack must remain DRAFT.')
+  }
+  if (guide.contentVersion !== pack.manifest.contentVersion) {
+    pushIssue(issues, 'mismatched_content_version', guide.passageId, 'Author purpose guide content version must match the pack version.')
+  }
+  if (guide.topicLabel.includes('<') || guide.specificPurposeStatement.includes('<') || guide.topicLabel.includes('http://') || guide.topicLabel.includes('https://') || guide.specificPurposeStatement.includes('http://') || guide.specificPurposeStatement.includes('https://')) {
+    pushIssue(issues, 'author_purpose_guide_invalid', guide.passageId, 'Author purpose guide text must not contain raw HTML or remote URLs.')
+  }
+
+  const purposeIds = new Set(guide.purposeEvidenceIds)
+  const secondaryIds = new Set(guide.secondaryDetailIds)
+  if (purposeIds.size !== guide.purposeEvidenceIds.length) {
+    pushIssue(issues, 'author_purpose_guide_invalid', guide.passageId, 'Purpose evidence IDs must be unique.')
+  }
+  if (secondaryIds.size !== guide.secondaryDetailIds.length) {
+    pushIssue(issues, 'author_purpose_guide_invalid', guide.passageId, 'Secondary detail IDs must be unique.')
+  }
+  for (const evidenceId of guide.purposeEvidenceIds) {
+    if (guide.secondaryDetailIds.includes(evidenceId)) {
+      pushIssue(issues, 'author_purpose_guide_invalid', guide.passageId, 'Purpose evidence and secondary detail IDs must not overlap.')
+      break
+    }
+  }
+
+  const requiredPurposeCount = checkpointPassageIds.has(passage.passageIdentifier) ? 4 : 3
+  if (guide.purposeEvidenceIds.length < requiredPurposeCount) {
+    pushIssue(issues, 'author_purpose_guide_invalid', guide.passageId, `Author purpose guides need at least ${requiredPurposeCount} purpose evidence IDs.`)
+  }
+  const purposeSentenceIds = guide.purposeEvidenceIds.filter((evidenceId) => sentenceIds.has(evidenceId))
+  if (purposeSentenceIds.length < 2) {
+    pushIssue(issues, 'author_purpose_guide_invalid', guide.passageId, 'Author purpose guides need at least two body sentence evidence references.')
+  }
+  if (checkpointPassageIds.has(passage.passageIdentifier)) {
+    const purposeSectionIds = new Set(
+      purposeSentenceIds
+        .map((sentenceId) => sectionBySentenceId.get(sentenceId))
+        .filter((sectionId): sectionId is string => Boolean(sectionId)),
+    )
+    if (purposeSectionIds.size < 2) {
+      pushIssue(issues, 'author_purpose_guide_invalid', guide.passageId, 'Checkpoint purpose guides must draw clues from at least two sections.')
+    }
+  }
+
+  for (const evidenceId of [...guide.purposeEvidenceIds, ...guide.secondaryDetailIds]) {
+    if (!resolvePassageEvidence(passage, evidenceId)) {
+      pushIssue(issues, 'invalid_informational_feature_reference', evidenceId, 'Author purpose evidence IDs must resolve to authored passage evidence.')
+    }
+  }
+}
+
 function normalizeGuideText(text: string): string {
   return text.trim().toLowerCase().replace(/\s+/g, ' ')
 }
@@ -1616,6 +1768,38 @@ function getBridgePackExpectation(pack: ContentPack): BridgePackExpectation | nu
         'relevant-details-across-sections',
         'central-idea-from-details',
         'central-idea-and-evidence',
+      ],
+      minSupportTargets: 28,
+      maxSupportTargets: 28,
+      minSupportTargetsPerPassage: 4,
+      maxSupportTargetsPerPassage: 4,
+      openConsonantLeWords: new Set<string>(),
+      closedConsonantLeWords: new Set<string>(),
+      forbiddenSilentEWords: new Set<string>(),
+      questionTypeCounts: {
+        multiple_choice: 17,
+        multi_select: 7,
+        hot_text: 7,
+        table_match: 7,
+        two_part: 3,
+      },
+    }
+  }
+
+  if (pack.manifest.benchmarkReferences.includes('ELA.2.R.2.3') && pack.manifest.difficultyRange[0] === 2 && pack.manifest.difficultyRange[1] === 3) {
+    return {
+      packId: pack.manifest.packId,
+      guidedDifficultyA: 2,
+      guidedDifficultyB: 3,
+      checkpointPatterns: [
+        'informational-author-purpose',
+        'author-purpose-specific',
+        'purpose-vs-topic',
+        'purpose-vs-central-idea',
+        'purpose-vs-detail',
+        'purpose-from-text-clues',
+        'purpose-from-multiple-sections',
+        'purpose-supported-by-text',
       ],
       minSupportTargets: 28,
       maxSupportTargets: 28,

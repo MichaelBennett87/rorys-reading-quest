@@ -12,6 +12,7 @@ import { grade2StoryScoutsPerspectivePortalPack } from './grade2/storyScouts/per
 import { grade2PoetryPlanetRhymeRoutesPack } from './grade2/poetryPlanet/rhymeRoutes'
 import { grade2InformationDetectivesTextFeatureHuntPack } from './grade2/informationDetectives/textFeatureHunt'
 import { grade2InformationDetectivesCentralIdeaCenterPack } from './grade2/informationDetectives/centralIdeaCenter'
+import { grade2InformationDetectivesPurposePathPack } from './grade2/informationDetectives/purposePath'
 import { legacyDevelopmentPack } from './legacyDevelopmentPack'
 import type { ContentPack } from './contentPackTypes'
 import type { ContentSample } from '../types'
@@ -33,6 +34,7 @@ export const contentPacks: readonly ContentPack[] = [
   grade2PoetryPlanetRhymeRoutesPack,
   grade2InformationDetectivesTextFeatureHuntPack,
   grade2InformationDetectivesCentralIdeaCenterPack,
+  grade2InformationDetectivesPurposePathPack,
   legacyDevelopmentPack,
 ]
 

@@ -81,6 +81,25 @@ export interface CentralIdeaGuide {
   contentVersion: string
 }
 
+export type InformationalPurposeKind =
+  | 'explain-how'
+  | 'describe'
+  | 'teach-about'
+  | 'explain-process'
+  | 'explain-why'
+  | 'provide-facts'
+
+export interface AuthorPurposeGuide {
+  passageId: string
+  topicLabel: string
+  purposeKind: InformationalPurposeKind
+  specificPurposeStatement: string
+  purposeEvidenceIds: string[]
+  secondaryDetailIds: string[]
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
 export interface ContentPackManifest {
   packId: string
   packTitle: string
@@ -127,6 +146,7 @@ export interface ContentPack {
   lessons: ContentPackLesson[]
   textFeatureGuides?: TextFeatureGuide[]
   centralIdeaGuides?: CentralIdeaGuide[]
+  authorPurposeGuides?: AuthorPurposeGuide[]
   themeGuides?: ThemeGuide[]
   perspectiveGuides?: PerspectiveGuide[]
   rhymeSchemeGuides?: RhymeSchemeGuide[]
@@ -174,15 +194,18 @@ export interface ContentPackAuditIssue {
     | 'correct_answer_absent'
     | 'correct_answer_position_concentration'
     | 'ambiguous_forbidden_homograph'
-    | 'missing_theme_guide'
-    | 'theme_guide_count_mismatch'
-    | 'theme_guide_structure_invalid'
+     | 'missing_theme_guide'
+     | 'theme_guide_count_mismatch'
+     | 'theme_guide_structure_invalid'
      | 'missing_text_feature_guide'
      | 'text_feature_guide_count_mismatch'
      | 'text_feature_guide_invalid'
    | 'missing_central_idea_guide'
    | 'central_idea_guide_count_mismatch'
    | 'central_idea_guide_invalid'
+   | 'missing_author_purpose_guide'
+   | 'author_purpose_guide_count_mismatch'
+   | 'author_purpose_guide_invalid'
    | 'invalid_informational_feature_reference'
    | 'missing_perspective_guide'
    | 'perspective_guide_count_mismatch'

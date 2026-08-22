@@ -23,9 +23,9 @@ describe('documentation consistency', () => {
     expect(tasks).toContain('    - [x] Phase 6E1: text features and ELA.2.R.2.1')
     expect(tasks).toContain('    - [x] Phase 6E2: central idea and relevant details for ELA.2.R.2.2')
     expect(tasks).toContain('    - [ ] Phase 6E7: context, word relationships, reference materials, background knowledge, and final Phase 6E audit')
-    expect(readme).toContain('Phase 6D complete; Phase 6E0 complete; Phase 6E1 complete; Phase 6E2 complete; Phase 6 remains in progress; Phase 6E3 is next')
-    expect(architecture).toContain('fourteen registered packs, 98 lessons, 98 passages, 561 questions, and 390 support targets')
-    expect(contentModel).toContain('fourteen active Grade 2 bridge packs with 98 lessons, 98 passages, 561 scored questions, and 390 authored word-support targets')
+    expect(readme).toContain('Phase 6D complete; Phase 6E0 complete; Phase 6E1 complete; Phase 6E2 complete; Phase 6E3 complete; Phase 6 remains in progress; Phase 6E4 is next')
+    expect(architecture).toContain('fifteen registered packs, 105 lessons, 105 passages, 602 questions, and 418 support targets')
+    expect(contentModel).toContain('fifteen active Grade 2 bridge packs with 105 lessons, 105 passages, 602 scored questions, and 418 authored word-support targets')
     expect(curriculum).toContain('Information Detectives')
     expect(curriculum).toContain('Context Cavern')
     expect(curriculum).toContain('Text Feature Hunt')
@@ -75,20 +75,20 @@ describe('documentation consistency', () => {
 
     expect(report).toContain('Starting local HEAD: `4edae570d5609013f3d28aa62c64e4dc462364c4`')
     expect(report).toContain('Starting remote HEAD: `4edae570d5609013f3d28aa62c64e4dc462364c4`')
-    expect(report).toContain('Implementation checkpoint')
-    expect(report).toContain('Verification facts')
-    expect(report).toContain('Final synchronized SHA reconciliation is deferred to the external completion report.')
-    expect(report).not.toContain('Final local HEAD:')
-    expect(report).not.toContain('Final remote HEAD:')
+    expect(report).toContain('Implementation checkpoint: `94d97e9` `feat: integrate central idea center progression`')
+    expect(report).toContain('Documentation commit: `917003c` `docs: complete phase 6e2 review`')
+    expect(report).toContain('Final local HEAD: `917003cda255cf3a7169b97aee929392c8c076ef`')
+    expect(report).toContain('Final remote HEAD: `917003cda255cf3a7169b97aee929392c8c076ef`')
+    expect(report).toContain('Local and remote SHA match: yes')
   })
 
   test('keeps active curriculum totals aligned with the registry helper', () => {
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 14,
-      activeLessonCount: 98,
-      activePassageCount: 98,
-      activeQuestionCount: 561,
-      activeSupportTargetCount: 390,
+      activePackCount: 15,
+      activeLessonCount: 105,
+      activePassageCount: 105,
+      activeQuestionCount: 602,
+      activeSupportTargetCount: 418,
     })
   })
 })

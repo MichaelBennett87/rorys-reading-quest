@@ -332,7 +332,7 @@ function deriveSequentialRoadmapUnit(
   isOwned: boolean,
   unitIndex: number,
 ): DemoUnit {
-  const exactReview = currentDifficulty >= roadmapUnit.completionDifficulty && currentLearningState === 'SPACED_REVIEW'
+  const exactReview = currentLearningState === 'SPACED_REVIEW' && currentDifficulty === roadmapUnit.completionDifficulty
   const completedState: UnitState = exactReview ? 'review' : 'complete'
   const state: UnitState = !hasContent && !isOwned
     ? 'locked'

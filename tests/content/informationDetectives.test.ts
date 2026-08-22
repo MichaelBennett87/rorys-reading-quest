@@ -10,6 +10,10 @@ import {
   centralIdeaCenterGuides,
 } from '../../src/domain/content/packs/grade2/informationDetectives/centralIdeaCenter'
 import { grade2InformationDetectivesTextFeatureHuntPack } from '../../src/domain/content/packs/grade2/informationDetectives/textFeatureHunt'
+import {
+  authorPurposeGuides,
+  grade2InformationDetectivesPurposePathPack,
+} from '../../src/domain/content/packs/grade2/informationDetectives/purposePath'
 import { resolvePassageEvidence, sampleContent, validateContent } from '../../src/domain/content'
 import { buildBenchmarkCoverageAudit } from '../../src/domain/content/packs/benchmarkCoverageAudit'
 import { getLessonForUnit } from '../../src/domain/lesson'
@@ -54,13 +58,14 @@ describe('grade 2 information detectives text feature hunt pack', () => {
       'g2-poetry-planet-rhyme-routes',
       'g2-information-detectives-text-feature-hunt',
       'g2-information-detectives-central-idea-center',
+      'g2-information-detectives-purpose-path',
     ])
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 14,
-      activeLessonCount: 98,
-      activePassageCount: 98,
-      activeQuestionCount: 561,
-      activeSupportTargetCount: 390,
+      activePackCount: 15,
+      activeLessonCount: 105,
+      activePassageCount: 105,
+      activeQuestionCount: 602,
+      activeSupportTargetCount: 418,
     })
     expect(contentPackAudit).toHaveLength(0)
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.2.1')).toEqual(expect.objectContaining({
@@ -78,6 +83,15 @@ describe('grade 2 information detectives text feature hunt pack', () => {
       coveredPatterns: ['central-idea', 'relevant-details'],
       missingPatterns: [],
       contributingPackIds: ['g2-information-detectives-central-idea-center'],
+      coverageStatus: 'implemented',
+      reviewStatus: 'DRAFT',
+    }))
+    expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.2.3')).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.2.R.2.3',
+      expectedPatterns: ['informational-author-purpose'],
+      coveredPatterns: ['informational-author-purpose'],
+      missingPatterns: [],
+      contributingPackIds: ['g2-information-detectives-purpose-path'],
       coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',
     }))
@@ -405,6 +419,125 @@ describe('grade 2 information detectives central idea center pack', () => {
     const result = getLessonForUnit('id-unit-2')
 
     expect(result.lesson?.lessonId).toBe('lesson-central-idea-checkpoint-a')
+    expect(result.lesson?.lessonRole).toBe('CHECKPOINT')
+    expect(result.lesson?.selectionStatus).toBe('active')
+    expect(result.lesson?.questionCount).toBe(7)
+  })
+})
+
+describe('grade 2 information detectives purpose path pack', () => {
+  test('registers as the active purpose pack with the expected totals', () => {
+    const pack = grade2InformationDetectivesPurposePathPack
+
+    expect(pack.manifest.packId).toBe('g2-information-detectives-purpose-path')
+    expect(pack.manifest.packTitle).toBe('Grade 2 Information Detectives: Purpose Path')
+    expect(pack.manifest.worldId).toBe('information-detectives')
+    expect(pack.manifest.unitId).toBe('id-unit-3')
+    expect(pack.manifest.primarySkillId).toBe('g2-information-detectives-reading')
+    expect(pack.manifest.reviewStatus).toBe('DRAFT')
+    expect(pack.manifest.contentVersion).toBe('g2-id-purpose-r0.1.0')
+    expect(pack.lessons).toHaveLength(7)
+    expect(pack.passages).toHaveLength(7)
+    expect(pack.questions).toHaveLength(41)
+    expect(authorPurposeGuides).toHaveLength(7)
+    expect(pack.lessons.filter((lesson) => lesson.lessonRole === 'GUIDED_PRACTICE')).toHaveLength(4)
+    expect(pack.lessons.filter((lesson) => lesson.lessonRole === 'CHECKPOINT')).toHaveLength(3)
+    expect(pack.lessons.filter((lesson) => lesson.difficulty === 2)).toHaveLength(2)
+    expect(pack.lessons.filter((lesson) => lesson.difficulty === 3)).toHaveLength(5)
+    expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.2.3')).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.2.R.2.3',
+      expectedPatterns: ['informational-author-purpose'],
+      coveredPatterns: ['informational-author-purpose'],
+      missingPatterns: [],
+      contributingPackIds: ['g2-information-detectives-purpose-path'],
+      coverageStatus: 'implemented',
+      reviewStatus: 'DRAFT',
+    }))
+    expect(validateContent(sampleContent)).toHaveLength(0)
+    expect(contentPackAudit).toHaveLength(0)
+  })
+
+  test('every informational passage has a valid structure, guide, and support targets', () => {
+    const pack = grade2InformationDetectivesPurposePathPack
+
+    for (const passage of pack.passages) {
+      expect(passage.contentKind).toBe('informational')
+      expect(passage.reviewStatus).toBe('DRAFT')
+      expect(passage.contentVersion).toBe('g2-id-purpose-r0.1.0')
+      expect(passage.wordSupportTargets).toHaveLength(4)
+      expect(passage.informationalStructure).toBeTruthy()
+
+      const structure = passage.informationalStructure!
+      const title = structure.features.find((feature) => feature.kind === 'title')
+      const headings = structure.features.filter((feature) => feature.kind === 'heading')
+      const visuals = structure.features.filter((feature) => feature.kind === 'graph' || feature.kind === 'map' || feature.kind === 'illustration')
+      const captions = structure.features.filter((feature) => feature.kind === 'caption')
+
+      expect(title).toBeTruthy()
+      expect(headings.length).toBeGreaterThanOrEqual(2)
+      expect(visuals.length).toBeGreaterThanOrEqual(1)
+      expect(captions).toHaveLength(1)
+      expect(structure.sections.length).toBeGreaterThanOrEqual(2)
+      expect(new Set(structure.features.map((feature) => feature.featureId)).size).toBe(structure.features.length)
+
+      const guide = authorPurposeGuides.find((entry) => entry.passageId === passage.passageIdentifier)
+      expect(guide).toBeTruthy()
+      expect(guide?.reviewStatus).toBe('DRAFT')
+      expect(guide?.contentVersion).toBe('g2-id-purpose-r0.1.0')
+      expect(guide?.topicLabel).toMatch(/\S/)
+      expect(guide?.specificPurposeStatement).toMatch(/^To /)
+      expect(guide?.purposeEvidenceIds.length).toBeGreaterThanOrEqual(3)
+      expect(guide?.secondaryDetailIds.length).toBeGreaterThanOrEqual(1)
+
+      for (const evidenceId of [...(guide?.purposeEvidenceIds ?? []), ...(guide?.secondaryDetailIds ?? [])]) {
+        expect(resolvePassageEvidence(passage, evidenceId)).toBeTruthy()
+      }
+
+      for (const target of passage.wordSupportTargets ?? []) {
+        expect(target.reviewStatus).toBe('DRAFT')
+        expect(target.contentVersion).toBe('g2-id-purpose-r0.1.0')
+        expect(passage.sentences?.some((sentence) => sentence.sentenceId === target.sentenceId)).toBe(true)
+        expect(resolvePassageEvidence(passage, target.sentenceId)?.text).toMatch(/\S/)
+      }
+    }
+  })
+
+  test('every question uses the Phase 6E3 benchmark contract and resolves its evidence', () => {
+    const pack = grade2InformationDetectivesPurposePathPack
+    const visibleAnswerText = new Set<string>()
+
+    for (const question of pack.questions) {
+      expect(question.gradeBand).toBe(2)
+      expect(question.benchmarkReference).toBe('ELA.2.R.2.3')
+      expect(question.skillIdentifier).toBe('g2-information-detectives-reading')
+      expect(question.reportingCategory).toBe('Reading Informational Text')
+      expect(question.contentVersion).toBe('g2-id-purpose-r0.1.0')
+      expect(question.reviewStatus).toBe('DRAFT')
+      expect(question.explanation).toMatch(/\S/)
+      const evidenceReferenceIds = question.evidenceReferenceIds ?? []
+      expect(evidenceReferenceIds.length).toBeGreaterThan(0)
+
+      const passage = pack.passages.find((entry) => entry.passageIdentifier === question.passageIdentifier)
+      expect(passage).toBeTruthy()
+
+      for (const evidenceId of evidenceReferenceIds) {
+        expect(resolvePassageEvidence(passage!, evidenceId)).toBeTruthy()
+      }
+
+      if (question.questionContent && 'choices' in question.questionContent) {
+        for (const choice of question.questionContent.choices) {
+          visibleAnswerText.add(choice.text)
+        }
+      }
+    }
+
+    expect(visibleAnswerText.size).toBeGreaterThan(0)
+  })
+
+  test('resolves the Purpose Path unit to the new checkpoint lesson', () => {
+    const result = getLessonForUnit('id-unit-3')
+
+    expect(result.lesson?.lessonId).toBe('lesson-purpose-checkpoint-a')
     expect(result.lesson?.lessonRole).toBe('CHECKPOINT')
     expect(result.lesson?.selectionStatus).toBe('active')
     expect(result.lesson?.questionCount).toBe(7)
