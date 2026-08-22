@@ -129,12 +129,12 @@ function deriveSequentialTrackWorld(
       .map((lesson) => lesson.unitId),
   )
 
-   const units = world.units.map((unit, index) => {
-     const roadmapUnit = roadmap.units[index]
-     if (!roadmapUnit) return { ...unit }
-     const hasContent = contentUnitIds.has(unit.id)
-     const isOwned = unit.id === activeUnitId || unit.id === plannedUnitId
-     return deriveSequentialRoadmapUnit(unit, roadmapUnit, currentDifficulty, currentLearningState, hasContent, isOwned, index)
+  const units = world.units.map((unit, index) => {
+    const roadmapUnit = roadmap.units[index]
+    if (!roadmapUnit) return { ...unit }
+    const hasContent = contentUnitIds.has(unit.id)
+    const isOwned = unit.id === activeUnitId || unit.id === plannedUnitId
+    return deriveSequentialRoadmapUnit(world.id, unit, roadmapUnit, currentDifficulty, currentLearningState, hasContent, isOwned, index)
   })
   const currentUnit = [...units].reverse().find((unit) => unit.state !== 'locked') ?? units[0]
 
@@ -324,6 +324,7 @@ function deriveRhymeRoutesUnit(
 }
 
 function deriveSequentialRoadmapUnit(
+  worldId: string,
   unit: DemoUnit,
   roadmapUnit: { unitId: string; title: string; activeDifficulty: number; completionDifficulty: number; lockedMessage: string; futureContentMessage: string; activeLabel: string; practiceFocus: string },
   currentDifficulty: number,
@@ -354,7 +355,7 @@ function deriveSequentialRoadmapUnit(
     difficultyLabel: state === 'locked'
       ? 'Locked'
       : unitIndex === 0 && currentDifficulty <= 0
-        ? 'Building Block'
+        ? (worldId === 'context-cavern' ? 'Power-Up Mission' : 'Building Block')
         : state === 'available' && currentDifficulty < roadmapUnit.activeDifficulty
           ? 'Power-Up Mission'
         : state === 'available'

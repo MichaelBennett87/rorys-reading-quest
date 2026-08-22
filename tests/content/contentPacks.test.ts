@@ -35,19 +35,20 @@ describe('grade 2 content pack registry', () => {
       'g2-information-detectives-central-idea-center',
       'g2-information-detectives-purpose-path',
       'g2-information-detectives-opinion-evidence-desk',
+      'g2-context-cavern-academic-word-workshop',
       'legacy-word-forge-development-pack',
     ])
-    expect(activePacks).toHaveLength(16)
-    expect(activePacks.reduce((sum, pack) => sum + pack.lessons.length, 0)).toBe(112)
-    expect(activePacks.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(112)
-    expect(activePacks.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(643)
-    expect(activePacks.reduce((sum, pack) => sum + pack.passages.reduce((passageSum, passage) => passageSum + (passage.wordSupportTargets?.length ?? 0), 0), 0)).toBe(446)
+    expect(activePacks).toHaveLength(17)
+    expect(activePacks.reduce((sum, pack) => sum + pack.lessons.length, 0)).toBe(119)
+    expect(activePacks.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(119)
+    expect(activePacks.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(684)
+    expect(activePacks.reduce((sum, pack) => sum + pack.passages.reduce((passageSum, passage) => passageSum + (passage.wordSupportTargets?.length ?? 0), 0), 0)).toBe(474)
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 16,
-      activeLessonCount: 112,
-      activePassageCount: 112,
-      activeQuestionCount: 643,
-      activeSupportTargetCount: 446,
+      activePackCount: 17,
+      activeLessonCount: 119,
+      activePassageCount: 119,
+      activeQuestionCount: 684,
+      activeSupportTargetCount: 474,
     })
     expect(contentPackAudit).toHaveLength(0)
     expect(benchmarkCoverageAudit).toEqual(expect.objectContaining({

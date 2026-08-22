@@ -64,13 +64,14 @@ describe('grade 2 information detectives text feature hunt pack', () => {
       'g2-information-detectives-central-idea-center',
       'g2-information-detectives-purpose-path',
       'g2-information-detectives-opinion-evidence-desk',
+      'g2-context-cavern-academic-word-workshop',
     ])
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 16,
-      activeLessonCount: 112,
-      activePassageCount: 112,
-      activeQuestionCount: 643,
-      activeSupportTargetCount: 446,
+      activePackCount: 17,
+      activeLessonCount: 119,
+      activePassageCount: 119,
+      activeQuestionCount: 684,
+      activeSupportTargetCount: 474,
     })
     expect(contentPackAudit).toHaveLength(0)
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.2.1')).toEqual(expect.objectContaining({

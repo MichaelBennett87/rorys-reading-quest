@@ -141,7 +141,7 @@ describe('curriculum planning foundation', () => {
     expect(curriculumTracks.find((track) => track.trackId === 'g2-story-scouts-prose')?.status).toBe('active')
     expect(curriculumTracks.find((track) => track.trackId === 'g2-poetry-planet')?.status).toBe('active')
     expect(curriculumTracks.find((track) => track.trackId === 'g2-information-detectives-reading')?.status).toBe('active')
-    expect(curriculumTracks.find((track) => track.trackId === 'g2-context-cavern-vocabulary')?.status).toBe('planned_until_content_exists')
+    expect(curriculumTracks.find((track) => track.trackId === 'g2-context-cavern-vocabulary')?.status).toBe('active')
     expect(new Set(curriculumTracks.map((track) => track.trackId)).size).toBe(curriculumTracks.length)
     expect(new Set(curriculumTracks.map((track) => track.skillId)).size).toBe(curriculumTracks.length)
   })
@@ -439,7 +439,7 @@ describe('curriculum planning foundation', () => {
     expect(result.state.skillProgress['g2-poetry-planet-poetry']).toBeDefined()
   })
 
-  test('initializes playable Information Detectives progress without resetting existing tracks or creating Context Cavern progress', () => {
+  test('initializes playable Information Detectives and Context Cavern progress without resetting existing tracks', () => {
     const progress = createDefaultQuestProgress(now)
 
     const result = ensureProgressForPlayableTracks(progress, getLessonCandidates())
@@ -453,7 +453,11 @@ describe('curriculum planning foundation', () => {
       currentDifficulty: 1,
       lastMasteredDifficulty: 0,
     })
-    expect(result.state.skillProgress['g2-context-cavern-vocabulary']).toBeUndefined()
+    expect(result.state.skillProgress['g2-context-cavern-vocabulary']).toMatchObject({
+      skillId: 'g2-context-cavern-vocabulary',
+      currentDifficulty: 1,
+      lastMasteredDifficulty: 0,
+    })
   })
 
   test('initializes fixture Information Detectives and Context Cavern progress without touching existing tracks', () => {

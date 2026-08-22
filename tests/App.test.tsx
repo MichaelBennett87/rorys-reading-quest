@@ -64,7 +64,7 @@ const getSingleByRole = (
 
 const getWordForgeCard = () => getSingleByRole('button', /Word Forge world - Available/i)
 const getStoryScoutsCard = () => getSingleByRole('button', /Story Scouts world - Available/i)
-const getLockedCard = () => getSingleByRole('button', /Context Cavern world - Locked/i)
+const getLockedCard = () => getSingleByRole('button', /Compare Castle world - Locked/i)
 const getPoetryCard = () => getSingleByRole('button', /Poetry Planet world - Available/i)
 const getContinueButton = () => getSingleByRole('button', /Continue Quest/i)
 const getOpenParentButton = () => getSingleByRole('button', /Grown-Up Area/i)

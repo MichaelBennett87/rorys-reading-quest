@@ -803,6 +803,8 @@ export function planUnitQuest(input: PlanUnitQuestInput): UnitQuestPlan {
         unitId: input.selectedUnitId,
         reason: selectedTrack.status === 'planned_until_content_exists'
           ? `${selectedTrack.displayName} quests are being prepared.`
+          : selectedTrack.worldId === 'context-cavern'
+            ? 'Context Cavern Vocabulary quests are being prepared.'
           : 'This unit has no active lesson content yet.',
       }
     }

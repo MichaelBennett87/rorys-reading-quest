@@ -118,6 +118,23 @@ export interface AuthorOpinionGuide {
   contentVersion: string
 }
 
+export interface AcademicVocabularyTarget {
+  targetId: string
+  word: string
+  childFriendlyMeaning: string
+  speakingExample: string
+  writingExample: string
+  appropriateUseSentenceIds: string[]
+  subjectContexts: string[]
+}
+
+export interface AcademicVocabularyGuide {
+  passageId: string
+  targets: AcademicVocabularyTarget[]
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
 export interface ContentPackManifest {
   packId: string
   packTitle: string
@@ -166,6 +183,7 @@ export interface ContentPack {
   centralIdeaGuides?: CentralIdeaGuide[]
   authorPurposeGuides?: AuthorPurposeGuide[]
   authorOpinionGuides?: AuthorOpinionGuide[]
+  academicVocabularyGuides?: AcademicVocabularyGuide[]
   themeGuides?: ThemeGuide[]
   perspectiveGuides?: PerspectiveGuide[]
   rhymeSchemeGuides?: RhymeSchemeGuide[]
@@ -228,6 +246,9 @@ export interface ContentPackAuditIssue {
    | 'missing_author_opinion_guide'
    | 'author_opinion_guide_count_mismatch'
    | 'author_opinion_guide_invalid'
+   | 'missing_academic_vocabulary_guide'
+   | 'academic_vocabulary_guide_count_mismatch'
+   | 'academic_vocabulary_guide_invalid'
    | 'invalid_author_opinion_feature_reference'
    | 'invalid_informational_feature_reference'
    | 'missing_perspective_guide'

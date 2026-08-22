@@ -16,6 +16,9 @@ describe('documentation consistency', () => {
     const architecture = readRepoFile('docs/ARCHITECTURE.md')
     const contentModel = readRepoFile('docs/CONTENT_MODEL.md')
     const curriculum = readRepoFile('docs/GRADE_2_BRIDGE_CURRICULUM.md')
+    const review = readRepoFile('docs/content/GRADE_2_CONTEXT_CAVERN_ACADEMIC_WORD_WORKSHOP_REVIEW.md')
+    const coverageAudit = readRepoFile('docs/content/GRADE_2_R_2_4_COVERAGE_AUDIT.md')
+    const finalAudit = readRepoFile('docs/content/GRADE_2_CONTEXT_CAVERN_FINAL_AUDIT.md')
 
     expect(tasks).toContain('- [x] Phase 6D: Grade 2 prose and poetry')
     expect(tasks).toContain('  - [ ] Phase 6E: informational reading and vocabulary')
@@ -24,18 +27,30 @@ describe('documentation consistency', () => {
     expect(tasks).toContain('    - [x] Phase 6E2: central idea and relevant details for ELA.2.R.2.2')
     expect(tasks).toContain("    - [x] Phase 6E3: author's purpose for ELA.2.R.2.3")
     expect(tasks).toContain('    - [x] Phase 6E4: opinion and supporting evidence for ELA.2.R.2.4')
-    expect(tasks).toContain('    - [ ] Phase 6E5: academic-vocabulary practice and Context Cavern foundation')
+    expect(tasks).toContain('    - [x] Phase 6E5: academic-vocabulary practice and Context Cavern foundation')
+    expect(tasks).toContain('    - [ ] Phase 6E6: morphology and ELA.2.V.1.2')
     expect(tasks).toContain('    - [ ] Phase 6E7: context, word relationships, reference materials, background knowledge, and final Phase 6E audit')
-    expect(readme).toContain('Phase 6D complete; Phase 6E0 through Phase 6E4 complete; Information Detectives informational-reading sequence complete; Phase 6 remains in progress; Phase 6E5 is next; Context Cavern still has no production curriculum')
-    expect(architecture).toContain('sixteen registered packs, 112 lessons, 112 passages, 643 questions, and 446 support targets')
-    expect(contentModel).toContain('sixteen active Grade 2 bridge packs with 112 lessons, 112 passages, 643 scored questions, and 446 authored word-support targets')
+    expect(readme).toContain('Phase 6D complete; Phase 6E0 through Phase 6E5 complete; Information Detectives informational-reading sequence complete; Phase 6 remains in progress; Phase 6E6 is next; Context Cavern is active')
+    expect(architecture).toContain('seventeen registered packs, 119 lessons, 119 passages, 684 questions, and 474 support targets')
+    expect(contentModel).toContain('seventeen active Grade 2 bridge packs with 119 lessons, 119 passages, 684 scored questions, and 474 authored word-support targets')
     expect(curriculum).toContain('Information Detectives')
     expect(curriculum).toContain('Context Cavern')
     expect(curriculum).toContain('Text Feature Hunt')
     expect(curriculum).toContain('Central Idea Center')
     expect(curriculum).toContain('Opinion & Evidence Desk')
+    expect(curriculum).toContain('Academic Word Workshop')
     expect(curriculum).not.toContain('Info Lab')
     expect(curriculum).not.toContain('Vocabulary Lab')
+    expect(review).toContain('Pack ID: `g2-context-cavern-academic-word-workshop`')
+    expect(review).toContain('Benchmark alignment: `ELA.2.V.1.1`')
+    expect(review).toContain('Review status: `DRAFT`')
+    expect(coverageAudit).toContain('Contributing pack')
+    expect(coverageAudit).toContain('g2-context-cavern-academic-word-workshop')
+    expect(coverageAudit).toContain('Coverage status')
+    expect(coverageAudit).toContain('implemented')
+    expect(finalAudit).toContain('Context Cavern is the fifth playable curriculum track.')
+    expect(finalAudit).toContain('`ELA.2.V.1.1`: implemented, DRAFT.')
+    expect(finalAudit).toContain('Morphology Mine remains next.')
   })
 
   test('keeps the Phase 6D4 reconciliation report synchronized with the final repository state', () => {
@@ -114,11 +129,11 @@ describe('documentation consistency', () => {
 
   test('keeps active curriculum totals aligned with the registry helper', () => {
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 16,
-      activeLessonCount: 112,
-      activePassageCount: 112,
-      activeQuestionCount: 643,
-      activeSupportTargetCount: 446,
+      activePackCount: 17,
+      activeLessonCount: 119,
+      activePassageCount: 119,
+      activeQuestionCount: 684,
+      activeSupportTargetCount: 474,
     })
   })
 })

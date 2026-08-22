@@ -593,6 +593,9 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
     if (pack.manifest.benchmarkReferences.includes('ELA.2.R.2.4')) {
       validateAuthorOpinionGuideStructure(pack, issues)
     }
+    if (pack.manifest.benchmarkReferences.includes('ELA.2.V.1.1')) {
+      validateAcademicVocabularyGuideStructure(pack, issues)
+    }
     if (pack.manifest.benchmarkReferences.includes('ELA.2.R.1.3')) {
       validatePerspectivePortalGuideStructure(pack, issues)
     }
@@ -1492,6 +1495,138 @@ function validateAuthorOpinionGuideAgainstPassage(
   }
 }
 
+function validateAcademicVocabularyGuideStructure(pack: ContentPack, issues: ContentPackAuditIssue[]) {
+  const guides = pack.academicVocabularyGuides ?? []
+  const passageById = new Map(pack.passages.map((passage) => [passage.passageIdentifier, passage] as const))
+  const guideByPassageId = new Map<string, NonNullable<ContentPack['academicVocabularyGuides']>[number]>()
+  const sentenceIdsByPassageId = new Map(
+    pack.passages.map((passage) => [passage.passageIdentifier, new Set((passage.sentences ?? []).map((sentence) => sentence.sentenceId))] as const),
+  )
+  const allowedWords = new Set([
+    'compare',
+    'describe',
+    'explain',
+    'identify',
+    'observe',
+    'predict',
+    'reason',
+    'result',
+    'example',
+    'detail',
+    'sequence',
+    'measure',
+    'record',
+    'category',
+  ])
+  const wordCounts = new Map<string, number>()
+
+  if (guides.length !== pack.passages.length) {
+    pushIssue(
+      issues,
+      'academic_vocabulary_guide_count_mismatch',
+      pack.manifest.packId,
+      `Expected ${pack.passages.length} academic vocabulary guides, found ${guides.length}.`,
+    )
+  }
+
+  for (const guide of guides) {
+    if (guideByPassageId.has(guide.passageId)) {
+      pushIssue(issues, 'academic_vocabulary_guide_invalid', guide.passageId, 'Academic vocabulary guides must not duplicate a passage ID.')
+      continue
+    }
+    guideByPassageId.set(guide.passageId, guide)
+    const passage = passageById.get(guide.passageId)
+    if (!passage) {
+      pushIssue(issues, 'missing_academic_vocabulary_guide', guide.passageId, 'Every academic vocabulary guide must point to a real passage.')
+      continue
+    }
+    const sentenceIds = sentenceIdsByPassageId.get(guide.passageId) ?? new Set<string>()
+
+    if (guide.targets.length !== 4) {
+      pushIssue(issues, 'academic_vocabulary_guide_invalid', guide.passageId, 'Academic vocabulary guides must contain exactly four targets.')
+    }
+    if (guide.reviewStatus !== 'DRAFT') {
+      pushIssue(issues, 'missing_draft_status', guide.passageId, 'Academic vocabulary guides in this pack must remain DRAFT.')
+    }
+    if (guide.contentVersion !== pack.manifest.contentVersion) {
+      pushIssue(issues, 'mismatched_content_version', guide.passageId, 'Academic vocabulary guide content version must match the pack version.')
+    }
+    if (
+      guide.passageId.includes('<') || guide.passageId.includes('http://') || guide.passageId.includes('https://')
+      || guide.targets.some((target) => [target.targetId, target.word, target.childFriendlyMeaning, target.speakingExample, target.writingExample].some((text) => text.includes('<') || text.includes('http://') || text.includes('https://')))
+    ) {
+      pushIssue(issues, 'academic_vocabulary_guide_invalid', guide.passageId, 'Academic vocabulary guide text must not contain raw HTML or remote URLs.')
+    }
+
+    const seenTargetIds = new Set<string>()
+    for (const target of guide.targets) {
+      if (seenTargetIds.has(target.targetId)) {
+        pushIssue(issues, 'academic_vocabulary_guide_invalid', target.targetId, 'Academic vocabulary target IDs must be unique.')
+      } else {
+        seenTargetIds.add(target.targetId)
+      }
+
+      const word = normalizeGuideText(target.word)
+      if (!allowedWords.has(word)) {
+        pushIssue(issues, 'academic_vocabulary_guide_invalid', target.targetId, 'Academic vocabulary targets must use approved Phase 6E5 words.')
+      }
+      wordCounts.set(word, (wordCounts.get(word) ?? 0) + 1)
+
+      if (!target.childFriendlyMeaning.trim()) {
+        pushIssue(issues, 'academic_vocabulary_guide_invalid', target.targetId, 'Academic vocabulary targets need a child-friendly meaning.')
+      } else if (!looksLikeCompleteThought(target.childFriendlyMeaning)) {
+        pushIssue(issues, 'academic_vocabulary_guide_invalid', target.targetId, 'Academic vocabulary meanings must be complete thoughts.')
+      }
+      if (!target.speakingExample.trim()) {
+        pushIssue(issues, 'academic_vocabulary_guide_invalid', target.targetId, 'Academic vocabulary targets need a speaking example.')
+      } else if (!normalizeGuideText(target.speakingExample).includes(word)) {
+        pushIssue(issues, 'academic_vocabulary_guide_invalid', target.targetId, 'Speaking examples must use the target word.')
+      }
+      if (!target.writingExample.trim()) {
+        pushIssue(issues, 'academic_vocabulary_guide_invalid', target.targetId, 'Academic vocabulary targets need a writing example.')
+      } else if (!normalizeGuideText(target.writingExample).includes(word)) {
+        pushIssue(issues, 'academic_vocabulary_guide_invalid', target.targetId, 'Writing examples must use the target word.')
+      }
+      if (!Array.isArray(target.appropriateUseSentenceIds) || target.appropriateUseSentenceIds.length < 1) {
+        pushIssue(issues, 'academic_vocabulary_guide_invalid', target.targetId, 'Academic vocabulary targets need at least one appropriate-use sentence ID.')
+      }
+      const subjectContexts = new Set(target.subjectContexts)
+      if (subjectContexts.size < 2) {
+        pushIssue(issues, 'academic_vocabulary_guide_invalid', target.targetId, 'Academic vocabulary targets need at least two subject contexts.')
+      }
+      const hasBodySentence = target.appropriateUseSentenceIds.some((sentenceId) => sentenceIds.has(sentenceId))
+      if (!hasBodySentence) {
+        pushIssue(issues, 'academic_vocabulary_guide_invalid', target.targetId, 'Academic vocabulary targets need at least one body sentence evidence reference.')
+      }
+      for (const sentenceId of target.appropriateUseSentenceIds) {
+        const evidence = resolvePassageEvidence(passage, sentenceId)
+        if (!evidence) {
+          pushIssue(issues, 'invalid_informational_feature_reference', sentenceId, 'Academic vocabulary target sentences must resolve to authored passage evidence.')
+          continue
+        }
+        if (!normalizeGuideText(evidence.text).includes(word)) {
+          pushIssue(issues, 'academic_vocabulary_guide_invalid', sentenceId, 'Academic vocabulary target sentences must contain the target word.')
+        }
+      }
+    }
+  }
+
+  if (wordCounts.size !== 14) {
+    pushIssue(issues, 'academic_vocabulary_guide_invalid', pack.manifest.packId, 'Academic vocabulary packs must use exactly 14 distinct target words.')
+  }
+  for (const [word, count] of wordCounts) {
+    if (count !== 2) {
+      pushIssue(issues, 'academic_vocabulary_guide_invalid', word, 'Each academic vocabulary word must appear exactly twice across the pack.')
+    }
+  }
+
+  for (const passage of pack.passages) {
+    if (!guideByPassageId.has(passage.passageIdentifier)) {
+      pushIssue(issues, 'missing_academic_vocabulary_guide', passage.passageIdentifier, 'Every passage needs exactly one academic vocabulary guide.')
+    }
+  }
+}
+
 function normalizeGuideText(text: string): string {
   return text.trim().toLowerCase().replace(/\s+/g, ' ')
 }
@@ -2051,6 +2186,29 @@ function getBridgePackExpectation(pack: ContentPack): BridgePackExpectation | nu
         'evidence-connection',
         'evidence-across-sections',
       ],
+      minSupportTargets: 28,
+      maxSupportTargets: 28,
+      minSupportTargetsPerPassage: 4,
+      maxSupportTargetsPerPassage: 4,
+      openConsonantLeWords: new Set<string>(),
+      closedConsonantLeWords: new Set<string>(),
+      forbiddenSilentEWords: new Set<string>(),
+      questionTypeCounts: {
+        multiple_choice: 17,
+        multi_select: 7,
+        hot_text: 7,
+        table_match: 7,
+        two_part: 3,
+      },
+    }
+  }
+
+  if (pack.manifest.benchmarkReferences.includes('ELA.2.V.1.1') && pack.manifest.difficultyRange[0] === 0 && pack.manifest.difficultyRange[1] === 1) {
+    return {
+      packId: pack.manifest.packId,
+      guidedDifficultyA: 0,
+      guidedDifficultyB: 1,
+      checkpointPatterns: ['academic-vocabulary-use', 'speaking-vocabulary-use', 'writing-vocabulary-use', 'cross-subject-vocabulary-use'],
       minSupportTargets: 28,
       maxSupportTargets: 28,
       minSupportTargetsPerPassage: 4,

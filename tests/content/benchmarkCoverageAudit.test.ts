@@ -70,7 +70,7 @@ describe('benchmark coverage audit', () => {
     }))
   })
 
-  test('keeps future information and vocabulary benchmarks planned but not implemented', () => {
+  test('keeps future information active and reports academic vocabulary as implemented', () => {
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.2.1')).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.R.2.1',
       expectedPatterns: ['informational-text-features', 'feature-meaning'],
@@ -93,10 +93,10 @@ describe('benchmark coverage audit', () => {
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.V.1.1')).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.V.1.1',
       expectedPatterns: ['academic-vocabulary-use'],
-      coveredPatterns: [],
-      missingPatterns: ['academic-vocabulary-use'],
-      contributingPackIds: [],
-      coverageStatus: 'partial',
+      coveredPatterns: ['academic-vocabulary-use'],
+      missingPatterns: [],
+      contributingPackIds: ['g2-context-cavern-academic-word-workshop'],
+      coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',
     }))
   })
