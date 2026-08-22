@@ -304,3 +304,8 @@
 - Decision: Activate Information Detectives Purpose Path for `ELA.2.R.2.3` while preserving unit-specific review isolation and the existing no-Grade-3-purpose-development boundary.
 - Reason: Phase 6E3 needs a bounded informational-text pack that teaches specific author purpose from whole-text clues without moving into Grade 3 purpose-development analysis or opinion scoring.
 - Consequence: The active curriculum gains a third informational pack, the bridge roadmap now includes implemented DRAFT coverage for `ELA.2.R.2.3`, and later informational and vocabulary phases stay planned.
+
+## 2026-08-22 - Phase 6E4 Opinion & Evidence Desk Activation
+- Decision: Activate Information Detectives Opinion & Evidence Desk for `ELA.2.R.2.4` while preserving unit-specific review isolation and the existing no-argument-analysis boundary.
+- Reason: Phase 6E4 needs a bounded informational-text pack that teaches author opinion, fact versus opinion, and supporting evidence without moving into formal argument analysis, source reliability, or bias analysis.
+- Consequence: The active curriculum gains a fourth informational pack, the bridge roadmap now includes implemented DRAFT coverage for `ELA.2.R.2.4`, and later vocabulary phases stay planned.
