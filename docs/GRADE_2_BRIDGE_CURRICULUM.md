@@ -1,6 +1,6 @@
 # Grade 2 Bridge Curriculum
 
-This roadmap describes the bounded Grade 2 bridge plan for Rory's Reading Quest. Phase 6A1, Phase 6A2, Phase 6B1, Phase 6B2, Phase 6C1, Phase 6C2, and Phase 6C3 provide authored DRAFT coverage for the listed Grade 2 bridge patterns, Phase 6C4 provides supportive practice for fluency foundations without claiming benchmark mastery, Phase 6D0 prepares the multi-world progression foundation for later prose and poetry work, Phase 6D1 adds the first active Story Scouts prose pack, Phase 6D2 adds the first active Story Scouts theme pack, and Phase 6D3 adds the first active Story Scouts perspective pack. All new material stays DRAFT-only.
+This roadmap describes the bounded Grade 2 bridge plan for Rory's Reading Quest. Phase 6A1, Phase 6A2, Phase 6B1, Phase 6B2, Phase 6C1, Phase 6C2, and Phase 6C3 provide authored DRAFT coverage for the listed Grade 2 bridge patterns, Phase 6C4 provides supportive practice for fluency foundations without claiming benchmark mastery, Phase 6D0 prepares the multi-world progression foundation for later prose and poetry work, Phase 6D1 adds the first active Story Scouts prose pack, Phase 6D2 adds the first active Story Scouts theme pack, Phase 6D3 adds the first active Story Scouts perspective pack, and Phase 6E0 adds planned Information Detectives and Context Cavern shells without active content. All new material stays DRAFT-only.
 
 ## Foundations
 
@@ -26,10 +26,10 @@ This roadmap describes the bounded Grade 2 bridge plan for Rory's Reading Quest.
 
 | Benchmark | Planned world | Planned unit | Prerequisite | Intended difficulty range | Phase | Status |
 | --- | --- | --- | --- | --- | --- | --- |
-| `ELA.2.R.2.1` | Info Lab | `il-unit-1` | Bridge decoding support | 1-2 | 6E | planned |
-| `ELA.2.R.2.2` | Info Lab | `il-unit-2` | `ELA.2.R.2.1` | 1-2 | 6E | planned |
-| `ELA.2.R.2.3` | Info Lab | `il-unit-3` | `ELA.2.R.2.1` | 1-2 | 6E | planned |
-| `ELA.2.R.2.4` | Info Lab | `il-unit-4` | `ELA.2.R.2.2` | 1-2 | 6E | planned |
+| `ELA.2.R.2.1` | Information Detectives | `id-unit-1` | Bridge decoding support | 1-2 | 6E | planned |
+| `ELA.2.R.2.2` | Information Detectives | `id-unit-2` | `ELA.2.R.2.1` | 1-2 | 6E | planned |
+| `ELA.2.R.2.3` | Information Detectives | `id-unit-3` | `ELA.2.R.2.2` | 1-2 | 6E | planned |
+| `ELA.2.R.2.4` | Information Detectives | `id-unit-4` | `ELA.2.R.2.3` | 1-2 | 6E | planned |
 
 ## Reading Across Genres and Vocabulary
 
@@ -38,9 +38,9 @@ This roadmap describes the bounded Grade 2 bridge plan for Rory's Reading Quest.
 | `ELA.2.R.3.1` | Cross-Genre Lab | `cg-unit-1` | Bridge decoding support | 1-2 | 6F | planned |
 | `ELA.2.R.3.2` | Cross-Genre Lab | `cg-unit-2` | `ELA.2.R.3.1` | 1-2 | 6F | planned |
 | `ELA.2.R.3.3` | Cross-Genre Lab | `cg-unit-3` | `ELA.2.R.3.2` | 1-2 | 6F | planned |
-| `ELA.2.V.1.1` | Vocabulary Lab | `v-unit-1` | Bridge decoding support | 1-2 | 6E | planned |
-| `ELA.2.V.1.2` | Vocabulary Lab | `v-unit-2` | `ELA.2.V.1.1` | 1-2 | 6E | planned |
-| `ELA.2.V.1.3` | Vocabulary Lab | `v-unit-3` | `ELA.2.V.1.2` | 1-2 | 6E | planned |
+| `ELA.2.V.1.1` | Context Cavern | `cc-unit-1` | Bridge decoding support | 1-2 | 6E | planned |
+| `ELA.2.V.1.2` | Context Cavern | `cc-unit-2` | `ELA.2.V.1.1` | 1-2 | 6E | planned |
+| `ELA.2.V.1.3` | Context Cavern | `cc-unit-3` | `ELA.2.V.1.2` | 1-2 | 6E | planned |
 
 ## Notes
 
@@ -51,6 +51,7 @@ This roadmap describes the bounded Grade 2 bridge plan for Rory's Reading Quest.
 - `ELA.2.F.1.3e` is implemented in DRAFT in Phase 6C3; it covers a bounded silent-letter set for Quiet Letter Quest.
 - `ELA.2.F.1.4` is supportive practice only in Phase 6C4; it keeps Fluency Flight local, child-controlled, and free of oral measurement.
 - `ELA.2.R.1.1` is implemented in DRAFT across the Story Map pack, `ELA.2.R.1.2` is implemented in DRAFT across the Theme Trail pack, `ELA.2.R.1.3` is implemented in DRAFT across the Perspective Portal pack, and `ELA.2.R.1.4` is implemented in DRAFT across the Rhyme Routes pack.
+- Phase 6E0 keeps Information Detectives and Context Cavern as planned roadmap shells only; no informational or vocabulary benchmark is implemented yet.
 - Implemented means authored DRAFT coverage. It does not mean human approval, learner mastery, or an official assessment result.
 - Implemented means the listed patterns have authored DRAFT coverage only; it does not mean human approval or learner mastery.
 - No benchmark is marked approved.

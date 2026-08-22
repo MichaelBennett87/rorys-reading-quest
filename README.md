@@ -6,7 +6,7 @@ Rory's Reading Quest is a local-first, child-safe reading-learning foundation fo
 
 ## Current Status
 
-- Status: `Phase 6C complete; Phase 6D complete; Phase 6 remains in progress; Phase 6E is next`.
+- Status: `Phase 6D complete; Phase 6E0 complete; Phase 6 remains in progress; Phase 6E1 is next`.
 - A completed `LessonResult` now drives verification, advancement, fresh practice, same-level remediation, prerequisite rebuilding, spaced review, or a structured content-needed outcome.
 - Progress, rewards, bounded attempt history, review scheduling, submitted active-session checkpoints, and assistance summaries persist locally.
 - Curated word-help controls reveal authored patterns and optional browser speech without using an external service or microphone.
@@ -26,7 +26,7 @@ Rory's Reading Quest is a local-first, child-safe reading-learning foundation fo
 
 - Presentation: React/TypeScript shell with explicit local screen state and a small progress hook.
 - Domain: pure lesson evaluation, adaptive progression, deterministic lesson selection, remediation return, review scheduling, and assistance summarization.
-- Content: eleven active Grade 2 bridge packs with 77 DRAFT lessons, 77 original DRAFT passages, 438 DRAFT questions, and 306 DRAFT word-support targets, plus the legacy development pack preserved for recovery and history.
+- Content: twelve active Grade 2 bridge packs with 84 DRAFT lessons, 84 original DRAFT passages, 479 DRAFT questions, and 334 DRAFT word-support targets, plus the legacy development pack preserved for recovery and history.
 - Persistence: version-1 child progress plus separate parent-access and parent-record stores behind small interfaces, with safe in-memory fallback and optional assistance-event persistence.
 - Runtime services: browser only; no telemetry, advertising, cloud service, backend, or remote content request. Phase 5A adds a local parent PIN gate and parent analytics summaries without changing child learning flow. Phase 5B1 adds the parent dashboard presentation on top of the same local data, Phase 5B2 adds local assessment CRUD plus a browser-print preview, and Phase 6A1 through Phase 6C4 add local curriculum packs without runtime generation or external content.
 

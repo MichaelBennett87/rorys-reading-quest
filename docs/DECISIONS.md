@@ -279,3 +279,13 @@
 - Decision: Activate `ELA.2.R.1.4` and the Rhyme Routes pack when the first Poetry Planet pack is registered, while keeping later Grade 2 informational and vocabulary phases planned.
 - Reason: Phase 6D4 is the first active Poetry Planet rhyme-scheme phase and needs bounded end-rhyme practice with unit-affine review scheduling alongside the existing Story Scouts tracks.
 - Consequence: Poetry Planet becomes an active independent track with its own review content, Story Scouts review isolation remains intact, and later Grade 2 bridge phases stay deferred.
+
+## 2026-08-22 - Phase 6E0 Planned Information and Vocabulary Shells
+- Decision: Add planned Information Detectives and Context Cavern roadmap shells without active content during Phase 6E0.
+- Reason: Phase 6E0 needs stable track definitions, unit ownership, and future-world gating boundaries before informational and vocabulary content exists.
+- Consequence: The curriculum can recognize the future worlds in docs and tests without creating benchmark coverage, new passages, questions, or learner progress entries.
+
+## 2026-08-22 - Phase 6E0 Vocabulary Measurement Boundary
+- Decision: Keep `ELA.2.V.1.1` planned in Phase 6E0 rather than implementing it.
+- Reason: The application cannot independently verify spoken or open-ended vocabulary use yet, so a benchmark claim would overstate what the UI can measure safely.
+- Consequence: Phase 6E0 stays within a no-content architecture boundary and leaves future vocabulary practice design for Phase 6E5.

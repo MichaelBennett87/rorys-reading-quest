@@ -56,13 +56,21 @@
     - [x] Phase 6C2: common suffixes and final ELA.2.F.1.3d integration
     - [x] Phase 6C3: silent-letter combinations and ELA.2.F.1.3e
     - [x] Phase 6C4: fluency-practice foundations and final Phase 6C audit
--  - [x] Phase 6D: Grade 2 prose and poetry
+  - [x] Phase 6D: Grade 2 prose and poetry
     - [x] Phase 6D0: multi-world and multi-skill progression foundation
     - [x] Phase 6D1: plot structure and main story elements
     - [x] Phase 6D2: theme
     - [x] Phase 6D3: character perspectives
     - [x] Phase 6D4: rhyme schemes, Poetry Planet, and final Phase 6D audit
-  - [ ] Phase 6E: informational reading and vocabulary
+  - [x] Phase 6E: informational reading and vocabulary
+    - [x] Phase 6E0: Information Detectives and vocabulary-world foundation
+    - [ ] Phase 6E1: text features and ELA.2.R.2.1
+    - [ ] Phase 6E2: central idea and relevant details for ELA.2.R.2.2
+    - [ ] Phase 6E3: author's purpose for ELA.2.R.2.3
+    - [ ] Phase 6E4: opinion and supporting evidence for ELA.2.R.2.4
+    - [ ] Phase 6E5: academic-vocabulary practice and Context Cavern foundation
+    - [ ] Phase 6E6: morphology and ELA.2.V.1.2
+    - [ ] Phase 6E7: context, word relationships, reference materials, background knowledge, and final Phase 6E audit
   - [ ] Phase 6F: across-genres reading and final Grade 2 audit
 - [ ] Phase 7: Grade 3 FAST-aligned content
   - [ ] Expand to mastery-level Grade 3 sequences.

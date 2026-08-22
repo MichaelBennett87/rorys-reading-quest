@@ -6,8 +6,8 @@
 
 ## Implementation snapshot
 - Implementation checkpoint: `97fb8e4b024323c43a1d419d3a891da2ce3aead1`
-- Final local HEAD: `97fb8e4b024323c43a1d419d3a891da2ce3aead1`
-- Final remote HEAD: `97fb8e4b024323c43a1d419d3a891da2ce3aead1`
+- Final local HEAD: `dee575d6bfbe5928ddb4f212b27090dcb96b6f41`
+- Final remote HEAD: `dee575d6bfbe5928ddb4f212b27090dcb96b6f41`
 - Local and remote SHA match: yes
 
 ## Verification
@@ -36,6 +36,7 @@
 - Questions: 41
 - Support targets: 28
 - Unit-affine review intent: preserved
+- Phase 6D completion remains complete.
 
 ## Boundary notes
 - No Grade 3 poetry curriculum was added.
