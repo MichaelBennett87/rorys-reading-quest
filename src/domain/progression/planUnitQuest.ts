@@ -745,11 +745,52 @@ export function planUnitQuest(input: PlanUnitQuestInput): UnitQuestPlan {
         reason: 'Complete Purpose Path to unlock Opinion & Evidence Desk.',
       }
     }
+    if (selectedDifficulty >= 5) {
+      if (contentNeededNextQuest && contentNeededNextQuest.difficulty >= 5) {
+        return {
+          status: 'content_needed',
+          purpose: contentNeededNextQuest.purpose,
+          skillId: contentNeededNextQuest.skillId,
+          difficulty: contentNeededNextQuest.difficulty,
+          reason: contentNeededNextQuest.reason,
+          unitId: input.selectedUnitId,
+        }
+      }
+      return {
+        status: 'content_needed',
+        purpose: contentNeededNextQuest?.purpose ?? plannedPurpose,
+        skillId: currentSkill?.skillId ?? 'unknown',
+        difficulty: selectedDifficulty,
+        reason: 'You completed the available Information Detectives missions. Context Cavern vocabulary quests are being prepared.',
+        unitId: input.selectedUnitId,
+      }
+    }
+
+    const plan = selectNextLesson({
+      skillId: currentSkill?.skillId ?? 'unknown',
+      difficulty: selectedDifficulty,
+      purpose: availableNextQuest?.purpose ?? 'progression',
+      availableLessons: input.availableLessons.filter((lesson) => lesson.unitId === input.selectedUnitId),
+      recentActivityUsage: currentSkill?.recentActivityUsage ?? [],
+      preferredUnitId: input.selectedUnitId,
+    })
+    if (plan.status === 'available') {
+      return {
+        status: 'available',
+        purpose: plan.purpose,
+        lesson: plan.lesson,
+        lessonId: plan.lesson.lessonId,
+        unitId: plan.lesson.unitId,
+        activityId: plan.lesson.activityId,
+      }
+    }
     return {
-      status: 'locked',
-      purpose: 'progression',
+      status: 'content_needed',
+      purpose: plan.purpose,
+      skillId: plan.skillId,
+      difficulty: plan.difficulty,
+      reason: plan.reason,
       unitId: input.selectedUnitId,
-      reason: 'Opinion & Evidence Desk quests are being prepared.',
     }
   }
 

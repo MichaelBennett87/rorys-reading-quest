@@ -128,15 +128,6 @@ const poetryPlanetUnits: DemoUnit[] = [
 
 const infoDetectivesUnits: DemoUnit[] = [
   ...buildSequentialWorldUnitShells('information-detectives'),
-  {
-    id: 'id-unit-4',
-    title: 'Opinion & Evidence Desk',
-    difficultyLabel: 'Locked',
-    progressPercent: 0,
-    stars: 0,
-    state: 'locked',
-    practiceFocus: "an author's opinion and supporting evidence",
-  },
 ]
 
 const contextCavernUnits: DemoUnit[] = [...buildSequentialWorldUnitShells('context-cavern')]

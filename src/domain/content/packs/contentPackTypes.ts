@@ -100,6 +100,24 @@ export interface AuthorPurposeGuide {
   contentVersion: string
 }
 
+export interface AuthorOpinionRecord {
+  opinionId: string
+  opinionStatement: string
+  opinionSentenceId: string
+  supportingEvidenceIds: string[]
+  evidenceConnectionStatement: string
+}
+
+export interface AuthorOpinionGuide {
+  passageId: string
+  topicLabel: string
+  opinions: AuthorOpinionRecord[]
+  factEvidenceIds: string[]
+  otherDetailIds: string[]
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
 export interface ContentPackManifest {
   packId: string
   packTitle: string
@@ -147,6 +165,7 @@ export interface ContentPack {
   textFeatureGuides?: TextFeatureGuide[]
   centralIdeaGuides?: CentralIdeaGuide[]
   authorPurposeGuides?: AuthorPurposeGuide[]
+  authorOpinionGuides?: AuthorOpinionGuide[]
   themeGuides?: ThemeGuide[]
   perspectiveGuides?: PerspectiveGuide[]
   rhymeSchemeGuides?: RhymeSchemeGuide[]
@@ -206,6 +225,10 @@ export interface ContentPackAuditIssue {
    | 'missing_author_purpose_guide'
    | 'author_purpose_guide_count_mismatch'
    | 'author_purpose_guide_invalid'
+   | 'missing_author_opinion_guide'
+   | 'author_opinion_guide_count_mismatch'
+   | 'author_opinion_guide_invalid'
+   | 'invalid_author_opinion_feature_reference'
    | 'invalid_informational_feature_reference'
    | 'missing_perspective_guide'
    | 'perspective_guide_count_mismatch'

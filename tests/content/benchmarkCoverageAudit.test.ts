@@ -80,6 +80,15 @@ describe('benchmark coverage audit', () => {
       coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',
     }))
+    expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.2.4')).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.2.R.2.4',
+      expectedPatterns: ['opinion', 'supporting-evidence'],
+      coveredPatterns: ['opinion', 'supporting-evidence'],
+      missingPatterns: [],
+      contributingPackIds: ['g2-information-detectives-opinion-evidence-desk'],
+      coverageStatus: 'implemented',
+      reviewStatus: 'DRAFT',
+    }))
 
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.V.1.1')).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.V.1.1',

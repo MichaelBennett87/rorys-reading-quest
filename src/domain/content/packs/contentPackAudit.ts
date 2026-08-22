@@ -590,6 +590,9 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
     if (pack.manifest.benchmarkReferences.includes('ELA.2.R.2.3')) {
       validateAuthorPurposeGuideStructure(pack, issues)
     }
+    if (pack.manifest.benchmarkReferences.includes('ELA.2.R.2.4')) {
+      validateAuthorOpinionGuideStructure(pack, issues)
+    }
     if (pack.manifest.benchmarkReferences.includes('ELA.2.R.1.3')) {
       validatePerspectivePortalGuideStructure(pack, issues)
     }
@@ -1284,6 +1287,211 @@ function validateAuthorPurposeGuideAgainstPassage(
   }
 }
 
+function validateAuthorOpinionGuideStructure(pack: ContentPack, issues: ContentPackAuditIssue[]) {
+  const guides = pack.authorOpinionGuides ?? []
+  const passageById = new Map(pack.passages.map((passage) => [passage.passageIdentifier, passage] as const))
+  const guideByPassageId = new Map<string, NonNullable<ContentPack['authorOpinionGuides']>[number]>()
+  const checkpointPassageIds = new Set(
+    pack.lessons
+      .filter((lesson) => lesson.selectionStatus === 'active' && lesson.lessonRole === 'CHECKPOINT')
+      .flatMap((lesson) => lesson.passageIdentifiers),
+  )
+
+  if (guides.length !== pack.passages.length) {
+    pushIssue(
+      issues,
+      'author_opinion_guide_count_mismatch',
+      pack.manifest.packId,
+      `Expected ${pack.passages.length} author opinion guides, found ${guides.length}.`,
+    )
+  }
+
+  let oneOpinionPassageCount = 0
+  let twoOpinionPassageCount = 0
+
+  for (const guide of guides) {
+    if (guideByPassageId.has(guide.passageId)) {
+      pushIssue(issues, 'author_opinion_guide_invalid', guide.passageId, 'Author opinion guides must not duplicate a passage ID.')
+      continue
+    }
+    guideByPassageId.set(guide.passageId, guide)
+    const passage = passageById.get(guide.passageId)
+    if (!passage) {
+      pushIssue(issues, 'missing_author_opinion_guide', guide.passageId, 'Every author opinion guide must point to a real passage.')
+      continue
+    }
+
+    const opinionCount = guide.opinions?.length ?? 0
+    if (opinionCount === 1) oneOpinionPassageCount += 1
+    if (opinionCount === 2) twoOpinionPassageCount += 1
+
+    validateAuthorOpinionGuideAgainstPassage(pack, passage, guide, checkpointPassageIds, issues)
+  }
+
+  if (oneOpinionPassageCount < 5) {
+    pushIssue(issues, 'author_opinion_guide_invalid', pack.manifest.packId, 'At least five passages must contain one focal opinion.')
+  }
+  if (twoOpinionPassageCount < 2) {
+    pushIssue(issues, 'author_opinion_guide_invalid', pack.manifest.packId, 'At least two passages must contain two related opinions.')
+  }
+
+  for (const passage of pack.passages) {
+    if (!guideByPassageId.has(passage.passageIdentifier)) {
+      pushIssue(issues, 'missing_author_opinion_guide', passage.passageIdentifier, 'Every passage needs exactly one author opinion guide.')
+    }
+  }
+}
+
+function validateAuthorOpinionGuideAgainstPassage(
+  pack: ContentPack,
+  passage: ContentPack['passages'][number],
+  guide: NonNullable<ContentPack['authorOpinionGuides']>[number],
+  checkpointPassageIds: Set<string>,
+  issues: ContentPackAuditIssue[],
+) {
+  const structure = passage.informationalStructure
+  const features = structure?.features ?? []
+  const titleFeature = features.find((feature) => feature.kind === 'title')
+  const sentenceById = new Map((passage.sentences ?? []).map((sentence) => [sentence.sentenceId, sentence] as const))
+  const sectionBySentenceId = new Map<string, string>()
+  for (const section of structure?.sections ?? []) {
+    for (const sentenceId of section.sentenceIds) {
+      sectionBySentenceId.set(sentenceId, section.sectionId)
+    }
+  }
+
+  if (passage.contentKind !== 'informational' || !structure || !titleFeature) {
+    pushIssue(issues, 'author_opinion_guide_invalid', guide.passageId, 'Author opinion guides require an informational passage structure with a title.')
+    return
+  }
+  if (!guide.topicLabel.trim()) {
+    pushIssue(issues, 'author_opinion_guide_invalid', guide.passageId, 'Author opinion guides need a topic label.')
+  }
+  if (guide.opinions.length < 1 || guide.opinions.length > 2) {
+    pushIssue(issues, 'author_opinion_guide_invalid', guide.passageId, 'Author opinion guides must contain one or two opinions.')
+  }
+
+  const normalizedTopic = normalizeGuideText(guide.topicLabel)
+  const normalizedTitle = normalizeGuideText(titleFeature.text)
+  const seenOpinionIds = new Set<string>()
+
+  for (const opinion of guide.opinions) {
+    if (!opinion.opinionId.trim()) {
+      pushIssue(issues, 'author_opinion_guide_invalid', guide.passageId, 'Opinion IDs are required.')
+      continue
+    }
+    if (seenOpinionIds.has(opinion.opinionId)) {
+      pushIssue(issues, 'author_opinion_guide_invalid', opinion.opinionId, 'Opinion IDs must be unique.')
+      continue
+    }
+    seenOpinionIds.add(opinion.opinionId)
+
+    if (!opinion.opinionStatement.trim()) {
+      pushIssue(issues, 'author_opinion_guide_invalid', opinion.opinionId, 'Opinion statements are required.')
+    }
+    if (!looksLikeCompleteThought(opinion.opinionStatement)) {
+      pushIssue(issues, 'author_opinion_guide_invalid', opinion.opinionId, 'Opinion statements must be complete thoughts.')
+    }
+    if (!looksLikeOpinionStatement(opinion.opinionStatement)) {
+      pushIssue(issues, 'author_opinion_guide_invalid', opinion.opinionId, 'Opinion statements must clearly express what the author thinks or recommends.')
+    }
+
+    const normalizedOpinion = normalizeGuideText(opinion.opinionStatement)
+    if (normalizedTopic && normalizedOpinion === normalizedTopic) {
+      pushIssue(issues, 'author_opinion_guide_invalid', opinion.opinionId, 'Opinion statements must differ from the topic.')
+    }
+    if (normalizedOpinion && normalizedOpinion === normalizedTitle) {
+      pushIssue(issues, 'author_opinion_guide_invalid', opinion.opinionId, 'Opinion statements must differ from the title.')
+    }
+
+    if (!opinion.opinionSentenceId.trim()) {
+      pushIssue(issues, 'author_opinion_guide_invalid', opinion.opinionId, 'Opinion sentence IDs are required.')
+    }
+    const opinionSentence = sentenceById.get(opinion.opinionSentenceId)
+    if (!opinionSentence) {
+      pushIssue(issues, 'invalid_author_opinion_feature_reference', opinion.opinionSentenceId, 'Opinion sentence IDs must resolve to the authored passage.')
+    } else if (normalizeGuideText(opinionSentence.text) !== normalizedOpinion) {
+      pushIssue(issues, 'author_opinion_guide_invalid', opinion.opinionId, 'Opinion sentence text must match the authored opinion statement.')
+    }
+
+    const evidenceIds = new Set(opinion.supportingEvidenceIds)
+    if (evidenceIds.size !== opinion.supportingEvidenceIds.length) {
+      pushIssue(issues, 'author_opinion_guide_invalid', opinion.opinionId, 'Supporting evidence IDs must be unique.')
+    }
+    const requiredEvidenceCount = checkpointPassageIds.has(passage.passageIdentifier) ? 3 : 2
+    if (opinion.supportingEvidenceIds.length < requiredEvidenceCount) {
+      pushIssue(issues, 'author_opinion_guide_invalid', opinion.opinionId, `Opinion evidence needs at least ${requiredEvidenceCount} evidence IDs.`)
+    }
+    const bodyEvidenceIds = opinion.supportingEvidenceIds.filter((evidenceId) => sentenceById.has(evidenceId))
+    if (bodyEvidenceIds.length < 1) {
+      pushIssue(issues, 'author_opinion_guide_invalid', opinion.opinionId, 'Every opinion needs at least one body sentence evidence reference.')
+    }
+    if (checkpointPassageIds.has(passage.passageIdentifier)) {
+      if (bodyEvidenceIds.length < 2) {
+        pushIssue(issues, 'author_opinion_guide_invalid', opinion.opinionId, 'Checkpoint opinion evidence needs at least two body sentence references.')
+      }
+      const relevantSectionIds = new Set(
+        bodyEvidenceIds
+          .map((sentenceId) => sectionBySentenceId.get(sentenceId))
+          .filter((sectionId): sectionId is string => Boolean(sectionId)),
+      )
+      if (relevantSectionIds.size < 2) {
+        pushIssue(issues, 'author_opinion_guide_invalid', opinion.opinionId, 'Checkpoint opinion evidence must span at least two sections.')
+      }
+    }
+    if (!opinion.evidenceConnectionStatement.trim()) {
+      pushIssue(issues, 'author_opinion_guide_invalid', opinion.opinionId, 'Evidence connection statements are required.')
+    } else if (!/\b(because|shows|supports|helps)\b/i.test(opinion.evidenceConnectionStatement)) {
+      pushIssue(issues, 'author_opinion_guide_invalid', opinion.opinionId, 'Evidence connection statements should connect the evidence to the opinion.')
+    }
+
+    if (opinion.opinionStatement.includes('<') || opinion.opinionStatement.includes('http://') || opinion.opinionStatement.includes('https://') || opinion.evidenceConnectionStatement.includes('<') || opinion.evidenceConnectionStatement.includes('http://') || opinion.evidenceConnectionStatement.includes('https://')) {
+      pushIssue(issues, 'author_opinion_guide_invalid', opinion.opinionId, 'Opinion guide text must not contain raw HTML or remote URLs.')
+    }
+
+    for (const evidenceId of opinion.supportingEvidenceIds) {
+      if (!resolvePassageEvidence(passage, evidenceId)) {
+        pushIssue(issues, 'invalid_author_opinion_feature_reference', evidenceId, 'Opinion evidence IDs must resolve to authored passage evidence.')
+      }
+    }
+  }
+
+  const factEvidenceIds = new Set(guide.factEvidenceIds)
+  const otherDetailIds = new Set(guide.otherDetailIds)
+  if (factEvidenceIds.size !== guide.factEvidenceIds.length) {
+    pushIssue(issues, 'author_opinion_guide_invalid', guide.passageId, 'Fact evidence IDs must be unique.')
+  }
+  if (otherDetailIds.size !== guide.otherDetailIds.length) {
+    pushIssue(issues, 'author_opinion_guide_invalid', guide.passageId, 'Other detail IDs must be unique.')
+  }
+  if (guide.factEvidenceIds.length < 1) {
+    pushIssue(issues, 'author_opinion_guide_invalid', guide.passageId, 'Author opinion guides need at least one fact evidence ID.')
+  }
+  if (guide.otherDetailIds.length < 1) {
+    pushIssue(issues, 'author_opinion_guide_invalid', guide.passageId, 'Author opinion guides need at least one other detail ID.')
+  }
+
+  const opinionEvidenceIds = new Set(guide.opinions.flatMap((opinion) => opinion.supportingEvidenceIds))
+  for (const detailId of guide.otherDetailIds) {
+    if (opinionEvidenceIds.has(detailId)) {
+      pushIssue(issues, 'author_opinion_guide_invalid', detailId, 'Other detail IDs must not overlap opinion evidence IDs.')
+    }
+  }
+
+  if (guide.reviewStatus !== 'DRAFT') {
+    pushIssue(issues, 'missing_draft_status', guide.passageId, 'Author opinion guides in this pack must remain DRAFT.')
+  }
+  if (guide.contentVersion !== pack.manifest.contentVersion) {
+    pushIssue(issues, 'mismatched_content_version', guide.passageId, 'Author opinion guide content version must match the pack version.')
+  }
+
+  for (const evidenceId of [...guide.factEvidenceIds, ...guide.otherDetailIds]) {
+    if (!resolvePassageEvidence(passage, evidenceId)) {
+      pushIssue(issues, 'invalid_author_opinion_feature_reference', evidenceId, 'Author opinion guide evidence IDs must resolve to authored passage evidence.')
+    }
+  }
+}
+
 function normalizeGuideText(text: string): string {
   return text.trim().toLowerCase().replace(/\s+/g, ' ')
 }
@@ -1291,6 +1499,11 @@ function normalizeGuideText(text: string): string {
 function looksLikeCompleteThought(text: string): boolean {
   const trimmed = text.trim()
   return /^[^.?!].*[.?!]$/.test(trimmed) || trimmed.split(/\s+/).length >= 6
+}
+
+function looksLikeOpinionStatement(text: string): boolean {
+  const normalized = normalizeGuideText(text)
+  return /\b(should|need|needs|better|best|useful|help|helps|recommend|important|would)\b/i.test(normalized)
 }
 
 function validatePerspectivePortalGuideStructure(pack: ContentPack, issues: ContentPackAuditIssue[]) {
@@ -1800,6 +2013,43 @@ function getBridgePackExpectation(pack: ContentPack): BridgePackExpectation | nu
         'purpose-from-text-clues',
         'purpose-from-multiple-sections',
         'purpose-supported-by-text',
+      ],
+      minSupportTargets: 28,
+      maxSupportTargets: 28,
+      minSupportTargetsPerPassage: 4,
+      maxSupportTargetsPerPassage: 4,
+      openConsonantLeWords: new Set<string>(),
+      closedConsonantLeWords: new Set<string>(),
+      forbiddenSilentEWords: new Set<string>(),
+      questionTypeCounts: {
+        multiple_choice: 17,
+        multi_select: 7,
+        hot_text: 7,
+        table_match: 7,
+        two_part: 3,
+      },
+    }
+  }
+
+  if (pack.manifest.benchmarkReferences.includes('ELA.2.R.2.4') && pack.manifest.difficultyRange[0] === 3 && pack.manifest.difficultyRange[1] === 4) {
+    return {
+      packId: pack.manifest.packId,
+      guidedDifficultyA: 3,
+      guidedDifficultyB: 4,
+      checkpointPatterns: [
+        'opinion',
+        'supporting-evidence',
+        'author-opinion-identification',
+        'multiple-author-opinions',
+        'fact-vs-opinion',
+        'opinion-vs-topic',
+        'opinion-vs-central-idea',
+        'opinion-vs-author-purpose',
+        'supporting-evidence-identification',
+        'opinion-evidence-matching',
+        'strongest-supporting-evidence',
+        'evidence-connection',
+        'evidence-across-sections',
       ],
       minSupportTargets: 28,
       maxSupportTargets: 28,
