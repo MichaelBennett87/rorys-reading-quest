@@ -88,7 +88,7 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getAllByRole('heading', { name: /Curriculum Worlds/i })).toHaveLength(1)
     expect(screen.getAllByRole('button', { name: /Word Forge world - Available/i })).toHaveLength(1)
     expect(screen.getAllByRole('button', { name: /Story Scouts world - Available/i })).toHaveLength(1)
-    expect(screen.getAllByRole('button', { name: /Information Detectives world - Coming Later/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Information Detectives world - Available/i })).toHaveLength(1)
     expect(screen.getAllByRole('button', { name: /Poetry Planet world - Available/i })).toHaveLength(1)
   })
 
@@ -521,9 +521,9 @@ describe('Phase 2 lesson flow and child shell', () => {
     render(<App />)
 
     const locked = getLockedCard()
-    const comingSoon = getSingleByRole('button', /Information Detectives world - Coming Later/i)
+    const informationCard = getSingleByRole('button', /Information Detectives world - Available/i)
 
     expect(locked.getAttribute('disabled')).not.toBeNull()
-    expect(comingSoon.getAttribute('disabled')).not.toBeNull()
+    expect(informationCard.getAttribute('disabled')).toBeNull()
   })
 })

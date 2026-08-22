@@ -2,6 +2,7 @@ import { describe, expect, test } from 'vitest'
 
 import type { ContentSample } from '../../src/domain/content'
 import { sampleContent, validateContent } from '../../src/domain/content'
+import { grade2InformationDetectivesTextFeatureHuntPack } from '../../src/domain/content/packs/grade2/informationDetectives/textFeatureHunt'
 
 describe('validateContent', () => {
   test('accepts the phase 0 sample', () => {
@@ -541,5 +542,36 @@ describe('validateContent', () => {
     }
 
     expect(validateContent(duplicateTargetSample).some((error) => error.code === 'duplicate_support_target_id')).toBe(true)
+  })
+
+  test('rejects invalid informational structures safely', () => {
+    const informationalPassage = grade2InformationDetectivesTextFeatureHuntPack.passages[0]
+
+    const missingStructureErrors = validateContent({
+      passages: [
+        {
+          ...informationalPassage,
+          informationalStructure: undefined,
+        },
+      ],
+      questions: [],
+    })
+
+    expect(missingStructureErrors.some((error) => error.code === 'missing_informational_structure')).toBe(true)
+
+    const invalidStructureErrors = validateContent({
+      passages: [
+        {
+          ...informationalPassage,
+          informationalStructure: {
+            ...informationalPassage.informationalStructure!,
+            titleFeatureId: 'missing-title-feature',
+          },
+        },
+      ],
+      questions: [],
+    })
+
+    expect(invalidStructureErrors.some((error) => error.code === 'informational_structure_invalid')).toBe(true)
   })
 })

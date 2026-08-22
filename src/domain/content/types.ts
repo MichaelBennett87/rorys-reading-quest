@@ -1,3 +1,5 @@
+import type { InformationalTextStructure } from './informationalTypes'
+
 export type GradeBand = 2 | 3 | 4
 
 export type ContentReviewStatus = 'DRAFT' | 'REVIEWED' | 'APPROVED' | 'RETIRED'
@@ -68,7 +70,7 @@ export interface Passage {
   passageIdentifier: string
   gradeBand: GradeBand
   passageText: string
-  contentKind?: 'prose' | 'poem'
+  contentKind?: 'prose' | 'poem' | 'informational'
   sentences?: {
     sentenceId: string
     lineNumber?: number
@@ -76,6 +78,7 @@ export interface Passage {
     text: string
   }[]
   poemStructure?: PoemStructure
+  informationalStructure?: InformationalTextStructure
   readingContext: string
   sourceReference?: string
   contentVersion: string
@@ -180,9 +183,13 @@ export interface ContentValidationError {
   | 'duplicate_support_target_id'
   | 'duplicate_support_placement'
   | 'duplicate_target_placement'
-  | 'invalid_support_metadata'
-  | 'missing_support_sentence'
-  | 'duplicate_support_reference'
+    | 'invalid_support_metadata'
+    | 'missing_support_sentence'
+    | 'duplicate_support_reference'
+    | 'missing_informational_structure'
+    | 'informational_structure_invalid'
+    | 'invalid_informational_feature'
+    | 'invalid_informational_feature_reference'
   message: string
   itemIdentifier: string
 }

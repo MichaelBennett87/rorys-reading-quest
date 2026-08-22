@@ -289,3 +289,8 @@
 - Decision: Keep `ELA.2.V.1.1` planned in Phase 6E0 rather than implementing it.
 - Reason: The application cannot independently verify spoken or open-ended vocabulary use yet, so a benchmark claim would overstate what the UI can measure safely.
 - Consequence: Phase 6E0 stays within a no-content architecture boundary and leaves future vocabulary practice design for Phase 6E5.
+
+## 2026-08-22 - Phase 6E1 Information Detectives Activation
+- Decision: Activate Information Detectives Text Feature Hunt for `ELA.2.R.2.1` while keeping Context Cavern planned.
+- Reason: Phase 6E1 needs a bounded informational-text pack with authored text features, evidence, and deterministic unit-gated progression.
+- Consequence: The active curriculum gains one informational pack and the bridge roadmap now includes implemented DRAFT coverage for `ELA.2.R.2.1`.

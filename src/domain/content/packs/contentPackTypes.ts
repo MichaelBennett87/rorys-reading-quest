@@ -52,6 +52,21 @@ export interface RhymeSchemeGuide {
   contentVersion: string
 }
 
+export interface TextFeatureContribution {
+  featureId: string
+  featureKind: 'title' | 'heading' | 'caption' | 'graph' | 'map' | 'glossary' | 'illustration'
+  contributionStatement: string
+  relatedSentenceIds: string[]
+}
+
+export interface TextFeatureGuide {
+  passageId: string
+  featureContributions: TextFeatureContribution[]
+  combinedFeatureExplanation: string
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
 export interface ContentPackManifest {
   packId: string
   packTitle: string
@@ -96,6 +111,7 @@ export interface ContentPack {
   passages: Passage[]
   questions: ReadingQuestion[]
   lessons: ContentPackLesson[]
+  textFeatureGuides?: TextFeatureGuide[]
   themeGuides?: ThemeGuide[]
   perspectiveGuides?: PerspectiveGuide[]
   rhymeSchemeGuides?: RhymeSchemeGuide[]
@@ -143,9 +159,12 @@ export interface ContentPackAuditIssue {
     | 'correct_answer_absent'
     | 'correct_answer_position_concentration'
     | 'ambiguous_forbidden_homograph'
-  | 'missing_theme_guide'
-  | 'theme_guide_count_mismatch'
-  | 'theme_guide_structure_invalid'
+    | 'missing_theme_guide'
+    | 'theme_guide_count_mismatch'
+    | 'theme_guide_structure_invalid'
+    | 'missing_text_feature_guide'
+    | 'text_feature_guide_count_mismatch'
+    | 'text_feature_guide_invalid'
   | 'missing_perspective_guide'
   | 'perspective_guide_count_mismatch'
   | 'perspective_guide_structure_invalid'

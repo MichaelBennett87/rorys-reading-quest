@@ -74,10 +74,10 @@ describe('benchmark coverage audit', () => {
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.2.1')).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.R.2.1',
       expectedPatterns: ['informational-text-features', 'feature-meaning'],
-      coveredPatterns: [],
-      missingPatterns: ['informational-text-features', 'feature-meaning'],
-      contributingPackIds: [],
-      coverageStatus: 'partial',
+      coveredPatterns: ['informational-text-features', 'feature-meaning'],
+      missingPatterns: [],
+      contributingPackIds: ['g2-information-detectives-text-feature-hunt'],
+      coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',
     }))
 

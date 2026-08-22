@@ -1,3 +1,5 @@
 export * from './types'
+export * from './informationalTypes'
+export * from './evidence'
 export * from './validateContent'
 export { benchmarkCoverageAudit, contentPackAudit, contentPacks, fluencyPracticeAudit, sampleContent } from './packs'

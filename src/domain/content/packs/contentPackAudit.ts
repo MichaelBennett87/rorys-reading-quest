@@ -580,6 +580,9 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
     if (pack.manifest.benchmarkReferences.includes('ELA.2.R.1.2')) {
       validateThemeTrailGuideStructure(pack, issues)
     }
+    if (pack.manifest.benchmarkReferences.includes('ELA.2.R.2.1')) {
+      validateTextFeatureGuideStructure(pack, issues)
+    }
     if (pack.manifest.benchmarkReferences.includes('ELA.2.R.1.3')) {
       validatePerspectivePortalGuideStructure(pack, issues)
     }
@@ -878,6 +881,104 @@ function validateThemeGuideAgainstPassage(
   }
   if (guide.contentVersion !== pack.manifest.contentVersion) {
     pushIssue(issues, 'mismatched_content_version', guide.passageId, 'Theme guide content version must match the pack version.')
+  }
+}
+
+function validateTextFeatureGuideStructure(pack: ContentPack, issues: ContentPackAuditIssue[]) {
+  const guides = pack.textFeatureGuides ?? []
+  const passageById = new Map(pack.passages.map((passage) => [passage.passageIdentifier, passage] as const))
+  const guideByPassageId = new Map<string, NonNullable<ContentPack['textFeatureGuides']>[number]>()
+
+  if (guides.length !== pack.passages.length) {
+    pushIssue(
+      issues,
+      'text_feature_guide_count_mismatch',
+      pack.manifest.packId,
+      `Expected ${pack.passages.length} text feature guides, found ${guides.length}.`,
+    )
+  }
+
+  for (const guide of guides) {
+    if (guideByPassageId.has(guide.passageId)) {
+      pushIssue(issues, 'text_feature_guide_invalid', guide.passageId, 'Text feature guides must not duplicate a passage ID.')
+      continue
+    }
+    guideByPassageId.set(guide.passageId, guide)
+    const passage = passageById.get(guide.passageId)
+    if (!passage) {
+      pushIssue(issues, 'missing_text_feature_guide', guide.passageId, 'Every text feature guide must point to a real passage.')
+      continue
+    }
+
+    validateTextFeatureGuideAgainstPassage(pack, passage, guide, issues)
+  }
+
+  for (const passage of pack.passages) {
+    if (!guideByPassageId.has(passage.passageIdentifier)) {
+      pushIssue(issues, 'missing_text_feature_guide', passage.passageIdentifier, 'Every passage needs exactly one text feature guide.')
+    }
+  }
+}
+
+function validateTextFeatureGuideAgainstPassage(
+  pack: ContentPack,
+  passage: ContentPack['passages'][number],
+  guide: NonNullable<ContentPack['textFeatureGuides']>[number],
+  issues: ContentPackAuditIssue[],
+) {
+  const sentenceIds = new Set((passage.sentences ?? []).map((sentence) => sentence.sentenceId))
+  const structure = passage.informationalStructure
+  const features = structure?.features ?? []
+  const featuresById = new Map(features.map((feature) => [feature.featureId, feature] as const))
+  const seenFeatureIds = new Set<string>()
+
+  if (passage.contentKind !== 'informational' || !structure) {
+    pushIssue(issues, 'text_feature_guide_invalid', guide.passageId, 'Text feature guides require an informational passage structure.')
+    return
+  }
+  if (!guide.combinedFeatureExplanation.trim()) {
+    pushIssue(issues, 'text_feature_guide_invalid', guide.passageId, 'Text feature guides need a combined feature explanation.')
+  }
+  if (guide.featureContributions.length !== features.length) {
+    pushIssue(issues, 'text_feature_guide_invalid', guide.passageId, 'Text feature guides must cover every authored feature exactly once.')
+  }
+  if (guide.reviewStatus !== 'DRAFT') {
+    pushIssue(issues, 'missing_draft_status', guide.passageId, 'Text feature guides in this pack must remain DRAFT.')
+  }
+  if (guide.contentVersion !== pack.manifest.contentVersion) {
+    pushIssue(issues, 'mismatched_content_version', guide.passageId, 'Text feature guide content version must match the pack version.')
+  }
+
+  for (const contribution of guide.featureContributions) {
+    const feature = featuresById.get(contribution.featureId)
+    if (!feature) {
+      pushIssue(issues, 'text_feature_guide_invalid', contribution.featureId, 'Feature contributions must point to an authored feature.')
+      continue
+    }
+    if (seenFeatureIds.has(contribution.featureId)) {
+      pushIssue(issues, 'text_feature_guide_invalid', contribution.featureId, 'Feature contributions must be unique.')
+      continue
+    }
+    seenFeatureIds.add(contribution.featureId)
+
+    if (feature.kind !== contribution.featureKind) {
+      pushIssue(issues, 'text_feature_guide_invalid', contribution.featureId, 'Feature contribution kind must match the authored feature.')
+    }
+    if (!contribution.contributionStatement.trim() || contribution.contributionStatement.trim().split(/\s+/).length < 4) {
+      pushIssue(issues, 'text_feature_guide_invalid', contribution.featureId, 'Feature contribution statements must explain meaning in a complete thought.')
+    }
+    if (!Array.isArray(contribution.relatedSentenceIds) || contribution.relatedSentenceIds.length === 0) {
+      pushIssue(issues, 'text_feature_guide_invalid', contribution.featureId, 'Feature contributions need at least one related sentence.')
+    }
+    const relatedIds = new Set(contribution.relatedSentenceIds)
+    if (relatedIds.size !== contribution.relatedSentenceIds.length) {
+      pushIssue(issues, 'text_feature_guide_invalid', contribution.featureId, 'Related sentence IDs must be unique.')
+    }
+    for (const sentenceId of contribution.relatedSentenceIds) {
+      if (!sentenceIds.has(sentenceId)) {
+        pushIssue(issues, 'missing_support_sentence', contribution.featureId, 'Text feature guide sentence IDs must resolve to the authored passage.')
+      }
+    }
   }
 }
 
@@ -1318,6 +1419,29 @@ interface BridgePackExpectation {
 }
 
 function getBridgePackExpectation(pack: ContentPack): BridgePackExpectation | null {
+  if (pack.manifest.benchmarkReferences.includes('ELA.2.R.2.1') && pack.manifest.difficultyRange[0] === 0 && pack.manifest.difficultyRange[1] === 1) {
+    return {
+      packId: pack.manifest.packId,
+      guidedDifficultyA: 0,
+      guidedDifficultyB: 1,
+      checkpointPatterns: ['informational-text-features', 'feature-meaning'],
+      minSupportTargets: 28,
+      maxSupportTargets: 28,
+      minSupportTargetsPerPassage: 4,
+      maxSupportTargetsPerPassage: 4,
+      openConsonantLeWords: new Set<string>(),
+      closedConsonantLeWords: new Set<string>(),
+      forbiddenSilentEWords: new Set<string>(),
+      questionTypeCounts: {
+        multiple_choice: 17,
+        multi_select: 7,
+        hot_text: 7,
+        table_match: 7,
+        two_part: 3,
+      },
+    }
+  }
+
   const hasB = pack.manifest.benchmarkReferences.includes('ELA.2.F.1.3b')
   const hasC = pack.manifest.benchmarkReferences.includes('ELA.2.F.1.3c')
   const [minDifficulty, maxDifficulty] = pack.manifest.difficultyRange

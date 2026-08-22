@@ -31,7 +31,7 @@ export function deriveWorldsForProgress(
       return derivePoetryPlanetWorld(world, skillProgress, activeUnitId, plannedUnitId, playableTrackIds)
     }
     if (world.id === 'information-detectives' || world.id === 'context-cavern') {
-      return deriveSequentialTrackWorld(world, skillProgress, activeUnitId, plannedUnitId, playableTrackIds)
+      return deriveSequentialTrackWorld(world, skillProgress, activeUnitId, plannedUnitId, playableTrackIds, availableLessons)
     }
     return deriveNonPlayableWorld(world)
   })
@@ -110,6 +110,7 @@ function deriveSequentialTrackWorld(
   activeUnitId: string | null,
   plannedUnitId: string | null,
   playableTrackIds: Set<string>,
+  availableLessons: readonly LessonActivityCandidate[],
 ): DemoWorld {
   const track = getTrackByWorldId(world.id)
   const roadmap = getSequentialWorldRoadmapByWorldId(world.id)
@@ -121,26 +122,31 @@ function deriveSequentialTrackWorld(
   const progress = skillProgress[track.skillId]
     ?? createInitialSkillProgress(track.skillId, track.initialDifficulty, track.initialLastMasteredDifficulty)
   const currentDifficulty = progress.currentDifficulty
-  const currentLearningState = progress.currentLearningState
-  const currentUnitIndex = Math.max(0, Math.min(roadmap.units.length - 1, currentDifficulty - 1))
-  const currentUnit = roadmap.units[currentUnitIndex] ?? roadmap.units[0]
-  const activeOrPlanned = roadmap.units.some((unit) => unit.unitId === activeUnitId || unit.unitId === plannedUnitId)
+  const currentLearningState = progress.currentLearningState ?? null
+  const contentUnitIds = new Set(
+    availableLessons
+      .filter((lesson) => lesson.worldId === world.id)
+      .map((lesson) => lesson.unitId),
+  )
 
   const units = world.units.map((unit, index) => {
     const roadmapUnit = roadmap.units[index]
     if (!roadmapUnit) return { ...unit }
-    return deriveSequentialRoadmapUnit(unit, roadmapUnit, currentDifficulty, currentLearningState, activeOrPlanned)
+    const hasContent = contentUnitIds.has(unit.id)
+    const isOwned = unit.id === activeUnitId || unit.id === plannedUnitId
+    return deriveSequentialRoadmapUnit(unit, roadmapUnit, currentDifficulty, currentLearningState, hasContent, isOwned, index)
   })
+  const currentUnit = [...units].reverse().find((unit) => unit.state !== 'locked') ?? units[0]
 
   return {
     ...world,
     status: playable ? 'available' : world.status === 'locked' ? 'locked' : 'coming-later',
     progressionLabel: playable
-      ? currentDifficulty >= roadmap.units.length + 1
-        ? currentLearningState === 'SPACED_REVIEW'
-          ? `${world.name} review available`
-          : `${world.name} complete`
-        : `${currentUnit.title} active`
+      ? currentUnit.state === 'review'
+        ? `${currentUnit.title} review available`
+        : currentUnit.state === 'complete'
+          ? `${currentUnit.title} complete`
+          : `${currentUnit.title} active`
       : `${world.name} quests are being prepared.`,
     currentProgress: playable ? Math.min(100, Math.max(0, currentDifficulty) * 25 + 25) : 0,
     units,
@@ -322,34 +328,46 @@ function deriveSequentialRoadmapUnit(
   roadmapUnit: { unitId: string; title: string; activeDifficulty: number; completionDifficulty: number; lockedMessage: string; futureContentMessage: string; activeLabel: string; practiceFocus: string },
   currentDifficulty: number,
   currentLearningState: SkillProgressState['currentLearningState'] | null,
-  activeOrPlanned: boolean,
+  hasContent: boolean,
+  isOwned: boolean,
+  unitIndex: number,
 ): DemoUnit {
-  const state: UnitState = currentDifficulty < roadmapUnit.activeDifficulty
+  const state: UnitState = !hasContent && !isOwned
     ? 'locked'
-    : currentDifficulty < roadmapUnit.completionDifficulty
-      ? 'available'
-      : currentLearningState === 'SPACED_REVIEW'
-        ? 'review'
-        : 'complete'
+    : isOwned
+      ? currentDifficulty >= roadmapUnit.completionDifficulty
+        ? (currentLearningState === 'SPACED_REVIEW' ? 'review' : 'complete')
+        : 'available'
+      : unitIndex === 0 && currentDifficulty <= 0
+        ? 'available'
+        : currentDifficulty < roadmapUnit.activeDifficulty
+          ? 'locked'
+          : currentDifficulty < roadmapUnit.completionDifficulty
+            ? 'available'
+            : currentLearningState === 'SPACED_REVIEW'
+              ? 'review'
+              : 'complete'
 
   return {
     ...unit,
     state,
     difficultyLabel: state === 'locked'
       ? 'Locked'
-      : state === 'available'
-        ? roadmapUnit.activeLabel
-        : state === 'review'
-          ? 'Review'
-          : 'Complete',
+      : unitIndex === 0 && currentDifficulty <= 0
+        ? 'Building Block'
+        : state === 'available'
+          ? roadmapUnit.activeLabel
+          : state === 'review'
+            ? 'Review'
+            : 'Complete',
     progressPercent: state === 'locked' ? 0 : state === 'available' ? 75 : 100,
     stars: state === 'locked' ? 0 : state === 'available' ? 2 : 3,
     practiceFocus: state === 'locked'
-      ? roadmapUnit.lockedMessage
+      ? currentDifficulty >= roadmapUnit.activeDifficulty
+        ? `${roadmapUnit.title} quests are being prepared.`
+        : roadmapUnit.lockedMessage
       : state === 'available'
-        ? activeOrPlanned
-          ? `${roadmapUnit.title} quests are ready to resume.`
-          : roadmapUnit.practiceFocus
+        ? roadmapUnit.practiceFocus
         : state === 'review'
           ? roadmapUnit.futureContentMessage
           : `${roadmapUnit.title} quests are complete. ${roadmapUnit.futureContentMessage}`,

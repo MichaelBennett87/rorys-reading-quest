@@ -46,7 +46,7 @@ const curriculumTrackDefinitions: CurriculumTrackDefinition[] = [
     curriculumOrder: 40,
     initialDifficulty: 1,
     initialLastMasteredDifficulty: 0,
-    status: 'planned_until_content_exists',
+    status: 'active',
     displayName: 'Information Detectives',
   },
   {

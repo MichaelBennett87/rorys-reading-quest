@@ -31,19 +31,20 @@ describe('grade 2 content pack registry', () => {
       'g2-story-scouts-theme-trail',
       'g2-story-scouts-perspective-portal',
       'g2-poetry-planet-rhyme-routes',
+      'g2-information-detectives-text-feature-hunt',
       'legacy-word-forge-development-pack',
     ])
-    expect(activePacks).toHaveLength(12)
-    expect(activePacks.reduce((sum, pack) => sum + pack.lessons.length, 0)).toBe(84)
-    expect(activePacks.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(84)
-    expect(activePacks.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(479)
-    expect(activePacks.reduce((sum, pack) => sum + pack.passages.reduce((passageSum, passage) => passageSum + (passage.wordSupportTargets?.length ?? 0), 0), 0)).toBe(334)
+    expect(activePacks).toHaveLength(13)
+    expect(activePacks.reduce((sum, pack) => sum + pack.lessons.length, 0)).toBe(91)
+    expect(activePacks.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(91)
+    expect(activePacks.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(520)
+    expect(activePacks.reduce((sum, pack) => sum + pack.passages.reduce((passageSum, passage) => passageSum + (passage.wordSupportTargets?.length ?? 0), 0), 0)).toBe(362)
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 12,
-      activeLessonCount: 84,
-      activePassageCount: 84,
-      activeQuestionCount: 479,
-      activeSupportTargetCount: 334,
+      activePackCount: 13,
+      activeLessonCount: 91,
+      activePassageCount: 91,
+      activeQuestionCount: 520,
+      activeSupportTargetCount: 362,
     })
     expect(contentPackAudit).toHaveLength(0)
     expect(benchmarkCoverageAudit).toEqual(expect.objectContaining({
@@ -94,6 +95,15 @@ describe('grade 2 content pack registry', () => {
       coveredPatterns: ['rhyme-scheme-identification', 'rhyme-scheme-notation'],
       missingPatterns: [],
       contributingPackIds: ['g2-poetry-planet-rhyme-routes'],
+      coverageStatus: 'implemented',
+      reviewStatus: 'DRAFT',
+    }))
+    expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.2.1')).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.2.R.2.1',
+      expectedPatterns: ['informational-text-features', 'feature-meaning'],
+      coveredPatterns: ['informational-text-features', 'feature-meaning'],
+      missingPatterns: [],
+      contributingPackIds: ['g2-information-detectives-text-feature-hunt'],
       coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',
     }))

@@ -324,7 +324,7 @@ describe('unit-aware Word Forge planning', () => {
     })
     expect(informationLocked.status).toBe('locked')
     if (informationLocked.status === 'locked') {
-      expect(informationLocked.reason).toMatch(/Information Detectives quests are being prepared/i)
+      expect(informationLocked.reason).toMatch(/no active lesson content yet/i)
     }
 
     const contextLocked = planUnitQuest({

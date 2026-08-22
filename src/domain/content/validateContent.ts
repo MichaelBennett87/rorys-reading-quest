@@ -1,4 +1,5 @@
 import type { ContentSample, ContentValidationError, QuestionType } from './types'
+import { buildPassageEvidenceIndex } from './evidence'
 import type {
   HotTextQuestionData,
   MultipleChoiceQuestionData,
@@ -77,6 +78,10 @@ export function validateContent(sample: ContentSample): ContentValidationError[]
 
     if (passage.contentKind === 'poem') {
       validatePoemStructure(passage, errors)
+    }
+
+    if (passage.contentKind === 'informational') {
+      validateInformationalStructure(passage, errors)
     }
   }
 
@@ -353,10 +358,11 @@ export function validateContent(sample: ContentSample): ContentValidationError[]
     }
 
     if (Array.isArray(question.evidenceReferenceIds) && question.evidenceReferenceIds.length > 0) {
+      const referencedPassage = passagesById.get(question.passageIdentifier)
       const evidenceIds = question.evidenceReferenceIds
       const validEvidenceIds = new Set<string>([
         ...(payload ? getContentEvidenceIds(question.questionType, payload) : []),
-        ...(passagesById.get(question.passageIdentifier)?.sentences?.map((sentence) => sentence.sentenceId) ?? []),
+        ...(referencedPassage ? [...buildPassageEvidenceIndex(referencedPassage).keys()] : []),
       ])
       for (const evidenceId of evidenceIds) {
         if (evidenceId.trim() && !validEvidenceIds.has(evidenceId.trim())) {
@@ -445,6 +451,14 @@ function normalizeWord(text: string): string {
 
 function normalizePoemText(text: string): string {
   return text.replace(/\r\n?/g, '\n').trim()
+}
+
+function normalizeInformationalText(text: string): string {
+  return text.trim().replace(/\s+/g, ' ')
+}
+
+function containsUnsafeFeatureText(text: string): boolean {
+  return /https?:\/\/|www\.|<[^>]+>/i.test(text)
 }
 
 function concatDisplayParts(parts: { text: string }[]): string {
@@ -547,6 +561,273 @@ function validatePoemStructure(
     if (sentence.stanzaId !== line.stanzaId) {
       withError(errors, 'invalid_support_metadata', passage.passageIdentifier, 'Poem sentence stanza IDs must match the poem structure.')
     }
+  }
+}
+
+function validateInformationalStructure(
+  passage: ContentSample['passages'][number],
+  errors: ContentValidationError[],
+) {
+  const structure = passage.informationalStructure
+  if (!structure) {
+    withError(errors, 'missing_informational_structure', passage.passageIdentifier, 'Informational passages require informationalStructure.')
+    return
+  }
+
+  const features = structure.features ?? []
+  const sections = structure.sections ?? []
+  const featureById = new Map<string, (typeof features)[number]>()
+  const seenFeatureIds = new Set<string>()
+  const seenSectionIds = new Set<string>()
+  const sentenceById = new Map((passage.sentences ?? []).map((sentence) => [sentence.sentenceId, sentence] as const))
+  const sentenceOwners = new Map<string, string>()
+  const titleFeatures = features.filter((feature) => feature.kind === 'title')
+
+  if (!structure.titleFeatureId.trim()) {
+    withError(errors, 'informational_structure_invalid', passage.passageIdentifier, 'Informational passages require a titleFeatureId.')
+  }
+  if (features.length === 0) {
+    withError(errors, 'informational_structure_invalid', passage.passageIdentifier, 'Informational passages require structured features.')
+  }
+  if (titleFeatures.length !== 1) {
+    withError(errors, 'informational_structure_invalid', passage.passageIdentifier, 'Informational passages need exactly one title feature.')
+  }
+  if (sections.length < 2) {
+    withError(errors, 'informational_structure_invalid', passage.passageIdentifier, 'Informational passages need at least two sections.')
+  }
+
+  for (const feature of features) {
+    if (!feature.featureId.trim()) {
+      withError(errors, 'invalid_informational_feature', passage.passageIdentifier, 'Informational feature IDs are required.')
+      continue
+    }
+    if (seenFeatureIds.has(feature.featureId)) {
+      withError(errors, 'invalid_informational_feature', passage.passageIdentifier, 'Informational feature IDs must be unique.')
+      continue
+    }
+    seenFeatureIds.add(feature.featureId)
+    featureById.set(feature.featureId, feature)
+
+    if (containsUnsafeFeatureText(JSON.stringify(feature))) {
+      withError(errors, 'invalid_informational_feature', feature.featureId, 'Informational feature text must not contain remote URLs or raw HTML.')
+    }
+
+    if (feature.kind === 'title') {
+      if (!feature.text.trim()) {
+        withError(errors, 'invalid_informational_feature', feature.featureId, 'Title text is required.')
+      }
+    }
+    if (feature.kind === 'heading') {
+      if (!feature.sectionId.trim()) {
+        withError(errors, 'invalid_informational_feature_reference', feature.featureId, 'Heading features require a section ID.')
+      }
+      if (!feature.text.trim()) {
+        withError(errors, 'invalid_informational_feature', feature.featureId, 'Heading text is required.')
+      }
+    }
+    if (feature.kind === 'caption') {
+      if (!feature.targetFeatureId.trim()) {
+        withError(errors, 'invalid_informational_feature_reference', feature.featureId, 'Caption features require a target feature ID.')
+      }
+      if (!feature.text.trim()) {
+        withError(errors, 'invalid_informational_feature', feature.featureId, 'Caption text is required.')
+      }
+    }
+    if (feature.kind === 'graph') {
+      if (!feature.title.trim() || !feature.valueLabel.trim()) {
+        withError(errors, 'invalid_informational_feature', feature.featureId, 'Graph features require a title and value label.')
+      }
+      const seenPointIds = new Set<string>()
+      for (const point of feature.dataPoints ?? []) {
+        if (!point.dataPointId.trim()) {
+          withError(errors, 'invalid_informational_feature', feature.featureId, 'Graph data-point IDs are required.')
+          continue
+        }
+        if (seenPointIds.has(point.dataPointId)) {
+          withError(errors, 'invalid_informational_feature', feature.featureId, 'Graph data-point IDs must be unique.')
+          continue
+        }
+        seenPointIds.add(point.dataPointId)
+        if (!point.label.trim()) {
+          withError(errors, 'invalid_informational_feature', point.dataPointId, 'Graph data-point labels are required.')
+        }
+        if (!Number.isInteger(point.value) || point.value < 0) {
+          withError(errors, 'invalid_informational_feature', point.dataPointId, 'Graph data-point values must be nonnegative integers.')
+        }
+        if (containsUnsafeFeatureText(point.label) || containsUnsafeFeatureText(point.unitText ?? '')) {
+          withError(errors, 'invalid_informational_feature', point.dataPointId, 'Graph data-point text must not contain remote URLs or raw HTML.')
+        }
+      }
+    }
+    if (feature.kind === 'map') {
+      if (!feature.title.trim()) {
+        withError(errors, 'invalid_informational_feature', feature.featureId, 'Map features require a title.')
+      }
+      if (!Number.isInteger(feature.rows) || feature.rows < 1 || !Number.isInteger(feature.columns) || feature.columns < 1) {
+        withError(errors, 'invalid_informational_feature', feature.featureId, 'Map features require positive authored bounds.')
+      }
+      const seenLocationIds = new Set<string>()
+      for (const location of feature.locations ?? []) {
+        if (!location.locationId.trim()) {
+          withError(errors, 'invalid_informational_feature', feature.featureId, 'Map location IDs are required.')
+          continue
+        }
+        if (seenLocationIds.has(location.locationId)) {
+          withError(errors, 'invalid_informational_feature', feature.featureId, 'Map location IDs must be unique.')
+          continue
+        }
+        seenLocationIds.add(location.locationId)
+        if (!location.label.trim() || !location.description.trim()) {
+          withError(errors, 'invalid_informational_feature', location.locationId, 'Map locations require labels and descriptions.')
+        }
+        if (!Number.isInteger(location.order) || location.order < 1) {
+          withError(errors, 'invalid_informational_feature', location.locationId, 'Map locations require a positive authored order.')
+        }
+        if (location.position) {
+          if (!Number.isInteger(location.position.row) || !Number.isInteger(location.position.column)) {
+            withError(errors, 'invalid_informational_feature', location.locationId, 'Map positions must use integer rows and columns.')
+          }
+          if (
+            Number.isInteger(location.position.row)
+            && Number.isInteger(location.position.column)
+            && (
+              location.position.row < 1
+              || location.position.row > feature.rows
+              || location.position.column < 1
+              || location.position.column > feature.columns
+            )
+          ) {
+            withError(errors, 'invalid_informational_feature', location.locationId, 'Map positions must fall within the authored bounds.')
+          }
+        }
+      }
+      const seenLegendIds = new Set<string>()
+      for (const legend of feature.legendEntries ?? []) {
+        if (!legend.legendId.trim()) {
+          withError(errors, 'invalid_informational_feature', feature.featureId, 'Map legend IDs are required.')
+          continue
+        }
+        if (seenLegendIds.has(legend.legendId)) {
+          withError(errors, 'invalid_informational_feature', feature.featureId, 'Map legend IDs must be unique.')
+          continue
+        }
+        seenLegendIds.add(legend.legendId)
+        if (!legend.label.trim() || !legend.description.trim()) {
+          withError(errors, 'invalid_informational_feature', legend.legendId, 'Map legend entries require labels and descriptions.')
+        }
+      }
+      for (const connection of feature.connections ?? []) {
+        if (!seenLocationIds.has(connection.fromLocationId) || !seenLocationIds.has(connection.toLocationId)) {
+          withError(errors, 'invalid_informational_feature_reference', feature.featureId, 'Map connections must reference authored locations.')
+        }
+      }
+    }
+    if (feature.kind === 'glossary') {
+      const seenTerms = new Set<string>()
+      for (const entry of feature.entries ?? []) {
+        if (!entry.entryId.trim()) {
+          withError(errors, 'invalid_informational_feature', feature.featureId, 'Glossary entry IDs are required.')
+          continue
+        }
+        const normalizedTerm = normalizeInformationalText(entry.term)
+        if (seenTerms.has(normalizedTerm)) {
+          withError(errors, 'invalid_informational_feature', feature.featureId, 'Glossary terms must be unique.')
+          continue
+        }
+        seenTerms.add(normalizedTerm)
+        if (!entry.definition.trim()) {
+          withError(errors, 'invalid_informational_feature', entry.entryId, 'Glossary definitions are required.')
+        }
+      }
+    }
+    if (feature.kind === 'illustration') {
+      if (!feature.title.trim() || !feature.accessibleDescription.trim()) {
+        withError(errors, 'invalid_informational_feature', feature.featureId, 'Illustrations require a title and accessible description.')
+      }
+      const seenLabelIds = new Set<string>()
+      for (const label of feature.labels ?? []) {
+        if (!label.labelId.trim()) {
+          withError(errors, 'invalid_informational_feature', feature.featureId, 'Illustration label IDs are required.')
+          continue
+        }
+        if (seenLabelIds.has(label.labelId)) {
+          withError(errors, 'invalid_informational_feature', feature.featureId, 'Illustration label IDs must be unique.')
+          continue
+        }
+        seenLabelIds.add(label.labelId)
+        if (!label.text.trim() || !label.description.trim()) {
+          withError(errors, 'invalid_informational_feature', label.labelId, 'Illustration labels require text and descriptions.')
+        }
+      }
+    }
+  }
+
+  const titleFeature = featureById.get(structure.titleFeatureId)
+  if (!titleFeature || titleFeature.kind !== 'title') {
+    withError(errors, 'informational_structure_invalid', passage.passageIdentifier, 'titleFeatureId must point to a title feature.')
+  }
+
+  for (const section of sections) {
+    if (!section.sectionId.trim()) {
+      withError(errors, 'informational_structure_invalid', passage.passageIdentifier, 'Section IDs are required.')
+      continue
+    }
+    if (seenSectionIds.has(section.sectionId)) {
+      withError(errors, 'informational_structure_invalid', passage.passageIdentifier, 'Section IDs must be unique.')
+      continue
+    }
+    seenSectionIds.add(section.sectionId)
+
+    const heading = featureById.get(section.headingFeatureId)
+    if (!heading || heading.kind !== 'heading' || heading.sectionId !== section.sectionId) {
+      withError(errors, 'invalid_informational_feature_reference', section.headingFeatureId, 'Section headings must resolve to a matching heading feature.')
+    }
+
+    if (!Array.isArray(section.sentenceIds) || section.sentenceIds.length === 0) {
+      withError(errors, 'informational_structure_invalid', section.sectionId, 'Each section requires at least one sentence.')
+    }
+
+    if (!Array.isArray(section.featureIds)) {
+      withError(errors, 'informational_structure_invalid', section.sectionId, 'Section feature references are required.')
+    } else {
+      for (const featureId of section.featureIds) {
+        const referencedFeature = featureById.get(featureId)
+        if (!referencedFeature) {
+          withError(errors, 'invalid_informational_feature_reference', featureId, 'Section feature references must resolve to a feature.')
+          continue
+        }
+        if (referencedFeature.kind === 'title') {
+          withError(errors, 'informational_structure_invalid', featureId, 'Title features must not be repeated in sections.')
+        }
+      }
+    }
+
+    for (const sentenceId of section.sentenceIds ?? []) {
+      const sentence = sentenceById.get(sentenceId)
+      if (!sentence) {
+        withError(errors, 'invalid_informational_feature_reference', sentenceId, 'Section sentence IDs must resolve to passage sentences.')
+        continue
+      }
+      const existingOwner = sentenceOwners.get(sentenceId)
+      if (existingOwner && existingOwner !== section.sectionId) {
+        withError(errors, 'informational_structure_invalid', sentenceId, 'Each informational sentence must belong to exactly one section.')
+        continue
+      }
+      sentenceOwners.set(sentenceId, section.sectionId)
+    }
+  }
+
+  for (const sentence of passage.sentences ?? []) {
+    if (!sentenceOwners.has(sentence.sentenceId)) {
+      withError(errors, 'informational_structure_invalid', sentence.sentenceId, 'Every informational sentence must belong to exactly one section.')
+    }
+  }
+
+  const normalizedPassageText = normalizeInformationalText(
+    (passage.sentences ?? []).map((sentence) => sentence.text).join(' '),
+  )
+  if (normalizedPassageText !== normalizeInformationalText(passage.passageText)) {
+    withError(errors, 'informational_structure_invalid', passage.passageIdentifier, 'Informational passage text must match the authored sentence structure.')
   }
 }
 
