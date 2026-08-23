@@ -1,4 +1,5 @@
 import type { ContentPack } from '../content/packs/contentPackTypes'
+import { getActiveContentPacks } from '../content/packs/registry'
 import type { ContentReviewStatus } from '../content/types'
 import { grade3BenchmarkInventory } from './grade3BenchmarkInventory'
 import type { GradeBandBenchmarkInventoryEntry } from './gradeBandBenchmarkInventory'
@@ -9,6 +10,7 @@ export interface Grade3CoverageSnapshotRow extends GradeBandBenchmarkInventoryEn
   coverageStatus: Grade3CoverageStatus
   reviewStatus: ContentReviewStatus
   contributingPackIds: readonly string[]
+  coveredPatterns: readonly string[]
   missingPatterns: readonly string[]
   notes: readonly string[]
 }
@@ -19,7 +21,7 @@ export interface Grade3CoverageSnapshot {
 
 export function buildGrade3CoverageSnapshot(
   inventory: readonly GradeBandBenchmarkInventoryEntry[] = grade3BenchmarkInventory,
-  grade3Packs: readonly ContentPack[] = [],
+  grade3Packs: readonly ContentPack[] = getActiveContentPacks().filter((pack) => pack.manifest.gradeBand === 3),
 ): Grade3CoverageSnapshot {
   return Object.freeze({
     rows: Object.freeze(inventory.map((entry) => {
@@ -30,7 +32,16 @@ export function buildGrade3CoverageSnapshot(
         ))
         .map((pack) => pack.manifest.packId)
         .sort()
-      const status: Grade3CoverageStatus = contributingPackIds.length > 0 ? 'partial' : 'planned'
+      const contributingPacks = grade3Packs.filter((pack) => contributingPackIds.includes(pack.manifest.packId))
+      const coveredPatterns = new Set(contributingPacks.flatMap((pack) => pack.manifest.coveredPatterns))
+      const missingPatterns = entry.expectedPatterns.filter((pattern) => !coveredPatterns.has(pattern))
+      const status: Grade3CoverageStatus = contributingPackIds.length === 0
+        ? 'planned'
+        : missingPatterns.length > 0
+          ? 'partial'
+          : entry.intendedCoverageKind === 'supportive_practice'
+            ? 'supportive_practice'
+            : 'implemented'
       return Object.freeze({
         ...entry,
         unitIds: Object.freeze([...entry.unitIds]),
@@ -38,10 +49,13 @@ export function buildGrade3CoverageSnapshot(
         coverageStatus: status,
         reviewStatus: 'DRAFT' as const,
         contributingPackIds: Object.freeze(contributingPackIds),
-        missingPatterns: Object.freeze(status === 'planned' ? [] : [...entry.expectedPatterns]),
+        coveredPatterns: Object.freeze(entry.expectedPatterns.filter((pattern) => coveredPatterns.has(pattern))),
+        missingPatterns: Object.freeze([...missingPatterns]),
         notes: Object.freeze(status === 'planned'
           ? ['Roadmap only; no active Grade 3 content yet.']
-          : ['Active Grade 3 content is incomplete.']),
+          : status === 'partial' && entry.benchmarkReference === 'ELA.3.F.1.3'
+            ? ['Root Reactor provides authored decoding and word-analysis practice for common Greek and Latin roots and affixes. Suffix Shifter and Multisyllable Mountain remain required before ELA.3.F.1.3 can become implemented.']
+            : ['Active Grade 3 content contributes to this inventory row.']),
       })
     })),
   })

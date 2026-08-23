@@ -3,6 +3,7 @@ import { buildFluencyPracticeAudit } from './fluencyPracticeAudit'
 
 export * from './contentPackTypes'
 export * from './contentPackAudit'
+export * from './rootDecodingGuideAudit'
 export * from './fluencyPracticeAudit'
 export * from './legacyDevelopmentPack'
 export * from './grade2/wordForge/consonantLeIntegrated'
@@ -18,6 +19,7 @@ export * from './grade2/contextCavern/meaningClueChamber'
 export * from './grade2/compareCastle/wordplayWatchtower'
 export * from './grade2/compareCastle/retellHall'
 export * from './grade2/compareCastle/compareKeep'
+export * from './grade3/wordForge/rootReactor'
 export * from './registry'
 
 export const fluencyPracticeAudit = buildFluencyPracticeAudit(contentPacks)
