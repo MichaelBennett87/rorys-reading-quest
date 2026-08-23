@@ -306,7 +306,7 @@ export const compareKeepCheckpointQuestions: ReadingQuestion[] = [
     activityIdentifier: 'activity-compare-castle-compare-keep-checkpoint-informational',
     questionIdentifier: COMPARE_KEEP_QUESTION_IDS.checkpointInformational[0],
     prompt: 'What are both informational texts mostly about?',
-    explanation: 'Both texts explain how parts of a living place help it stay supported.',
+    explanation: 'Both texts explain how roots support plants and help soil stay in place.',
     evidenceReference: createScopedEvidenceReference(informational1, 'ck-info-5-s6'),
     evidenceReferenceIds: [
       createScopedEvidenceReference(informational1, 'ck-info-5-s6'),
@@ -318,7 +318,7 @@ export const compareKeepCheckpointQuestions: ReadingQuestion[] = [
     contentVersion: COMPARE_KEEP_CONTENT_VERSION,
     tags: ['paired-text', 'same-topic', 'informational-central-idea-comparison', ...compareKeepCheckpointPatternTags],
     choices: [
-      choice('living-places', 'How living places stay supported.'),
+      choice('living-places', 'How roots support plants and soil.'),
       choice('music-show', 'How a music show gets ready.'),
       choice('kite-wind', 'How a kite flies in the wind.'),
       choice('garden-sign', 'How to fix a garden sign.'),
@@ -336,7 +336,7 @@ export const compareKeepCheckpointQuestions: ReadingQuestion[] = [
     activityIdentifier: 'activity-compare-castle-compare-keep-checkpoint-informational',
     questionIdentifier: COMPARE_KEEP_QUESTION_IDS.checkpointInformational[1],
     prompt: 'Which detail belongs only in Text 1?',
-    explanation: 'Text 1 is about the pond, so its pond-layer detail belongs there only.',
+    explanation: 'Only Text 1 explains that pond-edge plants shelter small animals.',
     evidenceReference: createScopedEvidenceReference(informational1, 'ck-info-5-s1'),
     evidenceReferenceIds: [
       createScopedEvidenceReference(informational1, 'ck-info-5-s1'),
@@ -348,9 +348,9 @@ export const compareKeepCheckpointQuestions: ReadingQuestion[] = [
     contentVersion: COMPARE_KEEP_CONTENT_VERSION,
     tags: ['paired-text', 'same-topic', 'informational-detail-comparison'],
     choices: [
-      choice('pond-layers', 'A pond can have shallow edges, deeper water, and muddy places.'),
-      choice('soil-strong', 'Roots help the soil stay in place after heavy rain.'),
-      choice('both-support', 'Both texts explain how a place stays supported.'),
+      choice('pond-layers', 'Pond-edge plants give shelter to small animals.'),
+      choice('soil-strong', 'Roots help soil stay in place.'),
+      choice('both-support', 'Both texts explain how roots support soil.'),
       choice('notes', 'The class gathered careful notes after each observation.'),
     ],
     correctChoiceIds: ['pond-layers'],
@@ -366,7 +366,7 @@ export const compareKeepCheckpointQuestions: ReadingQuestion[] = [
     activityIdentifier: 'activity-compare-castle-compare-keep-checkpoint-informational',
     questionIdentifier: COMPARE_KEEP_QUESTION_IDS.checkpointInformational[2],
     prompt: 'Which detail is less important for the comparison?',
-    explanation: 'The small shower is true, but it is not the best detail for comparing the two texts.',
+    explanation: 'The shallow pond edge is true, but the strongest comparison focuses on what roots do.',
     evidenceReference: createScopedEvidenceReference(informational1, 'ck-info-5-s6'),
     evidenceReferenceIds: [
       createScopedEvidenceReference(informational1, 'ck-info-5-s6'),
@@ -378,10 +378,10 @@ export const compareKeepCheckpointQuestions: ReadingQuestion[] = [
     contentVersion: COMPARE_KEEP_CONTENT_VERSION,
     tags: ['paired-text', 'same-topic', 'important-vs-minor-detail'],
     choices: [
-      choice('small-shower', 'Even a small shower can give the class a useful result.'),
-      choice('root-grip', 'Roots give the soil a strong grip.'),
-      choice('fresh-soil', 'Both texts help the reader think about fresh soil or support.'),
-      choice('protect-tools', 'The weather shelter protects tools from sun and rain.'),
+      choice('small-shower', 'The pond edge is shallow.'),
+      choice('root-grip', 'Roots help soil stay in place.'),
+      choice('fresh-soil', 'Both texts explain how roots support plants and soil.'),
+      choice('protect-tools', 'Text 1 explains that roots work near moving pond water.'),
     ],
     correctChoiceIds: ['small-shower'],
   }),
@@ -396,7 +396,7 @@ export const compareKeepCheckpointQuestions: ReadingQuestion[] = [
     activityIdentifier: 'activity-compare-castle-compare-keep-checkpoint-informational',
     questionIdentifier: COMPARE_KEEP_QUESTION_IDS.checkpointInformational[3],
     prompt: 'Choose two details that help compare the informational texts.',
-    explanation: 'The best details show how each text explains support in a different way.',
+    explanation: 'The best details show roots holding muddy pond soil and garden soil in place.',
     evidenceReference: createScopedEvidenceReference(informational1, 'ck-info-5-s5'),
     evidenceReferenceIds: [
       createScopedEvidenceReference(informational1, 'ck-info-5-s5'),
@@ -408,8 +408,8 @@ export const compareKeepCheckpointQuestions: ReadingQuestion[] = [
     contentVersion: COMPARE_KEEP_CONTENT_VERSION,
     tags: ['paired-text', 'same-topic', 'comparison-evidence'],
     choices: [
-      choice('pond-support', 'The pond layers give food and shelter to living things.'),
-      choice('roots-hold', 'The roots help the soil stay in place after heavy rain.'),
+      choice('pond-support', 'Pond-edge roots help muddy soil stay in place when water moves.'),
+      choice('roots-hold', 'Garden roots help soil stay in place after heavy rain.'),
       choice('sports-day', 'The texts are about sports day.'),
       choice('marker-color', 'The texts compare marker colors.'),
     ],
@@ -426,11 +426,11 @@ export const compareKeepCheckpointQuestions: ReadingQuestion[] = [
     activityIdentifier: 'activity-compare-castle-compare-keep-checkpoint-informational',
     questionIdentifier: COMPARE_KEEP_QUESTION_IDS.checkpointInformational[4],
     prompt: 'Select the sentence in Text 2 that shows the main idea.',
-    explanation: 'The sentence about roots helping the soil stay in place gives the main idea clearly.',
-    evidenceReference: createScopedEvidenceReference(informational2, 'ck-info-6-s3'),
+    explanation: 'The final sentence states that garden roots support both the plant and the soil.',
+    evidenceReference: createScopedEvidenceReference(informational2, 'ck-info-6-s6'),
     evidenceReferenceIds: [
       createScopedEvidenceReference(informational1, 'ck-info-5-s1'),
-      createScopedEvidenceReference(informational2, 'ck-info-6-s3'),
+      createScopedEvidenceReference(informational2, 'ck-info-6-s6'),
     ],
     targetVocabulary: ['main', 'idea'],
     soundOutChunks: ['mai', 'n'],
@@ -440,7 +440,7 @@ export const compareKeepCheckpointQuestions: ReadingQuestion[] = [
     selectableSegments: [
       choice('seg-1', 'Plant roots push into soil and spread in many directions.'),
       choice('seg-2', 'The roots gather water and hold the plant steady.'),
-      choice('seg-3', 'They also help the soil stay in place after heavy rain.'),
+      choice('seg-3', 'Garden roots help both the plant and the soil stay steady.'),
     ],
     correctSegmentIds: ['seg-3'],
   }),
@@ -469,7 +469,7 @@ export const compareKeepCheckpointQuestions: ReadingQuestion[] = [
     rows: [
       {
         id: 'row-a',
-        prompt: 'Pond layers give food and shelter to living things.',
+        prompt: 'Pond-edge plants give shelter to small animals.',
         correctChoiceId: 'text1',
         options: [
           choice('text1', 'Text 1 only'),
@@ -479,7 +479,7 @@ export const compareKeepCheckpointQuestions: ReadingQuestion[] = [
       },
       {
         id: 'row-b',
-        prompt: 'Roots help the soil stay in place after heavy rain.',
+        prompt: 'Garden roots hold the plant upright.',
         correctChoiceId: 'text2',
         options: [
           choice('text2', 'Text 2 only'),
@@ -489,7 +489,7 @@ export const compareKeepCheckpointQuestions: ReadingQuestion[] = [
       },
       {
         id: 'row-c',
-        prompt: 'Each text explains how a place stays supported.',
+        prompt: 'Roots help soil stay in place.',
         correctChoiceId: 'both',
         options: [
           choice('both', 'Both texts'),
@@ -523,14 +523,14 @@ export const compareKeepCheckpointQuestions: ReadingQuestion[] = [
     tags: ['paired-text', 'same-topic', 'structured-compare-contrast'],
     partAPrompt: 'Which important similarity do the texts share?',
     partAChoices: [
-      choice('support-place', 'Both texts explain how a place or system stays supported.'),
+      choice('support-place', 'Both texts explain how roots support plants and soil.'),
       choice('story-kite', 'Both texts are about a kite in the park.'),
       choice('stage-show', 'Both texts are about a stage show.'),
     ],
     partACorrectChoiceId: 'support-place',
     partBPrompt: 'Which evidence best supports that similarity?',
     partBChoices: [
-      choice('pond-roots', 'Pond layers give food and shelter to living things. / Roots help the soil stay in place after heavy rain.'),
+      choice('pond-roots', 'Pond-edge roots hold muddy soil. / Garden roots help soil stay in place after heavy rain.'),
       choice('trail-map', 'The class finds a trail card. / The parade team uses a map.'),
       choice('wind-kite', 'The kite rises in the wind. / Leaves spin in the breeze.'),
     ],

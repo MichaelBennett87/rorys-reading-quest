@@ -143,17 +143,17 @@ const informationalPlans: readonly InformationalPassagePlan[] = [
       {
         sectionId: 'ck-info-5-section-2',
         headingFeatureId: 'ck-info-5-head-2',
-        headingText: 'Plants below the surface',
+        headingText: 'Roots beside the pond',
         sentenceIndexes: [3, 4, 5],
       },
     ],
     sentences: [
-      makeSentence('ck-info-5-s1', 'A pond can have shallow edges, deeper water, and muddy places beside the bank.'),
-      makeSentence('ck-info-5-s2', 'Small animals hide near the reeds where the water is calm.'),
-      makeSentence('ck-info-5-s3', 'The layered space gives food and shelter to frogs, insects, and fish.'),
-      makeSentence('ck-info-5-s4', 'Plants below the surface keep oxygen moving in the water.'),
-      makeSentence('ck-info-5-s5', 'The plant roots hold the mud and help stop it from drifting away.'),
-      makeSentence('ck-info-5-s6', 'The whole pond works like a home with many useful parts.'),
+      makeSentence('ck-info-5-s1', 'Reeds and other pond plants grow along shallow, muddy edges.'),
+      makeSentence('ck-info-5-s2', 'Their roots spread through the wet soil near the bank.'),
+      makeSentence('ck-info-5-s3', 'The plants give shelter to small animals near the bank.'),
+      makeSentence('ck-info-5-s4', 'Their roots help the muddy soil stay in place when water moves.'),
+      makeSentence('ck-info-5-s5', 'This support keeps the soil from drifting away.'),
+      makeSentence('ck-info-5-s6', 'Pond-edge roots help plants, animals, and soil stay supported.'),
     ],
     supportTargetPlans: [
       { sentenceIndex: 2, surfaceWord: 'shelter', chunks: ['shel', 'ter'] },
@@ -163,7 +163,7 @@ const informationalPlans: readonly InformationalPassagePlan[] = [
   {
     passageId: COMPARE_KEEP_PASSAGE_IDS.informationalF,
     titleFeatureId: 'ck-info-6-title',
-    titleText: 'Roots Help Soil Stay in Place',
+    titleText: 'Roots in a Garden Bed',
     sections: [
       {
         sectionId: 'ck-info-6-section-1',
@@ -184,7 +184,7 @@ const informationalPlans: readonly InformationalPassagePlan[] = [
       makeSentence('ck-info-6-s3', 'They also help the soil stay in place after heavy rain.'),
       makeSentence('ck-info-6-s4', 'Without roots, the ground can move and wash away more quickly.'),
       makeSentence('ck-info-6-s5', 'The plant uses this hidden support to keep growing upright.'),
-      makeSentence('ck-info-6-s6', 'Roots give the soil a strong grip that helps the whole area stay neat.'),
+      makeSentence('ck-info-6-s6', 'Garden roots help both the plant and the soil stay steady.'),
     ],
     supportTargetPlans: [
       { sentenceIndex: 1, surfaceWord: 'gather', chunks: ['gath', 'er'] },

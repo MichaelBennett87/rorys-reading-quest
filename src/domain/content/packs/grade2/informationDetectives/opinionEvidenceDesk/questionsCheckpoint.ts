@@ -232,7 +232,7 @@ export const opinionEvidenceDeskCheckpointQuestions = [
     partBChoices: [
       choice('bird-part-b-1', 'The class counted more bird visits near the shrubs than near the fence.'),
       choice('bird-part-b-2', 'The observation area has a low fence, a path, and a small tree.'),
-      choice('bird-part-b-3', 'The wind felt strong in the open part of the yard.'),
+      choice('bird-part-b-3', 'Birds drank from a small puddle under the tree.'),
     ],
     partBCorrectChoiceId: 'bird-part-b-1',
   }),

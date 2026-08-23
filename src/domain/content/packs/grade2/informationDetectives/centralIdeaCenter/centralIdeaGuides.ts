@@ -92,7 +92,7 @@ export const centralIdeaCenterGuides: CentralIdeaGuide[] = [
   {
     passageId: centralIdeaCenterPassageIds.compostChangeStory.passageId,
     topicLabel: 'compost piles',
-    centralIdeaStatement: 'A compost pile changes scraps and leaves into useful soil.',
+    centralIdeaStatement: 'A compost pile changes scraps and leaves into material that helps soil.',
     centralIdeaMode: 'inferred',
     relevantEvidenceIds: [
       centralIdeaCenterSentenceIds.compostChangeStory[0],
@@ -125,4 +125,3 @@ export const centralIdeaCenterGuides: CentralIdeaGuide[] = [
     contentVersion: centralIdeaCenterContentVersion,
   },
 ]
-

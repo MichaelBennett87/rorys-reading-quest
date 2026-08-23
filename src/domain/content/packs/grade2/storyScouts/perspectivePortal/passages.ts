@@ -109,7 +109,7 @@ export const perspectivePortalPassageBlueprints: PerspectivePortalPassageBluepri
       'Maya noticed gray clouds and said the seedlings should be covered right away.',
       'Theo watched the drizzle and thought they still had time to finish the welcome sign.',
       'Maya carefully spread a tarp over the tiny plants while Theo straightened the sign posts.',
-      'Theo then saw the wind grow stronger and said his help would be helpful, so he grabbed the rope to help.',
+      'Theo then saw the wind grow stronger and gave helpful support by grabbing the rope.',
       'Together they finished the sign and protected the garden beds before the visitors came.',
       'Maya smiled because the quick work kept the plants safe.',
     ],
@@ -179,7 +179,7 @@ export const perspectivePortalPassageBlueprints: PerspectivePortalPassageBluepri
         spokenChunks: [['help', 'help'], ['ful', 'ful']],
         blendSpeechText: 'help - ful',
         wholeWordSpeechText: 'helpful',
-        sentenceSpeechText: 'Theo then saw the wind grow stronger and grabbed the rope to help.',
+        sentenceSpeechText: 'Theo then saw the wind grow stronger and gave helpful support by grabbing the rope.',
       },
       {
         targetKey: 'rainy',

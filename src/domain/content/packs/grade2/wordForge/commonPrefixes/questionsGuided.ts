@@ -201,7 +201,7 @@ export const guidedQuestions: ReadingQuestion[] = [
     lessonIdentifier: COMMON_PREFIX_LESSON_IDS.guidedDisMis,
     activityIdentifier: 'activity-word-forge-common-prefixes-guided-dis-mis-1',
     questionIdentifier: COMMON_PREFIX_QUESTION_IDS.guidedDisMis[0],
-    prompt: 'Which word has the prefix dis-?',
+    prompt: 'Which word has the prefix dis- and means not agree?',
     explanation: 'Disagree begins with dis-, and agree is the base word.',
     evidenceReference: 'word-pattern',
     evidenceReferenceIds: ['disagree-choice'],

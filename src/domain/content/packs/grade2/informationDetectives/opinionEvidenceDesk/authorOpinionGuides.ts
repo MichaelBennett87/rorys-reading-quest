@@ -139,7 +139,7 @@ export const authorOpinionGuides: AuthorOpinionGuide[] = [
           opinionEvidenceDeskSentenceIds.birdFriendlyPlants[8],
         ],
         evidenceConnectionStatement:
-          'The tree, the open-yard wind, and the map of the area support the opinion because they show why the water dish should go under the tree.',
+          'The birds drinking under the tree and the mapped shady spot support the opinion because they show why the water dish belongs there.',
       },
     ],
     factEvidenceIds: [

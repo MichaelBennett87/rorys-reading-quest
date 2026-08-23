@@ -270,7 +270,7 @@ export const rhymeRoutesBuildingBlockQuestions: ReadingQuestion[] = [
     tags: ['line-end-word-identification', 'end-rhyme-identification'],
     selectableSegments: [
       { id: 'segment-1', text: 'At dawn, the garden looked bare.' },
-      { id: 'segment-2', text: 'By noon, a small green sprout stood near.' },
+      { id: 'segment-2', text: 'After some days, a small green sprout stood near.' },
       { id: 'segment-3', text: 'Nia smiled because the sign was clear.' },
     ],
     correctSegmentIds: ['segment-3'],

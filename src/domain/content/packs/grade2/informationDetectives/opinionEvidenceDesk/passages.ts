@@ -190,13 +190,13 @@ const reusableContainerSentences: Sentence[] = [
 const birdFriendlyPlantSentences: Sentence[] = [
   { sentenceId: opinionEvidenceDeskSentenceIds.birdFriendlyPlants[0], text: 'The observation area has a low fence, a path, and a small tree.' },
   { sentenceId: opinionEvidenceDeskSentenceIds.birdFriendlyPlants[1], text: 'Birds landed on the tree branches and ate the berries.' },
-  { sentenceId: opinionEvidenceDeskSentenceIds.birdFriendlyPlants[2], text: 'The wind felt strong in the open part of the yard.' },
+  { sentenceId: opinionEvidenceDeskSentenceIds.birdFriendlyPlants[2], text: 'Birds drank from a small puddle under the tree.' },
   { sentenceId: opinionEvidenceDeskSentenceIds.birdFriendlyPlants[3], text: 'The observation area should include more berry shrubs.' },
   { sentenceId: opinionEvidenceDeskSentenceIds.birdFriendlyPlants[4], text: 'The area should also place one water dish under the tree.' },
   { sentenceId: opinionEvidenceDeskSentenceIds.birdFriendlyPlants[5], text: 'A graph showed birds resting in the leaves.' },
   { sentenceId: opinionEvidenceDeskSentenceIds.birdFriendlyPlants[6], text: 'The class counted more bird visits near the shrubs than near the fence.' },
   { sentenceId: opinionEvidenceDeskSentenceIds.birdFriendlyPlants[7], text: 'The shrubs gave the birds food and a place to hide.' },
-  { sentenceId: opinionEvidenceDeskSentenceIds.birdFriendlyPlants[8], text: 'A map of the area showed the tree, the path, and the fence.' },
+  { sentenceId: opinionEvidenceDeskSentenceIds.birdFriendlyPlants[8], text: 'The map showed a shady spot under the tree where the dish could sit.' },
   { sentenceId: opinionEvidenceDeskSentenceIds.birdFriendlyPlants[9], text: 'The berry shrubs sat nearest the middle path.' },
 ]
 

@@ -201,7 +201,7 @@ export const buildingBlockQuestions: ReadingQuestion[] = [
     lessonIdentifier: CONSONANT_LE_LESSON_IDS.guidedSplitBeforeConsonantLe,
     activityIdentifier: 'activity-word-forge-consonant-le-guided-split-before-2',
     questionIdentifier: CONSONANT_LE_QUESTION_IDS.guidedSplitBeforeConsonantLe[1],
-    prompt: 'Which word has a closed first syllable and a consonant-le ending?',
+    prompt: 'Which word splits as sim | ple?',
     explanation: 'Simple has sim | ple, so the first syllable is closed.',
     evidenceReference: 'word-pattern',
     evidenceReferenceIds: ['simple-choice'],

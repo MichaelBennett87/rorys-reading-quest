@@ -437,7 +437,7 @@ export const checkpointQuestions: ReadingQuestion[] = [
     lessonIdentifier: COMMON_PREFIX_LESSON_IDS.checkpointC,
     activityIdentifier: 'activity-word-forge-common-prefixes-checkpoint-c-2',
     questionIdentifier: COMMON_PREFIX_QUESTION_IDS.checkpointC[1],
-    prompt: 'Which word has the prefix dis-?',
+    prompt: 'Which word has the prefix dis- and means not obey?',
     explanation: 'Disobey begins with dis-, and obey is the base word.',
     evidenceReference: 'word-pattern',
     evidenceReferenceIds: ['disobey-choice'],

@@ -31,7 +31,7 @@ export const buildingBlockQuestions: ReadingQuestion[] = [
     lessonIdentifier: COMMON_SUFFIX_LESSON_IDS.guidedBaseAndEnding,
     activityIdentifier: 'activity-word-forge-common-suffixes-guided-base-and-ending-1',
     questionIdentifier: COMMON_SUFFIX_QUESTION_IDS.guidedBaseAndEnding[0],
-    prompt: 'Which word has the suffix -ed and tells about something that already happened?',
+    prompt: 'Which word has the suffix -ed and means put a plant in soil?',
     explanation: 'Planted ends with -ed, and plant is the base word.',
     evidenceReference: 'word-pattern',
     evidenceReferenceIds: ['planted-choice'],

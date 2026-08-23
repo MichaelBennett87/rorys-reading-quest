@@ -95,7 +95,7 @@ export const purposePathLessons = [
       examples: [
         'One section may give one important detail.',
         'Another section may add a second detail that points to the same idea.',
-        'The author purpose is the complete thought those details support together.',
+        'The author\'s purpose explains why the author wrote the passage.',
       ],
       contrast: 'Do not stop at one detail if the passage gives several important details that point to the same idea.',
       learnerCue: 'Put the important details together and name the big idea.',

@@ -535,7 +535,7 @@ export const textFeatureHuntCheckpointQuestions: ReadingQuestion[] = [
     lessonIdentifier: TEXT_FEATURE_HUNT_LESSON_IDS.checkpointC,
     questionIdentifier: textFeatureHuntQuestionId('checkpoint-c', 'ht-1'),
     prompt: 'Select the sentence that tells what the glossary means.',
-    explanation: 'The glossary sentence explains that compost means plant and food scraps that break down slowly into rich soil.',
+    explanation: 'The glossary sentence explains that compost means decayed plant and food scraps that can help soil.',
     evidenceReference: 'glossary-contribution',
     evidenceReferenceIds: [textFeatureHuntSentenceId(TEXT_FEATURE_HUNT_PASSAGE_KEYS.compostChange, 4)],
     targetVocabulary: ['glossary', 'compost', 'soil'],
@@ -636,7 +636,7 @@ export const textFeatureHuntCheckpointQuestions: ReadingQuestion[] = [
     partBChoices: [
       { id: 'part-b-1', text: 'The map shows where the compost bin sits beside the herb bed and the hose hook.' },
       { id: 'part-b-2', text: 'The title says Compost Change.' },
-      { id: 'part-b-3', text: 'The glossary defines compost as plant and food scraps that break down slowly into rich soil.' },
+      { id: 'part-b-3', text: 'The glossary defines compost as decayed plant and food scraps that can help soil.' },
     ],
     partBCorrectChoiceId: 'part-b-1',
   }),

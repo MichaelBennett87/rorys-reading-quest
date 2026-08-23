@@ -534,8 +534,8 @@ const PASSAGE_PLANS: readonly PassagePlan[] = [
         childFriendlyMeaning: 'Dim means not very bright.',
         primaryStrategy: 'context-clue',
         clueEvidenceIds: [contextCavernMeaningClueChamberSentenceIds.weatherNotesShade[0], contextCavernMeaningClueChamberSentenceIds.weatherNotesShade[1]],
-        strategyExplanation: 'The contrast with bright light helps show what dim means.',
-        contextClueKind: 'contrast',
+        strategyExplanation: 'The next sentence directly defines dim as not very bright.',
+        contextClueKind: 'definition',
       },
       {
         word: 'glide',
@@ -622,7 +622,7 @@ const PASSAGE_PLANS: readonly PassagePlan[] = [
         childFriendlyMeaning: 'Shallow means not deep.',
         primaryStrategy: 'context-clue',
         clueEvidenceIds: [contextCavernMeaningClueChamberSentenceIds.seedTravelGround[0], contextCavernMeaningClueChamberSentenceIds.seedTravelGround[2]],
-        strategyExplanation: 'The result in the sentence shows why shallow matters, so the clue uses cause and effect.',
+        strategyExplanation: 'The roots reached water quickly because the soil was shallow, showing that shallow soil is not deep.',
         contextClueKind: 'cause-effect',
       },
       {
@@ -684,7 +684,7 @@ const PASSAGE_PLANS: readonly PassagePlan[] = [
     sentences: [
       { sentenceId: contextCavernMeaningClueChamberSentenceIds.trailMapHelpers[0], text: 'The hikers moved along a narrow path beside the creek, not the wide path near the field.' },
       { sentenceId: contextCavernMeaningClueChamberSentenceIds.trailMapHelpers[1], text: 'Narrow means not wide.' },
-      { sentenceId: contextCavernMeaningClueChamberSentenceIds.trailMapHelpers[2], text: 'The map shows the surface where the trail begins.' },
+      { sentenceId: contextCavernMeaningClueChamberSentenceIds.trailMapHelpers[2], text: 'The map shows the gravel surface where the trail begins.' },
       { sentenceId: contextCavernMeaningClueChamberSentenceIds.trailMapHelpers[3], text: 'The surface is the top part of a thing, and the glossary says so.' },
       { sentenceId: contextCavernMeaningClueChamberSentenceIds.trailMapHelpers[4], text: 'A marker on the trail points to the rest stop.' },
       { sentenceId: contextCavernMeaningClueChamberSentenceIds.trailMapHelpers[5], text: 'The hikers settled down for a break when they reached the marker.' },
@@ -770,19 +770,19 @@ const PASSAGE_PLANS: readonly PassagePlan[] = [
       ],
     ],
     sentences: [
-      { sentenceId: contextCavernMeaningClueChamberSentenceIds.compostPileChange[0], text: 'The compost pile looked scarce after the dry week.' },
+      { sentenceId: contextCavernMeaningClueChamberSentenceIds.compostPileChange[0], text: 'Compost scraps were scarce after the dry week.' },
       { sentenceId: contextCavernMeaningClueChamberSentenceIds.compostPileChange[1], text: 'Scarce means not enough.' },
       { sentenceId: contextCavernMeaningClueChamberSentenceIds.compostPileChange[2], text: 'The scraps gathered into a cluster near the fence.' },
       { sentenceId: contextCavernMeaningClueChamberSentenceIds.compostPileChange[3], text: 'A cluster is a small group of things close together, and the glossary explains it.' },
       { sentenceId: contextCavernMeaningClueChamberSentenceIds.compostPileChange[4], text: 'The birds migrate when the season changes, but the compost stays in one place.' },
-      { sentenceId: contextCavernMeaningClueChamberSentenceIds.compostPileChange[5], text: 'The old compost pile gives the soil a better home later.' },
+      { sentenceId: contextCavernMeaningClueChamberSentenceIds.compostPileChange[5], text: 'Finished compost can help garden soil hold water and nutrients.' },
       { sentenceId: contextCavernMeaningClueChamberSentenceIds.compostPileChange[6], text: 'The cool season helps the pile change little by little.' },
     ],
     glossaryEntries: [
       {
         entryId: `${contextCavernMeaningClueChamberPassageIds.compostPileChange.passageId}-glossary-compost`,
         term: 'compost',
-        definition: 'Rotten plant scraps that can help soil.',
+        definition: 'Decayed plant and food scraps that can help soil.',
       },
       {
         entryId: `${contextCavernMeaningClueChamberPassageIds.compostPileChange.passageId}-glossary-cluster`,
@@ -811,15 +811,15 @@ const PASSAGE_PLANS: readonly PassagePlan[] = [
           contextCavernMeaningClueChamberSentenceIds.compostPileChange[2],
           contextCavernMeaningClueChamberSentenceIds.compostPileChange[3],
         ],
-        strategyExplanation: 'Cluster means a group, so the word belongs with category and member words.',
-        relationshipKind: 'category-member',
+        strategyExplanation: 'Group and bunch mean nearly the same as cluster, so the relationship is synonym.',
+        relationshipKind: 'synonym',
         relatedWords: ['group', 'bunch'],
       },
       {
         word: 'compost',
         sentenceIndex: 5,
         splitIndex: 4,
-        childFriendlyMeaning: 'Compost is rotten plant scraps that can help soil.',
+        childFriendlyMeaning: 'Compost is decayed plant and food scraps that can help soil.',
         primaryStrategy: 'reference-material',
         clueEvidenceIds: [
           `${contextCavernMeaningClueChamberPassageIds.compostPileChange.passageId}-glossary-compost`,
@@ -1379,7 +1379,7 @@ const meaningClueLessons: ContentPackLesson[] = [
       explanation:
         'A context clue can be a definition, restatement, example, contrast, or cause-and-effect clue. A word relationship can be a synonym, antonym, category-member link, part-whole link, or object-function link.',
       examples: [
-        'Dim is shown by a contrast with bright.',
+        'Dim is defined directly as not very bright.',
         'Glide is shown by a synonym like float.',
         'Gather is explained by a glossary entry.',
       ],

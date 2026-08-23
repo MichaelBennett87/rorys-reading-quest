@@ -255,7 +255,7 @@ export const centralIdeaCenterCheckpointQuestions = [
     choices: [
       choice('compost-detail-1', 'Tiny bugs and worms help break the pieces apart.'),
       choice('compost-detail-2', 'The class turns the pile so air can move through it.'),
-      choice('compost-central', 'Compost changes scraps and leaves into useful soil.'),
+      choice('compost-central', 'Composting changes scraps and leaves into material that helps soil.'),
       choice('compost-detail-3', 'The class watches the graph each week.'),
     ],
     correctChoiceIds: ['compost-central'],
@@ -288,7 +288,7 @@ export const centralIdeaCenterCheckpointQuestions = [
     lessonIdentifier: centralIdeaCenterLessonIds.checkpointB,
     questionIdentifier: centralIdeaCenterQuestionIds.checkpointB[3],
     prompt: 'Choose two details that are most relevant to the central idea.',
-    explanation: 'These details show how scraps change into useful soil.',
+    explanation: 'These details show how scraps change into compost that helps soil.',
     evidenceReference: centralIdeaCenterFeatureIds.compostChangeStory.visual,
     evidenceReferenceIds: [
       centralIdeaCenterSentenceIds.compostChangeStory[1],
@@ -299,7 +299,7 @@ export const centralIdeaCenterCheckpointQuestions = [
     tags: ['relevant-details', 'relevant-detail-identification'],
     choices: [
       choice('compost-bugs', 'Tiny bugs and worms help break the pieces apart.'),
-      choice('compost-useful', 'The scraps become useful soil that helps plants grow.'),
+      choice('compost-useful', 'The scraps become compost that helps plants grow.'),
       choice('compost-leaf', 'A teacher says the class can still see leaf bits in the pile.'),
       choice('compost-week', 'The class watches the graph each week.'),
     ],
@@ -358,7 +358,7 @@ export const centralIdeaCenterCheckpointQuestions = [
         prompt: 'What is the central idea?',
         correctChoiceId: 'compost-central-answer',
         options: [
-          choice('compost-central-answer', 'Compost changes scraps and leaves into useful soil.'),
+          choice('compost-central-answer', 'Composting changes scraps and leaves into material that helps soil.'),
           choice('compost-central-other1', 'The pile gets darker and crumbly over time.'),
           choice('compost-central-other2', 'The class turns the pile so air can move through it.'),
         ],
@@ -370,7 +370,7 @@ export const centralIdeaCenterCheckpointQuestions = [
         options: [
           choice('compost-other-answer', 'A teacher says the class can still see leaf bits in the pile.'),
           choice('compost-other-topic', 'compost piles'),
-          choice('compost-other-central', 'Compost changes scraps and leaves into useful soil.'),
+          choice('compost-other-central', 'Composting changes scraps and leaves into material that helps soil.'),
         ],
       },
     ],
@@ -394,7 +394,7 @@ export const centralIdeaCenterCheckpointQuestions = [
     tags: ['central-idea-and-evidence', 'central-idea-from-details', 'most-relevant-details', 'relevant-details-across-sections'],
     partAPrompt: 'What is the central idea of the text?',
     partAChoices: [
-      choice('compost-part-a-1', 'Compost changes scraps and leaves into useful soil.'),
+      choice('compost-part-a-1', 'Composting changes scraps and leaves into material that helps soil.'),
       choice('compost-part-a-2', 'A graph shows the pile warming up and then cooling down.'),
       choice('compost-part-a-3', 'Tiny bugs and worms help break the pieces apart.'),
     ],

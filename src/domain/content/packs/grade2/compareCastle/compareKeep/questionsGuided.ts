@@ -128,8 +128,8 @@ export const compareKeepGuidedQuestions: ReadingQuestion[] = [
     lessonIdentifier: COMPARE_KEEP_LESSON_IDS.guidedCompareCharactersAndEvents,
     activityIdentifier: 'activity-compare-castle-compare-keep-guided-compare-characters-and-events',
     questionIdentifier: COMPARE_KEEP_QUESTION_IDS.guidedCompareCharactersAndEvents[3],
-    prompt: 'Select the line in Text 1 that shows the kite rising.',
-    explanation: 'The line about the kite climbing shows the important event in Text 1.',
+    prompt: 'Select the sentence in Text 1 that shows the kite rising.',
+    explanation: 'The sentence about the kite rising shows the important event in Text 1.',
     evidenceReference: createScopedEvidenceReference(proseWind, 'ck-lit-prose-3-s4'),
     evidenceReferenceIds: [
       createScopedEvidenceReference(proseWind, 'ck-lit-prose-3-s4'),

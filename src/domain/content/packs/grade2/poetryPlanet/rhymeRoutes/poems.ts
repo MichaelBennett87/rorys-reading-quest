@@ -64,10 +64,10 @@ const poemDefinitions: PoemDefinition[] = [
     scheme: 'AABBCC',
     lines: [
       { lineNumber: 1, stanzaNumber: 1, text: 'At dawn, the garden looked bare.', endWord: 'bare', rhymeKey: 'are-bare', rhymeLabel: 'A' },
-      { lineNumber: 2, stanzaNumber: 1, text: 'Nia planted seeds with careful care.', endWord: 'care', rhymeKey: 'are-bare', rhymeLabel: 'A' },
+      { lineNumber: 2, stanzaNumber: 1, text: 'Nia planted seeds with steady care.', endWord: 'care', rhymeKey: 'are-bare', rhymeLabel: 'A' },
       { lineNumber: 3, stanzaNumber: 1, text: 'She pressed each seed into the dirt.', endWord: 'dirt', rhymeKey: 'irt-dirt', rhymeLabel: 'B' },
       { lineNumber: 4, stanzaNumber: 2, text: 'Then she watered gently, not to hurt.', endWord: 'hurt', rhymeKey: 'irt-dirt', rhymeLabel: 'B' },
-      { lineNumber: 5, stanzaNumber: 2, text: 'By noon, a small green sprout stood near.', endWord: 'near', rhymeKey: 'ear-near', rhymeLabel: 'C' },
+      { lineNumber: 5, stanzaNumber: 2, text: 'After some days, a small green sprout stood near.', endWord: 'near', rhymeKey: 'ear-near', rhymeLabel: 'C' },
       { lineNumber: 6, stanzaNumber: 2, text: 'Nia smiled because the sign was clear.', endWord: 'clear', rhymeKey: 'ear-near', rhymeLabel: 'C' },
     ],
     stanzaLineNumbers: [[1, 2, 3], [4, 5, 6]],
@@ -85,9 +85,9 @@ const poemDefinitions: PoemDefinition[] = [
     scheme: 'ABAB',
     lines: [
       { lineNumber: 1, stanzaNumber: 1, text: 'Mara set the cans beside the bin.', endWord: 'bin', rhymeKey: 'in-bin', rhymeLabel: 'A' },
-      { lineNumber: 2, stanzaNumber: 1, text: 'She smiled and gave a happy grin.', endWord: 'grin', rhymeKey: 'in-grin', rhymeLabel: 'B' },
+      { lineNumber: 2, stanzaNumber: 1, text: 'With a grin, she checked each label on the side.', endWord: 'side', rhymeKey: 'ide-side', rhymeLabel: 'B' },
       { lineNumber: 3, stanzaNumber: 1, text: 'She stacked the jars beside the tin.', endWord: 'tin', rhymeKey: 'in-bin', rhymeLabel: 'A' },
-      { lineNumber: 4, stanzaNumber: 1, text: 'The cart rolled past with a gentle spin.', endWord: 'spin', rhymeKey: 'in-grin', rhymeLabel: 'B' },
+      { lineNumber: 4, stanzaNumber: 1, text: 'With a spin, the cart rolled on a gentle ride.', endWord: 'ride', rhymeKey: 'ide-side', rhymeLabel: 'B' },
     ],
     stanzaLineNumbers: [[1, 2, 3, 4]],
     supportTargets: [
@@ -103,10 +103,10 @@ const poemDefinitions: PoemDefinition[] = [
     readingContext: 'Poetry Planet rhyme routes',
     scheme: 'ABCB',
     lines: [
-      { lineNumber: 1, stanzaNumber: 1, text: 'The bridge crew brought the bright boards to school.', endWord: 'school', rhymeKey: 'ool-school', rhymeLabel: 'A' },
+      { lineNumber: 1, stanzaNumber: 1, text: 'The bridge crew brought bright boards from school to the site.', endWord: 'site', rhymeKey: 'ite-site', rhymeLabel: 'A' },
       { lineNumber: 2, stanzaNumber: 1, text: 'Tess checked each plank with a careful tool.', endWord: 'tool', rhymeKey: 'ool-tool', rhymeLabel: 'B' },
       { lineNumber: 3, stanzaNumber: 1, text: 'She marked the safe spots in a neat row.', endWord: 'row', rhymeKey: 'ow-row', rhymeLabel: 'C' },
-      { lineNumber: 4, stanzaNumber: 1, text: 'Then Tess passed the hammer back to the tool.', endWord: 'tool', rhymeKey: 'ool-tool', rhymeLabel: 'B' },
+      { lineNumber: 4, stanzaNumber: 1, text: 'Then Tess set the hammer beside a stool.', endWord: 'stool', rhymeKey: 'ool-tool', rhymeLabel: 'B' },
     ],
     stanzaLineNumbers: [[1, 2, 3, 4]],
     supportTargets: [
@@ -142,9 +142,9 @@ const poemDefinitions: PoemDefinition[] = [
     scheme: 'ABABCDCD',
     lines: [
       { lineNumber: 1, stanzaNumber: 1, text: 'Lena set the cups in a row.', endWord: 'row', rhymeKey: 'ow-row', rhymeLabel: 'A' },
-      { lineNumber: 2, stanzaNumber: 1, text: 'She watched the cotton clouds move slow.', endWord: 'slow', rhymeKey: 'ow-slow', rhymeLabel: 'B' },
+      { lineNumber: 2, stanzaNumber: 1, text: 'She watched the slow cotton clouds change pace.', endWord: 'pace', rhymeKey: 'ace-pace', rhymeLabel: 'B' },
       { lineNumber: 3, stanzaNumber: 1, text: 'A fan made the paper flags blow.', endWord: 'blow', rhymeKey: 'ow-row', rhymeLabel: 'A' },
-      { lineNumber: 4, stanzaNumber: 1, text: 'She nodded when the pieces stayed slow.', endWord: 'slow', rhymeKey: 'ow-slow', rhymeLabel: 'B' },
+      { lineNumber: 4, stanzaNumber: 1, text: 'She nodded when each flag stayed in place.', endWord: 'place', rhymeKey: 'ace-pace', rhymeLabel: 'B' },
       { lineNumber: 5, stanzaNumber: 2, text: 'Then Omar held the chart up high.', endWord: 'high', rhymeKey: 'igh-high', rhymeLabel: 'C' },
       { lineNumber: 6, stanzaNumber: 2, text: 'He pointed to the bright red light.', endWord: 'light', rhymeKey: 'ight-light', rhymeLabel: 'D' },
       { lineNumber: 7, stanzaNumber: 2, text: 'They saw the clouds move across the sky.', endWord: 'sky', rhymeKey: 'igh-high', rhymeLabel: 'C' },
@@ -164,7 +164,7 @@ const poemDefinitions: PoemDefinition[] = [
     readingContext: 'Poetry Planet rhyme routes',
     scheme: 'ABCB',
     lines: [
-      { lineNumber: 1, stanzaNumber: 1, text: 'Noah carried props to the stage.', endWord: 'stage', rhymeKey: 'age-stage', rhymeLabel: 'A' },
+      { lineNumber: 1, stanzaNumber: 1, text: 'Noah carried props across the stage for the show.', endWord: 'show', rhymeKey: 'ow-show', rhymeLabel: 'A' },
       { lineNumber: 2, stanzaNumber: 1, text: 'Iris read the plan on a page.', endWord: 'page', rhymeKey: 'age-page', rhymeLabel: 'B' },
       { lineNumber: 3, stanzaNumber: 2, text: 'She lined the costumes by the door.', endWord: 'door', rhymeKey: 'oor-door', rhymeLabel: 'C' },
       { lineNumber: 4, stanzaNumber: 2, text: 'Then Noah checked the props once more on the page.', endWord: 'page', rhymeKey: 'age-page', rhymeLabel: 'B' },

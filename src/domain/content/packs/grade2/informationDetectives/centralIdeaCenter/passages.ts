@@ -203,9 +203,9 @@ export const compostChangeSentences: Sentence[] = [
   { sentenceId: centralIdeaCenterSentenceIds.compostChangeStory[4], text: 'A graph shows the pile warming up and then cooling down.' },
   { sentenceId: centralIdeaCenterSentenceIds.compostChangeStory[5], text: 'The class watches the graph each week.' },
   { sentenceId: centralIdeaCenterSentenceIds.compostChangeStory[6], text: 'When the pile changes, it smells less like food scraps and more like earth.' },
-  { sentenceId: centralIdeaCenterSentenceIds.compostChangeStory[7], text: 'The scraps become useful soil that helps plants grow.' },
+  { sentenceId: centralIdeaCenterSentenceIds.compostChangeStory[7], text: 'The scraps become dark, crumbly compost that helps plants grow.' },
   { sentenceId: centralIdeaCenterSentenceIds.compostChangeStory[8], text: 'A teacher says the class can still see leaf bits in the pile.' },
-  { sentenceId: centralIdeaCenterSentenceIds.compostChangeStory[9], text: 'Compost changes scraps and leaves into useful soil.' },
+  { sentenceId: centralIdeaCenterSentenceIds.compostChangeStory[9], text: 'Composting changes scraps and leaves into material that helps soil.' },
 ]
 
 export const trailMarkerSentences: Sentence[] = [

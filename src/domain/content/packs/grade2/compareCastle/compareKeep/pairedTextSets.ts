@@ -114,19 +114,19 @@ export const compareKeepPairedTextSets: readonly PairedTextSet[] = [
   },
   {
     pairId: COMPARE_KEEP_PAIR_IDS.informationalC,
-    pairTitle: 'Living Things at the Pond',
+    pairTitle: 'How Roots Help Soil',
     relationshipKind: 'same-topic',
     members: [
       {
         passageId: COMPARE_KEEP_PASSAGE_IDS.informationalE,
         label: 'Text 1',
-        displayTitle: 'Pond Layers and Living Things',
+        displayTitle: 'Roots at the Pond Edge',
         format: 'informational',
       },
       {
         passageId: COMPARE_KEEP_PASSAGE_IDS.informationalF,
         label: 'Text 2',
-        displayTitle: 'Roots Help Soil Stay in Place',
+        displayTitle: 'Roots in a Garden Bed',
         format: 'informational',
       },
     ],

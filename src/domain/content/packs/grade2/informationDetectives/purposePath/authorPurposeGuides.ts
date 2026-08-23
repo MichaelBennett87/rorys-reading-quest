@@ -4,9 +4,9 @@ import { purposePathContentVersion, purposePathFeatureIds, purposePathPassageIds
 export const authorPurposeGuides: AuthorPurposeGuide[] = [
   {
     passageId: purposePathPassageIds.rainGaugeReadings.passageId,
-    topicLabel: 'rain gauges',
+    topicLabel: 'rain gardens',
     purposeKind: 'explain-how',
-    specificPurposeStatement: 'To explain how a rain gauge helps people measure rainfall.',
+    specificPurposeStatement: 'To explain how a rain garden catches water and helps it soak into soil.',
     purposeEvidenceIds: [
       purposePathSentenceIds.rainGaugeReadings[0],
       purposePathSentenceIds.rainGaugeReadings[1],
@@ -21,9 +21,9 @@ export const authorPurposeGuides: AuthorPurposeGuide[] = [
   },
   {
     passageId: purposePathPassageIds.nestBuilderNotes.passageId,
-    topicLabel: 'bird nests',
+    topicLabel: 'animal shelters',
     purposeKind: 'describe',
-    specificPurposeStatement: 'To describe how birds build nests that keep young birds warm and safe.',
+    specificPurposeStatement: 'To describe how a calm shelter helps animals rest and feel safe.',
     purposeEvidenceIds: [
       purposePathSentenceIds.nestBuilderNotes[0],
       purposePathSentenceIds.nestBuilderNotes[1],
@@ -38,9 +38,9 @@ export const authorPurposeGuides: AuthorPurposeGuide[] = [
   },
   {
     passageId: purposePathPassageIds.beePollenPath.passageId,
-    topicLabel: 'bees and pollen',
+    topicLabel: 'pollinator gardens',
     purposeKind: 'teach-about',
-    specificPurposeStatement: 'To teach readers how bees carry pollen from flower to flower.',
+    specificPurposeStatement: 'To teach readers how sunny and shady garden rows support pollinators in different ways.',
     purposeEvidenceIds: [
       purposePathSentenceIds.beePollenPath[0],
       purposePathSentenceIds.beePollenPath[1],
@@ -55,9 +55,9 @@ export const authorPurposeGuides: AuthorPurposeGuide[] = [
   },
   {
     passageId: purposePathPassageIds.trailMarkerSystem.passageId,
-    topicLabel: 'trail markers',
-    purposeKind: 'explain-process',
-    specificPurposeStatement: 'To explain how trail markers and maps help visitors follow a path safely.',
+    topicLabel: 'weather observations',
+    purposeKind: 'explain-how',
+    specificPurposeStatement: 'To explain how weather tools and notes help a class observe changes.',
     purposeEvidenceIds: [
       purposePathSentenceIds.trailMarkerSystem[0],
       purposePathSentenceIds.trailMarkerSystem[1],
@@ -72,9 +72,9 @@ export const authorPurposeGuides: AuthorPurposeGuide[] = [
   },
   {
     passageId: purposePathPassageIds.shadeGardenStudy.passageId,
-    topicLabel: 'shade in a garden',
-    purposeKind: 'explain-why',
-    specificPurposeStatement: 'To explain why shade helps a garden stay moist and calm for plants.',
+    topicLabel: 'seed travel',
+    purposeKind: 'explain-process',
+    specificPurposeStatement: 'To explain several ways seeds travel to new places.',
     purposeEvidenceIds: [
       purposePathSentenceIds.shadeGardenStudy[0],
       purposePathSentenceIds.shadeGardenStudy[1],
@@ -89,9 +89,9 @@ export const authorPurposeGuides: AuthorPurposeGuide[] = [
   },
   {
     passageId: purposePathPassageIds.recyclingSortStation.passageId,
-    topicLabel: 'recycling stations',
-    purposeKind: 'provide-facts',
-    specificPurposeStatement: 'To provide facts about how a recycling station sorts materials for reuse.',
+    topicLabel: 'compost piles',
+    purposeKind: 'explain-process',
+    specificPurposeStatement: 'To explain how scraps and leaves change into compost that helps soil.',
     purposeEvidenceIds: [
       purposePathSentenceIds.recyclingSortStation[0],
       purposePathSentenceIds.recyclingSortStation[1],
@@ -106,9 +106,9 @@ export const authorPurposeGuides: AuthorPurposeGuide[] = [
   },
   {
     passageId: purposePathPassageIds.compostChangeNotes.passageId,
-    topicLabel: 'compost piles',
+    topicLabel: 'trail markers',
     purposeKind: 'explain-process',
-    specificPurposeStatement: 'To explain how a compost pile changes scraps and leaves into useful soil.',
+    specificPurposeStatement: 'To explain how trail markers and maps help visitors follow a path safely.',
     purposeEvidenceIds: [
       purposePathSentenceIds.compostChangeNotes[0],
       purposePathSentenceIds.compostChangeNotes[1],
