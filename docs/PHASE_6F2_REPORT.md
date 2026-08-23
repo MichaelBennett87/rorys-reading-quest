@@ -6,6 +6,7 @@ Starting remote HEAD: `0ec741250997b1578b5793c116ac338ac597fd87`
 
 Implementation checkpoint(s):
 
+- `736465d` docs: complete phase 6f2 review
 - `7c15822` feat: integrate compare castle wordplay progression
 - `0ec7412` docs: complete phase 6f1 review
 
@@ -34,7 +35,7 @@ Final bundle:
 
 Boundary:
 
-- Phase 6F2 is in progress locally
+- Phase 6F2 is complete locally
 - Phase 6F3 remains next
 - Compare Castle content is active for Wordplay Watchtower and Retell Hall
 - later Compare Keep content remains deferred
