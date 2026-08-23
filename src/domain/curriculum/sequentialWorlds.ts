@@ -81,7 +81,7 @@ const contextCavernRoadmap: SequentialWorldRoadmap = {
       activeLabel: 'Trail 3',
       practiceFocus: 'context clues, word relationships, reference tools, and background knowledge',
       lockedMessage: 'Meaning Clue Chamber quests are being prepared.',
-      futureContentMessage: 'Review context clues, word relationships, reference tools, and background knowledge.',
+      futureContentMessage: 'You completed the available Context Cavern quests. Your progress is safe while new across-genre missions are prepared.',
     },
   ],
 }

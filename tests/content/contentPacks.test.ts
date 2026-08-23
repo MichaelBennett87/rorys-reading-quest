@@ -37,19 +37,20 @@ describe('grade 2 content pack registry', () => {
       'g2-information-detectives-opinion-evidence-desk',
       'g2-context-cavern-academic-word-workshop',
       'g2-context-cavern-morphology-mine',
+      'g2-context-cavern-meaning-clue-chamber',
       'legacy-word-forge-development-pack',
     ])
-    expect(activePacks).toHaveLength(18)
-    expect(activePacks.reduce((sum, pack) => sum + pack.lessons.length, 0)).toBe(126)
-    expect(activePacks.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(126)
-    expect(activePacks.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(725)
-    expect(activePacks.reduce((sum, pack) => sum + pack.passages.reduce((passageSum, passage) => passageSum + (passage.wordSupportTargets?.length ?? 0), 0), 0)).toBe(502)
+    expect(activePacks).toHaveLength(19)
+    expect(activePacks.reduce((sum, pack) => sum + pack.lessons.length, 0)).toBe(133)
+    expect(activePacks.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(133)
+    expect(activePacks.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(766)
+    expect(activePacks.reduce((sum, pack) => sum + pack.passages.reduce((passageSum, passage) => passageSum + (passage.wordSupportTargets?.length ?? 0), 0), 0)).toBe(530)
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 18,
-      activeLessonCount: 126,
-      activePassageCount: 126,
-      activeQuestionCount: 725,
-      activeSupportTargetCount: 502,
+      activePackCount: 19,
+      activeLessonCount: 133,
+      activePassageCount: 133,
+      activeQuestionCount: 766,
+      activeSupportTargetCount: 530,
     })
     expect(contentPackAudit).toHaveLength(0)
     expect(benchmarkCoverageAudit).toEqual(expect.objectContaining({
@@ -145,6 +146,15 @@ describe('grade 2 content pack registry', () => {
       coveredPatterns: ['base-words', 'affixes'],
       missingPatterns: [],
       contributingPackIds: ['g2-context-cavern-morphology-mine'],
+      coverageStatus: 'implemented',
+      reviewStatus: 'DRAFT',
+    }))
+    expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.V.1.3')).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.2.V.1.3',
+      expectedPatterns: ['context-clues', 'word-relationships', 'reference-materials', 'background-knowledge'],
+      coveredPatterns: ['context-clues', 'word-relationships', 'reference-materials', 'background-knowledge'],
+      missingPatterns: [],
+      contributingPackIds: ['g2-context-cavern-meaning-clue-chamber'],
       coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',
     }))

@@ -163,6 +163,48 @@ export interface MorphologyGuide {
   contentVersion: string
 }
 
+export type MeaningClueStrategyKind =
+  | 'context-clue'
+  | 'word-relationship'
+  | 'reference-material'
+  | 'background-knowledge'
+
+export type ContextClueKind =
+  | 'definition'
+  | 'restatement'
+  | 'example'
+  | 'contrast'
+  | 'cause-effect'
+
+export type WordRelationshipKind =
+  | 'synonym'
+  | 'antonym'
+  | 'category-member'
+  | 'part-whole'
+  | 'object-function'
+
+export interface MeaningClueTarget {
+  targetId: string
+  word: string
+  sentenceId: string
+  childFriendlyMeaning: string
+  primaryStrategy: MeaningClueStrategyKind
+  clueEvidenceIds: string[]
+  strategyExplanation: string
+  contextClueKind?: ContextClueKind
+  relationshipKind?: WordRelationshipKind
+  relatedWords?: string[]
+  glossaryEntryId?: string
+  backgroundKnowledgeStatement?: string
+}
+
+export interface MeaningClueGuide {
+  passageId: string
+  targets: MeaningClueTarget[]
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
 export interface ContentPackManifest {
   packId: string
   packTitle: string
@@ -213,6 +255,7 @@ export interface ContentPack {
   authorOpinionGuides?: AuthorOpinionGuide[]
   academicVocabularyGuides?: AcademicVocabularyGuide[]
   morphologyGuides?: MorphologyGuide[]
+  meaningClueGuides?: MeaningClueGuide[]
   themeGuides?: ThemeGuide[]
   perspectiveGuides?: PerspectiveGuide[]
   rhymeSchemeGuides?: RhymeSchemeGuide[]
@@ -281,6 +324,9 @@ export interface ContentPackAuditIssue {
    | 'missing_morphology_guide'
    | 'morphology_guide_count_mismatch'
    | 'morphology_guide_invalid'
+   | 'missing_meaning_clue_guide'
+   | 'meaning_clue_guide_count_mismatch'
+   | 'meaning_clue_guide_invalid'
    | 'invalid_author_opinion_feature_reference'
    | 'invalid_informational_feature_reference'
    | 'missing_perspective_guide'

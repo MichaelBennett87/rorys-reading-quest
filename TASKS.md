@@ -70,7 +70,7 @@
     - [x] Phase 6E4: opinion and supporting evidence for ELA.2.R.2.4
     - [x] Phase 6E5: academic-vocabulary practice and Context Cavern foundation
     - [x] Phase 6E6: morphology and ELA.2.V.1.2
-    - [ ] Phase 6E7: context, word relationships, reference materials, background knowledge, and final Phase 6E audit
+    - [x] Phase 6E7: context, word relationships, reference materials, background knowledge, and final Phase 6E audit
   - [ ] Phase 6F: across-genres reading and final Grade 2 audit
 - [ ] Phase 7: Grade 3 FAST-aligned content
   - [ ] Expand to mastery-level Grade 3 sequences.

@@ -260,7 +260,7 @@ describe('dashboard analytics', () => {
     const skill = buildSkillSummaries({ progress }).find((entry) => entry.skillId === 'g2-context-cavern-vocabulary')!
     expect(skill.reportingCategory).toBe('Vocabulary')
     expect(skill.benchmarkReference).toBe('ELA.2.V.1.1')
-    expect(skill.benchmarkReferences).toEqual(['ELA.2.V.1.1', 'ELA.2.V.1.2'])
+    expect(skill.benchmarkReferences).toEqual(['ELA.2.V.1.1', 'ELA.2.V.1.2', 'ELA.2.V.1.3'])
     expect(skill.currentDifficulty).toBe(2)
     expect(skill.lastMasteredDifficulty).toBe(1)
     expect(skill.distinctIndependentEvidenceCount).toBe(2)

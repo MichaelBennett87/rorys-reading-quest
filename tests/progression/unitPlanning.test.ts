@@ -85,6 +85,23 @@ function createMorphologyMineLesson(overrides: Partial<LessonActivityCandidate> 
   }
 }
 
+function createMeaningClueChamberLesson(overrides: Partial<LessonActivityCandidate> = {}): LessonActivityCandidate {
+  return {
+    lessonId: 'lesson-context-cavern-meaning-clue-chamber-checkpoint-a',
+    activityId: 'activity-context-cavern-meaning-clue-chamber-checkpoint-a',
+    skillId: 'g2-context-cavern-vocabulary',
+    difficulty: 3,
+    worldId: 'context-cavern',
+    unitId: 'cc-unit-3',
+    packId: 'fixture-context-cavern-pack',
+    benchmarkReferences: ['ELA.2.V.1.3'],
+    eligiblePurposes: ['progression', 'review', 'verification', 'remediation'],
+    passageQuestionKeys: ['context-cavern-meaning-clue-chamber-a|q1'],
+    contentVersion: 'fixture-context-cavern-v3',
+    ...overrides,
+  }
+}
+
 describe('unit-aware Word Forge planning', () => {
   test('derives Vowel Voyage and Syllable Summit states from progress', () => {
     const difficultyOneWorlds = deriveWorldsForProgress(createProgress(1))
@@ -381,6 +398,16 @@ describe('unit-aware Word Forge planning', () => {
       expect(morphologyLocked.reason).toMatch(/Complete Academic Word Workshop to unlock Morphology Mine/i)
     }
 
+    const meaningClueLocked = planUnitQuest({
+      selectedUnitId: 'cc-unit-3',
+      progress: noContentProgress,
+      availableLessons: [],
+    })
+    expect(meaningClueLocked.status).toBe('locked')
+    if (meaningClueLocked.status === 'locked') {
+      expect(meaningClueLocked.reason).toMatch(/Complete Morphology Mine to unlock Meaning Clue Chamber/i)
+    }
+
     const morphologyRemediationProgress = createDefaultQuestProgress(now)
     morphologyRemediationProgress.skillProgress['g2-context-cavern-vocabulary'] = createInitialSkillProgress('g2-context-cavern-vocabulary', 1, 0)
     morphologyRemediationProgress.plannedNextQuest = {
@@ -412,7 +439,38 @@ describe('unit-aware Word Forge planning', () => {
       expect(morphologyRemediation.lesson.benchmarkReferences).toEqual(['ELA.2.V.1.2'])
     }
 
-    const fixtureLessons = [createInformationDetectivesLesson(), createContextCavernLesson(), createMorphologyMineLesson()]
+    const meaningClueRemediationProgress = createDefaultQuestProgress(now)
+    meaningClueRemediationProgress.skillProgress['g2-context-cavern-vocabulary'] = createInitialSkillProgress('g2-context-cavern-vocabulary', 2, 1)
+    meaningClueRemediationProgress.plannedNextQuest = {
+      status: 'available',
+      purpose: 'remediation',
+      lesson: createMeaningClueChamberLesson({ difficulty: 2, eligiblePurposes: ['remediation', 'review'] }),
+    }
+
+    const meaningClueRemediationWorlds = deriveCurriculumWorlds(
+      demoWorlds,
+      meaningClueRemediationProgress,
+      [createMeaningClueChamberLesson({ difficulty: 2, eligiblePurposes: ['remediation', 'review'] })],
+    )
+    const meaningClueRemediationWorld = meaningClueRemediationWorlds.find((world) => world.id === 'context-cavern')!
+
+    expect(meaningClueRemediationWorld.status).toBe('available')
+    expect(meaningClueRemediationWorld.units.find((unit) => unit.id === 'cc-unit-3')?.state).toBe('available')
+    expect(meaningClueRemediationWorld.units.find((unit) => unit.id === 'cc-unit-3')?.difficultyLabel).toBe('Power-Up Mission')
+
+    const meaningClueRemediation = planUnitQuest({
+      selectedUnitId: 'cc-unit-3',
+      progress: meaningClueRemediationProgress,
+      availableLessons: [createMeaningClueChamberLesson({ difficulty: 2, eligiblePurposes: ['remediation', 'review'] })],
+    })
+    expect(meaningClueRemediation.status).toBe('available')
+    if (meaningClueRemediation.status === 'available') {
+      expect(meaningClueRemediation.lesson.skillId).toBe('g2-context-cavern-vocabulary')
+      expect(meaningClueRemediation.lesson.unitId).toBe('cc-unit-3')
+      expect(meaningClueRemediation.lesson.benchmarkReferences).toEqual(['ELA.2.V.1.3'])
+    }
+
+    const fixtureLessons = [createInformationDetectivesLesson(), createContextCavernLesson(), createMorphologyMineLesson(), createMeaningClueChamberLesson()]
     const playableWorlds = deriveCurriculumWorlds(demoWorlds, createDefaultQuestProgress(now), fixtureLessons)
     const informationWorld = playableWorlds.find((world) => world.id === 'information-detectives')!
     const contextWorld = playableWorlds.find((world) => world.id === 'context-cavern')!
@@ -422,6 +480,7 @@ describe('unit-aware Word Forge planning', () => {
     expect(contextWorld.status).toBe('available')
     expect(contextWorld.units.find((unit) => unit.id === 'cc-unit-1')?.state).toBe('available')
     expect(contextWorld.units.find((unit) => unit.id === 'cc-unit-2')?.state).toBe('locked')
+    expect(contextWorld.units.find((unit) => unit.id === 'cc-unit-3')?.state).toBe('locked')
 
     const informationPlayable = planUnitQuest({
       selectedUnitId: 'id-unit-1',
@@ -453,7 +512,7 @@ describe('unit-aware Word Forge planning', () => {
     const worldsAtTwo = deriveCurriculumWorlds(
       demoWorlds,
       progress,
-      [createContextCavernLesson(), createMorphologyMineLesson()],
+      [createContextCavernLesson(), createMorphologyMineLesson(), createMeaningClueChamberLesson({ difficulty: 2, eligiblePurposes: ['remediation', 'review'] })],
     )
     const contextWorldAtTwo = worldsAtTwo.find((world) => world.id === 'context-cavern')!
 
@@ -461,6 +520,9 @@ describe('unit-aware Word Forge planning', () => {
     expect(contextWorldAtTwo.units.find((unit) => unit.id === 'cc-unit-1')?.state).toBe('complete')
     expect(contextWorldAtTwo.units.find((unit) => unit.id === 'cc-unit-2')?.state).toBe('available')
     expect(contextWorldAtTwo.units.find((unit) => unit.id === 'cc-unit-2')?.difficultyLabel).toBe('Trail 2')
+    expect(contextWorldAtTwo.units.find((unit) => unit.id === 'cc-unit-3')?.state).toBe('locked')
+    expect(contextWorldAtTwo.units.find((unit) => unit.id === 'cc-unit-3')?.difficultyLabel).toBe('Locked')
+    expect(contextWorldAtTwo.units.find((unit) => unit.id === 'cc-unit-3')?.practiceFocus).toContain('quests are being prepared')
 
     const reviewProgress = createDefaultQuestProgress(now)
     reviewProgress.skillProgress['g2-context-cavern-vocabulary'] = createInitialSkillProgress('g2-context-cavern-vocabulary', 3, 2)
@@ -469,12 +531,27 @@ describe('unit-aware Word Forge planning', () => {
     const worldsAtThree = deriveCurriculumWorlds(
       demoWorlds,
       reviewProgress,
-      [createContextCavernLesson(), createMorphologyMineLesson()],
+      [createContextCavernLesson(), createMorphologyMineLesson(), createMeaningClueChamberLesson()],
     )
     const contextWorldAtThree = worldsAtThree.find((world) => world.id === 'context-cavern')!
 
     expect(contextWorldAtThree.units.find((unit) => unit.id === 'cc-unit-2')?.state).toBe('review')
     expect(contextWorldAtThree.units.find((unit) => unit.id === 'cc-unit-2')?.difficultyLabel).toBe('Review')
+    expect(contextWorldAtThree.units.find((unit) => unit.id === 'cc-unit-3')?.state).toBe('available')
+    expect(contextWorldAtThree.units.find((unit) => unit.id === 'cc-unit-3')?.difficultyLabel).toBe('Trail 3')
+
+    const reviewReadyProgress = createDefaultQuestProgress(now)
+    reviewReadyProgress.skillProgress['g2-context-cavern-vocabulary'] = createInitialSkillProgress('g2-context-cavern-vocabulary', 4, 3)
+    reviewReadyProgress.skillProgress['g2-context-cavern-vocabulary'].currentLearningState = 'SPACED_REVIEW'
+
+    const worldsAtFour = deriveCurriculumWorlds(
+      demoWorlds,
+      reviewReadyProgress,
+      [createContextCavernLesson(), createMorphologyMineLesson(), createMeaningClueChamberLesson()],
+    )
+    const contextWorldAtFour = worldsAtFour.find((world) => world.id === 'context-cavern')!
+
+    expect(contextWorldAtFour.units.find((unit) => unit.id === 'cc-unit-3')?.state).toMatch(/^(review|complete)$/)
 
     const reviewPlan = planUnitQuest({
       selectedUnitId: 'cc-unit-2',
@@ -484,6 +561,17 @@ describe('unit-aware Word Forge planning', () => {
     expect(reviewPlan.status).toBe('content_needed')
     if (reviewPlan.status === 'content_needed') {
       expect(reviewPlan.reason).toMatch(/Meaning Clue Chamber quests are being prepared/i)
+    }
+
+    const meaningClueReviewPlan = planUnitQuest({
+      selectedUnitId: 'cc-unit-3',
+      progress: reviewReadyProgress,
+      availableLessons: [createMeaningClueChamberLesson({ eligiblePurposes: ['review'] })],
+    })
+    expect(meaningClueReviewPlan.status).toBe('content_needed')
+    if (meaningClueReviewPlan.status === 'content_needed') {
+      expect(meaningClueReviewPlan.reason).toMatch(/available Context Cavern quests/i)
+      expect(meaningClueReviewPlan.reason).toMatch(/across-genre missions are prepared/i)
     }
   })
 
@@ -533,6 +621,24 @@ describe('unit-aware Word Forge planning', () => {
     expect(informationWorld.units.find((unit) => unit.id === 'id-unit-2')?.state).toBe('available')
     expect(informationWorld.units.find((unit) => unit.id === 'id-unit-2')?.difficultyLabel).toBe('Power-Up Mission')
     expect(informationWorld.units.find((unit) => unit.id === 'id-unit-2')?.practiceFocus).toContain('central idea')
+  })
+
+  test('keeps all three Context Cavern review labels unit-specific when Meaning Clue Chamber is in spaced review', () => {
+    const progress = createDefaultQuestProgress(now)
+    progress.skillProgress['g2-context-cavern-vocabulary'] = createInitialSkillProgress('g2-context-cavern-vocabulary', 3, 2)
+    progress.skillProgress['g2-context-cavern-vocabulary'].currentLearningState = 'SPACED_REVIEW'
+
+    const worlds = deriveCurriculumWorlds(
+      demoWorlds,
+      progress,
+      [createContextCavernLesson(), createMorphologyMineLesson(), createMeaningClueChamberLesson()],
+    )
+    const contextWorld = worlds.find((world) => world.id === 'context-cavern')!
+
+    expect(contextWorld.units.find((unit) => unit.id === 'cc-unit-1')?.state).toBe('complete')
+    expect(contextWorld.units.find((unit) => unit.id === 'cc-unit-2')?.state).toBe('review')
+    expect(contextWorld.units.find((unit) => unit.id === 'cc-unit-3')?.state).toBe('available')
+    expect(contextWorld.units.find((unit) => unit.id === 'cc-unit-3')?.difficultyLabel).toBe('Trail 3')
   })
 
   test('an active session in another unit blocks a fresh unit launch', () => {

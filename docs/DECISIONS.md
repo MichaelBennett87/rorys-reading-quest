@@ -319,3 +319,8 @@
 - Decision: Activate Context Cavern Morphology Mine for `ELA.2.V.1.2` while preserving Meaning Clue Chamber as the planned later unit.
 - Reason: Phase 6E6 needs bounded morphology practice with transparent base words and affixes without moving into context clues, word relationships, reference materials, or background knowledge.
 - Consequence: The active curriculum keeps Context Cavern playable, the bridge roadmap now includes implemented DRAFT coverage for `ELA.2.V.1.2`, and Meaning Clue Chamber stays planned.
+
+## 2026-08-23 - Phase 6E7 Meaning Clue Chamber Activation
+- Decision: Activate Context Cavern Meaning Clue Chamber for `ELA.2.V.1.3` while completing Phase 6E and preserving later across-genres work for Phase 6F.
+- Reason: Phase 6E7 needs bounded Grade 2 meaning-clue practice with context clues, word relationships, reference materials, and background knowledge without moving into figurative language, multiple-meaning words, or cross-genre comparison.
+- Consequence: The active curriculum keeps Context Cavern playable, the bridge roadmap now includes implemented DRAFT coverage for `ELA.2.V.1.3`, and Phase 6F remains the next planned boundary.

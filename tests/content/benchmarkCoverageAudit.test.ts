@@ -108,6 +108,15 @@ describe('benchmark coverage audit', () => {
       coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',
     }))
+    expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.V.1.3')).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.2.V.1.3',
+      expectedPatterns: ['context-clues', 'word-relationships', 'reference-materials', 'background-knowledge'],
+      coveredPatterns: ['context-clues', 'word-relationships', 'reference-materials', 'background-knowledge'],
+      missingPatterns: [],
+      contributingPackIds: ['g2-context-cavern-meaning-clue-chamber'],
+      coverageStatus: 'implemented',
+      reviewStatus: 'DRAFT',
+    }))
   })
 
   test('unknown benchmark references fail safely without pretending to be implemented', () => {

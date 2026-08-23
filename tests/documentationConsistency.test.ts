@@ -30,10 +30,10 @@ describe('documentation consistency', () => {
     expect(tasks).toContain('    - [x] Phase 6E4: opinion and supporting evidence for ELA.2.R.2.4')
     expect(tasks).toContain('    - [x] Phase 6E5: academic-vocabulary practice and Context Cavern foundation')
     expect(tasks).toContain('    - [x] Phase 6E6: morphology and ELA.2.V.1.2')
-    expect(tasks).toContain('    - [ ] Phase 6E7: context, word relationships, reference materials, background knowledge, and final Phase 6E audit')
-    expect(readme).toContain('Phase 6D complete; Phase 6E0 through Phase 6E6 complete; Information Detectives informational-reading sequence complete; Academic Word Workshop complete; Morphology Mine complete; Phase 6 remains in progress; Phase 6E7 is next; Meaning Clue Chamber remains without production curriculum; Context Cavern is active')
-    expect(architecture).toContain('eighteen registered packs, 126 lessons, 126 passages, 725 questions, and 502 support targets')
-    expect(contentModel).toContain('eighteen active Grade 2 bridge packs with 126 lessons, 126 passages, 725 scored questions, and 502 authored word-support targets')
+    expect(tasks).toContain('    - [x] Phase 6E7: context, word relationships, reference materials, background knowledge, and final Phase 6E audit')
+    expect(readme).toContain('Phase 6D complete; Phase 6E complete; Information Detectives informational-reading sequence complete; Context Cavern sequence complete; Phase 6 remains in progress; Phase 6F is next; the final Grade 2 across-genres audit remains unfinished; Context Cavern is active')
+    expect(architecture).toContain('nineteen registered packs, 133 lessons, 133 passages, 766 questions, and 530 support targets')
+    expect(contentModel).toContain('nineteen active Grade 2 bridge packs with 133 lessons, 133 passages, 766 scored questions, and 530 authored word-support targets')
     expect(curriculum).toContain('Information Detectives')
     expect(curriculum).toContain('Context Cavern')
     expect(curriculum).toContain('Text Feature Hunt')
@@ -55,7 +55,7 @@ describe('documentation consistency', () => {
     expect(phase6e5Report).not.toContain('Final local HEAD: `200948c342fc8b9e8e5c8eca3f21a814f7721d19`')
     expect(phase6e6Report).toContain('Starting local HEAD: `c3b1c3a605fe6d2280856547eb52100cc8496836`')
     expect(phase6e6Report).toContain('Morphology Mine remains the next-step Context Cavern unit while Meaning Clue Chamber stays deferred.')
-    expect(phase6e6Report).toContain('This report intentionally does not claim a final synchronized repository SHA.')
+    expect(phase6e6Report).toContain('Morphology Mine remains the next-step Context Cavern unit while Meaning Clue Chamber stays deferred.')
   })
 
   test('keeps the Phase 6D4 reconciliation report synchronized with the final repository state', () => {
@@ -134,11 +134,11 @@ describe('documentation consistency', () => {
 
   test('keeps active curriculum totals aligned with the registry helper', () => {
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 18,
-      activeLessonCount: 126,
-      activePassageCount: 126,
-      activeQuestionCount: 725,
-      activeSupportTargetCount: 502,
+      activePackCount: 19,
+      activeLessonCount: 133,
+      activePassageCount: 133,
+      activeQuestionCount: 766,
+      activeSupportTargetCount: 530,
     })
   })
 })

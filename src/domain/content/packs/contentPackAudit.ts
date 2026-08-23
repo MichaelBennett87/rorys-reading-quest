@@ -599,6 +599,9 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
     if (pack.manifest.benchmarkReferences.includes('ELA.2.V.1.2')) {
       validateMorphologyGuideStructure(pack, issues)
     }
+    if (pack.manifest.benchmarkReferences.includes('ELA.2.V.1.3')) {
+      validateMeaningClueGuideStructure(pack, issues)
+    }
     if (pack.manifest.benchmarkReferences.includes('ELA.2.R.1.3')) {
       validatePerspectivePortalGuideStructure(pack, issues)
     }
@@ -1871,6 +1874,237 @@ function validateMorphologyGuideStructure(pack: ContentPack, issues: ContentPack
   }
 }
 
+function validateMeaningClueGuideStructure(pack: ContentPack, issues: ContentPackAuditIssue[]) {
+  const guides = pack.meaningClueGuides ?? []
+  const passageById = new Map(pack.passages.map((passage) => [passage.passageIdentifier, passage] as const))
+  const guideByPassageId = new Map<string, NonNullable<ContentPack['meaningClueGuides']>[number]>()
+  const observedContextClueKinds = new Set<string>()
+  const observedRelationshipKinds = new Set<string>()
+  const requiredContextClueKinds = new Set(['definition', 'restatement', 'example', 'contrast', 'cause-effect'])
+  const requiredRelationshipKinds = new Set(['synonym', 'antonym', 'category-member', 'part-whole', 'object-function'])
+
+  if (guides.length !== pack.passages.length) {
+    pushIssue(
+      issues,
+      'meaning_clue_guide_count_mismatch',
+      pack.manifest.packId,
+      `Expected ${pack.passages.length} meaning clue guides, found ${guides.length}.`,
+    )
+  }
+
+  for (const guide of guides) {
+    if (guideByPassageId.has(guide.passageId)) {
+      pushIssue(issues, 'meaning_clue_guide_invalid', guide.passageId, 'Meaning clue guides must not duplicate a passage ID.')
+      continue
+    }
+    guideByPassageId.set(guide.passageId, guide)
+    const passage = passageById.get(guide.passageId)
+    if (!passage) {
+      pushIssue(issues, 'missing_meaning_clue_guide', guide.passageId, 'Every meaning clue guide must point to a real passage.')
+      continue
+    }
+
+    const glossaryFeature = passage.informationalStructure?.features.find((feature) => feature.kind === 'glossary') as
+      | { kind: 'glossary'; entries: { entryId: string; term: string; definition: string }[] }
+      | undefined
+    const sentenceIds = new Set((passage.sentences ?? []).map((sentence) => sentence.sentenceId))
+    const seenTargetIds = new Set<string>()
+    const seenTargetWords = new Set<string>()
+    const seenStrategies = new Set<string>()
+
+    if (guide.targets.length !== 4) {
+      pushIssue(issues, 'meaning_clue_guide_invalid', guide.passageId, 'Meaning clue guides must contain exactly four targets.')
+    }
+    if (guide.reviewStatus !== 'DRAFT') {
+      pushIssue(issues, 'missing_draft_status', guide.passageId, 'Meaning clue guides in this pack must remain DRAFT.')
+    }
+    if (guide.contentVersion !== pack.manifest.contentVersion) {
+      pushIssue(issues, 'meaning_clue_guide_invalid', guide.passageId, 'Meaning clue guide content version must match the pack version.')
+    }
+    if (!glossaryFeature) {
+      pushIssue(issues, 'meaning_clue_guide_invalid', guide.passageId, 'Meaning clue passages need a glossary feature.')
+    } else if (glossaryFeature.entries.length < 2) {
+      pushIssue(issues, 'meaning_clue_guide_invalid', guide.passageId, 'Meaning clue passages need at least two glossary entries.')
+    }
+
+    const structureTexts = [
+      guide.passageId,
+      ...guide.targets.flatMap((target) => [
+        target.targetId,
+        target.word,
+        target.sentenceId,
+        target.childFriendlyMeaning,
+        target.strategyExplanation,
+        target.contextClueKind ?? '',
+        target.relationshipKind ?? '',
+        ...(target.relatedWords ?? []),
+        target.glossaryEntryId ?? '',
+        target.backgroundKnowledgeStatement ?? '',
+      ]),
+      ...(glossaryFeature?.entries.flatMap((entry) => [entry.entryId, entry.term, entry.definition]) ?? []),
+    ]
+    if (structureTexts.some((text) => text.includes('<') || text.includes('http://') || text.includes('https://'))) {
+      pushIssue(issues, 'meaning_clue_guide_invalid', guide.passageId, 'Meaning clue guide text must not contain raw HTML or remote URLs.')
+    }
+
+    for (const target of guide.targets) {
+      if (seenTargetIds.has(target.targetId)) {
+        pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Meaning clue target IDs must be unique within a guide.')
+      } else {
+        seenTargetIds.add(target.targetId)
+      }
+
+      const normalizedWord = normalizeGuideText(target.word)
+      if (!normalizedWord) {
+        pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Meaning clue targets need a word.')
+      }
+      if (seenTargetWords.has(normalizedWord)) {
+        pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Meaning clue target words must be unique within a guide.')
+      } else {
+        seenTargetWords.add(normalizedWord)
+      }
+
+      if (!target.childFriendlyMeaning.trim()) {
+        pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Meaning clue targets need a child-friendly meaning.')
+      } else if (!looksLikeCompleteThought(target.childFriendlyMeaning)) {
+        pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Meaning clue meanings must be complete thoughts.')
+      }
+
+      if (!target.sentenceId.trim() || !sentenceIds.has(target.sentenceId)) {
+        pushIssue(issues, 'missing_support_sentence', target.targetId, 'Meaning clue target sentence IDs must resolve to the passage.')
+      }
+      const targetSentence = resolvePassageEvidence(passage, target.sentenceId)
+      if (!targetSentence) {
+        pushIssue(issues, 'invalid_informational_feature_reference', target.sentenceId, 'Meaning clue target sentences must resolve to authored passage evidence.')
+      } else if (!normalizeGuideText(targetSentence.text).includes(normalizedWord)) {
+        pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Meaning clue target sentences must contain the target word.')
+      }
+
+      if (target.clueEvidenceIds.length === 0) {
+        pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Meaning clue targets need at least one clue evidence ID.')
+      }
+      const clueEvidenceIds = new Set(target.clueEvidenceIds)
+      if (clueEvidenceIds.size !== target.clueEvidenceIds.length) {
+        pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Meaning clue clue evidence IDs must be unique.')
+      }
+      for (const evidenceId of clueEvidenceIds) {
+        if (!resolvePassageEvidence(passage, evidenceId)) {
+          pushIssue(issues, 'invalid_informational_feature_reference', evidenceId, 'Meaning clue evidence IDs must resolve to authored passage evidence.')
+        }
+      }
+
+      if (!target.strategyExplanation.trim()) {
+        pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Meaning clue strategy explanations are required.')
+      } else if (!looksLikeCompleteThought(target.strategyExplanation)) {
+        pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Meaning clue strategy explanations must be complete thoughts.')
+      }
+
+      switch (target.primaryStrategy) {
+        case 'context-clue':
+          if (target.contextClueKind) observedContextClueKinds.add(target.contextClueKind)
+          if (!target.contextClueKind) {
+            pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Context clue targets need a context clue kind.')
+          }
+          if (target.relationshipKind || (target.relatedWords?.length ?? 0) > 0 || target.glossaryEntryId || target.backgroundKnowledgeStatement) {
+            pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Context clue targets may not claim other primary strategy metadata.')
+          }
+          if (!target.clueEvidenceIds.includes(target.sentenceId)) {
+            pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Context clue targets need a body sentence evidence reference.')
+          }
+          break
+        case 'word-relationship':
+          if (target.relationshipKind) observedRelationshipKinds.add(target.relationshipKind)
+          if (!target.relationshipKind) {
+            pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Word relationship targets need a relationship kind.')
+          }
+          if (!target.relatedWords || target.relatedWords.length === 0) {
+            pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Word relationship targets need related words.')
+          } else if (new Set(target.relatedWords.map((word) => normalizeGuideText(word))).size !== target.relatedWords.length) {
+            pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Word relationship related words must be unique.')
+          }
+          if (target.contextClueKind || target.glossaryEntryId || target.backgroundKnowledgeStatement) {
+            pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Word relationship targets may not claim other primary strategy metadata.')
+          }
+          if (!target.clueEvidenceIds.includes(target.sentenceId)) {
+            pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Word relationship targets need a body sentence evidence reference.')
+          }
+          break
+        case 'reference-material':
+          if (!target.glossaryEntryId) {
+            pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Reference material targets need a glossary entry ID.')
+          }
+          if (target.contextClueKind || target.relationshipKind || (target.relatedWords?.length ?? 0) > 0 || target.backgroundKnowledgeStatement) {
+            pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Reference material targets may not claim other primary strategy metadata.')
+          }
+          if (target.glossaryEntryId) {
+            const glossaryEvidence = resolvePassageEvidence(passage, target.glossaryEntryId)
+            if (!glossaryEvidence) {
+              pushIssue(issues, 'invalid_informational_feature_reference', target.glossaryEntryId, 'Reference material targets must resolve to a glossary entry.')
+            }
+            const glossaryEntry = glossaryFeature?.entries.find((entry) => entry.entryId === target.glossaryEntryId)
+            if (!glossaryEntry) {
+              pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Reference material targets must point to a real glossary entry.')
+            } else if (normalizeGuideText(glossaryEntry.term) !== normalizedWord) {
+              pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Reference material glossary terms must match the target word.')
+            }
+            if (!target.clueEvidenceIds.includes(target.glossaryEntryId)) {
+              pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Reference material targets need the glossary entry as evidence.')
+            }
+          }
+          break
+        case 'background-knowledge':
+          if (!target.backgroundKnowledgeStatement) {
+            pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Background knowledge targets need a background knowledge statement.')
+          } else if (!looksLikeCompleteThought(target.backgroundKnowledgeStatement)) {
+            pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Background knowledge statements must be complete thoughts.')
+          }
+          if (target.contextClueKind || target.relationshipKind || target.glossaryEntryId || (target.relatedWords?.length ?? 0) > 0) {
+            pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Background knowledge targets may not claim other primary strategy metadata.')
+          }
+          if (!target.clueEvidenceIds.includes(target.sentenceId)) {
+            pushIssue(issues, 'meaning_clue_guide_invalid', target.targetId, 'Background knowledge targets need a body sentence evidence reference.')
+          }
+          break
+      }
+
+      seenStrategies.add(target.primaryStrategy)
+    }
+
+    if (seenStrategies.size !== 4) {
+      pushIssue(issues, 'meaning_clue_guide_invalid', guide.passageId, 'Meaning clue guides must contain one of each strategy family.')
+    }
+  }
+
+  for (const passage of pack.passages) {
+    if (!guideByPassageId.has(passage.passageIdentifier)) {
+      pushIssue(issues, 'missing_meaning_clue_guide', passage.passageIdentifier, 'Every passage needs exactly one meaning clue guide.')
+      continue
+    }
+
+    const glossaryFeature = passage.informationalStructure?.features.find((feature) => feature.kind === 'glossary') as
+      | { kind: 'glossary'; entries: { entryId: string; term: string; definition: string }[] }
+      | undefined
+    if (!glossaryFeature) {
+      pushIssue(issues, 'meaning_clue_guide_invalid', passage.passageIdentifier, 'Meaning clue passages must include one glossary feature.')
+      continue
+    }
+    if (glossaryFeature.entries.length < 2) {
+      pushIssue(issues, 'meaning_clue_guide_invalid', passage.passageIdentifier, 'Meaning clue passages need at least two glossary entries.')
+    }
+  }
+
+  for (const requiredContextClueKind of requiredContextClueKinds) {
+    if (!observedContextClueKinds.has(requiredContextClueKind)) {
+      pushIssue(issues, 'meaning_clue_guide_invalid', pack.manifest.packId, `Meaning clue packs must include ${requiredContextClueKind} context clues.`)
+    }
+  }
+  for (const requiredRelationshipKind of requiredRelationshipKinds) {
+    if (!observedRelationshipKinds.has(requiredRelationshipKind)) {
+      pushIssue(issues, 'meaning_clue_guide_invalid', pack.manifest.packId, `Meaning clue packs must include ${requiredRelationshipKind} relationships.`)
+    }
+  }
+}
+
 function normalizeGuideText(text: string): string {
   return text.trim().toLowerCase().replace(/\s+/g, ' ')
 }
@@ -2528,6 +2762,50 @@ function getBridgePackExpectation(pack: ContentPack): BridgePackExpectation | nu
         'suffix-er-est',
         'suffix-ful-less',
         'suffix-ly',
+      ],
+      minSupportTargets: 28,
+      maxSupportTargets: 28,
+      minSupportTargetsPerPassage: 4,
+      maxSupportTargetsPerPassage: 4,
+      openConsonantLeWords: new Set<string>(),
+      closedConsonantLeWords: new Set<string>(),
+      forbiddenSilentEWords: new Set<string>(),
+      questionTypeCounts: {
+        multiple_choice: 17,
+        multi_select: 7,
+        hot_text: 7,
+        table_match: 7,
+        two_part: 3,
+      },
+    }
+  }
+
+  if (pack.manifest.benchmarkReferences.includes('ELA.2.V.1.3') && pack.manifest.difficultyRange[0] === 2 && pack.manifest.difficultyRange[1] === 3) {
+    return {
+      packId: pack.manifest.packId,
+      guidedDifficultyA: 2,
+      guidedDifficultyB: 3,
+      checkpointPatterns: [
+        'context-clues',
+        'word-relationships',
+        'reference-materials',
+        'background-knowledge',
+        'context-definition',
+        'context-restatement',
+        'context-example',
+        'context-contrast',
+        'context-cause-effect',
+        'relationship-synonym',
+        'relationship-antonym',
+        'relationship-category-member',
+        'relationship-part-whole',
+        'relationship-object-function',
+        'glossary-reference',
+        'reference-definition-selection',
+        'background-knowledge-connection',
+        'unknown-word-meaning',
+        'strategy-selection',
+        'meaning-confirmation',
       ],
       minSupportTargets: 28,
       maxSupportTargets: 28,

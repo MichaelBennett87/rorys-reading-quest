@@ -5,70 +5,80 @@
 - Context Cavern is the fifth playable curriculum track.
 - The world ID remains `context-cavern`.
 - The skill ID remains `g2-context-cavern-vocabulary`.
-- The first playable unit is `cc-unit-1` Academic Word Workshop.
-- Later units remain planned for Phase 6E6 and Phase 6E7.
+- The playable units are `cc-unit-1` Academic Word Workshop, `cc-unit-2` Morphology Mine, and `cc-unit-3` Meaning Clue Chamber.
 
 ## ELA status
 
 - `ELA.2.V.1.1`: implemented, DRAFT.
-- `ELA.2.V.1.2`: planned.
-- `ELA.2.V.1.3`: planned.
+- `ELA.2.V.1.2`: implemented, DRAFT.
+- `ELA.2.V.1.3`: implemented, DRAFT.
 
 ## Contributing pack inventory
 
 - `g2-context-cavern-academic-word-workshop`
+- `g2-context-cavern-morphology-mine`
+- `g2-context-cavern-meaning-clue-chamber`
 
 ## Context Cavern lesson total
 
-- 7 lessons
-- 2 prerequisite lessons
-- 2 guided lessons
-- 3 checkpoint lessons
+- 21 lessons
+- 6 prerequisite lessons
+- 6 guided lessons
+- 9 checkpoint lessons
 
 ## Context Cavern passage total
 
-- 7 original informational passages
+- 21 original informational passages
 
 ## Context Cavern question total
 
-- 41 scored questions
+- 123 scored questions
 
 ## Context Cavern support-target total
 
-- 28 authored support targets
+- 84 authored support targets
 
 ## Difficulty sequence
 
 - Initial difficulty: 1
-- Initial last-mastered difficulty: 0
-- Power-Up Mission at difficulty 0
-- Trail 1 at difficulty 1
-- Complete or review-ready at difficulty 2 and higher
+- Academic Word Workshop at difficulty 1
+- Morphology Mine at difficulty 2
+- Meaning Clue Chamber at difficulty 3
+- Complete or review-ready at difficulty 4 and higher
 
 ## Unit and review behavior
 
 - Context Cavern review remains unit-specific.
-- The active pack remains isolated from Word Forge, Story Scouts, Poetry Planet, and Information Detectives.
-- Later Context Cavern units remain locked until their content exists.
+- All three Context Cavern review identities can coexist safely.
+- The active packs remain isolated from Word Forge, Story Scouts, Poetry Planet, and Information Detectives.
+
+## Remediation behavior
+
+- Academic Word Workshop remediation uses Power-Up Mission at difficulty 0.
+- Morphology Mine remediation uses Power-Up Mission at difficulty 1.
+- Meaning Clue Chamber remediation uses Power-Up Mission at difficulty 2.
 
 ## World-gating behavior
 
 - Context Cavern is active.
-- Morphology Mine remains planned and locked.
-- Meaning Clue Chamber remains planned and locked.
+- Academic Word Workshop is complete or review-ready.
+- Morphology Mine is complete or review-ready.
+- Meaning Clue Chamber is complete or review-ready.
 
 ## Benchmark coverage results
 
 - `ELA.2.V.1.1` coverage is implemented.
+- `ELA.2.V.1.2` coverage is implemented.
+- `ELA.2.V.1.3` coverage is implemented.
 - Review status remains DRAFT.
 
 ## Originality review
 
-- The passages and word examples are locally authored and original.
+- The passages, target words, and examples are locally authored and original.
 
-## Factuality review
+## Cultural-fairness review
 
-- The topics stay within stable classroom vocabulary and subject-area usage.
+- The topics stay within stable classroom vocabulary and do not require private experience.
 
 ## Privacy review
 
@@ -77,12 +87,10 @@
 
 ## Unresolved bundle-size issue
 
-- Baseline bundle: 1,608.91 kB raw, 285.48 kB gzip.
-- Final bundle: 1,646.54 kB raw, 293.23 kB gzip.
-- Bundle change: +37.63 kB raw, +7.75 kB gzip.
-- The Vite warning remains present.
+- The initial bundle remains above the Vite warning threshold.
+- The warning remains present.
 
-## Phase 6E6 boundary
+## Phase 6F boundary
 
-- Morphology Mine remains next.
-- Context Cavern content beyond Academic Word Workshop is not begun here.
+- Phase 6F remains next.
+- Context Cavern content beyond Meaning Clue Chamber is not begun here.

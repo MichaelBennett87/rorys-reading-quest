@@ -920,6 +920,87 @@ export function planUnitQuest(input: PlanUnitQuestInput): UnitQuestPlan {
         unitId: input.selectedUnitId,
       }
     }
+
+    if (input.selectedUnitId === 'cc-unit-3') {
+      if (selectedDifficulty < 3) {
+        if (canResumePlannedLesson && availableNextQuest && ['remediation', 'review'].includes(availableNextQuest.purpose)) {
+          return {
+            status: 'available',
+            purpose: availableNextQuest.purpose,
+            lesson: availableNextQuest.lesson,
+            lessonId: availableNextQuest.lesson.lessonId,
+            unitId: plannedLesson.unitId,
+            activityId: availableNextQuest.lesson.activityId,
+          }
+        }
+
+        return {
+          status: 'locked',
+          purpose: 'progression',
+          unitId: input.selectedUnitId,
+          reason: 'Complete Morphology Mine to unlock Meaning Clue Chamber.',
+        }
+      }
+
+      if (selectedDifficulty >= 4) {
+        if (canResumePlannedLesson && availableNextQuest && availableNextQuest.purpose === 'review') {
+          return {
+            status: 'available',
+            purpose: availableNextQuest.purpose,
+            lesson: availableNextQuest.lesson,
+            lessonId: availableNextQuest.lesson.lessonId,
+            unitId: plannedLesson.unitId,
+            activityId: availableNextQuest.lesson.activityId,
+          }
+        }
+
+        if (contentNeededNextQuest && contentNeededNextQuest.difficulty >= 4) {
+          return {
+            status: 'content_needed',
+            purpose: contentNeededNextQuest.purpose,
+            skillId: contentNeededNextQuest.skillId,
+            difficulty: contentNeededNextQuest.difficulty,
+            reason: contentNeededNextQuest.reason,
+            unitId: input.selectedUnitId,
+          }
+        }
+
+        return {
+          status: 'content_needed',
+          purpose: contentNeededNextQuest?.purpose ?? 'review',
+          skillId: currentSkill?.skillId ?? 'unknown',
+          difficulty: selectedDifficulty,
+          reason: 'You completed the available Context Cavern quests. Your progress is safe while new across-genre missions are prepared.',
+          unitId: input.selectedUnitId,
+        }
+      }
+
+      const plan = selectNextLesson({
+        skillId: currentSkill?.skillId ?? 'unknown',
+        difficulty: selectedDifficulty,
+        purpose: availableNextQuest?.purpose ?? 'progression',
+        availableLessons: selectedLessons,
+        recentActivityUsage: currentSkill?.recentActivityUsage ?? [],
+      })
+      if (plan.status === 'available') {
+        return {
+          status: 'available',
+          purpose: plan.purpose,
+          lesson: plan.lesson,
+          lessonId: plan.lesson.lessonId,
+          unitId: plan.lesson.unitId,
+          activityId: plan.lesson.activityId,
+        }
+      }
+      return {
+        status: 'content_needed',
+        purpose: plan.purpose,
+        skillId: plan.skillId,
+        difficulty: plan.difficulty,
+        reason: plan.reason,
+        unitId: input.selectedUnitId,
+      }
+    }
   }
 
   if (selectedTrack) {

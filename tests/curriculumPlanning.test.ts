@@ -85,6 +85,23 @@ function createMorphologyMineLesson(overrides: Partial<LessonActivityCandidate> 
   }
 }
 
+function createMeaningClueChamberLesson(overrides: Partial<LessonActivityCandidate> = {}): LessonActivityCandidate {
+  return {
+    lessonId: 'lesson-context-cavern-meaning-clue-chamber-checkpoint-a',
+    activityId: 'activity-context-cavern-meaning-clue-chamber-checkpoint-a',
+    skillId: 'g2-context-cavern-vocabulary',
+    difficulty: 3,
+    worldId: 'context-cavern',
+    unitId: 'cc-unit-3',
+    packId: 'fixture-context-cavern-pack',
+    benchmarkReferences: ['ELA.2.V.1.3'],
+    eligiblePurposes: ['progression', 'review', 'verification', 'remediation'],
+    passageQuestionKeys: ['context-cavern-meaning-clue-chamber-a|q1'],
+    contentVersion: 'fixture-context-cavern-v3',
+    ...overrides,
+  }
+}
+
 function createWordForgeLesson(overrides: Partial<LessonActivityCandidate> = {}): LessonActivityCandidate {
   return {
     lessonId: 'lesson-word-forge-trail-1-checkpoint-a',
@@ -486,6 +503,7 @@ describe('curriculum planning foundation', () => {
     const result = ensureProgressForPlayableTracks(progress, [
       createInformationDetectivesLesson(),
       createContextCavernLesson(),
+      createMeaningClueChamberLesson(),
     ])
 
     expect(result.changed).toBe(true)
@@ -518,6 +536,7 @@ describe('curriculum planning foundation', () => {
       availableLessons: [
         createContextCavernLesson(),
         createInformationDetectivesLesson(),
+        createMeaningClueChamberLesson(),
       ],
       now,
     })
