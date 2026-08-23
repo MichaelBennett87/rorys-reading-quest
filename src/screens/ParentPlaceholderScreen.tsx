@@ -45,6 +45,7 @@ export function ParentPlaceholderScreen({ progress, onBack }: ParentPlaceholderS
   const [setupPin, setSetupPin] = useState('')
   const [confirmPin, setConfirmPin] = useState('')
   const [unlockPin, setUnlockPin] = useState('')
+  const [showPin, setShowPin] = useState(false)
   const [setupMessage, setSetupMessage] = useState<string | null>(null)
   const [unlockMessage, setUnlockMessage] = useState<string | null>(null)
   const [storageNotice, setStorageNotice] = useState<string | null>(composeStorageNotice(accessLoad, recordsLoad))
@@ -283,12 +284,12 @@ export function ParentPlaceholderScreen({ progress, onBack }: ParentPlaceholderS
 
   if (pinUnavailable) {
     return (
-      <section className="screen-shell" aria-labelledby="parent-area-title">
+      <section className="screen-shell parent-access-shell" aria-labelledby="parent-area-title">
         <header className="screen-header">
           <h1 id="parent-area-title" ref={headingRef} tabIndex={-1}>Parent Area</h1>
           <p>Secure local PIN setup is not available in this browser.</p>
         </header>
-        <section className="card">
+        <section className="card parent-access-card">
           <p>The child quest can still run normally on this device.</p>
         </section>
         <section className="screen-actions">
@@ -319,17 +320,17 @@ export function ParentPlaceholderScreen({ progress, onBack }: ParentPlaceholderS
 
   if (showUnlock) {
     return (
-      <section className="screen-shell" aria-labelledby="parent-area-title">
+      <section className="screen-shell parent-access-shell" aria-labelledby="parent-area-title">
         <header className="screen-header">
           <h1 id="parent-area-title" ref={headingRef} tabIndex={-1}>Unlock Parent Area</h1>
           <p>Enter the local PIN to open the parent summary.</p>
         </header>
-        <form className="card" onSubmit={handleUnlock}>
+        <form className="card parent-access-card parent-pin-form" onSubmit={handleUnlock}>
           <label htmlFor="parent-pin">Parent PIN</label>
           <input
             ref={unlockPinRef}
             id="parent-pin"
-            type="password"
+            type={showPin ? 'text' : 'password'}
             inputMode="numeric"
             autoComplete="current-password"
             value={unlockPin}
@@ -337,6 +338,14 @@ export function ParentPlaceholderScreen({ progress, onBack }: ParentPlaceholderS
             aria-invalid={unlockMessage ? 'true' : undefined}
             aria-describedby={unlockMessage ? 'parent-pin-message' : undefined}
           />
+          <ChildButton
+            type="button"
+            className="secondary-action pin-visibility-toggle"
+            aria-pressed={showPin}
+            onClick={() => setShowPin((visible) => !visible)}
+          >
+            {showPin ? 'Hide PIN' : 'Show PIN'}
+          </ChildButton>
           {unlockMessage && <p id="parent-pin-message" role="alert">{unlockMessage}</p>}
           {storageNotice && <p role="status">{storageNotice}</p>}
           <section className="screen-actions">
@@ -349,17 +358,17 @@ export function ParentPlaceholderScreen({ progress, onBack }: ParentPlaceholderS
   }
 
   return (
-    <section className="screen-shell" aria-labelledby="parent-area-title">
+    <section className="screen-shell parent-access-shell" aria-labelledby="parent-area-title">
       <header className="screen-header">
         <h1 id="parent-area-title" ref={headingRef} tabIndex={-1}>Set Up Parent Area</h1>
         <p>Create a local PIN to open the parent summary later.</p>
       </header>
-      <form className="card" onSubmit={handleSetup}>
+      <form className="card parent-access-card parent-pin-form" onSubmit={handleSetup}>
         <label htmlFor="parent-pin-new">Create Parent PIN</label>
         <input
           ref={setupPinRef}
           id="parent-pin-new"
-          type="password"
+          type={showPin ? 'text' : 'password'}
           inputMode="numeric"
           autoComplete="new-password"
           value={setupPin}
@@ -371,12 +380,20 @@ export function ParentPlaceholderScreen({ progress, onBack }: ParentPlaceholderS
         <input
           ref={confirmPinRef}
           id="parent-pin-confirm"
-          type="password"
+          type={showPin ? 'text' : 'password'}
           inputMode="numeric"
           autoComplete="new-password"
           value={confirmPin}
           onChange={(event) => setConfirmPin(event.target.value)}
         />
+        <ChildButton
+          type="button"
+          className="secondary-action pin-visibility-toggle"
+          aria-pressed={showPin}
+          onClick={() => setShowPin((visible) => !visible)}
+        >
+          {showPin ? 'Hide PIN' : 'Show PIN'}
+        </ChildButton>
         {setupMessage && <p id="parent-setup-message" role="alert">{setupMessage}</p>}
         {storageNotice && <p role="status">{storageNotice}</p>}
         <section className="screen-actions">

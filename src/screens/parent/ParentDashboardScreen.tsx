@@ -890,7 +890,7 @@ function RecentAttemptCard({
       <p className="parent-muted-copy">{formatParentDate(attempt.completionDate)}</p>
       <p>{resolveFriendlySkillName(attempt.skillId)}</p>
       <p>Trail: {formatTrailLabel(attempt.difficulty)}</p>
-      <ParentMetricCard label="Accuracy" value={`${attempt.accuracy}%`}>
+      <ParentMetricCard label="Accuracy" value={formatAccuracyPercent(attempt.accuracy)}>
         <AccuracyMeter label={`${attempt.lessonTitle} accuracy`} value={attempt.accuracy} />
       </ParentMetricCard>
       <p>Assistance: {attempt.assistanceUsed > 0 ? 'Used' : 'No support used'}</p>
