@@ -3,9 +3,9 @@ import { getLessonCatalogMetadata } from '../lesson'
 import type { LessonActivityCandidate, SkillProgressState } from '../progression'
 import { createInitialSkillProgress } from '../progression'
 import type { QuestProgressV1 } from '../../persistence'
-import { discoverPlayableTracks, normalizeQuestProgressForPlanning } from './curriculumPlanning'
-import { getTrackBySkillId, getTrackByWorldId } from './curriculumTracks'
-import { getSequentialWorldRoadmapByWorldId } from './sequentialWorlds'
+import { areTrackPrerequisitesSatisfied, discoverPlayableTracksForState, normalizeQuestProgressForPlanning } from './curriculumPlanning'
+import { getTrackBySkillId, getTrackByWorldId, getTracksByWorldId } from './curriculumTracks'
+import { getSequentialWorldRoadmapByWorldId, getSequentialWorldRoadmapByTrackId } from './sequentialWorlds'
 
 export function deriveWorldsForProgress(
   worlds: readonly DemoWorld[],
@@ -14,13 +14,13 @@ export function deriveWorldsForProgress(
 ): DemoWorld[] {
   const normalized = normalizeQuestProgressForPlanning(progress, availableLessons)
   const skillProgress = normalized.state.skillProgress
-  const playableTrackIds = new Set(discoverPlayableTracks(availableLessons).map((entry) => entry.track.trackId))
+  const playableTrackIds = new Set(discoverPlayableTracksForState(normalized.state, availableLessons).map((entry) => entry.track.trackId))
   const activeUnitId = progress.activeLessonSession ? getLessonCatalogMetadata(progress.activeLessonSession.lessonId)?.unitId ?? null : null
   const plannedUnitId = progress.plannedNextQuest?.status === 'available'
     ? progress.plannedNextQuest.lesson.unitId
     : null
 
-  return worlds.map((world) => {
+  const grade2Worlds = worlds.map((world) => {
     if (world.id === 'word-forge') {
       return deriveWordForgeWorld(world, skillProgress, activeUnitId, plannedUnitId)
     }
@@ -35,6 +35,70 @@ export function deriveWorldsForProgress(
     }
     return deriveNonPlayableWorld(world)
   })
+
+  return grade2Worlds.map((world) => appendFixtureGrade3Chapter(
+    world,
+    normalized.state,
+    availableLessons,
+    activeUnitId,
+    plannedUnitId,
+  ))
+}
+
+function appendFixtureGrade3Chapter(
+  world: DemoWorld,
+  progress: QuestProgressV1,
+  availableLessons: readonly LessonActivityCandidate[],
+  activeUnitId: string | null,
+  plannedUnitId: string | null,
+): DemoWorld {
+  const fixtureTracks = getTracksByWorldId(world.id)
+    .filter((track) => track.gradeBand === 3)
+    .filter((track) => availableLessons.some((lesson) => lesson.skillId === track.skillId))
+  if (fixtureTracks.length === 0) return world
+
+  const grade3Units = fixtureTracks.flatMap((track) => {
+    const roadmap = getSequentialWorldRoadmapByTrackId(track.trackId)
+    if (!roadmap) return []
+    const ready = areTrackPrerequisitesSatisfied(track, progress)
+    const trackProgress = progress.skillProgress[track.skillId] ?? null
+    const currentDifficulty = trackProgress?.currentDifficulty ?? track.initialDifficulty
+    return roadmap.units.map((unit) => {
+      const hasContent = availableLessons.some((lesson) => lesson.skillId === track.skillId && lesson.unitId === unit.unitId)
+      const isOwned = activeUnitId === unit.unitId || plannedUnitId === unit.unitId
+      const state: UnitState = !ready || !hasContent || currentDifficulty < unit.activeDifficulty
+        ? 'locked'
+        : currentDifficulty >= unit.completionDifficulty && !isOwned
+          ? trackProgress?.currentLearningState === 'SPACED_REVIEW' ? 'review' : 'complete'
+          : 'available'
+      return {
+        id: unit.unitId,
+        title: unit.title,
+        difficultyLabel: state === 'locked' ? 'Locked' : state === 'review' ? 'Review' : state === 'complete' ? 'Complete' : unit.activeLabel,
+        progressPercent: state === 'locked' ? 0 : state === 'available' ? 60 : 100,
+        stars: state === 'complete' ? 3 : state === 'available' ? 1 : 0,
+        state,
+        practiceFocus: !ready
+          ? `Complete the ${world.name} Grade 2 chapter before starting ${roadmap.chapterTitle}.`
+          : !hasContent
+            ? unit.futureContentMessage
+            : unit.practiceFocus,
+        gradeBand: 3 as const,
+        chapterTitle: roadmap.chapterTitle,
+        trackId: track.trackId,
+      }
+    })
+  })
+
+  const ownedGrade3Unit = grade3Units.find((unit) => unit.id === activeUnitId || unit.id === plannedUnitId)
+  return {
+    ...world,
+    progressionLabel: ownedGrade3Unit ? `${ownedGrade3Unit.chapterTitle}: ${ownedGrade3Unit.title} active` : world.progressionLabel,
+    units: [
+      ...world.units.map((unit) => ({ ...unit, gradeBand: 2 as const, chapterTitle: 'Grade 2 Chapter' })),
+      ...grade3Units,
+    ],
+  }
 }
 
 function deriveWordForgeWorld(

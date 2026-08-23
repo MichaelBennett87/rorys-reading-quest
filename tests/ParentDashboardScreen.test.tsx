@@ -31,6 +31,7 @@ function createProgress(): QuestProgressV1 {
         lessonId: 'lesson-word-forge-b',
         activityId: 'activity-word-forge-b',
         skillId: 'g2-word-forge-word-practice',
+        gradeBand: 2,
         difficulty: 1,
         worldId: 'word-forge',
         unitId: 'wg-unit-1',

@@ -76,6 +76,9 @@ export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPac
       if (passage.contentVersion !== pack.manifest.contentVersion) {
         pushIssue(issues, 'mismatched_content_version', passage.passageIdentifier, 'Passage content version must match pack version.')
       }
+      if (passage.gradeBand !== pack.manifest.gradeBand) {
+        pushIssue(issues, 'wrong_grade_band', passage.passageIdentifier, 'Passage grade band must match the pack manifest.')
+      }
       if (passage.reviewStatus !== undefined && passage.reviewStatus !== 'DRAFT') {
         pushIssue(issues, 'missing_draft_status', passage.passageIdentifier, 'Passages in this pack must remain DRAFT.')
       }
@@ -97,6 +100,9 @@ export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPac
       }
       if (question.contentVersion !== pack.manifest.contentVersion) {
         pushIssue(issues, 'mismatched_content_version', question.questionIdentifier, 'Question content version must match pack version.')
+      }
+      if (question.gradeBand !== pack.manifest.gradeBand) {
+        pushIssue(issues, 'wrong_grade_band', question.questionIdentifier, 'Question grade band must match the pack manifest.')
       }
       if (question.reviewStatus !== 'DRAFT') {
         pushIssue(issues, 'missing_draft_status', question.questionIdentifier, 'Questions in this pack must remain DRAFT.')

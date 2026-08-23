@@ -1,4 +1,4 @@
-import type { QuestionType, TableMatchSelectionMode } from '../content/types'
+import type { GradeBand, QuestionType, TableMatchSelectionMode } from '../content/types'
 import type { AssistanceSummary } from '../assistance'
 
 export type LessonQuestionType =
@@ -134,6 +134,7 @@ export interface LessonDefinition {
   passageId: string
   passageIds: string[]
   pairedTextSetId?: string
+  gradeBand: GradeBand
   skillId: string
   difficulty: number
   unitId: string
@@ -229,6 +230,7 @@ export interface LessonCatalogEntry {
   activityId: string
   passageIdentifier: string[]
   pairedTextSetId?: string
+  gradeBand: GradeBand
   questionIdentifiers: string[]
   lessonTitle: string
   lessonObjective: string

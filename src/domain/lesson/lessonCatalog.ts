@@ -19,6 +19,7 @@ export const lessonCatalog: readonly LessonCatalogEntry[] = contentPacks.flatMap
     activityId: lesson.activityId,
     passageIdentifier: [...lesson.passageIdentifiers],
     pairedTextSetId: lesson.pairedTextSetId,
+    gradeBand: pack.manifest.gradeBand,
     questionIdentifiers: [...lesson.questionIdentifiers],
     lessonTitle: lesson.lessonTitle,
     lessonObjective: lesson.lessonObjective,
@@ -44,6 +45,7 @@ export interface LessonCatalogMetadata {
   eligiblePurposes: LessonCatalogEntry['eligiblePurposes']
   passageIds: string[]
   pairedTextSetId?: string
+  gradeBand: LessonCatalogEntry['gradeBand']
 }
 
 export interface LessonCatalogResult {
@@ -67,6 +69,7 @@ export function getLessonCatalogMetadata(lessonId: string): LessonCatalogMetadat
     eligiblePurposes: [...entry.eligiblePurposes],
     passageIds: [...entry.passageIdentifier],
     pairedTextSetId: entry.pairedTextSetId,
+    gradeBand: entry.gradeBand,
   }
 }
 
@@ -109,6 +112,7 @@ export function getLessonCandidates(): LessonActivityCandidate[] {
       lessonId: entry.lessonId,
       activityId: entry.activityId,
       skillId: firstQuestion.skillIdentifier,
+      gradeBand: entry.gradeBand,
       difficulty: firstQuestion.difficulty,
       worldId: entry.worldId,
       unitId: entry.unitId,
@@ -137,9 +141,11 @@ function buildLesson(entry: LessonCatalogEntry): LessonCatalogResult {
   }
   const firstQuestion = foundQuestions[0]
   if (!firstQuestion || foundQuestions.some((question) => (
-    question.skillIdentifier !== firstQuestion.skillIdentifier || question.difficulty !== firstQuestion.difficulty
+    question.skillIdentifier !== firstQuestion.skillIdentifier
+    || question.difficulty !== firstQuestion.difficulty
+    || question.gradeBand !== entry.gradeBand
   ))) {
-    return { errors: ['Lesson questions must share one skill and one difficulty.'] }
+    return { errors: ['Lesson questions must share one skill, grade band, and difficulty.'] }
   }
 
   const foundPassages = entry.passageIdentifier
@@ -147,6 +153,9 @@ function buildLesson(entry: LessonCatalogEntry): LessonCatalogResult {
     .filter((passage): passage is typeof sampleContent.passages[number] => Boolean(passage))
   if (foundPassages.length !== entry.passageIdentifier.length) {
     return { errors: ['Lesson references unknown passage content.'] }
+  }
+  if (foundPassages.some((passage) => passage.gradeBand !== entry.gradeBand)) {
+    return { errors: ['Lesson passages must match the lesson grade band.'] }
   }
 
   const questions = foundQuestions
@@ -163,6 +172,7 @@ function buildLesson(entry: LessonCatalogEntry): LessonCatalogResult {
       passageId: entry.passageIdentifier[0],
       passageIds: [...entry.passageIdentifier],
       pairedTextSetId: entry.pairedTextSetId,
+      gradeBand: entry.gradeBand,
       skillId: firstQuestion.skillIdentifier,
       difficulty: firstQuestion.difficulty,
       unitId: entry.unitId,

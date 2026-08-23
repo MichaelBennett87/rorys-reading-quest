@@ -5,12 +5,12 @@ import { selectNextLesson } from '../../src/domain/progression'
 
 const candidates: LessonActivityCandidate[] = [
   {
-    lessonId: 'lesson-b', activityId: 'activity-b', skillId: 'skill-a', difficulty: 1,
+    lessonId: 'lesson-b', activityId: 'activity-b', skillId: 'skill-a', gradeBand: 2, difficulty: 1,
     worldId: 'word-forge', unitId: 'wg-unit-1', packId: 'pack-a', benchmarkReferences: ['ELA.2.F.1.3a'],
     eligiblePurposes: ['progression'], passageQuestionKeys: ['passage-b::question-b'], contentVersion: 'v1',
   },
   {
-    lessonId: 'lesson-a', activityId: 'activity-a', skillId: 'skill-a', difficulty: 1,
+    lessonId: 'lesson-a', activityId: 'activity-a', skillId: 'skill-a', gradeBand: 2, difficulty: 1,
     worldId: 'word-forge', unitId: 'wg-unit-1', packId: 'pack-a', benchmarkReferences: ['ELA.2.F.1.3a'],
     eligiblePurposes: ['progression'], passageQuestionKeys: ['passage-a::question-a'], contentVersion: 'v1',
   },

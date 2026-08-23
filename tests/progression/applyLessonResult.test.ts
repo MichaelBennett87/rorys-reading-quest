@@ -128,6 +128,7 @@ describe('applyLessonResult', () => {
       lessonId: 'lesson-prerequisite',
       activityId: 'activity-prerequisite',
       skillId: 'skill-prerequisite',
+      gradeBand: 2,
       difficulty: 0,
       worldId: 'word-forge',
       unitId: 'wg-unit-1',

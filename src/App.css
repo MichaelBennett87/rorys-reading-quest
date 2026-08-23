@@ -797,6 +797,18 @@ main {
 
 .adventure-map { padding: clamp(1.2rem, 4vw, 2.25rem); }
 .unit-map-screen .unit-grid { position: relative; display: grid; grid-template-columns: 1fr; gap: 1.1rem; max-width: 860px; margin-inline: auto; }
+.unit-chapter { display: grid; gap: 0.9rem; margin-top: 1.5rem; }
+.unit-chapter:first-of-type { margin-top: 0.75rem; }
+.unit-chapter-heading {
+  width: min(100%, 860px);
+  margin-inline: auto;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid color-mix(in srgb, var(--world-accent, #69b8ff) 34%, transparent);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(18, 37, 66, 0.94), rgba(12, 23, 43, 0.86));
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.08), var(--shadow-soft);
+}
+.unit-chapter-heading h3 { margin: 0.15rem 0 0; color: var(--text-strong); }
 .unit-map-screen .unit-grid::before {
   position: absolute;
   top: 2rem;

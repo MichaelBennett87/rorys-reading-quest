@@ -1,10 +1,12 @@
 import type { LessonPurpose, LessonResult } from '../lesson'
+import type { GradeBand } from '../content/types'
 import type { LearningState, ProgressionDecision } from './types'
 
 export interface LessonActivityCandidate {
   lessonId: string
   activityId: string
   skillId: string
+  gradeBand: GradeBand
   difficulty: number
   worldId: string
   unitId: string

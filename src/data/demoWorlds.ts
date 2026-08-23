@@ -13,6 +13,9 @@ export interface DemoUnit {
   stars: number
   state: UnitState
   practiceFocus: string
+  gradeBand?: 2 | 3 | 4
+  chapterTitle?: string
+  trackId?: string
 }
 
 export interface DemoWorld {

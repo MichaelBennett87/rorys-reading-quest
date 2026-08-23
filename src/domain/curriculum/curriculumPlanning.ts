@@ -16,7 +16,6 @@ import type {
 } from './curriculumTrackTypes'
 import {
   curriculumTracks,
-  getTrackByTrackId,
   getTrackBySkillId,
   getTrackByUnitId,
 } from './curriculumTracks'
@@ -62,7 +61,12 @@ export function discoverPlayableTracks(
     .map((track) => ({
       track,
       activeLessonCandidates: availableLessons
-        .filter((lesson) => lesson.skillId === track.skillId)
+        .filter((lesson) => (
+          lesson.skillId === track.skillId
+          && lesson.gradeBand === track.gradeBand
+          && lesson.worldId === track.worldId
+          && (track.unitIds ?? [track.entryUnitId]).includes(lesson.unitId)
+        ))
         .filter((lesson) => lesson.eligiblePurposes.includes('progression')),
     }))
     .filter((entry) => entry.activeLessonCandidates.length > 0)
@@ -77,9 +81,7 @@ export function areTrackPrerequisitesSatisfied(
   const knownTrackIds = new Set(tracks.map((candidate) => candidate.trackId))
   return track.prerequisiteTrackIds.every((prerequisiteTrackId) => {
     if (!knownTrackIds.has(prerequisiteTrackId)) return false
-    const prerequisite = getTrackByTrackId(prerequisiteTrackId)
-      ?? tracks.find((candidate) => candidate.trackId === prerequisiteTrackId)
-      ?? null
+    const prerequisite = tracks.find((candidate) => candidate.trackId === prerequisiteTrackId) ?? null
     if (!prerequisite) return false
     const progress = state.skillProgress[prerequisite.skillId]
     return Boolean(progress && progress.currentDifficulty >= prerequisite.completionDifficulty)
@@ -93,7 +95,11 @@ export function isCurriculumTrackPlayable(
   tracks: readonly CurriculumTrackDefinition[] = curriculumTracks,
 ): boolean {
   const hasActiveContent = availableLessons.some((lesson) => (
-    lesson.skillId === track.skillId && lesson.eligiblePurposes.includes('progression')
+    lesson.skillId === track.skillId
+    && lesson.gradeBand === track.gradeBand
+    && lesson.worldId === track.worldId
+    && (track.unitIds ?? [track.entryUnitId]).includes(lesson.unitId)
+    && lesson.eligiblePurposes.includes('progression')
   ))
   return hasActiveContent && areTrackPrerequisitesSatisfied(track, state, tracks)
 }

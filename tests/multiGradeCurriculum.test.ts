@@ -7,6 +7,7 @@ import {
   getTrackBySkillId,
   getTrackByUnitId,
   getTracksByWorldId,
+  planGlobalQuest,
 } from '../src/domain/curriculum'
 import { getLessonCandidates } from '../src/domain/lesson'
 import type { LessonActivityCandidate } from '../src/domain/progression'
@@ -19,12 +20,13 @@ function createGrade3Fixture(): LessonActivityCandidate {
     lessonId: 'fixture-g3-word-analysis-lesson',
     activityId: 'fixture-g3-word-analysis-activity',
     skillId: 'g3-word-forge-word-analysis',
+    gradeBand: 3,
     difficulty: 1,
     worldId: 'word-forge',
     unitId: 'g3-wg-unit-1',
     packId: 'fixture-g3-word-analysis-pack',
     benchmarkReferences: ['ELA.3.F.1.3'],
-    eligiblePurposes: ['progression'],
+    eligiblePurposes: ['progression', 'verification', 'remediation', 'review'],
     passageQuestionKeys: ['fixture-g3-text:fixture-g3-question'],
     contentVersion: 'fixture-only-v1',
   }
@@ -115,6 +117,47 @@ describe('multi-grade curriculum track architecture', () => {
       2, 2, 2, 2, 2, 2,
     ])
     expect(Object.keys(normalized.skillProgress).some((skillId) => skillId.startsWith('g3-'))).toBe(false)
+  })
+
+  test('keeps Grade 2 due review above unlocked Grade 3 ordinary progression', () => {
+    const fixture = createGrade3Fixture()
+    const lessons = [...getLessonCandidates(), fixture]
+    const progress = createDefaultQuestProgress(NOW)
+    progress.skillProgress['g2-word-forge-word-practice'].currentDifficulty = 8
+    progress.reviewQueue = [{
+      skillId: 'g2-story-scouts-prose',
+      difficulty: 1,
+      reviewStep: 1,
+      dueAt: NOW,
+      unitId: 'ss-unit-1',
+      contentVersion: lessons.find((lesson) => lesson.unitId === 'ss-unit-1')?.contentVersion,
+    }]
+    const plan = planGlobalQuest({ progress, availableLessons: lessons, now: NOW })
+    expect(plan.purpose).toBe('review')
+    expect(plan.skillId).toBe('g2-story-scouts-prose')
+    expect(plan.lesson?.gradeBand).toBe(2)
+  })
+
+  test('keeps grade-affine remediation and deterministic balancing with fixture content', () => {
+    const fixture = createGrade3Fixture()
+    const initial = createDefaultQuestProgress(NOW)
+    initial.skillProgress['g2-word-forge-word-practice'].currentDifficulty = 8
+    const ready = ensureProgressForPlayableTracks(initial, [fixture]).state
+    ready.skillProgress[fixture.skillId].currentLearningState = 'REMEDIATE_PREREQUISITE'
+    const remediation = planGlobalQuest({ progress: ready, availableLessons: [fixture], now: NOW })
+    expect(remediation.purpose).toBe('remediation')
+    expect(remediation.lesson?.gradeBand).toBe(3)
+
+    ready.skillProgress[fixture.skillId].currentLearningState = 'CHECKPOINT'
+    const wordForgeGrade2 = getLessonCandidates().find((lesson) => lesson.skillId === 'g2-word-forge-word-practice' && lesson.difficulty === 8)!
+    const forward = planGlobalQuest({ progress: ready, availableLessons: [wordForgeGrade2, fixture], now: NOW })
+    const reversed = planGlobalQuest({ progress: ready, availableLessons: [fixture, wordForgeGrade2], now: NOW })
+    expect(reversed.lesson?.lessonId).toBe(forward.lesson?.lessonId)
+    expect(reversed.skillId).toBe(forward.skillId)
+
+    const lessons = [...getLessonCandidates(), fixture]
+    expect(discoverPlayableTracksForState(ready, lessons, [...curriculumTracks].reverse()).map(({ track }) => track.trackId))
+      .toEqual(discoverPlayableTracksForState(ready, lessons, curriculumTracks).map(({ track }) => track.trackId))
   })
 
   test('preserves the persistence schema and child progress key', () => {
