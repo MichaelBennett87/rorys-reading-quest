@@ -34,7 +34,7 @@ import {
   type ActiveLessonSession,
 } from '../persistence'
 import { starsForAccuracy, xpForLesson } from '../persistence/completeQuestProgress'
-import { DEFAULT_CONFIG, createSpeechService, type SpeechService, type SpeakStep } from '../services/speech'
+import { DEFAULT_CONFIG, createSpeechService, createWordSupportSpeechRequest, type SpeechService } from '../services/speech'
 
 type FluencyStep = 'question' | 'feedback' | 'results'
 
@@ -266,7 +266,7 @@ export function FluencyPracticeScreen({
 
   const requestSpeech = async (target: WordSupportTarget, level: AssistanceLevel) => {
     if (!speechService.isSupported()) return
-    const speak = createSpeechRequest(target, level, speechService)
+    const speak = createWordSupportSpeechRequest(target, level, speechService)
     if (!speak) return
     speechService.cancel()
     setSpeechActive(true)
@@ -713,26 +713,4 @@ function deriveSupportLevels(events: AssistanceEvent[]): Record<string, Assistan
     levels[event.targetId] = Math.max(current, event.assistanceLevel) as AssistanceLevel
     return levels
   }, {})
-}
-
-function createSpeechRequest(
-  target: WordSupportTarget,
-  level: AssistanceLevel,
-  speechService: SpeechService,
-): (() => Promise<void>) | null {
-  const speakSequence = () => speechService.speakSequence(target.spokenChunks.map((chunk): SpeakStep => ({
-    text: chunk.speechText,
-    rate: DEFAULT_CONFIG.chunkSequenceRate,
-  })))
-
-  const requests: Record<AssistanceLevel, (() => Promise<void>) | null> = {
-    1: null,
-    2: null,
-    3: speakSequence,
-    4: () => speechService.speakText(target.blendSpeechText, { rate: DEFAULT_CONFIG.blendRate }),
-    5: () => speechService.speakText(target.wholeWordSpeechText, { rate: DEFAULT_CONFIG.wordRate }),
-    6: () => speechService.speakText(target.sentenceSpeechText, { rate: DEFAULT_CONFIG.sentenceRate }),
-  }
-
-  return requests[level]
 }

@@ -50,7 +50,13 @@ export function createBrowserSpeechService(config: Partial<SpeechServiceConfig> 
             const utterance = new SpeechSynthesisUtterance(step.text)
             utterance.rate = step.rate
             utterance.lang = preferEnglishVoice()
-            const cleanup = () => resolve()
+            const cleanup = () => {
+              if (step.pauseAfterMs && step.pauseAfterMs > 0) {
+                window.setTimeout(resolve, step.pauseAfterMs)
+                return
+              }
+              resolve()
+            }
             utterance.onend = cleanup
             utterance.onerror = cleanup
             cancelInProgress(utterance)

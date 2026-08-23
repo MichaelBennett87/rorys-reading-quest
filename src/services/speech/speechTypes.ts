@@ -8,6 +8,7 @@ export type SpeechKind =
 export interface SpeakStep {
   text: string
   rate: number
+  pauseAfterMs?: number
 }
 
 export interface SpeechService {
