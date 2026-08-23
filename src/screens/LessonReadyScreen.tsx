@@ -22,7 +22,7 @@ export function LessonReadyScreen({
   onStartQuest,
 }: LessonReadyScreenProps) {
   return (
-    <div className={`screen-shell child-experience mission-ready world-theme-${world.id}`} data-world={world.id}>
+    <div className={`screen-shell child-experience mission-ready world-theme-${world.id}`} data-appearance="dark" data-world={world.id}>
       <header className="screen-header">
         <p className="eyebrow">Mission ready</p>
         <h1>{unit.title}</h1>

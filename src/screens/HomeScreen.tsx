@@ -24,7 +24,7 @@ export function HomeScreen({
   storageNotice,
 }: HomeScreenProps) {
   return (
-    <div className="screen-shell child-experience home-screen">
+    <div className="screen-shell child-experience home-screen" data-appearance="dark">
       <header className="app-header">
         <div className="title-row">
           <AtlasGuide />

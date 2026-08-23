@@ -10,7 +10,7 @@ interface UnitSelectScreenProps {
 
 export function UnitSelectScreen({ world, onBack, onSelectUnit }: UnitSelectScreenProps) {
   return (
-    <div className={`screen-shell child-experience unit-map-screen world-theme-${world.id}`} data-world={world.id}>
+    <div className={`screen-shell child-experience unit-map-screen world-theme-${world.id}`} data-appearance="dark" data-world={world.id}>
       <header className="screen-header">
         <p className="eyebrow">Follow the glowing trail</p>
         <h1>{world.name}: Unit Selection</h1>

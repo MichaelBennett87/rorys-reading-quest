@@ -1,4 +1,5 @@
 :root {
+  color-scheme: dark;
   --font-title: 'Trebuchet MS', 'Arial', sans-serif;
   --font-body: 'Verdana', 'Helvetica Neue', sans-serif;
   --background: #eff5ff;
@@ -36,6 +37,20 @@ body {
     radial-gradient(circle at 88% 3%, #edf5ff 0%, transparent 36%),
     var(--background);
   min-height: 100vh;
+}
+
+/* Phase 6.6 dark-first product canvas. */
+body {
+  color: #f3f7ff;
+  background:
+    radial-gradient(circle at 12% -8%, rgba(46, 98, 205, 0.28), transparent 32rem),
+    radial-gradient(circle at 92% 8%, rgba(117, 46, 170, 0.2), transparent 28rem),
+    linear-gradient(160deg, #07101f 0%, #0b1325 48%, #10152a 100%);
+  background-attachment: fixed;
+}
+
+#root {
+  max-width: 1240px;
 }
 
 #root {

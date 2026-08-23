@@ -11,7 +11,7 @@ interface WorldScreenProps {
 
 export function WorldScreen({ world, onBack, onOpenUnitSelect }: WorldScreenProps) {
   return (
-    <div className={`screen-shell child-experience world-screen world-theme-${world.id}`} data-world={world.id}>
+    <div className={`screen-shell child-experience world-screen world-theme-${world.id}`} data-appearance="dark" data-world={world.id}>
       <header className="screen-header">
         <p className="eyebrow">World adventure</p>
         <h1>{world.name}</h1>

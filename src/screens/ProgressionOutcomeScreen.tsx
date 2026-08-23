@@ -54,7 +54,7 @@ export function ProgressionOutcomeScreen({
     : `Trail ${outcome.currentDifficulty}`
 
   return (
-    <section className="screen-shell child-experience progression-outcome" aria-labelledby="progression-outcome-title">
+    <section className="screen-shell child-experience progression-outcome" data-appearance="dark" aria-labelledby="progression-outcome-title">
       <header className="screen-header">
         <span className="outcome-icon" aria-hidden="true">🏅</span>
         <h1 id="progression-outcome-title">{message.title}</h1>
