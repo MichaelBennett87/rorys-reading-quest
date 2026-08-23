@@ -40,4 +40,45 @@ describe('semantic question audit', () => {
       .filter((question) => question.lessonIdentifier === OO_EA_LESSON_IDS.checkpointB)
       .every((question) => question.passageIdentifier === OO_EA_PASSAGE_IDS.poolParty)).toBe(true)
   })
+
+  test('reports passage ownership and hot-text source defects in malformed fixtures', () => {
+    const malformedPack = structuredClone(grade2WordForgeVariableVowelsOoEaPack)
+    const hotTextQuestion = malformedPack.questions.find((question) => question.questionContent?.type === 'hot_text')
+
+    expect(hotTextQuestion?.questionContent?.type).toBe('hot_text')
+    if (!hotTextQuestion || hotTextQuestion.questionContent?.type !== 'hot_text') return
+
+    const owningLesson = malformedPack.lessons.find((lesson) => lesson.lessonId === hotTextQuestion.lessonIdentifier)
+    expect(owningLesson).toBeDefined()
+    owningLesson?.passageIdentifiers.push('not-a-real-lesson-passage')
+    hotTextQuestion.passageIdentifier = 'not-an-owned-passage'
+    hotTextQuestion.questionContent.selectableSegments[0].text = 'This sentence is not in the lesson text.'
+
+    const codes = auditSemanticQuestionPacks([malformedPack]).issues.map((issue) => issue.code)
+
+    expect(codes).toContain('question_passage_ownership_mismatch')
+    expect(codes).toContain('lesson_passage_ownership_mismatch')
+    expect(codes).toContain('hot_text_source_mismatch')
+  })
+
+  test('reports missing keys, invalid cardinality, and stale ordinal explanations', () => {
+    const malformedPack = structuredClone(grade2WordForgeVariableVowelsOoEaPack)
+    const multipleChoice = malformedPack.questions.find((question) => question.questionContent?.type === 'multiple_choice')
+
+    expect(multipleChoice?.questionContent?.type).toBe('multiple_choice')
+    if (!multipleChoice || multipleChoice.questionContent?.type !== 'multiple_choice') return
+
+    multipleChoice.questionContent.correctChoiceIds = [
+      multipleChoice.questionContent.choices[0].id,
+      'missing-choice',
+    ]
+    multipleChoice.correctAnswers = [...multipleChoice.questionContent.correctChoiceIds]
+    multipleChoice.explanation = 'The first answer is correct.'
+
+    const codes = auditSemanticQuestionPacks([malformedPack]).issues.map((issue) => issue.code)
+
+    expect(codes).toContain('keyed_answer_missing')
+    expect(codes).toContain('incorrect_selection_cardinality')
+    expect(codes).toContain('stale_ordinal_explanation')
+  })
 })

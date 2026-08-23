@@ -369,3 +369,9 @@ Consequences: Phase 6 is complete; Phase 7 remains the next boundary; the final 
 - Decision: treat the live UX, phonics, data, and content-integrity cleanup as a post-Phase-6 hardening milestone.
 - Reason: the first live playtest exposed percentage formatting drift, demo reward contamination, stale child copy, and a small semantic question mismatch that did not require new curriculum.
 - Consequence: production reward totals now initialize at zero, legacy seeded saves receive a bounded one-time cleanup, active Grade 2 semantic audit coverage is explicit, and the phase boundary stays below Phase 7.
+
+### Reopened acceptance correction
+
+- Decision: keep Phase 6.5 unchecked after implementation and use `IMPLEMENTATION COMPLETE - LIVE HUMAN VISUAL ACCEPTANCE PENDING` until Michael completes the deployed playthrough.
+- Reason: registry-wide ownership, expanded semantic checks, distinct speech sequences, and real child/parent visual implementations were required beyond the first partial hardening pass.
+- Consequence: no curriculum counts, benchmark states, persistence schema, mastery thresholds, review intervals, or Phase 7 state change. The remaining gate is external visual and voice acceptance on GitHub Pages.

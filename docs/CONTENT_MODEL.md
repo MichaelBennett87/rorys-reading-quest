@@ -60,3 +60,5 @@ The snapshot reports `implemented` for `ELA.2.R.3.1`, `ELA.2.R.3.2`, and `ELA.2.
 ## Phase 6.5 semantic audit and content-integrity note
 
 Phase 6.5 adds no new curriculum packs. The active production totals remain 22 packs, 154 lessons, 161 passages, 889 questions, and 614 support targets. The semantic question audit applies to the active Grade 2 slice, and the live hardening pass corrects stale child copy and question-text mismatches without reopening Phase 6 curriculum completeness.
+
+Every active question must be owned by its lesson and use a passage in that lesson's passage list. Single-text lessons may include multiple canonical passages when their authored question set intentionally spans them; paired lessons retain exactly two ordered members. The semantic audit also verifies hot-text source membership, local and scoped evidence, keyed answers, selection cardinality, paired scope, retell-piece ownership, and explanation stability. These checks establish repository integrity, not professional curricular approval.

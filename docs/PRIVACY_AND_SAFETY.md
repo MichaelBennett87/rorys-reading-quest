@@ -50,3 +50,5 @@ The retell boundary remains authored and structured. The paired-text boundary is
 ## Phase 6.5 production-initialization note
 
 Phase 6.5 does not add new persisted learner fields. New production progress starts at zero rewards, and the one-time legacy cleanup only trims the known demo baseline from old saves when it is safe to do so. Attempts, reviews, assessments, assistance history, and PIN state remain intact.
+
+Phonics speech remains optional browser SpeechSynthesis output. Hear the Parts and Blend It use distinct local request sequences, but no microphone, recording, external speech provider, learner audio, analytics, or telemetry is introduced. Visual and speech preferences are not used to alter curriculum selection or mastery decisions.

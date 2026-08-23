@@ -2,45 +2,65 @@
 
 ## Scope
 
-- Total questions reviewed: 889 active Grade 2 questions
-- Source slice: active production packs only; the legacy development pack is excluded from the reviewed set
-- Status: automated semantic QA passed on the active production slice after targeted corrections
+- Automated questions checked: 889 active Grade 2 questions
+- Active packs checked: 22
+- Active lessons checked: 154
+- Source slice: active production packs only; legacy development content remains excluded from fresh planning
+- Status: deterministic integrity checks pass after confirmed defects were corrected
 
 ## Automated checks performed
 
-- Prompt-answer leakage detection for the phonics patterns used by the active Grade 2 decoding lessons
-- Visible-choice distinctness checks for single-answer question types
-- Prompt/passage ownership checks for the changed Word Forge items
-- Evidence-reference sanity checks for the changed items
-- Active-pack slicing so legacy development content does not pollute the production audit
+The registry-aware audit now checks:
+
+- lesson and question ownership
+- question passage membership in the owning lesson
+- hot-text segments against the intended source text
+- local and scoped evidence resolution and passage ownership
+- keyed-answer existence
+- single-select and multiselect cardinality
+- two-part authored-context consistency
+- paired-text evidence scope
+- structured-retell piece ownership
+- explanation references to answers and evidence
+- stale first, second, or third positional explanations
+- duplicate visible choices
+- prompt-exemplar leakage in transfer-oriented items
+
+Malformed-fixture regression tests prove that ownership, source, key, cardinality, and ordinal defects are reported rather than silently accepted.
 
 ## Semantic review approach
 
-The audit combined deterministic helper checks with targeted review of the live content families that changed during the hardening pass. Structured builder questions such as table-match and two-part items were reviewed through their own pack audits because repeated row labels are intentional there and should not be flagged as duplicate visible answer text.
+The deterministic audit was run against every active question. A source-level editorial pass also reviewed each active pack's manifest, question modules, answer keys, evidence references, explanations, structured builders, paired-text guides, and retell guides in its authored lesson context. Pack-specific audits remain responsible for their deeper format contracts.
 
-## Defects found
+Automated checks can prove structural and authored-context invariants, but they cannot establish professional curricular approval or replace a live human reading of every learner experience.
 
-- One duplicate prompt existed inside the Word Forge checkpoint B lesson.
-- One Moon-and-Team hot-text question referenced stale content from a different passage family.
-- Several low-transfer exemplar prompts in the observed Word Forge lessons repeated the answer token directly in the prompt.
+## Confirmed defects found and corrected
 
-## Defects fixed
+- The two oo/ea checkpoints displayed Moon Room and Beach Cleanup passages while their questions were authored for Tree Study and Pool Party. Their lesson titles, objectives, and passage ownership now match the authored question families.
+- Common Prefix and Silent Letter lesson manifests omitted additional canonical passages used by their questions. Those passage lists now include every authored question context.
+- Eleven hot-text selectable segments contained stale or incomplete text that did not exactly match the intended source. The visible segments now match their canonical text.
+- Several oo/ea answer keys or explanations conflated spelling patterns with sounds. `book`, `bread`, and the affected `ea` selections now use phonetically accurate distinctions.
+- Thirty-six low-transfer exemplar prompts repeated the keyed token or named the answer too directly. They now ask for valid transfer using a different accurate exemplar or a direct feature question.
 
-- The duplicate Word Forge checkpoint B prompt was rewritten to a unique exemplar.
-- The Moon-and-Team hot-text prompt, answer key, and explanation were brought back into alignment with the visible passage.
-- The low-transfer Word Forge exemplar prompts were rewritten to use distinct exemplars from the same lesson family where phonetically accurate.
-- The semantic audit helper now ignores intentional duplicate row labels in table-match and two-part builder questions.
+No lesson, text, question, support target, benchmark, or content pack was added by these corrections. Existing identifiers were retained where safe.
 
-## Low-transfer questions improved
+## Automated result
 
-- Word Forge vowel-team multiple-choice prompts that repeated the keyed exemplar were rewritten.
-- Word Forge guided and checkpoint prompts that gave away the answer token were rewritten.
-- The audited lesson family now uses non-identical exemplars that still stay inside the same phonics pattern.
+- Questions checked: 889
+- Packs checked: 22
+- Lessons checked: 154
+- Remaining deterministic issues: 0
 
-## Unresolved questions requiring human review
+## Targeted human-style source review
 
-- None identified by the deterministic audit after the targeted fixes.
+The repository pass covered all active pack families, with additional line-level attention to Word Forge ownership, hot-text source text, answer sound relationships, Retell Hall sequence pieces, and Compare Keep scoped evidence. Confirmed defects were corrected in place and protected by regression tests.
+
+## Items still needing live human verification
+
+- The deployed child and parent visual experience needs Michael's post-deployment playthrough.
+- Browser voice quality varies by operating system and installed voice. The app requests authored chunks and distinct sequences, but browser SpeechSynthesis cannot guarantee isolated phoneme fidelity.
+- Professional curricular approval remains pending; this repository audit does not claim it.
 
 ## Final status
 
-The active Grade 2 semantic-question slice passed the deterministic audit. This report documents the repository review only; it is not human curricular approval.
+Expanded deterministic audit passed. Source-level editorial review is complete for this hardening implementation. Live human visual and voice acceptance remains pending.

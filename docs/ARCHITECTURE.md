@@ -76,3 +76,5 @@ The retell boundary remains structured and authored rather than oral or free-res
 ## Phase 6.5 operational hardening
 
 Phase 6.5 keeps the existing architecture and applies only bounded fixes. Parent accuracy uses one percent contract, production rewards start at zero, the known demo baseline is cleaned up once for legacy saves, and the active Grade 2 semantic audit targets the production slice without adding new persistence fields or services.
+
+The registry-wide semantic layer now verifies lesson/question ownership, passage membership, source text, evidence scope, answer resolution, cardinality, retell pieces, paired-text evidence, and explanation stability across all active packs. Browser speech support uses separate authored request sequences for parts, blending, whole-word, and sentence support. The child and parent visual systems are CSS/component presentation layers only; progression, persistence, scoring, mastery thresholds, and review intervals remain unchanged.

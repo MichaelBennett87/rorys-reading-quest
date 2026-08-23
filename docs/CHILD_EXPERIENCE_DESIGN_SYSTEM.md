@@ -38,6 +38,8 @@ Use CSS custom properties for the shared visual language:
 - Context Cavern: emerald and green with crystal and cave cues.
 - Compare Castle: royal blue and gold with castle and shield cues.
 
+These identities are implemented through reusable world theme classes and data attributes on the production Home, World, Unit Select, Lesson Ready, and Lesson screens. They do not alter gating or selection behavior.
+
 ## Child shell
 
 - Use larger cards, generous spacing, and clear primary actions.
@@ -45,6 +47,8 @@ Use CSS custom properties for the shared visual language:
 - Make rewards feel earned without overwhelming animation.
 - Keep locked states readable and calm.
 - Keep current-trail language child friendly.
+
+The production shell now uses layered atmospheric backgrounds, dimensional rounded cards, larger visual badges, a prominent current quest, an adventure-style unit path, and responsive layouts from narrow phones through desktop widths.
 
 ## Lesson and support surfaces
 
@@ -54,11 +58,15 @@ Use CSS custom properties for the shared visual language:
 - Answer cards should expose selected, correct, incorrect, and disabled states without relying on color alone.
 - Completion and progression-outcome screens should feel rewarding but still quiet enough for repeated use.
 
+Selected answers use shape and labels in addition to color. Completion uses a bounded star reveal and reward summary, with animation disabled by `prefers-reduced-motion`.
+
 ## Parent shell
 
 - Use a calmer analytics-style layout for adults.
 - Prefer clear hierarchy, compact metrics, and readable empty states.
 - Keep the parent area visually distinct from the child shell.
+
+The implemented adult system uses navy and teal analytics surfaces, compact responsive metrics, scroll-safe tab navigation, readable session and review cards, calm empty states, and spacious PIN forms. Print rules remove navigation and decorative backgrounds while preserving readable summaries.
 
 ## Motion and accessibility
 
