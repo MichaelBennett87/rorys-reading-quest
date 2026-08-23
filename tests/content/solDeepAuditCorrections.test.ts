@@ -13,7 +13,7 @@ function activePack(packId: string) {
 
 describe('GPT-5.6 Sol Grade 2 curricular corrections', () => {
   it('preserves the frozen Grade 2 inventory and structural audits', () => {
-    const activePacks = contentPacks.filter((pack) => !pack.manifest.packId.startsWith('legacy-'))
+    const activePacks = contentPacks.filter((pack) => pack.manifest.gradeBand === 2 && !pack.manifest.packId.startsWith('legacy-'))
     expect({
       activePackCount: activePacks.length,
       activeLessonCount: activePacks.reduce((sum, pack) => sum + pack.lessons.filter((lesson) => lesson.selectionStatus === 'active').length, 0),
@@ -34,7 +34,7 @@ describe('GPT-5.6 Sol Grade 2 curricular corrections', () => {
       activeSupportTargetCount: 614,
     })
     expect(contentPackAudit).toEqual([])
-    expect(auditSemanticQuestionPacks(contentPacks)).toMatchObject({
+    expect(auditSemanticQuestionPacks(activePacks)).toMatchObject({
       reviewedPackCount: 22,
       reviewedLessonCount: 154,
       reviewedCount: 889,

@@ -4,6 +4,7 @@ import { createAssistanceEvent } from '../../src/domain/assistance'
 import { sampleContent } from '../../src/domain/content'
 import { grade2ContextCavernAcademicWordWorkshopPack } from '../../src/domain/content/packs/grade2/contextCavern/academicWordWorkshop'
 import { grade2ContextCavernMorphologyMinePack } from '../../src/domain/content/packs/grade2/contextCavern/morphologyMine'
+import { grade3WordForgeRootReactorPack } from '../../src/domain/content/packs/grade3/wordForge/rootReactor'
 import {
   buildAttentionItems,
   buildBenchmarkSummaries,
@@ -466,6 +467,58 @@ describe('dashboard analytics', () => {
       some_pauses: 1,
       try_again: 0,
     })
+  })
+
+  test('reports Root Reactor as separate Grade 3 partial-foundation context after an attempt', () => {
+    const rootCandidate = candidates.find((candidate) => candidate.skillId === 'g3-word-forge-word-analysis')!
+    const questionIds = grade3WordForgeRootReactorPack.questions.slice(0, 2).map((question) => question.questionIdentifier)
+    const progress = createDefaultQuestProgress(now)
+    progress.completedAttempts = [buildAttempt({
+      completionId: 'root-reactor-completion',
+      completedAt: now,
+      accuracy: 100,
+      questionIds,
+      decisionState: 'VERIFY_MASTERY',
+      skillId: rootCandidate.skillId,
+      difficulty: rootCandidate.difficulty,
+      lessonId: rootCandidate.lessonId,
+      activityId: rootCandidate.activityId,
+      lessonRole: 'CHECKPOINT',
+    })]
+    progress.completedSessionCount = 1
+    progress.skillProgress[rootCandidate.skillId] = {
+      skillId: rootCandidate.skillId,
+      currentDifficulty: 1,
+      lastMasteredDifficulty: 0,
+      currentLearningState: 'VERIFY_MASTERY',
+      qualifyingIndependentActivityIds: [rootCandidate.activityId],
+      consecutiveUnsuccessfulAtCurrentDifficulty: 0,
+      lastCompletedActivityId: rootCandidate.activityId,
+      recentActivityUsage: [],
+      reviewStep: 0,
+      nextReviewDate: '2026-08-24T12:00:00.000Z',
+      lastDecisionReasonCodes: ['independent_evidence'],
+      remediationContext: null,
+    }
+
+    const snapshot = buildDashboardSnapshot({ progress, now })
+    const grade3Skill = snapshot.skillSummaries.find((summary) => summary.skillId === rootCandidate.skillId)
+    const grade2Skill = snapshot.skillSummaries.find((summary) => summary.skillId === 'g2-word-forge-word-practice')
+
+    expect(grade3Skill).toMatchObject({
+      gradeBand: 3,
+      benchmarkReferences: ['ELA.3.F.1.3'],
+      reportingCategory: 'Foundational Skills Bridge',
+      currentDifficulty: 1,
+      distinctIndependentEvidenceCount: 1,
+    })
+    expect(grade2Skill).toBeDefined()
+    expect(snapshot.benchmarkSummaries.find((summary) => summary.skillIdentifier === rootCandidate.skillId)).toMatchObject({
+      benchmarkReference: 'ELA.3.F.1.3',
+      gradeBand: 3,
+    })
+    expect((snapshot as { predictedFastScore?: unknown }).predictedFastScore).toBeUndefined()
+    expect((snapshot as { diagnosedGradeLevel?: unknown }).diagnosedGradeLevel).toBeUndefined()
   })
 
   test('dashboard snapshot preserves percent accuracy values without multiplying them again', () => {

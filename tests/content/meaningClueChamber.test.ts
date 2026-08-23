@@ -70,13 +70,14 @@ describe('grade 2 context cavern meaning clue chamber pack', () => {
       'g2-compare-castle-wordplay-watchtower',
       'g2-compare-castle-retell-hall',
       'g2-compare-castle-compare-keep',
+      'g3-word-forge-root-reactor',
     ])
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 22,
-      activeLessonCount: 154,
-      activePassageCount: 161,
-      activeQuestionCount: 889,
-      activeSupportTargetCount: 614,
+      activePackCount: 23,
+      activeLessonCount: 161,
+      activePassageCount: 168,
+      activeQuestionCount: 930,
+      activeSupportTargetCount: 642,
     })
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.V.1.3')).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.V.1.3',

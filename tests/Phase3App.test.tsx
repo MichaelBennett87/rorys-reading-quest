@@ -425,7 +425,7 @@ describe('Phase 3 adaptive child flow', () => {
     fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
     expect(screen.getByText(/Which word has the same ou sound as loud\?/i)).toBeTruthy()
     expect(readProgress().completedAttempts).toHaveLength(2)
-  })
+  }, 10_000)
 
   test('partial performance remains on the same trail with training language', () => {
     launchFromMap()

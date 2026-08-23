@@ -18,7 +18,6 @@ import { buildContentPackAudit, contentPacks, getActiveContentPacks, getActiveCo
 import type { ContentPack } from '../src/domain/content/packs'
 import { buildDashboardSnapshot } from '../src/domain/dashboard'
 import { getLessonCandidates, lessonCatalog } from '../src/domain/lesson'
-import type { LessonActivityCandidate } from '../src/domain/progression'
 import { planUnitQuest } from '../src/domain/progression'
 import { createDefaultQuestProgress, type QuestProgressV1 } from '../src/persistence'
 import { demoWorlds } from '../src/data/demoWorlds'
@@ -27,23 +26,6 @@ import { UnitSelectScreen } from '../src/screens/UnitSelectScreen'
 const NOW = '2026-08-23T12:00:00.000Z'
 
 afterEach(cleanup)
-
-function grade3Fixture(): LessonActivityCandidate {
-  return {
-    lessonId: 'fixture-grade3-root-reactor',
-    activityId: 'fixture-grade3-root-reactor-a',
-    skillId: 'g3-word-forge-word-analysis',
-    gradeBand: 3,
-    difficulty: 1,
-    worldId: 'word-forge',
-    unitId: 'g3-wg-unit-1',
-    packId: 'fixture-grade3-root-reactor-pack',
-    benchmarkReferences: ['ELA.3.F.1.3'],
-    eligiblePurposes: ['progression', 'verification', 'review'],
-    passageQuestionKeys: ['fixture-grade3-root::fixture-question'],
-    contentVersion: 'fixture-only-v1',
-  }
-}
 
 describe('Grade 3 standards and FAST planning foundation', () => {
   test('defines exactly sixteen immutable planned benchmark rows with required coverage intent', () => {
@@ -69,14 +51,20 @@ describe('Grade 3 standards and FAST planning foundation', () => {
     ))).toBe(true)
   })
 
-  test('builds sixteen DRAFT roadmap-only coverage rows without mutating Grade 2 coverage', () => {
+  test('builds one partial and fifteen planned DRAFT rows without mutating Grade 2 coverage', () => {
     const grade2Before = buildGrade2CoverageSnapshot()
     const snapshot = buildGrade3CoverageSnapshot()
     expect(snapshot.rows).toHaveLength(16)
-    expect(snapshot.rows.every((row) => row.coverageStatus === 'planned')).toBe(true)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'partial')).toHaveLength(1)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(15)
     expect(snapshot.rows.every((row) => row.reviewStatus === 'DRAFT')).toBe(true)
-    expect(snapshot.rows.every((row) => row.contributingPackIds.length === 0)).toBe(true)
-    expect(snapshot.rows.every((row) => row.notes.includes('Roadmap only; no active Grade 3 content yet.'))).toBe(true)
+    expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.F.1.3')).toMatchObject({
+      coverageStatus: 'partial',
+      contributingPackIds: ['g3-word-forge-root-reactor'],
+      coveredPatterns: ['greek-latin-root-decoding', 'affix-decoding'],
+      missingPatterns: ['derivational-suffix-decoding', 'part-of-speech-change', 'multisyllabic-decoding'],
+    })
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned').every((row) => row.notes.includes('Roadmap only; no active Grade 3 content yet.'))).toBe(true)
     expect(buildGrade2CoverageSnapshot()).toEqual(grade2Before)
     expect(grade2BenchmarkInventory).toHaveLength(20)
   })
@@ -122,18 +110,20 @@ describe('Grade 3 planned roadmaps and production freeze', () => {
     expect(getSequentialWorldRoadmapByTrackId('g3-information-detectives-reading')?.chapterTitle).toBe('Grade 3 Informational Analysis')
   })
 
-  test('keeps production totals frozen and all production lesson metadata on Grade 2', () => {
+  test('preserves Grade 2 totals while registering the bounded Root Reactor pack', () => {
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 22,
-      activeLessonCount: 154,
-      activePassageCount: 161,
-      activeQuestionCount: 889,
-      activeSupportTargetCount: 614,
+      activePackCount: 23,
+      activeLessonCount: 161,
+      activePassageCount: 168,
+      activeQuestionCount: 930,
+      activeSupportTargetCount: 642,
     })
-    expect(getActiveContentPacks().some((pack) => pack.manifest.gradeBand === 3)).toBe(false)
-    expect(lessonCatalog.filter((lesson) => lesson.selectionStatus === 'active')).toHaveLength(154)
-    expect(lessonCatalog.every((lesson) => lesson.gradeBand === 2)).toBe(true)
-    expect(getLessonCandidates().every((lesson) => lesson.gradeBand === 2)).toBe(true)
+    expect(getActiveContentPacks().filter((pack) => pack.manifest.gradeBand === 2)).toHaveLength(22)
+    expect(getActiveContentPacks().filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(1)
+    expect(lessonCatalog.filter((lesson) => lesson.selectionStatus === 'active' && lesson.gradeBand === 2)).toHaveLength(154)
+    expect(lessonCatalog.filter((lesson) => lesson.selectionStatus === 'active' && lesson.gradeBand === 3)).toHaveLength(7)
+    expect(getLessonCandidates().filter((lesson) => lesson.gradeBand === 2)).toHaveLength(154)
+    expect(getLessonCandidates().filter((lesson) => lesson.gradeBand === 3)).toHaveLength(7)
     expect(buildContentPackAudit(contentPacks)).toEqual([])
   })
 
@@ -151,18 +141,15 @@ describe('Grade 3 planned roadmaps and production freeze', () => {
     ])
   })
 
-  test('keeps empty Grade 3 metadata invisible and reveals fixture content only through its chapter gate', () => {
+  test('reveals Root Reactor production content only through its chapter gate', () => {
     const initial = createDefaultQuestProgress(NOW)
     expect(buildDashboardSnapshot({ progress: initial, now: NOW }).skillSummaries.some((skill) => skill.skillId.startsWith('g3-'))).toBe(false)
-    const productionWorlds = deriveWorldsForProgress(demoWorlds, initial, getLessonCandidates())
-    expect(productionWorlds.flatMap((world) => world.units).some((unit) => unit.gradeBand === 3)).toBe(false)
-
-    const fixtureLessons = [...getLessonCandidates(), grade3Fixture()]
-    const lockedWorlds = deriveWorldsForProgress(demoWorlds, initial, fixtureLessons)
+    const productionLessons = getLessonCandidates()
+    const lockedWorlds = deriveWorldsForProgress(demoWorlds, initial, productionLessons)
     const lockedWordForge = lockedWorlds.find((world) => world.id === 'word-forge')!
     expect(lockedWordForge.units.find((unit) => unit.id === 'g3-wg-unit-1')?.state).toBe('locked')
     expect(initial.skillProgress['g3-word-forge-word-analysis']).toBeUndefined()
-    expect(planUnitQuest({ selectedUnitId: 'g3-wg-unit-1', progress: initial, availableLessons: fixtureLessons })).toMatchObject({
+    expect(planUnitQuest({ selectedUnitId: 'g3-wg-unit-1', progress: initial, availableLessons: productionLessons })).toMatchObject({
       status: 'locked',
       unitId: 'g3-wg-unit-1',
     })
@@ -177,12 +164,12 @@ describe('Grade 3 planned roadmaps and production freeze', () => {
         },
       },
     }
-    const readyWorlds = deriveWorldsForProgress(demoWorlds, ready, fixtureLessons)
+    const readyWorlds = deriveWorldsForProgress(demoWorlds, ready, productionLessons)
     const readyWordForge = readyWorlds.find((world) => world.id === 'word-forge')!
     expect(readyWordForge.units.find((unit) => unit.id === 'g3-wg-unit-1')?.state).toBe('available')
     expect(readyWordForge.units.find((unit) => unit.id === 'g3-wg-unit-2')?.state).toBe('locked')
     expect(ready.skillProgress['g3-word-forge-word-analysis']).toBeUndefined()
-    expect(planUnitQuest({ selectedUnitId: 'g3-wg-unit-1', progress: ready, availableLessons: fixtureLessons })).toMatchObject({
+    expect(planUnitQuest({ selectedUnitId: 'g3-wg-unit-1', progress: ready, availableLessons: productionLessons })).toMatchObject({
       status: 'available',
       unitId: 'g3-wg-unit-1',
     })

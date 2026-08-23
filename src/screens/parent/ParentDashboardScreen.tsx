@@ -531,6 +531,9 @@ function BenchmarkCard({ summary }: { summary: DashboardBenchmarkSummary }) {
       <p>{resolveFriendlySkillName(summary.skillIdentifier)}</p>
       <p className="parent-muted-copy">Skill ID: {summary.skillIdentifier}</p>
       <p className="parent-muted-copy">Grade band: {summary.gradeBand ?? 'Archived'}</p>
+      {summary.benchmarkReference === 'ELA.3.F.1.3' && (
+        <ParentDataNote title="Partial curriculum coverage" message="Root Reactor practices Greek and Latin root and affix decoding. Later Grade 3 word-analysis units are still required for full ELA.3.F.1.3 coverage." />
+      )}
       <ParentMetricCard label="Attempts" value={summary.questionAttempts} />
       <ParentMetricCard label="Accuracy" value={formatPercent(summary.accuracy)} />
       <ParentMetricCard label="First-attempt accuracy" value={formatPercent(summary.firstAttemptAccuracy)} />
@@ -559,6 +562,9 @@ function SkillSummaryCard({
       <p className="parent-muted-copy">Skill ID: {summary.skillId}</p>
       <p className="parent-muted-copy">Benchmark references: {formatBenchmarkReferences(summary.benchmarkReferences)}</p>
       <p className="parent-muted-copy">Category: {summary.reportingCategory}</p>
+      {summary.benchmarkReferences.includes('ELA.3.F.1.3') && (
+        <p className="parent-muted-copy">Curriculum coverage: Partial. Root Reactor covers root and affix decoding only.</p>
+      )}
       <p>Current trail: {formatTrailLabel(summary.currentDifficulty)}</p>
       <p>Last mastered trail: {formatTrailLabel(summary.lastMasteredDifficulty)}</p>
       <p>Mastery evidence: {summary.distinctIndependentEvidenceCount}</p>
@@ -599,6 +605,9 @@ function SkillDetailView({
         <p className="parent-muted-copy">Benchmark references: {formatBenchmarkReferences(skill.benchmarkReferences)}</p>
         <p className="parent-muted-copy">Reporting category: {skill.reportingCategory}</p>
         <p>Grade band: {skill.gradeBand ?? 'Archived'}</p>
+        {skill.benchmarkReferences.includes('ELA.3.F.1.3') && (
+          <ParentDataNote title="Partial curriculum coverage" message="Root Reactor covers common Greek and Latin root and affix decoding. It does not yet complete ELA.3.F.1.3." />
+        )}
         <p>Question attempts: {skill.questionAttempts}</p>
         <p>Overall accuracy: {formatPercent(skill.accuracy)}</p>
         <p>First-attempt accuracy: {formatPercent(skill.firstAttemptAccuracy)}</p>

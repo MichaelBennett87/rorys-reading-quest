@@ -26,6 +26,7 @@ function readRepoFile(relativePath: string): string {
 describe('final grade 2 audit', () => {
   test('keeps the Grade 2 inventory, coverage snapshot, and registry totals complete', () => {
     const activePacks = getActiveContentPacks()
+    const grade2Packs = activePacks.filter((pack) => pack.manifest.gradeBand === 2)
     const snapshot = buildGrade2CoverageSnapshot()
     const statuses = snapshot.rows.reduce<Record<'implemented' | 'supportive_practice' | 'partial' | 'planned' | 'missing', number>>(
       (acc, row: Grade2CoverageSnapshotRow) => {
@@ -41,16 +42,16 @@ describe('final grade 2 audit', () => {
       },
     )
 
-    expect(contentPacks).toHaveLength(23)
-    expect(new Set(contentPacks.map((pack) => pack.manifest.packId)).size).toBe(23)
-    expect(activePacks).toHaveLength(22)
-    expect(new Set(activePacks.map((pack) => pack.manifest.packId)).size).toBe(22)
+    expect(contentPacks).toHaveLength(24)
+    expect(new Set(contentPacks.map((pack) => pack.manifest.packId)).size).toBe(24)
+    expect(grade2Packs).toHaveLength(22)
+    expect(new Set(grade2Packs.map((pack) => pack.manifest.packId)).size).toBe(22)
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 22,
-      activeLessonCount: 154,
-      activePassageCount: 161,
-      activeQuestionCount: 889,
-      activeSupportTargetCount: 614,
+      activePackCount: 23,
+      activeLessonCount: 161,
+      activePassageCount: 168,
+      activeQuestionCount: 930,
+      activeSupportTargetCount: 642,
     })
     expect(contentPackAudit).toHaveLength(0)
     expect(validateContent(sampleContent)).toHaveLength(0)
