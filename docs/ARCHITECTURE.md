@@ -63,12 +63,12 @@
 - Lesson ownership now comes from catalog metadata, not brittle lesson-ID prefixes, so unit gating and recovery stay aligned as later packs land.
 ## Phase 6F0 architecture boundary
 
-Compare Castle becomes active in Phase 6F1. The shared curriculum architecture reserves `g2-across-genres-reading` for `compare-castle` with three Compare Castle units that activate in sequence across Phase 6F1, Phase 6F2, and Phase 6F3. Phase 6F3 adaptive-planning boundary: Compare Castle is active only when Wordplay Watchtower, Retell Hall, and Compare Keep exist, and the planner keeps later Phase 6F4 audit work separate from the production units.
+Compare Castle becomes active in Phase 6F1. The shared curriculum architecture reserves `g2-across-genres-reading` for `compare-castle` with three Compare Castle units that activate in sequence across Phase 6F1, Phase 6F2, and Phase 6F3. Phase 6F3 adaptive-planning boundary: Compare Castle is active only when Wordplay Watchtower, Retell Hall, and Compare Keep exist, and the planner keeps later Phase 6F4 audit work separate from the production units. Phase 6F4 completes the final Grade 2 audit and Phase 6 completion, and Phase 7 remains next.
 
 - `cg-unit-1` Wordplay Watchtower for `ELA.2.R.3.1` (active in DRAFT)
 - `cg-unit-2` Retell Hall for `ELA.2.R.3.2` (active in DRAFT)
 - `cg-unit-3` Compare Keep for `ELA.2.R.3.3`
 
-Phase 6F0 adds no production lessons and no new persistence behavior. Phase 6F1 adds the first active Compare Castle content pack, Wordplay Watchtower, Phase 6F2 adds Retell Hall, and Phase 6F3 adds Compare Keep while Phase 6F4 remains the final audit boundary.
+Phase 6F0 adds no production lessons and no new persistence behavior. Phase 6F1 adds the first active Compare Castle content pack, Wordplay Watchtower, Phase 6F2 adds Retell Hall, and Phase 6F3 adds Compare Keep while Phase 6F4 completes the final audit boundary and Phase 6 completion.
 
 The retell boundary remains structured and authored rather than oral or free-response scoring. The paired-text boundary is now active in Compare Keep while remaining limited to two texts and structured authored selected response. The figurative-language boundary remains limited to similes, idioms, and alliteration.

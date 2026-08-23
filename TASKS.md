@@ -45,7 +45,7 @@
   - [x] Phase 5B: complete dashboard, assessment entry, and print summary
     - [x] Phase 5B1: dashboard presentation and progress drill-downs
     - [x] Phase 5B2: assessment management, print summary, and Phase 5 completion
-- [ ] Phase 6: Grade 2 bridge content
+- [x] Phase 6: Grade 2 bridge content
   - [x] Phase 6A1: content framework and variable vowel teams `oo`/`ea`
   - [x] Phase 6A2: `ou`, `oi`, `oy`, and `ow`
   - [x] Phase 6B: two-syllable, open, closed, and consonant-`le`
@@ -71,12 +71,12 @@
     - [x] Phase 6E5: academic-vocabulary practice and Context Cavern foundation
     - [x] Phase 6E6: morphology and ELA.2.V.1.2
     - [x] Phase 6E7: context, word relationships, reference materials, background knowledge, and final Phase 6E audit
-  - [ ] Phase 6F: across-genres reading and final Grade 2 audit
+  - [x] Phase 6F: across-genres reading and final Grade 2 audit
     - [x] Phase 6F0: Compare Castle and across-genres foundation
     - [x] Phase 6F1: similes, idioms, alliteration, and ELA.2.R.3.1
     - [x] Phase 6F2: literary and informational retelling for ELA.2.R.3.2
     - [x] Phase 6F3: paired-text comparison for ELA.2.R.3.3
-    - [ ] Phase 6F4: final Grade 2 audit and Phase 6 completion
+    - [x] Phase 6F4: final Grade 2 audit and Phase 6 completion
 - [ ] Phase 7: Grade 3 FAST-aligned content
   - [ ] Expand to mastery-level Grade 3 sequences.
 - [ ] Phase 8: Grade 4 stretch content

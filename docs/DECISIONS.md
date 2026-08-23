@@ -355,3 +355,11 @@ Decision: activate `g2-across-genres-reading` through the Compare Castle Compare
 Rationale: Phase 6F3 now has authored DRAFT production content for `ELA.2.R.3.3`, and the shared curriculum architecture can extend the existing `compare-castle` world without changing storage, review identity, or the final audit boundary.
 
 Consequences: `ELA.2.R.3.3` becomes implemented in DRAFT through Compare Castle Compare Keep; Compare Castle remains active in child-facing views and in the Grade 2 coverage snapshot; Phase 6F4 remains the final audit boundary.
+
+## 2026-08-23 - Phase 6F4 Final Grade 2 Audit Completion
+
+Decision: mark Phase 6 complete after the final Grade 2 audit verified the 20-benchmark inventory, the 22 active packs, the authored DRAFT and supportive-practice coverage, and the unchanged privacy, accessibility, and progression boundaries.
+
+Rationale: The repository already contains the full planned Grade 2 bridge curriculum, and the final audit only needed to confirm the documented totals, reports, and safety boundaries without adding new curriculum.
+
+Consequences: Phase 6 is complete; Phase 7 remains the next boundary; the final audit documents now describe the repository state rather than a pending phase.
