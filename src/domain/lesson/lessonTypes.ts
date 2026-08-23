@@ -1,4 +1,4 @@
-import type { QuestionType } from '../content/types'
+import type { QuestionType, TableMatchSelectionMode } from '../content/types'
 import type { AssistanceSummary } from '../assistance'
 
 export type LessonQuestionType =
@@ -112,6 +112,7 @@ export interface EvidencePairLessonQuestion extends LessonQuestionBase {
 
 export interface TableMatchLessonQuestion extends LessonQuestionBase {
   questionType: 'TABLE_MATCH'
+  selectionMode?: TableMatchSelectionMode
   rows: {
     id: string
     prompt: string

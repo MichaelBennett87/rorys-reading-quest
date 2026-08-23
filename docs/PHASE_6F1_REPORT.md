@@ -4,15 +4,26 @@ Starting local HEAD: `bac8e73028f663fd622969ba9144af0b1b556baf`
 
 Starting remote HEAD: `bac8e73028f663fd622969ba9144af0b1b556baf`
 
-Implementation checkpoint(s):
+Implementation checkpoint:
 
 - `7c15822 feat: integrate compare castle wordplay progression`
+
+Documentation commit:
+
+- `0ec7412 docs: complete phase 6f1 review`
+
+Final local HEAD: `0ec741250997b1578b5793c116ac338ac597fd87`
+
+Final remote HEAD: `0ec741250997b1578b5793c116ac338ac597fd87`
+
+Local and remote SHA match: yes
 
 This report records the Phase 6F1 Wordplay Watchtower work for Compare Castle.
 
 Compare Castle is active.
 Wordplay Watchtower is active.
-Retell Hall and Compare Keep remain planned.
+Retell Hall remains planned.
+Compare Keep remains planned.
 
 Verification facts:
 
@@ -32,8 +43,7 @@ Bundle status:
 
 Boundary:
 
-- Phase 6F1 is in progress
-- Phase 6F2 remains next
-- Compare Castle content is active only for Wordplay Watchtower right now
-- later Compare Castle units remain deferred
-- final synchronization reconciliation is deferred to the external completion report or the next phase
+- Phase 6F1 is complete
+- Phase 6F2 is next
+- Compare Castle content is active for Wordplay Watchtower; Retell Hall and Compare Keep remain deferred
+- final synchronization reconciliation was recorded in the completion report for this phase

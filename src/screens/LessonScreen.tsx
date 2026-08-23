@@ -121,6 +121,9 @@ export function LessonScreen({
   const activeSupportTarget = openSupportTargetId
     ? passageTargets.find((target) => target.targetId === openSupportTargetId) ?? null
     : null
+  const tableMatchSelectionMode = currentQuestion.questionType === 'TABLE_MATCH'
+    ? currentQuestion.selectionMode ?? 'independent'
+    : 'independent'
   const speechSupported = speechService.isSupported()
   const lessonAssistanceSummary = useMemo(() => summarizeAssistance(assistanceEvents), [assistanceEvents])
   const supportLevels = useMemo(() => deriveSupportLevels(assistanceEvents), [assistanceEvents])
@@ -586,8 +589,15 @@ export function LessonScreen({
                 prompt: row.prompt,
                 options: row.options,
                 selectedChoiceId: selectedMappings[row.id] ?? '',
+                disabledChoiceIds: tableMatchSelectionMode === 'use_each_once'
+                  ? currentQuestion.rows
+                      .filter((otherRow) => otherRow.id !== row.id)
+                      .map((otherRow) => selectedMappings[otherRow.id] ?? '')
+                      .filter((choiceId): choiceId is string => Boolean(choiceId))
+                  : [],
               }))}
               disabled={step !== 'question'}
+              selectionMode={tableMatchSelectionMode}
               onSelectChoice={updateMapping}
             />
           )}

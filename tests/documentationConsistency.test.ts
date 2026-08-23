@@ -18,6 +18,7 @@ describe('documentation consistency', () => {
     const curriculum = readRepoFile('docs/GRADE_2_BRIDGE_CURRICULUM.md')
     const phase6f0Report = readRepoFile('docs/PHASE_6F0_REPORT.md')
     const phase6e7Report = readRepoFile('docs/PHASE_6E7_REPORT.md')
+    const phase6f2Report = readRepoFile('docs/PHASE_6F2_REPORT.md')
     const baselineAudit = readRepoFile('docs/content/GRADE_2_PHASE_6_BASELINE_AUDIT.md')
     const review = readRepoFile('docs/content/GRADE_2_CONTEXT_CAVERN_MORPHOLOGY_MINE_REVIEW.md')
     const coverageAudit = readRepoFile('docs/content/GRADE_2_V_1_2_COVERAGE_AUDIT.md')
@@ -29,19 +30,22 @@ describe('documentation consistency', () => {
     expect(tasks).toContain('  - [ ] Phase 6F: across-genres reading and final Grade 2 audit')
     expect(tasks).toContain('    - [x] Phase 6F0: Compare Castle and across-genres foundation')
     expect(tasks).toContain('    - [x] Phase 6F1: similes, idioms, alliteration, and ELA.2.R.3.1')
-    expect(tasks).toContain('    - [ ] Phase 6F2: literary and informational retelling for ELA.2.R.3.2')
+    expect(tasks).toContain('    - [x] Phase 6F2: literary and informational retelling for ELA.2.R.3.2')
     expect(tasks).toContain('    - [ ] Phase 6F3: paired-text comparison for ELA.2.R.3.3')
     expect(tasks).toContain('    - [ ] Phase 6F4: final Grade 2 audit and Phase 6 completion')
     expect(readme).toContain('Phase 6F0 complete')
     expect(readme).toContain('Phase 6F1 complete')
-    expect(readme).toContain('Phase 6F2 is next')
+    expect(readme).toContain('Phase 6F2 complete')
+    expect(readme).toContain('Phase 6F3 is next')
     expect(readme).toContain('Compare Castle active')
     expect(readme).toContain('Wordplay Watchtower active')
-    expect(architecture).toContain('twenty registered packs, 140 lessons, 140 passages, 807 questions, and 558 support targets')
-    expect(architecture).toContain('Phase 6F1 adaptive-planning boundary')
+    expect(readme).toContain('Retell Hall active')
+    expect(readme).toContain('Compare Keep remains without production curriculum')
+    expect(architecture).toContain('twenty-one registered packs, 147 lessons, 147 passages, 848 questions, and 586 support targets')
+    expect(architecture).toContain('Phase 6F2 adaptive-planning boundary')
     expect(architecture).toContain('Compare Castle becomes active in Phase 6F1')
-    expect(contentModel).toContain('twenty active Grade 2 bridge packs with 140 lessons, 140 passages, 807 scored questions, and 558 authored word-support targets')
-    expect(contentModel).toContain('Phase 6F1 Grade 2 benchmark inventory and coverage snapshot')
+    expect(contentModel).toContain('twenty-one active Grade 2 bridge packs with 147 lessons, 147 passages, 848 scored questions, and 586 authored word-support targets')
+    expect(contentModel).toContain('Phase 6F2 Grade 2 benchmark inventory and coverage snapshot')
     expect(curriculum).toContain('Information Detectives')
     expect(curriculum).toContain('Context Cavern')
     expect(curriculum).toContain('Text Feature Hunt')
@@ -79,6 +83,15 @@ describe('documentation consistency', () => {
     expect(phase6f0Report).toContain('Final local HEAD: `bac8e73028f663fd622969ba9144af0b1b556baf`')
     expect(phase6f0Report).toContain('Final remote HEAD: `bac8e73028f663fd622969ba9144af0b1b556baf`')
     expect(phase6f0Report).toContain('Local and remote SHA match: yes')
+    expect(phase6f2Report).toContain('Starting local HEAD: `0ec741250997b1578b5793c116ac338ac597fd87`')
+    expect(phase6f2Report).toContain('Starting remote HEAD: `0ec741250997b1578b5793c116ac338ac597fd87`')
+    expect(phase6f2Report).toContain('Compare Castle is active.')
+    expect(phase6f2Report).toContain('Retell Hall is active.')
+    expect(phase6f2Report).toContain('Phase 6F2 is in progress')
+    expect(phase6f2Report).toContain('Phase 6F3 remains next')
+    expect(phase6f2Report).toContain('final synchronization reconciliation is deferred to the external completion report or the next phase')
+    expect(phase6f2Report).not.toContain('Final local HEAD:')
+    expect(phase6f2Report).not.toContain('Final remote HEAD:')
     expect(baselineAudit).toContain('Grade 2 benchmark inventory count: 20')
     expect(baselineAudit).toContain('ELA.2.R.3.1 status: planned')
     expect(baselineAudit).toContain('Phase 6F0 architecture boundary')
@@ -160,11 +173,11 @@ describe('documentation consistency', () => {
 
   test('keeps active curriculum totals aligned with the registry helper', () => {
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 20,
-      activeLessonCount: 140,
-      activePassageCount: 140,
-      activeQuestionCount: 807,
-      activeSupportTargetCount: 558,
+      activePackCount: 21,
+      activeLessonCount: 147,
+      activePassageCount: 147,
+      activeQuestionCount: 848,
+      activeSupportTargetCount: 586,
     })
   })
 })

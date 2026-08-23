@@ -602,6 +602,9 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
     if (pack.manifest.benchmarkReferences.includes('ELA.2.V.1.3')) {
       validateMeaningClueGuideStructure(pack, issues)
     }
+    if (pack.manifest.benchmarkReferences.includes('ELA.2.R.3.2')) {
+      validateRetellGuideStructure(pack, issues)
+    }
     if (pack.manifest.benchmarkReferences.includes('ELA.2.R.3.1')) {
       validateWordplayGuideStructure(pack, issues)
     }
@@ -2382,6 +2385,384 @@ function validateWordplayGuideAgainstPassage(
   }
 }
 
+function validateRetellGuideStructure(pack: ContentPack, issues: ContentPackAuditIssue[]) {
+  const guides = pack.retellGuides ?? []
+  if (guides.length === 0) {
+    return
+  }
+  const passageById = new Map(pack.passages.map((passage) => [passage.passageIdentifier, passage] as const))
+  const guideByPassageId = new Map<string, NonNullable<ContentPack['retellGuides']>[number]>()
+  const literaryGuides = new Set<string>()
+  const informationalGuides = new Set<string>()
+
+  if (guides.length !== pack.passages.length) {
+    pushIssue(
+      issues,
+      'retell_guide_count_mismatch',
+      pack.manifest.packId,
+      `Expected ${pack.passages.length} retell guides, found ${guides.length}.`,
+    )
+  }
+
+  for (const guide of guides) {
+    if (guideByPassageId.has(guide.passageId)) {
+      pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Retell guides must not duplicate a passage ID.')
+      continue
+    }
+    guideByPassageId.set(guide.passageId, guide)
+
+    const passage = passageById.get(guide.passageId)
+    if (!passage) {
+      pushIssue(issues, 'missing_retell_guide', guide.passageId, 'Every retell guide must point to a real passage.')
+      continue
+    }
+    validateRetellGuideAgainstPassage(pack, passage, guide, issues, literaryGuides, informationalGuides)
+  }
+
+  for (const passage of pack.passages) {
+    if (!guideByPassageId.has(passage.passageIdentifier)) {
+      pushIssue(issues, 'missing_retell_guide', passage.passageIdentifier, 'Every passage needs exactly one retell guide.')
+    }
+  }
+
+  if (literaryGuides.size !== 4) {
+    pushIssue(issues, 'retell_guide_invalid', pack.manifest.packId, `Retell Hall must include 4 literary guides, found ${literaryGuides.size}.`)
+  }
+  if (informationalGuides.size !== 3) {
+    pushIssue(issues, 'retell_guide_invalid', pack.manifest.packId, `Retell Hall must include 3 informational guides, found ${informationalGuides.size}.`)
+  }
+
+  validateRetellBuilderStructure(pack, issues)
+}
+
+function validateRetellGuideAgainstPassage(
+  pack: ContentPack,
+  passage: ContentPack['passages'][number],
+  guide: NonNullable<ContentPack['retellGuides']>[number],
+  issues: ContentPackAuditIssue[],
+  literaryGuides: Set<string>,
+  informationalGuides: Set<string>,
+) {
+  const normalizedTexts = [
+    guide.passageId,
+    guide.textKind,
+    guide.reviewStatus,
+    guide.contentVersion,
+    ...(guide.textKind === 'literary'
+      ? [
+          ...guide.mainCharacters,
+          guide.settingStatement,
+          guide.problemStatement,
+          ...guide.importantEventStatements,
+          guide.resolutionStatement,
+          ...guide.minorDetailIds,
+        ]
+      : [
+          guide.topicLabel,
+          guide.centralIdeaStatement,
+          ...guide.relevantDetailStatements,
+          ...guide.otherTrueDetailIds,
+        ]),
+    ...guide.retellPieces.flatMap((piece) => [
+      piece.pieceId,
+      piece.text,
+      piece.role,
+      ...piece.evidenceReferenceIds,
+    ]),
+  ]
+  const sentenceToSectionId = new Map<string, string>()
+  if (passage.contentKind === 'informational' && passage.informationalStructure) {
+    for (const section of passage.informationalStructure.sections) {
+      for (const sentenceId of section.sentenceIds) {
+        sentenceToSectionId.set(sentenceId, section.sectionId)
+      }
+    }
+  }
+
+  if (guide.reviewStatus !== 'DRAFT') {
+    pushIssue(issues, 'missing_draft_status', guide.passageId, 'Retell guides in this pack must remain DRAFT.')
+  }
+  if (guide.contentVersion !== pack.manifest.contentVersion) {
+    pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Retell guide content version must match the pack version.')
+  }
+  if (normalizedTexts.some((text) => text.includes('<') || text.includes('http://') || text.includes('https://'))) {
+    pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Retell guide text must not contain raw HTML or remote URLs.')
+  }
+
+  if (passage.contentKind === 'prose') {
+    literaryGuides.add(guide.passageId)
+    if (guide.textKind !== 'literary') {
+      pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Prose passages require literary retell guides.')
+    }
+    const literaryGuide = guide as NonNullable<ContentPack['retellGuides']>[number] & { textKind: 'literary' }
+    if (!literaryGuide.mainCharacters.length) {
+      pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Literary retell guides need at least one main character.')
+    }
+    if (new Set(literaryGuide.mainCharacters.map((value) => normalizeGuideText(value))).size !== literaryGuide.mainCharacters.length) {
+      pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Literary main characters must be unique.')
+    }
+    if (!literaryGuide.settingStatement.trim()) {
+      pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Literary retell guides need a setting statement.')
+    }
+    if (!literaryGuide.problemStatement.trim()) {
+      pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Literary retell guides need a problem statement.')
+    }
+    if (!literaryGuide.importantEventStatements.length || literaryGuide.importantEventStatements.length < 2) {
+      pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Literary retell guides need at least two important events.')
+    }
+    if (!literaryGuide.resolutionStatement.trim()) {
+      pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Literary retell guides need a resolution statement.')
+    }
+    if (literaryGuide.retellPieces.length !== 5) {
+      pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Literary retell guides must contain exactly five retell pieces.')
+    }
+    if (!literaryGuide.minorDetailIds.length) {
+      pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Literary retell guides need at least one minor detail.')
+    }
+
+    const expectedRoles = ['Opening', 'Problem', 'Important event 1', 'Important event 2', 'Ending']
+    validateRetellPieces(
+      literaryGuide,
+      passage,
+      issues,
+      expectedRoles,
+      5,
+      sentenceToSectionId,
+      false,
+    )
+
+    const requiredEvidenceIds = new Set(literaryGuide.retellPieces.flatMap((piece) => piece.evidenceReferenceIds))
+    for (const minorDetailId of literaryGuide.minorDetailIds) {
+      if (!resolvePassageEvidence(passage, minorDetailId)) {
+        pushIssue(issues, 'invalid_evidence_reference', minorDetailId, 'Minor detail evidence must resolve to the passage.')
+      }
+      if (requiredEvidenceIds.has(minorDetailId)) {
+        pushIssue(issues, 'retell_guide_invalid', minorDetailId, 'Minor details must stay separate from required retell evidence.')
+      }
+    }
+    return
+  }
+
+  if (passage.contentKind === 'informational') {
+    informationalGuides.add(guide.passageId)
+    if (guide.textKind !== 'informational') {
+      pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Informational passages require informational retell guides.')
+    }
+    const informationalGuide = guide as NonNullable<ContentPack['retellGuides']>[number] & { textKind: 'informational' }
+    if (!informationalGuide.topicLabel.trim()) {
+      pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Informational retell guides need a topic label.')
+    }
+    if (!informationalGuide.centralIdeaStatement.trim()) {
+      pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Informational retell guides need a central-idea statement.')
+    } else if (!looksLikeCompleteThought(informationalGuide.centralIdeaStatement)) {
+      pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Informational central ideas must be complete thoughts.')
+    }
+    if (normalizeGuideText(informationalGuide.centralIdeaStatement) === normalizeGuideText(informationalGuide.topicLabel)) {
+      pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Informational central ideas must differ from the topic label.')
+    }
+    if (informationalGuide.relevantDetailStatements.length !== 3) {
+      pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Informational retell guides must contain exactly three relevant details.')
+    }
+    if (informationalGuide.retellPieces.length !== 4) {
+      pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Informational retell guides must contain exactly four retell pieces.')
+    }
+    if (!informationalGuide.otherTrueDetailIds.length) {
+      pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Informational retell guides need at least one less-relevant detail.')
+    }
+
+    const expectedRoles = ['Central idea', 'Relevant detail 1', 'Relevant detail 2', 'Relevant detail 3']
+    validateRetellPieces(
+      informationalGuide,
+      passage,
+      issues,
+      expectedRoles,
+      4,
+      sentenceToSectionId,
+      false,
+    )
+
+    const requiredEvidenceIds = new Set(informationalGuide.retellPieces.flatMap((piece) => piece.evidenceReferenceIds))
+    const observedSections = new Set<string>()
+    for (const piece of informationalGuide.retellPieces) {
+      for (const evidenceId of piece.evidenceReferenceIds) {
+        const sectionId = sentenceToSectionId.get(evidenceId)
+        if (sectionId) observedSections.add(sectionId)
+      }
+    }
+    if (observedSections.size < 2) {
+      pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Informational retell evidence must span at least two sections.')
+    }
+    for (const otherDetailId of informationalGuide.otherTrueDetailIds) {
+      if (!resolvePassageEvidence(passage, otherDetailId)) {
+        pushIssue(issues, 'invalid_evidence_reference', otherDetailId, 'Less-relevant detail evidence must resolve to the passage.')
+      }
+      if (requiredEvidenceIds.has(otherDetailId)) {
+        pushIssue(issues, 'retell_guide_invalid', otherDetailId, 'Less-relevant details must stay separate from required retell evidence.')
+      }
+    }
+  }
+}
+
+function validateRetellPieces(
+  guide: NonNullable<ContentPack['retellGuides']>[number],
+  passage: ContentPack['passages'][number],
+  issues: ContentPackAuditIssue[],
+  expectedRoles: readonly string[],
+  expectedPieceCount: number,
+  sentenceToSectionId: Map<string, string>,
+  checkSectionSpan: boolean,
+) {
+  const seenPieceIds = new Set<string>()
+  const seenSequenceIndices = new Set<number>()
+  const requiredEvidenceIds = new Set<string>()
+
+  for (const [index, piece] of guide.retellPieces.entries()) {
+    if (!piece.pieceId.trim()) {
+      pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Retell pieces need IDs.')
+    }
+    if (seenPieceIds.has(piece.pieceId)) {
+      pushIssue(issues, 'retell_guide_invalid', piece.pieceId, 'Retell piece IDs must be unique within a guide.')
+    } else {
+      seenPieceIds.add(piece.pieceId)
+    }
+    if (piece.sequenceIndex !== index + 1) {
+      pushIssue(issues, 'retell_guide_invalid', piece.pieceId, 'Retell sequence indices must be contiguous starting at 1.')
+    }
+    if (seenSequenceIndices.has(piece.sequenceIndex)) {
+      pushIssue(issues, 'retell_guide_invalid', piece.pieceId, 'Retell sequence indices must be unique within a guide.')
+    } else {
+      seenSequenceIndices.add(piece.sequenceIndex)
+    }
+    if (piece.role !== expectedRoles[index]) {
+      pushIssue(issues, 'retell_guide_invalid', piece.pieceId, 'Retell pieces must use the expected role order.')
+    }
+    if (!piece.text.trim()) {
+      pushIssue(issues, 'retell_guide_invalid', piece.pieceId, 'Retell pieces need text.')
+    } else if (!looksLikeCompleteThought(piece.text)) {
+      pushIssue(issues, 'retell_guide_invalid', piece.pieceId, 'Retell pieces must be complete thoughts.')
+    }
+    if (!Array.isArray(piece.evidenceReferenceIds) || piece.evidenceReferenceIds.length === 0) {
+      pushIssue(issues, 'retell_guide_invalid', piece.pieceId, 'Retell pieces need evidence references.')
+    } else {
+      const evidenceIds = new Set(piece.evidenceReferenceIds)
+      if (evidenceIds.size !== piece.evidenceReferenceIds.length) {
+        pushIssue(issues, 'retell_guide_invalid', piece.pieceId, 'Retell evidence references must be unique.')
+      }
+      for (const evidenceId of evidenceIds) {
+        requiredEvidenceIds.add(evidenceId)
+        if (!resolvePassageEvidence(passage, evidenceId)) {
+          pushIssue(issues, 'invalid_evidence_reference', evidenceId, 'Retell evidence must resolve to the passage.')
+        }
+        if (checkSectionSpan && !sentenceToSectionId.has(evidenceId)) {
+          pushIssue(issues, 'retell_guide_invalid', evidenceId, 'Informational retell evidence must come from passage sentences. ')
+        }
+      }
+    }
+  }
+
+  if (guide.retellPieces.length !== expectedPieceCount) {
+    pushIssue(issues, 'retell_guide_invalid', guide.passageId, `Retell guides must contain exactly ${expectedPieceCount} retell pieces.`)
+  }
+
+  if (guide.textKind === 'literary' && expectedRoles[0] === 'Opening' && guide.retellPieces.length > 0) {
+    if (!guide.retellPieces[0].role.toLowerCase().includes('opening')) {
+      pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Literary retell pieces must begin with the opening.')
+    }
+    if (!guide.retellPieces[guide.retellPieces.length - 1].role.toLowerCase().includes('ending')) {
+      pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Literary retell pieces must end with the ending.')
+    }
+  }
+
+  if (guide.textKind === 'informational' && guide.retellPieces.length > 0) {
+    if (!guide.retellPieces[0].role.toLowerCase().includes('central idea')) {
+      pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Informational retell pieces must begin with the central idea.')
+    }
+  }
+
+  if (requiredEvidenceIds.size === 0) {
+    pushIssue(issues, 'retell_guide_invalid', guide.passageId, 'Retell pieces need evidence references.')
+  }
+}
+
+function validateRetellBuilderStructure(pack: ContentPack, issues: ContentPackAuditIssue[]) {
+  const tableMatchQuestions = pack.questions.filter((question) => question.questionType === 'table_match' && question.questionContent?.type === 'table_match')
+
+  if (tableMatchQuestions.length !== pack.lessons.length) {
+    pushIssue(
+      issues,
+      'retell_builder_invalid',
+      pack.manifest.packId,
+      `Retell Hall must include one structured retell builder per lesson, found ${tableMatchQuestions.length}.`,
+    )
+  }
+
+  for (const lesson of pack.lessons) {
+    const lessonQuestions = pack.questions.filter((question) => question.lessonIdentifier === lesson.lessonId)
+    const builderQuestions = lessonQuestions.filter((question) => question.questionType === 'table_match' && question.questionContent?.type === 'table_match')
+    if (builderQuestions.length !== 1) {
+      pushIssue(issues, 'retell_builder_invalid', lesson.lessonId, 'Each Retell Hall lesson must include exactly one structured retell builder.')
+      continue
+    }
+
+    const builderQuestion = builderQuestions[0]
+    const payload = builderQuestion.questionContent as Extract<NonNullable<typeof builderQuestion.questionContent>, { type: 'table_match' }>
+    if (payload.selectionMode !== 'use_each_once') {
+      pushIssue(issues, 'retell_builder_invalid', builderQuestion.questionIdentifier, 'Retell builders must use each piece only once.')
+    }
+
+    const passage = pack.passages.find((entry) => entry.passageIdentifier === builderQuestion.passageIdentifier)
+    const guide = passage ? pack.retellGuides?.find((entry) => entry.passageId === passage.passageIdentifier) : undefined
+    const expectedRowCount = guide?.textKind === 'informational' ? 4 : 5
+
+    if (!guide) {
+      pushIssue(issues, 'retell_builder_invalid', builderQuestion.questionIdentifier, 'Every retell builder must align to a retell guide.')
+      continue
+    }
+
+    if (payload.rows.length !== expectedRowCount) {
+      pushIssue(issues, 'retell_builder_invalid', builderQuestion.questionIdentifier, `Retell builders must contain exactly ${expectedRowCount} rows.`)
+    }
+
+    const normalizedPools = payload.rows.map((row) => normalizeRetellTableMatchPool(row.options))
+    for (let index = 1; index < normalizedPools.length; index += 1) {
+      if (!sameStringList(normalizedPools[0] ?? [], normalizedPools[index])) {
+        pushIssue(issues, 'retell_builder_invalid', builderQuestion.questionIdentifier, 'Retell builder rows must share the same option pool.')
+        break
+      }
+    }
+
+    const uniquePoolIds = new Set(payload.rows.flatMap((row) => row.options.map((option) => option.id)))
+    if (uniquePoolIds.size !== expectedRowCount + 1) {
+      pushIssue(issues, 'retell_builder_invalid', builderQuestion.questionIdentifier, 'Retell builders must leave exactly one unused distractor.')
+    }
+
+    const correctChoiceIds = payload.rows.map((row) => row.correctChoiceId)
+    if (new Set(correctChoiceIds).size !== expectedRowCount) {
+      pushIssue(issues, 'retell_builder_invalid', builderQuestion.questionIdentifier, 'Retell builder choices must be unique across rows.')
+    }
+
+    for (const row of payload.rows) {
+      if (!row.prompt.trim()) {
+        pushIssue(issues, 'retell_builder_invalid', builderQuestion.questionIdentifier, 'Retell builder rows need prompts.')
+      }
+      if (!row.options.some((option) => option.id === row.correctChoiceId)) {
+        pushIssue(issues, 'retell_builder_invalid', builderQuestion.questionIdentifier, 'Every retell row needs a resolvable correct choice.')
+      }
+    }
+  }
+}
+
+function normalizeRetellTableMatchPool(options: { id: string; text: string }[]): string[] {
+  return options
+    .map((option) => `${option.id.trim()}::${normalizeGuideText(option.text)}`)
+    .sort((left, right) => left.localeCompare(right))
+}
+
+function sameStringList(left: readonly string[], right: readonly string[]): boolean {
+  if (left.length !== right.length) return false
+  return left.every((value, index) => value === right[index])
+}
+
 function normalizeGuideText(text: string): string {
   return text.trim().toLowerCase().replace(/\s+/g, ' ')
 }
@@ -3324,6 +3705,47 @@ function getBridgePackExpectation(pack: ContentPack): BridgePackExpectation | nu
       openConsonantLeWords: new Set(),
       closedConsonantLeWords: new Set(),
       forbiddenSilentEWords: new Set(),
+      questionTypeCounts: {
+        multiple_choice: 17,
+        multi_select: 7,
+        hot_text: 7,
+        table_match: 7,
+        two_part: 3,
+      },
+    }
+  }
+
+  if (pack.manifest.benchmarkReferences.includes('ELA.2.R.3.2') && pack.manifest.difficultyRange[0] === 1 && pack.manifest.difficultyRange[1] === 2) {
+    return {
+      packId: pack.manifest.packId,
+      guidedDifficultyA: 1,
+      guidedDifficultyB: 2,
+      checkpointPatterns: [
+        'literary-retell',
+        'informational-retell',
+        'structured-retell',
+        'retell-important-vs-minor',
+        'retell-use-each-once',
+        'literary-main-characters',
+        'literary-setting',
+        'literary-problem',
+        'literary-important-events',
+        'literary-resolution',
+        'literary-logical-sequence',
+        'literary-retell-completeness',
+        'informational-central-idea',
+        'informational-relevant-details',
+        'informational-details-across-sections',
+        'informational-retell-order',
+        'informational-retell-completeness',
+      ],
+      minSupportTargets: 28,
+      maxSupportTargets: 28,
+      minSupportTargetsPerPassage: 4,
+      maxSupportTargetsPerPassage: 4,
+      openConsonantLeWords: new Set<string>(),
+      closedConsonantLeWords: new Set<string>(),
+      forbiddenSilentEWords: new Set<string>(),
       questionTypeCounts: {
         multiple_choice: 17,
         multi_select: 7,

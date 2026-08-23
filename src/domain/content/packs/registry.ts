@@ -18,6 +18,7 @@ import { grade2ContextCavernAcademicWordWorkshopPack } from './grade2/contextCav
 import { grade2ContextCavernMorphologyMinePack } from './grade2/contextCavern/morphologyMine'
 import { grade2ContextCavernMeaningClueChamberPack } from './grade2/contextCavern/meaningClueChamber'
 import { grade2CompareCastleWordplayWatchtowerPack } from './grade2/compareCastle/wordplayWatchtower'
+import { grade2CompareCastleRetellHallPack } from './grade2/compareCastle/retellHall'
 import { legacyDevelopmentPack } from './legacyDevelopmentPack'
 import type { ContentPack } from './contentPackTypes'
 import type { ContentSample } from '../types'
@@ -45,6 +46,7 @@ export const contentPacks: readonly ContentPack[] = [
   grade2ContextCavernMorphologyMinePack,
   grade2ContextCavernMeaningClueChamberPack,
   grade2CompareCastleWordplayWatchtowerPack,
+  grade2CompareCastleRetellHallPack,
   legacyDevelopmentPack,
 ]
 

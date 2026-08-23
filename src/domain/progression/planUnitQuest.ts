@@ -794,6 +794,192 @@ export function planUnitQuest(input: PlanUnitQuestInput): UnitQuestPlan {
     }
   }
 
+  if (selectedTrack?.worldId === 'compare-castle') {
+    const selectedLessons = input.availableLessons.filter((lesson) => lesson.unitId === input.selectedUnitId)
+    const canResumePlannedLesson =
+      !!availableNextQuest &&
+      !!plannedLesson &&
+      plannedLesson.unitId === input.selectedUnitId
+
+    if (input.selectedUnitId === 'cg-unit-1') {
+      if (selectedDifficulty >= 2) {
+        if (canResumePlannedLesson && availableNextQuest && availableNextQuest.purpose === 'review') {
+          return {
+            status: 'available',
+            purpose: availableNextQuest.purpose,
+            lesson: availableNextQuest.lesson,
+            lessonId: availableNextQuest.lesson.lessonId,
+            unitId: plannedLesson.unitId,
+            activityId: availableNextQuest.lesson.activityId,
+          }
+        }
+
+        return {
+          status: 'content_needed',
+          purpose: contentNeededNextQuest?.purpose ?? 'review',
+          skillId: currentSkill?.skillId ?? 'unknown',
+          difficulty: selectedDifficulty,
+          reason: 'Wordplay Watchtower quests are complete. More across-genre review may appear when needed.',
+          unitId: input.selectedUnitId,
+        }
+      }
+
+      const plan = selectNextLesson({
+        skillId: currentSkill?.skillId ?? 'unknown',
+        difficulty: selectedDifficulty,
+        purpose: availableNextQuest?.purpose ?? 'progression',
+        availableLessons: selectedLessons,
+        recentActivityUsage: currentSkill?.recentActivityUsage ?? [],
+      })
+      if (plan.status === 'available') {
+        return {
+          status: 'available',
+          purpose: plan.purpose,
+          lesson: plan.lesson,
+          lessonId: plan.lesson.lessonId,
+          unitId: plan.lesson.unitId,
+          activityId: plan.lesson.activityId,
+        }
+      }
+      return {
+        status: 'content_needed',
+        purpose: plan.purpose,
+        skillId: plan.skillId,
+        difficulty: plan.difficulty,
+        reason: plan.reason,
+        unitId: input.selectedUnitId,
+      }
+    }
+
+    if (input.selectedUnitId === 'cg-unit-2') {
+      if (selectedDifficulty < 2) {
+        if (canResumePlannedLesson && availableNextQuest && ['remediation', 'review'].includes(availableNextQuest.purpose)) {
+          return {
+            status: 'available',
+            purpose: availableNextQuest.purpose,
+            lesson: availableNextQuest.lesson,
+            lessonId: availableNextQuest.lesson.lessonId,
+            unitId: plannedLesson.unitId,
+            activityId: availableNextQuest.lesson.activityId,
+          }
+        }
+
+        return {
+          status: 'locked',
+          purpose: 'progression',
+          unitId: input.selectedUnitId,
+          reason: 'Complete Wordplay Watchtower to unlock Retell Hall.',
+        }
+      }
+
+      if (selectedDifficulty >= 3) {
+        if (canResumePlannedLesson && availableNextQuest && availableNextQuest.purpose === 'review') {
+          return {
+            status: 'available',
+            purpose: availableNextQuest.purpose,
+            lesson: availableNextQuest.lesson,
+            lessonId: availableNextQuest.lesson.lessonId,
+            unitId: plannedLesson.unitId,
+            activityId: availableNextQuest.lesson.activityId,
+          }
+        }
+
+        return {
+          status: 'content_needed',
+          purpose: contentNeededNextQuest?.purpose ?? 'review',
+          skillId: currentSkill?.skillId ?? 'unknown',
+          difficulty: selectedDifficulty,
+          reason: 'Retell Hall quests are complete. Compare Keep quests are being prepared.',
+          unitId: input.selectedUnitId,
+        }
+      }
+
+      const plan = selectNextLesson({
+        skillId: currentSkill?.skillId ?? 'unknown',
+        difficulty: selectedDifficulty,
+        purpose: availableNextQuest?.purpose ?? 'progression',
+        availableLessons: selectedLessons,
+        recentActivityUsage: currentSkill?.recentActivityUsage ?? [],
+      })
+      if (plan.status === 'available') {
+        return {
+          status: 'available',
+          purpose: plan.purpose,
+          lesson: plan.lesson,
+          lessonId: plan.lesson.lessonId,
+          unitId: plan.lesson.unitId,
+          activityId: plan.lesson.activityId,
+        }
+      }
+      return {
+        status: 'content_needed',
+        purpose: plan.purpose,
+        skillId: plan.skillId,
+        difficulty: plan.difficulty,
+        reason: plan.reason,
+        unitId: input.selectedUnitId,
+      }
+    }
+
+    if (input.selectedUnitId === 'cg-unit-3') {
+      if (selectedDifficulty < 3) {
+        if (canResumePlannedLesson && availableNextQuest && ['remediation', 'review'].includes(availableNextQuest.purpose)) {
+          return {
+            status: 'available',
+            purpose: availableNextQuest.purpose,
+            lesson: availableNextQuest.lesson,
+            lessonId: availableNextQuest.lesson.lessonId,
+            unitId: plannedLesson.unitId,
+            activityId: availableNextQuest.lesson.activityId,
+          }
+        }
+
+        return {
+          status: 'locked',
+          purpose: 'progression',
+          unitId: input.selectedUnitId,
+          reason: 'Complete Retell Hall to unlock Compare Keep.',
+        }
+      }
+
+      if (selectedLessons.length === 0) {
+        return {
+          status: 'locked',
+          purpose: plannedPurpose,
+          unitId: input.selectedUnitId,
+          reason: 'Compare Keep quests are being prepared.',
+        }
+      }
+
+      const plan = selectNextLesson({
+        skillId: currentSkill?.skillId ?? 'unknown',
+        difficulty: selectedDifficulty,
+        purpose: availableNextQuest?.purpose ?? 'progression',
+        availableLessons: selectedLessons,
+        recentActivityUsage: currentSkill?.recentActivityUsage ?? [],
+      })
+      if (plan.status === 'available') {
+        return {
+          status: 'available',
+          purpose: plan.purpose,
+          lesson: plan.lesson,
+          lessonId: plan.lesson.lessonId,
+          unitId: plan.lesson.unitId,
+          activityId: plan.lesson.activityId,
+        }
+      }
+
+      return {
+        status: 'content_needed',
+        purpose: plan.purpose,
+        skillId: plan.skillId,
+        difficulty: plan.difficulty,
+        reason: plan.reason,
+        unitId: input.selectedUnitId,
+      }
+    }
+  }
+
   if (selectedTrack?.worldId === 'context-cavern') {
     const selectedLessons = input.availableLessons.filter((lesson) => lesson.unitId === input.selectedUnitId)
     const canResumePlannedLesson =

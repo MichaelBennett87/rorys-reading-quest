@@ -237,6 +237,7 @@ function toLessonQuestion(raw: typeof sampleContent.questions[number], lessonId:
       const question: TableMatchLessonQuestion = {
         ...base,
         questionType: 'TABLE_MATCH',
+        selectionMode: raw.questionContent.selectionMode ?? 'independent',
         rows: raw.questionContent.rows.map((row) => ({
           id: row.id,
           prompt: row.prompt,

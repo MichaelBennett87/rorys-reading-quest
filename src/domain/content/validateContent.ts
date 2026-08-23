@@ -279,6 +279,7 @@ export function validateContent(sample: ContentSample): ContentValidationError[]
           )
         } else {
           const typed = payload as TableMatchQuestionData
+          const selectionMode = typed.selectionMode ?? 'independent'
           if (!Array.isArray(typed.rows) || typed.rows.length === 0) {
             withError(
               errors,
@@ -320,6 +321,61 @@ export function validateContent(sample: ContentSample): ContentValidationError[]
                   'malformed_table_match_rows',
                   question.questionIdentifier,
                   'Table match rows must point to one listed option.',
+                )
+              }
+            }
+
+            if (selectionMode !== 'independent' && selectionMode !== 'use_each_once') {
+              withError(
+                errors,
+                'malformed_question_payload',
+                question.questionIdentifier,
+                `Unsupported table match selection mode: ${selectionMode}.`,
+              )
+            }
+
+            if (selectionMode === 'use_each_once') {
+              const normalizedPools = typed.rows.map((row) => normalizeTableMatchPool(row.options))
+              const expectedPool = normalizedPools[0] ?? []
+              if (expectedPool.length !== typed.rows.length + 1) {
+                withError(
+                  errors,
+                  'malformed_table_match_rows',
+                  question.questionIdentifier,
+                  'Use-each-once table match questions need one extra distractor option.',
+                )
+              }
+              for (const pool of normalizedPools.slice(1)) {
+                if (!sameStringList(expectedPool, pool)) {
+                  withError(
+                    errors,
+                    'malformed_table_match_rows',
+                    question.questionIdentifier,
+                    'Use-each-once table match rows must share the same option pool.',
+                  )
+                  break
+                }
+              }
+
+              const correctChoiceIds = new Set<string>()
+              for (const row of typed.rows) {
+                if (correctChoiceIds.has(row.correctChoiceId)) {
+                  withError(
+                    errors,
+                    'malformed_table_match_rows',
+                    question.questionIdentifier,
+                    'Use-each-once table match correct choices must be unique across rows.',
+                  )
+                  break
+                }
+                correctChoiceIds.add(row.correctChoiceId)
+              }
+              if (correctChoiceIds.size > 0 && correctChoiceIds.size >= expectedPool.length) {
+                withError(
+                  errors,
+                  'malformed_table_match_rows',
+                  question.questionIdentifier,
+                  'Use-each-once table match questions need at least one unused distractor.',
                 )
               }
             }
@@ -469,6 +525,17 @@ function normalizeChunks(chunks: WordSupportChunk[]): string {
   return chunks
     .map((chunk) => chunk.displayText ?? '')
     .join('')
+}
+
+function normalizeTableMatchPool(options: { id: string; text: string }[]): string[] {
+  return options
+    .map((option) => `${option.id.trim()}::${option.text.trim().replace(/\s+/g, ' ')}`)
+    .sort((left, right) => left.localeCompare(right))
+}
+
+function sameStringList(left: string[], right: string[]): boolean {
+  if (left.length !== right.length) return false
+  return left.every((value, index) => value === right[index])
 }
 
 function validatePoemStructure(

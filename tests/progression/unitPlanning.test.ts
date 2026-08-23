@@ -762,6 +762,99 @@ describe('Compare Castle planning', () => {
     expect(compareCastle.units.find((unit) => unit.id === 'cg-unit-3')?.difficultyLabel).toBe('Trail 3')
   })
 
+  test('recovers stale Compare Castle content-needed state when Retell Hall content arrives', () => {
+    const progress = createDefaultQuestProgress(now)
+    progress.skillProgress['g2-across-genres-reading'] = createInitialSkillProgress('g2-across-genres-reading', 2, 1)
+    progress.plannedNextQuest = {
+      status: 'content_needed',
+      purpose: 'progression',
+      skillId: 'g2-across-genres-reading',
+      difficulty: 2,
+      reason: 'Retell Hall quests were not yet available.',
+    }
+
+    const plan = planUnitQuest({
+      selectedUnitId: 'cg-unit-2',
+      progress,
+      availableLessons: [
+        createCompareCastleLesson(),
+        createCompareCastleLesson({
+          lessonId: 'lesson-compare-castle-retell-hall-checkpoint-a',
+          activityId: 'activity-compare-castle-retell-hall-checkpoint-a',
+          unitId: 'cg-unit-2',
+          difficulty: 2,
+          benchmarkReferences: ['ELA.2.R.3.2'],
+          contentVersion: 'fixture-compare-castle-v2',
+        }),
+      ],
+    })
+
+    expect(plan.status).toBe('available')
+    expect(plan.unitId).toBe('cg-unit-2')
+    if (plan.status === 'available') {
+      expect(plan.lessonId).toBe('lesson-compare-castle-retell-hall-checkpoint-a')
+    }
+  })
+
+  test('keeps Compare Castle review ownership unit-specific', () => {
+    const availableLessons = [
+      createCompareCastleLesson({
+        lessonId: 'lesson-compare-castle-wordplay-watchtower-review-a',
+        activityId: 'activity-compare-castle-wordplay-watchtower-review-a',
+        benchmarkReferences: ['ELA.2.R.3.1'],
+        eligiblePurposes: ['review'],
+        contentVersion: 'fixture-compare-castle-v1',
+      }),
+      createCompareCastleLesson({
+        lessonId: 'lesson-compare-castle-retell-hall-review-a',
+        activityId: 'activity-compare-castle-retell-hall-review-a',
+        unitId: 'cg-unit-2',
+        difficulty: 2,
+        benchmarkReferences: ['ELA.2.R.3.2'],
+        eligiblePurposes: ['review'],
+        contentVersion: 'fixture-compare-castle-v2',
+      }),
+    ]
+
+    const wordplayProgress = createDefaultQuestProgress(now)
+    wordplayProgress.skillProgress['g2-across-genres-reading'] = createInitialSkillProgress('g2-across-genres-reading', 2, 1)
+    wordplayProgress.plannedNextQuest = {
+      status: 'available',
+      purpose: 'review',
+      lesson: availableLessons[0],
+    }
+
+    const wordplayReviewPlan = planUnitQuest({
+      selectedUnitId: 'cg-unit-1',
+      progress: wordplayProgress,
+      availableLessons,
+    })
+    expect(wordplayReviewPlan.status).toBe('available')
+    expect(wordplayReviewPlan.unitId).toBe('cg-unit-1')
+    if (wordplayReviewPlan.status === 'available') {
+      expect(wordplayReviewPlan.lessonId).toBe('lesson-compare-castle-wordplay-watchtower-review-a')
+    }
+
+    const retellProgress = createDefaultQuestProgress(now)
+    retellProgress.skillProgress['g2-across-genres-reading'] = createInitialSkillProgress('g2-across-genres-reading', 2, 1)
+    retellProgress.plannedNextQuest = {
+      status: 'available',
+      purpose: 'review',
+      lesson: availableLessons[1],
+    }
+
+    const retellReviewPlan = planUnitQuest({
+      selectedUnitId: 'cg-unit-2',
+      progress: retellProgress,
+      availableLessons,
+    })
+    expect(retellReviewPlan.status).toBe('available')
+    expect(retellReviewPlan.unitId).toBe('cg-unit-2')
+    if (retellReviewPlan.status === 'available') {
+      expect(retellReviewPlan.lessonId).toBe('lesson-compare-castle-retell-hall-review-a')
+    }
+  })
+
   test('plans Compare Castle through the selected unit without crossing ownership', () => {
     const baseProgress = createDefaultQuestProgress(now)
     baseProgress.skillProgress['g2-across-genres-reading'] = createInitialSkillProgress('g2-across-genres-reading', 1, 0)

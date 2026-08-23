@@ -9,15 +9,15 @@ import type {
 } from '../../../../types'
 
 type BaseQuestionSpec = {
-  benchmarkReference: 'ELA.2.R.3.1'
+  benchmarkReference: 'ELA.2.R.3.2'
   skillIdentifier: 'g2-across-genres-reading'
   reportingCategory: 'Reading Across Genres and Vocabulary'
-  genre: 'literary'
+  genre: 'literary' | 'informational'
   gradeBand: 2
   estimatedReadingLevel: 'Grade 2'
   contentVersion: string
   reviewStatus: 'DRAFT'
-  difficulty: 0 | 1
+  difficulty: 1 | 2
   passageIdentifier: string
   lessonIdentifier: string
   questionIdentifier: string

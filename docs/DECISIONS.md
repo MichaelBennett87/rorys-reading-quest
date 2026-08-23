@@ -339,3 +339,11 @@ Decision: activate `g2-across-genres-reading` through the Compare Castle Wordpla
 Rationale: Phase 6F1 now has authored DRAFT production content for `ELA.2.R.3.1`, and the shared curriculum architecture can use the existing `compare-castle` world without changing storage, review identity, or the later Compare Castle unit roadmap.
 
 Consequences: `ELA.2.R.3.1` becomes implemented in DRAFT through Compare Castle Wordplay Watchtower; `ELA.2.R.3.2` and `ELA.2.R.3.3` remain planned; Compare Castle becomes active in child-facing views and in the Grade 2 coverage snapshot; later Compare Castle units remain locked until their own phases.
+
+## 2026-08-23 - Phase 6F2 Retell Hall activation
+
+Decision: activate `g2-across-genres-reading` through the Compare Castle Retell Hall pack while keeping Compare Keep planned.
+
+Rationale: Phase 6F2 now has authored DRAFT production content for `ELA.2.R.3.2`, and the shared curriculum architecture can extend the existing `compare-castle` world without changing storage, review identity, or the later Compare Castle unit roadmap.
+
+Consequences: `ELA.2.R.3.2` becomes implemented in DRAFT through Compare Castle Retell Hall; `ELA.2.R.3.3` remains planned; Compare Castle remains active in child-facing views and in the Grade 2 coverage snapshot; Compare Keep remains locked until its own phase.

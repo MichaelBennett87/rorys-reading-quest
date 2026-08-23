@@ -448,6 +448,102 @@ function createVocabularyDashboard(): DashboardSnapshot {
   return dashboard
 }
 
+function createCompareCastleDashboard(): DashboardSnapshot {
+  const dashboard = createDashboard()
+  dashboard.categorySummaries.push({
+    reportingCategory: 'Reading Across Genres and Vocabulary',
+    rawCategories: ['across_genres'],
+    totalQuestionAttempts: 7,
+    correctResponses: 6,
+    firstAttemptCorrectResponses: 5,
+    overallAccuracy: 86,
+    firstAttemptAccuracy: 71,
+    assistedSessionCount: 1,
+    assistedSessionRate: 14,
+    mostRecentActivityDate: '2026-08-20T12:00:00.000Z',
+    dataAvailability: 'ready',
+    unclassifiedQuestionCount: 0,
+  })
+  dashboard.benchmarkSummaries.push(
+    {
+      benchmarkReference: 'ELA.2.R.3.1',
+      skillIdentifier: 'g2-across-genres-reading',
+      reportingCategory: 'Reading Across Genres and Vocabulary',
+      gradeBand: 2,
+      questionAttempts: 4,
+      accuracy: 100,
+      firstAttemptAccuracy: 100,
+      assistedSessionRate: 0,
+      mostRecentActivityDate: '2026-08-20T12:00:00.000Z',
+      currentDifficulty: 1,
+      lastMasteredDifficulty: 0,
+      distinctIndependentEvidenceCount: 2,
+      currentLearningState: 'ADVANCE',
+      nextReviewDate: '2026-08-21T12:00:00.000Z',
+      activeRemediationTarget: null,
+      parentStatusExplanation: 'Wordplay Watchtower is ready for the next compare-castle trail.',
+      dataAvailability: 'ready',
+    },
+    {
+      benchmarkReference: 'ELA.2.R.3.2',
+      skillIdentifier: 'g2-across-genres-reading',
+      reportingCategory: 'Reading Across Genres and Vocabulary',
+      gradeBand: 2,
+      questionAttempts: 3,
+      accuracy: 100,
+      firstAttemptAccuracy: 100,
+      assistedSessionRate: 0,
+      mostRecentActivityDate: '2026-08-20T12:00:00.000Z',
+      currentDifficulty: 2,
+      lastMasteredDifficulty: 1,
+      distinctIndependentEvidenceCount: 2,
+      currentLearningState: 'ADVANCE',
+      nextReviewDate: '2026-08-21T12:00:00.000Z',
+      activeRemediationTarget: null,
+      parentStatusExplanation: 'Retell Hall uses structured authored retell choices rather than spontaneous oral or original written retells.',
+      dataAvailability: 'ready',
+    },
+  )
+  dashboard.skillSummaries.push({
+    skillId: 'g2-across-genres-reading',
+    benchmarkReference: 'ELA.2.R.3.1',
+    benchmarkReferences: ['ELA.2.R.3.1', 'ELA.2.R.3.2'],
+    reportingCategory: 'Reading Across Genres and Vocabulary',
+    gradeBand: 2,
+    questionAttempts: 7,
+    accuracy: 100,
+    firstAttemptAccuracy: 100,
+    assistedSessionRate: 0,
+    mostRecentActivityDate: '2026-08-20T12:00:00.000Z',
+    currentDifficulty: 2,
+    lastMasteredDifficulty: 1,
+    distinctIndependentEvidenceCount: 2,
+    currentLearningState: 'ADVANCE',
+    nextReviewDate: '2026-08-21T12:00:00.000Z',
+    activeRemediationTarget: null,
+    parentStatusExplanation: 'Retell Hall uses structured authored retell choices rather than spontaneous oral or original written retells.',
+    dataAvailability: 'ready',
+  })
+  dashboard.recentAttempts.unshift({
+    completionDate: '2026-08-20T12:00:00.000Z',
+    lessonId: 'cg-retell-checkpoint-literary-a',
+    lessonTitle: 'Compare Castle: Retell Hall',
+    activityId: 'activity-compare-castle-retell-hall-checkpoint-a',
+    skillId: 'g2-across-genres-reading',
+    difficulty: 2,
+    accuracy: 100,
+    firstAttemptAccuracy: 100,
+    assistanceUsed: 0,
+    supportedTargetCount: 0,
+    maximumAssistanceLevel: 0,
+    progressionDecision: 'ADVANCE',
+    parentFriendlyExplanation: 'Retell Hall uses structured authored retell choices rather than spontaneous oral or original written retells.',
+    nextReviewDate: '2026-08-21T12:00:00.000Z',
+    classificationStatus: 'classified',
+  })
+  return dashboard
+}
+
 function createNoDataDashboard(): DashboardSnapshot {
   return {
     generatedAt: now,
@@ -919,7 +1015,6 @@ describe('ParentDashboardScreen', () => {
     expect(screen.getByText(/Distinct independent evidence count: 2/i)).toBeTruthy()
     expect(screen.getByText(/Context Cavern Morphology Mine is ready for review and next-step practice/i)).toBeTruthy()
 
-    fireEvent.click(screen.getByRole('button', { name: /Back to Progress/i }))
     fireEvent.click(screen.getByRole('button', { name: /Print Summary/i }))
     expect(screen.getByRole('heading', { name: /Parent Progress Summary/i })).toBeTruthy()
     expect(screen.getAllByText(/Context Cavern Vocabulary/i).length).toBeGreaterThan(0)
@@ -927,6 +1022,43 @@ describe('ParentDashboardScreen', () => {
     expect(screen.getByText(/Context Cavern: Morphology Mine/i)).toBeTruthy()
     expect(screen.queryByText(/passage text/i)).toBeNull()
     expect(screen.queryByText(/MorphologyGuide/i)).toBeNull()
+    fireEvent.click(screen.getByRole('button', { name: /^Print$/i }))
+    expect(print).toHaveBeenCalledTimes(1)
+  })
+
+  test('compare castle progress and print summary use friendly across-genre labels', () => {
+    const { service: printService, print } = createSupportedPrintService()
+
+    render(
+      <ParentDashboardScreen
+        progress={createProgress()}
+        dashboard={createCompareCastleDashboard()}
+        recordsState={createRecordsState()}
+        storageNotice="Parent storage is ready."
+        printService={printService}
+        onCreateAssessment={(values) => createNoopMutationResult(createRecordsState(), values.assessmentWindow)}
+        onUpdateAssessment={() => createNoopMutationResult(createRecordsState(), 'update')}
+        onDeleteAssessment={() => createNoopMutationResult(createRecordsState(), 'delete')}
+        onLock={() => {}}
+        onBackToQuest={() => {}}
+      />,
+    )
+
+    fireEvent.click(screen.getByRole('button', { name: /Progress/i }))
+    fireEvent.change(screen.getByLabelText(/Filter by category/i), { target: { value: 'Reading Across Genres and Vocabulary' } })
+    expect(screen.getByRole('heading', { name: /Across-Genre Reading/i })).toBeTruthy()
+    expect(screen.getAllByText(/Retell Hall uses structured authored retell choices rather than spontaneous oral or original written retells\./i).length).toBeGreaterThan(0)
+    expect(screen.queryByRole('heading', { name: /g2-across-genres-reading/i })).toBeNull()
+
+    fireEvent.click(screen.getByRole('button', { name: /Print Summary/i }))
+
+    expect(screen.getByRole('heading', { name: /Parent Progress Summary/i })).toBeTruthy()
+    expect(screen.getAllByText(/Across-Genre Reading/i).length).toBeGreaterThan(0)
+    expect(screen.getByText(/Compare Castle: Retell Hall/i)).toBeTruthy()
+    expect(screen.getAllByText(/Reading Across Genres and Vocabulary/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/Retell Hall uses structured authored retell choices rather than spontaneous oral or original written retells\./i).length).toBeGreaterThan(0)
+    expect(screen.queryByRole('heading', { name: /g2-across-genres-reading/i })).toBeNull()
+
     fireEvent.click(screen.getByRole('button', { name: /^Print$/i }))
     expect(print).toHaveBeenCalledTimes(1)
   })

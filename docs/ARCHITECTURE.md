@@ -1,5 +1,4 @@
 # Architecture (Phase 3)
-
 ## Presentation and Application Layer
 
 - `src/app/AppShell.tsx` owns explicit local navigation, including `progression_outcome`.
@@ -57,19 +56,19 @@
 - `sampleContent` now aggregates registered packs, while legacy lesson IDs remain resolvable for recovery and history.
 - `GUIDED_PRACTICE` lessons can include teaching blocks before scored questions; `CHECKPOINT` lessons remain fresh, scored progression material.
 - The benchmark-pattern catalog is benchmark-specific, so `ELA.2.F.1.3a`, `ELA.2.F.1.3b`, `ELA.2.F.1.3c`, and `ELA.2.F.1.3d` can each report their own expected patterns and coverage status.
-- The active Grade 2 bridge packs now total twenty registered packs, 140 lessons, 140 passages, 807 questions, and 558 support targets, with the legacy development pack still preserved for recovery and history.
+- The active Grade 2 bridge packs now total twenty-one registered packs, 147 lessons, 147 passages, 848 questions, and 586 support targets, with the legacy development pack still preserved for recovery and history.
 - `planUnitQuest` keeps selected-unit planning unit-aware so fresh content and active-session recovery do not silently cross from one Word Forge trail to another.
 - The active Grade 2 bridge packs cover `oo`, `ea`, `ou`, `oi`, `oy`, and `ow` across Phase 6A1 and Phase 6A2, implement `ELA.2.F.1.3b` in DRAFT form in Phase 6B1, implement `ELA.2.F.1.3c` in DRAFT form across Phase 6B1 and Phase 6B2, implement `ELA.2.F.1.3d` in DRAFT form across Phase 6C1 and Phase 6C2, implement `ELA.2.F.1.3e` in DRAFT form in Phase 6C3, provide `ELA.2.F.1.4` as supportive practice only in Phase 6C4, implement `ELA.2.R.1.1`, `ELA.2.R.1.2`, and `ELA.2.R.1.3` in DRAFT form across Phases 6D1 through 6D3, implement `ELA.2.R.1.4` in DRAFT form in Phase 6D4, and implement `ELA.2.R.2.1`, `ELA.2.R.2.2`, `ELA.2.R.2.3`, and `ELA.2.R.2.4` in DRAFT form in Phases 6E1 through 6E4 while implementing `ELA.2.V.1.1` in DRAFT form in Phase 6E5, implementing `ELA.2.V.1.2` in DRAFT form in Phase 6E6, and implementing `ELA.2.V.1.3` in DRAFT form in Phase 6E7 while keeping Fluency Flight free of oral measurement. Phase 6E0 keeps Information Detectives and Context Cavern as planned shells only so they do not affect active totals before content exists.
 - Phase 6D0 adds curriculum-track registry, playable-track discovery, and safe multi-skill initialization so later prose, poetry, and informational packs can land without relying on object insertion order or Word Forge-specific assumptions. Phase 6D1 uses that foundation to activate Story Scouts, Phase 6D2 adds unit-affine Story Map and Theme Trail review scheduling so same-skill units do not steal one another's reviews, Phase 6D3 extends that review affinity to Perspective Portal and preserves the existing Story Scouts unit boundaries, Phase 6D4 activates Poetry Planet with the same deterministic planning and world-gating rules, Phase 6E1 activates Information Detectives Text Feature Hunt with the same deterministic planning and world-gating rules, Phase 6E2 adds Central Idea Center while preserving unit-specific review, remediation, and completion labeling, Phase 6E3 adds Purpose Path while preserving the same unit-specific review, remediation, and completion labeling, and Phase 6E4 adds Opinion & Evidence Desk while preserving the same unit-specific review, remediation, and completion labeling, Phase 6E5 adds Academic Word Workshop while preserving the same Context Cavern unit boundaries, Phase 6E6 adds Morphology Mine while preserving the same Context Cavern unit boundaries, and Phase 6E7 adds Meaning Clue Chamber while preserving the same Context Cavern unit boundaries.
 - Lesson ownership now comes from catalog metadata, not brittle lesson-ID prefixes, so unit gating and recovery stay aligned as later packs land.
 ## Phase 6F0 architecture boundary
 
-Compare Castle becomes active in Phase 6F1. The shared curriculum architecture reserves `g2-across-genres-reading` for `compare-castle` with three planned units, of which `cg-unit-1` is now active and `cg-unit-2` and `cg-unit-3` remain planned. Phase 6F1 adaptive-planning boundary: Compare Castle is active only when Wordplay Watchtower exists, and the planner keeps Retell Hall and Compare Keep planned.
+Compare Castle becomes active in Phase 6F1. The shared curriculum architecture reserves `g2-across-genres-reading` for `compare-castle` with three planned units, of which `cg-unit-1` and `cg-unit-2` are now active and `cg-unit-3` remains planned. Phase 6F2 adaptive-planning boundary: Compare Castle is active only when Wordplay Watchtower and Retell Hall exist, and the planner keeps Compare Keep planned until its own phase.
 
 - `cg-unit-1` Wordplay Watchtower for `ELA.2.R.3.1` (active in DRAFT)
-- `cg-unit-2` Retell Hall for `ELA.2.R.3.2`
+- `cg-unit-2` Retell Hall for `ELA.2.R.3.2` (active in DRAFT)
 - `cg-unit-3` Compare Keep for `ELA.2.R.3.3`
 
-Phase 6F0 adds no production lessons and no new persistence behavior. Phase 6F1 adds the first active Compare Castle content pack, Wordplay Watchtower, while Retell Hall and Compare Keep remain planned for later phases.
+Phase 6F0 adds no production lessons and no new persistence behavior. Phase 6F1 adds the first active Compare Castle content pack, Wordplay Watchtower, Phase 6F2 adds Retell Hall, and Compare Keep remains planned for later phases.
 
 The retell boundary remains structured and authored rather than oral or free-response scoring. The paired-text boundary remains deferred to Phase 6F3. The figurative-language boundary remains limited to similes, idioms, and alliteration.

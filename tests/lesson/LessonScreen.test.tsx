@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen } from '@testing-library/react'
+import { cleanup, fireEvent, render, screen, within } from '@testing-library/react'
 import { afterEach, describe, expect, test, vi } from 'vitest'
 
 import { LessonScreen } from '../../src/screens/LessonScreen'
@@ -171,6 +171,38 @@ const tableMatchQuestion: LessonQuestion = {
   ],
 }
 
+const retellBuilderQuestion: LessonQuestion = {
+  ...tableMatchQuestion,
+  questionId: 'q-retell',
+  lessonId: 'lesson-compare-castle-retell-hall-checkpoint-a',
+  activityId: 'act-compare-castle-retell-hall-checkpoint-a',
+  prompt: 'Build the retell.',
+  explanation: 'Each retell piece can be used only once.',
+  selectionMode: 'use_each_once',
+  rows: [
+    {
+      id: 'row-opening',
+      prompt: 'Opening',
+      correctChoiceId: 'piece-opening',
+      options: [
+        { id: 'piece-opening', text: 'Mia and Theo mapped the mural walk.' },
+        { id: 'piece-problem', text: 'The label slipped from the folder.' },
+        { id: 'piece-ending', text: 'They finished the display with a smile.' },
+      ],
+    },
+    {
+      id: 'row-ending',
+      prompt: 'Ending',
+      correctChoiceId: 'piece-ending',
+      options: [
+        { id: 'piece-opening', text: 'Mia and Theo mapped the mural walk.' },
+        { id: 'piece-problem', text: 'The label slipped from the folder.' },
+        { id: 'piece-ending', text: 'They finished the display with a smile.' },
+      ],
+    },
+  ],
+}
+
 const guidedLesson: LessonDefinition = {
   ...baseLesson,
   lessonId: 'lesson-word-forge-guided-moon',
@@ -267,6 +299,21 @@ describe('LessonScreen', () => {
     fireEvent.click(screen.getByRole('button', { name: /Submit Answer/i }))
     fireEvent.click(screen.getByRole('button', { name: /See Quest Complete/i }))
     expect(screen.getByText(/Quest Complete/i)).toBeTruthy()
+  })
+
+  test('supports one-use table matching for Retell Hall builders', () => {
+    renderLesson(retellBuilderQuestion)
+    expect(screen.getByText(/Each retell piece can be used only once/i)).toBeTruthy()
+
+    const selects = screen.getAllByRole('combobox')
+    fireEvent.change(selects[0], { target: { value: 'piece-opening' } })
+
+    expect(screen.getByRole('button', { name: /Submit Answer/i }).getAttribute('disabled')).not.toBeNull()
+    expect(within(selects[0]).getByRole('option', { name: /Mia and Theo mapped the mural walk\./i }).getAttribute('disabled')).toBeNull()
+    expect(within(selects[1]).getByRole('option', { name: /Mia and Theo mapped the mural walk\./i }).getAttribute('disabled')).not.toBeNull()
+
+    fireEvent.change(selects[1], { target: { value: 'piece-ending' } })
+    expect(screen.getByRole('button', { name: /Submit Answer/i }).getAttribute('disabled')).toBeNull()
   })
 
   test('shows completion screen and return action', () => {

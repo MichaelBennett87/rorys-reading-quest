@@ -49,8 +49,11 @@ export interface TwoPartQuestionData {
   partBCorrectChoiceId: string
 }
 
+export type TableMatchSelectionMode = 'independent' | 'use_each_once'
+
 export interface TableMatchQuestionData {
   type: 'table_match'
+  selectionMode?: TableMatchSelectionMode
   rows: {
     id: string
     prompt: string

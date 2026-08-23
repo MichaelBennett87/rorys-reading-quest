@@ -101,10 +101,10 @@ describe('benchmark coverage audit', () => {
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.3.2')).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.R.3.2',
       expectedPatterns: ['literary-retell', 'informational-retell'],
-      coveredPatterns: [],
-      missingPatterns: ['literary-retell', 'informational-retell'],
-      contributingPackIds: [],
-      coverageStatus: 'partial',
+      coveredPatterns: ['literary-retell', 'informational-retell'],
+      missingPatterns: [],
+      contributingPackIds: ['g2-compare-castle-retell-hall'],
+      coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',
     }))
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.3.3')).toEqual(expect.objectContaining({

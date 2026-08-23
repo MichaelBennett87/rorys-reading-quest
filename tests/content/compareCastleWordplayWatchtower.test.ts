@@ -13,6 +13,7 @@ import { grade2CompareCastleWordplayWatchtowerPack } from '../../src/domain/cont
 
 const WORDPLAY_VERSION = 'g2-cg-wordplay-r0.1.0'
 const WORDPLAY_PACK_ID = 'g2-compare-castle-wordplay-watchtower'
+const RETELL_PACK_ID = 'g2-compare-castle-retell-hall'
 
 describe('Grade 2 Compare Castle Wordplay Watchtower pack', () => {
   test('registers the active Compare Castle pack and updates registry totals', () => {
@@ -21,7 +22,8 @@ describe('Grade 2 Compare Castle Wordplay Watchtower pack', () => {
       .map((pack) => pack.manifest.packId)
 
     expect(contentPacks.some((pack) => pack.manifest.packId === WORDPLAY_PACK_ID)).toBe(true)
-    expect(activePackIds.at(-1)).toBe(WORDPLAY_PACK_ID)
+    expect(activePackIds.at(-2)).toBe(WORDPLAY_PACK_ID)
+    expect(activePackIds.at(-1)).toBe(RETELL_PACK_ID)
     expect(grade2CompareCastleWordplayWatchtowerPack.manifest).toEqual(expect.objectContaining({
       packId: WORDPLAY_PACK_ID,
       packTitle: 'Grade 2 Compare Castle: Wordplay Watchtower',
@@ -35,11 +37,11 @@ describe('Grade 2 Compare Castle Wordplay Watchtower pack', () => {
       difficultyRange: [0, 1],
     }))
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 20,
-      activeLessonCount: 140,
-      activePassageCount: 140,
-      activeQuestionCount: 807,
-      activeSupportTargetCount: 558,
+      activePackCount: 21,
+      activeLessonCount: 147,
+      activePassageCount: 147,
+      activeQuestionCount: 848,
+      activeSupportTargetCount: 586,
     })
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.3.1')).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.R.3.1',

@@ -1,5 +1,4 @@
 # Adaptive Engine (Phase 3)
-
 ## Score Contract
 
 `LessonResult.accuracy` is a percentage from `0` through `100`. The checkpoint engine receives `accuracy / 100`. First-attempt accuracy is `firstAttemptCorrect / totalQuestions`; incomplete, zero-question, malformed, unknown-skill, mismatched-trail, and unsupported-difficulty results are declined.
@@ -51,9 +50,9 @@ Phase 6A1 through Phase 6C4 add registered Grade 2 bridge packs for `word-forge`
 ## Phase 6A1 through Phase 6C3 Coverage
 
 `ELA.2.F.1.3a` is implemented in DRAFT form across Phase 6A1 and Phase 6A2. `ELA.2.F.1.3b` is implemented in DRAFT form in Phase 6B1, `ELA.2.F.1.3c` is implemented in DRAFT form across Phase 6B1 and Phase 6B2, `ELA.2.F.1.3d` is implemented in DRAFT form across Phase 6C1 and Phase 6C2, `ELA.2.F.1.3e` is implemented in DRAFT form in Phase 6C3, and `ELA.2.F.1.4` is supportive practice only in Phase 6C4. The active packs cover `oo`, `ea`, `ou`, `oi`, `oy`, and `ow`; the Syllable Summit pack covers the two-syllable, open/closed, and consonant-`le` bridge patterns; Prefix Power covers common prefixes; Suffix Station covers common suffixes; Quiet Letter Quest covers the bounded silent-letter set; Fluency Flight supports modeled and repeated reading without oral scoring; the active prose-and-poetry bridge packs implement `ELA.2.R.1.1` through `ELA.2.R.1.4` in DRAFT form; Information Detectives implements `ELA.2.R.2.1` through `ELA.2.R.2.4` in DRAFT form; and Context Cavern implements `ELA.2.V.1.1` in DRAFT form in Phase 6E5 and `ELA.2.V.1.2` in DRAFT form in Phase 6E6 while later Context Cavern units remain planned. Phase 6D0 adds the track foundation only; it does not add prose or poetry content yet. Parent and curriculum docs must distinguish benchmark-aligned exposure from complete benchmark mastery and supportive practice from benchmark coverage. Later bridge phases add the remaining Grade 2 foundations and reading strands.
-## Phase 6F1 adaptive-planning boundary
+## Phase 6F2 adaptive-planning boundary
 
-The adaptive planner includes `g2-across-genres-reading` when active Compare Castle content exists. Compare Castle is playable in Phase 6F1 through Wordplay Watchtower, and the planned Retell Hall and Compare Keep units must not create progress entries, reviews, or content-needed blockers.
+The adaptive planner includes `g2-across-genres-reading` when active Compare Castle content exists. Compare Castle is playable in Phase 6F1 through Wordplay Watchtower and in Phase 6F2 through Retell Hall, while Compare Keep remains planned. The planner must keep unit ownership deterministic, preserve review identity, and avoid creating progress entries for deferred units.
 
 When fixture content is present, unit affinity remains isolated:
 

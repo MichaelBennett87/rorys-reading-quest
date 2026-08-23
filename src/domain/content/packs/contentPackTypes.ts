@@ -257,6 +257,44 @@ export interface WordplayGuide {
   contentVersion: string
 }
 
+export type RetellTextKind = 'literary' | 'informational'
+
+export interface RetellPiece {
+  pieceId: string
+  text: string
+  sequenceIndex: number
+  role: string
+  evidenceReferenceIds: string[]
+}
+
+export interface LiteraryRetellGuide {
+  passageId: string
+  textKind: 'literary'
+  mainCharacters: string[]
+  settingStatement: string
+  problemStatement: string
+  importantEventStatements: string[]
+  resolutionStatement: string
+  retellPieces: RetellPiece[]
+  minorDetailIds: string[]
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
+export interface InformationalRetellGuide {
+  passageId: string
+  textKind: 'informational'
+  topicLabel: string
+  centralIdeaStatement: string
+  relevantDetailStatements: string[]
+  retellPieces: RetellPiece[]
+  otherTrueDetailIds: string[]
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
+export type RetellGuide = LiteraryRetellGuide | InformationalRetellGuide
+
 export interface ContentPackManifest {
   packId: string
   packTitle: string
@@ -309,6 +347,7 @@ export interface ContentPack {
   morphologyGuides?: MorphologyGuide[]
   meaningClueGuides?: MeaningClueGuide[]
   wordplayGuides?: WordplayGuide[]
+  retellGuides?: RetellGuide[]
   themeGuides?: ThemeGuide[]
   perspectiveGuides?: PerspectiveGuide[]
   rhymeSchemeGuides?: RhymeSchemeGuide[]
@@ -383,6 +422,10 @@ export interface ContentPackAuditIssue {
    | 'missing_wordplay_guide'
    | 'wordplay_guide_count_mismatch'
    | 'wordplay_guide_invalid'
+   | 'missing_retell_guide'
+   | 'retell_guide_count_mismatch'
+   | 'retell_guide_invalid'
+   | 'retell_builder_invalid'
    | 'invalid_evidence_reference'
    | 'invalid_author_opinion_feature_reference'
    | 'invalid_informational_feature_reference'

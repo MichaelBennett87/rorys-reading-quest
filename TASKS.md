@@ -74,7 +74,7 @@
   - [ ] Phase 6F: across-genres reading and final Grade 2 audit
     - [x] Phase 6F0: Compare Castle and across-genres foundation
     - [x] Phase 6F1: similes, idioms, alliteration, and ELA.2.R.3.1
-    - [ ] Phase 6F2: literary and informational retelling for ELA.2.R.3.2
+    - [x] Phase 6F2: literary and informational retelling for ELA.2.R.3.2
     - [ ] Phase 6F3: paired-text comparison for ELA.2.R.3.3
     - [ ] Phase 6F4: final Grade 2 audit and Phase 6 completion
 - [ ] Phase 7: Grade 3 FAST-aligned content
