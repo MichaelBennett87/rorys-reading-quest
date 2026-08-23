@@ -11,19 +11,20 @@ interface WorldScreenProps {
 
 export function WorldScreen({ world, onBack, onOpenUnitSelect }: WorldScreenProps) {
   return (
-    <div className="screen-shell">
+    <div className={`screen-shell child-experience world-screen world-theme-${world.id}`} data-world={world.id}>
       <header className="screen-header">
+        <p className="eyebrow">World adventure</p>
         <h1>{world.name}</h1>
         <p>{world.description}</p>
       </header>
 
-      <section className="card">
+      <section className="card world-status-card">
         <h2>Adventure status</h2>
         <p>Skills trained: {world.skills.join(', ')}</p>
         <ProgressMeter label={`${world.name} progress`} value={world.currentProgress} />
       </section>
 
-      <section className="card" aria-labelledby="world-units-heading">
+      <section className="card world-units-card" aria-labelledby="world-units-heading">
         <h2 id="world-units-heading">Available Units in this world</h2>
         <ul className="world-unit-list">
           {world.units.length === 0 ? (
@@ -47,4 +48,3 @@ export function WorldScreen({ world, onBack, onOpenUnitSelect }: WorldScreenProp
     </div>
   )
 }
-

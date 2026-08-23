@@ -10,14 +10,15 @@ interface UnitSelectScreenProps {
 
 export function UnitSelectScreen({ world, onBack, onSelectUnit }: UnitSelectScreenProps) {
   return (
-    <div className="screen-shell">
+    <div className={`screen-shell child-experience unit-map-screen world-theme-${world.id}`} data-world={world.id}>
       <header className="screen-header">
+        <p className="eyebrow">Follow the glowing trail</p>
         <h1>{world.name}: Unit Selection</h1>
-        <p>Choose a unit to continue your trail.</p>
+        <p>Choose the next stop on your reading journey.</p>
       </header>
 
-      <section className="card" aria-labelledby="unit-list-heading">
-        <h2 id="unit-list-heading">Units</h2>
+      <section className="card adventure-map" aria-labelledby="unit-list-heading">
+        <h2 id="unit-list-heading">Quest Trail</h2>
         <div className="unit-grid">
           {world.units.map((unit) => (
             <UnitCard key={unit.id} unit={unit} onSelect={onSelectUnit} />
@@ -33,4 +34,3 @@ export function UnitSelectScreen({ world, onBack, onSelectUnit }: UnitSelectScre
     </div>
   )
 }
-

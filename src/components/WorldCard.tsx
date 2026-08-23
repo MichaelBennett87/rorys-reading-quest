@@ -16,7 +16,7 @@ export function WorldCard({ world, onOpenWorld }: WorldCardProps) {
   const isAvailable = world.status === 'available'
 
   return (
-    <article className="world-card">
+    <article className={`world-card world-theme-${world.id}`} data-world={world.id}>
       <ChildButton
         type="button"
         className={`world-card-inner world-${world.status}`}
@@ -43,4 +43,3 @@ export function WorldCard({ world, onOpenWorld }: WorldCardProps) {
     </article>
   )
 }
-

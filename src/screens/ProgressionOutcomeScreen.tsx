@@ -54,15 +54,16 @@ export function ProgressionOutcomeScreen({
     : `Trail ${outcome.currentDifficulty}`
 
   return (
-    <section className="screen-shell progression-outcome" aria-labelledby="progression-outcome-title">
+    <section className="screen-shell child-experience progression-outcome" aria-labelledby="progression-outcome-title">
       <header className="screen-header">
+        <span className="outcome-icon" aria-hidden="true">🏅</span>
         <h1 id="progression-outcome-title">{message.title}</h1>
         <p>{message.message}</p>
       </header>
-      <section className="card reward-summary" aria-label="Quest rewards earned">
-        <p><strong>Stars earned:</strong> {outcome.earnedStars}</p>
-        <p><strong>XP earned:</strong> {outcome.earnedXp}</p>
-        <p><strong>Current trail:</strong> {trailLabel}</p>
+      <section className="card reward-summary reward-stat-grid" aria-label="Quest rewards earned">
+        <p><span aria-hidden="true">⭐</span><strong>{outcome.earnedStars}</strong><span>stars earned</span></p>
+        <p><span aria-hidden="true">✨</span><strong>{outcome.earnedXp}</strong><span>XP earned</span></p>
+        <p><span aria-hidden="true">🗺️</span><strong>{trailLabel}</strong><span>current trail</span></p>
       </section>
       <section className="card">
         <h2>Next Quest</h2>

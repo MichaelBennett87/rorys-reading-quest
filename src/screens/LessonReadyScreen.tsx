@@ -22,17 +22,23 @@ export function LessonReadyScreen({
   onStartQuest,
 }: LessonReadyScreenProps) {
   return (
-    <div className="screen-shell">
+    <div className={`screen-shell child-experience mission-ready world-theme-${world.id}`} data-world={world.id}>
       <header className="screen-header">
+        <p className="eyebrow">Mission ready</p>
         <h1>{unit.title}</h1>
         <p>{world.name}</p>
       </header>
 
-      <section className="card">
+      <section className="card mission-card">
+        <span className="mission-badge" aria-hidden="true">🧭</span>
         <h2>Lesson Preview</h2>
         <p>You will practice {unit.practiceFocus} in this quest.</p>
-        <p>Questions: {previewQuestionCount} in this play session.</p>
-        <p>Potential reward: up to 3 stars.</p>
+        <p className="sr-only">Questions: {previewQuestionCount} in this play session.</p>
+        <p className="sr-only">Potential reward: up to 3 stars.</p>
+        <div className="mission-stats" aria-label="Quest details">
+          <p><strong>{previewQuestionCount}</strong><span>questions</span></p>
+          <p><strong>3</strong><span>stars available</span></p>
+        </div>
         <p>Atlas message: Today we’re hunting for clues that help build careful reading habits.</p>
       </section>
 

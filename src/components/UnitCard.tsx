@@ -18,7 +18,7 @@ export function UnitCard({ unit, onSelect }: UnitCardProps) {
   const isSelectable = unit.state !== 'locked'
 
   return (
-    <article className="unit-card">
+    <article className={`unit-card unit-state-${unit.state}`} data-unit-state={unit.state}>
       <ChildButton
         type="button"
         className={`unit-card-inner unit-${unit.state}`}

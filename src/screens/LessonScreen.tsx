@@ -439,7 +439,7 @@ export function LessonScreen({
   }
 
   return (
-    <section className="screen-shell">
+    <section className={`screen-shell child-experience lesson-screen world-theme-${lesson.worldId}`} data-world={lesson.worldId}>
       <header className="screen-header">
         <h1>{lesson.lessonTitle}</h1>
         <p>{lesson.lessonObjective}</p>
