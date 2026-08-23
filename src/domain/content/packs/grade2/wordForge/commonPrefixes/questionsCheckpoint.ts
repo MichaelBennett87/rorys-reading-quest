@@ -320,7 +320,7 @@ export const checkpointQuestions: ReadingQuestion[] = [
     tags: ['common-prefixes', 'prefix-pre'],
     selectableSegments: [
       { id: 'school-preview-1', text: 'The school preview let families pretest the art game and hear a welcome song.' },
-      { id: 'school-preview-2', text: 'A child could unroll a poster while the teacher retold the plan.' },
+      { id: 'school-preview-2', text: 'A child could unroll a poster while the teacher could retell the plan.' },
       { id: 'school-preview-3', text: 'Younger guests smiled near the preschool room.' },
     ],
     correctSegmentIds: ['school-preview-1'],
@@ -512,7 +512,7 @@ export const checkpointQuestions: ReadingQuestion[] = [
     tags: ['common-prefixes', 'prefix-un', 'prefix-re'],
     selectableSegments: [
       { id: 'school-preview-1', text: 'The school preview let families pretest the art game and hear a welcome song.' },
-      { id: 'school-preview-2', text: 'A child could unroll a poster while the teacher retold the plan.' },
+      { id: 'school-preview-2', text: 'A child could unroll a poster while the teacher could retell the plan.' },
       { id: 'school-preview-3', text: 'Younger guests smiled near the preschool room.' },
     ],
     correctSegmentIds: ['school-preview-2'],

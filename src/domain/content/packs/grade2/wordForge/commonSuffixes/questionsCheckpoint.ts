@@ -151,7 +151,7 @@ export const checkpointQuestions: ReadingQuestion[] = [
     tags: ['common-suffixes', 'suffix-ly'],
     selectableSegments: [
       { id: 'suffix-pantry-1', text: 'At the pantry, the children carried careful bags and cleaned the shelves.' },
-      { id: 'suffix-pantry-2', text: 'The fastest cart rolled past the hopeful signs, and the family was glad.' },
+      { id: 'suffix-pantry-2', text: 'The fastest cart rolled past the hopeful signs, and the family made wishes for a full shelf.' },
       { id: 'suffix-pantry-3', text: 'A careless spill was wiped quickly.' },
     ],
     correctSegmentIds: ['suffix-pantry-3'],
@@ -345,7 +345,7 @@ export const checkpointQuestions: ReadingQuestion[] = [
     tags: ['common-suffixes', 'suffix-ly'],
     selectableSegments: [
       { id: 'suffix-pantry-1', text: 'At the pantry, the children carried careful bags and cleaned the shelves.' },
-      { id: 'suffix-pantry-2', text: 'The fastest cart rolled past the hopeful signs, and the family was glad.' },
+      { id: 'suffix-pantry-2', text: 'The fastest cart rolled past the hopeful signs, and the family made wishes for a full shelf.' },
       { id: 'suffix-pantry-3', text: 'A careless spill was wiped quickly.' },
     ],
     correctSegmentIds: ['suffix-pantry-3'],
@@ -539,7 +539,7 @@ export const checkpointQuestions: ReadingQuestion[] = [
     tags: ['common-suffixes', 'suffix-ly'],
     selectableSegments: [
       { id: 'suffix-pantry-1', text: 'At the pantry, the children carried careful bags and cleaned the shelves.' },
-      { id: 'suffix-pantry-2', text: 'The fastest cart rolled past the hopeful signs, and the family was glad.' },
+      { id: 'suffix-pantry-2', text: 'The fastest cart rolled past the hopeful signs, and the family made wishes for a full shelf.' },
       { id: 'suffix-pantry-3', text: 'A careless spill was wiped quickly.' },
     ],
     correctSegmentIds: ['suffix-pantry-3'],

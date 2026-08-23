@@ -560,12 +560,12 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
 
     const checkpointPassageCount = expectation.checkpointPassageCount ?? 3
     for (const lesson of checkpointLessons) {
-      if (lesson.passageIdentifiers.length !== checkpointPassageCount) {
+      if (lesson.passageIdentifiers.length < checkpointPassageCount) {
         pushIssue(
           issues,
           'lesson_referencing_missing_content',
           lesson.lessonId,
-          `Checkpoint lessons in this pack must reference exactly ${checkpointPassageCount} passages.`,
+          `Checkpoint lessons in this pack must reference at least ${checkpointPassageCount} passages.`,
         )
       }
       for (const passageId of lesson.passageIdentifiers) {

@@ -107,7 +107,7 @@ export const buildingBlockQuestions: ReadingQuestion[] = [
     tags: ['common-suffixes', 'suffix-ly'],
     selectableSegments: [
       { id: 'suffix-garden-1', text: 'At the garden, the class planted seeds and watered plants.' },
-      { id: 'suffix-garden-2', text: 'A helpful helper carried boxes of tools and cleaned the table.' },
+      { id: 'suffix-garden-2', text: 'A helpful helper helped carry boxes of tools and cleaned the table.' },
       { id: 'suffix-garden-3', text: 'The team worked carefully.' },
     ],
     correctSegmentIds: ['suffix-garden-3'],

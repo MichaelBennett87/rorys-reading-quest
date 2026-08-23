@@ -226,31 +226,31 @@ function answerTrail2CheckpointQuestion(correct = true) {
   const prompt = getCurrentLegendText()
   const passageText = screen.getByRole('heading', { name: /Reading Passage/i }).parentElement?.textContent ?? ''
 
-  if (/Which word has ou like cloud\?/i.test(prompt)) {
+  if (/Which word has the same ou sound as loud\?/i.test(prompt)) {
     clickRadioChoice(correct ? 'cloud' : 'snow')
     return
   }
-  if (/Which word has ow like snow\?/i.test(prompt)) {
+  if (/Which word has the same ow sound as grow\?/i.test(prompt)) {
     clickRadioChoice(correct ? 'snow' : 'cloud')
     return
   }
-  if (/Which word has oi like coin\?/i.test(prompt)) {
+  if (/Which word has the same oi sound as boil\?/i.test(prompt)) {
     clickRadioChoice(correct ? 'coin' : 'cloud')
     return
   }
-  if (/Which word has oy like toy\?/i.test(prompt)) {
-    clickRadioChoice(correct ? 'toy' : 'cloud')
+  if (/Which word has the same oy sound as joy\?/i.test(prompt)) {
+    clickRadioChoice(correct ? (/science walk/i.test(passageText) ? 'boy' : 'toy') : 'cloud')
     return
   }
-  if (/Which word has ou like round\?/i.test(prompt)) {
+  if (/Which word has the same ou sound as sound\?/i.test(prompt)) {
     clickRadioChoice(correct ? 'round' : 'toy')
     return
   }
-  if (/Which word has oi like choice\?/i.test(prompt)) {
-    clickRadioChoice(correct ? 'choice' : 'toy')
+  if (/Which word has the same oi sound as noise\?/i.test(prompt)) {
+    clickRadioChoice(correct ? (/science walk/i.test(passageText) ? 'voice' : 'choice') : 'toy')
     return
   }
-  if (/Which word has ow like cow\?/i.test(prompt)) {
+  if (/Which word has the same ow sound as how\?/i.test(prompt)) {
     clickRadioChoice(correct ? 'cow' : 'toy')
     return
   }
@@ -368,16 +368,15 @@ describe('Phase 3 adaptive child flow', () => {
     fireEvent.click(screen.getByRole('button', { name: /Return to Map/i }))
     fireEvent.click(screen.getByRole('button', { name: /Vowel Voyage Available/i }))
     fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
-    expect(screen.getByRole('heading', { name: /Beach and Bread Quest/i })).toBeTruthy()
+    expect(screen.getByRole('heading', { name: /Pool Party Quest/i })).toBeTruthy()
     completeCheckpointLesson()
     fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
-    expect(screen.getByRole('heading', { name: /Training Round/i })).toBeTruthy()
-    expect(screen.getByText(/You are close\. A new quest will help this skill grow stronger\./i)).toBeTruthy()
-    expect(readProgress().skillProgress['g2-word-forge-word-practice'].currentDifficulty).toBe(1)
+    expect(screen.getByRole('heading', { name: /Trail Complete!/i })).toBeTruthy()
+    expect(readProgress().skillProgress['g2-word-forge-word-practice'].currentDifficulty).toBe(2)
     fireEvent.click(screen.getByRole('button', { name: /Return to Map/i }))
     fireEvent.click(screen.getByRole('button', { name: /Vowel Voyage Available/i }))
     fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
-    expect(screen.getByText(/Which word has ea like bread\?/i)).toBeTruthy()
+    expect(screen.getByText(/Which word has the same ou sound as loud\?/i)).toBeTruthy()
     expect(readProgress().completedAttempts).toHaveLength(2)
   })
 
@@ -385,15 +384,15 @@ describe('Phase 3 adaptive child flow', () => {
     launchFromMap()
     completeCheckpointLesson(false)
     fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
-    expect(screen.getByRole('heading', { name: /Try a New Route/i })).toBeTruthy()
-    expect(screen.getByText(/Let’s practice this reading power in a different way\./i)).toBeTruthy()
+    expect(screen.getByRole('heading', { name: /Training Round/i })).toBeTruthy()
+    expect(screen.getByText(/You are close\. A new quest will help this skill grow stronger\./i)).toBeTruthy()
     expect(readProgress().skillProgress['g2-word-forge-word-practice'].currentDifficulty).toBe(1)
   })
 
   test('manual unit launch respects the current trail and opens Trail 2 checkpoint content', () => {
     seedTrailDifficulty(2)
     launchFromMap()
-    expect(screen.getByText(/Which word has ou like cloud\?/i)).toBeTruthy()
+    expect(screen.getByText(/Which word has the same ou sound as loud\?/i)).toBeTruthy()
     expect(screen.queryByText(/Which word has ea like leaf\?/i)).toBeNull()
   })
 
@@ -406,7 +405,7 @@ describe('Phase 3 adaptive child flow', () => {
     fireEvent.click(screen.getByRole('button', { name: /Return to Map/i }))
     fireEvent.click(screen.getByRole('button', { name: /Vowel Voyage Available/i }))
     fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
-    expect(screen.getByText(/Which word has ou like round\?/i)).toBeTruthy()
+    expect(screen.getByText(/Which word has the same ou sound as sound\?/i)).toBeTruthy()
     completeTrail2CheckpointLesson()
     fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
     expect(screen.getByRole('heading', { name: /Trail Complete!/i })).toBeTruthy()
@@ -414,7 +413,7 @@ describe('Phase 3 adaptive child flow', () => {
     fireEvent.click(screen.getByRole('button', { name: /Return to Map/i }))
     fireEvent.click(screen.getByRole('button', { name: /Syllable Summit Available/i }))
     fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
-    expect(screen.getByText(/Which word has two short vowels like picnic\?/i)).toBeTruthy()
+    expect(screen.getByText(/Which word has two short vowel sounds\?/i)).toBeTruthy()
     expect(readProgress().skillProgress['g2-word-forge-word-practice'].currentDifficulty).toBe(3)
   })
 
@@ -506,7 +505,7 @@ describe('Phase 3 adaptive child flow', () => {
     window.localStorage.setItem(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(state))
     render(<App />)
     fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
-    expect(screen.getByRole('heading', { name: /Vowel Voyage: Moon and Team Quest/i })).toBeTruthy()
+    expect(screen.getByRole('heading', { name: /Vowel Voyage: Tree Study Quest/i })).toBeTruthy()
     expect(screen.getByText(/fresh questions/i)).toBeTruthy()
     expect(screen.queryByText(/failed|failure|bad reader|wrong level|behind/i)).toBeNull()
   })

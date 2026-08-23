@@ -315,7 +315,7 @@ export const compareKeepGuidedQuestions: ReadingQuestion[] = [
     selectableSegments: [
       choice('seg-1', 'A rain gauge is a clear cup that helps people measure how much rain falls.'),
       choice('seg-2', 'The water line shows whether the day had a little rain or a lot of rain.'),
-      choice('seg-3', 'The class uses a weather shelter to keep tools dry.'),
+      choice('seg-3', 'The cup must stay on level ground so the reading stays fair.'),
     ],
     correctSegmentIds: ['seg-1'],
   }),

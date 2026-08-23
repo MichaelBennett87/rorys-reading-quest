@@ -1,5 +1,7 @@
 # Phase 6.5 Live UX, Phonics, Data, and Content-Integrity Hardening Report
 
+Status: **IN PROGRESS - live visual and semantic acceptance pending**
+
 ## Repository checkpoint
 
 - Starting SHA: `bd28f537fad1f1c3a8759b8f6110e78de3324160`
@@ -31,8 +33,10 @@
 - Gzip size: `361.94 kB`
 - Vite warning: present
 
-## Remaining notes
+## Remaining work
 
-- Browser speech remains browser-provided only.
-- Dynamic content-pack loading remains deferred.
-- Live deployment verification is handled after the commit and push step.
+- Complete registry-wide passage/question ownership correction and expanded semantic checks.
+- Implement distinct browser-speech request sequences for phonics support stages.
+- Apply the documented child and parent visual systems to the production screens.
+- Complete deployment verification, then leave live human visual acceptance as the only external step.
+- Browser speech remains browser-provided only, and dynamic content-pack loading remains deferred.

@@ -56,7 +56,7 @@ describe('grade 2 content pack registry', () => {
       activeQuestionCount: 889,
       activeSupportTargetCount: 614,
     })
-    expect(contentPackAudit).toHaveLength(0)
+    expect(contentPackAudit, JSON.stringify(contentPackAudit, null, 2)).toHaveLength(0)
     expect(benchmarkCoverageAudit).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.F.1.3a',
       expectedPatterns: ['oo', 'ea', 'ou', 'oi', 'oy', 'ow'],
