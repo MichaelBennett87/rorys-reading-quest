@@ -53,6 +53,27 @@ Status: **IMPLEMENTATION COMPLETE - LIVE HUMAN VISUAL ACCEPTANCE PENDING**
 
 Local lint, typecheck, tests, build, and `git diff --check` must pass at the final implementation checkpoint. GitHub Pages deployment must then pass normally. Phase 6.5 remains open for external acceptance until Michael refreshes the deployed site and completes another visual and voice playthrough.
 
+## Reopened implementation commits
+
+- `4103303` `fix: align grade 2 lesson and question ownership`
+- `178ca2a` `feat: improve phonics speech support`
+- `70464e3` `feat: apply child experience design system`
+- `4cd41c9` `feat: polish parent analytics experience`
+- `de2fd91` `test: expand grade 2 semantic integrity audit`
+
+## Final local verification snapshot
+
+- Lint: passed with zero warnings
+- Typecheck: passed
+- Tests: 49 files and 332 tests passed
+- Build: passed
+- JavaScript asset: `dist/assets/index-D4CAzvmR.js`
+- JavaScript raw size: `2,052.87 kB`
+- JavaScript gzip size: `362.98 kB`
+- Change from reopened baseline: `+3.99 kB` raw and `+1.04 kB` gzip
+- Vite chunk-size warning: remains present and unchanged
+- `git diff --check`: passed; Git emitted only line-ending conversion notices for intentionally edited files
+
 ## Remaining external acceptance
 
 - Confirm the deployed child redesign at phone, tablet, and desktop sizes.
