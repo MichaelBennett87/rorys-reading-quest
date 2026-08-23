@@ -15,6 +15,7 @@ export * from './grade2/poetryPlanet/rhymeRoutes'
 export * from './grade2/contextCavern/academicWordWorkshop'
 export * from './grade2/contextCavern/morphologyMine'
 export * from './grade2/contextCavern/meaningClueChamber'
+export * from './grade2/compareCastle/wordplayWatchtower'
 export * from './registry'
 
 export const fluencyPracticeAudit = buildFluencyPracticeAudit(contentPacks)

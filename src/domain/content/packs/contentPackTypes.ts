@@ -205,6 +205,58 @@ export interface MeaningClueGuide {
   contentVersion: string
 }
 
+export type WordplayKind = 'simile' | 'idiom' | 'alliteration'
+
+export interface WordplayTargetBase {
+  targetId: string
+  kind: WordplayKind
+  expressionText: string
+  sentenceId: string
+  evidenceReferenceIds: string[]
+  explanationStatement: string
+}
+
+export interface SimileWordplayTarget extends WordplayTargetBase {
+  kind: 'simile'
+  signalWord: 'like' | 'as'
+  comparisonSubject: string
+  comparisonObject: string
+  sharedQuality: string
+  figurativeComparison: true
+}
+
+export interface IdiomWordplayTarget extends WordplayTargetBase {
+  kind: 'idiom'
+  intendedMeaning: string
+  literalReading: string
+  contextEvidenceIds: string[]
+  nonliteral: true
+}
+
+export interface AlliterativeWord {
+  word: string
+  initialSound: string
+}
+
+export interface AlliterationWordplayTarget extends WordplayTargetBase {
+  kind: 'alliteration'
+  alliterativeWords: AlliterativeWord[]
+  repeatedInitialSound: string
+  soundExplanation: string
+}
+
+export type WordplayTarget =
+  | SimileWordplayTarget
+  | IdiomWordplayTarget
+  | AlliterationWordplayTarget
+
+export interface WordplayGuide {
+  passageId: string
+  targets: WordplayTarget[]
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
 export interface ContentPackManifest {
   packId: string
   packTitle: string
@@ -256,6 +308,7 @@ export interface ContentPack {
   academicVocabularyGuides?: AcademicVocabularyGuide[]
   morphologyGuides?: MorphologyGuide[]
   meaningClueGuides?: MeaningClueGuide[]
+  wordplayGuides?: WordplayGuide[]
   themeGuides?: ThemeGuide[]
   perspectiveGuides?: PerspectiveGuide[]
   rhymeSchemeGuides?: RhymeSchemeGuide[]
@@ -327,6 +380,10 @@ export interface ContentPackAuditIssue {
    | 'missing_meaning_clue_guide'
    | 'meaning_clue_guide_count_mismatch'
    | 'meaning_clue_guide_invalid'
+   | 'missing_wordplay_guide'
+   | 'wordplay_guide_count_mismatch'
+   | 'wordplay_guide_invalid'
+   | 'invalid_evidence_reference'
    | 'invalid_author_opinion_feature_reference'
    | 'invalid_informational_feature_reference'
    | 'missing_perspective_guide'

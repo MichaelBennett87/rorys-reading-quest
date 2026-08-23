@@ -331,3 +331,11 @@ Decision: use the existing world ID `compare-castle` for the Across-Genre Readin
 Rationale: the application already has a locked placeholder world shell, and Phase 6F0 only needs the roadmap, inventory, and audit foundation. Reusing the existing world avoids duplicate production worlds and keeps the child-facing name `Compare Castle` aligned with the current map.
 
 Consequences: `ELA.2.R.3.1`, `ELA.2.R.3.2`, and `ELA.2.R.3.3` remain planned in Phase 6F0; the Grade 2 benchmark inventory and coverage snapshot become explicit; the retell, paired-text, and figurative-language boundaries are documented before content authoring begins.
+
+## 2026-08-23 - Phase 6F1 Compare Castle activation
+
+Decision: activate `g2-across-genres-reading` through the Compare Castle Wordplay Watchtower pack while keeping Retell Hall and Compare Keep planned.
+
+Rationale: Phase 6F1 now has authored DRAFT production content for `ELA.2.R.3.1`, and the shared curriculum architecture can use the existing `compare-castle` world without changing storage, review identity, or the later Compare Castle unit roadmap.
+
+Consequences: `ELA.2.R.3.1` becomes implemented in DRAFT through Compare Castle Wordplay Watchtower; `ELA.2.R.3.2` and `ELA.2.R.3.3` remain planned; Compare Castle becomes active in child-facing views and in the Grade 2 coverage snapshot; later Compare Castle units remain locked until their own phases.

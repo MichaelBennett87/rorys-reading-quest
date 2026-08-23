@@ -66,7 +66,7 @@ const getSingleByRole = (
 
 const getWordForgeCard = () => getSingleByRole('button', /Word Forge world - Available/i)
 const getStoryScoutsCard = () => getSingleByRole('button', /Story Scouts world - Available/i)
-const getLockedCard = () => getSingleByRole('button', /Compare Castle world - Locked/i)
+const getCompareCastleCard = () => getSingleByRole('button', /Compare Castle world - Available/i)
 const getPoetryCard = () => getSingleByRole('button', /Poetry Planet world - Available/i)
 const getContinueButton = () => getSingleByRole('button', /Continue Quest/i)
 const getOpenParentButton = () => getSingleByRole('button', /Grown-Up Area/i)
@@ -103,7 +103,7 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getAllByRole('button', { name: /Story Scouts world - Available/i })).toHaveLength(1)
     expect(screen.getAllByRole('button', { name: /Information Detectives world - Available/i })).toHaveLength(1)
     expect(screen.getAllByRole('button', { name: /Poetry Planet world - Available/i })).toHaveLength(1)
-    expect(screen.getAllByRole('button', { name: /Compare Castle world - Locked/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Compare Castle world - Available/i })).toHaveLength(1)
   })
 
   test('shows Word Forge as available world', () => {
@@ -119,15 +119,23 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getByText(/Current path: Word Forge Foundations Trail 1/i)).toBeTruthy()
   })
 
-  test('locked world cannot launch a unit screen', () => {
+  test('opens world screen from Compare Castle', () => {
     render(<App />)
 
-    const lockedCard = getLockedCard()
-    expect(lockedCard.getAttribute('disabled')).not.toBeNull()
+    fireEvent.click(getCompareCastleCard())
+    expect(screen.getAllByRole('heading', { name: /^Compare Castle$/i })).toHaveLength(1)
+    expect(screen.getByText(/Skills trained/i)).toBeTruthy()
+  })
 
-    fireEvent.click(lockedCard)
-    const appTitle = screen.getAllByRole('heading', { name: /Rory's Reading Quest/i })
-    expect(appTitle).toHaveLength(1)
+  test('renders Compare Castle unit cards in unit selection', () => {
+    render(<App />)
+
+    fireEvent.click(getCompareCastleCard())
+    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
+    expect(screen.getAllByRole('heading', { name: /Compare Castle: Unit Selection/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Wordplay Watchtower Available/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Retell Hall Locked/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Compare Keep Locked/i })).toHaveLength(1)
   })
 
   test('opens world screen from Word Forge', () => {
@@ -562,13 +570,13 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(document.activeElement).toBe(continueButton)
   })
 
-  test('locks unavailable worlds with non-available state', () => {
+  test('shows Compare Castle as available alongside other worlds', () => {
     render(<App />)
 
-    const locked = getLockedCard()
+    const compareCastle = getCompareCastleCard()
     const informationCard = getSingleByRole('button', /Information Detectives world - Available/i)
 
-    expect(locked.getAttribute('disabled')).not.toBeNull()
+    expect(compareCastle.getAttribute('disabled')).toBeNull()
     expect(informationCard.getAttribute('disabled')).toBeNull()
   })
 

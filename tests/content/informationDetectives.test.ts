@@ -67,13 +67,14 @@ describe('grade 2 information detectives text feature hunt pack', () => {
       'g2-context-cavern-academic-word-workshop',
       'g2-context-cavern-morphology-mine',
       'g2-context-cavern-meaning-clue-chamber',
+      'g2-compare-castle-wordplay-watchtower',
     ])
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 19,
-      activeLessonCount: 133,
-      activePassageCount: 133,
-      activeQuestionCount: 766,
-      activeSupportTargetCount: 530,
+      activePackCount: 20,
+      activeLessonCount: 140,
+      activePassageCount: 140,
+      activeQuestionCount: 807,
+      activeSupportTargetCount: 558,
     })
     expect(contentPackAudit).toHaveLength(0)
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.2.1')).toEqual(expect.objectContaining({

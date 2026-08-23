@@ -92,10 +92,10 @@ describe('benchmark coverage audit', () => {
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.3.1')).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.R.3.1',
       expectedPatterns: ['similes', 'idioms', 'alliteration'],
-      coveredPatterns: [],
-      missingPatterns: ['similes', 'idioms', 'alliteration'],
-      contributingPackIds: [],
-      coverageStatus: 'partial',
+      coveredPatterns: ['similes', 'idioms', 'alliteration'],
+      missingPatterns: [],
+      contributingPackIds: ['g2-compare-castle-wordplay-watchtower'],
+      coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',
     }))
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.3.2')).toEqual(expect.objectContaining({

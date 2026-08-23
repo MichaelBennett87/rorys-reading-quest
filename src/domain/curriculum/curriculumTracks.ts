@@ -70,7 +70,7 @@ const curriculumTrackDefinitions: CurriculumTrackDefinition[] = [
     curriculumOrder: 60,
     initialDifficulty: 1,
     initialLastMasteredDifficulty: 0,
-    status: 'planned_until_content_exists',
+    status: 'active',
     displayName: 'Across-Genre Reading',
   },
 ]

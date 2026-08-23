@@ -681,13 +681,15 @@ describe('unit-aware Word Forge planning', () => {
 })
 
 describe('Compare Castle planning', () => {
-  test('keeps Compare Castle locked without active content', () => {
+  test('shows Compare Castle as available when production content exists', () => {
     const worlds = deriveWorldsForProgress(createProgress(1))
     const compareCastle = worlds.find((world) => world.id === 'compare-castle')!
 
-    expect(compareCastle.status).toBe('locked')
+    expect(compareCastle.status).toBe('available')
     expect(compareCastle.units).toHaveLength(3)
-    expect(compareCastle.units.every((unit) => unit.state === 'locked')).toBe(true)
+    expect(compareCastle.units.find((unit) => unit.id === 'cg-unit-1')?.state).toBe('available')
+    expect(compareCastle.units.find((unit) => unit.id === 'cg-unit-2')?.state).toBe('locked')
+    expect(compareCastle.units.find((unit) => unit.id === 'cg-unit-3')?.state).toBe('locked')
   })
 
   test('makes Wordplay Watchtower available with fixture content at difficulty 1', () => {

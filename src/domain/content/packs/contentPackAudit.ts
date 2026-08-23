@@ -602,6 +602,9 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
     if (pack.manifest.benchmarkReferences.includes('ELA.2.V.1.3')) {
       validateMeaningClueGuideStructure(pack, issues)
     }
+    if (pack.manifest.benchmarkReferences.includes('ELA.2.R.3.1')) {
+      validateWordplayGuideStructure(pack, issues)
+    }
     if (pack.manifest.benchmarkReferences.includes('ELA.2.R.1.3')) {
       validatePerspectivePortalGuideStructure(pack, issues)
     }
@@ -2105,6 +2108,280 @@ function validateMeaningClueGuideStructure(pack: ContentPack, issues: ContentPac
   }
 }
 
+function validateWordplayGuideStructure(pack: ContentPack, issues: ContentPackAuditIssue[]) {
+  const guides = pack.wordplayGuides ?? []
+  const passageById = new Map(pack.passages.map((passage) => [passage.passageIdentifier, passage] as const))
+  const guideByPassageId = new Map<string, NonNullable<ContentPack['wordplayGuides']>[number]>()
+  const observedKinds = new Set<string>()
+  const observedPassageKinds = new Map<string, Set<string>>()
+  const observedTags = new Set(pack.questions.flatMap((question) => question.tags ?? []))
+  const forbiddenTags = new Set([
+    'metaphor',
+    'personification',
+    'hyperbole',
+    'symbolism',
+    'tone',
+    'mood',
+    'retell',
+    'paired-text',
+  ])
+  const likeSimileTargets = new Set<string>()
+  const asSimileTargets = new Set<string>()
+  const idiomExpressions = new Set<string>()
+  const alliterationSounds = new Set<string>()
+
+  if (guides.length !== pack.passages.length) {
+    pushIssue(
+      issues,
+      'wordplay_guide_count_mismatch',
+      pack.manifest.packId,
+      `Expected ${pack.passages.length} wordplay guides, found ${guides.length}.`,
+    )
+  }
+
+  for (const tag of forbiddenTags) {
+    if (observedTags.has(tag)) {
+      pushIssue(issues, 'wordplay_guide_invalid', pack.manifest.packId, `Wordplay packs must not include the ${tag} tag.`)
+    }
+  }
+
+  for (const guide of guides) {
+    if (guideByPassageId.has(guide.passageId)) {
+      pushIssue(issues, 'wordplay_guide_invalid', guide.passageId, 'Wordplay guides must not duplicate a passage ID.')
+      continue
+    }
+    guideByPassageId.set(guide.passageId, guide)
+    const passage = passageById.get(guide.passageId)
+    if (!passage) {
+      pushIssue(issues, 'missing_wordplay_guide', guide.passageId, 'Every wordplay guide must point to a real passage.')
+      continue
+    }
+
+    validateWordplayGuideAgainstPassage(pack, passage, guide, issues, observedKinds, observedPassageKinds, likeSimileTargets, asSimileTargets, idiomExpressions, alliterationSounds)
+  }
+
+  for (const passage of pack.passages) {
+    if (!guideByPassageId.has(passage.passageIdentifier)) {
+      pushIssue(issues, 'missing_wordplay_guide', passage.passageIdentifier, 'Every passage needs exactly one wordplay guide.')
+    }
+  }
+
+  for (const passage of pack.passages) {
+    const kinds = observedPassageKinds.get(passage.passageIdentifier)
+    if (!kinds || kinds.size !== 3) {
+      pushIssue(issues, 'wordplay_guide_invalid', passage.passageIdentifier, 'Every wordplay passage must include simile, idiom, and alliteration targets.')
+    }
+  }
+
+  if (likeSimileTargets.size < 4) {
+    pushIssue(issues, 'wordplay_guide_invalid', pack.manifest.packId, 'Wordplay packs must include at least four similes that use like.')
+  }
+  if (asSimileTargets.size < 4) {
+    pushIssue(issues, 'wordplay_guide_invalid', pack.manifest.packId, 'Wordplay packs must include at least four similes that use as.')
+  }
+  if (idiomExpressions.size < 7) {
+    pushIssue(issues, 'wordplay_guide_invalid', pack.manifest.packId, 'Wordplay packs must include at least seven distinct idioms.')
+  }
+  if (alliterationSounds.size < 5) {
+    pushIssue(issues, 'wordplay_guide_invalid', pack.manifest.packId, 'Wordplay packs must include at least five distinct alliteration sounds.')
+  }
+}
+
+function validateWordplayGuideAgainstPassage(
+  pack: ContentPack,
+  passage: ContentPack['passages'][number],
+  guide: NonNullable<ContentPack['wordplayGuides']>[number],
+  issues: ContentPackAuditIssue[],
+  observedKinds: Set<string>,
+  observedPassageKinds: Map<string, Set<string>>,
+  likeSimileTargets: Set<string>,
+  asSimileTargets: Set<string>,
+  idiomExpressions: Set<string>,
+  alliterationSounds: Set<string>,
+) {
+  const sentenceById = new Map((passage.sentences ?? []).map((sentence) => [sentence.sentenceId, sentence] as const))
+  const seenTargetIds = new Set<string>()
+  const targetKinds = new Set<string>()
+  const normalizedTexts = [
+    guide.passageId,
+    guide.reviewStatus,
+    guide.contentVersion,
+    ...guide.targets.flatMap((target) => [
+      target.targetId,
+      target.kind,
+      target.expressionText,
+      target.sentenceId,
+      target.explanationStatement,
+      ...target.evidenceReferenceIds,
+      ...(target.kind === 'simile' ? [target.signalWord, target.comparisonSubject, target.comparisonObject, target.sharedQuality] : []),
+      ...(target.kind === 'idiom' ? [target.intendedMeaning, target.literalReading, ...(target.contextEvidenceIds ?? [])] : []),
+      ...(target.kind === 'alliteration'
+        ? [
+            target.repeatedInitialSound,
+            target.soundExplanation,
+            ...target.alliterativeWords.flatMap((word) => [word.word, word.initialSound]),
+          ]
+        : []),
+    ]),
+  ]
+
+  if (guide.targets.length !== 4) {
+    pushIssue(issues, 'wordplay_guide_invalid', guide.passageId, 'Wordplay guides must contain exactly four targets.')
+  }
+  if (guide.reviewStatus !== 'DRAFT') {
+    pushIssue(issues, 'missing_draft_status', guide.passageId, 'Wordplay guides in this pack must remain DRAFT.')
+  }
+  if (guide.contentVersion !== pack.manifest.contentVersion) {
+    pushIssue(issues, 'wordplay_guide_invalid', guide.passageId, 'Wordplay guide content version must match the pack version.')
+  }
+  if (normalizedTexts.some((text) => text.includes('<') || text.includes('http://') || text.includes('https://'))) {
+    pushIssue(issues, 'wordplay_guide_invalid', guide.passageId, 'Wordplay guide text must not contain raw HTML or remote URLs.')
+  }
+
+  for (const target of guide.targets) {
+    const normalizedTargetId = normalizeGuideText(target.targetId)
+    if (!normalizedTargetId) {
+      pushIssue(issues, 'wordplay_guide_invalid', guide.passageId, 'Wordplay targets need an ID.')
+    }
+    if (seenTargetIds.has(target.targetId)) {
+      pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Wordplay target IDs must be unique within a guide.')
+    } else {
+      seenTargetIds.add(target.targetId)
+    }
+    if (observedKinds.has(target.targetId)) {
+      pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Wordplay target IDs must be unique across the pack.')
+    } else {
+      observedKinds.add(target.targetId)
+    }
+
+    const normalizedExpression = normalizeGuideText(target.expressionText)
+    if (!normalizedExpression) {
+      pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Wordplay targets need expression text.')
+    }
+
+    const sentence = sentenceById.get(target.sentenceId)
+    if (!sentence) {
+      pushIssue(issues, 'missing_support_sentence', target.targetId, 'Wordplay target sentence IDs must resolve to the passage.')
+    } else if (!normalizeGuideText(sentence.text).includes(normalizedExpression)) {
+      pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Wordplay target expressions must appear in the referenced sentence or line.')
+    }
+
+    if (target.evidenceReferenceIds.length === 0) {
+      pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Wordplay targets need at least one evidence reference.')
+    }
+    const evidenceIds = new Set(target.evidenceReferenceIds)
+    if (evidenceIds.size !== target.evidenceReferenceIds.length) {
+      pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Wordplay evidence references must be unique.')
+    }
+    for (const evidenceId of evidenceIds) {
+      if (!resolvePassageEvidence(passage, evidenceId)) {
+        pushIssue(issues, 'invalid_evidence_reference', evidenceId, 'Wordplay evidence references must resolve to authored passage evidence.')
+      }
+    }
+
+    if (!target.explanationStatement.trim()) {
+      pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Wordplay targets need an explanation.')
+    } else if (!looksLikeCompleteThought(target.explanationStatement)) {
+      pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Wordplay explanations must be complete thoughts.')
+    }
+
+    observedPassageKinds.set(passage.passageIdentifier, observedPassageKinds.get(passage.passageIdentifier) ?? new Set<string>())
+    const passageKinds = observedPassageKinds.get(passage.passageIdentifier)!
+    passageKinds.add(target.kind)
+    targetKinds.add(target.kind)
+
+    switch (target.kind) {
+      case 'simile': {
+        const simileTarget = target as Extract<typeof target, { kind: 'simile' }>
+        if (simileTarget.figurativeComparison !== true) {
+          pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Similes must be marked as figurative comparisons.')
+        }
+        if (!['like', 'as'].includes(simileTarget.signalWord)) {
+          pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Similes must use like or as.')
+        }
+        if (!simileTarget.comparisonSubject.trim() || !simileTarget.comparisonObject.trim() || !simileTarget.sharedQuality.trim()) {
+          pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Similes need the compared things and shared quality.')
+        }
+        if (!normalizedExpression.includes(simileTarget.signalWord)) {
+          pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Simile expressions must include the signal word.')
+        }
+        if (!target.evidenceReferenceIds.includes(target.sentenceId)) {
+          pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Similes need the sentence as evidence.')
+        }
+        if (simileTarget.signalWord === 'like') {
+          likeSimileTargets.add(target.targetId)
+        } else if (simileTarget.signalWord === 'as') {
+          asSimileTargets.add(target.targetId)
+        }
+        break
+      }
+      case 'idiom': {
+        const idiomTarget = target as Extract<typeof target, { kind: 'idiom' }>
+        if (idiomTarget.nonliteral !== true) {
+          pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Idioms must be marked as nonliteral.')
+        }
+        if (!idiomTarget.intendedMeaning.trim() || !idiomTarget.literalReading.trim()) {
+          pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Idioms need intended and literal meanings.')
+        }
+        if (normalizeGuideText(idiomTarget.intendedMeaning) === normalizeGuideText(idiomTarget.literalReading)) {
+          pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Idioms need different intended and literal meanings.')
+        }
+        if (!idiomTarget.contextEvidenceIds?.length) {
+          pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Idioms need context evidence.')
+        } else {
+          const contextEvidenceIds = new Set(idiomTarget.contextEvidenceIds)
+          if (contextEvidenceIds.size !== idiomTarget.contextEvidenceIds.length) {
+            pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Idioms need unique context evidence IDs.')
+          }
+          for (const evidenceId of contextEvidenceIds) {
+            if (!resolvePassageEvidence(passage, evidenceId)) {
+              pushIssue(issues, 'invalid_evidence_reference', evidenceId, 'Idioms need context evidence that resolves to the passage.')
+            }
+          }
+        }
+        if (!target.evidenceReferenceIds.includes(target.sentenceId)) {
+          pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Idioms need the sentence as evidence.')
+        }
+        idiomExpressions.add(normalizedExpression)
+        break
+      }
+      case 'alliteration': {
+        const alliterationTarget = target as Extract<typeof target, { kind: 'alliteration' }>
+        if (!alliterationTarget.soundExplanation.trim()) {
+          pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Alliteration targets need a sound explanation.')
+        }
+        if (!alliterationTarget.repeatedInitialSound.trim()) {
+          pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Alliteration targets need a repeated sound.')
+        }
+        if (alliterationTarget.alliterativeWords.length < 3) {
+          pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Alliteration targets need at least three words.')
+        }
+        const initialSound = normalizeGuideText(alliterationTarget.repeatedInitialSound)
+        for (const word of alliterationTarget.alliterativeWords) {
+          if (!word.word.trim() || !word.initialSound.trim()) {
+            pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Alliterative words need words and initial sounds.')
+          }
+          if (!normalizeGuideText(sentence?.text ?? '').includes(normalizeGuideText(word.word))) {
+            pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Alliterative words must appear in the referenced sentence or line.')
+          }
+          if (normalizeGuideText(word.initialSound) !== initialSound) {
+            pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Alliterative words must share the same initial sound.')
+          }
+        }
+        if (!target.evidenceReferenceIds.includes(target.sentenceId)) {
+          pushIssue(issues, 'wordplay_guide_invalid', target.targetId, 'Alliteration targets need the sentence as evidence.')
+        }
+        alliterationSounds.add(initialSound)
+        break
+      }
+    }
+  }
+
+  if (targetKinds.size !== 3) {
+    pushIssue(issues, 'wordplay_guide_invalid', guide.passageId, 'Every wordplay passage must include simile, idiom, and alliteration targets.')
+  }
+}
+
 function normalizeGuideText(text: string): string {
   return text.trim().toLowerCase().replace(/\s+/g, ' ')
 }
@@ -3047,6 +3324,46 @@ function getBridgePackExpectation(pack: ContentPack): BridgePackExpectation | nu
       openConsonantLeWords: new Set(),
       closedConsonantLeWords: new Set(),
       forbiddenSilentEWords: new Set(),
+      questionTypeCounts: {
+        multiple_choice: 17,
+        multi_select: 7,
+        hot_text: 7,
+        table_match: 7,
+        two_part: 3,
+      },
+    }
+  }
+
+  if (pack.manifest.benchmarkReferences.includes('ELA.2.R.3.1') && pack.manifest.difficultyRange[0] === 0 && pack.manifest.difficultyRange[1] === 1) {
+    return {
+      packId: pack.manifest.packId,
+      guidedDifficultyA: 0,
+      guidedDifficultyB: 1,
+      checkpointPatterns: [
+        'similes',
+        'idioms',
+        'alliteration',
+        'simile-identification',
+        'simile-comparison',
+        'simile-shared-quality',
+        'literal-like-as-distinction',
+        'idiom-identification',
+        'idiom-meaning-in-context',
+        'literal-vs-nonliteral',
+        'alliteration-identification',
+        'repeated-beginning-sound',
+        'sound-not-letter',
+        'wordplay-explanation',
+        'prose-wordplay',
+        'poetry-wordplay',
+      ],
+      minSupportTargets: 28,
+      maxSupportTargets: 28,
+      minSupportTargetsPerPassage: 4,
+      maxSupportTargetsPerPassage: 4,
+      openConsonantLeWords: new Set<string>(),
+      closedConsonantLeWords: new Set<string>(),
+      forbiddenSilentEWords: new Set<string>(),
       questionTypeCounts: {
         multiple_choice: 17,
         multi_select: 7,

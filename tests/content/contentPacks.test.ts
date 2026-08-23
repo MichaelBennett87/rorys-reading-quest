@@ -39,19 +39,20 @@ describe('grade 2 content pack registry', () => {
       'g2-context-cavern-academic-word-workshop',
       'g2-context-cavern-morphology-mine',
       'g2-context-cavern-meaning-clue-chamber',
+      'g2-compare-castle-wordplay-watchtower',
       'legacy-word-forge-development-pack',
     ])
-    expect(activePacks).toHaveLength(19)
-    expect(activePacks.reduce((sum, pack) => sum + pack.lessons.length, 0)).toBe(133)
-    expect(activePacks.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(133)
-    expect(activePacks.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(766)
-    expect(activePacks.reduce((sum, pack) => sum + pack.passages.reduce((passageSum, passage) => passageSum + (passage.wordSupportTargets?.length ?? 0), 0), 0)).toBe(530)
+    expect(activePacks).toHaveLength(20)
+    expect(activePacks.reduce((sum, pack) => sum + pack.lessons.length, 0)).toBe(140)
+    expect(activePacks.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(140)
+    expect(activePacks.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(807)
+    expect(activePacks.reduce((sum, pack) => sum + pack.passages.reduce((passageSum, passage) => passageSum + (passage.wordSupportTargets?.length ?? 0), 0), 0)).toBe(558)
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 19,
-      activeLessonCount: 133,
-      activePassageCount: 133,
-      activeQuestionCount: 766,
-      activeSupportTargetCount: 530,
+      activePackCount: 20,
+      activeLessonCount: 140,
+      activePassageCount: 140,
+      activeQuestionCount: 807,
+      activeSupportTargetCount: 558,
     })
     expect(contentPackAudit).toHaveLength(0)
     expect(benchmarkCoverageAudit).toEqual(expect.objectContaining({
@@ -302,10 +303,10 @@ describe('grade 2 content pack registry', () => {
     }))
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.2.R.3.1')).toEqual(expect.objectContaining({
       coverageKind: 'benchmark',
-      coverageStatus: 'planned',
+      coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',
-      contributingPackIds: [],
-      missingPatterns: ['similes', 'idioms', 'alliteration'],
+      contributingPackIds: ['g2-compare-castle-wordplay-watchtower'],
+      missingPatterns: [],
     }))
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.2.R.3.2')).toEqual(expect.objectContaining({
       coverageStatus: 'planned',

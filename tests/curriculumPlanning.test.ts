@@ -9,6 +9,7 @@ import {
   planGlobalQuest,
   resolveActiveLearningFocus,
 } from '../src/domain/curriculum'
+import { grade2CompareCastleWordplayWatchtowerPack } from '../src/domain/content/packs/grade2/compareCastle/wordplayWatchtower'
 import { getLessonById, getLessonCandidates } from '../src/domain/lesson'
 import { planUnitQuest } from '../src/domain/progression'
 import type { LessonActivityCandidate } from '../src/domain/progression'
@@ -194,7 +195,7 @@ describe('curriculum planning foundation', () => {
     expect(curriculumTracks.find((track) => track.trackId === 'g2-poetry-planet')?.status).toBe('active')
     expect(curriculumTracks.find((track) => track.trackId === 'g2-information-detectives-reading')?.status).toBe('active')
     expect(curriculumTracks.find((track) => track.trackId === 'g2-context-cavern-vocabulary')?.status).toBe('active')
-    expect(curriculumTracks.find((track) => track.trackId === 'g2-across-genres-reading')?.status).toBe('planned_until_content_exists')
+    expect(curriculumTracks.find((track) => track.trackId === 'g2-across-genres-reading')?.status).toBe('active')
     expect(new Set(curriculumTracks.map((track) => track.trackId)).size).toBe(curriculumTracks.length)
     expect(new Set(curriculumTracks.map((track) => track.skillId)).size).toBe(curriculumTracks.length)
   })
@@ -548,6 +549,21 @@ describe('curriculum planning foundation', () => {
     const result = ensureProgressForPlayableTracks(progress, [
       createCompareCastleLesson(),
     ])
+
+    expect(result.changed).toBe(true)
+    expect(result.state.skillProgress['g2-word-forge-word-practice']).toEqual(progress.skillProgress['g2-word-forge-word-practice'])
+    expect(result.state.skillProgress['g2-across-genres-reading']).toMatchObject({
+      skillId: 'g2-across-genres-reading',
+      currentDifficulty: 1,
+      lastMasteredDifficulty: 0,
+    })
+  })
+
+  test('initializes production Compare Castle progress without touching existing tracks', () => {
+    const progress = createDefaultQuestProgress(now)
+    const compareCastleLessons = getLessonCandidates().filter((candidate) => candidate.skillId === grade2CompareCastleWordplayWatchtowerPack.manifest.primarySkillId)
+
+    const result = ensureProgressForPlayableTracks(progress, compareCastleLessons)
 
     expect(result.changed).toBe(true)
     expect(result.state.skillProgress['g2-word-forge-word-practice']).toEqual(progress.skillProgress['g2-word-forge-word-practice'])

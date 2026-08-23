@@ -28,18 +28,20 @@ describe('documentation consistency', () => {
     expect(tasks).toContain('  - [x] Phase 6E: informational reading and vocabulary')
     expect(tasks).toContain('  - [ ] Phase 6F: across-genres reading and final Grade 2 audit')
     expect(tasks).toContain('    - [x] Phase 6F0: Compare Castle and across-genres foundation')
-    expect(tasks).toContain('    - [ ] Phase 6F1: similes, idioms, alliteration, and ELA.2.R.3.1')
+    expect(tasks).toContain('    - [x] Phase 6F1: similes, idioms, alliteration, and ELA.2.R.3.1')
     expect(tasks).toContain('    - [ ] Phase 6F2: literary and informational retelling for ELA.2.R.3.2')
     expect(tasks).toContain('    - [ ] Phase 6F3: paired-text comparison for ELA.2.R.3.3')
     expect(tasks).toContain('    - [ ] Phase 6F4: final Grade 2 audit and Phase 6 completion')
     expect(readme).toContain('Phase 6F0 complete')
-    expect(readme).toContain('Phase 6F1 is next')
-    expect(readme).toContain('Compare Castle has a roadmap but no production lessons yet')
-    expect(architecture).toContain('nineteen registered packs, 133 lessons, 133 passages, 766 questions, and 530 support targets')
-    expect(architecture).toContain('Phase 6F0 architecture boundary')
-    expect(architecture).toContain('Compare Castle remains a planned sequential world shell')
-    expect(contentModel).toContain('nineteen active Grade 2 bridge packs with 133 lessons, 133 passages, 766 scored questions, and 530 authored word-support targets')
-    expect(contentModel).toContain('Phase 6F0 Grade 2 benchmark inventory and coverage snapshot')
+    expect(readme).toContain('Phase 6F1 complete')
+    expect(readme).toContain('Phase 6F2 is next')
+    expect(readme).toContain('Compare Castle active')
+    expect(readme).toContain('Wordplay Watchtower active')
+    expect(architecture).toContain('twenty registered packs, 140 lessons, 140 passages, 807 questions, and 558 support targets')
+    expect(architecture).toContain('Phase 6F1 adaptive-planning boundary')
+    expect(architecture).toContain('Compare Castle becomes active in Phase 6F1')
+    expect(contentModel).toContain('twenty active Grade 2 bridge packs with 140 lessons, 140 passages, 807 scored questions, and 558 authored word-support targets')
+    expect(contentModel).toContain('Phase 6F1 Grade 2 benchmark inventory and coverage snapshot')
     expect(curriculum).toContain('Information Detectives')
     expect(curriculum).toContain('Context Cavern')
     expect(curriculum).toContain('Text Feature Hunt')
@@ -69,12 +71,14 @@ describe('documentation consistency', () => {
     expect(phase6e7Report).toContain('Final remote HEAD: `c0a7f0ea539124fd645734879d8272a72c894e75`')
     expect(phase6e7Report).toContain('Local and remote SHA match:')
     expect(phase6f0Report).toContain('Starting local HEAD: `c0a7f0ea539124fd645734879d8272a72c894e75`')
-    expect(phase6f0Report).toContain('Phase 6F0 implementation checkpoint')
+    expect(phase6f0Report).toContain('Combined Phase 6F0 architecture, tests, audits, and documentation commit: `bac8e73028f663fd622969ba9144af0b1b556baf`')
     expect(phase6f0Report).toContain('Compare Castle has a roadmap but no production lessons yet')
-    expect(phase6f0Report).toContain('largest JavaScript asset: `dist/assets/index-C7LMCdQa.js`')
+    expect(phase6f0Report).toContain('largest JavaScript asset:')
     expect(phase6f0Report).toContain('raw size: `1,763.43 kB`')
     expect(phase6f0Report).toContain('gzip size: `314.86 kB`')
-    expect(phase6f0Report).not.toContain('Final local HEAD:')
+    expect(phase6f0Report).toContain('Final local HEAD: `bac8e73028f663fd622969ba9144af0b1b556baf`')
+    expect(phase6f0Report).toContain('Final remote HEAD: `bac8e73028f663fd622969ba9144af0b1b556baf`')
+    expect(phase6f0Report).toContain('Local and remote SHA match: yes')
     expect(baselineAudit).toContain('Grade 2 benchmark inventory count: 20')
     expect(baselineAudit).toContain('ELA.2.R.3.1 status: planned')
     expect(baselineAudit).toContain('Phase 6F0 architecture boundary')
@@ -156,11 +160,11 @@ describe('documentation consistency', () => {
 
   test('keeps active curriculum totals aligned with the registry helper', () => {
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 19,
-      activeLessonCount: 133,
-      activePassageCount: 133,
-      activeQuestionCount: 766,
-      activeSupportTargetCount: 530,
+      activePackCount: 20,
+      activeLessonCount: 140,
+      activePassageCount: 140,
+      activeQuestionCount: 807,
+      activeSupportTargetCount: 558,
     })
   })
 })

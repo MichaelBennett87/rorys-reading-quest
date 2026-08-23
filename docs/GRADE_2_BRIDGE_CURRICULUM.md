@@ -1,6 +1,6 @@
 # Grade 2 Bridge Curriculum
 
-This roadmap describes the bounded Grade 2 bridge plan for Rory's Reading Quest. Phase 6A1, Phase 6A2, Phase 6B1, Phase 6B2, Phase 6C1, Phase 6C2, and Phase 6C3 provide authored DRAFT coverage for the listed Grade 2 bridge patterns, Phase 6C4 provides supportive practice for fluency foundations without claiming benchmark mastery, Phase 6D0 prepares the multi-world progression foundation for later prose and poetry work, Phase 6D1 adds the first active Story Scouts prose pack, Phase 6D2 adds the first active Story Scouts theme pack, Phase 6D3 adds the first active Story Scouts perspective pack, Phase 6E0 adds planned Information Detectives and Context Cavern shells without active content, Phase 6E1 adds Text Feature Hunt for `ELA.2.R.2.1`, Phase 6E2 adds Central Idea Center for `ELA.2.R.2.2`, Phase 6E3 adds Purpose Path for `ELA.2.R.2.3`, Phase 6E4 adds Opinion & Evidence Desk for `ELA.2.R.2.4`, Phase 6E5 adds Academic Word Workshop for `ELA.2.V.1.1`, Phase 6E6 adds Morphology Mine for `ELA.2.V.1.2`, Phase 6E7 adds Meaning Clue Chamber for `ELA.2.V.1.3` and completes Phase 6E, and Phase 6F0 adds the Compare Castle roadmap shell plus the Grade 2 baseline audit without adding production across-genres content. All new material stays DRAFT-only.
+This roadmap describes the bounded Grade 2 bridge plan for Rory's Reading Quest. Phase 6A1, Phase 6A2, Phase 6B1, Phase 6B2, Phase 6C1, Phase 6C2, and Phase 6C3 provide authored DRAFT coverage for the listed Grade 2 bridge patterns, Phase 6C4 provides supportive practice for fluency foundations without claiming benchmark mastery, Phase 6D0 prepares the multi-world progression foundation for later prose and poetry work, Phase 6D1 adds the first active Story Scouts prose pack, Phase 6D2 adds the first active Story Scouts theme pack, Phase 6D3 adds the first active Story Scouts perspective pack, Phase 6E0 adds planned Information Detectives and Context Cavern shells without active content, Phase 6E1 adds Text Feature Hunt for `ELA.2.R.2.1`, Phase 6E2 adds Central Idea Center for `ELA.2.R.2.2`, Phase 6E3 adds Purpose Path for `ELA.2.R.2.3`, Phase 6E4 adds Opinion & Evidence Desk for `ELA.2.R.2.4`, Phase 6E5 adds Academic Word Workshop for `ELA.2.V.1.1`, Phase 6E6 adds Morphology Mine for `ELA.2.V.1.2`, Phase 6E7 adds Meaning Clue Chamber for `ELA.2.V.1.3` and completes Phase 6E, and Phase 6F0 adds the Compare Castle roadmap shell plus the Grade 2 baseline audit without adding production across-genres content. Phase 6F1 adds Wordplay Watchtower production content for `ELA.2.R.3.1` and activates Compare Castle. All new material stays DRAFT-only.
 
 ## Foundations
 
@@ -35,7 +35,7 @@ This roadmap describes the bounded Grade 2 bridge plan for Rory's Reading Quest.
 
 | Benchmark | Planned world | Planned unit | Prerequisite | Intended difficulty range | Phase | Status |
 | --- | --- | --- | --- | --- | --- | --- |
-| `ELA.2.R.3.1` | Compare Castle | `cg-unit-1` | Bridge decoding support | 1-2 | 6F1 | planned |
+| `ELA.2.R.3.1` | Compare Castle | `cg-unit-1` | existing Grade 2 prose and poetry reading support | 0-1 | 6F1 | implemented |
 | `ELA.2.R.3.2` | Compare Castle | `cg-unit-2` | `ELA.2.R.3.1` | 1-2 | 6F2 | planned |
 | `ELA.2.R.3.3` | Compare Castle | `cg-unit-3` | `ELA.2.R.3.2` | 1-2 | 6F3 | planned |
 | `ELA.2.V.1.1` | Context Cavern | `cc-unit-1` | Academic Word Workshop | 0-1 | 6E5 | implemented |
@@ -59,8 +59,8 @@ This roadmap describes the bounded Grade 2 bridge plan for Rory's Reading Quest.
 - Phase 6E5 activates `ELA.2.V.1.1` through Context Cavern Academic Word Workshop while `ELA.2.V.1.2` and `ELA.2.V.1.3` remain planned.
 - Phase 6E6 activates `ELA.2.V.1.2` through Context Cavern Morphology Mine while `ELA.2.V.1.3` remains planned.
 - Phase 6E7 activates `ELA.2.V.1.3` through Context Cavern Meaning Clue Chamber and completes the Context Cavern sequence.
-- Phase 6F0 keeps Compare Castle roadmap-only, and the Phase 6F2 retell boundary uses structured authored retell choices rather than spontaneous oral retelling or open-ended writing.
-- Compare Castle roadmap units: `cg-unit-1` Wordplay Watchtower, `cg-unit-2` Retell Hall, and `cg-unit-3` Compare Keep.
+- Phase 6F0 kept Compare Castle roadmap-only until Wordplay Watchtower became active in Phase 6F1, and the Phase 6F2 retell boundary still uses structured authored retell choices rather than spontaneous oral retelling or open-ended writing.
+- Compare Castle roadmap units: `cg-unit-1` Wordplay Watchtower, `cg-unit-2` Retell Hall, and `cg-unit-3` Compare Keep. Phase 6F1 activates Wordplay Watchtower while the later Compare Castle units remain planned.
 - Implemented means the listed patterns have authored DRAFT coverage only; it does not mean human approval or learner mastery.
 - No benchmark is marked approved.
 - Bridge planning keeps exposure, partial coverage, implemented coverage, and approved coverage distinct so future phases can stay bounded and auditable.
