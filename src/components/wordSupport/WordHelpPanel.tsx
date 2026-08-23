@@ -37,28 +37,49 @@ export function WordHelpPanel({
   onClose,
   speechActive,
 }: WordHelpPanelProps) {
+  const currentStep = steps.find((step) => step.level === level) ?? steps[0]
   return (
-    <section className="word-help-panel" aria-live="polite">
-      <h3 id={`help-title-${target.targetId}`}>Word Help</h3>
-      <p>Target word: {target.surfaceWord}</p>
-      <p>Current support step: {level}</p>
-      <WordParts parts={target.focusParts} />
-      <p>
-        <span className="sr-only">Word chunks:</span>
-        {target.displayChunks.map((chunk: WordSupportChunk, index: number) => (
-          <span key={`${chunk.displayText}-${index}`}>{chunk.displayText}{index + 1 < target.displayChunks.length ? ' | ' : ''}</span>
-        ))}
+    <section className="word-help-panel" aria-live="polite" aria-labelledby={`help-title-${target.targetId}`}>
+      <div className="word-help-panel-header">
+        <div>
+          <h3 id={`help-title-${target.targetId}`}>Word Help</h3>
+          <p className="word-help-stage">
+            Help step {Math.max(level, 1)} of {steps.length}: {currentStep.label}
+          </p>
+        </div>
+        <p className="word-help-target-label">Target word</p>
+      </div>
+
+      <p className="word-help-target-word">{target.surfaceWord}</p>
+      <p className="word-help-clue">
+        {currentStep.level === 1 && `Look at ${target.focusParts.find((part) => part.emphasis)?.text ?? target.surfaceWord}. These letters work together.`}
+        {currentStep.level === 2 && 'Break the word into chunks so each part is easy to see.'}
+        {currentStep.level === 3 && 'Hear each chunk one at a time.'}
+        {currentStep.level === 4 && 'Blend the chunks, then say the whole word.'}
+        {currentStep.level === 5 && 'Hear the whole word in a natural voice.'}
+        {currentStep.level === 6 && 'Hear the sentence that holds the word in context.'}
       </p>
+
+      <WordParts parts={target.focusParts} />
+
+      <div className="word-help-chunk-grid" aria-label={`Chunks for ${target.surfaceWord}`}>
+        {target.displayChunks.map((chunk: WordSupportChunk, index: number) => (
+          <span key={`${chunk.displayText}-${index}`} className="word-help-chunk">
+            {chunk.displayText}
+          </span>
+        ))}
+      </div>
 
       <div className="word-help-controls">
         {steps.map((step) => {
           const enabled = step.level <= level + 1
           const speechDisabled = step.requiresSpeech && !speechSupported
+          const state = step.level < level ? 'complete' : step.level === level ? 'active' : 'locked'
           return (
             <ChildButton
               key={step.label}
               type="button"
-              className="word-help-control"
+              className={`word-help-control word-help-step-${state}`}
               disabled={!enabled || speechDisabled}
               onClick={() => onRequestLevel(step.level, step.kind)}
             >

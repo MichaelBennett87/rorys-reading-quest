@@ -7,8 +7,8 @@ export function createDefaultQuestProgress(timestamp: string): QuestProgressV1 {
   return {
     schemaVersion: 1,
     learnerId: 'local-learner',
-    totalXp: 120,
-    totalStars: 8,
+    totalXp: 0,
+    totalStars: 0,
     completedSessionCount: 0,
     skillProgress: {
       [DEFAULT_SKILL_ID]: createInitialSkillProgress(DEFAULT_SKILL_ID, 1, 0),

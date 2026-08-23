@@ -32,6 +32,7 @@ import {
   FLUENCY_PRACTICE_NOTE,
   formatBenchmarkReferences,
   formatAssistanceLevel,
+  formatAccuracyPercent,
   formatParentDate,
   formatPercent,
   formatTrailLabel,
@@ -192,7 +193,7 @@ export function ParentDashboardScreen({
 
             <section className="parent-metric-grid" aria-label="Progress overview">
               <ParentMetricCard label="Completed sessions" value={dashboard.overview.completedSessions} note="Completed reading quests" />
-              <ParentMetricCard label="Recent average accuracy" value={dashboard.overview.recentAverageAccuracy === null ? 'No completed sessions yet' : `${dashboard.overview.recentAverageAccuracy}%`} note="Most recent 10 completed sessions" />
+              <ParentMetricCard label="Recent average accuracy" value={formatAccuracyPercent(dashboard.overview.recentAverageAccuracy)} note="Most recent 10 completed sessions" />
               <ParentMetricCard label="Total XP" value={dashboard.overview.totalXp} note="Local reward total" />
               <ParentMetricCard label="Total stars" value={dashboard.overview.totalStars} note="Stars never decrease" />
               <ParentMetricCard label="Skills represented" value={dashboard.overview.skillsRepresented} note="Skills with history" />
@@ -681,8 +682,8 @@ function SessionCard({
       <p className="parent-muted-copy">{formatParentDate(attempt.completionDate)}</p>
       <p className="parent-muted-copy">{resolveFriendlySkillName(attempt.skillId)}</p>
       <p>Trail: {formatTrailLabel(attempt.difficulty)}</p>
-      <ParentMetricCard label="Accuracy" value={`${attempt.accuracy}%`} />
-      <ParentMetricCard label="First-attempt accuracy" value={`${attempt.firstAttemptAccuracy}%`} />
+      <ParentMetricCard label="Accuracy" value={formatAccuracyPercent(attempt.accuracy)} />
+      <ParentMetricCard label="First-attempt accuracy" value={formatAccuracyPercent(attempt.firstAttemptAccuracy)} />
       <p>Assistance used: {attempt.assistanceUsed > 0 ? 'Yes' : 'No'}</p>
       <p>Highest support step: {attempt.maximumAssistanceLevel > 0 ? formatAssistanceLevel(attempt.maximumAssistanceLevel) : 'No support used'}</p>
       <p>{attempt.parentFriendlyExplanation}</p>
@@ -716,8 +717,8 @@ function SessionDetailView({
         <p>Activity identifier: {attempt.activityId}</p>
         <p>Skill: {resolveFriendlySkillName(attempt.skillId)}</p>
         <p>Trail: {formatTrailLabel(attempt.difficulty)}</p>
-        <p>Accuracy: {attempt.accuracy}%</p>
-        <p>First-attempt accuracy: {attempt.firstAttemptAccuracy}%</p>
+        <p>Accuracy: {formatAccuracyPercent(attempt.accuracy)}</p>
+        <p>First-attempt accuracy: {formatAccuracyPercent(attempt.firstAttemptAccuracy)}</p>
         <p>Assistance used: {attempt.assistanceUsed > 0 ? 'Yes' : 'No'}</p>
         <p>Supported targets used: {attempt.supportedTargetCount}</p>
         <p>Highest support step: {attempt.maximumAssistanceLevel > 0 ? formatAssistanceLevel(attempt.maximumAssistanceLevel) : 'No support used'}</p>

@@ -48,6 +48,16 @@ const attempt = (index: number): CompletedLessonAttempt => ({
   nextReviewDate: null,
 })
 
+const legacySeededAttempt = (): CompletedLessonAttempt => ({
+  ...attempt(1),
+  questionResults: Array.from({ length: 7 }, (_, index) => ({
+    questionId: `question-${index + 1}`,
+    isCorrect: index < 6,
+    isFirstAttemptCorrect: index < 6,
+  })),
+  accuracy: 85.7142857143,
+})
+
 describe('local quest progress persistence', () => {
   test('saves and loads version-1 state', () => {
     const storage = new MemoryStorage()
@@ -57,6 +67,12 @@ describe('local quest progress persistence', () => {
     const loaded = store.load()
     expect(loaded.status).toBe('loaded')
     expect(loaded.state).toEqual(state)
+  })
+
+  test('new production defaults start without seeded rewards', () => {
+    const state = createDefaultQuestProgress(now)
+    expect(state.totalXp).toBe(0)
+    expect(state.totalStars).toBe(0)
   })
 
   test('invalid JSON safely falls back without overwriting stored data', () => {
@@ -173,6 +189,30 @@ describe('local quest progress persistence', () => {
     expect(loaded.state.completedAttempts[0].assistanceSummary.totalUniqueEvents).toBe(0)
     expect(loaded.state.completedAttempts[0].assistanceEvents).toEqual([])
     expect(loaded.state.activeLessonSession?.assistanceEvents).toEqual([])
+  })
+
+  test('legacy seeded reward totals clean up once without losing attempts or history', () => {
+    const storage = new MemoryStorage()
+    const store = createLocalStorageQuestProgressStore(storage, () => now)
+    const state = createDefaultQuestProgress(now)
+    state.completedAttempts = [legacySeededAttempt()]
+    state.completedSessionCount = 1
+    state.totalXp = 220
+    state.totalStars = 10
+    storage.values.set(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(state))
+
+    const firstLoad = store.load()
+    expect(firstLoad.status).toBe('loaded')
+    expect(firstLoad.state.totalXp).toBe(100)
+    expect(firstLoad.state.totalStars).toBe(2)
+    expect(firstLoad.state.completedAttempts).toHaveLength(1)
+
+    const writesAfterCleanup = storage.writes
+    const secondLoad = store.load()
+    expect(secondLoad.status).toBe('loaded')
+    expect(secondLoad.state.totalXp).toBe(100)
+    expect(secondLoad.state.totalStars).toBe(2)
+    expect(storage.writes).toBe(writesAfterCleanup)
   })
 
   test('incompatible active content is discarded while completed progress survives', () => {

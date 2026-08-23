@@ -282,7 +282,7 @@ export function buildRecentAttemptSummaries(input: {
       activityId: attempt.activityId,
       skillId: attempt.skillId,
       difficulty: attempt.difficulty,
-      accuracy: roundPercent(attempt.accuracy),
+      accuracy: roundDisplayPercent(attempt.accuracy),
       firstAttemptAccuracy: roundPercent(firstAttemptRatio(attempt)),
       assistanceUsed: attempt.assistanceSummary.totalUniqueEvents,
       supportedTargetCount: attempt.assistanceSummary.targetsHelped,
@@ -539,7 +539,7 @@ function buildOverview(progress: QuestProgressV1, reviewSummary: DashboardReview
     totalStars: progress.totalStars,
     recentAverageAccuracy: recentWindow.length === 0
       ? null
-      : roundPercent(recentWindow.reduce((sum, attempt) => sum + attempt.accuracy, 0) / recentWindow.length),
+      : roundDisplayPercent(recentWindow.reduce((sum, attempt) => sum + attempt.accuracy, 0) / recentWindow.length),
     latestCompletedSessionDate: sortedAttempts.at(-1)?.completedAt ?? null,
     totalIndependentMasteryMilestones: progress.completedAttempts.filter((attempt) => attempt.progressionDecisionState === 'ADVANCE').length,
     skillsRepresented: Object.keys(progress.skillProgress).length,
@@ -615,6 +615,10 @@ function ratio(numerator: number, denominator: number): number {
 
 function roundPercent(value: number): number {
   return Math.round(value * 1000) / 10
+}
+
+function roundDisplayPercent(value: number): number {
+  return Math.round(value * 10) / 10
 }
 
 function firstAttemptRatio(attempt: { questionResults: { isFirstAttemptCorrect: boolean }[] }): number {

@@ -853,7 +853,7 @@ function getDetailButton(article: HTMLElement, name: RegExp) {
 }
 
 describe('ParentDashboardScreen', () => {
-  test('overview is the initial authenticated view and no-data sessions do not show 0 percent', () => {
+  test('overview is the initial authenticated view and no-data sessions do not show stale percent labels', () => {
     const recordsState = createRecordsState()
     render(
       <ParentDashboardScreen
@@ -873,7 +873,7 @@ describe('ParentDashboardScreen', () => {
     expect(screen.getByRole('heading', { name: /Overview/i })).toBeTruthy()
     expect(screen.getByRole('navigation', { name: /Parent dashboard views/i })).toBeTruthy()
     expect(screen.getByRole('button', { name: /Overview/i }).getAttribute('aria-current')).toBe('page')
-    expect(screen.getByText(/No completed sessions yet/i)).toBeTruthy()
+    expect(screen.getAllByText(/No completed reading quests yet/i).length).toBeGreaterThan(1)
     expect(screen.queryByText('0%')).toBeNull()
     expect(screen.queryByText(/Some older activity details could not be matched to the current lesson catalog/i)).toBeNull()
     expect(screen.getByText(/No practice items need special attention right now/i)).toBeTruthy()

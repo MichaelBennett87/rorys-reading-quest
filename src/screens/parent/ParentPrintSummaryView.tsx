@@ -18,6 +18,7 @@ import {
   FLUENCY_PRACTICE_NOTE,
   formatBenchmarkReferences,
   formatAssistanceLevel,
+  formatAccuracyPercent,
   formatDataAvailability,
   formatParentDate,
   formatPercent,
@@ -109,7 +110,7 @@ export function ParentPrintSummaryView({
 
       <section className="parent-metric-grid" aria-label="Overview">
         <ParentMetricCard label="Completed sessions" value={dashboard.overview.completedSessions} />
-        <ParentMetricCard label="Recent average accuracy" value={dashboard.overview.recentAverageAccuracy === null ? 'No completed sessions yet' : `${dashboard.overview.recentAverageAccuracy}%`} />
+        <ParentMetricCard label="Recent average accuracy" value={formatAccuracyPercent(dashboard.overview.recentAverageAccuracy)} />
         <ParentMetricCard label="Skills represented" value={dashboard.overview.skillsRepresented} />
         <ParentMetricCard label="Independent mastery milestones" value={dashboard.overview.totalIndependentMasteryMilestones} />
         <ParentMetricCard label="Reviews due" value={dashboard.overview.reviewsCurrentlyDue} />
@@ -172,7 +173,7 @@ export function ParentPrintSummaryView({
               <ParentMetricCard label="Overall accuracy" value={formatPercent(summary.overallAccuracy)}>
                 <AccuracyMeter label={`${summary.reportingCategory} overall accuracy`} value={summary.overallAccuracy} />
               </ParentMetricCard>
-              <p>First-attempt accuracy: {formatPercent(summary.firstAttemptAccuracy)}</p>
+              <p>First-attempt accuracy: {formatAccuracyPercent(summary.firstAttemptAccuracy)}</p>
               <p>Assisted-session rate: {formatPercent(summary.assistedSessionRate)}</p>
               <p className="parent-muted-copy">Most recent activity: {formatParentDate(summary.mostRecentActivityDate)}</p>
             </article>

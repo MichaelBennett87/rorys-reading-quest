@@ -56,3 +56,7 @@ The coverage snapshot is a pure derivation over:
 - the existing fluency supportive-practice audit
 
 The snapshot reports `implemented` for `ELA.2.R.3.1`, `ELA.2.R.3.2`, and `ELA.2.R.3.3`, and `supportive_practice` for `ELA.2.F.1.4` during Phase 6F3 because Compare Castle now has active Wordplay Watchtower, Retell Hall, and Compare Keep content. It preserves the implemented DRAFT statuses for the authored Grade 2 packs already in the registry, and Phase 6F4 completes the final Grade 2 audit without changing those measured totals.
+
+## Phase 6.5 semantic audit and content-integrity note
+
+Phase 6.5 adds no new curriculum packs. The active production totals remain 22 packs, 154 lessons, 161 passages, 889 questions, and 614 support targets. The semantic question audit applies to the active Grade 2 slice, and the live hardening pass corrects stale child copy and question-text mismatches without reopening Phase 6 curriculum completeness.

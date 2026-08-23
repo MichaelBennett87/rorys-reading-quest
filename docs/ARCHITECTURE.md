@@ -72,3 +72,7 @@ Compare Castle becomes active in Phase 6F1. The shared curriculum architecture r
 Phase 6F0 adds no production lessons and no new persistence behavior. Phase 6F1 adds the first active Compare Castle content pack, Wordplay Watchtower, Phase 6F2 adds Retell Hall, and Phase 6F3 adds Compare Keep while Phase 6F4 completes the final audit boundary and Phase 6 completion.
 
 The retell boundary remains structured and authored rather than oral or free-response scoring. The paired-text boundary is now active in Compare Keep while remaining limited to two texts and structured authored selected response. The figurative-language boundary remains limited to similes, idioms, and alliteration.
+
+## Phase 6.5 operational hardening
+
+Phase 6.5 keeps the existing architecture and applies only bounded fixes. Parent accuracy uses one percent contract, production rewards start at zero, the known demo baseline is cleaned up once for legacy saves, and the active Grade 2 semantic audit targets the production slice without adding new persistence fields or services.

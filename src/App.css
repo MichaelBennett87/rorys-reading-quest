@@ -140,6 +140,122 @@ main {
   color: var(--text-soft);
 }
 
+.word-help-panel {
+  display: grid;
+  gap: 0.85rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--focus);
+  background: linear-gradient(180deg, rgba(245, 248, 255, 0.96), rgba(228, 237, 255, 0.96));
+  box-shadow: var(--shadow);
+  padding: 0.95rem;
+}
+
+.word-help-panel-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: start;
+}
+
+.word-help-stage {
+  margin: 0.18rem 0 0;
+  font-weight: 700;
+  color: var(--accent-strong);
+}
+
+.word-help-target-label {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.word-help-target-word {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.word-help-clue {
+  margin: 0;
+  padding: 0.7rem 0.85rem;
+  border-radius: calc(var(--radius) - 6px);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(61, 102, 255, 0.18);
+}
+
+.word-help-chunk-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.word-help-chunk {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.4rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(61, 102, 255, 0.2);
+  background: rgba(255, 255, 255, 0.9);
+  font-weight: 700;
+}
+
+.word-parts {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding: 0.35rem 0.15rem;
+}
+
+.word-part {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.65rem;
+  min-height: 2.2rem;
+  padding: 0.2rem 0.45rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(61, 102, 255, 0.14);
+  font-weight: 700;
+}
+
+.word-part.emphasized-part {
+  background: linear-gradient(180deg, #fff2a6, #ffd766);
+  border-color: #f0b400;
+  box-shadow: 0 0 0 2px rgba(240, 180, 0, 0.12);
+}
+
+.word-help-control {
+  min-width: 9rem;
+}
+
+.word-help-step-active {
+  border-color: var(--focus);
+  background: var(--surface-action);
+}
+
+.word-help-step-complete {
+  border-color: var(--ok);
+  background: var(--ok-soft);
+}
+
+.word-help-step-locked {
+  opacity: 0.92;
+}
+
+.word-help-controls {
+  display: grid;
+  gap: 0.55rem;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+}
+
 .paired-text-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

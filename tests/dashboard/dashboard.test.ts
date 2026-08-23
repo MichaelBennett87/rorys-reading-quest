@@ -467,4 +467,21 @@ describe('dashboard analytics', () => {
       try_again: 0,
     })
   })
+
+  test('dashboard snapshot preserves percent accuracy values without multiplying them again', () => {
+    const progress = createProgress([
+      buildAttempt({
+        completionId: 'completion-percent',
+        completedAt: now,
+        accuracy: 85.7142857143,
+        questionIds: Array.from({ length: 7 }, (_, index) => `q-word-forge-percent-${index + 1}`),
+        decisionState: 'VERIFY_MASTERY',
+      }),
+    ])
+
+    const snapshot = buildDashboardSnapshot({ progress, now })
+
+    expect(snapshot.recentAttempts[0]?.accuracy).toBe(85.7)
+    expect(snapshot.overview.recentAverageAccuracy).toBe(85.7)
+  })
 })

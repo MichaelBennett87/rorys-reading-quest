@@ -83,7 +83,7 @@ function answerCheckpointQuestion(correct = true) {
     return
   }
   const prompt = getCurrentLegendText()
-  if (/Which word has ea like leaf\?/i.test(prompt) || /Which word has oo like pool\?/i.test(prompt) || /Which word has ea like head\?/i.test(prompt)) {
+  if (/Which word has (ea|oo) like/i.test(prompt)) {
     answerCurrentMultipleChoice(correct)
     return
   }
@@ -115,7 +115,7 @@ function answerCheckpointQuestion(correct = true) {
     answerCurrentMultiselect(correct ? [0] : [1])
     return
   }
-  if (/Select the sentence about the dream\./i.test(prompt)) {
+  if (/Select the sentence that tells about the dream, the green branch, and the little pond\./i.test(prompt)) {
     const group = screen.getByRole('group')
     fireEvent.click(within(group).getByRole('radio', { name: /They wrote about a dream, a green branch, and a little pond\./i }))
     return
@@ -377,7 +377,7 @@ describe('Phase 3 adaptive child flow', () => {
     fireEvent.click(screen.getByRole('button', { name: /Return to Map/i }))
     fireEvent.click(screen.getByRole('button', { name: /Vowel Voyage Available/i }))
     fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
-    expect(screen.getByText(/Which word has ea like head\?/i)).toBeTruthy()
+    expect(screen.getByText(/Which word has ea like bread\?/i)).toBeTruthy()
     expect(readProgress().completedAttempts).toHaveLength(2)
   })
 

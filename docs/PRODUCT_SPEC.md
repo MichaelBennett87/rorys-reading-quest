@@ -95,3 +95,7 @@ Phase 6F2 covers `ELA.2.R.3.2` with structured authored retell choices for liter
 Phase 6F3 covers `ELA.2.R.3.3` with structured authored paired-text comparison of important details.
 
 Phase 6F0 documents the retell measurement boundary, the paired-text architecture boundary, and the figurative-language boundary before any production across-genres content exists.
+
+## Phase 6.5 live hardening
+
+Phase 6.5 is a post-curriculum hardening milestone. It does not add curriculum, change benchmark counts, or move the phase boundary into Phase 7. It corrects live UX and data issues discovered in playtesting, including accuracy formatting, reward initialization, stale child copy, and semantic question integrity.

@@ -46,3 +46,7 @@ Phase 6A1, Phase 6A2, Phase 6B1, Phase 6B2, Phase 6C1, Phase 6C2, Phase 6C3, and
 Phase 6F0 adds no child data, no assessment data, no external service, no telemetry, and no live AI. Phase 6F1 adds original Wordplay Watchtower content, Phase 6F2 adds original Retell Hall content, and Phase 6F3 adds original Compare Keep content while keeping Phase 6F4 as the final audit boundary. Phase 6F4 completed the final audit without adding new child data or persistence fields. The Compare Castle roadmap and Grade 2 benchmark inventory remain documentation and planning artifacts only; they do not persist learner text, roadmap prose, or benchmark descriptions as child records.
 
 The retell boundary remains authored and structured. The paired-text boundary is structured authored paired-text comparison. Compare Castle is active in child-facing views, Retell Hall is active as structured authored retell work, and Compare Keep is active as structured authored paired-text comparison work; none of these phases must surface as failure or zero-percent performance states.
+
+## Phase 6.5 production-initialization note
+
+Phase 6.5 does not add new persisted learner fields. New production progress starts at zero rewards, and the one-time legacy cleanup only trims the known demo baseline from old saves when it is safe to do so. Attempts, reviews, assessments, assistance history, and PIN state remain intact.

@@ -363,3 +363,9 @@ Decision: mark Phase 6 complete after the final Grade 2 audit verified the 20-be
 Rationale: The repository already contains the full planned Grade 2 bridge curriculum, and the final audit only needed to confirm the documented totals, reports, and safety boundaries without adding new curriculum.
 
 Consequences: Phase 6 is complete; Phase 7 remains the next boundary; the final audit documents now describe the repository state rather than a pending phase.
+
+## 2026-08-23 - Phase 6.5 Live Hardening
+
+- Decision: treat the live UX, phonics, data, and content-integrity cleanup as a post-Phase-6 hardening milestone.
+- Reason: the first live playtest exposed percentage formatting drift, demo reward contamination, stale child copy, and a small semantic question mismatch that did not require new curriculum.
+- Consequence: production reward totals now initialize at zero, legacy seeded saves receive a bounded one-time cleanup, active Grade 2 semantic audit coverage is explicit, and the phase boundary stays below Phase 7.

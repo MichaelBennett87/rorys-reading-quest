@@ -1,6 +1,8 @@
 import { describe, expect, test } from 'vitest'
 
 import {
+  formatAccuracyPercent,
+  formatAccuracyPercentCompact,
   formatAssistanceLevel,
   formatBenchmarkReferences,
   formatParentDate,
@@ -13,6 +15,19 @@ describe('parent dashboard presentation helpers', () => {
   test('formats no-data and numeric percentages deterministically', () => {
     expect(formatPercent(null)).toMatch(/No practice data/i)
     expect(formatPercent(72.4)).toBe('72.4%')
+  })
+
+  test('formats accuracy values without double-scaling percentages', () => {
+    expect(formatAccuracyPercent(null)).toMatch(/No practice data/i)
+    expect(formatAccuracyPercent(0)).toBe('0%')
+    expect(formatAccuracyPercent(14.2857142857)).toBe('14.3%')
+    expect(formatAccuracyPercent(42.8571428571)).toBe('42.9%')
+    expect(formatAccuracyPercent(85.7142857143)).toBe('85.7%')
+    expect(formatAccuracyPercent(100)).toBe('100%')
+    expect(formatAccuracyPercentCompact(14.2857142857)).toBe('14%')
+    expect(formatAccuracyPercentCompact(42.8571428571)).toBe('43%')
+    expect(formatAccuracyPercentCompact(85.7142857143)).toBe('86%')
+    expect(formatAccuracyPercentCompact(100)).toBe('100%')
   })
 
   test('formats trail labels deterministically', () => {

@@ -20,7 +20,15 @@ export const FLUENCY_PRACTICE_NOTE =
   'Fluency Flight supports practice only. The app does not record or score oral reading.'
 
 export function formatPercent(value: number | null): string {
-  return value === null ? 'No practice data yet' : `${value}%`
+  return value === null ? 'No practice data yet' : `${formatPercentValue(value, 1)}%`
+}
+
+export function formatAccuracyPercent(value: number | null): string {
+  return value === null ? 'No practice data yet' : `${formatPercentValue(value, 1)}%`
+}
+
+export function formatAccuracyPercentCompact(value: number | null): string {
+  return value === null ? 'No practice data yet' : `${formatPercentValue(value, 0)}%`
 }
 
 export function formatParentDate(value: string | null): string {
@@ -123,4 +131,11 @@ function compareSkillSummariesByCurriculum(leftSkillId: string, rightSkillId: st
   return (leftTrack?.curriculumOrder ?? Number.MAX_SAFE_INTEGER)
     - (rightTrack?.curriculumOrder ?? Number.MAX_SAFE_INTEGER)
     || leftSkillId.localeCompare(rightSkillId)
+}
+
+function formatPercentValue(value: number, maximumFractionDigits: 0 | 1): string {
+  return new Intl.NumberFormat('en-US', {
+    maximumFractionDigits,
+    minimumFractionDigits: 0,
+  }).format(value)
 }

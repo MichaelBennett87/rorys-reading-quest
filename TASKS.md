@@ -77,7 +77,8 @@
     - [x] Phase 6F2: literary and informational retelling for ELA.2.R.3.2
     - [x] Phase 6F3: paired-text comparison for ELA.2.R.3.3
     - [x] Phase 6F4: final Grade 2 audit and Phase 6 completion
-- [ ] Phase 7: Grade 3 FAST-aligned content
+- [x] Phase 6.5: live UX, phonics, data, and content-integrity hardening
+  - [ ] Phase 7: Grade 3 FAST-aligned content
   - [ ] Expand to mastery-level Grade 3 sequences.
 - [ ] Phase 8: Grade 4 stretch content
   - [ ] Add stretch writing and evidence tasks.

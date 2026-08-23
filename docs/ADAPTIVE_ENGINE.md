@@ -61,3 +61,7 @@ When fixture content is present, unit affinity remains isolated:
 - `cg-unit-3` owns Compare Keep
 
 Planning priority remains unchanged: compatible active session, verification, remediation, due review, balanced ordinary progression, then content-needed. The new Grade 2 coverage snapshot is read-only and does not alter child progress.
+
+## Phase 6.5 accuracy and recovery note
+
+`LessonResult.accuracy` continues to use a 0 through 100 percent contract. Dashboard and parent summary formatters must not multiply that value again. Phase 6.5 also preserves the existing mastery thresholds, review intervals, and review identity while the legacy demo baseline cleanup keeps old saves readable.

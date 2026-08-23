@@ -117,12 +117,16 @@ describe('LessonScreen guided teaching flow', () => {
 
     fireEvent.click(screen.getByRole('button', { name: /Open word help for gathered/i }))
     expect(screen.getByRole('heading', { name: /Word Help/i })).toBeTruthy()
-    expect(screen.getByText(/Target word: gathered/i)).toBeTruthy()
+    expect(screen.getByText(/Help step 1 of 6/i)).toBeTruthy()
+    expect(screen.getByText(/^Target word$/i)).toBeTruthy()
+    expect(screen.getAllByText(/^gathered$/i).length).toBeGreaterThan(1)
 
     fireEvent.click(screen.getByRole('button', { name: /Close Word Help/i }))
     fireEvent.click(screen.getByRole('button', { name: /Open word help for careful$/i }))
     expect(screen.getByRole('heading', { name: /Word Help/i })).toBeTruthy()
-    expect(screen.getByText(/Target word: careful/i)).toBeTruthy()
+    expect(screen.getByText(/Help step 1 of 6/i)).toBeTruthy()
+    expect(screen.getByText(/^Target word$/i)).toBeTruthy()
+    expect(screen.getAllByText(/^careful$/i).length).toBeGreaterThan(1)
     expect(screen.getAllByRole('heading', { name: /Word Help/i })).toHaveLength(1)
   })
 
