@@ -2,11 +2,11 @@
 
 ## Status
 
-`PHASE 6.6 IMPLEMENTATION COMPLETE - FINAL ACTIVE-QUEST AND WORD-HELP ACCEPTANCE PENDING`
+`PHASE 6.6 COMPLETE - LIVE ACCEPTANCE PASSED`
 
-Phase 7 remains unstarted.
+Michael accepted the dark child and parent experiences, the five-step Word Help sequence, and the explicit active-quest resume, Save and Exit, End Current Quest, and switching lifecycle. Grade 2 is now frozen, and Phase 7A0 is the next architecture-only boundary.
 
-The remaining live boundary is explicit active-quest switching acceptance plus the final human word-help playthrough on GitHub Pages.
+No live Phase 6.6 acceptance item remains open. This acceptance does not claim learner mastery, official FAST performance, or professional curricular approval.
 
 ## Starting checkpoint
 

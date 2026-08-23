@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useState } from 'react'
 
 import { ChildButton } from '../components/ChildButton'
 import { ChildMessage } from '../components/ChildMessage'
@@ -35,16 +35,13 @@ export function LessonReadyScreen({
   onEndCurrentQuestAndChooseThisUnit,
   onStartQuest,
 }: LessonReadyScreenProps) {
-  const activeQuestSignature = useMemo(() => (
-    activeQuest ? `${activeQuest.lessonTitle}|${activeQuest.worldName}|${activeQuest.unitTitle}` : 'none'
-  ), [activeQuest])
-  const [showGuard, setShowGuard] = useState(activeQuestConflict)
-  const [confirmingEnd, setConfirmingEnd] = useState(false)
-
-  useEffect(() => {
-    setShowGuard(activeQuestConflict)
-    setConfirmingEnd(false)
-  }, [activeQuestConflict, activeQuestSignature])
+  const activeQuestSignature = activeQuest
+    ? `${activeQuest.lessonTitle}|${activeQuest.worldName}|${activeQuest.unitTitle}`
+    : 'none'
+  const [dismissedGuardSignature, setDismissedGuardSignature] = useState<string | null>(null)
+  const [confirmationSignature, setConfirmationSignature] = useState<string | null>(null)
+  const showGuard = activeQuestConflict && dismissedGuardSignature !== activeQuestSignature
+  const confirmingEnd = confirmationSignature === activeQuestSignature
 
   return (
     <div className={`screen-shell child-experience mission-ready world-theme-${world.id}`} data-appearance="dark" data-world={world.id}>
@@ -71,11 +68,11 @@ export function LessonReadyScreen({
                 <ChildButton
                   type="button"
                   className="secondary-action"
-                  onClick={() => setConfirmingEnd(true)}
+                  onClick={() => setConfirmationSignature(activeQuestSignature)}
                 >
                   End Current Quest and Choose This Unit
                 </ChildButton>
-                <ChildButton type="button" onClick={() => setShowGuard(false)}>
+                <ChildButton type="button" onClick={() => setDismissedGuardSignature(activeQuestSignature)}>
                   Stay Here
                 </ChildButton>
               </div>
@@ -90,14 +87,14 @@ export function LessonReadyScreen({
                   type="button"
                   className="primary-action"
                   onClick={() => {
-                    setConfirmingEnd(false)
-                    setShowGuard(false)
+                    setConfirmationSignature(null)
+                    setDismissedGuardSignature(activeQuestSignature)
                     onEndCurrentQuestAndChooseThisUnit()
                   }}
                 >
                   End Current Quest
                 </ChildButton>
-                <ChildButton type="button" onClick={() => setConfirmingEnd(false)}>
+                <ChildButton type="button" onClick={() => setConfirmationSignature(null)}>
                   Cancel
                 </ChildButton>
               </div>

@@ -77,10 +77,33 @@
     - [x] Phase 6F2: literary and informational retelling for ELA.2.R.3.2
     - [x] Phase 6F3: paired-text comparison for ELA.2.R.3.3
     - [x] Phase 6F4: final Grade 2 audit and Phase 6 completion
-- [ ] Phase 6.5: IMPLEMENTATION COMPLETE - LIVE HUMAN VISUAL ACCEPTANCE PENDING
-- [ ] Phase 6.6: IMPLEMENTATION COMPLETE - FINAL ACTIVE-QUEST AND WORD-HELP ACCEPTANCE PENDING
+- [x] Phase 6.5: live UX, phonics, data, and content-integrity hardening
+- [x] Phase 6.6: dark experience, Sol Grade 2 audit, and final live acceptance
 - [ ] Phase 7: Grade 3 FAST-aligned content
-  - [ ] Expand to mastery-level Grade 3 sequences.
+  - [ ] Phase 7A: Grade 3 foundations and transition
+    - [ ] Phase 7A0: Grade 3 architecture, standards map, FAST blueprint, and progression bridge (active)
+    - [ ] Phase 7A1: Root Reactor
+    - [ ] Phase 7A2: Suffix Shifter
+    - [ ] Phase 7A3: Multisyllable Mountain
+    - [ ] Phase 7A4: Fluency Flight Grade 3
+  - [ ] Phase 7B: Grade 3 prose and poetry
+    - [ ] Phase 7B1: Character Arc Camp
+    - [ ] Phase 7B2: Theme Development Trail
+    - [ ] Phase 7B3: Perspective Portal Grade 3
+    - [ ] Phase 7B4: Poem Form Observatory
+  - [ ] Phase 7C: Grade 3 informational reading
+    - [ ] Phase 7C1: Structure Station
+    - [ ] Phase 7C2: Central Idea Engine
+    - [ ] Phase 7C3: Purpose Development Path
+    - [ ] Phase 7C4: Claim and Evidence Court
+  - [ ] Phase 7D: Grade 3 across genres and vocabulary
+    - [ ] Phase 7D1: Figurative Fortress
+    - [ ] Phase 7D2: Summary Stronghold
+    - [ ] Phase 7D3: Author Lens Tower
+    - [ ] Phase 7D4: Academic Word Workshop Grade 3
+    - [ ] Phase 7D5: Root Meaning Vault
+    - [ ] Phase 7D6: Meaning Maze
+    - [ ] Phase 7D7: final Grade 3 audit
 - [ ] Phase 8: Grade 4 stretch content
   - [ ] Add stretch writing and evidence tasks.
 - [ ] Phase 9: FAST-style practice mode
