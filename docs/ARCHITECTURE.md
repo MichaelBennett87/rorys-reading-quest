@@ -78,3 +78,9 @@ The retell boundary remains structured and authored rather than oral or free-res
 Phase 6.5 keeps the existing architecture and applies only bounded fixes. Parent accuracy uses one percent contract, production rewards start at zero, the known demo baseline is cleaned up once for legacy saves, and the active Grade 2 semantic audit targets the production slice without adding new persistence fields or services.
 
 The registry-wide semantic layer now verifies lesson/question ownership, passage membership, source text, evidence scope, answer resolution, cardinality, retell pieces, paired-text evidence, and explanation stability across all active packs. Browser speech support uses separate authored request sequences for parts, blending, whole-word, and sentence support. The child and parent visual systems are CSS/component presentation layers only; progression, persistence, scoring, mastery thresholds, and review intervals remain unchanged.
+
+## Phase 7A0 multi-grade track architecture
+
+Curriculum tracks now carry immutable grade band, completion difficulty, prerequisite track IDs, and per-world chapter order. A world can own multiple tracks; runtime ownership resolves by exact skill, unit, or track ID. `getTrackByWorldId` remains only a documented Grade 2 compatibility helper, while `getTracksByWorldId` supplies deterministic grade/chapter/curriculum ordering.
+
+Readiness requires both active progression content and completed same-domain prerequisites. Planned Grade 3 metadata therefore cannot initialize progress, create content-needed noise, or appear in production child, parent, or print surfaces. Lesson grade band derives from the content-pack manifest and is validated against passage and question grade bands. Persistence schema and storage keys remain unchanged.

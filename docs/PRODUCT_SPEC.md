@@ -99,3 +99,6 @@ Phase 6F0 documents the retell measurement boundary, the paired-text architectur
 ## Phase 6.5 live hardening
 
 Phase 6.5 is a post-curriculum hardening milestone. It does not add curriculum, change benchmark counts, or move the phase boundary into Phase 7. It corrects live UX and data issues discovered in playtesting, including accuracy formatting, reward initialization, stale child copy, and semantic question integrity.
+## Phase 7A0 multi-grade boundary
+
+Phase 7 reuses the six established worlds through separate grade-band tracks. Grade 3 readiness is domain-specific, requires active eligible content, and requires the matching Grade 2 track to reach its explicit completion difficulty. Phase 7A0 adds roadmap and FAST audit metadata only; it adds no Grade 3 production curriculum and makes no global grade diagnosis. Grade 3 fluency and unconstrained academic-vocabulary use retain supportive-practice measurement boundaries.

@@ -59,3 +59,7 @@ Focused tests cover the dark default, six world identities, locked-state semanti
 ## Human acceptance boundary
 
 Repository implementation and automated verification can confirm structure, behavior, authored context, and accessibility contracts. Michael's refreshed live playthrough remains the final visual, synthesized-voice, and interaction acceptance step for the active-quest and word-help hotfix. Professional educational review remains separate.
+
+## Phase 7A0 handoff
+
+The accepted Phase 6.6 experience remains the frozen Grade 2 baseline. Phase 7A0 subsequently completed the Grade 3 architecture and roadmap foundation without changing Grade 2 curriculum or adding Grade 3 production content. Phase 7A1 is the next bounded phase.

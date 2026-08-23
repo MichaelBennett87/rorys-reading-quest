@@ -69,3 +69,7 @@ Planning priority remains unchanged: compatible active session, verification, re
 ## Phase 6.6 active-quest lifecycle note
 
 `Save and Exit` preserves the current active lesson session for later resume. `End Current Quest` abandons only the unfinished active session, keeps completed attempts, rewards, reviews, and progression intact, and clears the stale resume plan when it points at the same abandoned lesson. Historical level-4 blended-word records remain readable for older saves, but the child-facing help sequence now exposes five steps rather than a separate visible Blend It control.
+
+## Phase 7A0 domain-specific grade transition
+
+Grade transition is track-specific rather than a global learner classification. A track is progression-playable only when exact-track active content exists and each prerequisite track has reached its explicit completion difficulty. Grade 3 progress is initialized only at that point. Grade 2 reviews remain eligible after a domain advances, and global priority remains active session, verification, remediation, due review, balanced ordinary progression, then content-needed. Review and remediation identity never crosses grade, skill, unit, or content version.

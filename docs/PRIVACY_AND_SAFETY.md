@@ -52,3 +52,7 @@ The retell boundary remains authored and structured. The paired-text boundary is
 Phase 6.5 does not add new persisted learner fields. New production progress starts at zero rewards, and the one-time legacy cleanup only trims the known demo baseline from old saves when it is safe to do so. Attempts, reviews, assessments, assistance history, and PIN state remain intact.
 
 Phonics speech remains optional browser SpeechSynthesis output. Hear the Parts uses a local chunk sequence, Hear the Word uses a whole-word request, and historical level-4 blended-word summaries remain readable for older saves, but no microphone, recording, external speech provider, learner audio, analytics, or telemetry is introduced. Visual and speech preferences are not used to alter curriculum selection or mastery decisions.
+
+## Phase 7A0 privacy boundary
+
+Grade 3 roadmap and FAST blueprint metadata contain no child data and are not persisted. Planned tracks do not initialize progress without active unlocked content. Parent assessments do not unlock grade transitions. Existing child progress, parent access, and parent record keys remain unchanged at schema version 1, and no grade-level mastery diagnosis or FAST prediction is introduced.

@@ -81,7 +81,7 @@
 - [x] Phase 6.6: dark experience, Sol Grade 2 audit, and final live acceptance
 - [ ] Phase 7: Grade 3 FAST-aligned content
   - [ ] Phase 7A: Grade 3 foundations and transition
-    - [ ] Phase 7A0: Grade 3 architecture, standards map, FAST blueprint, and progression bridge (active)
+    - [x] Phase 7A0: Grade 3 architecture, standards map, FAST blueprint, and progression bridge
     - [ ] Phase 7A1: Root Reactor
     - [ ] Phase 7A2: Suffix Shifter
     - [ ] Phase 7A3: Multisyllable Mountain

@@ -393,3 +393,13 @@ Consequences: Phase 6 is complete; Phase 7 remains the next boundary; the final 
 - Decision: supplement deterministic content validation with a source-level reasoning review of all 22 active packs, 154 lessons, 161 texts, 889 questions, and 614 support targets.
 - Reason: structural validation proves ownership and resolution contracts but cannot prove that a keyed answer is instructionally defensible, a distractor is unambiguous, or an explanation measures the intended skill.
 - Consequence: confirmed ambiguity, author-purpose construct, rhyme, perspective, factual wording, context-clue, retell, wordplay, and paired-comparison defects were corrected in place. Counts, IDs where practical, benchmark coverage, adaptive thresholds, review intervals, persistence schema, and Phase 7 state remain unchanged. Professional educational review and final live human acceptance remain pending.
+
+## Phase 7A0 decisions
+
+- Reuse each established world with separate grade-band tracks and distinct skill IDs rather than renaming or migrating Grade 2 progress.
+- Treat `ELA.3.F.1.3` as one official benchmark with five internal required patterns; do not invent official lettered sub-benchmarks.
+- Gate Grade 3 by same-domain Grade 2 completion plus active content, not by a global grade diagnosis or parent assessment.
+- Retain `getTrackByWorldId` only as a Grade 2 compatibility helper and require exact ownership for ambiguity-sensitive runtime paths.
+- Keep the Grade 3 FAST blueprint immutable and audit-facing; defer multimedia and timed mixed practice to Phase 9.
+- Keep `ELA.3.F.1.4` and `ELA.3.V.1.1` as intended supportive practice with no oral or unrestricted writing scoring.
+- Preserve schema version 1, storage keys, mastery thresholds, review intervals, rewards, Pages base, and deployment workflow.
