@@ -2,9 +2,11 @@
 
 ## Status
 
-`PHASE 6.6 IMPLEMENTATION COMPLETE - FINAL HUMAN ACCEPTANCE PENDING`
+`PHASE 6.6 IMPLEMENTATION COMPLETE - FINAL ACTIVE-QUEST AND WORD-HELP ACCEPTANCE PENDING`
 
 Phase 7 remains unstarted.
+
+The remaining live boundary is explicit active-quest switching acceptance plus the final human word-help playthrough on GitHub Pages.
 
 ## Starting checkpoint
 
@@ -52,8 +54,8 @@ Twelve confirmed defect families were corrected across ambiguous foundational pr
 
 ## Tests and verification
 
-Focused tests cover the dark default, six world identities, locked-state semantics, author-purpose construct, rhyme corrections, Compare Keep same-topic coherence, perspective wording, semantic audit, and frozen totals. Final command results and bundle measurements are recorded at the final Phase 6.6 repository checkpoint rather than predicting this report's own commit SHA.
+Focused tests cover the dark default, six world identities, locked-state semantics, author-purpose construct, rhyme corrections, Compare Keep same-topic coherence, perspective wording, semantic audit, and frozen totals. The hotfix adds explicit active-quest resume and abandon flow coverage plus the reduced five-step word-help sequence. Final command results and bundle measurements are recorded at the final Phase 6.6 repository checkpoint rather than predicting this report's own commit SHA.
 
 ## Human acceptance boundary
 
-Repository implementation and automated verification can confirm structure, behavior, authored context, and accessibility contracts. Michael's refreshed live playthrough remains the final visual, synthesized-voice, and interaction acceptance step. Professional educational review remains separate.
+Repository implementation and automated verification can confirm structure, behavior, authored context, and accessibility contracts. Michael's refreshed live playthrough remains the final visual, synthesized-voice, and interaction acceptance step for the active-quest and word-help hotfix. Professional educational review remains separate.

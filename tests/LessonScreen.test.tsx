@@ -2,6 +2,8 @@ import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, test } from 'vitest'
 
 import { LessonScreen } from '../src/screens/LessonScreen'
+import { WordHelpPanel } from '../src/components/wordSupport'
+import { sampleContent } from '../src/domain/content'
 import { getLessonById } from '../src/domain/lesson'
 import { createActiveLessonSession } from '../src/persistence'
 
@@ -117,17 +119,46 @@ describe('LessonScreen guided teaching flow', () => {
 
     fireEvent.click(screen.getByRole('button', { name: /Open word help for gathered/i }))
     expect(screen.getByRole('heading', { name: /Word Help/i })).toBeTruthy()
-    expect(screen.getByText(/Help step 1 of 6/i)).toBeTruthy()
+    expect(screen.getByText(/Help step 1 of 5/i)).toBeTruthy()
     expect(screen.getByText(/^Target word$/i)).toBeTruthy()
     expect(screen.getAllByText(/^gathered$/i).length).toBeGreaterThan(1)
+    expect(screen.getAllByRole('button', {
+      name: /Look at the Pattern|Break It Apart|Hear the Parts|Hear the Word|Hear the Sentence/i,
+    })).toHaveLength(5)
+    expect(screen.queryByRole('button', { name: /Blend It/i })).toBeNull()
 
     fireEvent.click(screen.getByRole('button', { name: /Close Word Help/i }))
     fireEvent.click(screen.getByRole('button', { name: /Open word help for careful$/i }))
     expect(screen.getByRole('heading', { name: /Word Help/i })).toBeTruthy()
-    expect(screen.getByText(/Help step 1 of 6/i)).toBeTruthy()
+    expect(screen.getByText(/Help step 1 of 5/i)).toBeTruthy()
     expect(screen.getByText(/^Target word$/i)).toBeTruthy()
     expect(screen.getAllByText(/^careful$/i).length).toBeGreaterThan(1)
     expect(screen.getAllByRole('heading', { name: /Word Help/i })).toHaveLength(1)
+  })
+
+  test('legacy level-4 support renders safely without exposing Blend It', () => {
+    const target = sampleContent.passages
+      .flatMap((passage) => passage.wordSupportTargets ?? [])
+      .find((candidate) => candidate.surfaceWord === 'team')
+
+    expect(target).toBeDefined()
+    if (!target) return
+
+    render(
+      <WordHelpPanel
+        target={target}
+        level={4}
+        speechSupported
+        onRequestLevel={() => undefined}
+        onStop={() => undefined}
+        onClose={() => undefined}
+        speechActive={false}
+      />,
+    )
+
+    expect(screen.getByText(/Help step 4 of 5/i)).toBeTruthy()
+    expect(screen.getByRole('button', { name: /Hear the Word/i })).toBeTruthy()
+    expect(screen.queryByRole('button', { name: /Blend It/i })).toBeNull()
   })
 
   test('shows Compare Keep evidence in both text areas after scoring', () => {

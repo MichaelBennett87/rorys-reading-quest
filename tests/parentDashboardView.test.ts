@@ -39,7 +39,7 @@ describe('parent dashboard presentation helpers', () => {
     expect(formatAssistanceLevel(1)).toBe('Pattern clue')
     expect(formatAssistanceLevel(2)).toBe('Word chunks')
     expect(formatAssistanceLevel(3)).toBe('Heard the parts')
-    expect(formatAssistanceLevel(4)).toBe('Blended the parts')
+    expect(formatAssistanceLevel(4)).toBe('Blended word')
     expect(formatAssistanceLevel(5)).toBe('Heard the word')
     expect(formatAssistanceLevel(6)).toBe('Heard the sentence')
     expect(formatAssistanceLevel(99)).toBe('Unknown support level')

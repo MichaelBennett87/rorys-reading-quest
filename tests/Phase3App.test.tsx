@@ -2,9 +2,10 @@ import { cleanup, fireEvent, render, screen, within } from '@testing-library/rea
 import { afterEach, describe, expect, test } from 'vitest'
 
 import App from '../src/App'
-import { getLessonCandidates } from '../src/domain/lesson'
+import { getLessonById, getLessonCandidates } from '../src/domain/lesson'
 import {
   QUEST_PROGRESS_STORAGE_KEY,
+  createActiveLessonSession,
   createDefaultQuestProgress,
   type QuestProgressV1,
 } from '../src/persistence'
@@ -343,6 +344,52 @@ function readProgress(): QuestProgressV1 {
   return JSON.parse(window.localStorage.getItem(QUEST_PROGRESS_STORAGE_KEY) ?? 'null') as QuestProgressV1
 }
 
+function seedActiveQuestProgress() {
+  const state = createDefaultQuestProgress('2026-08-20T12:00:00.000Z')
+  const candidate = getLessonCandidates()[0]
+  const lesson = getLessonById(candidate.lessonId).lesson
+  if (!lesson) throw new Error('Expected a seeded active lesson.')
+
+  state.activeLessonSession = createActiveLessonSession(lesson, 'session-active-quest', '2026-08-20T12:00:00.000Z')
+  state.skillProgress['g2-word-forge-word-practice'].currentDifficulty = 3
+  state.skillProgress['g2-word-forge-word-practice'].currentLearningState = 'ADVANCE'
+  state.totalXp = 100
+  state.totalStars = 2
+  state.completedSessionCount = 1
+  state.completedAttempts = [{
+    attemptId: 'attempt-1',
+    completionId: 'completion-1',
+    lessonId: lesson.lessonId,
+    activityId: lesson.activityId,
+    skillId: lesson.skillId,
+    difficulty: lesson.difficulty,
+    questionResults: [],
+    accuracy: 100,
+    assistanceCount: 0,
+    assistanceSummary: {
+      totalUniqueEvents: 0,
+      targetsHelped: 0,
+      maximumAssistanceLevel: 0,
+      visualHintUsed: false,
+      spokenChunkHelpUsed: false,
+      spokenWordHelpUsed: false,
+      sentenceReadAloudUsed: false,
+    },
+    assistanceEvents: [],
+    completedAt: '2026-08-20T12:00:00.000Z',
+    progressionDecisionState: 'VERIFY_MASTERY',
+    reasonCodes: ['independent_evidence'],
+    nextReviewDate: null,
+  }]
+  state.plannedNextQuest = {
+    status: 'available',
+    purpose: 'progression',
+    lesson,
+  } as never
+  window.localStorage.setItem(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(state))
+  return { state, lesson }
+}
+
 function seedTrailDifficulty(difficulty: number) {
   const state = createDefaultQuestProgress('2026-08-20T12:00:00.000Z')
   state.skillProgress['g2-word-forge-word-practice'].currentDifficulty = difficulty
@@ -483,10 +530,76 @@ describe('Phase 3 adaptive child flow', () => {
     expect(screen.getByRole('button', { name: /Next Question/i })).toBeTruthy()
   })
 
-  test('exiting before completion does not create a completed attempt', () => {
+  test('save and exit preserves the active session and continues after reload', () => {
     launchFromMap()
-    fireEvent.click(screen.getByRole('button', { name: /Exit Quest/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Save and Exit/i }))
+    expect(readProgress().activeLessonSession).not.toBeNull()
     expect(readProgress().completedAttempts).toHaveLength(0)
+
+    cleanup()
+    render(<App />)
+    fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
+    expect(screen.getByRole('heading', { name: /Vowel Voyage: Tree Study Quest/i })).toBeTruthy()
+  })
+
+  test('active quest guard names the current quest and cancel keeps the session saved', () => {
+    const { lesson } = seedActiveQuestProgress()
+
+    render(<App />)
+    fireEvent.click(screen.getByRole('button', { name: /Word Forge world - Available/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Syllable Summit Available/i }))
+
+    expect(screen.getByRole('heading', { name: /You already have a quest in progress/i })).toBeTruthy()
+    expect(screen.getByText(new RegExp(`${lesson.lessonTitle} is still open`, 'i'))).toBeTruthy()
+    expect(screen.getByText(/Resume it, or end the unfinished quest before choosing another adventure\./i)).toBeTruthy()
+
+    fireEvent.click(screen.getByRole('button', { name: /End Current Quest and Choose This Unit/i }))
+    expect(screen.getByRole('heading', { name: /End this unfinished quest\?/i })).toBeTruthy()
+    fireEvent.click(screen.getByRole('button', { name: /^Cancel$/i }))
+    expect(readProgress().activeLessonSession?.lessonId).toBe(lesson.lessonId)
+    expect(readProgress().completedAttempts).toHaveLength(1)
+  })
+
+  test('resume current quest restores the saved active lesson instead of replacing it', () => {
+    const { lesson } = seedActiveQuestProgress()
+
+    render(<App />)
+    fireEvent.click(screen.getByRole('button', { name: /Word Forge world - Available/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Syllable Summit Available/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Resume Current Quest/i }))
+
+    expect(screen.getByRole('heading', { name: new RegExp(lesson.lessonTitle, 'i') })).toBeTruthy()
+    expect(readProgress().activeLessonSession?.lessonId).toBe(lesson.lessonId)
+    expect(readProgress().plannedNextQuest?.status).toBe('available')
+  })
+
+  test('explicit abandonment clears the active session without changing earned progress', () => {
+    const { lesson } = seedActiveQuestProgress()
+
+    render(<App />)
+    fireEvent.click(screen.getByRole('button', { name: /Word Forge world - Available/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Syllable Summit Available/i }))
+    fireEvent.click(screen.getByRole('button', { name: /End Current Quest and Choose This Unit/i }))
+    fireEvent.click(screen.getByRole('button', { name: /End Current Quest/i }))
+
+    const afterAbandon = readProgress()
+    expect(afterAbandon.activeLessonSession).toBeNull()
+    expect(afterAbandon.totalXp).toBe(100)
+    expect(afterAbandon.totalStars).toBe(2)
+    expect(afterAbandon.completedAttempts).toHaveLength(1)
+    expect(afterAbandon.plannedNextQuest).toBeNull()
+    expect(afterAbandon.lastProgressionOutcome).toBeNull()
+
+    fireEvent.click(screen.getByRole('button', { name: /Back/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Back/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Back to Home/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Story Scouts world - Available/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
+    expect(screen.getByRole('heading', { name: /Story Scouts: Unit Selection/i })).toBeTruthy()
+    expect(lesson.lessonTitle).toBe('Vowel Voyage: Tree Study Quest')
   })
 
   test('double interaction at completion cannot duplicate an attempt or rewards', () => {

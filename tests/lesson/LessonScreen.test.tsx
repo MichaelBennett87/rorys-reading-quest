@@ -335,7 +335,7 @@ describe('LessonScreen', () => {
     expect(screen.getByRole('heading', { name: /Look at the Pattern/i })).toBeTruthy()
     expect(screen.getByText(/oo can sound like moon or book/i)).toBeTruthy()
     expect(screen.getByRole('button', { name: /Start Practice/i })).toBeTruthy()
-    expect(screen.getAllByRole('button', { name: /Exit Quest/i }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('button', { name: /Save and Exit/i }).length).toBeGreaterThan(0)
     expect(screen.getByRole('button', { name: /Submit Answer/i }).getAttribute('disabled')).not.toBeNull()
   })
 

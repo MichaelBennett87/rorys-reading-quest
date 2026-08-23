@@ -458,7 +458,7 @@ export function FluencyPracticeScreen({
               Start Practice
             </ChildButton>
             <ChildButton type="button" onClick={exitQuest}>
-              Exit Quest
+              Save and Exit
             </ChildButton>
           </section>
         </section>
@@ -686,7 +686,7 @@ export function FluencyPracticeScreen({
                 Submit Answer
               </ChildButton>
               <ChildButton type="button" onClick={exitQuest}>
-                Exit Quest
+                Save and Exit
               </ChildButton>
             </section>
           )}

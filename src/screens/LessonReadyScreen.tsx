@@ -1,3 +1,5 @@
+import { useEffect, useMemo, useState } from 'react'
+
 import { ChildButton } from '../components/ChildButton'
 import { ChildMessage } from '../components/ChildMessage'
 import type { DemoWorld, DemoUnit } from '../data/demoWorlds'
@@ -5,22 +7,45 @@ import type { DemoWorld, DemoUnit } from '../data/demoWorlds'
 interface LessonReadyScreenProps {
   world: DemoWorld
   unit: DemoUnit
+  activeQuest?: {
+    lessonTitle: string
+    worldName: string
+    unitTitle: string
+  } | null
+  activeQuestConflict?: boolean
   hasLesson: boolean
   previewQuestionCount?: number
   unavailableMessage?: string
   onBack: () => void
+  onResumeCurrentQuest: () => void
+  onEndCurrentQuestAndChooseThisUnit: () => void
   onStartQuest: () => void
 }
 
 export function LessonReadyScreen({
   world,
   unit,
+  activeQuest = null,
+  activeQuestConflict = false,
   hasLesson,
   previewQuestionCount = 0,
   unavailableMessage,
   onBack,
+  onResumeCurrentQuest,
+  onEndCurrentQuestAndChooseThisUnit,
   onStartQuest,
 }: LessonReadyScreenProps) {
+  const activeQuestSignature = useMemo(() => (
+    activeQuest ? `${activeQuest.lessonTitle}|${activeQuest.worldName}|${activeQuest.unitTitle}` : 'none'
+  ), [activeQuest])
+  const [showGuard, setShowGuard] = useState(activeQuestConflict)
+  const [confirmingEnd, setConfirmingEnd] = useState(false)
+
+  useEffect(() => {
+    setShowGuard(activeQuestConflict)
+    setConfirmingEnd(false)
+  }, [activeQuestConflict, activeQuestSignature])
+
   return (
     <div className={`screen-shell child-experience mission-ready world-theme-${world.id}`} data-appearance="dark" data-world={world.id}>
       <header className="screen-header">
@@ -28,6 +53,58 @@ export function LessonReadyScreen({
         <h1>{unit.title}</h1>
         <p>{world.name}</p>
       </header>
+
+      {activeQuestConflict && showGuard && activeQuest && (
+        <section className="card active-quest-guard" aria-labelledby="active-quest-guard-heading">
+          {!confirmingEnd ? (
+            <>
+              <p className="quest-kicker">Quest in progress</p>
+              <h2 id="active-quest-guard-heading">You already have a quest in progress.</h2>
+              <p>
+                {activeQuest.lessonTitle} is still open in {activeQuest.worldName}: {activeQuest.unitTitle}.
+              </p>
+              <p>Resume it, or end the unfinished quest before choosing another adventure.</p>
+              <div className="screen-actions">
+                <ChildButton type="button" className="primary-action" onClick={onResumeCurrentQuest}>
+                  Resume Current Quest
+                </ChildButton>
+                <ChildButton
+                  type="button"
+                  className="secondary-action"
+                  onClick={() => setConfirmingEnd(true)}
+                >
+                  End Current Quest and Choose This Unit
+                </ChildButton>
+                <ChildButton type="button" onClick={() => setShowGuard(false)}>
+                  Stay Here
+                </ChildButton>
+              </div>
+            </>
+          ) : (
+            <>
+              <p className="quest-kicker">Confirm ending quest</p>
+              <h2>End this unfinished quest?</h2>
+              <p>Your completed quests, XP, stars, and progress will stay safe. Answers from this unfinished quest will be discarded.</p>
+              <div className="screen-actions">
+                <ChildButton
+                  type="button"
+                  className="primary-action"
+                  onClick={() => {
+                    setConfirmingEnd(false)
+                    setShowGuard(false)
+                    onEndCurrentQuestAndChooseThisUnit()
+                  }}
+                >
+                  End Current Quest
+                </ChildButton>
+                <ChildButton type="button" onClick={() => setConfirmingEnd(false)}>
+                  Cancel
+                </ChildButton>
+              </div>
+            </>
+          )}
+        </section>
+      )}
 
       <section className="card mission-card">
         <span className="mission-badge" aria-hidden="true">🧭</span>

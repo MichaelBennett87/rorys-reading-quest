@@ -1,6 +1,7 @@
-import type { WordSupportTarget } from '../../domain/content'
-import type { WordSupportChunk } from '../../domain/content'
+import { useMemo } from 'react'
+
 import type { AssistanceKind, AssistanceLevel } from '../../domain/assistance'
+import type { WordSupportChunk, WordSupportTarget } from '../../domain/content'
 import { ChildButton } from '../ChildButton'
 import { WordParts } from './WordParts'
 
@@ -15,17 +16,17 @@ interface WordHelpPanelProps {
 }
 
 const steps: Array<{
-  level: AssistanceLevel
+  displayStep: 1 | 2 | 3 | 4 | 5
+  assistanceLevel: AssistanceLevel
   kind: AssistanceKind
   label: string
   requiresSpeech: boolean
 }> = [
-  { level: 1 as const, kind: 'PATTERN_HIGHLIGHT', label: 'Look at the Pattern', requiresSpeech: false },
-  { level: 2 as const, kind: 'SHOW_CHUNKS', label: 'Break It Apart', requiresSpeech: false },
-  { level: 3 as const, kind: 'SPEAK_CHUNKS', label: 'Hear the Parts', requiresSpeech: true },
-  { level: 4 as const, kind: 'SPEAK_BLEND', label: 'Blend It', requiresSpeech: true },
-  { level: 5 as const, kind: 'SPEAK_WORD', label: 'Hear the Word', requiresSpeech: true },
-  { level: 6 as const, kind: 'SPEAK_SENTENCE', label: 'Hear the Sentence', requiresSpeech: true },
+  { displayStep: 1, assistanceLevel: 1 as const, kind: 'PATTERN_HIGHLIGHT', label: 'Look at the Pattern', requiresSpeech: false },
+  { displayStep: 2, assistanceLevel: 2 as const, kind: 'SHOW_CHUNKS', label: 'Break It Apart', requiresSpeech: false },
+  { displayStep: 3, assistanceLevel: 3 as const, kind: 'SPEAK_CHUNKS', label: 'Hear the Parts', requiresSpeech: true },
+  { displayStep: 4, assistanceLevel: 5 as const, kind: 'SPEAK_WORD', label: 'Hear the Word', requiresSpeech: true },
+  { displayStep: 5, assistanceLevel: 6 as const, kind: 'SPEAK_SENTENCE', label: 'Hear the Sentence', requiresSpeech: true },
 ]
 
 export function WordHelpPanel({
@@ -37,14 +38,21 @@ export function WordHelpPanel({
   onClose,
   speechActive,
 }: WordHelpPanelProps) {
-  const currentStep = steps.find((step) => step.level === level) ?? steps[0]
+  const displayLevel = useMemo(() => {
+    if (level >= 6) return 5
+    if (level >= 4) return 4
+    if (level >= 1) return level
+    return 1
+  }, [level])
+  const currentStep = steps.find((step) => step.displayStep === displayLevel) ?? steps[0]
+  const maxUnlockedDisplayStep = Math.min(displayLevel + 1, steps.length)
   return (
     <section className="word-help-panel" aria-live="polite" aria-labelledby={`help-title-${target.targetId}`}>
       <div className="word-help-panel-header">
         <div>
           <h3 id={`help-title-${target.targetId}`}>Word Help</h3>
           <p className="word-help-stage">
-            Help step {Math.max(level, 1)} of {steps.length}: {currentStep.label}
+            Help step {displayLevel} of {steps.length}: {currentStep.label}
           </p>
         </div>
         <p className="word-help-target-label">Target word</p>
@@ -52,13 +60,18 @@ export function WordHelpPanel({
 
       <p className="word-help-target-word">{target.surfaceWord}</p>
       <p className="word-help-clue">
-        {currentStep.level === 1 && `Look at ${target.focusParts.find((part) => part.emphasis)?.text ?? target.surfaceWord}. These letters work together.`}
-        {currentStep.level === 2 && 'Break the word into chunks so each part is easy to see.'}
-        {currentStep.level === 3 && 'Hear each chunk one at a time.'}
-        {currentStep.level === 4 && 'Blend the chunks, then say the whole word.'}
-        {currentStep.level === 5 && 'Hear the whole word in a natural voice.'}
-        {currentStep.level === 6 && 'Hear the sentence that holds the word in context.'}
+        {currentStep.displayStep === 1 && `Look at ${target.focusParts.find((part) => part.emphasis)?.text ?? target.surfaceWord}. These letters work together.`}
+        {currentStep.displayStep === 2 && 'Break the word into chunks so each part is easy to see.'}
+        {currentStep.displayStep === 3 && 'Hear each chunk one at a time.'}
+        {currentStep.displayStep === 4 && 'Hear the whole word in a natural voice.'}
+        {currentStep.displayStep === 5 && 'Hear the sentence that holds the word in context.'}
       </p>
+
+      {level === 4 && (
+        <p className="word-help-legacy-note">
+          Older saved help from a blended-word step is still supported.
+        </p>
+      )}
 
       <WordParts parts={target.focusParts} />
 
@@ -72,16 +85,16 @@ export function WordHelpPanel({
 
       <div className="word-help-controls">
         {steps.map((step) => {
-          const enabled = step.level <= level + 1
+          const enabled = step.displayStep <= maxUnlockedDisplayStep
           const speechDisabled = step.requiresSpeech && !speechSupported
-          const state = step.level < level ? 'complete' : step.level === level ? 'active' : 'locked'
+          const state = step.displayStep < displayLevel ? 'complete' : step.displayStep === displayLevel ? 'active' : 'locked'
           return (
             <ChildButton
               key={step.label}
               type="button"
               className={`word-help-control word-help-step-${state}`}
               disabled={!enabled || speechDisabled}
-              onClick={() => onRequestLevel(step.level, step.kind)}
+              onClick={() => onRequestLevel(step.assistanceLevel, step.kind)}
             >
               {step.label}
             </ChildButton>

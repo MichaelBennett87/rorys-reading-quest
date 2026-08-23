@@ -382,6 +382,12 @@ Consequences: Phase 6 is complete; Phase 7 remains the next boundary; the final 
 - Reason: the post-playtest interface needed stronger depth, hierarchy, and product identity without adding a UI dependency or changing application behavior.
 - Consequence: child and parent screens share reusable dark tokens but retain distinct presentation systems; print remains light and readable; reduced-motion, focus, contrast, and semantic controls remain required. A light-mode preference was not added because it would introduce new persistence scope without improving this bounded gate.
 
+## 2026-08-23 - Phase 6.6 active-quest and word-help hotfix
+
+- Decision: remove the redundant visible Blend It learner control, keep historical level-4 compatibility for older saves, and add explicit active-quest resume, Save and Exit, and End Current Quest behavior.
+- Reason: browser speech did not provide a distinct enough blended-word experience to justify a separate learner control, and learners needed a clear, safe way to keep or abandon an in-progress quest without silent replacement.
+- Consequence: new child help exposes five visible steps, historical level-4 records still render safely, and abandonment clears only the unfinished active session while preserving earned progress and review state.
+
 ## 2026-08-23 - GPT-5.6 Sol Grade 2 curricular reasoning review
 
 - Decision: supplement deterministic content validation with a source-level reasoning review of all 22 active packs, 154 lessons, 161 texts, 889 questions, and 614 support targets.

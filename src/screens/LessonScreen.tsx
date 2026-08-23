@@ -464,7 +464,7 @@ export function LessonScreen({
               Start Practice
             </ChildButton>
             <ChildButton type="button" onClick={onBack}>
-              Exit Quest
+              Save and Exit
             </ChildButton>
           </section>
         </section>
@@ -603,7 +603,7 @@ export function LessonScreen({
                 Submit Answer
               </ChildButton>
               <ChildButton type="button" onClick={onBack}>
-                Exit Quest
+                Save and Exit
               </ChildButton>
             </section>
           )}

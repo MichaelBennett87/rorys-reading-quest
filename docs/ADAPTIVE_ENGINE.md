@@ -65,3 +65,7 @@ Planning priority remains unchanged: compatible active session, verification, re
 ## Phase 6.5 accuracy and recovery note
 
 `LessonResult.accuracy` continues to use a 0 through 100 percent contract. Dashboard and parent summary formatters must not multiply that value again. Phase 6.5 also preserves the existing mastery thresholds, review intervals, and review identity while the legacy demo baseline cleanup keeps old saves readable.
+
+## Phase 6.6 active-quest lifecycle note
+
+`Save and Exit` preserves the current active lesson session for later resume. `End Current Quest` abandons only the unfinished active session, keeps completed attempts, rewards, reviews, and progression intact, and clears the stale resume plan when it points at the same abandoned lesson. Historical level-4 blended-word records remain readable for older saves, but the child-facing help sequence now exposes five steps rather than a separate visible Blend It control.

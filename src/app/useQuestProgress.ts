@@ -10,6 +10,7 @@ import {
 } from '../domain/progression'
 import { getLessonCandidates } from '../domain/lesson'
 import {
+  abandonActiveLesson as abandonActiveLessonState,
   completeQuestProgress,
   completeFluencyPracticeProgress,
   createActiveLessonSession,
@@ -91,6 +92,11 @@ export function useQuestProgress() {
 
   const saveActiveSession = (session: ActiveLessonSession) => {
     persist({ ...progressRef.current, activeLessonSession: session })
+  }
+
+  const abandonActiveLesson = () => {
+    const nextState = abandonActiveLessonState(progressRef.current)
+    persist(nextState)
   }
 
   const completeLesson = (
@@ -205,6 +211,7 @@ export function useQuestProgress() {
     technicalDetail,
     beginLesson,
     saveActiveSession,
+    abandonActiveLesson,
     completeLesson,
     planContinue,
   }

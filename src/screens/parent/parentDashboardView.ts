@@ -57,7 +57,7 @@ export function formatAssistanceLevel(level: number): string {
     case 3:
       return 'Heard the parts'
     case 4:
-      return 'Blended the parts'
+      return 'Blended word'
     case 5:
       return 'Heard the word'
     case 6:

@@ -24,7 +24,7 @@ describe('word-support speech planning', () => {
     expect(plan.steps.every((step) => step.pauseAfterMs === 260)).toBe(true)
   })
 
-  test('makes Blend It a progressive sequence distinct from Hear the Word', () => {
+  test('keeps the historical blended-word sequence distinct from Hear the Word', () => {
     const target = getTeamTarget()
     const blend = buildWordSupportSpeechPlan(target, 4)
     const word = buildWordSupportSpeechPlan(target, 5)

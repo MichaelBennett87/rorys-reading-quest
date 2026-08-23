@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { resolveActiveLearningFocus } from '../domain/curriculum'
 import { demoLearner } from '../data/demoLearner'
-import { deriveWorldsForProgress } from '../data/demoWorlds'
+import { deriveWorldsForProgress, getDemoWorldById } from '../data/demoWorlds'
 import { getLessonById, getLessonCandidates, type LessonDefinition } from '../domain/lesson'
 import { planUnitQuest } from '../domain/progression'
 import type { ActiveLessonSession } from '../persistence'
@@ -53,6 +53,16 @@ export function AppShell() {
 
   const selectedWorld = state.selectedWorldId ? worlds.find((world) => world.id === state.selectedWorldId) ?? null : null
   const selectedUnit = selectedWorld ? selectedWorld.units.find((unit) => unit.id === state.selectedUnitId) : null
+  const activeLessonSession = questProgress.progress.activeLessonSession
+  const activeLesson = activeLessonSession ? getLessonById(activeLessonSession.lessonId).lesson : null
+  const activeQuestWorld = activeLesson ? getDemoWorldById(activeLesson.worldId) ?? null : null
+  const activeQuestUnit = activeQuestWorld?.units.find((unit) => unit.id === activeLesson?.unitId) ?? null
+  const activeQuestDetails = activeLesson && activeQuestWorld && activeQuestUnit ? {
+    lessonTitle: activeLesson.lessonTitle,
+    worldName: activeQuestWorld.name,
+    unitTitle: activeQuestUnit.title,
+  } : null
+  const activeQuestConflict = Boolean(activeLessonSession && activeLesson && selectedUnit && activeLesson.unitId !== selectedUnit.id)
   const resolveLaunchState = (selectedUnitId?: string | null): LessonLaunchState => {
     if (selectedUnitId) {
       const plannedUnitQuest = planUnitQuest({
@@ -228,10 +238,16 @@ export function AppShell() {
       <LessonReadyScreen
         world={selectedWorld}
         unit={selectedUnit}
+        activeQuest={activeQuestDetails}
+        activeQuestConflict={activeQuestConflict}
         hasLesson={Boolean(lessonPreview?.lesson)}
         previewQuestionCount={lessonPreview?.lesson?.questionCount}
         unavailableMessage={lessonPreview?.errors[0]}
         onBack={navigateBack}
+        onResumeCurrentQuest={handleContinue}
+        onEndCurrentQuestAndChooseThisUnit={() => {
+          questProgress.abandonActiveLesson()
+        }}
         onStartQuest={startQuest}
       />
     )
