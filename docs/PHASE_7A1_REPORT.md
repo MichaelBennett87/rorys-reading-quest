@@ -37,17 +37,19 @@ Two distinct strong independent checkpoints advance Root Reactor. Replays do not
 
 Parent and print reporting omit empty Grade 3 performance, separate Grade 2 and Grade 3 skill identities after real data exists, label `ELA.3.F.1.3` as partial curriculum coverage, and expose no passage, guide, submitted-answer, or correct-answer text. Persistence schema version 1, storage keys, Parent PIN, and assessment behavior are unchanged.
 
-## Verification facts before documentation checkpoint
+## Final verification facts
 
 - Lint: passed, zero warnings
 - Typecheck: passed
-- Tests: 56 files, 371 tests passed
+- Tests: 57 files, 372 tests passed
 - Build: passed
-- JavaScript: `dist/assets/index-hvkNFhMV.js`, 2,116.25 kB raw, 379.82 kB gzip
+- JavaScript: `dist/assets/index-Dmod7les.js`, 2,116.27 kB raw, 379.83 kB gzip
 - CSS: `dist/assets/index-B8pbE89U.css`, 47.77 kB raw, 10.65 kB gzip
 - Vite chunk-size warning remained visible and unchanged in policy
 - `git diff --check`: passed
 - Content-pack audit: zero blocking issues
 - Global semantic audit: 23 active packs, 161 lessons, 930 questions, zero deterministic issues
+
+The final acceptance review corrected one Grade 3-only display label so difficulty-0 Root Reactor remediation reads `Power-Up Mission` rather than the older generic `Building Block` label. No curriculum, progression threshold, reward, persistence, or Grade 2 behavior changed.
 
 Phase 7A1 is complete only after final verification, push synchronization, and Pages deployment succeed. Phase 7 remains in progress. Phase 7A2 is not started.

@@ -423,7 +423,7 @@ function deriveSequentialRoadmapUnit(
     difficultyLabel: state === 'locked'
       ? 'Locked'
       : unitIndex === 0 && currentDifficulty <= 0
-        ? (worldId === 'context-cavern' ? 'Power-Up Mission' : 'Building Block')
+        ? (worldId === 'context-cavern' || roadmapUnit.unitId === 'g3-wg-unit-1' ? 'Power-Up Mission' : 'Building Block')
         : state === 'available' && currentDifficulty < roadmapUnit.activeDifficulty
           ? 'Power-Up Mission'
         : state === 'available'

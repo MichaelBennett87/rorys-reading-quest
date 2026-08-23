@@ -27,7 +27,7 @@ describe('Phase 7A1 documentation acceptance', () => {
     expect(report).toContain('`41e90f3` `feat: add root reactor architecture`')
     expect(report).toContain('`4215aec` `feat: add grade 3 root reactor pack`')
     expect(report).toContain('`41f0c73` `feat: integrate grade 3 root reactor progression`')
-    expect(report).toContain('56 files, 371 tests passed')
+    expect(report).toContain('57 files, 372 tests passed')
     expect(review).toContain('DRAFT - human educational approval pending')
     expect(review).toContain('Greek-primary targets (12)')
     expect(review).toContain('Latin-primary targets (8)')

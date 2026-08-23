@@ -174,6 +174,37 @@ describe('Grade 3 planned roadmaps and production freeze', () => {
       unitId: 'g3-wg-unit-1',
     })
 
+    const remediation: QuestProgressV1 = {
+      ...ready,
+      skillProgress: {
+        ...ready.skillProgress,
+        'g3-word-forge-word-analysis': {
+          skillId: 'g3-word-forge-word-analysis',
+          currentDifficulty: 0,
+          lastMasteredDifficulty: 0,
+          currentLearningState: 'REMEDIATE_PREREQUISITE',
+          qualifyingIndependentActivityIds: [],
+          consecutiveUnsuccessfulAtCurrentDifficulty: 2,
+          lastCompletedActivityId: null,
+          recentActivityUsage: [],
+          reviewStep: 0,
+          nextReviewDate: null,
+          lastDecisionReasonCodes: ['consecutive_unsuccessful_results'],
+          remediationContext: {
+            originalSkillId: 'g3-word-forge-word-analysis',
+            originalDifficulty: 1,
+            remediationSkillId: 'g3-word-forge-word-analysis',
+            remediationDifficulty: 0,
+            reason: 'last_mastered_difficulty',
+          },
+        },
+      },
+    }
+    const remediationRoot = deriveWorldsForProgress(demoWorlds, remediation, productionLessons)
+      .find((world) => world.id === 'word-forge')
+      ?.units.find((unit) => unit.id === 'g3-wg-unit-1')
+    expect(remediationRoot).toMatchObject({ state: 'available', difficultyLabel: 'Power-Up Mission' })
+
     render(<UnitSelectScreen world={readyWordForge} onBack={() => undefined} onSelectUnit={() => undefined} />)
     expect(screen.getByRole('heading', { name: 'Grade 3 Word Analysis' })).toBeTruthy()
     expect(screen.getByRole('heading', { name: 'Grade 2 Chapter' })).toBeTruthy()
