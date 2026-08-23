@@ -9,6 +9,7 @@ import {
 } from '../../src/domain/content'
 import { buildBenchmarkCoverageAudit } from '../../src/domain/content/packs/benchmarkCoverageAudit'
 import { getActiveContentRegistryTotals } from '../../src/domain/content/packs/registry'
+import { buildGrade2CoverageSnapshot, grade2BenchmarkInventory } from '../../src/domain/curriculum'
 import { getLessonById, getLessonCandidates, getLessonForUnit } from '../../src/domain/lesson'
 
 describe('grade 2 content pack registry', () => {
@@ -254,5 +255,68 @@ describe('grade 2 content pack registry', () => {
     expect(result.lesson?.lessonRole).toBe('CHECKPOINT')
     expect(result.lesson?.selectionStatus).toBe('active')
     expect(result.lesson?.questionCount).toBe(7)
+  })
+
+  test('keeps the Grade 2 benchmark inventory immutable and complete', () => {
+    expect(Object.isFrozen(grade2BenchmarkInventory)).toBe(true)
+    expect(grade2BenchmarkInventory.every((entry) => Object.isFrozen(entry))).toBe(true)
+    expect(grade2BenchmarkInventory).toHaveLength(20)
+    expect(new Set(grade2BenchmarkInventory.map((entry) => entry.benchmarkReference)).size).toBe(20)
+    expect(grade2BenchmarkInventory.map((entry) => entry.benchmarkReference)).toEqual([
+      'ELA.2.F.1.3a',
+      'ELA.2.F.1.3b',
+      'ELA.2.F.1.3c',
+      'ELA.2.F.1.3d',
+      'ELA.2.F.1.3e',
+      'ELA.2.F.1.4',
+      'ELA.2.R.1.1',
+      'ELA.2.R.1.2',
+      'ELA.2.R.1.3',
+      'ELA.2.R.1.4',
+      'ELA.2.R.2.1',
+      'ELA.2.R.2.2',
+      'ELA.2.R.2.3',
+      'ELA.2.R.2.4',
+      'ELA.2.R.3.1',
+      'ELA.2.R.3.2',
+      'ELA.2.R.3.3',
+      'ELA.2.V.1.1',
+      'ELA.2.V.1.2',
+      'ELA.2.V.1.3',
+    ])
+    expect(grade2BenchmarkInventory.find((entry) => entry.benchmarkReference === 'ELA.2.F.1.4')?.intendedCoverageKind).toBe('supportive_practice')
+    expect(grade2BenchmarkInventory.filter((entry) => entry.intendedCoverageKind === 'benchmark')).toHaveLength(19)
+  })
+
+  test('builds the Grade 2 coverage snapshot without mutating the registry or the inventory', () => {
+    const packsSnapshot = structuredClone(contentPacks)
+    const inventorySnapshot = structuredClone(grade2BenchmarkInventory)
+    const snapshot = buildGrade2CoverageSnapshot()
+
+    expect(snapshot.rows).toHaveLength(20)
+    expect(snapshot.rows.map((row) => row.benchmarkReference)).toEqual(grade2BenchmarkInventory.map((entry) => entry.benchmarkReference))
+    expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.2.F.1.4')).toEqual(expect.objectContaining({
+      coverageKind: 'supportive_practice',
+      coverageStatus: 'supportive_practice',
+      reviewStatus: 'DRAFT',
+    }))
+    expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.2.R.3.1')).toEqual(expect.objectContaining({
+      coverageKind: 'benchmark',
+      coverageStatus: 'planned',
+      reviewStatus: 'DRAFT',
+      contributingPackIds: [],
+      missingPatterns: ['similes', 'idioms', 'alliteration'],
+    }))
+    expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.2.R.3.2')).toEqual(expect.objectContaining({
+      coverageStatus: 'planned',
+      missingPatterns: ['literary-retell', 'informational-retell'],
+    }))
+    expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.2.R.3.3')).toEqual(expect.objectContaining({
+      coverageStatus: 'planned',
+      missingPatterns: ['compare-contrast-important-details', 'same-topic-or-theme'],
+    }))
+    expect(snapshot.rows.every((row) => row.reviewStatus === 'DRAFT')).toBe(true)
+    expect(contentPacks).toEqual(packsSnapshot)
+    expect(grade2BenchmarkInventory).toEqual(inventorySnapshot)
   })
 })

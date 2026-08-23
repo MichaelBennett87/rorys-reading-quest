@@ -1,0 +1,29 @@
+# Grade 2 Phase 6 baseline audit
+
+- audit date: 2026-08-23
+- repository starting SHA: `c0a7f0ea539124fd645734879d8272a72c894e75`
+- active pack count: 19
+- active lesson count: 133
+- active passage count: 133
+- active question count: 766
+- active support-target count: 530
+- Grade 2 benchmark inventory count: 20
+- implemented benchmark count: 16
+- supportive-practice benchmark count: 1
+- planned benchmark count: 3
+- DRAFT review-status count: 20
+- REVIEWED count: 0
+- APPROVED count: 0
+- ELA.2.F.1.4 limitation: supportive practice only
+- ELA.2.R.3.1 status: planned
+- ELA.2.R.3.2 status: planned
+- ELA.2.R.3.3 status: planned
+- no learner-mastery claim: true
+- no official FAST prediction: true
+- no final Grade 2 completion claim: true
+- Phase 6F1 boundary: similes, idioms, and alliteration only
+- Phase 6F2 boundary: structured authored retell only
+- Phase 6F3 boundary: paired-text comparison only
+- Phase 6F4 boundary: final Grade 2 audit and Phase 6 completion only
+- Phase 6F0 architecture boundary: Compare Castle remains planned without content
+- bundle-size technical debt: curriculum data is increasing the initial bundle; dynamic content-pack loading remains deferred to Phase 10 release hardening unless it becomes a functional blocker earlier

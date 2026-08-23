@@ -30,7 +30,7 @@ export function deriveWorldsForProgress(
     if (world.id === 'poetry-planet') {
       return derivePoetryPlanetWorld(world, skillProgress, activeUnitId, plannedUnitId, playableTrackIds)
     }
-    if (world.id === 'information-detectives' || world.id === 'context-cavern') {
+    if (world.id === 'information-detectives' || world.id === 'context-cavern' || world.id === 'compare-castle') {
       return deriveSequentialTrackWorld(world, skillProgress, activeUnitId, plannedUnitId, playableTrackIds, availableLessons)
     }
     return deriveNonPlayableWorld(world)

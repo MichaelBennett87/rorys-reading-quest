@@ -62,7 +62,7 @@
     - [x] Phase 6D2: theme
     - [x] Phase 6D3: character perspectives
     - [x] Phase 6D4: rhyme schemes, Poetry Planet, and final Phase 6D audit
-  - [ ] Phase 6E: informational reading and vocabulary
+  - [x] Phase 6E: informational reading and vocabulary
     - [x] Phase 6E0: Information Detectives and vocabulary-world foundation
     - [x] Phase 6E1: text features and ELA.2.R.2.1
     - [x] Phase 6E2: central idea and relevant details for ELA.2.R.2.2
@@ -72,6 +72,11 @@
     - [x] Phase 6E6: morphology and ELA.2.V.1.2
     - [x] Phase 6E7: context, word relationships, reference materials, background knowledge, and final Phase 6E audit
   - [ ] Phase 6F: across-genres reading and final Grade 2 audit
+    - [x] Phase 6F0: Compare Castle and across-genres foundation
+    - [ ] Phase 6F1: similes, idioms, alliteration, and ELA.2.R.3.1
+    - [ ] Phase 6F2: literary and informational retelling for ELA.2.R.3.2
+    - [ ] Phase 6F3: paired-text comparison for ELA.2.R.3.3
+    - [ ] Phase 6F4: final Grade 2 audit and Phase 6 completion
 - [ ] Phase 7: Grade 3 FAST-aligned content
   - [ ] Expand to mastery-level Grade 3 sequences.
 - [ ] Phase 8: Grade 4 stretch content

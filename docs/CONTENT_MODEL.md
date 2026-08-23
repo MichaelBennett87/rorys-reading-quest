@@ -45,3 +45,15 @@ Phase 6A1 introduces a local bridge pack for `word-forge` and `wg-unit-1`. Phase
 ## Phase 6A1 through Phase 6C3 Curriculum Scope Boundary
 
 Phase 6A1 is partial benchmark coverage only. `ELA.2.F.1.3a` becomes implemented in DRAFT form when Phase 6A2 adds `ou`, `oi`, `oy`, and `ow`. Phase 6B1 implements `ELA.2.F.1.3b` in DRAFT form, Phase 6B2 completes `ELA.2.F.1.3c` in DRAFT form, Phase 6C1 through 6C2 implement `ELA.2.F.1.3d` in DRAFT form with common prefixes and common suffixes, Phase 6C3 implements `ELA.2.F.1.3e` in DRAFT form with a bounded silent-letter set, Phase 6C4 provides supportive practice for `ELA.2.F.1.4` without measuring oral fluency, Phase 6D1 through 6D4 implement `ELA.2.R.1.1` through `ELA.2.R.1.4` in DRAFT form, Phase 6E5 implements `ELA.2.V.1.1` in DRAFT form, Phase 6E6 implements `ELA.2.V.1.2` in DRAFT form, and Phase 6E7 implements `ELA.2.V.1.3` in DRAFT form. The bridge packs can support fluency-adjacent reading practice, but they do not assess or score oral fluency. Parent analytics should label this work as `Foundational Skills Bridge`, which is an internal practice category and not an official FAST reporting lane.
+## Phase 6F0 Grade 2 benchmark inventory and coverage snapshot
+
+Grade 2 now has an immutable 20-entry benchmark inventory that includes the three Reading Across Genres benchmarks and the supportive-practice boundary for `ELA.2.F.1.4`.
+
+The coverage snapshot is a pure derivation over:
+
+- the benchmark inventory
+- registered active content packs
+- benchmark coverage audits
+- the existing fluency supportive-practice audit
+
+The snapshot reports `planned` for the Reading Across Genres benchmarks during Phase 6F0 because Compare Castle has no production content yet. It reports `supportive_practice` for `ELA.2.F.1.4` and preserves the implemented DRAFT statuses for the authored Grade 2 packs already in the registry.

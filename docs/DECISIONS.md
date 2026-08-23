@@ -324,3 +324,10 @@
 - Decision: Activate Context Cavern Meaning Clue Chamber for `ELA.2.V.1.3` while completing Phase 6E and preserving later across-genres work for Phase 6F.
 - Reason: Phase 6E7 needs bounded Grade 2 meaning-clue practice with context clues, word relationships, reference materials, and background knowledge without moving into figurative language, multiple-meaning words, or cross-genre comparison.
 - Consequence: The active curriculum keeps Context Cavern playable, the bridge roadmap now includes implemented DRAFT coverage for `ELA.2.V.1.3`, and Phase 6F remains the next planned boundary.
+## 2026-08-23 - Phase 6F0 Compare Castle foundation
+
+Decision: use the existing world ID `compare-castle` for the Across-Genre Reading track and keep it planned until production lessons exist.
+
+Rationale: the application already has a locked placeholder world shell, and Phase 6F0 only needs the roadmap, inventory, and audit foundation. Reusing the existing world avoids duplicate production worlds and keeps the child-facing name `Compare Castle` aligned with the current map.
+
+Consequences: `ELA.2.R.3.1`, `ELA.2.R.3.2`, and `ELA.2.R.3.3` remain planned in Phase 6F0; the Grade 2 benchmark inventory and coverage snapshot become explicit; the retell, paired-text, and figurative-language boundaries are documented before content authoring begins.

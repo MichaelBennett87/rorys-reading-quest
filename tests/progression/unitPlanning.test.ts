@@ -102,6 +102,23 @@ function createMeaningClueChamberLesson(overrides: Partial<LessonActivityCandida
   }
 }
 
+function createCompareCastleLesson(overrides: Partial<LessonActivityCandidate> = {}): LessonActivityCandidate {
+  return {
+    lessonId: 'lesson-compare-castle-wordplay-watchtower-checkpoint-a',
+    activityId: 'activity-compare-castle-wordplay-watchtower-checkpoint-a',
+    skillId: 'g2-across-genres-reading',
+    difficulty: 1,
+    worldId: 'compare-castle',
+    unitId: 'cg-unit-1',
+    packId: 'fixture-compare-castle-pack',
+    benchmarkReferences: ['ELA.2.R.3.1'],
+    eligiblePurposes: ['progression', 'review', 'verification', 'remediation'],
+    passageQuestionKeys: ['compare-castle-wordplay-watchtower-a|q1'],
+    contentVersion: 'fixture-compare-castle-v1',
+    ...overrides,
+  }
+}
+
 describe('unit-aware Word Forge planning', () => {
   test('derives Vowel Voyage and Syllable Summit states from progress', () => {
     const difficultyOneWorlds = deriveWorldsForProgress(createProgress(1))
@@ -660,5 +677,141 @@ describe('unit-aware Word Forge planning', () => {
     if (plan.status === 'locked') {
       expect(plan.reason).toMatch(/different quest is already in progress/i)
     }
+  })
+})
+
+describe('Compare Castle planning', () => {
+  test('keeps Compare Castle locked without active content', () => {
+    const worlds = deriveWorldsForProgress(createProgress(1))
+    const compareCastle = worlds.find((world) => world.id === 'compare-castle')!
+
+    expect(compareCastle.status).toBe('locked')
+    expect(compareCastle.units).toHaveLength(3)
+    expect(compareCastle.units.every((unit) => unit.state === 'locked')).toBe(true)
+  })
+
+  test('makes Wordplay Watchtower available with fixture content at difficulty 1', () => {
+    const progress = createDefaultQuestProgress(now)
+    progress.skillProgress['g2-across-genres-reading'] = createInitialSkillProgress('g2-across-genres-reading', 1, 0)
+
+    const worlds = deriveCurriculumWorlds(demoWorlds, progress, [createCompareCastleLesson()])
+    const compareCastle = worlds.find((world) => world.id === 'compare-castle')!
+
+    expect(compareCastle.status).toBe('available')
+    expect(compareCastle.units.find((unit) => unit.id === 'cg-unit-1')?.state).toBe('available')
+    expect(compareCastle.units.find((unit) => unit.id === 'cg-unit-1')?.difficultyLabel).toBe('Trail 1')
+    expect(compareCastle.units.find((unit) => unit.id === 'cg-unit-2')?.state).toBe('locked')
+    expect(compareCastle.units.find((unit) => unit.id === 'cg-unit-3')?.state).toBe('locked')
+  })
+
+  test('makes Retell Hall available with fixture content at difficulty 2', () => {
+    const progress = createDefaultQuestProgress(now)
+    progress.skillProgress['g2-across-genres-reading'] = createInitialSkillProgress('g2-across-genres-reading', 2, 1)
+
+    const worlds = deriveCurriculumWorlds(demoWorlds, progress, [
+      createCompareCastleLesson(),
+      createCompareCastleLesson({
+        lessonId: 'lesson-compare-castle-retell-hall-checkpoint-a',
+        activityId: 'activity-compare-castle-retell-hall-checkpoint-a',
+        unitId: 'cg-unit-2',
+        difficulty: 2,
+        benchmarkReferences: ['ELA.2.R.3.2'],
+        contentVersion: 'fixture-compare-castle-v2',
+      }),
+    ])
+    const compareCastle = worlds.find((world) => world.id === 'compare-castle')!
+
+    expect(compareCastle.status).toBe('available')
+    expect(['complete', 'review']).toContain(compareCastle.units.find((unit) => unit.id === 'cg-unit-1')?.state)
+    expect(compareCastle.units.find((unit) => unit.id === 'cg-unit-2')?.state).toBe('available')
+    expect(compareCastle.units.find((unit) => unit.id === 'cg-unit-2')?.difficultyLabel).toBe('Trail 2')
+    expect(compareCastle.units.find((unit) => unit.id === 'cg-unit-3')?.state).toBe('locked')
+  })
+
+  test('makes Compare Keep available with fixture content at difficulty 3', () => {
+    const progress = createDefaultQuestProgress(now)
+    progress.skillProgress['g2-across-genres-reading'] = createInitialSkillProgress('g2-across-genres-reading', 3, 2)
+
+    const worlds = deriveCurriculumWorlds(demoWorlds, progress, [
+      createCompareCastleLesson(),
+      createCompareCastleLesson({
+        lessonId: 'lesson-compare-castle-retell-hall-checkpoint-a',
+        activityId: 'activity-compare-castle-retell-hall-checkpoint-a',
+        unitId: 'cg-unit-2',
+        difficulty: 2,
+        benchmarkReferences: ['ELA.2.R.3.2'],
+        contentVersion: 'fixture-compare-castle-v2',
+      }),
+      createCompareCastleLesson({
+        lessonId: 'lesson-compare-castle-compare-keep-checkpoint-a',
+        activityId: 'activity-compare-castle-compare-keep-checkpoint-a',
+        unitId: 'cg-unit-3',
+        difficulty: 3,
+        benchmarkReferences: ['ELA.2.R.3.3'],
+        contentVersion: 'fixture-compare-castle-v3',
+      }),
+    ])
+    const compareCastle = worlds.find((world) => world.id === 'compare-castle')!
+
+    expect(compareCastle.status).toBe('available')
+    expect(['complete', 'review']).toContain(compareCastle.units.find((unit) => unit.id === 'cg-unit-1')?.state)
+    expect(['complete', 'review']).toContain(compareCastle.units.find((unit) => unit.id === 'cg-unit-2')?.state)
+    expect(compareCastle.units.find((unit) => unit.id === 'cg-unit-3')?.state).toBe('available')
+    expect(compareCastle.units.find((unit) => unit.id === 'cg-unit-3')?.difficultyLabel).toBe('Trail 3')
+  })
+
+  test('plans Compare Castle through the selected unit without crossing ownership', () => {
+    const baseProgress = createDefaultQuestProgress(now)
+    baseProgress.skillProgress['g2-across-genres-reading'] = createInitialSkillProgress('g2-across-genres-reading', 1, 0)
+
+    const unitOnePlan = planUnitQuest({
+      selectedUnitId: 'cg-unit-1',
+      progress: baseProgress,
+      availableLessons: [createCompareCastleLesson()],
+    })
+    expect(unitOnePlan.status).toBe('available')
+    expect(unitOnePlan.unitId).toBe('cg-unit-1')
+
+    const unitTwoProgress = createDefaultQuestProgress(now)
+    unitTwoProgress.skillProgress['g2-across-genres-reading'] = createInitialSkillProgress('g2-across-genres-reading', 2, 1)
+    const unitTwoLessons = [
+      createCompareCastleLesson(),
+      createCompareCastleLesson({
+        lessonId: 'lesson-compare-castle-retell-hall-checkpoint-a',
+        activityId: 'activity-compare-castle-retell-hall-checkpoint-a',
+        unitId: 'cg-unit-2',
+        difficulty: 2,
+        benchmarkReferences: ['ELA.2.R.3.2'],
+        contentVersion: 'fixture-compare-castle-v2',
+      }),
+    ]
+    const unitTwoPlan = planUnitQuest({
+      selectedUnitId: 'cg-unit-2',
+      progress: unitTwoProgress,
+      availableLessons: unitTwoLessons,
+    })
+    expect(unitTwoPlan.status).toBe('available')
+    expect(unitTwoPlan.unitId).toBe('cg-unit-2')
+
+    const unitThreeProgress = createDefaultQuestProgress(now)
+    unitThreeProgress.skillProgress['g2-across-genres-reading'] = createInitialSkillProgress('g2-across-genres-reading', 3, 2)
+    const unitThreeLessons = [
+      ...unitTwoLessons,
+      createCompareCastleLesson({
+        lessonId: 'lesson-compare-castle-compare-keep-checkpoint-a',
+        activityId: 'activity-compare-castle-compare-keep-checkpoint-a',
+        unitId: 'cg-unit-3',
+        difficulty: 3,
+        benchmarkReferences: ['ELA.2.R.3.3'],
+        contentVersion: 'fixture-compare-castle-v3',
+      }),
+    ]
+    const unitThreePlan = planUnitQuest({
+      selectedUnitId: 'cg-unit-3',
+      progress: unitThreeProgress,
+      availableLessons: unitThreeLessons,
+    })
+    expect(unitThreePlan.status).toBe('available')
+    expect(unitThreePlan.unitId).toBe('cg-unit-3')
   })
 })

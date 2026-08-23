@@ -2,11 +2,13 @@ import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-li
 import { afterEach, describe, expect, test, vi } from 'vitest'
 
 import App from '../src/App'
+import { getDemoWorldById } from '../src/data/demoWorlds'
 import { createInitialSkillProgress } from '../src/domain/progression'
 import { QUEST_PROGRESS_STORAGE_KEY, createDefaultQuestProgress } from '../src/persistence'
 import { PARENT_ACCESS_STORAGE_KEY, PARENT_RECORDS_STORAGE_KEY } from '../src/persistence'
 import * as parentAccess from '../src/services/parentAccess'
 import type { ParentPinRecord } from '../src/services/parentAccess'
+import { UnitSelectScreen } from '../src/screens/UnitSelectScreen'
 
 let parentCryptoSupported = true
 
@@ -101,6 +103,7 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getAllByRole('button', { name: /Story Scouts world - Available/i })).toHaveLength(1)
     expect(screen.getAllByRole('button', { name: /Information Detectives world - Available/i })).toHaveLength(1)
     expect(screen.getAllByRole('button', { name: /Poetry Planet world - Available/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Compare Castle world - Locked/i })).toHaveLength(1)
   })
 
   test('shows Word Forge as available world', () => {
@@ -567,5 +570,25 @@ describe('Phase 2 lesson flow and child shell', () => {
 
     expect(locked.getAttribute('disabled')).not.toBeNull()
     expect(informationCard.getAttribute('disabled')).toBeNull()
+  })
+
+  test('shows Compare Castle unit shells as locked in unit selection', () => {
+    const compareCastle = getDemoWorldById('compare-castle')!
+
+    render(
+      <UnitSelectScreen
+        world={compareCastle}
+        onBack={() => {}}
+        onSelectUnit={() => {}}
+      />,
+    )
+
+    expect(screen.getAllByRole('heading', { name: /Compare Castle: Unit Selection/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Wordplay Watchtower Locked/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Retell Hall Locked/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Compare Keep Locked/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Wordplay Watchtower Locked/i })[0].getAttribute('disabled')).not.toBeNull()
+    expect(screen.getAllByRole('button', { name: /Retell Hall Locked/i })[0].getAttribute('disabled')).not.toBeNull()
+    expect(screen.getAllByRole('button', { name: /Compare Keep Locked/i })[0].getAttribute('disabled')).not.toBeNull()
   })
 })

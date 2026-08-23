@@ -86,9 +86,48 @@ const contextCavernRoadmap: SequentialWorldRoadmap = {
   ],
 }
 
+const compareCastleRoadmap: SequentialWorldRoadmap = {
+  worldId: 'compare-castle',
+  trackId: 'g2-across-genres-reading',
+  baseStatus: 'locked',
+  units: [
+    {
+      unitId: 'cg-unit-1',
+      title: 'Wordplay Watchtower',
+      activeDifficulty: 1,
+      completionDifficulty: 2,
+      activeLabel: 'Trail 1',
+      practiceFocus: 'similes, idioms, alliteration, and what they mean in texts',
+      lockedMessage: 'Wordplay Watchtower quests are being prepared.',
+      futureContentMessage: 'Review similes, idioms, alliteration, and their meanings.',
+    },
+    {
+      unitId: 'cg-unit-2',
+      title: 'Retell Hall',
+      activeDifficulty: 2,
+      completionDifficulty: 3,
+      activeLabel: 'Trail 2',
+      practiceFocus: 'retelling literary and informational texts with the most important parts',
+      lockedMessage: 'Complete Wordplay Watchtower to unlock Retell Hall.',
+      futureContentMessage: 'Review literary and informational retelling.',
+    },
+    {
+      unitId: 'cg-unit-3',
+      title: 'Compare Keep',
+      activeDifficulty: 3,
+      completionDifficulty: 4,
+      activeLabel: 'Trail 3',
+      practiceFocus: 'comparing and contrasting important details from two texts',
+      lockedMessage: 'Complete Retell Hall to unlock Compare Keep.',
+      futureContentMessage: 'Review important similarities and differences across two texts.',
+    },
+  ],
+}
+
 export const sequentialWorldRoadmaps: readonly SequentialWorldRoadmap[] = Object.freeze([
   informationDetectivesRoadmap,
   contextCavernRoadmap,
+  compareCastleRoadmap,
 ])
 
 export function getSequentialWorldRoadmapByWorldId(worldId: string): SequentialWorldRoadmap | null {

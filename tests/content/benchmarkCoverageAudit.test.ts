@@ -89,6 +89,33 @@ describe('benchmark coverage audit', () => {
       coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',
     }))
+    expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.3.1')).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.2.R.3.1',
+      expectedPatterns: ['similes', 'idioms', 'alliteration'],
+      coveredPatterns: [],
+      missingPatterns: ['similes', 'idioms', 'alliteration'],
+      contributingPackIds: [],
+      coverageStatus: 'partial',
+      reviewStatus: 'DRAFT',
+    }))
+    expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.3.2')).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.2.R.3.2',
+      expectedPatterns: ['literary-retell', 'informational-retell'],
+      coveredPatterns: [],
+      missingPatterns: ['literary-retell', 'informational-retell'],
+      contributingPackIds: [],
+      coverageStatus: 'partial',
+      reviewStatus: 'DRAFT',
+    }))
+    expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.3.3')).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.2.R.3.3',
+      expectedPatterns: ['compare-contrast-important-details', 'same-topic-or-theme'],
+      coveredPatterns: [],
+      missingPatterns: ['compare-contrast-important-details', 'same-topic-or-theme'],
+      contributingPackIds: [],
+      coverageStatus: 'partial',
+      reviewStatus: 'DRAFT',
+    }))
 
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.V.1.1')).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.V.1.1',

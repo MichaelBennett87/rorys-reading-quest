@@ -102,6 +102,23 @@ function createMeaningClueChamberLesson(overrides: Partial<LessonActivityCandida
   }
 }
 
+function createCompareCastleLesson(overrides: Partial<LessonActivityCandidate> = {}): LessonActivityCandidate {
+  return {
+    lessonId: 'lesson-compare-castle-wordplay-watchtower-checkpoint-a',
+    activityId: 'activity-compare-castle-wordplay-watchtower-checkpoint-a',
+    skillId: 'g2-across-genres-reading',
+    difficulty: 1,
+    worldId: 'compare-castle',
+    unitId: 'cg-unit-1',
+    packId: 'fixture-compare-castle-pack',
+    benchmarkReferences: ['ELA.2.R.3.1'],
+    eligiblePurposes: ['progression', 'review', 'verification', 'remediation'],
+    passageQuestionKeys: ['compare-castle-wordplay-watchtower-a|q1'],
+    contentVersion: 'fixture-compare-castle-v1',
+    ...overrides,
+  }
+}
+
 function createWordForgeLesson(overrides: Partial<LessonActivityCandidate> = {}): LessonActivityCandidate {
   return {
     lessonId: 'lesson-word-forge-trail-1-checkpoint-a',
@@ -171,11 +188,13 @@ describe('curriculum planning foundation', () => {
       'g2-poetry-planet',
       'g2-information-detectives-reading',
       'g2-context-cavern-vocabulary',
+      'g2-across-genres-reading',
     ])
     expect(curriculumTracks.find((track) => track.trackId === 'g2-story-scouts-prose')?.status).toBe('active')
     expect(curriculumTracks.find((track) => track.trackId === 'g2-poetry-planet')?.status).toBe('active')
     expect(curriculumTracks.find((track) => track.trackId === 'g2-information-detectives-reading')?.status).toBe('active')
     expect(curriculumTracks.find((track) => track.trackId === 'g2-context-cavern-vocabulary')?.status).toBe('active')
+    expect(curriculumTracks.find((track) => track.trackId === 'g2-across-genres-reading')?.status).toBe('planned_until_content_exists')
     expect(new Set(curriculumTracks.map((track) => track.trackId)).size).toBe(curriculumTracks.length)
     expect(new Set(curriculumTracks.map((track) => track.skillId)).size).toBe(curriculumTracks.length)
   })
@@ -197,6 +216,9 @@ describe('curriculum planning foundation', () => {
     ])
     expect(discoverPlayableTracks([createContextCavernLesson()]).map((entry) => entry.track.skillId)).toEqual([
       'g2-context-cavern-vocabulary',
+    ])
+    expect(discoverPlayableTracks([createCompareCastleLesson()]).map((entry) => entry.track.skillId)).toEqual([
+      'g2-across-genres-reading',
     ])
     expect(discoverPlayableTracks([createMorphologyMineLesson()]).map((entry) => entry.track.skillId)).toEqual([
       'g2-context-cavern-vocabulary',
@@ -520,6 +542,22 @@ describe('curriculum planning foundation', () => {
     })
   })
 
+  test('initializes fixture Compare Castle progress without touching existing tracks', () => {
+    const progress = createDefaultQuestProgress(now)
+
+    const result = ensureProgressForPlayableTracks(progress, [
+      createCompareCastleLesson(),
+    ])
+
+    expect(result.changed).toBe(true)
+    expect(result.state.skillProgress['g2-word-forge-word-practice']).toEqual(progress.skillProgress['g2-word-forge-word-practice'])
+    expect(result.state.skillProgress['g2-across-genres-reading']).toMatchObject({
+      skillId: 'g2-across-genres-reading',
+      currentDifficulty: 1,
+      lastMasteredDifficulty: 0,
+    })
+  })
+
   test('does not initialize planned future tracks without active content', () => {
     const progress = createDefaultQuestProgress(now)
 
@@ -528,6 +566,7 @@ describe('curriculum planning foundation', () => {
     expect(result.changed).toBe(false)
     expect(result.state.skillProgress['g2-information-detectives-reading']).toBeUndefined()
     expect(result.state.skillProgress['g2-context-cavern-vocabulary']).toBeUndefined()
+    expect(result.state.skillProgress['g2-across-genres-reading']).toBeUndefined()
   })
 
   test('uses future track curriculum order when fixture information and vocabulary lessons are available', () => {

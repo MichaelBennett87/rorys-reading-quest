@@ -61,6 +61,18 @@ const curriculumTrackDefinitions: CurriculumTrackDefinition[] = [
     status: 'active',
     displayName: 'Context Cavern Vocabulary',
   },
+  {
+    trackId: 'g2-across-genres-reading',
+    skillId: 'g2-across-genres-reading',
+    worldId: 'compare-castle',
+    entryUnitId: 'cg-unit-1',
+    unitIds: ['cg-unit-1', 'cg-unit-2', 'cg-unit-3'],
+    curriculumOrder: 60,
+    initialDifficulty: 1,
+    initialLastMasteredDifficulty: 0,
+    status: 'planned_until_content_exists',
+    displayName: 'Across-Genre Reading',
+  },
 ]
 
 export const curriculumTracks: readonly CurriculumTrackDefinition[] = Object.freeze(
