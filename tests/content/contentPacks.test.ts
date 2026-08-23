@@ -41,19 +41,20 @@ describe('grade 2 content pack registry', () => {
       'g2-context-cavern-meaning-clue-chamber',
       'g2-compare-castle-wordplay-watchtower',
       'g2-compare-castle-retell-hall',
+      'g2-compare-castle-compare-keep',
       'legacy-word-forge-development-pack',
     ])
-    expect(activePacks).toHaveLength(21)
-    expect(activePacks.reduce((sum, pack) => sum + pack.lessons.length, 0)).toBe(147)
-    expect(activePacks.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(147)
-    expect(activePacks.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(848)
-    expect(activePacks.reduce((sum, pack) => sum + pack.passages.reduce((passageSum, passage) => passageSum + (passage.wordSupportTargets?.length ?? 0), 0), 0)).toBe(586)
+    expect(activePacks).toHaveLength(22)
+    expect(activePacks.reduce((sum, pack) => sum + pack.lessons.length, 0)).toBe(154)
+    expect(activePacks.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(161)
+    expect(activePacks.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(889)
+    expect(activePacks.reduce((sum, pack) => sum + pack.passages.reduce((passageSum, passage) => passageSum + (passage.wordSupportTargets?.length ?? 0), 0), 0)).toBe(614)
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 21,
-      activeLessonCount: 147,
-      activePassageCount: 147,
-      activeQuestionCount: 848,
-      activeSupportTargetCount: 586,
+      activePackCount: 22,
+      activeLessonCount: 154,
+      activePassageCount: 161,
+      activeQuestionCount: 889,
+      activeSupportTargetCount: 614,
     })
     expect(contentPackAudit).toHaveLength(0)
     expect(benchmarkCoverageAudit).toEqual(expect.objectContaining({
@@ -113,6 +114,15 @@ describe('grade 2 content pack registry', () => {
       coveredPatterns: ['literary-retell', 'informational-retell'],
       missingPatterns: [],
       contributingPackIds: ['g2-compare-castle-retell-hall'],
+      coverageStatus: 'implemented',
+      reviewStatus: 'DRAFT',
+    }))
+    expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.3.3')).toEqual(expect.objectContaining({
+      benchmarkReference: 'ELA.2.R.3.3',
+      expectedPatterns: ['compare-contrast-important-details', 'same-topic-or-theme'],
+      coveredPatterns: ['compare-contrast-important-details', 'same-topic-or-theme'],
+      missingPatterns: [],
+      contributingPackIds: ['g2-compare-castle-compare-keep'],
       coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',
     }))
@@ -324,11 +334,46 @@ describe('grade 2 content pack registry', () => {
       missingPatterns: [],
     }))
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.2.R.3.3')).toEqual(expect.objectContaining({
-      coverageStatus: 'planned',
-      missingPatterns: ['compare-contrast-important-details', 'same-topic-or-theme'],
+      coverageKind: 'benchmark',
+      coverageStatus: 'implemented',
+      contributingPackIds: ['g2-compare-castle-compare-keep'],
+      missingPatterns: [],
     }))
     expect(snapshot.rows.every((row) => row.reviewStatus === 'DRAFT')).toBe(true)
     expect(contentPacks).toEqual(packsSnapshot)
     expect(grade2BenchmarkInventory).toEqual(inventorySnapshot)
+  })
+
+  test('keeps the Compare Keep pack aligned with paired-text expectations', () => {
+    const compareKeepPack = contentPacks.find((pack) => pack.manifest.packId === 'g2-compare-castle-compare-keep')
+    expect(compareKeepPack).toBeDefined()
+    expect(compareKeepPack?.manifest).toEqual(expect.objectContaining({
+      packTitle: 'Grade 2 Compare Castle: Compare Keep',
+      worldId: 'compare-castle',
+      unitId: 'cg-unit-3',
+      primarySkillId: 'g2-across-genres-reading',
+      benchmarkReferences: ['ELA.2.R.3.3'],
+      reviewStatus: 'DRAFT',
+      difficultyRange: [2, 3],
+      coverageKind: 'benchmark',
+    }))
+    expect(compareKeepPack?.passages).toHaveLength(14)
+    expect(compareKeepPack?.passages.filter((passage) => passage.contentKind === 'prose')).toHaveLength(6)
+    expect(compareKeepPack?.passages.filter((passage) => passage.contentKind === 'poem')).toHaveLength(2)
+    expect(compareKeepPack?.passages.filter((passage) => passage.contentKind === 'informational')).toHaveLength(6)
+    expect(compareKeepPack?.lessons).toHaveLength(7)
+    expect(compareKeepPack?.questions).toHaveLength(41)
+    expect(compareKeepPack?.pairedTextSets).toHaveLength(7)
+    expect(compareKeepPack?.pairedTextComparisonGuides).toHaveLength(7)
+    expect(compareKeepPack?.questions.filter((question) => question.questionType === 'multiple_choice')).toHaveLength(17)
+    expect(compareKeepPack?.questions.filter((question) => question.questionType === 'multi_select')).toHaveLength(7)
+    expect(compareKeepPack?.questions.filter((question) => question.questionType === 'hot_text')).toHaveLength(7)
+    expect(compareKeepPack?.questions.filter((question) => question.questionType === 'table_match')).toHaveLength(7)
+    expect(compareKeepPack?.questions.filter((question) => question.questionType === 'two_part')).toHaveLength(3)
+    expect(compareKeepPack?.passages.reduce((sum, passage) => sum + (passage.wordSupportTargets?.length ?? 0), 0)).toBe(28)
+    expect(compareKeepPack?.lessons.every((lesson) => lesson.pairedTextSetId)).toBe(true)
+    expect(compareKeepPack?.lessons.every((lesson) => lesson.contentVersion === 'g2-cg-compare-r0.1.0')).toBe(true)
+    expect(compareKeepPack?.questions.every((question) => question.contentVersion === 'g2-cg-compare-r0.1.0')).toBe(true)
+    expect(compareKeepPack?.questions.every((question) => question.benchmarkReference === 'ELA.2.R.3.3')).toBe(true)
   })
 })

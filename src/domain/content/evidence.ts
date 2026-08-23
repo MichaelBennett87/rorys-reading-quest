@@ -10,8 +10,44 @@ export interface PassageEvidenceEntry {
   text: string
 }
 
+export interface LessonEvidenceEntry extends PassageEvidenceEntry {
+  passageId: string
+}
+
+export interface ScopedEvidenceReference {
+  passageId: string
+  evidenceId: string
+}
+
 export function resolvePassageEvidence(passage: Passage, evidenceId: string): PassageEvidenceEntry | null {
   return buildPassageEvidenceIndex(passage).get(evidenceId) ?? null
+}
+
+export function createScopedEvidenceReference(passageId: string, evidenceId: string): string {
+  return `${passageId}::${evidenceId}`
+}
+
+export function parseScopedEvidenceReference(reference: string): ScopedEvidenceReference | null {
+  const match = /^(.+?)::(.+)$/.exec(reference.trim())
+  if (!match) return null
+  return {
+    passageId: match[1],
+    evidenceId: match[2],
+  }
+}
+
+export function resolveLessonEvidence(
+  passagesById: ReadonlyMap<string, Passage>,
+  primaryPassageId: string,
+  evidenceReference: string,
+): LessonEvidenceEntry | null {
+  const scopedReference = parseScopedEvidenceReference(evidenceReference)
+  const passageId = scopedReference?.passageId ?? primaryPassageId
+  const evidenceId = scopedReference?.evidenceId ?? evidenceReference
+  const passage = passagesById.get(passageId)
+  if (!passage) return null
+  const resolved = resolvePassageEvidence(passage, evidenceId)
+  return resolved ? { ...resolved, passageId: passage.passageIdentifier } : null
 }
 
 export function buildPassageEvidenceIndex(passage: Passage): ReadonlyMap<string, PassageEvidenceEntry> {
@@ -162,4 +198,3 @@ function getCaptionLabel(kind: InformationalFeature['kind']): string {
       return 'Caption'
   }
 }
-

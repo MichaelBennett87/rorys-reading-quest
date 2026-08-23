@@ -295,6 +295,56 @@ export interface InformationalRetellGuide {
 
 export type RetellGuide = LiteraryRetellGuide | InformationalRetellGuide
 
+export type PairedTextRelationshipKind = 'same-topic' | 'same-theme'
+
+export type PairedTextMemberFormat = 'literary-prose' | 'literary-poem' | 'informational'
+
+export interface PairedTextMember {
+  passageId: string
+  label: 'Text 1' | 'Text 2'
+  displayTitle: string
+  format: PairedTextMemberFormat
+}
+
+export interface PairedTextSet {
+  pairId: string
+  pairTitle: string
+  relationshipKind: PairedTextRelationshipKind
+  members: [PairedTextMember, PairedTextMember]
+  formatRelationship: 'same-format' | 'different-format'
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
+export type ComparisonDimension =
+  | 'character'
+  | 'setting'
+  | 'event-sequence'
+  | 'central-idea'
+  | 'important-detail'
+  | 'process'
+
+export interface PairedTextComparisonPoint {
+  pointId: string
+  dimension: ComparisonDimension
+  statement: string
+  text1EvidenceIds: string[]
+  text2EvidenceIds: string[]
+  importanceExplanation: string
+}
+
+export interface PairedTextComparisonGuide {
+  pairId: string
+  relationshipKind: PairedTextRelationshipKind
+  sharedTopicOrThemeStatement: string
+  importantSimilarities: PairedTextComparisonPoint[]
+  importantDifferences: PairedTextComparisonPoint[]
+  text1OtherDetailIds: string[]
+  text2OtherDetailIds: string[]
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
 export interface ContentPackManifest {
   packId: string
   packTitle: string
@@ -323,6 +373,7 @@ export interface ContentPackLesson {
   activityId: string
   difficulty: number
   passageIdentifiers: string[]
+  pairedTextSetId?: string
   questionIdentifiers: string[]
   lessonTitle: string
   lessonObjective: string
@@ -348,6 +399,8 @@ export interface ContentPack {
   meaningClueGuides?: MeaningClueGuide[]
   wordplayGuides?: WordplayGuide[]
   retellGuides?: RetellGuide[]
+  pairedTextSets?: PairedTextSet[]
+  pairedTextComparisonGuides?: PairedTextComparisonGuide[]
   themeGuides?: ThemeGuide[]
   perspectiveGuides?: PerspectiveGuide[]
   rhymeSchemeGuides?: RhymeSchemeGuide[]
@@ -419,13 +472,19 @@ export interface ContentPackAuditIssue {
    | 'missing_meaning_clue_guide'
    | 'meaning_clue_guide_count_mismatch'
    | 'meaning_clue_guide_invalid'
-   | 'missing_wordplay_guide'
-   | 'wordplay_guide_count_mismatch'
-   | 'wordplay_guide_invalid'
-   | 'missing_retell_guide'
-   | 'retell_guide_count_mismatch'
-   | 'retell_guide_invalid'
-   | 'retell_builder_invalid'
+     | 'missing_wordplay_guide'
+     | 'wordplay_guide_count_mismatch'
+     | 'wordplay_guide_invalid'
+     | 'missing_retell_guide'
+     | 'retell_guide_count_mismatch'
+     | 'retell_guide_invalid'
+     | 'retell_builder_invalid'
+     | 'missing_paired_text_set'
+     | 'paired_text_set_count_mismatch'
+     | 'paired_text_set_invalid'
+     | 'missing_paired_text_comparison_guide'
+     | 'paired_text_comparison_guide_count_mismatch'
+     | 'paired_text_comparison_guide_invalid'
    | 'invalid_evidence_reference'
    | 'invalid_author_opinion_feature_reference'
    | 'invalid_informational_feature_reference'

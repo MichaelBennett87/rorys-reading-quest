@@ -464,10 +464,10 @@ function createCompareCastleDashboard(): DashboardSnapshot {
     dataAvailability: 'ready',
     unclassifiedQuestionCount: 0,
   })
-  dashboard.benchmarkSummaries.push(
-    {
-      benchmarkReference: 'ELA.2.R.3.1',
-      skillIdentifier: 'g2-across-genres-reading',
+    dashboard.benchmarkSummaries.push(
+      {
+        benchmarkReference: 'ELA.2.R.3.1',
+        skillIdentifier: 'g2-across-genres-reading',
       reportingCategory: 'Reading Across Genres and Vocabulary',
       gradeBand: 2,
       questionAttempts: 4,
@@ -484,11 +484,11 @@ function createCompareCastleDashboard(): DashboardSnapshot {
       parentStatusExplanation: 'Wordplay Watchtower is ready for the next compare-castle trail.',
       dataAvailability: 'ready',
     },
-    {
-      benchmarkReference: 'ELA.2.R.3.2',
-      skillIdentifier: 'g2-across-genres-reading',
-      reportingCategory: 'Reading Across Genres and Vocabulary',
-      gradeBand: 2,
+      {
+        benchmarkReference: 'ELA.2.R.3.2',
+        skillIdentifier: 'g2-across-genres-reading',
+        reportingCategory: 'Reading Across Genres and Vocabulary',
+        gradeBand: 2,
       questionAttempts: 3,
       accuracy: 100,
       firstAttemptAccuracy: 100,
@@ -499,50 +499,95 @@ function createCompareCastleDashboard(): DashboardSnapshot {
       distinctIndependentEvidenceCount: 2,
       currentLearningState: 'ADVANCE',
       nextReviewDate: '2026-08-21T12:00:00.000Z',
+        activeRemediationTarget: null,
+        parentStatusExplanation: 'Retell Hall uses structured authored retell choices rather than spontaneous oral or original written retells.',
+        dataAvailability: 'ready',
+      },
+      {
+        benchmarkReference: 'ELA.2.R.3.3',
+        skillIdentifier: 'g2-across-genres-reading',
+        reportingCategory: 'Reading Across Genres and Vocabulary',
+        gradeBand: 2,
+        questionAttempts: 3,
+        accuracy: 100,
+        firstAttemptAccuracy: 100,
+        assistedSessionRate: 0,
+        mostRecentActivityDate: '2026-08-20T12:00:00.000Z',
+        currentDifficulty: 3,
+        lastMasteredDifficulty: 2,
+        distinctIndependentEvidenceCount: 2,
+        currentLearningState: 'ADVANCE',
+        nextReviewDate: '2026-08-21T12:00:00.000Z',
+        activeRemediationTarget: null,
+        parentStatusExplanation: 'Compare Keep uses structured authored comparison choices rather than original written or oral comparison.',
+        dataAvailability: 'ready',
+      },
+    )
+    dashboard.skillSummaries.push({
+      skillId: 'g2-across-genres-reading',
+      benchmarkReference: 'ELA.2.R.3.1',
+      benchmarkReferences: ['ELA.2.R.3.1', 'ELA.2.R.3.2', 'ELA.2.R.3.3'],
+      reportingCategory: 'Reading Across Genres and Vocabulary',
+      gradeBand: 2,
+      questionAttempts: 10,
+      accuracy: 100,
+      firstAttemptAccuracy: 100,
+      assistedSessionRate: 0,
+      mostRecentActivityDate: '2026-08-20T12:00:00.000Z',
+      currentDifficulty: 3,
+      lastMasteredDifficulty: 2,
+      distinctIndependentEvidenceCount: 2,
+      currentLearningState: 'ADVANCE',
+      nextReviewDate: '2026-08-21T12:00:00.000Z',
       activeRemediationTarget: null,
-      parentStatusExplanation: 'Retell Hall uses structured authored retell choices rather than spontaneous oral or original written retells.',
+      parentStatusExplanation: 'Compare Keep uses structured authored comparison choices rather than original written or oral comparison.',
       dataAvailability: 'ready',
-    },
-  )
-  dashboard.skillSummaries.push({
-    skillId: 'g2-across-genres-reading',
-    benchmarkReference: 'ELA.2.R.3.1',
-    benchmarkReferences: ['ELA.2.R.3.1', 'ELA.2.R.3.2'],
-    reportingCategory: 'Reading Across Genres and Vocabulary',
-    gradeBand: 2,
-    questionAttempts: 7,
-    accuracy: 100,
-    firstAttemptAccuracy: 100,
-    assistedSessionRate: 0,
-    mostRecentActivityDate: '2026-08-20T12:00:00.000Z',
-    currentDifficulty: 2,
-    lastMasteredDifficulty: 1,
-    distinctIndependentEvidenceCount: 2,
-    currentLearningState: 'ADVANCE',
-    nextReviewDate: '2026-08-21T12:00:00.000Z',
-    activeRemediationTarget: null,
-    parentStatusExplanation: 'Retell Hall uses structured authored retell choices rather than spontaneous oral or original written retells.',
-    dataAvailability: 'ready',
-  })
-  dashboard.recentAttempts.unshift({
-    completionDate: '2026-08-20T12:00:00.000Z',
-    lessonId: 'cg-retell-checkpoint-literary-a',
-    lessonTitle: 'Compare Castle: Retell Hall',
-    activityId: 'activity-compare-castle-retell-hall-checkpoint-a',
-    skillId: 'g2-across-genres-reading',
-    difficulty: 2,
-    accuracy: 100,
-    firstAttemptAccuracy: 100,
-    assistanceUsed: 0,
-    supportedTargetCount: 0,
-    maximumAssistanceLevel: 0,
-    progressionDecision: 'ADVANCE',
-    parentFriendlyExplanation: 'Retell Hall uses structured authored retell choices rather than spontaneous oral or original written retells.',
-    nextReviewDate: '2026-08-21T12:00:00.000Z',
-    classificationStatus: 'classified',
-  })
-  return dashboard
-}
+    })
+    dashboard.recentAttempts.unshift({
+      completionDate: '2026-08-20T12:00:00.000Z',
+      lessonId: 'cg-compare-checkpoint-literary-a',
+      lessonTitle: 'Compare Castle: Compare Keep',
+      activityId: 'activity-compare-castle-compare-keep-checkpoint-a',
+      skillId: 'g2-across-genres-reading',
+      difficulty: 3,
+      accuracy: 100,
+      firstAttemptAccuracy: 100,
+      assistanceUsed: 0,
+      supportedTargetCount: 0,
+      maximumAssistanceLevel: 0,
+      progressionDecision: 'ADVANCE',
+      parentFriendlyExplanation: 'Compare Keep uses structured authored comparison choices rather than original written or oral comparison.',
+      nextReviewDate: '2026-08-21T12:00:00.000Z',
+      classificationStatus: 'classified',
+    })
+    dashboard.reviewSummary.entries.push(
+      {
+        skillId: 'g2-across-genres-reading',
+        difficulty: 2,
+        reviewStep: 0,
+        dueAt: '2026-08-21T12:00:00.000Z',
+        unitId: 'cg-unit-2',
+        unitLabel: 'Compare Castle: Retell Hall',
+        contentVersion: 'g2-cg-retell-r0.1.0',
+        status: 'due_now',
+      },
+      {
+        skillId: 'g2-across-genres-reading',
+        difficulty: 3,
+        reviewStep: 1,
+        dueAt: '2026-08-22T12:00:00.000Z',
+        unitId: 'cg-unit-3',
+        unitLabel: 'Compare Castle: Compare Keep',
+        contentVersion: 'g2-cg-compare-r0.1.0',
+        status: 'upcoming',
+      },
+    )
+    dashboard.reviewSummary.dueReviews = 1
+    dashboard.reviewSummary.upcomingReviews = 1
+    dashboard.reviewSummary.overdueReviews = 0
+    dashboard.reviewSummary.nextReviewDate = '2026-08-21T12:00:00.000Z'
+    return dashboard
+  }
 
 function createNoDataDashboard(): DashboardSnapshot {
   return {
@@ -1047,7 +1092,6 @@ describe('ParentDashboardScreen', () => {
     fireEvent.click(screen.getByRole('button', { name: /Progress/i }))
     fireEvent.change(screen.getByLabelText(/Filter by category/i), { target: { value: 'Reading Across Genres and Vocabulary' } })
     expect(screen.getByRole('heading', { name: /Across-Genre Reading/i })).toBeTruthy()
-    expect(screen.getAllByText(/Retell Hall uses structured authored retell choices rather than spontaneous oral or original written retells\./i).length).toBeGreaterThan(0)
     expect(screen.queryByRole('heading', { name: /g2-across-genres-reading/i })).toBeNull()
 
     fireEvent.click(screen.getByRole('button', { name: /Print Summary/i }))
@@ -1055,8 +1099,9 @@ describe('ParentDashboardScreen', () => {
     expect(screen.getByRole('heading', { name: /Parent Progress Summary/i })).toBeTruthy()
     expect(screen.getAllByText(/Across-Genre Reading/i).length).toBeGreaterThan(0)
     expect(screen.getByText(/Compare Castle: Retell Hall/i)).toBeTruthy()
+    expect(screen.getAllByText(/Compare Castle: Compare Keep/i).length).toBeGreaterThan(1)
     expect(screen.getAllByText(/Reading Across Genres and Vocabulary/i).length).toBeGreaterThan(0)
-    expect(screen.getAllByText(/Retell Hall uses structured authored retell choices rather than spontaneous oral or original written retells\./i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/Compare Keep uses structured authored comparison choices rather than original written or oral comparison\./i).length).toBeGreaterThan(0)
     expect(screen.queryByRole('heading', { name: /g2-across-genres-reading/i })).toBeNull()
 
     fireEvent.click(screen.getByRole('button', { name: /^Print$/i }))

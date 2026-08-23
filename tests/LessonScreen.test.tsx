@@ -97,4 +97,53 @@ describe('LessonScreen guided teaching flow', () => {
     expect(screen.getByRole('button', { name: /Hear a Model Read/i })).toBeTruthy()
     expect(screen.getByRole('button', { name: /Read It Once/i })).toBeTruthy()
   })
+
+  test('renders Compare Keep paired texts with accessible word help from both texts', () => {
+    const lesson = getLessonById('lesson-compare-castle-compare-keep-checkpoint-literary-b').lesson
+    expect(lesson).toBeDefined()
+
+    render(
+      <LessonScreen
+        lesson={lesson!}
+        onBack={() => undefined}
+        onSessionCheckpoint={() => undefined}
+        onComplete={() => undefined}
+      />,
+    )
+
+    expect(screen.getByRole('heading', { name: /Preparing for a Shared Moment/i })).toBeTruthy()
+    expect(screen.getByRole('heading', { name: /Text 1: Camp Lanterns/i })).toBeTruthy()
+    expect(screen.getByRole('heading', { name: /Text 2: Before the Show/i })).toBeTruthy()
+
+    fireEvent.click(screen.getByRole('button', { name: /Open word help for gathered/i }))
+    expect(screen.getByRole('heading', { name: /Word Help/i })).toBeTruthy()
+    expect(screen.getByText(/Target word: gathered/i)).toBeTruthy()
+
+    fireEvent.click(screen.getByRole('button', { name: /Close Word Help/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Open word help for careful$/i }))
+    expect(screen.getByRole('heading', { name: /Word Help/i })).toBeTruthy()
+    expect(screen.getByText(/Target word: careful/i)).toBeTruthy()
+    expect(screen.getAllByRole('heading', { name: /Word Help/i })).toHaveLength(1)
+  })
+
+  test('shows Compare Keep evidence in both text areas after scoring', () => {
+    const lesson = getLessonById('lesson-compare-castle-compare-keep-checkpoint-literary-b').lesson
+    expect(lesson).toBeDefined()
+
+    render(
+      <LessonScreen
+        lesson={lesson!}
+        onBack={() => undefined}
+        onSessionCheckpoint={() => undefined}
+        onComplete={() => undefined}
+      />,
+    )
+
+    fireEvent.click(screen.getByRole('radio', { name: /Both texts show helpers getting ready with care\./i }))
+    fireEvent.click(screen.getByRole('button', { name: /Submit Answer/i }))
+
+    expect(screen.getByText(/Great clue-finding!/i)).toBeTruthy()
+    expect(screen.getByText(/They worked carefully so each camper would have a bright spot to sit\./i)).toBeTruthy()
+    expect(screen.getByText(/Line 2: Hands checked strings, lanterns, and notes in a careful row\./i)).toBeTruthy()
+  })
 })

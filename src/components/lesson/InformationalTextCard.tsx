@@ -13,6 +13,7 @@ import { SupportedText } from './SupportedText'
 
 interface InformationalTextCardProps {
   heading: string
+  headingId?: string
   passage: Passage
   evidenceSnippets?: string[]
   wordSupportTargets?: WordSupportTarget[]
@@ -22,6 +23,7 @@ interface InformationalTextCardProps {
 
 function InformationalTextCard({
   heading,
+  headingId = 'lesson-informational-heading',
   passage,
   evidenceSnippets = [],
   wordSupportTargets = [],
@@ -31,8 +33,8 @@ function InformationalTextCard({
   const structure = passage.informationalStructure
   if (!structure) {
     return (
-      <section className="card informational-text-card" aria-labelledby="lesson-informational-heading">
-        <h2 id="lesson-informational-heading">{heading}</h2>
+      <section className="card informational-text-card" aria-labelledby={headingId}>
+        <h2 id={headingId}>{heading}</h2>
         <p>This informational passage could not be displayed.</p>
       </section>
     )
@@ -54,8 +56,8 @@ function InformationalTextCard({
   )
 
   return (
-    <section className="card informational-text-card" aria-labelledby="lesson-informational-heading">
-      <h2 id="lesson-informational-heading">{heading}</h2>
+    <section className="card informational-text-card" aria-labelledby={headingId}>
+      <h2 id={headingId}>{heading}</h2>
       <article className="informational-text" aria-label="Informational text">
         {renderTitle(featureById.get(structure.titleFeatureId))}
         {structure.sections.map((section) => {

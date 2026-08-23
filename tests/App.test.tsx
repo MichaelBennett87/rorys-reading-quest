@@ -87,6 +87,16 @@ function seedInformationDifficulty(difficulty: number) {
   window.localStorage.setItem(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(progress))
 }
 
+function seedCompareDifficulty(difficulty: number) {
+  const progress = createDefaultQuestProgress('2026-08-20T12:00:00.000Z')
+  progress.skillProgress['g2-across-genres-reading'] = createInitialSkillProgress(
+    'g2-across-genres-reading',
+    difficulty,
+    Math.max(0, difficulty - 1),
+  )
+  window.localStorage.setItem(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(progress))
+}
+
 describe('Phase 2 lesson flow and child shell', () => {
   test('renders home title', () => {
     render(<App />)
@@ -136,6 +146,19 @@ describe('Phase 2 lesson flow and child shell', () => {
     expect(screen.getAllByRole('button', { name: /Wordplay Watchtower Available/i })).toHaveLength(1)
     expect(screen.getAllByRole('button', { name: /Retell Hall Locked/i })).toHaveLength(1)
     expect(screen.getAllByRole('button', { name: /Compare Keep Locked/i })).toHaveLength(1)
+  })
+
+  test('shows Compare Keep as available when Across-Genre Reading reaches difficulty 3', async () => {
+    seedCompareDifficulty(3)
+    render(<App />)
+
+    fireEvent.click(getCompareCastleCard())
+    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
+
+    expect(screen.getAllByRole('button', { name: /Wordplay Watchtower (Complete|Review)/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Retell Hall (Complete|Review)/i })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: /Compare Keep Available/i })).toHaveLength(1)
+    expect(within(screen.getByRole('button', { name: /Compare Keep Available/i })).getByText(/Trail 3/i)).toBeTruthy()
   })
 
   test('opens world screen from Word Forge', () => {

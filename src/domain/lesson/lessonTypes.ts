@@ -132,6 +132,8 @@ export interface LessonDefinition {
   lessonId: string
   activityId: string
   passageId: string
+  passageIds: string[]
+  pairedTextSetId?: string
   skillId: string
   difficulty: number
   unitId: string
@@ -226,6 +228,7 @@ export interface LessonCatalogEntry {
   unitId: string
   activityId: string
   passageIdentifier: string[]
+  pairedTextSetId?: string
   questionIdentifiers: string[]
   lessonTitle: string
   lessonObjective: string

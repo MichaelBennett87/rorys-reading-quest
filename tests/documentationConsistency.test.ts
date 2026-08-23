@@ -31,21 +31,22 @@ describe('documentation consistency', () => {
     expect(tasks).toContain('    - [x] Phase 6F0: Compare Castle and across-genres foundation')
     expect(tasks).toContain('    - [x] Phase 6F1: similes, idioms, alliteration, and ELA.2.R.3.1')
     expect(tasks).toContain('    - [x] Phase 6F2: literary and informational retelling for ELA.2.R.3.2')
-    expect(tasks).toContain('    - [ ] Phase 6F3: paired-text comparison for ELA.2.R.3.3')
+    expect(tasks).toContain('    - [x] Phase 6F3: paired-text comparison for ELA.2.R.3.3')
     expect(tasks).toContain('    - [ ] Phase 6F4: final Grade 2 audit and Phase 6 completion')
     expect(readme).toContain('Phase 6F0 complete')
     expect(readme).toContain('Phase 6F1 complete')
     expect(readme).toContain('Phase 6F2 complete')
-    expect(readme).toContain('Phase 6F3 is next')
+    expect(readme).toContain('Phase 6F3 complete')
+    expect(readme).toContain('Phase 6F4 is next')
     expect(readme).toContain('Compare Castle active')
     expect(readme).toContain('Wordplay Watchtower active')
     expect(readme).toContain('Retell Hall active')
-    expect(readme).toContain('Compare Keep remains without production curriculum')
-    expect(architecture).toContain('twenty-one registered packs, 147 lessons, 147 passages, 848 questions, and 586 support targets')
-    expect(architecture).toContain('Phase 6F2 adaptive-planning boundary')
+    expect(readme).toContain('Compare Keep active')
+    expect(architecture).toContain('twenty-two registered packs, 154 lessons, 161 passages, 889 questions, and 614 support targets')
+    expect(architecture).toContain('Phase 6F3 adaptive-planning boundary')
     expect(architecture).toContain('Compare Castle becomes active in Phase 6F1')
-    expect(contentModel).toContain('twenty-one active Grade 2 bridge packs with 147 lessons, 147 passages, 848 scored questions, and 586 authored word-support targets')
-    expect(contentModel).toContain('Phase 6F2 Grade 2 benchmark inventory and coverage snapshot')
+    expect(contentModel).toContain('twenty-two active Grade 2 bridge packs with 154 lessons, 161 passages, 889 scored questions, and 614 authored word-support targets')
+    expect(contentModel).toContain('Phase 6F3 Grade 2 benchmark inventory and coverage snapshot')
     expect(curriculum).toContain('Information Detectives')
     expect(curriculum).toContain('Context Cavern')
     expect(curriculum).toContain('Text Feature Hunt')
@@ -87,11 +88,15 @@ describe('documentation consistency', () => {
     expect(phase6f2Report).toContain('Starting remote HEAD: `0ec741250997b1578b5793c116ac338ac597fd87`')
     expect(phase6f2Report).toContain('Compare Castle is active.')
     expect(phase6f2Report).toContain('Retell Hall is active.')
-    expect(phase6f2Report).toContain('Phase 6F2 is in progress')
+    expect(phase6f2Report).toContain('Phase 6F2 is complete locally')
     expect(phase6f2Report).toContain('Phase 6F3 remains next')
     expect(phase6f2Report).toContain('final synchronization reconciliation is deferred to the external completion report or the next phase')
     expect(phase6f2Report).not.toContain('Final local HEAD:')
     expect(phase6f2Report).not.toContain('Final remote HEAD:')
+    const phase6f3Report = readRepoFile('docs/PHASE_6F3_REPORT.md')
+    expect(phase6f3Report).toContain('Starting local HEAD: `79b178536722157bbe965a6dde307b842309363d`')
+    expect(phase6f3Report).toContain('Starting remote HEAD: `79b178536722157bbe965a6dde307b842309363d`')
+    expect(phase6f3Report).toContain('Phase 6F3 is complete')
     expect(baselineAudit).toContain('Grade 2 benchmark inventory count: 20')
     expect(baselineAudit).toContain('ELA.2.R.3.1 status: planned')
     expect(baselineAudit).toContain('Phase 6F0 architecture boundary')
@@ -173,11 +178,11 @@ describe('documentation consistency', () => {
 
   test('keeps active curriculum totals aligned with the registry helper', () => {
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 21,
-      activeLessonCount: 147,
-      activePassageCount: 147,
-      activeQuestionCount: 848,
-      activeSupportTargetCount: 586,
+      activePackCount: 22,
+      activeLessonCount: 154,
+      activePassageCount: 161,
+      activeQuestionCount: 889,
+      activeSupportTargetCount: 614,
     })
   })
 })

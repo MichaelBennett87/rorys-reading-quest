@@ -13,6 +13,7 @@ const baseLesson: Omit<LessonDefinition, 'questionCount' | 'questions'> = {
   lessonId: 'lesson-word-forge-vowel-voyage',
   activityId: 'act-word-forge-vowel-voyage',
   passageId: 'passage-word-forge-bridge-a',
+  passageIds: ['passage-word-forge-bridge-a'],
   skillId: 'g2-word-forge-word-practice',
   difficulty: 1,
   unitId: 'wg-unit-1',

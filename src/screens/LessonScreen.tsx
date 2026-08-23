@@ -11,6 +11,7 @@ import {
 } from '../domain/lesson'
 import { sampleContent } from '../domain/content'
 import type { WordSupportTarget } from '../domain/content'
+import type { PairedTextSet } from '../domain/content/packs/contentPackTypes'
 import {
   type AssistanceEvent,
   type AssistanceKind,
@@ -26,13 +27,12 @@ import { HotTextQuestion } from '../components/lesson/HotTextQuestion'
 import { EvidencePairQuestion } from '../components/lesson/EvidencePairQuestion'
 import { TableMatchQuestion } from '../components/lesson/TableMatchQuestion'
 import { AnswerFeedback } from '../components/lesson/AnswerFeedback'
-import { InformationalTextCard } from '../components/lesson/InformationalTextCard'
-import { PassageCard } from '../components/lesson/PassageCard'
-import { PoemCard } from '../components/lesson/PoemCard'
+import { LessonTextCard } from '../components/lesson/LessonTextCard'
+import { PairedTextCard } from '../components/lesson/PairedTextCard'
 import { LessonResults } from '../components/lesson/LessonResults'
 import { FluencyPracticeScreen } from './FluencyPracticeScreen'
 import { WordHelpPanel } from '../components/wordSupport'
-import { resolvePassageEvidence } from '../domain/content'
+import { resolveLessonEvidence } from '../domain/content'
 import {
   advanceActiveLessonSession,
   checkpointSubmittedQuestion,
@@ -114,12 +114,28 @@ export function LessonScreen({
   const sessionRef = useRef<ActiveLessonSession | null>(session)
   const completionSentRef = useRef(false)
   const currentQuestion = lesson.questions[currentIndex] ?? null
-  const currentPassage = currentQuestion
-    ? sampleContent.passages.find((passage) => passage.passageIdentifier === currentQuestion.passageId) ?? null
+  const lessonPassages = useMemo(() => {
+    const passageIds = lesson.passageIds.length > 0 ? lesson.passageIds : [lesson.passageId]
+    return passageIds
+      .map((passageId) => sampleContent.passages.find((passage) => passage.passageIdentifier === passageId))
+      .filter((passage): passage is (typeof sampleContent.passages)[number] => Boolean(passage))
+  }, [lesson.passageId, lesson.passageIds])
+  const lessonPassagesById = useMemo(
+    () => new Map(lessonPassages.map((passage) => [passage.passageIdentifier, passage] as const)),
+    [lessonPassages],
+  )
+  const pairedContent = sampleContent as typeof sampleContent & {
+    pairedTextSets?: PairedTextSet[]
+  }
+  const pairedTextSet = lesson.pairedTextSetId
+    ? pairedContent.pairedTextSets?.find((pair) => pair.pairId === lesson.pairedTextSetId) ?? null
     : null
-  const passageTargets = currentPassage?.wordSupportTargets ?? []
+  const currentPassage = currentQuestion
+    ? lessonPassagesById.get(currentQuestion.passageId) ?? lessonPassages[0] ?? null
+    : null
+  const lessonWordSupportTargets = lessonPassages.flatMap((passage) => passage.wordSupportTargets ?? [])
   const activeSupportTarget = openSupportTargetId
-    ? passageTargets.find((target) => target.targetId === openSupportTargetId) ?? null
+    ? lessonWordSupportTargets.find((target) => target.targetId === openSupportTargetId) ?? null
     : null
   const tableMatchSelectionMode = currentQuestion.questionType === 'TABLE_MATCH'
     ? currentQuestion.selectionMode ?? 'independent'
@@ -132,6 +148,22 @@ export function LessonScreen({
     !practiceStarted &&
     (session?.submittedQuestions.length ?? 0) === 0 &&
     Boolean(lesson.teachingBlock)
+  const evidenceSnippetsByPassageId = useMemo(() => {
+    if (!currentQuestion) {
+      return {}
+    }
+
+    const groups: Record<string, string[]> = {}
+    for (const evidenceId of currentQuestion.evidenceReferenceIds) {
+      const resolved = resolveLessonEvidence(lessonPassagesById, currentQuestion.passageId, evidenceId)
+      if (!resolved) {
+        continue
+      }
+      const snippet = resolved.label && resolved.label !== resolved.text ? `${resolved.label}: ${resolved.text}` : resolved.text
+      groups[resolved.passageId] = [...(groups[resolved.passageId] ?? []), snippet]
+    }
+    return groups
+  }, [currentQuestion, lessonPassagesById])
   const result = useMemo(
     () =>
       buildLessonResult({
@@ -206,48 +238,9 @@ export function LessonScreen({
     )
   }
 
-  const evidenceSnippets = (() => {
-    const evidenceIds = currentQuestion.evidenceReferenceIds
-    if (evidenceIds.length === 0) {
-      return []
-    }
-    const sentenceLookup = new Map(
-      currentPassage?.sentences?.map((sentence) => [sentence.sentenceId, sentence.text] as const) ?? [],
-    )
-    return evidenceIds
-      .map((id) => {
-        const resolved = currentPassage ? resolvePassageEvidence(currentPassage, id) : undefined
-        if (resolved) {
-          return resolved.label && resolved.label !== resolved.text ? `${resolved.label}: ${resolved.text}` : resolved.text
-        }
-        if (currentQuestion.questionType === 'TABLE_MATCH') {
-          const optionText = currentQuestion.rows
-            .flatMap((row) => row.options)
-            .find((option) => option.id === id)?.text
-          const sentenceText = sentenceLookup.get(id)
-          return optionText ? `${id}: ${optionText}` : sentenceText ? `${id}: ${sentenceText}` : undefined
-        }
-        if (currentQuestion.questionType === 'MULTISELECT' || currentQuestion.questionType === 'MULTIPLE_CHOICE') {
-          const choiceText = currentQuestion.choices.find((choice) => choice.id === id)?.text
-          const sentenceText = sentenceLookup.get(id)
-          return choiceText ?? sentenceText ?? undefined
-        }
-        if (currentQuestion.questionType === 'HOT_TEXT') {
-          const segmentText = currentQuestion.segments.find((segment) => segment.id === id)?.text
-          const sentenceText = sentenceLookup.get(id)
-          return segmentText ?? sentenceText ?? undefined
-        }
-        if (currentQuestion.questionType === 'EVIDENCE_PAIR') {
-          const allChoices = [...currentQuestion.partAChoices, ...currentQuestion.partBChoices]
-          const choiceText = allChoices.find((choice) => choice.id === id)?.text
-          const sentenceText = sentenceLookup.get(id)
-          return choiceText ?? sentenceText ?? undefined
-        }
-        const sentenceText = sentenceLookup.get(id)
-        return sentenceText ? `${id}: ${sentenceText}` : id
-      })
-      .filter((entry): entry is string => Boolean(entry))
-  })()
+  const currentPassageEvidenceSnippets = currentPassage
+    ? evidenceSnippetsByPassageId[currentPassage.passageIdentifier] ?? []
+    : []
 
   const submissionReady = (() => {
     switch (currentQuestion.questionType) {
@@ -477,34 +470,31 @@ export function LessonScreen({
         </section>
       ) : (
         <>
-          {currentPassage?.contentKind === 'poem' && currentPassage.poemStructure ? (
-            <PoemCard
-              poemText={currentPassage.passageText}
-              poemStructure={currentPassage.poemStructure}
-              wordSupportTargets={passageTargets}
+          {pairedTextSet && lessonPassages.length >= 2 ? (
+            <PairedTextCard
+              pairId={pairedTextSet.pairId}
+              pairTitle={pairedTextSet.pairTitle}
+              members={pairedTextSet.members}
+              passages={[lessonPassages[0], lessonPassages[1]]}
+              wordSupportTargets={lessonWordSupportTargets}
+              evidenceSnippetsByPassageId={step === 'feedback' ? evidenceSnippetsByPassageId : {}}
               onOpenWordSupport={onOpenSupport}
               visibleWordSupport
-              heading="Reading Poem"
-              evidenceSnippets={step === 'feedback' ? evidenceSnippets : []}
             />
-          ) : currentPassage?.contentKind === 'informational' && currentPassage.informationalStructure ? (
-            <InformationalTextCard
+          ) : currentPassage ? (
+            <LessonTextCard
               passage={currentPassage}
-              wordSupportTargets={passageTargets}
+              heading="Reading Passage"
+              wordSupportTargets={lessonWordSupportTargets}
               onOpenWordSupport={onOpenSupport}
               visibleWordSupport
-              heading="Reading Passage"
-              evidenceSnippets={step === 'feedback' ? evidenceSnippets : []}
+              evidenceSnippets={step === 'feedback' ? currentPassageEvidenceSnippets : []}
             />
           ) : (
-            <PassageCard
-              passageText={currentPassage?.passageText ?? ''}
-              wordSupportTargets={passageTargets}
-              onOpenWordSupport={onOpenSupport}
-              visibleWordSupport
-              heading="Reading Passage"
-              evidenceSnippets={step === 'feedback' ? evidenceSnippets : []}
-            />
+            <section className="card">
+              <h2>Reading Passage</h2>
+              <p>We can’t load this quest right now. Try another unit from the shell.</p>
+            </section>
           )}
           {activeSupportTarget && (
             <WordHelpPanel

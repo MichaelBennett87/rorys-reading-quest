@@ -1,4 +1,4 @@
-import { resolvePassageEvidence } from '../evidence'
+import { parseScopedEvidenceReference, resolveLessonEvidence, resolvePassageEvidence } from '../evidence'
 import type { ContentPack, ContentPackAuditIssue } from './contentPackTypes'
 import { collectObservedBenchmarkPatterns, getClaimedBenchmarkPatterns, getExpectedBenchmarkPatterns } from './benchmarkPatternCatalog'
 
@@ -185,6 +185,10 @@ export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPac
     if (pack.manifest.coverageKind === 'supportive_practice') {
       validateSupportivePracticePackStructure(pack, issues)
     }
+
+    if (pack.manifest.benchmarkReferences.includes('ELA.2.R.3.3') && pack.manifest.difficultyRange[0] === 2 && pack.manifest.difficultyRange[1] === 3) {
+      validateCompareKeepPackStructure(pack, issues)
+    }
   }
 
   if (activeProgressionCount < 3) {
@@ -232,8 +236,9 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
     if (activeLessons.length !== 7) {
       pushIssue(issues, 'lesson_count_mismatch', pack.manifest.packId, `Expected 7 active lessons, found ${activeLessons.length}.`)
     }
-    if (pack.passages.length !== 7) {
-      pushIssue(issues, 'passage_count_mismatch', pack.manifest.packId, `Expected 7 passages, found ${pack.passages.length}.`)
+    const passageCount = expectation.passageCount ?? 7
+    if (pack.passages.length !== passageCount) {
+      pushIssue(issues, 'passage_count_mismatch', pack.manifest.packId, `Expected ${passageCount} passages, found ${pack.passages.length}.`)
     }
     if (pack.questions.length !== 41) {
       pushIssue(issues, 'question_count_mismatch', pack.manifest.packId, `Expected 41 questions, found ${pack.questions.length}.`)
@@ -553,9 +558,15 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
       }
     }
 
+    const checkpointPassageCount = expectation.checkpointPassageCount ?? 3
     for (const lesson of checkpointLessons) {
-      if (lesson.passageIdentifiers.length !== 3) {
-        pushIssue(issues, 'lesson_referencing_missing_content', lesson.lessonId, 'Checkpoint lessons in this pack must reference exactly three passages.')
+      if (lesson.passageIdentifiers.length !== checkpointPassageCount) {
+        pushIssue(
+          issues,
+          'lesson_referencing_missing_content',
+          lesson.lessonId,
+          `Checkpoint lessons in this pack must reference exactly ${checkpointPassageCount} passages.`,
+        )
       }
       for (const passageId of lesson.passageIdentifiers) {
         checkpointPassages.add(passageId)
@@ -3004,8 +3015,8 @@ function validatePoetryPassageStructure(
 
   const lines = structure.lines ?? []
   const stanzas = structure.stanzas ?? []
-  if (lines.length < 4 || lines.length > 8) {
-    pushIssue(issues, 'poem_structure_invalid', passage.passageIdentifier, 'Poem passages must contain 4 to 8 lines.')
+  if (lines.length < 4 || lines.length > 12) {
+      pushIssue(issues, 'poem_structure_invalid', passage.passageIdentifier, 'Poem passages must contain 4 to 12 lines.')
   }
   if (stanzas.length < 1 || stanzas.length > 2) {
     pushIssue(issues, 'poem_structure_invalid', passage.passageIdentifier, 'Poem passages must contain 1 or 2 stanzas.')
@@ -3227,11 +3238,285 @@ function validateFluencySupportMetadata(pack: ContentPack, issues: ContentPackAu
     }
   }
 }
+function validateCompareKeepPackStructure(pack: ContentPack, issues: ContentPackAuditIssue[]) {
+  const pairedTextSets = pack.pairedTextSets ?? []
+  const comparisonGuides = pack.pairedTextComparisonGuides ?? []
+  const activeLessons = pack.lessons.filter((lesson) => lesson.selectionStatus === 'active')
+  const passagesById = new Map(pack.passages.map((passage) => [passage.passageIdentifier, passage] as const))
+  const pairById = new Map<string, NonNullable<ContentPack['pairedTextSets']>[number]>()
+  const seenPairIds = new Set<string>()
+  const seenPassageIds = new Set<string>()
+  const seenGuideIds = new Set<string>()
+
+  if (activeLessons.length !== 7) {
+    pushIssue(issues, 'lesson_count_mismatch', pack.manifest.packId, `Expected 7 active lessons, found ${activeLessons.length}.`)
+  }
+  if (pack.passages.length !== 14) {
+    pushIssue(issues, 'passage_count_mismatch', pack.manifest.packId, `Expected 14 passages, found ${pack.passages.length}.`)
+  }
+  if (pack.questions.length !== 41) {
+    pushIssue(issues, 'question_count_mismatch', pack.manifest.packId, `Expected 41 questions, found ${pack.questions.length}.`)
+  }
+  if (pairedTextSets.length !== 7) {
+    pushIssue(
+      issues,
+      pairedTextSets.length === 0 ? 'missing_paired_text_set' : 'paired_text_set_count_mismatch',
+      pack.manifest.packId,
+      pairedTextSets.length === 0
+        ? 'Compare Keep requires paired text sets.'
+        : `Expected 7 paired text sets, found ${pairedTextSets.length}.`,
+    )
+  }
+  if (comparisonGuides.length !== 7) {
+    pushIssue(
+      issues,
+      comparisonGuides.length === 0 ? 'missing_paired_text_comparison_guide' : 'paired_text_comparison_guide_count_mismatch',
+      pack.manifest.packId,
+      comparisonGuides.length === 0
+        ? 'Compare Keep requires paired-text comparison guides.'
+        : `Expected 7 paired-text comparison guides, found ${comparisonGuides.length}.`,
+    )
+  }
+  if (activeLessons.filter((lesson) => lesson.lessonRole === 'GUIDED_PRACTICE').length !== 4) {
+    pushIssue(issues, 'lesson_count_mismatch', pack.manifest.packId, 'Expected 4 active guided lessons.')
+  }
+  if (activeLessons.filter((lesson) => lesson.lessonRole === 'CHECKPOINT').length !== 3) {
+    pushIssue(issues, 'lesson_count_mismatch', pack.manifest.packId, 'Expected 3 active checkpoint lessons.')
+  }
+  if (activeLessons.filter((lesson) => lesson.lessonRole === 'GUIDED_PRACTICE' && lesson.difficulty === 2).length !== 2) {
+    pushIssue(issues, 'lesson_count_mismatch', pack.manifest.packId, 'Expected 2 guided lessons at difficulty 2.')
+  }
+  if (activeLessons.filter((lesson) => lesson.lessonRole === 'GUIDED_PRACTICE' && lesson.difficulty === 3).length !== 2) {
+    pushIssue(issues, 'lesson_count_mismatch', pack.manifest.packId, 'Expected 2 guided lessons at difficulty 3.')
+  }
+  if (activeLessons.filter((lesson) => lesson.lessonRole === 'CHECKPOINT' && lesson.difficulty === 3).length !== 3) {
+    pushIssue(issues, 'lesson_count_mismatch', pack.manifest.packId, 'Expected 3 checkpoint lessons at difficulty 3.')
+  }
+
+  const allSupportTargets = pack.passages.flatMap((passage) => passage.wordSupportTargets ?? [])
+  if (allSupportTargets.length !== 28) {
+    pushIssue(issues, 'support_target_count_mismatch', pack.manifest.packId, `Expected 28 support targets, found ${allSupportTargets.length}.`)
+  }
+
+  for (const passage of pack.passages) {
+    const targetCount = passage.wordSupportTargets?.length ?? 0
+    if (targetCount !== 2) {
+      pushIssue(issues, 'support_target_count_mismatch', passage.passageIdentifier, `Expected 2 support targets per text, found ${targetCount}.`)
+    }
+  }
+
+  for (const lesson of activeLessons) {
+    if (!lesson.pairedTextSetId) {
+      pushIssue(issues, 'missing_paired_text_set', lesson.lessonId, 'Every Compare Keep lesson needs a paired text set.')
+      continue
+    }
+    if (lesson.passageIdentifiers.length !== 2) {
+      pushIssue(issues, 'paired_text_set_invalid', lesson.lessonId, 'Paired lessons must reference exactly two passages.')
+      continue
+    }
+    const pair = pairedTextSets.find((candidate) => candidate.pairId === lesson.pairedTextSetId)
+    if (!pair) {
+      pushIssue(issues, 'missing_paired_text_set', lesson.lessonId, `Missing paired text set: ${lesson.pairedTextSetId}`)
+      continue
+    }
+    pairById.set(pair.pairId, pair)
+    if (lesson.passageIdentifiers[0] !== pair.members[0].passageId || lesson.passageIdentifiers[1] !== pair.members[1].passageId) {
+      pushIssue(issues, 'paired_text_set_invalid', lesson.lessonId, 'Paired lesson passages must match the pair set order.')
+    }
+  }
+
+  for (const pair of pairedTextSets) {
+    if (!pair.pairId.trim()) {
+      pushIssue(issues, 'paired_text_set_invalid', pack.manifest.packId, 'Paired text set IDs are required.')
+      continue
+    }
+    if (seenPairIds.has(pair.pairId)) {
+      pushIssue(issues, 'paired_text_set_invalid', pair.pairId, `Duplicate paired text set: ${pair.pairId}`)
+      continue
+    }
+    seenPairIds.add(pair.pairId)
+
+    if (pair.reviewStatus !== 'DRAFT') {
+      pushIssue(issues, 'missing_draft_status', pair.pairId, 'Paired text sets in this pack must remain DRAFT.')
+    }
+    if (pair.contentVersion !== pack.manifest.contentVersion) {
+      pushIssue(issues, 'mismatched_content_version', pair.pairId, 'Paired text set content version must match the pack version.')
+    }
+    if (pair.members.length !== 2) {
+      pushIssue(issues, 'paired_text_set_invalid', pair.pairId, 'Each paired text set must contain exactly two texts.')
+      continue
+    }
+    if (pair.members[0].label !== 'Text 1' || pair.members[1].label !== 'Text 2') {
+      pushIssue(issues, 'paired_text_set_invalid', pair.pairId, 'Paired text members must be labeled Text 1 and Text 2.')
+    }
+    if (!pair.members[0].displayTitle.trim() || !pair.members[1].displayTitle.trim()) {
+      pushIssue(issues, 'paired_text_set_invalid', pair.pairId, 'Paired text display titles are required.')
+    }
+    if (pair.members[0].passageId === pair.members[1].passageId) {
+      pushIssue(issues, 'paired_text_set_invalid', pair.pairId, 'Paired text sets must contain two distinct passages.')
+    }
+    if (seenPassageIds.has(pair.members[0].passageId) || seenPassageIds.has(pair.members[1].passageId)) {
+      pushIssue(issues, 'paired_text_set_invalid', pair.pairId, 'Each Compare Keep passage may appear in only one active pair.')
+    }
+    seenPassageIds.add(pair.members[0].passageId)
+    seenPassageIds.add(pair.members[1].passageId)
+
+    const firstPassage = passagesById.get(pair.members[0].passageId)
+    const secondPassage = passagesById.get(pair.members[1].passageId)
+    if (!firstPassage || !secondPassage) {
+      pushIssue(issues, 'paired_text_set_invalid', pair.pairId, 'Paired text set passages must resolve.')
+      continue
+    }
+    if (!matchesPairedTextFormat(firstPassage, pair.members[0].format) || !matchesPairedTextFormat(secondPassage, pair.members[1].format)) {
+      pushIssue(issues, 'paired_text_set_invalid', pair.pairId, 'Paired text formats must match the authored passage kinds.')
+    }
+    if (pair.formatRelationship === 'same-format' && pair.members[0].format !== pair.members[1].format) {
+      pushIssue(issues, 'paired_text_set_invalid', pair.pairId, 'Same-format pairs must use matching text formats.')
+    }
+    if (pair.formatRelationship === 'different-format' && pair.members[0].format === pair.members[1].format) {
+      pushIssue(issues, 'paired_text_set_invalid', pair.pairId, 'Different-format pairs must use different text formats.')
+    }
+    if (containsUnsafeText(pair.pairTitle) || pair.members.some((member) => containsUnsafeText(member.displayTitle))) {
+      pushIssue(issues, 'paired_text_set_invalid', pair.pairId, 'Paired text titles must not contain raw HTML or remote URLs.')
+    }
+  }
+
+  for (const guide of comparisonGuides) {
+    if (!guide.pairId.trim()) {
+      pushIssue(issues, 'paired_text_comparison_guide_invalid', pack.manifest.packId, 'Comparison guide pair IDs are required.')
+      continue
+    }
+    if (seenGuideIds.has(guide.pairId)) {
+      pushIssue(issues, 'paired_text_comparison_guide_count_mismatch', guide.pairId, `Duplicate comparison guide for pair: ${guide.pairId}`)
+      continue
+    }
+    seenGuideIds.add(guide.pairId)
+    const pair = pairById.get(guide.pairId)
+    if (!pair) {
+      pushIssue(issues, 'missing_paired_text_comparison_guide', guide.pairId, `Missing paired-text comparison guide for ${guide.pairId}.`)
+      continue
+    }
+    if (guide.relationshipKind !== pair.relationshipKind) {
+      pushIssue(issues, 'paired_text_comparison_guide_invalid', guide.pairId, 'Comparison guide relationship kind must match the pair set.')
+    }
+    if (guide.reviewStatus !== 'DRAFT') {
+      pushIssue(issues, 'missing_draft_status', guide.pairId, 'Comparison guides in this pack must remain DRAFT.')
+    }
+    if (guide.contentVersion !== pack.manifest.contentVersion) {
+      pushIssue(issues, 'mismatched_content_version', guide.pairId, 'Comparison guide content version must match the pack version.')
+    }
+    if (!guide.sharedTopicOrThemeStatement.trim()) {
+      pushIssue(issues, 'paired_text_comparison_guide_invalid', guide.pairId, 'Comparison guides require a shared topic or theme statement.')
+    }
+    if (containsUnsafeText(guide.sharedTopicOrThemeStatement)) {
+      pushIssue(issues, 'paired_text_comparison_guide_invalid', guide.pairId, 'Comparison guide text must not contain raw HTML or remote URLs.')
+    }
+    if (guide.text1OtherDetailIds.length === 0 || guide.text2OtherDetailIds.length === 0) {
+      pushIssue(issues, 'paired_text_comparison_guide_invalid', guide.pairId, 'Comparison guides require at least one less-important detail from each text.')
+    }
+
+    const lesson = activeLessons.find((candidate) => candidate.pairedTextSetId === guide.pairId)
+    const minimumPointCount = lesson?.lessonRole === 'CHECKPOINT' ? 3 : 2
+    if (guide.importantSimilarities.length < minimumPointCount) {
+      pushIssue(issues, 'paired_text_comparison_guide_invalid', guide.pairId, `Comparison guides need at least ${minimumPointCount} important similarities.`)
+    }
+    if (guide.importantDifferences.length < minimumPointCount) {
+      pushIssue(issues, 'paired_text_comparison_guide_invalid', guide.pairId, `Comparison guides need at least ${minimumPointCount} important differences.`)
+    }
+
+    const seenPointIds = new Set<string>()
+    validateComparisonPoints(issues, pack, pair, guide.importantSimilarities, guide.pairId, seenPointIds)
+    validateComparisonPoints(issues, pack, pair, guide.importantDifferences, guide.pairId, seenPointIds)
+
+    for (const otherDetailId of [...guide.text1OtherDetailIds, ...guide.text2OtherDetailIds]) {
+      const resolvedText1 = resolveLessonEvidence(passagesById, pair.members[0].passageId, otherDetailId)
+      const resolvedText2 = resolveLessonEvidence(passagesById, pair.members[1].passageId, otherDetailId)
+      if (!resolvedText1 && !resolvedText2) {
+        pushIssue(issues, 'paired_text_comparison_guide_invalid', guide.pairId, `Other-detail evidence must resolve: ${otherDetailId}`)
+      }
+    }
+    if (guide.text1OtherDetailIds.some((id) => overlapsComparisonEvidence(id, guide.importantSimilarities, guide.importantDifferences))) {
+      pushIssue(issues, 'paired_text_comparison_guide_invalid', guide.pairId, 'Text 1 other-detail evidence must not overlap required comparison evidence.')
+    }
+    if (guide.text2OtherDetailIds.some((id) => overlapsComparisonEvidence(id, guide.importantSimilarities, guide.importantDifferences))) {
+      pushIssue(issues, 'paired_text_comparison_guide_invalid', guide.pairId, 'Text 2 other-detail evidence must not overlap required comparison evidence.')
+    }
+    if ([...guide.importantSimilarities, ...guide.importantDifferences].some((point) => containsUnsafeText(point.statement) || containsUnsafeText(point.importanceExplanation))) {
+      pushIssue(issues, 'paired_text_comparison_guide_invalid', guide.pairId, 'Comparison point text must not contain raw HTML or remote URLs.')
+    }
+  }
+}
+
+function validateComparisonPoints(
+  issues: ContentPackAuditIssue[],
+  pack: ContentPack,
+  pair: NonNullable<ContentPack['pairedTextSets']>[number],
+  points: NonNullable<ContentPack['pairedTextComparisonGuides']>[number]['importantSimilarities'],
+  itemIdentifier: string,
+  seenPointIds: Set<string>,
+) {
+  const passagesById = new Map(pack.passages.map((passage) => [passage.passageIdentifier, passage] as const))
+  for (const point of points) {
+    if (!point.pointId.trim() || !point.statement.trim() || !point.importanceExplanation.trim()) {
+      pushIssue(issues, 'paired_text_comparison_guide_invalid', itemIdentifier, 'Comparison points require an ID, statement, and importance explanation.')
+    }
+    if (seenPointIds.has(point.pointId)) {
+      pushIssue(issues, 'paired_text_comparison_guide_invalid', itemIdentifier, `Duplicate comparison point ID: ${point.pointId}`)
+    } else {
+      seenPointIds.add(point.pointId)
+    }
+    if (!['character', 'setting', 'event-sequence', 'central-idea', 'important-detail', 'process'].includes(point.dimension)) {
+      pushIssue(issues, 'paired_text_comparison_guide_invalid', itemIdentifier, `Invalid comparison dimension: ${point.dimension}`)
+    }
+    if (!point.text1EvidenceIds.length || !point.text2EvidenceIds.length) {
+      pushIssue(issues, 'paired_text_comparison_guide_invalid', itemIdentifier, 'Comparison points require evidence from both texts.')
+    }
+    for (const evidenceId of point.text1EvidenceIds) {
+      const scopedReference = parseScopedEvidenceReference(evidenceId)
+      if (!scopedReference || scopedReference.passageId !== pair.members[0].passageId || !resolveLessonEvidence(passagesById, pair.members[0].passageId, evidenceId)) {
+        pushIssue(issues, 'paired_text_comparison_guide_invalid', itemIdentifier, `Text 1 evidence must resolve to Text 1: ${evidenceId}`)
+      }
+    }
+    for (const evidenceId of point.text2EvidenceIds) {
+      const scopedReference = parseScopedEvidenceReference(evidenceId)
+      if (!scopedReference || scopedReference.passageId !== pair.members[1].passageId || !resolveLessonEvidence(passagesById, pair.members[1].passageId, evidenceId)) {
+        pushIssue(issues, 'paired_text_comparison_guide_invalid', itemIdentifier, `Text 2 evidence must resolve to Text 2: ${evidenceId}`)
+      }
+    }
+  }
+}
+
+function overlapsComparisonEvidence(
+  evidenceId: string,
+  similarities: NonNullable<ContentPack['pairedTextComparisonGuides']>[number]['importantSimilarities'],
+  differences: NonNullable<ContentPack['pairedTextComparisonGuides']>[number]['importantDifferences'],
+): boolean {
+  return [...similarities, ...differences].some((point) => point.text1EvidenceIds.includes(evidenceId) || point.text2EvidenceIds.includes(evidenceId))
+}
+
+function matchesPairedTextFormat(passage: ContentPack['passages'][number], format: string): boolean {
+  switch (format) {
+    case 'literary-prose':
+      return passage.contentKind === 'prose'
+    case 'literary-poem':
+      return passage.contentKind === 'poem'
+    case 'informational':
+      return passage.contentKind === 'informational'
+    default:
+      return false
+  }
+}
+
+function containsUnsafeText(text: string): boolean {
+  return /https?:\/\/|www\.|<[^>]+>/i.test(text)
+}
 
 interface BridgePackExpectation {
   packId: string
+  passageCount?: number
   guidedDifficultyA: number
   guidedDifficultyB: number
+  checkpointPassageCount?: number
   checkpointPatterns: string[]
   minSupportTargets: number
   maxSupportTargets: number
@@ -3743,6 +4028,52 @@ function getBridgePackExpectation(pack: ContentPack): BridgePackExpectation | nu
       maxSupportTargets: 28,
       minSupportTargetsPerPassage: 4,
       maxSupportTargetsPerPassage: 4,
+      openConsonantLeWords: new Set<string>(),
+      closedConsonantLeWords: new Set<string>(),
+      forbiddenSilentEWords: new Set<string>(),
+      questionTypeCounts: {
+        multiple_choice: 17,
+        multi_select: 7,
+        hot_text: 7,
+        table_match: 7,
+        two_part: 3,
+      },
+    }
+  }
+
+  if (pack.manifest.benchmarkReferences.includes('ELA.2.R.3.3') && pack.manifest.difficultyRange[0] === 2 && pack.manifest.difficultyRange[1] === 3) {
+    return {
+      packId: pack.manifest.packId,
+      passageCount: 14,
+      guidedDifficultyA: 2,
+      guidedDifficultyB: 3,
+      checkpointPassageCount: 2,
+      checkpointPatterns: [
+        'compare-contrast-important-details',
+        'same-topic-or-theme',
+        'paired-text-reading',
+        'text-1-text-2-evidence',
+        'important-detail-identification',
+        'important-vs-minor-detail',
+        'similarity-identification',
+        'difference-identification',
+        'comparison-evidence',
+        'same-topic-pair',
+        'same-theme-pair',
+        'same-format-pair',
+        'different-format-pair',
+        'literary-character-comparison',
+        'literary-setting-comparison',
+        'literary-event-sequence-comparison',
+        'informational-central-idea-comparison',
+        'informational-detail-comparison',
+        'informational-process-comparison',
+        'structured-compare-contrast',
+      ],
+      minSupportTargets: 28,
+      maxSupportTargets: 28,
+      minSupportTargetsPerPassage: 2,
+      maxSupportTargetsPerPassage: 2,
       openConsonantLeWords: new Set<string>(),
       closedConsonantLeWords: new Set<string>(),
       forbiddenSilentEWords: new Set<string>(),

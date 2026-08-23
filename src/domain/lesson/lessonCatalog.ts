@@ -18,6 +18,7 @@ export const lessonCatalog: readonly LessonCatalogEntry[] = contentPacks.flatMap
     unitId: lesson.unitId,
     activityId: lesson.activityId,
     passageIdentifier: [...lesson.passageIdentifiers],
+    pairedTextSetId: lesson.pairedTextSetId,
     questionIdentifiers: [...lesson.questionIdentifiers],
     lessonTitle: lesson.lessonTitle,
     lessonObjective: lesson.lessonObjective,
@@ -41,6 +42,8 @@ export interface LessonCatalogMetadata {
   lessonRole: LessonCatalogEntry['lessonRole']
   selectionStatus: LessonCatalogEntry['selectionStatus']
   eligiblePurposes: LessonCatalogEntry['eligiblePurposes']
+  passageIds: string[]
+  pairedTextSetId?: string
 }
 
 export interface LessonCatalogResult {
@@ -62,6 +65,8 @@ export function getLessonCatalogMetadata(lessonId: string): LessonCatalogMetadat
     lessonRole: entry.lessonRole,
     selectionStatus: entry.selectionStatus,
     eligiblePurposes: [...entry.eligiblePurposes],
+    passageIds: [...entry.passageIdentifier],
+    pairedTextSetId: entry.pairedTextSetId,
   }
 }
 
@@ -110,7 +115,9 @@ export function getLessonCandidates(): LessonActivityCandidate[] {
       packId: entry.packId,
       benchmarkReferences: [...entry.benchmarkReferences],
       eligiblePurposes: [...entry.eligiblePurposes],
-      passageQuestionKeys: questions.map((question) => `${question.passageIdentifier}::${question.questionIdentifier}`),
+      passageQuestionKeys: entry.passageIdentifier.flatMap((passageId) =>
+        questions.map((question) => `${passageId}::${question.questionIdentifier}`),
+      ),
       contentVersion: entry.contentVersion,
     }]
   })
@@ -154,6 +161,8 @@ function buildLesson(entry: LessonCatalogEntry): LessonCatalogResult {
       lessonId: entry.lessonId,
       activityId: entry.activityId,
       passageId: entry.passageIdentifier[0],
+      passageIds: [...entry.passageIdentifier],
+      pairedTextSetId: entry.pairedTextSetId,
       skillId: firstQuestion.skillIdentifier,
       difficulty: firstQuestion.difficulty,
       unitId: entry.unitId,

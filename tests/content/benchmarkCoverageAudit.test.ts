@@ -110,10 +110,10 @@ describe('benchmark coverage audit', () => {
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.3.3')).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.R.3.3',
       expectedPatterns: ['compare-contrast-important-details', 'same-topic-or-theme'],
-      coveredPatterns: [],
-      missingPatterns: ['compare-contrast-important-details', 'same-topic-or-theme'],
-      contributingPackIds: [],
-      coverageStatus: 'partial',
+      coveredPatterns: ['compare-contrast-important-details', 'same-topic-or-theme'],
+      missingPatterns: [],
+      contributingPackIds: ['g2-compare-castle-compare-keep'],
+      coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',
     }))
 

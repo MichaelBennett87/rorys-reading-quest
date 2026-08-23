@@ -5,6 +5,7 @@ import { SupportedText } from './SupportedText'
 
 interface PoemCardProps {
   heading: string
+  headingId?: string
   poemText: string
   poemStructure: PoemStructure
   evidenceSnippets?: string[]
@@ -15,6 +16,7 @@ interface PoemCardProps {
 
 function PoemCard({
   heading,
+  headingId = 'lesson-poem-heading',
   poemText,
   poemStructure,
   evidenceSnippets = [],
@@ -30,8 +32,8 @@ function PoemCard({
   }
 
   return (
-    <section className="card poem-card" aria-labelledby="lesson-poem-heading">
-      <h2 id="lesson-poem-heading">{heading}</h2>
+    <section className="card poem-card" aria-labelledby={headingId}>
+      <h2 id={headingId}>{heading}</h2>
       <div className="poem-structure" aria-label="Poem text">
         {poemStructure.stanzas.map((stanza, stanzaIndex) => (
           <section

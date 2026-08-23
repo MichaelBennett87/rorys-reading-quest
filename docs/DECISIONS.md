@@ -347,3 +347,11 @@ Decision: activate `g2-across-genres-reading` through the Compare Castle Retell 
 Rationale: Phase 6F2 now has authored DRAFT production content for `ELA.2.R.3.2`, and the shared curriculum architecture can extend the existing `compare-castle` world without changing storage, review identity, or the later Compare Castle unit roadmap.
 
 Consequences: `ELA.2.R.3.2` becomes implemented in DRAFT through Compare Castle Retell Hall; `ELA.2.R.3.3` remains planned; Compare Castle remains active in child-facing views and in the Grade 2 coverage snapshot; Compare Keep remains locked until its own phase.
+
+## 2026-08-23 - Phase 6F3 Compare Keep activation
+
+Decision: activate `g2-across-genres-reading` through the Compare Castle Compare Keep pack while keeping the final Grade 2 audit for Phase 6F4.
+
+Rationale: Phase 6F3 now has authored DRAFT production content for `ELA.2.R.3.3`, and the shared curriculum architecture can extend the existing `compare-castle` world without changing storage, review identity, or the final audit boundary.
+
+Consequences: `ELA.2.R.3.3` becomes implemented in DRAFT through Compare Castle Compare Keep; Compare Castle remains active in child-facing views and in the Grade 2 coverage snapshot; Phase 6F4 remains the final audit boundary.

@@ -69,13 +69,14 @@ describe('grade 2 context cavern meaning clue chamber pack', () => {
       'g2-context-cavern-meaning-clue-chamber',
       'g2-compare-castle-wordplay-watchtower',
       'g2-compare-castle-retell-hall',
+      'g2-compare-castle-compare-keep',
     ])
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 21,
-      activeLessonCount: 147,
-      activePassageCount: 147,
-      activeQuestionCount: 848,
-      activeSupportTargetCount: 586,
+      activePackCount: 22,
+      activeLessonCount: 154,
+      activePassageCount: 161,
+      activeQuestionCount: 889,
+      activeSupportTargetCount: 614,
     })
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.V.1.3')).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.V.1.3',

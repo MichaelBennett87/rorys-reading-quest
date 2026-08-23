@@ -375,7 +375,9 @@ function resolveReviewUnitLabel(unitId: string, worlds = deriveWorldsForProgress
   for (const world of worlds) {
     const unit = world.units.find((candidate) => candidate.id === unitId)
     if (unit) {
-      return unit.title
+      return world.id === 'compare-castle'
+        ? `Compare Castle: ${unit.title}`
+        : unit.title
     }
   }
 

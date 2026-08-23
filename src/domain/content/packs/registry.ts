@@ -19,6 +19,7 @@ import { grade2ContextCavernMorphologyMinePack } from './grade2/contextCavern/mo
 import { grade2ContextCavernMeaningClueChamberPack } from './grade2/contextCavern/meaningClueChamber'
 import { grade2CompareCastleWordplayWatchtowerPack } from './grade2/compareCastle/wordplayWatchtower'
 import { grade2CompareCastleRetellHallPack } from './grade2/compareCastle/retellHall'
+import { grade2CompareCastleCompareKeepPack } from './grade2/compareCastle/compareKeep'
 import { legacyDevelopmentPack } from './legacyDevelopmentPack'
 import type { ContentPack } from './contentPackTypes'
 import type { ContentSample } from '../types'
@@ -47,6 +48,7 @@ export const contentPacks: readonly ContentPack[] = [
   grade2ContextCavernMeaningClueChamberPack,
   grade2CompareCastleWordplayWatchtowerPack,
   grade2CompareCastleRetellHallPack,
+  grade2CompareCastleCompareKeepPack,
   legacyDevelopmentPack,
 ]
 
@@ -77,5 +79,6 @@ function aggregateSampleContent(packs: readonly ContentPack[]): ContentSample {
   return {
     passages: packs.flatMap((pack) => pack.passages.map((passage) => structuredClone(passage))),
     questions: packs.flatMap((pack) => pack.questions.map((question) => structuredClone(question))),
-  }
+    pairedTextSets: packs.flatMap((pack) => pack.pairedTextSets?.map((pair) => structuredClone(pair)) ?? []),
+  } as ContentSample
 }

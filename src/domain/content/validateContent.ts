@@ -1,5 +1,5 @@
 import type { ContentSample, ContentValidationError, QuestionType } from './types'
-import { buildPassageEvidenceIndex } from './evidence'
+import { buildPassageEvidenceIndex, parseScopedEvidenceReference, resolveLessonEvidence } from './evidence'
 import type {
   HotTextQuestionData,
   MultipleChoiceQuestionData,
@@ -421,7 +421,22 @@ export function validateContent(sample: ContentSample): ContentValidationError[]
         ...(referencedPassage ? [...buildPassageEvidenceIndex(referencedPassage).keys()] : []),
       ])
       for (const evidenceId of evidenceIds) {
-        if (evidenceId.trim() && !validEvidenceIds.has(evidenceId.trim())) {
+        const trimmedEvidenceId = evidenceId.trim()
+        if (!trimmedEvidenceId) {
+          continue
+        }
+        if (parseScopedEvidenceReference(trimmedEvidenceId)) {
+          if (!resolveLessonEvidence(passagesById, question.passageIdentifier, trimmedEvidenceId)) {
+            withError(
+              errors,
+              'invalid_evidence_reference',
+              question.questionIdentifier,
+              `Evidence reference does not resolve across the lesson passages: ${evidenceId}`,
+            )
+          }
+          continue
+        }
+        if (!validEvidenceIds.has(trimmedEvidenceId)) {
           withError(
             errors,
             'invalid_evidence_reference',
@@ -550,8 +565,8 @@ function validatePoemStructure(
 
   const lines = structure.lines ?? []
   const stanzas = structure.stanzas ?? []
-  if (lines.length < 4 || lines.length > 8) {
-    withError(errors, 'invalid_support_metadata', passage.passageIdentifier, 'Poem passages must contain 4 to 8 lines.')
+  if (lines.length < 4 || lines.length > 12) {
+    withError(errors, 'invalid_support_metadata', passage.passageIdentifier, 'Poem passages must contain 4 to 12 lines.')
   }
   if (stanzas.length < 1 || stanzas.length > 2) {
     withError(errors, 'invalid_support_metadata', passage.passageIdentifier, 'Poem passages must contain 1 or 2 stanzas.')

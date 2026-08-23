@@ -814,6 +814,15 @@ describe('Compare Castle planning', () => {
         eligiblePurposes: ['review'],
         contentVersion: 'fixture-compare-castle-v2',
       }),
+      createCompareCastleLesson({
+        lessonId: 'lesson-compare-castle-compare-keep-review-a',
+        activityId: 'activity-compare-castle-compare-keep-review-a',
+        unitId: 'cg-unit-3',
+        difficulty: 3,
+        benchmarkReferences: ['ELA.2.R.3.3'],
+        eligiblePurposes: ['review'],
+        contentVersion: 'fixture-compare-castle-v3',
+      }),
     ]
 
     const wordplayProgress = createDefaultQuestProgress(now)
@@ -852,6 +861,67 @@ describe('Compare Castle planning', () => {
     expect(retellReviewPlan.unitId).toBe('cg-unit-2')
     if (retellReviewPlan.status === 'available') {
       expect(retellReviewPlan.lessonId).toBe('lesson-compare-castle-retell-hall-review-a')
+    }
+
+    const compareProgress = createDefaultQuestProgress(now)
+    compareProgress.skillProgress['g2-across-genres-reading'] = createInitialSkillProgress('g2-across-genres-reading', 3, 2)
+    compareProgress.plannedNextQuest = {
+      status: 'available',
+      purpose: 'review',
+      lesson: availableLessons[2],
+    }
+
+    const compareReviewPlan = planUnitQuest({
+      selectedUnitId: 'cg-unit-3',
+      progress: compareProgress,
+      availableLessons,
+    })
+    expect(compareReviewPlan.status).toBe('available')
+    expect(compareReviewPlan.unitId).toBe('cg-unit-3')
+    if (compareReviewPlan.status === 'available') {
+      expect(compareReviewPlan.lessonId).toBe('lesson-compare-castle-compare-keep-review-a')
+    }
+  })
+
+  test('recovers stale Compare Castle content-needed state when Compare Keep content arrives', () => {
+    const progress = createDefaultQuestProgress(now)
+    progress.skillProgress['g2-across-genres-reading'] = createInitialSkillProgress('g2-across-genres-reading', 3, 2)
+    progress.plannedNextQuest = {
+      status: 'content_needed',
+      purpose: 'progression',
+      skillId: 'g2-across-genres-reading',
+      difficulty: 3,
+      reason: 'Compare Keep quests were not yet available.',
+    }
+
+    const plan = planUnitQuest({
+      selectedUnitId: 'cg-unit-3',
+      progress,
+      availableLessons: [
+        createCompareCastleLesson(),
+        createCompareCastleLesson({
+          lessonId: 'lesson-compare-castle-retell-hall-checkpoint-a',
+          activityId: 'activity-compare-castle-retell-hall-checkpoint-a',
+          unitId: 'cg-unit-2',
+          difficulty: 2,
+          benchmarkReferences: ['ELA.2.R.3.2'],
+          contentVersion: 'fixture-compare-castle-v2',
+        }),
+        createCompareCastleLesson({
+          lessonId: 'lesson-compare-castle-compare-keep-checkpoint-a',
+          activityId: 'activity-compare-castle-compare-keep-checkpoint-a',
+          unitId: 'cg-unit-3',
+          difficulty: 3,
+          benchmarkReferences: ['ELA.2.R.3.3'],
+          contentVersion: 'fixture-compare-castle-v3',
+        }),
+      ],
+    })
+
+    expect(plan.status).toBe('available')
+    expect(plan.unitId).toBe('cg-unit-3')
+    if (plan.status === 'available') {
+      expect(plan.lessonId).toBe('lesson-compare-castle-compare-keep-checkpoint-a')
     }
   })
 

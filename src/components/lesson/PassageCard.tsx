@@ -6,6 +6,7 @@ import { SupportedText } from './SupportedText'
 interface PassageCardProps {
   passageText: string
   heading: string
+  headingId?: string
   evidenceSnippets?: string[]
   wordSupportTargets?: WordSupportTarget[]
   onOpenWordSupport?: (target: WordSupportTarget) => void
@@ -15,14 +16,15 @@ interface PassageCardProps {
 function PassageCard({
   passageText,
   heading,
+  headingId = 'lesson-passage-heading',
   evidenceSnippets = [],
   wordSupportTargets = [],
   onOpenWordSupport,
   visibleWordSupport = true,
 }: PassageCardProps) {
   return (
-    <section className="card passage-card" aria-labelledby="lesson-passage-heading">
-      <h2 id="lesson-passage-heading">{heading}</h2>
+    <section className="card passage-card" aria-labelledby={headingId}>
+      <h2 id={headingId}>{heading}</h2>
       <p className="passage-text">
         <SupportedText
           text={passageText}
