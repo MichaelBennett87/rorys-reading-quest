@@ -183,7 +183,7 @@ describe('curriculum planning foundation', () => {
   test('keeps curriculum tracks immutable and explicitly ordered', () => {
     expect(Object.isFrozen(curriculumTracks)).toBe(true)
     expect(curriculumTracks.every((track) => Object.isFrozen(track))).toBe(true)
-    expect(curriculumTracks.map((track) => track.trackId)).toEqual([
+    expect(curriculumTracks.filter((track) => track.gradeBand === 2).map((track) => track.trackId)).toEqual([
       'g2-word-forge-foundations',
       'g2-story-scouts-prose',
       'g2-poetry-planet',

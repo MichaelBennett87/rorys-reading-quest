@@ -3,7 +3,7 @@ import type { LessonActivityCandidate, NextQuestPlan } from './skillProgressType
 import type { QuestProgressV1 } from '../../persistence'
 import { selectNextLesson } from './selectNextLesson'
 import { createInitialSkillProgress } from './skillProgressTypes'
-import { getTrackByUnitId } from '../curriculum'
+import { areTrackPrerequisitesSatisfied, getTrackByUnitId } from '../curriculum'
 
 export interface PlanUnitQuestInput {
   selectedUnitId: string
@@ -92,6 +92,30 @@ export function planUnitQuest(input: PlanUnitQuestInput): UnitQuestPlan {
       purpose: plannedPurpose,
       unitId: input.selectedUnitId,
       reason: 'A different quest is already in progress. Continue that quest before starting this unit.',
+    }
+  }
+
+  if (selectedTrack?.gradeBand === 3) {
+    const selectedLessons = input.availableLessons.filter((lesson) => (
+      lesson.skillId === selectedTrack.skillId
+      && lesson.unitId === input.selectedUnitId
+      && lesson.eligiblePurposes.includes('progression')
+    ))
+    if (selectedLessons.length === 0) {
+      return {
+        status: 'locked',
+        purpose: 'progression',
+        unitId: input.selectedUnitId,
+        reason: `${selectedTrack.displayName} quests are being prepared.`,
+      }
+    }
+    if (!areTrackPrerequisitesSatisfied(selectedTrack, input.progress)) {
+      return {
+        status: 'locked',
+        purpose: 'progression',
+        unitId: input.selectedUnitId,
+        reason: 'Complete this world\'s Grade 2 chapter before starting the Grade 3 chapter.',
+      }
     }
   }
 

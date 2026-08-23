@@ -16,9 +16,9 @@ import type {
 } from './curriculumTrackTypes'
 import {
   curriculumTracks,
+  getTrackByTrackId,
   getTrackBySkillId,
   getTrackByUnitId,
-  getTrackByWorldId,
 } from './curriculumTracks'
 
 export interface NormalizeQuestProgressForPlanningResult {
@@ -69,12 +69,50 @@ export function discoverPlayableTracks(
     .sort((left, right) => compareTrackDefinitions(left.track, right.track))
 }
 
+export function areTrackPrerequisitesSatisfied(
+  track: CurriculumTrackDefinition,
+  state: QuestProgressV1,
+  tracks: readonly CurriculumTrackDefinition[] = curriculumTracks,
+): boolean {
+  const knownTrackIds = new Set(tracks.map((candidate) => candidate.trackId))
+  return track.prerequisiteTrackIds.every((prerequisiteTrackId) => {
+    if (!knownTrackIds.has(prerequisiteTrackId)) return false
+    const prerequisite = getTrackByTrackId(prerequisiteTrackId)
+      ?? tracks.find((candidate) => candidate.trackId === prerequisiteTrackId)
+      ?? null
+    if (!prerequisite) return false
+    const progress = state.skillProgress[prerequisite.skillId]
+    return Boolean(progress && progress.currentDifficulty >= prerequisite.completionDifficulty)
+  })
+}
+
+export function isCurriculumTrackPlayable(
+  track: CurriculumTrackDefinition,
+  state: QuestProgressV1,
+  availableLessons: readonly LessonActivityCandidate[],
+  tracks: readonly CurriculumTrackDefinition[] = curriculumTracks,
+): boolean {
+  const hasActiveContent = availableLessons.some((lesson) => (
+    lesson.skillId === track.skillId && lesson.eligiblePurposes.includes('progression')
+  ))
+  return hasActiveContent && areTrackPrerequisitesSatisfied(track, state, tracks)
+}
+
+export function discoverPlayableTracksForState(
+  state: QuestProgressV1,
+  availableLessons: readonly LessonActivityCandidate[],
+  tracks: readonly CurriculumTrackDefinition[] = curriculumTracks,
+): PlayableTrackDiscovery[] {
+  return discoverPlayableTracks(availableLessons, tracks)
+    .filter(({ track }) => isCurriculumTrackPlayable(track, state, availableLessons, tracks))
+}
+
 export function ensureProgressForPlayableTracks(
   state: QuestProgressV1,
-  _availableLessons: readonly LessonActivityCandidate[],
+  availableLessons: readonly LessonActivityCandidate[],
   tracks: readonly CurriculumTrackDefinition[] = curriculumTracks,
 ): NormalizeQuestProgressForPlanningResult {
-  const playableTracks = discoverPlayableTracks(_availableLessons, tracks).map((entry) => entry.track)
+  const playableTracks = discoverPlayableTracksForState(state, availableLessons, tracks).map((entry) => entry.track)
   if (playableTracks.length === 0) {
     return { state, changed: false }
   }
@@ -120,7 +158,8 @@ export function normalizePlannedNextQuest(
     && lesson.contentVersion === planned.lesson.contentVersion
     && lesson.eligiblePurposes.includes(planned.purpose)
   ))
-  if (!candidate || !getTrackBySkillId(candidate.skillId)) {
+  const track = candidate ? getTrackBySkillId(candidate.skillId) : null
+  if (!candidate || !track || !isCurriculumTrackPlayable(track, state, availableLessons)) {
     return {
       state: {
         ...state,
@@ -147,14 +186,14 @@ export function normalizeQuestProgressForPlanning(
 export function planGlobalQuest(input: PlanGlobalQuestInput): GlobalQuestPlan {
   const normalized = normalizeQuestProgressForPlanning(input.progress, input.availableLessons)
   const state = normalized.state
-  const playableTracks = discoverPlayableTracks(input.availableLessons)
+  const playableTracks = discoverPlayableTracksForState(state, input.availableLessons)
 
   const activeSessionPlan = resolveActiveSessionPlan(state, input.availableLessons)
   if (activeSessionPlan) return activeSessionPlan
 
   const urgentPlannedQuest = state.plannedNextQuest?.status === 'available'
     && ['verification', 'remediation', 'review'].includes(state.plannedNextQuest.purpose)
-    && isValidPlannedQuest(state.plannedNextQuest, input.availableLessons)
+    && isValidPlannedQuest(state, state.plannedNextQuest, input.availableLessons)
     ? buildPlanFromLesson(state.plannedNextQuest.lesson, state.plannedNextQuest.purpose, 'planned_quest')
     : null
   if (urgentPlannedQuest) return urgentPlannedQuest
@@ -167,7 +206,7 @@ export function planGlobalQuest(input: PlanGlobalQuestInput): GlobalQuestPlan {
 
   const ordinaryPlan = state.plannedNextQuest?.status === 'available'
     && state.plannedNextQuest.purpose === 'progression'
-    && isValidPlannedQuest(state.plannedNextQuest, input.availableLessons)
+    && isValidPlannedQuest(state, state.plannedNextQuest, input.availableLessons)
     ? buildPlanFromLesson(state.plannedNextQuest.lesson, state.plannedNextQuest.purpose, 'planned_quest')
     : null
   if (ordinaryPlan) return ordinaryPlan
@@ -187,7 +226,7 @@ export function resolveActiveLearningFocus(
     return buildFocusForLesson(activeSession.skillId, activeSession.unitId, activeSession.worldId, activeSession.difficulty, 'active_session')
   }
 
-  const plannedQuest = state.plannedNextQuest?.status === 'available' && isValidPlannedQuest(state.plannedNextQuest, input.availableLessons)
+  const plannedQuest = state.plannedNextQuest?.status === 'available' && isValidPlannedQuest(state, state.plannedNextQuest, input.availableLessons)
     ? state.plannedNextQuest
     : null
   if (plannedQuest) {
@@ -220,7 +259,7 @@ export function resolveActiveLearningFocus(
     }
   }
 
-  const firstPlayableTrack = discoverPlayableTracks(input.availableLessons)[0]?.track ?? null
+  const firstPlayableTrack = discoverPlayableTracksForState(state, input.availableLessons)[0]?.track ?? null
   if (firstPlayableTrack) {
     const progress = state.skillProgress[firstPlayableTrack.skillId]
       ?? createInitialSkillProgress(
@@ -408,7 +447,6 @@ function buildPlanFromLesson(
   source: ActiveLearningFocusSource,
 ): GlobalQuestPlan {
   const track = getTrackBySkillId(lesson.skillId)
-    ?? getTrackByWorldId(lesson.worldId)
     ?? getTrackByUnitId(lesson.unitId)
   const displayName = track ? `${track.displayName} ${formatTrailDisplayLabel(lesson.difficulty)}` : formatTrailDisplayLabel(lesson.difficulty)
   return {
@@ -499,7 +537,6 @@ function buildFocusForLesson(
 ): ActiveLearningFocus {
   const track = getTrackBySkillId(skillId)
     ?? getTrackByUnitId(unitId)
-    ?? getTrackByWorldId(worldId)
   return {
     skillId,
     worldId,
@@ -515,6 +552,7 @@ function formatTrailDisplayLabel(difficulty: number): string {
 }
 
 function isValidPlannedQuest(
+  state: QuestProgressV1,
   plannedQuest: Extract<QuestProgressV1['plannedNextQuest'], { status: 'available' }>,
   availableLessons: readonly LessonActivityCandidate[],
 ): boolean {
@@ -526,7 +564,8 @@ function isValidPlannedQuest(
     && lesson.contentVersion === plannedQuest.lesson.contentVersion
     && lesson.eligiblePurposes.includes(plannedQuest.purpose)
   ))
-  return Boolean(candidate && getTrackBySkillId(candidate.skillId))
+  const track = candidate ? getTrackBySkillId(candidate.skillId) : null
+  return Boolean(candidate && track && isCurriculumTrackPlayable(track, state, availableLessons))
 }
 
 function compareTrackDefinitions(left: CurriculumTrackDefinition, right: CurriculumTrackDefinition): number {
