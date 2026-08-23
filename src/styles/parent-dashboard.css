@@ -679,3 +679,237 @@
     box-shadow: none;
   }
 }
+
+/* Phase 6.6 mature dark analytics theme. */
+.parent-access-shell,
+.parent-dashboard-shell {
+  --parent-ink: #f1f5fc;
+  --parent-muted: #a7b5ca;
+  --parent-line: #33435d;
+  --parent-surface: rgba(18, 29, 49, 0.96);
+  --parent-soft: #17243a;
+  --parent-blue: #58a5ff;
+  --parent-blue-dark: #83bdff;
+  --parent-teal: #2ac5c7;
+  --parent-positive: #58d6a4;
+  color-scheme: dark;
+  color: var(--parent-ink);
+}
+
+.parent-access-shell {
+  background:
+    radial-gradient(circle at 10% 4%, rgba(61, 129, 235, 0.24), transparent 30rem),
+    radial-gradient(circle at 92% 94%, rgba(27, 165, 170, 0.18), transparent 28rem),
+    linear-gradient(150deg, #091321, #101a2d 50%, #0d1828);
+}
+
+.parent-access-card {
+  border-color: rgba(117, 145, 184, 0.34);
+  background:
+    linear-gradient(150deg, rgba(22, 35, 58, 0.98), rgba(14, 24, 42, 0.98));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 1.8rem 4.5rem rgba(1, 6, 16, 0.56);
+}
+
+.parent-access-card h1,
+.parent-pin-form label { color: var(--parent-ink); }
+
+.parent-pin-form input {
+  border-color: #50617e;
+  background: #101b2e;
+  color: #f5f7fc;
+}
+
+.parent-pin-form input:focus-visible {
+  outline-color: rgba(88, 165, 255, 0.4);
+  border-color: var(--parent-blue);
+}
+
+.parent-pin-form button[aria-pressed] { color: #9ac9ff; }
+
+.parent-dashboard-shell {
+  background:
+    radial-gradient(circle at 88% 0%, rgba(40, 174, 180, 0.12), transparent 32rem),
+    linear-gradient(180deg, #0b1423 0, #101a2b 18rem, #0c1524 100%);
+}
+
+.parent-dashboard-header {
+  border-bottom: 1px solid rgba(100, 147, 201, 0.24);
+  background:
+    radial-gradient(circle at 82% 0%, rgba(46, 205, 202, 0.24), transparent 24rem),
+    radial-gradient(circle at 10% 100%, rgba(74, 126, 255, 0.2), transparent 28rem),
+    linear-gradient(130deg, #101d32, #17345c 58%, #124c56);
+  box-shadow: 0 1rem 2.8rem rgba(2, 8, 20, 0.48);
+}
+
+.parent-dashboard-header p { color: #c1d3e9; }
+
+.parent-dashboard-nav {
+  border-bottom-color: var(--parent-line);
+  background: rgba(13, 23, 39, 0.92);
+  box-shadow: 0 8px 24px rgba(2, 7, 17, 0.24);
+}
+
+.parent-dashboard-nav button,
+.parent-dashboard-nav a,
+.parent-dashboard-tab {
+  border-color: transparent;
+  background: transparent;
+  color: #acbad0;
+}
+
+.parent-dashboard-nav button:hover,
+.parent-dashboard-nav a:hover,
+.parent-dashboard-tab:hover {
+  color: #edf5ff;
+  background: #1b2b45;
+}
+
+.parent-dashboard-nav button[aria-current='page'],
+.parent-dashboard-nav a[aria-current='page'],
+.parent-dashboard-nav .active,
+.parent-dashboard-tab.is-active,
+.parent-dashboard-tab[aria-current='page'] {
+  border-color: rgba(88, 165, 255, 0.48);
+  color: #ddecff;
+  background: linear-gradient(145deg, #214777, #183656);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 5px 14px rgba(2, 7, 17, 0.28);
+}
+
+.parent-dashboard-panel > h2,
+.parent-panel-header h2,
+.parent-summary-card h3,
+.parent-preview-card h3,
+.parent-detail-card h3 { color: #f4f7fc; }
+
+.parent-metric-card,
+.parent-summary-card,
+.parent-preview-card,
+.parent-detail-card,
+.parent-route-card,
+.parent-empty-state,
+.parent-data-note {
+  border-color: var(--parent-line);
+  background:
+    linear-gradient(150deg, rgba(24, 37, 61, 0.98), rgba(15, 25, 43, 0.98));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.055),
+    0 0.7rem 1.8rem rgba(2, 7, 17, 0.3);
+}
+
+.parent-metric-card::before {
+  background: linear-gradient(var(--parent-blue), var(--parent-teal));
+  box-shadow: 0 0 16px rgba(55, 189, 211, 0.34);
+}
+
+.parent-metric-card strong,
+.parent-metric-card .metric-value,
+.parent-metric-value {
+  color: #f8fbff;
+  text-shadow: 0 0 20px rgba(88, 165, 255, 0.14);
+}
+
+.parent-metric-label,
+.parent-metric-card p,
+.parent-metric-card small,
+.parent-summary-card small,
+.parent-preview-card small,
+.parent-detail-card small,
+.parent-dashboard-trail,
+.parent-muted-copy,
+.parent-metric-note { color: var(--parent-muted); }
+
+.parent-route-card {
+  border-left-color: var(--parent-teal);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(42, 197, 199, 0.12), transparent 20rem),
+    linear-gradient(125deg, #172742, #122037);
+}
+
+.parent-summary-list-item,
+.parent-summary-item,
+.parent-explainer-box,
+.parent-field-error,
+.parent-status-message {
+  border-color: #34445e;
+  background: #111e32;
+  color: #dbe5f4;
+}
+
+.parent-summary-item strong,
+.parent-summary-list-item strong { color: #99c8ff; }
+
+.parent-inline-field select,
+.parent-inline-field input,
+.parent-assessment-form select,
+.parent-assessment-form input {
+  border-color: #465874;
+  background: #101c30;
+  color: #f1f5fb;
+}
+
+.parent-empty-state {
+  border-color: #3d4c65;
+  color: var(--parent-muted);
+  background: rgba(17, 28, 46, 0.75);
+}
+
+.accuracy-meter,
+.accuracy-meter-track { background: #26344b; }
+
+.accuracy-meter-fill,
+.accuracy-meter > span,
+.accuracy-meter > div {
+  background: linear-gradient(90deg, var(--parent-blue), var(--parent-teal));
+  box-shadow: 0 0 14px rgba(42, 197, 199, 0.26);
+}
+
+.parent-status-badge-info { color: #8ac3ff; }
+.parent-status-badge-attention { color: #ffca70; }
+.parent-status-badge-neutral { color: #adb9cc; }
+
+.parent-dashboard-action,
+.parent-card-actions button,
+.parent-print-actions button {
+  border-color: #465977;
+  background: linear-gradient(145deg, #203452, #17263f);
+  color: #eef5ff;
+}
+
+@media print {
+  .parent-access-shell,
+  .parent-dashboard-shell {
+    color-scheme: light;
+    color: #000;
+    background: #fff !important;
+  }
+
+  .parent-dashboard-header,
+  .parent-metric-card,
+  .parent-summary-card,
+  .parent-preview-card,
+  .parent-detail-card,
+  .parent-route-card,
+  .parent-empty-state,
+  .parent-data-note,
+  .parent-summary-list-item,
+  .parent-summary-item,
+  .parent-explainer-box {
+    border-color: #bbb;
+    color: #000;
+    background: #fff !important;
+    text-shadow: none;
+  }
+
+  .parent-metric-card strong,
+  .parent-metric-card .metric-value,
+  .parent-metric-value,
+  .parent-summary-card h3,
+  .parent-detail-card h3,
+  .parent-summary-item strong,
+  .parent-summary-list-item strong {
+    color: #000;
+    text-shadow: none;
+  }
+}
