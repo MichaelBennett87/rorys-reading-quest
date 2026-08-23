@@ -80,3 +80,20 @@ The implemented adult system uses navy and teal analytics surfaces, compact resp
 ## Tone
 
 Child-facing copy should sound confident, current, and supportive. Parent-facing copy should be concise, factual, and privacy-safe.
+
+## Phase 6.6 dark-first implementation
+
+Dark is the fixed default product appearance. The implementation uses deep navy, midnight blue, charcoal, and blue-gray layers rather than pure black. Shared CSS tokens control canvas surfaces, glass panels, raised cards, text, focus, success, warning, locked states, radii, shadows, spacing, and motion.
+
+World accents remain semantic and decorative rather than the only state signal:
+
+- Word Forge uses molten orange, amber, and ember glow.
+- Story Scouts uses electric blue and indigo.
+- Poetry Planet uses magenta, violet, and cosmic pink.
+- Information Detectives uses cyan, turquoise, and teal.
+- Context Cavern uses emerald, jade, and crystal green.
+- Compare Castle uses royal blue, gold, and deep violet.
+
+The child shell applies these identities to hero rewards, current quests, world cards, unit nodes, mission previews, lesson surfaces, answer states, Word Help, completion medals, and progression outcomes. The parent shell deliberately avoids game styling and uses quieter navy/slate surfaces, teal and blue accents, compact tabs, and strong numerical hierarchy. Print styles continue to force a light, ink-safe presentation.
+
+The optional Dark/Light preference was not added. Dark remains deterministic and default without introducing a new persisted preference. `prefers-reduced-motion` still disables nonessential movement, and no sound autoplays.

@@ -375,3 +375,15 @@ Consequences: Phase 6 is complete; Phase 7 remains the next boundary; the final 
 - Decision: keep Phase 6.5 unchecked after implementation and use `IMPLEMENTATION COMPLETE - LIVE HUMAN VISUAL ACCEPTANCE PENDING` until Michael completes the deployed playthrough.
 - Reason: registry-wide ownership, expanded semantic checks, distinct speech sequences, and real child/parent visual implementations were required beyond the first partial hardening pass.
 - Consequence: no curriculum counts, benchmark states, persistence schema, mastery thresholds, review intervals, or Phase 7 state change. The remaining gate is external visual and voice acceptance on GitHub Pages.
+
+## 2026-08-23 - Phase 6.6 dark-first quality gate
+
+- Decision: make a layered dark visual system the fixed default for both application shells, with playful world-specific child themes and a separate restrained parent analytics theme.
+- Reason: the post-playtest interface needed stronger depth, hierarchy, and product identity without adding a UI dependency or changing application behavior.
+- Consequence: child and parent screens share reusable dark tokens but retain distinct presentation systems; print remains light and readable; reduced-motion, focus, contrast, and semantic controls remain required. A light-mode preference was not added because it would introduce new persistence scope without improving this bounded gate.
+
+## 2026-08-23 - GPT-5.6 Sol Grade 2 curricular reasoning review
+
+- Decision: supplement deterministic content validation with a source-level reasoning review of all 22 active packs, 154 lessons, 161 texts, 889 questions, and 614 support targets.
+- Reason: structural validation proves ownership and resolution contracts but cannot prove that a keyed answer is instructionally defensible, a distractor is unambiguous, or an explanation measures the intended skill.
+- Consequence: confirmed ambiguity, author-purpose construct, rhyme, perspective, factual wording, context-clue, retell, wordplay, and paired-comparison defects were corrected in place. Counts, IDs where practical, benchmark coverage, adaptive thresholds, review intervals, persistence schema, and Phase 7 state remain unchanged. Professional educational review and final live human acceptance remain pending.

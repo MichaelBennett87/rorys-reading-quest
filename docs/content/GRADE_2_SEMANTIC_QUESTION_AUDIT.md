@@ -64,3 +64,11 @@ The repository pass covered all active pack families, with additional line-level
 ## Final status
 
 Expanded deterministic audit passed. Source-level editorial review is complete for this hardening implementation. Live human visual and voice acceptance remains pending.
+
+## Phase 6.6 Sol extension
+
+A GPT-5.6 Sol repository-level curricular reasoning review supplemented the deterministic audit across all 22 active packs and all 889 questions. It reviewed keyed answers, distractor defensibility, skill alignment, available evidence, explanation accuracy, Grade 2 wording, pronunciation ambiguity, passage ownership, transfer value, and mechanical repetition.
+
+Confirmed corrections included ambiguous consonant-`le`, prefix, suffix, and fluency prompts; four rhyme-scheme text conflicts; generated perspective wording; author-purpose items that had incorrectly keyed central ideas; inaccurate compost wording; weak opinion evidence; misclassified context clues; stale Wordplay and Retell text; and a Compare Keep checkpoint whose two texts did not share a sufficiently precise topic.
+
+The automated result remains 889 questions checked with zero deterministic issues. The Sol review corrected twelve confirmed defect families without adding or removing curriculum. Professional teacher review, dialect-sensitive phonics listening, and Michael's deployed visual acceptance remain human review boundaries.
