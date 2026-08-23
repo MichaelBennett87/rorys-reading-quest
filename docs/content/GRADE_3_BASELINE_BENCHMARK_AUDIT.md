@@ -38,3 +38,7 @@ All rows remain `DRAFT` roadmap metadata. There are no contributing active Grade
 ## Limitations
 
 This baseline is an internal architecture audit. It makes no learner-mastery claim, official FAST prediction, human-approval claim, or Florida certification claim. Fluency and academic-vocabulary use retain their supportive-practice boundaries.
+
+## Historical follow-up after Phase 7A0
+
+This document remains the Phase 7A0 zero-content baseline. Phase 7A1 subsequently registered `g3-word-forge-root-reactor`, changing only `ELA.3.F.1.3` from planned to partial DRAFT coverage for `greek-latin-root-decoding` and `affix-decoding`. The remaining three broad patterns are still missing, no Grade 3 benchmark is implemented or APPROVED, and `ELA.3.V.1.2` remains planned.

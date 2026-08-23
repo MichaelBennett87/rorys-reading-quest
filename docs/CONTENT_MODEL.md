@@ -66,3 +66,7 @@ Every active question must be owned by its lesson and use a passage in that less
 ## Phase 7A0 grade-band ownership
 
 The content-pack manifest remains the canonical grade-band owner. Catalog entries, `LessonDefinition`, and `LessonActivityCandidate` expose the derived grade band without adding a persisted active-session field. Pack audit validation rejects passages or questions whose grade band contradicts the manifest. Grade 3 inventory, roadmap, coverage snapshot, and FAST blueprint objects are immutable planning metadata, not persisted curriculum or child progress.
+
+## Phase 7A1 root-decoding guides
+
+Root Reactor extends `ContentPack` with optional `rootDecodingGuides`. A guide owns one passage and four targets. Each target records a primary classical part, optional additional parts, meaningful morphological chunks, pronounceable reading chunks with authored speech text, a decoding statement, and a non-scored meaning support statement. Morphological chunks and reading chunks independently reconstruct the written word and are deliberately not treated as interchangeable. Root Reactor contributes only `greek-latin-root-decoding` and `affix-decoding` to `ELA.3.F.1.3`; it contributes nothing to `ELA.3.V.1.2`.

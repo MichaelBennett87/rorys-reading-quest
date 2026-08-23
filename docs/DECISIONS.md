@@ -403,3 +403,7 @@ Consequences: Phase 6 is complete; Phase 7 remains the next boundary; the final 
 - Keep the Grade 3 FAST blueprint immutable and audit-facing; defer multimedia and timed mixed practice to Phase 9.
 - Keep `ELA.3.F.1.4` and `ELA.3.V.1.1` as intended supportive practice with no oral or unrestricted writing scoring.
 - Preserve schema version 1, storage keys, mastery thresholds, review intervals, rewards, Pages base, and deployment workflow.
+
+## 2026-08-23 - Phase 7A1 Root Reactor activation
+
+Decision: activate only `g3-word-forge-foundations` with one prerequisite-gated DRAFT pack. Keep all other Grade 3 tracks planned. Represent meaningful word parts and pronounceable reading chunks separately because their boundaries can differ. Treat root meanings and origin labels as teaching/audit support, not scored meaning mastery or origin trivia. Keep `ELA.3.F.1.3` partial until Phases 7A2 and 7A3 supply the remaining broad patterns; keep `ELA.3.V.1.2` planned. Preserve schema version 1, storage keys, Grade 2 review identity, reward rules, mastery thresholds, and review intervals.

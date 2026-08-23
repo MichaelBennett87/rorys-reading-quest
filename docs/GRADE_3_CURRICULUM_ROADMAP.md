@@ -4,7 +4,7 @@
 
 Phase 7 extends the six existing reading worlds into separate Grade 3 curriculum tracks. Advancement is domain-specific: a Grade 3 track can become playable only after its matching Grade 2 track reaches its verified completion difficulty and active Grade 3 content exists. This is not a global grade diagnosis, a learner-mastery claim, or a FAST prediction.
 
-Phase 7A0 contains architecture and immutable planning metadata only. It contains no Grade 3 content pack, lesson, passage, poem, question, or word-support target. Phase 7A1, Root Reactor, is the next bounded authoring phase.
+Phase 7A0 established architecture and immutable planning metadata. Phase 7A1 now adds Root Reactor as the first production Grade 3 pack: seven DRAFT lessons, seven original passages, forty-one questions, seven root-decoding guides, twenty-eight decoding targets, and twenty-eight support targets. `ELA.3.F.1.3` is partial; Phase 7A2, Suffix Shifter, is next and remains unstarted.
 
 ## Instructional inventory
 

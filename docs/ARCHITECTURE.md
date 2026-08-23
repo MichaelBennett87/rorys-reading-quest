@@ -84,3 +84,7 @@ The registry-wide semantic layer now verifies lesson/question ownership, passage
 Curriculum tracks now carry immutable grade band, completion difficulty, prerequisite track IDs, and per-world chapter order. A world can own multiple tracks; runtime ownership resolves by exact skill, unit, or track ID. `getTrackByWorldId` remains only a documented Grade 2 compatibility helper, while `getTracksByWorldId` supplies deterministic grade/chapter/curriculum ordering.
 
 Readiness requires both active progression content and completed same-domain prerequisites. Planned Grade 3 metadata therefore cannot initialize progress, create content-needed noise, or appear in production child, parent, or print surfaces. Lesson grade band derives from the content-pack manifest and is validated against passage and question grade bands. Persistence schema and storage keys remain unchanged.
+
+## Phase 7A1 Root Reactor architecture
+
+`g3-word-forge-root-reactor` is the first active Grade 3 pack and remains owned by `g3-word-forge-word-analysis`, `g3-wg-unit-1`, and content version `g3-wf-root-reactor-r0.1.0`. Optional `rootDecodingGuides` stay inside immutable curriculum data. Validation checks passage ownership, target occurrence, meaningful-part and reading-chunk reconstruction, classical-part links, and one-to-one Word Help ownership. Guide data is never copied into persistence. The Grade 3 chapter is derived only when active content exists, remains prerequisite-locked until Grade 2 Word Forge reaches its completion boundary, and does not initialize unrelated Grade 3 skills.

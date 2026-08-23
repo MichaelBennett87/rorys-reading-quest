@@ -73,3 +73,7 @@ Planning priority remains unchanged: compatible active session, verification, re
 ## Phase 7A0 domain-specific grade transition
 
 Grade transition is track-specific rather than a global learner classification. A track is progression-playable only when exact-track active content exists and each prerequisite track has reached its explicit completion difficulty. Grade 3 progress is initialized only at that point. Grade 2 reviews remain eligible after a domain advances, and global priority remains active session, verification, remediation, due review, balanced ordinary progression, then content-needed. Review and remediation identity never crosses grade, skill, unit, or content version.
+
+## Phase 7A1 Root Reactor progression
+
+Root Reactor starts at Grade 3 difficulty 1 after domain readiness. Two distinct strong independent checkpoints are required to advance to difficulty 2; replaying the same activity cannot provide both proofs. A first low result chooses same-level Grade 3 guidance, while a second consecutive low result routes to Root Reactor difficulty-0 power-up work and preserves the difficulty-1 return target. Assisted strong work retains score and rewards but does not become independent mastery evidence. Completion at difficulty 2 yields content-needed for the still-deferred Suffix Shifter without blocking Grade 2 work or reviews.

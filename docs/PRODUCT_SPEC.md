@@ -102,3 +102,7 @@ Phase 6.5 is a post-curriculum hardening milestone. It does not add curriculum, 
 ## Phase 7A0 multi-grade boundary
 
 Phase 7 reuses the six established worlds through separate grade-band tracks. Grade 3 readiness is domain-specific, requires active eligible content, and requires the matching Grade 2 track to reach its explicit completion difficulty. Phase 7A0 adds roadmap and FAST audit metadata only; it adds no Grade 3 production curriculum and makes no global grade diagnosis. Grade 3 fluency and unconstrained academic-vocabulary use retain supportive-practice measurement boundaries.
+
+## Phase 7A1 Root Reactor boundary
+
+Root Reactor activates only Grade 3 Word Forge after the matching Grade 2 Word Forge prerequisite is complete. Its seven DRAFT lessons teach decoding with a bounded set of Greek and Latin roots, combining forms, and classical prefixes. Meanings are memory support rather than the scored construct. `ELA.3.F.1.3` remains partial because derivational-suffix/part-of-speech work and systematic multisyllabic decoding remain deferred to Phases 7A2 and 7A3. The product makes no oral-decoding score, grade-level diagnosis, or FAST prediction.

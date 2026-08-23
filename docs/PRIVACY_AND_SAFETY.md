@@ -56,3 +56,7 @@ Phonics speech remains optional browser SpeechSynthesis output. Hear the Parts u
 ## Phase 7A0 privacy boundary
 
 Grade 3 roadmap and FAST blueprint metadata contain no child data and are not persisted. Planned tracks do not initialize progress without active unlocked content. Parent assessments do not unlock grade transitions. Existing child progress, parent access, and parent record keys remain unchanged at schema version 1, and no grade-level mastery diagnosis or FAST prediction is introduced.
+
+## Phase 7A1 privacy boundary
+
+Root Reactor persists the same bounded attempt, progress, review, reward, and assistance event data as existing lessons. Passage text, root-guide content, root meanings, question text, answer text, explanations, and Word Help curriculum text are not persisted or printed. Browser speech remains optional local `SpeechSynthesis`; there is no microphone, oral score, external speech provider, analytics, telemetry, backend, or live AI. Parent and print views identify Grade 3 Word Forge only after real learner data exists and do not expose root-answer metadata.
