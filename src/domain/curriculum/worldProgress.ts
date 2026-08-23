@@ -63,10 +63,11 @@ function appendFixtureGrade3Chapter(
     const ready = areTrackPrerequisitesSatisfied(track, progress)
     const trackProgress = progress.skillProgress[track.skillId] ?? null
     const currentDifficulty = trackProgress?.currentDifficulty ?? track.initialDifficulty
-    return roadmap.units.map((unit) => {
+    return roadmap.units.map((unit, unitIndex) => {
       const hasContent = availableLessons.some((lesson) => lesson.skillId === track.skillId && lesson.unitId === unit.unitId)
       const isOwned = activeUnitId === unit.unitId || plannedUnitId === unit.unitId
-      const state: UnitState = !ready || !hasContent || currentDifficulty < unit.activeDifficulty
+      const isFirstUnitPowerUp = unitIndex === 0 && currentDifficulty <= 0
+      const state: UnitState = !ready || !hasContent || (currentDifficulty < unit.activeDifficulty && !isFirstUnitPowerUp)
         ? 'locked'
         : currentDifficulty >= unit.completionDifficulty && !isOwned
           ? trackProgress?.currentLearningState === 'SPACED_REVIEW' ? 'review' : 'complete'
@@ -74,12 +75,14 @@ function appendFixtureGrade3Chapter(
       return {
         id: unit.unitId,
         title: unit.title,
-        difficultyLabel: state === 'locked' ? 'Locked' : state === 'review' ? 'Review' : state === 'complete' ? 'Complete' : unit.activeLabel,
+        difficultyLabel: state === 'locked' ? 'Locked' : state === 'review' ? 'Review' : state === 'complete' ? 'Complete' : isFirstUnitPowerUp ? 'Power-Up Mission' : unit.activeLabel,
         progressPercent: state === 'locked' ? 0 : state === 'available' ? 60 : 100,
         stars: state === 'complete' ? 3 : state === 'available' ? 1 : 0,
         state,
         practiceFocus: !ready
-          ? `Complete the ${world.name} Grade 2 chapter before starting ${roadmap.chapterTitle}.`
+          ? track.trackId === 'g3-word-forge-foundations'
+            ? 'Complete the Grade 2 Word Forge chapter to unlock Root Reactor.'
+            : `Complete the ${world.name} Grade 2 chapter before starting ${roadmap.chapterTitle}.`
           : !hasContent
             ? unit.futureContentMessage
             : unit.practiceFocus,

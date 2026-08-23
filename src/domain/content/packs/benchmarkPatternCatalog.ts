@@ -24,6 +24,7 @@ const BENCHMARK_PATTERN_CATALOG: Record<string, readonly string[]> = {
   'ELA.2.V.1.1': ['academic-vocabulary-use'],
   'ELA.2.V.1.2': ['base-words', 'affixes'],
   'ELA.2.V.1.3': ['context-clues', 'word-relationships', 'reference-materials', 'background-knowledge'],
+  'ELA.3.F.1.3': ['greek-latin-root-decoding', 'affix-decoding', 'derivational-suffix-decoding', 'part-of-speech-change', 'multisyllabic-decoding'],
 }
 
 const REVIEW_ORDER: Record<BenchmarkReviewStatus, number> = {

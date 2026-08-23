@@ -163,6 +163,49 @@ export interface MorphologyGuide {
   contentVersion: string
 }
 
+export type ClassicalPartOrigin = 'Greek' | 'Latin' | 'Greek/Latin'
+
+export type ClassicalPartKind = 'root' | 'prefix' | 'combining-form'
+
+export interface ClassicalWordPart {
+  partId: string
+  surfaceForm: string
+  displayLabel: string
+  origin: ClassicalPartOrigin
+  kind: ClassicalPartKind
+  commonMeaning: string
+}
+
+export interface RootMorphologicalChunk {
+  text: string
+  role: 'root' | 'prefix' | 'suffix' | 'connector' | 'other'
+  partId?: string
+}
+
+export interface RootSyllableChunk {
+  displayText: string
+  speechText: string
+}
+
+export interface RootDecodingTarget {
+  targetId: string
+  surfaceWord: string
+  sentenceId: string
+  primaryPart: ClassicalWordPart
+  additionalParts: ClassicalWordPart[]
+  morphologicalChunks: RootMorphologicalChunk[]
+  syllableChunks: RootSyllableChunk[]
+  decodingStatement: string
+  meaningSupportStatement: string
+}
+
+export interface RootDecodingGuide {
+  passageId: string
+  targets: RootDecodingTarget[]
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
 export type MeaningClueStrategyKind =
   | 'context-clue'
   | 'word-relationship'
@@ -396,6 +439,7 @@ export interface ContentPack {
   authorOpinionGuides?: AuthorOpinionGuide[]
   academicVocabularyGuides?: AcademicVocabularyGuide[]
   morphologyGuides?: MorphologyGuide[]
+  rootDecodingGuides?: RootDecodingGuide[]
   meaningClueGuides?: MeaningClueGuide[]
   wordplayGuides?: WordplayGuide[]
   retellGuides?: RetellGuide[]
@@ -468,7 +512,10 @@ export interface ContentPackAuditIssue {
    | 'academic_vocabulary_guide_invalid'
    | 'missing_morphology_guide'
    | 'morphology_guide_count_mismatch'
-   | 'morphology_guide_invalid'
+     | 'morphology_guide_invalid'
+     | 'missing_root_decoding_guide'
+     | 'root_decoding_guide_count_mismatch'
+     | 'root_decoding_guide_invalid'
    | 'missing_meaning_clue_guide'
    | 'meaning_clue_guide_count_mismatch'
    | 'meaning_clue_guide_invalid'

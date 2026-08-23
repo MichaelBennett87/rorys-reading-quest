@@ -114,7 +114,9 @@ export function planUnitQuest(input: PlanUnitQuestInput): UnitQuestPlan {
         status: 'locked',
         purpose: 'progression',
         unitId: input.selectedUnitId,
-        reason: 'Complete this world\'s Grade 2 chapter before starting the Grade 3 chapter.',
+        reason: selectedTrack.trackId === 'g3-word-forge-foundations'
+          ? 'Complete the Grade 2 Word Forge chapter to unlock Root Reactor.'
+          : 'Complete this world\'s Grade 2 chapter before starting the Grade 3 chapter.',
       }
     }
   }

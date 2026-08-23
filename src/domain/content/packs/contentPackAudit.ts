@@ -1,6 +1,7 @@
 import { parseScopedEvidenceReference, resolveLessonEvidence, resolvePassageEvidence } from '../evidence'
 import type { ContentPack, ContentPackAuditIssue } from './contentPackTypes'
 import { collectObservedBenchmarkPatterns, getClaimedBenchmarkPatterns, getExpectedBenchmarkPatterns } from './benchmarkPatternCatalog'
+import { buildRootDecodingGuideAudit } from './rootDecodingGuideAudit'
 
 export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPackAuditIssue[] {
   const issues: ContentPackAuditIssue[] = []
@@ -195,6 +196,8 @@ export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPac
     if (pack.manifest.benchmarkReferences.includes('ELA.2.R.3.3') && pack.manifest.difficultyRange[0] === 2 && pack.manifest.difficultyRange[1] === 3) {
       validateCompareKeepPackStructure(pack, issues)
     }
+
+    issues.push(...buildRootDecodingGuideAudit(pack))
   }
 
   if (activeProgressionCount < 3) {

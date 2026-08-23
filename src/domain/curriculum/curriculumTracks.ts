@@ -43,7 +43,7 @@ const curriculumTrackDefinitions: CurriculumTrackDefinition[] = [
     entryUnitId: 'g3-wg-unit-1', unitIds: ['g3-wg-unit-1', 'g3-wg-unit-2', 'g3-wg-unit-3', 'g3-wg-unit-4'],
     curriculumOrder: 110, worldChapterOrder: 2, initialDifficulty: 1, initialLastMasteredDifficulty: 0,
     completionDifficulty: 5, prerequisiteTrackIds: ['g2-word-forge-foundations'],
-    status: 'planned_until_content_exists', displayName: 'Grade 3 Word Forge',
+    status: 'active', displayName: 'Grade 3 Word Forge',
   },
   {
     trackId: 'g3-story-scouts-prose', skillId: 'g3-story-scouts-prose', worldId: 'story-scouts', gradeBand: 3,
