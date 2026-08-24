@@ -8,7 +8,7 @@ function readRepoFile(relativePath: string): string {
 }
 
 describe('Phase 7A1 documentation acceptance', () => {
-  test('records Root Reactor as partial DRAFT coverage without starting Phase 7A2', () => {
+  test('preserves Root Reactor completion while project status advances through Phase 7A2', () => {
     const readme = readRepoFile('README.md')
     const tasks = readRepoFile('TASKS.md')
     const report = readRepoFile('docs/PHASE_7A1_REPORT.md')
@@ -20,7 +20,8 @@ describe('Phase 7A1 documentation acceptance', () => {
     expect(readme).toContain('ELA.3.F.1.3 has partial authored DRAFT coverage')
     expect(readme).toContain('no Grade 3 benchmark is fully implemented or APPROVED')
     expect(tasks).toContain('- [x] Phase 7A1: Root Reactor')
-    expect(tasks).toContain('- [ ] Phase 7A2: Suffix Shifter')
+    expect(tasks).toContain('- [x] Phase 7A2: Suffix Shifter')
+    expect(tasks).toContain('- [ ] Phase 7A3: Multisyllable Mountain')
     expect(tasks).toContain('- [ ] Phase 7A: Grade 3 foundations and transition')
     expect(tasks).toContain('- [ ] Phase 7: Grade 3 FAST-aligned content')
     expect(report).toContain('Starting local SHA: `3cfb43ebba6d9485e6161be57e59df910725f263`')

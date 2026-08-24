@@ -106,3 +106,7 @@ Phase 7 reuses the six established worlds through separate grade-band tracks. Gr
 ## Phase 7A1 Root Reactor boundary
 
 Root Reactor activates only Grade 3 Word Forge after the matching Grade 2 Word Forge prerequisite is complete. Its seven DRAFT lessons teach decoding with a bounded set of Greek and Latin roots, combining forms, and classical prefixes. Meanings are memory support rather than the scored construct. `ELA.3.F.1.3` remains partial because derivational-suffix/part-of-speech work and systematic multisyllabic decoding remain deferred to Phases 7A2 and 7A3. The product makes no oral-decoding score, grade-level diagnosis, or FAST prediction.
+
+## Phase 7A2 Suffix Shifter boundary
+
+Suffix Shifter activates Grade 3 Word Forge Trail 2 only after Root Reactor completes. Seven DRAFT lessons teach transparent derivational suffix decoding and child-readable word-function changes with `-ness`, `-ment`, `-er`, `-ful`, `-less`, `-ly`, `-able`, and `-y`. The pack does not teach absolute ending rules, unrestricted grammar or writing, oral scoring, or systematic multisyllabic decoding. `ELA.3.F.1.3` remains partial until Phase 7A3.

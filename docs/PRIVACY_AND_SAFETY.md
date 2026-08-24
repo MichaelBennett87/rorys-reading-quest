@@ -66,3 +66,7 @@ Root Reactor persists the same bounded attempt, progress, review, reward, and as
 Question-truth ledgers contain only local authored curriculum identifiers, visible authored answer text, concise audit conclusions, and deterministic content fingerprints. They contain no learner selections, child identifiers, session data, progress, rewards, parent records, assessment records, PIN material, or hidden reasoning. The ledgers are not loaded into persistence and are not printed in parent summaries.
 
 Feedback decoration is derived from the in-memory evaluator result already used by the lesson screen. It adds no storage field and sends no data anywhere. The phase adds no backend, cloud service, analytics, telemetry, microphone, external speech provider, or live AI.
+
+## Phase 7A2 curriculum-data boundary
+
+Suffix Shifter persists only the existing bounded attempt, skill, review, reward, and assistance records. It does not persist passages, derivational guides, base/derived roles, transformation explanations, question or answer text, evidence text, or Word Help curriculum content. Parent and print views use friendly lesson/unit metadata and never expose guide answers or learner answer text. Storage keys, schema version 1, Parent PIN cryptography, assessment records, local-only browser speech, and the no-backend/no-telemetry/no-microphone boundaries remain unchanged.

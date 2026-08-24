@@ -76,3 +76,7 @@ Answer-level decorations identify selected correct responses, selected incorrect
 ## Status
 
 Phase 7A1.5 is complete and synchronized. Phase 7 remains in progress; Phase 7A2 is the active bounded content phase.
+
+## Phase 7A2 historical follow-up
+
+Phase 7A1.5 remains the synchronized 930-question historical quality gate at `d17bd17724a5127db38e3dd1ba537daa66eea020`. Phase 7A2 extends the same framework to 24 active packs and 971 questions: 971 canonical submissions, 323 canonical-equivalent submissions, 12,913 adversarial submissions, and 16,149 grading assertions. No Phase 7A1.5 fact above is retroactively rewritten.

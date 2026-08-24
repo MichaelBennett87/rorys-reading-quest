@@ -9,6 +9,7 @@ import {
   suffixShifterSupportTargets,
   suffixShifterTargets,
 } from '../../src/domain/content/packs'
+import { createDefaultQuestProgress } from '../../src/persistence'
 
 const PACK_ID = 'g3-word-forge-suffix-shifter'
 const VERSION = 'g3-wf-suffix-shifter-r0.1.0'
@@ -109,5 +110,12 @@ describe('Grade 3 Suffix Shifter authored pack', () => {
     expect(manifest.coveredPatterns).not.toEqual(expect.arrayContaining(['multisyllabic-decoding', 'unfamiliar-word-meaning']))
     expect(manifest.benchmarkReferences).not.toContain('ELA.3.V.1.2')
     expect(manifest.supportingBenchmarkReferences ?? []).not.toContain('ELA.3.V.1.2')
+  })
+
+  test('keeps derivational guide and authored answer content out of learner persistence', () => {
+    const serialized = JSON.stringify(createDefaultQuestProgress('2026-08-24T12:00:00.000Z'))
+    expect(serialized).not.toContain('derivationalSuffixGuides')
+    expect(serialized).not.toContain('transformationExplanation')
+    expect(serialized).not.toContain('kindness')
   })
 })

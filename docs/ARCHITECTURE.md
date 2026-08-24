@@ -96,3 +96,9 @@ Readiness requires both active progression content and completed same-domain pre
 - Table-match evaluation now requires the exact known row set, valid option IDs, complete mappings, and unique choices in `use_each_once` mode. Extra or unknown mappings cannot be silently ignored.
 - Answer presentation is derived after evaluation. Pre-submit selection is neutral; post-submit correct, incorrect, and correct-answer reveal states are passed to all five renderers without mutating question content or persistence.
 - Per-pack JSON ledgers under `docs/content/question-truth-ledger/` contain curriculum data and concise audit conclusions only, never learner data or hidden reasoning.
+
+## Phase 7A2 derivational-suffix architecture
+
+`ContentPack.derivationalSuffixGuides` is optional, immutable authored curriculum metadata. Each guide binds one source passage to four transparent base/derived pairs, suffix identity, base and derived sentence roles, meaningful chunks, pronounceable reading chunks, an authored transformation explanation, DRAFT state, and content version. Pack audit validates sentence ownership, exact reconstruction, role/suffix compatibility, Word Help affinity, safe text, and non-persistence.
+
+Progression keeps the shared `g3-word-forge-word-analysis` skill while resolving unit and content-version affinity exactly. Verification, remediation, and review remain pinned to their source unit. A true `ADVANCE` intentionally releases the completed unit affinity so difficulty 1 Root Reactor can transition to difficulty 2 Suffix Shifter; difficulty 2 completion reaches structured `CONTENT_NEEDED` at the deferred difficulty 3 roadmap boundary.

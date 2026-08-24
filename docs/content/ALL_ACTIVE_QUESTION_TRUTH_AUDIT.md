@@ -90,3 +90,9 @@ No active question remains unresolved in this repository-level gate. Human revie
 ## Final status
 
 PASS - all 930 active questions have current PASS ledger records, canonical grading succeeds, generated incorrect responses are rejected, and no confirmed semantic ambiguity remains at these fingerprints. Phase 7A2 remains unstarted.
+
+## Phase 7A2 extension
+
+The Phase 7A1.5 body above is a historical 930-question checkpoint. Phase 7A2 applies the same permanent gate to `g3-word-forge-suffix-shifter` and brings the current registry to 24 packs, 168 lessons, 175 texts, 971 questions, and 971 matching PASS ledger records. Current evaluator metrics are 971 canonical, 323 canonical-equivalent, and 12,913 adversarial submissions, totaling 16,149 grading assertions.
+
+Independent source review corrected one passage grammar defect and three checkpoint construct defects before registration. The three checkpoint two-part items now compare meaningful base-plus-suffix boundaries with genuinely distinct authored reading chunks. No answer key, evidence reference, production evaluator, Grade 2 item, or Root Reactor item required correction. `ELA.3.F.1.3` remains partial DRAFT coverage, `ELA.3.V.1.2` remains planned, and Phase 7A3 remains unstarted.

@@ -417,3 +417,9 @@ Decision: activate only `g3-word-forge-foundations` with one prerequisite-gated 
 - Derive correct, incorrect, and selected presentation state after grading; never infer correctness from text, CSS position, or color alone.
 - Keep all 23 ledgers documentation-only and fingerprint-bound. A changed question must fail the ledger gate until reviewed again.
 - Preserve all curriculum totals, adaptive thresholds, review intervals, rewards, persistence, parent access, and Phase 7A2 boundaries.
+
+## 2026-08-24 - Phase 7A2 transparent derivational suffix scope
+
+Decision: activate only `g3-wg-unit-2` with the DRAFT `g3-word-forge-suffix-shifter` pack. Teach eight bounded transparent suffix families: `-ness`, `-ment`, `-er`, `-ful`, `-less`, `-ly`, `-able`, and `-y`. Substitute `-y` for the provisional `-tion` family because common Grade 3 `-tion` examples generally require a nontransparent boundary or spelling-change instruction that this phase deliberately excludes. Preserve the eight-family count and noun-to-adjective branch without implying universal ending rules.
+
+Decision: keep verification, remediation, and review unit/content-version affine, but release unit affinity after an `ADVANCE` decision so Root Reactor can enter Suffix Shifter. Keep `ELA.3.F.1.3` partial and DRAFT with only `multisyllabic-decoding` missing; keep `ELA.3.V.1.2` planned and Phase 7A3 unstarted.

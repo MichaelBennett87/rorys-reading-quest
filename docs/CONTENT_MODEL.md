@@ -76,3 +76,7 @@ Root Reactor extends `ContentPack` with optional `rootDecodingGuides`. A guide o
 The active-question truth inventory is derived from active production packs and active lesson ownership. Each record carries pack, version, grade, benchmark, world, unit, skill, lesson, passage, question, visible answer, evidence, explanation, authored response, evaluator contract, and fingerprint metadata. The separate blind projection intentionally excludes keys, explanations, evidence IDs, and guide answers.
 
 Question-truth ledgers are documentation artifacts, not runtime curriculum or persistence. A fingerprint covers the relevant pack, lesson, displayed text, and question payload so later authoring changes require explicit re-review. No ledger data is used for learner scoring, mastery, planning, rewards, parent assessment, or FAST prediction.
+
+## Phase 7A2 derivational-suffix guides
+
+Suffix Shifter adds optional `derivationalSuffixGuides` to `ContentPack`. Each `DerivationalSuffixTarget` stores a transparent base word, derived word, suffix, child-readable base and derived roles, meaningful chunks, authored reading chunks, source sentence, and concise transformation explanation. Meaningful chunks and pronunciation chunks independently reconstruct the derived word and may differ. Matching Word Help targets highlight only the suffix while Break It Apart and Hear the Parts use authored reading chunks. Guide data is curriculum-only and is never added to schema-version-1 learner persistence.
