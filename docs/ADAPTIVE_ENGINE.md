@@ -112,3 +112,7 @@ Character Arc Camp, Theme Development Trail, Perspective Portal, and Grade 2 Sto
 ## Grade 3 Poetry Planet progression
 
 Poem Form Observatory starts at difficulty 1 after the existing Grade 2 Poetry Planet prerequisite reaches completion. Two distinct strong checkpoints verify then advance the track to completionDifficulty 2; partial work remains at level, two consecutive low outcomes route to difficulty-0 unit-affine remediation, rebuilding returns to difficulty 1, and assisted work does not create independent mastery evidence. Active sessions, verification, remediation, due review, ordinary progression, and content-needed retain their established priority. No threshold, review interval, reward, or one-button journey rule changes.
+
+## Phase 7C1 Structure Station progression
+
+Grade 3 Information Detectives initializes at difficulty 1 only after Grade 2 Information Detectives reaches completion difficulty 5 and active Structure Station content exists. Two distinct independent strong checkpoints verify then advance to difficulty 2, where Central Idea Engine remains unavailable and planning fails closed with structured content-needed. Partial work stays at difficulty 1; two consecutive low outcomes route to difficulty-0 Structure Station remediation; rebuilding returns to difficulty 1 without claiming mastery. Active session, verification, remediation, due review, ordinary progression, and content-needed priorities remain unchanged, and Start/Continue Journey remains the only child launch path.

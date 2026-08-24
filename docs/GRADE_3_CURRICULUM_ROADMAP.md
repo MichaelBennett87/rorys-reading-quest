@@ -4,7 +4,7 @@
 
 Phase 7 extends the six existing reading worlds into separate Grade 3 curriculum tracks. Advancement is domain-specific: a Grade 3 track can become playable only after its matching Grade 2 track reaches its verified completion difficulty and active Grade 3 content exists. This is not a global grade diagnosis, a learner-mastery claim, or a FAST prediction.
 
-Phase 7A established the four Grade 3 Word Forge production packs. Phase 7B1 added Character Arc Camp, Phase 7B2 added Theme Development Trail, and Phase 7B3 adds Perspective Portal Grade 3. The seven Grade 3 production packs provide forty-nine DRAFT lessons, forty-nine original passages, 274 questions, and 189 Word Help targets. `ELA.3.F.1.3` and `ELA.3.R.1.1` through `ELA.3.R.1.3` are IMPLEMENTED / DRAFT. `ELA.3.F.1.4` is SUPPORTIVE_PRACTICE / DRAFT with no oral measurement. No Grade 3 row is APPROVED and no status claims learner mastery. Phase 7B remains incomplete because Poem Form Observatory is still planned.
+Phase 7A and Phase 7B are complete. Phase 7C1 adds Structure Station as the ninth Grade 3 production pack, bringing Grade 3 to 63 DRAFT lessons, 63 original texts, 356 questions, and 245 Word Help targets. `ELA.3.F.1.3`, `ELA.3.R.1.1` through `ELA.3.R.1.4`, and `ELA.3.R.2.1` are IMPLEMENTED / DRAFT. `ELA.3.F.1.4` is SUPPORTIVE_PRACTICE / DRAFT with no oral measurement. No Grade 3 row is APPROVED and no status claims learner mastery. Phase 7C remains incomplete because Central Idea Engine is unstarted.
 
 ## Instructional inventory
 
@@ -79,3 +79,7 @@ Perspective Portal Grade 3 (`g3-ss-unit-3`) is active after Theme Development Tr
 ## Phase 7B4 completion snapshot
 
 Poem Form Observatory completes authored DRAFT coverage of `ELA.3.R.1.4` through free verse, rhymed verse, haiku, and limerick. Grade 3 now has five IMPLEMENTED / DRAFT benchmarks (`ELA.3.F.1.3` and `ELA.3.R.1.1` through `ELA.3.R.1.4`), one SUPPORTIVE_PRACTICE / DRAFT benchmark (`ELA.3.F.1.4`), and ten PLANNED benchmarks. No Grade 3 benchmark is APPROVED. Phase 7B is complete; Phase 7C1 Structure Station is the next bounded phase and remains unstarted.
+
+## Phase 7C1 implementation snapshot
+
+Structure Station (`g3-id-unit-1`) activates Grade 3 Information Detectives after the Grade 2 track reaches completion difficulty 5. It covers text-feature contributions, chronology, comparison, and cause/effect, making `ELA.3.R.2.1` IMPLEMENTED / DRAFT. Grade 3 now has six implemented benchmarks, one supportive-practice benchmark, and nine planned benchmarks. Central Idea Engine remains unstarted; no learner mastery or approval is inferred.

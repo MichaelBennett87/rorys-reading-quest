@@ -143,3 +143,7 @@ The existing Grade 3 Story Scouts track resolves unit 3 at difficulty 3. Perspec
 ## Phase 7B4 architecture
 
 `ContentPack.poemFormGuides` adds authored, non-persisted form evidence for Grade 3 poetry. `buildPoemFormGuideAudit` validates guide ownership, form distribution, line and stanza claims, rhyme evidence, qualified classroom-haiku metadata, limerick AABBA structure, lesson roles, checkpoint coverage, and exact pack counts. The existing PoemCard renderer, evaluator, review planner, persistence layer, and guided child state machine are reused unchanged. Grade 3 Poetry Planet is activated in the canonical curriculum track registry and remains planner-selected rather than child-selected.
+
+## Phase 7C1 informational-structure architecture
+
+Structure Station reuses `InformationalTextCard`, passage evidence resolution, lesson catalog, global planning, review affinity, parent reporting, and print privacy. `ContentPack` may now include DRAFT `informationalStructureGuides`; the informational feature union adds accessible timelines and sidebars. Validation and pack audit bind every guide, feature contribution, structure-evidence record, and source ID without persisting or printing guide content. The protected child route remains `home`, `lesson_run`, `progression_outcome`, and `parent_gate`; Home retains only Start Journey and Parent Area.

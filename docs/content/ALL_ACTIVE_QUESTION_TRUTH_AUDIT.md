@@ -123,3 +123,7 @@ The permanent audit now covers 29 active packs, 203 active lessons, 210 active t
 ## Phase 7B4 registration
 
 Poem Form Observatory adds 41 independently reviewed questions under `g3-poetry-planet-poem-form-observatory`. The production inventory now contains 1,204 active questions and 1,204 current PASS ledger records across 30 packs. The executable contract accepts 1,204 canonical submissions and 402 canonical-equivalent submissions, rejects 15,214 adversarial submissions, and completes 19,228 grading assertions. Three prompts were refined before registration; no key, distractor, explanation, evidence, poem, rhyme, or evaluator correction remained after blind comparison. Zero question IDs are unresolved and zero fingerprints are stale.
+
+## Phase 7C1 registration
+
+Structure Station adds 41 independently reviewed questions under `g3-information-detectives-structure-station`. The production inventory now contains 1,245 active questions and 1,245 current PASS ledger records across 31 packs. The executable contract accepts 1,245 canonical submissions and 416 canonical-equivalent submissions, rejects 15,596 adversarial submissions, and completes 19,747 grading assertions. Two Word Help source alignments and one guide-contribution statement were corrected before registration; no question, key, distractor, explanation, evidence reference, passage fact, or evaluator correction remained after blind comparison. Zero question IDs are unresolved and zero fingerprints are stale.

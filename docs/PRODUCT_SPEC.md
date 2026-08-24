@@ -139,3 +139,7 @@ Child mode presents one learning-navigation action: `Start Journey`. `Parent Are
 ## Phase 7B4: Grade 3 Poetry Planet
 
 Poem Form Observatory activates the existing `g3-poetry-planet` track behind Grade 2 Poetry Planet completion. Its seven DRAFT lessons use structured PoemCards to identify free verse, rhymed verse, haiku, and limerick without expanding into figurative language, composition, advanced meter, or oral scoring. The simplified child journey remains authoritative: Home has only Start Journey and Parent Area, the map is display-only, and the global planner launches Grade 3 poetry when prerequisite and curriculum order permit.
+
+## Phase 7C1: Grade 3 Information Detectives
+
+Structure Station activates `g3-information-detectives-reading` behind verified Grade 2 Information Detectives completion. Seven DRAFT lessons teach how informational text features contribute to meaning and how chronology, comparison, and cause/effect organize important ideas. Central idea, author purpose, claim/evidence, and informational writing remain deferred. The protected child journey remains unchanged: the planner selects Structure Station through Start/Continue Journey and no child-facing curriculum menu is added.

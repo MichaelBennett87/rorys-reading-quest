@@ -110,4 +110,6 @@ Guide records remain DRAFT curriculum-only metadata. Passage text, perspective s
 
 ## Grade 3 poem-form guides
 
-Phase 7B4 adds optional `PoemFormGuide` records to authored content packs. A guide binds one structured poem to one of `free-verse`, `rhymed-verse`, `haiku`, or `limerick`, with defining and non-defining features, evidence line IDs, an explanation, comparison notes, DRAFT status, and the pack content version. Guides are validated and audited at build/test time but are not persisted or printed. The active registry now contains 30 packs, 210 lessons, 217 texts, 1,204 questions, and 831 support targets.
+Phase 7B4 adds optional `PoemFormGuide` records to authored content packs. A guide binds one structured poem to one of `free-verse`, `rhymed-verse`, `haiku`, or `limerick`, with defining and non-defining features, evidence line IDs, an explanation, comparison notes, DRAFT status, and the pack content version. Guides are validated and audited at build/test time but are not persisted or printed.
+
+Phase 7C1 adds optional `InformationalStructureGuide` records and minimal structured timeline/sidebar feature variants. A guide binds one Grade 3 informational text to chronology, comparison, or cause/effect; records feature contributions and resolved structure evidence; and provides an organizational summary for deterministic audit. Guide and feature curriculum text are never persisted or printed. The active registry now contains 31 packs, 217 lessons, 224 texts, 1,245 questions, and 859 support targets.

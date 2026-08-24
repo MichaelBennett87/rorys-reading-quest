@@ -103,3 +103,7 @@ The stories use original child-safe situations and reasonable motivations, witho
 ## Phase 7B4 privacy boundary
 
 Poem text, PoemFormGuide records, rhyme maps, classroom syllable notes, question text, explanations, and correct answers remain authored application content and are not copied into learner persistence or print output. Storage keys, schema version 1, the hashed Parent PIN record, assessment stores, bounded attempts, and active-session recovery are unchanged. Phase 7B4 adds no backend, cloud synchronization, analytics, telemetry, microphone, external speech provider, or live AI.
+
+## Phase 7C1 privacy and accessibility boundary
+
+Structure Station passages, headings, captions, diagram labels, timelines, sidebars, glossary text, `InformationalStructureGuide` records, question text, explanations, correct answers, and Word Help curriculum remain application content and are not copied into learner persistence or print output. Storage schema version 1, storage keys, the hashed Parent PIN record, assessments, bounded attempts, reviews, and active-session recovery are unchanged. Accessible headings, captions, text equivalents for structured diagrams, keyboard controls, focus, non-color-only feedback, and reduced motion remain required. Phase 7C1 adds no backend, cloud synchronization, analytics, telemetry, microphone, external speech service, or live AI.

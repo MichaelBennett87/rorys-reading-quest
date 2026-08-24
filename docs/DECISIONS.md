@@ -480,3 +480,9 @@ Decision: permit fresh difficulty-4 fluency practice to complete the Grade 3 Wor
 - Decision: classify `ELA.3.R.1.4` as IMPLEMENTED / DRAFT when all four required poem forms are authored and truth-gated; this is not learner mastery or human approval.
 - Decision: teach free verse and rhymed verse without false absolutes, qualify the authored haiku's 5-7-5 pattern as a common English classroom example, and identify limericks through five lines, AABBA rhyme, and playful tone without advanced meter claims.
 - Decision: Phase 7B is complete after Phase 7B4; Phase 7C remains unstarted.
+
+## Phase 7C1 decisions
+
+Decision: activate only `g3-information-detectives-reading` through the DRAFT Structure Station pack after verified Grade 2 Information Detectives completion. Reuse the existing informational renderer and add only timeline/sidebar feature variants plus optional `InformationalStructureGuide` metadata. Treat feature contribution and chronology/comparison/cause-effect organization as the complete Phase 7C1 boundary; keep central idea, author purpose, claim/evidence, vocabulary, across-genres, Grade 4, and timed FAST practice deferred.
+
+Decision: preserve the simplified guided journey without exceptions. Structure Station is planner-selected through Start Journey or Continue Journey; Home retains exactly Start Journey and Parent Area, world cards remain display-only, and progression outcomes retain one child-facing action. Existing mastery thresholds, review intervals, rewards, persistence, Parent PIN, assessments, and planner priority are unchanged.
