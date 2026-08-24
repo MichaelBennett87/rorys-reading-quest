@@ -233,6 +233,46 @@ export interface DerivationalSuffixGuide {
   contentVersion: string
 }
 
+export type MultisyllablePatternLabel =
+  | 'closed'
+  | 'open'
+  | 'vowel-consonant-e'
+  | 'vowel-team'
+  | 'r-controlled'
+  | 'consonant-le'
+
+export type MultisyllableMorphologicalHintKind =
+  | 'compound-part'
+  | 'prefix'
+  | 'base'
+  | 'suffix'
+
+export interface MultisyllableMorphologicalHint {
+  text: string
+  kind: MultisyllableMorphologicalHintKind
+}
+
+export interface MultisyllableDecodingTarget {
+  targetId: string
+  surfaceWord: string
+  sourceSentenceId: string
+  syllableCount: number
+  pronunciationChunks: RootSyllableChunk[]
+  syllablePatterns: MultisyllablePatternLabel[]
+  morphologicalHints: MultisyllableMorphologicalHint[]
+  decodingSteps: string[]
+  wholeWordSpeechText: string
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
+export interface MultisyllableDecodingGuide {
+  passageId: string
+  targets: MultisyllableDecodingTarget[]
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
 export type MeaningClueStrategyKind =
   | 'context-clue'
   | 'word-relationship'
@@ -468,6 +508,7 @@ export interface ContentPack {
   morphologyGuides?: MorphologyGuide[]
   rootDecodingGuides?: RootDecodingGuide[]
   derivationalSuffixGuides?: DerivationalSuffixGuide[]
+  multisyllableDecodingGuides?: MultisyllableDecodingGuide[]
   meaningClueGuides?: MeaningClueGuide[]
   wordplayGuides?: WordplayGuide[]
   retellGuides?: RetellGuide[]
@@ -547,6 +588,9 @@ export interface ContentPackAuditIssue {
      | 'missing_derivational_suffix_guide'
      | 'derivational_suffix_guide_count_mismatch'
      | 'derivational_suffix_guide_invalid'
+     | 'missing_multisyllable_decoding_guide'
+     | 'multisyllable_decoding_guide_count_mismatch'
+     | 'multisyllable_decoding_guide_invalid'
    | 'missing_meaning_clue_guide'
    | 'meaning_clue_guide_count_mismatch'
    | 'meaning_clue_guide_invalid'

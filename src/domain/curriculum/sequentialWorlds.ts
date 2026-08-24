@@ -137,8 +137,15 @@ const grade3Roadmaps: readonly SequentialWorldRoadmap[] = [
       ...plannedUnit('g3-wg-unit-2', 'Suffix Shifter', 'ELA.3.F.1.3', 'derivational suffixes and how they change parts of speech', '7A2', 2, 3),
       lockedMessage: 'Complete Root Reactor to unlock Suffix Shifter.',
     },
-    plannedUnit('g3-wg-unit-3', 'Multisyllable Mountain', 'ELA.3.F.1.3', 'decoding Grade 3 multisyllabic words', '7A3', 3, 4),
-    plannedUnit('g3-wg-unit-4', 'Fluency Flight Grade 3', 'ELA.3.F.1.4', 'accuracy, automaticity, phrasing, and expression practice without oral scoring', '7A4', 4, 5),
+    {
+      ...plannedUnit('g3-wg-unit-3', 'Multisyllable Mountain', 'ELA.3.F.1.3', 'decoding Grade 3 multisyllabic words', '7A3', 3, 4),
+      lockedMessage: 'Complete Suffix Shifter to unlock Multisyllable Mountain.',
+    },
+    {
+      ...plannedUnit('g3-wg-unit-4', 'Fluency Flight Grade 3', 'ELA.3.F.1.4', 'accuracy, automaticity, phrasing, and expression practice without oral scoring', '7A4', 4, 5),
+      lockedMessage: 'Complete Multisyllable Mountain to unlock Fluency Flight Grade 3.',
+      futureContentMessage: 'Fluency Flight Grade 3 quests are being prepared.',
+    },
   ]),
   plannedRoadmap('story-scouts', 'g3-story-scouts-prose', 'Grade 3 Literary Analysis', [
     plannedUnit('g3-ss-unit-1', 'Character Arc Camp', 'ELA.3.R.1.1', 'how characters develop throughout a plot', '7B1', 1, 2),
