@@ -93,3 +93,9 @@ Character Arc Camp persists no passage text, dialogue, thoughts, stage statement
 Theme Development Trail persists no story text, supported or distractor theme statement, stage evidence, turning-point statement, guide metadata, question text, submitted answer, correct answer, explanation, or Word Help curriculum text. Parent and print views use benchmark, grade, unit, and aggregate progress facts only and explicitly separate curriculum coverage from learner mastery.
 
 Storage keys, schema version 1, Parent PIN behavior, assessment records, bounded attempt history, active-session recovery, and optional local browser speech remain unchanged. The phase adds no backend, cloud sync, analytics, telemetry, advertising, microphone, speech recognition, external speech provider, or live AI.
+
+## Phase 7B3 privacy and child-safety boundary
+
+Perspective Portal persists no story text, character-perspective guide, perspective or motivation statement, dialogue/thought excerpt, comparison, change statement, question text, submitted answer, correct answer, explanation, or Word Help curriculum text. Parent and print surfaces use friendly benchmark, grade, unit, and aggregate progress facts only; implemented DRAFT curriculum coverage remains separate from learner mastery.
+
+The stories use original child-safe situations and reasonable motivations, without private child details, real private locations, trauma, political or ideological conflict, shaming, villain/hero simplification, backend services, cloud sync, analytics, telemetry, microphone access, speech recognition, external speech, or live AI. Schema version 1, storage keys, Parent PIN, assessments, bounded attempt history, and active-session recovery remain unchanged.

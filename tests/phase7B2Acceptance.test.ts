@@ -11,14 +11,15 @@ function read(relativePath: string): string {
 }
 
 describe('Phase 7B2 acceptance documentation and coverage', () => {
-  test('records the bounded Theme Development Trail release and keeps Phase 7B3 unstarted', () => {
+  test('preserves the bounded historical Phase 7B2 report after Phase 7B3 lands', () => {
     const report = read('docs/PHASE_7B2_REPORT.md')
     const tasks = read('TASKS.md')
     expect(report).toContain('Starting local and remote SHA: `6255b41bf5eece960331afca4678ebd1b5e87cea`')
     expect(report).toContain('Phase 7B3 Perspective Portal Grade 3 is next and remains unstarted.')
     expect(tasks).toContain('- [x] Phase 7B1 - Character Arc Camp')
     expect(tasks).toContain('- [x] Phase 7B2 - Theme Development Trail')
-    expect(tasks).toContain('- [ ] Phase 7B3 - Perspective Portal Grade 3')
+    expect(tasks).toContain('- [x] Phase 7B3 - Perspective Portal Grade 3')
+    expect(tasks).toContain('- [ ] Phase 7B4 - Poem Form Observatory')
     expect(tasks).toContain('- [ ] Phase 7B')
     expect(tasks).toContain('- [ ] Phase 7')
   })

@@ -456,3 +456,12 @@ Decision: permit fresh difficulty-4 fluency practice to complete the Grade 3 Wor
 - Mark `ELA.3.R.1.2` curriculum coverage IMPLEMENTED / DRAFT while keeping learner mastery and human approval separate.
 - Preserve exact Grade 2 Story Scouts, Character Arc Camp, and Theme Development Trail review identity, permanent truth gates, evaluator behavior, feedback semantics, persistence, Parent PIN, assessments, and Pages configuration.
 - Defer Perspective Portal Grade 3, poetry, informational, vocabulary, across-genres content, Grade 4, and FAST timed practice.
+
+## Phase 7B3 decisions
+
+- Activate only `g3-ss-unit-3` with the DRAFT `g3-story-scouts-perspective-portal` pack after Theme Development Trail completion.
+- Model character perspective as a complete text-supported view of a shared situation; reject isolated feelings, traits, narrator point of view, author perspective, and unsupported inferred motivations as substitutes.
+- Require evidence for both characters and include four different, two partly-similar, one similar comparison, plus three supported perspective changes across the pack.
+- Mark `ELA.3.R.1.3` curriculum coverage IMPLEMENTED / DRAFT while keeping learner mastery and human approval separate.
+- Preserve exact Grade 2 and all three Grade 3 Story Scouts review identities, permanent truth gates, evaluator and feedback behavior, schema-version-1 persistence, Parent PIN, assessments, thresholds, intervals, rewards, and Pages configuration.
+- Defer Poem Form Observatory, Grade 3 informational, vocabulary, across-genres content, Grade 4, and FAST timed practice.

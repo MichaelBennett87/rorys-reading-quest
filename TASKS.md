@@ -90,7 +90,7 @@
   - [ ] Phase 7B: Grade 3 prose and poetry
     - [x] Phase 7B1: Character Arc Camp
     - [x] Phase 7B2: Theme Development Trail
-    - [ ] Phase 7B3: Perspective Portal Grade 3
+    - [x] Phase 7B3: Perspective Portal Grade 3
     - [ ] Phase 7B4: Poem Form Observatory
   - [ ] Phase 7C: Grade 3 informational reading
     - [ ] Phase 7C1: Structure Station
@@ -117,7 +117,8 @@
 - [ ] Phase 7B
 - [x] Phase 7B1 - Character Arc Camp
 - [x] Phase 7B2 - Theme Development Trail
-- [ ] Phase 7B3 - Perspective Portal Grade 3
+- [x] Phase 7B3 - Perspective Portal Grade 3
+- [ ] Phase 7B4 - Poem Form Observatory
 - [ ] Phase 7
 
-Phase 7B1 and Phase 7B2 are complete. Phase 7B and Phase 7 remain incomplete, and Phase 7B3 has not started.
+Phase 7B1, Phase 7B2, and Phase 7B3 are complete. Phase 7B and Phase 7 remain incomplete, and Phase 7B4 has not started.

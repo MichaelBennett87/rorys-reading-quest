@@ -125,3 +125,7 @@ Grade 3 Story Scouts now begins with prerequisite-gated Character Arc Camp. The 
 ## Phase 7B2 Theme Development Trail
 
 Theme Development Trail activates Grade 3 Story Scouts Trail 2 only after Character Arc Camp completes. Seven original DRAFT stories and guides teach a complete best-supported theme, theme versus topic and summary, and how beginning, middle, turning-point, and ending details develop that theme. The pack uses only existing selected-response forms and reports `ELA.3.R.1.2` curriculum coverage as IMPLEMENTED / DRAFT. Character perspective, narrator point of view, poetry, unrestricted writing, learner-mastery claims, and FAST prediction remain outside this phase.
+
+## Phase 7B3 Perspective Portal Grade 3
+
+Perspective Portal activates Grade 3 Story Scouts Trail 3 only after Theme Development Trail completes. Seven original DRAFT stories and perspective guides teach how two characters see the same situation through dialogue, actions, thoughts, feelings, noticing, choices, motivations, similarities, differences, and supported viewpoint change. The pack reports `ELA.3.R.1.3` curriculum coverage as IMPLEMENTED / DRAFT while keeping feeling-only labels, traits, narrator point of view, author perspective, poetry, unrestricted writing, learner-mastery claims, and FAST prediction outside the scored boundary.

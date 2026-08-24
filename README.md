@@ -6,9 +6,9 @@ Rory's Reading Quest is a local-first, child-safe reading-learning foundation fo
 
 ## Current Status
 
-- Status: `Phase 6 complete and Grade 2 frozen; Phase 7A complete; Phase 7B1 and Phase 7B2 complete; all 1,122 active questions are fingerprint-bound to pack ledgers and executable canonical/adversarial grading contracts; ELA.3.F.1.3, ELA.3.R.1.1, and ELA.3.R.1.2 curriculum coverage are IMPLEMENTED / DRAFT; ELA.3.F.1.4 is SUPPORTIVE_PRACTICE / DRAFT; no Grade 3 row is APPROVED`.
-- Phase continuity: Phase 7 remains in progress. Grade 3 Story Scouts now includes Character Arc Camp and Theme Development Trail behind domain readiness. Curriculum coverage is separate from learner mastery, and no global Grade 3 diagnosis or FAST prediction is made.
-- Historical completion markers remain explicit: `Phase 6F0 complete; Phase 6F1 complete; Phase 6F2 complete; Phase 6F3 complete; Phase 6F4 complete; Phase 6 complete; Grade 2 curriculum coverage complete; Phase 7A0 complete; Phase 7A1 complete; Phase 7A1.5 complete; Phase 7A2 complete; Phase 7A3 complete; Phase 7A4 complete; Phase 7A complete; Phase 7B1 complete; Phase 7B2 complete; Phase 7B incomplete`.
+- Status: `Phase 6 complete and Grade 2 frozen; Phase 7A complete; Phase 7B1, Phase 7B2, and Phase 7B3 complete; all 1,163 active questions are fingerprint-bound to pack ledgers and executable canonical/adversarial grading contracts; ELA.3.F.1.3 and ELA.3.R.1.1 through ELA.3.R.1.3 curriculum coverage are IMPLEMENTED / DRAFT; ELA.3.F.1.4 is SUPPORTIVE_PRACTICE / DRAFT; no Grade 3 row is APPROVED`.
+- Phase continuity: Phase 7 remains in progress. Grade 3 Story Scouts now includes Character Arc Camp, Theme Development Trail, and Perspective Portal behind domain readiness. Curriculum coverage is separate from learner mastery, and no global Grade 3 diagnosis or FAST prediction is made.
+- Historical completion markers remain explicit: `Phase 6F0 complete; Phase 6F1 complete; Phase 6F2 complete; Phase 6F3 complete; Phase 6F4 complete; Phase 6 complete; Grade 2 curriculum coverage complete; Phase 7A0 complete; Phase 7A1 complete; Phase 7A1.5 complete; Phase 7A2 complete; Phase 7A3 complete; Phase 7A4 complete; Phase 7A complete; Phase 7B1 complete; Phase 7B2 complete; Phase 7B3 complete; Phase 7B incomplete`.
 - Historical Phase 7A0 milestone: Root Reactor is the first Grade 3 production pack.
 - Historical Phase 7A1 milestone: ELA.3.F.1.3 has partial authored DRAFT coverage, and no Grade 3 benchmark is fully implemented or APPROVED at that checkpoint.
 - A completed `LessonResult` now drives verification, advancement, fresh practice, same-level remediation, prerequisite rebuilding, spaced review, or a structured content-needed outcome.
@@ -31,8 +31,8 @@ Rory's Reading Quest is a local-first, child-safe reading-learning foundation fo
 
 - Presentation: React/TypeScript shell with explicit local screen state and a small progress hook.
 - Domain: pure lesson evaluation, adaptive progression, deterministic lesson selection, remediation return, review scheduling, and assistance summarization.
-- Content: twenty-two frozen Grade 2 packs retain 154 DRAFT lessons, 161 original DRAFT passages, 889 DRAFT questions, and 614 DRAFT word-support targets. Six Grade 3 packs provide 42 lessons, 42 original passages, 233 questions, and 161 support targets across Word Forge and Story Scouts. Combined active totals are 28 packs, 196 lessons, 203 texts, 1,122 questions, and 775 support targets; legacy development content remains excluded from fresh selection.
-- Question truth gate: the active registry derives a 1,122-record audit inventory, a key-free blind-review projection, 28 per-pack JSON ledgers, deterministic content fingerprints, and evaluator tests covering 1,122 canonical, 374 canonical-equivalent, and 14,458 adversarial submissions.
+- Content: twenty-two frozen Grade 2 packs retain 154 DRAFT lessons, 161 original DRAFT passages, 889 DRAFT questions, and 614 DRAFT word-support targets. Seven Grade 3 packs provide 49 lessons, 49 original passages, 274 questions, and 189 support targets across Word Forge and Story Scouts. Combined active totals are 29 packs, 203 lessons, 210 texts, 1,163 questions, and 803 support targets; legacy development content remains excluded from fresh selection.
+- Question truth gate: the active registry derives a 1,163-record audit inventory, a key-free blind-review projection, 29 per-pack JSON ledgers, deterministic content fingerprints, and evaluator tests covering 1,163 canonical, 388 canonical-equivalent, and 14,840 adversarial submissions.
 - Grade 3 fluency boundary: Fluency Flight Grade 3 provides optional model listening, phrase grouping, punctuation cues, expression support, and rereading practice for `ELA.3.F.1.4`. It has no microphone, recording, WCPM, pronunciation score, prosody score, oral-accuracy score, oral-mastery claim, or FAST prediction.
 - Persistence: version-1 child progress plus separate parent-access and parent-record stores behind small interfaces, with safe in-memory fallback and optional assistance-event persistence.
 - Runtime services: browser only; no telemetry, advertising, cloud service, backend, or remote content request. Phase 5A adds a local parent PIN gate and parent analytics summaries without changing child learning flow. Phase 5B1 adds the parent dashboard presentation on top of the same local data, Phase 5B2 adds local assessment CRUD plus a browser-print preview, and Phase 6A1 through Phase 6C4 add local curriculum packs without runtime generation or external content.
@@ -40,10 +40,10 @@ Rory's Reading Quest is a local-first, child-safe reading-learning foundation fo
 ## Privacy and Assessment Boundary
 
 Persisted records contain stable local IDs and educational summaries only. Passage text, explanation text, correct-answer text, private child identifiers, official FAST reports, official FAST scores, and plaintext PINs are not persisted. Parent access and assessment records use separate local stores. This application is not an official assessment or diagnostic system.
-# Phase 7B2 current status
+# Phase 7B3 current status
 
 - Phase 7A is complete.
-- Phase 7B1 Character Arc Camp and Phase 7B2 Theme Development Trail are complete and active behind Grade 2 Story Scouts readiness.
-- `ELA.3.R.1.1` and `ELA.3.R.1.2` curriculum coverage are IMPLEMENTED / DRAFT; curriculum availability does not claim learner mastery.
-- Perspective Portal Grade 3 in Phase 7B3 is next and remains unstarted.
+- Phase 7B1 Character Arc Camp, Phase 7B2 Theme Development Trail, and Phase 7B3 Perspective Portal Grade 3 are complete and active behind Grade 2 Story Scouts readiness.
+- `ELA.3.R.1.1`, `ELA.3.R.1.2`, and `ELA.3.R.1.3` curriculum coverage are IMPLEMENTED / DRAFT; curriculum availability does not claim learner mastery.
+- Poem Form Observatory in Phase 7B4 is next and remains unstarted.
 - The live GitHub Pages site remains available.

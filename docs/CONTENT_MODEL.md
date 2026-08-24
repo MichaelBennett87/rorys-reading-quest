@@ -101,3 +101,9 @@ Phase 7B1 adds optional `CharacterDevelopmentGuide` records to a content pack. A
 Phase 7B2 adds optional `ThemeDevelopmentGuide` records. Each guide links to one literary passage, owns one complete supported theme plus bounded distractor candidates, and records ordered beginning, middle, and end stages with resolved evidence. Turning-point, character-connection, conflict-connection, and development-summary fields make the progression of the theme explicit for validation without exposing guide answers to learners before grading.
 
 Guide records remain DRAFT curriculum-only metadata. Passage text, theme candidates, stage statements, explanations, answer keys, and Word Help curriculum text are excluded from persistence and print. All forty-one questions use the permanent inventory, fingerprint, semantic-audit, and production evaluator contracts.
+
+## Character-perspective guides
+
+Phase 7B3 adds optional `CharacterPerspectiveGuide` records. Each guide links to one literary passage and stores at least two character states toward a shared situation, complete perspective and motivation statements, typed dialogue/thought/action/feeling/noticing/choice evidence, a supported similar/different/partly-similar comparison, optional earlier/later perspective change, and important evidence IDs. Validation keeps perspective distinct from an isolated feeling, trait, narrator point of view, or author viewpoint.
+
+Guide records remain DRAFT curriculum-only metadata. Passage text, perspective statements, motivations, excerpts, explanations, answer keys, and Word Help curriculum text are excluded from persistence and print. All forty-one questions use the permanent inventory, fingerprint, semantic-audit, and production evaluator contracts.

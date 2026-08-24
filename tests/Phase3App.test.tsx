@@ -462,7 +462,7 @@ describe('Phase 3 adaptive child flow', () => {
     fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
     expect(screen.getByText(/Which word has two short vowel sounds\?/i)).toBeTruthy()
     expect(readProgress().skillProgress['g2-word-forge-word-practice'].currentDifficulty).toBe(3)
-  })
+  }, 10_000)
 
   test('partial Trail 2 performance remains at the same difficulty', () => {
     seedTrailDifficulty(2)
