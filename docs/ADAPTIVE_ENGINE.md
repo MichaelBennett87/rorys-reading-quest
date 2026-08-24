@@ -116,3 +116,7 @@ Poem Form Observatory starts at difficulty 1 after the existing Grade 2 Poetry P
 ## Phase 7C1 Structure Station progression
 
 Grade 3 Information Detectives initializes at difficulty 1 only after Grade 2 Information Detectives reaches completion difficulty 5 and active Structure Station content exists. Two distinct independent strong checkpoints verify then advance to difficulty 2, where Central Idea Engine remains unavailable and planning fails closed with structured content-needed. Partial work stays at difficulty 1; two consecutive low outcomes route to difficulty-0 Structure Station remediation; rebuilding returns to difficulty 1 without claiming mastery. Active session, verification, remediation, due review, ordinary progression, and content-needed priorities remain unchanged, and Start/Continue Journey remains the only child launch path.
+
+## Phase 7C2 Central Idea Engine progression
+
+Central Idea Engine becomes available only when Grade 3 Information Detectives reaches difficulty 2 after Structure Station completion. Two distinct independent strong checkpoints verify then advance to difficulty 3, where Purpose Development Path remains unavailable and planning fails closed with structured content-needed. Partial work remains at difficulty 2; two consecutive low outcomes route to difficulty-1 Central Idea Engine remediation; rebuilding returns to difficulty 2 without claiming mastery. Active sessions, verification, remediation, due review, ordinary progression, deterministic freshness, and unit-affine review retain their established priority.

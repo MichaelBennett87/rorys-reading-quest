@@ -143,3 +143,7 @@ Poem Form Observatory activates the existing `g3-poetry-planet` track behind Gra
 ## Phase 7C1: Grade 3 Information Detectives
 
 Structure Station activates `g3-information-detectives-reading` behind verified Grade 2 Information Detectives completion. Seven DRAFT lessons teach how informational text features contribute to meaning and how chronology, comparison, and cause/effect organize important ideas. Central idea, author purpose, claim/evidence, and informational writing remain deferred. The protected child journey remains unchanged: the planner selects Structure Station through Start/Continue Journey and no child-facing curriculum menu is added.
+
+## Phase 7C2: Central Idea Engine
+
+Central Idea Engine adds seven DRAFT Grade 3 informational lessons at difficulty 2. Learners distinguish topic, complete central idea, summary, relevant detail, and minor detail; identify stated and implied ideas; and connect evidence across sections. Author purpose, author claims, argumentative evidence, vocabulary, and written-response scoring remain deferred. Structure Station flows automatically into this unit through the existing planner, while Home remains limited to Start Journey and Parent Area.

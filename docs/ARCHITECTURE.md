@@ -147,3 +147,7 @@ The existing Grade 3 Story Scouts track resolves unit 3 at difficulty 3. Perspec
 ## Phase 7C1 informational-structure architecture
 
 Structure Station reuses `InformationalTextCard`, passage evidence resolution, lesson catalog, global planning, review affinity, parent reporting, and print privacy. `ContentPack` may now include DRAFT `informationalStructureGuides`; the informational feature union adds accessible timelines and sidebars. Validation and pack audit bind every guide, feature contribution, structure-evidence record, and source ID without persisting or printing guide content. The protected child route remains `home`, `lesson_run`, `progression_outcome`, and `parent_gate`; Home retains only Start Journey and Parent Area.
+
+## Phase 7C2 central-idea architecture
+
+Central Idea Engine extends the existing optional `CentralIdeaGuide` compatibly with section-owned relevant and minor details, section-contribution records, and a synthesis statement. `buildCentralIdeaEngineGuideAudit` enforces the exact seven-text pack shape, stated/inferred balance, cross-section evidence, complete-thought central ideas, and topic/summary/minor-detail boundaries. The existing informational renderer, evaluator, review affinity, planner, persistence schema, parent reporting, print privacy, and four-state guided child route are reused unchanged.

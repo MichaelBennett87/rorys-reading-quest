@@ -4,7 +4,7 @@
 
 Phase 7 extends the six existing reading worlds into separate Grade 3 curriculum tracks. Advancement is domain-specific: a Grade 3 track can become playable only after its matching Grade 2 track reaches its verified completion difficulty and active Grade 3 content exists. This is not a global grade diagnosis, a learner-mastery claim, or a FAST prediction.
 
-Phase 7A and Phase 7B are complete. Phase 7C1 adds Structure Station as the ninth Grade 3 production pack, bringing Grade 3 to 63 DRAFT lessons, 63 original texts, 356 questions, and 245 Word Help targets. `ELA.3.F.1.3`, `ELA.3.R.1.1` through `ELA.3.R.1.4`, and `ELA.3.R.2.1` are IMPLEMENTED / DRAFT. `ELA.3.F.1.4` is SUPPORTIVE_PRACTICE / DRAFT with no oral measurement. No Grade 3 row is APPROVED and no status claims learner mastery. Phase 7C remains incomplete because Central Idea Engine is unstarted.
+Phase 7A and Phase 7B are complete. Phase 7C1 and Phase 7C2 bring Grade 3 to 10 production packs, 70 DRAFT lessons, 70 original texts, 397 questions, and 273 Word Help targets. `ELA.3.F.1.3`, `ELA.3.R.1.1` through `ELA.3.R.1.4`, `ELA.3.R.2.1`, and `ELA.3.R.2.2` are IMPLEMENTED / DRAFT. `ELA.3.F.1.4` is SUPPORTIVE_PRACTICE / DRAFT with no oral measurement. No Grade 3 row is APPROVED and no status claims learner mastery. Phase 7C remains incomplete because Purpose Development Path is unstarted.
 
 ## Instructional inventory
 
@@ -83,3 +83,7 @@ Poem Form Observatory completes authored DRAFT coverage of `ELA.3.R.1.4` through
 ## Phase 7C1 implementation snapshot
 
 Structure Station (`g3-id-unit-1`) activates Grade 3 Information Detectives after the Grade 2 track reaches completion difficulty 5. It covers text-feature contributions, chronology, comparison, and cause/effect, making `ELA.3.R.2.1` IMPLEMENTED / DRAFT. Grade 3 now has six implemented benchmarks, one supportive-practice benchmark, and nine planned benchmarks. Central Idea Engine remains unstarted; no learner mastery or approval is inferred.
+
+## Phase 7C2 implementation snapshot
+
+Central Idea Engine (`g3-id-unit-2`) becomes available after Structure Station completion. It covers stated and implied central ideas, relevant versus minor details, and evidence across informational sections, making `ELA.3.R.2.2` IMPLEMENTED / DRAFT. Grade 3 now has seven implemented benchmarks, one supportive-practice benchmark, and eight planned benchmarks. Purpose Development Path remains unstarted; no learner mastery or approval is inferred.

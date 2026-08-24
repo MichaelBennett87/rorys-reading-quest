@@ -100,7 +100,7 @@
     - [x] Phase 7B4: Poem Form Observatory
   - [ ] Phase 7C: Grade 3 informational reading
     - [x] Phase 7C1: Structure Station
-    - [ ] Phase 7C2: Central Idea Engine
+    - [x] Phase 7C2: Central Idea Engine
     - [ ] Phase 7C3: Purpose Development Path
     - [ ] Phase 7C4: Claim and Evidence Court
   - [ ] Phase 7D: Grade 3 across genres and vocabulary
@@ -127,7 +127,8 @@
 - [x] Phase 7B4 - Poem Form Observatory
 - [ ] Phase 7C
 - [x] Phase 7C1: Structure Station
-- [ ] Phase 7C2: Central Idea Engine
+- [x] Phase 7C2: Central Idea Engine
+- [ ] Phase 7C3: Purpose Development Path
 - [ ] Phase 7
 
-Phase 7A and Phase 7B are complete. Phase 7C1 is complete, Phase 7C remains incomplete, Phase 7C2 remains unstarted, and Phase 7 remains incomplete.
+Phase 7A and Phase 7B are complete. Phase 7C1 and Phase 7C2 are complete, Phase 7C remains incomplete, Phase 7C3 remains unstarted, and Phase 7 remains incomplete.

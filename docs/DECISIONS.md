@@ -486,3 +486,9 @@ Decision: permit fresh difficulty-4 fluency practice to complete the Grade 3 Wor
 Decision: activate only `g3-information-detectives-reading` through the DRAFT Structure Station pack after verified Grade 2 Information Detectives completion. Reuse the existing informational renderer and add only timeline/sidebar feature variants plus optional `InformationalStructureGuide` metadata. Treat feature contribution and chronology/comparison/cause-effect organization as the complete Phase 7C1 boundary; keep central idea, author purpose, claim/evidence, vocabulary, across-genres, Grade 4, and timed FAST practice deferred.
 
 Decision: preserve the simplified guided journey without exceptions. Structure Station is planner-selected through Start Journey or Continue Journey; Home retains exactly Start Journey and Parent Area, world cards remain display-only, and progression outcomes retain one child-facing action. Existing mastery thresholds, review intervals, rewards, persistence, Parent PIN, assessments, and planner priority are unchanged.
+
+## Phase 7C2 decisions
+
+Decision: implement `ELA.3.R.2.2` only through Central Idea Engine at `g3-id-unit-2`, reusing the active Grade 3 Information Detectives track and existing informational renderer. Extend the shared central-idea guide compatibly for Grade 3 section evidence rather than create a competing model. Treat topic, complete central idea, stated/inferred ideas, relevant/minor details, and support across sections as the complete scope; defer author purpose, author claims, vocabulary, across genres, Grade 4, and FAST practice.
+
+Decision: preserve the simplified guided journey and all progression evidence rules. Central Idea Engine is planner-selected after Structure Station completion, remediation remains unit-affine, reviews remain separately identified by unit and version, and Home continues to expose only Start Journey and Parent Area.
