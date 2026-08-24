@@ -1,5 +1,6 @@
 import type { TableMatchSelectionMode } from '../../domain/content'
 import type { LessonChoice } from '../../domain/lesson'
+import { deriveAnswerPresentationState } from '../../domain/lesson'
 
 interface MatchRow {
   id: string
@@ -7,12 +8,14 @@ interface MatchRow {
   options: LessonChoice[]
   selectedChoiceId: string
   disabledChoiceIds?: string[]
+  correctChoiceId?: string
 }
 
 interface TableMatchQuestionProps {
   rows: MatchRow[]
   disabled: boolean
   selectionMode?: TableMatchSelectionMode
+  submitted?: boolean
   onSelectChoice: (rowId: string, choiceId: string) => void
 }
 
@@ -20,6 +23,7 @@ export function TableMatchQuestion({
   rows,
   disabled,
   selectionMode = 'independent',
+  submitted = false,
   onSelectChoice,
 }: TableMatchQuestionProps) {
   const useEachOnce = selectionMode === 'use_each_once'
@@ -34,8 +38,19 @@ export function TableMatchQuestion({
         <div>Item</div>
         <div>Match</div>
       </div>
-      {rows.map((row) => (
-        <div className="table-match-row" key={row.id}>
+      {rows.map((row) => {
+        const answerState = deriveAnswerPresentationState({
+          submitted,
+          selected: Boolean(row.selectedChoiceId),
+          correct: Boolean(row.correctChoiceId) && row.selectedChoiceId === row.correctChoiceId,
+        })
+        const correctOption = row.options.find((option) => option.id === row.correctChoiceId)
+        return (
+        <div
+          className={`table-match-row answer-state-${answerState}`}
+          data-answer-state={answerState}
+          key={row.id}
+        >
           <label htmlFor={`match-${row.id}`}>{row.prompt}</label>
           <select
             id={`match-${row.id}`}
@@ -55,8 +70,17 @@ export function TableMatchQuestion({
               </option>
             ))}
           </select>
+          {submitted && answerState === 'correct' && (
+            <p className="table-row-result table-row-result-correct"><span aria-hidden="true">✓</span> Correct match</p>
+          )}
+          {submitted && answerState === 'incorrect' && (
+            <p className="table-row-result table-row-result-incorrect">
+              <span aria-hidden="true">×</span> Needs correction. Correct match: {correctOption?.text ?? 'Review this row.'}
+            </p>
+          )}
         </div>
-      ))}
+        )
+      })}
     </section>
   )
 }

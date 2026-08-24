@@ -241,6 +241,22 @@ export function LessonScreen({
   const currentPassageEvidenceSnippets = currentPassage
     ? evidenceSnippetsByPassageId[currentPassage.passageIdentifier] ?? []
     : []
+  const feedbackSubmittedAnswer = step === 'feedback' ? pendingFeedback?.submittedAnswer : null
+  const displayedSelectedChoiceId = typeof feedbackSubmittedAnswer === 'string'
+    ? feedbackSubmittedAnswer
+    : selectedChoiceId
+  const displayedSelectedChoiceIds = Array.isArray(feedbackSubmittedAnswer)
+    ? feedbackSubmittedAnswer.map(String)
+    : selectedChoiceIds
+  const displayedSelectedSegmentIds = Array.isArray(feedbackSubmittedAnswer)
+    ? feedbackSubmittedAnswer.map(String)
+    : selectedSegmentIds
+  const feedbackPairAnswer = isStringRecord(feedbackSubmittedAnswer) ? feedbackSubmittedAnswer : null
+  const displayedPartAChoiceId = feedbackPairAnswer?.partA ?? selectedPartAChoiceId
+  const displayedPartBChoiceId = feedbackPairAnswer?.partB ?? selectedPartBChoiceId
+  const displayedMappings = isStringRecord(feedbackSubmittedAnswer) && !('partA' in feedbackSubmittedAnswer)
+    ? feedbackSubmittedAnswer
+    : selectedMappings
 
   const submissionReady = (() => {
     switch (currentQuestion.questionType) {
@@ -530,8 +546,10 @@ export function LessonScreen({
               questionId={currentQuestion.questionId}
               questionPrompt={currentQuestion.prompt}
               choices={currentQuestion.choices}
-              selectedChoiceId={selectedChoiceId}
+              selectedChoiceId={displayedSelectedChoiceId}
               disabled={step !== 'question'}
+              submitted={step === 'feedback'}
+              correctChoiceIds={currentQuestion.correctChoiceIds}
               onSelectChoice={setSelectedChoiceId}
             />
           )}
@@ -541,8 +559,10 @@ export function LessonScreen({
               questionId={currentQuestion.questionId}
               questionPrompt={currentQuestion.prompt}
               choices={currentQuestion.choices}
-              selectedChoiceIds={selectedChoiceIds}
+              selectedChoiceIds={displayedSelectedChoiceIds}
               disabled={step !== 'question'}
+              submitted={step === 'feedback'}
+              correctChoiceIds={currentQuestion.correctChoiceIds}
               onToggleChoice={toggleChoice}
             />
           )}
@@ -552,8 +572,10 @@ export function LessonScreen({
               questionPrompt={currentQuestion.prompt}
               allowMultiple={currentQuestion.allowMultiple}
               segments={currentQuestion.segments}
-              selectedSegmentIds={selectedSegmentIds}
+              selectedSegmentIds={displayedSelectedSegmentIds}
               disabled={step !== 'question'}
+              submitted={step === 'feedback'}
+              correctSegmentIds={currentQuestion.correctSegmentIds}
               onToggleSegment={toggleSegment}
             />
           )}
@@ -564,9 +586,12 @@ export function LessonScreen({
               partAChoices={(currentQuestion as EvidencePairLessonQuestion).partAChoices}
               partBPrompt={(currentQuestion as EvidencePairLessonQuestion).partBPrompt}
               partBChoices={(currentQuestion as EvidencePairLessonQuestion).partBChoices}
-              selectedPartAChoiceId={selectedPartAChoiceId}
-              selectedPartBChoiceId={selectedPartBChoiceId}
+              selectedPartAChoiceId={displayedPartAChoiceId}
+              selectedPartBChoiceId={displayedPartBChoiceId}
               disabled={step !== 'question'}
+              submitted={step === 'feedback'}
+              partACorrectChoiceId={(currentQuestion as EvidencePairLessonQuestion).partACorrectChoiceId}
+              partBCorrectChoiceId={(currentQuestion as EvidencePairLessonQuestion).partBCorrectChoiceId}
               onPartASelect={setSelectedPartAChoiceId}
               onPartBSelect={setSelectedPartBChoiceId}
             />
@@ -578,7 +603,8 @@ export function LessonScreen({
                 id: row.id,
                 prompt: row.prompt,
                 options: row.options,
-                selectedChoiceId: selectedMappings[row.id] ?? '',
+                selectedChoiceId: displayedMappings[row.id] ?? '',
+                correctChoiceId: row.correctChoiceId,
                 disabledChoiceIds: tableMatchSelectionMode === 'use_each_once'
                   ? currentQuestion.rows
                       .filter((otherRow) => otherRow.id !== row.id)
@@ -587,6 +613,7 @@ export function LessonScreen({
                   : [],
               }))}
               disabled={step !== 'question'}
+              submitted={step === 'feedback'}
               selectionMode={tableMatchSelectionMode}
               onSelectChoice={updateMapping}
             />
@@ -630,4 +657,9 @@ function deriveSupportLevels(events: AssistanceEvent[]): Record<string, Assistan
     levels[event.targetId] = Math.max(current, event.assistanceLevel) as AssistanceLevel
     return levels
   }, {})
+}
+
+function isStringRecord(value: unknown): value is Record<string, string> {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return false
+  return Object.values(value as Record<string, unknown>).every((entry) => typeof entry === 'string')
 }

@@ -1,4 +1,6 @@
 import type { LessonChoice } from '../../domain/lesson'
+import { deriveAnswerPresentationState } from '../../domain/lesson'
+import { AnswerStateMarker } from './AnswerStateMarker'
 
 interface MultipleChoiceQuestionProps {
   questionId: string
@@ -6,6 +8,8 @@ interface MultipleChoiceQuestionProps {
   choices: LessonChoice[]
   selectedChoiceId?: string
   disabled: boolean
+  submitted?: boolean
+  correctChoiceIds?: string[]
   onSelectChoice: (choiceId: string) => void
 }
 
@@ -15,6 +19,8 @@ export function MultipleChoiceQuestion({
   choices,
   selectedChoiceId,
   disabled,
+  submitted = false,
+  correctChoiceIds = [],
   onSelectChoice,
 }: MultipleChoiceQuestionProps) {
   return (
@@ -23,8 +29,17 @@ export function MultipleChoiceQuestion({
       <div className="choice-grid">
         {choices.map((choice) => {
           const isSelected = selectedChoiceId === choice.id
+          const answerState = deriveAnswerPresentationState({
+            submitted,
+            selected: isSelected,
+            correct: correctChoiceIds.includes(choice.id),
+          })
           return (
-            <label key={choice.id} className={`choice-option ${isSelected ? 'selected' : ''}`}>
+            <label
+              key={choice.id}
+              className={`choice-option ${isSelected ? 'selected' : ''} answer-state-${answerState}`}
+              data-answer-state={answerState}
+            >
               <input
                 type="radio"
                 name={`question-${questionId}`}
@@ -33,7 +48,8 @@ export function MultipleChoiceQuestion({
                 disabled={disabled}
                 onChange={() => onSelectChoice(choice.id)}
               />
-              <span>{choice.text}</span>
+              <span className="answer-choice-copy">{choice.text}</span>
+              <AnswerStateMarker state={answerState} />
             </label>
           )
         })}

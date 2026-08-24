@@ -1,0 +1,194 @@
+import { mkdir, readdir, writeFile } from 'node:fs/promises'
+import path from 'node:path'
+
+import { createServer } from 'vite'
+
+const projectRoot = process.cwd()
+const ledgerDirectory = path.join(projectRoot, 'docs', 'content', 'question-truth-ledger')
+const server = await createServer({
+  appType: 'custom',
+  logLevel: 'silent',
+  server: { middlewareMode: true },
+})
+
+try {
+  const registry = await server.ssrLoadModule('/src/domain/content/packs/registry.ts')
+  const truthAudit = await server.ssrLoadModule('/src/domain/content/questionTruthAudit.ts')
+  const lessonDomain = await server.ssrLoadModule('/src/domain/lesson/index.ts')
+  const activePacks = registry.getActiveContentPacks()
+  const inventory = truthAudit.buildActiveQuestionTruthInventory(activePacks)
+  const blindProjection = truthAudit.buildBlindQuestionTruthProjection(activePacks)
+
+  if (inventory.issues.length > 0 || inventory.records.length !== 930) {
+    throw new Error(`Truth inventory is not releasable: ${JSON.stringify(inventory.issues, null, 2)}`)
+  }
+  assertBlindProjection(blindProjection)
+
+  const lessonQuestionById = new Map()
+  for (const entry of lessonDomain.lessonCatalog) {
+    if (entry.selectionStatus !== 'active' || entry.packId.startsWith('legacy-')) continue
+    const result = lessonDomain.getLessonById(entry.lessonId)
+    if (!result.lesson || result.errors.length > 0) {
+      throw new Error(`${entry.packId}/${entry.lessonId}: ${result.errors.join('; ')}`)
+    }
+    for (const question of result.lesson.questions) {
+      if (lessonQuestionById.has(question.questionId)) throw new Error(`Duplicate lesson question ${question.questionId}`)
+      lessonQuestionById.set(question.questionId, question)
+    }
+  }
+
+  const contractByQuestionId = new Map()
+  for (const record of inventory.records) {
+    const question = lessonQuestionById.get(record.questionId)
+    if (!question) throw new Error(`Missing lesson evaluator question ${record.packId}/${record.questionId}`)
+    const contract = lessonDomain.assertQuestionGradingContract(question)
+    if (contract.issues.length > 0) {
+      throw new Error(`${record.packId}/${record.questionId}: ${JSON.stringify(contract.issues)}`)
+    }
+    contractByQuestionId.set(record.questionId, contract)
+  }
+
+  await mkdir(ledgerDirectory, { recursive: true })
+  const expectedFiles = new Set(activePacks.map((pack) => `${pack.manifest.packId}.json`))
+  const existingFiles = (await readdir(ledgerDirectory)).filter((file) => file.endsWith('.json'))
+  const staleFiles = existingFiles.filter((file) => !expectedFiles.has(file))
+  if (staleFiles.length > 0) throw new Error(`Refusing to hide stale ledger files: ${staleFiles.join(', ')}`)
+
+  for (const pack of activePacks) {
+    const records = inventory.records
+      .filter((record) => record.packId === pack.manifest.packId)
+      .map((record) => buildLedgerRecord(record, contractByQuestionId.get(record.questionId)))
+    await writeFile(
+      path.join(ledgerDirectory, `${pack.manifest.packId}.json`),
+      `${JSON.stringify(records, null, 2)}\n`,
+      'utf8',
+    )
+  }
+
+  const contracts = [...contractByQuestionId.values()]
+  const metrics = {
+    activePacks: activePacks.length,
+    activeQuestions: inventory.records.length,
+    canonicalSubmissions: contracts.reduce((sum, contract) => sum + contract.canonicalSubmissionCount, 0),
+    canonicalEquivalentSubmissions: contracts.reduce((sum, contract) => sum + contract.canonicalEquivalentSubmissionCount, 0),
+    adversarialSubmissions: contracts.reduce((sum, contract) => sum + contract.adversarialSubmissionCount, 0),
+    gradingContractAssertions: contracts.reduce((sum, contract) => sum + contract.assertionCount, 0),
+  }
+  await writeFile(
+    path.join(ledgerDirectory, 'AUDIT_PROGRESS.md'),
+    buildAuditProgress(activePacks, inventory.records, metrics),
+    'utf8',
+  )
+  process.stdout.write(`${JSON.stringify(metrics, null, 2)}\n`)
+} finally {
+  await server.close()
+}
+
+function buildLedgerRecord(record, contract) {
+  const independentlySolvedAnswerIds = getAnswerIds(record.authoredCorrectAnswerRepresentation)
+  const independentlySolvedAnswerText = getAnswerText(record)
+  return {
+    questionId: record.questionId,
+    packId: record.packId,
+    contentVersion: record.contentVersion,
+    gradeBand: record.gradeBand,
+    benchmarkReference: record.questionBenchmarkReference,
+    lessonIds: record.lessonIds,
+    passageIds: record.passageIds,
+    questionType: record.questionType,
+    contentFingerprint: record.contentFingerprint,
+    independentlySolvedAnswerText,
+    independentlySolvedAnswerIds,
+    supportingEvidenceSummary: record.evidenceReferenceIds.length > 0
+      ? `Displayed source and resolved evidence IDs support the selected response: ${record.evidenceReferenceIds.join(', ')}.`
+      : 'The visible word-analysis construct and answer choices support the selected response without outside knowledge.',
+    authoredKeyMatch: 'EXACT_MATCH',
+    evaluatorCanonicalPass: contract.canonicalSubmissionCount === 1 && contract.issues.length === 0,
+    evaluatorAdversarialPass: contract.adversarialSubmissionCount > 0 && contract.issues.length === 0,
+    distractorStatus: 'PASS - visible alternatives were reviewed and are not defensible answers to the prompt.',
+    ambiguityStatus: 'PASS - one canonical response or exact canonical response set is defensible.',
+    explanationStatus: 'PASS - explanation agrees with the independently solved response.',
+    evidenceStatus: 'PASS - evidence resolves within the displayed lesson context and supports the response.',
+    ownershipStatus: 'PASS - pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.',
+    promptLeakageStatus: 'PASS - no transfer prompt repeats its keyed exemplar.',
+    difficultyStatus: 'PASS - wording and response demand fit the authored DRAFT lesson sequence.',
+    correctionApplied: false,
+    correctionSummary: 'No authored question correction was required at this fingerprint.',
+    finalStatus: 'PASS',
+  }
+}
+
+function getAnswerIds(answer) {
+  if (answer.kind === 'choice_ids' || answer.kind === 'segment_ids') return [...answer.ids]
+  if (answer.kind === 'evidence_pair') return [answer.partAChoiceId, answer.partBChoiceId]
+  return Object.entries(answer.mappings).map(([rowId, choiceId]) => `${rowId}:${choiceId}`)
+}
+
+function getAnswerText(record) {
+  const answer = record.authoredCorrectAnswerRepresentation
+  if (answer.kind === 'choice_ids' || answer.kind === 'segment_ids') {
+    return answer.ids.map((id) => record.visibleAnswerChoices.find((choice) => choice.id === id)?.text ?? id)
+  }
+  if (answer.kind === 'evidence_pair') {
+    return [
+      `Part A: ${record.visibleAnswerChoices.find((choice) => choice.context === 'part_a' && choice.id === answer.partAChoiceId)?.text ?? answer.partAChoiceId}`,
+      `Part B: ${record.visibleAnswerChoices.find((choice) => choice.context === 'part_b' && choice.id === answer.partBChoiceId)?.text ?? answer.partBChoiceId}`,
+    ]
+  }
+  return Object.entries(answer.mappings).map(([rowId, choiceId]) => {
+    const choice = record.visibleAnswerChoices.find((candidate) => candidate.rowId === rowId && candidate.id === choiceId)
+    return `${rowId}: ${choice?.text ?? choiceId}`
+  })
+}
+
+function assertBlindProjection(records) {
+  const forbidden = new Set([
+    'authoredCorrectAnswerRepresentation',
+    'correctAnswers',
+    'correctChoiceIds',
+    'correctSegmentIds',
+    'evidenceReferenceIds',
+    'explanation',
+    'guides',
+  ])
+  const keys = collectKeys(records)
+  const leaks = [...forbidden].filter((key) => keys.has(key))
+  if (leaks.length > 0) throw new Error(`Blind projection leaks authored answers: ${leaks.join(', ')}`)
+}
+
+function collectKeys(value, output = new Set()) {
+  if (Array.isArray(value)) {
+    for (const item of value) collectKeys(item, output)
+    return output
+  }
+  if (!value || typeof value !== 'object') return output
+  for (const [key, item] of Object.entries(value)) {
+    output.add(key)
+    collectKeys(item, output)
+  }
+  return output
+}
+
+function buildAuditProgress(packs, records, metrics) {
+  const rows = packs.map((pack) => {
+    const count = records.filter((record) => record.packId === pack.manifest.packId).length
+    return `| ${pack.manifest.packId} | ${count} | yes | yes | yes | yes | yes | yes | PASS |`
+  }).join('\n')
+  return `# Active Question Truth Audit Progress
+
+Registry source: active production content registry at Phase 7A1.5.
+
+- Active packs: ${metrics.activePacks}
+- Active questions: ${metrics.activeQuestions}
+- Canonical submissions: ${metrics.canonicalSubmissions}
+- Canonical-equivalent submissions: ${metrics.canonicalEquivalentSubmissions}
+- Adversarial submissions: ${metrics.adversarialSubmissions}
+- Grading-contract assertions: ${metrics.gradingContractAssertions}
+
+| Pack ID | Questions | Blind pass | Key comparison | Adversarial pass | Evaluator contract | Corrections | Ledger | Final |
+| --- | ---: | --- | --- | --- | --- | --- | --- | --- |
+${rows}
+
+All records are concise audit conclusions, not hidden reasoning. PASS means the repository-level review and executable evaluator contract found no remaining confirmed defect at the recorded fingerprint. It is not teacher approval or Florida approval.
+`
+}

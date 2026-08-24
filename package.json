@@ -9,6 +9,7 @@
     "lint": "oxlint",
     "typecheck": "tsc -p tsconfig.app.json --noEmit",
     "test": "vitest run",
+    "audit:question-truth-ledgers": "node scripts/generate-question-truth-ledgers.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

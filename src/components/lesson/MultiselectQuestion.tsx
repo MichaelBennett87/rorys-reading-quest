@@ -1,4 +1,6 @@
 import type { LessonChoice } from '../../domain/lesson'
+import { deriveAnswerPresentationState } from '../../domain/lesson'
+import { AnswerStateMarker } from './AnswerStateMarker'
 
 interface MultiselectQuestionProps {
   questionId: string
@@ -6,6 +8,8 @@ interface MultiselectQuestionProps {
   choices: LessonChoice[]
   selectedChoiceIds: string[]
   disabled: boolean
+  submitted?: boolean
+  correctChoiceIds?: string[]
   onToggleChoice: (choiceId: string) => void
 }
 
@@ -15,6 +19,8 @@ export function MultiselectQuestion({
   choices,
   selectedChoiceIds,
   disabled,
+  submitted = false,
+  correctChoiceIds = [],
   onToggleChoice,
 }: MultiselectQuestionProps) {
   return (
@@ -24,8 +30,17 @@ export function MultiselectQuestion({
       <div className="choice-grid">
         {choices.map((choice) => {
           const isChecked = selectedChoiceIds.includes(choice.id)
+          const answerState = deriveAnswerPresentationState({
+            submitted,
+            selected: isChecked,
+            correct: correctChoiceIds.includes(choice.id),
+          })
           return (
-            <label key={choice.id} className={`choice-option ${isChecked ? 'selected' : ''}`}>
+            <label
+              key={choice.id}
+              className={`choice-option ${isChecked ? 'selected' : ''} answer-state-${answerState}`}
+              data-answer-state={answerState}
+            >
               <input
                 type="checkbox"
                 name={`question-${questionId}-${choice.id}`}
@@ -34,7 +49,8 @@ export function MultiselectQuestion({
                 disabled={disabled}
                 onChange={() => onToggleChoice(choice.id)}
               />
-              <span>{choice.text}</span>
+              <span className="answer-choice-copy">{choice.text}</span>
+              <AnswerStateMarker state={answerState} />
             </label>
           )
         })}

@@ -1,4 +1,6 @@
 export * from './lessonTypes'
 export * from './evaluateAnswer'
+export * from './questionGradingContract'
+export * from './answerPresentation'
 export * from './buildLessonResult'
 export * from './lessonCatalog'

@@ -115,15 +115,18 @@ export function evaluateAnswer(
     case 'TABLE_MATCH': {
       const selected = asRecord((submission.payload as { selectedMappings?: Record<string, string> }).selectedMappings)
       const rows = question.rows
-      let allCorrect = true
-      for (const row of rows) {
-        if ((selected[row.id] ?? '') !== row.correctChoiceId) {
-          allCorrect = false
-          break
-        }
-      }
+      const rowIds = new Set(rows.map((row) => row.id))
+      const selectedEntries = Object.entries(selected)
+      const hasExactRows = selectedEntries.length === rows.length
+        && selectedEntries.every(([rowId]) => rowIds.has(rowId))
       const allAnswered = rows.every((row) => typeof selected[row.id] === 'string')
-      const isCorrect = allCorrect && allAnswered
+      const allSelectionsResolve = rows.every((row) => (
+        row.options.some((option) => option.id === selected[row.id])
+      ))
+      const respectsSelectionMode = question.selectionMode !== 'use_each_once'
+        || new Set(rows.map((row) => selected[row.id])).size === rows.length
+      const allCorrect = rows.every((row) => selected[row.id] === row.correctChoiceId)
+      const isCorrect = hasExactRows && allAnswered && allSelectionsResolve && respectsSelectionMode && allCorrect
       return {
         questionId: question.questionId,
         questionType: question.questionType,

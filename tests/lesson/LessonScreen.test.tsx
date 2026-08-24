@@ -267,7 +267,7 @@ describe('LessonScreen', () => {
     fireEvent.click(screen.getByRole('radio', { name: 'Waving' }))
     fireEvent.click(screen.getByRole('button', { name: /Submit Answer/i }))
     expect(screen.getByText(/Not quite. Let’s look at the clue./i)).toBeTruthy()
-    expect(screen.getByRole('radio', { name: 'Waving' }).getAttribute('disabled')).not.toBeNull()
+    expect(screen.getByRole('radio', { name: /Waving.*Needs correction/i }).getAttribute('disabled')).not.toBeNull()
   })
 
   test('supports multiselect interactions', () => {
