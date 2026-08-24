@@ -48,19 +48,20 @@ describe('grade 2 content pack registry', () => {
       'g3-word-forge-multisyllable-mountain',
       'g3-word-forge-fluency-flight',
       'g3-story-scouts-character-arc-camp',
+      'g3-story-scouts-theme-development-trail',
       'legacy-word-forge-development-pack',
     ])
-    expect(activePacks).toHaveLength(27)
-    expect(activePacks.reduce((sum, pack) => sum + pack.lessons.length, 0)).toBe(189)
-    expect(activePacks.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(196)
-    expect(activePacks.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(1081)
-    expect(activePacks.reduce((sum, pack) => sum + pack.passages.reduce((passageSum, passage) => passageSum + (passage.wordSupportTargets?.length ?? 0), 0), 0)).toBe(747)
+    expect(activePacks).toHaveLength(28)
+    expect(activePacks.reduce((sum, pack) => sum + pack.lessons.length, 0)).toBe(196)
+    expect(activePacks.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(203)
+    expect(activePacks.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(1122)
+    expect(activePacks.reduce((sum, pack) => sum + pack.passages.reduce((passageSum, passage) => passageSum + (passage.wordSupportTargets?.length ?? 0), 0), 0)).toBe(775)
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 27,
-      activeLessonCount: 189,
-      activePassageCount: 196,
-      activeQuestionCount: 1081,
-      activeSupportTargetCount: 747,
+      activePackCount: 28,
+      activeLessonCount: 196,
+      activePassageCount: 203,
+      activeQuestionCount: 1122,
+      activeSupportTargetCount: 775,
     })
     expect(contentPackAudit, JSON.stringify(contentPackAudit, null, 2)).toHaveLength(0)
     expect(benchmarkCoverageAudit).toEqual(expect.objectContaining({

@@ -66,8 +66,9 @@ function appendFixtureGrade3Chapter(
     return roadmap.units.map((unit, unitIndex) => {
       const hasContent = availableLessons.some((lesson) => lesson.skillId === track.skillId && lesson.unitId === unit.unitId)
       const isOwned = activeUnitId === unit.unitId || plannedUnitId === unit.unitId
+      const isUnitPowerUp = isOwned && currentDifficulty === unit.activeDifficulty - 1
       const isFirstUnitPowerUp = unitIndex === 0 && currentDifficulty <= 0
-      const state: UnitState = !ready || !hasContent || (currentDifficulty < unit.activeDifficulty && !isFirstUnitPowerUp)
+      const state: UnitState = !ready || !hasContent || (currentDifficulty < unit.activeDifficulty && !isFirstUnitPowerUp && !isUnitPowerUp)
         ? 'locked'
         : currentDifficulty >= unit.completionDifficulty && !isOwned
           ? trackProgress?.currentLearningState === 'SPACED_REVIEW' ? 'review' : 'complete'
@@ -75,7 +76,7 @@ function appendFixtureGrade3Chapter(
       return {
         id: unit.unitId,
         title: unit.title,
-        difficultyLabel: state === 'locked' ? 'Locked' : state === 'review' ? 'Review' : state === 'complete' ? 'Complete' : isFirstUnitPowerUp ? 'Power-Up Mission' : unit.activeLabel,
+        difficultyLabel: state === 'locked' ? 'Locked' : state === 'review' ? 'Review' : state === 'complete' ? 'Complete' : isFirstUnitPowerUp || isUnitPowerUp ? 'Power-Up Mission' : unit.activeLabel,
         progressPercent: state === 'locked' ? 0 : state === 'available' ? 60 : 100,
         stars: state === 'complete' ? 3 : state === 'available' ? 1 : 0,
         state,

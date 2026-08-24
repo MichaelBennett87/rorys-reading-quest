@@ -537,6 +537,9 @@ function BenchmarkCard({ summary }: { summary: DashboardBenchmarkSummary }) {
       {summary.benchmarkReference === 'ELA.3.R.1.1' && (
         <ParentDataNote title="Curriculum coverage implemented" message="Character Arc Camp provides authored ELA.3.R.1.1 character-development practice at DRAFT review status. Curriculum availability is separate from learner mastery." />
       )}
+      {summary.benchmarkReference === 'ELA.3.R.1.2' && (
+        <ParentDataNote title="Curriculum coverage implemented" message="Theme Development Trail provides authored ELA.3.R.1.2 theme-development practice at DRAFT review status. Curriculum availability is separate from learner mastery." />
+      )}
       <ParentMetricCard label="Attempts" value={summary.questionAttempts} />
       <ParentMetricCard label="Accuracy" value={formatPercent(summary.accuracy)} />
       <ParentMetricCard label="First-attempt accuracy" value={formatPercent(summary.firstAttemptAccuracy)} />
@@ -570,6 +573,9 @@ function SkillSummaryCard({
       )}
       {summary.benchmarkReferences.includes('ELA.3.R.1.1') && (
         <p className="parent-muted-copy">Character development curriculum coverage: Implemented / DRAFT. This describes authored content, not learner mastery.</p>
+      )}
+      {summary.benchmarkReferences.includes('ELA.3.R.1.2') && (
+        <p className="parent-muted-copy">Theme development curriculum coverage: Implemented / DRAFT. This describes authored content, not learner mastery.</p>
       )}
       <p>Current trail: {formatTrailLabel(summary.currentDifficulty)}</p>
       <p>Last mastered trail: {formatTrailLabel(summary.lastMasteredDifficulty)}</p>
@@ -616,6 +622,9 @@ function SkillDetailView({
         )}
         {skill.benchmarkReferences.includes('ELA.3.R.1.1') && (
           <ParentDataNote title="Curriculum coverage implemented" message="ELA.3.R.1.1 has authored DRAFT Character Arc Camp content. Learner mastery remains a separate progress measure." />
+        )}
+        {skill.benchmarkReferences.includes('ELA.3.R.1.2') && (
+          <ParentDataNote title="Curriculum coverage implemented" message="ELA.3.R.1.2 has authored DRAFT Theme Development Trail content. Learner mastery remains a separate progress measure." />
         )}
         <p>Question attempts: {skill.questionAttempts}</p>
         <p>Overall accuracy: {formatPercent(skill.accuracy)}</p>

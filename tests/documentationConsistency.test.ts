@@ -215,11 +215,11 @@ describe('documentation consistency', () => {
 
   test('keeps active curriculum totals aligned with the registry helper', () => {
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 27,
-      activeLessonCount: 189,
-      activePassageCount: 196,
-      activeQuestionCount: 1081,
-      activeSupportTargetCount: 747,
+      activePackCount: 28,
+      activeLessonCount: 196,
+      activePassageCount: 203,
+      activeQuestionCount: 1122,
+      activeSupportTargetCount: 775,
     })
   })
 })

@@ -44,13 +44,13 @@ describe('Grade 3 Root Reactor production pack', () => {
     expect(grade2.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(161)
     expect(grade2.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(889)
     expect(grade2.reduce((sum, pack) => sum + pack.passages.flatMap((passage) => passage.wordSupportTargets ?? []).length, 0)).toBe(614)
-    expect(grade3.map((pack) => pack.manifest.packId)).toEqual([PACK_ID, 'g3-word-forge-suffix-shifter', 'g3-word-forge-multisyllable-mountain', 'g3-word-forge-fluency-flight', 'g3-story-scouts-character-arc-camp'])
+    expect(grade3.map((pack) => pack.manifest.packId)).toEqual([PACK_ID, 'g3-word-forge-suffix-shifter', 'g3-word-forge-multisyllable-mountain', 'g3-word-forge-fluency-flight', 'g3-story-scouts-character-arc-camp', 'g3-story-scouts-theme-development-trail'])
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 27,
-      activeLessonCount: 189,
-      activePassageCount: 196,
-      activeQuestionCount: 1081,
-      activeSupportTargetCount: 747,
+      activePackCount: 28,
+      activeLessonCount: 196,
+      activePassageCount: 203,
+      activeQuestionCount: 1122,
+      activeSupportTargetCount: 775,
     })
   })
 
@@ -138,8 +138,8 @@ describe('Grade 3 Root Reactor production pack', () => {
       missingPatterns: [],
     })
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'partial')).toHaveLength(0)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(13)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(2)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(12)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(3)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(1)
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.V.1.2')?.coverageStatus).toBe('planned')
     expect(buildGrade2CoverageSnapshot()).toEqual(grade2Before)
@@ -150,9 +150,9 @@ describe('Grade 3 Root Reactor production pack', () => {
     expect(curriculumTracks.find((track) => track.trackId === 'g3-story-scouts-prose')?.status).toBe('active')
     expect(curriculumTracks.filter((track) => track.gradeBand === 3 && !['g3-word-forge-foundations', 'g3-story-scouts-prose'].includes(track.trackId)).every((track) => track.status === 'planned_until_content_exists')).toBe(true)
     expect(auditSemanticQuestionPacks(getActiveContentPacks())).toMatchObject({
-      reviewedPackCount: 27,
-      reviewedLessonCount: 189,
-      reviewedCount: 1081,
+      reviewedPackCount: 28,
+      reviewedLessonCount: 196,
+      reviewedCount: 1122,
       issues: [],
     })
   })

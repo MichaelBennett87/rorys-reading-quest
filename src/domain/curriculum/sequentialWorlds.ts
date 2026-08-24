@@ -155,7 +155,7 @@ const grade3Roadmaps: readonly SequentialWorldRoadmap[] = [
     {
       ...plannedUnit('g3-ss-unit-2', 'Theme Development Trail', 'ELA.3.R.1.2', 'theme and how details develop it', '7B2', 2, 3),
       lockedMessage: 'Complete Character Arc Camp to unlock Theme Development Trail.',
-      futureContentMessage: 'Theme Development Trail quests are being prepared.',
+      futureContentMessage: 'Theme Development Trail review quests are being prepared.',
     },
     plannedUnit('g3-ss-unit-3', 'Perspective Portal Grade 3', 'ELA.3.R.1.3', "explaining different characters' perspectives", '7B3', 3, 4),
   ]),

@@ -200,6 +200,7 @@ describe('semantic answer feedback states', () => {
       { packId: 'g3-word-forge-multisyllable-mountain', expectedTypes: ['EVIDENCE_PAIR', 'HOT_TEXT', 'MULTIPLE_CHOICE', 'MULTISELECT', 'TABLE_MATCH'] },
       { packId: 'g3-word-forge-fluency-flight', expectedTypes: ['HOT_TEXT', 'MULTIPLE_CHOICE', 'MULTISELECT', 'TABLE_MATCH'] },
       { packId: 'g3-story-scouts-character-arc-camp', expectedTypes: ['EVIDENCE_PAIR', 'HOT_TEXT', 'MULTIPLE_CHOICE', 'MULTISELECT', 'TABLE_MATCH'] },
+      { packId: 'g3-story-scouts-theme-development-trail', expectedTypes: ['EVIDENCE_PAIR', 'HOT_TEXT', 'MULTIPLE_CHOICE', 'MULTISELECT', 'TABLE_MATCH'] },
     ]
     for (const { packId, expectedTypes } of packs) {
       const questions = lessonCatalog

@@ -91,13 +91,14 @@ describe('grade 2 context cavern academic word workshop pack', () => {
       'g3-word-forge-multisyllable-mountain',
       'g3-word-forge-fluency-flight',
       'g3-story-scouts-character-arc-camp',
+      'g3-story-scouts-theme-development-trail',
     ])
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 27,
-      activeLessonCount: 189,
-      activePassageCount: 196,
-      activeQuestionCount: 1081,
-      activeSupportTargetCount: 747,
+      activePackCount: 28,
+      activeLessonCount: 196,
+      activePassageCount: 203,
+      activeQuestionCount: 1122,
+      activeSupportTargetCount: 775,
     })
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.V.1.1')).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.V.1.1',
@@ -276,11 +277,11 @@ describe('grade 2 context cavern morphology mine pack', () => {
     ])
     expect(pack.morphologyGuides).toHaveLength(7)
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 27,
-      activeLessonCount: 189,
-      activePassageCount: 196,
-      activeQuestionCount: 1081,
-      activeSupportTargetCount: 747,
+      activePackCount: 28,
+      activeLessonCount: 196,
+      activePassageCount: 203,
+      activeQuestionCount: 1122,
+      activeSupportTargetCount: 775,
     })
   })
 

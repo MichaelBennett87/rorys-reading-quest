@@ -38,7 +38,7 @@ describe('Character Arc Camp child chapter UI', () => {
     const ready = readyState()
     const world = deriveWorldsForProgress(demoWorlds, ready, lessons).find((entry) => entry.id === 'story-scouts')!
     expect(world.units.find((entry) => entry.id === 'g3-ss-unit-1')).toMatchObject({ state: 'available', difficultyLabel: 'Trail 1' })
-    expect(world.units.find((entry) => entry.id === 'g3-ss-unit-2')).toMatchObject({ state: 'locked', practiceFocus: 'Theme Development Trail quests are being prepared.' })
+    expect(world.units.find((entry) => entry.id === 'g3-ss-unit-2')).toMatchObject({ state: 'locked', practiceFocus: 'Complete Character Arc Camp to unlock Theme Development Trail.' })
     expect(world.units.find((entry) => entry.id === 'g3-ss-unit-3')?.state).toBe('locked')
     expect(planUnitQuest({ selectedUnitId: 'g3-ss-unit-1', progress: ready, availableLessons: lessons })).toMatchObject({ status: 'available', unitId: 'g3-ss-unit-1' })
 

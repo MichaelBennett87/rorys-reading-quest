@@ -51,13 +51,13 @@ describe('Grade 3 standards and FAST planning foundation', () => {
     ))).toBe(true)
   })
 
-  test('builds two implemented, one supportive-practice, and thirteen planned DRAFT rows without mutating Grade 2 coverage', () => {
+  test('builds three implemented, one supportive-practice, and twelve planned DRAFT rows without mutating Grade 2 coverage', () => {
     const grade2Before = buildGrade2CoverageSnapshot()
     const snapshot = buildGrade3CoverageSnapshot()
     expect(snapshot.rows).toHaveLength(16)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(2)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(3)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(1)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(13)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(12)
     expect(snapshot.rows.every((row) => row.reviewStatus === 'DRAFT')).toBe(true)
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.F.1.3')).toMatchObject({
       coverageStatus: 'implemented',
@@ -75,6 +75,13 @@ describe('Grade 3 standards and FAST planning foundation', () => {
       coverageStatus: 'implemented',
       contributingPackIds: ['g3-story-scouts-character-arc-camp'],
       coveredPatterns: ['character-development', 'plot-linked-change', 'actions-dialogue-thoughts', 'beginning-middle-end-development', 'text-evidence'],
+      missingPatterns: [],
+      reviewStatus: 'DRAFT',
+    })
+    expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.1.2')).toMatchObject({
+      coverageStatus: 'implemented',
+      contributingPackIds: ['g3-story-scouts-theme-development-trail'],
+      coveredPatterns: ['theme', 'theme-development', 'supporting-details', 'plot-theme-connection'],
       missingPatterns: [],
       reviewStatus: 'DRAFT',
     })
@@ -124,20 +131,20 @@ describe('Grade 3 planned roadmaps and production freeze', () => {
     expect(getSequentialWorldRoadmapByTrackId('g3-information-detectives-reading')?.chapterTitle).toBe('Grade 3 Informational Analysis')
   })
 
-  test('preserves Grade 2 totals while registering four Grade 3 Word Forge packs and Character Arc Camp', () => {
+  test('preserves Grade 2 totals while registering Grade 3 Word Forge and both Story Scouts packs', () => {
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 27,
-      activeLessonCount: 189,
-      activePassageCount: 196,
-      activeQuestionCount: 1081,
-      activeSupportTargetCount: 747,
+      activePackCount: 28,
+      activeLessonCount: 196,
+      activePassageCount: 203,
+      activeQuestionCount: 1122,
+      activeSupportTargetCount: 775,
     })
     expect(getActiveContentPacks().filter((pack) => pack.manifest.gradeBand === 2)).toHaveLength(22)
-    expect(getActiveContentPacks().filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(5)
+    expect(getActiveContentPacks().filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(6)
     expect(lessonCatalog.filter((lesson) => lesson.selectionStatus === 'active' && lesson.gradeBand === 2)).toHaveLength(154)
-    expect(lessonCatalog.filter((lesson) => lesson.selectionStatus === 'active' && lesson.gradeBand === 3)).toHaveLength(35)
+    expect(lessonCatalog.filter((lesson) => lesson.selectionStatus === 'active' && lesson.gradeBand === 3)).toHaveLength(42)
     expect(getLessonCandidates().filter((lesson) => lesson.gradeBand === 2)).toHaveLength(154)
-    expect(getLessonCandidates().filter((lesson) => lesson.gradeBand === 3)).toHaveLength(35)
+    expect(getLessonCandidates().filter((lesson) => lesson.gradeBand === 3)).toHaveLength(42)
     expect(buildContentPackAudit(contentPacks)).toEqual([])
   })
 
