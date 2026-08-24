@@ -111,3 +111,7 @@ Structure Station passages, headings, captions, diagram labels, timelines, sideb
 ## Phase 7C2 privacy and accessibility boundary
 
 Central Idea Engine passages, section text, central-idea statements, detail classifications, `CentralIdeaGuide` records, questions, explanations, correct answers, and Word Help curriculum remain authored application content and are not copied into learner persistence or print output. Schema version 1, storage keys, the hashed Parent PIN record, assessments, bounded attempts, reviews, and active-session recovery remain unchanged. Semantic informational sections, keyboard controls, visible focus, non-color-only feedback, supported question interactions, reduced motion, and responsive layout remain required. Phase 7C2 adds no backend, cloud synchronization, analytics, telemetry, microphone, external speech service, or live AI.
+
+## Phase 7C3 preservation
+
+Journey-state reconciliation changes no storage key or schema version and preserves Parent PIN behavior, assessments, XP, stars, attempts, reviews, mastery evidence, and legitimate unfinished sessions. Purpose Development Path does not persist passage text, purpose guides, purpose statements, question text, explanations, correct answers, or Word Help curriculum text. No backend, telemetry, analytics, microphone, speech recognition, or live AI was added.

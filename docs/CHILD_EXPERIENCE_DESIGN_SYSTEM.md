@@ -97,3 +97,7 @@ World accents remain semantic and decorative rather than the only state signal:
 The child shell applies these identities to hero rewards, current quests, world cards, unit nodes, mission previews, lesson surfaces, answer states, Word Help, completion medals, and progression outcomes. The parent shell deliberately avoids game styling and uses quieter navy/slate surfaces, teal and blue accents, compact tabs, and strong numerical hierarchy. Print styles continue to force a light, ink-safe presentation.
 
 The optional Dark/Light preference was not added. Dark remains deterministic and default without introducing a new persisted preference. `prefers-reduced-motion` still disables nonessential movement, and no sound autoplays.
+
+## Phase 7C3 protected journey recovery
+
+Home still exposes exactly Start Journey and Parent Area, world cards remain display-only, and progression outcomes expose one child-facing action. Start Journey and Continue Journey now share an authoritative current-state transition: unfinished work resumes, completed or incompatible stale state is reconciled automatically, and a coming-soon message appears only for genuine current content-needed. No conflict menu, world selector, unit selector, or lesson selector is introduced.

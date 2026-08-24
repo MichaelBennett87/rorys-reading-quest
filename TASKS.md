@@ -101,7 +101,7 @@
   - [ ] Phase 7C: Grade 3 informational reading
     - [x] Phase 7C1: Structure Station
     - [x] Phase 7C2: Central Idea Engine
-    - [ ] Phase 7C3: Purpose Development Path
+    - [x] Phase 7C3: Purpose Development Path
     - [ ] Phase 7C4: Claim and Evidence Court
   - [ ] Phase 7D: Grade 3 across genres and vocabulary
     - [ ] Phase 7D1: Figurative Fortress

@@ -4,7 +4,7 @@
 
 Phase 7 extends the six existing reading worlds into separate Grade 3 curriculum tracks. Advancement is domain-specific: a Grade 3 track can become playable only after its matching Grade 2 track reaches its verified completion difficulty and active Grade 3 content exists. This is not a global grade diagnosis, a learner-mastery claim, or a FAST prediction.
 
-Phase 7A and Phase 7B are complete. Phase 7C1 and Phase 7C2 bring Grade 3 to 10 production packs, 70 DRAFT lessons, 70 original texts, 397 questions, and 273 Word Help targets. `ELA.3.F.1.3`, `ELA.3.R.1.1` through `ELA.3.R.1.4`, `ELA.3.R.2.1`, and `ELA.3.R.2.2` are IMPLEMENTED / DRAFT. `ELA.3.F.1.4` is SUPPORTIVE_PRACTICE / DRAFT with no oral measurement. No Grade 3 row is APPROVED and no status claims learner mastery. Phase 7C remains incomplete because Purpose Development Path is unstarted.
+Phase 7A and Phase 7B are complete. Phase 7C1 through Phase 7C3 bring Grade 3 to 11 production packs, 77 DRAFT lessons, 77 original texts, 438 questions, and 301 Word Help targets. `ELA.3.F.1.3`, `ELA.3.R.1.1` through `ELA.3.R.1.4`, and `ELA.3.R.2.1` through `ELA.3.R.2.3` are IMPLEMENTED / DRAFT. `ELA.3.F.1.4` is SUPPORTIVE_PRACTICE / DRAFT with no oral measurement. No Grade 3 row is APPROVED and no status claims learner mastery. Phase 7C remains incomplete because Claim and Evidence Court is unstarted.
 
 ## Instructional inventory
 
@@ -87,3 +87,7 @@ Structure Station (`g3-id-unit-1`) activates Grade 3 Information Detectives afte
 ## Phase 7C2 implementation snapshot
 
 Central Idea Engine (`g3-id-unit-2`) becomes available after Structure Station completion. It covers stated and implied central ideas, relevant versus minor details, and evidence across informational sections, making `ELA.3.R.2.2` IMPLEMENTED / DRAFT. Grade 3 now has seven implemented benchmarks, one supportive-practice benchmark, and eight planned benchmarks. Purpose Development Path remains unstarted; no learner mastery or approval is inferred.
+
+## Phase 7C3 implementation snapshot
+
+Purpose Development Path (`g3-id-unit-3`) becomes available after Central Idea Engine completion. It covers precise author purpose, purpose development, supporting details, and text evidence across sections, making `ELA.3.R.2.3` IMPLEMENTED / DRAFT. Grade 3 now has eight implemented benchmarks, one supportive-practice benchmark, and seven planned benchmarks. Claim and Evidence Court remains unstarted; no learner mastery or approval is inferred.

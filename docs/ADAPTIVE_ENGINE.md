@@ -120,3 +120,7 @@ Grade 3 Information Detectives initializes at difficulty 1 only after Grade 2 In
 ## Phase 7C2 Central Idea Engine progression
 
 Central Idea Engine becomes available only when Grade 3 Information Detectives reaches difficulty 2 after Structure Station completion. Two distinct independent strong checkpoints verify then advance to difficulty 3, where Purpose Development Path remains unavailable and planning fails closed with structured content-needed. Partial work remains at difficulty 2; two consecutive low outcomes route to difficulty-1 Central Idea Engine remediation; rebuilding returns to difficulty 2 without claiming mastery. Active sessions, verification, remediation, due review, ordinary progression, deterministic freshness, and unit-affine review retain their established priority.
+
+## Phase 7C3 planner and recovery contract
+
+The planner priority remains active unfinished session, verification, remediation, due review, ordinary progression, and content-needed. Before planning, completed or incompatible active sessions are removed without changing rewards, attempts, reviews, mastery evidence, assessments, or unrelated progress. Stored content-needed is always recomputed against current readiness and production content. At difficulty 3, Grade 3 Information Detectives selects only `g3-id-unit-3`; two distinct independent strong checkpoints advance to difficulty 4, where missing Phase 7C4 content returns structured content-needed.

@@ -147,3 +147,9 @@ Structure Station activates `g3-information-detectives-reading` behind verified 
 ## Phase 7C2: Central Idea Engine
 
 Central Idea Engine adds seven DRAFT Grade 3 informational lessons at difficulty 2. Learners distinguish topic, complete central idea, summary, relevant detail, and minor detail; identify stated and implied ideas; and connect evidence across sections. Author purpose, author claims, argumentative evidence, vocabulary, and written-response scoring remain deferred. Structure Station flows automatically into this unit through the existing planner, while Home remains limited to Start Journey and Parent Area.
+
+## Phase 7C3 product update
+
+Purpose Development Path adds authored DRAFT `ELA.3.R.2.3` practice for precise author purpose and how facts, examples, organization, and sections develop that purpose. Topic, central idea, generic intent, and claim remain explicit non-target boundaries. Claim and Evidence Court remains unstarted.
+
+The one-button journey now reconciles stale active-session and planned-quest state before every Start Journey or Continue Journey launch. The child never resolves a conflict manually: valid unfinished work resumes, completed or incompatible work is retired conservatively, and genuine content-needed remains fail-closed.

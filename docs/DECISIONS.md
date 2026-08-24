@@ -492,3 +492,9 @@ Decision: preserve the simplified guided journey without exceptions. Structure S
 Decision: implement `ELA.3.R.2.2` only through Central Idea Engine at `g3-id-unit-2`, reusing the active Grade 3 Information Detectives track and existing informational renderer. Extend the shared central-idea guide compatibly for Grade 3 section evidence rather than create a competing model. Treat topic, complete central idea, stated/inferred ideas, relevant/minor details, and support across sections as the complete scope; defer author purpose, author claims, vocabulary, across genres, Grade 4, and FAST practice.
 
 Decision: preserve the simplified guided journey and all progression evidence rules. Central Idea Engine is planner-selected after Structure Station completion, remediation remains unit-affine, reviews remain separately identified by unit and version, and Home continues to expose only Start Journey and Parent Area.
+
+## Phase 7C3 decisions
+
+Decision: treat the Continue Journey deadlock as a P0 and resolve it before curriculum authoring. Active recovery now checks exact completion identity, duplicate completion clears matching stale state without another reward, late checkpoints cannot resurrect completed sessions, stored content-needed is recomputed, and Start Journey plus Continue Journey share one latest-state launch transition. Keep the one-button UI and do not add child-facing conflict choices.
+
+Decision: implement `ELA.3.R.2.3` only through Purpose Development Path at `g3-id-unit-3`. Use seven precise purpose kinds and evidence across informational sections while keeping topic, central idea, and argumentative claim separate. Defer Claim and Evidence Court, vocabulary, across genres, Grade 4, and FAST timed practice.

@@ -151,3 +151,9 @@ Structure Station reuses `InformationalTextCard`, passage evidence resolution, l
 ## Phase 7C2 central-idea architecture
 
 Central Idea Engine extends the existing optional `CentralIdeaGuide` compatibly with section-owned relevant and minor details, section-contribution records, and a synthesis statement. `buildCentralIdeaEngineGuideAudit` enforces the exact seven-text pack shape, stated/inferred balance, cross-section evidence, complete-thought central ideas, and topic/summary/minor-detail boundaries. The existing informational renderer, evaluator, review affinity, planner, persistence schema, parent reporting, print privacy, and four-state guided child route are reused unchanged.
+
+## Phase 7C3 journey recovery and content integration
+
+`useQuestProgress.prepareJourneyLaunch` is the authoritative child-launch transition shared by Start Journey and Continue Journey. It reads the latest state reference, rejects active sessions whose session identity is already complete, validates compatibility, normalizes stored planning, replans against the current registry, and creates at most one new session. The rendered progression outcome remains a presentation snapshot rather than launch authority. Late checkpoints return an ignored result when their identity is complete or stale.
+
+Purpose Development Path reuses the existing Information Detectives renderer and lesson/evaluator pipeline. Its optional AuthorPurposeGuides are authored registry metadata only and are excluded from version-1 persistence and print output.
