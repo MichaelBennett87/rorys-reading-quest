@@ -60,9 +60,9 @@ describe('Grade 3 standards and FAST planning foundation', () => {
     expect(snapshot.rows.every((row) => row.reviewStatus === 'DRAFT')).toBe(true)
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.F.1.3')).toMatchObject({
       coverageStatus: 'partial',
-      contributingPackIds: ['g3-word-forge-root-reactor'],
-      coveredPatterns: ['greek-latin-root-decoding', 'affix-decoding'],
-      missingPatterns: ['derivational-suffix-decoding', 'part-of-speech-change', 'multisyllabic-decoding'],
+      contributingPackIds: ['g3-word-forge-root-reactor', 'g3-word-forge-suffix-shifter'],
+      coveredPatterns: ['greek-latin-root-decoding', 'affix-decoding', 'derivational-suffix-decoding', 'part-of-speech-change'],
+      missingPatterns: ['multisyllabic-decoding'],
     })
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned').every((row) => row.notes.includes('Roadmap only; no active Grade 3 content yet.'))).toBe(true)
     expect(buildGrade2CoverageSnapshot()).toEqual(grade2Before)
@@ -110,20 +110,20 @@ describe('Grade 3 planned roadmaps and production freeze', () => {
     expect(getSequentialWorldRoadmapByTrackId('g3-information-detectives-reading')?.chapterTitle).toBe('Grade 3 Informational Analysis')
   })
 
-  test('preserves Grade 2 totals while registering the bounded Root Reactor pack', () => {
+  test('preserves Grade 2 totals while registering the two bounded Grade 3 Word Forge packs', () => {
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 23,
-      activeLessonCount: 161,
-      activePassageCount: 168,
-      activeQuestionCount: 930,
-      activeSupportTargetCount: 642,
+      activePackCount: 24,
+      activeLessonCount: 168,
+      activePassageCount: 175,
+      activeQuestionCount: 971,
+      activeSupportTargetCount: 670,
     })
     expect(getActiveContentPacks().filter((pack) => pack.manifest.gradeBand === 2)).toHaveLength(22)
-    expect(getActiveContentPacks().filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(1)
+    expect(getActiveContentPacks().filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(2)
     expect(lessonCatalog.filter((lesson) => lesson.selectionStatus === 'active' && lesson.gradeBand === 2)).toHaveLength(154)
-    expect(lessonCatalog.filter((lesson) => lesson.selectionStatus === 'active' && lesson.gradeBand === 3)).toHaveLength(7)
+    expect(lessonCatalog.filter((lesson) => lesson.selectionStatus === 'active' && lesson.gradeBand === 3)).toHaveLength(14)
     expect(getLessonCandidates().filter((lesson) => lesson.gradeBand === 2)).toHaveLength(154)
-    expect(getLessonCandidates().filter((lesson) => lesson.gradeBand === 3)).toHaveLength(7)
+    expect(getLessonCandidates().filter((lesson) => lesson.gradeBand === 3)).toHaveLength(14)
     expect(buildContentPackAudit(contentPacks)).toEqual([])
   })
 
@@ -209,5 +209,42 @@ describe('Grade 3 planned roadmaps and production freeze', () => {
     expect(screen.getByRole('heading', { name: 'Grade 3 Word Analysis' })).toBeTruthy()
     expect(screen.getByRole('heading', { name: 'Grade 2 Chapter' })).toBeTruthy()
     expect(screen.getByRole('button', { name: /Root Reactor/i }).hasAttribute('disabled')).toBe(false)
+
+    const suffixReady: QuestProgressV1 = {
+      ...ready,
+      skillProgress: {
+        ...ready.skillProgress,
+        'g3-word-forge-word-analysis': {
+          skillId: 'g3-word-forge-word-analysis',
+          currentDifficulty: 2,
+          lastMasteredDifficulty: 1,
+          currentLearningState: 'ADVANCE',
+          qualifyingIndependentActivityIds: [],
+          consecutiveUnsuccessfulAtCurrentDifficulty: 0,
+          lastCompletedActivityId: null,
+          recentActivityUsage: [],
+          reviewStep: 0,
+          nextReviewDate: null,
+          lastDecisionReasonCodes: ['advanced'],
+          remediationContext: null,
+        },
+      },
+    }
+    const suffixWordForge = deriveWorldsForProgress(demoWorlds, suffixReady, productionLessons)
+      .find((world) => world.id === 'word-forge')!
+    expect(suffixWordForge.units.find((unit) => unit.id === 'g3-wg-unit-1')?.state).toBe('complete')
+    expect(suffixWordForge.units.find((unit) => unit.id === 'g3-wg-unit-2')).toMatchObject({ state: 'available', difficultyLabel: 'Trail 2' })
+    expect(suffixWordForge.units.find((unit) => unit.id === 'g3-wg-unit-3')?.state).toBe('locked')
+    expect(planUnitQuest({ selectedUnitId: 'g3-wg-unit-2', progress: suffixReady, availableLessons: productionLessons })).toMatchObject({
+      status: 'available',
+      unitId: 'g3-wg-unit-2',
+      lesson: { difficulty: 2 },
+    })
+
+    cleanup()
+    render(<UnitSelectScreen world={suffixWordForge} onBack={() => undefined} onSelectUnit={() => undefined} />)
+    expect(screen.getByRole('button', { name: /Suffix Shifter/i }).hasAttribute('disabled')).toBe(false)
+    expect(screen.getByText('Trail 2')).toBeTruthy()
+    expect(screen.getByRole('button', { name: /Multisyllable Mountain/i }).hasAttribute('disabled')).toBe(true)
   })
 })

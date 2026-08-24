@@ -42,16 +42,16 @@ describe('final grade 2 audit', () => {
       },
     )
 
-    expect(contentPacks).toHaveLength(24)
-    expect(new Set(contentPacks.map((pack) => pack.manifest.packId)).size).toBe(24)
+    expect(contentPacks).toHaveLength(25)
+    expect(new Set(contentPacks.map((pack) => pack.manifest.packId)).size).toBe(25)
     expect(grade2Packs).toHaveLength(22)
     expect(new Set(grade2Packs.map((pack) => pack.manifest.packId)).size).toBe(22)
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 23,
-      activeLessonCount: 161,
-      activePassageCount: 168,
-      activeQuestionCount: 930,
-      activeSupportTargetCount: 642,
+      activePackCount: 24,
+      activeLessonCount: 168,
+      activePassageCount: 175,
+      activeQuestionCount: 971,
+      activeSupportTargetCount: 670,
     })
     expect(contentPackAudit).toHaveLength(0)
     expect(validateContent(sampleContent)).toHaveLength(0)

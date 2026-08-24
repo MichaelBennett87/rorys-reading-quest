@@ -5,6 +5,11 @@ import { createServer } from 'vite'
 
 const projectRoot = process.cwd()
 const ledgerDirectory = path.join(projectRoot, 'docs', 'content', 'question-truth-ledger')
+const correctionSummaries = new Map([
+  ['lesson-g3-suffix-shifter-checkpoint-maker-q-7', 'Blind review replaced a sentence-role Part B with authored reading chunks so the checkpoint genuinely distinguishes morphological and pronunciation boundaries.'],
+  ['lesson-g3-suffix-shifter-checkpoint-nature-q-7', 'Blind review replaced a sentence-role Part B with authored reading chunks so the checkpoint genuinely distinguishes morphological and pronunciation boundaries.'],
+  ['lesson-g3-suffix-shifter-checkpoint-weather-q-7', 'Blind review replaced a sentence-role Part B with authored reading chunks so the checkpoint genuinely distinguishes morphological and pronunciation boundaries.'],
+])
 const server = await createServer({
   appType: 'custom',
   logLevel: 'silent',
@@ -19,7 +24,8 @@ try {
   const inventory = truthAudit.buildActiveQuestionTruthInventory(activePacks)
   const blindProjection = truthAudit.buildBlindQuestionTruthProjection(activePacks)
 
-  if (inventory.issues.length > 0 || inventory.records.length !== 930) {
+  const registeredQuestionCount = activePacks.reduce((sum, pack) => sum + pack.questions.length, 0)
+  if (inventory.issues.length > 0 || inventory.records.length !== registeredQuestionCount) {
     throw new Error(`Truth inventory is not releasable: ${JSON.stringify(inventory.issues, null, 2)}`)
   }
   assertBlindProjection(blindProjection)
@@ -87,6 +93,7 @@ try {
 function buildLedgerRecord(record, contract) {
   const independentlySolvedAnswerIds = getAnswerIds(record.authoredCorrectAnswerRepresentation)
   const independentlySolvedAnswerText = getAnswerText(record)
+  const correctionSummary = correctionSummaries.get(record.questionId)
   return {
     questionId: record.questionId,
     packId: record.packId,
@@ -112,8 +119,8 @@ function buildLedgerRecord(record, contract) {
     ownershipStatus: 'PASS - pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.',
     promptLeakageStatus: 'PASS - no transfer prompt repeats its keyed exemplar.',
     difficultyStatus: 'PASS - wording and response demand fit the authored DRAFT lesson sequence.',
-    correctionApplied: false,
-    correctionSummary: 'No authored question correction was required at this fingerprint.',
+    correctionApplied: Boolean(correctionSummary),
+    correctionSummary: correctionSummary ?? 'No authored question correction was required at this fingerprint.',
     finalStatus: 'PASS',
   }
 }
@@ -176,7 +183,7 @@ function buildAuditProgress(packs, records, metrics) {
   }).join('\n')
   return `# Active Question Truth Audit Progress
 
-Registry source: active production content registry at Phase 7A1.5.
+Registry source: active production content registry through Phase 7A2.
 
 - Active packs: ${metrics.activePacks}
 - Active questions: ${metrics.activeQuestions}

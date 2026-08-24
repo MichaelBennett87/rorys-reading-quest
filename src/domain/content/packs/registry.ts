@@ -21,6 +21,7 @@ import { grade2CompareCastleWordplayWatchtowerPack } from './grade2/compareCastl
 import { grade2CompareCastleRetellHallPack } from './grade2/compareCastle/retellHall'
 import { grade2CompareCastleCompareKeepPack } from './grade2/compareCastle/compareKeep'
 import { grade3WordForgeRootReactorPack } from './grade3/wordForge/rootReactor'
+import { grade3WordForgeSuffixShifterPack } from './grade3/wordForge/suffixShifter'
 import { legacyDevelopmentPack } from './legacyDevelopmentPack'
 import type { ContentPack } from './contentPackTypes'
 import type { ContentSample } from '../types'
@@ -51,6 +52,7 @@ export const contentPacks: readonly ContentPack[] = [
   grade2CompareCastleRetellHallPack,
   grade2CompareCastleCompareKeepPack,
   grade3WordForgeRootReactorPack,
+  grade3WordForgeSuffixShifterPack,
   legacyDevelopmentPack,
 ]
 

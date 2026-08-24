@@ -19,7 +19,7 @@ const SKILL_ID = 'g3-word-forge-word-analysis'
 const UNIT_ID = 'g3-wg-unit-1'
 const VERSION = 'g3-wf-root-reactor-r0.1.0'
 const allCandidates = getLessonCandidates()
-const rootCandidates = allCandidates.filter((candidate) => candidate.skillId === SKILL_ID)
+const rootCandidates = allCandidates.filter((candidate) => candidate.skillId === SKILL_ID && candidate.unitId === UNIT_ID)
 const checkpoints = rootCandidates.filter((candidate) => candidate.eligiblePurposes.includes('progression'))
 const guided = rootCandidates.filter((candidate) => candidate.difficulty === 1 && candidate.eligiblePurposes.includes('remediation'))
 const powerUps = rootCandidates.filter((candidate) => candidate.difficulty === 0)
@@ -150,7 +150,7 @@ describe('Root Reactor prerequisite and progression integration', () => {
     if (second.status !== 'applied') return
     expect(second.decision.decisionState).toBe('ADVANCE')
     expect(second.progress).toMatchObject({ currentDifficulty: 2, lastMasteredDifficulty: 1 })
-    expect(second.nextQuest).toMatchObject({ status: 'content_needed', skillId: SKILL_ID, difficulty: 2 })
+    expect(second.nextQuest).toMatchObject({ status: 'available', lesson: { skillId: SKILL_ID, difficulty: 2, unitId: 'g3-wg-unit-2' } })
   })
 
   test('keeps partial work at Trail 1 and routes repeated low work through Grade 3 power-ups', () => {

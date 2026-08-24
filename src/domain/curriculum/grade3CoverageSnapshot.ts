@@ -54,7 +54,7 @@ export function buildGrade3CoverageSnapshot(
         notes: Object.freeze(status === 'planned'
           ? ['Roadmap only; no active Grade 3 content yet.']
           : status === 'partial' && entry.benchmarkReference === 'ELA.3.F.1.3'
-            ? ['Root Reactor provides authored decoding and word-analysis practice for common Greek and Latin roots and affixes. Suffix Shifter and Multisyllable Mountain remain required before ELA.3.F.1.3 can become implemented.']
+            ? ['Root Reactor covers Greek and Latin root and affix decoding. Suffix Shifter covers transparent derivational suffix decoding and part-of-speech change. Multisyllable Mountain remains required before ELA.3.F.1.3 can become implemented.']
             : ['Active Grade 3 content contributes to this inventory row.']),
       })
     })),

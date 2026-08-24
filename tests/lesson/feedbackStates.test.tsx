@@ -8,7 +8,13 @@ import { HotTextQuestion } from '../../src/components/lesson/HotTextQuestion'
 import { MultipleChoiceQuestion } from '../../src/components/lesson/MultipleChoiceQuestion'
 import { MultiselectQuestion } from '../../src/components/lesson/MultiselectQuestion'
 import { TableMatchQuestion } from '../../src/components/lesson/TableMatchQuestion'
-import { getLessonById, lessonCatalog } from '../../src/domain/lesson'
+import {
+  buildCanonicalSubmission,
+  evaluateAnswer,
+  generateAdversarialSubmissions,
+  getLessonById,
+  lessonCatalog,
+} from '../../src/domain/lesson'
 import { LessonScreen } from '../../src/screens/LessonScreen'
 
 afterEach(cleanup)
@@ -186,6 +192,31 @@ describe('semantic answer feedback states', () => {
     const selected = getAnswerContainer('Supported answer')
     expect(selected.classList.contains('answer-state-correct')).toBe(false)
     expect(selected.classList.contains('answer-state-incorrect')).toBe(false)
+  })
+
+  test('keeps correct and incorrect semantics for every Suffix Shifter question type', () => {
+    const questions = lessonCatalog
+      .filter((entry) => entry.packId === 'g3-word-forge-suffix-shifter')
+      .flatMap((entry) => getLessonById(entry.lessonId).lesson?.questions ?? [])
+    const byType = new Map(questions.map((question) => [question.questionType, question] as const))
+    expect([...byType.keys()].sort()).toEqual(['EVIDENCE_PAIR', 'HOT_TEXT', 'MULTIPLE_CHOICE', 'MULTISELECT', 'TABLE_MATCH'])
+
+    for (const question of byType.values()) {
+      const correct = evaluateAnswer(question, buildCanonicalSubmission(question))
+      const adversarial = generateAdversarialSubmissions(question)[0]
+      if (!adversarial) throw new Error(`Suffix Shifter question ${question.questionId} needs an adversarial response.`)
+      const incorrect = evaluateAnswer(question, adversarial.submission)
+      expect(correct.isCorrect, question.questionId).toBe(true)
+      expect(incorrect.isCorrect, question.questionId).toBe(false)
+
+      const view = render(<AnswerFeedback isCorrect={correct.isCorrect} explanation={correct.explanation} />)
+      expect(screen.getByRole('status').getAttribute('data-result')).toBe('correct')
+      expect(screen.getByRole('status').classList.contains('answer-feedback-incorrect')).toBe(false)
+      view.rerender(<AnswerFeedback isCorrect={incorrect.isCorrect} explanation={incorrect.explanation} />)
+      expect(screen.getByRole('status').getAttribute('data-result')).toBe('incorrect')
+      expect(screen.getByRole('status').classList.contains('answer-feedback-correct')).toBe(false)
+      view.unmount()
+    }
   })
 })
 

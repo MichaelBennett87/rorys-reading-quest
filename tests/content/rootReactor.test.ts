@@ -44,13 +44,13 @@ describe('Grade 3 Root Reactor production pack', () => {
     expect(grade2.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(161)
     expect(grade2.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(889)
     expect(grade2.reduce((sum, pack) => sum + pack.passages.flatMap((passage) => passage.wordSupportTargets ?? []).length, 0)).toBe(614)
-    expect(grade3.map((pack) => pack.manifest.packId)).toEqual([PACK_ID])
+    expect(grade3.map((pack) => pack.manifest.packId)).toEqual([PACK_ID, 'g3-word-forge-suffix-shifter'])
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 23,
-      activeLessonCount: 161,
-      activePassageCount: 168,
-      activeQuestionCount: 930,
-      activeSupportTargetCount: 642,
+      activePackCount: 24,
+      activeLessonCount: 168,
+      activePassageCount: 175,
+      activeQuestionCount: 971,
+      activeSupportTargetCount: 670,
     })
   })
 
@@ -133,9 +133,9 @@ describe('Grade 3 Root Reactor production pack', () => {
     expect(f13).toMatchObject({
       coverageStatus: 'partial',
       reviewStatus: 'DRAFT',
-      contributingPackIds: [PACK_ID],
-      coveredPatterns: ['greek-latin-root-decoding', 'affix-decoding'],
-      missingPatterns: ['derivational-suffix-decoding', 'part-of-speech-change', 'multisyllabic-decoding'],
+      contributingPackIds: [PACK_ID, 'g3-word-forge-suffix-shifter'],
+      coveredPatterns: ['greek-latin-root-decoding', 'affix-decoding', 'derivational-suffix-decoding', 'part-of-speech-change'],
+      missingPatterns: ['multisyllabic-decoding'],
     })
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'partial')).toHaveLength(1)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(15)
@@ -148,9 +148,9 @@ describe('Grade 3 Root Reactor production pack', () => {
     expect(curriculumTracks.find((track) => track.trackId === 'g3-word-forge-foundations')?.status).toBe('active')
     expect(curriculumTracks.filter((track) => track.gradeBand === 3 && track.trackId !== 'g3-word-forge-foundations').every((track) => track.status === 'planned_until_content_exists')).toBe(true)
     expect(auditSemanticQuestionPacks(getActiveContentPacks())).toMatchObject({
-      reviewedPackCount: 23,
-      reviewedLessonCount: 161,
-      reviewedCount: 930,
+      reviewedPackCount: 24,
+      reviewedLessonCount: 168,
+      reviewedCount: 971,
       issues: [],
     })
   })

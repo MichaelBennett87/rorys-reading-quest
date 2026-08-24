@@ -5,6 +5,7 @@ import { sampleContent } from '../../src/domain/content'
 import { grade2ContextCavernAcademicWordWorkshopPack } from '../../src/domain/content/packs/grade2/contextCavern/academicWordWorkshop'
 import { grade2ContextCavernMorphologyMinePack } from '../../src/domain/content/packs/grade2/contextCavern/morphologyMine'
 import { grade3WordForgeRootReactorPack } from '../../src/domain/content/packs/grade3/wordForge/rootReactor'
+import { grade3WordForgeSuffixShifterPack } from '../../src/domain/content/packs/grade3/wordForge/suffixShifter'
 import {
   buildAttentionItems,
   buildBenchmarkSummaries,
@@ -517,6 +518,60 @@ describe('dashboard analytics', () => {
       benchmarkReference: 'ELA.3.F.1.3',
       gradeBand: 3,
     })
+    expect((snapshot as { predictedFastScore?: unknown }).predictedFastScore).toBeUndefined()
+    expect((snapshot as { diagnosedGradeLevel?: unknown }).diagnosedGradeLevel).toBeUndefined()
+  })
+
+  test('keeps Root Reactor and Suffix Shifter unit context separate inside one Grade 3 skill', () => {
+    const rootCandidate = candidates.find((candidate) => candidate.unitId === 'g3-wg-unit-1')!
+    const suffixCandidate = candidates.find((candidate) => candidate.unitId === 'g3-wg-unit-2')!
+    const progress = createDefaultQuestProgress(now)
+    progress.completedAttempts = [
+      buildAttempt({
+        completionId: 'root-unit-attempt', completedAt: old, accuracy: 100,
+        questionIds: grade3WordForgeRootReactorPack.questions.slice(0, 2).map((question) => question.questionIdentifier),
+        decisionState: 'ADVANCE', skillId: rootCandidate.skillId, difficulty: 1,
+        lessonId: rootCandidate.lessonId, activityId: rootCandidate.activityId, lessonRole: 'CHECKPOINT',
+      }),
+      buildAttempt({
+        completionId: 'suffix-unit-attempt', completedAt: now, accuracy: 86,
+        questionIds: grade3WordForgeSuffixShifterPack.questions.slice(0, 2).map((question) => question.questionIdentifier),
+        decisionState: 'VERIFY_MASTERY', skillId: suffixCandidate.skillId, difficulty: 2,
+        lessonId: suffixCandidate.lessonId, activityId: suffixCandidate.activityId, lessonRole: 'CHECKPOINT',
+      }),
+    ]
+    progress.completedSessionCount = 2
+    progress.skillProgress[suffixCandidate.skillId] = {
+      skillId: suffixCandidate.skillId,
+      currentDifficulty: 2,
+      lastMasteredDifficulty: 1,
+      currentLearningState: 'VERIFY_MASTERY',
+      qualifyingIndependentActivityIds: [suffixCandidate.activityId],
+      consecutiveUnsuccessfulAtCurrentDifficulty: 0,
+      lastCompletedActivityId: suffixCandidate.activityId,
+      recentActivityUsage: [],
+      reviewStep: 0,
+      nextReviewDate: '2026-08-25T12:00:00.000Z',
+      lastDecisionReasonCodes: ['independent_evidence'],
+      remediationContext: null,
+    }
+    progress.reviewQueue = [
+      { skillId: suffixCandidate.skillId, difficulty: 1, reviewStep: 0, dueAt: now, unitId: 'g3-wg-unit-1', contentVersion: 'g3-wf-root-reactor-r0.1.0' },
+      { skillId: suffixCandidate.skillId, difficulty: 2, reviewStep: 0, dueAt: now, unitId: 'g3-wg-unit-2', contentVersion: 'g3-wf-suffix-shifter-r0.1.0' },
+    ]
+
+    const snapshot = buildDashboardSnapshot({ progress, now })
+    expect(snapshot.skillSummaries.filter((summary) => summary.skillId === suffixCandidate.skillId)).toHaveLength(1)
+    expect(snapshot.skillSummaries.find((summary) => summary.skillId === suffixCandidate.skillId)).toMatchObject({
+      gradeBand: 3,
+      currentDifficulty: 2,
+      benchmarkReferences: ['ELA.3.F.1.3'],
+    })
+    expect(snapshot.recentAttempts.map((attempt) => attempt.lessonTitle)).toEqual(expect.arrayContaining([
+      expect.stringContaining('Root Reactor'),
+      expect.stringContaining('Suffix Shifter'),
+    ]))
+    expect(snapshot.reviewSummary.entries.map((entry) => entry.unitLabel)).toEqual(expect.arrayContaining(['Root Reactor', 'Suffix Shifter']))
     expect((snapshot as { predictedFastScore?: unknown }).predictedFastScore).toBeUndefined()
     expect((snapshot as { diagnosedGradeLevel?: unknown }).diagnosedGradeLevel).toBeUndefined()
   })

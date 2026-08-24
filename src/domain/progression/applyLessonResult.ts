@@ -114,8 +114,8 @@ export function applyLessonResult(input: ApplyLessonResultInput): ApplyLessonRes
       progress,
       availableLessons: input.availableLessons,
       purpose,
-      preferredUnitId: lessonMetadata?.unitId ?? lesson?.unitId ?? null,
-      preferredContentVersion: lessonMetadata?.contentVersion ?? lesson?.contentVersion ?? null,
+      preferredUnitId: decision.decisionState === 'ADVANCE' ? null : lessonMetadata?.unitId ?? lesson?.unitId ?? null,
+      preferredContentVersion: decision.decisionState === 'ADVANCE' ? null : lessonMetadata?.contentVersion ?? lesson?.contentVersion ?? null,
     }),
   }
 }
