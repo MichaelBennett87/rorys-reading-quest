@@ -97,4 +97,3 @@ Parent and print views identify `ELA.3.F.1.4` as supportive practice and explici
 ## Preserved boundaries
 
 Grade 2, Root Reactor, Suffix Shifter, Multisyllable Mountain, mastery thresholds, review intervals, rewards, persistence keys, schema version 1, Parent PIN, assessments, feedback semantics, five-stage Word Help, active-quest lifecycle, dark design, Pages base, and Pages workflow remain intact. No backend, cloud sync, analytics, telemetry, microphone, recording, external speech provider, live AI, Phase 7B content, Grade 4 content, or FAST timed practice was added.
-

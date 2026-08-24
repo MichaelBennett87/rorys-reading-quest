@@ -102,4 +102,3 @@ All seven passages and all question, guide, teaching, and support text were auth
 - Review optional browser-model limitations on representative devices.
 - Review the seven passages and twenty-eight questions for educational approval.
 - Keep status DRAFT until human educational approval is recorded.
-

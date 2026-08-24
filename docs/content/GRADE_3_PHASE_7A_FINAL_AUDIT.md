@@ -64,4 +64,3 @@ Phase 7: IN PROGRESS.
 Phase 7B: UNSTARTED.
 
 Next bounded phase: Phase 7B1 Character Arc Camp for `ELA.3.R.1.1`. This audit does not authorize or begin that content.
-
