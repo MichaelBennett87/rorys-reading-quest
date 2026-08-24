@@ -6,6 +6,7 @@ import { grade2ContextCavernAcademicWordWorkshopPack } from '../../src/domain/co
 import { grade2ContextCavernMorphologyMinePack } from '../../src/domain/content/packs/grade2/contextCavern/morphologyMine'
 import { grade3WordForgeRootReactorPack } from '../../src/domain/content/packs/grade3/wordForge/rootReactor'
 import { grade3WordForgeSuffixShifterPack } from '../../src/domain/content/packs/grade3/wordForge/suffixShifter'
+import { grade3WordForgeMultisyllableMountainPack } from '../../src/domain/content/packs/grade3/wordForge/multisyllableMountain'
 import {
   buildAttentionItems,
   buildBenchmarkSummaries,
@@ -522,9 +523,10 @@ describe('dashboard analytics', () => {
     expect((snapshot as { diagnosedGradeLevel?: unknown }).diagnosedGradeLevel).toBeUndefined()
   })
 
-  test('keeps Root Reactor and Suffix Shifter unit context separate inside one Grade 3 skill', () => {
+  test('keeps all three Grade 3 Word Forge units separate inside one friendly skill', () => {
     const rootCandidate = candidates.find((candidate) => candidate.unitId === 'g3-wg-unit-1')!
     const suffixCandidate = candidates.find((candidate) => candidate.unitId === 'g3-wg-unit-2')!
+    const mountainCandidate = candidates.find((candidate) => candidate.unitId === 'g3-wg-unit-3')!
     const progress = createDefaultQuestProgress(now)
     progress.completedAttempts = [
       buildAttempt({
@@ -539,16 +541,22 @@ describe('dashboard analytics', () => {
         decisionState: 'VERIFY_MASTERY', skillId: suffixCandidate.skillId, difficulty: 2,
         lessonId: suffixCandidate.lessonId, activityId: suffixCandidate.activityId, lessonRole: 'CHECKPOINT',
       }),
+      buildAttempt({
+        completionId: 'mountain-unit-attempt', completedAt: now, accuracy: 86,
+        questionIds: grade3WordForgeMultisyllableMountainPack.questions.slice(0, 2).map((question) => question.questionIdentifier),
+        decisionState: 'VERIFY_MASTERY', skillId: mountainCandidate.skillId, difficulty: 3,
+        lessonId: mountainCandidate.lessonId, activityId: mountainCandidate.activityId, lessonRole: 'CHECKPOINT',
+      }),
     ]
-    progress.completedSessionCount = 2
+    progress.completedSessionCount = 3
     progress.skillProgress[suffixCandidate.skillId] = {
       skillId: suffixCandidate.skillId,
-      currentDifficulty: 2,
-      lastMasteredDifficulty: 1,
+      currentDifficulty: 3,
+      lastMasteredDifficulty: 2,
       currentLearningState: 'VERIFY_MASTERY',
-      qualifyingIndependentActivityIds: [suffixCandidate.activityId],
+      qualifyingIndependentActivityIds: [mountainCandidate.activityId],
       consecutiveUnsuccessfulAtCurrentDifficulty: 0,
-      lastCompletedActivityId: suffixCandidate.activityId,
+      lastCompletedActivityId: mountainCandidate.activityId,
       recentActivityUsage: [],
       reviewStep: 0,
       nextReviewDate: '2026-08-25T12:00:00.000Z',
@@ -558,20 +566,22 @@ describe('dashboard analytics', () => {
     progress.reviewQueue = [
       { skillId: suffixCandidate.skillId, difficulty: 1, reviewStep: 0, dueAt: now, unitId: 'g3-wg-unit-1', contentVersion: 'g3-wf-root-reactor-r0.1.0' },
       { skillId: suffixCandidate.skillId, difficulty: 2, reviewStep: 0, dueAt: now, unitId: 'g3-wg-unit-2', contentVersion: 'g3-wf-suffix-shifter-r0.1.0' },
+      { skillId: mountainCandidate.skillId, difficulty: 3, reviewStep: 0, dueAt: now, unitId: 'g3-wg-unit-3', contentVersion: 'g3-wf-multisyllable-mountain-r0.1.0' },
     ]
 
     const snapshot = buildDashboardSnapshot({ progress, now })
     expect(snapshot.skillSummaries.filter((summary) => summary.skillId === suffixCandidate.skillId)).toHaveLength(1)
     expect(snapshot.skillSummaries.find((summary) => summary.skillId === suffixCandidate.skillId)).toMatchObject({
       gradeBand: 3,
-      currentDifficulty: 2,
+      currentDifficulty: 3,
       benchmarkReferences: ['ELA.3.F.1.3'],
     })
     expect(snapshot.recentAttempts.map((attempt) => attempt.lessonTitle)).toEqual(expect.arrayContaining([
       expect.stringContaining('Root Reactor'),
       expect.stringContaining('Suffix Shifter'),
+      expect.stringContaining('Multisyllable Mountain'),
     ]))
-    expect(snapshot.reviewSummary.entries.map((entry) => entry.unitLabel)).toEqual(expect.arrayContaining(['Root Reactor', 'Suffix Shifter']))
+    expect(snapshot.reviewSummary.entries.map((entry) => entry.unitLabel)).toEqual(expect.arrayContaining(['Root Reactor', 'Suffix Shifter', 'Multisyllable Mountain']))
     expect((snapshot as { predictedFastScore?: unknown }).predictedFastScore).toBeUndefined()
     expect((snapshot as { diagnosedGradeLevel?: unknown }).diagnosedGradeLevel).toBeUndefined()
   })

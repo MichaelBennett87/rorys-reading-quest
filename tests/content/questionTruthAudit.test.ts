@@ -24,8 +24,8 @@ describe('active question truth inventory', () => {
     const inventory = buildActiveQuestionTruthInventory(activePacks)
 
     expect(inventory.issues, JSON.stringify(inventory.issues, null, 2)).toEqual([])
-    expect(inventory.records).toHaveLength(971)
-    expect(new Set(inventory.records.map((record) => record.questionId)).size).toBe(971)
+    expect(inventory.records).toHaveLength(1012)
+    expect(new Set(inventory.records.map((record) => record.questionId)).size).toBe(1012)
     expect(new Set(inventory.records.map((record) => record.packId))).toEqual(
       new Set(activePacks.map((pack) => pack.manifest.packId)),
     )
@@ -46,7 +46,7 @@ describe('active question truth inventory', () => {
     ])
     const discoveredKeys = collectKeys(projection)
 
-    expect(projection).toHaveLength(971)
+    expect(projection).toHaveLength(1012)
     expect([...forbiddenKeys].filter((key) => discoveredKeys.has(key))).toEqual([])
     expect(projection.every((record) => record.displayedTexts.length >= 1)).toBe(true)
   })
@@ -56,9 +56,9 @@ describe('active question truth inventory', () => {
     const activeById = new Map(inventory.records.map((record) => [record.questionId, record] as const))
     const ledgerRecords = Object.values(ledgerModules).flatMap((raw) => JSON.parse(raw) as LedgerRecord[])
 
-    expect(Object.keys(ledgerModules)).toHaveLength(24)
-    expect(ledgerRecords).toHaveLength(971)
-    expect(new Set(ledgerRecords.map((record) => record.questionId)).size).toBe(971)
+    expect(Object.keys(ledgerModules)).toHaveLength(25)
+    expect(ledgerRecords).toHaveLength(1012)
+    expect(new Set(ledgerRecords.map((record) => record.questionId)).size).toBe(1012)
     expect(new Set(ledgerRecords.map((record) => record.packId))).toEqual(
       new Set(getActiveContentPacks().map((pack) => pack.manifest.packId)),
     )

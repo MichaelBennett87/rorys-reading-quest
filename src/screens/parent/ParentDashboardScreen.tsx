@@ -532,7 +532,7 @@ function BenchmarkCard({ summary }: { summary: DashboardBenchmarkSummary }) {
       <p className="parent-muted-copy">Skill ID: {summary.skillIdentifier}</p>
       <p className="parent-muted-copy">Grade band: {summary.gradeBand ?? 'Archived'}</p>
       {summary.benchmarkReference === 'ELA.3.F.1.3' && (
-        <ParentDataNote title="Partial curriculum coverage" message="Root Reactor practices Greek and Latin root and affix decoding. Later Grade 3 word-analysis units are still required for full ELA.3.F.1.3 coverage." />
+        <ParentDataNote title="Curriculum coverage implemented" message="Root Reactor, Suffix Shifter, and Multisyllable Mountain provide all authored ELA.3.F.1.3 branches at DRAFT review status. Curriculum availability is separate from learner mastery." />
       )}
       <ParentMetricCard label="Attempts" value={summary.questionAttempts} />
       <ParentMetricCard label="Accuracy" value={formatPercent(summary.accuracy)} />
@@ -563,7 +563,7 @@ function SkillSummaryCard({
       <p className="parent-muted-copy">Benchmark references: {formatBenchmarkReferences(summary.benchmarkReferences)}</p>
       <p className="parent-muted-copy">Category: {summary.reportingCategory}</p>
       {summary.benchmarkReferences.includes('ELA.3.F.1.3') && (
-        <p className="parent-muted-copy">Curriculum coverage: Partial. Root Reactor covers root and affix decoding only.</p>
+        <p className="parent-muted-copy">Curriculum coverage: Implemented / DRAFT. This describes authored content, not learner mastery.</p>
       )}
       <p>Current trail: {formatTrailLabel(summary.currentDifficulty)}</p>
       <p>Last mastered trail: {formatTrailLabel(summary.lastMasteredDifficulty)}</p>
@@ -606,7 +606,7 @@ function SkillDetailView({
         <p className="parent-muted-copy">Reporting category: {skill.reportingCategory}</p>
         <p>Grade band: {skill.gradeBand ?? 'Archived'}</p>
         {skill.benchmarkReferences.includes('ELA.3.F.1.3') && (
-          <ParentDataNote title="Partial curriculum coverage" message="Root Reactor covers common Greek and Latin root and affix decoding. It does not yet complete ELA.3.F.1.3." />
+          <ParentDataNote title="Curriculum coverage implemented" message="All five ELA.3.F.1.3 instructional patterns have authored DRAFT content. Learner mastery remains a separate progress measure." />
         )}
         <p>Question attempts: {skill.questionAttempts}</p>
         <p>Overall accuracy: {formatPercent(skill.accuracy)}</p>

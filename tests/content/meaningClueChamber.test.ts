@@ -72,13 +72,14 @@ describe('grade 2 context cavern meaning clue chamber pack', () => {
       'g2-compare-castle-compare-keep',
       'g3-word-forge-root-reactor',
       'g3-word-forge-suffix-shifter',
+      'g3-word-forge-multisyllable-mountain',
     ])
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 24,
-      activeLessonCount: 168,
-      activePassageCount: 175,
-      activeQuestionCount: 971,
-      activeSupportTargetCount: 670,
+      activePackCount: 25,
+      activeLessonCount: 175,
+      activePassageCount: 182,
+      activeQuestionCount: 1012,
+      activeSupportTargetCount: 698,
     })
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.V.1.3')).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.V.1.3',

@@ -198,7 +198,7 @@ export function ParentPrintSummaryView({
                 <p className="parent-muted-copy">Grade band: {skill.gradeBand ?? 'Archived'}</p>
                 <p className="parent-muted-copy">Benchmark references: {formatBenchmarkReferences(skill.benchmarkReferences)}</p>
                 {skill.benchmarkReferences.includes('ELA.3.F.1.3') && (
-                  <p>Curriculum coverage: Partial. Root Reactor covers Greek and Latin root and affix decoding only.</p>
+                  <p>Curriculum coverage: Implemented. Review status: DRAFT. This describes authored curriculum, not learner mastery.</p>
                 )}
                 <p>Category: {skill.reportingCategory}</p>
                 <p>Current trail: {formatTrailLabel(skill.currentDifficulty)}</p>

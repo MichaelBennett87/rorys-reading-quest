@@ -44,13 +44,13 @@ describe('Grade 3 Root Reactor production pack', () => {
     expect(grade2.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(161)
     expect(grade2.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(889)
     expect(grade2.reduce((sum, pack) => sum + pack.passages.flatMap((passage) => passage.wordSupportTargets ?? []).length, 0)).toBe(614)
-    expect(grade3.map((pack) => pack.manifest.packId)).toEqual([PACK_ID, 'g3-word-forge-suffix-shifter'])
+    expect(grade3.map((pack) => pack.manifest.packId)).toEqual([PACK_ID, 'g3-word-forge-suffix-shifter', 'g3-word-forge-multisyllable-mountain'])
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 24,
-      activeLessonCount: 168,
-      activePassageCount: 175,
-      activeQuestionCount: 971,
-      activeSupportTargetCount: 670,
+      activePackCount: 25,
+      activeLessonCount: 175,
+      activePassageCount: 182,
+      activeQuestionCount: 1012,
+      activeSupportTargetCount: 698,
     })
   })
 
@@ -125,21 +125,21 @@ describe('Grade 3 Root Reactor production pack', () => {
     expect(contentPackAudit).toEqual([])
   })
 
-  test('reports only partial F.1.3 coverage and preserves every other benchmark boundary', () => {
+  test('reports implemented DRAFT F.1.3 coverage and preserves every other benchmark boundary', () => {
     const grade2Before = buildGrade2CoverageSnapshot()
     const snapshot = buildGrade3CoverageSnapshot()
     const f13 = snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.F.1.3')
 
     expect(f13).toMatchObject({
-      coverageStatus: 'partial',
+      coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',
-      contributingPackIds: [PACK_ID, 'g3-word-forge-suffix-shifter'],
-      coveredPatterns: ['greek-latin-root-decoding', 'affix-decoding', 'derivational-suffix-decoding', 'part-of-speech-change'],
-      missingPatterns: ['multisyllabic-decoding'],
+      contributingPackIds: ['g3-word-forge-multisyllable-mountain', PACK_ID, 'g3-word-forge-suffix-shifter'],
+      coveredPatterns: ['greek-latin-root-decoding', 'affix-decoding', 'derivational-suffix-decoding', 'part-of-speech-change', 'multisyllabic-decoding'],
+      missingPatterns: [],
     })
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'partial')).toHaveLength(1)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'partial')).toHaveLength(0)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(15)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(0)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(1)
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.V.1.2')?.coverageStatus).toBe('planned')
     expect(buildGrade2CoverageSnapshot()).toEqual(grade2Before)
   })
@@ -148,9 +148,9 @@ describe('Grade 3 Root Reactor production pack', () => {
     expect(curriculumTracks.find((track) => track.trackId === 'g3-word-forge-foundations')?.status).toBe('active')
     expect(curriculumTracks.filter((track) => track.gradeBand === 3 && track.trackId !== 'g3-word-forge-foundations').every((track) => track.status === 'planned_until_content_exists')).toBe(true)
     expect(auditSemanticQuestionPacks(getActiveContentPacks())).toMatchObject({
-      reviewedPackCount: 24,
-      reviewedLessonCount: 168,
-      reviewedCount: 971,
+      reviewedPackCount: 25,
+      reviewedLessonCount: 175,
+      reviewedCount: 1012,
       issues: [],
     })
   })

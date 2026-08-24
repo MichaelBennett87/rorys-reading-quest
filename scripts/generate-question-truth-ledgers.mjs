@@ -9,6 +9,13 @@ const correctionSummaries = new Map([
   ['lesson-g3-suffix-shifter-checkpoint-maker-q-7', 'Blind review replaced a sentence-role Part B with authored reading chunks so the checkpoint genuinely distinguishes morphological and pronunciation boundaries.'],
   ['lesson-g3-suffix-shifter-checkpoint-nature-q-7', 'Blind review replaced a sentence-role Part B with authored reading chunks so the checkpoint genuinely distinguishes morphological and pronunciation boundaries.'],
   ['lesson-g3-suffix-shifter-checkpoint-weather-q-7', 'Blind review replaced a sentence-role Part B with authored reading chunks so the checkpoint genuinely distinguishes morphological and pronunciation boundaries.'],
+  ['lesson-g3-multisyllable-mountain-power-up-compounds-q-4', 'Blind review made the hot-text prompt self-contained instead of depending on opening Word Help to discover the requested chunk.'],
+  ['lesson-g3-multisyllable-mountain-power-up-vowels-q-4', 'Blind review made the hot-text prompt self-contained instead of depending on opening Word Help to discover the requested chunk.'],
+  ['lesson-g3-multisyllable-mountain-lab-garden-q-4', 'Blind review made the hot-text prompt self-contained instead of depending on opening Word Help to discover the requested chunk.'],
+  ['lesson-g3-multisyllable-mountain-lab-wildlife-q-4', 'Blind review made the hot-text prompt self-contained instead of depending on opening Word Help to discover the requested chunk.'],
+  ['lesson-g3-multisyllable-mountain-checkpoint-museum-q-5', 'Blind review bound the hot-text prompt to the authored prefix target rather than an unrelated fourth target.'],
+  ['lesson-g3-multisyllable-mountain-checkpoint-engineering-q-5', 'Blind review bound the hot-text prompt to the authored prefix target rather than an unrelated fourth target.'],
+  ['lesson-g3-multisyllable-mountain-checkpoint-adventure-q-5', 'Blind review bound the hot-text prompt to the authored prefix target rather than an unrelated fourth target.'],
 ])
 const server = await createServer({
   appType: 'custom',
@@ -183,7 +190,7 @@ function buildAuditProgress(packs, records, metrics) {
   }).join('\n')
   return `# Active Question Truth Audit Progress
 
-Registry source: active production content registry through Phase 7A2.
+Registry source: active production content registry through Phase 7A3.
 
 - Active packs: ${metrics.activePacks}
 - Active questions: ${metrics.activeQuestions}
