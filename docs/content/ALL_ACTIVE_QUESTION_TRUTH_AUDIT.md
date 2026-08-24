@@ -119,3 +119,7 @@ The permanent audit now covers 28 active packs, 196 active lessons, 203 active t
 ## Phase 7B3 current inventory
 
 The permanent audit now covers 29 active packs, 203 active lessons, 210 active texts, and 1,163 active questions. There are 1,163 current fingerprinted PASS records, 1,163 canonical submissions, 388 canonical-equivalent submissions, 14,840 adversarial submissions, and 18,717 grading assertions. Perspective Portal adds 41 PASS records. Blind review corrected two source-sentence Word Help occurrences, one checkpoint multiselect factory affecting three items, and one bounded table factory affecting seven items. No final answer key, explanation, evidence reference, production evaluator, or unresolved question ID remains. These are repository quality-gate results, not teacher approval, Florida approval, learner mastery, or FAST certification.
+
+## Phase 7B4 registration
+
+Poem Form Observatory adds 41 independently reviewed questions under `g3-poetry-planet-poem-form-observatory`. The production inventory now contains 1,204 active questions and 1,204 current PASS ledger records across 30 packs. The executable contract accepts 1,204 canonical submissions and 402 canonical-equivalent submissions, rejects 15,214 adversarial submissions, and completes 19,228 grading assertions. Three prompts were refined before registration; no key, distractor, explanation, evidence, poem, rhyme, or evaluator correction remained after blind comparison. Zero question IDs are unresolved and zero fingerprints are stale.

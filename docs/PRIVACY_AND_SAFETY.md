@@ -99,3 +99,7 @@ Storage keys, schema version 1, Parent PIN behavior, assessment records, bounded
 Perspective Portal persists no story text, character-perspective guide, perspective or motivation statement, dialogue/thought excerpt, comparison, change statement, question text, submitted answer, correct answer, explanation, or Word Help curriculum text. Parent and print surfaces use friendly benchmark, grade, unit, and aggregate progress facts only; implemented DRAFT curriculum coverage remains separate from learner mastery.
 
 The stories use original child-safe situations and reasonable motivations, without private child details, real private locations, trauma, political or ideological conflict, shaming, villain/hero simplification, backend services, cloud sync, analytics, telemetry, microphone access, speech recognition, external speech, or live AI. Schema version 1, storage keys, Parent PIN, assessments, bounded attempt history, and active-session recovery remain unchanged.
+
+## Phase 7B4 privacy boundary
+
+Poem text, PoemFormGuide records, rhyme maps, classroom syllable notes, question text, explanations, and correct answers remain authored application content and are not copied into learner persistence or print output. Storage keys, schema version 1, the hashed Parent PIN record, assessment stores, bounded attempts, and active-session recovery are unchanged. Phase 7B4 adds no backend, cloud synchronization, analytics, telemetry, microphone, external speech provider, or live AI.

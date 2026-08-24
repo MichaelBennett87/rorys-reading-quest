@@ -107,3 +107,7 @@ Guide records remain DRAFT curriculum-only metadata. Passage text, theme candida
 Phase 7B3 adds optional `CharacterPerspectiveGuide` records. Each guide links to one literary passage and stores at least two character states toward a shared situation, complete perspective and motivation statements, typed dialogue/thought/action/feeling/noticing/choice evidence, a supported similar/different/partly-similar comparison, optional earlier/later perspective change, and important evidence IDs. Validation keeps perspective distinct from an isolated feeling, trait, narrator point of view, or author viewpoint.
 
 Guide records remain DRAFT curriculum-only metadata. Passage text, perspective statements, motivations, excerpts, explanations, answer keys, and Word Help curriculum text are excluded from persistence and print. All forty-one questions use the permanent inventory, fingerprint, semantic-audit, and production evaluator contracts.
+
+## Grade 3 poem-form guides
+
+Phase 7B4 adds optional `PoemFormGuide` records to authored content packs. A guide binds one structured poem to one of `free-verse`, `rhymed-verse`, `haiku`, or `limerick`, with defining and non-defining features, evidence line IDs, an explanation, comparison notes, DRAFT status, and the pack content version. Guides are validated and audited at build/test time but are not persisted or printed. The active registry now contains 30 packs, 210 lessons, 217 texts, 1,204 questions, and 831 support targets.

@@ -53,3 +53,7 @@ Schema version 1, storage keys, Parent PIN, assessments, thresholds, review inte
 - Grade 3 approved rows: 0
 
 Phase 7B3 is complete after synchronized verification and deployment. Phase 7B and Phase 7 remain incomplete. Phase 7B4 Poem Form Observatory is next and remains unstarted.
+
+## Phase 7B3 final synchronization and protected UX detour
+
+Phase 7B3 began at `c0d36e71b2543854069840c58e72fc8efcd8bbbb` and synchronized at `b9fd9cae064915998d5154d3cb5ebf4f562068af` through `2ddfb8b`, `6ff12eb`, `1cc5108`, `7ffe77d`, and `b9fd9ca`. The subsequent one-button child-journey work began at `b9fd9cae064915998d5154d3cb5ebf4f562068af` and synchronized at `e11414e67b8887b9420e6a12775bb687b23125a0` through `3e19e19`, `ad601e6`, and `e11414e`. That detour changed navigation and planner sequencing only; it did not alter the Phase 7B3 curriculum totals. Home now has Start Journey and Parent Area only, world cards are display-only, and the accepted planner-driven flow is protected.

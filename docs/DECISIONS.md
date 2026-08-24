@@ -472,3 +472,11 @@ Decision: permit fresh difficulty-4 fluency practice to complete the Grade 3 Wor
 - Reason: Rory benefits from seeing the route and progress without having to choose a world, unit, lesson, review, verification, or remediation path.
 - Consequence: The normal route is `home -> lesson_run -> progression_outcome -> lesson_run or home`; reusable selection components remain outside that route. `planGlobalQuest` chooses the first incomplete active track by canonical curriculum order for ordinary progression while preserving active-session, urgent-plan, due-review, remediation, and verification priority. Word Forge therefore leads to Story Scouts only at its existing completion boundary, and required missing content still fails closed. Curriculum, mastery thresholds, reviews, rewards, persistence, assessments, and parent functionality are unchanged.
 - Status: Applied
+
+## Simplified Guided Journey remains protected for Phase 7B4
+
+- Decision: activate Grade 3 Poetry Planet only through the canonical track registry and global planner; do not add child-facing world, chapter, unit, or lesson selection.
+- Decision: preserve exactly two Home navigation controls, Start Journey and Parent Area, plus display-only world cards and one outcome action.
+- Decision: classify `ELA.3.R.1.4` as IMPLEMENTED / DRAFT when all four required poem forms are authored and truth-gated; this is not learner mastery or human approval.
+- Decision: teach free verse and rhymed verse without false absolutes, qualify the authored haiku's 5-7-5 pattern as a common English classroom example, and identify limericks through five lines, AABBA rhyme, and playful tone without advanced meter claims.
+- Decision: Phase 7B is complete after Phase 7B4; Phase 7C remains unstarted.

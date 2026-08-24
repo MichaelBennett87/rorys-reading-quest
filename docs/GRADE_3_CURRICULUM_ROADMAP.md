@@ -75,3 +75,7 @@ Theme Development Trail (`g3-ss-unit-2`) is active after Character Arc Camp comp
 ## Phase 7B3 implementation update
 
 Perspective Portal Grade 3 (`g3-ss-unit-3`) is active after Theme Development Trail completion. It contributes `character-perspective`, `different-character-perspectives`, `similar-character-perspectives`, `perspective-evidence`, and `perspective-change`, making `ELA.3.R.1.3` IMPLEMENTED / DRAFT. Character perspective remains distinct from feeling-only labels, traits, narrator point of view, and author perspective. Poem Form Observatory remains planned for Phase 7B4.
+
+## Phase 7B4 completion snapshot
+
+Poem Form Observatory completes authored DRAFT coverage of `ELA.3.R.1.4` through free verse, rhymed verse, haiku, and limerick. Grade 3 now has five IMPLEMENTED / DRAFT benchmarks (`ELA.3.F.1.3` and `ELA.3.R.1.1` through `ELA.3.R.1.4`), one SUPPORTIVE_PRACTICE / DRAFT benchmark (`ELA.3.F.1.4`), and ten PLANNED benchmarks. No Grade 3 benchmark is APPROVED. Phase 7B is complete; Phase 7C1 Structure Station is the next bounded phase and remains unstarted.
