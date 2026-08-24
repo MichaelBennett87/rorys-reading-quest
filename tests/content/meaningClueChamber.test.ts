@@ -78,13 +78,14 @@ describe('grade 2 context cavern meaning clue chamber pack', () => {
       'g3-story-scouts-theme-development-trail',
       'g3-story-scouts-perspective-portal',
       'g3-poetry-planet-poem-form-observatory',
+      'g3-information-detectives-structure-station',
     ])
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 30,
-      activeLessonCount: 210,
-      activePassageCount: 217,
-      activeQuestionCount: 1204,
-      activeSupportTargetCount: 831,
+      activePackCount: 31,
+      activeLessonCount: 217,
+      activePassageCount: 224,
+      activeQuestionCount: 1245,
+      activeSupportTargetCount: 859,
     })
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.V.1.3')).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.V.1.3',

@@ -42,6 +42,7 @@ export {
   perspectivePortalLessons as grade3PerspectivePortalLessons,
 } from './grade3/storyScouts/perspectivePortal'
 export * from './grade3/poetryPlanet/poemFormObservatory'
+export * from './grade3/informationDetectives/structureStation'
 export * from './registry'
 
 export const fluencyPracticeAudit = buildFluencyPracticeAudit(contentPacks)

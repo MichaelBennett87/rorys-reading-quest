@@ -18,7 +18,7 @@ describe('Phase 7B4 acceptance documentation and boundary', () => {
   test('keeps every Grade 3 row DRAFT and makes only ELA.3.R.1.4 newly implemented', () => {
     const snapshot = buildGrade3CoverageSnapshot()
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.1.4')).toMatchObject({ coverageStatus: 'implemented', reviewStatus: 'DRAFT' })
-    expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.2.1')).toMatchObject({ coverageStatus: 'planned' })
+    expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.2.1')).toMatchObject({ coverageStatus: 'implemented', reviewStatus: 'DRAFT' })
     expect(snapshot.rows.every((row) => row.reviewStatus === 'DRAFT')).toBe(true)
   })
 })

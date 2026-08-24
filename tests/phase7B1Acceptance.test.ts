@@ -22,16 +22,16 @@ describe('Phase 7B1 acceptance documentation and coverage', () => {
 
   test('keeps the final registry and Grade 3 coverage boundary exact', () => {
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 30,
-      activeLessonCount: 210,
-      activePassageCount: 217,
-      activeQuestionCount: 1204,
-      activeSupportTargetCount: 831,
+      activePackCount: 31,
+      activeLessonCount: 217,
+      activePassageCount: 224,
+      activeQuestionCount: 1245,
+      activeSupportTargetCount: 859,
     })
     const snapshot = buildGrade3CoverageSnapshot()
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(5)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(6)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(1)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(10)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(9)
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.1.1')).toMatchObject({ coverageStatus: 'implemented', reviewStatus: 'DRAFT' })
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.1.2')).toMatchObject({ coverageStatus: 'implemented', reviewStatus: 'DRAFT' })
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.1.3')).toMatchObject({ coverageStatus: 'implemented', reviewStatus: 'DRAFT' })

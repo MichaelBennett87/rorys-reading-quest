@@ -20,18 +20,18 @@ describe('Phase 7B3 acceptance documentation and coverage', () => {
 
   test('reports the production inventory and implemented DRAFT benchmark without approval', () => {
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 30,
-      activeLessonCount: 210,
-      activePassageCount: 217,
-      activeQuestionCount: 1204,
-      activeSupportTargetCount: 831,
+      activePackCount: 31,
+      activeLessonCount: 217,
+      activePassageCount: 224,
+      activeQuestionCount: 1245,
+      activeSupportTargetCount: 859,
     })
     expect(getActiveContentPacks().filter((pack) => pack.manifest.packId === 'g3-story-scouts-perspective-portal')).toHaveLength(1)
 
     const snapshot = buildGrade3CoverageSnapshot()
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(5)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(6)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(1)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(10)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(9)
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.1.3')).toMatchObject({
       coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',

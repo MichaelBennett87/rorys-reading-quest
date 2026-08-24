@@ -546,6 +546,9 @@ function BenchmarkCard({ summary }: { summary: DashboardBenchmarkSummary }) {
       {summary.benchmarkReference === 'ELA.3.R.1.4' && (
         <ParentDataNote title="Curriculum coverage implemented" message="Poem Form Observatory provides authored ELA.3.R.1.4 poem-form identification practice at DRAFT review status. Curriculum availability is separate from learner mastery and does not claim poetry composition or figurative-language mastery." />
       )}
+      {summary.benchmarkReference === 'ELA.3.R.2.1' && (
+        <ParentDataNote title="Curriculum coverage implemented" message="Structure Station provides authored ELA.3.R.2.1 text-feature and informational-structure practice at DRAFT review status. Curriculum availability is separate from learner mastery and does not claim central-idea, author-purpose, or claim-and-evidence mastery." />
+      )}
       <ParentMetricCard label="Attempts" value={summary.questionAttempts} />
       <ParentMetricCard label="Accuracy" value={formatPercent(summary.accuracy)} />
       <ParentMetricCard label="First-attempt accuracy" value={formatPercent(summary.firstAttemptAccuracy)} />
@@ -588,6 +591,9 @@ function SkillSummaryCard({
       )}
       {summary.benchmarkReferences.includes('ELA.3.R.1.4') && (
         <p className="parent-muted-copy">Poem-form curriculum coverage: Implemented / DRAFT. This describes authored content, not learner mastery.</p>
+      )}
+      {summary.benchmarkReferences.includes('ELA.3.R.2.1') && (
+        <p className="parent-muted-copy">Informational structure curriculum coverage: Implemented / DRAFT. This describes authored content, not learner mastery.</p>
       )}
       <p>Current trail: {formatTrailLabel(summary.currentDifficulty)}</p>
       <p>Last mastered trail: {formatTrailLabel(summary.lastMasteredDifficulty)}</p>
@@ -643,6 +649,9 @@ function SkillDetailView({
         )}
         {skill.benchmarkReferences.includes('ELA.3.R.1.4') && (
           <ParentDataNote title="Curriculum coverage implemented" message="ELA.3.R.1.4 has authored DRAFT Poem Form Observatory content. Learner mastery remains separate, and the app does not claim poetry-writing or figurative-language mastery." />
+        )}
+        {skill.benchmarkReferences.includes('ELA.3.R.2.1') && (
+          <ParentDataNote title="Curriculum coverage implemented" message="ELA.3.R.2.1 has authored DRAFT Structure Station content. Learner mastery remains separate, and the app does not claim central-idea, author-purpose, or claim-and-evidence mastery." />
         )}
         <p>Question attempts: {skill.questionAttempts}</p>
         <p>Overall accuracy: {formatPercent(skill.accuracy)}</p>

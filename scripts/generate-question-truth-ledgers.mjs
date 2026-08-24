@@ -208,7 +208,7 @@ function buildAuditProgress(packs, records, metrics) {
   }).join('\n')
   return `# Active Question Truth Audit Progress
 
-Registry source: active production content registry through Phase 7B4.
+Registry source: active production content registry through Phase 7C1.
 
 - Active packs: ${metrics.activePacks}
 - Active questions: ${metrics.activeQuestions}
