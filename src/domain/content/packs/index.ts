@@ -21,6 +21,7 @@ export * from './grade2/compareCastle/wordplayWatchtower'
 export * from './grade2/compareCastle/retellHall'
 export * from './grade2/compareCastle/compareKeep'
 export * from './grade3/wordForge/rootReactor'
+export * from './grade3/wordForge/suffixShifter'
 export * from './registry'
 
 export const fluencyPracticeAudit = buildFluencyPracticeAudit(contentPacks)
