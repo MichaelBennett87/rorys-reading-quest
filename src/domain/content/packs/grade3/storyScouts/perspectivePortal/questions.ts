@@ -228,7 +228,6 @@ function tableMatch(story: PerspectiveStoryRecord, lessonIndex: number, question
   const options = [
     choice(data.questionIdentifier, 'option-a', story.characterA.perspective),
     choice(data.questionIdentifier, 'option-b', story.characterB.perspective),
-    choice(data.questionIdentifier, 'option-feeling', story.characterA.feelingOnly),
     choice(data.questionIdentifier, 'option-narrator', NARRATOR_DISTRACTOR),
   ]
   const rows = [

@@ -26,6 +26,7 @@ import { grade3WordForgeMultisyllableMountainPack } from './grade3/wordForge/mul
 import { grade3WordForgeFluencyFlightPack } from './grade3/wordForge/fluencyFlight'
 import { characterArcCampPack } from './grade3/storyScouts/characterArcCamp'
 import { themeDevelopmentTrailPack } from './grade3/storyScouts/themeDevelopmentTrail'
+import { perspectivePortalPack } from './grade3/storyScouts/perspectivePortal'
 import { legacyDevelopmentPack } from './legacyDevelopmentPack'
 import type { ContentPack } from './contentPackTypes'
 import type { ContentSample } from '../types'
@@ -61,6 +62,7 @@ export const contentPacks: readonly ContentPack[] = [
   grade3WordForgeFluencyFlightPack,
   characterArcCampPack,
   themeDevelopmentTrailPack,
+  perspectivePortalPack,
   legacyDevelopmentPack,
 ]
 

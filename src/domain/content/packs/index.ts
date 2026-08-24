@@ -30,6 +30,15 @@ export * from './grade3/wordForge/multisyllableMountain'
 export * from './grade3/wordForge/fluencyFlight'
 export * from './grade3/storyScouts/characterArcCamp'
 export * from './grade3/storyScouts/themeDevelopmentTrail'
+export {
+  characterPerspectiveGuides,
+  perspectivePortalCoveragePatterns,
+  perspectivePortalPack,
+  perspectivePortalStories as grade3PerspectivePortalStories,
+  perspectivePortalPassages as grade3PerspectivePortalPassages,
+  perspectivePortalQuestions as grade3PerspectivePortalQuestions,
+  perspectivePortalLessons as grade3PerspectivePortalLessons,
+} from './grade3/storyScouts/perspectivePortal'
 export * from './registry'
 
 export const fluencyPracticeAudit = buildFluencyPracticeAudit(contentPacks)

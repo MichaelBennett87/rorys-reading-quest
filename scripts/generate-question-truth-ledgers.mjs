@@ -30,6 +30,7 @@ const correctionSummaries = new Map([
   ['g3-ss-cac-q5-6', 'Registration review added a genuinely unused minor-detail distractor required by the hardened use-each-once table contract.'],
   ['g3-ss-cac-q6-6', 'Registration review added a genuinely unused minor-detail distractor required by the hardened use-each-once table contract.'],
   ['g3-ss-cac-q7-6', 'Registration review added a genuinely unused minor-detail distractor required by the hardened use-each-once table contract.'],
+  ['g3-ss-pp3-q5-4', 'Blind adversarial review replaced a second defensible Character A evidence option with a feeling-only distractor so exactly one cross-character evidence pair remains correct.'],
 ])
 const server = await createServer({
   appType: 'custom',
@@ -204,7 +205,7 @@ function buildAuditProgress(packs, records, metrics) {
   }).join('\n')
   return `# Active Question Truth Audit Progress
 
-Registry source: active production content registry through Phase 7B2.
+Registry source: active production content registry through Phase 7B3.
 
 - Active packs: ${metrics.activePacks}
 - Active questions: ${metrics.activeQuestions}

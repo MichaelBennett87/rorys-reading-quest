@@ -76,13 +76,14 @@ describe('grade 2 information detectives text feature hunt pack', () => {
       'g3-word-forge-fluency-flight',
       'g3-story-scouts-character-arc-camp',
       'g3-story-scouts-theme-development-trail',
+      'g3-story-scouts-perspective-portal',
     ])
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 28,
-      activeLessonCount: 196,
-      activePassageCount: 203,
-      activeQuestionCount: 1122,
-      activeSupportTargetCount: 775,
+      activePackCount: 29,
+      activeLessonCount: 203,
+      activePassageCount: 210,
+      activeQuestionCount: 1163,
+      activeSupportTargetCount: 803,
     })
     expect(contentPackAudit).toHaveLength(0)
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.2.1')).toEqual(expect.objectContaining({

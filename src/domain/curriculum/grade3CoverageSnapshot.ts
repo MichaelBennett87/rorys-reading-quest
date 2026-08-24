@@ -61,6 +61,8 @@ export function buildGrade3CoverageSnapshot(
                 ? ['Character Arc Camp covers plot-linked character development across beginning, middle, and end using actions, dialogue, thoughts, turning points, and text evidence. Curriculum coverage is implemented at DRAFT review status; this does not claim learner mastery.']
                 : status === 'implemented' && entry.benchmarkReference === 'ELA.3.R.1.2'
                   ? ['Theme Development Trail covers theme development across beginning, middle, and end using plot details, choices, consequences, turning points, and text evidence. Curriculum coverage is implemented at DRAFT review status; this does not claim learner mastery.']
+                  : status === 'implemented' && entry.benchmarkReference === 'ELA.3.R.1.3'
+                    ? ['Perspective Portal covers different, partly similar, and similar character perspectives, evidence from both characters, and evidence-supported perspective change. Curriculum coverage is implemented at DRAFT review status; this does not claim learner mastery or narrator point-of-view mastery.']
               : status === 'supportive_practice' && entry.benchmarkReference === 'ELA.3.F.1.4'
                 ? ['Fluency Flight provides DRAFT visual and question-based support for accuracy, automaticity, phrasing, and expression. The app does not record audio or measure oral fluency, pronunciation, prosody, or reading rate.']
             : ['Active Grade 3 content contributes to this inventory row.']),

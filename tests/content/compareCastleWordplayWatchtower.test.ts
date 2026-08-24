@@ -22,15 +22,16 @@ describe('Grade 2 Compare Castle Wordplay Watchtower pack', () => {
       .map((pack) => pack.manifest.packId)
 
     expect(contentPacks.some((pack) => pack.manifest.packId === WORDPLAY_PACK_ID)).toBe(true)
-    expect(activePackIds.at(-9)).toBe(WORDPLAY_PACK_ID)
-    expect(activePackIds.at(-8)).toBe(RETELL_PACK_ID)
-    expect(activePackIds.at(-7)).toBe('g2-compare-castle-compare-keep')
-    expect(activePackIds.at(-6)).toBe('g3-word-forge-root-reactor')
-    expect(activePackIds.at(-5)).toBe('g3-word-forge-suffix-shifter')
-    expect(activePackIds.at(-4)).toBe('g3-word-forge-multisyllable-mountain')
-    expect(activePackIds.at(-3)).toBe('g3-word-forge-fluency-flight')
-    expect(activePackIds.at(-2)).toBe('g3-story-scouts-character-arc-camp')
-    expect(activePackIds.at(-1)).toBe('g3-story-scouts-theme-development-trail')
+    expect(activePackIds.at(-10)).toBe(WORDPLAY_PACK_ID)
+    expect(activePackIds.at(-9)).toBe(RETELL_PACK_ID)
+    expect(activePackIds.at(-8)).toBe('g2-compare-castle-compare-keep')
+    expect(activePackIds.at(-7)).toBe('g3-word-forge-root-reactor')
+    expect(activePackIds.at(-6)).toBe('g3-word-forge-suffix-shifter')
+    expect(activePackIds.at(-5)).toBe('g3-word-forge-multisyllable-mountain')
+    expect(activePackIds.at(-4)).toBe('g3-word-forge-fluency-flight')
+    expect(activePackIds.at(-3)).toBe('g3-story-scouts-character-arc-camp')
+    expect(activePackIds.at(-2)).toBe('g3-story-scouts-theme-development-trail')
+    expect(activePackIds.at(-1)).toBe('g3-story-scouts-perspective-portal')
     expect(grade2CompareCastleWordplayWatchtowerPack.manifest).toEqual(expect.objectContaining({
       packId: WORDPLAY_PACK_ID,
       packTitle: 'Grade 2 Compare Castle: Wordplay Watchtower',
@@ -44,11 +45,11 @@ describe('Grade 2 Compare Castle Wordplay Watchtower pack', () => {
       difficultyRange: [0, 1],
     }))
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 28,
-      activeLessonCount: 196,
-      activePassageCount: 203,
-      activeQuestionCount: 1122,
-      activeSupportTargetCount: 775,
+      activePackCount: 29,
+      activeLessonCount: 203,
+      activePassageCount: 210,
+      activeQuestionCount: 1163,
+      activeSupportTargetCount: 803,
     })
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.3.1')).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.R.3.1',
