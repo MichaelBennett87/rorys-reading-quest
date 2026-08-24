@@ -465,3 +465,10 @@ Decision: permit fresh difficulty-4 fluency practice to complete the Grade 3 Wor
 - Mark `ELA.3.R.1.3` curriculum coverage IMPLEMENTED / DRAFT while keeping learner mastery and human approval separate.
 - Preserve exact Grade 2 and all three Grade 3 Story Scouts review identities, permanent truth gates, evaluator and feedback behavior, schema-version-1 persistence, Parent PIN, assessments, thresholds, intervals, rewards, and Pages configuration.
 - Defer Poem Form Observatory, Grade 3 informational, vocabulary, across-genres content, Grade 4, and FAST timed practice.
+
+## 2026-08-24 - Simplified Guided Child Journey
+
+- Decision: Make `Start Journey` the sole child learning-navigation action on Home and keep `Parent Area` as the only secondary Home navigation action. Render curriculum worlds as static progress landmarks rather than controls.
+- Reason: Rory benefits from seeing the route and progress without having to choose a world, unit, lesson, review, verification, or remediation path.
+- Consequence: The normal route is `home -> lesson_run -> progression_outcome -> lesson_run or home`; reusable selection components remain outside that route. `planGlobalQuest` chooses the first incomplete active track by canonical curriculum order for ordinary progression while preserving active-session, urgent-plan, due-review, remediation, and verification priority. Word Forge therefore leads to Story Scouts only at its existing completion boundary, and required missing content still fails closed. Curriculum, mastery thresholds, reviews, rewards, persistence, assessments, and parent functionality are unchanged.
+- Status: Applied

@@ -129,3 +129,9 @@ Theme Development Trail activates Grade 3 Story Scouts Trail 2 only after Charac
 ## Phase 7B3 Perspective Portal Grade 3
 
 Perspective Portal activates Grade 3 Story Scouts Trail 3 only after Theme Development Trail completes. Seven original DRAFT stories and perspective guides teach how two characters see the same situation through dialogue, actions, thoughts, feelings, noticing, choices, motivations, similarities, differences, and supported viewpoint change. The pack reports `ELA.3.R.1.3` curriculum coverage as IMPLEMENTED / DRAFT while keeping feeling-only labels, traits, narrator point of view, author perspective, poetry, unrestricted writing, learner-mastery claims, and FAST prediction outside the scored boundary.
+
+## Simplified Guided Child Journey
+
+Child mode presents one learning-navigation action: `Start Journey`. `Parent Area` remains a separate, visually secondary grown-up action. The colorful curriculum map remains visible as noninteractive progress information so Rory can see the current world, completed worlds, the next world, and later locked content without choosing a world, unit, or lesson.
+
+`Start Journey` resumes a valid active session first and otherwise delegates to the global progression planner. The planner retains verification, remediation, and due-review priorities, while ordinary fresh progression follows active curriculum tracks in canonical `curriculumOrder`: Word Forge first, Story Scouts after Word Forge completion, then each later active track. A missing required track fails closed with the existing content-needed result rather than skipping ahead. No content, mastery threshold, review interval, score rule, XP, star, streak, persistence, assessment, or parent analytics contract is removed.

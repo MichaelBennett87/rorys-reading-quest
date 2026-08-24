@@ -79,6 +79,12 @@
     - [x] Phase 6F4: final Grade 2 audit and Phase 6 completion
 - [x] Phase 6.5: live UX, phonics, data, and content-integrity hardening
 - [x] Phase 6.6: dark experience, Sol Grade 2 audit, and final live acceptance
+- [x] Guided child journey simplification
+  - [x] Make Start Journey the sole child learning-navigation action on Home.
+  - [x] Keep Parent Area as the only secondary Home navigation action.
+  - [x] Convert curriculum worlds into a display-only current/up-next/locked journey map.
+  - [x] Make ordinary progression sequential by canonical curriculum order while preserving automatic review, verification, remediation, and active-session recovery.
+  - [x] Remove world, unit, and lesson-ready states from the normal child route without removing curriculum content.
 - [ ] Phase 7: Grade 3 FAST-aligned content
   - [x] Phase 7A: Grade 3 foundations and transition
     - [x] Phase 7A0: Grade 3 architecture, standards map, FAST blueprint, and progression bridge
