@@ -148,8 +148,15 @@ const grade3Roadmaps: readonly SequentialWorldRoadmap[] = [
     },
   ]),
   plannedRoadmap('story-scouts', 'g3-story-scouts-prose', 'Grade 3 Literary Analysis', [
-    plannedUnit('g3-ss-unit-1', 'Character Arc Camp', 'ELA.3.R.1.1', 'how characters develop throughout a plot', '7B1', 1, 2),
-    plannedUnit('g3-ss-unit-2', 'Theme Development Trail', 'ELA.3.R.1.2', 'theme and how details develop it', '7B2', 2, 3),
+    {
+      ...plannedUnit('g3-ss-unit-1', 'Character Arc Camp', 'ELA.3.R.1.1', 'how characters develop throughout a plot', '7B1', 1, 2),
+      lockedMessage: 'Complete the Grade 2 Story Scouts chapter to unlock Character Arc Camp.',
+    },
+    {
+      ...plannedUnit('g3-ss-unit-2', 'Theme Development Trail', 'ELA.3.R.1.2', 'theme and how details develop it', '7B2', 2, 3),
+      lockedMessage: 'Complete Character Arc Camp to unlock Theme Development Trail.',
+      futureContentMessage: 'Theme Development Trail quests are being prepared.',
+    },
     plannedUnit('g3-ss-unit-3', 'Perspective Portal Grade 3', 'ELA.3.R.1.3', "explaining different characters' perspectives", '7B3', 3, 4),
   ]),
   plannedRoadmap('poetry-planet', 'g3-poetry-planet', 'Grade 3 Poetry Forms', [

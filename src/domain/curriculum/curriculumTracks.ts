@@ -50,7 +50,7 @@ const curriculumTrackDefinitions: CurriculumTrackDefinition[] = [
     entryUnitId: 'g3-ss-unit-1', unitIds: ['g3-ss-unit-1', 'g3-ss-unit-2', 'g3-ss-unit-3'],
     curriculumOrder: 120, worldChapterOrder: 2, initialDifficulty: 1, initialLastMasteredDifficulty: 0,
     completionDifficulty: 4, prerequisiteTrackIds: ['g2-story-scouts-prose'],
-    status: 'planned_until_content_exists', displayName: 'Grade 3 Story Scouts',
+    status: 'active', displayName: 'Grade 3 Story Scouts',
   },
   {
     trackId: 'g3-poetry-planet', skillId: 'g3-poetry-planet-poetry', worldId: 'poetry-planet', gradeBand: 3,

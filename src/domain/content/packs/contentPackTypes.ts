@@ -273,6 +273,52 @@ export interface MultisyllableDecodingGuide {
   contentVersion: string
 }
 
+export type CharacterDevelopmentStageKind = 'beginning' | 'middle' | 'end'
+
+export type CharacterDevelopmentEvidenceKind =
+  | 'action'
+  | 'dialogue'
+  | 'thought'
+  | 'feeling'
+  | 'choice'
+  | 'response-to-event'
+
+export interface CharacterDevelopmentStage {
+  stageId: string
+  stage: CharacterDevelopmentStageKind
+  stateStatement: string
+  plotEventStatement: string
+  evidenceIds: string[]
+  evidenceKinds: CharacterDevelopmentEvidenceKind[]
+}
+
+export type CharacterDevelopmentKind =
+  | 'learns'
+  | 'changes-strategy'
+  | 'builds-confidence'
+  | 'becomes-more-responsible'
+  | 'becomes-more-cooperative'
+  | 'persists-after-setback'
+  | 'reconsiders-a-choice'
+
+export interface CharacterDevelopmentArc {
+  characterId: string
+  characterName: string
+  developmentKind: CharacterDevelopmentKind
+  stages: [CharacterDevelopmentStage, CharacterDevelopmentStage, CharacterDevelopmentStage]
+  turningPointEvidenceIds: string[]
+  plotCauseStatement: string
+  developmentSummary: string
+}
+
+export interface CharacterDevelopmentGuide {
+  passageId: string
+  arcs: CharacterDevelopmentArc[]
+  importantPlotEvidenceIds: string[]
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
 export type MeaningClueStrategyKind =
   | 'context-clue'
   | 'word-relationship'
@@ -509,6 +555,7 @@ export interface ContentPack {
   rootDecodingGuides?: RootDecodingGuide[]
   derivationalSuffixGuides?: DerivationalSuffixGuide[]
   multisyllableDecodingGuides?: MultisyllableDecodingGuide[]
+  characterDevelopmentGuides?: CharacterDevelopmentGuide[]
   meaningClueGuides?: MeaningClueGuide[]
   wordplayGuides?: WordplayGuide[]
   retellGuides?: RetellGuide[]
@@ -591,6 +638,9 @@ export interface ContentPackAuditIssue {
      | 'missing_multisyllable_decoding_guide'
      | 'multisyllable_decoding_guide_count_mismatch'
      | 'multisyllable_decoding_guide_invalid'
+     | 'missing_character_development_guide'
+     | 'character_development_guide_count_mismatch'
+     | 'character_development_guide_invalid'
    | 'missing_meaning_clue_guide'
    | 'meaning_clue_guide_count_mismatch'
    | 'meaning_clue_guide_invalid'

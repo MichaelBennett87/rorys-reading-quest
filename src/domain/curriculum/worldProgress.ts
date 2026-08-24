@@ -82,6 +82,8 @@ function appendFixtureGrade3Chapter(
         practiceFocus: !ready
           ? track.trackId === 'g3-word-forge-foundations'
             ? 'Complete the Grade 2 Word Forge chapter to unlock Root Reactor.'
+            : track.trackId === 'g3-story-scouts-prose'
+              ? 'Complete the Grade 2 Story Scouts chapter to unlock Character Arc Camp.'
             : `Complete the ${world.name} Grade 2 chapter before starting ${roadmap.chapterTitle}.`
           : !hasContent
             ? unit.futureContentMessage

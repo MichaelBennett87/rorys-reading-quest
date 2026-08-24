@@ -145,9 +145,10 @@ describe('Grade 3 Root Reactor production pack', () => {
     expect(buildGrade2CoverageSnapshot()).toEqual(grade2Before)
   })
 
-  test('activates only Grade 3 Word Forge and includes Grade 3 in the global semantic audit', () => {
+  test('preserves Grade 3 Word Forge while Story Scouts activation remains content-gated', () => {
     expect(curriculumTracks.find((track) => track.trackId === 'g3-word-forge-foundations')?.status).toBe('active')
-    expect(curriculumTracks.filter((track) => track.gradeBand === 3 && track.trackId !== 'g3-word-forge-foundations').every((track) => track.status === 'planned_until_content_exists')).toBe(true)
+    expect(curriculumTracks.find((track) => track.trackId === 'g3-story-scouts-prose')?.status).toBe('active')
+    expect(curriculumTracks.filter((track) => track.gradeBand === 3 && !['g3-word-forge-foundations', 'g3-story-scouts-prose'].includes(track.trackId)).every((track) => track.status === 'planned_until_content_exists')).toBe(true)
     expect(auditSemanticQuestionPacks(getActiveContentPacks())).toMatchObject({
       reviewedPackCount: 26,
       reviewedLessonCount: 182,
