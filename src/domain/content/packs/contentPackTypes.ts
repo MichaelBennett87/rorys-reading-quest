@@ -141,6 +141,20 @@ export interface InformationalStructureGuide {
 
 export type CentralIdeaMode = 'stated' | 'inferred'
 
+export interface CentralIdeaDetail {
+  detailId: string
+  evidenceIds: string[]
+  contributionStatement: string
+  sectionId: string
+  relevant: boolean
+}
+
+export interface CentralIdeaSectionSupport {
+  sectionId: string
+  contributionStatement: string
+  evidenceIds: string[]
+}
+
 export interface CentralIdeaGuide {
   passageId: string
   topicLabel: string
@@ -149,6 +163,10 @@ export interface CentralIdeaGuide {
   explicitCentralIdeaSentenceId?: string
   relevantEvidenceIds: string[]
   otherEvidenceIds: string[]
+  relevantDetails?: CentralIdeaDetail[]
+  irrelevantOrMinorDetails?: CentralIdeaDetail[]
+  sectionSupport?: CentralIdeaSectionSupport[]
+  synthesisStatement?: string
   reviewStatus: ContentReviewStatus
   contentVersion: string
 }

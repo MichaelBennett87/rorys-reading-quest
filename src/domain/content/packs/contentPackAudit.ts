@@ -9,6 +9,7 @@ import { buildThemeDevelopmentGuideAudit } from './themeDevelopmentGuideAudit'
 import { buildCharacterPerspectiveGuideAudit } from './characterPerspectiveGuideAudit'
 import { buildPoemFormGuideAudit } from './poemFormGuideAudit'
 import { buildInformationalStructureGuideAudit } from './informationalStructureGuideAudit'
+import { buildCentralIdeaEngineGuideAudit } from './centralIdeaEngineGuideAudit'
 
 export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPackAuditIssue[] {
   const issues: ContentPackAuditIssue[] = []
@@ -212,6 +213,7 @@ export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPac
     issues.push(...buildCharacterPerspectiveGuideAudit(pack))
     issues.push(...buildPoemFormGuideAudit(pack))
     issues.push(...buildInformationalStructureGuideAudit(pack))
+    issues.push(...buildCentralIdeaEngineGuideAudit(pack))
   }
 
   const hasBenchmarkProgressionPack = packs.some((pack) => pack.manifest.coverageKind !== 'supportive_practice')
@@ -620,7 +622,7 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
     if (pack.manifest.benchmarkReferences.includes('ELA.2.R.2.1')) {
       validateTextFeatureGuideStructure(pack, issues)
     }
-    if (pack.manifest.benchmarkReferences.includes('ELA.2.R.2.2')) {
+    if (pack.manifest.benchmarkReferences.includes('ELA.2.R.2.2') || pack.manifest.benchmarkReferences.includes('ELA.3.R.2.2')) {
       validateCentralIdeaGuideStructure(pack, issues)
     }
     if (pack.manifest.benchmarkReferences.includes('ELA.2.R.2.3')) {
