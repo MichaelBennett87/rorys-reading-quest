@@ -72,3 +72,7 @@ A GPT-5.6 Sol repository-level curricular reasoning review supplemented the dete
 Confirmed corrections included ambiguous consonant-`le`, prefix, suffix, and fluency prompts; four rhyme-scheme text conflicts; generated perspective wording; author-purpose items that had incorrectly keyed central ideas; inaccurate compost wording; weak opinion evidence; misclassified context clues; stale Wordplay and Retell text; and a Compare Keep checkpoint whose two texts did not share a sufficiently precise topic.
 
 The automated result remains 889 questions checked with zero deterministic issues. The Sol review corrected twelve confirmed defect families without adding or removing curriculum. Professional teacher review, dialect-sensitive phonics listening, and Michael's deployed visual acceptance remain human review boundaries.
+
+## Phase 7A1.5 truth-ledger follow-up
+
+All 889 frozen Grade 2 questions were re-enumerated from the active registry and bound to pack-specific truth-ledger fingerprints. A key-free projection supported the independent pass before authored key, explanation, evidence, and guide comparison. Every canonical response passed production evaluation, and every generated noncanonical response was rejected after the shared table evaluator correction. No new Grade 2 prompt, key, distractor, explanation, evidence, passage, lesson, benchmark, or count correction was required at the current fingerprints. Professional educational approval remains outside this repository-level gate.

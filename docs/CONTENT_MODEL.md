@@ -70,3 +70,9 @@ The content-pack manifest remains the canonical grade-band owner. Catalog entrie
 ## Phase 7A1 root-decoding guides
 
 Root Reactor extends `ContentPack` with optional `rootDecodingGuides`. A guide owns one passage and four targets. Each target records a primary classical part, optional additional parts, meaningful morphological chunks, pronounceable reading chunks with authored speech text, a decoding statement, and a non-scored meaning support statement. Morphological chunks and reading chunks independently reconstruct the written word and are deliberately not treated as interchangeable. Root Reactor contributes only `greek-latin-root-decoding` and `affix-decoding` to `ELA.3.F.1.3`; it contributes nothing to `ELA.3.V.1.2`.
+
+## Phase 7A1.5 truth-audit projection
+
+The active-question truth inventory is derived from active production packs and active lesson ownership. Each record carries pack, version, grade, benchmark, world, unit, skill, lesson, passage, question, visible answer, evidence, explanation, authored response, evaluator contract, and fingerprint metadata. The separate blind projection intentionally excludes keys, explanations, evidence IDs, and guide answers.
+
+Question-truth ledgers are documentation artifacts, not runtime curriculum or persistence. A fingerprint covers the relevant pack, lesson, displayed text, and question payload so later authoring changes require explicit re-review. No ledger data is used for learner scoring, mastery, planning, rewards, parent assessment, or FAST prediction.

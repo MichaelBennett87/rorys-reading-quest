@@ -88,3 +88,11 @@ Readiness requires both active progression content and completed same-domain pre
 ## Phase 7A1 Root Reactor architecture
 
 `g3-word-forge-root-reactor` is the first active Grade 3 pack and remains owned by `g3-word-forge-word-analysis`, `g3-wg-unit-1`, and content version `g3-wf-root-reactor-r0.1.0`. Optional `rootDecodingGuides` stay inside immutable curriculum data. Validation checks passage ownership, target occurrence, meaningful-part and reading-chunk reconstruction, classical-part links, and one-to-one Word Help ownership. Guide data is never copied into persistence. The Grade 3 chapter is derived only when active content exists, remains prerequisite-locked until Grade 2 Word Forge reaches its completion boundary, and does not initialize unrelated Grade 3 skills.
+
+## Phase 7A1.5 question truth and feedback architecture
+
+- `questionTruthAudit.ts` derives the active audit inventory from production packs and active lesson ownership. It also creates a key-free blind projection and a deterministic fingerprint over the owning pack, lesson, displayed texts, and question.
+- `questionGradingContract.ts` builds canonical, canonical-equivalent, and question-type-specific adversarial submissions. Tests route all of them through production `evaluateAnswer` and assert that authored questions remain immutable.
+- Table-match evaluation now requires the exact known row set, valid option IDs, complete mappings, and unique choices in `use_each_once` mode. Extra or unknown mappings cannot be silently ignored.
+- Answer presentation is derived after evaluation. Pre-submit selection is neutral; post-submit correct, incorrect, and correct-answer reveal states are passed to all five renderers without mutating question content or persistence.
+- Per-pack JSON ledgers under `docs/content/question-truth-ledger/` contain curriculum data and concise audit conclusions only, never learner data or hidden reasoning.

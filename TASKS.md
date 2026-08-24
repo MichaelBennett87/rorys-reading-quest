@@ -83,6 +83,7 @@
   - [ ] Phase 7A: Grade 3 foundations and transition
     - [x] Phase 7A0: Grade 3 architecture, standards map, FAST blueprint, and progression bridge
     - [x] Phase 7A1: Root Reactor
+    - [x] Phase 7A1.5: Full Question Truth Audit and Feedback-State Correction
     - [ ] Phase 7A2: Suffix Shifter
     - [ ] Phase 7A3: Multisyllable Mountain
     - [ ] Phase 7A4: Fluency Flight Grade 3

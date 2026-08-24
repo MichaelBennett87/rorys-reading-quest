@@ -60,3 +60,9 @@ Grade 3 roadmap and FAST blueprint metadata contain no child data and are not pe
 ## Phase 7A1 privacy boundary
 
 Root Reactor persists the same bounded attempt, progress, review, reward, and assistance event data as existing lessons. Passage text, root-guide content, root meanings, question text, answer text, explanations, and Word Help curriculum text are not persisted or printed. Browser speech remains optional local `SpeechSynthesis`; there is no microphone, oral score, external speech provider, analytics, telemetry, backend, or live AI. Parent and print views identify Grade 3 Word Forge only after real learner data exists and do not expose root-answer metadata.
+
+## Phase 7A1.5 audit-data boundary
+
+Question-truth ledgers contain only local authored curriculum identifiers, visible authored answer text, concise audit conclusions, and deterministic content fingerprints. They contain no learner selections, child identifiers, session data, progress, rewards, parent records, assessment records, PIN material, or hidden reasoning. The ledgers are not loaded into persistence and are not printed in parent summaries.
+
+Feedback decoration is derived from the in-memory evaluator result already used by the lesson screen. It adds no storage field and sends no data anywhere. The phase adds no backend, cloud service, analytics, telemetry, microphone, external speech provider, or live AI.

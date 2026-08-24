@@ -23,3 +23,7 @@ No keyed-answer, evidence, passage-ownership, morphology, pronunciation-context,
 ## Human review boundary
 
 Deterministic and repository-level reasoning review cannot certify classroom effectiveness, dialect comfort, or professional curricular approval. Human educational review should sample live speech voices, child comprehension of chunk displays, and checkpoint difficulty. Approval remains `DRAFT - human educational approval pending`.
+
+## Phase 7A1.5 truth-ledger follow-up
+
+All 41 Root Reactor questions now have current per-pack truth-ledger records. The blind, authored-key, adversarial, morphology, reading-chunk, evidence, explanation, and evaluator passes found no new content defect. Canonical responses pass and all generated alternatives fail through production evaluation. Root Reactor remains partial DRAFT coverage of `ELA.3.F.1.3`; no `ELA.3.V.1.2`, etymology-trivia, word-meaning mastery, oral scoring, derivational-suffix, or systematic multisyllabic claim was added.

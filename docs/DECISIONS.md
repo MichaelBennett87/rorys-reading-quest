@@ -407,3 +407,13 @@ Consequences: Phase 6 is complete; Phase 7 remains the next boundary; the final 
 ## 2026-08-23 - Phase 7A1 Root Reactor activation
 
 Decision: activate only `g3-word-forge-foundations` with one prerequisite-gated DRAFT pack. Keep all other Grade 3 tracks planned. Represent meaningful word parts and pronounceable reading chunks separately because their boundaries can differ. Treat root meanings and origin labels as teaching/audit support, not scored meaning mastery or origin trivia. Keep `ELA.3.F.1.3` partial until Phases 7A2 and 7A3 supply the remaining broad patterns; keep `ELA.3.V.1.2` planned. Preserve schema version 1, storage keys, Grade 2 review identity, reward rules, mastery thresholds, and review intervals.
+
+## Phase 7A1.5: fingerprinted question truth and semantic feedback
+
+- Derive the audit inventory from the active registry instead of maintaining a parallel question list.
+- Keep blind-review projections free of authored keys and guide answers to reduce confirmation bias.
+- Exercise every canonical response and bounded meaningful incorrect mutation through production `evaluateAnswer`.
+- Reject extra table rows, unknown table choices, incomplete mappings, and duplicate `use_each_once` selections rather than ignoring malformed payload data.
+- Derive correct, incorrect, and selected presentation state after grading; never infer correctness from text, CSS position, or color alone.
+- Keep all 23 ledgers documentation-only and fingerprint-bound. A changed question must fail the ledger gate until reviewed again.
+- Preserve all curriculum totals, adaptive thresholds, review intervals, rewards, persistence, parent access, and Phase 7A2 boundaries.
