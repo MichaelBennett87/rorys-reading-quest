@@ -51,17 +51,24 @@ describe('Grade 3 standards and FAST planning foundation', () => {
     ))).toBe(true)
   })
 
-  test('builds one implemented and fifteen planned DRAFT rows without mutating Grade 2 coverage', () => {
+  test('builds one implemented, one supportive-practice, and fourteen planned DRAFT rows without mutating Grade 2 coverage', () => {
     const grade2Before = buildGrade2CoverageSnapshot()
     const snapshot = buildGrade3CoverageSnapshot()
     expect(snapshot.rows).toHaveLength(16)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(1)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(15)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(1)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(14)
     expect(snapshot.rows.every((row) => row.reviewStatus === 'DRAFT')).toBe(true)
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.F.1.3')).toMatchObject({
       coverageStatus: 'implemented',
       contributingPackIds: ['g3-word-forge-multisyllable-mountain', 'g3-word-forge-root-reactor', 'g3-word-forge-suffix-shifter'],
       coveredPatterns: ['greek-latin-root-decoding', 'affix-decoding', 'derivational-suffix-decoding', 'part-of-speech-change', 'multisyllabic-decoding'],
+      missingPatterns: [],
+    })
+    expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.F.1.4')).toMatchObject({
+      coverageStatus: 'supportive_practice',
+      contributingPackIds: ['g3-word-forge-fluency-flight'],
+      coveredPatterns: ['accuracy-practice', 'automaticity-practice', 'phrasing-practice', 'expression-practice', 'no-oral-measurement'],
       missingPatterns: [],
     })
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned').every((row) => row.notes.includes('Roadmap only; no active Grade 3 content yet.'))).toBe(true)
@@ -110,20 +117,20 @@ describe('Grade 3 planned roadmaps and production freeze', () => {
     expect(getSequentialWorldRoadmapByTrackId('g3-information-detectives-reading')?.chapterTitle).toBe('Grade 3 Informational Analysis')
   })
 
-  test('preserves Grade 2 totals while registering the three bounded Grade 3 Word Forge packs', () => {
+  test('preserves Grade 2 totals while registering the four bounded Grade 3 Word Forge packs', () => {
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 25,
-      activeLessonCount: 175,
-      activePassageCount: 182,
-      activeQuestionCount: 1012,
-      activeSupportTargetCount: 698,
+      activePackCount: 26,
+      activeLessonCount: 182,
+      activePassageCount: 189,
+      activeQuestionCount: 1040,
+      activeSupportTargetCount: 719,
     })
     expect(getActiveContentPacks().filter((pack) => pack.manifest.gradeBand === 2)).toHaveLength(22)
-    expect(getActiveContentPacks().filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(3)
+    expect(getActiveContentPacks().filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(4)
     expect(lessonCatalog.filter((lesson) => lesson.selectionStatus === 'active' && lesson.gradeBand === 2)).toHaveLength(154)
-    expect(lessonCatalog.filter((lesson) => lesson.selectionStatus === 'active' && lesson.gradeBand === 3)).toHaveLength(21)
+    expect(lessonCatalog.filter((lesson) => lesson.selectionStatus === 'active' && lesson.gradeBand === 3)).toHaveLength(28)
     expect(getLessonCandidates().filter((lesson) => lesson.gradeBand === 2)).toHaveLength(154)
-    expect(getLessonCandidates().filter((lesson) => lesson.gradeBand === 3)).toHaveLength(21)
+    expect(getLessonCandidates().filter((lesson) => lesson.gradeBand === 3)).toHaveLength(28)
     expect(buildContentPackAudit(contentPacks)).toEqual([])
   })
 
@@ -274,5 +281,46 @@ describe('Grade 3 planned roadmaps and production freeze', () => {
     expect(screen.getByRole('button', { name: /Multisyllable Mountain/i }).hasAttribute('disabled')).toBe(false)
     expect(screen.getByText('Trail 3')).toBeTruthy()
     expect(screen.getByRole('button', { name: /Fluency Flight Grade 3/i }).hasAttribute('disabled')).toBe(true)
+
+    const fluencyReady: QuestProgressV1 = {
+      ...mountainReady,
+      skillProgress: {
+        ...mountainReady.skillProgress,
+        'g3-word-forge-word-analysis': {
+          ...mountainReady.skillProgress['g3-word-forge-word-analysis'],
+          currentDifficulty: 4,
+          lastMasteredDifficulty: 3,
+        },
+      },
+    }
+    const fluencyWordForge = deriveWorldsForProgress(demoWorlds, fluencyReady, productionLessons)
+      .find((world) => world.id === 'word-forge')!
+    expect(fluencyWordForge.units.find((unit) => unit.id === 'g3-wg-unit-3')?.state).toBe('complete')
+    expect(fluencyWordForge.units.find((unit) => unit.id === 'g3-wg-unit-4')).toMatchObject({ state: 'available', difficultyLabel: 'Trail 4' })
+    expect(planUnitQuest({ selectedUnitId: 'g3-wg-unit-4', progress: fluencyReady, availableLessons: productionLessons })).toMatchObject({
+      status: 'available',
+      unitId: 'g3-wg-unit-4',
+      lesson: { difficulty: 4 },
+    })
+
+    cleanup()
+    render(<UnitSelectScreen world={fluencyWordForge} onBack={() => undefined} onSelectUnit={() => undefined} />)
+    expect(screen.getByRole('button', { name: /Fluency Flight Grade 3/i }).hasAttribute('disabled')).toBe(false)
+    expect(screen.getByText('Trail 4')).toBeTruthy()
+
+    const chapterComplete: QuestProgressV1 = {
+      ...fluencyReady,
+      skillProgress: {
+        ...fluencyReady.skillProgress,
+        'g3-word-forge-word-analysis': {
+          ...fluencyReady.skillProgress['g3-word-forge-word-analysis'],
+          currentDifficulty: 5,
+          currentLearningState: 'FLUENCY_PRACTICE',
+        },
+      },
+    }
+    const completeWordForge = deriveWorldsForProgress(demoWorlds, chapterComplete, productionLessons)
+      .find((world) => world.id === 'word-forge')!
+    expect(completeWordForge.units.find((unit) => unit.id === 'g3-wg-unit-4')?.state).toBe('complete')
   })
 })

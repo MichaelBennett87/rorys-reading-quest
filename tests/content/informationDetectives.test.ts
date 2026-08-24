@@ -73,13 +73,14 @@ describe('grade 2 information detectives text feature hunt pack', () => {
       'g3-word-forge-root-reactor',
       'g3-word-forge-suffix-shifter',
       'g3-word-forge-multisyllable-mountain',
+      'g3-word-forge-fluency-flight',
     ])
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 25,
-      activeLessonCount: 175,
-      activePassageCount: 182,
-      activeQuestionCount: 1012,
-      activeSupportTargetCount: 698,
+      activePackCount: 26,
+      activeLessonCount: 182,
+      activePassageCount: 189,
+      activeQuestionCount: 1040,
+      activeSupportTargetCount: 719,
     })
     expect(contentPackAudit).toHaveLength(0)
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.2.1')).toEqual(expect.objectContaining({

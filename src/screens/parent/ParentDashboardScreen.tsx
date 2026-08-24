@@ -220,7 +220,7 @@ export function ParentDashboardScreen({
               </div>
               <ParentDataNote
                 title="Fluency Flight"
-                message={`${FLUENCY_PRACTICE_NOTE} Supports ELA.2.F.1.4 as practice only.`}
+                message={`${FLUENCY_PRACTICE_NOTE} Supports ELA.2.F.1.4 and ELA.3.F.1.4 as practice only, depending on the completed activity.`}
               />
               <div className="parent-card-grid">
                 <article className="card parent-summary-card">

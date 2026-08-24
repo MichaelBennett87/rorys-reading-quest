@@ -194,13 +194,18 @@ describe('semantic answer feedback states', () => {
     expect(selected.classList.contains('answer-state-incorrect')).toBe(false)
   })
 
-  test('keeps correct and incorrect semantics for every Suffix Shifter and Multisyllable Mountain question type', () => {
-    for (const packId of ['g3-word-forge-suffix-shifter', 'g3-word-forge-multisyllable-mountain']) {
+  test('keeps correct and incorrect semantics for every active Grade 3 Word Forge question type', () => {
+    const packs = [
+      { packId: 'g3-word-forge-suffix-shifter', expectedTypes: ['EVIDENCE_PAIR', 'HOT_TEXT', 'MULTIPLE_CHOICE', 'MULTISELECT', 'TABLE_MATCH'] },
+      { packId: 'g3-word-forge-multisyllable-mountain', expectedTypes: ['EVIDENCE_PAIR', 'HOT_TEXT', 'MULTIPLE_CHOICE', 'MULTISELECT', 'TABLE_MATCH'] },
+      { packId: 'g3-word-forge-fluency-flight', expectedTypes: ['HOT_TEXT', 'MULTIPLE_CHOICE', 'MULTISELECT', 'TABLE_MATCH'] },
+    ]
+    for (const { packId, expectedTypes } of packs) {
       const questions = lessonCatalog
         .filter((entry) => entry.packId === packId)
         .flatMap((entry) => getLessonById(entry.lessonId).lesson?.questions ?? [])
       const byType = new Map(questions.map((question) => [question.questionType, question] as const))
-      expect([...byType.keys()].sort()).toEqual(['EVIDENCE_PAIR', 'HOT_TEXT', 'MULTIPLE_CHOICE', 'MULTISELECT', 'TABLE_MATCH'])
+      expect([...byType.keys()].sort()).toEqual(expectedTypes)
 
       for (const question of byType.values()) {
         const correct = evaluateAnswer(question, buildCanonicalSubmission(question))

@@ -97,7 +97,7 @@ describe('Multisyllable Mountain progression and review isolation', () => {
     })
   })
 
-  test('requires two distinct independent checkpoints and stops at deferred Trail 4', () => {
+  test('requires two distinct independent checkpoints and opens supportive Trail 4', () => {
     const first = apply(trailThreeState().skillProgress[SKILL_ID], checkpoints[0], 100)
     expect(first.status).toBe('applied')
     if (first.status !== 'applied') return
@@ -115,7 +115,7 @@ describe('Multisyllable Mountain progression and review isolation', () => {
     if (second.status !== 'applied') return
     expect(second.decision.decisionState).toBe('ADVANCE')
     expect(second.progress).toMatchObject({ currentDifficulty: 4, lastMasteredDifficulty: 3 })
-    expect(second.nextQuest).toMatchObject({ status: 'content_needed', skillId: SKILL_ID, difficulty: 4 })
+    expect(second.nextQuest).toMatchObject({ status: 'available', purpose: 'progression', lesson: { unitId: 'g3-wg-unit-4', difficulty: 4 } })
   })
 
   test('routes partial and repeated low work within Multisyllable Mountain affinity', () => {

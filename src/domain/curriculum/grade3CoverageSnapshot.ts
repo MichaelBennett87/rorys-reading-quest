@@ -57,6 +57,8 @@ export function buildGrade3CoverageSnapshot(
             ? ['Root Reactor covers Greek and Latin root and affix decoding. Suffix Shifter covers transparent derivational suffix decoding and part-of-speech change. Multisyllable Mountain remains required before ELA.3.F.1.3 can become implemented.']
             : status === 'implemented' && entry.benchmarkReference === 'ELA.3.F.1.3'
               ? ['Root Reactor, Suffix Shifter, and Multisyllable Mountain cover all five required ELA.3.F.1.3 patterns. Curriculum coverage is implemented at DRAFT review status; this does not claim learner mastery.']
+              : status === 'supportive_practice' && entry.benchmarkReference === 'ELA.3.F.1.4'
+                ? ['Fluency Flight provides DRAFT visual and question-based support for accuracy, automaticity, phrasing, and expression. The app does not record audio or measure oral fluency, pronunciation, prosody, or reading rate.']
             : ['Active Grade 3 content contributes to this inventory row.']),
       })
     })),

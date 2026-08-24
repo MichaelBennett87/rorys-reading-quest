@@ -7,6 +7,7 @@ import { grade2ContextCavernMorphologyMinePack } from '../../src/domain/content/
 import { grade3WordForgeRootReactorPack } from '../../src/domain/content/packs/grade3/wordForge/rootReactor'
 import { grade3WordForgeSuffixShifterPack } from '../../src/domain/content/packs/grade3/wordForge/suffixShifter'
 import { grade3WordForgeMultisyllableMountainPack } from '../../src/domain/content/packs/grade3/wordForge/multisyllableMountain'
+import { grade3WordForgeFluencyFlightPack } from '../../src/domain/content/packs/grade3/wordForge/fluencyFlight'
 import {
   buildAttentionItems,
   buildBenchmarkSummaries,
@@ -509,7 +510,7 @@ describe('dashboard analytics', () => {
 
     expect(grade3Skill).toMatchObject({
       gradeBand: 3,
-      benchmarkReferences: ['ELA.3.F.1.3'],
+      benchmarkReferences: ['ELA.3.F.1.3', 'ELA.3.F.1.4'],
       reportingCategory: 'Foundational Skills Bridge',
       currentDifficulty: 1,
       distinctIndependentEvidenceCount: 1,
@@ -523,10 +524,11 @@ describe('dashboard analytics', () => {
     expect((snapshot as { diagnosedGradeLevel?: unknown }).diagnosedGradeLevel).toBeUndefined()
   })
 
-  test('keeps all three Grade 3 Word Forge units separate inside one friendly skill', () => {
+  test('keeps all four Grade 3 Word Forge units separate inside one friendly skill', () => {
     const rootCandidate = candidates.find((candidate) => candidate.unitId === 'g3-wg-unit-1')!
     const suffixCandidate = candidates.find((candidate) => candidate.unitId === 'g3-wg-unit-2')!
     const mountainCandidate = candidates.find((candidate) => candidate.unitId === 'g3-wg-unit-3')!
+    const fluencyCandidate = candidates.find((candidate) => candidate.unitId === 'g3-wg-unit-4')!
     const progress = createDefaultQuestProgress(now)
     progress.completedAttempts = [
       buildAttempt({
@@ -547,13 +549,28 @@ describe('dashboard analytics', () => {
         decisionState: 'VERIFY_MASTERY', skillId: mountainCandidate.skillId, difficulty: 3,
         lessonId: mountainCandidate.lessonId, activityId: mountainCandidate.activityId, lessonRole: 'CHECKPOINT',
       }),
+      buildAttempt({
+        completionId: 'fluency-unit-attempt', completedAt: now, accuracy: 75,
+        questionIds: grade3WordForgeFluencyFlightPack.questions.slice(0, 2).map((question) => question.questionIdentifier),
+        decisionState: 'FLUENCY_PRACTICE', skillId: fluencyCandidate.skillId, difficulty: 4,
+        lessonId: fluencyCandidate.lessonId, activityId: fluencyCandidate.activityId, lessonRole: 'FLUENCY_PRACTICE',
+        fluencyPracticeSummary: {
+          modelReadUsed: false,
+          phrasePracticeCompleted: true,
+          completedReadCount: 2,
+          reflection: 'some_pauses',
+          oralReadingMeasured: false,
+          timerUsed: false,
+          microphoneUsed: false,
+        },
+      }),
     ]
-    progress.completedSessionCount = 3
+    progress.completedSessionCount = 4
     progress.skillProgress[suffixCandidate.skillId] = {
       skillId: suffixCandidate.skillId,
-      currentDifficulty: 3,
-      lastMasteredDifficulty: 2,
-      currentLearningState: 'VERIFY_MASTERY',
+      currentDifficulty: 4,
+      lastMasteredDifficulty: 3,
+      currentLearningState: 'FLUENCY_PRACTICE',
       qualifyingIndependentActivityIds: [mountainCandidate.activityId],
       consecutiveUnsuccessfulAtCurrentDifficulty: 0,
       lastCompletedActivityId: mountainCandidate.activityId,
@@ -567,21 +584,27 @@ describe('dashboard analytics', () => {
       { skillId: suffixCandidate.skillId, difficulty: 1, reviewStep: 0, dueAt: now, unitId: 'g3-wg-unit-1', contentVersion: 'g3-wf-root-reactor-r0.1.0' },
       { skillId: suffixCandidate.skillId, difficulty: 2, reviewStep: 0, dueAt: now, unitId: 'g3-wg-unit-2', contentVersion: 'g3-wf-suffix-shifter-r0.1.0' },
       { skillId: mountainCandidate.skillId, difficulty: 3, reviewStep: 0, dueAt: now, unitId: 'g3-wg-unit-3', contentVersion: 'g3-wf-multisyllable-mountain-r0.1.0' },
+      { skillId: fluencyCandidate.skillId, difficulty: 4, reviewStep: 0, dueAt: now, unitId: 'g3-wg-unit-4', contentVersion: 'g3-wf-fluency-flight-r0.1.0' },
     ]
 
     const snapshot = buildDashboardSnapshot({ progress, now })
     expect(snapshot.skillSummaries.filter((summary) => summary.skillId === suffixCandidate.skillId)).toHaveLength(1)
     expect(snapshot.skillSummaries.find((summary) => summary.skillId === suffixCandidate.skillId)).toMatchObject({
       gradeBand: 3,
-      currentDifficulty: 3,
-      benchmarkReferences: ['ELA.3.F.1.3'],
+      currentDifficulty: 4,
+      benchmarkReferences: ['ELA.3.F.1.3', 'ELA.3.F.1.4'],
     })
     expect(snapshot.recentAttempts.map((attempt) => attempt.lessonTitle)).toEqual(expect.arrayContaining([
       expect.stringContaining('Root Reactor'),
       expect.stringContaining('Suffix Shifter'),
       expect.stringContaining('Multisyllable Mountain'),
+      expect.stringContaining('Fluency Flight'),
     ]))
-    expect(snapshot.reviewSummary.entries.map((entry) => entry.unitLabel)).toEqual(expect.arrayContaining(['Root Reactor', 'Suffix Shifter', 'Multisyllable Mountain']))
+    expect(snapshot.reviewSummary.entries.map((entry) => entry.unitLabel)).toEqual(expect.arrayContaining(['Root Reactor', 'Suffix Shifter', 'Multisyllable Mountain', 'Fluency Flight Grade 3']))
+    expect(snapshot.fluencyPracticeSummary).toMatchObject({
+      completedFluencyPracticeSessions: 1,
+      oralReadingMeasured: false,
+    })
     expect((snapshot as { predictedFastScore?: unknown }).predictedFastScore).toBeUndefined()
     expect((snapshot as { diagnosedGradeLevel?: unknown }).diagnosedGradeLevel).toBeUndefined()
   })

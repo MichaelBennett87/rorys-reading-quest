@@ -8,7 +8,11 @@ describe('Phase 7A3 parent and print reporting boundary', () => {
     const row = buildGrade3CoverageSnapshot().rows.find((entry) => entry.benchmarkReference === 'ELA.3.F.1.3')
     expect(row).toMatchObject({ coverageStatus: 'implemented', reviewStatus: 'DRAFT', missingPatterns: [] })
     expect(row?.notes.join(' ')).toContain('does not claim learner mastery')
-    expect(buildGrade3CoverageSnapshot().rows.find((entry) => entry.benchmarkReference === 'ELA.3.F.1.4')?.coverageStatus).toBe('planned')
+    expect(buildGrade3CoverageSnapshot().rows.find((entry) => entry.benchmarkReference === 'ELA.3.F.1.4')).toMatchObject({
+      coverageStatus: 'supportive_practice',
+      reviewStatus: 'DRAFT',
+      missingPatterns: [],
+    })
     expect(buildGrade3CoverageSnapshot().rows.find((entry) => entry.benchmarkReference === 'ELA.3.V.1.2')?.coverageStatus).toBe('planned')
   })
 
@@ -19,6 +23,7 @@ describe('Phase 7A3 parent and print reporting boundary', () => {
     expect(dashboardSource).toContain('separate from learner mastery')
     expect(printSource).toContain('Curriculum coverage: Implemented. Review status: DRAFT.')
     expect(printSource).toContain('not learner mastery')
+    expect(`${dashboardSource}\n${printSource}`).toContain('ELA.3.F.1.4 as practice only')
     for (const forbidden of ['predicted FAST score', 'oral decoding score', 'global grade diagnosis']) {
       expect(`${dashboardSource}\n${printSource}`).not.toContain(forbidden)
     }

@@ -1,5 +1,5 @@
 import { contentPacks } from './registry'
-import { buildFluencyPracticeAudit } from './fluencyPracticeAudit'
+import { buildFluencyPracticeAudit, buildGrade3FluencyPracticeAudit } from './fluencyPracticeAudit'
 
 export * from './contentPackTypes'
 export * from './contentPackAudit'
@@ -24,6 +24,8 @@ export * from './grade2/compareCastle/compareKeep'
 export * from './grade3/wordForge/rootReactor'
 export * from './grade3/wordForge/suffixShifter'
 export * from './grade3/wordForge/multisyllableMountain'
+export * from './grade3/wordForge/fluencyFlight'
 export * from './registry'
 
 export const fluencyPracticeAudit = buildFluencyPracticeAudit(contentPacks)
+export const grade3FluencyPracticeAudit = buildGrade3FluencyPracticeAudit(contentPacks)

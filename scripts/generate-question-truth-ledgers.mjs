@@ -17,6 +17,12 @@ const correctionSummaries = new Map([
   ['lesson-g3-multisyllable-mountain-checkpoint-museum-q-5', 'Blind review bound the hot-text prompt to the authored prefix target rather than an unrelated fourth target.'],
   ['lesson-g3-multisyllable-mountain-checkpoint-engineering-q-5', 'Blind review bound the hot-text prompt to the authored prefix target rather than an unrelated fourth target.'],
   ['lesson-g3-multisyllable-mountain-checkpoint-adventure-q-5', 'Blind review bound the hot-text prompt to the authored prefix target rather than an unrelated fourth target.'],
+  ['question-g3-fluency-flight-punctuation-pilot-4', 'Blind review gave every table option distinct visible wording while preserving the punctuation-cue construct.'],
+  ['question-g3-fluency-flight-phrase-formation-2', 'Blind review labeled each proposed pause location so the grouping choices remain visibly distinct.'],
+  ['question-g3-fluency-flight-dialogue-voices-4', 'Blind review gave every table option distinct visible wording while preserving the dialogue-voice construct.'],
+  ['question-g3-fluency-flight-marsh-morning-4', 'Blind review gave every table option distinct visible wording while preserving the phrase-and-expression construct.'],
+  ['question-g3-fluency-flight-formation-facts-3', 'Blind review labeled each proposed phrase boundary so the grouping choices remain visibly distinct.'],
+  ['question-g3-fluency-flight-formation-facts-4', 'Blind review gave every table option distinct visible wording while preserving the informational-phrasing construct.'],
 ])
 const server = await createServer({
   appType: 'custom',
@@ -191,7 +197,7 @@ function buildAuditProgress(packs, records, metrics) {
   }).join('\n')
   return `# Active Question Truth Audit Progress
 
-Registry source: active production content registry through Phase 7A3.
+Registry source: active production content registry through Phase 7A4.
 
 - Active packs: ${metrics.activePacks}
 - Active questions: ${metrics.activeQuestions}
