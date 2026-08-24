@@ -111,3 +111,7 @@ Blind review corrected six choice-clarity defects before registration: four tabl
 ## Phase 7B1 current inventory
 
 The permanent audit now covers 27 active packs, 189 active lessons, 196 active texts, and 1,081 active questions. There are 1,081 current fingerprinted PASS records, 1,081 canonical submissions, 360 canonical-equivalent submissions, 14,027 adversarial submissions, and 17,630 grading assertions. Character Arc Camp adds 41 PASS records. Seven table distractors were corrected before release; no answer key, prompt, explanation, evidence, passage, or evaluator defect remains unresolved. These are repository quality-gate results, not teacher or Florida approval.
+
+## Phase 7B2 current inventory
+
+The permanent audit now covers 28 active packs, 196 active lessons, 203 active texts, and 1,122 active questions. There are 1,122 current fingerprinted PASS records, 1,122 canonical submissions, 374 canonical-equivalent submissions, 14,458 adversarial submissions, and 18,198 grading assertions. Theme Development Trail adds 41 PASS records. Final blind review found no learner-facing question, key, prompt, distractor, explanation, evidence, passage, or evaluator defect; one audit regular expression was corrected before registration. No question ID remains unresolved. These are repository quality-gate results, not teacher or Florida approval.

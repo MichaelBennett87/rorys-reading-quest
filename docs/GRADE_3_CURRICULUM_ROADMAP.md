@@ -4,7 +4,7 @@
 
 Phase 7 extends the six existing reading worlds into separate Grade 3 curriculum tracks. Advancement is domain-specific: a Grade 3 track can become playable only after its matching Grade 2 track reaches its verified completion difficulty and active Grade 3 content exists. This is not a global grade diagnosis, a learner-mastery claim, or a FAST prediction.
 
-Phase 7A0 established architecture and immutable planning metadata. Phase 7A1 added Root Reactor, Phase 7A2 added Suffix Shifter, Phase 7A3 added Multisyllable Mountain, and Phase 7A4 adds Fluency Flight Grade 3. Together the four Grade 3 Word Forge production packs provide twenty-eight DRAFT lessons, twenty-eight original passages, 151 questions, and 105 Word Help targets. All five required `ELA.3.F.1.3` patterns have authored coverage, so that curriculum row is IMPLEMENTED / DRAFT. `ELA.3.F.1.4` is SUPPORTIVE_PRACTICE / DRAFT with no oral measurement. Neither row is APPROVED and neither status claims learner mastery. Phase 7A is complete; Phase 7B remains unstarted.
+Phase 7A established the four Grade 3 Word Forge production packs. Phase 7B1 added Character Arc Camp, and Phase 7B2 adds Theme Development Trail. The six Grade 3 production packs provide forty-two DRAFT lessons, forty-two original passages, 233 questions, and 161 Word Help targets. `ELA.3.F.1.3`, `ELA.3.R.1.1`, and `ELA.3.R.1.2` are IMPLEMENTED / DRAFT. `ELA.3.F.1.4` is SUPPORTIVE_PRACTICE / DRAFT with no oral measurement. No Grade 3 row is APPROVED and no status claims learner mastery. Phase 7B remains incomplete.
 
 ## Instructional inventory
 
@@ -67,3 +67,7 @@ The six tracks contain eighteen planned units. Grade 2 and Grade 3 use distinct 
 ## Phase 7B1 implementation update
 
 Character Arc Camp (`g3-ss-unit-1`) is active as the first Grade 3 Story Scouts production unit. It contributes all five expected `ELA.3.R.1.1` patterns and records IMPLEMENTED / DRAFT curriculum coverage. Theme Development Trail (`g3-ss-unit-2`) remains planned for Phase 7B2, Perspective Portal Grade 3 remains planned for Phase 7B3, and Poem Form Observatory remains planned for Phase 7B4.
+
+## Phase 7B2 implementation update
+
+Theme Development Trail (`g3-ss-unit-2`) is active after Character Arc Camp completion. It contributes `theme`, `theme-development`, `supporting-details`, and `plot-theme-connection`, making `ELA.3.R.1.2` IMPLEMENTED / DRAFT. Perspective Portal Grade 3 remains planned for Phase 7B3, and Poem Form Observatory remains planned for Phase 7B4.

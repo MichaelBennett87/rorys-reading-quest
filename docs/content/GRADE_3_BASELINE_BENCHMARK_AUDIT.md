@@ -42,3 +42,7 @@ This baseline is an internal architecture audit. It makes no learner-mastery cla
 ## Historical follow-up after Phase 7A0
 
 This document remains the Phase 7A0 zero-content baseline. Phase 7A1 subsequently registered `g3-word-forge-root-reactor`, changing only `ELA.3.F.1.3` from planned to partial DRAFT coverage for `greek-latin-root-decoding` and `affix-decoding`. The remaining three broad patterns are still missing, no Grade 3 benchmark is implemented or APPROVED, and `ELA.3.V.1.2` remains planned.
+
+## Current follow-up after Phase 7B2
+
+The historical baseline above remains unchanged. The current registry now records `ELA.3.F.1.3`, `ELA.3.R.1.1`, and `ELA.3.R.1.2` as IMPLEMENTED / DRAFT, `ELA.3.F.1.4` as SUPPORTIVE_PRACTICE / DRAFT, twelve rows as planned, and no row as APPROVED. These statuses describe authored curriculum, not learner mastery.

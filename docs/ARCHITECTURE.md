@@ -121,3 +121,9 @@ The Grade 3 coverage snapshot records `ELA.3.F.1.4` as `supportive_practice` onl
 `ContentPack.characterDevelopmentGuides` is optional and nonpersisted. A guide owns one passage and one or two character arcs. Each arc owns ordered beginning, middle, and end stages, typed evidence kinds, resolved turning-point IDs, a plot-cause statement, and a multi-stage development summary. The pack-specific audit rejects unresolved evidence, repeated stages, static-trait-only summaries, missing checkpoint action/dialogue/thought coverage, unsafe text, wrong versions, or shape drift.
 
 `g3-story-scouts-prose` uses the existing multi-grade readiness, world chapter, selected-unit planner, review affinity, active-session, dashboard, and print architecture. It adds no new persistence object or question evaluator.
+
+## Phase 7B2 theme-development architecture
+
+`ContentPack.themeDevelopmentGuides` is optional, immutable, and nonpersisted. One guide owns each Theme Development Trail passage, a topic label, one supported complete theme, bounded plausible distractors, ordered beginning/middle/end stages, turning-point evidence, character and conflict connections, and a multi-stage development summary. Pack audit rejects topic-only themes, summary-only themes, commands, unresolved evidence, equal second themes, unsafe text, wrong versions, or missing stage contribution.
+
+The existing Grade 3 Story Scouts track now resolves unit 2 at difficulty 2. Unit-owned remediation may expose difficulty-1 Theme Trail Power-Up missions without unlocking the unit for ordinary progression. Registry-derived coverage, parent/print wording, permanent truth ledgers, evaluator contracts, feedback states, selected-unit planning, review affinity, and schema-version-1 persistence remain shared rather than duplicated.

@@ -96,3 +96,9 @@ Normal XP and stars remain governed by existing question-result rules. Assistanc
 ## Phase 7B1 Story Scouts progression
 
 Grade 3 Story Scouts initializes at difficulty 1 only after active Character Arc Camp content exists and Grade 2 Story Scouts reaches completion difficulty 4. Two distinct independent strong checkpoints are required to advance to difficulty 2. A first low checkpoint selects same-level guidance; a second consecutive low checkpoint selects Character Arc-specific difficulty-0 remediation and preserves the difficulty-1 return target. Theme Development Trail remains content-needed, and no planner path falls back across grade bands.
+
+## Phase 7B2 Theme Development Trail progression
+
+Theme Development Trail becomes ordinary progression content only at Grade 3 Story Scouts difficulty 2 after Character Arc Camp advances the shared skill. Two distinct independent strong checkpoints are required to advance to difficulty 3. A first low checkpoint selects difficulty-2 Theme Trail guidance; a second consecutive low checkpoint selects difficulty-1 Theme Trail remediation while preserving the difficulty-2 return target. Rebuilding returns to difficulty 2 without marking it mastered.
+
+Grade 2 Story Scouts, Character Arc Camp, and Theme Development Trail reviews retain exact grade, skill, unit, and content-version identity. After a true advance, Perspective Portal Grade 3 remains locked and planning returns structured CONTENT_NEEDED. Thresholds, review intervals, rewards, assistance semantics, planner priority, and active-session behavior are unchanged.

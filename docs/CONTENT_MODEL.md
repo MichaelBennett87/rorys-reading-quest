@@ -95,3 +95,9 @@ The pack contains twenty-one ordinary `WordSupportTarget` records for word-level
 ## Character-development guides
 
 Phase 7B1 adds optional `CharacterDevelopmentGuide` records to a content pack. A guide links to one literary passage and owns one or two `CharacterDevelopmentArc` records. Every arc has exactly three ordered stages, typed action/dialogue/thought/feeling/choice/response evidence, resolved turning-point evidence, a plot-cause statement, and a development summary that connects multiple plot stages. Guide data remains authored DRAFT curriculum and is never persisted or printed.
+
+## Theme-development guides
+
+Phase 7B2 adds optional `ThemeDevelopmentGuide` records. Each guide links to one literary passage, owns one complete supported theme plus bounded distractor candidates, and records ordered beginning, middle, and end stages with resolved evidence. Turning-point, character-connection, conflict-connection, and development-summary fields make the progression of the theme explicit for validation without exposing guide answers to learners before grading.
+
+Guide records remain DRAFT curriculum-only metadata. Passage text, theme candidates, stage statements, explanations, answer keys, and Word Help curriculum text are excluded from persistence and print. All forty-one questions use the permanent inventory, fingerprint, semantic-audit, and production evaluator contracts.

@@ -88,8 +88,8 @@
     - [x] Phase 7A3: Multisyllable Mountain
     - [x] Phase 7A4: Fluency Flight Grade 3
   - [ ] Phase 7B: Grade 3 prose and poetry
-    - [ ] Phase 7B1: Character Arc Camp
-    - [ ] Phase 7B2: Theme Development Trail
+    - [x] Phase 7B1: Character Arc Camp
+    - [x] Phase 7B2: Theme Development Trail
     - [ ] Phase 7B3: Perspective Portal Grade 3
     - [ ] Phase 7B4: Poem Form Observatory
   - [ ] Phase 7C: Grade 3 informational reading
@@ -116,7 +116,8 @@
 - [x] Phase 7A
 - [ ] Phase 7B
 - [x] Phase 7B1 - Character Arc Camp
-- [ ] Phase 7B2 - Theme Development Trail
+- [x] Phase 7B2 - Theme Development Trail
+- [ ] Phase 7B3 - Perspective Portal Grade 3
 - [ ] Phase 7
 
-Phase 7B1 is complete. Phase 7B and Phase 7 remain incomplete, and Phase 7B2 has not started.
+Phase 7B1 and Phase 7B2 are complete. Phase 7B and Phase 7 remain incomplete, and Phase 7B3 has not started.

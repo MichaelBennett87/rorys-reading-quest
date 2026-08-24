@@ -447,3 +447,12 @@ Decision: permit fresh difficulty-4 fluency practice to complete the Grade 3 Wor
 - Keep `ELA.3.R.1.1` curriculum coverage separate from learner mastery and human approval.
 - Reuse the five existing question types, hardened evaluator, permanent truth ledger, five-stage Word Help, planner, review, persistence, parent, print, and Pages architecture.
 - Defer theme development, character perspective, and poetry to later bounded phases.
+
+## Phase 7B2 decisions
+
+- Activate only `g3-ss-unit-2` with the DRAFT `g3-story-scouts-theme-development-trail` pack after Character Arc Camp completion.
+- Model one clearly best-supported complete theme with ordered beginning, middle, and end evidence; reject topic-only, summary-only, command, and equally supported distractor candidates.
+- Keep character actions and consequences as theme evidence without turning the pack into `ELA.3.R.1.1` character-development or `ELA.3.R.1.3` perspective instruction.
+- Mark `ELA.3.R.1.2` curriculum coverage IMPLEMENTED / DRAFT while keeping learner mastery and human approval separate.
+- Preserve exact Grade 2 Story Scouts, Character Arc Camp, and Theme Development Trail review identity, permanent truth gates, evaluator behavior, feedback semantics, persistence, Parent PIN, assessments, and Pages configuration.
+- Defer Perspective Portal Grade 3, poetry, informational, vocabulary, across-genres content, Grade 4, and FAST timed practice.

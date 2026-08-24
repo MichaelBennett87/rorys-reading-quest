@@ -87,3 +87,9 @@ Parent and print views may show practice sessions, question accuracy, assistance
 ## Phase 7B1 privacy and child-safety boundary
 
 Character Arc Camp persists no passage text, dialogue, thoughts, stage statements, development summaries, guide metadata, question text, answer text, explanation text, or Word Help curriculum text. Parent and print views use friendly activity metadata and aggregate attempt facts only. The stories are original, child-safe DRAFT content without private child details, real private locations, trauma, shaming, analytics, telemetry, microphone use, cloud services, or live AI.
+
+## Phase 7B2 privacy and child-safety boundary
+
+Theme Development Trail persists no story text, supported or distractor theme statement, stage evidence, turning-point statement, guide metadata, question text, submitted answer, correct answer, explanation, or Word Help curriculum text. Parent and print views use benchmark, grade, unit, and aggregate progress facts only and explicitly separate curriculum coverage from learner mastery.
+
+Storage keys, schema version 1, Parent PIN behavior, assessment records, bounded attempt history, active-session recovery, and optional local browser speech remain unchanged. The phase adds no backend, cloud sync, analytics, telemetry, advertising, microphone, speech recognition, external speech provider, or live AI.

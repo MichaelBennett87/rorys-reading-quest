@@ -121,3 +121,7 @@ Fluency Flight activates Grade 3 Word Forge Trail 4 only after Multisyllable Mou
 ## Phase 7B1 Character Arc Camp
 
 Grade 3 Story Scouts now begins with prerequisite-gated Character Arc Camp. The learner traces character development through beginning, middle, and end evidence; actions, dialogue, thoughts, feelings, choices, turning points, and plot consequences. The application reports `ELA.3.R.1.1` curriculum coverage as IMPLEMENTED / DRAFT and keeps learner mastery separate. Theme development, perspective, poetry, FAST prediction, and unrestricted writing remain outside this phase.
+
+## Phase 7B2 Theme Development Trail
+
+Theme Development Trail activates Grade 3 Story Scouts Trail 2 only after Character Arc Camp completes. Seven original DRAFT stories and guides teach a complete best-supported theme, theme versus topic and summary, and how beginning, middle, turning-point, and ending details develop that theme. The pack uses only existing selected-response forms and reports `ELA.3.R.1.2` curriculum coverage as IMPLEMENTED / DRAFT. Character perspective, narrator point of view, poetry, unrestricted writing, learner-mastery claims, and FAST prediction remain outside this phase.

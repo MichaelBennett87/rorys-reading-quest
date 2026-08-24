@@ -10,13 +10,14 @@ function read(relativePath: string): string {
 }
 
 describe('Phase 7B1 acceptance documentation and coverage', () => {
-  test('records the bounded Character Arc Camp release without starting Phase 7B2', () => {
+  test('preserves the bounded Character Arc Camp checkpoint and reconciles its final synchronization', () => {
     const report = read('docs/PHASE_7B1_REPORT.md')
     const tasks = read('TASKS.md')
     expect(report).toContain('Starting local and remote SHA: `90d2afcd51efe19312e3acc0634f05b4ccb549d0`')
     expect(report).toContain('Phase 7B2 Theme Development Trail is next and remains unstarted.')
+    expect(report).toContain('Final synchronized SHA: `6255b41bf5eece960331afca4678ebd1b5e87cea`')
     expect(tasks).toContain('- [x] Phase 7B1 - Character Arc Camp')
-    expect(tasks).toContain('- [ ] Phase 7B2 - Theme Development Trail')
+    expect(tasks).toContain('- [x] Phase 7B2 - Theme Development Trail')
   })
 
   test('keeps the final registry and Grade 3 coverage boundary exact', () => {
