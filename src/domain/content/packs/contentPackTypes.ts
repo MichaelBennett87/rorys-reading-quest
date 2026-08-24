@@ -206,6 +206,33 @@ export interface RootDecodingGuide {
   contentVersion: string
 }
 
+export type DerivationalWordRole = 'noun' | 'verb' | 'adjective' | 'adverb'
+
+export interface DerivationalMorphologicalChunk {
+  text: string
+  role: 'base' | 'suffix'
+}
+
+export interface DerivationalSuffixTarget {
+  targetId: string
+  sentenceId: string
+  baseWord: string
+  derivedWord: string
+  suffix: string
+  baseWordRole: DerivationalWordRole
+  derivedWordRole: DerivationalWordRole
+  morphologicalChunks: DerivationalMorphologicalChunk[]
+  readingChunks: RootSyllableChunk[]
+  transformationExplanation: string
+}
+
+export interface DerivationalSuffixGuide {
+  passageId: string
+  targets: DerivationalSuffixTarget[]
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
 export type MeaningClueStrategyKind =
   | 'context-clue'
   | 'word-relationship'
@@ -440,6 +467,7 @@ export interface ContentPack {
   academicVocabularyGuides?: AcademicVocabularyGuide[]
   morphologyGuides?: MorphologyGuide[]
   rootDecodingGuides?: RootDecodingGuide[]
+  derivationalSuffixGuides?: DerivationalSuffixGuide[]
   meaningClueGuides?: MeaningClueGuide[]
   wordplayGuides?: WordplayGuide[]
   retellGuides?: RetellGuide[]
@@ -516,6 +544,9 @@ export interface ContentPackAuditIssue {
      | 'missing_root_decoding_guide'
      | 'root_decoding_guide_count_mismatch'
      | 'root_decoding_guide_invalid'
+     | 'missing_derivational_suffix_guide'
+     | 'derivational_suffix_guide_count_mismatch'
+     | 'derivational_suffix_guide_invalid'
    | 'missing_meaning_clue_guide'
    | 'meaning_clue_guide_count_mismatch'
    | 'meaning_clue_guide_invalid'

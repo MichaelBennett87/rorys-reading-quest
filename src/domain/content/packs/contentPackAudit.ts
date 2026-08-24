@@ -2,6 +2,7 @@ import { parseScopedEvidenceReference, resolveLessonEvidence, resolvePassageEvid
 import type { ContentPack, ContentPackAuditIssue } from './contentPackTypes'
 import { collectObservedBenchmarkPatterns, getClaimedBenchmarkPatterns, getExpectedBenchmarkPatterns } from './benchmarkPatternCatalog'
 import { buildRootDecodingGuideAudit } from './rootDecodingGuideAudit'
+import { buildDerivationalSuffixGuideAudit } from './derivationalSuffixGuideAudit'
 
 export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPackAuditIssue[] {
   const issues: ContentPackAuditIssue[] = []
@@ -198,6 +199,7 @@ export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPac
     }
 
     issues.push(...buildRootDecodingGuideAudit(pack))
+    issues.push(...buildDerivationalSuffixGuideAudit(pack))
   }
 
   if (activeProgressionCount < 3) {

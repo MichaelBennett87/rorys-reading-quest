@@ -133,7 +133,10 @@ const compareCastleRoadmap: SequentialWorldRoadmap = {
 const grade3Roadmaps: readonly SequentialWorldRoadmap[] = [
   plannedRoadmap('word-forge', 'g3-word-forge-foundations', 'Grade 3 Word Analysis', [
     plannedUnit('g3-wg-unit-1', 'Root Reactor', 'ELA.3.F.1.3', 'decoding words with common Greek and Latin roots and affixes', '7A1', 1, 2),
-    plannedUnit('g3-wg-unit-2', 'Suffix Shifter', 'ELA.3.F.1.3', 'derivational suffixes and how they change parts of speech', '7A2', 2, 3),
+    {
+      ...plannedUnit('g3-wg-unit-2', 'Suffix Shifter', 'ELA.3.F.1.3', 'derivational suffixes and how they change parts of speech', '7A2', 2, 3),
+      lockedMessage: 'Complete Root Reactor to unlock Suffix Shifter.',
+    },
     plannedUnit('g3-wg-unit-3', 'Multisyllable Mountain', 'ELA.3.F.1.3', 'decoding Grade 3 multisyllabic words', '7A3', 3, 4),
     plannedUnit('g3-wg-unit-4', 'Fluency Flight Grade 3', 'ELA.3.F.1.4', 'accuracy, automaticity, phrasing, and expression practice without oral scoring', '7A4', 4, 5),
   ]),

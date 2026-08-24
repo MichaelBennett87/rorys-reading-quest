@@ -63,8 +63,16 @@ Answer-level decorations identify selected correct responses, selected incorrect
 - Vite chunk warning: visible and unsuppressed
 - `git diff --check`: passed after removing trailing documentation whitespace
 
-The final synchronized commit, push, and Pages facts are recorded by the external completion report. This document does not predict its own final commit SHA.
+## Final synchronization reconciliation
+
+- Final synchronized SHA: `d17bd17724a5127db38e3dd1ba537daa66eea020`
+- Commits: `1c1695a fix: correct answer feedback and grading contract`; `05c8fc2 fix: audit all active question truth`; `d17bd17 docs: complete question truth quality gate`
+- Final audited inventory: 23 packs / 161 lessons / 168 texts / 930 questions / 930 truth-ledger records
+- Evaluator exercise: 930 canonical / 309 canonical-equivalent / 12,518 adversarial submissions / 15,617 grading assertions
+- Confirmed defects: one evaluator false-positive and one feedback-state defect corrected
+- Unresolved active question IDs: zero
+- Local and remote SHA matched, Pages deployment succeeded, and the working tree was clean
 
 ## Status
 
-Phase 7A1.5 implementation and local verification are complete; release acceptance requires the authorized push and successful Pages deployment. Phase 7 remains in progress and Phase 7A2 remains unstarted.
+Phase 7A1.5 is complete and synchronized. Phase 7 remains in progress; Phase 7A2 is the active bounded content phase.

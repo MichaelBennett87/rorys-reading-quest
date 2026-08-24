@@ -85,7 +85,9 @@ function appendFixtureGrade3Chapter(
             : `Complete the ${world.name} Grade 2 chapter before starting ${roadmap.chapterTitle}.`
           : !hasContent
             ? unit.futureContentMessage
-            : unit.practiceFocus,
+            : state === 'locked'
+              ? unit.lockedMessage
+              : unit.practiceFocus,
         gradeBand: 3 as const,
         chapterTitle: roadmap.chapterTitle,
         trackId: track.trackId,

@@ -3,7 +3,7 @@ import type { LessonActivityCandidate, NextQuestPlan } from './skillProgressType
 import type { QuestProgressV1 } from '../../persistence'
 import { selectNextLesson } from './selectNextLesson'
 import { createInitialSkillProgress } from './skillProgressTypes'
-import { areTrackPrerequisitesSatisfied, getTrackByUnitId } from '../curriculum'
+import { areTrackPrerequisitesSatisfied, getSequentialWorldRoadmapByTrackId, getTrackByUnitId } from '../curriculum'
 
 export interface PlanUnitQuestInput {
   selectedUnitId: string
@@ -117,6 +117,16 @@ export function planUnitQuest(input: PlanUnitQuestInput): UnitQuestPlan {
         reason: selectedTrack.trackId === 'g3-word-forge-foundations'
           ? 'Complete the Grade 2 Word Forge chapter to unlock Root Reactor.'
           : 'Complete this world\'s Grade 2 chapter before starting the Grade 3 chapter.',
+      }
+    }
+    const roadmapUnit = getSequentialWorldRoadmapByTrackId(selectedTrack.trackId)
+      ?.units.find((unit) => unit.unitId === input.selectedUnitId)
+    if (roadmapUnit && (currentSkill?.currentDifficulty ?? selectedTrack.initialDifficulty) < roadmapUnit.activeDifficulty) {
+      return {
+        status: 'locked',
+        purpose: 'progression',
+        unitId: input.selectedUnitId,
+        reason: roadmapUnit.lockedMessage,
       }
     }
   }
