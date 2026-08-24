@@ -357,6 +357,53 @@ export interface ThemeDevelopmentGuide {
   contentVersion: string
 }
 
+export type PerspectiveEvidenceKind =
+  | 'dialogue'
+  | 'thought'
+  | 'action'
+  | 'feeling'
+  | 'noticing'
+  | 'choice'
+
+export interface CharacterPerspectiveState {
+  characterId: string
+  characterName: string
+  situationId: string
+  perspectiveStatement: string
+  evidenceIds: string[]
+  evidenceKinds: PerspectiveEvidenceKind[]
+  motivationStatement: string
+}
+
+export interface PerspectiveComparison {
+  comparisonId: string
+  characterAId: string
+  characterBId: string
+  situationId: string
+  relationship: 'different' | 'similar' | 'partly-similar'
+  comparisonStatement: string
+  characterAEvidenceIds: string[]
+  characterBEvidenceIds: string[]
+}
+
+export interface PerspectiveChange {
+  characterId: string
+  earlierPerspectiveStatement: string
+  laterPerspectiveStatement: string
+  changeEvidenceIds: string[]
+  causeStatement: string
+}
+
+export interface CharacterPerspectiveGuide {
+  passageId: string
+  characters: CharacterPerspectiveState[]
+  comparisons: PerspectiveComparison[]
+  perspectiveChanges: PerspectiveChange[]
+  importantEvidenceIds: string[]
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
 export type MeaningClueStrategyKind =
   | 'context-clue'
   | 'word-relationship'
@@ -595,6 +642,7 @@ export interface ContentPack {
   multisyllableDecodingGuides?: MultisyllableDecodingGuide[]
   characterDevelopmentGuides?: CharacterDevelopmentGuide[]
   themeDevelopmentGuides?: ThemeDevelopmentGuide[]
+  characterPerspectiveGuides?: CharacterPerspectiveGuide[]
   meaningClueGuides?: MeaningClueGuide[]
   wordplayGuides?: WordplayGuide[]
   retellGuides?: RetellGuide[]
@@ -686,6 +734,9 @@ export interface ContentPackAuditIssue {
      | 'ambiguous_supported_theme'
      | 'theme_is_topic_only'
      | 'theme_is_summary_only'
+     | 'missing_character_perspective_guide'
+     | 'character_perspective_guide_count_mismatch'
+     | 'character_perspective_guide_invalid'
    | 'missing_meaning_clue_guide'
    | 'meaning_clue_guide_count_mismatch'
    | 'meaning_clue_guide_invalid'

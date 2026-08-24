@@ -157,7 +157,11 @@ const grade3Roadmaps: readonly SequentialWorldRoadmap[] = [
       lockedMessage: 'Complete Character Arc Camp to unlock Theme Development Trail.',
       futureContentMessage: 'Theme Development Trail review quests are being prepared.',
     },
-    plannedUnit('g3-ss-unit-3', 'Perspective Portal Grade 3', 'ELA.3.R.1.3', "explaining different characters' perspectives", '7B3', 3, 4),
+    {
+      ...plannedUnit('g3-ss-unit-3', 'Perspective Portal Grade 3', 'ELA.3.R.1.3', "explaining and comparing how characters understand the same situation", '7B3', 3, 4),
+      lockedMessage: 'Complete Theme Development Trail to unlock Perspective Portal Grade 3.',
+      futureContentMessage: 'Review character perspectives, comparisons, changes, and supporting story evidence.',
+    },
   ]),
   plannedRoadmap('poetry-planet', 'g3-poetry-planet', 'Grade 3 Poetry Forms', [
     plannedUnit('g3-pp-unit-1', 'Poem Form Observatory', 'ELA.3.R.1.4', 'free verse, rhymed verse, haiku, and limerick', '7B4', 1, 2),

@@ -14,7 +14,7 @@ const entries: GradeBandBenchmarkInventoryEntry[] = [
   entry('ELA.3.R.1.2', PROSE, 'story-scouts', ['g3-ss-unit-2'], '7B2', 'benchmark', 'fast_reading', PROSE,
     ['theme', 'theme-development', 'supporting-details', 'plot-theme-connection']),
   entry('ELA.3.R.1.3', PROSE, 'story-scouts', ['g3-ss-unit-3'], '7B3', 'benchmark', 'fast_reading', PROSE,
-    ['character-perspective', 'perspective-comparison', 'words-actions-thoughts', 'text-evidence']),
+    ['character-perspective', 'different-character-perspectives', 'similar-character-perspectives', 'perspective-evidence', 'perspective-change']),
   entry('ELA.3.R.1.4', PROSE, 'poetry-planet', ['g3-pp-unit-1'], '7B4', 'benchmark', 'fast_reading', PROSE,
     ['free-verse', 'rhymed-verse', 'haiku', 'limerick']),
   entry('ELA.3.R.2.1', INFORMATIONAL, 'information-detectives', ['g3-id-unit-1'], '7C1', 'benchmark', 'fast_reading', INFORMATIONAL,

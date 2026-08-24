@@ -27,6 +27,7 @@ const BENCHMARK_PATTERN_CATALOG: Record<string, readonly string[]> = {
   'ELA.3.F.1.3': ['greek-latin-root-decoding', 'affix-decoding', 'derivational-suffix-decoding', 'part-of-speech-change', 'multisyllabic-decoding'],
   'ELA.3.R.1.1': ['character-development', 'plot-linked-change', 'actions-dialogue-thoughts', 'beginning-middle-end-development', 'text-evidence'],
   'ELA.3.R.1.2': ['theme', 'theme-development', 'supporting-details', 'plot-theme-connection'],
+  'ELA.3.R.1.3': ['character-perspective', 'different-character-perspectives', 'similar-character-perspectives', 'perspective-evidence', 'perspective-change'],
 }
 
 const REVIEW_ORDER: Record<BenchmarkReviewStatus, number> = {
