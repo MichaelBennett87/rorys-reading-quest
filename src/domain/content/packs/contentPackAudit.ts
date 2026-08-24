@@ -204,13 +204,15 @@ export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPac
     issues.push(...buildMultisyllableDecodingGuideAudit(pack))
   }
 
-  if (activeProgressionCount < 3) {
+  const hasBenchmarkProgressionPack = packs.some((pack) => pack.manifest.coverageKind !== 'supportive_practice')
+
+  if (hasBenchmarkProgressionPack && activeProgressionCount < 3) {
     pushIssue(issues, 'insufficient_progression_variants', 'content-pack', 'At least three active checkpoint lessons are required.')
   }
-  if (guidedCount < 4) {
+  if (hasBenchmarkProgressionPack && guidedCount < 4) {
     pushIssue(issues, 'insufficient_guided_remediation_variants', 'content-pack', 'At least four guided remediation lessons are required.')
   }
-  if (lowerDifficultyCount < 2) {
+  if (hasBenchmarkProgressionPack && lowerDifficultyCount < 2) {
     pushIssue(
       issues,
       'insufficient_lower_difficulty_variants',
@@ -218,7 +220,7 @@ export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPac
       'At least two guided lessons at the pack\'s lower difficulty are required.',
     )
   }
-  if (activeProgressionPassages.size < 3) {
+  if (hasBenchmarkProgressionPack && activeProgressionPassages.size < 3) {
     pushIssue(issues, 'repeated_active_passage', 'content-pack', 'Checkpoint lessons should use distinct active passages.')
   }
 
