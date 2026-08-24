@@ -21,8 +21,11 @@ describe('dark-first experience', () => {
     expect(document.querySelector('.world-theme-context-cavern')).not.toBeNull()
     expect(document.querySelector('.world-theme-compare-castle')).not.toBeNull()
 
-    const unavailableWorld = document.querySelector<HTMLButtonElement>('.world-coming-later')
-    expect(unavailableWorld?.disabled).toBe(true)
+    const unavailableWorld = document.querySelector<HTMLElement>('.world-coming-later')
+    const unavailableLandmark = unavailableWorld?.closest('article')
+    expect(unavailableLandmark).not.toBeNull()
+    expect(unavailableWorld?.closest('button')).toBeNull()
+    expect(unavailableLandmark?.getAttribute('tabindex')).toBeNull()
     expect(unavailableWorld?.textContent).toMatch(/coming later/i)
   })
 })

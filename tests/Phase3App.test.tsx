@@ -15,328 +15,59 @@ afterEach(() => {
   window.localStorage.removeItem(QUEST_PROGRESS_STORAGE_KEY)
 })
 
-function launchFromMap() {
+function launchJourney() {
   render(<App />)
-  fireEvent.click(screen.getByRole('button', { name: /Word Forge world - Available/i }))
-  fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
-  fireEvent.click(screen.getByRole('button', { name: /Vowel Voyage Available/i }))
-  fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
+  fireEvent.click(screen.getByRole('button', { name: 'Start Journey' }))
 }
 
 function submitAndAdvance(final = false) {
   fireEvent.click(screen.getByRole('button', { name: /Submit Answer/i }))
-  fireEvent.click(screen.getByRole('button', {
-    name: final ? /See Quest Complete/i : /Next Question/i,
-  }))
+  fireEvent.click(screen.getByRole('button', { name: final ? /See Quest Complete/i : /Next Question/i }))
 }
 
-function getCurrentLegendText() {
-  return screen.queryByRole('group')?.querySelector('legend')?.textContent?.trim() ?? ''
-}
-
-function answerCurrentMultipleChoice(correct = true) {
-  const group = screen.getByRole('group')
-  fireEvent.click(within(group).getAllByRole('radio')[correct ? 0 : 1])
-}
-
-function answerCurrentMultiselect(indices: number[]) {
-  const group = screen.getByRole('group')
-  const checkboxes = within(group).getAllByRole('checkbox')
-  indices.forEach((index) => {
-    fireEvent.click(checkboxes[index])
-  })
-}
-
-function answerCurrentTableMatch(choiceValue: string) {
-  const region = screen.getByRole('region', { name: /table matching question/i })
-  fireEvent.change(within(region).getByRole('combobox'), { target: { value: choiceValue } })
-}
-
-function answerCurrentQuestionWrong() {
-  const tableRegion = screen.queryByRole('region', { name: /table matching question/i })
-  if (tableRegion) {
-    const select = within(tableRegion).getByRole('combobox')
-    const options = Array.from(select.querySelectorAll('option[value]'))
+function answerCurrentQuestion(correct = true) {
+  const table = screen.queryByRole('region', { name: /table matching question/i })
+  if (table) {
+    const select = within(table).getByRole('combobox')
+    const values = Array.from(select.querySelectorAll('option[value]'))
       .map((option) => option.getAttribute('value') ?? '')
       .filter(Boolean)
-    fireEvent.change(select, { target: { value: options[1] ?? options[0] ?? 'book-sound' } })
+    const prompt = (select as HTMLSelectElement).labels?.[0]?.textContent ?? ''
+    const correctValue = /leaf/i.test(prompt) ? 'leaf-sound'
+      : /boot/i.test(prompt) ? 'boot-sound'
+      : 'beach-sound'
+    fireEvent.change(select, { target: { value: correct ? correctValue : values.find((value) => value !== correctValue) ?? values[0] } })
     return
   }
+
   const group = screen.getByRole('group')
+  const prompt = group.querySelector('legend')?.textContent ?? ''
   const radios = within(group).queryAllByRole('radio')
   if (radios.length > 0) {
-    fireEvent.click(radios[1] ?? radios[0])
+    if (/dream, the green branch, and the little pond/i.test(prompt)) {
+      fireEvent.click(within(group).getByRole('radio', { name: /They wrote about a dream, a green branch, and a little pond/i }))
+    } else if (/food tasted good/i.test(prompt)) {
+      fireEvent.click(within(group).getByRole('radio', { name: /The food tasted good, and the room felt bright/i }))
+    } else if (/beach path/i.test(prompt)) {
+      fireEvent.click(within(group).getByRole('radio', { name: /A spoon of soil helped one seed sprout near the beach path/i }))
+    } else {
+      fireEvent.click(radios[correct ? 0 : 1])
+    }
     return
   }
-  const checkboxes = within(group).queryAllByRole('checkbox')
-  if (checkboxes.length > 0) {
-    fireEvent.click(checkboxes[0])
-  }
+
+  const checkboxes = within(group).getAllByRole('checkbox')
+  const passage = screen.getByRole('heading', { name: /Reading Passage/i }).parentElement?.textContent ?? ''
+  let correctCount = 1
+  if (/Choose all the ea words/i.test(prompt)) correctCount = /pool party/i.test(passage) ? 2 : 4
+  if (/Choose all the oo words/i.test(prompt)) correctCount = /garden morning/i.test(passage) ? 3 : 2
+  checkboxes.slice(0, correct ? correctCount : 1).forEach((choice) => fireEvent.click(choice))
 }
 
-function answerCheckpointQuestion(correct = true) {
-  if (screen.queryByRole('region', { name: /table matching question/i })) {
-    const region = screen.getByRole('region', { name: /table matching question/i })
-    const select = within(region).getByRole('combobox')
-    const options = Array.from(select.querySelectorAll('option[value]')).map((option) => option.getAttribute('value') ?? '')
-    const nextValue = correct ? options.find((value) => value) ?? 'leaf-sound' : options.find((value) => value && value !== options.find((candidate) => candidate)) ?? 'book-sound'
-    fireEvent.change(select, { target: { value: nextValue } })
-    return
-  }
-  const prompt = getCurrentLegendText()
-  if (/Which word has (ea|oo) like/i.test(prompt)) {
-    answerCurrentMultipleChoice(correct)
-    return
-  }
-  if (/Choose all the ea words in the passage\./i.test(prompt)) {
-    if (/tree room/i.test(screen.getByRole('heading', { name: /Reading Passage/i }).parentElement?.textContent ?? '')) {
-      answerCurrentMultiselect(correct ? [0, 1, 2, 3] : [0])
-      return
-    }
-    if (/pool party/i.test(screen.getByRole('heading', { name: /Reading Passage/i }).parentElement?.textContent ?? '')) {
-      answerCurrentMultiselect(correct ? [0, 1] : [0])
-      return
-    }
-    answerCurrentMultiselect(correct ? [0, 1, 2, 3] : [0])
-    return
-  }
-  if (/Choose all the oo words in the passage\./i.test(prompt)) {
-    if (/tree room/i.test(screen.getByRole('heading', { name: /Reading Passage/i }).parentElement?.textContent ?? '')) {
-      answerCurrentMultiselect(correct ? [0, 1] : [0])
-      return
-    }
-    if (/pool party/i.test(screen.getByRole('heading', { name: /Reading Passage/i }).parentElement?.textContent ?? '')) {
-      answerCurrentMultiselect(correct ? [0, 1, 2, 3] : [0])
-      return
-    }
-    if (/garden morning/i.test(screen.getByRole('heading', { name: /Reading Passage/i }).parentElement?.textContent ?? '')) {
-      answerCurrentMultiselect(correct ? [0, 1, 2] : [0])
-      return
-    }
-    answerCurrentMultiselect(correct ? [0] : [1])
-    return
-  }
-  if (/Select the sentence that tells about the dream, the green branch, and the little pond\./i.test(prompt)) {
-    const group = screen.getByRole('group')
-    fireEvent.click(within(group).getByRole('radio', { name: /They wrote about a dream, a green branch, and a little pond\./i }))
-    return
-  }
-  if (/Select the sentence that says the food tasted good\./i.test(prompt)) {
-    const group = screen.getByRole('group')
-    fireEvent.click(within(group).getByRole('radio', { name: /The food tasted good, and the room felt bright\./i }))
-    return
-  }
-  if (/Select the sentence that mentions the beach path\./i.test(prompt)) {
-    const group = screen.getByRole('group')
-    fireEvent.click(within(group).getByRole('radio', { name: /A spoon of soil helped one seed sprout near the beach path\./i }))
-    return
-  }
-  if (/Which sound group fits leaf\?/i.test(prompt)) {
-    answerCurrentTableMatch(correct ? 'leaf-sound' : 'team-sound')
-    return
-  }
-  if (/Which sound group fits boot\?/i.test(prompt)) {
-    answerCurrentTableMatch(correct ? 'boot-sound' : 'ea-sound')
-    return
-  }
-  if (/Which sound group fits beach\?/i.test(prompt)) {
-    answerCurrentTableMatch(correct ? 'beach-sound' : 'pool-sound')
-    return
-  }
-  if (/Which word has ea like clean\?/i.test(prompt)) {
-    answerCurrentMultipleChoice(correct)
-    return
-  }
-  if (/Which word has oo like spoon\?/i.test(prompt) || /Which word has oo like good\?/i.test(prompt)) {
-    answerCurrentMultipleChoice(correct)
-    return
-  }
-  if (/Which word has ea like bread\?/i.test(prompt) || /Which word has ea like beach\?/i.test(prompt) || /Which word has ea like weather\?/i.test(prompt) || /Which word has ea like team\?/i.test(prompt)) {
-    answerCurrentMultipleChoice(correct)
-    return
-  }
-  answerCurrentMultipleChoice(correct)
-}
-
-function completeCheckpointLesson(firstCorrect = true) {
-  answerCheckpointQuestion(firstCorrect)
-  submitAndAdvance()
-  answerCheckpointQuestion(firstCorrect)
-  submitAndAdvance()
-  answerCheckpointQuestion(true)
-  submitAndAdvance()
-  answerCheckpointQuestion(true)
-  submitAndAdvance()
-  answerCheckpointQuestion(true)
-  submitAndAdvance()
-  answerCheckpointQuestion(true)
-  submitAndAdvance()
-  answerCheckpointQuestion(true)
-  submitAndAdvance(true)
-}
-
-function completeCheckpointLessonLow() {
-  for (let i = 0; i < 7; i += 1) {
-    answerCheckpointQuestion(false)
-    submitAndAdvance(i === 6)
-  }
-}
-
-function completeGuidedLessonLow() {
-  const startPractice = screen.queryByRole('button', { name: /Start Practice/i })
-  if (startPractice) {
-    fireEvent.click(startPractice)
-  }
-  for (let safety = 0; safety < 10; safety += 1) {
-    answerCurrentQuestionWrong()
-    fireEvent.click(screen.getByRole('button', { name: /Submit Answer/i }))
-    const nextQuestionButton = screen.queryByRole('button', { name: /Next Question/i })
-    if (nextQuestionButton) {
-      fireEvent.click(nextQuestionButton)
-      continue
-    }
-    const completeButton = screen.queryByRole('button', { name: /See Quest Complete/i })
-    if (completeButton) {
-      fireEvent.click(completeButton)
-      return
-    }
-    throw new Error('Expected Next Question or See Quest Complete after submitting guided lesson answer')
-  }
-  throw new Error('Guided low helper exceeded the expected question count')
-}
-
-function clickRadioChoice(label: string) {
-  const group = screen.getByRole('group')
-  fireEvent.click(within(group).getByRole('radio', { name: label }))
-}
-
-function clickCheckboxChoice(label: string) {
-  const group = screen.getByRole('group')
-  fireEvent.click(within(group).getByRole('checkbox', { name: label }))
-}
-
-function setTrail2TableMatches(values: string[]) {
-  const region = screen.getByRole('region', { name: /table matching question/i })
-  const selects = within(region).getAllByRole('combobox')
-  values.forEach((value, index) => {
-    fireEvent.change(selects[index], { target: { value } })
-  })
-}
-
-function answerTrail2CheckpointQuestion(correct = true) {
-  const prompt = getCurrentLegendText()
-  const passageText = screen.getByRole('heading', { name: /Reading Passage/i }).parentElement?.textContent ?? ''
-
-  if (/Which word has the same ou sound as loud\?/i.test(prompt)) {
-    clickRadioChoice(correct ? 'cloud' : 'snow')
-    return
-  }
-  if (/Which word has the same ow sound as grow\?/i.test(prompt)) {
-    clickRadioChoice(correct ? 'snow' : 'cloud')
-    return
-  }
-  if (/Which word has the same oi sound as boil\?/i.test(prompt)) {
-    clickRadioChoice(correct ? 'coin' : 'cloud')
-    return
-  }
-  if (/Which word has the same oy sound as joy\?/i.test(prompt)) {
-    clickRadioChoice(correct ? (/science walk/i.test(passageText) ? 'boy' : 'toy') : 'cloud')
-    return
-  }
-  if (/Which word has the same ou sound as sound\?/i.test(prompt)) {
-    clickRadioChoice(correct ? 'round' : 'toy')
-    return
-  }
-  if (/Which word has the same oi sound as noise\?/i.test(prompt)) {
-    clickRadioChoice(correct ? (/science walk/i.test(passageText) ? 'voice' : 'choice') : 'toy')
-    return
-  }
-  if (/Which word has the same ow sound as how\?/i.test(prompt)) {
-    clickRadioChoice(correct ? 'cow' : 'toy')
-    return
-  }
-  if (/Choose all the words that show the Trail 2 patterns in this fair passage\./i.test(prompt)) {
-    if (correct) clickCheckboxChoice('cloud')
-    if (correct) clickCheckboxChoice('coin')
-    if (correct) clickCheckboxChoice('toy')
-    if (correct) clickCheckboxChoice('snow')
-    else clickCheckboxChoice('cloud')
-    return
-  }
-  if (/Choose all the words that show the Trail 2 patterns in the cleanup passage\./i.test(prompt)) {
-    if (correct) clickCheckboxChoice('round')
-    if (correct) clickCheckboxChoice('choice')
-    if (correct) clickCheckboxChoice('toy')
-    if (correct) clickCheckboxChoice('cow')
-    else clickCheckboxChoice('round')
-    return
-  }
-  if (/Choose all the words that show the Trail 2 patterns in the science walk\./i.test(prompt)) {
-    if (correct) clickCheckboxChoice('cloud')
-    if (correct) clickCheckboxChoice('voice')
-    if (correct) clickCheckboxChoice('boy')
-    if (correct) clickCheckboxChoice('cow')
-    else clickCheckboxChoice('cloud')
-    return
-  }
-  if (/Select the sentence that says a coin spun beside a toy wagon\./i.test(prompt)) {
-    clickRadioChoice(correct ? 'A coin spun beside a toy wagon while the boy waited.' : 'At the town fair, a cloud of smoke rose from the soup tent.')
-    return
-  }
-  if (/Select the sentence that says another child carried a toy crow past the window\./i.test(prompt)) {
-    clickRadioChoice(correct ? 'Another child carried a toy crow past the window.' : 'During the cleanup, the team found a round sign and a loud horn.')
-    return
-  }
-  if (/Select the sentence that says the cow moved down the brown trail\./i.test(prompt)) {
-    clickRadioChoice(correct ? 'On the science walk, the cow moved down the brown trail.' : 'The children heard the voice of the guide, and one boy held a cloud chart.')
-    return
-  }
-
-  if (screen.queryByRole('region', { name: /table matching question/i })) {
-    if (/At the town fair/i.test(passageText)) {
-      setTrail2TableMatches(correct
-        ? ['cloud-ou-sound', 'coin-oi-sound', 'toy-oy-sound', 'snow-ow-sound']
-        : ['cloud-oi-sound', 'coin-ou-sound', 'toy-ow-sound', 'snow-oy-sound'])
-      return
-    }
-    if (/During the cleanup/i.test(passageText)) {
-      setTrail2TableMatches(correct
-        ? ['round-ou-sound', 'choice-oi-sound', 'toy-oy-sound', 'cow-ow-sound']
-        : ['round-oi-sound', 'choice-ou-sound', 'toy-ow-sound', 'cow-oy-sound'])
-      return
-    }
-    if (/On the science walk/i.test(passageText)) {
-      setTrail2TableMatches(correct
-        ? ['cloud-ou-sound', 'voice-oi-sound', 'boy-oy-sound', 'cow-ow-sound']
-        : ['cloud-oi-sound', 'voice-ou-sound', 'boy-ow-sound', 'cow-oy-sound'])
-      return
-    }
-  }
-
-  answerCurrentMultipleChoice(correct)
-}
-
-function completeTrail2CheckpointLesson(firstCorrect = true) {
-  answerTrail2CheckpointQuestion(firstCorrect)
-  submitAndAdvance()
-  answerTrail2CheckpointQuestion(firstCorrect)
-  submitAndAdvance()
-  answerTrail2CheckpointQuestion(true)
-  submitAndAdvance()
-  answerTrail2CheckpointQuestion(true)
-  submitAndAdvance()
-  answerTrail2CheckpointQuestion(true)
-  submitAndAdvance()
-  answerTrail2CheckpointQuestion(true)
-  submitAndAdvance()
-  answerTrail2CheckpointQuestion(true)
-  submitAndAdvance(true)
-}
-
-function completeTrail2CheckpointLessonLow() {
-  for (let i = 0; i < 7; i += 1) {
-    answerTrail2CheckpointQuestion(false)
-    submitAndAdvance(i === 6)
+function completeCheckpoint(correct = true) {
+  for (let index = 0; index < 7; index += 1) {
+    answerCurrentQuestion(correct || index > 1)
+    submitAndAdvance(index === 6)
   }
 }
 
@@ -344,286 +75,88 @@ function readProgress(): QuestProgressV1 {
   return JSON.parse(window.localStorage.getItem(QUEST_PROGRESS_STORAGE_KEY) ?? 'null') as QuestProgressV1
 }
 
-function seedActiveQuestProgress() {
-  const state = createDefaultQuestProgress('2026-08-20T12:00:00.000Z')
-  const candidate = getLessonCandidates()[0]
-  const lesson = getLessonById(candidate.lessonId).lesson
-  if (!lesson) throw new Error('Expected a seeded active lesson.')
-
-  state.activeLessonSession = createActiveLessonSession(lesson, 'session-active-quest', '2026-08-20T12:00:00.000Z')
-  state.skillProgress['g2-word-forge-word-practice'].currentDifficulty = 3
-  state.skillProgress['g2-word-forge-word-practice'].currentLearningState = 'ADVANCE'
-  state.totalXp = 100
-  state.totalStars = 2
-  state.completedSessionCount = 1
-  state.completedAttempts = [{
-    attemptId: 'attempt-1',
-    completionId: 'completion-1',
-    lessonId: lesson.lessonId,
-    activityId: lesson.activityId,
-    skillId: lesson.skillId,
-    difficulty: lesson.difficulty,
-    questionResults: [],
-    accuracy: 100,
-    assistanceCount: 0,
-    assistanceSummary: {
-      totalUniqueEvents: 0,
-      targetsHelped: 0,
-      maximumAssistanceLevel: 0,
-      visualHintUsed: false,
-      spokenChunkHelpUsed: false,
-      spokenWordHelpUsed: false,
-      sentenceReadAloudUsed: false,
-    },
-    assistanceEvents: [],
-    completedAt: '2026-08-20T12:00:00.000Z',
-    progressionDecisionState: 'VERIFY_MASTERY',
-    reasonCodes: ['independent_evidence'],
-    nextReviewDate: null,
-  }]
-  state.plannedNextQuest = {
-    status: 'available',
-    purpose: 'progression',
-    lesson,
-  } as never
-  window.localStorage.setItem(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(state))
-  return { state, lesson }
-}
-
-function seedTrailDifficulty(difficulty: number) {
-  const state = createDefaultQuestProgress('2026-08-20T12:00:00.000Z')
-  state.skillProgress['g2-word-forge-word-practice'].currentDifficulty = difficulty
-  state.skillProgress['g2-word-forge-word-practice'].currentLearningState = difficulty >= 2 ? 'ADVANCE' : 'VERIFY_MASTERY'
-  window.localStorage.setItem(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(state))
-}
-
-describe('Phase 3 adaptive child flow', () => {
-  test('completing a strong lesson creates a supportive fresh-verification outcome', () => {
-    launchFromMap()
-    completeCheckpointLesson()
+describe('guided adaptive child flow', () => {
+  test('a completed quest reaches one-action progression with no map return', () => {
+    launchJourney()
+    completeCheckpoint()
     fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
+
     expect(screen.getByRole('heading', { name: /Almost There/i })).toBeTruthy()
-    expect(screen.getByText(/One fresh quest will prove this reading power is ready/i)).toBeTruthy()
-    expect(screen.getByRole('button', { name: /Return to Map/i })).toBeTruthy()
+    expect(screen.getAllByRole('button')).toHaveLength(1)
+    expect(screen.getByRole('button', { name: 'Continue Journey' })).toBeTruthy()
+    expect(screen.queryByRole('button', { name: /Return to Map/i })).toBeNull()
     expect(readProgress().completedAttempts).toHaveLength(1)
   }, 10_000)
 
-  test('selects a fresh activity and a second distinct strong lesson unlocks the next trail', () => {
-    launchFromMap()
-    completeCheckpointLesson()
+  test('Continue Journey launches the planner-selected fresh lesson directly', () => {
+    launchJourney()
+    completeCheckpoint()
     fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Return to Map/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Vowel Voyage Available/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
+    fireEvent.click(screen.getByRole('button', { name: 'Continue Journey' }))
+
     expect(screen.getByRole('heading', { name: /Pool Party Quest/i })).toBeTruthy()
-    completeCheckpointLesson()
-    fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
-    expect(screen.getByRole('heading', { name: /Trail Complete!/i })).toBeTruthy()
-    expect(readProgress().skillProgress['g2-word-forge-word-practice'].currentDifficulty).toBe(2)
-    fireEvent.click(screen.getByRole('button', { name: /Return to Map/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Vowel Voyage Available/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
-    expect(screen.getByText(/Which word has the same ou sound as loud\?/i)).toBeTruthy()
-    expect(readProgress().completedAttempts).toHaveLength(2)
+    expect(screen.queryByText(/Unit Selection|Ready when you are|Return to Map/i)).toBeNull()
   }, 10_000)
 
-  test('partial performance remains on the same trail with training language', () => {
-    launchFromMap()
-    completeCheckpointLesson(false)
+  test('partial performance keeps automatic same-level guidance', () => {
+    launchJourney()
+    completeCheckpoint(false)
     fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
     expect(screen.getByRole('heading', { name: /Training Round/i })).toBeTruthy()
-    expect(screen.getByText(/You are close\. A new quest will help this skill grow stronger\./i)).toBeTruthy()
     expect(readProgress().skillProgress['g2-word-forge-word-practice'].currentDifficulty).toBe(1)
   })
 
-  test('manual unit launch respects the current trail and opens Trail 2 checkpoint content', () => {
-    seedTrailDifficulty(2)
-    launchFromMap()
-    expect(screen.getByText(/Which word has the same ou sound as loud\?/i)).toBeTruthy()
-    expect(screen.queryByText(/Which word has ea like leaf\?/i)).toBeNull()
+  test('Save and Exit returns Home while preserving and resuming the active lesson', () => {
+    launchJourney()
+    fireEvent.click(screen.getByRole('button', { name: /Save and Exit/i }))
+
+    expect(screen.getByRole('heading', { name: "Rory's Reading Quest" })).toBeTruthy()
+    expect(readProgress().activeLessonSession).not.toBeNull()
+    expect(readProgress().completedAttempts).toHaveLength(0)
+    fireEvent.click(screen.getByRole('button', { name: 'Start Journey' }))
+    expect(screen.getByRole('heading', { name: /Vowel Voyage: Tree Study Quest/i })).toBeTruthy()
   })
 
-  test('a strong Trail 2 checkpoint requests verification and a second distinct success reaches Trail 3', () => {
-    seedTrailDifficulty(2)
-    launchFromMap()
-    completeTrail2CheckpointLesson()
-    fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
-    expect(screen.getByRole('heading', { name: /Almost There/i })).toBeTruthy()
-    fireEvent.click(screen.getByRole('button', { name: /Return to Map/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Vowel Voyage Available/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
-    expect(screen.getByText(/Which word has the same ou sound as sound\?/i)).toBeTruthy()
-    completeTrail2CheckpointLesson()
-    fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
-    expect(screen.getByRole('heading', { name: /Trail Complete!/i })).toBeTruthy()
-    expect(screen.getByRole('button', { name: /Return to Map/i })).toBeTruthy()
-    fireEvent.click(screen.getByRole('button', { name: /Return to Map/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Syllable Summit Available/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
-    expect(screen.getByText(/Which word has two short vowel sounds\?/i)).toBeTruthy()
-    expect(readProgress().skillProgress['g2-word-forge-word-practice'].currentDifficulty).toBe(3)
-  }, 10_000)
-
-  test('partial Trail 2 performance remains at the same difficulty', () => {
-    seedTrailDifficulty(2)
-    launchFromMap()
-    completeTrail2CheckpointLesson(false)
-    fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
-    expect(screen.getByRole('heading', { name: /Training Round/i })).toBeTruthy()
-    expect(readProgress().skillProgress['g2-word-forge-word-practice'].currentDifficulty).toBe(2)
-  })
-
-  test('a low Trail 2 checkpoint routes to guided practice and preserves the original Trail 2 target', () => {
-    seedTrailDifficulty(2)
-    launchFromMap()
-    completeTrail2CheckpointLessonLow()
-    fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
-    expect(screen.getByRole('heading', { name: /Try a New Route/i })).toBeTruthy()
-    fireEvent.click(screen.getByRole('button', { name: /Return to Map/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Vowel Voyage Available/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
-    expect(screen.getByRole('heading', { name: /Look closely at oi and oy/i })).toBeTruthy()
-    completeGuidedLessonLow()
-    fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
-    expect(screen.getByRole('heading', { name: /Power-Up Mission/i })).toBeTruthy()
-    fireEvent.click(screen.getByRole('button', { name: /Return to Map/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Vowel Voyage Available/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
-    expect(screen.getByRole('heading', { name: /Look closely at oi and oy/i })).toBeTruthy()
-    expect(readProgress().skillProgress['g2-word-forge-word-practice'].currentDifficulty).toBe(1)
-    expect(readProgress().skillProgress['g2-word-forge-word-practice'].remediationContext?.originalDifficulty).toBe(2)
-  })
-
-  test('two consecutive low completions route to a supportive building-block mission', () => {
-    launchFromMap()
-    completeCheckpointLessonLow()
-    fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
-    expect(screen.getByRole('heading', { name: /Try a New Route/i })).toBeTruthy()
-    fireEvent.click(screen.getByRole('button', { name: /Return to Map/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Vowel Voyage Available/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Start Quest/i }))
-    completeGuidedLessonLow()
-    fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
-    expect(screen.getByRole('heading', { name: /Power-Up Mission/i })).toBeTruthy()
-    expect(screen.getByText(/building block to strengthen/i)).toBeTruthy()
-  })
-
-  test('persisted XP and stars appear after a reload', () => {
-    launchFromMap()
-    completeCheckpointLesson()
-    fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
-    const state = readProgress()
-    cleanup()
-    render(<App />)
-    expect(screen.getByLabelText(`${state.totalXp} experience points`)).toBeTruthy()
-    expect(screen.getByLabelText(`${state.totalStars} stars earned`)).toBeTruthy()
-  })
-
-  test('a submitted active question resumes at its feedback boundary after reload', () => {
-    launchFromMap()
+  test('a submitted answer resumes at its feedback boundary after reload', () => {
+    launchJourney()
     fireEvent.click(screen.getByRole('radio', { name: /leaf/i }))
     fireEvent.click(screen.getByRole('button', { name: /Submit Answer/i }))
     cleanup()
     render(<App />)
-    fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
+    fireEvent.click(screen.getByRole('button', { name: 'Start Journey' }))
     expect(screen.getByText(/Great clue-finding/i)).toBeTruthy()
     expect(screen.getByRole('button', { name: /Next Question/i })).toBeTruthy()
   })
 
-  test('save and exit preserves the active session and continues after reload', () => {
-    launchFromMap()
-    fireEvent.click(screen.getByRole('button', { name: /Save and Exit/i }))
-    expect(readProgress().activeLessonSession).not.toBeNull()
-    expect(readProgress().completedAttempts).toHaveLength(0)
-
-    cleanup()
-    render(<App />)
-    fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
-    expect(screen.getByRole('heading', { name: /Vowel Voyage: Tree Study Quest/i })).toBeTruthy()
-  })
-
-  test('active quest guard names the current quest and cancel keeps the session saved', () => {
-    const { lesson } = seedActiveQuestProgress()
-
-    render(<App />)
-    fireEvent.click(screen.getByRole('button', { name: /Word Forge world - Available/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Syllable Summit Available/i }))
-
-    expect(screen.getByRole('heading', { name: /You already have a quest in progress/i })).toBeTruthy()
-    expect(screen.getByText(new RegExp(`${lesson.lessonTitle} is still open`, 'i'))).toBeTruthy()
-    expect(screen.getByText(/Resume it, or end the unfinished quest before choosing another adventure\./i)).toBeTruthy()
-
-    fireEvent.click(screen.getByRole('button', { name: /End Current Quest and Choose This Unit/i }))
-    expect(screen.getByRole('heading', { name: /End this unfinished quest\?/i })).toBeTruthy()
-    fireEvent.click(screen.getByRole('button', { name: /^Cancel$/i }))
-    expect(readProgress().activeLessonSession?.lessonId).toBe(lesson.lessonId)
-    expect(readProgress().completedAttempts).toHaveLength(1)
-  })
-
-  test('resume current quest restores the saved active lesson instead of replacing it', () => {
-    const { lesson } = seedActiveQuestProgress()
-
-    render(<App />)
-    fireEvent.click(screen.getByRole('button', { name: /Word Forge world - Available/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Syllable Summit Available/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Resume Current Quest/i }))
-
-    expect(screen.getByRole('heading', { name: new RegExp(lesson.lessonTitle, 'i') })).toBeTruthy()
-    expect(readProgress().activeLessonSession?.lessonId).toBe(lesson.lessonId)
-    expect(readProgress().plannedNextQuest?.status).toBe('available')
-  })
-
-  test('explicit abandonment clears the active session without changing earned progress', () => {
-    const { lesson } = seedActiveQuestProgress()
-
-    render(<App />)
-    fireEvent.click(screen.getByRole('button', { name: /Word Forge world - Available/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Syllable Summit Available/i }))
-    fireEvent.click(screen.getByRole('button', { name: /End Current Quest and Choose This Unit/i }))
-    fireEvent.click(screen.getByRole('button', { name: /End Current Quest/i }))
-
-    const afterAbandon = readProgress()
-    expect(afterAbandon.activeLessonSession).toBeNull()
-    expect(afterAbandon.totalXp).toBe(100)
-    expect(afterAbandon.totalStars).toBe(2)
-    expect(afterAbandon.completedAttempts).toHaveLength(1)
-    expect(afterAbandon.plannedNextQuest).toBeNull()
-    expect(afterAbandon.lastProgressionOutcome).toBeNull()
-
-    fireEvent.click(screen.getByRole('button', { name: /Back/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Back/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Back to Home/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Story Scouts world - Available/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Open Unit Map/i }))
-    expect(screen.getByRole('heading', { name: /Story Scouts: Unit Selection/i })).toBeTruthy()
-    expect(lesson.lessonTitle).toBe('Vowel Voyage: Tree Study Quest')
-  })
-
-  test('double interaction at completion cannot duplicate an attempt or rewards', () => {
-    launchFromMap()
-    completeCheckpointLesson()
-    const continueButton = screen.getByRole('button', { name: /Continue Quest/i })
-    fireEvent.click(continueButton)
-    fireEvent.click(continueButton)
-    const state = readProgress()
-    expect(state.completedAttempts).toHaveLength(1)
-    expect(state.completedSessionCount).toBe(1)
-  })
-
-  test('a saved progress snapshot still opens the live Word Forge quest', () => {
+  test('an existing active lesson always resumes before a stored fresh plan', () => {
     const state = createDefaultQuestProgress('2026-08-20T12:00:00.000Z')
+    const candidates = getLessonCandidates()
+    const activeLesson = getLessonById(candidates[0].lessonId).lesson!
+    const otherLesson = candidates.find((candidate) => candidate.lessonId !== activeLesson.lessonId)!
+    state.activeLessonSession = createActiveLessonSession(activeLesson, 'guided-active-session', '2026-08-20T12:00:00.000Z')
+    state.plannedNextQuest = { status: 'available', purpose: 'progression', lesson: otherLesson }
+    window.localStorage.setItem(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(state))
+
+    render(<App />)
+    fireEvent.click(screen.getByRole('button', { name: 'Start Journey' }))
+    expect(screen.getByRole('heading', { name: activeLesson.lessonTitle })).toBeTruthy()
+    expect(readProgress().activeLessonSession?.lessonId).toBe(activeLesson.lessonId)
+  })
+
+  test('saved schema-version-1 progress opens the live guided quest without migration loss', () => {
+    const state = createDefaultQuestProgress('2026-08-20T12:00:00.000Z')
+    state.totalXp = 90
+    state.totalStars = 3
     window.localStorage.setItem(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(state))
     render(<App />)
-    fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
+
+    expect(screen.getByLabelText('90 experience points')).toBeTruthy()
+    expect(screen.getByLabelText('3 stars earned')).toBeTruthy()
+    fireEvent.click(screen.getByRole('button', { name: 'Start Journey' }))
     expect(screen.getByRole('heading', { name: /Vowel Voyage: Tree Study Quest/i })).toBeTruthy()
-    expect(screen.getByText(/fresh questions/i)).toBeTruthy()
-    expect(screen.queryByText(/failed|failure|bad reader|wrong level|behind/i)).toBeNull()
   })
 
-  test('an incompatible active session returns safely to a fresh quest', () => {
+  test('an incompatible active session recovers safely to a fresh guided quest', () => {
     const state = createDefaultQuestProgress('2026-08-20T12:00:00.000Z')
     const candidate = getLessonCandidates()[0]
     state.activeLessonSession = {
@@ -641,7 +174,17 @@ describe('Phase 3 adaptive child flow', () => {
     }
     window.localStorage.setItem(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(state))
     render(<App />)
-    fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
+    fireEvent.click(screen.getByRole('button', { name: 'Start Journey' }))
     expect(screen.getByText(/Question 1 of 7/i)).toBeTruthy()
+  })
+
+  test('double completion interaction remains idempotent', () => {
+    launchJourney()
+    completeCheckpoint()
+    const continueButton = screen.getByRole('button', { name: /Continue Quest/i })
+    fireEvent.click(continueButton)
+    fireEvent.click(continueButton)
+    expect(readProgress().completedAttempts).toHaveLength(1)
+    expect(readProgress().completedSessionCount).toBe(1)
   })
 })
