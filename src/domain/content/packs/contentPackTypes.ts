@@ -319,6 +319,44 @@ export interface CharacterDevelopmentGuide {
   contentVersion: string
 }
 
+export type ThemeDevelopmentStageKind = 'beginning' | 'middle' | 'end'
+
+export interface ThemeDevelopmentStage {
+  stageId: string
+  stage: ThemeDevelopmentStageKind
+  evidenceIds: string[]
+  developmentStatement: string
+}
+
+export type ThemeCandidateKind =
+  | 'theme'
+  | 'topic'
+  | 'summary'
+  | 'unsupported-theme'
+  | 'moral-command'
+
+export interface ThemeCandidate {
+  themeId: string
+  statement: string
+  candidateKind: ThemeCandidateKind
+  supported: boolean
+  supportReason: string
+}
+
+export interface ThemeDevelopmentGuide {
+  passageId: string
+  topicLabel: string
+  supportedTheme: ThemeCandidate
+  plausibleDistractorThemes: ThemeCandidate[]
+  stages: [ThemeDevelopmentStage, ThemeDevelopmentStage, ThemeDevelopmentStage]
+  turningPointEvidenceIds: string[]
+  characterConnectionStatement: string
+  conflictConnectionStatement: string
+  developmentSummary: string
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
 export type MeaningClueStrategyKind =
   | 'context-clue'
   | 'word-relationship'
@@ -556,6 +594,7 @@ export interface ContentPack {
   derivationalSuffixGuides?: DerivationalSuffixGuide[]
   multisyllableDecodingGuides?: MultisyllableDecodingGuide[]
   characterDevelopmentGuides?: CharacterDevelopmentGuide[]
+  themeDevelopmentGuides?: ThemeDevelopmentGuide[]
   meaningClueGuides?: MeaningClueGuide[]
   wordplayGuides?: WordplayGuide[]
   retellGuides?: RetellGuide[]
@@ -641,6 +680,12 @@ export interface ContentPackAuditIssue {
      | 'missing_character_development_guide'
      | 'character_development_guide_count_mismatch'
      | 'character_development_guide_invalid'
+     | 'missing_theme_development_guide'
+     | 'theme_development_guide_count_mismatch'
+     | 'theme_development_guide_invalid'
+     | 'ambiguous_supported_theme'
+     | 'theme_is_topic_only'
+     | 'theme_is_summary_only'
    | 'missing_meaning_clue_guide'
    | 'meaning_clue_guide_count_mismatch'
    | 'meaning_clue_guide_invalid'

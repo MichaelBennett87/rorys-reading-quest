@@ -5,6 +5,7 @@ import { buildRootDecodingGuideAudit } from './rootDecodingGuideAudit'
 import { buildDerivationalSuffixGuideAudit } from './derivationalSuffixGuideAudit'
 import { buildMultisyllableDecodingGuideAudit } from './multisyllableDecodingGuideAudit'
 import { buildCharacterDevelopmentGuideAudit } from './characterDevelopmentGuideAudit'
+import { buildThemeDevelopmentGuideAudit } from './themeDevelopmentGuideAudit'
 
 export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPackAuditIssue[] {
   const issues: ContentPackAuditIssue[] = []
@@ -204,6 +205,7 @@ export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPac
     issues.push(...buildDerivationalSuffixGuideAudit(pack))
     issues.push(...buildMultisyllableDecodingGuideAudit(pack))
     issues.push(...buildCharacterDevelopmentGuideAudit(pack))
+    issues.push(...buildThemeDevelopmentGuideAudit(pack))
   }
 
   const hasBenchmarkProgressionPack = packs.some((pack) => pack.manifest.coverageKind !== 'supportive_practice')
