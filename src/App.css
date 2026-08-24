@@ -547,6 +547,7 @@ main {
 .world-card-inner {
   display: grid;
   gap: 0.45rem;
+  cursor: default;
 }
 
 .world-card-header,
@@ -839,7 +840,7 @@ main {
   transition: transform var(--rq-motion-fast) ease, box-shadow var(--rq-motion-fast) ease;
 }
 
-.world-card-inner:not(:disabled):hover { transform: translateY(-5px) rotate(-0.4deg); box-shadow: var(--rq-shadow-lift); }
+.world-card-current { transform: translateY(-3px); box-shadow: var(--rq-shadow-lift); }
 .world-card-header { align-items: flex-start; }
 .world-icon {
   display: grid;
@@ -1291,7 +1292,7 @@ main {
   color: var(--rq-ink);
 }
 
-.world-card-inner:not(:disabled):hover {
+.world-card-current {
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.12),
     0 24px 52px rgba(2, 7, 18, 0.52),
@@ -1319,6 +1320,8 @@ main {
   background: rgba(8, 15, 29, 0.72);
 }
 
+.status-current { color: #fff0a8; background: #544117; }
+.status-up-next { color: #a9d7ff; background: #173454; }
 .status-complete { color: #77e7b5; background: #13372f; }
 .status-locked,
 .status-coming-later { color: #aeb8ca; background: #222c3e; }

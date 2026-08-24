@@ -156,16 +156,7 @@ export function normalizePlannedNextQuest(
     return { state, changed: false }
   }
 
-  const candidate = availableLessons.find((lesson) => (
-    lesson.lessonId === planned.lesson.lessonId
-    && lesson.activityId === planned.lesson.activityId
-    && lesson.skillId === planned.lesson.skillId
-    && lesson.difficulty === planned.lesson.difficulty
-    && lesson.contentVersion === planned.lesson.contentVersion
-    && lesson.eligiblePurposes.includes(planned.purpose)
-  ))
-  const track = candidate ? getTrackBySkillId(candidate.skillId) : null
-  if (!candidate || !track || !isCurriculumTrackPlayable(track, state, availableLessons)) {
+  if (!isValidPlannedQuest(state, planned, availableLessons)) {
     return {
       state: {
         ...state,
@@ -217,10 +208,15 @@ export function planGlobalQuest(input: PlanGlobalQuestInput): GlobalQuestPlan {
     : null
   if (ordinaryPlan) return ordinaryPlan
 
-  const freshProgression = chooseBalancedFreshProgression(state, input.availableLessons, playableTracks)
+  const guidedTrack = getCurrentGuidedJourneyTrack(state, playableTracks)
+  const freshProgression = chooseGuidedFreshProgression(state, input.availableLessons, guidedTrack)
   if (freshProgression) return freshProgression
 
-  return buildContentNeededPlan(state, playableTracks)
+  return buildContentNeededPlan(
+    state,
+    guidedTrack ? [guidedTrack] : playableTracks,
+    guidedTrack?.track.skillId ?? null,
+  )
 }
 
 export function resolveActiveLearningFocus(
@@ -245,15 +241,7 @@ export function resolveActiveLearningFocus(
     )
   }
 
-  const latestAttempt = [...state.completedAttempts]
-    .sort((left, right) => new Date(right.completedAt).getTime() - new Date(left.completedAt).getTime()
-      || right.completionId.localeCompare(left.completionId))[0] ?? null
-  if (latestAttempt) {
-    const track = getTrackBySkillId(latestAttempt.skillId)
-    return buildTrackFocus(track, latestAttempt.skillId, latestAttempt.difficulty, 'latest_attempt')
-  }
-
-  const plannedQuestResult = planGlobalQuest(input)
+  const plannedQuestResult = planGlobalQuest({ ...input, progress: state })
   if (plannedQuestResult.status === 'available' && plannedQuestResult.skillId) {
     return {
       skillId: plannedQuestResult.skillId,
@@ -263,6 +251,14 @@ export function resolveActiveLearningFocus(
       displayName: plannedQuestResult.displayName,
       source: 'global_planned_quest',
     }
+  }
+
+  const latestAttempt = [...state.completedAttempts]
+    .sort((left, right) => new Date(right.completedAt).getTime() - new Date(left.completedAt).getTime()
+      || right.completionId.localeCompare(left.completionId))[0] ?? null
+  if (latestAttempt) {
+    const track = getTrackBySkillId(latestAttempt.skillId)
+    return buildTrackFocus(track, latestAttempt.skillId, latestAttempt.difficulty, 'latest_attempt')
   }
 
   const firstPlayableTrack = discoverPlayableTracksForState(state, input.availableLessons)[0]?.track ?? null
@@ -388,63 +384,45 @@ function chooseActiveStatePlan(
   return null
 }
 
-function chooseBalancedFreshProgression(
+function getCurrentGuidedJourneyTrack(
   state: QuestProgressV1,
-  availableLessons: readonly LessonActivityCandidate[],
   playableTracks: readonly PlayableTrackDiscovery[],
-): GlobalQuestPlan | null {
-  type BalancedFreshProgressionCandidate = {
-    track: CurriculumTrackDefinition
-    lesson: LessonActivityCandidate
-    nonReviewCount: number
-    lastCompletedAt: string | null
-  } | null
-
-  const candidates = playableTracks
-    .map((entry): BalancedFreshProgressionCandidate => {
+): PlayableTrackDiscovery | null {
+  return [...playableTracks]
+    .sort((left, right) => compareTrackDefinitions(left.track, right.track))
+    .find((entry) => {
       const progress = state.skillProgress[entry.track.skillId]
         ?? createInitialSkillProgress(
           entry.track.skillId,
           entry.track.initialDifficulty,
           entry.track.initialLastMasteredDifficulty,
         )
-      const plan = selectNextLesson({
-        skillId: entry.track.skillId,
-        difficulty: progress.currentDifficulty,
-        purpose: 'progression',
-        availableLessons,
-        recentActivityUsage: progress.recentActivityUsage,
-      })
-      if (plan.status !== 'available') return null
-      const nonReviewCount = state.completedAttempts.filter((attempt) => (
-        attempt.skillId === entry.track.skillId
-        && attempt.lessonRole !== 'FLUENCY_PRACTICE'
-        && attempt.progressionDecisionState !== 'SPACED_REVIEW'
-      )).length
-      const lastCompletedAt = [...state.completedAttempts]
-        .filter((attempt) => (
-          attempt.skillId === entry.track.skillId
-          && attempt.lessonRole !== 'FLUENCY_PRACTICE'
-          && attempt.progressionDecisionState !== 'SPACED_REVIEW'
-        ))
-        .sort((left, right) => new Date(right.completedAt).getTime() - new Date(left.completedAt).getTime()
-          || right.completionId.localeCompare(left.completionId))[0]?.completedAt ?? null
-      return {
-        track: entry.track,
-        lesson: plan.lesson,
-        nonReviewCount,
-        lastCompletedAt,
-      }
-    })
-    .filter((candidate): candidate is Exclude<BalancedFreshProgressionCandidate, null> => candidate !== null)
-    .sort((left, right) => left.nonReviewCount - right.nonReviewCount
-      || compareNullableDates(left.lastCompletedAt, right.lastCompletedAt)
-      || compareTrackDefinitions(left.track, right.track)
-      || left.lesson.activityId.localeCompare(right.lesson.activityId))
+      return progress.currentDifficulty < entry.track.completionDifficulty
+    }) ?? null
+}
 
-  const first = candidates[0]
-  if (!first) return null
-  return buildPlanFromLesson(first.lesson, 'progression', 'global_planned_quest')
+function chooseGuidedFreshProgression(
+  state: QuestProgressV1,
+  availableLessons: readonly LessonActivityCandidate[],
+  guidedTrack: PlayableTrackDiscovery | null,
+): GlobalQuestPlan | null {
+  if (!guidedTrack) return null
+  const progress = state.skillProgress[guidedTrack.track.skillId]
+    ?? createInitialSkillProgress(
+      guidedTrack.track.skillId,
+      guidedTrack.track.initialDifficulty,
+      guidedTrack.track.initialLastMasteredDifficulty,
+    )
+  const plan = selectNextLesson({
+    skillId: guidedTrack.track.skillId,
+    difficulty: progress.currentDifficulty,
+    purpose: 'progression',
+    availableLessons,
+    recentActivityUsage: progress.recentActivityUsage,
+  })
+  return plan.status === 'available'
+    ? buildPlanFromLesson(plan.lesson, 'progression', 'global_planned_quest')
+    : null
 }
 
 function buildPlanFromLesson(
@@ -476,9 +454,13 @@ function buildPlanFromLesson(
 function buildContentNeededPlan(
   state: QuestProgressV1,
   playableTracks: readonly PlayableTrackDiscovery[],
+  requiredSkillId: string | null = null,
 ): GlobalQuestPlan {
   const firstPlayableTrack = playableTracks[0]?.track ?? null
-  const planned = state.plannedNextQuest?.status === 'content_needed' ? state.plannedNextQuest : null
+  const storedContentNeeded = state.plannedNextQuest?.status === 'content_needed' ? state.plannedNextQuest : null
+  const planned = storedContentNeeded && (!requiredSkillId || storedContentNeeded.skillId === requiredSkillId)
+    ? storedContentNeeded
+    : null
   const skillId = planned?.skillId ?? firstPlayableTrack?.skillId ?? null
   const difficulty = planned?.difficulty ?? firstPlayableTrack?.initialDifficulty ?? 1
   const reason = planned?.reason
@@ -571,7 +553,13 @@ function isValidPlannedQuest(
     && lesson.eligiblePurposes.includes(plannedQuest.purpose)
   ))
   const track = candidate ? getTrackBySkillId(candidate.skillId) : null
-  return Boolean(candidate && track && isCurriculumTrackPlayable(track, state, availableLessons))
+  if (!candidate || !track || !isCurriculumTrackPlayable(track, state, availableLessons)) return false
+  if (plannedQuest.purpose !== 'progression') return true
+  const guidedTrack = getCurrentGuidedJourneyTrack(
+    state,
+    discoverPlayableTracksForState(state, availableLessons),
+  )
+  return guidedTrack?.track.skillId === candidate.skillId
 }
 
 function compareTrackDefinitions(left: CurriculumTrackDefinition, right: CurriculumTrackDefinition): number {
@@ -582,11 +570,4 @@ function compareTrackIds(leftSkillId: string, rightSkillId: string): number {
   return (getTrackBySkillId(leftSkillId)?.curriculumOrder ?? Number.MAX_SAFE_INTEGER)
     - (getTrackBySkillId(rightSkillId)?.curriculumOrder ?? Number.MAX_SAFE_INTEGER)
     || leftSkillId.localeCompare(rightSkillId)
-}
-
-function compareNullableDates(left: string | null, right: string | null): number {
-  if (left === right) return 0
-  if (left === null) return -1
-  if (right === null) return 1
-  return new Date(left).getTime() - new Date(right).getTime()
 }

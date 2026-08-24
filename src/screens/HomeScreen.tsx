@@ -9,8 +9,8 @@ import type { DemoWorld } from '../data/demoWorlds'
 interface HomeScreenProps {
   learner: DemoLearner
   worlds: DemoWorld[]
-  onContinue: () => void
-  onWorldSelect: (worldId: string) => void
+  currentWorldId: string
+  onStartJourney: () => void
   onOpenParentArea: () => void
   storageNotice?: string
 }
@@ -18,20 +18,25 @@ interface HomeScreenProps {
 export function HomeScreen({
   learner,
   worlds,
-  onContinue,
-  onWorldSelect,
+  currentWorldId,
+  onStartJourney,
   onOpenParentArea,
   storageNotice,
 }: HomeScreenProps) {
+  const currentWorldIndex = worlds.findIndex((world) => world.id === currentWorldId)
+  const upNextWorldId = currentWorldIndex >= 0
+    ? worlds.slice(currentWorldIndex + 1).find((world) => world.status !== 'coming-later')?.id ?? null
+    : null
+
   return (
     <div className="screen-shell child-experience home-screen" data-appearance="dark">
       <header className="app-header">
         <div className="title-row">
           <AtlasGuide />
           <div>
-            <p className="eyebrow">Choose your next reading adventure</p>
+            <p className="eyebrow">Your reading journey</p>
             <h1>Rory&apos;s Reading Quest</h1>
-            <p className="subtitle">Build reading powers one quest at a time.</p>
+            <p className="subtitle">Ready to continue your journey?</p>
           </div>
         </div>
         <RewardBar xp={learner.xp} stars={learner.stars} streak={learner.questStreak} />
@@ -46,17 +51,22 @@ export function HomeScreen({
         </p>
         <p className="small-copy">Completed quests: {learner.questStreak}</p>
         {storageNotice && <p className="storage-notice" role="status">{storageNotice}</p>}
-        <ChildButton type="button" className="primary-action" onClick={onContinue}>
-          Continue Quest
+        <ChildButton type="button" className="primary-action" onClick={onStartJourney}>
+          Start Journey
         </ChildButton>
       </section>
 
       <section className="world-map" aria-labelledby="world-map-heading">
-        <p className="eyebrow">Your adventure map</p>
-        <h2 id="world-map-heading">Curriculum Worlds</h2>
+        <p className="eyebrow">See where your journey leads</p>
+        <h2 id="world-map-heading">Your Reading Journey</h2>
         <div className="world-grid">
           {worlds.map((world) => (
-            <WorldCard key={world.id} world={world} onOpenWorld={onWorldSelect} />
+            <WorldCard
+              key={world.id}
+              world={world}
+              isCurrent={world.id === currentWorldId}
+              isUpNext={world.id === upNextWorldId}
+            />
           ))}
         </div>
       </section>
@@ -64,14 +74,14 @@ export function HomeScreen({
       <section className="quest-panel daily-quest-card" aria-labelledby="daily-quest-heading">
         <h2 id="daily-quest-heading">Today&apos;s Quest</h2>
         <div className="quest-goal-row">
-          <p><span aria-hidden="true">🗺️</span> Practice one available unit</p>
+          <p><span aria-hidden="true">🗺️</span> Complete your next reading quest.</p>
           <p><span aria-hidden="true">⭐</span> Earn up to three stars</p>
         </div>
       </section>
 
       <footer>
         <ChildButton type="button" className="parent-button" onClick={onOpenParentArea}>
-          Grown-Up Area
+          Parent Area
         </ChildButton>
       </footer>
     </div>

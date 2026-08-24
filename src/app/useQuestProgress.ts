@@ -139,17 +139,22 @@ export function useQuestProgress() {
         fluencyProgress,
         completedAt,
       })
-      persist(completed.state)
+      const guidedNextQuest = planGlobalQuest({
+        progress: completed.state,
+        availableLessons,
+        now: completedAt,
+      }).nextQuest
+      persist({ ...completed.state, plannedNextQuest: guidedNextQuest })
       return {
         kind: fluencyProgress.reasonCodes.includes('fluency_practice_chapter_completed')
           ? 'FLUENCY_PRACTICE'
-          : fluencyProgress.nextQuest.status === 'content_needed'
+          : guidedNextQuest.status === 'content_needed'
           ? 'CONTENT_NEEDED'
           : 'FLUENCY_PRACTICE',
         earnedXp: completed.earnedXp,
         earnedStars: completed.earnedStars,
         currentDifficulty: fluencyProgress.progress.currentDifficulty,
-        nextQuest: fluencyProgress.nextQuest,
+        nextQuest: guidedNextQuest,
         completionId,
       }
     }
@@ -186,16 +191,21 @@ export function useQuestProgress() {
       progression,
       completedAt,
     })
-    persist(completed.state)
+    const guidedNextQuest = planGlobalQuest({
+      progress: completed.state,
+      availableLessons,
+      now: completedAt,
+    }).nextQuest
+    persist({ ...completed.state, plannedNextQuest: guidedNextQuest })
     return {
-      kind: progression.nextQuest.status === 'content_needed'
+      kind: guidedNextQuest.status === 'content_needed'
         && progression.decision.decisionState !== 'ADVANCE'
         ? 'CONTENT_NEEDED'
         : progression.decision.decisionState,
       earnedXp: completed.earnedXp,
       earnedStars: completed.earnedStars,
       currentDifficulty: progression.progress.currentDifficulty,
-      nextQuest: progression.nextQuest,
+      nextQuest: guidedNextQuest,
       completionId,
     }
   }

@@ -3,8 +3,8 @@ import type { ProgressionOutcomeViewModel } from '../app/useQuestProgress'
 
 interface ProgressionOutcomeScreenProps {
   outcome: ProgressionOutcomeViewModel
-  onStartNext: () => void
-  onReturnToMap: () => void
+  onContinueJourney: () => void
+  onBackHome: () => void
 }
 
 const copy: Record<string, { title: string; message: string }> = {
@@ -44,8 +44,8 @@ const copy: Record<string, { title: string; message: string }> = {
 
 export function ProgressionOutcomeScreen({
   outcome,
-  onStartNext,
-  onReturnToMap,
+  onContinueJourney,
+  onBackHome,
 }: ProgressionOutcomeScreenProps) {
   const message = copy[outcome.kind] ?? copy.CONTENT_NEEDED
   const nextAvailable = outcome.nextQuest.status === 'available'
@@ -72,12 +72,15 @@ export function ProgressionOutcomeScreen({
           : 'Atlas is preparing more fresh adventures for this trail.'}</p>
       </section>
       <section className="screen-actions">
-        {nextAvailable && (
-          <ChildButton type="button" className="primary-action" onClick={onStartNext}>
-            Start Fresh Quest
+        {nextAvailable ? (
+          <ChildButton type="button" className="primary-action" onClick={onContinueJourney}>
+            Continue Journey
+          </ChildButton>
+        ) : (
+          <ChildButton type="button" className="primary-action" onClick={onBackHome}>
+            Back Home
           </ChildButton>
         )}
-        <ChildButton type="button" onClick={onReturnToMap}>Return to Map</ChildButton>
       </section>
     </section>
   )
