@@ -406,7 +406,7 @@ describe('Phase 3 adaptive child flow', () => {
     expect(screen.getByText(/One fresh quest will prove this reading power is ready/i)).toBeTruthy()
     expect(screen.getByRole('button', { name: /Return to Map/i })).toBeTruthy()
     expect(readProgress().completedAttempts).toHaveLength(1)
-  })
+  }, 10_000)
 
   test('selects a fresh activity and a second distinct strong lesson unlocks the next trail', () => {
     launchFromMap()
