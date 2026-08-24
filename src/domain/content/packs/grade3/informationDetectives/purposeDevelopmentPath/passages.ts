@@ -135,8 +135,8 @@ const records: PurposeDevelopmentRecord[] = [
     hotPrompt: 'Select the sentence that most clearly supports the author\'s purpose of describing a water-saving cactus feature.',
     hotCorrectSentence: 6, hotDistractorSentences: [1, 10, 14],
     support: [
-      { word: 'scarce', sentence: 1, chunks: ['scarce'], focus: 'scarce' },
-      { word: 'swell', sentence: 3, chunks: ['swell'], focus: 'swell' },
+      { word: 'cactuses', sentence: 1, chunks: ['cac', 'tus', 'es'], focus: 'cac' },
+      { word: 'expand', sentence: 4, chunks: ['ex', 'pand'], focus: 'pand' },
       { word: 'waxy', sentence: 6, chunks: ['wax', 'y'], focus: 'wax' },
       { word: 'absorb', sentence: 12, chunks: ['ab', 'sorb'], focus: 'sorb' },
     ],

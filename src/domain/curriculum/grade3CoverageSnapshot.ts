@@ -69,6 +69,8 @@ export function buildGrade3CoverageSnapshot(
                         ? ['Structure Station covers text-feature contributions plus chronology, comparison, and cause-and-effect organization. Curriculum coverage is implemented at DRAFT review status; this does not claim learner mastery, central-idea, author-purpose, or claim-and-evidence mastery.']
                         : status === 'implemented' && entry.benchmarkReference === 'ELA.3.R.2.2'
                           ? ['Central Idea Engine covers stated and implied central ideas, relevant versus minor details, and support across informational sections. Curriculum coverage is implemented at DRAFT review status; this does not claim learner mastery, author-purpose, or claim-and-evidence mastery.']
+                          : status === 'implemented' && entry.benchmarkReference === 'ELA.3.R.2.3'
+                            ? ['Purpose Development Path covers precise author purpose, purpose development, supporting details, and text evidence across informational sections. Curriculum coverage is implemented at DRAFT review status; this does not claim learner mastery or claim-and-evidence mastery.']
               : status === 'supportive_practice' && entry.benchmarkReference === 'ELA.3.F.1.4'
                 ? ['Fluency Flight provides DRAFT visual and question-based support for accuracy, automaticity, phrasing, and expression. The app does not record audio or measure oral fluency, pronunciation, prosody, or reading rate.']
             : ['Active Grade 3 content contributes to this inventory row.']),

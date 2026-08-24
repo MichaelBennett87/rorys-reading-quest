@@ -30,6 +30,7 @@ import { perspectivePortalPack } from './grade3/storyScouts/perspectivePortal'
 import { poemFormObservatoryPack } from './grade3/poetryPlanet/poemFormObservatory'
 import { structureStationPack } from './grade3/informationDetectives/structureStation'
 import { centralIdeaEnginePack } from './grade3/informationDetectives/centralIdeaEngine'
+import { purposeDevelopmentPack } from './grade3/informationDetectives/purposeDevelopmentPath'
 import { legacyDevelopmentPack } from './legacyDevelopmentPack'
 import type { ContentPack } from './contentPackTypes'
 import type { ContentSample } from '../types'
@@ -69,6 +70,7 @@ export const contentPacks: readonly ContentPack[] = [
   poemFormObservatoryPack,
   structureStationPack,
   centralIdeaEnginePack,
+  purposeDevelopmentPack,
   legacyDevelopmentPack,
 ]
 

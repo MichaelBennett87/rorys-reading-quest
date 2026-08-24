@@ -80,13 +80,14 @@ describe('grade 2 information detectives text feature hunt pack', () => {
       'g3-poetry-planet-poem-form-observatory',
       'g3-information-detectives-structure-station',
       'g3-information-detectives-central-idea-engine',
+      'g3-information-detectives-purpose-development-path',
     ])
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 32,
-      activeLessonCount: 224,
-      activePassageCount: 231,
-      activeQuestionCount: 1286,
-      activeSupportTargetCount: 887,
+      activePackCount: 33,
+      activeLessonCount: 231,
+      activePassageCount: 238,
+      activeQuestionCount: 1327,
+      activeSupportTargetCount: 915,
     })
     expect(contentPackAudit).toHaveLength(0)
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.2.1')).toEqual(expect.objectContaining({

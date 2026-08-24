@@ -6,25 +6,26 @@ import { getActiveContentPacks, getActiveContentRegistryTotals } from '../src/do
 import { buildGrade3CoverageSnapshot } from '../src/domain/curriculum'
 import { createDefaultQuestProgress } from '../src/persistence'
 
-describe('Phase 7C2 integration and protected child journey', () => {
-  test('registers only Central Idea Engine and derives the Grade 3 coverage snapshot', () => {
+describe('Phase 7C3 integration and protected child journey', () => {
+  test('registers only Purpose Development Path and derives the Grade 3 coverage snapshot', () => {
     const packs = getActiveContentPacks()
     expect(packs.filter((pack) => pack.manifest.gradeBand === 2)).toHaveLength(22)
     expect(packs.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(11)
-    expect(packs.filter((pack) => pack.manifest.packId === 'g3-information-detectives-central-idea-engine')).toHaveLength(1)
+    expect(packs.filter((pack) => pack.manifest.packId === 'g3-information-detectives-purpose-development-path')).toHaveLength(1)
     expect(getActiveContentRegistryTotals()).toEqual({
       activePackCount: 33, activeLessonCount: 231, activePassageCount: 238,
       activeQuestionCount: 1327, activeSupportTargetCount: 915,
     })
     const snapshot = buildGrade3CoverageSnapshot()
-    expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.2.2')).toMatchObject({
+    expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.2.3')).toMatchObject({
       coverageStatus: 'implemented', reviewStatus: 'DRAFT', missingPatterns: [],
-      contributingPackIds: ['g3-information-detectives-central-idea-engine'],
-      coveredPatterns: ['central-idea', 'relevant-details', 'details-support-central-idea', 'evidence-across-sections'],
+      contributingPackIds: ['g3-information-detectives-purpose-development-path'],
+      coveredPatterns: ['author-purpose', 'purpose-development', 'supporting-details', 'text-evidence'],
     })
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(8)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(1)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(7)
+    expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.2.4')).toMatchObject({ coverageStatus: 'planned' })
   })
 
   test('keeps Home at exactly two controls with a display-only journey map', () => {
@@ -36,11 +37,11 @@ describe('Phase 7C2 integration and protected child journey', () => {
     expect(within(map).getAllByRole('article').every((article) => article.getAttribute('tabindex') === null)).toBe(true)
   })
 
-  test('keeps guides, texts, central ideas, and answers outside persisted progress', () => {
+  test('keeps guides, texts, precise purposes, and answers outside persisted progress', () => {
     const serialized = JSON.stringify(createDefaultQuestProgress('2026-08-24T20:00:00.000Z'))
-    expect(serialized).not.toContain('centralIdeaGuides')
-    expect(serialized).not.toContain('centralIdeaStatement')
+    expect(serialized).not.toContain('authorPurposeGuides')
+    expect(serialized).not.toContain('precisePurposeStatement')
     expect(serialized).not.toContain('correctAnswers')
-    expect(serialized).not.toContain('How Beach Grass Builds a Dune')
+    expect(serialized).not.toContain('Water Waiting High Above Town')
   })
 })
