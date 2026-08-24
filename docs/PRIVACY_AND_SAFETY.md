@@ -76,3 +76,11 @@ Suffix Shifter persists only the existing bounded attempt, skill, review, reward
 Multisyllable Mountain uses the same bounded local attempt, skill, review, reward, and assistance records. Passage text, decoding guides, pronunciation chunks, morphology hints, decoding steps, questions, submitted answers, correct answers, evidence text, explanations, and Word Help curriculum text are not persisted or printed. Parent and print views may report `ELA.3.F.1.3` curriculum coverage as IMPLEMENTED / DRAFT only after real Grade 3 activity exists, and explicitly separate curriculum availability from learner mastery. They do not expose oral scores, FAST predictions, or a global grade diagnosis.
 
 Storage keys, schema version 1, Parent PIN cryptography, assessments, optional local browser speech, the five-step Word Help contract, and the no-backend/no-cloud/no-analytics/no-telemetry/no-microphone/no-live-AI boundaries remain unchanged.
+
+## Phase 7A4 fluency-support boundary
+
+Grade 3 Fluency Flight persists only existing bounded attempt, skill, review, reward, assistance, and fluency-practice reflection fields. It does not persist passages, phrase groups, expression cues, modeled-reading text, teaching text, questions, submitted answers, correct answers, explanations, or Word Help curriculum text.
+
+Optional model listening uses local browser `SpeechSynthesis`, never autoplays, and is not required to reach questions. Browser voice use is stored only as the existing boolean practice-summary fact; it is not interpreted as oral performance. There is no microphone permission, speech recognition, recording, WCPM, pronunciation score, prosody score, oral-accuracy score, expression score, automaticity score, backend, cloud sync, analytics, telemetry, advertising, external speech provider, or live AI.
+
+Parent and print views may show practice sessions, question accuracy, assistance, friendly unit names, and `ELA.3.F.1.4` supportive-practice context. They do not print passage text, guide metadata, learner answer text, correct answers, oral scores, FAST predictions, or a global grade diagnosis.

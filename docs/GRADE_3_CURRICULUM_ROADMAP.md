@@ -4,7 +4,7 @@
 
 Phase 7 extends the six existing reading worlds into separate Grade 3 curriculum tracks. Advancement is domain-specific: a Grade 3 track can become playable only after its matching Grade 2 track reaches its verified completion difficulty and active Grade 3 content exists. This is not a global grade diagnosis, a learner-mastery claim, or a FAST prediction.
 
-Phase 7A0 established architecture and immutable planning metadata. Phase 7A1 added Root Reactor, Phase 7A2 added Suffix Shifter, and Phase 7A3 adds Multisyllable Mountain. Together the three Grade 3 Word Forge production packs provide twenty-one DRAFT lessons, twenty-one original passages, 123 questions, eighty-four instructional targets, and eighty-four support targets. All five required `ELA.3.F.1.3` patterns now have authored coverage, so the curriculum row is IMPLEMENTED / DRAFT. It is not APPROVED and does not claim learner mastery. Phase 7A4 remains unstarted.
+Phase 7A0 established architecture and immutable planning metadata. Phase 7A1 added Root Reactor, Phase 7A2 added Suffix Shifter, Phase 7A3 added Multisyllable Mountain, and Phase 7A4 adds Fluency Flight Grade 3. Together the four Grade 3 Word Forge production packs provide twenty-eight DRAFT lessons, twenty-eight original passages, 151 questions, and 105 Word Help targets. All five required `ELA.3.F.1.3` patterns have authored coverage, so that curriculum row is IMPLEMENTED / DRAFT. `ELA.3.F.1.4` is SUPPORTIVE_PRACTICE / DRAFT with no oral measurement. Neither row is APPROVED and neither status claims learner mastery. Phase 7A is complete; Phase 7B remains unstarted.
 
 ## Instructional inventory
 

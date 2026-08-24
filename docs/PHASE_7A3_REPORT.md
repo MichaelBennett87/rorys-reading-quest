@@ -86,3 +86,7 @@ The dark child chapter displays Root Reactor and Suffix Shifter complete/review-
 ## Preserved boundaries
 
 Grade 2, Root Reactor, Suffix Shifter, mastery thresholds, review intervals, rewards, storage keys, schema version 1, Parent PIN, assessments, accepted feedback colors, five-step Word Help, active-quest lifecycle, privacy boundaries, Pages base, and workflow remain intact. No backend, analytics, telemetry, microphone, external speech, live AI, Phase 7A4 content, or unrelated Grade 3 world was added.
+
+## Phase 7A4 historical follow-up
+
+Phase 7A4 later added Fluency Flight Grade 3 as a fourth DRAFT Grade 3 Word Forge pack. The Phase 7A3 facts above remain the exact historical checkpoint. Current totals and supportive-practice results are recorded in `docs/PHASE_7A4_REPORT.md`; `ELA.3.F.1.3` remains IMPLEMENTED / DRAFT, while `ELA.3.F.1.4` is SUPPORTIVE_PRACTICE / DRAFT without oral measurement or learner-mastery claims.

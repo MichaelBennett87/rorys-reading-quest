@@ -431,3 +431,11 @@ Decision: activate only `g3-wg-unit-3` with the DRAFT `g3-word-forge-multisyllab
 Decision: mark `ELA.3.F.1.3` curriculum coverage IMPLEMENTED / DRAFT because Root Reactor, Suffix Shifter, and Multisyllable Mountain together cover all five inventory patterns. Do not mark it APPROVED, infer learner mastery, activate `ELA.3.F.1.4`, or claim `ELA.3.V.1.2`, oral fluency, WCPM, prosody, grade diagnosis, or FAST prediction.
 
 Decision: preserve exact review identity for Grade 2 Word Forge and all three Grade 3 Word Forge units. Advancing Multisyllable Mountain reaches difficulty 4 and structured `CONTENT_NEEDED`; Fluency Flight Grade 3 remains unstarted. Storage, thresholds, intervals, rewards, Parent PIN, assessments, feedback semantics, and Pages configuration remain unchanged.
+
+## 2026-08-24 - Phase 7A4 supportive Grade 3 fluency scope
+
+Decision: activate only `g3-wg-unit-4` with the DRAFT `g3-word-forge-fluency-flight` pack. Reuse the Grade 2 `FLUENCY_PRACTICE` architecture, question types, optional local model listening, phrase groups, reflection, and supportive completion semantics rather than creating an incompatible Grade 3 runtime.
+
+Decision: classify `ELA.3.F.1.4` as SUPPORTIVE_PRACTICE / DRAFT. Question correctness measures only understanding of visible fluent-reading choices. Do not record speech or infer oral accuracy, automaticity, pronunciation, expression, prosody, rate, learner mastery, a global grade diagnosis, or FAST performance.
+
+Decision: permit fresh difficulty-4 fluency practice to complete the Grade 3 Word Forge chapter at completion difficulty 5 without creating checkpoint-style oral mastery evidence. Preserve exact Grade 2 and four-unit Grade 3 review identity, optional model listening, five-stage Word Help, feedback semantics, persistence schema, thresholds, review intervals, rewards, Parent PIN, assessments, privacy boundaries, Pages configuration, and the Phase 7B stop boundary.

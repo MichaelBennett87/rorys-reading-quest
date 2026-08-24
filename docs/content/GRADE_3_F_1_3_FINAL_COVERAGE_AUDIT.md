@@ -21,7 +21,7 @@ The repository represents its three benchmark clauses as five internal expected 
 - APPROVED: false
 - Missing expected patterns: 0
 - Contributing packs: 3
-- `ELA.3.F.1.4`: planned supportive practice; no Grade 3 fluency content exists
+- `ELA.3.F.1.4`: SUPPORTIVE_PRACTICE / DRAFT through Fluency Flight Grade 3; no oral measurement or mastery claim
 - `ELA.3.V.1.2`: planned; no vocabulary-meaning coverage is inferred from decoding support
 
 Implemented means all expected authored curriculum patterns are present in active DRAFT packs. It does not mean the learner mastered the benchmark, the material has human educational approval, the app predicts FAST performance, or oral decoding was measured.

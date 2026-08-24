@@ -86,3 +86,9 @@ Suffix Shifter adds optional `derivationalSuffixGuides` to `ContentPack`. Each `
 Multisyllable Mountain adds optional `multisyllableDecodingGuides` to `ContentPack`. Each `MultisyllableDecodingTarget` stores a surface word, source sentence, syllable count, authored display/speech chunks, one bounded syllable-pattern label per chunk, optional compound/prefix/base/suffix hints, child-facing decoding steps, whole-word speech text, DRAFT review status, and content version. Display chunks reconstruct the written word. Morphological hints identify useful contiguous meaning parts but are not falsely treated as syllable boundaries.
 
 Each target owns exactly one existing five-step Word Help target. Look at the Pattern highlights one useful authored clue; Break It Apart and Hear the Parts use pronunciation chunks; Hear the Word uses only the whole word; Hear the Sentence uses only the source sentence. The guide, passage, question, answer, and support text remain authored curriculum and are never persisted in learner progress.
+
+## Phase 7A4 fluency-practice content
+
+Grade 3 Fluency Flight reuses `FluencyPracticeBlock` as the canonical authored guide layer. Each of seven DRAFT lessons owns one passage, visible phrase groups, expression cues, optional model-reading availability, required practice-read count, and guided or independent mode. Four guided lessons also own non-scored teaching blocks; three independent lessons begin with passage practice. No quantitative oral field is added.
+
+The pack contains twenty-one ordinary `WordSupportTarget` records for word-level help. Passage phrase groups do not replace Word Help and are not persisted. All twenty-eight questions retain ordinary question ownership, `ELA.3.F.1.4`, Grade 3 metadata, DRAFT status, visible evidence, and the permanent truth fingerprint. The pack contributes only the five supportive-practice patterns and does not contribute oral mastery or a benchmark implementation claim.
