@@ -85,7 +85,7 @@
     - [x] Phase 7A1: Root Reactor
     - [x] Phase 7A1.5: Full Question Truth Audit and Feedback-State Correction
     - [x] Phase 7A2: Suffix Shifter
-    - [ ] Phase 7A3: Multisyllable Mountain
+    - [x] Phase 7A3: Multisyllable Mountain
     - [ ] Phase 7A4: Fluency Flight Grade 3
   - [ ] Phase 7B: Grade 3 prose and poetry
     - [ ] Phase 7B1: Character Arc Camp

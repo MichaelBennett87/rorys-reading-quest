@@ -110,3 +110,7 @@ Root Reactor activates only Grade 3 Word Forge after the matching Grade 2 Word F
 ## Phase 7A2 Suffix Shifter boundary
 
 Suffix Shifter activates Grade 3 Word Forge Trail 2 only after Root Reactor completes. Seven DRAFT lessons teach transparent derivational suffix decoding and child-readable word-function changes with `-ness`, `-ment`, `-er`, `-ful`, `-less`, `-ly`, `-able`, and `-y`. The pack does not teach absolute ending rules, unrestricted grammar or writing, oral scoring, or systematic multisyllabic decoding. `ELA.3.F.1.3` remains partial until Phase 7A3.
+
+## Phase 7A3 Multisyllable Mountain boundary
+
+Multisyllable Mountain activates Grade 3 Word Forge Trail 3 only after Suffix Shifter completes. Seven DRAFT lessons teach flexible decoding with closed, open, vowel-consonant-e, vowel-team, r-controlled, and consonant-le syllables plus helpful compound, prefix, base, and suffix boundaries. The child chunks, blends, and rereads in context; no oral score, WCPM, prosody mastery, vocabulary mastery, or universal mechanical division rule is claimed. With Root Reactor and Suffix Shifter, all five `ELA.3.F.1.3` inventory patterns now have authored coverage, so the curriculum row is IMPLEMENTED / DRAFT. That status does not mean the learner mastered the benchmark.

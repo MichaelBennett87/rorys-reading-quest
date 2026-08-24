@@ -81,3 +81,9 @@ Root Reactor starts at Grade 3 difficulty 1 after domain readiness. Two distinct
 ## Phase 7A2 Suffix Shifter progression
 
 Suffix Shifter is available only at Grade 3 Word Forge difficulty 2 after Root Reactor mastery evidence advances the shared skill. Two distinct strong independent checkpoints are required to advance to difficulty 3. A first low result selects difficulty-2 Suffix Shifter guidance; a second consecutive low result selects difficulty-1 Suffix Shifter remediation while preserving the difficulty-2 return target. Root Reactor, Suffix Shifter, and Grade 2 Word Forge reviews retain distinct unit/content-version identities. At difficulty 3, Multisyllable Mountain remains locked and planning returns structured `CONTENT_NEEDED` without blocking other playable tracks or due reviews.
+
+## Phase 7A3 Multisyllable Mountain progression
+
+Multisyllable Mountain is available only at Grade 3 Word Forge difficulty 3 after Suffix Shifter advances the shared skill. Two distinct strong independent checkpoints are required to advance to difficulty 4; replaying one checkpoint cannot supply both proofs, and assisted strong work does not become independent evidence. A first low result selects difficulty-3 guidance. A second consecutive low result routes to difficulty-2 Multisyllable Mountain remediation while preserving the difficulty-3 return target. Rebuilding returns to difficulty 3 without marking it mastered.
+
+Grade 2 Word Forge, Root Reactor, Suffix Shifter, and Multisyllable Mountain reviews retain exact grade/skill/unit/version identities and may coexist. Due Grade 2 review keeps its normal priority over ordinary Grade 3 progression. At difficulty 4, Fluency Flight Grade 3 remains locked and planning returns structured `CONTENT_NEEDED`; thresholds, review intervals, rewards, and planner priority are unchanged.

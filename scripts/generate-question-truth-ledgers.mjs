@@ -10,6 +10,7 @@ const correctionSummaries = new Map([
   ['lesson-g3-suffix-shifter-checkpoint-nature-q-7', 'Blind review replaced a sentence-role Part B with authored reading chunks so the checkpoint genuinely distinguishes morphological and pronunciation boundaries.'],
   ['lesson-g3-suffix-shifter-checkpoint-weather-q-7', 'Blind review replaced a sentence-role Part B with authored reading chunks so the checkpoint genuinely distinguishes morphological and pronunciation boundaries.'],
   ['lesson-g3-multisyllable-mountain-power-up-compounds-q-4', 'Blind review made the hot-text prompt self-contained instead of depending on opening Word Help to discover the requested chunk.'],
+  ['lesson-g3-multisyllable-mountain-power-up-compounds-q-3', 'Blind review replaced a single qualifying silent-e target with transparent lakeside so the choose-two contract has exactly two defensible responses.'],
   ['lesson-g3-multisyllable-mountain-power-up-vowels-q-4', 'Blind review made the hot-text prompt self-contained instead of depending on opening Word Help to discover the requested chunk.'],
   ['lesson-g3-multisyllable-mountain-lab-garden-q-4', 'Blind review made the hot-text prompt self-contained instead of depending on opening Word Help to discover the requested chunk.'],
   ['lesson-g3-multisyllable-mountain-lab-wildlife-q-4', 'Blind review made the hot-text prompt self-contained instead of depending on opening Word Help to discover the requested chunk.'],

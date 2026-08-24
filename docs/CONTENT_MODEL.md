@@ -80,3 +80,9 @@ Question-truth ledgers are documentation artifacts, not runtime curriculum or pe
 ## Phase 7A2 derivational-suffix guides
 
 Suffix Shifter adds optional `derivationalSuffixGuides` to `ContentPack`. Each `DerivationalSuffixTarget` stores a transparent base word, derived word, suffix, child-readable base and derived roles, meaningful chunks, authored reading chunks, source sentence, and concise transformation explanation. Meaningful chunks and pronunciation chunks independently reconstruct the derived word and may differ. Matching Word Help targets highlight only the suffix while Break It Apart and Hear the Parts use authored reading chunks. Guide data is curriculum-only and is never added to schema-version-1 learner persistence.
+
+## Phase 7A3 multisyllable-decoding guides
+
+Multisyllable Mountain adds optional `multisyllableDecodingGuides` to `ContentPack`. Each `MultisyllableDecodingTarget` stores a surface word, source sentence, syllable count, authored display/speech chunks, one bounded syllable-pattern label per chunk, optional compound/prefix/base/suffix hints, child-facing decoding steps, whole-word speech text, DRAFT review status, and content version. Display chunks reconstruct the written word. Morphological hints identify useful contiguous meaning parts but are not falsely treated as syllable boundaries.
+
+Each target owns exactly one existing five-step Word Help target. Look at the Pattern highlights one useful authored clue; Break It Apart and Hear the Parts use pronunciation chunks; Hear the Word uses only the whole word; Hear the Sentence uses only the source sentence. The guide, passage, question, answer, and support text remain authored curriculum and are never persisted in learner progress.

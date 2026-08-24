@@ -35,3 +35,7 @@ Suffix Shifter adds transparent base/suffix segmentation, authored pronunciation
 ## Status
 
 PARTIAL / DRAFT. This is a GPT-5.6 Sol repository-level curricular reasoning review, not teacher approval, Florida approval, or professional certification.
+
+## Historical follow-up after Phase 7A3
+
+This file remains the Phase 7A2 partial-coverage checkpoint. Phase 7A3 subsequently added the missing `multisyllabic-decoding` pattern through `g3-word-forge-multisyllable-mountain`. The current `ELA.3.F.1.3` curriculum row is IMPLEMENTED / DRAFT; see `GRADE_3_F_1_3_FINAL_COVERAGE_AUDIT.md`. This follow-up does not alter the historical Phase 7A2 result.

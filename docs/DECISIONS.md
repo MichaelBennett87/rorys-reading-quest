@@ -423,3 +423,11 @@ Decision: activate only `g3-word-forge-foundations` with one prerequisite-gated 
 Decision: activate only `g3-wg-unit-2` with the DRAFT `g3-word-forge-suffix-shifter` pack. Teach eight bounded transparent suffix families: `-ness`, `-ment`, `-er`, `-ful`, `-less`, `-ly`, `-able`, and `-y`. Substitute `-y` for the provisional `-tion` family because common Grade 3 `-tion` examples generally require a nontransparent boundary or spelling-change instruction that this phase deliberately excludes. Preserve the eight-family count and noun-to-adjective branch without implying universal ending rules.
 
 Decision: keep verification, remediation, and review unit/content-version affine, but release unit affinity after an `ADVANCE` decision so Root Reactor can enter Suffix Shifter. Keep `ELA.3.F.1.3` partial and DRAFT with only `multisyllabic-decoding` missing; keep `ELA.3.V.1.2` planned and Phase 7A3 unstarted.
+
+## 2026-08-24 - Phase 7A3 flexible multisyllabic decoding scope
+
+Decision: activate only `g3-wg-unit-3` with the DRAFT `g3-word-forge-multisyllable-mountain` pack. Teach six bounded syllable patterns and compound/prefix/base/suffix boundaries as flexible decoding strategies, not universal division rules. Keep morphology clues and pronunciation chunks explicit and independent where their boundaries differ.
+
+Decision: mark `ELA.3.F.1.3` curriculum coverage IMPLEMENTED / DRAFT because Root Reactor, Suffix Shifter, and Multisyllable Mountain together cover all five inventory patterns. Do not mark it APPROVED, infer learner mastery, activate `ELA.3.F.1.4`, or claim `ELA.3.V.1.2`, oral fluency, WCPM, prosody, grade diagnosis, or FAST prediction.
+
+Decision: preserve exact review identity for Grade 2 Word Forge and all three Grade 3 Word Forge units. Advancing Multisyllable Mountain reaches difficulty 4 and structured `CONTENT_NEEDED`; Fluency Flight Grade 3 remains unstarted. Storage, thresholds, intervals, rewards, Parent PIN, assessments, feedback semantics, and Pages configuration remain unchanged.

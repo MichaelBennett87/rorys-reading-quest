@@ -70,3 +70,9 @@ Feedback decoration is derived from the in-memory evaluator result already used 
 ## Phase 7A2 curriculum-data boundary
 
 Suffix Shifter persists only the existing bounded attempt, skill, review, reward, and assistance records. It does not persist passages, derivational guides, base/derived roles, transformation explanations, question or answer text, evidence text, or Word Help curriculum content. Parent and print views use friendly lesson/unit metadata and never expose guide answers or learner answer text. Storage keys, schema version 1, Parent PIN cryptography, assessment records, local-only browser speech, and the no-backend/no-telemetry/no-microphone boundaries remain unchanged.
+
+## Phase 7A3 curriculum-data boundary
+
+Multisyllable Mountain uses the same bounded local attempt, skill, review, reward, and assistance records. Passage text, decoding guides, pronunciation chunks, morphology hints, decoding steps, questions, submitted answers, correct answers, evidence text, explanations, and Word Help curriculum text are not persisted or printed. Parent and print views may report `ELA.3.F.1.3` curriculum coverage as IMPLEMENTED / DRAFT only after real Grade 3 activity exists, and explicitly separate curriculum availability from learner mastery. They do not expose oral scores, FAST predictions, or a global grade diagnosis.
+
+Storage keys, schema version 1, Parent PIN cryptography, assessments, optional local browser speech, the five-step Word Help contract, and the no-backend/no-cloud/no-analytics/no-telemetry/no-microphone/no-live-AI boundaries remain unchanged.

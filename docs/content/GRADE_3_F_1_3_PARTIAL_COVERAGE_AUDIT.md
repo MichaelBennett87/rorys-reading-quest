@@ -26,3 +26,7 @@ Phase 7A2 Suffix Shifter must supply and audit derivational-suffix and part-of-s
 Root meanings are brief teaching supports, not the primary scored construct. This pack makes no `ELA.3.V.1.2` claim; that benchmark remains planned. It makes no oral decoding, pronunciation, automaticity, WCPM, learner mastery, global grade-level, or FAST-performance claim. It is not teacher approved, Florida approved, or professionally certified.
 
 Inventory result after Phase 7A1: 16 Grade 3 rows, 0 implemented, 0 supportive-practice implemented, 1 partial, 15 planned, 0 missing, and 0 APPROVED.
+
+## Historical follow-up
+
+This document remains the Phase 7A1 partial checkpoint. Phase 7A2 later added derivational-suffix and part-of-speech-change patterns, and Phase 7A3 added multisyllabic decoding. The current result is documented in `GRADE_3_F_1_3_FINAL_COVERAGE_AUDIT.md`; the historical statements above are intentionally not rewritten.
