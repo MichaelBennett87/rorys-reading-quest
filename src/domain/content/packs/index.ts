@@ -26,6 +26,7 @@ export * from './grade3/wordForge/rootReactor'
 export * from './grade3/wordForge/suffixShifter'
 export * from './grade3/wordForge/multisyllableMountain'
 export * from './grade3/wordForge/fluencyFlight'
+export * from './grade3/storyScouts/characterArcCamp'
 export * from './registry'
 
 export const fluencyPracticeAudit = buildFluencyPracticeAudit(contentPacks)
