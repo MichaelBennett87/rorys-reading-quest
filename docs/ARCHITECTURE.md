@@ -116,3 +116,8 @@ Grade 3 Fluency Flight reuses the established `FLUENCY_PRACTICE` role, `FluencyP
 `completeFluencyPractice` accepts the exact owning track completion difficulty. Grade 2 retains its existing behavior. Grade 3 difficulty-4 practice selects fresh unit-affine activities until exhaustion, then moves the chapter to completion difficulty 5 while preserving `lastMasteredDifficulty` and the `FLUENCY_PRACTICE` learning state. This is chapter completion, not oral mastery evidence. Grade 2 and all four Grade 3 Word Forge review identities remain exact by grade, skill, unit, and content version.
 
 The Grade 3 coverage snapshot records `ELA.3.F.1.4` as `supportive_practice` only after the active pack supplies all five expected support patterns. Parent and print notes identify both Grade 2 and Grade 3 fluency as practice-only and explicitly retain the no-oral-measurement boundary.
+## Phase 7B1 character-development architecture
+
+`ContentPack.characterDevelopmentGuides` is optional and nonpersisted. A guide owns one passage and one or two character arcs. Each arc owns ordered beginning, middle, and end stages, typed evidence kinds, resolved turning-point IDs, a plot-cause statement, and a multi-stage development summary. The pack-specific audit rejects unresolved evidence, repeated stages, static-trait-only summaries, missing checkpoint action/dialogue/thought coverage, unsafe text, wrong versions, or shape drift.
+
+`g3-story-scouts-prose` uses the existing multi-grade readiness, world chapter, selected-unit planner, review affinity, active-session, dashboard, and print architecture. It adds no new persistence object or question evaluator.

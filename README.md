@@ -40,3 +40,10 @@ Rory's Reading Quest is a local-first, child-safe reading-learning foundation fo
 ## Privacy and Assessment Boundary
 
 Persisted records contain stable local IDs and educational summaries only. Passage text, explanation text, correct-answer text, private child identifiers, official FAST reports, official FAST scores, and plaintext PINs are not persisted. Parent access and assessment records use separate local stores. This application is not an official assessment or diagnostic system.
+# Phase 7B1 current status
+
+- Phase 7A is complete.
+- Phase 7B1 Character Arc Camp is complete and active behind Grade 2 Story Scouts readiness.
+- `ELA.3.R.1.1` curriculum coverage is IMPLEMENTED / DRAFT; curriculum availability does not claim learner mastery.
+- Theme Development Trail in Phase 7B2 is next and remains unstarted.
+- The live GitHub Pages site remains available.

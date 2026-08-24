@@ -9,6 +9,7 @@ import {
   characterArcQuestions,
   characterDevelopmentGuides,
 } from '../../src/domain/content/packs'
+import { createDefaultQuestProgress } from '../../src/persistence'
 
 describe('Grade 3 Character Arc Camp production pack', () => {
   test('keeps the exact authored lesson, passage, guide, arc, question, and support inventories', () => {
@@ -84,5 +85,13 @@ describe('Grade 3 Character Arc Camp production pack', () => {
     expect(characterArcQuestions.every((question) => question.reportingCategory === 'Reading Prose and Poetry')).toBe(true)
     expect(characterArcQuestions.every((question) => question.reviewStatus === 'DRAFT' && question.contentVersion === 'g3-ss-character-arc-r0.1.0')).toBe(true)
     expect(characterArcQuestions.every((question) => !/theme|perspective|narrator point of view|poem/i.test(question.prompt))).toBe(true)
+  })
+
+  test('does not persist authored character-development curriculum', () => {
+    const serialized = JSON.stringify(createDefaultQuestProgress('2026-08-24T12:00:00.000Z'))
+    expect(serialized).not.toContain('characterDevelopmentGuides')
+    expect(serialized).not.toContain('developmentSummary')
+    expect(serialized).not.toContain('turningPointEvidenceIds')
+    expect(serialized).not.toContain('The Quiet Map Maker')
   })
 })

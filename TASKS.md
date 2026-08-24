@@ -111,3 +111,12 @@
   - [ ] Add timed practice and mixed-question sessions.
 - [ ] Phase 10: PWA, offline support, accessibility, and release hardening
   - [ ] Add installability, offline safeguards, and final accessibility pass.
+# Phase 7B delivery status
+
+- [x] Phase 7A
+- [ ] Phase 7B
+- [x] Phase 7B1 - Character Arc Camp
+- [ ] Phase 7B2 - Theme Development Trail
+- [ ] Phase 7
+
+Phase 7B1 is complete. Phase 7B and Phase 7 remain incomplete, and Phase 7B2 has not started.

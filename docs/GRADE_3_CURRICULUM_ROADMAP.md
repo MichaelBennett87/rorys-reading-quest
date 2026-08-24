@@ -64,3 +64,6 @@ The six tracks contain eighteen planned units. Grade 2 and Grade 3 use distinct 
 - Academic vocabulary use is constrained authored recognition/use practice without oral scoring or unrestricted writing evaluation.
 - Author presentation comparison remains Grade 3 selected-response work, not rhetoric, bias analysis, or comparative essay scoring.
 - Phase 9 owns mixed FAST-style practice and timing. Multimedia remains deferred.
+## Phase 7B1 implementation update
+
+Character Arc Camp (`g3-ss-unit-1`) is active as the first Grade 3 Story Scouts production unit. It contributes all five expected `ELA.3.R.1.1` patterns and records IMPLEMENTED / DRAFT curriculum coverage. Theme Development Trail (`g3-ss-unit-2`) remains planned for Phase 7B2, Perspective Portal Grade 3 remains planned for Phase 7B3, and Poem Form Observatory remains planned for Phase 7B4.

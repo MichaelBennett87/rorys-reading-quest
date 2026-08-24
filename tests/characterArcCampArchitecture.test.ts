@@ -1,9 +1,17 @@
 import { describe, expect, test } from 'vitest'
+import { readFileSync } from 'node:fs'
+import { resolve } from 'node:path'
 
 import { curriculumTracks, getSequentialWorldRoadmapByTrackId } from '../src/domain/curriculum'
 import { buildCharacterDevelopmentGuideAudit, type ContentPack } from '../src/domain/content/packs'
 
 describe('Character Arc Camp architecture', () => {
+  test('reconciles the final Phase 7A4 synchronized SHA before Phase 7B1', () => {
+    const report = readFileSync(resolve(process.cwd(), 'docs/PHASE_7A4_REPORT.md'), 'utf8')
+    expect(report).toContain('Final synchronized local and remote SHA: `90d2afcd51efe19312e3acc0634f05b4ccb549d0`')
+    expect(report).toContain('`90d2afc docs: fix phase 7a4 report formatting`')
+  })
+
   test('activates only the existing Grade 3 Story Scouts track and preserves the roadmap boundary', () => {
     expect(curriculumTracks.find((track) => track.trackId === 'g3-story-scouts-prose')).toMatchObject({
       status: 'active',

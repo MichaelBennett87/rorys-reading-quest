@@ -439,3 +439,11 @@ Decision: activate only `g3-wg-unit-4` with the DRAFT `g3-word-forge-fluency-fli
 Decision: classify `ELA.3.F.1.4` as SUPPORTIVE_PRACTICE / DRAFT. Question correctness measures only understanding of visible fluent-reading choices. Do not record speech or infer oral accuracy, automaticity, pronunciation, expression, prosody, rate, learner mastery, a global grade diagnosis, or FAST performance.
 
 Decision: permit fresh difficulty-4 fluency practice to complete the Grade 3 Word Forge chapter at completion difficulty 5 without creating checkpoint-style oral mastery evidence. Preserve exact Grade 2 and four-unit Grade 3 review identity, optional model listening, five-stage Word Help, feedback semantics, persistence schema, thresholds, review intervals, rewards, Parent PIN, assessments, privacy boundaries, Pages configuration, and the Phase 7B stop boundary.
+## Phase 7B1 decisions
+
+- Activate `g3-story-scouts-prose` only with Character Arc Camp production content and verified Grade 2 Story Scouts completion.
+- Represent character development with ordered authored stages and resolved evidence rather than inferring arcs at runtime.
+- Require a development summary to connect multiple plot stages so a static trait cannot satisfy the guide contract.
+- Keep `ELA.3.R.1.1` curriculum coverage separate from learner mastery and human approval.
+- Reuse the five existing question types, hardened evaluator, permanent truth ledger, five-stage Word Help, planner, review, persistence, parent, print, and Pages architecture.
+- Defer theme development, character perspective, and poetry to later bounded phases.
