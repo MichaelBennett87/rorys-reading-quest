@@ -56,7 +56,7 @@ const curriculumTrackDefinitions: CurriculumTrackDefinition[] = [
     trackId: 'g3-poetry-planet', skillId: 'g3-poetry-planet-poetry', worldId: 'poetry-planet', gradeBand: 3,
     entryUnitId: 'g3-pp-unit-1', unitIds: ['g3-pp-unit-1'], curriculumOrder: 130, worldChapterOrder: 2,
     initialDifficulty: 1, initialLastMasteredDifficulty: 0, completionDifficulty: 2,
-    prerequisiteTrackIds: ['g2-poetry-planet'], status: 'planned_until_content_exists', displayName: 'Grade 3 Poetry Planet',
+    prerequisiteTrackIds: ['g2-poetry-planet'], status: 'active', displayName: 'Grade 3 Poetry Planet',
   },
   {
     trackId: 'g3-information-detectives-reading', skillId: 'g3-information-detectives-reading',

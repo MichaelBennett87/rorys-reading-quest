@@ -52,6 +52,41 @@ export interface RhymeSchemeGuide {
   contentVersion: string
 }
 
+export type Grade3PoemForm = 'free-verse' | 'rhymed-verse' | 'haiku' | 'limerick'
+
+export type PoemFormFeatureKind =
+  | 'line-count'
+  | 'stanza-structure'
+  | 'rhyme'
+  | 'rhyme-pattern'
+  | 'syllable-pattern'
+  | 'free-lineation'
+  | 'nature-observation'
+  | 'playful-tone'
+
+export interface PoemFormFeature {
+  featureId: string
+  kind: PoemFormFeatureKind
+  statement: string
+  evidenceLineIds: string[]
+}
+
+export interface PoemFormGuide {
+  poemId: string
+  form: Grade3PoemForm
+  lineCount: number
+  stanzaCount: number
+  definingFeatures: PoemFormFeature[]
+  nonDefiningFeatures: string[]
+  rhymeScheme?: string
+  rhymeLines?: RhymeSchemeLineGuide[]
+  classroomSyllablePattern?: number[]
+  formExplanation: string
+  comparisonNotes: string
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
 export interface TextFeatureContribution {
   featureId: string
   featureKind: 'title' | 'heading' | 'caption' | 'graph' | 'map' | 'glossary' | 'illustration'
@@ -651,6 +686,7 @@ export interface ContentPack {
   themeGuides?: ThemeGuide[]
   perspectiveGuides?: PerspectiveGuide[]
   rhymeSchemeGuides?: RhymeSchemeGuide[]
+  poemFormGuides?: PoemFormGuide[]
 }
 
 export interface ContentPackAuditIssue {
@@ -764,6 +800,9 @@ export interface ContentPackAuditIssue {
   | 'missing_rhyme_scheme_guide'
   | 'rhyme_scheme_guide_count_mismatch'
   | 'rhyme_scheme_guide_invalid'
+  | 'missing_poem_form_guide'
+  | 'poem_form_guide_count_mismatch'
+  | 'poem_form_guide_invalid'
   message: string
   itemIdentifier: string
 }

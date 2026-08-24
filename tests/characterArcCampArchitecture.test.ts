@@ -24,6 +24,7 @@ describe('Character Arc Camp architecture', () => {
     expect(curriculumTracks.filter((track) => track.gradeBand === 3 && track.status === 'active').map((track) => track.trackId)).toEqual([
       'g3-word-forge-foundations',
       'g3-story-scouts-prose',
+      'g3-poetry-planet',
     ])
     expect(getSequentialWorldRoadmapByTrackId('g3-story-scouts-prose')?.units.map((unit) => unit.unitId)).toEqual([
       'g3-ss-unit-1', 'g3-ss-unit-2', 'g3-ss-unit-3',

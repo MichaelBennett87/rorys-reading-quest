@@ -565,8 +565,9 @@ function validatePoemStructure(
 
   const lines = structure.lines ?? []
   const stanzas = structure.stanzas ?? []
-  if (lines.length < 4 || lines.length > 12) {
-    withError(errors, 'invalid_support_metadata', passage.passageIdentifier, 'Poem passages must contain 4 to 12 lines.')
+  const minimumLineCount = passage.gradeBand === 3 ? 3 : 4
+  if (lines.length < minimumLineCount || lines.length > 12) {
+    withError(errors, 'invalid_support_metadata', passage.passageIdentifier, `Grade ${passage.gradeBand} poem passages must contain ${minimumLineCount} to 12 lines.`)
   }
   if (stanzas.length < 1 || stanzas.length > 2) {
     withError(errors, 'invalid_support_metadata', passage.passageIdentifier, 'Poem passages must contain 1 or 2 stanzas.')
