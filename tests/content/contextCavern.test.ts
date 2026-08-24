@@ -95,13 +95,14 @@ describe('grade 2 context cavern academic word workshop pack', () => {
       'g3-story-scouts-perspective-portal',
       'g3-poetry-planet-poem-form-observatory',
       'g3-information-detectives-structure-station',
+      'g3-information-detectives-central-idea-engine',
     ])
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 31,
-      activeLessonCount: 217,
-      activePassageCount: 224,
-      activeQuestionCount: 1245,
-      activeSupportTargetCount: 859,
+      activePackCount: 32,
+      activeLessonCount: 224,
+      activePassageCount: 231,
+      activeQuestionCount: 1286,
+      activeSupportTargetCount: 887,
     })
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.V.1.1')).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.V.1.1',
@@ -280,11 +281,11 @@ describe('grade 2 context cavern morphology mine pack', () => {
     ])
     expect(pack.morphologyGuides).toHaveLength(7)
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 31,
-      activeLessonCount: 217,
-      activePassageCount: 224,
-      activeQuestionCount: 1245,
-      activeSupportTargetCount: 859,
+      activePackCount: 32,
+      activeLessonCount: 224,
+      activePassageCount: 231,
+      activeQuestionCount: 1286,
+      activeSupportTargetCount: 887,
     })
   })
 

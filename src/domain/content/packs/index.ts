@@ -11,6 +11,7 @@ export * from './themeDevelopmentGuideAudit'
 export * from './characterPerspectiveGuideAudit'
 export * from './poemFormGuideAudit'
 export * from './informationalStructureGuideAudit'
+export * from './centralIdeaEngineGuideAudit'
 export * from './fluencyPracticeAudit'
 export * from './legacyDevelopmentPack'
 export * from './grade2/wordForge/consonantLeIntegrated'
@@ -43,6 +44,7 @@ export {
 } from './grade3/storyScouts/perspectivePortal'
 export * from './grade3/poetryPlanet/poemFormObservatory'
 export * from './grade3/informationDetectives/structureStation'
+export * from './grade3/informationDetectives/centralIdeaEngine'
 export * from './registry'
 
 export const fluencyPracticeAudit = buildFluencyPracticeAudit(contentPacks)
