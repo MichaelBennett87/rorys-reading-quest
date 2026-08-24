@@ -82,7 +82,7 @@ describe('FluencyPracticeScreen', () => {
     if (resolveSpeech) resolveSpeech()
   })
 
-  test('understanding check unlocks only after the required practice steps', async () => {
+  test('keeps model listening optional while requiring the non-audio practice steps', async () => {
     const lesson = getLessonById('lesson-word-forge-fluency-practice-punctuation-pauses').lesson
     expect(lesson).toBeDefined()
 
@@ -96,8 +96,6 @@ describe('FluencyPracticeScreen', () => {
     )
 
     fireEvent.click(screen.getByRole('button', { name: /Start Practice/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Hear a Model Read/i }))
-    if (resolveSpeech) resolveSpeech()
     fireEvent.click(screen.getByRole('button', { name: /I Practiced the Phrases/i }))
     const requiredReadCount = lesson!.fluencyPracticeBlock?.requiredReadCount ?? 1
     for (let index = 0; index < requiredReadCount; index += 1) {
@@ -109,5 +107,6 @@ describe('FluencyPracticeScreen', () => {
     await waitFor(() => {
       expect(screen.getByRole('button', { name: /Start Understanding Check/i }).getAttribute('disabled')).toBeNull()
     })
+    expect(speakSequence).not.toHaveBeenCalled()
   })
 })

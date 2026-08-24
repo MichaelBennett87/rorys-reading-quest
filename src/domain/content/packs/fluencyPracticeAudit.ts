@@ -11,7 +11,7 @@ export interface FluencyPracticeAuditIssue {
 }
 
 export interface FluencyPracticeAudit {
-  supportingBenchmarkReference: 'ELA.2.F.1.4'
+  supportingBenchmarkReference: 'ELA.2.F.1.4' | 'ELA.3.F.1.4'
   expectedSupportComponents: string[]
   providedSupportComponents: string[]
   missingSupportComponents: string[]
@@ -37,9 +37,20 @@ const EXPECTED_SUPPORT_COMPONENTS = [
 ]
 
 export function buildFluencyPracticeAudit(packs: readonly ContentPack[]): FluencyPracticeAudit {
+  return buildFluencyPracticeAuditForBenchmark(packs, 'ELA.2.F.1.4')
+}
+
+export function buildGrade3FluencyPracticeAudit(packs: readonly ContentPack[]): FluencyPracticeAudit {
+  return buildFluencyPracticeAuditForBenchmark(packs, 'ELA.3.F.1.4')
+}
+
+function buildFluencyPracticeAuditForBenchmark(
+  packs: readonly ContentPack[],
+  supportingBenchmarkReference: FluencyPracticeAudit['supportingBenchmarkReference'],
+): FluencyPracticeAudit {
   const contributingPacks = packs.filter((pack) => (
     pack.manifest.coverageKind === 'supportive_practice'
-    && pack.manifest.supportingBenchmarkReferences?.includes('ELA.2.F.1.4')
+    && pack.manifest.supportingBenchmarkReferences?.includes(supportingBenchmarkReference)
   ))
   const providedSupportComponents = new Set<string>()
   const issues: FluencyPracticeAuditIssue[] = []
@@ -62,12 +73,12 @@ export function buildFluencyPracticeAudit(packs: readonly ContentPack[]): Fluenc
     issues.push({
       code: 'missing_support_component',
       message: `Missing fluency support component: ${component}.`,
-      itemIdentifier: 'ELA.2.F.1.4',
+      itemIdentifier: supportingBenchmarkReference,
     })
   }
 
   return {
-    supportingBenchmarkReference: 'ELA.2.F.1.4',
+    supportingBenchmarkReference,
     expectedSupportComponents: [...EXPECTED_SUPPORT_COMPONENTS],
     providedSupportComponents: [...providedSupportComponents].sort((left, right) => left.localeCompare(right)),
     missingSupportComponents,

@@ -14,6 +14,7 @@ export interface FluencyPracticeCompletionInput {
   lessonResult: LessonResult
   availableLessons: readonly LessonActivityCandidate[]
   completedAt: string
+  completionDifficulty?: number
 }
 
 export interface FluencyPracticeCompletionResult {
@@ -79,6 +80,37 @@ export function completeFluencyPractice(input: FluencyPracticeCompletionInput): 
       progress,
       nextQuest: plan,
       reasonCodes: ['fluency_practice_completed', 'oral_fluency_not_measured', 'fresh_fluency_practice_planned'],
+      summary,
+      lessonUsage,
+    }
+  }
+
+  const chapterCompleted = typeof input.completionDifficulty === 'number'
+    && input.completionDifficulty > input.lessonResult.difficulty
+  if (chapterCompleted) {
+    const completedProgress = {
+      ...progress,
+      currentDifficulty: input.completionDifficulty!,
+      lastDecisionReasonCodes: [
+        'fluency_practice_completed',
+        'oral_fluency_not_measured',
+        'fluency_practice_chapter_completed',
+      ],
+    }
+    return {
+      progress: completedProgress,
+      nextQuest: {
+        status: 'content_needed',
+        purpose: 'progression',
+        skillId: input.lessonResult.skillId,
+        difficulty: input.completionDifficulty!,
+        reason: 'Grade 3 Word Forge practice is complete. Oral fluency was not measured.',
+      },
+      reasonCodes: [
+        'fluency_practice_completed',
+        'oral_fluency_not_measured',
+        'fluency_practice_chapter_completed',
+      ],
       summary,
       lessonUsage,
     }

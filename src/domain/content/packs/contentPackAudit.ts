@@ -642,12 +642,17 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
 }
 
 function validateSupportivePracticePackStructure(pack: ContentPack, issues: ContentPackAuditIssue[]) {
-  if (pack.manifest.supportingBenchmarkReferences?.includes('ELA.2.F.1.4') !== true) {
+  const isGrade3Fluency = pack.manifest.gradeBand === 3
+  const expectedSupportingBenchmark = isGrade3Fluency ? 'ELA.3.F.1.4' : 'ELA.2.F.1.4'
+  const expectedQuestionBenchmark = isGrade3Fluency ? 'ELA.3.F.1.4' : 'RR-G2-FLUENCY-PRACTICE'
+  const expectedDifficulty = isGrade3Fluency ? 4 : 8
+
+  if (pack.manifest.supportingBenchmarkReferences?.includes(expectedSupportingBenchmark) !== true) {
     pushIssue(
       issues,
       'missing_supporting_benchmark_mapping',
       pack.manifest.packId,
-      'Supportive-practice packs must support ELA.2.F.1.4.',
+      `Supportive-practice packs at Grade ${pack.manifest.gradeBand} must support ${expectedSupportingBenchmark}.`,
     )
   }
 
@@ -684,8 +689,8 @@ function validateSupportivePracticePackStructure(pack: ContentPack, issues: Cont
     if (lesson.lessonRole !== 'FLUENCY_PRACTICE') {
       pushIssue(issues, 'missing_lesson_role', lesson.lessonId, 'Fluency lessons must use the FLUENCY_PRACTICE lesson role.')
     }
-    if (lesson.difficulty !== 8) {
-      pushIssue(issues, 'mixed_difficulty_within_lesson', lesson.lessonId, 'Fluency lessons must remain at difficulty 8.')
+    if (lesson.difficulty !== expectedDifficulty) {
+      pushIssue(issues, 'mixed_difficulty_within_lesson', lesson.lessonId, `Fluency lessons must remain at difficulty ${expectedDifficulty}.`)
     }
     if (!lesson.fluencyPracticeBlock) {
       pushIssue(issues, 'missing_manifest_field', lesson.lessonId, 'Fluency lessons require a fluency practice block.')
@@ -742,8 +747,8 @@ function validateSupportivePracticePackStructure(pack: ContentPack, issues: Cont
     }
     for (const question of lessonQuestions) {
       questionTypeCounts.set(question.questionType, (questionTypeCounts.get(question.questionType) ?? 0) + 1)
-      if (question.gradeBand !== 2) {
-        pushIssue(issues, 'missing_manifest_field', question.questionIdentifier, 'Fluency questions must remain Grade 2.')
+      if (question.gradeBand !== pack.manifest.gradeBand) {
+        pushIssue(issues, 'wrong_grade_band', question.questionIdentifier, `Fluency questions must remain Grade ${pack.manifest.gradeBand}.`)
       }
       if (question.skillIdentifier !== pack.manifest.primarySkillId) {
         pushIssue(issues, 'wrong_primary_skill', question.questionIdentifier, 'Fluency questions must stay on the bridge skill.')
@@ -751,8 +756,8 @@ function validateSupportivePracticePackStructure(pack: ContentPack, issues: Cont
       if (question.reportingCategory !== 'Foundational Skills Bridge') {
         pushIssue(issues, 'missing_manifest_field', question.questionIdentifier, 'Fluency questions must use the Foundational Skills Bridge category.')
       }
-      if (question.benchmarkReference !== 'RR-G2-FLUENCY-PRACTICE') {
-        pushIssue(issues, 'missing_manifest_field', question.questionIdentifier, 'Fluency questions must use the internal fluency practice reference.')
+      if (question.benchmarkReference !== expectedQuestionBenchmark) {
+        pushIssue(issues, 'missing_manifest_field', question.questionIdentifier, `Fluency questions must use ${expectedQuestionBenchmark}.`)
       }
       if (question.reviewStatus !== 'DRAFT') {
         pushIssue(issues, 'missing_draft_status', question.questionIdentifier, 'Fluency questions must remain DRAFT.')

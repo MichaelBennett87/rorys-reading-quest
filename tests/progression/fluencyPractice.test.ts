@@ -5,6 +5,7 @@ import { completeFluencyPractice } from '../../src/domain/progression/fluencyPra
 import { createInitialSkillProgress } from '../../src/domain/progression'
 import { completeFluencyPracticeProgress, createDefaultQuestProgress } from '../../src/persistence'
 import type { LessonResult } from '../../src/domain/lesson'
+import { buildReviewQueueIdentity } from '../../src/domain/progression/reviewQueueAffinity'
 
 const completedAt = '2026-08-20T12:00:00.000Z'
 const fluencyCandidates = getLessonCandidates().filter((candidate) => candidate.unitId === 'wg-unit-6')
@@ -99,6 +100,53 @@ describe('fluency practice progression', () => {
 
     expect(result.nextQuest.status).toBe('content_needed')
     expect(result.reasonCodes).toContain('fluency_practice_exhausted')
+  })
+
+  test('completes a higher Grade 3 chapter difficulty without claiming oral mastery', () => {
+    const grade3Candidates = fluencyCandidates.map((candidate, index) => ({
+      ...candidate,
+      lessonId: `grade-3-fluency-lesson-${index + 1}`,
+      activityId: `grade-3-fluency-activity-${index + 1}`,
+      skillId: 'g3-word-forge-word-analysis',
+      unitId: 'g3-wg-unit-4',
+      difficulty: 4,
+      contentVersion: 'g3-wf-fluency-flight-r0.1.0',
+    }))
+    const progress = createInitialSkillProgress('g3-word-forge-word-analysis')
+    progress.currentDifficulty = 4
+    progress.lastMasteredDifficulty = 3
+    progress.recentActivityUsage = grade3Candidates.map((candidate) => ({ ...candidate, completedAt }))
+
+    const result = completeFluencyPractice({
+      progress,
+      lessonResult: buildLessonResult(grade3Candidates[0]),
+      availableLessons: grade3Candidates,
+      completedAt,
+      completionDifficulty: 5,
+    })
+
+    expect(result.progress).toMatchObject({
+      currentDifficulty: 5,
+      lastMasteredDifficulty: 3,
+      currentLearningState: 'FLUENCY_PRACTICE',
+    })
+    expect(result.reasonCodes).toEqual(expect.arrayContaining([
+      'fluency_practice_chapter_completed',
+      'oral_fluency_not_measured',
+    ]))
+    expect(result.nextQuest).toMatchObject({ status: 'content_needed', difficulty: 5 })
+  })
+
+  test('keeps four Grade 3 Word Forge review identities separate from Grade 2', () => {
+    const identities = [
+      buildReviewQueueIdentity({ skillId: 'g2-word-forge-word-practice', difficulty: 8, unitId: 'wg-unit-6', contentVersion: 'g2-wf-fluency-practice-r0.1.0' }),
+      buildReviewQueueIdentity({ skillId: 'g3-word-forge-word-analysis', difficulty: 1, unitId: 'g3-wg-unit-1', contentVersion: 'g3-wf-root-reactor-r0.1.0' }),
+      buildReviewQueueIdentity({ skillId: 'g3-word-forge-word-analysis', difficulty: 2, unitId: 'g3-wg-unit-2', contentVersion: 'g3-wf-suffix-shifter-r0.1.0' }),
+      buildReviewQueueIdentity({ skillId: 'g3-word-forge-word-analysis', difficulty: 3, unitId: 'g3-wg-unit-3', contentVersion: 'g3-wf-multisyllable-mountain-r0.1.0' }),
+      buildReviewQueueIdentity({ skillId: 'g3-word-forge-word-analysis', difficulty: 4, unitId: 'g3-wg-unit-4', contentVersion: 'g3-wf-fluency-flight-r0.1.0' }),
+    ]
+
+    expect(new Set(identities.map((identity) => JSON.stringify(identity))).size).toBe(5)
   })
 
   test('fluency completion persists once and remains idempotent on duplicate completion ids', () => {

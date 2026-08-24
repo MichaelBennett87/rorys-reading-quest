@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 
-import { normalizeQuestProgressForPlanning, planGlobalQuest } from '../domain/curriculum'
+import { getTrackBySkillId, normalizeQuestProgressForPlanning, planGlobalQuest } from '../domain/curriculum'
 import type { LessonDefinition, LessonResult } from '../domain/lesson'
 import { completeFluencyPractice } from '../domain/progression/fluencyPractice'
 import {
@@ -124,11 +124,13 @@ export function useQuestProgress() {
     const completedAt = new Date().toISOString()
 
     if (lessonResult.lessonRole === 'FLUENCY_PRACTICE') {
+      const track = getTrackBySkillId(lessonResult.skillId)
       const fluencyProgress = completeFluencyPractice({
         progress: progressEntry,
         lessonResult,
         availableLessons,
         completedAt,
+        completionDifficulty: track?.completionDifficulty,
       })
       const completed = completeFluencyPracticeProgress({
         state: progressRef.current,
@@ -139,7 +141,9 @@ export function useQuestProgress() {
       })
       persist(completed.state)
       return {
-        kind: fluencyProgress.nextQuest.status === 'content_needed'
+        kind: fluencyProgress.reasonCodes.includes('fluency_practice_chapter_completed')
+          ? 'FLUENCY_PRACTICE'
+          : fluencyProgress.nextQuest.status === 'content_needed'
           ? 'CONTENT_NEEDED'
           : 'FLUENCY_PRACTICE',
         earnedXp: completed.earnedXp,

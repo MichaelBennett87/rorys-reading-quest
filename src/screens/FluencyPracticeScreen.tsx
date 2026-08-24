@@ -108,8 +108,7 @@ export function FluencyPracticeScreen({
   const supportLevels = useMemo(() => deriveSupportLevels(assistanceEvents), [assistanceEvents])
   const currentPassageTitle = lesson.fluencyPracticeBlock?.title ?? lesson.lessonTitle
   const practiceReady = Boolean(
-    fluencyState.modelReadUsed
-    && fluencyState.phrasePracticeCompleted
+    fluencyState.phrasePracticeCompleted
     && fluencyState.completedReadCount >= (lesson.fluencyPracticeBlock?.requiredReadCount ?? 1)
     && fluencyState.reflection
     && fluencyState.reflection !== 'try_again'
@@ -560,7 +559,7 @@ export function FluencyPracticeScreen({
               </section>
               {!practiceReady && (
                 <p className="parent-muted-copy">
-                  Finish the model read, phrase practice, rereading, and reflection to unlock the questions.
+                  Finish phrase practice, rereading, and reflection to unlock the questions. Model listening is optional.
                 </p>
               )}
             </section>
@@ -593,8 +592,8 @@ export function FluencyPracticeScreen({
 
       {step === 'results' && (
         <section className="card lesson-results" aria-labelledby="fluency-complete-heading">
-          <h2 id="fluency-complete-heading">Reading Flight Complete!</h2>
-          <p>You practiced smooth reading with a fresh passage.</p>
+          <h2 id="fluency-complete-heading">Nice Fluency Practice!</h2>
+          <p>You practiced smooth, meaningful reading with a fresh passage.</p>
           <p><strong>Practice rewards:</strong> {xpForLesson(result)} XP and {starsForAccuracy(result.accuracy)} stars</p>
           <p><strong>Understanding-check accuracy:</strong> {Math.round(result.accuracy)}%</p>
           <p><strong>Model read used:</strong> {fluencyState.modelReadUsed ? 'Yes' : 'No'}</p>

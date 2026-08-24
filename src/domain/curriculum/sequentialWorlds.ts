@@ -144,7 +144,7 @@ const grade3Roadmaps: readonly SequentialWorldRoadmap[] = [
     {
       ...plannedUnit('g3-wg-unit-4', 'Fluency Flight Grade 3', 'ELA.3.F.1.4', 'accuracy, automaticity, phrasing, and expression practice without oral scoring', '7A4', 4, 5),
       lockedMessage: 'Complete Multisyllable Mountain to unlock Fluency Flight Grade 3.',
-      futureContentMessage: 'Fluency Flight Grade 3 quests are being prepared.',
+      futureContentMessage: 'Review smooth, meaningful reading. Completing this practice chapter does not measure oral fluency.',
     },
   ]),
   plannedRoadmap('story-scouts', 'g3-story-scouts-prose', 'Grade 3 Literary Analysis', [
