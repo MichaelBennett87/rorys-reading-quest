@@ -137,7 +137,7 @@ export interface QuestProgressSaveResult {
 
 export interface ActiveSessionRecoveryResult {
   state: QuestProgressV1
-  status: 'none' | 'resumable' | 'discarded_incompatible'
+  status: 'none' | 'resumable' | 'discarded_completed' | 'discarded_incompatible'
   technicalDetail?: string
 }
 

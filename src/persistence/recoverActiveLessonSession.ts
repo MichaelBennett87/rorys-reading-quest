@@ -8,6 +8,14 @@ export function recoverActiveLessonSession(
   const active = state.activeLessonSession
   if (!active) return { state, status: 'none' }
 
+  if (state.completedAttempts.some((attempt) => attempt.completionId === active.sessionId)) {
+    return {
+      state: { ...state, activeLessonSession: null },
+      status: 'discarded_completed',
+      technicalDetail: 'The stored active lesson session was already recorded as completed.',
+    }
+  }
+
   const candidate = input.availableLessons.find((lesson) => (
     lesson.lessonId === active.lessonId
     && lesson.activityId === active.activityId

@@ -426,7 +426,9 @@ export function LessonScreen({
     speechService.cancel()
     setSpeechActive(false)
     if (onComplete && sessionRef.current) {
-      onComplete(result, sessionRef.current.sessionId)
+      const completionId = sessionRef.current.sessionId
+      sessionRef.current = null
+      onComplete(result, completionId)
       return
     }
     onBack()

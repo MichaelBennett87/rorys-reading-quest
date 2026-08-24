@@ -27,7 +27,10 @@ export function completeFluencyPracticeProgress(
   input: CompleteFluencyPracticeProgressInput,
 ): CompleteFluencyPracticeProgressResult {
   if (input.state.completedAttempts.some((attempt) => attempt.completionId === input.completionId)) {
-    return { state: normalizeQuestProgressForSave(input.state), duplicate: true, earnedXp: 0, earnedStars: 0 }
+    const reconciledState = input.state.activeLessonSession?.sessionId === input.completionId
+      ? { ...input.state, activeLessonSession: null }
+      : input.state
+    return { state: normalizeQuestProgressForSave(reconciledState), duplicate: true, earnedXp: 0, earnedStars: 0 }
   }
 
   const earnedXp = xpForLesson(input.lessonResult)

@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { resolveActiveLearningFocus } from '../domain/curriculum'
 import { demoLearner } from '../data/demoLearner'
 import { deriveWorldsForProgress } from '../data/demoWorlds'
-import { getLessonById, getLessonCandidates, type LessonDefinition } from '../domain/lesson'
+import { getLessonCandidates, type LessonDefinition } from '../domain/lesson'
 import type { ActiveLessonSession } from '../persistence'
 import { HomeScreen } from '../screens/HomeScreen'
 import { LessonScreen } from '../screens/LessonScreen'
@@ -34,6 +34,11 @@ export function AppShell() {
     errors: [],
   })
   const [outcome, setOutcome] = useState<ProgressionOutcomeViewModel | null>(null)
+  const journeyLaunchPendingRef = useRef(false)
+
+  useEffect(() => {
+    journeyLaunchPendingRef.current = false
+  }, [screen])
 
   const learner = {
     ...demoLearner,
@@ -44,8 +49,7 @@ export function AppShell() {
     questStreak: questProgress.progress.completedSessionCount,
   }
 
-  const launchLesson = (lesson: LessonDefinition) => {
-    const session = questProgress.beginLesson(lesson)
+  const launchLesson = (lesson: LessonDefinition, session: ActiveLessonSession) => {
     setLessonState({ lesson, session, errors: [] })
     setScreen('lesson_run')
   }
@@ -68,39 +72,21 @@ export function AppShell() {
     setScreen('progression_outcome')
   }
 
-  const startJourney = () => {
-    const active = questProgress.progress.activeLessonSession
-    if (active) {
-      const resumed = getLessonById(active.lessonId)
-      if (resumed.lesson) {
-        launchLesson(resumed.lesson)
-        return
-      }
-    }
-
-    const plan = questProgress.planContinue()
-    if (plan.status === 'content_needed') {
-      showContentNeeded(plan.reason, plan.difficulty)
+  const launchCurrentJourney = () => {
+    if (journeyLaunchPendingRef.current) return
+    journeyLaunchPendingRef.current = true
+    const decision = questProgress.prepareJourneyLaunch()
+    if (decision.status === 'resume' || decision.status === 'start') {
+      launchLesson(decision.lesson, decision.session)
       return
     }
-
-    const selected = getLessonById(plan.lesson.lessonId)
-    if (selected.lesson) {
-      launchLesson(selected.lesson)
+    if (decision.status === 'content_needed') {
+      showContentNeeded(decision.plan.reason, decision.plan.difficulty)
       return
     }
-
-    showContentNeeded(selected.errors[0] ?? 'The planned quest is unavailable.', plan.lesson.difficulty)
-  }
-
-  const continueJourney = () => {
-    if (!outcome || outcome.nextQuest.status !== 'available') return
-    const selected = getLessonById(outcome.nextQuest.lesson.lessonId)
-    if (selected.lesson) {
-      launchLesson(selected.lesson)
-      return
+    if (decision.status === 'unavailable') {
+      showContentNeeded(decision.reason, decision.difficulty)
     }
-    showContentNeeded(selected.errors[0] ?? 'The next fresh quest is unavailable.', outcome.currentDifficulty)
   }
 
   if (screen === 'parent_gate') {
@@ -116,7 +102,7 @@ export function AppShell() {
     return (
       <ProgressionOutcomeScreen
         outcome={outcome}
-        onContinueJourney={continueJourney}
+        onContinueJourney={launchCurrentJourney}
         onBackHome={() => setScreen('home')}
       />
     )
@@ -130,8 +116,10 @@ export function AppShell() {
           lesson={lessonState.lesson}
           session={lessonState.session}
           onSessionCheckpoint={(session) => {
-            setLessonState((previous) => ({ ...previous, session }))
-            questProgress.saveActiveSession(session)
+            const saved = questProgress.saveActiveSession(session)
+            if (saved.status === 'saved') {
+              setLessonState((previous) => ({ ...previous, session }))
+            }
           }}
           onComplete={(result, completionId) => {
             const nextOutcome = questProgress.completeLesson(result, completionId)
@@ -167,7 +155,7 @@ export function AppShell() {
       worlds={worlds}
       currentWorldId={activeFocus.worldId ?? 'word-forge'}
       storageNotice={storageNotice}
-      onStartJourney={startJourney}
+      onStartJourney={launchCurrentJourney}
       onOpenParentArea={() => setScreen('parent_gate')}
     />
   )

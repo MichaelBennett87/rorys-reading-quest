@@ -152,8 +152,18 @@ export function normalizePlannedNextQuest(
   availableLessons: readonly LessonActivityCandidate[],
 ): NormalizeQuestProgressForPlanningResult {
   const planned = state.plannedNextQuest
-  if (planned?.status !== 'available') {
+  if (!planned) {
     return { state, changed: false }
+  }
+
+  if (planned.status === 'content_needed') {
+    return {
+      state: {
+        ...state,
+        plannedNextQuest: null,
+      },
+      changed: true,
+    }
   }
 
   if (!isValidPlannedQuest(state, planned, availableLessons)) {
