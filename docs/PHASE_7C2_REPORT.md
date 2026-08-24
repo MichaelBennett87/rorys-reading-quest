@@ -44,6 +44,12 @@ Home still has exactly `Start Journey` and `Parent Area`; world cards remain dis
 
 Phase 7A and Phase 7B remain complete. Phase 7C is incomplete, Phase 7C1 and Phase 7C2 are complete, Phase 7C3 remains unstarted, and Phase 7 remains incomplete.
 
+## Final synchronization and post-phase journey correction
+
+Phase 7C2 started at `6ce92f0200eb689435febc03d57d6be7e99dd2a6` and synchronized at `af65679e9ea19072b51e59e3e36673d41b366345` through `408d361`, `afeee8a`, `fb3e997`, and `af65679`. The synchronized historical inventory remained 32 packs, 224 lessons, 231 texts, 1,286 questions, 887 support targets, and 1,286 current PASS ledger records. `ELA.3.R.2.2` remained IMPLEMENTED / DRAFT and Phase 7C3 was next.
+
+After Phase 7C2 was complete, the opening of Phase 7C3 reproduced and corrected a P0 Continue Journey state-recovery defect in separate commit `613d5fb`. The fix reconciles completed or incompatible active sessions, duplicate completion, late checkpoints, stale planned work, and stale content-needed state before Start or Continue Journey launches current planner-selected work. This correction does not rewrite Phase 7C2's historical curriculum facts.
+
 ## Exact recommended Phase 7C3 scope
 
 Create Purpose Development Path for `ELA.3.R.2.3` only: authored DRAFT informational practice explaining an author's purpose and how details across sections develop that purpose. Preserve the one-button journey, permanent truth gate, review affinity, privacy, and reporting boundaries. Do not begin claim/evidence, vocabulary, across-genres, Grade 4, or timed FAST practice.

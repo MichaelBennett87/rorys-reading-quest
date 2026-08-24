@@ -178,6 +178,29 @@ export type InformationalPurposeKind =
   | 'explain-process'
   | 'explain-why'
   | 'provide-facts'
+  | 'compare'
+  | 'explain-change'
+
+export interface PurposeSupportingDetail {
+  detailId: string
+  sectionId: string
+  evidenceIds: string[]
+  contributionStatement: string
+  strength: 'strong' | 'secondary'
+}
+
+export interface PurposeSectionContribution {
+  sectionId: string
+  contributionStatement: string
+  evidenceIds: string[]
+}
+
+export interface PurposeWeakDetail {
+  detailId: string
+  sectionId: string
+  evidenceIds: string[]
+  explanation: string
+}
 
 export interface AuthorPurposeGuide {
   passageId: string
@@ -186,6 +209,10 @@ export interface AuthorPurposeGuide {
   specificPurposeStatement: string
   purposeEvidenceIds: string[]
   secondaryDetailIds: string[]
+  supportingDetails?: PurposeSupportingDetail[]
+  sectionContributions?: PurposeSectionContribution[]
+  weakOrNonDiagnosticDetails?: PurposeWeakDetail[]
+  synthesisStatement?: string
   reviewStatus: ContentReviewStatus
   contentVersion: string
 }

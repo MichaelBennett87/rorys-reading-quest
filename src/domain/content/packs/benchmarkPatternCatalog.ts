@@ -31,6 +31,7 @@ const BENCHMARK_PATTERN_CATALOG: Record<string, readonly string[]> = {
   'ELA.3.R.1.4': ['free-verse', 'rhymed-verse', 'haiku', 'limerick'],
   'ELA.3.R.2.1': ['text-features-contribute-to-meaning', 'chronology', 'comparison-structure', 'cause-effect-structure'],
   'ELA.3.R.2.2': ['central-idea', 'relevant-details', 'details-support-central-idea', 'evidence-across-sections'],
+  'ELA.3.R.2.3': ['author-purpose', 'purpose-development', 'supporting-details', 'text-evidence'],
 }
 
 const REVIEW_ORDER: Record<BenchmarkReviewStatus, number> = {

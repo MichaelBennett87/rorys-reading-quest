@@ -10,6 +10,7 @@ import { buildCharacterPerspectiveGuideAudit } from './characterPerspectiveGuide
 import { buildPoemFormGuideAudit } from './poemFormGuideAudit'
 import { buildInformationalStructureGuideAudit } from './informationalStructureGuideAudit'
 import { buildCentralIdeaEngineGuideAudit } from './centralIdeaEngineGuideAudit'
+import { buildPurposeDevelopmentGuideAudit } from './purposeDevelopmentGuideAudit'
 
 export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPackAuditIssue[] {
   const issues: ContentPackAuditIssue[] = []
@@ -214,6 +215,7 @@ export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPac
     issues.push(...buildPoemFormGuideAudit(pack))
     issues.push(...buildInformationalStructureGuideAudit(pack))
     issues.push(...buildCentralIdeaEngineGuideAudit(pack))
+    issues.push(...buildPurposeDevelopmentGuideAudit(pack))
   }
 
   const hasBenchmarkProgressionPack = packs.some((pack) => pack.manifest.coverageKind !== 'supportive_practice')
