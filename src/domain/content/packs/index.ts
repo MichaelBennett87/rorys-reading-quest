@@ -9,6 +9,7 @@ export * from './multisyllableDecodingGuideAudit'
 export * from './characterDevelopmentGuideAudit'
 export * from './themeDevelopmentGuideAudit'
 export * from './characterPerspectiveGuideAudit'
+export * from './poemFormGuideAudit'
 export * from './fluencyPracticeAudit'
 export * from './legacyDevelopmentPack'
 export * from './grade2/wordForge/consonantLeIntegrated'
@@ -39,6 +40,7 @@ export {
   perspectivePortalQuestions as grade3PerspectivePortalQuestions,
   perspectivePortalLessons as grade3PerspectivePortalLessons,
 } from './grade3/storyScouts/perspectivePortal'
+export * from './grade3/poetryPlanet/poemFormObservatory'
 export * from './registry'
 
 export const fluencyPracticeAudit = buildFluencyPracticeAudit(contentPacks)

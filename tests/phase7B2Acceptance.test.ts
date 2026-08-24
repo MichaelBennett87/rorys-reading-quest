@@ -19,24 +19,24 @@ describe('Phase 7B2 acceptance documentation and coverage', () => {
     expect(tasks).toContain('- [x] Phase 7B1 - Character Arc Camp')
     expect(tasks).toContain('- [x] Phase 7B2 - Theme Development Trail')
     expect(tasks).toContain('- [x] Phase 7B3 - Perspective Portal Grade 3')
-    expect(tasks).toContain('- [ ] Phase 7B4 - Poem Form Observatory')
-    expect(tasks).toContain('- [ ] Phase 7B')
+    expect(tasks).toContain('- [x] Phase 7B4 - Poem Form Observatory')
+    expect(tasks).toContain('- [x] Phase 7B')
     expect(tasks).toContain('- [ ] Phase 7')
   })
 
   test('keeps registry totals and Grade 3 coverage exact', () => {
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 29,
-      activeLessonCount: 203,
-      activePassageCount: 210,
-      activeQuestionCount: 1163,
-      activeSupportTargetCount: 803,
+      activePackCount: 30,
+      activeLessonCount: 210,
+      activePassageCount: 217,
+      activeQuestionCount: 1204,
+      activeSupportTargetCount: 831,
     })
     const snapshot = buildGrade3CoverageSnapshot()
     expect(snapshot.rows).toHaveLength(16)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(4)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(5)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(1)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(11)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(10)
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.1.2')).toMatchObject({
       coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',
@@ -51,7 +51,7 @@ describe('Phase 7B2 acceptance documentation and coverage', () => {
   test('preserves frozen content, persistence, parent-print privacy, and Pages boundaries', () => {
     const activePacks = getActiveContentPacks()
     expect(activePacks.filter((pack) => pack.manifest.gradeBand === 2)).toHaveLength(22)
-    expect(activePacks.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(7)
+    expect(activePacks.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(8)
     expect(activePacks.filter((pack) => pack.manifest.packId === 'g3-story-scouts-theme-development-trail')).toHaveLength(1)
     expect(activePacks.some((pack) => pack.manifest.packId === 'g3-story-scouts-perspective-portal')).toBe(true)
 

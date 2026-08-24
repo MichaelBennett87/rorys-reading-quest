@@ -13,25 +13,25 @@ describe('Phase 7B3 acceptance documentation and coverage', () => {
     expect(report).toContain('Starting local and remote SHA: `c0d36e71b2543854069840c58e72fc8efcd8bbbb`')
     expect(report).toContain('Phase 7B4 Poem Form Observatory is next and remains unstarted.')
     expect(tasks).toContain('- [x] Phase 7B3 - Perspective Portal Grade 3')
-    expect(tasks).toContain('- [ ] Phase 7B4 - Poem Form Observatory')
-    expect(tasks).toContain('- [ ] Phase 7B')
+    expect(tasks).toContain('- [x] Phase 7B4 - Poem Form Observatory')
+    expect(tasks).toContain('- [x] Phase 7B')
     expect(tasks).toContain('- [ ] Phase 7')
   })
 
   test('reports the production inventory and implemented DRAFT benchmark without approval', () => {
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 29,
-      activeLessonCount: 203,
-      activePassageCount: 210,
-      activeQuestionCount: 1163,
-      activeSupportTargetCount: 803,
+      activePackCount: 30,
+      activeLessonCount: 210,
+      activePassageCount: 217,
+      activeQuestionCount: 1204,
+      activeSupportTargetCount: 831,
     })
     expect(getActiveContentPacks().filter((pack) => pack.manifest.packId === 'g3-story-scouts-perspective-portal')).toHaveLength(1)
 
     const snapshot = buildGrade3CoverageSnapshot()
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(4)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(5)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(1)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(11)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(10)
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.1.3')).toMatchObject({
       coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',

@@ -9,21 +9,21 @@ describe('Phase 7B3 production integration', () => {
   test('registers only Perspective Portal and derives the required totals and coverage state', () => {
     const packs = getActiveContentPacks()
     expect(packs.filter((pack) => pack.manifest.gradeBand === 2)).toHaveLength(22)
-    expect(packs.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(7)
+    expect(packs.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(8)
     expect(packs.filter((pack) => pack.manifest.packId === 'g3-story-scouts-perspective-portal')).toHaveLength(1)
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 29, activeLessonCount: 203, activePassageCount: 210,
-      activeQuestionCount: 1163, activeSupportTargetCount: 803,
+      activePackCount: 30, activeLessonCount: 210, activePassageCount: 217,
+      activeQuestionCount: 1204, activeSupportTargetCount: 831,
     })
     const snapshot = buildGrade3CoverageSnapshot()
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.1.3')).toMatchObject({
       coverageStatus: 'implemented', reviewStatus: 'DRAFT', missingPatterns: [],
       contributingPackIds: ['g3-story-scouts-perspective-portal'],
     })
-    expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.1.4')).toMatchObject({ coverageStatus: 'planned' })
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(4)
+    expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.1.4')).toMatchObject({ coverageStatus: 'implemented' })
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(5)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(1)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(11)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(10)
   })
 
   test('keeps parent and print wording honest and authored guide data out of persistence', () => {

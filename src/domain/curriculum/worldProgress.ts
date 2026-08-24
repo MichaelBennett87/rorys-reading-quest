@@ -356,7 +356,7 @@ function derivePerspectivePortalUnit(
           : 'character perspectives and supporting story clues'
         : state === 'review'
           ? 'Review character perspective clues and supporting details.'
-          : 'Perspective Portal quests are complete. Poetry Planet quests are being prepared.',
+          : 'Perspective Portal quests are complete. Continue the guided journey into Poetry Planet.',
   }
 }
 
