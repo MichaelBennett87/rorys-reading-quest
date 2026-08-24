@@ -218,7 +218,7 @@ function isMoralCommand(value: string): boolean {
 
 function countStageMarkers(value: string): number {
   const normalized = value.toLowerCase()
-  return [/beginning|at first/, /\bmiddle\b|turning point|after/, /\bend\b|finally|by the end/]
+  return [/\bbeginning\b|\bat first\b/, /\bmiddle\b|turning point|after/, /\bend\b|finally|by the end/]
     .filter((pattern) => pattern.test(normalized)).length
 }
 
