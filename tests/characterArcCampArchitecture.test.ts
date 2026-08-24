@@ -25,6 +25,7 @@ describe('Character Arc Camp architecture', () => {
       'g3-word-forge-foundations',
       'g3-story-scouts-prose',
       'g3-poetry-planet',
+      'g3-information-detectives-reading',
     ])
     expect(getSequentialWorldRoadmapByTrackId('g3-story-scouts-prose')?.units.map((unit) => unit.unitId)).toEqual([
       'g3-ss-unit-1', 'g3-ss-unit-2', 'g3-ss-unit-3',

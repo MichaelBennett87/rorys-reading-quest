@@ -123,6 +123,16 @@ function collectInformationalEvidence(structure: InformationalTextStructure): Pa
         })
       }
     }
+
+    if (feature.kind === 'timeline') {
+      for (const item of feature.items) {
+        entries.push({
+          evidenceId: item.itemId,
+          label: `Timeline item: ${item.label}`,
+          text: item.description,
+        })
+      }
+    }
   }
 
   for (const feature of structure.features) {
@@ -183,6 +193,18 @@ function buildFeatureEvidence(feature: InformationalFeature): PassageEvidenceEnt
         label: `Illustration: ${feature.title}`,
         text: feature.accessibleDescription,
       }
+    case 'timeline':
+      return {
+        evidenceId: feature.featureId,
+        label: `Timeline: ${feature.title}`,
+        text: feature.items.map((item) => `${item.label}: ${item.description}`).join(' | '),
+      }
+    case 'sidebar':
+      return {
+        evidenceId: feature.featureId,
+        label: `Fact box: ${feature.title}`,
+        text: feature.text,
+      }
   }
 }
 
@@ -194,6 +216,8 @@ function getCaptionLabel(kind: InformationalFeature['kind']): string {
       return 'Map caption'
     case 'illustration':
       return 'Illustration caption'
+    case 'timeline':
+      return 'Timeline caption'
     default:
       return 'Caption'
   }

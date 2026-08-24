@@ -102,6 +102,43 @@ export interface TextFeatureGuide {
   contentVersion: string
 }
 
+export type Grade3InformationalStructure = 'chronology' | 'comparison' | 'cause-effect'
+
+export type Grade3InformationalFeatureKind =
+  | 'title'
+  | 'heading'
+  | 'caption'
+  | 'graph'
+  | 'map'
+  | 'glossary'
+  | 'illustration'
+  | 'timeline'
+  | 'sidebar'
+
+export interface InformationalFeatureContribution {
+  featureId: string
+  featureKind: Grade3InformationalFeatureKind
+  contributionStatement: string
+  evidenceIds: string[]
+}
+
+export interface InformationalStructureEvidence {
+  evidenceId: string
+  structure: Grade3InformationalStructure
+  evidenceIds: string[]
+  explanation: string
+}
+
+export interface InformationalStructureGuide {
+  passageId: string
+  primaryStructure: Grade3InformationalStructure
+  featureContributions: InformationalFeatureContribution[]
+  structureEvidence: InformationalStructureEvidence[]
+  organizationalSummary: string
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
 export type CentralIdeaMode = 'stated' | 'inferred'
 
 export interface CentralIdeaGuide {
@@ -667,6 +704,7 @@ export interface ContentPack {
   questions: ReadingQuestion[]
   lessons: ContentPackLesson[]
   textFeatureGuides?: TextFeatureGuide[]
+  informationalStructureGuides?: InformationalStructureGuide[]
   centralIdeaGuides?: CentralIdeaGuide[]
   authorPurposeGuides?: AuthorPurposeGuide[]
   authorOpinionGuides?: AuthorOpinionGuide[]
@@ -803,6 +841,10 @@ export interface ContentPackAuditIssue {
   | 'missing_poem_form_guide'
   | 'poem_form_guide_count_mismatch'
   | 'poem_form_guide_invalid'
+  | 'missing_informational_structure_guide'
+  | 'informational_structure_guide_count_mismatch'
+  | 'informational_structure_guide_invalid'
+  | 'ambiguous_informational_structure'
   message: string
   itemIdentifier: string
 }

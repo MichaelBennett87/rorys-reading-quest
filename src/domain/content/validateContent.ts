@@ -843,6 +843,32 @@ function validateInformationalStructure(
         }
       }
     }
+    if (feature.kind === 'timeline') {
+      if (!feature.title.trim() || (feature.items ?? []).length < 2) {
+        withError(errors, 'invalid_informational_feature', feature.featureId, 'Timeline features require a title and at least two ordered items.')
+      }
+      const seenItemIds = new Set<string>()
+      const seenOrders = new Set<number>()
+      for (const item of feature.items ?? []) {
+        if (!item.itemId.trim() || seenItemIds.has(item.itemId)) {
+          withError(errors, 'invalid_informational_feature', feature.featureId, 'Timeline item IDs must be present and unique.')
+          continue
+        }
+        seenItemIds.add(item.itemId)
+        if (!item.label.trim() || !item.description.trim()) {
+          withError(errors, 'invalid_informational_feature', item.itemId, 'Timeline items require labels and descriptions.')
+        }
+        if (!Number.isInteger(item.order) || item.order < 1 || seenOrders.has(item.order)) {
+          withError(errors, 'invalid_informational_feature', item.itemId, 'Timeline items require unique positive integer order values.')
+        }
+        seenOrders.add(item.order)
+      }
+    }
+    if (feature.kind === 'sidebar') {
+      if (!feature.title.trim() || !feature.text.trim()) {
+        withError(errors, 'invalid_informational_feature', feature.featureId, 'Sidebar features require a title and explanatory text.')
+      }
+    }
   }
 
   const titleFeature = featureById.get(structure.titleFeatureId)

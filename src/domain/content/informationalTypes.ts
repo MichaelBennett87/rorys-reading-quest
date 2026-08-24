@@ -6,6 +6,8 @@ export type InformationalFeatureKind =
   | 'map'
   | 'glossary'
   | 'illustration'
+  | 'timeline'
+  | 'sidebar'
 
 export interface InformationalTitleFeature {
   featureId: string
@@ -104,6 +106,27 @@ export interface InformationalIllustrationFeature {
   labels: InformationalIllustrationLabel[]
 }
 
+export interface InformationalTimelineItem {
+  itemId: string
+  label: string
+  description: string
+  order: number
+}
+
+export interface InformationalTimelineFeature {
+  featureId: string
+  kind: 'timeline'
+  title: string
+  items: InformationalTimelineItem[]
+}
+
+export interface InformationalSidebarFeature {
+  featureId: string
+  kind: 'sidebar'
+  title: string
+  text: string
+}
+
 export interface InformationalSection {
   sectionId: string
   headingFeatureId: string
@@ -119,10 +142,11 @@ export type InformationalFeature =
   | InformationalMapFeature
   | InformationalGlossaryFeature
   | InformationalIllustrationFeature
+  | InformationalTimelineFeature
+  | InformationalSidebarFeature
 
 export interface InformationalTextStructure {
   titleFeatureId: string
   sections: InformationalSection[]
   features: InformationalFeature[]
 }
-

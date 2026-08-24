@@ -29,6 +29,7 @@ const BENCHMARK_PATTERN_CATALOG: Record<string, readonly string[]> = {
   'ELA.3.R.1.2': ['theme', 'theme-development', 'supporting-details', 'plot-theme-connection'],
   'ELA.3.R.1.3': ['character-perspective', 'different-character-perspectives', 'similar-character-perspectives', 'perspective-evidence', 'perspective-change'],
   'ELA.3.R.1.4': ['free-verse', 'rhymed-verse', 'haiku', 'limerick'],
+  'ELA.3.R.2.1': ['text-features-contribute-to-meaning', 'chronology', 'comparison-structure', 'cause-effect-structure'],
 }
 
 const REVIEW_ORDER: Record<BenchmarkReviewStatus, number> = {

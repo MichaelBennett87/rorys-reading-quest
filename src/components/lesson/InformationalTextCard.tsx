@@ -8,6 +8,8 @@ import type {
   InformationalGraphFeature,
   InformationalIllustrationFeature,
   InformationalMapFeature,
+  InformationalSidebarFeature,
+  InformationalTimelineFeature,
 } from '../../domain/content'
 import { SupportedText } from './SupportedText'
 
@@ -139,6 +141,10 @@ function renderFeature(
       return renderGlossaryFeature(feature)
     case 'illustration':
       return renderIllustrationFeature(feature, caption)
+    case 'timeline':
+      return renderTimelineFeature(feature, caption)
+    case 'sidebar':
+      return renderSidebarFeature(feature)
     default:
       return null
   }
@@ -284,6 +290,32 @@ function renderIllustrationFeature(feature: InformationalIllustrationFeature, ca
       </ul>
       {caption && <figcaption>{caption.text}</figcaption>}
     </figure>
+  )
+}
+
+function renderTimelineFeature(feature: InformationalTimelineFeature, caption: InformationalCaptionFeature | undefined) {
+  return (
+    <figure key={feature.featureId} className="informational-figure informational-timeline" aria-labelledby={`${feature.featureId}-title`}>
+      <h4 id={`${feature.featureId}-title`}>{feature.title}</h4>
+      <ol>
+        {feature.items.map((item) => (
+          <li key={item.itemId}>
+            <strong>{item.label}</strong>
+            <span>{item.description}</span>
+          </li>
+        ))}
+      </ol>
+      {caption && <figcaption>{caption.text}</figcaption>}
+    </figure>
+  )
+}
+
+function renderSidebarFeature(feature: InformationalSidebarFeature) {
+  return (
+    <aside key={feature.featureId} className="informational-sidebar" aria-labelledby={`${feature.featureId}-title`}>
+      <h4 id={`${feature.featureId}-title`}>{feature.title}</h4>
+      <p>{feature.text}</p>
+    </aside>
   )
 }
 

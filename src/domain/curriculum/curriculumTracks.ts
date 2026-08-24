@@ -64,7 +64,7 @@ const curriculumTrackDefinitions: CurriculumTrackDefinition[] = [
     unitIds: ['g3-id-unit-1', 'g3-id-unit-2', 'g3-id-unit-3', 'g3-id-unit-4'],
     curriculumOrder: 140, worldChapterOrder: 2, initialDifficulty: 1, initialLastMasteredDifficulty: 0,
     completionDifficulty: 5, prerequisiteTrackIds: ['g2-information-detectives-reading'],
-    status: 'planned_until_content_exists', displayName: 'Grade 3 Information Detectives',
+    status: 'active', displayName: 'Grade 3 Information Detectives',
   },
   {
     trackId: 'g3-context-cavern-vocabulary', skillId: 'g3-context-cavern-vocabulary', worldId: 'context-cavern',
