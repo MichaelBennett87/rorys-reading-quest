@@ -116,6 +116,8 @@ export function planUnitQuest(input: PlanUnitQuestInput): UnitQuestPlan {
         unitId: input.selectedUnitId,
         reason: selectedTrack.trackId === 'g3-word-forge-foundations'
           ? 'Complete the Grade 2 Word Forge chapter to unlock Root Reactor.'
+          : selectedTrack.trackId === 'g3-story-scouts-prose'
+            ? 'Complete the Grade 2 Story Scouts chapter to unlock Character Arc Camp.'
           : 'Complete this world\'s Grade 2 chapter before starting the Grade 3 chapter.',
       }
     }

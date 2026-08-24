@@ -534,6 +534,9 @@ function BenchmarkCard({ summary }: { summary: DashboardBenchmarkSummary }) {
       {summary.benchmarkReference === 'ELA.3.F.1.3' && (
         <ParentDataNote title="Curriculum coverage implemented" message="Root Reactor, Suffix Shifter, and Multisyllable Mountain provide all authored ELA.3.F.1.3 branches at DRAFT review status. Curriculum availability is separate from learner mastery." />
       )}
+      {summary.benchmarkReference === 'ELA.3.R.1.1' && (
+        <ParentDataNote title="Curriculum coverage implemented" message="Character Arc Camp provides authored ELA.3.R.1.1 character-development practice at DRAFT review status. Curriculum availability is separate from learner mastery." />
+      )}
       <ParentMetricCard label="Attempts" value={summary.questionAttempts} />
       <ParentMetricCard label="Accuracy" value={formatPercent(summary.accuracy)} />
       <ParentMetricCard label="First-attempt accuracy" value={formatPercent(summary.firstAttemptAccuracy)} />
@@ -564,6 +567,9 @@ function SkillSummaryCard({
       <p className="parent-muted-copy">Category: {summary.reportingCategory}</p>
       {summary.benchmarkReferences.includes('ELA.3.F.1.3') && (
         <p className="parent-muted-copy">Curriculum coverage: Implemented / DRAFT. This describes authored content, not learner mastery.</p>
+      )}
+      {summary.benchmarkReferences.includes('ELA.3.R.1.1') && (
+        <p className="parent-muted-copy">Character development curriculum coverage: Implemented / DRAFT. This describes authored content, not learner mastery.</p>
       )}
       <p>Current trail: {formatTrailLabel(summary.currentDifficulty)}</p>
       <p>Last mastered trail: {formatTrailLabel(summary.lastMasteredDifficulty)}</p>
@@ -607,6 +613,9 @@ function SkillDetailView({
         <p>Grade band: {skill.gradeBand ?? 'Archived'}</p>
         {skill.benchmarkReferences.includes('ELA.3.F.1.3') && (
           <ParentDataNote title="Curriculum coverage implemented" message="All five ELA.3.F.1.3 instructional patterns have authored DRAFT content. Learner mastery remains a separate progress measure." />
+        )}
+        {skill.benchmarkReferences.includes('ELA.3.R.1.1') && (
+          <ParentDataNote title="Curriculum coverage implemented" message="ELA.3.R.1.1 has authored DRAFT Character Arc Camp content. Learner mastery remains a separate progress measure." />
         )}
         <p>Question attempts: {skill.questionAttempts}</p>
         <p>Overall accuracy: {formatPercent(skill.accuracy)}</p>

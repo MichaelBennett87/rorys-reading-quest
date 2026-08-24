@@ -23,6 +23,13 @@ const correctionSummaries = new Map([
   ['question-g3-fluency-flight-marsh-morning-4', 'Blind review gave every table option distinct visible wording while preserving the phrase-and-expression construct.'],
   ['question-g3-fluency-flight-formation-facts-3', 'Blind review labeled each proposed phrase boundary so the grouping choices remain visibly distinct.'],
   ['question-g3-fluency-flight-formation-facts-4', 'Blind review gave every table option distinct visible wording while preserving the informational-phrasing construct.'],
+  ['g3-ss-cac-q1-5', 'Registration review added a genuinely unused minor-detail distractor required by the hardened use-each-once table contract.'],
+  ['g3-ss-cac-q2-5', 'Registration review added a genuinely unused minor-detail distractor required by the hardened use-each-once table contract.'],
+  ['g3-ss-cac-q3-5', 'Registration review added a genuinely unused minor-detail distractor required by the hardened use-each-once table contract.'],
+  ['g3-ss-cac-q4-5', 'Registration review added a genuinely unused minor-detail distractor required by the hardened use-each-once table contract.'],
+  ['g3-ss-cac-q5-6', 'Registration review added a genuinely unused minor-detail distractor required by the hardened use-each-once table contract.'],
+  ['g3-ss-cac-q6-6', 'Registration review added a genuinely unused minor-detail distractor required by the hardened use-each-once table contract.'],
+  ['g3-ss-cac-q7-6', 'Registration review added a genuinely unused minor-detail distractor required by the hardened use-each-once table contract.'],
 ])
 const server = await createServer({
   appType: 'custom',
@@ -197,7 +204,7 @@ function buildAuditProgress(packs, records, metrics) {
   }).join('\n')
   return `# Active Question Truth Audit Progress
 
-Registry source: active production content registry through Phase 7A4.
+Registry source: active production content registry through Phase 7B1.
 
 - Active packs: ${metrics.activePacks}
 - Active questions: ${metrics.activeQuestions}

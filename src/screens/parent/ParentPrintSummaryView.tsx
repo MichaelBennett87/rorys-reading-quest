@@ -200,6 +200,9 @@ export function ParentPrintSummaryView({
                 {skill.benchmarkReferences.includes('ELA.3.F.1.3') && (
                   <p>Curriculum coverage: Implemented. Review status: DRAFT. This describes authored curriculum, not learner mastery.</p>
                 )}
+                {skill.benchmarkReferences.includes('ELA.3.R.1.1') && (
+                  <p>Character development curriculum coverage: Implemented. Review status: DRAFT. This describes authored curriculum, not learner mastery.</p>
+                )}
                 <p>Category: {skill.reportingCategory}</p>
                 <p>Current trail: {formatTrailLabel(skill.currentDifficulty)}</p>
                 <p>Last mastered trail: {formatTrailLabel(skill.lastMasteredDifficulty)}</p>

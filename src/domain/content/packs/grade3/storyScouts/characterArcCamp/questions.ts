@@ -84,7 +84,7 @@ function base(
     genre: 'literary',
     difficulty: story.difficulty,
     passageIdentifier: story.passageId,
-    activityIdentifier: `g3-ss-cac-activity-${lessonIndex + 1}`,
+    activityIdentifier: `g3-ss-cac-activity-${lessonIndex + 1}-question-${questionIndex}`,
     lessonIdentifier: CHARACTER_ARC_LESSON_IDS[lessonIndex],
     explanation,
     evidenceReference: evidenceReferenceIds[0] ?? story.beginningEvidenceId,
@@ -200,6 +200,7 @@ function tableMatch(story: CharacterArcStoryRecord, lessonIndex: number, questio
     choice(data.questionIdentifier, 'option-beginning', story.beginningChoice),
     choice(data.questionIdentifier, 'option-middle', story.turningChoice),
     choice(data.questionIdentifier, 'option-end', story.endingChoice),
+    choice(data.questionIdentifier, 'option-minor', story.unrelatedChoice),
   ]
   const rows = [
     { id: `${data.questionIdentifier}-row-beginning`, prompt: 'Beginning', correctChoiceId: options[0].id, options },

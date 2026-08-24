@@ -194,11 +194,12 @@ describe('semantic answer feedback states', () => {
     expect(selected.classList.contains('answer-state-incorrect')).toBe(false)
   })
 
-  test('keeps correct and incorrect semantics for every active Grade 3 Word Forge question type', () => {
+  test('keeps correct and incorrect semantics for every active Grade 3 question type', () => {
     const packs = [
       { packId: 'g3-word-forge-suffix-shifter', expectedTypes: ['EVIDENCE_PAIR', 'HOT_TEXT', 'MULTIPLE_CHOICE', 'MULTISELECT', 'TABLE_MATCH'] },
       { packId: 'g3-word-forge-multisyllable-mountain', expectedTypes: ['EVIDENCE_PAIR', 'HOT_TEXT', 'MULTIPLE_CHOICE', 'MULTISELECT', 'TABLE_MATCH'] },
       { packId: 'g3-word-forge-fluency-flight', expectedTypes: ['HOT_TEXT', 'MULTIPLE_CHOICE', 'MULTISELECT', 'TABLE_MATCH'] },
+      { packId: 'g3-story-scouts-character-arc-camp', expectedTypes: ['EVIDENCE_PAIR', 'HOT_TEXT', 'MULTIPLE_CHOICE', 'MULTISELECT', 'TABLE_MATCH'] },
     ]
     for (const { packId, expectedTypes } of packs) {
       const questions = lessonCatalog

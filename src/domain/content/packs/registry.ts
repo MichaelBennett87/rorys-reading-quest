@@ -24,6 +24,7 @@ import { grade3WordForgeRootReactorPack } from './grade3/wordForge/rootReactor'
 import { grade3WordForgeSuffixShifterPack } from './grade3/wordForge/suffixShifter'
 import { grade3WordForgeMultisyllableMountainPack } from './grade3/wordForge/multisyllableMountain'
 import { grade3WordForgeFluencyFlightPack } from './grade3/wordForge/fluencyFlight'
+import { characterArcCampPack } from './grade3/storyScouts/characterArcCamp'
 import { legacyDevelopmentPack } from './legacyDevelopmentPack'
 import type { ContentPack } from './contentPackTypes'
 import type { ContentSample } from '../types'
@@ -57,6 +58,7 @@ export const contentPacks: readonly ContentPack[] = [
   grade3WordForgeSuffixShifterPack,
   grade3WordForgeMultisyllableMountainPack,
   grade3WordForgeFluencyFlightPack,
+  characterArcCampPack,
   legacyDevelopmentPack,
 ]
 
