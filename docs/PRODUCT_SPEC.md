@@ -153,3 +153,9 @@ Central Idea Engine adds seven DRAFT Grade 3 informational lessons at difficulty
 Purpose Development Path adds authored DRAFT `ELA.3.R.2.3` practice for precise author purpose and how facts, examples, organization, and sections develop that purpose. Topic, central idea, generic intent, and claim remain explicit non-target boundaries. Claim and Evidence Court remains unstarted.
 
 The one-button journey now reconciles stale active-session and planned-quest state before every Start Journey or Continue Journey launch. The child never resolves a conflict manually: valid unfinished work resumes, completed or incompatible work is retired conservatively, and genuine content-needed remains fail-closed.
+
+## Phase 7C4: Claim and Evidence Court
+
+Claim and Evidence Court adds seven DRAFT Grade 3 informational argument lessons at difficulty 4 for `ELA.3.R.2.4`. Learners distinguish a supportable author claim from topic, neutral central idea, author purpose, fact, and unsupported preference; separate reasons from evidence; identify strong and weak support; and explain how visible evidence connects to a claim. The scope excludes sophisticated rhetoric, bias, source-credibility evaluation, counterargument, open writing, and Phase 7D content.
+
+Purpose Development Path flows into Claim and Evidence Court through the reconciled Start/Continue Journey transition. Existing stored content-needed is recomputed against the current registry, the Home map remains display-only with exactly Start Journey and Parent Area, and a valid unfinished lesson still resumes before new work.

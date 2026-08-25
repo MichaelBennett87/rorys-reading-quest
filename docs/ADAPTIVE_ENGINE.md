@@ -124,3 +124,9 @@ Central Idea Engine becomes available only when Grade 3 Information Detectives r
 ## Phase 7C3 planner and recovery contract
 
 The planner priority remains active unfinished session, verification, remediation, due review, ordinary progression, and content-needed. Before planning, completed or incompatible active sessions are removed without changing rewards, attempts, reviews, mastery evidence, assessments, or unrelated progress. Stored content-needed is always recomputed against current readiness and production content. At difficulty 3, Grade 3 Information Detectives selects only `g3-id-unit-3`; two distinct independent strong checkpoints advance to difficulty 4, where missing Phase 7C4 content returns structured content-needed.
+
+## Phase 7C4 Claim and Evidence Court progression
+
+Claim and Evidence Court becomes available at Grade 3 Information Detectives difficulty 4 after Purpose Development Path completion. A first distinct independent strong checkpoint returns `VERIFY_MASTERY`; a second distinct strong checkpoint returns `ADVANCE`, moves current difficulty to the unchanged completion difficulty 5, and marks the chapter complete/review-ready without initializing Phase 7D. Partial performance remains at difficulty 4. A first low result selects same-level guidance, while a second consecutive low result selects difficulty-3 Claim and Evidence Court remediation and preserves the difficulty-4 return target.
+
+All four Grade 3 Information Detectives review identities coexist with Grade 2 reviews. Unit affinity, content-version affinity, thresholds, intervals, rewards, assistance semantics, and deterministic planner priority are unchanged. The reconciled launcher retires stale Phase 7C3 content-needed and enters Unit 4 through Start Journey or Continue Journey; after track completion, genuine lack of Phase 7D content remains fail-closed.

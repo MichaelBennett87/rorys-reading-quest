@@ -498,3 +498,11 @@ Decision: preserve the simplified guided journey and all progression evidence ru
 Decision: treat the Continue Journey deadlock as a P0 and resolve it before curriculum authoring. Active recovery now checks exact completion identity, duplicate completion clears matching stale state without another reward, late checkpoints cannot resurrect completed sessions, stored content-needed is recomputed, and Start Journey plus Continue Journey share one latest-state launch transition. Keep the one-button UI and do not add child-facing conflict choices.
 
 Decision: implement `ELA.3.R.2.3` only through Purpose Development Path at `g3-id-unit-3`. Use seven precise purpose kinds and evidence across informational sections while keeping topic, central idea, and argumentative claim separate. Defer Claim and Evidence Court, vocabulary, across genres, Grade 4, and FAST timed practice.
+
+## Phase 7C4 decisions
+
+Decision: implement `ELA.3.R.2.4` only through Claim and Evidence Court at `g3-id-unit-4`. Teach an explicit supportable author claim, reasons, learner-visible evidence, and the claim-evidence connection while keeping topic, central idea, purpose, neutral facts, and unsupported preferences distinct. Reuse the existing informational renderer and five scored question types; do not add rhetoric, bias, source-credibility, counterargument, writing-scoring, vocabulary, across-genres, Grade 4, or FAST timed-practice scope.
+
+Decision: preserve the Phase 7C3 authoritative Start/Continue transition as a permanent runtime contract. Unit 4 registration releases stale content-needed through current-state replanning, completed sessions remain retired, unfinished sessions resume, rewards remain exact-once, Home retains exactly Start Journey and Parent Area, world cards remain display-only, and progression outcomes retain one child-facing action.
+
+Decision: Phase 7C is complete after all four Information Detectives units reach implemented DRAFT curriculum coverage. This status does not infer learner mastery or approval. Phase 7 remains in progress and Phase 7D1 Figurative Fortress remains unstarted.

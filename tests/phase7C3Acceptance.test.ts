@@ -13,8 +13,9 @@ describe('Phase 7C3 acceptance documentation and boundary', () => {
     expect(report).toContain('613d5fb fix: reconcile continue journey state')
     expect(hotfix).toContain('Five failed against the starting implementation')
     expect(tasks).toContain('- [x] Phase 7C3: Purpose Development Path')
-    expect(tasks).toContain('- [ ] Phase 7C4: Claim and Evidence Court')
-    expect(tasks).toContain('- [ ] Phase 7C')
+    expect(tasks).toContain('- [x] Phase 7C4: Claim and Evidence Court')
+    expect(tasks).toContain('- [x] Phase 7C')
+    expect(tasks).toContain('- [ ] Phase 7D')
     expect(tasks).toContain('- [ ] Phase 7')
   })
 

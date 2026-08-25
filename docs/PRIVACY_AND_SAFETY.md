@@ -115,3 +115,9 @@ Central Idea Engine passages, section text, central-idea statements, detail clas
 ## Phase 7C3 preservation
 
 Journey-state reconciliation changes no storage key or schema version and preserves Parent PIN behavior, assessments, XP, stars, attempts, reviews, mastery evidence, and legitimate unfinished sessions. Purpose Development Path does not persist passage text, purpose guides, purpose statements, question text, explanations, correct answers, or Word Help curriculum text. No backend, telemetry, analytics, microphone, speech recognition, or live AI was added.
+
+## Phase 7C4 privacy and accessibility boundary
+
+Claim and Evidence Court does not persist passage text, `AuthorClaimGuide` metadata, claim statements, reasons, evidence text, questions, explanations, correct answers, or Word Help curriculum text. Parent and print surfaces use friendly benchmark, unit, curriculum-status, and aggregate progress facts only. Schema version 1, all storage keys, hashed Parent PIN behavior, assessment records, bounded attempts, reviews, assistance summaries, exact-once rewards, and active-session recovery are unchanged.
+
+Semantic informational sections and headings, keyboard operation, visible focus, non-color-only feedback, accessible selected states, multiselect, hot text, table match, two-part questions, reduced motion, responsive layout, and text equivalents remain required. The phase adds no backend, cloud synchronization, analytics, telemetry, microphone, speech recognition, external speech provider, or live AI.

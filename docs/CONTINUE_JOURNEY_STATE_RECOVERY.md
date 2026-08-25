@@ -29,3 +29,7 @@ The deadlock was a state-authority failure across several boundaries rather than
 ## Preservation and proof
 
 The fix keeps persistence schema version 1 and preserves storage keys, attempts, XP, stars, reviews, mastery evidence, assessments, Parent PIN behavior, and unfinished-session recovery. The focused hotfix matrix contains 38 tests across the nine reproduction cases and 29 state invariants, including complete/continue/resume/late-checkpoint and new-content-registration sequences. Full lint, typecheck, test, build, and diff checks passed before commit `613d5fb fix: reconcile continue journey state`.
+
+## Phase 7C4 boundary regression
+
+Claim and Evidence Court registration exercises the same recovery path at the former difficulty-4 boundary. A version-1 save with completed Purpose Development Path work and stored content-needed is normalized against the current registry; Start Journey or Continue Journey launches Unit 4 directly without relaunching Unit 3, restoring a completed session, changing earned rewards, or showing a false coming-soon state. The original 38-test recovery/invariant matrix and the new persisted-boundary integration fixture pass unchanged.

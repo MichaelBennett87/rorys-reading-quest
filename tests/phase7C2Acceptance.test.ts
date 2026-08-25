@@ -11,8 +11,9 @@ describe('Phase 7C2 acceptance documentation and boundary', () => {
     expect(report).toContain('Phase 7C3 remains unstarted')
     expect(tasks).toContain('- [x] Phase 7C1: Structure Station')
     expect(tasks).toContain('- [x] Phase 7C2: Central Idea Engine')
-    expect(tasks).toContain('- [ ] Phase 7C3: Purpose Development Path')
-    expect(tasks).toContain('- [ ] Phase 7C')
+    expect(tasks).toContain('- [x] Phase 7C3: Purpose Development Path')
+    expect(tasks).toContain('- [x] Phase 7C')
+    expect(tasks).toContain('- [ ] Phase 7D')
     expect(tasks).toContain('- [ ] Phase 7')
   })
 

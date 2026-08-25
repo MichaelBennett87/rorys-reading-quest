@@ -11,7 +11,8 @@ describe('Phase 7B4 acceptance documentation and boundary', () => {
     expect(report).toContain('Phase 7C remains unstarted.')
     expect(tasks).toContain('- [x] Phase 7B4 - Poem Form Observatory')
     expect(tasks).toContain('- [x] Phase 7B')
-    expect(tasks).toContain('- [ ] Phase 7C')
+    expect(tasks).toContain('- [x] Phase 7C')
+    expect(tasks).toContain('- [ ] Phase 7D')
     expect(tasks).toContain('- [ ] Phase 7')
   })
 

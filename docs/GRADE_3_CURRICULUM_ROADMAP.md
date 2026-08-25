@@ -91,3 +91,7 @@ Central Idea Engine (`g3-id-unit-2`) becomes available after Structure Station c
 ## Phase 7C3 implementation snapshot
 
 Purpose Development Path (`g3-id-unit-3`) becomes available after Central Idea Engine completion. It covers precise author purpose, purpose development, supporting details, and text evidence across sections, making `ELA.3.R.2.3` IMPLEMENTED / DRAFT. Grade 3 now has eight implemented benchmarks, one supportive-practice benchmark, and seven planned benchmarks. Claim and Evidence Court remains unstarted; no learner mastery or approval is inferred.
+
+## Phase 7C4 completion snapshot
+
+Claim and Evidence Court (`g3-id-unit-4`) becomes available after Purpose Development Path completion. It covers explicit author claims, supporting reasons, multiple evidence kinds, and evidence-to-claim connections, making `ELA.3.R.2.4` IMPLEMENTED / DRAFT. Grade 3 now has nine implemented benchmarks, one supportive-practice benchmark, and six planned benchmarks. Phase 7C is complete; Phase 7D1 Figurative Fortress remains unstarted, and no learner mastery or approval is inferred.

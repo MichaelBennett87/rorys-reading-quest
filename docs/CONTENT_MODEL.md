@@ -119,3 +119,9 @@ Phase 7C2 extends optional `CentralIdeaGuide` records with authored relevant-det
 ## Phase 7C3 AuthorPurposeGuide
 
 Grade 3 informational packs may attach one optional AuthorPurposeGuide per passage. The guide records topic, a precise purpose kind and statement, strong or secondary supporting details with section ownership and evidence IDs, per-section contributions, weak or non-diagnostic details, and a synthesis statement. Validation requires a purpose more precise than generic `inform`, rejects topic, central-idea, and claim substitutions, resolves all evidence, and keeps review status/version aligned. Guide metadata is not persisted or printed.
+
+## Phase 7C4 AuthorClaimGuide
+
+Grade 3 informational argument packs may attach one optional `AuthorClaimGuide` per passage. A guide records an explicit position, recommendation, evaluation, priority, or proposed action; at least two section-owned reasons; typed fact, example, observation, measurement, result, or comparison evidence; evidence-to-reason ownership; claim-connection statements; and weak or irrelevant details. Validation rejects topic-only, neutral central-idea, purpose-only, fact-only, unsupported, and circular claims while requiring resolved learner-visible evidence and cross-section checkpoint support.
+
+Guide metadata, claims, reasons, evidence statements, questions, explanations, and correct answers remain authored application content and are not persisted or printed. The active registry contains 34 packs, 238 lessons, 245 texts, 1,368 questions, and 943 support targets.

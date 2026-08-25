@@ -46,3 +46,7 @@ This document remains the Phase 7A0 zero-content baseline. Phase 7A1 subsequentl
 ## Current follow-up after Phase 7B2
 
 The historical baseline above remains unchanged. The current registry now records `ELA.3.F.1.3`, `ELA.3.R.1.1`, and `ELA.3.R.1.2` as IMPLEMENTED / DRAFT, `ELA.3.F.1.4` as SUPPORTIVE_PRACTICE / DRAFT, twelve rows as planned, and no row as APPROVED. These statuses describe authored curriculum, not learner mastery.
+
+## Current follow-up after Phase 7C4
+
+The zero-content baseline remains historical. The current registry records nine IMPLEMENTED / DRAFT benchmarks (`ELA.3.F.1.3`, `ELA.3.R.1.1` through `ELA.3.R.1.4`, and `ELA.3.R.2.1` through `ELA.3.R.2.4`), one SUPPORTIVE_PRACTICE / DRAFT benchmark (`ELA.3.F.1.4`), six planned benchmarks, and no APPROVED row. Phase 7C is complete; Phase 7D remains unstarted. These statuses describe authored curriculum coverage only and do not infer learner mastery.

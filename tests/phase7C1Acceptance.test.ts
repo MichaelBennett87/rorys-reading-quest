@@ -11,7 +11,8 @@ describe('Phase 7C1 acceptance documentation and boundary', () => {
     expect(report).toContain('Final synchronized SHA: `6ce92f0200eb689435febc03d57d6be7e99dd2a6`')
     expect(tasks).toContain('- [x] Phase 7C1: Structure Station')
     expect(tasks).toContain('- [x] Phase 7C2: Central Idea Engine')
-    expect(tasks).toContain('- [ ] Phase 7C')
+    expect(tasks).toContain('- [x] Phase 7C')
+    expect(tasks).toContain('- [ ] Phase 7D')
     expect(tasks).toContain('- [ ] Phase 7')
   })
 
