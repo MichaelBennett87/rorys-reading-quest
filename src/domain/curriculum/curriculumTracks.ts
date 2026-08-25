@@ -78,7 +78,7 @@ const curriculumTrackDefinitions: CurriculumTrackDefinition[] = [
     entryUnitId: 'g3-cg-unit-1', unitIds: ['g3-cg-unit-1', 'g3-cg-unit-2', 'g3-cg-unit-3'],
     curriculumOrder: 160, worldChapterOrder: 2, initialDifficulty: 1, initialLastMasteredDifficulty: 0,
     completionDifficulty: 4, prerequisiteTrackIds: ['g2-across-genres-reading'],
-    status: 'planned_until_content_exists', displayName: 'Grade 3 Across-Genre Reading',
+    status: 'active', displayName: 'Grade 3 Across-Genre Reading',
   },
 ]
 

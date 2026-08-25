@@ -670,6 +670,56 @@ export interface WordplayGuide {
   contentVersion: string
 }
 
+export type Grade3FigurativeLanguageKind = 'metaphor' | 'personification' | 'hyperbole'
+
+export type FigurativeSourceFormat = 'literary-prose' | 'poem' | 'informational'
+
+export interface FigurativeLanguageTargetBase {
+  targetId: string
+  kind: Grade3FigurativeLanguageKind
+  sourceFormat: FigurativeSourceFormat
+  expressionText: string
+  sourceEvidenceIds: string[]
+  contextEvidenceIds: string[]
+  literalReading: string
+  figurativeMeaning: string
+  explanationStatement: string
+}
+
+export interface MetaphorTarget extends FigurativeLanguageTargetBase {
+  kind: 'metaphor'
+  comparisonSubject: string
+  comparisonObject: string
+  sharedQuality: string
+  directComparison: true
+}
+
+export interface PersonificationTarget extends FigurativeLanguageTargetBase {
+  kind: 'personification'
+  nonhumanSubject: string
+  humanActionOrQuality: string
+  intendedMeaning: string
+  humanQualityAssigned: true
+}
+
+export interface HyperboleTarget extends FigurativeLanguageTargetBase {
+  kind: 'hyperbole'
+  exaggeratedStatement: string
+  realisticMeaning: string
+  exaggerationPurpose: 'emphasis' | 'humor' | 'intensity'
+  deliberateExaggeration: true
+}
+
+export type FigurativeLanguageTarget = MetaphorTarget | PersonificationTarget | HyperboleTarget
+
+export interface FigurativeLanguageGuide {
+  passageId: string
+  targets: FigurativeLanguageTarget[]
+  literalVsNonliteralSummary: string
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
 export type RetellTextKind = 'literary' | 'informational'
 
 export interface RetellPiece {
@@ -819,6 +869,7 @@ export interface ContentPack {
   characterPerspectiveGuides?: CharacterPerspectiveGuide[]
   meaningClueGuides?: MeaningClueGuide[]
   wordplayGuides?: WordplayGuide[]
+  figurativeLanguageGuides?: FigurativeLanguageGuide[]
   retellGuides?: RetellGuide[]
   pairedTextSets?: PairedTextSet[]
   pairedTextComparisonGuides?: PairedTextComparisonGuide[]
@@ -930,6 +981,15 @@ export interface ContentPackAuditIssue {
      | 'missing_wordplay_guide'
      | 'wordplay_guide_count_mismatch'
      | 'wordplay_guide_invalid'
+     | 'missing_figurative_language_guide'
+     | 'figurative_language_guide_count_mismatch'
+     | 'figurative_language_guide_invalid'
+     | 'ambiguous_figurative_classification'
+     | 'metaphor_is_simile'
+     | 'personification_is_normal_behavior'
+     | 'hyperbole_is_literal_or_unclear'
+     | 'figurative_meaning_not_supported'
+     | 'informational_figurative_fact_conflict'
      | 'missing_retell_guide'
      | 'retell_guide_count_mismatch'
      | 'retell_guide_invalid'

@@ -150,7 +150,8 @@ describe('Grade 3 Root Reactor production pack', () => {
     expect(curriculumTracks.find((track) => track.trackId === 'g3-story-scouts-prose')?.status).toBe('active')
     expect(curriculumTracks.find((track) => track.trackId === 'g3-poetry-planet')?.status).toBe('active')
     expect(curriculumTracks.find((track) => track.trackId === 'g3-information-detectives-reading')?.status).toBe('active')
-    expect(curriculumTracks.filter((track) => track.gradeBand === 3 && !['g3-word-forge-foundations', 'g3-story-scouts-prose', 'g3-poetry-planet', 'g3-information-detectives-reading'].includes(track.trackId)).every((track) => track.status === 'planned_until_content_exists')).toBe(true)
+    expect(curriculumTracks.find((track) => track.trackId === 'g3-across-genres-reading')?.status).toBe('active')
+    expect(curriculumTracks.find((track) => track.trackId === 'g3-context-cavern-vocabulary')?.status).toBe('planned_until_content_exists')
     expect(auditSemanticQuestionPacks(getActiveContentPacks())).toMatchObject({
       reviewedPackCount: 34,
       reviewedLessonCount: 238,

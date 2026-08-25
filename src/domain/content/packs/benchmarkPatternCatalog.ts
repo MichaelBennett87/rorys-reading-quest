@@ -33,6 +33,7 @@ const BENCHMARK_PATTERN_CATALOG: Record<string, readonly string[]> = {
   'ELA.3.R.2.2': ['central-idea', 'relevant-details', 'details-support-central-idea', 'evidence-across-sections'],
   'ELA.3.R.2.3': ['author-purpose', 'purpose-development', 'supporting-details', 'text-evidence'],
   'ELA.3.R.2.4': ['author-claim', 'reasons', 'evidence', 'claim-evidence-connection'],
+  'ELA.3.R.3.1': ['metaphors', 'personification', 'hyperbole', 'figurative-meaning', 'literal-vs-nonliteral'],
 }
 
 const REVIEW_ORDER: Record<BenchmarkReviewStatus, number> = {
