@@ -31,6 +31,7 @@ import { poemFormObservatoryPack } from './grade3/poetryPlanet/poemFormObservato
 import { structureStationPack } from './grade3/informationDetectives/structureStation'
 import { centralIdeaEnginePack } from './grade3/informationDetectives/centralIdeaEngine'
 import { purposeDevelopmentPack } from './grade3/informationDetectives/purposeDevelopmentPath'
+import { claimEvidenceCourtPack } from './grade3/informationDetectives/claimEvidenceCourt'
 import { legacyDevelopmentPack } from './legacyDevelopmentPack'
 import type { ContentPack } from './contentPackTypes'
 import type { ContentSample } from '../types'
@@ -71,6 +72,7 @@ export const contentPacks: readonly ContentPack[] = [
   structureStationPack,
   centralIdeaEnginePack,
   purposeDevelopmentPack,
+  claimEvidenceCourtPack,
   legacyDevelopmentPack,
 ]
 

@@ -10,11 +10,11 @@ describe('Phase 7B4 integration and protected child journey', () => {
   test('registers only Grade 3 Poetry and derives final Phase 7B totals and coverage', () => {
     const packs = getActiveContentPacks()
     expect(packs.filter((pack) => pack.manifest.gradeBand === 2)).toHaveLength(22)
-    expect(packs.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(11)
+    expect(packs.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(12)
     expect(packs.filter((pack) => pack.manifest.packId === 'g3-poetry-planet-poem-form-observatory')).toHaveLength(1)
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 33, activeLessonCount: 231, activePassageCount: 238,
-      activeQuestionCount: 1327, activeSupportTargetCount: 915,
+      activePackCount: 34, activeLessonCount: 238, activePassageCount: 245,
+      activeQuestionCount: 1368, activeSupportTargetCount: 943,
     })
     const snapshot = buildGrade3CoverageSnapshot()
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.1.4')).toMatchObject({
@@ -22,9 +22,9 @@ describe('Phase 7B4 integration and protected child journey', () => {
       contributingPackIds: ['g3-poetry-planet-poem-form-observatory'],
       coveredPatterns: ['free-verse', 'rhymed-verse', 'haiku', 'limerick'],
     })
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(8)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(9)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(1)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(7)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(6)
   })
 
   test('keeps Home at exactly two controls with a display-only journey map', () => {

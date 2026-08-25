@@ -48,6 +48,7 @@ export * from './grade3/poetryPlanet/poemFormObservatory'
 export * from './grade3/informationDetectives/structureStation'
 export * from './grade3/informationDetectives/centralIdeaEngine'
 export * from './grade3/informationDetectives/purposeDevelopmentPath'
+export * from './grade3/informationDetectives/claimEvidenceCourt'
 export * from './registry'
 
 export const fluencyPracticeAudit = buildFluencyPracticeAudit(contentPacks)

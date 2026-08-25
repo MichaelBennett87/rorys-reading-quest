@@ -34,6 +34,20 @@ const correctionSummaries = new Map([
   ['g3-pp-pfo-q1-4', 'Blind review replaced a subjective free-verse line-break choice with the poem\'s unique one-word line so the hot-text response is objective.'],
   ['g3-pp-pfo-q4-4', 'Blind review bound the limerick hot-text item to the final A-rhyme after the B pair so only one line is defensible.'],
   ['g3-pp-pfo-q5-3', 'Blind review added an explicit haiku transfer item so the three checkpoints collectively assess all four required poem forms.'],
+  ['g3-id-ce-q1-3', 'Semantic review named both keyed multiselect evidence details explicitly in the learner explanation.'],
+  ['g3-id-ce-q2-3', 'Semantic review named both keyed multiselect evidence details explicitly in the learner explanation.'],
+  ['g3-id-ce-q3-3', 'Semantic review named both keyed multiselect evidence details explicitly in the learner explanation.'],
+  ['g3-id-ce-q4-3', 'Semantic review named both keyed multiselect evidence details explicitly in the learner explanation.'],
+  ['g3-id-ce-q5-4', 'Semantic review named both keyed multiselect evidence details explicitly in the learner explanation.'],
+  ['g3-id-ce-q6-4', 'Semantic review named both keyed multiselect evidence details explicitly in the learner explanation.'],
+  ['g3-id-ce-q7-4', 'Semantic review named both keyed multiselect evidence details explicitly in the learner explanation.'],
+  ['g3-id-ce-q1-5', 'Catalog review added a plausible unused option required by the hardened use-each-once table evaluator.'],
+  ['g3-id-ce-q2-5', 'Catalog review added a plausible unused option required by the hardened use-each-once table evaluator.'],
+  ['g3-id-ce-q3-5', 'Catalog review added a plausible unused option required by the hardened use-each-once table evaluator.'],
+  ['g3-id-ce-q4-5', 'Catalog review added a plausible unused option required by the hardened use-each-once table evaluator.'],
+  ['g3-id-ce-q5-6', 'Catalog review added a plausible unused option required by the hardened use-each-once table evaluator.'],
+  ['g3-id-ce-q6-6', 'Catalog review added a plausible unused option required by the hardened use-each-once table evaluator.'],
+  ['g3-id-ce-q7-6', 'Catalog review added a plausible unused option required by the hardened use-each-once table evaluator.'],
 ])
 const server = await createServer({
   appType: 'custom',
@@ -208,7 +222,7 @@ function buildAuditProgress(packs, records, metrics) {
   }).join('\n')
   return `# Active Question Truth Audit Progress
 
-Registry source: active production content registry through Phase 7C3.
+Registry source: active production content registry through Phase 7C4.
 
 - Active packs: ${metrics.activePacks}
 - Active questions: ${metrics.activeQuestions}

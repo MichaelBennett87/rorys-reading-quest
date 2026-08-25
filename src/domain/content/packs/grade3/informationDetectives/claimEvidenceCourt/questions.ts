@@ -129,6 +129,7 @@ function classificationTable(record: ClaimEvidenceRecord, lessonIndex: number, q
   const options = [
     choice(data.questionIdentifier, 'claim', 'Claim'), choice(data.questionIdentifier, 'reason', 'Reason'),
     choice(data.questionIdentifier, 'evidence', 'Evidence'), choice(data.questionIdentifier, 'weak', 'Weak or irrelevant detail'),
+    choice(data.questionIdentifier, 'unused', 'Unsupported opinion'),
   ]
   const rows = [
     { id: `${data.questionIdentifier}-row-claim`, prompt: record.claim, correctChoiceId: options[0].id, options },

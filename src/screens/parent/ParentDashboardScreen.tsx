@@ -555,6 +555,9 @@ function BenchmarkCard({ summary }: { summary: DashboardBenchmarkSummary }) {
       {summary.benchmarkReference === 'ELA.3.R.2.3' && (
         <ParentDataNote title="Curriculum coverage implemented" message="Purpose Development Path provides authored ELA.3.R.2.3 precise author-purpose and purpose-development practice at DRAFT review status. Curriculum availability is separate from learner mastery and does not claim claim-and-evidence mastery." />
       )}
+      {summary.benchmarkReference === 'ELA.3.R.2.4' && (
+        <ParentDataNote title="Curriculum coverage implemented" message="Claim and Evidence Court provides authored ELA.3.R.2.4 claim, reason, evidence, and claim-evidence connection practice at DRAFT review status. Curriculum availability is separate from learner mastery and does not claim sophisticated argument analysis." />
+      )}
       <ParentMetricCard label="Attempts" value={summary.questionAttempts} />
       <ParentMetricCard label="Accuracy" value={formatPercent(summary.accuracy)} />
       <ParentMetricCard label="First-attempt accuracy" value={formatPercent(summary.firstAttemptAccuracy)} />
@@ -606,6 +609,9 @@ function SkillSummaryCard({
       )}
       {summary.benchmarkReferences.includes('ELA.3.R.2.3') && (
         <p className="parent-muted-copy">Author-purpose curriculum coverage: Implemented / DRAFT. This describes authored content, not learner mastery or claim-and-evidence performance.</p>
+      )}
+      {summary.benchmarkReferences.includes('ELA.3.R.2.4') && (
+        <p className="parent-muted-copy">Claim-and-evidence curriculum coverage: Implemented / DRAFT. This describes authored content, not learner mastery or sophisticated argument analysis.</p>
       )}
       <p>Current trail: {formatTrailLabel(summary.currentDifficulty)}</p>
       <p>Last mastered trail: {formatTrailLabel(summary.lastMasteredDifficulty)}</p>
@@ -670,6 +676,9 @@ function SkillDetailView({
         )}
         {skill.benchmarkReferences.includes('ELA.3.R.2.3') && (
           <ParentDataNote title="Curriculum coverage implemented" message="ELA.3.R.2.3 has authored DRAFT Purpose Development Path content. Learner mastery remains separate, and the app does not claim claim-and-evidence mastery." />
+        )}
+        {skill.benchmarkReferences.includes('ELA.3.R.2.4') && (
+          <ParentDataNote title="Curriculum coverage implemented" message="ELA.3.R.2.4 has authored DRAFT Claim and Evidence Court content. Learner mastery remains separate, and the app does not claim sophisticated argument-analysis mastery." />
         )}
         <p>Question attempts: {skill.questionAttempts}</p>
         <p>Overall accuracy: {formatPercent(skill.accuracy)}</p>
