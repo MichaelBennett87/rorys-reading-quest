@@ -217,6 +217,61 @@ export interface AuthorPurposeGuide {
   contentVersion: string
 }
 
+export type AuthorClaimKind =
+  | 'recommendation'
+  | 'best-choice'
+  | 'evaluation'
+  | 'priority'
+  | 'proposed-action'
+
+export type ClaimEvidenceKind =
+  | 'fact'
+  | 'example'
+  | 'observation'
+  | 'measurement'
+  | 'result'
+  | 'comparison'
+
+export interface AuthorClaimReason {
+  reasonId: string
+  reasonStatement: string
+  sectionId: string
+  evidenceIds: string[]
+  connectionStatement: string
+}
+
+export interface AuthorClaimEvidence {
+  evidenceId: string
+  evidenceKind: ClaimEvidenceKind
+  sectionId: string
+  sourceEvidenceIds: string[]
+  supportsReasonIds: string[]
+  evidenceStatement: string
+  claimConnectionStatement: string
+  strength: 'strong' | 'secondary'
+}
+
+export interface WeakOrIrrelevantClaimDetail {
+  detailId: string
+  sectionId: string
+  evidenceIds: string[]
+  explanation: string
+}
+
+export interface AuthorClaimGuide {
+  passageId: string
+  topic: string
+  claimKind: AuthorClaimKind
+  claimStatement: string
+  claimEvidenceIds: string[]
+  reasons: AuthorClaimReason[]
+  evidence: AuthorClaimEvidence[]
+  weakOrIrrelevantDetails: WeakOrIrrelevantClaimDetail[]
+  synthesisStatement: string
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
 export interface AuthorOpinionRecord {
   opinionId: string
   opinionStatement: string
@@ -752,6 +807,7 @@ export interface ContentPack {
   informationalStructureGuides?: InformationalStructureGuide[]
   centralIdeaGuides?: CentralIdeaGuide[]
   authorPurposeGuides?: AuthorPurposeGuide[]
+  authorClaimGuides?: AuthorClaimGuide[]
   authorOpinionGuides?: AuthorOpinionGuide[]
   academicVocabularyGuides?: AcademicVocabularyGuide[]
   morphologyGuides?: MorphologyGuide[]
@@ -826,6 +882,18 @@ export interface ContentPackAuditIssue {
    | 'missing_author_purpose_guide'
    | 'author_purpose_guide_count_mismatch'
    | 'author_purpose_guide_invalid'
+   | 'missing_author_claim_guide'
+   | 'author_claim_guide_count_mismatch'
+   | 'author_claim_guide_invalid'
+   | 'claim_is_topic_only'
+   | 'claim_is_central_idea_only'
+   | 'claim_is_purpose_only'
+   | 'claim_is_fact_only'
+   | 'unsupported_author_claim'
+   | 'reason_without_evidence'
+   | 'evidence_without_reason'
+   | 'circular_claim_evidence'
+   | 'weak_claim_evidence_connection'
    | 'missing_author_opinion_guide'
    | 'author_opinion_guide_count_mismatch'
    | 'author_opinion_guide_invalid'
