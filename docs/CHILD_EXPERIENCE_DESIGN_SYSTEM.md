@@ -104,3 +104,6 @@ Home still exposes exactly Start Journey and Parent Area, world cards remain dis
 ## Phase 7D1 one-button confirmation
 
 Figurative Fortress adds a display-only Grade 3 Across Genres landmark using the established Compare Castle identity. Home still exposes exactly `Start Journey` and `Parent Area`; no world, unit, lesson, or Compare Castle launch control exists. Start Journey and Continue Journey use the same reconciled current-state transition, and the progression outcome exposes one navigation action. The map may label Figurative Fortress as Trail 1 and later trails as preparing, but it never becomes a child-facing planner.
+## Phase 7D2 one-button confirmation
+
+Summary Stronghold appears as Compare Castle Trail 2 after Figurative Fortress readiness. Home still exposes exactly `Start Journey` and `Parent Area`; world cards remain display-only, and no world, unit, lesson, or Summary Stronghold launch control exists. Start Journey and Continue Journey retain one authoritative reconciled transition. Progression outcomes retain one navigation action, and Author Lens Tower remains visually preparing without becoming selectable.

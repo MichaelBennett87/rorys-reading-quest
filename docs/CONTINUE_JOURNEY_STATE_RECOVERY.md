@@ -36,3 +36,6 @@ Claim and Evidence Court registration exercises the same recovery path at the fo
 ## Phase 7D1 boundary regression
 
 The Phase 7C-to-7D boundary is covered by a production-registry fixture. A schema-v1 save with completed Grade 3 Information Detectives and stale `CONTENT_NEEDED` is normalized against newly registered Figurative Fortress content. The stale plan is retired, only `g3-across-genres-reading` initializes, and the shared Start/Continue launcher opens Unit 1 without relaunching Information Detectives or replacing attempts, XP, stars, or reviews. A valid unfinished Figurative Fortress session resumes first; completed or incompatible sessions remain non-resumable. The one-button recovery contract is unchanged.
+## Phase 7D2 boundary regression
+
+The Figurative Fortress-to-Summary Stronghold boundary uses the same authoritative launcher. A schema-v1 save at Grade 3 Across-Genre difficulty 2 with stored `CONTENT_NEEDED` is replanned against the current registry, and Start Journey or Continue Journey opens Unit 2. Repeated launch preparation resumes the same session identity instead of creating a second session. Existing XP and stars remain unchanged, completed Unit 1 state cannot block Unit 2, and genuine content-needed remains fail-closed at unregistered Unit 3.

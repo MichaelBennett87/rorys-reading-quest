@@ -513,3 +513,6 @@ Decision: Phase 7C is complete after all four Information Detectives units reach
 - Decision: activate only `g3-across-genres-reading` Unit 1 behind completed Grade 2 Across-Genre Reading; leave Grade 3 Context Cavern and later Compare Castle units planned.
 - Decision: preserve the shared reconciled Start/Continue launch transition, display-only world cards, exactly two Home controls, schema version 1, existing storage keys, rewards, review intervals, and local-only runtime.
 - Consequence: `ELA.3.R.3.1` is IMPLEMENTED / DRAFT with no approval, learner-mastery, or FAST claim; Phase 7D remains incomplete.
+## Phase 7D2: summary is selection and compression, not retell relabeling
+
+Decision: reuse safe Grade 2 Retell Hall infrastructure but model Grade 3 summary metadata explicitly. Summary Stronghold must assess importance, omission, compression, source-meaning preservation, literary plot/theme, and informational central idea/relevant details. It does not rename retell metadata, score unrestricted writing, or begin Author Lens Tower. Unit 2 remains behind Figurative Fortress completion and uses the reconciled one-button planner.

@@ -105,7 +105,7 @@
     - [x] Phase 7C4: Claim and Evidence Court
   - [ ] Phase 7D: Grade 3 across genres and vocabulary
     - [x] Phase 7D1: Figurative Fortress
-    - [ ] Phase 7D2: Summary Stronghold
+    - [x] Phase 7D2: Summary Stronghold
     - [ ] Phase 7D3: Author Lens Tower
     - [ ] Phase 7D4: Academic Word Workshop Grade 3
     - [ ] Phase 7D5: Root Meaning Vault
@@ -132,6 +132,7 @@
 - [x] Phase 7C4: Claim and Evidence Court
 - [ ] Phase 7D
 - [x] Phase 7D1: Figurative Fortress
+- [x] Phase 7D2: Summary Stronghold
 - [ ] Phase 7
 
-Phase 7A, Phase 7B, and Phase 7C are complete. Phase 7C1 through Phase 7C4 and Phase 7D1 are complete. Phase 7D remains incomplete, Phase 7D2 remains incomplete and unstarted, and Phase 7 remains incomplete.
+Phase 7A, Phase 7B, and Phase 7C are complete. Phase 7C1 through Phase 7C4 and Phase 7D1 through Phase 7D2 are complete. Phase 7D remains incomplete, Phase 7D3 remains incomplete and unstarted, and Phase 7 remains incomplete.

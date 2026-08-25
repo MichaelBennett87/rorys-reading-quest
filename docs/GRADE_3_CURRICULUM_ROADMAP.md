@@ -98,3 +98,12 @@ Claim and Evidence Court (`g3-id-unit-4`) becomes available after Purpose Develo
 ## Phase 7D1 implementation snapshot
 
 Figurative Fortress (`g3-cg-unit-1`) activates Grade 3 Across-Genre Reading after the Grade 2 track reaches completion difficulty 4. It covers metaphors, personification, hyperbole, figurative meaning, and literal-versus-nonliteral meaning across original prose, poetry, and informational text, making `ELA.3.R.3.1` IMPLEMENTED / DRAFT. Grade 3 now has ten implemented benchmarks, one supportive-practice benchmark, and five planned benchmarks. Summary Stronghold, Author Lens Tower, and Grade 3 Context Cavern remain unstarted; no learner mastery or approval is inferred.
+## Phase 7D2 completion update
+
+- `g3-cg-unit-1` Figurative Fortress: complete/review-ready, `ELA.3.R.3.1` IMPLEMENTED / DRAFT.
+- `g3-cg-unit-2` Summary Stronghold: active and complete for curriculum delivery, `ELA.3.R.3.2` IMPLEMENTED / DRAFT.
+- `g3-cg-unit-3` Author Lens Tower: planned and unstarted; no production lesson is registered.
+- Grade 3 Context Cavern: planned with no active production content.
+- Phase 7D remains incomplete; Phase 7D3 is next.
+
+The Grade 3 snapshot is 11 implemented, 1 supportive practice, 4 planned, 0 partial, 0 missing, and 0 approved. Curriculum coverage does not infer learner mastery.

@@ -53,3 +53,6 @@ The zero-content baseline remains historical. The current registry records nine 
 ## Phase 7D1 current snapshot
 
 `ELA.3.R.3.1` is now IMPLEMENTED / DRAFT through `g3-compare-castle-figurative-fortress`. The Grade 3 inventory remains sixteen rows: ten implemented, one supportive practice, and five planned; zero rows are APPROVED. `ELA.3.R.3.2`, `ELA.3.R.3.3`, `ELA.3.V.1.1`, `ELA.3.V.1.2`, and `ELA.3.V.1.3` remain planned. Curriculum availability does not infer learner mastery.
+## Phase 7D2 coverage update
+
+`ELA.3.R.3.2` now has authored benchmark coverage from Summary Stronghold for literary summary, plot, theme, informational summary, central idea, relevant details, and important-versus-minor selection. Its curriculum status is IMPLEMENTED / DRAFT and APPROVED remains false. The 16-row Grade 3 inventory is unchanged: 11 implemented, 1 supportive practice, 4 planned, 0 partial, 0 missing, and 0 approved.

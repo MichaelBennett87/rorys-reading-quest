@@ -36,3 +36,6 @@ Phase 7A0 adds no multimedia and no timed FAST session. Phase 9 owns mixed FAST-
 ## Phase 7D1 boundary update
 
 Figurative Fortress supplies authored DRAFT curriculum coverage for `ELA.3.R.3.1` only. Its selected-response questions assess metaphor, personification, hyperbole, figurative meaning, and literal-versus-nonliteral meaning from learner-visible context. This is curriculum coverage, not an official FAST form, timed practice, scale score, prediction, proficiency classification, or learner diagnosis.
+## Phase 7D2 alignment update
+
+Summary Stronghold contributes bounded authored practice for `ELA.3.R.3.2` across literary and informational sources. It does not produce a FAST score, timed result, global Grade 3 diagnosis, or unrestricted written-summary evaluation. Curriculum availability and learner mastery remain separate.
