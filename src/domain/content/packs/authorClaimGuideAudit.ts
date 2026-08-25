@@ -67,7 +67,9 @@ function validateGuide(
 
   for (const reason of guide.reasons) {
     if (!reason.reasonStatement.trim() || !reason.connectionStatement.trim()) add(issues, 'weak_claim_evidence_connection', reason.reasonId, 'Reasons require a statement and an explanation connecting them to the claim.')
-    validateOwnedEvidence(passage, sectionById, reason.sectionId, reason.evidenceIds, reason.reasonId, issues)
+    if (!sectionById.has(reason.sectionId) || reason.evidenceIds.length === 0 || reason.evidenceIds.some((id) => !resolvePassageEvidence(passage, id))) {
+      invalid(issues, reason.reasonId, 'Reason evidence must resolve in the passage, and the reason must own a valid section.')
+    }
     if (reason.evidenceIds.length === 0 || !guide.evidence.some((entry) => entry.supportsReasonIds.includes(reason.reasonId))) add(issues, 'reason_without_evidence', reason.reasonId, 'Every reason requires declared supporting evidence.')
     if (normalize(reason.reasonStatement) === normalize(claim)) add(issues, 'circular_claim_evidence', reason.reasonId, 'A reason cannot merely repeat the claim.')
   }
