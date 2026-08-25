@@ -720,6 +720,55 @@ export interface FigurativeLanguageGuide {
   contentVersion: string
 }
 
+export type Grade3SummaryTextKind = 'literary' | 'informational'
+
+export interface SummaryImportantDetail {
+  detailId: string
+  statement: string
+  evidenceIds: string[]
+  importanceReason: string
+}
+
+export interface SummaryMinorDetail {
+  detailId: string
+  statement: string
+  evidenceIds: string[]
+  omissionReason: string
+}
+
+export interface LiterarySummaryGuide {
+  passageId: string
+  textKind: 'literary'
+  mainCharacterNames: string[]
+  settingStatement?: string
+  problemOrGoalStatement: string
+  importantPlotEvents: SummaryImportantDetail[]
+  resolutionStatement: string
+  supportedThemeStatement: string
+  themeEvidenceIds: string[]
+  minorDetails: SummaryMinorDetail[]
+  modelSummary: string
+  summaryRationale: string
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
+export interface InformationalSummaryGuide {
+  passageId: string
+  textKind: 'informational'
+  topicLabel: string
+  centralIdeaStatement: string
+  importantDetails: SummaryImportantDetail[]
+  minorDetails: SummaryMinorDetail[]
+  essentialRelationship: 'description' | 'chronology' | 'cause-effect' | 'comparison' | 'mixed'
+  modelSummary: string
+  summaryRationale: string
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
+export type Grade3SummaryGuide = LiterarySummaryGuide | InformationalSummaryGuide
+
 export type RetellTextKind = 'literary' | 'informational'
 
 export interface RetellPiece {
@@ -870,6 +919,7 @@ export interface ContentPack {
   meaningClueGuides?: MeaningClueGuide[]
   wordplayGuides?: WordplayGuide[]
   figurativeLanguageGuides?: FigurativeLanguageGuide[]
+  summaryGuides?: Grade3SummaryGuide[]
   retellGuides?: RetellGuide[]
   pairedTextSets?: PairedTextSet[]
   pairedTextComparisonGuides?: PairedTextComparisonGuide[]
@@ -990,6 +1040,17 @@ export interface ContentPackAuditIssue {
      | 'hyperbole_is_literal_or_unclear'
      | 'figurative_meaning_not_supported'
      | 'informational_figurative_fact_conflict'
+     | 'missing_grade3_summary_guide'
+     | 'summary_guide_count_mismatch'
+     | 'summary_guide_invalid'
+     | 'summary_missing_essential_detail'
+     | 'summary_contains_minor_detail'
+     | 'summary_distorts_source'
+     | 'summary_adds_outside_information'
+     | 'literary_summary_missing_plot'
+     | 'literary_summary_theme_unsupported'
+     | 'informational_summary_central_idea_invalid'
+     | 'summary_important_minor_overlap'
      | 'missing_retell_guide'
      | 'retell_guide_count_mismatch'
      | 'retell_guide_invalid'

@@ -13,6 +13,7 @@ import { buildCentralIdeaEngineGuideAudit } from './centralIdeaEngineGuideAudit'
 import { buildPurposeDevelopmentGuideAudit } from './purposeDevelopmentGuideAudit'
 import { buildAuthorClaimGuideAudit } from './authorClaimGuideAudit'
 import { buildFigurativeLanguageGuideAudit } from './figurativeLanguageGuideAudit'
+import { buildGrade3SummaryGuideAudit } from './grade3SummaryGuideAudit'
 
 export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPackAuditIssue[] {
   const issues: ContentPackAuditIssue[] = []
@@ -220,6 +221,7 @@ export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPac
     issues.push(...buildPurposeDevelopmentGuideAudit(pack))
     issues.push(...buildAuthorClaimGuideAudit(pack))
     issues.push(...buildFigurativeLanguageGuideAudit(pack))
+    issues.push(...buildGrade3SummaryGuideAudit(pack))
   }
 
   const hasBenchmarkProgressionPack = packs.some((pack) => pack.manifest.coverageKind !== 'supportive_practice')
