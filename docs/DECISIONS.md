@@ -506,3 +506,10 @@ Decision: implement `ELA.3.R.2.4` only through Claim and Evidence Court at `g3-i
 Decision: preserve the Phase 7C3 authoritative Start/Continue transition as a permanent runtime contract. Unit 4 registration releases stale content-needed through current-state replanning, completed sessions remain retired, unfinished sessions resume, rewards remain exact-once, Home retains exactly Start Journey and Parent Area, world cards remain display-only, and progression outcomes retain one child-facing action.
 
 Decision: Phase 7C is complete after all four Information Detectives units reach implemented DRAFT curriculum coverage. This status does not infer learner mastery or approval. Phase 7 remains in progress and Phase 7D1 Figurative Fortress remains unstarted.
+## 2026-08-25 - Use an explicit Grade 3 figurative-language guide and keep Compare Castle planner-driven
+
+- Decision: add an optional discriminated `figurativeLanguageGuides` model rather than broadening the Grade 2 Wordplay Watchtower guide union.
+- Reason: Grade 3 requires metaphor, personification, hyperbole, and literal-versus-nonliteral meaning proof without destabilizing Grade 2 simile, idiom, and alliteration content.
+- Decision: activate only `g3-across-genres-reading` Unit 1 behind completed Grade 2 Across-Genre Reading; leave Grade 3 Context Cavern and later Compare Castle units planned.
+- Decision: preserve the shared reconciled Start/Continue launch transition, display-only world cards, exactly two Home controls, schema version 1, existing storage keys, rewards, review intervals, and local-only runtime.
+- Consequence: `ELA.3.R.3.1` is IMPLEMENTED / DRAFT with no approval, learner-mastery, or FAST claim; Phase 7D remains incomplete.

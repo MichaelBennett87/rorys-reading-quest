@@ -33,3 +33,6 @@ The fix keeps persistence schema version 1 and preserves storage keys, attempts,
 ## Phase 7C4 boundary regression
 
 Claim and Evidence Court registration exercises the same recovery path at the former difficulty-4 boundary. A version-1 save with completed Purpose Development Path work and stored content-needed is normalized against the current registry; Start Journey or Continue Journey launches Unit 4 directly without relaunching Unit 3, restoring a completed session, changing earned rewards, or showing a false coming-soon state. The original 38-test recovery/invariant matrix and the new persisted-boundary integration fixture pass unchanged.
+## Phase 7D1 boundary regression
+
+The Phase 7C-to-7D boundary is covered by a production-registry fixture. A schema-v1 save with completed Grade 3 Information Detectives and stale `CONTENT_NEEDED` is normalized against newly registered Figurative Fortress content. The stale plan is retired, only `g3-across-genres-reading` initializes, and the shared Start/Continue launcher opens Unit 1 without relaunching Information Detectives or replacing attempts, XP, stars, or reviews. A valid unfinished Figurative Fortress session resumes first; completed or incompatible sessions remain non-resumable. The one-button recovery contract is unchanged.

@@ -101,3 +101,6 @@ The optional Dark/Light preference was not added. Dark remains deterministic and
 ## Phase 7C3 protected journey recovery
 
 Home still exposes exactly Start Journey and Parent Area, world cards remain display-only, and progression outcomes expose one child-facing action. Start Journey and Continue Journey now share an authoritative current-state transition: unfinished work resumes, completed or incompatible stale state is reconciled automatically, and a coming-soon message appears only for genuine current content-needed. No conflict menu, world selector, unit selector, or lesson selector is introduced.
+## Phase 7D1 one-button confirmation
+
+Figurative Fortress adds a display-only Grade 3 Across Genres landmark using the established Compare Castle identity. Home still exposes exactly `Start Journey` and `Parent Area`; no world, unit, lesson, or Compare Castle launch control exists. Start Journey and Continue Journey use the same reconciled current-state transition, and the progression outcome exposes one navigation action. The map may label Figurative Fortress as Trail 1 and later trails as preparing, but it never becomes a child-facing planner.

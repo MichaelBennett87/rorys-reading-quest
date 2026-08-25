@@ -16,7 +16,7 @@ describe('Phase 7C4 acceptance documentation and boundary', () => {
     expect(hotfix).toContain('Phase 7C4 boundary regression')
     expect(tasks).toContain('- [x] Phase 7C4: Claim and Evidence Court')
     expect(tasks).toContain('- [x] Phase 7C')
-    expect(tasks).toContain('- [ ] Phase 7D1: Figurative Fortress')
+    expect(tasks).toContain('- [x] Phase 7D1: Figurative Fortress')
     expect(tasks).toContain('- [ ] Phase 7')
   })
 

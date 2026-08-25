@@ -33,3 +33,6 @@ Exactly thirteen benchmark references are represented.
 | Multimedia | deferred |
 
 Phase 7A0 adds no multimedia and no timed FAST session. Phase 9 owns mixed FAST-style practice and timing. The blueprint remains immutable informational metadata and cannot unlock, select, score, or report a child quest.
+## Phase 7D1 boundary update
+
+Figurative Fortress supplies authored DRAFT curriculum coverage for `ELA.3.R.3.1` only. Its selected-response questions assess metaphor, personification, hyperbole, figurative meaning, and literal-versus-nonliteral meaning from learner-visible context. This is curriculum coverage, not an official FAST form, timed practice, scale score, prediction, proficiency classification, or learner diagnosis.

@@ -50,3 +50,6 @@ The historical baseline above remains unchanged. The current registry now record
 ## Current follow-up after Phase 7C4
 
 The zero-content baseline remains historical. The current registry records nine IMPLEMENTED / DRAFT benchmarks (`ELA.3.F.1.3`, `ELA.3.R.1.1` through `ELA.3.R.1.4`, and `ELA.3.R.2.1` through `ELA.3.R.2.4`), one SUPPORTIVE_PRACTICE / DRAFT benchmark (`ELA.3.F.1.4`), six planned benchmarks, and no APPROVED row. Phase 7C is complete; Phase 7D remains unstarted. These statuses describe authored curriculum coverage only and do not infer learner mastery.
+## Phase 7D1 current snapshot
+
+`ELA.3.R.3.1` is now IMPLEMENTED / DRAFT through `g3-compare-castle-figurative-fortress`. The Grade 3 inventory remains sixteen rows: ten implemented, one supportive practice, and five planned; zero rows are APPROVED. `ELA.3.R.3.2`, `ELA.3.R.3.3`, `ELA.3.V.1.1`, `ELA.3.V.1.2`, and `ELA.3.V.1.3` remain planned. Curriculum availability does not infer learner mastery.
