@@ -83,13 +83,14 @@ describe('grade 2 information detectives text feature hunt pack', () => {
       'g3-information-detectives-purpose-development-path',
       'g3-information-detectives-claim-evidence-court',
       'g3-compare-castle-figurative-fortress',
+      'g3-compare-castle-summary-stronghold',
     ])
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 35,
-      activeLessonCount: 245,
-      activePassageCount: 252,
-      activeQuestionCount: 1409,
-      activeSupportTargetCount: 971,
+      activePackCount: 36,
+      activeLessonCount: 252,
+      activePassageCount: 259,
+      activeQuestionCount: 1450,
+      activeSupportTargetCount: 999,
     })
     expect(contentPackAudit).toHaveLength(0)
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.2.1')).toEqual(expect.objectContaining({

@@ -44,13 +44,13 @@ describe('Grade 3 Root Reactor production pack', () => {
     expect(grade2.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(161)
     expect(grade2.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(889)
     expect(grade2.reduce((sum, pack) => sum + pack.passages.flatMap((passage) => passage.wordSupportTargets ?? []).length, 0)).toBe(614)
-    expect(grade3.map((pack) => pack.manifest.packId)).toEqual([PACK_ID, 'g3-word-forge-suffix-shifter', 'g3-word-forge-multisyllable-mountain', 'g3-word-forge-fluency-flight', 'g3-story-scouts-character-arc-camp', 'g3-story-scouts-theme-development-trail', 'g3-story-scouts-perspective-portal', 'g3-poetry-planet-poem-form-observatory', 'g3-information-detectives-structure-station', 'g3-information-detectives-central-idea-engine', 'g3-information-detectives-purpose-development-path', 'g3-information-detectives-claim-evidence-court', 'g3-compare-castle-figurative-fortress'])
+    expect(grade3.map((pack) => pack.manifest.packId)).toEqual([PACK_ID, 'g3-word-forge-suffix-shifter', 'g3-word-forge-multisyllable-mountain', 'g3-word-forge-fluency-flight', 'g3-story-scouts-character-arc-camp', 'g3-story-scouts-theme-development-trail', 'g3-story-scouts-perspective-portal', 'g3-poetry-planet-poem-form-observatory', 'g3-information-detectives-structure-station', 'g3-information-detectives-central-idea-engine', 'g3-information-detectives-purpose-development-path', 'g3-information-detectives-claim-evidence-court', 'g3-compare-castle-figurative-fortress', 'g3-compare-castle-summary-stronghold'])
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 35,
-      activeLessonCount: 245,
-      activePassageCount: 252,
-      activeQuestionCount: 1409,
-      activeSupportTargetCount: 971,
+      activePackCount: 36,
+      activeLessonCount: 252,
+      activePassageCount: 259,
+      activeQuestionCount: 1450,
+      activeSupportTargetCount: 999,
     })
   })
 
@@ -138,8 +138,8 @@ describe('Grade 3 Root Reactor production pack', () => {
       missingPatterns: [],
     })
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'partial')).toHaveLength(0)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(5)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(10)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(4)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(11)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(1)
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.V.1.2')?.coverageStatus).toBe('planned')
     expect(buildGrade2CoverageSnapshot()).toEqual(grade2Before)
@@ -153,9 +153,9 @@ describe('Grade 3 Root Reactor production pack', () => {
     expect(curriculumTracks.find((track) => track.trackId === 'g3-across-genres-reading')?.status).toBe('active')
     expect(curriculumTracks.find((track) => track.trackId === 'g3-context-cavern-vocabulary')?.status).toBe('planned_until_content_exists')
     expect(auditSemanticQuestionPacks(getActiveContentPacks())).toMatchObject({
-      reviewedPackCount: 35,
-      reviewedLessonCount: 245,
-      reviewedCount: 1409,
+      reviewedPackCount: 36,
+      reviewedLessonCount: 252,
+      reviewedCount: 1450,
       issues: [],
     })
   })

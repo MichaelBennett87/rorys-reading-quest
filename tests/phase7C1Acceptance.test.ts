@@ -20,7 +20,7 @@ describe('Phase 7C1 acceptance documentation and boundary', () => {
     const snapshot = buildGrade3CoverageSnapshot()
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.2.1')).toMatchObject({ coverageStatus: 'implemented', reviewStatus: 'DRAFT', missingPatterns: [] })
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.2.2')).toMatchObject({ coverageStatus: 'implemented', reviewStatus: 'DRAFT' })
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(10)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(11)
     expect(snapshot.rows.every((row) => row.reviewStatus === 'DRAFT')).toBe(true)
   })
 })

@@ -388,7 +388,7 @@ export const summaryTextRecords: SummaryTextRecord[] = [
     ],
     support: [
       { word: 'community', sentence: 1, chunks: ['com', 'mu', 'ni', 'ty'] }, { word: 'frustrated', sentence: 8, chunks: ['frus', 'trat', 'ed'] },
-      { word: 'replacement', sentence: 12, chunks: ['re', 'place', 'ment'] }, { word: 'dependable', sentence: 24, chunks: ['de', 'pend', 'a', 'ble'] },
+      { word: 'replacement', sentence: 12, chunks: ['re', 'place', 'ment'] }, { word: 'strengthen', sentence: 24, chunks: ['strength', 'en'] },
     ],
   },
 ]

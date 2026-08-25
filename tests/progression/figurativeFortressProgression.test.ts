@@ -49,7 +49,7 @@ describe('Figurative Fortress progression', () => {
     expect(planUnitQuest({ selectedUnitId: UNIT_ID, progress: stateAtDifficulty(1), availableLessons: allCandidates })).toMatchObject({ status: 'available', lesson: { unitId: UNIT_ID, contentVersion: VERSION } })
   })
 
-  test('requires two distinct strong checkpoints and then fails closed at Summary Stronghold', () => {
+  test('requires two distinct strong checkpoints and then opens Summary Stronghold', () => {
     const initial = stateAtDifficulty(1).skillProgress[SKILL_ID]
     const first = apply(initial, checkpoints[0], 100)
     expect(first.status).toBe('applied')
@@ -65,7 +65,7 @@ describe('Figurative Fortress progression', () => {
     if (second.status !== 'applied') return
     expect(second.decision.decisionState).toBe('ADVANCE')
     expect(second.progress).toMatchObject({ currentDifficulty: 2, lastMasteredDifficulty: 1 })
-    expect(second.nextQuest).toMatchObject({ status: 'content_needed', skillId: SKILL_ID, difficulty: 2 })
+    expect(second.nextQuest).toMatchObject({ status: 'available', lesson: { skillId: SKILL_ID, unitId: 'g3-cg-unit-2', difficulty: 2 } })
   })
 
   test('preserves guidance, unit-affine power-up remediation, rebuilding, and assistance rules', () => {
@@ -114,6 +114,6 @@ describe('Figurative Fortress progression', () => {
     expect(planGlobalQuest({ progress: state, availableLessons: allCandidates, now: NOW })).toMatchObject({ status: 'available', purpose: 'progression', lesson: { skillId: SKILL_ID, unitId: UNIT_ID, difficulty: 1 } })
     expect(state.skillProgress['g3-context-cavern-vocabulary']).toBeUndefined()
     state.skillProgress[SKILL_ID] = createInitialSkillProgress(SKILL_ID, 2, 1)
-    expect(planGlobalQuest({ progress: state, availableLessons: allCandidates, now: NOW })).toMatchObject({ status: 'content_needed' })
+    expect(planGlobalQuest({ progress: state, availableLessons: allCandidates, now: NOW })).toMatchObject({ status: 'available', purpose: 'progression', lesson: { skillId: SKILL_ID, unitId: 'g3-cg-unit-2', difficulty: 2 } })
   })
 })

@@ -17,10 +17,10 @@ describe('getLessonForUnit', () => {
 
   test('exposes the active trail and bridge lessons while excluding legacy lessons', () => {
     const candidates = getLessonCandidates()
-    expect(candidates).toHaveLength(245)
-    expect(new Set(candidates.map((candidate) => candidate.activityId)).size).toBe(245)
+    expect(candidates).toHaveLength(252)
+    expect(new Set(candidates.map((candidate) => candidate.activityId)).size).toBe(252)
     expect(candidates.filter((candidate) => candidate.gradeBand === 2)).toHaveLength(154)
-    expect(candidates.filter((candidate) => candidate.gradeBand === 3)).toHaveLength(91)
+    expect(candidates.filter((candidate) => candidate.gradeBand === 3)).toHaveLength(98)
     expect(candidates.filter((candidate) => candidate.lessonId.startsWith('lesson-word-forge-common-prefixes-'))).toHaveLength(7)
     expect(candidates.filter((candidate) => candidate.lessonId.startsWith('lesson-word-forge-common-suffixes-'))).toHaveLength(7)
     expect(candidates.filter((candidate) => candidate.lessonId.startsWith('lesson-word-forge-silent-letter-combinations-'))).toHaveLength(7)

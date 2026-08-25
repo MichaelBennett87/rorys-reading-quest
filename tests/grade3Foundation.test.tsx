@@ -55,9 +55,9 @@ describe('Grade 3 standards and FAST planning foundation', () => {
     const grade2Before = buildGrade2CoverageSnapshot()
     const snapshot = buildGrade3CoverageSnapshot()
     expect(snapshot.rows).toHaveLength(16)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(10)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(11)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(1)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(5)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(4)
     expect(snapshot.rows.every((row) => row.reviewStatus === 'DRAFT')).toBe(true)
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.F.1.3')).toMatchObject({
       coverageStatus: 'implemented',
@@ -133,18 +133,18 @@ describe('Grade 3 planned roadmaps and production freeze', () => {
 
   test('preserves Grade 2 totals while registering Grade 3 Word Forge and both Story Scouts packs', () => {
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 35,
-      activeLessonCount: 245,
-      activePassageCount: 252,
-      activeQuestionCount: 1409,
-      activeSupportTargetCount: 971,
+      activePackCount: 36,
+      activeLessonCount: 252,
+      activePassageCount: 259,
+      activeQuestionCount: 1450,
+      activeSupportTargetCount: 999,
     })
     expect(getActiveContentPacks().filter((pack) => pack.manifest.gradeBand === 2)).toHaveLength(22)
-    expect(getActiveContentPacks().filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(13)
+    expect(getActiveContentPacks().filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(14)
     expect(lessonCatalog.filter((lesson) => lesson.selectionStatus === 'active' && lesson.gradeBand === 2)).toHaveLength(154)
-    expect(lessonCatalog.filter((lesson) => lesson.selectionStatus === 'active' && lesson.gradeBand === 3)).toHaveLength(91)
+    expect(lessonCatalog.filter((lesson) => lesson.selectionStatus === 'active' && lesson.gradeBand === 3)).toHaveLength(98)
     expect(getLessonCandidates().filter((lesson) => lesson.gradeBand === 2)).toHaveLength(154)
-    expect(getLessonCandidates().filter((lesson) => lesson.gradeBand === 3)).toHaveLength(91)
+    expect(getLessonCandidates().filter((lesson) => lesson.gradeBand === 3)).toHaveLength(98)
     expect(buildContentPackAudit(contentPacks)).toEqual([])
   })
 
