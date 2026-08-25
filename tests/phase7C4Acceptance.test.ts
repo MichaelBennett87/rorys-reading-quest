@@ -27,16 +27,16 @@ describe('Phase 7C4 acceptance documentation and boundary', () => {
       reviewStatus: 'DRAFT',
       missingPatterns: [],
     })
-    expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.3.1')).toMatchObject({ coverageStatus: 'planned', reviewStatus: 'DRAFT' })
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(9)
+    expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.3.1')).toMatchObject({ coverageStatus: 'implemented', reviewStatus: 'DRAFT' })
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(10)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(1)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(6)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(5)
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 34,
-      activeLessonCount: 238,
-      activePassageCount: 245,
-      activeQuestionCount: 1368,
-      activeSupportTargetCount: 943,
+      activePackCount: 35,
+      activeLessonCount: 245,
+      activePassageCount: 252,
+      activeQuestionCount: 1409,
+      activeSupportTargetCount: 971,
     })
   })
 })

@@ -32,6 +32,7 @@ import { structureStationPack } from './grade3/informationDetectives/structureSt
 import { centralIdeaEnginePack } from './grade3/informationDetectives/centralIdeaEngine'
 import { purposeDevelopmentPack } from './grade3/informationDetectives/purposeDevelopmentPath'
 import { claimEvidenceCourtPack } from './grade3/informationDetectives/claimEvidenceCourt'
+import { figurativeFortressPack } from './grade3/compareCastle/figurativeFortress'
 import { legacyDevelopmentPack } from './legacyDevelopmentPack'
 import type { ContentPack } from './contentPackTypes'
 import type { ContentSample } from '../types'
@@ -73,6 +74,7 @@ export const contentPacks: readonly ContentPack[] = [
   centralIdeaEnginePack,
   purposeDevelopmentPack,
   claimEvidenceCourtPack,
+  figurativeFortressPack,
   legacyDevelopmentPack,
 ]
 

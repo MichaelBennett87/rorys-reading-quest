@@ -6,19 +6,19 @@ import { applyLessonResult, createInitialSkillProgress, planUnitQuest, type Less
 import { buildReviewQueueIdentity, sameReviewQueueIdentity } from '../../src/domain/progression/reviewQueueAffinity'
 import { createDefaultQuestProgress, type QuestProgressV1 } from '../../src/persistence'
 
-const NOW = '2026-08-25T07:00:00.000Z'
-const SKILL_ID = 'g3-information-detectives-reading'
-const UNIT_ID = 'g3-id-unit-4'
-const VERSION = 'g3-id-claim-evidence-r0.1.0'
+const NOW = '2026-08-25T10:00:00.000Z'
+const SKILL_ID = 'g3-across-genres-reading'
+const UNIT_ID = 'g3-cg-unit-1'
+const VERSION = 'g3-cg-figurative-fortress-r0.1.0'
 const allCandidates = getLessonCandidates()
 const unitCandidates = allCandidates.filter((candidate) => candidate.skillId === SKILL_ID && candidate.unitId === UNIT_ID)
 const checkpoints = unitCandidates.filter((candidate) => candidate.eligiblePurposes.includes('progression'))
-const guided = unitCandidates.filter((candidate) => candidate.difficulty === 4 && candidate.eligiblePurposes.includes('remediation'))
-const powerUps = unitCandidates.filter((candidate) => candidate.difficulty === 3)
+const guided = unitCandidates.filter((candidate) => candidate.difficulty === 1 && candidate.eligiblePurposes.includes('remediation'))
+const powerUps = unitCandidates.filter((candidate) => candidate.difficulty === 0)
 
-function stateAtDifficulty(difficulty: 3 | 4 | 5): QuestProgressV1 {
+function stateAtDifficulty(difficulty: 1 | 2): QuestProgressV1 {
   const state = createDefaultQuestProgress(NOW)
-  state.skillProgress['g2-information-detectives-reading'] = createInitialSkillProgress('g2-information-detectives-reading', 5, 4)
+  state.skillProgress['g2-across-genres-reading'] = createInitialSkillProgress('g2-across-genres-reading', 4, 3)
   state.skillProgress[SKILL_ID] = createInitialSkillProgress(SKILL_ID, difficulty, Math.max(0, difficulty - 1))
   return state
 }
@@ -40,16 +40,17 @@ function apply(progress: SkillProgressState, candidate: LessonActivityCandidate,
   return applyLessonResult({ progress, lessonResult: result(candidate, accuracy, assisted), availableLessons: allCandidates, completedAt: NOW })
 }
 
-describe('Claim and Evidence Court progression', () => {
-  test('locks before Purpose Development completion and clears the stale Unit 4 boundary', () => {
-    expect(planUnitQuest({ selectedUnitId: UNIT_ID, progress: stateAtDifficulty(3), availableLessons: allCandidates })).toMatchObject({ status: 'locked' })
-    const ready = stateAtDifficulty(4)
-    ready.plannedNextQuest = { status: 'content_needed', purpose: 'progression', skillId: SKILL_ID, difficulty: 4, reason: 'Historical Unit 4 boundary.' }
-    expect(planUnitQuest({ selectedUnitId: UNIT_ID, progress: ready, availableLessons: allCandidates })).toMatchObject({ status: 'available', lesson: { unitId: UNIT_ID, contentVersion: VERSION } })
+describe('Figurative Fortress progression', () => {
+  test('locks before the Grade 2 prerequisite and unlocks without creating Context Cavern progress', () => {
+    const locked = createDefaultQuestProgress(NOW)
+    expect(planUnitQuest({ selectedUnitId: UNIT_ID, progress: locked, availableLessons: allCandidates })).toMatchObject({ status: 'locked' })
+    expect(locked.skillProgress[SKILL_ID]).toBeUndefined()
+    expect(locked.skillProgress['g3-context-cavern-vocabulary']).toBeUndefined()
+    expect(planUnitQuest({ selectedUnitId: UNIT_ID, progress: stateAtDifficulty(1), availableLessons: allCandidates })).toMatchObject({ status: 'available', lesson: { unitId: UNIT_ID, contentVersion: VERSION } })
   })
 
-  test('requires two distinct strong checkpoints and completes the track at difficulty 5', () => {
-    const initial = stateAtDifficulty(4).skillProgress[SKILL_ID]
+  test('requires two distinct strong checkpoints and then fails closed at Summary Stronghold', () => {
+    const initial = stateAtDifficulty(1).skillProgress[SKILL_ID]
     const first = apply(initial, checkpoints[0], 100)
     expect(first.status).toBe('applied')
     if (first.status !== 'applied') return
@@ -57,73 +58,62 @@ describe('Claim and Evidence Court progression', () => {
     const replay = apply(first.progress, checkpoints[0], 100)
     expect(replay.status).toBe('applied')
     if (replay.status !== 'applied') return
-    expect(replay.progress.currentDifficulty).toBe(4)
+    expect(replay.progress.currentDifficulty).toBe(1)
     expect(replay.decision.reasonCodes).toContain('duplicate_activity_not_counted')
     const second = apply(replay.progress, checkpoints[1], 100)
     expect(second.status).toBe('applied')
     if (second.status !== 'applied') return
     expect(second.decision.decisionState).toBe('ADVANCE')
-    expect(second.progress).toMatchObject({ currentDifficulty: 5, lastMasteredDifficulty: 4 })
-    expect(second.nextQuest).toMatchObject({ status: 'content_needed', skillId: SKILL_ID, difficulty: 5 })
+    expect(second.progress).toMatchObject({ currentDifficulty: 2, lastMasteredDifficulty: 1 })
+    expect(second.nextQuest).toMatchObject({ status: 'content_needed', skillId: SKILL_ID, difficulty: 2 })
   })
 
-  test('preserves same-level guidance, unit-affine remediation, rebuilding, and assistance rules', () => {
-    const initial = stateAtDifficulty(4).skillProgress[SKILL_ID]
+  test('preserves guidance, unit-affine power-up remediation, rebuilding, and assistance rules', () => {
+    const initial = stateAtDifficulty(1).skillProgress[SKILL_ID]
     const partial = apply(initial, checkpoints[0], 80)
     expect(partial.status).toBe('applied')
     if (partial.status !== 'applied') return
-    expect(partial.progress.currentDifficulty).toBe(4)
+    expect(partial.progress.currentDifficulty).toBe(1)
     const lowOne = apply(initial, checkpoints[0], 60)
     expect(lowOne.status).toBe('applied')
     if (lowOne.status !== 'applied') return
-    expect(lowOne.nextQuest).toMatchObject({ status: 'available', lesson: { unitId: UNIT_ID, difficulty: 4 } })
+    expect(lowOne.nextQuest).toMatchObject({ status: 'available', lesson: { unitId: UNIT_ID, difficulty: 1 } })
     const lowTwo = apply(lowOne.progress, checkpoints[1], 60)
     expect(lowTwo.status).toBe('applied')
     if (lowTwo.status !== 'applied') return
-    expect(lowTwo.progress).toMatchObject({ currentDifficulty: 3, remediationContext: { originalDifficulty: 4, remediationDifficulty: 3 } })
-    expect(lowTwo.nextQuest).toMatchObject({ status: 'available', lesson: { unitId: UNIT_ID, difficulty: 3 } })
+    expect(lowTwo.progress).toMatchObject({ currentDifficulty: 0, remediationContext: { originalDifficulty: 1, remediationDifficulty: 0 } })
+    expect(lowTwo.nextQuest).toMatchObject({ status: 'available', lesson: { unitId: UNIT_ID, difficulty: 0 } })
     const rebuildOne = apply(lowTwo.progress, powerUps[0], 100)
     expect(rebuildOne.status).toBe('applied')
     if (rebuildOne.status !== 'applied') return
     const rebuildTwo = apply(rebuildOne.progress, powerUps[1], 100)
     expect(rebuildTwo.status).toBe('applied')
     if (rebuildTwo.status !== 'applied') return
-    expect(rebuildTwo.progress).toMatchObject({ currentDifficulty: 4, lastMasteredDifficulty: 3, remediationContext: null })
+    expect(rebuildTwo.progress).toMatchObject({ currentDifficulty: 1, lastMasteredDifficulty: 0, remediationContext: null })
     const assisted = apply(initial, checkpoints[0], 100, true)
     expect(assisted.status).toBe('applied')
     if (assisted.status === 'applied') expect(assisted.progress.qualifyingIndependentActivityIds).toEqual([])
   })
 
-  test('keeps all four Grade 3 informational reviews and Grade 2 review separate', () => {
+  test('keeps Grade 2 and Grade 3 Compare Castle reviews separate', () => {
     expect(guided).toHaveLength(2)
     expect(powerUps).toHaveLength(2)
     expect(checkpoints).toHaveLength(3)
-    const identities = [
-      buildReviewQueueIdentity({ skillId: 'g2-information-detectives-reading', difficulty: 4, unitId: 'id-unit-4', contentVersion: 'g2-id-opinion-evidence-r0.1.0' }),
-      buildReviewQueueIdentity({ skillId: SKILL_ID, difficulty: 1, unitId: 'g3-id-unit-1', contentVersion: 'g3-id-structure-station-r0.1.0' }),
-      buildReviewQueueIdentity({ skillId: SKILL_ID, difficulty: 2, unitId: 'g3-id-unit-2', contentVersion: 'g3-id-central-idea-r0.1.0' }),
-      buildReviewQueueIdentity({ skillId: SKILL_ID, difficulty: 3, unitId: 'g3-id-unit-3', contentVersion: 'g3-id-purpose-development-r0.1.0' }),
-      buildReviewQueueIdentity({ skillId: SKILL_ID, difficulty: 4, unitId: UNIT_ID, contentVersion: VERSION }),
-    ]
-    for (let left = 0; left < identities.length; left += 1) {
-      for (let right = left + 1; right < identities.length; right += 1) expect(sameReviewQueueIdentity(identities[left], identities[right])).toBe(false)
-    }
+    const grade2 = buildReviewQueueIdentity({ skillId: 'g2-across-genres-reading', difficulty: 1, unitId: 'cg-unit-1', contentVersion: 'g2-cg-wordplay-r0.1.0' })
+    const grade3 = buildReviewQueueIdentity({ skillId: SKILL_ID, difficulty: 1, unitId: UNIT_ID, contentVersion: VERSION })
+    expect(sameReviewQueueIdentity(grade2, grade3)).toBe(false)
   })
 
-  test('enters Unit 4 through ordinary one-button planning and fails closed after track completion', () => {
+  test('enters through ordinary global planning and returns genuine content-needed after completion', () => {
     const state = createDefaultQuestProgress(NOW)
     for (const [skillId, difficulty] of [
       ['g2-word-forge-word-practice', 8], ['g2-story-scouts-prose', 4], ['g2-poetry-planet-poetry', 2],
       ['g2-information-detectives-reading', 5], ['g2-context-cavern-vocabulary', 4], ['g2-across-genres-reading', 4],
-      ['g3-word-forge-word-analysis', 5], ['g3-story-scouts-prose', 4], ['g3-poetry-planet-poetry', 2],
+      ['g3-word-forge-word-analysis', 5], ['g3-story-scouts-prose', 4], ['g3-poetry-planet-poetry', 2], ['g3-information-detectives-reading', 5],
     ] as const) state.skillProgress[skillId] = createInitialSkillProgress(skillId, difficulty, difficulty - 1)
-    state.skillProgress[SKILL_ID] = createInitialSkillProgress(SKILL_ID, 4, 3)
-    expect(planGlobalQuest({ progress: state, availableLessons: allCandidates, now: NOW })).toMatchObject({
-      status: 'available', purpose: 'progression', lesson: { skillId: SKILL_ID, unitId: UNIT_ID, difficulty: 4 },
-    })
-    state.skillProgress[SKILL_ID] = createInitialSkillProgress(SKILL_ID, 5, 4)
-    expect(planGlobalQuest({ progress: state, availableLessons: allCandidates, now: NOW })).toMatchObject({
-      status: 'available', purpose: 'progression', lesson: { skillId: 'g3-across-genres-reading', unitId: 'g3-cg-unit-1', difficulty: 1 },
-    })
+    expect(planGlobalQuest({ progress: state, availableLessons: allCandidates, now: NOW })).toMatchObject({ status: 'available', purpose: 'progression', lesson: { skillId: SKILL_ID, unitId: UNIT_ID, difficulty: 1 } })
+    expect(state.skillProgress['g3-context-cavern-vocabulary']).toBeUndefined()
+    state.skillProgress[SKILL_ID] = createInitialSkillProgress(SKILL_ID, 2, 1)
+    expect(planGlobalQuest({ progress: state, availableLessons: allCandidates, now: NOW })).toMatchObject({ status: 'content_needed' })
   })
 })

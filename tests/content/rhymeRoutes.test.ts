@@ -45,21 +45,22 @@ describe('Grade 2 Poetry Planet: Rhyme Routes', () => {
       'g3-information-detectives-central-idea-engine',
       'g3-information-detectives-purpose-development-path',
       'g3-information-detectives-claim-evidence-court',
+      'g3-compare-castle-figurative-fortress',
       'legacy-word-forge-development-pack',
     ])
-    expect(activePacks).toHaveLength(34)
-    expect(activePacks.reduce((sum, pack) => sum + pack.lessons.length, 0)).toBe(238)
-    expect(activePacks.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(245)
-    expect(activePacks.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(1368)
-    expect(activePacks.reduce((sum, pack) => sum + pack.passages.reduce((passageSum, passage) => passageSum + (passage.wordSupportTargets?.length ?? 0), 0), 0)).toBe(943)
+    expect(activePacks).toHaveLength(35)
+    expect(activePacks.reduce((sum, pack) => sum + pack.lessons.length, 0)).toBe(245)
+    expect(activePacks.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(252)
+    expect(activePacks.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(1409)
+    expect(activePacks.reduce((sum, pack) => sum + pack.passages.reduce((passageSum, passage) => passageSum + (passage.wordSupportTargets?.length ?? 0), 0), 0)).toBe(971)
     expect(new Set(contentPacks.map((pack) => pack.manifest.packId)).size).toBe(contentPacks.length)
     expect(contentPackAudit).toHaveLength(0)
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 34,
-      activeLessonCount: 238,
-      activePassageCount: 245,
-      activeQuestionCount: 1368,
-      activeSupportTargetCount: 943,
+      activePackCount: 35,
+      activeLessonCount: 245,
+      activePassageCount: 252,
+      activeQuestionCount: 1409,
+      activeSupportTargetCount: 971,
     })
   })
 

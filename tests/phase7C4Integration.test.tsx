@@ -19,11 +19,11 @@ describe('Phase 7C4 integration and reconciled one-button journey', () => {
   test('registers only Claim and Evidence Court and derives final Phase 7C coverage', () => {
     const packs = getActiveContentPacks()
     expect(packs.filter((pack) => pack.manifest.gradeBand === 2)).toHaveLength(22)
-    expect(packs.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(12)
+    expect(packs.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(13)
     expect(packs.filter((pack) => pack.manifest.packId === 'g3-information-detectives-claim-evidence-court')).toHaveLength(1)
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 34, activeLessonCount: 238, activePassageCount: 245,
-      activeQuestionCount: 1368, activeSupportTargetCount: 943,
+      activePackCount: 35, activeLessonCount: 245, activePassageCount: 252,
+      activeQuestionCount: 1409, activeSupportTargetCount: 971,
     })
     const snapshot = buildGrade3CoverageSnapshot()
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.2.4')).toMatchObject({
@@ -31,9 +31,9 @@ describe('Phase 7C4 integration and reconciled one-button journey', () => {
       contributingPackIds: ['g3-information-detectives-claim-evidence-court'],
       coveredPatterns: ['author-claim', 'reasons', 'evidence', 'claim-evidence-connection'],
     })
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(9)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(10)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(1)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(6)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(5)
   })
 
   test('releases a persisted Unit 4 content boundary through Start Journey with no child menu', async () => {

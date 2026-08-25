@@ -218,6 +218,9 @@ export function ParentPrintSummaryView({
                 {skill.benchmarkReferences.includes('ELA.3.R.2.4') && (
                   <p>Claim-and-evidence curriculum coverage: Implemented. Review status: DRAFT. This describes authored curriculum, not learner mastery or sophisticated argument-analysis performance.</p>
                 )}
+                {skill.benchmarkReferences.includes('ELA.3.R.3.1') && (
+                  <p>Figurative-language curriculum coverage: Implemented. Review status: DRAFT. This describes authored curriculum, not learner mastery, summary, tone, mood, or vocabulary performance.</p>
+                )}
                 <p>Category: {skill.reportingCategory}</p>
                 <p>Current trail: {formatTrailLabel(skill.currentDifficulty)}</p>
                 <p>Last mastered trail: {formatTrailLabel(skill.lastMasteredDifficulty)}</p>

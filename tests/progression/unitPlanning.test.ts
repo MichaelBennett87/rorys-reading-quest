@@ -692,7 +692,7 @@ describe('Compare Castle planning', () => {
     const compareCastle = worlds.find((world) => world.id === 'compare-castle')!
 
     expect(compareCastle.status).toBe('available')
-    expect(compareCastle.units).toHaveLength(3)
+    expect(compareCastle.units).toHaveLength(6)
     expect(compareCastle.units.find((unit) => unit.id === 'cg-unit-1')?.state).toBe('available')
     expect(compareCastle.units.find((unit) => unit.id === 'cg-unit-2')?.state).toBe('locked')
     expect(compareCastle.units.find((unit) => unit.id === 'cg-unit-3')?.state).toBe('locked')

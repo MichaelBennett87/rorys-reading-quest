@@ -50,6 +50,7 @@ export * from './grade3/informationDetectives/structureStation'
 export * from './grade3/informationDetectives/centralIdeaEngine'
 export * from './grade3/informationDetectives/purposeDevelopmentPath'
 export * from './grade3/informationDetectives/claimEvidenceCourt'
+export * from './grade3/compareCastle/figurativeFortress'
 export * from './registry'
 
 export const fluencyPracticeAudit = buildFluencyPracticeAudit(contentPacks)
