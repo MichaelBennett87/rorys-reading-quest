@@ -3,7 +3,7 @@ import { describe, expect, test } from 'vitest'
 import { demoWorlds, deriveWorldsForProgress } from '../../src/data/demoWorlds'
 import { deriveWorldsForProgress as deriveCurriculumWorlds } from '../../src/domain/curriculum'
 import { getLessonById, getLessonCandidates } from '../../src/domain/lesson'
-import { planUnitQuest } from '../../src/domain/progression'
+import { planUnitQuest, selectNextLessonWithDiagnostics } from '../../src/domain/progression'
 import type { LessonActivityCandidate } from '../../src/domain/progression'
 import { createInitialSkillProgress } from '../../src/domain/progression/skillProgressTypes'
 import { createActiveLessonSession, createDefaultQuestProgress } from '../../src/persistence'
@@ -322,7 +322,28 @@ describe('unit-aware Word Forge planning', () => {
       progress: exhaustedFluencyProgress,
       availableLessons,
     })
-    expect(exhaustedFluencyPlan.status).toBe('content_needed')
+    expect(exhaustedFluencyPlan.status).toBe('available')
+    if (exhaustedFluencyPlan.status === 'available') {
+      expect(exhaustedFluencyPlan.lesson).toMatchObject({
+        skillId: 'g2-word-forge-word-practice',
+        unitId: 'wg-unit-6',
+        difficulty: 8,
+        contentVersion: 'g2-wf-fluency-practice-r0.1.0',
+      })
+      expect(exhaustedFluencyPlan.activityId).not.toBe(
+        exhaustedFluencyProgress.skillProgress['g2-word-forge-word-practice'].recentActivityUsage.at(-1)?.activityId,
+      )
+    }
+    const exhaustedFluencyDiagnostic = selectNextLessonWithDiagnostics({
+      skillId: 'g2-word-forge-word-practice',
+      difficulty: 8,
+      purpose: 'progression',
+      availableLessons: availableLessons.filter((lesson) => lesson.unitId === 'wg-unit-6'),
+      recentActivityUsage: exhaustedFluencyProgress.skillProgress['g2-word-forge-word-practice'].recentActivityUsage,
+      preferredUnitId: 'wg-unit-6',
+      preferredContentVersion: 'g2-wf-fluency-practice-r0.1.0',
+    })
+    expect(exhaustedFluencyDiagnostic.selection?.selectionMode).toBe('recycled')
   })
 
   test('story scouts unit planning respects story map progress and future locks', () => {
@@ -408,7 +429,13 @@ describe('unit-aware Word Forge planning', () => {
     })
     expect(contextLocked.status).toBe('content_needed')
     if (contextLocked.status === 'content_needed') {
-      expect(contextLocked.reason).toMatch(/No lesson exists for this skill/i)
+      expect(contextLocked).toMatchObject({
+        purpose: 'progression',
+        skillId: 'g2-context-cavern-vocabulary',
+        difficulty: 1,
+        unitId: 'cc-unit-1',
+      })
+      expect(contextLocked.reason).toMatch(/No authored compatible lesson exists/i)
     }
 
     const morphologyLocked = planUnitQuest({

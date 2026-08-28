@@ -453,7 +453,7 @@ describe('curriculum planning foundation', () => {
     expect(result.state.skillProgress).toEqual(progress.skillProgress)
   })
 
-  test('returns content-needed instead of skipping an exhausted required track', () => {
+  test('recycles the exhausted required track instead of skipping it or returning content-needed', () => {
     const wordForgeLesson = createWordForgeLesson({
       eligiblePurposes: ['progression'],
     })
@@ -480,9 +480,10 @@ describe('curriculum planning foundation', () => {
       now,
     })
 
-    expect(plan.status).toBe('content_needed')
+    expect(plan.status).toBe('available')
     expect(plan.skillId).toBe('g2-word-forge-word-practice')
-    expect(plan.source).toBe('safe_fallback')
+    expect(plan.lesson?.lessonId).toBe(wordForgeLesson.lessonId)
+    expect(plan.source).toBe('global_planned_quest')
   })
 
   test('initializes playable Story Scouts progress without resetting Word Forge or creating planned tracks', () => {

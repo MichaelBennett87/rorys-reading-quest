@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest'
 
 import type { LessonActivityCandidate, RecentLessonActivityUsage } from '../../src/domain/progression'
-import { selectNextLesson } from '../../src/domain/progression'
+import { selectNextLesson, selectNextLessonWithDiagnostics } from '../../src/domain/progression'
 
 const candidates: LessonActivityCandidate[] = [
   {
@@ -38,20 +38,29 @@ describe('selectNextLesson', () => {
     if (next.status === 'available') expect(next.lesson.activityId).toBe('activity-b')
   })
 
-  test('blocks an exact repeated passage-question pair even under a new activity ID', () => {
+  test('keeps a new activity available when passage overlap is the only remaining option', () => {
     const repeatedPair = { ...candidates[0], activityId: 'activity-c' }
-    const selected = selectNextLesson({
+    const selected = selectNextLessonWithDiagnostics({
       skillId: 'skill-a', difficulty: 1, purpose: 'progression', availableLessons: [repeatedPair],
       recentActivityUsage: [usage(candidates[0])],
     })
-    expect(selected.status).toBe('content_needed')
+    expect(selected.plan.status).toBe('available')
+    expect(selected.selection).toMatchObject({ selectionMode: 'fresh_with_overlap', overlapCount: 1 })
   })
 
-  test('returns structured content-needed when no fresh candidate exists', () => {
-    const selected = selectNextLesson({
+  test('recycles a compatible lesson and permits a sole immediate repeat without returning content-needed', () => {
+    const selected = selectNextLessonWithDiagnostics({
       skillId: 'skill-a', difficulty: 1, purpose: 'progression', availableLessons: candidates,
       recentActivityUsage: candidates.map(usage),
     })
-    expect(selected.status).toBe('content_needed')
+    expect(selected.plan.status).toBe('available')
+    expect(selected.selection?.selectionMode).toBe('recycled')
+
+    const sole = selectNextLessonWithDiagnostics({
+      skillId: 'skill-a', difficulty: 1, purpose: 'progression', availableLessons: [candidates[0]],
+      recentActivityUsage: [usage(candidates[0])],
+    })
+    expect(sole.plan.status).toBe('available')
+    expect(sole.selection?.selectionMode).toBe('sole_candidate_repeat')
   })
 })
