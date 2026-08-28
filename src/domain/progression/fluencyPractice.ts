@@ -1,5 +1,5 @@
 import type { FluencyPracticeSummary, LessonResult } from '../lesson'
-import { selectNextLesson } from './selectNextLesson'
+import { selectNextLessonWithDiagnostics } from './selectNextLesson'
 import type {
   LessonActivityCandidate,
   NextQuestPlan,
@@ -13,8 +13,16 @@ export interface FluencyPracticeCompletionInput {
   progress: SkillProgressState
   lessonResult: LessonResult
   availableLessons: readonly LessonActivityCandidate[]
+  completedAttempts?: readonly CompletedFluencyActivityReference[]
   completedAt: string
   completionDifficulty?: number
+}
+
+export interface CompletedFluencyActivityReference {
+  lessonId: string
+  activityId: string
+  skillId: string
+  difficulty: number
 }
 
 export interface FluencyPracticeCompletionResult {
@@ -64,38 +72,34 @@ export function completeFluencyPractice(input: FluencyPracticeCompletionInput): 
     lastDecisionReasonCodes: ['fluency_practice_completed', 'oral_fluency_not_measured'],
     remediationContext: null,
   }
-  const lessonPool = currentLesson
-    ? input.availableLessons.filter((lesson) => lesson.unitId === currentLesson.unitId)
-    : input.availableLessons.filter((lesson) => lesson.skillId === input.lessonResult.skillId)
-  const plan = selectNextLesson({
-    skillId: input.lessonResult.skillId,
-    difficulty: input.lessonResult.difficulty,
-    purpose: 'progression',
-    availableLessons: lessonPool,
-    recentActivityUsage: progress.recentActivityUsage,
-  })
 
-  if (plan.status === 'available') {
-    return {
-      progress,
-      nextQuest: plan,
-      reasonCodes: ['fluency_practice_completed', 'oral_fluency_not_measured', 'fresh_fluency_practice_planned'],
-      summary,
-      lessonUsage,
-    }
-  }
-
+  const exactUnitLessons = currentLesson
+    ? input.availableLessons.filter((lesson) => (
+        lesson.skillId === currentLesson.skillId
+        && lesson.unitId === currentLesson.unitId
+        && lesson.difficulty === currentLesson.difficulty
+        && lesson.contentVersion === currentLesson.contentVersion
+        && lesson.eligiblePurposes.includes('progression')
+      ))
+    : []
   const chapterCompleted = typeof input.completionDifficulty === 'number'
     && input.completionDifficulty > input.lessonResult.difficulty
+    && hasCompletedEveryAuthoredActivity({
+      currentLesson,
+      exactUnitLessons,
+      completedAttempts: input.completedAttempts ?? [],
+    })
+
   if (chapterCompleted) {
+    const reasonCodes = [
+      'fluency_practice_completed',
+      'oral_fluency_not_measured',
+      'fluency_practice_chapter_completed',
+    ]
     const completedProgress = {
       ...progress,
       currentDifficulty: input.completionDifficulty!,
-      lastDecisionReasonCodes: [
-        'fluency_practice_completed',
-        'oral_fluency_not_measured',
-        'fluency_practice_chapter_completed',
-      ],
+      lastDecisionReasonCodes: reasonCodes,
     }
     return {
       progress: completedProgress,
@@ -106,27 +110,78 @@ export function completeFluencyPractice(input: FluencyPracticeCompletionInput): 
         difficulty: input.completionDifficulty!,
         reason: 'Grade 3 Word Forge practice is complete. Oral fluency was not measured.',
       },
-      reasonCodes: [
-        'fluency_practice_completed',
-        'oral_fluency_not_measured',
-        'fluency_practice_chapter_completed',
-      ],
+      reasonCodes,
       summary,
       lessonUsage,
     }
   }
 
+  const selection = selectNextLessonWithDiagnostics({
+    skillId: input.lessonResult.skillId,
+    difficulty: input.lessonResult.difficulty,
+    purpose: 'progression',
+    availableLessons: input.availableLessons,
+    recentActivityUsage: progress.recentActivityUsage,
+    preferredUnitId: currentLesson?.unitId,
+    preferredContentVersion: currentLesson?.contentVersion,
+  })
+  const plan = selection.plan
+
+  if (plan.status === 'available') {
+    const recycled = selection.selection?.selectionMode === 'recycled'
+      || selection.selection?.selectionMode === 'sole_candidate_repeat'
+    const reasonCodes = [
+      'fluency_practice_completed',
+      'oral_fluency_not_measured',
+      recycled ? 'recycled_fluency_practice_planned' : 'fresh_fluency_practice_planned',
+    ]
+    return {
+      progress: { ...progress, lastDecisionReasonCodes: reasonCodes },
+      nextQuest: plan,
+      reasonCodes,
+      summary,
+      lessonUsage,
+    }
+  }
+
+  const reasonCodes = [
+    'fluency_practice_completed',
+    'oral_fluency_not_measured',
+    'fluency_practice_content_needed',
+  ]
   return {
-    progress,
-    nextQuest: {
-      status: 'content_needed',
-      purpose: 'progression',
-      skillId: input.lessonResult.skillId,
-      difficulty: input.lessonResult.difficulty,
-      reason: 'Fluency Flight has no fresh practice left in this phase.',
-    },
-    reasonCodes: ['fluency_practice_completed', 'oral_fluency_not_measured', 'fluency_practice_exhausted'],
+    progress: { ...progress, lastDecisionReasonCodes: reasonCodes },
+    nextQuest: plan,
+    reasonCodes,
     summary,
     lessonUsage,
   }
+}
+
+function hasCompletedEveryAuthoredActivity(input: {
+  currentLesson: LessonActivityCandidate | undefined
+  exactUnitLessons: readonly LessonActivityCandidate[]
+  completedAttempts: readonly CompletedFluencyActivityReference[]
+}): boolean {
+  if (!input.currentLesson || input.exactUnitLessons.length === 0) return false
+
+  const requiredActivityIds = new Set(input.exactUnitLessons.map((lesson) => lesson.activityId))
+  const completedActivityIds = new Set<string>()
+
+  for (const lesson of input.exactUnitLessons) {
+    if (input.completedAttempts.some((attempt) => (
+      attempt.lessonId === lesson.lessonId
+      && attempt.activityId === lesson.activityId
+      && attempt.skillId === lesson.skillId
+      && attempt.difficulty === lesson.difficulty
+    ))) {
+      completedActivityIds.add(lesson.activityId)
+    }
+  }
+
+  if (requiredActivityIds.has(input.currentLesson.activityId)) {
+    completedActivityIds.add(input.currentLesson.activityId)
+  }
+
+  return [...requiredActivityIds].every((activityId) => completedActivityIds.has(activityId))
 }

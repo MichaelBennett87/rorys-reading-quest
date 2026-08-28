@@ -10,7 +10,7 @@ interface ProgressionOutcomeScreenProps {
 const copy: Record<string, { title: string; message: string }> = {
   VERIFY_MASTERY: {
     title: 'Almost There!',
-    message: 'You found the clues. One fresh quest will prove this reading power is ready.',
+    message: 'You found the clues. One more quest will help show this reading power is ready.',
   },
   ADVANCE: {
     title: 'Trail Complete!',
@@ -18,7 +18,7 @@ const copy: Record<string, { title: string; message: string }> = {
   },
   RETRY_SAME_DIFFICULTY: {
     title: 'Training Round',
-    message: 'You are close. A new quest will help this skill grow stronger.',
+    message: 'You are close. Another quest will help this skill grow stronger.',
   },
   GUIDED_PRACTICE: {
     title: 'Try a New Route',
@@ -30,7 +30,7 @@ const copy: Record<string, { title: string; message: string }> = {
   },
   CHECKPOINT: {
     title: 'Clue Practice',
-    message: 'A fresh quest will help you show this reading power on your own.',
+    message: 'Your next quest will help you show this reading power on your own.',
   },
   FLUENCY_PRACTICE: {
     title: 'Reading Flight Practice Complete!',
@@ -68,8 +68,8 @@ export function ProgressionOutcomeScreen({
       <section className="card">
         <h2>Next Quest</h2>
         <p>{nextAvailable
-          ? `Atlas found a fresh ${outcome.nextQuest.purpose} quest.`
-          : 'Atlas is preparing more fresh adventures for this trail.'}</p>
+          ? `Atlas found your next ${outcome.nextQuest.purpose} quest.`
+          : 'Atlas is preparing more adventures for this trail.'}</p>
       </section>
       <section className="screen-actions">
         {nextAvailable ? (

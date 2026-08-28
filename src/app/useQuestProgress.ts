@@ -189,6 +189,7 @@ export function useQuestProgress() {
         progress: progressEntry,
         lessonResult,
         availableLessons,
+        completedAttempts: progressRef.current.completedAttempts,
         completedAt,
         completionDifficulty: track?.completionDifficulty,
       })

@@ -219,8 +219,8 @@ export function planGlobalQuest(input: PlanGlobalQuestInput): GlobalQuestPlan {
   if (ordinaryPlan) return ordinaryPlan
 
   const guidedTrack = getCurrentGuidedJourneyTrack(state, playableTracks)
-  const freshProgression = chooseGuidedFreshProgression(state, input.availableLessons, guidedTrack)
-  if (freshProgression) return freshProgression
+  const guidedProgression = chooseGuidedProgression(state, input.availableLessons, guidedTrack)
+  if (guidedProgression) return guidedProgression
 
   return buildContentNeededPlan(
     state,
@@ -411,7 +411,7 @@ function getCurrentGuidedJourneyTrack(
     }) ?? null
 }
 
-function chooseGuidedFreshProgression(
+function chooseGuidedProgression(
   state: QuestProgressV1,
   availableLessons: readonly LessonActivityCandidate[],
   guidedTrack: PlayableTrackDiscovery | null,
@@ -467,15 +467,19 @@ function buildContentNeededPlan(
   requiredSkillId: string | null = null,
 ): GlobalQuestPlan {
   const firstPlayableTrack = playableTracks[0]?.track ?? null
+  const firstPlayableProgress = firstPlayableTrack ? state.skillProgress[firstPlayableTrack.skillId] : null
   const storedContentNeeded = state.plannedNextQuest?.status === 'content_needed' ? state.plannedNextQuest : null
   const planned = storedContentNeeded && (!requiredSkillId || storedContentNeeded.skillId === requiredSkillId)
     ? storedContentNeeded
     : null
   const skillId = planned?.skillId ?? firstPlayableTrack?.skillId ?? null
-  const difficulty = planned?.difficulty ?? firstPlayableTrack?.initialDifficulty ?? 1
+  const difficulty = planned?.difficulty
+    ?? firstPlayableProgress?.currentDifficulty
+    ?? firstPlayableTrack?.initialDifficulty
+    ?? 1
   const reason = planned?.reason
     ?? (firstPlayableTrack
-      ? `No fresh quests remain for ${firstPlayableTrack.displayName}.`
+      ? `No compatible authored quest exists for ${firstPlayableTrack.displayName} at ${formatTrailDisplayLabel(difficulty)}.`
       : 'No playable learning track is currently available.')
 
   return {
