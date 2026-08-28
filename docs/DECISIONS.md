@@ -516,3 +516,19 @@ Decision: Phase 7C is complete after all four Information Detectives units reach
 ## Phase 7D2: summary is selection and compression, not retell relabeling
 
 Decision: reuse safe Grade 2 Retell Hall infrastructure but model Grade 3 summary metadata explicitly. Summary Stronghold must assess importance, omission, compression, source-meaning preservation, literary plot/theme, and informational central idea/relevant details. It does not rename retell metadata, score unrestricted writing, or begin Author Lens Tower. Unit 2 remains behind Figurative Fortress completion and uses the reconciled one-button planner.
+
+## 2026-08-27 - Treat freshness as ranking, not permanent eligibility
+
+Decision: preserve the first-incomplete-track sequence and repair planner liveness inside that track. Hard compatibility continues to enforce skill, difficulty, purpose, unit, content version, grade-aware registry ownership, and active curriculum status. Recent activity use and passage-question overlap become deterministic ranking signals. Compatible work may be recycled only after preferred fresh options are exhausted, and the most recent activity is avoided whenever another compatible candidate exists.
+
+Reason: deployed Story Scouts Trail 1 had three compatible progression checkpoints, all present in recent usage, but the selector converted variety history into a permanent blacklist and recreated a false content-needed result after every Start Journey attempt.
+
+Consequence: finite packs remain usable for practice, verification, remediation, and review without changing evidence distinctness, thresholds, intervals, rewards, persistence, or the reconciled Start/Continue transition. Technical selection metadata remains memory-only. Phase 7D3 stays unstarted.
+
+## 2026-08-28 - Separate terminal fluency completion from lesson freshness
+
+Decision: determine Grade 3 Fluency Flight chapter completion from durable completed attempts joined to the current exact Unit 4 registry identity, including the current completion, before asking the selector for more practice. Advance to difficulty 5 only after every authored Unit 4 activity has been completed at least once. Continue to recycle Grade 2 and incomplete Grade 3 fluency safely, with distinct fresh and recycled planning reason codes.
+
+Reason: changing recent activity from a blacklist to a ranking signal correctly kept finite packs live, but exposed an older hidden coupling in which Grade 3 chapter completion ran only after lesson selection returned no content. Once recycling always returned a compatible lesson, the completion branch became unreachable.
+
+Consequence: chapter completion no longer depends on recent-usage exhaustion or its 12-entry cap. Schema version 1, persisted attempt shape, rewards, `lastMasteredDifficulty`, oral-fluency boundaries, review intervals, and the one-button journey remain unchanged. Phase 7D3 remains unstarted.

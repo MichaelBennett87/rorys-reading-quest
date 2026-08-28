@@ -7,7 +7,8 @@
 - Architecture commit: `3c41fdd feat: add grade 3 summary stronghold architecture`
 - Content commit: `d15cfd0 feat: add grade 3 summary stronghold pack`
 - Integration commit: `1f7b485 feat: integrate summary stronghold progression`
-- Documentation commit: created by the Phase 7D2 documentation checkpoint after this report is staged
+- Documentation commit: `61c6793 docs: complete phase 7d2 review`
+- Final synchronized Phase 7D2 SHA: `61c67932fd38f5130950768c058e41c4905590ef`
 - Phase 7D2: complete after all release gates and synchronization pass
 - Phase 7D: incomplete
 - Phase 7D3 Author Lens Tower: unstarted
@@ -42,3 +43,9 @@ Figurative Fortress completion opens Unit 2. Two distinct independent strong Sum
 ## Verification snapshot
 
 Checkpoint C passed lint with zero warnings, typecheck, 120 test files and 621 tests, build, and `git diff --check`. The production bundle was `dist/assets/index-D5uXybVA.js` at 2,702.71 kB raw and 531.69 kB gzip; CSS remained `dist/assets/index-1vquRqyg.css` at 50.43 kB raw and 11.11 kB gzip. The expected unsuppressed Vite chunk warning remained visible. Final verification and Pages synchronization are recorded in the final operator report after the documentation commit and push.
+
+## Post-Phase 7D2 P0 planner-liveness hotfix
+
+The synchronized Phase 7D2 release exposed a separate production liveness defect in Story Scouts Trail 1: recent-use freshness exhausted three compatible checkpoints and incorrectly produced a permanent content-needed loop. The dedicated P0 hotfix preserves all Phase 7D2 curriculum and the Phase 7C3 session-state repair while changing freshness from an eligibility ban to deterministic ranking with safe same-track recycling. Phase 7D3 remains unstarted. Full reproduction, root cause, preservation evidence, and release gates are recorded in `docs/P0_PLANNER_LIVENESS_HOTFIX_REPORT.md`.
+
+The full hotfix gate then exposed a distinct Grade 3 fluency completion regression: safe recycling made the former selector-exhaustion completion signal unreachable. The bounded correction evaluates Unit 4 completion explicitly from durable completed attempts joined to the current exact registry identity, advances to difficulty 5 only after all authored activities are represented, preserves `lastMasteredDifficulty` 3, and continues to make no oral-mastery claim. No Phase 7D2 curriculum fact changes.

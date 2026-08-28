@@ -129,3 +129,9 @@ Schema version 1, the child-progress key, parent-access key, parent-records key,
 ## Phase 7D2 privacy boundary
 
 Summary Stronghold adds no persisted curriculum text. Literary and informational sources, summary guides, model summaries, themes, central ideas, important/minor metadata, question text, explanations, correct answers, and Word Help curriculum remain registry-only. Schema version 1, all storage keys, Parent PIN behavior, assessment records, active-session recovery, bounded attempts, reviews, rewards, and assistance summaries remain unchanged. No backend, cloud sync, analytics, telemetry, microphone, speech recognition, live AI, or unrestricted summary scoring was added.
+
+## P0 planner-liveness privacy boundary
+
+Safe recycling reads the existing bounded recent-activity history in memory and does not erase or expand it. Selection mode, candidate counts, prior-use counts, last-use timestamps, overlap counts, and diagnostic reason codes are not included in persisted next-quest plans, child UI, parent reporting, print output, analytics, or remote diagnostics. Schema version 1, all three storage keys, Parent PIN behavior, assessments, attempts, reviews, rewards, assistance summaries, and active-session recovery remain unchanged. The repair adds no backend, cloud sync, analytics, telemetry, microphone, speech recognition, learner identifier, debugging upload, or live AI.
+
+The Grade 3 fluency completion correction reads existing completed-attempt lesson/activity identity and joins it to current in-memory unit/version curriculum metadata. It persists no new completion field, curriculum text, selector diagnostic, oral score, or mastery claim, and it does not rely on or expand recent-usage retention.
