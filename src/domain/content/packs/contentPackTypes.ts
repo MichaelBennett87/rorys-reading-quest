@@ -946,6 +946,49 @@ export interface Grade3AuthorComparisonGuide {
   contentVersion: string
 }
 
+export type MeaningPartOrigin = 'Greek' | 'Latin' | 'English'
+
+export type MeaningPartKind = 'root' | 'base' | 'prefix' | 'suffix' | 'connector'
+
+export interface MeaningWordPart {
+  partId: string
+  kind: MeaningPartKind
+  surfaceForm: string
+  canonicalForm?: string
+  origin: MeaningPartOrigin
+  commonMeaning: string
+  contextualContribution: string
+  contributesMeaning: boolean
+}
+
+export type RootMeaningPrimaryFamily =
+  | 'greek-root'
+  | 'latin-root'
+  | 'english-prefix-base'
+  | 'english-base-suffix'
+
+export interface RootMeaningTarget {
+  targetId: string
+  surfaceWord: string
+  sourceSentenceId: string
+  primaryFamily: RootMeaningPrimaryFamily
+  parts: MeaningWordPart[]
+  combinedPartClue: string
+  inferredMeaning: string
+  contextEvidenceIds: string[]
+  contextConfirmationStatement: string
+  transparentComposition: true
+}
+
+export interface RootMeaningGuide {
+  passageId: string
+  targets: RootMeaningTarget[]
+  wordPartStrategyStatement: string
+  contextConfirmationStatement: string
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
 export interface ContentPackManifest {
   packId: string
   packTitle: string
@@ -1014,6 +1057,7 @@ export interface ContentPack {
   pairedTextSets?: PairedTextSet[]
   pairedTextComparisonGuides?: PairedTextComparisonGuide[]
   grade3AuthorComparisonGuides?: Grade3AuthorComparisonGuide[]
+  rootMeaningGuides?: RootMeaningGuide[]
   themeGuides?: ThemeGuide[]
   perspectiveGuides?: PerspectiveGuide[]
   rhymeSchemeGuides?: RhymeSchemeGuide[]
@@ -1100,7 +1144,19 @@ export interface ContentPackAuditIssue {
     | 'academic_misuse_example_ambiguous'
     | 'academic_subject_context_insufficient'
     | 'academic_open_response_scope_violation'
-    | 'academic_vocabulary_scope_drift'
+     | 'academic_vocabulary_scope_drift'
+    | 'missing_root_meaning_guide'
+    | 'root_meaning_guide_invalid'
+    | 'root_word_not_in_source'
+    | 'root_word_part_reconstruction_failure'
+    | 'false_root_boundary'
+    | 'root_origin_mismatch'
+    | 'root_common_meaning_invalid'
+    | 'root_composed_meaning_invalid'
+    | 'root_context_confirmation_invalid'
+    | 'root_target_not_transparent'
+    | 'root_meaning_scope_drift'
+    | 'root_meaning_speech_chunk_confusion'
    | 'missing_morphology_guide'
    | 'morphology_guide_count_mismatch'
      | 'morphology_guide_invalid'

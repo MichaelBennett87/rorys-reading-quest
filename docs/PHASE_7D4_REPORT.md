@@ -100,3 +100,15 @@ Checkpoint C passed lint, typecheck, 133 test files with 686 tests, production b
 Phase 7D4 is complete after the final local, remote, deployment, and live-asset gates pass. Phase 7D remains incomplete. Phase 7D5, Root Meaning Vault, Meaning Maze, the final Grade 3 audit, Grade 4, and timed FAST practice remain unstarted.
 
 The exact recommended Phase 7D5 scope is Root Meaning Vault for ELA.3.V.1.2: bounded DRAFT instruction and assessment of roots, base words, and affixes used to determine word meaning, while preserving the one-button journey and leaving Meaning Maze unstarted.
+
+## Synchronized Phase 7D4 release
+
+Phase 7D4 started from `5045e2dc874d087c32ecbbe0a29ba866256611d1` and synchronized locally, remotely, and on GitHub Pages at `5dc0f670d170ed4691891cab1a2e0ffe9378084e` through these commits:
+
+- `8033fc7 docs: allow bounded multi-agent project work`
+- `d8ffe33 feat: add grade 3 academic vocabulary architecture`
+- `d02af2a feat: add grade 3 academic word workshop pack`
+- `9e043fd feat: integrate grade 3 context cavern progression`
+- `5dc0f67 docs: complete phase 7d4 review`
+
+The synchronized release contains 38 packs, 266 lessons, 280 texts, 1,532 questions, 1,055 Word Help targets, and 1,532 current PASS truth records. ELA.3.V.1.1 remains `SUPPORTIVE_PRACTICE / DRAFT`; Grade 3 Context Cavern is active; Academic Word Workshop is complete for curriculum delivery; the four-agent operating policy and P0 planner-liveness recovery remain active; and deployed browser acceptance passed. Phase 7D5 is the next bounded phase.
