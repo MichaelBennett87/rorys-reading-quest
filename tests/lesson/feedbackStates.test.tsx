@@ -202,6 +202,7 @@ describe('semantic answer feedback states', () => {
       { packId: 'g3-story-scouts-character-arc-camp', expectedTypes: ['EVIDENCE_PAIR', 'HOT_TEXT', 'MULTIPLE_CHOICE', 'MULTISELECT', 'TABLE_MATCH'] },
       { packId: 'g3-story-scouts-theme-development-trail', expectedTypes: ['EVIDENCE_PAIR', 'HOT_TEXT', 'MULTIPLE_CHOICE', 'MULTISELECT', 'TABLE_MATCH'] },
       { packId: 'g3-story-scouts-perspective-portal', expectedTypes: ['EVIDENCE_PAIR', 'HOT_TEXT', 'MULTIPLE_CHOICE', 'MULTISELECT', 'TABLE_MATCH'] },
+      { packId: 'g3-context-cavern-academic-word-workshop', expectedTypes: ['EVIDENCE_PAIR', 'HOT_TEXT', 'MULTIPLE_CHOICE', 'MULTISELECT', 'TABLE_MATCH'] },
     ]
     for (const { packId, expectedTypes } of packs) {
       const questions = lessonCatalog
@@ -227,7 +228,7 @@ describe('semantic answer feedback states', () => {
         view.unmount()
       }
     }
-  })
+  }, 15_000)
 })
 
 function getAnswerContainer(text: string): HTMLElement {

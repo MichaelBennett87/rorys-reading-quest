@@ -540,3 +540,14 @@ Decision: extend `ContentPack` with optional Grade 3 author-comparison guides wh
 Reason: `ELA.3.R.3.3` asks how two authors present the same topic or theme. A fact-only comparison or a second paired-text engine would weaken construct validity and duplicate stable architecture.
 
 Consequence: Author Lens Tower is the only new pack, Grade 3 Across-Genre Reading can complete at difficulty 4, and Phase 7D4 Grade 3 Context Cavern remains unstarted. The P0 selector, fluency completion, one-button journey, persistence, rewards, review intervals, and prior authored curriculum remain unchanged.
+
+
+## Phase 7D4 Academic Word Workshop and bounded multi-agent work
+
+- The repository permits three to four explicitly bounded subagents for substantial work when useful; the primary agent retains production edits, integration, verification ordering, Git, push, and deployment.
+- ELA.3.V.1.1 is represented as SUPPORTIVE_PRACTICE because all scoring is constrained selected response.
+- Grade 3 Context Cavern activates only when real Unit 1 content exists and Grade 2 Context Cavern is complete.
+- Once its prerequisite is ready, Context Cavern curriculum order 150 canonically precedes Across-Genre order 160 for ordinary progression; valid active sessions, urgent plans, due reviews, and active learning states retain their established higher priority.
+- A dedicated Grade 3 vocabulary guide extends the content model without changing Grade 2 authored content or persistence.
+- Curriculum progression may reach difficulty 2, but speaking, writing, oral, and open-response mastery are not inferred.
+- Root Meaning Vault and Meaning Maze remain unstarted production boundaries.

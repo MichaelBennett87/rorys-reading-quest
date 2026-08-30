@@ -139,3 +139,10 @@ Phase 7D2 adds `Grade3SummaryGuide`, discriminated as `LiterarySummaryGuide` or 
 Phase 7D3 adds optional `Grade3AuthorComparisonGuide` metadata on a content pack. Each guide identifies one paired set, a meaningful same-topic or same-theme basis, Text A and Text B kinds and focus statements, presentation-feature similarities and differences, separately scoped evidence IDs from both texts, and a synthesis statement. `evidenceFromBothRequired` is always true. Guides remain DRAFT and content-version bound.
 
 The active pack contains 7 paired sets, 14 sources, 7 guides, and 28 lesson-level Word Help targets. Guide content, source text, comparison statements, evidence text, questions, explanations, keys, and Word Help curriculum are not persisted or printed. Current active registry totals are 37 packs, 259 lessons, 273 texts, 1,491 questions, and 1,027 support targets.
+
+
+## Phase 7D4 Grade 3 academic-vocabulary model
+
+A Grade 3 academic-vocabulary guide belongs to one passage and contains exactly four unique targets. Each target records its learner-visible word, grammatical role, meaning, source sentence ownership, two or more academic subject contexts, authored speaking and writing frames, appropriate-use examples, one unambiguous misuse and reason, and a precision note.
+
+The guide explicitly records `supportivePracticeOnly: true`, `openResponseScoring: false`, `oralScoring: false`, DRAFT review status, and the pack content version. Guide data, frames, examples, meanings, source text, question text, answers, and Word Help curriculum text remain registry content and are excluded from persisted child state and print output.

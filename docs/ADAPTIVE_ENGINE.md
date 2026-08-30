@@ -150,3 +150,10 @@ Safe recycling changes no mastery decision. Two distinct independent strong acti
 At Grade 3 Across-Genre difficulty 3, Author Lens Tower is the ordinary progression unit. A first distinct independent strong checkpoint requests verification; a second distinct strong checkpoint advances the track to its unchanged completion difficulty 4. Duplicate activity evidence, assisted work, and weak work do not supply independent proof. Partial performance stays at difficulty 3, the first low result selects Unit 3 guidance, and a second consecutive low result selects Unit 3 difficulty-2 remediation with a difficulty-3 return target.
 
 Summary Stronghold ordinary progression is never substituted for Unit 3 remediation. Stored difficulty-3 `CONTENT_NEEDED` is recomputed after registration through the shared Start/Continue transition. Reviews remain unit/version affine, safe recycling remains available before completion, and the completed Grade 3 Across-Genre chapter becomes review-ready without initializing planned Grade 3 Context Cavern.
+
+
+## Phase 7D4 Context Cavern progression
+
+Grade 3 Context Cavern begins at difficulty 1 and last mastered difficulty 0 after its Grade 2 prerequisite is complete. A first distinct independent strong Unit 1 checkpoint returns VERIFY_MASTERY; a second advances to difficulty 2. Assisted work and duplicate activity IDs do not create independent evidence. Low performance selects difficulty-1 guidance before difficulty-0 Unit 1 remediation.
+
+Difficulty 2 is a genuine CONTENT_NEEDED boundary because Root Meaning Vault is not registered. Recent use remains a ranking preference: fresh content is preferred, safe recycling remains available, immediate repetition is avoided when alternatives exist, and compatible work is never blocked solely by freshness history.

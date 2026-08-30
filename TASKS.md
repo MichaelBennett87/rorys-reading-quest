@@ -107,7 +107,7 @@
     - [x] Phase 7D1: Figurative Fortress
     - [x] Phase 7D2: Summary Stronghold
     - [x] Phase 7D3: Author Lens Tower
-    - [ ] Phase 7D4: Academic Word Workshop Grade 3
+    - [x] Phase 7D4: Academic Word Workshop Grade 3
     - [ ] Phase 7D5: Root Meaning Vault
     - [ ] Phase 7D6: Meaning Maze
     - [ ] Phase 7D7: final Grade 3 audit
@@ -137,4 +137,13 @@
 - [x] P0 production hotfix: keep finite guided tracks live through deterministic recycling and preserve explicit Grade 3 Fluency Flight chapter completion
 - [ ] Phase 7
 
-Phase 7A, Phase 7B, and Phase 7C are complete. Phase 7C1 through Phase 7C4 and Phase 7D1 through Phase 7D3 are complete. The planner-liveness P0 is preserved. Phase 7D remains incomplete, Phase 7D4 remains incomplete and unstarted, and Phase 7 remains incomplete.
+Phase 7D4 is complete; Phase 7D remains in progress, and Phase 7D5 remains unstarted.
+
+
+### Phase 7D4 completion checkpoint
+
+- [x] Activate Grade 3 Context Cavern only after Unit 1 production content exists and Grade 2 Context Cavern is complete.
+- [x] Add seven Academic Word Workshop lessons, seven texts, seven guides, 28 academic targets, 41 questions, and 28 Word Help targets.
+- [x] Preserve P0 planner liveness, the one-button journey, schema v1, rewards, review intervals, Parent PIN behavior, and assessments.
+- [x] Record ELA.3.V.1.1 as SUPPORTIVE_PRACTICE / DRAFT without speaking, writing, or open-response mastery claims.
+- [ ] Begin Phase 7D5 Root Meaning Vault.

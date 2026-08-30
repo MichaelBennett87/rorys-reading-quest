@@ -227,6 +227,9 @@ export function ParentPrintSummaryView({
                 {skill.benchmarkReferences.includes('ELA.3.R.3.3') && (
                   <p>Author-comparison curriculum coverage: Implemented. Review status: DRAFT. This describes authored curriculum, not learner mastery, vocabulary performance, or advanced rhetorical analysis.</p>
                 )}
+                {skill.benchmarkReferences.includes('ELA.3.V.1.1') && (
+                  <p>Academic-vocabulary curriculum coverage: SUPPORTIVE_PRACTICE / DRAFT. This is constrained selected-response practice, not speaking, writing-production, learner-mastery, diagnosis, or FAST evidence.</p>
+                )}
                 <p>Category: {skill.reportingCategory}</p>
                 <p>Current trail: {formatTrailLabel(skill.currentDifficulty)}</p>
                 <p>Last mastered trail: {formatTrailLabel(skill.lastMasteredDifficulty)}</p>
@@ -259,7 +262,6 @@ export function ParentPrintSummaryView({
                 <p>{item.explanation}</p>
                 <p className="parent-muted-copy">{item.evidenceSummary}</p>
                 {item.relatedSkillId && <p className="parent-muted-copy">Skill: {resolveFriendlySkillName(item.relatedSkillId)}</p>}
-                {item.relatedTargetId && <p className="parent-muted-copy">Target: {item.relatedTargetId}</p>}
               </article>
             ))}
           </div>
@@ -329,7 +331,6 @@ export function ParentPrintSummaryView({
             {topWordHelp.map((summary) => (
               <article key={summary.targetId} className="card parent-summary-card">
                 <h4>{summary.displayWord}</h4>
-                <p className="parent-muted-copy">Target ID: {summary.targetId}</p>
                 <p>Sessions where help was used: {summary.sessionsWhereHelpUsed}</p>
                 <p>Unique assistance actions: {summary.totalUniqueAssistanceActions}</p>
                 <p>Highest support level: {formatAssistanceLevel(summary.maximumAssistanceLevel)}</p>

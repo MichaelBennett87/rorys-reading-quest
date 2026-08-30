@@ -171,3 +171,10 @@ Summary Stronghold activates Grade 3 Across-Genre Reading Trail 2 only after Fig
 ## Phase 7D3 Author Lens Tower boundary
 
 Author Lens Tower activates Grade 3 Across-Genre Reading Trail 3 only after Summary Stronghold completes. Seven DRAFT paired lessons contain fourteen original texts: four informational-informational pairs sharing a topic and three literary-literary pairs sharing a supported theme. Questions compare how authors organize, focus, explain, illustrate, describe, and develop the shared basis, with source-scoped evidence from both texts. The phase excludes fact-only comparison, private author intent, advanced rhetoric, vocabulary curriculum, Grade 4 work, and timed FAST practice. `ELA.3.R.3.3` curriculum coverage is IMPLEMENTED / DRAFT; learner mastery and approval remain separate.
+
+
+## Phase 7D4 Academic Word Workshop product boundary
+
+Grade 3 Context Cavern becomes active at curriculum order 150 only after Grade 2 Context Cavern reaches completion difficulty 4 and Unit 1 production content exists. Academic Word Workshop provides selected-response academic-vocabulary practice across school subjects. It supports recognition and constrained use in authored speaking and writing contexts but does not score spontaneous speech, original writing, pronunciation, or productive vocabulary mastery.
+
+The child still launches work only through Start Journey or Continue Journey. Home retains exactly two navigation controls, world cards remain display-only, and progression outcome retains one action. Root Meaning Vault and Meaning Maze have no production content.

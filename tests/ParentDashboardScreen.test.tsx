@@ -1076,6 +1076,8 @@ describe('ParentDashboardScreen', () => {
     expect(screen.getByRole('heading', { name: /Parent Progress Summary/i })).toBeTruthy()
     expect(screen.getByText(/Foundational Skills Bridge is an internal practice category/i)).toBeTruthy()
     expect(screen.getByText(/Benchmark references: BM-WORD-FORGE-1 · BM-WORD-FORGE-2/i)).toBeTruthy()
+    expect(screen.queryByText(/Target ID:/i)).toBeNull()
+    expect(screen.queryByText(/^Target: support-wind$/i)).toBeNull()
     expect(screen.getByRole('button', { name: /^Print$/i })).toBeTruthy()
     fireEvent.click(screen.getByRole('button', { name: /^Print$/i }))
     expect(print).toHaveBeenCalledTimes(1)

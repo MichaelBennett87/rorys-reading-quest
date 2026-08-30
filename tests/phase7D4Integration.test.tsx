@@ -1,4 +1,5 @@
 import { act, cleanup, fireEvent, render, renderHook, screen, within } from '@testing-library/react'
+import { readFileSync } from 'node:fs'
 import { afterEach, describe, expect, test } from 'vitest'
 
 import App from '../src/App'
@@ -146,6 +147,19 @@ describe('Phase 7D4 integration and reconciled one-button journey', () => {
       expect(serialized).not.toContain(forbidden)
     }
     expect(containsExactOwnProperty(JSON.parse(serialized), 'reasonCode')).toBe(false)
+  })
+
+  test('keeps parent and print copy supportive while excluding raw target identifiers from print', () => {
+    const dashboardSource = readFileSync('src/screens/parent/ParentDashboardScreen.tsx', 'utf8')
+    const printSource = readFileSync('src/screens/parent/ParentPrintSummaryView.tsx', 'utf8')
+
+    expect(dashboardSource).toContain("summary.benchmarkReference === 'ELA.3.V.1.1'")
+    expect(dashboardSource).toContain('SUPPORTIVE_PRACTICE / DRAFT')
+    expect(dashboardSource).toContain('does not establish productive vocabulary mastery')
+    expect(printSource).toContain("skill.benchmarkReferences.includes('ELA.3.V.1.1')")
+    expect(printSource).toContain('SUPPORTIVE_PRACTICE / DRAFT')
+    expect(printSource).not.toContain('Target ID:')
+    expect(printSource).not.toContain('Target: {item.relatedTargetId}')
   })
 })
 

@@ -279,7 +279,13 @@ describe('LessonScreen', () => {
 
   test('supports hot-text single-selection and explanation output', () => {
     renderLesson(hotTextQuestion)
-    fireEvent.click(screen.getByRole('radio', { name: 'She measured soil and water.' }))
+    const correct = screen.getByRole('radio', { name: 'She measured soil and water.' }) as HTMLInputElement
+    const alternate = screen.getAllByRole('radio').find((radio) => radio !== correct) as HTMLInputElement
+    fireEvent.click(alternate)
+    expect(alternate.checked).toBe(true)
+    fireEvent.click(correct)
+    expect(alternate.checked).toBe(false)
+    expect(correct.checked).toBe(true)
     fireEvent.click(screen.getByRole('button', { name: /Submit Answer/i }))
     expect(screen.getByText(/Great clue-finding!/i)).toBeTruthy()
     expect(screen.getByText(/Caring for soil and water is part of setup/i)).toBeTruthy()

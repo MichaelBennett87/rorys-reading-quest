@@ -86,3 +86,10 @@ After Pages deployment, load Rory's existing browser save without clearing stora
 ## Phase 7D3 preservation reconciliation
 
 Author Lens Tower registration changes no P0 selector or fluency-completion implementation. The full Phase 7D3 gates rerun the planner-liveness screenshot flow, registry-wide liveness cases, Grade 3 Fluency Flight completion boundary, shared Start/Continue launcher, exact-once completion, and persistence diagnostics. Recent use remains a ranking signal, safe recycling remains available before true completion, and `CONTENT_NEEDED` remains reserved for genuine authored-content or hard-affinity boundaries.
+
+
+## Phase 7D4 preservation reconciliation
+
+Phase 7D4 registers a new prerequisite-gated sequential track without changing the P0 selector or journey transition. Recent use remains a ranking preference, compatible lessons remain available through safe recycling, immediate repeats remain avoidable when alternatives exist, and true CONTENT_NEEDED still requires no compatible authored lesson. Explicit Grade 3 Fluency Flight completion remains independent of freshness.
+
+Stale global CONTENT_NEEDED state now recomputes into Grade 3 Context Cavern when Grade 2 Context Cavern is complete and Unit 1 content is registered. The one-button journey, exact-once rewards, completed-session rejection, late-checkpoint rejection, and schema-v1 recovery remain covered by the inherited and Phase 7D4 regression suites.

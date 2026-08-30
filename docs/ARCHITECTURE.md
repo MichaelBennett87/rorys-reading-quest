@@ -185,3 +185,12 @@ This liveness repair is separate from the Phase 7C3 active-session repair. The e
 `ContentPack.grade3AuthorComparisonGuides` extends the existing Grade 2 paired-text model without creating a second paired engine. Each guide owns one `PairedTextSet`, a same-topic or same-theme basis, source kinds and focus statements, at least two presentation similarities, at least two presentation differences, evidence arrays scoped separately to Text A and Text B, and a two-author synthesis. The validator rejects unresolved ownership, superficial comparisons, wording-only differences, unsupported private intent, and one-sided evidence.
 
 Author Lens Tower reuses `PairedTextCard`, paired lesson ownership, the five hardened question evaluators, truth-ledger fingerprints, planner/review affinity, parent reporting, and print filtering. Guide metadata is static DRAFT curriculum data and is neither persisted nor printed. No persistence schema, storage key, launcher, mastery threshold, review interval, reward rule, selector ranking, or Grade 3 Fluency Flight completion behavior changed.
+
+
+## Phase 7D4 Grade 3 academic-vocabulary architecture
+
+The active registry now contains 38 packs, 266 lessons, 280 passages, 1,532 questions, and 1,055 support targets. Grade 3 Academic Word Workshop contributes one pack with seven lessons, seven passages, 41 questions, and 28 support targets.
+
+`Grade3AcademicVocabularyGuide` is optional curriculum metadata. Its four targets per passage model source ownership, part of speech, child-friendly meaning, multiple subject contexts, speaking and writing frames, appropriate use, misuse, and precision notes. The dedicated audit returns structured issues and never persists or prints the guide.
+
+`g3-context-cavern-vocabulary` remains prerequisite-gated by completed Grade 2 Context Cavern progress. Registry-backed readiness initializes the Grade 3 track exactly once. Existing planner reconciliation retires stale CONTENT_NEEDED plans while preserving active-session safety, progress, rewards, reviews, Parent PIN state, and assessments.

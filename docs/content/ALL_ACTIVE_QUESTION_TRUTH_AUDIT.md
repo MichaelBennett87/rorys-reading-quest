@@ -150,3 +150,10 @@ Summary Stronghold adds 41 independently reviewed questions under `g3-compare-ca
 ## Phase 7D3 registration
 
 Author Lens Tower adds 41 independently reviewed questions under `g3-compare-castle-author-lens-tower`. The production inventory now contains 1,491 active questions and 1,491 current PASS ledger records across 37 packs. The executable contract accepts 1,491 canonical submissions and 500 canonical-equivalent submissions, rejects 18,135 adversarial submissions, and completes 23,108 grading assertions. Registration review replaced one non-source Word Help target with learner-visible `picnic` and corrected one support sentence index; no source text, paired set, comparison guide, scored question, key, distractor, explanation, evidence reference, evaluator, unresolved question ID, or stale fingerprint remains defective. These are repository truth-gate results, not teacher approval, learner mastery, or FAST certification.
+
+
+## Phase 7D4 active-question reconciliation
+
+The production registry now resolves 1,532 current PASS ledger records across 38 packs. Global canonical grading accepts 1,532 canonical submissions and 514 canonical-equivalent submissions. Adversarial grading rejects 20,154 submissions. The complete grading contract passes 25,264 assertions with zero false positives, zero false negatives, zero stale fingerprints, and no authored-content mutation.
+
+Academic Word Workshop contributes 41 current PASS records, 41 canonical submissions, 14 canonical equivalents, 528 adversarial submissions, and 665 total assertions. All five bounded question types are exercised. Mismatched question-type discriminators are rejected, and learner-visible table and two-part subprompts participate in independent truth review.

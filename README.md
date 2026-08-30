@@ -50,3 +50,10 @@ Persisted records contain stable local IDs and educational summaries only. Passa
 - `ELA.3.R.1.1` through `ELA.3.R.1.4` curriculum coverage are IMPLEMENTED / DRAFT; curriculum availability does not claim learner mastery.
 - Poem Form Observatory, all four Grade 3 Information Detectives units, Figurative Fortress, Summary Stronghold, and Author Lens Tower are active. ELA.3.R.2.1 through ELA.3.R.2.4 and ELA.3.R.3.1 through ELA.3.R.3.3 are IMPLEMENTED / DRAFT. Phase 7C and Phase 7D1 through Phase 7D3 are complete; Phase 7D4 Grade 3 Context Cavern remains unstarted.
 - The live GitHub Pages site remains available.
+
+
+## Phase 7D4 current status
+
+Academic Word Workshop Grade 3 activates Context Cavern Unit 1 with constrained academic-vocabulary meaning and appropriate-use practice. ELA.3.V.1.1 is `SUPPORTIVE_PRACTICE / DRAFT`; speaking mastery, writing mastery, and open-response ability are not inferred.
+
+Current active registry totals are 38 packs, 266 lessons, 280 texts, 1,532 questions, and 1,055 support targets. Grade 3 contributes 16 packs, 112 lessons, 119 texts, 643 questions, and 441 support targets. Phase 7D remains in progress, and Phase 7D5 remains unstarted.

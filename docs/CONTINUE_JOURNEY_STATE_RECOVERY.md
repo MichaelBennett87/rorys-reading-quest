@@ -43,3 +43,10 @@ The Figurative Fortress-to-Summary Stronghold boundary uses the same authoritati
 ## Phase 7D3 boundary regression
 
 The Summary Stronghold-to-Author Lens Tower boundary uses the same authoritative launcher and P0 liveness selector. A schema-v1 save at Grade 3 Across-Genre difficulty 3 with stored `CONTENT_NEEDED` is replanned against the registered Unit 3 pair. Start Journey and Continue Journey launch or resume one Author Lens session, completed Unit 2 state cannot block it, rapid preparation cannot duplicate it, and attempts, XP, stars, reviews, Parent PIN data, and assessments remain unchanged. After two distinct independent strong Unit 3 checkpoints, the track reaches completion difficulty 4 and genuine later-content absence remains fail-closed.
+
+
+## Phase 7D4 boundary regression
+
+When Grade 2 Context Cavern is complete, a schema-v1 save with all earlier Grade 3 tracks complete, no Grade 3 Context Cavern progress, no active session, and stale CONTENT_NEEDED now initializes `g3-context-cavern-vocabulary` exactly once. Start Journey and Continue Journey both launch Unit 1 through the shared authoritative transition. An unfinished Unit 1 session resumes; a completed stale session cannot block it.
+
+When the Grade 2 prerequisite is incomplete, Grade 3 Context Cavern does not initialize. After Unit 1 advances to difficulty 2, the absent Unit 2 remains a genuine content boundary. Home still has exactly two navigation controls, world cards remain display-only, progression outcome has one action, and safe recycling remains active.

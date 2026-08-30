@@ -141,3 +141,10 @@ The Grade 3 fluency completion correction reads existing completed-attempt lesso
 Author Lens Tower adds no persisted curriculum content. The fourteen source texts, seven paired sets, comparison guides, shared topic/theme statements, similarities, differences, evidence content, questions, explanations, correct answers, and Word Help curriculum remain registry-only. Parent and print views expose friendly benchmark, unit, assistance, and curriculum-status labels only after activity; they exclude source text, guide metadata, responses, keys, raw IDs, FAST predictions, and global diagnosis.
 
 Schema version 1, all storage keys, Parent PIN behavior, assessment records, attempts, reviews, rewards, assistance summaries, active-session recovery, and P0 planner diagnostics remain unchanged. No backend, cloud synchronization, analytics, telemetry, microphone, speech recognition, debugging upload, or live AI was added.
+
+
+## Phase 7D4 privacy boundary
+
+Academic Word Workshop adds no learner-generated text or audio. The app does not record speech, score pronunciation, provide a microphone path, use speech recognition, apply keyword grading, or call live AI. Passage text, vocabulary guides, meanings, speaking frames, writing frames, examples, explanations, correct answers, and Word Help curriculum text are not persisted.
+
+Schema version 1 and the child progress, parent access, and parent records storage keys are unchanged. Parent PIN behavior, assessments, active-session recovery, attempts, reviews, rewards, and assistance summaries retain their existing contracts.

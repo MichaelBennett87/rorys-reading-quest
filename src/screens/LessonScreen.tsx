@@ -440,7 +440,11 @@ export function LessonScreen({
     )
   }
 
-  const toggleSegment = (segmentId: string) => {
+  const toggleSegment = (segmentId: string, allowMultiple: boolean) => {
+    if (!allowMultiple) {
+      setSelectedSegmentIds([segmentId])
+      return
+    }
     const isSelected = selectedSegmentIds.includes(segmentId)
     if (isSelected) {
       setSelectedSegmentIds((previous) => previous.filter((entry) => entry !== segmentId))
@@ -578,7 +582,7 @@ export function LessonScreen({
               disabled={step !== 'question'}
               submitted={step === 'feedback'}
               correctSegmentIds={currentQuestion.correctSegmentIds}
-              onToggleSegment={toggleSegment}
+              onToggleSegment={(segmentId) => toggleSegment(segmentId, currentQuestion.allowMultiple)}
             />
           )}
 
