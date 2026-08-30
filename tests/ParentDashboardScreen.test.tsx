@@ -583,8 +583,74 @@ function createCompareCastleDashboard(): DashboardSnapshot {
         status: 'upcoming',
       },
     )
+    dashboard.benchmarkSummaries.push({
+      benchmarkReference: 'ELA.3.R.3.3',
+      skillIdentifier: 'g3-across-genres-reading',
+      reportingCategory: 'Reading Across Genres and Vocabulary',
+      gradeBand: 3,
+      questionAttempts: 7,
+      accuracy: 86,
+      firstAttemptAccuracy: 71,
+      assistedSessionRate: 14,
+      mostRecentActivityDate: '2026-08-20T12:00:00.000Z',
+      currentDifficulty: 4,
+      lastMasteredDifficulty: 3,
+      distinctIndependentEvidenceCount: 2,
+      currentLearningState: 'ADVANCE',
+      nextReviewDate: '2026-08-22T12:00:00.000Z',
+      activeRemediationTarget: null,
+      parentStatusExplanation: 'Author Lens Tower uses evidence from both texts to compare how authors present a shared topic or theme.',
+      dataAvailability: 'ready',
+    })
+    dashboard.skillSummaries.push({
+      skillId: 'g3-across-genres-reading',
+      benchmarkReference: 'ELA.3.R.3.3',
+      benchmarkReferences: ['ELA.3.R.3.1', 'ELA.3.R.3.2', 'ELA.3.R.3.3'],
+      reportingCategory: 'Reading Across Genres and Vocabulary',
+      gradeBand: 3,
+      questionAttempts: 7,
+      accuracy: 86,
+      firstAttemptAccuracy: 71,
+      assistedSessionRate: 14,
+      mostRecentActivityDate: '2026-08-20T12:00:00.000Z',
+      currentDifficulty: 4,
+      lastMasteredDifficulty: 3,
+      distinctIndependentEvidenceCount: 2,
+      currentLearningState: 'ADVANCE',
+      nextReviewDate: '2026-08-22T12:00:00.000Z',
+      activeRemediationTarget: null,
+      parentStatusExplanation: 'Author Lens Tower uses evidence from both texts to compare how authors present a shared topic or theme.',
+      dataAvailability: 'ready',
+    })
+    dashboard.recentAttempts.unshift({
+      completionDate: '2026-08-20T12:00:00.000Z',
+      lessonId: 'g3-cg-author-lens-checkpoint-pollinators',
+      lessonTitle: 'Grade 3 Compare Castle: Author Lens Tower',
+      activityId: 'g3-cg-author-lens-checkpoint-pollinators-activity',
+      skillId: 'g3-across-genres-reading',
+      difficulty: 3,
+      accuracy: 86,
+      firstAttemptAccuracy: 71,
+      assistanceUsed: 1,
+      supportedTargetCount: 1,
+      maximumAssistanceLevel: 1,
+      progressionDecision: 'ADVANCE',
+      parentFriendlyExplanation: 'Author Lens Tower uses evidence from both texts to compare how authors present a shared topic or theme.',
+      nextReviewDate: '2026-08-22T12:00:00.000Z',
+      classificationStatus: 'classified',
+    })
+    dashboard.reviewSummary.entries.push({
+      skillId: 'g3-across-genres-reading',
+      difficulty: 3,
+      reviewStep: 0,
+      dueAt: '2026-08-22T12:00:00.000Z',
+      unitId: 'g3-cg-unit-3',
+      unitLabel: 'Grade 3 Compare Castle: Author Lens Tower',
+      contentVersion: 'g3-cg-author-lens-r0.1.0',
+      status: 'upcoming',
+    })
     dashboard.reviewSummary.dueReviews = 1
-    dashboard.reviewSummary.upcomingReviews = 1
+    dashboard.reviewSummary.upcomingReviews = 2
     dashboard.reviewSummary.overdueReviews = 0
     dashboard.reviewSummary.nextReviewDate = '2026-08-21T12:00:00.000Z'
     return dashboard
@@ -1092,7 +1158,8 @@ describe('ParentDashboardScreen', () => {
 
     fireEvent.click(screen.getByRole('button', { name: /Progress/i }))
     fireEvent.change(screen.getByLabelText(/Filter by category/i), { target: { value: 'Reading Across Genres and Vocabulary' } })
-    expect(screen.getByRole('heading', { name: /Across-Genre Reading/i })).toBeTruthy()
+    expect(screen.getByRole('heading', { name: /^Across-Genre Reading$/i })).toBeTruthy()
+    expect(screen.getByRole('heading', { name: /^Grade 3 Across-Genre Reading$/i })).toBeTruthy()
     expect(screen.queryByRole('heading', { name: /g2-across-genres-reading/i })).toBeNull()
 
     fireEvent.click(screen.getByRole('button', { name: /Print Summary/i }))
@@ -1101,6 +1168,10 @@ describe('ParentDashboardScreen', () => {
     expect(screen.getAllByText(/Across-Genre Reading/i).length).toBeGreaterThan(0)
     expect(screen.getByText(/Compare Castle: Retell Hall/i)).toBeTruthy()
     expect(screen.getAllByText(/Compare Castle: Compare Keep/i).length).toBeGreaterThan(1)
+    expect(screen.getAllByText(/Grade 3 Compare Castle: Author Lens Tower/i).length).toBeGreaterThan(1)
+    expect(screen.getAllByText(/ELA\.3\.R\.3\.3/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/Author-comparison curriculum coverage: Implemented\. Review status: DRAFT/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/not learner mastery/i).length).toBeGreaterThan(0)
     expect(screen.getAllByText(/Reading Across Genres and Vocabulary/i).length).toBeGreaterThan(0)
     expect(screen.getAllByText(/Compare Keep uses structured authored comparison choices rather than original written or oral comparison\./i).length).toBeGreaterThan(0)
     expect(screen.queryByRole('heading', { name: /g2-across-genres-reading/i })).toBeNull()

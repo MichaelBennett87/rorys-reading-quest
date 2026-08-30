@@ -34,6 +34,7 @@ import { purposeDevelopmentPack } from './grade3/informationDetectives/purposeDe
 import { claimEvidenceCourtPack } from './grade3/informationDetectives/claimEvidenceCourt'
 import { figurativeFortressPack } from './grade3/compareCastle/figurativeFortress'
 import { summaryStrongholdPack } from './grade3/compareCastle/summaryStronghold'
+import { authorLensTowerPack } from './grade3/compareCastle/authorLensTower'
 import { legacyDevelopmentPack } from './legacyDevelopmentPack'
 import type { ContentPack } from './contentPackTypes'
 import type { ContentSample } from '../types'
@@ -77,6 +78,7 @@ export const contentPacks: readonly ContentPack[] = [
   claimEvidenceCourtPack,
   figurativeFortressPack,
   summaryStrongholdPack,
+  authorLensTowerPack,
   legacyDevelopmentPack,
 ]
 

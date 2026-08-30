@@ -84,13 +84,14 @@ describe('grade 2 context cavern meaning clue chamber pack', () => {
       'g3-information-detectives-claim-evidence-court',
       'g3-compare-castle-figurative-fortress',
       'g3-compare-castle-summary-stronghold',
+      'g3-compare-castle-author-lens-tower',
     ])
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 36,
-      activeLessonCount: 252,
-      activePassageCount: 259,
-      activeQuestionCount: 1450,
-      activeSupportTargetCount: 999,
+      activePackCount: 37,
+      activeLessonCount: 259,
+      activePassageCount: 273,
+      activeQuestionCount: 1491,
+      activeSupportTargetCount: 1027,
     })
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.V.1.3')).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.V.1.3',

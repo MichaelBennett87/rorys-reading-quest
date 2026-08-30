@@ -1,13 +1,13 @@
 # Active Question Truth Audit Progress
 
-Registry source: active production content registry through Phase 7D1.
+Registry source: active production content registry through Phase 7D3.
 
-- Active packs: 36
-- Active questions: 1450
-- Canonical submissions: 1450
-- Canonical-equivalent submissions: 486
-- Adversarial submissions: 17781
-- Grading-contract assertions: 22617
+- Active packs: 37
+- Active questions: 1491
+- Canonical submissions: 1491
+- Canonical-equivalent submissions: 500
+- Adversarial submissions: 18135
+- Grading-contract assertions: 23108
 
 | Pack ID | Questions | Blind pass | Key comparison | Adversarial pass | Evaluator contract | Corrections | Ledger | Final |
 | --- | ---: | --- | --- | --- | --- | --- | --- | --- |
@@ -47,5 +47,6 @@ Registry source: active production content registry through Phase 7D1.
 | g3-information-detectives-claim-evidence-court | 41 | yes | yes | yes | yes | yes | yes | PASS |
 | g3-compare-castle-figurative-fortress | 41 | yes | yes | yes | yes | yes | yes | PASS |
 | g3-compare-castle-summary-stronghold | 41 | yes | yes | yes | yes | yes | yes | PASS |
+| g3-compare-castle-author-lens-tower | 41 | yes | yes | yes | yes | yes | yes | PASS |
 
 All records are concise audit conclusions, not hidden reasoning. PASS means the repository-level review and executable evaluator contract found no remaining confirmed defect at the recorded fingerprint. It is not teacher approval or Florida approval.

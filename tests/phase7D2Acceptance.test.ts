@@ -11,12 +11,12 @@ function read(relativePath: string): string {
 }
 
 describe('Phase 7D2 acceptance documentation and boundary', () => {
-  test('records Summary Stronghold complete while later Phase 7D curriculum remains unstarted', () => {
+  test('preserves the historical Summary Stronghold boundary while current Phase 7D work continues', () => {
     const tasks = read('TASKS.md')
     const report = read('docs/PHASE_7D2_REPORT.md')
     const phase7D1 = read('docs/PHASE_7D1_REPORT.md')
     expect(tasks).toContain('    - [x] Phase 7D2: Summary Stronghold')
-    expect(tasks).toContain('    - [ ] Phase 7D3: Author Lens Tower')
+    expect(tasks).toContain('    - [x] Phase 7D3: Author Lens Tower')
     expect(report).toContain('Starting local SHA: `e48e2e381889ef4d1eb971f6d51a570a33a04a81`')
     expect(report).toContain('Phase 7D3 Author Lens Tower: unstarted')
     expect(phase7D1).toContain('Final synchronized SHA: `e48e2e381889ef4d1eb971f6d51a570a33a04a81`')
@@ -24,16 +24,16 @@ describe('Phase 7D2 acceptance documentation and boundary', () => {
 
   test('binds exact current registry, coverage, truth, and privacy facts', () => {
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 36,
-      activeLessonCount: 252,
-      activePassageCount: 259,
-      activeQuestionCount: 1450,
-      activeSupportTargetCount: 999,
+      activePackCount: 37,
+      activeLessonCount: 259,
+      activePassageCount: 273,
+      activeQuestionCount: 1491,
+      activeSupportTargetCount: 1027,
     })
     const snapshot = buildGrade3CoverageSnapshot()
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(11)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(12)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(1)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(4)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(3)
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.3.2')).toMatchObject({
       coverageStatus: 'implemented', reviewStatus: 'DRAFT',
       contributingPackIds: ['g3-compare-castle-summary-stronghold'], missingPatterns: [],

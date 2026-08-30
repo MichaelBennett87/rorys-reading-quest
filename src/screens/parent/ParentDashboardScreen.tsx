@@ -564,6 +564,9 @@ function BenchmarkCard({ summary }: { summary: DashboardBenchmarkSummary }) {
       {summary.benchmarkReference === 'ELA.3.R.3.2' && (
         <ParentDataNote title="Curriculum coverage implemented" message="Summary Stronghold provides authored ELA.3.R.3.2 literary and informational summary practice at DRAFT review status. Curriculum availability is separate from learner mastery and does not claim author-comparison or vocabulary mastery." />
       )}
+      {summary.benchmarkReference === 'ELA.3.R.3.3' && (
+        <ParentDataNote title="Curriculum coverage implemented" message="Author Lens Tower provides authored ELA.3.R.3.3 comparison practice using presentation choices and evidence from both texts at DRAFT review status. Curriculum availability is separate from learner mastery and does not claim vocabulary mastery." />
+      )}
       <ParentMetricCard label="Attempts" value={summary.questionAttempts} />
       <ParentMetricCard label="Accuracy" value={formatPercent(summary.accuracy)} />
       <ParentMetricCard label="First-attempt accuracy" value={formatPercent(summary.firstAttemptAccuracy)} />
@@ -624,6 +627,9 @@ function SkillSummaryCard({
       )}
       {summary.benchmarkReferences.includes('ELA.3.R.3.2') && (
         <p className="parent-muted-copy">Summary curriculum coverage: Implemented / DRAFT. This describes authored content, not learner mastery, author-comparison, or vocabulary performance.</p>
+      )}
+      {summary.benchmarkReferences.includes('ELA.3.R.3.3') && (
+        <p className="parent-muted-copy">Author-comparison curriculum coverage: Implemented / DRAFT. This describes authored content, not learner mastery, vocabulary performance, or advanced rhetorical analysis.</p>
       )}
       <p>Current trail: {formatTrailLabel(summary.currentDifficulty)}</p>
       <p>Last mastered trail: {formatTrailLabel(summary.lastMasteredDifficulty)}</p>
@@ -697,6 +703,9 @@ function SkillDetailView({
         )}
         {skill.benchmarkReferences.includes('ELA.3.R.3.2') && (
           <ParentDataNote title="Curriculum coverage implemented" message="ELA.3.R.3.2 has authored DRAFT Summary Stronghold content. Learner mastery remains separate, and the app does not claim author-comparison or vocabulary mastery." />
+        )}
+        {skill.benchmarkReferences.includes('ELA.3.R.3.3') && (
+          <ParentDataNote title="Curriculum coverage implemented" message="ELA.3.R.3.3 has authored DRAFT Author Lens Tower content comparing presentation choices with evidence from both texts. Learner mastery remains separate, and the app does not claim vocabulary mastery or advanced rhetorical analysis." />
         )}
         <p>Question attempts: {skill.questionAttempts}</p>
         <p>Overall accuracy: {formatPercent(skill.accuracy)}</p>

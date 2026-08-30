@@ -10,11 +10,11 @@ describe('Phase 7C3 integration and protected child journey', () => {
   test('registers only Purpose Development Path and derives the Grade 3 coverage snapshot', () => {
     const packs = getActiveContentPacks()
     expect(packs.filter((pack) => pack.manifest.gradeBand === 2)).toHaveLength(22)
-    expect(packs.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(14)
+    expect(packs.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(15)
     expect(packs.filter((pack) => pack.manifest.packId === 'g3-information-detectives-purpose-development-path')).toHaveLength(1)
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 36, activeLessonCount: 252, activePassageCount: 259,
-      activeQuestionCount: 1450, activeSupportTargetCount: 999,
+      activePackCount: 37, activeLessonCount: 259, activePassageCount: 273,
+      activeQuestionCount: 1491, activeSupportTargetCount: 1027,
     })
     const snapshot = buildGrade3CoverageSnapshot()
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.2.3')).toMatchObject({
@@ -22,9 +22,9 @@ describe('Phase 7C3 integration and protected child journey', () => {
       contributingPackIds: ['g3-information-detectives-purpose-development-path'],
       coveredPatterns: ['author-purpose', 'purpose-development', 'supporting-details', 'text-evidence'],
     })
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(11)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(12)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(1)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(4)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(3)
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.2.4')).toMatchObject({ coverageStatus: 'implemented' })
   })
 

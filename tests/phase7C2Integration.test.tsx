@@ -10,11 +10,11 @@ describe('Phase 7C2 integration and protected child journey', () => {
   test('registers only Central Idea Engine and derives the Grade 3 coverage snapshot', () => {
     const packs = getActiveContentPacks()
     expect(packs.filter((pack) => pack.manifest.gradeBand === 2)).toHaveLength(22)
-    expect(packs.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(14)
+    expect(packs.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(15)
     expect(packs.filter((pack) => pack.manifest.packId === 'g3-information-detectives-central-idea-engine')).toHaveLength(1)
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 36, activeLessonCount: 252, activePassageCount: 259,
-      activeQuestionCount: 1450, activeSupportTargetCount: 999,
+      activePackCount: 37, activeLessonCount: 259, activePassageCount: 273,
+      activeQuestionCount: 1491, activeSupportTargetCount: 1027,
     })
     const snapshot = buildGrade3CoverageSnapshot()
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.2.2')).toMatchObject({
@@ -22,9 +22,9 @@ describe('Phase 7C2 integration and protected child journey', () => {
       contributingPackIds: ['g3-information-detectives-central-idea-engine'],
       coveredPatterns: ['central-idea', 'relevant-details', 'details-support-central-idea', 'evidence-across-sections'],
     })
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(11)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(12)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(1)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(4)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(3)
   })
 
   test('keeps Home at exactly two controls with a display-only journey map', () => {

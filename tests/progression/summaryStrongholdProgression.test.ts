@@ -78,7 +78,7 @@ describe('Summary Stronghold progression', () => {
     })
   })
 
-  test('requires two distinct independent checkpoints and fails closed at Author Lens Tower', () => {
+  test('requires two distinct independent checkpoints and opens Author Lens Tower', () => {
     const initial = stateAtDifficulty(2).skillProgress[SKILL_ID]
     const first = apply(initial, checkpoints[0], 100)
     expect(first.status).toBe('applied')
@@ -94,7 +94,11 @@ describe('Summary Stronghold progression', () => {
     if (second.status !== 'applied') return
     expect(second.decision.decisionState).toBe('ADVANCE')
     expect(second.progress).toMatchObject({ currentDifficulty: 3, lastMasteredDifficulty: 2 })
-    expect(second.nextQuest).toMatchObject({ status: 'content_needed', skillId: SKILL_ID, difficulty: 3 })
+    expect(second.nextQuest).toMatchObject({
+      status: 'available',
+      purpose: 'progression',
+      lesson: { skillId: SKILL_ID, unitId: 'g3-cg-unit-3', difficulty: 3, contentVersion: 'g3-cg-author-lens-r0.1.0' },
+    })
   })
 
   test('keeps guidance and remediation inside Summary Stronghold', () => {
@@ -136,12 +140,14 @@ describe('Summary Stronghold progression', () => {
     expect(sameReviewQueueIdentity(figurative, summary)).toBe(false)
   })
 
-  test('is selected by global planning and leaves Unit 3 genuinely unavailable', () => {
+  test('is selected by global planning and hands off to Unit 3', () => {
     const atSummary = stateAtDifficulty(2)
     expect(planGlobalQuest({ progress: atSummary, availableLessons: allCandidates, now: NOW })).toMatchObject({
       status: 'available', purpose: 'progression', lesson: { skillId: SKILL_ID, unitId: UNIT_ID, difficulty: 2 },
     })
     const atUnitThree = stateAtDifficulty(3)
-    expect(planGlobalQuest({ progress: atUnitThree, availableLessons: allCandidates, now: NOW })).toMatchObject({ status: 'content_needed' })
+    expect(planGlobalQuest({ progress: atUnitThree, availableLessons: allCandidates, now: NOW })).toMatchObject({
+      status: 'available', purpose: 'progression', lesson: { skillId: SKILL_ID, unitId: 'g3-cg-unit-3', difficulty: 3 },
+    })
   })
 })

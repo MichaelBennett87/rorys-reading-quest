@@ -143,7 +143,7 @@ describe('production-registry planner liveness audit', () => {
       }
     }
 
-    expect(combinations.size).toBe(160)
+    expect(combinations.size).toBe(164)
     expect([...new Set([...combinations.values()].map((entry) => entry.skillId))].sort()).toEqual([
       'g2-across-genres-reading',
       'g2-context-cavern-vocabulary',
@@ -174,11 +174,11 @@ describe('production-registry planner liveness audit', () => {
     }
 
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 36,
-      activeLessonCount: 252,
-      activePassageCount: 259,
-      activeQuestionCount: 1450,
-      activeSupportTargetCount: 999,
+      activePackCount: 37,
+      activeLessonCount: 259,
+      activePassageCount: 273,
+      activeQuestionCount: 1491,
+      activeSupportTargetCount: 1027,
     })
   })
 

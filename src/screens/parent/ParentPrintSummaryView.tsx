@@ -224,6 +224,9 @@ export function ParentPrintSummaryView({
                 {skill.benchmarkReferences.includes('ELA.3.R.3.2') && (
                   <p>Summary curriculum coverage: Implemented. Review status: DRAFT. This describes authored curriculum, not learner mastery, author-comparison, or vocabulary performance.</p>
                 )}
+                {skill.benchmarkReferences.includes('ELA.3.R.3.3') && (
+                  <p>Author-comparison curriculum coverage: Implemented. Review status: DRAFT. This describes authored curriculum, not learner mastery, vocabulary performance, or advanced rhetorical analysis.</p>
+                )}
                 <p>Category: {skill.reportingCategory}</p>
                 <p>Current trail: {formatTrailLabel(skill.currentDifficulty)}</p>
                 <p>Last mastered trail: {formatTrailLabel(skill.lastMasteredDifficulty)}</p>
