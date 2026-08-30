@@ -125,3 +125,13 @@ The Grade 3 snapshot is 12 implemented, 1 supportive practice, 3 planned, 0 part
 Academic Word Workshop Grade 3 is active as Context Cavern Unit 1. ELA.3.V.1.1 now has SUPPORTIVE_PRACTICE / DRAFT coverage for grade-level academic vocabulary, appropriate use, authored speaking and writing support, and no open-response scoring.
 
 The Grade 3 snapshot is 12 implemented benchmark rows, 2 supportive-practice rows, and 2 planned rows, with no partial, missing, or approved rows. Phase 7D remains incomplete. Phase 7D5 Root Meaning Vault for ELA.3.V.1.2 is next; Meaning Maze and the final Grade 3 audit remain unstarted.
+
+## Phase 7D5 completion update
+
+- `g3-cc-unit-1` Academic Word Workshop: complete for curriculum delivery, `ELA.3.V.1.1` SUPPORTIVE_PRACTICE / DRAFT.
+- `g3-cc-unit-2` Root Meaning Vault: active and complete for curriculum delivery, `ELA.3.V.1.2` IMPLEMENTED / DRAFT.
+- `g3-cc-unit-3` Meaning Maze: planned and unstarted with no production lesson registered.
+- `g3-context-cavern-vocabulary`: advances from difficulty 2 to difficulty 3 only after two distinct independent strong Unit 2 checkpoints.
+- Phase 7D remains incomplete; Phase 7D6 is next.
+
+The Grade 3 snapshot is 13 implemented benchmark rows, 2 supportive-practice rows, and 1 planned row, with no partial, missing, or approved rows. Curriculum progression does not infer vocabulary, decoding, pronunciation, or global Grade 3 mastery.

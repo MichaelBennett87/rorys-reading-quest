@@ -178,3 +178,9 @@ Author Lens Tower activates Grade 3 Across-Genre Reading Trail 3 only after Summ
 Grade 3 Context Cavern becomes active at curriculum order 150 only after Grade 2 Context Cavern reaches completion difficulty 4 and Unit 1 production content exists. Academic Word Workshop provides selected-response academic-vocabulary practice across school subjects. It supports recognition and constrained use in authored speaking and writing contexts but does not score spontaneous speech, original writing, pronunciation, or productive vocabulary mastery.
 
 The child still launches work only through Start Journey or Continue Journey. Home retains exactly two navigation controls, world cards remain display-only, and progression outcome retains one action. Root Meaning Vault and Meaning Maze have no production content.
+
+## Phase 7D5 Root Meaning Vault product boundary
+
+Root Meaning Vault activates Grade 3 Context Cavern Unit 2 after Academic Word Workshop completion. Seven original DRAFT texts teach the learner to identify genuine Greek roots, Latin roots, English bases, prefixes, and suffixes; combine their common meanings into a reasonable hypothesis; and use visible context to confirm or refine that hypothesis. Letter matches that are not genuine morphemes are explicitly rejected.
+
+The scored construct is unfamiliar-word meaning, not pronunciation, syllable division, oral decoding, part-of-speech transformation, context-clue taxonomy, reference-material use, or unrestricted writing. Word Help retains its five accepted stages and uses separately authored pronunciation chunks. Meaning Maze, Grade 4, and timed FAST practice remain unstarted.

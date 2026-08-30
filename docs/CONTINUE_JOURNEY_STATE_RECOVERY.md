@@ -50,3 +50,9 @@ The Summary Stronghold-to-Author Lens Tower boundary uses the same authoritative
 When Grade 2 Context Cavern is complete, a schema-v1 save with all earlier Grade 3 tracks complete, no Grade 3 Context Cavern progress, no active session, and stale CONTENT_NEEDED now initializes `g3-context-cavern-vocabulary` exactly once. Start Journey and Continue Journey both launch Unit 1 through the shared authoritative transition. An unfinished Unit 1 session resumes; a completed stale session cannot block it.
 
 When the Grade 2 prerequisite is incomplete, Grade 3 Context Cavern does not initialize. After Unit 1 advances to difficulty 2, the absent Unit 2 remains a genuine content boundary. Home still has exactly two navigation controls, world cards remain display-only, progression outcome has one action, and safe recycling remains active.
+
+## Phase 7D5 boundary regression
+
+A schema-v1 save at Grade 3 Context Cavern difficulty 2 with completed Academic Word Workshop state and stored `CONTENT_NEEDED` now replans against Root Meaning Vault. Start Journey launches Unit 2, and another launch resumes the same unfinished session identity. A completed stale Unit 1 session is rejected before Unit 2 starts; XP, stars, attempts, reviews, Parent PIN data, and assessments remain intact.
+
+After two distinct independent strong Unit 2 checkpoints, the track reaches difficulty 3 and the absent Meaning Maze returns genuine content-needed. Home still has exactly Start Journey and Parent Area, world cards remain display-only, progression outcome retains one action, and no root, word, unit, or lesson selector is introduced.

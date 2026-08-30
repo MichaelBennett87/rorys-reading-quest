@@ -112,3 +112,10 @@ Phase 7D4 started from `5045e2dc874d087c32ecbbe0a29ba866256611d1` and synchroniz
 - `5dc0f67 docs: complete phase 7d4 review`
 
 The synchronized release contains 38 packs, 266 lessons, 280 texts, 1,532 questions, 1,055 Word Help targets, and 1,532 current PASS truth records. ELA.3.V.1.1 remains `SUPPORTIVE_PRACTICE / DRAFT`; Grade 3 Context Cavern is active; Academic Word Workshop is complete for curriculum delivery; the four-agent operating policy and P0 planner-liveness recovery remain active; and deployed browser acceptance passed. Phase 7D5 is the next bounded phase.
+
+## Phase 7D5 opening reconciliation
+
+- Starting SHA: `5045e2dc874d087c32ecbbe0a29ba866256611d1`
+- Final synchronized SHA: `5dc0f670d170ed4691891cab1a2e0ffe9378084e`
+
+Phase 7D4 started from `5045e2dc874d087c32ecbbe0a29ba866256611d1` and synchronized at `5dc0f670d170ed4691891cab1a2e0ffe9378084e` through `8033fc7`, `d8ffe33`, `d02af2a`, `9e043fd`, and `5dc0f67`. Its historical totals remain 38 packs, 266 lessons, 280 texts, 1,532 questions, 1,055 support targets, and 1,532 current PASS truth records. ELA.3.V.1.1 remains SUPPORTIVE_PRACTICE / DRAFT, Grade 3 Context Cavern remains active, the four-agent policy remains in force, P0 planner liveness remains preserved, and the Phase 7D4 automated deployed-browser acceptance remains passed. Phase 7D5 begins only after that synchronized state.

@@ -146,3 +146,9 @@ The active pack contains 7 paired sets, 14 sources, 7 guides, and 28 lesson-leve
 A Grade 3 academic-vocabulary guide belongs to one passage and contains exactly four unique targets. Each target records its learner-visible word, grammatical role, meaning, source sentence ownership, two or more academic subject contexts, authored speaking and writing frames, appropriate-use examples, one unambiguous misuse and reason, and a precision note.
 
 The guide explicitly records `supportivePracticeOnly: true`, `openResponseScoring: false`, `oralScoring: false`, DRAFT review status, and the pack content version. Guide data, frames, examples, meanings, source text, question text, answers, and Word Help curriculum text remain registry content and are excluded from persisted child state and print output.
+
+## Phase 7D5 root-meaning guide model
+
+`RootMeaningGuide` adds four `RootMeaningTarget` records per passage. `MeaningWordPart` distinguishes root, base, prefix, suffix, and connector; records Greek, Latin, or English origin; and separates the visible surface form from an optional canonical form. `contributesMeaning` must be false for connectors. The target combines exact source ownership, primary family, reconstructed spelling, part clue, inferred contextual meaning, context evidence, confirmation statement, and `transparentComposition: true`.
+
+The pack contains 7 guides and 28 unique targets distributed exactly 7 / 7 / 7 / 7 across Greek-root, Latin-root, English prefix-plus-base, and English base-plus-suffix primary families. `aqueduct` records surface `aque` with canonical `aqua`, preserving exact spelling while teaching the defensible water root. Authored meaning parts and Word Help speech chunks remain independent. Guide data, parts, meanings, context statements, questions, explanations, keys, and support text are neither persisted nor printed.

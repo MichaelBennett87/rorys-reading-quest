@@ -194,3 +194,9 @@ The active registry now contains 38 packs, 266 lessons, 280 passages, 1,532 ques
 `Grade3AcademicVocabularyGuide` is optional curriculum metadata. Its four targets per passage model source ownership, part of speech, child-friendly meaning, multiple subject contexts, speaking and writing frames, appropriate use, misuse, and precision notes. The dedicated audit returns structured issues and never persists or prints the guide.
 
 `g3-context-cavern-vocabulary` remains prerequisite-gated by completed Grade 2 Context Cavern progress. Registry-backed readiness initializes the Grade 3 track exactly once. Existing planner reconciliation retires stale CONTENT_NEEDED plans while preserving active-session safety, progress, rewards, reviews, Parent PIN state, and assessments.
+
+## Phase 7D5 Root Meaning Vault architecture
+
+`ContentPack.rootMeaningGuides` is optional non-persisted curriculum metadata. Each `RootMeaningGuide` owns one passage and four targets. A target records a source-owned surface word, exact written parts, optional canonical forms, Greek, Latin, or English origin, root/base/prefix/suffix/connector kind, common and contextual meanings, a combined clue, inferred meaning, context evidence, and transparent-composition assertion. Connectors are explicitly non-meaning-bearing. `buildRootMeaningGuideAudit` returns structured issues for ownership, reconstruction, origin, false boundary, composition, context, scope, and meaning/speech confusion failures.
+
+The registered Unit 2 pack reuses the existing text renderers, five scored question types, Word Help component, lesson catalog, evaluator, truth ledger, review affinity, planner, parent reporting, and print filtering. Meaning-part boundaries are never automatically reused as spoken chunks. No route, schema, storage key, scoring threshold, reward rule, review interval, selector ranking, or Grade 3 Fluency Flight completion behavior changes.

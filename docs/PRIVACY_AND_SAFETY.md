@@ -148,3 +148,9 @@ Schema version 1, all storage keys, Parent PIN behavior, assessment records, att
 Academic Word Workshop adds no learner-generated text or audio. The app does not record speech, score pronunciation, provide a microphone path, use speech recognition, apply keyword grading, or call live AI. Passage text, vocabulary guides, meanings, speaking frames, writing frames, examples, explanations, correct answers, and Word Help curriculum text are not persisted.
 
 Schema version 1 and the child progress, parent access, and parent records storage keys are unchanged. Parent PIN behavior, assessments, active-session recovery, attempts, reviews, rewards, and assistance summaries retain their existing contracts.
+
+## Phase 7D5 privacy and accessibility boundary
+
+Root Meaning Vault persists no passage text, root-meaning guide, root, base, affix meaning, connector metadata, combined clue, inferred meaning, context-confirmation statement, question text, explanation, correct answer, or Word Help curriculum text. Schema version 1, all three storage keys, hashed Parent PIN behavior, assessments, attempts, reviews, rewards, assistance summaries, and active-session recovery remain unchanged.
+
+Meaning parts are labeled with text rather than color alone. Existing keyboard operation, visible focus, correct/incorrect announcements, multiselect, hot text, table match, two-part interaction, reduced motion, responsive layout, and optional audio remain required. No typing, microphone, speech recognition, backend, cloud synchronization, analytics, telemetry, debugging upload, external speech service, or live AI is added.

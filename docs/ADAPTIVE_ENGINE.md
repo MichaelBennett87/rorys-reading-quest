@@ -157,3 +157,9 @@ Summary Stronghold ordinary progression is never substituted for Unit 3 remediat
 Grade 3 Context Cavern begins at difficulty 1 and last mastered difficulty 0 after its Grade 2 prerequisite is complete. A first distinct independent strong Unit 1 checkpoint returns VERIFY_MASTERY; a second advances to difficulty 2. Assisted work and duplicate activity IDs do not create independent evidence. Low performance selects difficulty-1 guidance before difficulty-0 Unit 1 remediation.
 
 Difficulty 2 is a genuine CONTENT_NEEDED boundary because Root Meaning Vault is not registered. Recent use remains a ranking preference: fresh content is preferred, safe recycling remains available, immediate repetition is avoided when alternatives exist, and compatible work is never blocked solely by freshness history.
+
+## Phase 7D5 Root Meaning Vault progression
+
+At Grade 3 Context Cavern difficulty 2, Root Meaning Vault is ordinary progression. A first distinct independent strong checkpoint returns `VERIFY_MASTERY`; a second distinct independent strong checkpoint advances to difficulty 3. Duplicate activity evidence and assisted work do not provide a second proof. Partial work stays at difficulty 2, a first low result selects Unit 2 guidance, and a second low result enters Unit 2 difficulty-1 remediation with a difficulty-2 return target.
+
+Academic Word Workshop ordinary progression is never substituted for Unit 2 remediation. Unit 1 and Unit 2 reviews retain exact unit and content-version affinity. Stored difficulty-2 `CONTENT_NEEDED` is recomputed against the registered pack, while difficulty 3 remains genuine `CONTENT_NEEDED` because Meaning Maze is absent. Safe recycling remains available before advancement and cannot weaken evidence distinctness, thresholds, review intervals, rewards, or exact-once completion.

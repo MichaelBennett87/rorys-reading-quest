@@ -551,3 +551,11 @@ Consequence: Author Lens Tower is the only new pack, Grade 3 Across-Genre Readin
 - A dedicated Grade 3 vocabulary guide extends the content model without changing Grade 2 authored content or persistence.
 - Curriculum progression may reach difficulty 2, but speaking, writing, oral, and open-response mastery are not inferred.
 - Root Meaning Vault and Meaning Maze remain unstarted production boundaries.
+
+## Phase 7D5 Root Meaning Vault decisions
+
+- Decision: implement only ELA.3.V.1.2 through transparent morphemic analysis in `g3-cc-unit-2`; leave ELA.3.V.1.3 Meaning Maze unstarted.
+- Decision: model written meaning parts independently from pronunciation chunks. A root or connector boundary may support instruction but is never assumed to be a syllable or speech boundary.
+- Decision: require genuine morphemes, defensible origin, transparent composition, and learner-visible context confirmation. Surface spelling may use an accurate canonical form only when needed, as with `aque` and canonical `aqua` in `aqueduct`.
+- Decision: reuse the current Context Cavern track, five selected-response forms, Word Help, planner, review affinity, parent/print reporting, and truth gates. Do not create a second vocabulary engine or modify Root Reactor, Suffix Shifter, or Academic Word Workshop.
+- Consequence: ELA.3.V.1.2 is IMPLEMENTED / DRAFT at difficulty 2, difficulty 3 remains genuine CONTENT_NEEDED, and no vocabulary, decoding, pronunciation, learner-mastery, approval, or FAST claim is inferred.

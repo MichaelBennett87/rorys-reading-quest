@@ -93,3 +93,9 @@ Author Lens Tower registration changes no P0 selector or fluency-completion impl
 Phase 7D4 registers a new prerequisite-gated sequential track without changing the P0 selector or journey transition. Recent use remains a ranking preference, compatible lessons remain available through safe recycling, immediate repeats remain avoidable when alternatives exist, and true CONTENT_NEEDED still requires no compatible authored lesson. Explicit Grade 3 Fluency Flight completion remains independent of freshness.
 
 Stale global CONTENT_NEEDED state now recomputes into Grade 3 Context Cavern when Grade 2 Context Cavern is complete and Unit 1 content is registered. The one-button journey, exact-once rewards, completed-session rejection, late-checkpoint rejection, and schema-v1 recovery remain covered by the inherited and Phase 7D4 regression suites.
+
+## Phase 7D5 preservation reconciliation
+
+Root Meaning Vault adds compatible Grade 3 Context Cavern Unit 2 work without changing the P0 selector. The production-registry liveness audit now derives 174 active-track skill/difficulty/purpose combinations and requires every compatible combination to remain available after freshness exhaustion. Unit 2 progression, verification, remediation, and review retain exact unit/version ownership; stale difficulty-2 CONTENT_NEEDED is retired; and difficulty 3 remains genuine content-needed because Meaning Maze is absent.
+
+The screenshot reproduction, safe-recycling tiers, immediate-repeat avoidance, exact-once rewards, completed-session rejection, late-checkpoint rejection, shared Start/Continue launcher, explicit Grade 3 Fluency Flight completion, schema-v1 persistence, Parent PIN, and assessments all pass unchanged.

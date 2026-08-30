@@ -108,7 +108,7 @@
     - [x] Phase 7D2: Summary Stronghold
     - [x] Phase 7D3: Author Lens Tower
     - [x] Phase 7D4: Academic Word Workshop Grade 3
-    - [ ] Phase 7D5: Root Meaning Vault
+    - [x] Phase 7D5: Root Meaning Vault
     - [ ] Phase 7D6: Meaning Maze
     - [ ] Phase 7D7: final Grade 3 audit
 - [ ] Phase 8: Grade 4 stretch content
@@ -137,7 +137,7 @@
 - [x] P0 production hotfix: keep finite guided tracks live through deterministic recycling and preserve explicit Grade 3 Fluency Flight chapter completion
 - [ ] Phase 7
 
-Phase 7D4 is complete; Phase 7D remains in progress, and Phase 7D5 remains unstarted.
+Phase 7D5 is complete; Phase 7D remains in progress, and Phase 7D6 remains unstarted.
 
 
 ### Phase 7D4 completion checkpoint
@@ -146,4 +146,14 @@ Phase 7D4 is complete; Phase 7D remains in progress, and Phase 7D5 remains unsta
 - [x] Add seven Academic Word Workshop lessons, seven texts, seven guides, 28 academic targets, 41 questions, and 28 Word Help targets.
 - [x] Preserve P0 planner liveness, the one-button journey, schema v1, rewards, review intervals, Parent PIN behavior, and assessments.
 - [x] Record ELA.3.V.1.1 as SUPPORTIVE_PRACTICE / DRAFT without speaking, writing, or open-response mastery claims.
-- [ ] Begin Phase 7D5 Root Meaning Vault.
+- [x] Complete Phase 7D5 Root Meaning Vault without beginning Meaning Maze.
+
+### Phase 7D5 completion checkpoint
+
+- [x] Add seven Root Meaning Vault lessons, seven original texts, seven guides, 28 meaning targets, 41 questions, and 28 Word Help targets.
+- [x] Preserve the exact 7 Greek / 7 Latin / 7 prefix-plus-base / 7 base-plus-suffix distribution with no target substitution.
+- [x] Prove genuine morpheme boundaries, transparent composition, context confirmation, and meaning-versus-pronunciation separation.
+- [x] Advance Grade 3 Context Cavern from Unit 1 into Unit 2 while leaving difficulty 3 as genuine CONTENT_NEEDED.
+- [x] Preserve P0 planner liveness, one-button launch, exact-once rewards, schema v1, Parent PIN, assessments, and review isolation.
+- [x] Record ELA.3.V.1.2 as IMPLEMENTED / DRAFT without learner-mastery, decoding-mastery, pronunciation, or FAST claims.
+- [ ] Begin Phase 7D6 Meaning Maze.

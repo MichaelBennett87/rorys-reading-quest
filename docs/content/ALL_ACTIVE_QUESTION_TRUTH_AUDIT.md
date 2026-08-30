@@ -157,3 +157,9 @@ Author Lens Tower adds 41 independently reviewed questions under `g3-compare-cas
 The production registry now resolves 1,532 current PASS ledger records across 38 packs. Global canonical grading accepts 1,532 canonical submissions and 514 canonical-equivalent submissions. Adversarial grading rejects 20,154 submissions. The complete grading contract passes 25,264 assertions with zero false positives, zero false negatives, zero stale fingerprints, and no authored-content mutation.
 
 Academic Word Workshop contributes 41 current PASS records, 41 canonical submissions, 14 canonical equivalents, 528 adversarial submissions, and 665 total assertions. All five bounded question types are exercised. Mismatched question-type discriminators are rejected, and learner-visible table and two-part subprompts participate in independent truth review.
+
+## Phase 7D5 active-question reconciliation
+
+Root Meaning Vault adds 41 independently reviewed questions under `g3-context-cavern-root-meaning-vault`. The production inventory now contains 1,573 active questions and 1,573 current PASS ledger records across 39 packs. The executable contract accepts 1,573 canonical submissions and 528 canonical-equivalent submissions, rejects 20,682 adversarial submissions, and completes 25,929 grading assertions.
+
+Blind review confirmed every genuine word-part boundary, origin, composed clue, contextual meaning, explanation, evidence reference, and distractor. The pack contributes 41 canonical submissions, 14 canonical equivalents, 528 adversarial submissions, and 665 assertions. One authored context label and one surface/canonical root representation were corrected before final registration; no final question, key, distractor, explanation, evidence, evaluator, unresolved ID, false positive, false negative, or stale fingerprint remains.
