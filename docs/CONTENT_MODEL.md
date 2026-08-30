@@ -152,3 +152,9 @@ The guide explicitly records `supportivePracticeOnly: true`, `openResponseScorin
 `RootMeaningGuide` adds four `RootMeaningTarget` records per passage. `MeaningWordPart` distinguishes root, base, prefix, suffix, and connector; records Greek, Latin, or English origin; and separates the visible surface form from an optional canonical form. `contributesMeaning` must be false for connectors. The target combines exact source ownership, primary family, reconstructed spelling, part clue, inferred contextual meaning, context evidence, confirmation statement, and `transparentComposition: true`.
 
 The pack contains 7 guides and 28 unique targets distributed exactly 7 / 7 / 7 / 7 across Greek-root, Latin-root, English prefix-plus-base, and English base-plus-suffix primary families. `aqueduct` records surface `aque` with canonical `aqua`, preserving exact spelling while teaching the defensible water root. Authored meaning parts and Word Help speech chunks remain independent. Guide data, parts, meanings, context statements, questions, explanations, keys, and support text are neither persisted nor printed.
+
+## Phase 7D6 meaning-maze guide model
+
+A `MeaningMazeGuide` owns exactly four source-bound targets plus any learner-visible local reference entries. Targets distinguish word from phrase form; unfamiliar, multiple-meaning, and figurative challenges; context, relationship, reference, background, and combined strategies; alternate senses; literal readings; and confirmation evidence. Reference entries distinguish glossary, dictionary, and thesaurus presentation without importing third-party text.
+
+The guide is authored DRAFT curriculum metadata. It is available to registration and semantic audits but excluded from schema-v1 progress, active sessions, attempts, reviews, assessments, Parent PIN records, and print. Word Help remains a separate assistance model and cannot silently disclose a scored meaning without assistance tracking.

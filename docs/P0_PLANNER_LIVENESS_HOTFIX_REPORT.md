@@ -99,3 +99,9 @@ Stale global CONTENT_NEEDED state now recomputes into Grade 3 Context Cavern whe
 Root Meaning Vault adds compatible Grade 3 Context Cavern Unit 2 work without changing the P0 selector. The production-registry liveness audit now derives 174 active-track skill/difficulty/purpose combinations and requires every compatible combination to remain available after freshness exhaustion. Unit 2 progression, verification, remediation, and review retain exact unit/version ownership; stale difficulty-2 CONTENT_NEEDED is retired; and difficulty 3 remains genuine content-needed because Meaning Maze is absent.
 
 The screenshot reproduction, safe-recycling tiers, immediate-repeat avoidance, exact-once rewards, completed-session rejection, late-checkpoint rejection, shared Start/Continue launcher, explicit Grade 3 Fluency Flight completion, schema-v1 persistence, Parent PIN, and assessments all pass unchanged.
+
+## Phase 7D6 preservation reconciliation
+
+Meaning Maze adds compatible Grade 3 Context Cavern Unit 3 work without changing the P0 selector. The production-registry liveness audit derives 178 active-track skill/difficulty/purpose combinations and requires every compatible combination to remain available after freshness exhaustion. Unit 3 progression, verification, remediation, and review retain exact unit/version ownership; stale difficulty-3 `CONTENT_NEEDED` is retired; and chapter completion at difficulty 4 returns genuine content-needed only when no other production curriculum is eligible.
+
+Recent use remains a ranking preference, fresh work remains preferred, least-used and oldest-used recycling remains deterministic, immediate repetition is avoided where alternatives exist, and sole-candidate repetition remains allowed. Completed-session rejection, late-checkpoint rejection, rapid-launch idempotency, exact-once rewards, schema-v1 recovery, and the shared Start/Continue transition remain unchanged.

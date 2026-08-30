@@ -184,3 +184,9 @@ The child still launches work only through Start Journey or Continue Journey. Ho
 Root Meaning Vault activates Grade 3 Context Cavern Unit 2 after Academic Word Workshop completion. Seven original DRAFT texts teach the learner to identify genuine Greek roots, Latin roots, English bases, prefixes, and suffixes; combine their common meanings into a reasonable hypothesis; and use visible context to confirm or refine that hypothesis. Letter matches that are not genuine morphemes are explicitly rejected.
 
 The scored construct is unfamiliar-word meaning, not pronunciation, syllable division, oral decoding, part-of-speech transformation, context-clue taxonomy, reference-material use, or unrestricted writing. Word Help retains its five accepted stages and uses separately authored pronunciation chunks. Meaning Maze, Grade 4, and timed FAST practice remain unstarted.
+
+## Phase 7D6 Meaning Maze product boundary
+
+Meaning Maze activates Grade 3 Context Cavern Unit 3 after Root Meaning Vault completion. Seven original DRAFT sources teach learners to combine context clues, word relationships, local authored reference materials, broad background knowledge, multiple-meaning sense selection, and complete-phrase interpretation. The scored construct is meaning determination and confirmation, not roots or affixes, pronunciation, figurative-device labels, dictionary alphabetization, open writing, or oral explanation.
+
+All local glossary, dictionary-style, and thesaurus-style entries are bundled curriculum content. They make no network request and are not persisted. Grade 3 Context Cavern reaches curriculum completion difficulty 4 after two distinct independent strong checkpoints. Curriculum completion remains separate from learner vocabulary mastery, and Phase 7D7 remains unstarted.

@@ -56,3 +56,9 @@ When the Grade 2 prerequisite is incomplete, Grade 3 Context Cavern does not ini
 A schema-v1 save at Grade 3 Context Cavern difficulty 2 with completed Academic Word Workshop state and stored `CONTENT_NEEDED` now replans against Root Meaning Vault. Start Journey launches Unit 2, and another launch resumes the same unfinished session identity. A completed stale Unit 1 session is rejected before Unit 2 starts; XP, stars, attempts, reviews, Parent PIN data, and assessments remain intact.
 
 After two distinct independent strong Unit 2 checkpoints, the track reaches difficulty 3 and the absent Meaning Maze returns genuine content-needed. Home still has exactly Start Journey and Parent Area, world cards remain display-only, progression outcome retains one action, and no root, word, unit, or lesson selector is introduced.
+
+## Phase 7D6 boundary regression
+
+The Root Meaning Vault-to-Meaning Maze boundary uses the same authoritative launcher and P0 liveness selector. A schema-v1 save at Grade 3 Context Cavern difficulty 3 with stored `CONTENT_NEEDED` is replanned against registered Unit 3 work. Start Journey and Continue Journey launch or resume one Meaning Maze session, a completed Unit 2 session cannot block it, rapid preparation cannot duplicate it, and XP, stars, attempts, reviews, assessments, and Parent PIN data remain unchanged.
+
+After two distinct independent strong Unit 3 checkpoints, Grade 3 Context Cavern reaches completion difficulty 4. Home still has exactly Start Journey and Parent Area, world cards remain display-only, progression outcome retains one child-facing action, and no word, phrase, unit, lesson, or world selector is introduced. Genuine later-content absence remains fail-closed without fabricating Phase 7D7 learner work.

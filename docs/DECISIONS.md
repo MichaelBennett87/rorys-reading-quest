@@ -559,3 +559,14 @@ Consequence: Author Lens Tower is the only new pack, Grade 3 Across-Genre Readin
 - Decision: require genuine morphemes, defensible origin, transparent composition, and learner-visible context confirmation. Surface spelling may use an accurate canonical form only when needed, as with `aque` and canonical `aqua` in `aqueduct`.
 - Decision: reuse the current Context Cavern track, five selected-response forms, Word Help, planner, review affinity, parent/print reporting, and truth gates. Do not create a second vocabulary engine or modify Root Reactor, Suffix Shifter, or Academic Word Workshop.
 - Consequence: ELA.3.V.1.2 is IMPLEMENTED / DRAFT at difficulty 2, difficulty 3 remains genuine CONTENT_NEEDED, and no vocabulary, decoding, pronunciation, learner-mastery, approval, or FAST claim is inferred.
+
+## Phase 7D6 Meaning Maze decisions
+
+- Decision: implement only ELA.3.V.1.3 through Grade 3 Context Cavern Unit 3 and leave the Phase 7D7 final audit unstarted.
+- Decision: keep roots, bases, and affix analysis in Root Meaning Vault; Meaning Maze selects and combines contextual meaning strategies.
+- Decision: interpret figurative phrases without making device identification the scored construct, preserving Figurative Fortress ownership.
+- Decision: use only original learner-visible glossary, dictionary-style, and thesaurus-style entries; add no external dictionary, API, or general browsing subsystem.
+- Decision: model broad background knowledge only when source context independently confirms the meaning.
+- Decision: keep multiple-meaning and phrase targets release-blocking when more than one interpretation remains defensible.
+- Decision: complete Grade 3 Context Cavern curriculum progression at difficulty 4 without claiming learner vocabulary mastery or creating Phase 7D7 child content.
+- Decision: preserve the P0 selector, safe recycling, exact-once rewards, schema-v1 persistence, one-button journey, Parent PIN, and assessment boundaries unchanged.

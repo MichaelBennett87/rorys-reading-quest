@@ -135,3 +135,12 @@ The Grade 3 snapshot is 12 implemented benchmark rows, 2 supportive-practice row
 - Phase 7D remains incomplete; Phase 7D6 is next.
 
 The Grade 3 snapshot is 13 implemented benchmark rows, 2 supportive-practice rows, and 1 planned row, with no partial, missing, or approved rows. Curriculum progression does not infer vocabulary, decoding, pronunciation, or global Grade 3 mastery.
+
+## Phase 7D6 completion update
+
+- `g3-cc-unit-1` Academic Word Workshop: active and complete for curriculum delivery, `ELA.3.V.1.1` SUPPORTIVE_PRACTICE / DRAFT.
+- `g3-cc-unit-2` Root Meaning Vault: active and complete for curriculum delivery, `ELA.3.V.1.2` IMPLEMENTED / DRAFT.
+- `g3-cc-unit-3` Meaning Maze: active and complete for curriculum delivery, `ELA.3.V.1.3` IMPLEMENTED / DRAFT.
+- Grade 3 Context Cavern reaches completion difficulty 4 and remains review-ready; curriculum completion does not infer mastery.
+- The Grade 3 snapshot is 14 implemented benchmark rows, 2 supportive-practice rows, and 0 planned, partial, missing, or approved rows.
+- Phase 7D6 is complete. Phase 7D remains incomplete pending Phase 7D7, which remains unstarted.

@@ -42,3 +42,7 @@ The learner recognizes meanings, selects precise academic words, identifies appr
 | Approved rows | 0 |
 
 The supportive-practice rows are `ELA.3.F.1.4` and `ELA.3.V.1.1`. `ELA.3.V.1.2` and `ELA.3.V.1.3` remain planned. This snapshot describes authored curriculum coverage, not learner mastery.
+
+## Phase 7D6 coverage reconciliation
+
+The historical supportive-practice conclusion for `ELA.3.V.1.1` is unchanged. With Root Meaning Vault and Meaning Maze now registered, `ELA.3.V.1.2` and `ELA.3.V.1.3` are IMPLEMENTED / DRAFT. The current Grade 3 snapshot is 14 implemented benchmark rows, 2 supportive-practice rows, and no planned, partial, missing, or approved rows. This remains curriculum coverage rather than learner mastery.

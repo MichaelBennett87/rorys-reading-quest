@@ -154,3 +154,11 @@ Schema version 1 and the child progress, parent access, and parent records stora
 Root Meaning Vault persists no passage text, root-meaning guide, root, base, affix meaning, connector metadata, combined clue, inferred meaning, context-confirmation statement, question text, explanation, correct answer, or Word Help curriculum text. Schema version 1, all three storage keys, hashed Parent PIN behavior, assessments, attempts, reviews, rewards, assistance summaries, and active-session recovery remain unchanged.
 
 Meaning parts are labeled with text rather than color alone. Existing keyboard operation, visible focus, correct/incorrect announcements, multiselect, hot text, table match, two-part interaction, reduced motion, responsive layout, and optional audio remain required. No typing, microphone, speech recognition, backend, cloud synchronization, analytics, telemetry, debugging upload, external speech service, or live AI is added.
+
+## Phase 7D6 privacy and accessibility boundary
+
+Meaning Maze persists no source or poem text, guide metadata, reference entry, target meaning, alternate sense, figurative mapping, background-knowledge statement, question text, explanation, correct answer, or Word Help curriculum text. Schema version 1, all storage keys, hashed Parent PIN behavior, assessments, attempts, reviews, rewards, assistance summaries, and active-session recovery remain unchanged.
+
+Glossary, dictionary-style, and thesaurus-style cards are original local curriculum content and never contact an external service. There is no backend, cloud synchronization, analytics, telemetry, microphone, speech recognition, live AI, learner-generated writing, or oral scoring.
+
+The child experience preserves semantic source and poem rendering, labeled reference cards, headings, keyboard operation, visible focus, non-color-only feedback, accessible multiselect, Hot Text, table match, and two-part controls, reduced motion, responsive layout, and optional Word Help audio. No typing or audio is required.

@@ -6,8 +6,8 @@ Rory's Reading Quest is a local-first, child-safe reading-learning foundation fo
 
 ## Current Status
 
-- Status: `Phase 6 complete and Grade 2 frozen; Phase 7A complete; Phase 7B complete; Phase 7C complete; Phase 7D1 through Phase 7D5 complete; all 1,573 active questions are fingerprint-bound to pack ledgers and executable canonical/adversarial grading contracts; ELA.3.F.1.3, ELA.3.R.1.1 through ELA.3.R.1.4, ELA.3.R.2.1 through ELA.3.R.2.4, ELA.3.R.3.1 through ELA.3.R.3.3, and ELA.3.V.1.2 curriculum coverage are IMPLEMENTED / DRAFT; ELA.3.F.1.4 and ELA.3.V.1.1 are SUPPORTIVE_PRACTICE / DRAFT; no Grade 3 row is APPROVED`.
-- Phase continuity: Phase 7 remains in progress and Phase 7D remains incomplete. Academic Word Workshop and Root Meaning Vault are active in Grade 3 Context Cavern; Meaning Maze and Phase 7D6 remain unstarted. Curriculum coverage is separate from learner mastery, and no global Grade 3 diagnosis or FAST prediction is made.
+- Status: `Phase 6 complete and Grade 2 frozen; Phase 7A complete; Phase 7B complete; Phase 7C complete; Phase 7D1 through Phase 7D6 complete; all 1,614 active questions are fingerprint-bound to pack ledgers and executable canonical/adversarial grading contracts; ELA.3.F.1.3, ELA.3.R.1.1 through ELA.3.R.1.4, ELA.3.R.2.1 through ELA.3.R.2.4, ELA.3.R.3.1 through ELA.3.R.3.3, and ELA.3.V.1.2 through ELA.3.V.1.3 curriculum coverage are IMPLEMENTED / DRAFT; ELA.3.F.1.4 and ELA.3.V.1.1 are SUPPORTIVE_PRACTICE / DRAFT; no Grade 3 row is APPROVED`.
+- Phase continuity: Phase 7 remains in progress and Phase 7D remains incomplete pending the Phase 7D7 final audit. All three Grade 3 Context Cavern units are active; Phase 7D7 remains unstarted. Curriculum coverage is separate from learner mastery, and no global Grade 3 diagnosis or FAST prediction is made.
 - Historical completion markers remain explicit: `Phase 6F0 complete; Phase 6F1 complete; Phase 6F2 complete; Phase 6F3 complete; Phase 6F4 complete; Phase 6 complete; Grade 2 curriculum coverage complete; Phase 7A0 complete; Phase 7A1 complete; Phase 7A1.5 complete; Phase 7A2 complete; Phase 7A3 complete; Phase 7A4 complete; Phase 7A complete; Phase 7B1 complete; Phase 7B2 complete; Phase 7B3 complete; Phase 7B4 complete; Phase 7B complete`.
 - Historical Phase 7A0 milestone: Root Reactor is the first Grade 3 production pack.
 - Historical Phase 7A1 milestone: ELA.3.F.1.3 has partial authored DRAFT coverage, and no Grade 3 benchmark is fully implemented or APPROVED at that checkpoint.
@@ -48,12 +48,12 @@ Persisted records contain stable local IDs and educational summaries only. Passa
 - Phase 7A is complete.
 - Phase 7B1 through Phase 7B4 are complete. Grade 3 Story Scouts and Grade 3 Poetry Planet remain independently prerequisite-gated.
 - `ELA.3.R.1.1` through `ELA.3.R.1.4` curriculum coverage are IMPLEMENTED / DRAFT; curriculum availability does not claim learner mastery.
-- Poem Form Observatory, all four Grade 3 Information Detectives units, all three Grade 3 Compare Castle units, Academic Word Workshop, and Root Meaning Vault are active. ELA.3.R.2.1 through ELA.3.R.2.4, ELA.3.R.3.1 through ELA.3.R.3.3, and ELA.3.V.1.2 are IMPLEMENTED / DRAFT; ELA.3.V.1.1 is SUPPORTIVE_PRACTICE / DRAFT. Phase 7C and Phase 7D1 through Phase 7D5 are complete; Meaning Maze remains unstarted.
+- Poem Form Observatory, all four Grade 3 Information Detectives units, all three Grade 3 Compare Castle units, and all three Grade 3 Context Cavern units are active. ELA.3.R.2.1 through ELA.3.R.2.4, ELA.3.R.3.1 through ELA.3.R.3.3, and ELA.3.V.1.2 through ELA.3.V.1.3 are IMPLEMENTED / DRAFT; ELA.3.V.1.1 is SUPPORTIVE_PRACTICE / DRAFT. Phase 7C and Phase 7D1 through Phase 7D6 are complete; Phase 7D7 remains unstarted.
 - The live GitHub Pages site remains available.
 
 
-## Phase 7D5 current status
+## Phase 7D6 current status
 
-Root Meaning Vault activates Grade 3 Context Cavern Unit 2 with transparent Greek roots, Latin roots, English bases, prefixes, suffixes, and context-confirmed unfamiliar-word meaning. ELA.3.V.1.2 is `IMPLEMENTED / DRAFT`; vocabulary mastery, decoding mastery, pronunciation mastery, and approval are not inferred.
+Meaning Maze activates Grade 3 Context Cavern Unit 3 with context clues, word relationships, local reference materials, broad background knowledge, multiple-meaning sense selection, and context-supported phrase interpretation. ELA.3.V.1.3 is `IMPLEMENTED / DRAFT`; vocabulary mastery, unrestricted reading mastery, and approval are not inferred.
 
-Current active registry totals are 39 packs, 273 lessons, 287 texts, 1,573 questions, and 1,083 support targets. Grade 3 contributes 17 packs, 119 lessons, 126 texts, 684 questions, and 469 support targets. Phase 7D remains in progress, and Phase 7D6 Meaning Maze remains unstarted.
+Current active registry totals are 40 packs, 280 lessons, 294 texts, 1,614 questions, and 1,111 support targets. Grade 3 contributes 18 packs, 126 lessons, 133 texts, 725 questions, and 497 support targets. Phase 7D remains in progress pending the Phase 7D7 final audit, which remains unstarted.

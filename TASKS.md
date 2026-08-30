@@ -109,7 +109,7 @@
     - [x] Phase 7D3: Author Lens Tower
     - [x] Phase 7D4: Academic Word Workshop Grade 3
     - [x] Phase 7D5: Root Meaning Vault
-    - [ ] Phase 7D6: Meaning Maze
+    - [x] Phase 7D6: Meaning Maze
     - [ ] Phase 7D7: final Grade 3 audit
 - [ ] Phase 8: Grade 4 stretch content
   - [ ] Add stretch writing and evidence tasks.
@@ -137,7 +137,7 @@
 - [x] P0 production hotfix: keep finite guided tracks live through deterministic recycling and preserve explicit Grade 3 Fluency Flight chapter completion
 - [ ] Phase 7
 
-Phase 7D5 is complete; Phase 7D remains in progress, and Phase 7D6 remains unstarted.
+Phase 7D6 is complete; Phase 7D remains in progress pending the final Grade 3 audit, and Phase 7D7 remains unstarted.
 
 
 ### Phase 7D4 completion checkpoint
@@ -156,4 +156,12 @@ Phase 7D5 is complete; Phase 7D remains in progress, and Phase 7D6 remains unsta
 - [x] Advance Grade 3 Context Cavern from Unit 1 into Unit 2 while leaving difficulty 3 as genuine CONTENT_NEEDED.
 - [x] Preserve P0 planner liveness, one-button launch, exact-once rewards, schema v1, Parent PIN, assessments, and review isolation.
 - [x] Record ELA.3.V.1.2 as IMPLEMENTED / DRAFT without learner-mastery, decoding-mastery, pronunciation, or FAST claims.
-- [ ] Begin Phase 7D6 Meaning Maze.
+- [x] Complete Phase 7D6 Meaning Maze without beginning the final Grade 3 audit.
+
+### Phase 7D6 completion checkpoint
+
+- [x] Add seven Meaning Maze lessons, seven original sources, seven guides, 28 meaning targets, 41 questions, and 28 Word Help targets.
+- [x] Cover all eight ELA.3.V.1.3 patterns as IMPLEMENTED / DRAFT without inferring learner mastery.
+- [x] Complete Grade 3 Context Cavern curriculum progression at difficulty 4 while preserving P0 planner liveness and the one-button child journey.
+- [x] Preserve schema-v1 storage, Parent PIN, assessments, rewards, reviews, privacy, and accessibility contracts.
+- [ ] Begin Phase 7D7 final Grade 3 audit.

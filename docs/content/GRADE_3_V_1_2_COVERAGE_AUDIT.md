@@ -27,3 +27,7 @@ The benchmark is not satisfied by letter matching alone. Every scored decomposit
 Root Reactor remains decoding-focused under ELA.3.F.1.3. Suffix Shifter remains derivational-role focused. Academic Word Workshop remains appropriate-use supportive practice. Meaning Maze remains unstarted and retains context-clue, relationship, reference-material, multiple-meaning, and figurative-phrase scope.
 
 This is authored curriculum coverage, not evidence that a learner has mastered vocabulary, decoding, pronunciation, Greek, Latin, or every unfamiliar word.
+
+## Phase 7D6 boundary reconciliation
+
+The Root Meaning Vault conclusion remains unchanged: `ELA.3.V.1.2` is IMPLEMENTED / DRAFT through morphemic analysis. Meaning Maze is now separately registered for `ELA.3.V.1.3`; it owns context clues, relationships, local reference materials, background knowledge, multiple meanings, and unknown word or phrase interpretation. No Root Meaning target or scored construct was changed.

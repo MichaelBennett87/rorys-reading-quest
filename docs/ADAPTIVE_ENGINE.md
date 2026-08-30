@@ -163,3 +163,11 @@ Difficulty 2 is a genuine CONTENT_NEEDED boundary because Root Meaning Vault is 
 At Grade 3 Context Cavern difficulty 2, Root Meaning Vault is ordinary progression. A first distinct independent strong checkpoint returns `VERIFY_MASTERY`; a second distinct independent strong checkpoint advances to difficulty 3. Duplicate activity evidence and assisted work do not provide a second proof. Partial work stays at difficulty 2, a first low result selects Unit 2 guidance, and a second low result enters Unit 2 difficulty-1 remediation with a difficulty-2 return target.
 
 Academic Word Workshop ordinary progression is never substituted for Unit 2 remediation. Unit 1 and Unit 2 reviews retain exact unit and content-version affinity. Stored difficulty-2 `CONTENT_NEEDED` is recomputed against the registered pack, while difficulty 3 remains genuine `CONTENT_NEEDED` because Meaning Maze is absent. Safe recycling remains available before advancement and cannot weaken evidence distinctness, thresholds, review intervals, rewards, or exact-once completion.
+
+## Phase 7D6 Meaning Maze progression
+
+At Grade 3 Context Cavern difficulty 3, Meaning Maze is ordinary progression. A first distinct independent strong checkpoint returns `VERIFY_MASTERY`; a second advances to completion difficulty 4. Duplicate checkpoint evidence and assisted work do not provide a second proof. Partial work stays at difficulty 3, a first low result selects Unit 3 guidance, and a second low result enters Unit 3 difficulty-2 remediation with a difficulty-3 return target.
+
+Root Meaning Vault ordinary progression is never substituted for Unit 3 remediation. All three Grade 3 Context Cavern review identities retain exact unit and content-version affinity. Stored difficulty-3 `CONTENT_NEEDED` is recomputed against the registered pack. After chapter completion, genuine content-needed remains fail-closed when no other production curriculum is eligible; no Phase 7D7 learner content is fabricated.
+
+Recent use remains a ranking preference, fresh work remains preferred, safe recycling remains available, immediate repetition is avoided when alternatives exist, and sole-candidate repetition remains allowed. Thresholds, review intervals, rewards, active-session reconciliation, exact-once completion, and the shared Start/Continue transition are unchanged.
