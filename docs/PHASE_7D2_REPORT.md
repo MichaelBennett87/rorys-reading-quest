@@ -49,3 +49,11 @@ Checkpoint C passed lint with zero warnings, typecheck, 120 test files and 621 t
 The synchronized Phase 7D2 release exposed a separate production liveness defect in Story Scouts Trail 1: recent-use freshness exhausted three compatible checkpoints and incorrectly produced a permanent content-needed loop. The dedicated P0 hotfix preserves all Phase 7D2 curriculum and the Phase 7C3 session-state repair while changing freshness from an eligibility ban to deterministic ranking with safe same-track recycling. Phase 7D3 remains unstarted. Full reproduction, root cause, preservation evidence, and release gates are recorded in `docs/P0_PLANNER_LIVENESS_HOTFIX_REPORT.md`.
 
 The full hotfix gate then exposed a distinct Grade 3 fluency completion regression: safe recycling made the former selector-exhaustion completion signal unreachable. The bounded correction evaluates Unit 4 completion explicitly from durable completed attempts joined to the current exact registry identity, advances to difficulty 5 only after all authored activities are represented, preserves `lastMasteredDifficulty` 3, and continues to make no oral-mastery claim. No Phase 7D2 curriculum fact changes.
+
+## Synchronized handoff to Phase 7D3
+
+- Starting P0 SHA: `61c67932fd38f5130950768c058e41c4905590ef`
+- Final synchronized P0 SHA: `5fb733b0010b63e9b8b92d37c7e24cf04ab07426`
+- P0 commits: `cc6bdd2`, `a92c448`, `5fb733b`
+
+Phase 7D2 started at `e48e2e381889ef4d1eb971f6d51a570a33a04a81` and synchronized at `61c67932fd38f5130950768c058e41c4905590ef` through `3c41fdd`, `d15cfd0`, `1f7b485`, and `61c6793`. The later P0 planner-liveness recovery started at `61c67932fd38f5130950768c058e41c4905590ef` and synchronized at `5fb733b0010b63e9b8b92d37c7e24cf04ab07426` through `cc6bdd2`, `a92c448`, and `5fb733b`. These are separate release histories: Phase 7D2 curriculum facts remain unchanged, while the P0 release preserves finite-pack liveness and explicit Grade 3 Fluency Flight completion. Phase 7D3 begins from the synchronized P0 SHA.

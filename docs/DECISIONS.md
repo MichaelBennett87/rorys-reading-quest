@@ -532,3 +532,11 @@ Decision: determine Grade 3 Fluency Flight chapter completion from durable compl
 Reason: changing recent activity from a blacklist to a ranking signal correctly kept finite packs live, but exposed an older hidden coupling in which Grade 3 chapter completion ran only after lesson selection returned no content. Once recycling always returned a compatible lesson, the completion branch became unreachable.
 
 Consequence: chapter completion no longer depends on recent-usage exhaustion or its 12-entry cap. Schema version 1, persisted attempt shape, rewards, `lastMasteredDifficulty`, oral-fluency boundaries, review intervals, and the one-button journey remain unchanged. Phase 7D3 remains unstarted.
+
+## 2026-08-30 - Reuse paired-text architecture for Grade 3 author presentation
+
+Decision: extend `ContentPack` with optional Grade 3 author-comparison guides while reusing the established `PairedTextSet`, `PairedTextCard`, source-scoped evidence, five question forms, review affinity, and grading/truth infrastructure. Every guide requires a meaningful shared topic or theme, at least two presentation similarities, at least two presentation differences, and evidence from both sources.
+
+Reason: `ELA.3.R.3.3` asks how two authors present the same topic or theme. A fact-only comparison or a second paired-text engine would weaken construct validity and duplicate stable architecture.
+
+Consequence: Author Lens Tower is the only new pack, Grade 3 Across-Genre Reading can complete at difficulty 4, and Phase 7D4 Grade 3 Context Cavern remains unstarted. The P0 selector, fluency completion, one-button journey, persistence, rewards, review intervals, and prior authored curriculum remain unchanged.

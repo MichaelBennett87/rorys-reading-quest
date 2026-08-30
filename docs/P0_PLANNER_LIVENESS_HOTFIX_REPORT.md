@@ -82,3 +82,7 @@ Final lint, typecheck, test, build, diff, Git synchronization, Pages workflow, H
 ## Remaining human acceptance
 
 After Pages deployment, load Rory's existing browser save without clearing storage. Confirm the Home values remain intact, Start Journey launches Story Scouts instead of More Quests Are Being Prepared, Save and Exit resumes the same unfinished session, and subsequent practice or verification remains available. This human check confirms the exact live localStorage history that cannot be extracted by repository tests.
+
+## Phase 7D3 preservation reconciliation
+
+Author Lens Tower registration changes no P0 selector or fluency-completion implementation. The full Phase 7D3 gates rerun the planner-liveness screenshot flow, registry-wide liveness cases, Grade 3 Fluency Flight completion boundary, shared Start/Continue launcher, exact-once completion, and persistence diagnostics. Recent use remains a ranking signal, safe recycling remains available before true completion, and `CONTENT_NEEDED` remains reserved for genuine authored-content or hard-affinity boundaries.

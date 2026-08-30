@@ -107,3 +107,14 @@ Figurative Fortress (`g3-cg-unit-1`) activates Grade 3 Across-Genre Reading afte
 - Phase 7D remains incomplete; Phase 7D3 is next.
 
 The Grade 3 snapshot is 11 implemented, 1 supportive practice, 4 planned, 0 partial, 0 missing, and 0 approved. Curriculum coverage does not infer learner mastery.
+
+## Phase 7D3 completion update
+
+- `g3-cg-unit-1` Figurative Fortress: complete/review-ready, `ELA.3.R.3.1` IMPLEMENTED / DRAFT.
+- `g3-cg-unit-2` Summary Stronghold: complete/review-ready, `ELA.3.R.3.2` IMPLEMENTED / DRAFT.
+- `g3-cg-unit-3` Author Lens Tower: active and complete for curriculum delivery, `ELA.3.R.3.3` IMPLEMENTED / DRAFT.
+- `g3-across-genres-reading`: completion difficulty remains 4 and the chapter becomes complete/review-ready after two distinct independent strong Unit 3 checkpoints.
+- Grade 3 Context Cavern and Phase 7D4: planned and unstarted with no active production content.
+- Phase 7D remains incomplete; Phase 7D4 is next.
+
+The Grade 3 snapshot is 12 implemented, 1 supportive practice, 3 planned, 0 partial, 0 missing, and 0 approved. Curriculum coverage and chapter completion do not infer learner mastery.

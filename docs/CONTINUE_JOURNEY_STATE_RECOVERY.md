@@ -39,3 +39,7 @@ The Phase 7C-to-7D boundary is covered by a production-registry fixture. A schem
 ## Phase 7D2 boundary regression
 
 The Figurative Fortress-to-Summary Stronghold boundary uses the same authoritative launcher. A schema-v1 save at Grade 3 Across-Genre difficulty 2 with stored `CONTENT_NEEDED` is replanned against the current registry, and Start Journey or Continue Journey opens Unit 2. Repeated launch preparation resumes the same session identity instead of creating a second session. Existing XP and stars remain unchanged, completed Unit 1 state cannot block Unit 2, and genuine content-needed remains fail-closed at unregistered Unit 3.
+
+## Phase 7D3 boundary regression
+
+The Summary Stronghold-to-Author Lens Tower boundary uses the same authoritative launcher and P0 liveness selector. A schema-v1 save at Grade 3 Across-Genre difficulty 3 with stored `CONTENT_NEEDED` is replanned against the registered Unit 3 pair. Start Journey and Continue Journey launch or resume one Author Lens session, completed Unit 2 state cannot block it, rapid preparation cannot duplicate it, and attempts, XP, stars, reviews, Parent PIN data, and assessments remain unchanged. After two distinct independent strong Unit 3 checkpoints, the track reaches completion difficulty 4 and genuine later-content absence remains fail-closed.

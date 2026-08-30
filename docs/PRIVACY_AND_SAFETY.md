@@ -135,3 +135,9 @@ Summary Stronghold adds no persisted curriculum text. Literary and informational
 Safe recycling reads the existing bounded recent-activity history in memory and does not erase or expand it. Selection mode, candidate counts, prior-use counts, last-use timestamps, overlap counts, and diagnostic reason codes are not included in persisted next-quest plans, child UI, parent reporting, print output, analytics, or remote diagnostics. Schema version 1, all three storage keys, Parent PIN behavior, assessments, attempts, reviews, rewards, assistance summaries, and active-session recovery remain unchanged. The repair adds no backend, cloud sync, analytics, telemetry, microphone, speech recognition, learner identifier, debugging upload, or live AI.
 
 The Grade 3 fluency completion correction reads existing completed-attempt lesson/activity identity and joins it to current in-memory unit/version curriculum metadata. It persists no new completion field, curriculum text, selector diagnostic, oral score, or mastery claim, and it does not rely on or expand recent-usage retention.
+
+## Phase 7D3 privacy boundary
+
+Author Lens Tower adds no persisted curriculum content. The fourteen source texts, seven paired sets, comparison guides, shared topic/theme statements, similarities, differences, evidence content, questions, explanations, correct answers, and Word Help curriculum remain registry-only. Parent and print views expose friendly benchmark, unit, assistance, and curriculum-status labels only after activity; they exclude source text, guide metadata, responses, keys, raw IDs, FAST predictions, and global diagnosis.
+
+Schema version 1, all storage keys, Parent PIN behavior, assessment records, attempts, reviews, rewards, assistance summaries, active-session recovery, and P0 planner diagnostics remain unchanged. No backend, cloud synchronization, analytics, telemetry, microphone, speech recognition, debugging upload, or live AI was added.

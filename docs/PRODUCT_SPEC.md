@@ -167,3 +167,7 @@ The accepted child flow remains Home to Start Journey to planner-selected work t
 ## Phase 7D2 Summary Stronghold boundary
 
 Summary Stronghold activates Grade 3 Across-Genre Reading Trail 2 only after Figurative Fortress completes. Seven original DRAFT sources teach concise literary and informational summarization through selection, omission, compression, and preservation of meaning. Literary work includes problem or goal, essential plot events, resolution, and supported theme; informational work includes central idea, relevant details, and essential relationships. The pack uses only bounded selected-response forms and does not introduce free-response scoring, author comparison, vocabulary curriculum, learner-mastery claims, or FAST predictions. `ELA.3.R.3.2` curriculum coverage is IMPLEMENTED / DRAFT.
+
+## Phase 7D3 Author Lens Tower boundary
+
+Author Lens Tower activates Grade 3 Across-Genre Reading Trail 3 only after Summary Stronghold completes. Seven DRAFT paired lessons contain fourteen original texts: four informational-informational pairs sharing a topic and three literary-literary pairs sharing a supported theme. Questions compare how authors organize, focus, explain, illustrate, describe, and develop the shared basis, with source-scoped evidence from both texts. The phase excludes fact-only comparison, private author intent, advanced rhetoric, vocabulary curriculum, Grade 4 work, and timed FAST practice. `ELA.3.R.3.3` curriculum coverage is IMPLEMENTED / DRAFT; learner mastery and approval remain separate.

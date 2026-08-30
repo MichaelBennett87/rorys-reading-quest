@@ -39,3 +39,7 @@ Figurative Fortress supplies authored DRAFT curriculum coverage for `ELA.3.R.3.1
 ## Phase 7D2 alignment update
 
 Summary Stronghold contributes bounded authored practice for `ELA.3.R.3.2` across literary and informational sources. It does not produce a FAST score, timed result, global Grade 3 diagnosis, or unrestricted written-summary evaluation. Curriculum availability and learner mastery remain separate.
+
+## Phase 7D3 alignment update
+
+Author Lens Tower contributes bounded authored paired-text practice for `ELA.3.R.3.3`, requiring presentation comparisons and source-scoped evidence from both texts. It is not an official FAST form, timed practice, scale score, prediction, proficiency classification, advanced rhetoric assessment, or global Grade 3 diagnosis. Curriculum availability and learner mastery remain separate.

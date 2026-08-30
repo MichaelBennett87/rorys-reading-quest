@@ -133,3 +133,9 @@ The Figurative Fortress pack contains 7 guides and 28 targets distributed as 10 
 ## Grade 3 summary guide metadata
 
 Phase 7D2 adds `Grade3SummaryGuide`, discriminated as `LiterarySummaryGuide` or `InformationalSummaryGuide`. Literary guides own characters, problem or goal, sequenced important plot events, resolution, supported theme, minor details, and a model summary. Informational guides own topic, central idea, important details, minor details, essential relationship, and a model summary. Every guide is DRAFT, version-bound, source-owned, audit-only curriculum data. Guides, summaries, themes, central ideas, important/minor mappings, questions, explanations, and answers are not written to child progress or parent records.
+
+## Grade 3 author-comparison guide metadata
+
+Phase 7D3 adds optional `Grade3AuthorComparisonGuide` metadata on a content pack. Each guide identifies one paired set, a meaningful same-topic or same-theme basis, Text A and Text B kinds and focus statements, presentation-feature similarities and differences, separately scoped evidence IDs from both texts, and a synthesis statement. `evidenceFromBothRequired` is always true. Guides remain DRAFT and content-version bound.
+
+The active pack contains 7 paired sets, 14 sources, 7 guides, and 28 lesson-level Word Help targets. Guide content, source text, comparison statements, evidence text, questions, explanations, keys, and Word Help curriculum are not persisted or printed. Current active registry totals are 37 packs, 259 lessons, 273 texts, 1,491 questions, and 1,027 support targets.
