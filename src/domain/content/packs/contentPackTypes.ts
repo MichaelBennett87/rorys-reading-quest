@@ -307,6 +307,42 @@ export interface AcademicVocabularyGuide {
   contentVersion: string
 }
 
+export type Grade3AcademicPartOfSpeech = 'noun' | 'verb' | 'adjective' | 'adverb'
+
+export type AcademicSubjectContext =
+  | 'reading'
+  | 'writing'
+  | 'science'
+  | 'mathematics'
+  | 'social-studies'
+  | 'engineering'
+  | 'project-presentation'
+
+export interface Grade3AcademicVocabularyTarget {
+  targetId: string
+  word: string
+  partOfSpeech: Grade3AcademicPartOfSpeech
+  childFriendlyMeaning: string
+  sourceSentenceIds: string[]
+  subjectContexts: AcademicSubjectContext[]
+  speakingFrame: string
+  writingFrame: string
+  appropriateUseExamples: string[]
+  inappropriateUseExample: string
+  inappropriateUseReason: string
+  precisionNote: string
+}
+
+export interface Grade3AcademicVocabularyGuide {
+  passageId: string
+  targets: Grade3AcademicVocabularyTarget[]
+  supportivePracticeOnly: true
+  openResponseScoring: false
+  oralScoring: false
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
 export type MorphologyAffixKind = 'prefix' | 'suffix'
 
 export interface MorphologyAffixAnalysis {
@@ -962,6 +998,7 @@ export interface ContentPack {
   authorClaimGuides?: AuthorClaimGuide[]
   authorOpinionGuides?: AuthorOpinionGuide[]
   academicVocabularyGuides?: AcademicVocabularyGuide[]
+  grade3AcademicVocabularyGuides?: Grade3AcademicVocabularyGuide[]
   morphologyGuides?: MorphologyGuide[]
   rootDecodingGuides?: RootDecodingGuide[]
   derivationalSuffixGuides?: DerivationalSuffixGuide[]
@@ -1052,9 +1089,18 @@ export interface ContentPackAuditIssue {
    | 'missing_author_opinion_guide'
    | 'author_opinion_guide_count_mismatch'
    | 'author_opinion_guide_invalid'
-   | 'missing_academic_vocabulary_guide'
-   | 'academic_vocabulary_guide_count_mismatch'
-   | 'academic_vocabulary_guide_invalid'
+    | 'missing_academic_vocabulary_guide'
+    | 'academic_vocabulary_guide_count_mismatch'
+    | 'academic_vocabulary_guide_invalid'
+    | 'missing_grade3_academic_vocabulary_guide'
+    | 'grade3_academic_vocabulary_guide_invalid'
+    | 'academic_word_not_in_source'
+    | 'academic_part_of_speech_mismatch'
+    | 'academic_use_example_invalid'
+    | 'academic_misuse_example_ambiguous'
+    | 'academic_subject_context_insufficient'
+    | 'academic_open_response_scope_violation'
+    | 'academic_vocabulary_scope_drift'
    | 'missing_morphology_guide'
    | 'morphology_guide_count_mismatch'
      | 'morphology_guide_invalid'

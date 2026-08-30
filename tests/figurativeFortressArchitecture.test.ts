@@ -12,13 +12,13 @@ import { createDefaultQuestProgress } from '../src/persistence'
 const NOW = '2026-08-25T09:00:00.000Z'
 
 describe('Figurative Fortress architecture', () => {
-  test('activates only the reserved Grade 3 Across-Genre track', () => {
+  test('preserves the Across-Genre track while Context Cavern activation is explicit', () => {
     expect(getTrackBySkillId('g3-across-genres-reading')).toMatchObject({
       trackId: 'g3-across-genres-reading', worldId: 'compare-castle', gradeBand: 3,
       entryUnitId: 'g3-cg-unit-1', completionDifficulty: 4,
       prerequisiteTrackIds: ['g2-across-genres-reading'], status: 'active',
     })
-    expect(getTrackBySkillId('g3-context-cavern-vocabulary')?.status).toBe('planned_until_content_exists')
+    expect(getTrackBySkillId('g3-context-cavern-vocabulary')?.status).toBe('active')
     expect(getExpectedBenchmarkPatterns('ELA.3.R.3.1')).toEqual(['metaphors', 'personification', 'hyperbole', 'figurative-meaning', 'literal-vs-nonliteral'])
   })
 
@@ -39,7 +39,7 @@ describe('Figurative Fortress architecture', () => {
     expect(sameReviewQueueIdentity(grade2, grade3)).toBe(false)
   })
 
-  test('releases the Phase 7C boundary without initializing planned Context Cavern', () => {
+  test('releases the Phase 7C boundary without initializing unavailable Context Cavern content', () => {
     const source = getLessonCandidates().find((candidate) => candidate.skillId === 'g2-across-genres-reading' && candidate.difficulty === 1)
     if (!source) throw new Error('Grade 2 Across-Genre fixture lesson is required.')
     const figurativeFixture: LessonActivityCandidate = {

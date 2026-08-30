@@ -36,6 +36,7 @@ const BENCHMARK_PATTERN_CATALOG: Record<string, readonly string[]> = {
   'ELA.3.R.3.1': ['metaphors', 'personification', 'hyperbole', 'figurative-meaning', 'literal-vs-nonliteral'],
   'ELA.3.R.3.2': ['literary-summary', 'plot', 'theme', 'informational-summary', 'central-idea', 'relevant-details', 'important-vs-minor'],
   'ELA.3.R.3.3': ['two-author-comparison', 'same-topic-or-theme', 'presentation-similarity', 'presentation-difference', 'evidence-from-both-texts'],
+  'ELA.3.V.1.1': ['grade-level-academic-vocabulary', 'appropriate-use', 'speaking-writing-support', 'no-open-response-scoring'],
 }
 
 const REVIEW_ORDER: Record<BenchmarkReviewStatus, number> = {

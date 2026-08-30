@@ -71,7 +71,7 @@ describe('multi-grade curriculum track architecture', () => {
     expect(grade3Tracks.find((track) => track.trackId === 'g3-poetry-planet')?.status).toBe('active')
     expect(grade3Tracks.find((track) => track.trackId === 'g3-information-detectives-reading')?.status).toBe('active')
     expect(grade3Tracks.find((track) => track.trackId === 'g3-across-genres-reading')?.status).toBe('active')
-    expect(grade3Tracks.find((track) => track.trackId === 'g3-context-cavern-vocabulary')?.status).toBe('planned_until_content_exists')
+    expect(grade3Tracks.find((track) => track.trackId === 'g3-context-cavern-vocabulary')?.status).toBe('active')
     expect(grade3Tracks.every((track) => track.prerequisiteTrackIds.length === 1)).toBe(true)
     expect(grade3Tracks.every((track) => Object.isFrozen(track.unitIds) && Object.isFrozen(track.prerequisiteTrackIds))).toBe(true)
     expect(curriculumTracks.some((track) => track.gradeBand === 4)).toBe(false)

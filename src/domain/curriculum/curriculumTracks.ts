@@ -71,7 +71,7 @@ const curriculumTrackDefinitions: CurriculumTrackDefinition[] = [
     gradeBand: 3, entryUnitId: 'g3-cc-unit-1', unitIds: ['g3-cc-unit-1', 'g3-cc-unit-2', 'g3-cc-unit-3'],
     curriculumOrder: 150, worldChapterOrder: 2, initialDifficulty: 1, initialLastMasteredDifficulty: 0,
     completionDifficulty: 4, prerequisiteTrackIds: ['g2-context-cavern-vocabulary'],
-    status: 'planned_until_content_exists', displayName: 'Grade 3 Context Cavern',
+    status: 'active', displayName: 'Grade 3 Context Cavern',
   },
   {
     trackId: 'g3-across-genres-reading', skillId: 'g3-across-genres-reading', worldId: 'compare-castle', gradeBand: 3,

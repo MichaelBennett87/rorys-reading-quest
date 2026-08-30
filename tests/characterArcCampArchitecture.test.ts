@@ -12,7 +12,7 @@ describe('Character Arc Camp architecture', () => {
     expect(report).toContain('`90d2afc docs: fix phase 7a4 report formatting`')
   })
 
-  test('activates only the existing Grade 3 Story Scouts track and preserves the roadmap boundary', () => {
+  test('preserves the Story Scouts roadmap while later production tracks activate in sequence', () => {
     expect(curriculumTracks.find((track) => track.trackId === 'g3-story-scouts-prose')).toMatchObject({
       status: 'active',
       skillId: 'g3-story-scouts-prose',
@@ -26,6 +26,7 @@ describe('Character Arc Camp architecture', () => {
       'g3-story-scouts-prose',
       'g3-poetry-planet',
       'g3-information-detectives-reading',
+      'g3-context-cavern-vocabulary',
       'g3-across-genres-reading',
     ])
     expect(getSequentialWorldRoadmapByTrackId('g3-story-scouts-prose')?.units.map((unit) => unit.unitId)).toEqual([

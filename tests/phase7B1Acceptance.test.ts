@@ -37,7 +37,7 @@ describe('Phase 7B1 acceptance documentation and coverage', () => {
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.1.3')).toMatchObject({ coverageStatus: 'implemented', reviewStatus: 'DRAFT' })
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.1.4')?.coverageStatus).toBe('implemented')
     expect(curriculumTracks.filter((track) => track.gradeBand === 3 && track.status === 'active').map((track) => track.trackId)).toEqual([
-      'g3-word-forge-foundations', 'g3-story-scouts-prose', 'g3-poetry-planet', 'g3-information-detectives-reading', 'g3-across-genres-reading',
+      'g3-word-forge-foundations', 'g3-story-scouts-prose', 'g3-poetry-planet', 'g3-information-detectives-reading', 'g3-context-cavern-vocabulary', 'g3-across-genres-reading',
     ])
   })
 })

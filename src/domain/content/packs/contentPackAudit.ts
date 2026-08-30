@@ -15,6 +15,7 @@ import { buildAuthorClaimGuideAudit } from './authorClaimGuideAudit'
 import { buildFigurativeLanguageGuideAudit } from './figurativeLanguageGuideAudit'
 import { buildGrade3SummaryGuideAudit } from './grade3SummaryGuideAudit'
 import { buildGrade3AuthorComparisonGuideAudit } from './grade3AuthorComparisonGuideAudit'
+import { buildGrade3AcademicVocabularyGuideAudit } from './grade3AcademicVocabularyGuideAudit'
 
 export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPackAuditIssue[] {
   const issues: ContentPackAuditIssue[] = []
@@ -224,6 +225,7 @@ export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPac
     issues.push(...buildFigurativeLanguageGuideAudit(pack))
     issues.push(...buildGrade3SummaryGuideAudit(pack))
     issues.push(...buildGrade3AuthorComparisonGuideAudit(pack))
+    issues.push(...buildGrade3AcademicVocabularyGuideAudit(pack))
   }
 
   const hasBenchmarkProgressionPack = packs.some((pack) => pack.manifest.coverageKind !== 'supportive_practice')
@@ -666,6 +668,8 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
 }
 
 function validateSupportivePracticePackStructure(pack: ContentPack, issues: ContentPackAuditIssue[]) {
+  if (!pack.lessons.some((lesson) => lesson.lessonRole === 'FLUENCY_PRACTICE')) return
+
   const isGrade3Fluency = pack.manifest.gradeBand === 3
   const expectedSupportingBenchmark = isGrade3Fluency ? 'ELA.3.F.1.4' : 'ELA.2.F.1.4'
   const expectedQuestionBenchmark = isGrade3Fluency ? 'ELA.3.F.1.4' : 'RR-G2-FLUENCY-PRACTICE'
