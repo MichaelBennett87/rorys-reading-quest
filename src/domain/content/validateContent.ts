@@ -823,6 +823,20 @@ function validateInformationalStructure(
         }
       }
     }
+    if (feature.kind === 'reference') {
+      if (!feature.headword.trim() || !['dictionary', 'thesaurus'].includes(feature.referenceKind)) {
+        withError(errors, 'invalid_informational_feature', feature.featureId, 'Reference cards require a headword and supported reference type.')
+      }
+      if (!feature.senses.length || feature.senses.some((sense) => !sense.senseId.trim() || !sense.meaning.trim())) {
+        withError(errors, 'invalid_informational_feature', feature.featureId, 'Reference cards require stable, meaningful senses.')
+      }
+      if (new Set(feature.senses.map((sense) => sense.senseId)).size !== feature.senses.length) {
+        withError(errors, 'invalid_informational_feature', feature.featureId, 'Reference sense IDs must be unique.')
+      }
+      if (feature.referenceKind === 'thesaurus' && !(feature.relatedWords?.length)) {
+        withError(errors, 'invalid_informational_feature', feature.featureId, 'Thesaurus cards require authored related words.')
+      }
+    }
     if (feature.kind === 'illustration') {
       if (!feature.title.trim() || !feature.accessibleDescription.trim()) {
         withError(errors, 'invalid_informational_feature', feature.featureId, 'Illustrations require a title and accessible description.')

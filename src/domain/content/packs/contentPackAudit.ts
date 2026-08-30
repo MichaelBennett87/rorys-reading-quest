@@ -17,6 +17,7 @@ import { buildGrade3SummaryGuideAudit } from './grade3SummaryGuideAudit'
 import { buildGrade3AuthorComparisonGuideAudit } from './grade3AuthorComparisonGuideAudit'
 import { buildGrade3AcademicVocabularyGuideAudit } from './grade3AcademicVocabularyGuideAudit'
 import { buildRootMeaningGuideAudit } from './rootMeaningGuideAudit'
+import { buildMeaningMazeGuideAudit } from './meaningMazeGuideAudit'
 
 export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPackAuditIssue[] {
   const issues: ContentPackAuditIssue[] = []
@@ -228,6 +229,7 @@ export function buildContentPackAudit(packs: readonly ContentPack[]): ContentPac
     issues.push(...buildGrade3AuthorComparisonGuideAudit(pack))
     issues.push(...buildGrade3AcademicVocabularyGuideAudit(pack))
     issues.push(...buildRootMeaningGuideAudit(pack))
+    issues.push(...buildMeaningMazeGuideAudit(pack))
   }
 
   const hasBenchmarkProgressionPack = packs.some((pack) => pack.manifest.coverageKind !== 'supportive_practice')

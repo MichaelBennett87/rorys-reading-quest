@@ -8,10 +8,12 @@ import type {
   InformationalGraphFeature,
   InformationalIllustrationFeature,
   InformationalMapFeature,
+  InformationalReferenceFeature,
   InformationalSidebarFeature,
   InformationalTimelineFeature,
 } from '../../domain/content'
 import { SupportedText } from './SupportedText'
+import { ReferenceMaterialCard } from './ReferenceMaterialCard'
 
 interface InformationalTextCardProps {
   heading: string
@@ -145,6 +147,8 @@ function renderFeature(
       return renderTimelineFeature(feature, caption)
     case 'sidebar':
       return renderSidebarFeature(feature)
+    case 'reference':
+      return renderReferenceFeature(feature)
     default:
       return null
   }
@@ -317,6 +321,10 @@ function renderSidebarFeature(feature: InformationalSidebarFeature) {
       <p>{feature.text}</p>
     </aside>
   )
+}
+
+function renderReferenceFeature(feature: InformationalReferenceFeature) {
+  return <ReferenceMaterialCard key={feature.featureId} feature={feature} />
 }
 
 export { InformationalTextCard }

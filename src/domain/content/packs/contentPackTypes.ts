@@ -114,6 +114,7 @@ export type Grade3InformationalFeatureKind =
   | 'illustration'
   | 'timeline'
   | 'sidebar'
+  | 'reference'
 
 export interface InformationalFeatureContribution {
   featureId: string
@@ -989,6 +990,65 @@ export interface RootMeaningGuide {
   contentVersion: string
 }
 
+export type MeaningMazeTargetForm = 'word' | 'phrase'
+
+export type MeaningMazeChallengeKind = 'unfamiliar' | 'multiple-meaning' | 'figurative'
+
+export type MeaningMazeStrategyKind =
+  | 'context-clue'
+  | 'word-relationship'
+  | 'reference-material'
+  | 'background-knowledge'
+  | 'combined'
+
+export type MeaningMazeReferenceKind = 'glossary' | 'dictionary' | 'thesaurus'
+
+export interface MeaningMazeSense {
+  senseId: string
+  meaning: string
+  partOfSpeech?: string
+  selectedForContext: boolean
+  evidenceIds: string[]
+}
+
+export interface MeaningMazeReferenceEntry {
+  referenceId: string
+  kind: MeaningMazeReferenceKind
+  headword: string
+  senses: MeaningMazeSense[]
+  relatedWords?: string[]
+}
+
+export interface MeaningMazeTarget {
+  targetId: string
+  targetText: string
+  targetForm: MeaningMazeTargetForm
+  challengeKind: MeaningMazeChallengeKind
+  sourceEvidenceIds: string[]
+  intendedMeaning: string
+  primaryStrategy: MeaningMazeStrategyKind
+  secondaryStrategies: MeaningMazeStrategyKind[]
+  contextEvidenceIds: string[]
+  contextClueKind?: ContextClueKind
+  relationshipKind?: WordRelationshipKind
+  relatedWords?: string[]
+  referenceEntryIds?: string[]
+  backgroundKnowledgeStatement?: string
+  alternateMeanings?: MeaningMazeSense[]
+  literalReading?: string
+  strategyExplanation: string
+  confirmationStatement: string
+}
+
+export interface MeaningMazeGuide {
+  passageId: string
+  targets: MeaningMazeTarget[]
+  referenceEntries: MeaningMazeReferenceEntry[]
+  strategySummary: string
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
 export interface ContentPackManifest {
   packId: string
   packTitle: string
@@ -1058,6 +1118,7 @@ export interface ContentPack {
   pairedTextComparisonGuides?: PairedTextComparisonGuide[]
   grade3AuthorComparisonGuides?: Grade3AuthorComparisonGuide[]
   rootMeaningGuides?: RootMeaningGuide[]
+  meaningMazeGuides?: MeaningMazeGuide[]
   themeGuides?: ThemeGuide[]
   perspectiveGuides?: PerspectiveGuide[]
   rhymeSchemeGuides?: RhymeSchemeGuide[]
@@ -1157,6 +1218,22 @@ export interface ContentPackAuditIssue {
     | 'root_target_not_transparent'
     | 'root_meaning_scope_drift'
     | 'root_meaning_speech_chunk_confusion'
+    | 'missing_meaning_maze_guide'
+    | 'meaning_maze_guide_invalid'
+    | 'meaning_target_not_in_source'
+    | 'meaning_phrase_not_contiguous'
+    | 'context_clue_kind_mismatch'
+    | 'word_relationship_mismatch'
+    | 'reference_entry_missing'
+    | 'reference_entry_invalid'
+    | 'background_knowledge_unsupported'
+    | 'multiple_meaning_sense_ambiguous'
+    | 'figurative_phrase_meaning_ambiguous'
+    | 'figurative_phrase_scope_drift'
+    | 'combined_strategy_incomplete'
+    | 'root_meaning_scope_drift'
+    | 'unknown_word_meaning_unsupported'
+    | 'unknown_phrase_meaning_unsupported'
    | 'missing_morphology_guide'
    | 'morphology_guide_count_mismatch'
      | 'morphology_guide_invalid'

@@ -133,6 +133,16 @@ function collectInformationalEvidence(structure: InformationalTextStructure): Pa
         })
       }
     }
+
+    if (feature.kind === 'reference') {
+      for (const sense of feature.senses) {
+        entries.push({
+          evidenceId: sense.senseId,
+          label: `${feature.referenceKind === 'dictionary' ? 'Dictionary' : 'Thesaurus'} sense: ${feature.headword}`,
+          text: sense.meaning,
+        })
+      }
+    }
   }
 
   for (const feature of structure.features) {
@@ -204,6 +214,15 @@ function buildFeatureEvidence(feature: InformationalFeature): PassageEvidenceEnt
         evidenceId: feature.featureId,
         label: `Fact box: ${feature.title}`,
         text: feature.text,
+      }
+    case 'reference':
+      return {
+        evidenceId: feature.featureId,
+        label: `${feature.referenceKind === 'dictionary' ? 'Dictionary' : 'Thesaurus'} entry: ${feature.headword}`,
+        text: [
+          ...feature.senses.map((sense) => sense.meaning),
+          ...(feature.relatedWords ?? []),
+        ].join(' | '),
       }
   }
 }

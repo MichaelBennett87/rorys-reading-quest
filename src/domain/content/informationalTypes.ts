@@ -8,6 +8,7 @@ export type InformationalFeatureKind =
   | 'illustration'
   | 'timeline'
   | 'sidebar'
+  | 'reference'
 
 export interface InformationalTitleFeature {
   featureId: string
@@ -127,6 +128,24 @@ export interface InformationalSidebarFeature {
   text: string
 }
 
+export type InformationalReferenceKind = 'dictionary' | 'thesaurus'
+
+export interface InformationalReferenceSense {
+  senseId: string
+  meaning: string
+  partOfSpeech?: string
+  selectedForContext: boolean
+}
+
+export interface InformationalReferenceFeature {
+  featureId: string
+  kind: 'reference'
+  referenceKind: InformationalReferenceKind
+  headword: string
+  senses: InformationalReferenceSense[]
+  relatedWords?: string[]
+}
+
 export interface InformationalSection {
   sectionId: string
   headingFeatureId: string
@@ -144,6 +163,7 @@ export type InformationalFeature =
   | InformationalIllustrationFeature
   | InformationalTimelineFeature
   | InformationalSidebarFeature
+  | InformationalReferenceFeature
 
 export interface InformationalTextStructure {
   titleFeatureId: string
