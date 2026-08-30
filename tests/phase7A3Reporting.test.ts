@@ -13,7 +13,7 @@ describe('Phase 7A3 parent and print reporting boundary', () => {
       reviewStatus: 'DRAFT',
       missingPatterns: [],
     })
-    expect(buildGrade3CoverageSnapshot().rows.find((entry) => entry.benchmarkReference === 'ELA.3.V.1.2')?.coverageStatus).toBe('planned')
+    expect(buildGrade3CoverageSnapshot().rows.find((entry) => entry.benchmarkReference === 'ELA.3.V.1.2')?.coverageStatus).toBe('implemented')
   })
 
   test('keeps the parent and print copy explicit and privacy-safe', () => {

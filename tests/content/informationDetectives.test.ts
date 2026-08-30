@@ -86,13 +86,14 @@ describe('grade 2 information detectives text feature hunt pack', () => {
       'g3-compare-castle-summary-stronghold',
       'g3-compare-castle-author-lens-tower',
       'g3-context-cavern-academic-word-workshop',
+    'g3-context-cavern-root-meaning-vault',
     ])
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 38,
-      activeLessonCount: 266,
-      activePassageCount: 280,
-      activeQuestionCount: 1532,
-      activeSupportTargetCount: 1055,
+      activePackCount: 39,
+      activeLessonCount: 273,
+      activePassageCount: 287,
+      activeQuestionCount: 1573,
+      activeSupportTargetCount: 1083,
     })
     expect(contentPackAudit).toHaveLength(0)
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.2.1')).toEqual(expect.objectContaining({

@@ -117,7 +117,7 @@ function apply(
 }
 
 describe('production-registry planner liveness audit', () => {
-  test('returns AVAILABLE for all 170 authored active-track combinations after freshness exhaustion', () => {
+  test('returns AVAILABLE for all 174 authored active-track combinations after freshness exhaustion', () => {
     const activeTracks = curriculumTracks.filter((track) => track.status === 'active')
     const trackBySkillId = new Map(activeTracks.map((track) => [track.skillId, track] as const))
     const combinations = new Map<string, {
@@ -143,7 +143,7 @@ describe('production-registry planner liveness audit', () => {
       }
     }
 
-    expect(combinations.size).toBe(170)
+    expect(combinations.size).toBe(174)
     expect([...new Set([...combinations.values()].map((entry) => entry.skillId))].sort()).toEqual([
       'g2-across-genres-reading',
       'g2-context-cavern-vocabulary',
@@ -175,11 +175,11 @@ describe('production-registry planner liveness audit', () => {
     }
 
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 38,
-      activeLessonCount: 266,
-      activePassageCount: 280,
-      activeQuestionCount: 1532,
-      activeSupportTargetCount: 1055,
+      activePackCount: 39,
+      activeLessonCount: 273,
+      activePassageCount: 287,
+      activeQuestionCount: 1573,
+      activeSupportTargetCount: 1083,
     })
   })
 

@@ -57,6 +57,8 @@ export * from './grade3/informationDetectives/claimEvidenceCourt'
 export * from './grade3/compareCastle/figurativeFortress'
 export * from './grade3/compareCastle/summaryStronghold'
 export * from './grade3/compareCastle/authorLensTower'
+export * from './grade3/contextCavern/academicWordWorkshop'
+export * from './grade3/contextCavern/rootMeaningVault'
 export * from './registry'
 
 export const fluencyPracticeAudit = buildFluencyPracticeAudit(contentPacks)

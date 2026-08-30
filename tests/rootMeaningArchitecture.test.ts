@@ -67,8 +67,23 @@ describe('Grade 3 Root Meaning Vault architecture', () => {
     }])
   })
 
-  test('keeps the unauthored Unit 2 boundary fail-closed and makes authored fixture work live', () => {
+  test('keeps genuine no-content fail-closed and makes authored Unit 2 work live', () => {
     const progress = readyProgress()
+    expect(selectNextLesson({
+      skillId: 'g3-context-cavern-vocabulary',
+      difficulty: 2,
+      purpose: 'progression',
+      availableLessons: [],
+      recentActivityUsage: [],
+      preferredUnitId: 'g3-cc-unit-2',
+      preferredContentVersion: 'g3-cc-root-meaning-r0.1.0',
+    })).toMatchObject({
+      status: 'content_needed',
+      purpose: 'progression',
+      skillId: 'g3-context-cavern-vocabulary',
+      difficulty: 2,
+    })
+
     expect(selectNextLesson({
       skillId: 'g3-context-cavern-vocabulary',
       difficulty: 2,
@@ -78,10 +93,8 @@ describe('Grade 3 Root Meaning Vault architecture', () => {
       preferredUnitId: 'g3-cc-unit-2',
       preferredContentVersion: 'g3-cc-root-meaning-r0.1.0',
     })).toMatchObject({
-      status: 'content_needed',
-      purpose: 'progression',
-      skillId: 'g3-context-cavern-vocabulary',
-      difficulty: 2,
+      status: 'available',
+      lesson: { unitId: 'g3-cc-unit-2', difficulty: 2, contentVersion: 'g3-cc-root-meaning-r0.1.0' },
     })
 
     const lesson = unitTwoFixture()

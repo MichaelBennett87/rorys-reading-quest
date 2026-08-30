@@ -39,19 +39,19 @@ function stateReadyForAcademicWordWorkshop() {
 }
 
 describe('Phase 7D4 integration and reconciled one-button journey', () => {
-  test('registers only Academic Word Workshop and derives supportive ELA.3.V.1.1 coverage', () => {
+  test('keeps Academic Word Workshop registered after the bounded Unit 2 release', () => {
     const packs = getActiveContentPacks()
     expect(packs.filter((pack) => pack.manifest.gradeBand === 2)).toHaveLength(22)
-    expect(packs.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(16)
+    expect(packs.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(17)
     expect(packs.filter((pack) => pack.manifest.packId === 'g3-context-cavern-academic-word-workshop')).toHaveLength(1)
-    expect(packs.some((pack) => pack.manifest.packId.includes('root-meaning-vault'))).toBe(false)
+    expect(packs.some((pack) => pack.manifest.packId.includes('root-meaning-vault'))).toBe(true)
     expect(packs.some((pack) => pack.manifest.packId.includes('meaning-maze'))).toBe(false)
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 38,
-      activeLessonCount: 266,
-      activePassageCount: 280,
-      activeQuestionCount: 1532,
-      activeSupportTargetCount: 1055,
+      activePackCount: 39,
+      activeLessonCount: 273,
+      activePassageCount: 287,
+      activeQuestionCount: 1573,
+      activeSupportTargetCount: 1083,
     })
     const snapshot = buildGrade3CoverageSnapshot()
     const row = snapshot.rows.find((entry) => entry.benchmarkReference === 'ELA.3.V.1.1')
@@ -68,9 +68,9 @@ describe('Phase 7D4 integration and reconciled one-button journey', () => {
       ],
     })
     expect(row?.notes.join(' ')).toMatch(/does not score open responses.*claim productive speaking or writing mastery/i)
-    expect(snapshot.rows.filter((entry) => entry.coverageStatus === 'implemented')).toHaveLength(12)
+    expect(snapshot.rows.filter((entry) => entry.coverageStatus === 'implemented')).toHaveLength(13)
     expect(snapshot.rows.filter((entry) => entry.coverageStatus === 'supportive_practice')).toHaveLength(2)
-    expect(snapshot.rows.filter((entry) => entry.coverageStatus === 'planned')).toHaveLength(2)
+    expect(snapshot.rows.filter((entry) => entry.coverageStatus === 'planned')).toHaveLength(1)
   })
 
   test('retires stale no-content, initializes once, and resumes one authoritative Unit 1 session', () => {

@@ -21,9 +21,9 @@ describe('all-active-question grading truth contract', () => {
       ...issue,
     })))
 
-    expect(questions).toHaveLength(1532)
-    expect(new Set(questions.map((question) => question.questionId)).size).toBe(1532)
-    expect(reports.reduce((sum, report) => sum + report.canonicalSubmissionCount, 0)).toBe(1532)
+    expect(questions).toHaveLength(1573)
+    expect(new Set(questions.map((question) => question.questionId)).size).toBe(1573)
+    expect(reports.reduce((sum, report) => sum + report.canonicalSubmissionCount, 0)).toBe(1573)
     expect(reports.reduce((sum, report) => sum + report.adversarialSubmissionCount, 0)).toBeGreaterThan(9_000)
     expect(failures, JSON.stringify(failures.slice(0, 50), null, 2)).toEqual([])
   }, 30_000)

@@ -203,6 +203,7 @@ describe('semantic answer feedback states', () => {
       { packId: 'g3-story-scouts-theme-development-trail', expectedTypes: ['EVIDENCE_PAIR', 'HOT_TEXT', 'MULTIPLE_CHOICE', 'MULTISELECT', 'TABLE_MATCH'] },
       { packId: 'g3-story-scouts-perspective-portal', expectedTypes: ['EVIDENCE_PAIR', 'HOT_TEXT', 'MULTIPLE_CHOICE', 'MULTISELECT', 'TABLE_MATCH'] },
       { packId: 'g3-context-cavern-academic-word-workshop', expectedTypes: ['EVIDENCE_PAIR', 'HOT_TEXT', 'MULTIPLE_CHOICE', 'MULTISELECT', 'TABLE_MATCH'] },
+      { packId: 'g3-context-cavern-root-meaning-vault', expectedTypes: ['EVIDENCE_PAIR', 'HOT_TEXT', 'MULTIPLE_CHOICE', 'MULTISELECT', 'TABLE_MATCH'] },
     ]
     for (const { packId, expectedTypes } of packs) {
       const questions = lessonCatalog

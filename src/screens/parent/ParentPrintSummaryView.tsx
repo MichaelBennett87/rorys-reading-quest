@@ -230,6 +230,9 @@ export function ParentPrintSummaryView({
                 {skill.benchmarkReferences.includes('ELA.3.V.1.1') && (
                   <p>Academic-vocabulary curriculum coverage: SUPPORTIVE_PRACTICE / DRAFT. This is constrained selected-response practice, not speaking, writing-production, learner-mastery, diagnosis, or FAST evidence.</p>
                 )}
+                {skill.benchmarkReferences.includes('ELA.3.V.1.2') && (
+                  <p>Root-and-affix meaning curriculum coverage: IMPLEMENTED / DRAFT. This is authored word-meaning practice, not pronunciation, decoding, learner-mastery, diagnosis, or FAST evidence.</p>
+                )}
                 <p>Category: {skill.reportingCategory}</p>
                 <p>Current trail: {formatTrailLabel(skill.currentDifficulty)}</p>
                 <p>Last mastered trail: {formatTrailLabel(skill.lastMasteredDifficulty)}</p>

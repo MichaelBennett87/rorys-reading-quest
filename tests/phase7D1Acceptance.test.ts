@@ -18,17 +18,17 @@ describe('Phase 7D1 acceptance documentation', () => {
 
   test('binds current registry and coverage facts to the documented snapshot', () => {
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 38,
-      activeLessonCount: 266,
-      activePassageCount: 280,
-      activeQuestionCount: 1532,
-      activeSupportTargetCount: 1055,
+      activePackCount: 39,
+      activeLessonCount: 273,
+      activePassageCount: 287,
+      activeQuestionCount: 1573,
+      activeSupportTargetCount: 1083,
     })
 
     const snapshot = buildGrade3CoverageSnapshot()
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(12)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(13)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(2)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(2)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(1)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'partial')).toHaveLength(0)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'missing')).toHaveLength(0)
     expect(snapshot.rows.filter((row) => row.reviewStatus === 'APPROVED')).toHaveLength(0)
