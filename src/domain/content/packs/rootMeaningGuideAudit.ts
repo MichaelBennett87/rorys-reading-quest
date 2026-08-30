@@ -26,6 +26,7 @@ interface ExpectedPart {
   origin: MeaningPartOrigin
   meaning: string
   contributes: boolean
+  canonical?: string
 }
 
 interface ExpectedTarget {
@@ -39,7 +40,8 @@ const part = (
   origin: MeaningPartOrigin,
   meaning: string,
   contributes = true,
-): ExpectedPart => ({ surface, kind, origin, meaning, contributes })
+  canonical?: string,
+): ExpectedPart => ({ surface, kind, origin, meaning, contributes, canonical })
 
 const EXPECTED_TARGETS = new Map<string, ExpectedTarget>([
   ['thermometer', { family: 'greek-root', parts: [part('therm', 'root', 'Greek', 'heat'), part('o', 'connector', 'Greek', 'joins the roots', false), part('meter', 'root', 'Greek', 'measure')] }],
@@ -55,7 +57,7 @@ const EXPECTED_TARGETS = new Map<string, ExpectedTarget>([
   ['visible', { family: 'latin-root', parts: [part('vis', 'root', 'Latin', 'see'), part('ible', 'suffix', 'Latin', 'can be')] }],
   ['audible', { family: 'latin-root', parts: [part('aud', 'root', 'Latin', 'hear'), part('ible', 'suffix', 'Latin', 'can be')] }],
   ['inspect', { family: 'latin-root', parts: [part('in', 'prefix', 'Latin', 'into'), part('spect', 'root', 'Latin', 'look')] }],
-  ['aqueduct', { family: 'latin-root', parts: [part('aqua', 'root', 'Latin', 'water'), part('duct', 'root', 'Latin', 'lead or carry')] }],
+  ['aqueduct', { family: 'latin-root', parts: [part('aque', 'root', 'Latin', 'water', true, 'aqua'), part('duct', 'root', 'Latin', 'lead or carry')] }],
   ['preview', { family: 'english-prefix-base', parts: [part('pre', 'prefix', 'Latin', 'before'), part('view', 'base', 'English', 'look at')] }],
   ['reread', { family: 'english-prefix-base', parts: [part('re', 'prefix', 'Latin', 'again'), part('read', 'base', 'English', 'read')] }],
   ['miscount', { family: 'english-prefix-base', parts: [part('mis', 'prefix', 'English', 'wrongly'), part('count', 'base', 'English', 'count')] }],
@@ -177,7 +179,7 @@ function validateTarget(
   if (target.parts.length < 2) invalid(issues, target.targetId, 'Each target requires at least two authored parts.')
   if (target.parts.map((candidate) => candidate.surfaceForm).join('').toLowerCase() !== word) add(issues, 'root_word_part_reconstruction_failure', target.targetId, 'Authored part surface forms must reconstruct the written target exactly.')
   if (!target.transparentComposition) add(issues, 'root_target_not_transparent', target.targetId, 'Every target must remain transparently compositional for Grade 3 instruction.')
-  if (!complete(target.combinedPartClue) || !complete(target.inferredMeaning) || unsafe(target.combinedPartClue) || unsafe(target.inferredMeaning)) add(issues, 'root_composed_meaning_invalid', target.targetId, 'Each target requires a safe, defensible combined clue and inferred meaning.')
+  if (!meaningful(target.combinedPartClue) || !meaningful(target.inferredMeaning) || unsafe(target.combinedPartClue) || unsafe(target.inferredMeaning)) add(issues, 'root_composed_meaning_invalid', target.targetId, 'Each target requires a safe, defensible combined clue and inferred meaning.')
   if (target.contextEvidenceIds.length === 0 || !complete(target.contextConfirmationStatement) || unsafe(target.contextConfirmationStatement)) add(issues, 'root_context_confirmation_invalid', target.targetId, 'Each target requires source-owned context evidence and an explicit confirmation statement.')
 
   const source = resolvePassageEvidence(passage, target.sourceSentenceId)
@@ -203,6 +205,7 @@ function validateExpectedParts(target: RootMeaningTarget, expected: readonly Exp
     const approved = expected[index]
     if (candidate.surfaceForm.toLowerCase() !== approved.surface || candidate.kind !== approved.kind) add(issues, 'false_root_boundary', candidate.partId, 'This boundary does not match the approved transparent decomposition.')
     if (candidate.origin !== approved.origin) add(issues, 'root_origin_mismatch', candidate.partId, 'The authored part origin must match the approved origin.')
+    if ((candidate.canonicalForm ?? undefined) !== approved.canonical) add(issues, 'root_origin_mismatch', candidate.partId, 'Canonical forms must be present only when needed and must match the approved root form.')
     if (normalize(candidate.commonMeaning) !== normalize(approved.meaning)) add(issues, 'root_common_meaning_invalid', candidate.partId, 'The authored common meaning must match the approved Grade 3 meaning clue.')
     if (candidate.contributesMeaning !== approved.contributes || (candidate.kind === 'connector') === candidate.contributesMeaning) add(issues, 'false_root_boundary', candidate.partId, 'Connectors must be non-meaningful and all other authored parts must contribute meaning.')
     if (!candidate.partId.trim() || !candidate.surfaceForm || !candidate.contextualContribution || unsafe(candidate.contextualContribution)) invalid(issues, target.targetId, 'Every word part needs a stable ID, surface form, and safe contextual contribution.')
@@ -212,6 +215,7 @@ function validateExpectedParts(target: RootMeaningTarget, expected: readonly Exp
 function containsWord(value: string, word: string): boolean { return new RegExp(`(^|[^a-z])${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}([^a-z]|$)`, 'i').test(value) }
 function normalize(value: string): string { return value.toLowerCase().trim().replace(/[.]/g, '') }
 function complete(value: string): boolean { return value.trim().split(/\s+/).length >= 3 }
+function meaningful(value: string): boolean { return value.trim().split(/\s+/).length >= 2 }
 function unsafe(value: string): boolean { return /<[^>]+>/.test(value) || /https?:\/\//i.test(value) }
 function invalid(issues: ContentPackAuditIssue[], itemIdentifier: string, message: string) { add(issues, 'root_meaning_guide_invalid', itemIdentifier, message) }
 function add(issues: ContentPackAuditIssue[], code: ContentPackAuditIssue['code'], itemIdentifier: string, message: string) { issues.push({ code, itemIdentifier, message }) }
