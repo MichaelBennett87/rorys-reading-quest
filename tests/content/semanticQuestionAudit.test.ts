@@ -9,9 +9,9 @@ describe('semantic question audit', () => {
   test('reports no deterministic semantic-integrity issues in active Grade 2 content', () => {
     const report = auditSemanticQuestionPacks(contentPacks)
 
-    expect(report.reviewedCount).toBe(1573)
-    expect(report.reviewedPackCount).toBe(39)
-    expect(report.reviewedLessonCount).toBe(273)
+    expect(report.reviewedCount).toBe(1614)
+    expect(report.reviewedPackCount).toBe(40)
+    expect(report.reviewedLessonCount).toBe(280)
     expect(report.issues).toEqual([])
   })
 

@@ -52,6 +52,11 @@ const correctionSummaries = new Map([
   ['g3-id-ce-q5-6', 'Catalog review added a plausible unused option required by the hardened use-each-once table evaluator.'],
   ['g3-id-ce-q6-6', 'Catalog review added a plausible unused option required by the hardened use-each-once table evaluator.'],
   ['g3-id-ce-q7-6', 'Catalog review added a plausible unused option required by the hardened use-each-once table evaluator.'],
+  ['lesson-g3-cc-mm-relationship-ropes-q-4', 'Blind review corrected the Hot Text key to the timid action sentence.'],
+  ['lesson-g3-cc-mm-background-knowledge-bridge-q-4', 'Blind review corrected the Hot Text key to the canopy parts sentence.'],
+  ['lesson-g3-cc-mm-more-than-one-door-q-3', 'Blind review rewrote the checkpoint item as a fresh multiple-meaning transfer and strategy selection.'],
+  ['lesson-g3-cc-mm-figurative-phrase-paths-q-3', 'Blind review rewrote the checkpoint item as a fresh figurative-phrase transfer and strategy selection.'],
+  ['lesson-g3-cc-mm-unknown-words-phrases-q-3', 'Blind review rewrote the checkpoint item as a fresh thesaurus-plus-context transfer and strategy selection.'],
 ])
 const server = await createServer({
   appType: 'custom',
@@ -229,7 +234,7 @@ function buildAuditProgress(packs, records, metrics) {
   }).join('\n')
   return `# Active Question Truth Audit Progress
 
-Registry source: active production content registry through Phase 7D4.
+Registry source: active production content registry through Phase 7D6.
 
 - Active packs: ${metrics.activePacks}
 - Active questions: ${metrics.activeQuestions}

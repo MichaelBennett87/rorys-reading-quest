@@ -22,26 +22,27 @@ describe('Grade 2 Compare Castle Wordplay Watchtower pack', () => {
       .map((pack) => pack.manifest.packId)
 
     expect(contentPacks.some((pack) => pack.manifest.packId === WORDPLAY_PACK_ID)).toBe(true)
-    expect(activePackIds.at(-20)).toBe(WORDPLAY_PACK_ID)
-    expect(activePackIds.at(-19)).toBe(RETELL_PACK_ID)
-    expect(activePackIds.at(-18)).toBe('g2-compare-castle-compare-keep')
-    expect(activePackIds.at(-17)).toBe('g3-word-forge-root-reactor')
-    expect(activePackIds.at(-16)).toBe('g3-word-forge-suffix-shifter')
-    expect(activePackIds.at(-15)).toBe('g3-word-forge-multisyllable-mountain')
-    expect(activePackIds.at(-14)).toBe('g3-word-forge-fluency-flight')
-    expect(activePackIds.at(-13)).toBe('g3-story-scouts-character-arc-camp')
-    expect(activePackIds.at(-12)).toBe('g3-story-scouts-theme-development-trail')
-    expect(activePackIds.at(-11)).toBe('g3-story-scouts-perspective-portal')
-    expect(activePackIds.at(-10)).toBe('g3-poetry-planet-poem-form-observatory')
-    expect(activePackIds.at(-9)).toBe('g3-information-detectives-structure-station')
-    expect(activePackIds.at(-8)).toBe('g3-information-detectives-central-idea-engine')
-    expect(activePackIds.at(-7)).toBe('g3-information-detectives-purpose-development-path')
-    expect(activePackIds.at(-6)).toBe('g3-information-detectives-claim-evidence-court')
-    expect(activePackIds.at(-5)).toBe('g3-compare-castle-figurative-fortress')
-    expect(activePackIds.at(-4)).toBe('g3-compare-castle-summary-stronghold')
-    expect(activePackIds.at(-3)).toBe('g3-compare-castle-author-lens-tower')
-    expect(activePackIds.at(-2)).toBe('g3-context-cavern-academic-word-workshop')
-    expect(activePackIds.at(-1)).toBe('g3-context-cavern-root-meaning-vault')
+    expect(activePackIds.at(-21)).toBe(WORDPLAY_PACK_ID)
+    expect(activePackIds.at(-20)).toBe(RETELL_PACK_ID)
+    expect(activePackIds.at(-19)).toBe('g2-compare-castle-compare-keep')
+    expect(activePackIds.at(-18)).toBe('g3-word-forge-root-reactor')
+    expect(activePackIds.at(-17)).toBe('g3-word-forge-suffix-shifter')
+    expect(activePackIds.at(-16)).toBe('g3-word-forge-multisyllable-mountain')
+    expect(activePackIds.at(-15)).toBe('g3-word-forge-fluency-flight')
+    expect(activePackIds.at(-14)).toBe('g3-story-scouts-character-arc-camp')
+    expect(activePackIds.at(-13)).toBe('g3-story-scouts-theme-development-trail')
+    expect(activePackIds.at(-12)).toBe('g3-story-scouts-perspective-portal')
+    expect(activePackIds.at(-11)).toBe('g3-poetry-planet-poem-form-observatory')
+    expect(activePackIds.at(-10)).toBe('g3-information-detectives-structure-station')
+    expect(activePackIds.at(-9)).toBe('g3-information-detectives-central-idea-engine')
+    expect(activePackIds.at(-8)).toBe('g3-information-detectives-purpose-development-path')
+    expect(activePackIds.at(-7)).toBe('g3-information-detectives-claim-evidence-court')
+    expect(activePackIds.at(-6)).toBe('g3-compare-castle-figurative-fortress')
+    expect(activePackIds.at(-5)).toBe('g3-compare-castle-summary-stronghold')
+    expect(activePackIds.at(-4)).toBe('g3-compare-castle-author-lens-tower')
+    expect(activePackIds.at(-3)).toBe('g3-context-cavern-academic-word-workshop')
+    expect(activePackIds.at(-2)).toBe('g3-context-cavern-root-meaning-vault')
+    expect(activePackIds.at(-1)).toBe('g3-context-cavern-meaning-maze')
     expect(grade2CompareCastleWordplayWatchtowerPack.manifest).toEqual(expect.objectContaining({
       packId: WORDPLAY_PACK_ID,
       packTitle: 'Grade 2 Compare Castle: Wordplay Watchtower',
@@ -55,11 +56,11 @@ describe('Grade 2 Compare Castle Wordplay Watchtower pack', () => {
       difficultyRange: [0, 1],
     }))
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 39,
-      activeLessonCount: 273,
-      activePassageCount: 287,
-      activeQuestionCount: 1573,
-      activeSupportTargetCount: 1083,
+      activePackCount: 40,
+      activeLessonCount: 280,
+      activePassageCount: 294,
+      activeQuestionCount: 1614,
+      activeSupportTargetCount: 1111,
     })
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.R.3.1')).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.R.3.1',

@@ -163,3 +163,9 @@ Academic Word Workshop contributes 41 current PASS records, 41 canonical submiss
 Root Meaning Vault adds 41 independently reviewed questions under `g3-context-cavern-root-meaning-vault`. The production inventory now contains 1,573 active questions and 1,573 current PASS ledger records across 39 packs. The executable contract accepts 1,573 canonical submissions and 528 canonical-equivalent submissions, rejects 20,682 adversarial submissions, and completes 25,929 grading assertions.
 
 Blind review confirmed every genuine word-part boundary, origin, composed clue, contextual meaning, explanation, evidence reference, and distractor. The pack contributes 41 canonical submissions, 14 canonical equivalents, 528 adversarial submissions, and 665 assertions. One authored context label and one surface/canonical root representation were corrected before final registration; no final question, key, distractor, explanation, evidence, evaluator, unresolved ID, false positive, false negative, or stale fingerprint remains.
+
+## Phase 7D6 active-question reconciliation
+
+Meaning Maze adds 41 independently reviewed questions under `g3-context-cavern-meaning-maze`. The production inventory now contains 1,614 active questions and 1,614 current PASS ledger records across 40 packs. The executable contract accepts 1,614 canonical submissions and 542 canonical-equivalent submissions, rejects 21,238 adversarial submissions, and completes 26,622 grading assertions.
+
+Blind review corrected two Hot Text keys, rewrote three checkpoint transfer-and-strategy items, and removed one unsupported reference-material strategy label before final registration. The pack contributes 41 canonical submissions, 14 canonical equivalents, 556 adversarial submissions, and 693 assertions. No final target, question, key, distractor, explanation, evidence reference, evaluator, unresolved ID, false positive, false negative, or stale fingerprint remains.

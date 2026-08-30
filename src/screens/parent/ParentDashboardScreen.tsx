@@ -573,6 +573,9 @@ function BenchmarkCard({ summary }: { summary: DashboardBenchmarkSummary }) {
       {summary.benchmarkReference === 'ELA.3.V.1.2' && (
         <ParentDataNote title="Curriculum coverage implemented" message="Root Meaning Vault provides authored ELA.3.V.1.2 word-part meaning practice at DRAFT review status. Curriculum availability is separate from learner mastery and does not claim pronunciation, decoding, or unrestricted vocabulary mastery." />
       )}
+      {summary.benchmarkReference === 'ELA.3.V.1.3' && (
+        <ParentDataNote title="Curriculum coverage implemented" message="Meaning Maze provides authored ELA.3.V.1.3 word-and-phrase meaning practice at DRAFT review status. Curriculum chapter completion remains separate from unrestricted vocabulary mastery, diagnosis, and FAST performance." />
+      )}
       <ParentMetricCard label="Attempts" value={summary.questionAttempts} />
       <ParentMetricCard label="Accuracy" value={formatPercent(summary.accuracy)} />
       <ParentMetricCard label="First-attempt accuracy" value={formatPercent(summary.firstAttemptAccuracy)} />
@@ -642,6 +645,9 @@ function SkillSummaryCard({
       )}
       {summary.benchmarkReferences.includes('ELA.3.V.1.2') && (
         <p className="parent-muted-copy">Root-and-affix meaning curriculum coverage: IMPLEMENTED / DRAFT. This describes authored word-meaning practice, not pronunciation, decoding, unrestricted vocabulary mastery, diagnosis, or FAST evidence.</p>
+      )}
+      {summary.benchmarkReferences.includes('ELA.3.V.1.3') && (
+        <p className="parent-muted-copy">Meaning-strategy curriculum coverage: IMPLEMENTED / DRAFT. This describes selected-response work with context, relationships, local references, and phrases, not unrestricted vocabulary mastery, diagnosis, or FAST evidence.</p>
       )}
       <p>Current trail: {formatTrailLabel(summary.currentDifficulty)}</p>
       <p>Last mastered trail: {formatTrailLabel(summary.lastMasteredDifficulty)}</p>
@@ -724,6 +730,9 @@ function SkillDetailView({
         )}
         {skill.benchmarkReferences.includes('ELA.3.V.1.2') && (
           <ParentDataNote title="Curriculum coverage implemented" message="ELA.3.V.1.2 has authored DRAFT Root Meaning Vault practice using genuine roots, bases, prefixes, suffixes, and confirming context. Learner mastery remains separate, and the app does not claim pronunciation or decoding mastery." />
+        )}
+        {skill.benchmarkReferences.includes('ELA.3.V.1.3') && (
+          <ParentDataNote title="Curriculum coverage implemented" message="ELA.3.V.1.3 has authored DRAFT Meaning Maze practice using context, relationships, local reference cards, broad background knowledge, and contextual word or phrase senses. Chapter completion does not establish unrestricted vocabulary mastery." />
         )}
         <p>Question attempts: {skill.questionAttempts}</p>
         <p>Overall accuracy: {formatPercent(skill.accuracy)}</p>

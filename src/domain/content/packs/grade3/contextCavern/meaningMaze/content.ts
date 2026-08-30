@@ -47,10 +47,15 @@ type ReferencePlan =
   | (MeaningMazeReferenceEntry & { visibleKind: 'glossary'; kind: 'glossary' })
   | (MeaningMazeReferenceEntry & { visibleKind: 'reference'; kind: 'dictionary' | 'thesaurus' })
 
+type SupportChunk = string | {
+  displayText: string
+  speechText: string
+}
+
 type SupportPlan = {
   word: string
   sentenceIndex: number
-  chunks: string[]
+  chunks: SupportChunk[]
 }
 
 type SourcePlan = {
@@ -84,14 +89,17 @@ function makeSupportTarget(
   sentenceText: string,
   plan: SupportPlan,
 ): WordSupportTarget {
+  const displayText = (chunk: SupportChunk) => typeof chunk === 'string' ? chunk : chunk.displayText
+  const speechText = (chunk: SupportChunk) => typeof chunk === 'string' ? chunk : chunk.speechText
+
   return {
     targetId: `${passageId}-support-${plan.word.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
     passageId,
     sentenceId,
     surfaceWord: plan.word,
-    focusParts: plan.chunks.map((text, index) => ({ text, emphasis: index === 0 })),
-    displayChunks: plan.chunks.map((text) => ({ displayText: text, speechText: text })),
-    spokenChunks: plan.chunks.map((text) => ({ displayText: text, speechText: text })),
+    focusParts: plan.chunks.map((chunk, index) => ({ text: displayText(chunk), emphasis: index === 0 })),
+    displayChunks: plan.chunks.map((chunk) => ({ displayText: displayText(chunk), speechText: speechText(chunk) })),
+    spokenChunks: plan.chunks.map((chunk) => ({ displayText: displayText(chunk), speechText: speechText(chunk) })),
     blendSpeechText: plan.word,
     wholeWordSpeechText: plan.word,
     sentenceSpeechText: sentenceText,
@@ -307,7 +315,7 @@ const sourcePlans: readonly SourcePlan[] = [
     supports: [
       { word: 'nocturnal', sentenceIndex: 1, chunks: ['noc', 'tur', 'nal'] },
       { word: 'drowsy', sentenceIndex: 3, chunks: ['drow', 'sy'] },
-      { word: 'scarce', sentenceIndex: 6, chunks: ['scarce'] },
+      { word: 'scarce', sentenceIndex: 6, chunks: [{ displayText: 'sc', speechText: 'sk' }, { displayText: 'arce', speechText: 'airs' }] },
       { word: 'saturated', sentenceIndex: 8, chunks: ['sat', 'ur', 'at', 'ed'] },
     ],
   },
@@ -363,10 +371,10 @@ const sourcePlans: readonly SourcePlan[] = [
       },
     ],
     supports: [
-      { word: 'swift', sentenceIndex: 1, chunks: ['swift'] },
+      { word: 'swift', sentenceIndex: 1, chunks: ['sw', 'ift'] },
       { word: 'sapling', sentenceIndex: 3, chunks: ['sap', 'ling'] },
       { word: 'timid', sentenceIndex: 4, chunks: ['tim', 'id'] },
-      { word: 'hinge', sentenceIndex: 7, chunks: ['hinge'] },
+      { word: 'hinge', sentenceIndex: 7, chunks: ['h', { displayText: 'inge', speechText: 'inj' }] },
     ],
   },
   {
@@ -441,7 +449,7 @@ const sourcePlans: readonly SourcePlan[] = [
     ],
     supports: [
       { word: 'habitat', sentenceIndex: 1, chunks: ['hab', 'i', 'tat'] },
-      { word: 'route', sentenceIndex: 3, chunks: ['route'] },
+      { word: 'route', sentenceIndex: 3, chunks: ['r', { displayText: 'oute', speechText: 'oot' }] },
       { word: 'observe', sentenceIndex: 5, chunks: ['ob', 'serve'] },
       { word: 'contrast', sentenceIndex: 7, chunks: ['con', 'trast'] },
     ],
@@ -502,7 +510,7 @@ const sourcePlans: readonly SourcePlan[] = [
       { word: 'canopy', sentenceIndex: 2, chunks: ['can', 'o', 'py'] },
       { word: 'sturdy', sentenceIndex: 4, chunks: ['stur', 'dy'] },
       { word: 'signal', sentenceIndex: 6, chunks: ['sig', 'nal'] },
-      { word: 'mapped', sentenceIndex: 8, chunks: ['mapped'] },
+      { word: 'mapped', sentenceIndex: 8, chunks: ['map', { displayText: 'ped', speechText: 't' }] },
     ],
   },
   {
@@ -589,10 +597,10 @@ const sourcePlans: readonly SourcePlan[] = [
       },
     ],
     supports: [
-      { word: 'bank', sentenceIndex: 1, chunks: ['bank'] },
+      { word: 'bank', sentenceIndex: 1, chunks: ['b', 'ank'] },
       { word: 'current', sentenceIndex: 3, chunks: ['cur', 'rent'] },
-      { word: 'draft', sentenceIndex: 5, chunks: ['draft'] },
-      { word: 'scale', sentenceIndex: 8, chunks: ['scale'] },
+      { word: 'draft', sentenceIndex: 5, chunks: ['dr', 'aft'] },
+      { word: 'scale', sentenceIndex: 8, chunks: [{ displayText: 'sc', speechText: 'sk' }, { displayText: 'ale', speechText: 'ale' }] },
     ],
   },
   {
@@ -600,62 +608,50 @@ const sourcePlans: readonly SourcePlan[] = [
     sourceKind: 'poem',
     title: 'The Map We Made Together',
     readingContext: 'A poem provides context for interpreting four figurative phrases without asking learners to name a device.',
-    stanzaEnds: [6, 12, 18, 24],
+    stanzaEnds: [6, 12],
     sentences: [
       'Morning hid the path from sight,',
       'a blanket of fog covered every stone.',
-      'We waited by the cedar rail,',
-      'until warm light thinned the gray.',
-      'Soon trail marks showed again,',
-      'and we opened our map.',
+      'We waited until warm light thinned the gray,',
+      'then trail marks showed and we opened our map.',
       'Mira shared a careful thought,',
       'and the idea took root in our group.',
-      'We would mark each turn with string,',
-      'then check the route on our return.',
-      'Everyone added one useful step,',
-      'so the plan began to grow.',
-      'At the creek the plan hit a snag:',
-      'one bridge board had washed away.',
-      'We stopped instead of stepping across,',
-      'and drew a safe detour uphill.',
-      'The trouble slowed our feet,',
-      'but it did not end the work.',
+      'Everyone added a useful step, so the plan began to grow.',
+      'At the creek the plan hit a snag: one bridge board had washed away.',
+      'We stopped and drew a safe detour; the trouble slowed but did not end our work.',
       'As we measured, time slipped away;',
-      'the sun moved low beyond the pines.',
-      'We packed the string and notes,',
-      'with the final loop still unfinished.',
-      'Tomorrow we will follow our map,',
-      'and finish the path together.',
+      'the sun moved low while the final loop stayed unfinished.',
+      'We packed our notes and promised to finish together tomorrow.',
     ],
     targets: [
       {
         targetText: 'a blanket of fog', targetForm: 'phrase', challengeKind: 'figurative', sentenceIndex: 1,
         intendedMeaning: 'thick fog covered the area', primaryStrategy: 'background-knowledge', secondaryStrategies: ['context-clue'],
-        contextSentenceIndexes: [0, 1, 3, 4], backgroundKnowledgeStatement: 'A blanket covers what lies beneath it, and thick fog can hide a view.',
+        contextSentenceIndexes: [0, 1, 2, 3], backgroundKnowledgeStatement: 'A blanket covers what lies beneath it, and thick fog can hide a view.',
         literalReading: 'A cloth blanket lay over the trail.',
         strategyExplanation: 'Broad knowledge about covering combines with lines saying the path was hidden and later reappeared.',
         confirmationStatement: 'Warm light thins the gray and trail marks show again, so fog rather than cloth covered the view.',
       },
       {
-        targetText: 'the idea took root', targetForm: 'phrase', challengeKind: 'figurative', sentenceIndex: 7,
+        targetText: 'the idea took root', targetForm: 'phrase', challengeKind: 'figurative', sentenceIndex: 5,
         intendedMeaning: 'the group accepted the idea and began developing it', primaryStrategy: 'combined', secondaryStrategies: ['context-clue', 'background-knowledge'],
-        contextSentenceIndexes: [6, 7, 8, 10, 11], backgroundKnowledgeStatement: 'Roots help a plant begin and grow; an accepted idea can also develop.',
+        contextSentenceIndexes: [4, 5, 6], backgroundKnowledgeStatement: 'Roots help a plant begin and grow; an accepted idea can also develop.',
         literalReading: 'The idea grew plant roots.',
         strategyExplanation: 'The growth image and the group adding steps together reveal the figurative meaning.',
         confirmationStatement: 'Everyone adds a step and the plan begins to grow.',
       },
       {
-        targetText: 'the plan hit a snag', targetForm: 'phrase', challengeKind: 'figurative', sentenceIndex: 12,
+        targetText: 'the plan hit a snag', targetForm: 'phrase', challengeKind: 'figurative', sentenceIndex: 7,
         intendedMeaning: 'the plan met an unexpected problem', primaryStrategy: 'combined', secondaryStrategies: ['context-clue', 'word-relationship'],
-        contextSentenceIndexes: [12, 13, 14, 15], relationshipKind: 'synonym', relatedWords: ['trouble', 'problem'],
+        contextSentenceIndexes: [7, 8], relationshipKind: 'synonym', relatedWords: ['trouble', 'problem'],
         literalReading: 'The plan bumped into a sharp branch or knot.',
         strategyExplanation: 'The colon introduces the washed-away board as the problem, and trouble restates snag.',
         confirmationStatement: 'The missing bridge board forces the group to stop and make a detour.',
       },
       {
-        targetText: 'time slipped away', targetForm: 'phrase', challengeKind: 'figurative', sentenceIndex: 18,
+        targetText: 'time slipped away', targetForm: 'phrase', challengeKind: 'figurative', sentenceIndex: 9,
         intendedMeaning: 'time passed quickly without the group noticing enough of it', primaryStrategy: 'combined', secondaryStrategies: ['context-clue', 'background-knowledge'],
-        contextSentenceIndexes: [18, 19, 20, 21], backgroundKnowledgeStatement: 'A lowering sun signals that much of the day has passed.',
+        contextSentenceIndexes: [9, 10, 11], backgroundKnowledgeStatement: 'A lowering sun signals that much of the day has passed.',
         literalReading: 'Time was an object that slid out of someone’s hands.',
         strategyExplanation: 'The low sun and unfinished work show that the available time passed quickly.',
         confirmationStatement: 'The group packs up with work unfinished because the sun is already low.',
@@ -663,9 +659,9 @@ const sourcePlans: readonly SourcePlan[] = [
     ],
     supports: [
       { word: 'blanket', sentenceIndex: 1, chunks: ['blan', 'ket'] },
-      { word: 'root', sentenceIndex: 7, chunks: ['root'] },
-      { word: 'snag', sentenceIndex: 12, chunks: ['snag'] },
-      { word: 'slipped', sentenceIndex: 18, chunks: ['slipped'] },
+      { word: 'root', sentenceIndex: 5, chunks: ['r', 'oot'] },
+      { word: 'snag', sentenceIndex: 7, chunks: ['sn', 'ag'] },
+      { word: 'slipped', sentenceIndex: 9, chunks: ['slip', { displayText: 'ped', speechText: 't' }] },
     ],
   },
   {
@@ -743,8 +739,8 @@ const sourcePlans: readonly SourcePlan[] = [
       },
     ],
     supports: [
-      { word: 'point', sentenceIndex: 1, chunks: ['point'] },
-      { word: 'track', sentenceIndex: 4, chunks: ['track'] },
+      { word: 'point', sentenceIndex: 1, chunks: ['p', 'oint'] },
+      { word: 'track', sentenceIndex: 4, chunks: ['tr', 'ack'] },
       { word: 'steady', sentenceIndex: 7, chunks: ['stead', 'y'] },
       { word: 'painted', sentenceIndex: 9, chunks: ['paint', 'ed'] },
     ],

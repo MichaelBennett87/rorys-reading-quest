@@ -233,6 +233,9 @@ export function ParentPrintSummaryView({
                 {skill.benchmarkReferences.includes('ELA.3.V.1.2') && (
                   <p>Root-and-affix meaning curriculum coverage: IMPLEMENTED / DRAFT. This is authored word-meaning practice, not pronunciation, decoding, learner-mastery, diagnosis, or FAST evidence.</p>
                 )}
+                {skill.benchmarkReferences.includes('ELA.3.V.1.3') && (
+                  <p>Meaning-strategy curriculum coverage: IMPLEMENTED / DRAFT. This is selected-response practice with context, relationships, local references, and phrases, not unrestricted vocabulary mastery, diagnosis, or FAST evidence.</p>
+                )}
                 <p>Category: {skill.reportingCategory}</p>
                 <p>Current trail: {formatTrailLabel(skill.currentDifficulty)}</p>
                 <p>Last mastered trail: {formatTrailLabel(skill.lastMasteredDifficulty)}</p>

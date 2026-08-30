@@ -28,16 +28,16 @@ describe('Phase 7D5 acceptance documentation and boundary', () => {
 
   test('binds exact registry totals and the Grade 3 coverage snapshot', () => {
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 39,
-      activeLessonCount: 273,
-      activePassageCount: 287,
-      activeQuestionCount: 1573,
-      activeSupportTargetCount: 1083,
+      activePackCount: 40,
+      activeLessonCount: 280,
+      activePassageCount: 294,
+      activeQuestionCount: 1614,
+      activeSupportTargetCount: 1111,
     })
     const snapshot = buildGrade3CoverageSnapshot()
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(13)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(14)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(2)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(1)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(0)
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.V.1.2')).toMatchObject({
       coverageStatus: 'implemented',
       reviewStatus: 'DRAFT',
@@ -51,7 +51,7 @@ describe('Phase 7D5 acceptance documentation and boundary', () => {
     const coverage = read('docs/content/GRADE_3_V_1_2_COVERAGE_AUDIT.md')
     const semantic = read('docs/content/GRADE_3_ROOT_MEANING_VAULT_SEMANTIC_AUDIT.md')
 
-    expect(truth).toContain('1,573 active questions and 1,573 current PASS ledger records across 39 packs')
+    expect(truth).toContain('1,614 active questions and 1,614 current PASS ledger records across 40 packs')
     expect(truth).toContain('rejects 20,682 adversarial submissions')
     for (const pattern of ['greek-roots', 'latin-roots', 'base-words', 'affixes', 'unfamiliar-word-meaning']) {
       expect(coverage).toContain(`\`${pattern}\``)

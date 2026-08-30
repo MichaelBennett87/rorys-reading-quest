@@ -29,17 +29,17 @@ describe('Phase 7D4 acceptance documentation and boundary', () => {
 
   test('binds exact registry totals and the Grade 3 supportive-practice snapshot', () => {
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 39,
-      activeLessonCount: 273,
-      activePassageCount: 287,
-      activeQuestionCount: 1573,
-      activeSupportTargetCount: 1083,
+      activePackCount: 40,
+      activeLessonCount: 280,
+      activePassageCount: 294,
+      activeQuestionCount: 1614,
+      activeSupportTargetCount: 1111,
     })
 
     const snapshot = buildGrade3CoverageSnapshot()
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(13)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(14)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(2)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(1)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(0)
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.V.1.1')).toMatchObject({
       coverageStatus: 'supportive_practice',
       reviewStatus: 'DRAFT',

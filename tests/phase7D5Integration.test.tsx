@@ -93,18 +93,18 @@ function completedAttempt(candidate: LessonActivityCandidate, completionId: stri
 }
 
 describe('Phase 7D5 integration and reconciled one-button journey', () => {
-  test('registers only Root Meaning Vault and derives complete ELA.3.V.1.2 coverage', () => {
+  test('keeps Root Meaning Vault registered while later Unit 3 coverage coexists', () => {
     const packs = getActiveContentPacks()
     expect(packs.filter((pack) => pack.manifest.gradeBand === 2)).toHaveLength(22)
-    expect(packs.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(17)
+    expect(packs.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(18)
     expect(packs.filter((pack) => pack.manifest.packId === 'g3-context-cavern-root-meaning-vault')).toHaveLength(1)
-    expect(packs.some((pack) => pack.manifest.packId.includes('meaning-maze'))).toBe(false)
+    expect(packs.some((pack) => pack.manifest.packId.includes('meaning-maze'))).toBe(true)
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 39,
-      activeLessonCount: 273,
-      activePassageCount: 287,
-      activeQuestionCount: 1573,
-      activeSupportTargetCount: 1083,
+      activePackCount: 40,
+      activeLessonCount: 280,
+      activePassageCount: 294,
+      activeQuestionCount: 1614,
+      activeSupportTargetCount: 1111,
     })
     const snapshot = buildGrade3CoverageSnapshot()
     expect(snapshot.rows.find((entry) => entry.benchmarkReference === 'ELA.3.V.1.2')).toMatchObject({
@@ -114,9 +114,9 @@ describe('Phase 7D5 integration and reconciled one-button journey', () => {
       contributingPackIds: ['g3-context-cavern-root-meaning-vault'],
       coveredPatterns: ['greek-roots', 'latin-roots', 'base-words', 'affixes', 'unfamiliar-word-meaning'],
     })
-    expect(snapshot.rows.filter((entry) => entry.coverageStatus === 'implemented')).toHaveLength(13)
+    expect(snapshot.rows.filter((entry) => entry.coverageStatus === 'implemented')).toHaveLength(14)
     expect(snapshot.rows.filter((entry) => entry.coverageStatus === 'supportive_practice')).toHaveLength(2)
-    expect(snapshot.rows.filter((entry) => entry.coverageStatus === 'planned')).toHaveLength(1)
+    expect(snapshot.rows.filter((entry) => entry.coverageStatus === 'planned')).toHaveLength(0)
   })
 
   test('retires stale Unit 2 no-content, preserves local records, and resumes one authoritative session', () => {

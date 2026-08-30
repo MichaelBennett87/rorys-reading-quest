@@ -37,6 +37,7 @@ import { summaryStrongholdPack } from './grade3/compareCastle/summaryStronghold'
 import { authorLensTowerPack } from './grade3/compareCastle/authorLensTower'
 import { grade3ContextCavernAcademicWordWorkshopPack } from './grade3/contextCavern/academicWordWorkshop'
 import { grade3ContextCavernRootMeaningVaultPack } from './grade3/contextCavern/rootMeaningVault'
+import { grade3ContextCavernMeaningMazePack } from './grade3/contextCavern/meaningMaze'
 import { legacyDevelopmentPack } from './legacyDevelopmentPack'
 import type { ContentPack } from './contentPackTypes'
 import type { ContentSample } from '../types'
@@ -83,6 +84,7 @@ export const contentPacks: readonly ContentPack[] = [
   authorLensTowerPack,
   grade3ContextCavernAcademicWordWorkshopPack,
   grade3ContextCavernRootMeaningVaultPack,
+  grade3ContextCavernMeaningMazePack,
   legacyDevelopmentPack,
 ]
 
