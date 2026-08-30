@@ -82,8 +82,10 @@ function validateReferenceEntry(
   if (entry.kind === 'thesaurus' && !(entry.relatedWords?.length)) add(issues, 'reference_entry_invalid', entry.referenceId, 'Thesaurus entries require authored related words.')
 
   if (entry.kind === 'glossary') {
-    const glossary = passage.informationalStructure?.features.find((feature): feature is InformationalGlossaryFeature => feature.kind === 'glossary')
-    const visible = glossary?.entries.find((candidate) => candidate.entryId === entry.referenceId)
+    const visible = passage.informationalStructure?.features
+      .filter((feature): feature is InformationalGlossaryFeature => feature.kind === 'glossary')
+      .flatMap((feature) => feature.entries)
+      .find((candidate) => candidate.entryId === entry.referenceId)
     if (!visible || normalize(visible.term) !== normalize(entry.headword)) add(issues, 'reference_entry_missing', entry.referenceId, 'Glossary references must resolve to a learner-visible glossary entry.')
     return
   }

@@ -1,0 +1,173 @@
+import type { ContentPack, ContentPackLesson } from '../../../contentPackTypes'
+import {
+  grade3MeaningMazeArtifacts,
+  grade3MeaningMazeGuides,
+  grade3MeaningMazePassages,
+} from './content'
+import {
+  grade3MeaningMazeContentVersion,
+  grade3MeaningMazeLessonIds,
+  grade3MeaningMazePackId,
+  grade3MeaningMazePrimarySkillId,
+  grade3MeaningMazeQuestionIds,
+  grade3MeaningMazeUnitId,
+  grade3MeaningMazeWorldId,
+} from './ids'
+import { grade3MeaningMazeQuestions } from './questions'
+
+const guidedPlans = [
+  {
+    lessonId: grade3MeaningMazeLessonIds.contextClueCompass,
+    activityId: 'activity-g3-cc-mm-context-clue-compass',
+    difficulty: 2,
+    passage: grade3MeaningMazeArtifacts.contextClueCompass.passage,
+    questionIds: grade3MeaningMazeQuestionIds.contextClueCompass,
+    lessonTitle: 'Meaning Maze Power-Up: Context Clue Compass',
+    lessonObjective: 'Use definition, restatement, contrast, and cause-and-effect clues to determine unfamiliar word meanings.',
+    teachingBlock: {
+      title: 'Read around the unfamiliar word',
+      explanation: 'Read the complete sentence and nearby sentences. Notice whether the author defines, restates, contrasts, gives an example, or shows a cause and result.',
+      examples: ['Nocturnal is explained directly.', 'Plentiful contrasts with scarce.', 'A dripping sponge shows the result of being saturated.'],
+      contrast: 'One nearby word is not enough when the rest of the section points to a different meaning.',
+      learnerCue: 'Ask: Which complete detail confirms this meaning?',
+    },
+  },
+  {
+    lessonId: grade3MeaningMazeLessonIds.relationshipRopes,
+    activityId: 'activity-g3-cc-mm-relationship-ropes',
+    difficulty: 2,
+    passage: grade3MeaningMazeArtifacts.relationshipRopes.passage,
+    questionIds: grade3MeaningMazeQuestionIds.relationshipRopes,
+    lessonTitle: 'Meaning Maze Power-Up: Relationship Ropes',
+    lessonObjective: 'Use synonym, antonym, category, part-whole, and object-function relationships as meaning clues.',
+    teachingBlock: {
+      title: 'Related words can pull meaning closer',
+      explanation: 'A synonym, antonym, category, part, or function can help. Then confirm the possible meaning with what happens in the story.',
+      examples: ['Quick helps explain swift.', 'Bold contrasts with timid.', 'A hinge is explained by the job it does.'],
+      contrast: 'Related words are not always exact substitutes in every sentence.',
+      learnerCue: 'Name the relationship, then check the action.',
+    },
+  },
+  {
+    lessonId: grade3MeaningMazeLessonIds.referenceToolRoom,
+    activityId: 'activity-g3-cc-mm-reference-tool-room',
+    difficulty: 3,
+    passage: grade3MeaningMazeArtifacts.referenceToolRoom.passage,
+    questionIds: grade3MeaningMazeQuestionIds.referenceToolRoom,
+    lessonTitle: 'Meaning Maze Lab: Reference Tool Room',
+    lessonObjective: 'Use local glossary and dictionary entries, then confirm the selected meaning in the source.',
+    teachingBlock: {
+      title: 'A reference card offers choices, not a shortcut',
+      explanation: 'Read the local card, choose the sense that fits the grammar and topic, and return to the source to confirm it.',
+      examples: ['A glossary supplies one focused meaning.', 'A dictionary may list more than one sense.', 'Source action chooses the fitting sense.'],
+      contrast: 'Do not choose a dictionary sense merely because it is familiar.',
+      learnerCue: 'Reference, return, and confirm.',
+    },
+  },
+  {
+    lessonId: grade3MeaningMazeLessonIds.backgroundKnowledgeBridge,
+    activityId: 'activity-g3-cc-mm-background-knowledge-bridge',
+    difficulty: 3,
+    passage: grade3MeaningMazeArtifacts.backgroundKnowledgeBridge.passage,
+    questionIds: grade3MeaningMazeQuestionIds.backgroundKnowledgeBridge,
+    lessonTitle: 'Meaning Maze Lab: Background Knowledge Bridge',
+    lessonObjective: 'Combine broad background knowledge with source evidence to determine unfamiliar word and phrase meanings.',
+    teachingBlock: {
+      title: 'Build a bridge from what you know to what the text proves',
+      explanation: 'Broad knowledge can suggest a meaning, but the story must confirm it. A private experience is never required.',
+      examples: ['Strong posts stay steady.', 'Visible signs can carry messages.', 'Plans guide actions people perform.'],
+      contrast: 'Background knowledge alone cannot override the source.',
+      learnerCue: 'What do I know, and what does this text confirm?',
+    },
+  },
+] as const
+
+const guidedLessons: ContentPackLesson[] = guidedPlans.map((plan) => ({
+  lessonId: plan.lessonId,
+  worldId: grade3MeaningMazeWorldId,
+  unitId: grade3MeaningMazeUnitId,
+  activityId: plan.activityId,
+  difficulty: plan.difficulty,
+  passageIdentifiers: [plan.passage.passageIdentifier],
+  questionIdentifiers: [...plan.questionIds],
+  lessonTitle: plan.lessonTitle,
+  lessonObjective: plan.lessonObjective,
+  lessonRole: 'GUIDED_PRACTICE',
+  selectionStatus: 'active',
+  teachingBlock: { ...plan.teachingBlock, examples: [...plan.teachingBlock.examples] },
+  contentVersion: grade3MeaningMazeContentVersion,
+  eligiblePurposes: ['remediation', 'review'],
+}))
+
+const checkpointLessons: ContentPackLesson[] = [
+  {
+    lessonId: grade3MeaningMazeLessonIds.moreThanOneDoor,
+    worldId: grade3MeaningMazeWorldId,
+    unitId: grade3MeaningMazeUnitId,
+    activityId: 'activity-g3-cc-mm-more-than-one-door',
+    difficulty: 3,
+    passageIdentifiers: [grade3MeaningMazeArtifacts.moreThanOneDoor.passage.passageIdentifier],
+    questionIdentifiers: [...grade3MeaningMazeQuestionIds.moreThanOneDoor],
+    lessonTitle: 'Meaning Maze Checkpoint: Words with More Than One Door',
+    lessonObjective: 'Select the contextual sense of multiple-meaning words using source and local dictionary evidence.',
+    lessonRole: 'CHECKPOINT', selectionStatus: 'active', contentVersion: grade3MeaningMazeContentVersion,
+    eligiblePurposes: ['progression', 'verification', 'review'],
+  },
+  {
+    lessonId: grade3MeaningMazeLessonIds.figurativePhrasePaths,
+    worldId: grade3MeaningMazeWorldId,
+    unitId: grade3MeaningMazeUnitId,
+    activityId: 'activity-g3-cc-mm-figurative-phrase-paths',
+    difficulty: 3,
+    passageIdentifiers: [grade3MeaningMazeArtifacts.figurativePhrasePaths.passage.passageIdentifier],
+    questionIdentifiers: [...grade3MeaningMazeQuestionIds.figurativePhrasePaths],
+    lessonTitle: 'Meaning Maze Checkpoint: Figurative Phrase Paths',
+    lessonObjective: 'Determine figurative phrase meanings from complete poetic context without naming the device.',
+    lessonRole: 'CHECKPOINT', selectionStatus: 'active', contentVersion: grade3MeaningMazeContentVersion,
+    eligiblePurposes: ['progression', 'verification', 'review'],
+  },
+  {
+    lessonId: grade3MeaningMazeLessonIds.unknownWordsPhrases,
+    worldId: grade3MeaningMazeWorldId,
+    unitId: grade3MeaningMazeUnitId,
+    activityId: 'activity-g3-cc-mm-unknown-words-phrases',
+    difficulty: 3,
+    passageIdentifiers: [grade3MeaningMazeArtifacts.unknownWordsPhrases.passage.passageIdentifier],
+    questionIdentifiers: [...grade3MeaningMazeQuestionIds.unknownWordsPhrases],
+    lessonTitle: 'Meaning Maze Checkpoint: Unknown Words and Phrases',
+    lessonObjective: 'Combine context, relationships, local references, and broad knowledge to determine word and phrase meanings.',
+    lessonRole: 'CHECKPOINT', selectionStatus: 'active', contentVersion: grade3MeaningMazeContentVersion,
+    eligiblePurposes: ['progression', 'verification', 'review'],
+  },
+]
+
+export const grade3MeaningMazeLessons: ContentPackLesson[] = [...guidedLessons, ...checkpointLessons]
+
+export const grade3ContextCavernMeaningMazePack: ContentPack = {
+  manifest: {
+    packId: grade3MeaningMazePackId,
+    packTitle: 'Grade 3 Context Cavern: Meaning Maze',
+    gradeBand: 3,
+    worldId: grade3MeaningMazeWorldId,
+    unitId: grade3MeaningMazeUnitId,
+    primarySkillId: grade3MeaningMazePrimarySkillId,
+    benchmarkReferences: ['ELA.3.V.1.3'],
+    supportingBenchmarkReferences: [],
+    partialBenchmarkCoverage: 'Grade 3 determination of unknown word and phrase meaning through context clues, word relationships, local reference materials, background knowledge, multiple-meaning sense selection, and context-supported figurative interpretation.',
+    difficultyRange: [2, 3],
+    contentVersion: grade3MeaningMazeContentVersion,
+    reviewStatus: 'DRAFT',
+    coverageKind: 'benchmark',
+    lessonIds: grade3MeaningMazeLessons.map((lesson) => lesson.lessonId),
+    passageIds: grade3MeaningMazePassages.map((passage) => passage.passageIdentifier),
+    questionIds: grade3MeaningMazeQuestions.map((question) => question.questionIdentifier),
+    coveredPatterns: [
+      'context-clues', 'figurative-language', 'word-relationships', 'reference-materials',
+      'background-knowledge', 'multiple-meaning-words', 'unknown-words', 'unknown-phrases',
+    ],
+  },
+  passages: grade3MeaningMazePassages,
+  questions: grade3MeaningMazeQuestions,
+  lessons: grade3MeaningMazeLessons,
+  meaningMazeGuides: grade3MeaningMazeGuides,
+}
