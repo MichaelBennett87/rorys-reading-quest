@@ -6,6 +6,10 @@ import { createServer } from 'vite'
 const projectRoot = process.cwd()
 const ledgerDirectory = path.join(projectRoot, 'docs', 'content', 'question-truth-ledger')
 const correctionSummaries = new Map([
+  ['lesson-g3-cc-aww-explain-and-support-q-2', 'Blind review aligned the keyed interpretation sentence with the learner-visible source so the answer and evidence describe the same reading action.'],
+  ['lesson-g3-cc-aww-reading-and-writing-checkpoint-q-5', 'Blind review narrowed the hot-text prompt to one exact learner-visible use so multiple plausible selections were removed.'],
+  ['lesson-g3-cc-aww-reading-and-writing-checkpoint-q-7', 'Blind review rewrote Part B to support the Part A word choice instead of revealing the Part A answer.'],
+  ['lesson-g3-cc-aww-across-subjects-checkpoint-q-1', 'Blind review replaced a defensible classification distractor with an option that does not fit the stated sorting task.'],
   ['lesson-g3-suffix-shifter-checkpoint-maker-q-7', 'Blind review replaced a sentence-role Part B with authored reading chunks so the checkpoint genuinely distinguishes morphological and pronunciation boundaries.'],
   ['lesson-g3-suffix-shifter-checkpoint-nature-q-7', 'Blind review replaced a sentence-role Part B with authored reading chunks so the checkpoint genuinely distinguishes morphological and pronunciation boundaries.'],
   ['lesson-g3-suffix-shifter-checkpoint-weather-q-7', 'Blind review replaced a sentence-role Part B with authored reading chunks so the checkpoint genuinely distinguishes morphological and pronunciation boundaries.'],
@@ -191,8 +195,11 @@ function assertBlindProjection(records) {
   const forbidden = new Set([
     'authoredCorrectAnswerRepresentation',
     'correctAnswers',
+    'correctChoiceId',
     'correctChoiceIds',
     'correctSegmentIds',
+    'partACorrectChoiceId',
+    'partBCorrectChoiceId',
     'evidenceReferenceIds',
     'explanation',
     'guides',
@@ -222,7 +229,7 @@ function buildAuditProgress(packs, records, metrics) {
   }).join('\n')
   return `# Active Question Truth Audit Progress
 
-Registry source: active production content registry through Phase 7D3.
+Registry source: active production content registry through Phase 7D4.
 
 - Active packs: ${metrics.activePacks}
 - Active questions: ${metrics.activeQuestions}

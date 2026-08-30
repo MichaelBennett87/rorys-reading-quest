@@ -137,6 +137,20 @@ describe('evaluateAnswer', () => {
     expect(result.correctAnswer).toEqual({ row1: 'r1-a', row2: 'r2-b' })
   })
 
+  test('rejects a canonical payload when the submission discriminator does not match the question', () => {
+    const result = evaluateAnswer(multipleChoiceQuestion, {
+      questionType: 'MULTISELECT',
+      payload: { selectedChoiceId: 'c2' },
+    })
+
+    expect(result).toMatchObject({
+      questionId: 'q-mc',
+      questionType: 'MULTIPLE_CHOICE',
+      isCorrect: false,
+      correctAnswer: null,
+    })
+  })
+
   test('preserves source content without mutation', () => {
     const sourceQuestion: LessonQuestion = JSON.parse(JSON.stringify(multiselectQuestion))
     const submission: LessonQuestionSubmission = {

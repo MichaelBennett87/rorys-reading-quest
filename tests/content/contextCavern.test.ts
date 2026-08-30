@@ -101,13 +101,14 @@ describe('grade 2 context cavern academic word workshop pack', () => {
       'g3-compare-castle-figurative-fortress',
       'g3-compare-castle-summary-stronghold',
       'g3-compare-castle-author-lens-tower',
+      'g3-context-cavern-academic-word-workshop',
     ])
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 37,
-      activeLessonCount: 259,
-      activePassageCount: 273,
-      activeQuestionCount: 1491,
-      activeSupportTargetCount: 1027,
+      activePackCount: 38,
+      activeLessonCount: 266,
+      activePassageCount: 280,
+      activeQuestionCount: 1532,
+      activeSupportTargetCount: 1055,
     })
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.V.1.1')).toEqual(expect.objectContaining({
       benchmarkReference: 'ELA.2.V.1.1',
@@ -286,11 +287,11 @@ describe('grade 2 context cavern morphology mine pack', () => {
     ])
     expect(pack.morphologyGuides).toHaveLength(7)
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 37,
-      activeLessonCount: 259,
-      activePassageCount: 273,
-      activeQuestionCount: 1491,
-      activeSupportTargetCount: 1027,
+      activePackCount: 38,
+      activeLessonCount: 266,
+      activePassageCount: 280,
+      activeQuestionCount: 1532,
+      activeSupportTargetCount: 1055,
     })
   })
 

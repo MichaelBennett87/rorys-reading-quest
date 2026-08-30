@@ -24,8 +24,8 @@ describe('active question truth inventory', () => {
     const inventory = buildActiveQuestionTruthInventory(activePacks)
 
     expect(inventory.issues, JSON.stringify(inventory.issues, null, 2)).toEqual([])
-    expect(inventory.records).toHaveLength(1491)
-    expect(new Set(inventory.records.map((record) => record.questionId)).size).toBe(1491)
+    expect(inventory.records).toHaveLength(1532)
+    expect(new Set(inventory.records.map((record) => record.questionId)).size).toBe(1532)
     expect(new Set(inventory.records.map((record) => record.packId))).toEqual(
       new Set(activePacks.map((pack) => pack.manifest.packId)),
     )
@@ -38,17 +38,26 @@ describe('active question truth inventory', () => {
     const forbiddenKeys = new Set([
       'authoredCorrectAnswerRepresentation',
       'correctAnswers',
+      'correctChoiceId',
       'correctChoiceIds',
       'correctSegmentIds',
       'evidenceReferenceIds',
       'explanation',
       'guides',
+      'partACorrectChoiceId',
+      'partBCorrectChoiceId',
     ])
     const discoveredKeys = collectKeys(projection)
 
-    expect(projection).toHaveLength(1491)
+    expect(projection).toHaveLength(1532)
     expect([...forbiddenKeys].filter((key) => discoveredKeys.has(key))).toEqual([])
     expect(projection.every((record) => record.displayedTexts.length >= 1)).toBe(true)
+    const tableRecords = projection.filter((record) => record.questionType === 'table_match')
+    const twoPartRecords = projection.filter((record) => record.questionType === 'two_part')
+    expect(tableRecords.length).toBeGreaterThan(0)
+    expect(twoPartRecords.length).toBeGreaterThan(0)
+    expect(tableRecords.every((record) => record.visibleSubprompts.length > 0)).toBe(true)
+    expect(twoPartRecords.every((record) => record.visibleSubprompts.length === 2)).toBe(true)
   })
 
   test('keeps one current fingerprinted PASS ledger record for every active question', () => {
@@ -56,9 +65,9 @@ describe('active question truth inventory', () => {
     const activeById = new Map(inventory.records.map((record) => [record.questionId, record] as const))
     const ledgerRecords = Object.values(ledgerModules).flatMap((raw) => JSON.parse(raw) as LedgerRecord[])
 
-    expect(Object.keys(ledgerModules)).toHaveLength(37)
-    expect(ledgerRecords).toHaveLength(1491)
-    expect(new Set(ledgerRecords.map((record) => record.questionId)).size).toBe(1491)
+    expect(Object.keys(ledgerModules)).toHaveLength(38)
+    expect(ledgerRecords).toHaveLength(1532)
+    expect(new Set(ledgerRecords.map((record) => record.questionId)).size).toBe(1532)
     expect(new Set(ledgerRecords.map((record) => record.packId))).toEqual(
       new Set(getActiveContentPacks().map((pack) => pack.manifest.packId)),
     )

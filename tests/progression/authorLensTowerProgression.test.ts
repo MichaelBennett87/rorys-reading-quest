@@ -21,7 +21,7 @@ function stateAtDifficulty(difficulty: 2 | 3 | 4): QuestProgressV1 {
   for (const [skillId, completedDifficulty] of [
     ['g2-word-forge-word-practice', 8], ['g2-story-scouts-prose', 4], ['g2-poetry-planet-poetry', 2],
     ['g2-information-detectives-reading', 5], ['g2-context-cavern-vocabulary', 4], ['g2-across-genres-reading', 4],
-    ['g3-word-forge-word-analysis', 5], ['g3-story-scouts-prose', 4], ['g3-poetry-planet-poetry', 2], ['g3-information-detectives-reading', 5],
+    ['g3-word-forge-word-analysis', 5], ['g3-story-scouts-prose', 4], ['g3-poetry-planet-poetry', 2], ['g3-information-detectives-reading', 5], ['g3-context-cavern-vocabulary', 4],
   ] as const) state.skillProgress[skillId] = createInitialSkillProgress(skillId, completedDifficulty, completedDifficulty - 1)
   state.skillProgress[SKILL_ID] = createInitialSkillProgress(SKILL_ID, difficulty, Math.max(0, difficulty - 1))
   return state

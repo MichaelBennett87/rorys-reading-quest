@@ -59,6 +59,7 @@ describe('parent dashboard presentation helpers', () => {
     expect(resolveFriendlySkillName('g2-poetry-planet-poetry')).toBe('Poetry Planet')
     expect(resolveFriendlySkillName('g2-information-detectives-reading')).toBe('Information Detectives')
     expect(resolveFriendlySkillName('g2-context-cavern-vocabulary')).toBe('Context Cavern Vocabulary')
+    expect(resolveFriendlySkillName('g3-context-cavern-vocabulary')).toBe('Grade 3 Context Cavern')
     expect(resolveFriendlySkillName('retired-skill-id')).toBe('Archived skill')
     expect(input).toEqual(snapshot)
   })

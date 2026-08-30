@@ -21,7 +21,7 @@ function stateAtAuthorLens() {
   for (const [skillId, difficulty] of [
     ['g2-word-forge-word-practice', 8], ['g2-story-scouts-prose', 4], ['g2-poetry-planet-poetry', 2],
     ['g2-information-detectives-reading', 5], ['g2-context-cavern-vocabulary', 4], ['g2-across-genres-reading', 4],
-    ['g3-word-forge-word-analysis', 5], ['g3-story-scouts-prose', 4], ['g3-poetry-planet-poetry', 2], ['g3-information-detectives-reading', 5],
+    ['g3-word-forge-word-analysis', 5], ['g3-story-scouts-prose', 4], ['g3-poetry-planet-poetry', 2], ['g3-information-detectives-reading', 5], ['g3-context-cavern-vocabulary', 4],
   ] as const) state.skillProgress[skillId] = createInitialSkillProgress(skillId, difficulty, difficulty - 1)
   state.skillProgress['g3-across-genres-reading'] = createInitialSkillProgress('g3-across-genres-reading', 3, 2)
   return state
@@ -31,9 +31,9 @@ describe('Phase 7D3 integration and reconciled one-button journey', () => {
   test('registers only Author Lens Tower and derives complete ELA.3.R.3.3 coverage', () => {
     const packs = getActiveContentPacks()
     expect(packs.filter((pack) => pack.manifest.gradeBand === 2)).toHaveLength(22)
-    expect(packs.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(15)
+    expect(packs.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(16)
     expect(packs.filter((pack) => pack.manifest.packId === 'g3-compare-castle-author-lens-tower')).toHaveLength(1)
-    expect(getActiveContentRegistryTotals()).toEqual({ activePackCount: 37, activeLessonCount: 259, activePassageCount: 273, activeQuestionCount: 1491, activeSupportTargetCount: 1027 })
+    expect(getActiveContentRegistryTotals()).toEqual({ activePackCount: 38, activeLessonCount: 266, activePassageCount: 280, activeQuestionCount: 1532, activeSupportTargetCount: 1055 })
     const row = buildGrade3CoverageSnapshot().rows.find((entry) => entry.benchmarkReference === 'ELA.3.R.3.3')
     expect(row).toMatchObject({
       coverageStatus: 'implemented', reviewStatus: 'DRAFT', missingPatterns: [],

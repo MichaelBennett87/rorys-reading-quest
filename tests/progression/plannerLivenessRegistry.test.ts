@@ -117,7 +117,7 @@ function apply(
 }
 
 describe('production-registry planner liveness audit', () => {
-  test('returns AVAILABLE for all 160 authored active-track combinations after freshness exhaustion', () => {
+  test('returns AVAILABLE for all 170 authored active-track combinations after freshness exhaustion', () => {
     const activeTracks = curriculumTracks.filter((track) => track.status === 'active')
     const trackBySkillId = new Map(activeTracks.map((track) => [track.skillId, track] as const))
     const combinations = new Map<string, {
@@ -143,7 +143,7 @@ describe('production-registry planner liveness audit', () => {
       }
     }
 
-    expect(combinations.size).toBe(164)
+    expect(combinations.size).toBe(170)
     expect([...new Set([...combinations.values()].map((entry) => entry.skillId))].sort()).toEqual([
       'g2-across-genres-reading',
       'g2-context-cavern-vocabulary',
@@ -152,6 +152,7 @@ describe('production-registry planner liveness audit', () => {
       'g2-story-scouts-prose',
       'g2-word-forge-word-practice',
       'g3-across-genres-reading',
+      'g3-context-cavern-vocabulary',
       'g3-information-detectives-reading',
       'g3-poetry-planet-poetry',
       'g3-story-scouts-prose',
@@ -174,11 +175,11 @@ describe('production-registry planner liveness audit', () => {
     }
 
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 37,
-      activeLessonCount: 259,
-      activePassageCount: 273,
-      activeQuestionCount: 1491,
-      activeSupportTargetCount: 1027,
+      activePackCount: 38,
+      activeLessonCount: 266,
+      activePassageCount: 280,
+      activeQuestionCount: 1532,
+      activeSupportTargetCount: 1055,
     })
   })
 

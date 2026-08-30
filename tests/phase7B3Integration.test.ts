@@ -9,11 +9,11 @@ describe('Phase 7B3 production integration', () => {
   test('registers only Perspective Portal and derives the required totals and coverage state', () => {
     const packs = getActiveContentPacks()
     expect(packs.filter((pack) => pack.manifest.gradeBand === 2)).toHaveLength(22)
-    expect(packs.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(15)
+    expect(packs.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(16)
     expect(packs.filter((pack) => pack.manifest.packId === 'g3-story-scouts-perspective-portal')).toHaveLength(1)
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 37, activeLessonCount: 259, activePassageCount: 273,
-      activeQuestionCount: 1491, activeSupportTargetCount: 1027,
+      activePackCount: 38, activeLessonCount: 266, activePassageCount: 280,
+      activeQuestionCount: 1532, activeSupportTargetCount: 1055,
     })
     const snapshot = buildGrade3CoverageSnapshot()
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.1.3')).toMatchObject({
@@ -22,8 +22,8 @@ describe('Phase 7B3 production integration', () => {
     })
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.1.4')).toMatchObject({ coverageStatus: 'implemented' })
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(12)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(1)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(3)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(2)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(2)
   })
 
   test('keeps parent and print wording honest and authored guide data out of persistence', () => {

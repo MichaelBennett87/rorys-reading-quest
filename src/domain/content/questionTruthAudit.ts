@@ -83,6 +83,7 @@ export interface BlindQuestionTruthProjection {
   questionId: string
   questionType: string
   prompt: string
+  visibleSubprompts: string[]
   visibleAnswerChoices: QuestionTruthVisibleChoice[]
 }
 
@@ -143,6 +144,7 @@ export function buildBlindQuestionTruthProjection(packs: readonly ContentPack[])
   return inventory.records.map((record) => {
     const pack = packsById.get(record.packId)
     const passageById = new Map(pack?.passages.map((passage) => [passage.passageIdentifier, passage] as const) ?? [])
+    const questionPayload = pack?.questions.find((question) => question.questionIdentifier === record.questionId)?.questionContent
     return {
       packId: record.packId,
       contentVersion: record.contentVersion,
@@ -172,9 +174,17 @@ export function buildBlindQuestionTruthProjection(packs: readonly ContentPack[])
       questionId: record.questionId,
       questionType: record.questionType,
       prompt: record.prompt,
+      visibleSubprompts: getVisibleSubprompts(questionPayload),
       visibleAnswerChoices: structuredClone(record.visibleAnswerChoices),
     }
   })
+}
+
+function getVisibleSubprompts(payload: QuestionContentPayload | undefined): string[] {
+  if (!payload) return []
+  if (payload.type === 'two_part') return [payload.partAPrompt, payload.partBPrompt]
+  if (payload.type === 'table_match') return payload.rows.map((row) => row.prompt)
+  return []
 }
 
 export function buildQuestionContentFingerprint(input: {

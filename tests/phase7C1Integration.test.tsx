@@ -10,11 +10,11 @@ describe('Phase 7C1 integration and protected child journey', () => {
   test('registers only Structure Station and derives the Grade 3 coverage snapshot', () => {
     const packs = getActiveContentPacks()
     expect(packs.filter((pack) => pack.manifest.gradeBand === 2)).toHaveLength(22)
-    expect(packs.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(15)
+    expect(packs.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(16)
     expect(packs.filter((pack) => pack.manifest.packId === 'g3-information-detectives-structure-station')).toHaveLength(1)
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 37, activeLessonCount: 259, activePassageCount: 273,
-      activeQuestionCount: 1491, activeSupportTargetCount: 1027,
+      activePackCount: 38, activeLessonCount: 266, activePassageCount: 280,
+      activeQuestionCount: 1532, activeSupportTargetCount: 1055,
     })
     const snapshot = buildGrade3CoverageSnapshot()
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.2.1')).toMatchObject({
@@ -23,8 +23,8 @@ describe('Phase 7C1 integration and protected child journey', () => {
       coveredPatterns: ['text-features-contribute-to-meaning', 'chronology', 'comparison-structure', 'cause-effect-structure'],
     })
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(12)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(1)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(3)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(2)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(2)
   })
 
   test('keeps Home at exactly two controls with a display-only journey map', () => {

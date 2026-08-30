@@ -35,6 +35,7 @@ import { claimEvidenceCourtPack } from './grade3/informationDetectives/claimEvid
 import { figurativeFortressPack } from './grade3/compareCastle/figurativeFortress'
 import { summaryStrongholdPack } from './grade3/compareCastle/summaryStronghold'
 import { authorLensTowerPack } from './grade3/compareCastle/authorLensTower'
+import { grade3ContextCavernAcademicWordWorkshopPack } from './grade3/contextCavern/academicWordWorkshop'
 import { legacyDevelopmentPack } from './legacyDevelopmentPack'
 import type { ContentPack } from './contentPackTypes'
 import type { ContentSample } from '../types'
@@ -79,6 +80,7 @@ export const contentPacks: readonly ContentPack[] = [
   figurativeFortressPack,
   summaryStrongholdPack,
   authorLensTowerPack,
+  grade3ContextCavernAcademicWordWorkshopPack,
   legacyDevelopmentPack,
 ]
 

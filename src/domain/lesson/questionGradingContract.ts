@@ -81,31 +81,41 @@ export function generateAdversarialSubmissions(question: LessonQuestion): NamedQ
           .map((choice) => named(`non-key choice ${choice.id}`, submission('MULTIPLE_CHOICE', { selectedChoiceId: choice.id }))),
         named('empty choice', submission('MULTIPLE_CHOICE', { selectedChoiceId: '' })),
         named('unknown choice', submission('MULTIPLE_CHOICE', { selectedChoiceId: '__unknown-choice__' })),
+        mismatchedQuestionTypeSubmission(question),
       ])
     case 'MULTISELECT':
-      return generateSetAdversaries(
-        question.choices.map((choice) => choice.id),
-        question.correctChoiceIds,
-        (selectedChoiceIds) => submission('MULTISELECT', { selectedChoiceIds }),
-      )
+      return uniqueSubmissions([
+        ...generateSetAdversaries(
+          question.choices.map((choice) => choice.id),
+          question.correctChoiceIds,
+          (selectedChoiceIds) => submission('MULTISELECT', { selectedChoiceIds }),
+        ),
+        mismatchedQuestionTypeSubmission(question),
+      ])
     case 'HOT_TEXT':
-      return generateSetAdversaries(
-        question.segments.map((segment) => segment.id),
-        question.correctSegmentIds,
-        (selectedSegmentIds) => submission('HOT_TEXT', { selectedSegmentIds }),
-      )
+      return uniqueSubmissions([
+        ...generateSetAdversaries(
+          question.segments.map((segment) => segment.id),
+          question.correctSegmentIds,
+          (selectedSegmentIds) => submission('HOT_TEXT', { selectedSegmentIds }),
+        ),
+        mismatchedQuestionTypeSubmission(question),
+      ])
     case 'EVIDENCE_PAIR': {
       const pairs = question.partAChoices.flatMap((partA) => (
         question.partBChoices.map((partB) => ({ partA, partB }))
       ))
-      return pairs
+      return uniqueSubmissions([
+        ...pairs
         .filter(({ partA, partB }) => (
           partA.id !== question.partACorrectChoiceId || partB.id !== question.partBCorrectChoiceId
         ))
         .map(({ partA, partB }) => named(
           `Part A ${partA.id} with Part B ${partB.id}`,
           submission('EVIDENCE_PAIR', { partAChoiceId: partA.id, partBChoiceId: partB.id }),
-        ))
+        )),
+        mismatchedQuestionTypeSubmission(question),
+      ])
     }
     case 'TABLE_MATCH': {
       const canonical = Object.fromEntries(question.rows.map((row) => [row.id, row.correctChoiceId]))
@@ -134,9 +144,19 @@ export function generateAdversarialSubmissions(question: LessonQuestion): NamedQ
           selectedMappings: { ...canonical, '__unknown-row__': '__unknown-option__' },
         }),
       ))
+      mutations.push(mismatchedQuestionTypeSubmission(question))
       return uniqueSubmissions(mutations)
     }
   }
+}
+
+function mismatchedQuestionTypeSubmission(question: LessonQuestion): NamedQuestionSubmission {
+  const canonical = buildCanonicalSubmission(question)
+  const alternateType = question.questionType === 'MULTIPLE_CHOICE' ? 'MULTISELECT' : 'MULTIPLE_CHOICE'
+  return named('canonical payload with mismatched question type', {
+    ...canonical,
+    questionType: alternateType,
+  })
 }
 
 export function assertQuestionGradingContract(question: LessonQuestion): QuestionGradingContractResult {

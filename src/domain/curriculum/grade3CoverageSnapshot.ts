@@ -75,6 +75,8 @@ export function buildGrade3CoverageSnapshot(
                               ? ['Claim and Evidence Court covers explicit author claims, reasons, evidence, and claim-evidence connections across informational argument sections. Curriculum coverage is implemented at DRAFT review status; this does not claim learner mastery or sophisticated rhetoric analysis.']
               : status === 'supportive_practice' && entry.benchmarkReference === 'ELA.3.F.1.4'
                 ? ['Fluency Flight provides DRAFT visual and question-based support for accuracy, automaticity, phrasing, and expression. The app does not record audio or measure oral fluency, pronunciation, prosody, or reading rate.']
+                : status === 'supportive_practice' && entry.benchmarkReference === 'ELA.3.V.1.1'
+                  ? ['Academic Word Workshop provides DRAFT constrained selected-response practice with Grade 3 academic vocabulary across speaking and writing contexts. The app does not score open responses, record speech, or claim productive speaking or writing mastery.']
             : ['Active Grade 3 content contributes to this inventory row.']),
       })
     })),

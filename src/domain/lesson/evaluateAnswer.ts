@@ -35,6 +35,18 @@ export function evaluateAnswer(
 ): QuestionEvaluationResult {
   const evidenceReference = question.evidenceReferenceIds
 
+  if (submission.questionType !== question.questionType) {
+    return {
+      questionId: question.questionId,
+      questionType: question.questionType,
+      submittedAnswer: submission.payload,
+      correctAnswer: null,
+      isCorrect: false,
+      explanation: question.explanation,
+      evidenceReference,
+    }
+  }
+
   switch (question.questionType) {
     case 'MULTIPLE_CHOICE': {
       const selectedChoiceId = (submission.payload as { selectedChoiceId?: string }).selectedChoiceId ?? ''

@@ -109,10 +109,10 @@ describe('Figurative Fortress progression', () => {
     for (const [skillId, difficulty] of [
       ['g2-word-forge-word-practice', 8], ['g2-story-scouts-prose', 4], ['g2-poetry-planet-poetry', 2],
       ['g2-information-detectives-reading', 5], ['g2-context-cavern-vocabulary', 4], ['g2-across-genres-reading', 4],
-      ['g3-word-forge-word-analysis', 5], ['g3-story-scouts-prose', 4], ['g3-poetry-planet-poetry', 2], ['g3-information-detectives-reading', 5],
+      ['g3-word-forge-word-analysis', 5], ['g3-story-scouts-prose', 4], ['g3-poetry-planet-poetry', 2], ['g3-information-detectives-reading', 5], ['g3-context-cavern-vocabulary', 4],
     ] as const) state.skillProgress[skillId] = createInitialSkillProgress(skillId, difficulty, difficulty - 1)
     expect(planGlobalQuest({ progress: state, availableLessons: allCandidates, now: NOW })).toMatchObject({ status: 'available', purpose: 'progression', lesson: { skillId: SKILL_ID, unitId: UNIT_ID, difficulty: 1 } })
-    expect(state.skillProgress['g3-context-cavern-vocabulary']).toBeUndefined()
+    expect(state.skillProgress['g3-context-cavern-vocabulary']).toMatchObject({ currentDifficulty: 4 })
     state.skillProgress[SKILL_ID] = createInitialSkillProgress(SKILL_ID, 2, 1)
     expect(planGlobalQuest({ progress: state, availableLessons: allCandidates, now: NOW })).toMatchObject({ status: 'available', purpose: 'progression', lesson: { skillId: SKILL_ID, unitId: 'g3-cg-unit-2', difficulty: 2 } })
   })

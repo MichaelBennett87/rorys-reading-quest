@@ -24,16 +24,16 @@ describe('Phase 7D2 acceptance documentation and boundary', () => {
 
   test('binds exact current registry, coverage, truth, and privacy facts', () => {
     expect(getActiveContentRegistryTotals()).toEqual({
-      activePackCount: 37,
-      activeLessonCount: 259,
-      activePassageCount: 273,
-      activeQuestionCount: 1491,
-      activeSupportTargetCount: 1027,
+      activePackCount: 38,
+      activeLessonCount: 266,
+      activePassageCount: 280,
+      activeQuestionCount: 1532,
+      activeSupportTargetCount: 1055,
     })
     const snapshot = buildGrade3CoverageSnapshot()
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(12)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(1)
-    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(3)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(2)
+    expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(2)
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.3.2')).toMatchObject({
       coverageStatus: 'implemented', reviewStatus: 'DRAFT',
       contributingPackIds: ['g3-compare-castle-summary-stronghold'], missingPatterns: [],

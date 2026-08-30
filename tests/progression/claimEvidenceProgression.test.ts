@@ -110,7 +110,7 @@ describe('Claim and Evidence Court progression', () => {
     }
   })
 
-  test('enters Unit 4 through ordinary one-button planning and fails closed after track completion', () => {
+  test('enters Unit 4 through ordinary one-button planning and hands off to Context Cavern', () => {
     const state = createDefaultQuestProgress(NOW)
     for (const [skillId, difficulty] of [
       ['g2-word-forge-word-practice', 8], ['g2-story-scouts-prose', 4], ['g2-poetry-planet-poetry', 2],
@@ -123,7 +123,7 @@ describe('Claim and Evidence Court progression', () => {
     })
     state.skillProgress[SKILL_ID] = createInitialSkillProgress(SKILL_ID, 5, 4)
     expect(planGlobalQuest({ progress: state, availableLessons: allCandidates, now: NOW })).toMatchObject({
-      status: 'available', purpose: 'progression', lesson: { skillId: 'g3-across-genres-reading', unitId: 'g3-cg-unit-1', difficulty: 1 },
+      status: 'available', purpose: 'progression', lesson: { skillId: 'g3-context-cavern-vocabulary', unitId: 'g3-cc-unit-1', difficulty: 1 },
     })
   })
 })

@@ -20,9 +20,9 @@ describe('Phase 7D1 integration and reconciled one-button journey', () => {
   test('registers only Figurative Fortress and derives the Grade 3 coverage snapshot', () => {
     const packs = getActiveContentPacks()
     expect(packs.filter((pack) => pack.manifest.gradeBand === 2)).toHaveLength(22)
-    expect(packs.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(15)
+    expect(packs.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(16)
     expect(packs.filter((pack) => pack.manifest.packId === 'g3-compare-castle-figurative-fortress')).toHaveLength(1)
-    expect(getActiveContentRegistryTotals()).toEqual({ activePackCount: 37, activeLessonCount: 259, activePassageCount: 273, activeQuestionCount: 1491, activeSupportTargetCount: 1027 })
+    expect(getActiveContentRegistryTotals()).toEqual({ activePackCount: 38, activeLessonCount: 266, activePassageCount: 280, activeQuestionCount: 1532, activeSupportTargetCount: 1055 })
     const row = buildGrade3CoverageSnapshot().rows.find((entry) => entry.benchmarkReference === 'ELA.3.R.3.1')
     expect(row).toMatchObject({
       coverageStatus: 'implemented', reviewStatus: 'DRAFT', missingPatterns: [],
@@ -36,7 +36,7 @@ describe('Phase 7D1 integration and reconciled one-button journey', () => {
     for (const [skillId, difficulty] of [
       ['g2-word-forge-word-practice', 8], ['g2-story-scouts-prose', 4], ['g2-poetry-planet-poetry', 2],
       ['g2-information-detectives-reading', 5], ['g2-context-cavern-vocabulary', 4], ['g2-across-genres-reading', 4],
-      ['g3-word-forge-word-analysis', 5], ['g3-story-scouts-prose', 4], ['g3-poetry-planet-poetry', 2], ['g3-information-detectives-reading', 5],
+      ['g3-word-forge-word-analysis', 5], ['g3-story-scouts-prose', 4], ['g3-poetry-planet-poetry', 2], ['g3-information-detectives-reading', 5], ['g3-context-cavern-vocabulary', 4],
     ] as const) state.skillProgress[skillId] = createInitialSkillProgress(skillId, difficulty, difficulty - 1)
     state.plannedNextQuest = { status: 'content_needed', purpose: 'progression', skillId: 'g3-information-detectives-reading', difficulty: 5, reason: 'Old Phase 7C boundary.' }
     state.totalXp = 960
@@ -48,7 +48,7 @@ describe('Phase 7D1 integration and reconciled one-button journey', () => {
     act(() => { decision = journey.result.current.prepareJourneyLaunch() })
     expect(decision).toMatchObject({ status: 'start', lesson: { unitId: 'g3-cg-unit-1', difficulty: 1 } })
     expect(journey.result.current.progress).toMatchObject({ totalXp: 960, totalStars: 32 })
-    expect(journey.result.current.progress.skillProgress['g3-context-cavern-vocabulary']).toBeUndefined()
+    expect(journey.result.current.progress.skillProgress['g3-context-cavern-vocabulary']).toMatchObject({ currentDifficulty: 4 })
     journey.unmount()
 
     render(<App />)
