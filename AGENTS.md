@@ -2,8 +2,11 @@
 
 ## Working Contract
 
-- Use the currently selected base model and model settings only.
-- Do not use subagents, delegated workers, parallel model tasks, or background tasks.
+- Use the current user-selected model and reasoning settings. Unless the user changes them, the standing default is Ultra reasoning with Fast mode off.
+- Substantial work should use three to four bounded subagents when useful, with explicit, non-overlapping scopes.
+- The primary agent owns integration decisions, production edits, Git operations, verification, pushes, and deployments.
+- Prefer read-only subagent reviews or isolated file ownership. Subagents must not independently commit, push, deploy, rewrite history, or alter shared files without primary-agent coordination.
+- Do not start unsupervised background work.
 - Run shell commands sequentially and prefer deterministic, non-interactive operations.
 - Do not use destructive Git operations or rewrite history.
 - Do not change global Git, Node, npm, Codex, IDE, or operating-system configuration.
