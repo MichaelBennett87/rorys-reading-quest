@@ -813,7 +813,7 @@ export type PairedTextMemberFormat = 'literary-prose' | 'literary-poem' | 'infor
 
 export interface PairedTextMember {
   passageId: string
-  label: 'Text 1' | 'Text 2'
+  label: 'Text 1' | 'Text 2' | 'Text A' | 'Text B'
   displayTitle: string
   format: PairedTextMemberFormat
 }
@@ -853,6 +853,59 @@ export interface PairedTextComparisonGuide {
   importantDifferences: PairedTextComparisonPoint[]
   text1OtherDetailIds: string[]
   text2OtherDetailIds: string[]
+  reviewStatus: ContentReviewStatus
+  contentVersion: string
+}
+
+export type AuthorPresentationTextKind = 'literary' | 'informational'
+
+export type AuthorPresentationFeature =
+  | 'organization'
+  | 'detail-focus'
+  | 'examples'
+  | 'description'
+  | 'evidence-selection'
+  | 'event-emphasis'
+  | 'character-action'
+  | 'dialogue'
+  | 'text-features'
+  | 'figurative-language'
+  | 'sequence'
+  | 'cause-effect'
+  | 'comparison'
+
+export interface PresentationSimilarity {
+  similarityId: string
+  feature: AuthorPresentationFeature
+  statement: string
+  textAEvidenceIds: string[]
+  textBEvidenceIds: string[]
+  explanation: string
+}
+
+export interface PresentationDifference {
+  differenceId: string
+  feature: AuthorPresentationFeature
+  textAStatement: string
+  textBStatement: string
+  textAEvidenceIds: string[]
+  textBEvidenceIds: string[]
+  explanation: string
+}
+
+export interface Grade3AuthorComparisonGuide {
+  pairedTextSetId: string
+  sharedBasis:
+    | { kind: 'same-topic'; topicStatement: string }
+    | { kind: 'same-theme'; themeStatement: string }
+  textAKind: AuthorPresentationTextKind
+  textBKind: AuthorPresentationTextKind
+  textAFocusStatement: string
+  textBFocusStatement: string
+  similarities: PresentationSimilarity[]
+  differences: PresentationDifference[]
+  evidenceFromBothRequired: true
+  synthesisStatement: string
   reviewStatus: ContentReviewStatus
   contentVersion: string
 }
@@ -923,6 +976,7 @@ export interface ContentPack {
   retellGuides?: RetellGuide[]
   pairedTextSets?: PairedTextSet[]
   pairedTextComparisonGuides?: PairedTextComparisonGuide[]
+  grade3AuthorComparisonGuides?: Grade3AuthorComparisonGuide[]
   themeGuides?: ThemeGuide[]
   perspectiveGuides?: PerspectiveGuide[]
   rhymeSchemeGuides?: RhymeSchemeGuide[]
@@ -1061,6 +1115,16 @@ export interface ContentPackAuditIssue {
      | 'missing_paired_text_comparison_guide'
      | 'paired_text_comparison_guide_count_mismatch'
      | 'paired_text_comparison_guide_invalid'
+     | 'missing_author_comparison_guide'
+     | 'author_comparison_guide_invalid'
+     | 'paired_topic_not_shared'
+     | 'paired_theme_not_shared'
+     | 'superficial_presentation_similarity'
+     | 'superficial_presentation_difference'
+     | 'comparison_missing_text_a_evidence'
+     | 'comparison_missing_text_b_evidence'
+     | 'cross_text_evidence_ownership_failure'
+     | 'unsupported_author_intent'
    | 'invalid_evidence_reference'
    | 'invalid_author_opinion_feature_reference'
    | 'invalid_informational_feature_reference'
