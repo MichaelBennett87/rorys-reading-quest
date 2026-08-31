@@ -61,3 +61,7 @@ At the Phase 7D6 checkpoint, active registry totals were 40 packs, 280 lessons, 
 ## Phase 7D7 final audit
 
 The final Grade 3 audit verifies all 16 inventory rows, 18 Grade 3 packs, 725 Grade 3 questions, 40 active pack ledgers, and all 1,614 active question fingerprints. Grade 2 remains frozen. The P0 safe-recycling planner contract, explicit Fluency Flight completion, one-button journey, schema-v1 persistence, Parent PIN separation, assessments, parent reporting, print privacy, and accessibility contracts remain protected. Phase 8, Phase 9, and Phase 10 remain unstarted.
+
+## P0 unit-affine review completion
+
+Spaced reviews preserve their authoritative launch purpose and exact grade, skill, historical difficulty, unit, content-version, review-step, and due-time identity in the active session. A historical review may therefore complete after its track advances or reaches completion without being treated as ordinary current-difficulty progression. Completion records the attempt and existing exact-once rewards, reschedules only the matching review through the existing interval policy, preserves unrelated reviews, and leaves track difficulty, mastery evidence, failure counters, remediation, schema version, and storage keys unchanged. Legacy schema-v1 sessions without review authority remain ordinary sessions and cannot bypass progression validation.

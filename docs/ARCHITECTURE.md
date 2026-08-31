@@ -211,3 +211,9 @@ The production registry adds only `g3-context-cavern-meaning-maze`. Existing pai
 ## Phase 7D7 final audit architecture
 
 The final audit derives inventory, coverage, identifiers, content versions, track order, support ownership, and truth fingerprints from the active registry rather than documentation constants. It adds no runtime route, persistence field, curriculum object, or dependency. Terminal no-content presentation recognizes complete Grade 3 curriculum while keeping the existing `progression_outcome` route and its single Back Home action. Nested schema-v1 objects are now validated before recovery, and cross-grade fluency chapter completion requires every active fluency scope rather than an aggregate activity count.
+
+## P0 unit-affine review completion architecture
+
+`ActiveLessonSession` may carry an optional `ActiveLessonLaunchContext`. The context records the authoritative launch purpose and, for a spaced review, the exact grade-aware skill, historical difficulty, unit, content version, review step, due time, and return learning state selected from the queue. The optional field is backward-compatible inside schema version 1: legacy sessions without it remain ordinary launches and receive no review authority.
+
+Review recovery fails closed unless the registered lesson, persisted launch context, and exactly one resolved review-queue entry agree. Save checkpoints may advance question state but may not replace the launch context. Review completion uses a dedicated transition rather than adapting the result to the track's current difficulty. It records the completed attempt and existing exact-once rewards, updates recency for deterministic recycling, and replaces only the exact queue entry through the unchanged review-spacing policy. Current difficulty, last mastered difficulty, qualifying evidence, failure counters, remediation context, chapter completion, unrelated reviews, Parent PIN data, and assessments are preserved.

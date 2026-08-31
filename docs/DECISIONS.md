@@ -573,3 +573,11 @@ Consequence: Author Lens Tower is the only new pack, Grade 3 Across-Genre Readin
 ## 2026-08-30 - Phase 7D7 final Grade 3 audit completion
 
 Decision: close Phase 7 only after a registry-derived audit covers all 16 Grade 3 rows, all 18 Grade 3 packs, all 725 Grade 3 questions, and all 1,614 active truth records. Confirmed content, truth-generator, persistence, reporting, and completion-copy defects are corrected without changing curriculum inventory. Grade 3 coverage is complete only at DRAFT repository level; learner mastery, educator approval, Florida approval, FAST certification, and FAST prediction remain explicitly outside the claim. Phase 8 remains the next boundary and is not begun.
+
+## 2026-08-31 - Preserve authoritative review identity through completion
+
+Decision: persist an optional launch context in the existing schema-v1 active session and require an exact match among that context, the registered lesson, and one resolved review-queue entry before using the review completion path. Legacy sessions without review context remain ordinary sessions.
+
+Reason: a deployed completed-track review was planned correctly from its historical unit, but launch purpose was discarded before completion. The ordinary progression adapter then compared the historical lesson difficulty with the track's completion difficulty, declined the result, cleared the session, awarded nothing, and left the review queued.
+
+Consequence: historical reviews now complete and reschedule exactly once without mutating track progression. Forged review authority cannot bypass ordinary difficulty checks. Review thresholds, intervals, reward calculations, schema version, storage keys, curriculum inventory, Parent PIN, assessments, one-button journey, and P0 recycling remain unchanged. Phase 8, Phase 9, and Phase 10 remain unstarted.

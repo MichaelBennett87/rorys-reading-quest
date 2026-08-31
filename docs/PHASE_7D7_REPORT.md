@@ -57,6 +57,12 @@ The final production JavaScript asset is `dist/assets/index-PPINlkdu.js` at 2,97
 
 GitHub Pages workflow and deployed-browser acceptance are post-push release gates. Their immutable results, final synchronized SHA, and cleanup result are recorded in the external completion response. A release failure remains blocking and must not be represented as success in that response.
 
+## P0 release-acceptance reconciliation
+
+The first deployed Phase 7D7 acceptance run passed sequences A through E, then Sequence F exposed a production defect in completion of historical unit-affine reviews after track advancement or completion. Planning selected the correct queue entry, but the active session did not retain review purpose or identity. Ordinary progression therefore declined the historical difficulty, recorded no attempt or reward, left the review unchanged, cleared the session, and surfaced false content-needed copy. Phase 7 release certification remained blocked.
+
+The dedicated follow-up adds no curriculum and changes no threshold, interval, reward formula, schema version, storage key, Parent PIN, assessment, or phase scope. It preserves an optional authoritative launch context, validates that context against the registered lesson and exact queue entry, and applies a review-only completion transition that cannot mutate track progression. Focused adversarial coverage proves completed and incomplete tracks, save/reload, exact-once behavior, queue isolation, same-difficulty controls, and fail-closed forged identities. Final local, remote, Pages, and deployed-browser results remain external release evidence and are not preclaimed here.
+
 ## Status
 
 Phase 7D7, Phase 7D, and Phase 7 are complete only after the remote and deployed-browser gates pass. Grade 3 curriculum coverage is complete at DRAFT repository level. Learner mastery, educator approval, Florida approval, official FAST certification, and FAST prediction are not inferred. Phase 8 remains unstarted.

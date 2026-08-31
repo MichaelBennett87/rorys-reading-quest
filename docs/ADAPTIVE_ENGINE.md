@@ -174,3 +174,9 @@ Recent use remains a ranking preference, fresh work remains preferred, safe recy
 ## Phase 7D7 final progression audit
 
 The final registry order is Grade 3 Word Forge at 110, Story Scouts at 120, Poetry Planet at 130, Information Detectives at 140, Context Cavern at 150, and Across-Genre Reading at 160. Each track keeps its matching Grade 2 prerequisite. Active sessions, verification, remediation, and due reviews continue to outrank ordinary progression. Recent use remains ranking metadata rather than a blacklist, and completed Grade 3 curriculum does not disable grade-, skill-, unit-, and version-affine reviews.
+
+## P0 historical review completion
+
+A spaced review is evaluated against its authoritative launch and queue identity, not against the track's current progression difficulty. The historical lesson difficulty and current track difficulty may differ after advancement or chapter completion. A valid review completion records one attempt and one reward event, then advances, shortens, or maintains only the matching review schedule according to the existing score, assistance, and interval rules. It never supplies ordinary advancement evidence, changes track difficulty or mastery state, increments ordinary failure counters, opens remediation, or reopens completed curriculum.
+
+The active session is the authority across Save and Exit and reload. Missing, forged, cross-grade, cross-unit, cross-version, wrong-lesson, wrong-step, or wrong-due review context is discarded or rejected without rewards or queue mutation. An older lesson submitted without an authoritative review launch remains subject to ordinary current-difficulty validation and is rejected. Duplicate completion and late checkpoints remain idempotent.

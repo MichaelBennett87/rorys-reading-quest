@@ -135,6 +135,7 @@
 - [x] Phase 7D2: Summary Stronghold
 - [x] Phase 7D3: Author Lens Tower
 - [x] P0 production hotfix: keep finite guided tracks live through deterministic recycling and preserve explicit Grade 3 Fluency Flight chapter completion
+- [x] P0 production hotfix: preserve unit-affine spaced-review purpose through launch, save, reload, and exact review-only completion after track advancement or completion
 - [x] Phase 7
 
 The repository-level Phase 7D7, Phase 7D, and Phase 7 audit work is complete. Remote synchronization and deployed-browser acceptance remain final release gates and are recorded in the external completion report. Grade 3 curriculum coverage is complete at DRAFT repository level; learner mastery, educator approval, Florida approval, FAST certification, and FAST prediction are not inferred. Phase 8, Phase 9, and Phase 10 remain unstarted.
