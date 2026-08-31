@@ -50,7 +50,7 @@ describe('documentation consistency', () => {
     expect(readme).toContain('Phase 6 complete')
     expect(readme).toContain('Grade 2 curriculum coverage complete')
     expect(readme).toContain('the final Grade 2 audit is complete')
-    expect(readme).toContain('Phase 7 remains in progress')
+    expect(readme).toContain('Phase 7 is complete at DRAFT repository level')
     expect(readme).toContain('Compare Castle is active')
     expect(readme).toContain('Wordplay Watchtower is active')
     expect(readme).toContain('Retell Hall is active')
