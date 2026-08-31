@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react'
+
 import { ChildButton } from '../components/ChildButton'
 import type { ProgressionOutcomeViewModel } from '../app/useQuestProgress'
 
@@ -47,17 +49,28 @@ export function ProgressionOutcomeScreen({
   onContinueJourney,
   onBackHome,
 }: ProgressionOutcomeScreenProps) {
-  const message = copy[outcome.kind] ?? copy.CONTENT_NEEDED
+  const titleRef = useRef<HTMLHeadingElement>(null)
+  const journeyComplete = outcome.nextQuest.status === 'content_needed' && outcome.nextQuest.skillId === 'unknown'
+  const message = journeyComplete
+    ? {
+        title: 'Grade 3 Journey Complete!',
+        message: 'You completed every Grade 3 trail currently in Rory’s Reading Quest. Reviews will appear when they are ready, and new adventures can be added later.',
+      }
+    : copy[outcome.kind] ?? copy.CONTENT_NEEDED
   const nextAvailable = outcome.nextQuest.status === 'available'
   const trailLabel = outcome.currentDifficulty <= 0
     ? 'Building Block Trail'
     : `Trail ${outcome.currentDifficulty}`
 
+  useEffect(() => {
+    titleRef.current?.focus()
+  }, [])
+
   return (
     <section className="screen-shell child-experience progression-outcome" data-appearance="dark" aria-labelledby="progression-outcome-title">
       <header className="screen-header">
         <span className="outcome-icon" aria-hidden="true">🏅</span>
-        <h1 id="progression-outcome-title">{message.title}</h1>
+        <h1 id="progression-outcome-title" ref={titleRef} tabIndex={-1}>{message.title}</h1>
         <p>{message.message}</p>
       </header>
       <section className="card reward-summary reward-stat-grid" aria-label="Quest rewards earned">
@@ -66,8 +79,10 @@ export function ProgressionOutcomeScreen({
         <p><span aria-hidden="true">🗺️</span><strong>{trailLabel}</strong><span>current trail</span></p>
       </section>
       <section className="card">
-        <h2>Next Quest</h2>
-        <p>{nextAvailable
+        <h2>{journeyComplete ? 'Journey Status' : 'Next Quest'}</h2>
+        <p>{journeyComplete
+          ? 'Curriculum completion is not the same as learner mastery. Spaced reviews can still launch when they are due.'
+          : nextAvailable
           ? `Atlas found your next ${outcome.nextQuest.purpose} quest.`
           : 'Atlas is preparing more adventures for this trail.'}</p>
       </section>

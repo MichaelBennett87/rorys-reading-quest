@@ -480,7 +480,7 @@ function buildContentNeededPlan(
   const reason = planned?.reason
     ?? (firstPlayableTrack
       ? `No compatible authored quest exists for ${firstPlayableTrack.displayName} at ${formatTrailDisplayLabel(difficulty)}.`
-      : 'No playable learning track is currently available.')
+      : 'Every currently authored Grade 2 and Grade 3 curriculum track is complete. Reviews will still appear when they are due.')
 
   return {
     status: 'content_needed',
@@ -496,7 +496,7 @@ function buildContentNeededPlan(
     worldId: firstPlayableTrack?.worldId ?? null,
     unitId: firstPlayableTrack?.entryUnitId ?? null,
     difficulty,
-    displayName: firstPlayableTrack ? `${firstPlayableTrack.displayName} ${formatTrailDisplayLabel(difficulty)}` : 'Reading Quest Ready',
+    displayName: firstPlayableTrack ? `${firstPlayableTrack.displayName} ${formatTrailDisplayLabel(difficulty)}` : 'Grade 3 Journey Complete',
     source: 'safe_fallback',
     lesson: null,
     reason,

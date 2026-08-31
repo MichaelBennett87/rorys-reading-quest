@@ -63,7 +63,7 @@ function baseSpec(
 
 function choiceSet(questionId: string, correctText: string, distractors: string[], correctIndex: number): { choices: LessonChoice[]; correctChoiceId: string } {
   const unique = [...new Set(distractors.filter((text) => text !== correctText))].slice(0, 3)
-  while (unique.length < 3) unique.push(`not ${unique.length + 1}`)
+  if (unique.length < 3) throw new Error(`Question ${questionId} needs three meaningful, unique distractors.`)
   const texts = [...unique]
   texts.splice(correctIndex, 0, correctText)
   const choices = texts.map((text, index) => rootChoice(`${questionId}-choice-${index + 1}`, text))
@@ -130,7 +130,7 @@ function buildGuidedQuestions(config: LessonQuestionConfig): ReadingQuestion[] {
     }),
     makeRootHotText({
       ...baseSpec(config, 3, {
-        prompt: `Select the primary root or affix shown for ${fourth.surfaceWord}.`,
+        prompt: `Select ${fourth.primaryPart.displayLabel} in ${fourth.surfaceWord}.`,
         explanation: `${fourth.primaryPart.displayLabel} is the highlighted useful part in ${fourth.surfaceWord}.`,
         evidenceReferenceIds: [fourth.sentenceId], targetVocabulary: [fourth.surfaceWord], soundOutChunks: fourth.syllableChunks.map((chunk) => chunk.displayText),
         tags: tags('root-pattern-highlight', fourth.primaryPart.kind === 'prefix' ? 'classical-prefix-decoding' : 'classical-part-identification'),
@@ -216,7 +216,7 @@ function buildCheckpointQuestions(config: CheckpointConfig): ReadingQuestion[] {
     }),
     makeRootHotText({
       ...baseSpec(config, 4, {
-        prompt: `Select the primary root shown for ${rootTarget.surfaceWord}.`,
+        prompt: `Select ${rootTarget.primaryPart.displayLabel} in ${rootTarget.surfaceWord}.`,
         explanation: `${rootTarget.primaryPart.displayLabel} is the useful root inside ${rootTarget.surfaceWord}.`,
         evidenceReferenceIds: [rootTarget.sentenceId], targetVocabulary: [rootTarget.surfaceWord], soundOutChunks: rootTarget.syllableChunks.map((chunk) => chunk.displayText),
         tags: tags('root-pattern-highlight', 'classical-part-identification'),
@@ -233,7 +233,12 @@ function buildCheckpointQuestions(config: CheckpointConfig): ReadingQuestion[] {
       }),
       rows: artifact.targets.map((target, index) => {
         const correct = split(target, 'syllable')
-        const choices = choiceSet(`${config.questionIds[5]}-row-${index + 1}`, correct, [split(target, 'morphology'), target.surfaceWord, `${target.surfaceWord[0]} | ${target.surfaceWord.slice(1)}`], index % 4)
+        const choices = choiceSet(`${config.questionIds[5]}-row-${index + 1}`, correct, [
+          split(target, 'morphology'),
+          target.surfaceWord,
+          `${target.surfaceWord[0]} | ${target.surfaceWord.slice(1)}`,
+          `${target.surfaceWord.slice(0, -1)} | ${target.surfaceWord.slice(-1)}`,
+        ], index % 4)
         return { id: `${config.questionIds[5]}-row-${index + 1}`, prompt: target.surfaceWord, correctChoiceId: choices.correctChoiceId, options: choices.choices }
       }),
     }),

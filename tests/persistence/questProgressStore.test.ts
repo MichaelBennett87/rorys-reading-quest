@@ -93,6 +93,44 @@ describe('local quest progress persistence', () => {
     expect(createLocalStorageQuestProgressStore(storage, () => now).load().status).toBe('invalid_state')
   })
 
+  test('malformed nested planner and outcome objects safely fall back without overwriting storage', () => {
+    const malformedStates = [
+      { ...createDefaultQuestProgress(now), plannedNextQuest: {} },
+      { ...createDefaultQuestProgress(now), lastProgressionOutcome: {} },
+      {
+        ...createDefaultQuestProgress(now),
+        skillProgress: {
+          malformed: {
+            ...createDefaultQuestProgress(now).skillProgress['g2-word-forge-word-practice'],
+            skillId: 'malformed',
+            currentDifficulty: 1,
+            lastMasteredDifficulty: 0,
+            currentLearningState: 'NOT_A_REAL_STATE',
+            qualifyingIndependentActivityIds: [],
+            consecutiveUnsuccessfulAtCurrentDifficulty: 0,
+            lastCompletedActivityId: null,
+            recentActivityUsage: [],
+            reviewStep: 0,
+            nextReviewDate: null,
+            lastDecisionReasonCodes: [],
+            remediationContext: null,
+          },
+        },
+      },
+    ]
+
+    for (const malformed of malformedStates) {
+      const storage = new MemoryStorage()
+      const raw = JSON.stringify(malformed)
+      storage.values.set(QUEST_PROGRESS_STORAGE_KEY, raw)
+      const loaded = createLocalStorageQuestProgressStore(storage, () => now).load()
+      expect(loaded.status).toBe('invalid_state')
+      expect(loaded.state).toEqual(createDefaultQuestProgress(now))
+      expect(storage.values.get(QUEST_PROGRESS_STORAGE_KEY)).toBe(raw)
+      expect(storage.writes).toBe(0)
+    }
+  })
+
   test('storage exceptions and unavailable storage use an in-memory fallback', () => {
     const throwing: StorageLike = {
       getItem() { throw new Error('read blocked') },

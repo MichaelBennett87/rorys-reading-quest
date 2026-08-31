@@ -2,7 +2,14 @@ import type { Passage, WordSupportTarget } from '../../../../types'
 import type { Grade3PoemForm, PoemFormGuide, RhymeSchemeLineGuide } from '../../../contentPackTypes'
 import { POEM_FORM_PASSAGE_IDS, POEM_FORM_VERSION } from './ids'
 
-interface SupportPlan { key: string; line: number; word: string; chunks: string[]; focus: string }
+interface SupportPlan {
+  key: string
+  line: number
+  word: string
+  chunks: string[]
+  focus: string
+  spokenChunks?: Array<{ displayText: string; speechText: string }>
+}
 interface RhymePlan { endWord: string; rhymeKey: string; rhymeLabel: string }
 
 export interface PoemFormRecord {
@@ -63,10 +70,10 @@ const records: PoemFormRecord[] = [
       { endWord: 'hum', rhymeKey: 'um', rhymeLabel: 'B' }, { endWord: 'drum', rhymeKey: 'um', rhymeLabel: 'B' },
     ],
     support: [
-      { key: 'gears', line: 1, word: 'gears', chunks: ['g', 'ears'], focus: 'ears' },
+      { key: 'gears', line: 1, word: 'gears', chunks: ['g', 'ears'], focus: 'ears', spokenChunks: [{ displayText: 'gears', speechText: 'gears' }] },
       { key: 'wheel', line: 2, word: 'wheel', chunks: ['wh', 'eel'], focus: 'eel' },
       { key: 'motor', line: 3, word: 'motor', chunks: ['mo', 'tor'], focus: 'mo' },
-      { key: 'steady', line: 4, word: 'steady', chunks: ['stead', 'y'], focus: 'stead' },
+      { key: 'steady', line: 4, word: 'steady', chunks: ['stead', 'y'], focus: 'stead', spokenChunks: [{ displayText: 'stead', speechText: 'sted' }, { displayText: 'y', speechText: 'ee' }] },
     ],
   },
   {
@@ -251,7 +258,8 @@ function buildSupportTarget(record: PoemFormRecord, support: SupportPlan): WordS
       { text: support.word.slice(index + support.focus.length), emphasis: false },
     ].filter((part) => part.text.length > 0),
     displayChunks: support.chunks.map((chunk) => ({ displayText: chunk, speechText: chunk })),
-    spokenChunks: support.chunks.map((chunk) => ({ displayText: chunk, speechText: chunk })),
+    spokenChunks: support.spokenChunks?.map((chunk) => ({ ...chunk }))
+      ?? support.chunks.map((chunk) => ({ displayText: chunk, speechText: chunk })),
     blendSpeechText: support.word, wholeWordSpeechText: support.word, sentenceSpeechText: text,
     reviewStatus: 'DRAFT', contentVersion: POEM_FORM_VERSION,
   }

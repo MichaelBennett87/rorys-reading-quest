@@ -18,7 +18,7 @@ import {
   buildSkillSummaries,
   buildWordHelpSummaries,
 } from '../../src/domain/dashboard'
-import { getLessonCandidates } from '../../src/domain/lesson'
+import { getLessonCandidates, lessonCatalog } from '../../src/domain/lesson'
 import { createDefaultQuestProgress, type CompletedLessonAttempt, type QuestProgressV1 } from '../../src/persistence'
 
 const now = '2026-08-20T12:00:00.000Z'
@@ -470,6 +470,42 @@ describe('dashboard analytics', () => {
       some_pauses: 1,
       try_again: 0,
     })
+  })
+
+  test('fluency completion requires every activity in each active grade and unit scope', () => {
+    const fluencyLessons = lessonCatalog.filter((lesson) => lesson.selectionStatus === 'active' && lesson.lessonRole === 'FLUENCY_PRACTICE')
+    const byScope = fluencyLessons.reduce((groups, lesson) => {
+      const key = `${lesson.gradeBand}::${lesson.unitId}::${lesson.contentVersion}`
+      groups.set(key, [...(groups.get(key) ?? []), lesson])
+      return groups
+    }, new Map<string, typeof fluencyLessons>())
+    const scopes = [...byScope.values()]
+    expect(scopes).toHaveLength(2)
+
+    const attemptsFor = (lessons: typeof fluencyLessons) => lessons.map((lesson, index) => buildAttempt({
+      completionId: `scoped-fluency-${lesson.gradeBand}-${index}`,
+      completedAt: now,
+      accuracy: 100,
+      questionIds: [],
+      decisionState: 'FLUENCY_PRACTICE',
+      lessonId: lesson.lessonId,
+      activityId: lesson.activityId,
+      lessonRole: 'FLUENCY_PRACTICE',
+      fluencyPracticeSummary: {
+        modelReadUsed: true,
+        phrasePracticeCompleted: true,
+        completedReadCount: 2,
+        reflection: 'smooth',
+        oralReadingMeasured: false,
+        timerUsed: false,
+        microphoneUsed: false,
+      },
+    }))
+
+    expect(buildDashboardSnapshot({ progress: createProgress(attemptsFor(scopes[0])), now }).fluencyPracticeSummary.practiceComplete).toBe(false)
+    expect(buildDashboardSnapshot({ progress: createProgress(attemptsFor(scopes[1])), now }).fluencyPracticeSummary.practiceComplete).toBe(false)
+    expect(buildDashboardSnapshot({ progress: createProgress(attemptsFor(scopes.flatMap((scope) => scope.slice(0, -1)))), now }).fluencyPracticeSummary.practiceComplete).toBe(false)
+    expect(buildDashboardSnapshot({ progress: createProgress(attemptsFor(fluencyLessons)), now }).fluencyPracticeSummary.practiceComplete).toBe(true)
   })
 
   test('reports Root Reactor as separate Grade 3 partial-foundation context after an attempt', () => {

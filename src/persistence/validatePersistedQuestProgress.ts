@@ -1,5 +1,6 @@
 import type { AssistanceSummary } from '../domain/assistance'
-import type { RecentLessonActivityUsage, SkillProgressState } from '../domain/progression'
+import type { LessonPurpose, LessonRole } from '../domain/lesson'
+import type { LearningState, NextQuestPlan, RecentLessonActivityUsage, SkillProgressState } from '../domain/progression'
 import {
   COMPLETED_ATTEMPT_LIMIT,
   QUEST_PROGRESS_SCHEMA_VERSION,
@@ -55,6 +56,12 @@ export function validatePersistedQuestProgress(value: unknown): PersistedStateVa
   if (value.activeLessonSession !== null && !isActiveLessonSession(value.activeLessonSession)) {
     return { status: 'invalid_state', reason: 'Persisted active lesson session is malformed.' }
   }
+  if (value.plannedNextQuest !== null && !isNextQuestPlan(value.plannedNextQuest)) {
+    return { status: 'invalid_state', reason: 'Persisted next quest plan is malformed.' }
+  }
+  if (value.lastProgressionOutcome !== null && !isLastProgressionOutcome(value.lastProgressionOutcome)) {
+    return { status: 'invalid_state', reason: 'Persisted progression outcome is malformed.' }
+  }
 
   return { status: 'valid', state: normalizeQuestProgressForSave(value as unknown as QuestProgressV1) }
 }
@@ -107,7 +114,7 @@ function isSkillProgress(value: unknown): value is SkillProgressState {
     && typeof value.skillId === 'string'
     && Number.isInteger(value.currentDifficulty)
     && Number.isInteger(value.lastMasteredDifficulty)
-    && typeof value.currentLearningState === 'string'
+    && isLearningState(value.currentLearningState)
     && Array.isArray(value.qualifyingIndependentActivityIds)
     && value.qualifyingIndependentActivityIds.every((id) => typeof id === 'string')
     && isNonNegativeInteger(value.consecutiveUnsuccessfulAtCurrentDifficulty)
@@ -118,7 +125,7 @@ function isSkillProgress(value: unknown): value is SkillProgressState {
     && (value.nextReviewDate === null || typeof value.nextReviewDate === 'string')
     && Array.isArray(value.lastDecisionReasonCodes)
     && value.lastDecisionReasonCodes.every((code) => typeof code === 'string')
-    && (value.remediationContext === null || isRecord(value.remediationContext))
+    && (value.remediationContext === null || isRemediationContext(value.remediationContext))
 }
 
 function isCompletedAttempt(value: unknown): value is CompletedLessonAttempt {
@@ -129,6 +136,7 @@ function isCompletedAttempt(value: unknown): value is CompletedLessonAttempt {
     && typeof value.activityId === 'string'
     && typeof value.skillId === 'string'
     && Number.isInteger(value.difficulty)
+    && (value.lessonRole === undefined || isLessonRole(value.lessonRole))
     && Array.isArray(value.questionResults)
     && value.questionResults.every((result) => isRecord(result)
       && typeof result.questionId === 'string'
@@ -142,8 +150,9 @@ function isCompletedAttempt(value: unknown): value is CompletedLessonAttempt {
       && value.assistanceEvents.every(isAssistanceEvent)
     ))
     && typeof value.completedAt === 'string'
-    && typeof value.progressionDecisionState === 'string'
+    && isLearningState(value.progressionDecisionState)
     && Array.isArray(value.reasonCodes)
+    && value.reasonCodes.every((code) => typeof code === 'string')
     && (value.nextReviewDate === null || typeof value.nextReviewDate === 'string')
 }
 
@@ -153,6 +162,7 @@ function isRecentActivityUsage(value: unknown): value is RecentLessonActivityUsa
     && typeof value.activityId === 'string'
     && typeof value.skillId === 'string'
     && Number.isInteger(value.difficulty)
+    && (value.lessonRole === undefined || isLessonRole(value.lessonRole))
     && Array.isArray(value.passageQuestionKeys)
     && value.passageQuestionKeys.every((key) => typeof key === 'string')
     && typeof value.contentVersion === 'string'
@@ -178,8 +188,87 @@ function isActiveLessonSession(value: unknown): value is ActiveLessonSession {
       Array.isArray(value.assistanceEvents)
       && value.assistanceEvents.every(isAssistanceEvent)
     ))
+    && (!('fluencyPracticeState' in value) || value.fluencyPracticeState === null || isFluencyPracticeState(value.fluencyPracticeState))
     && typeof value.startedAt === 'string'
     && typeof value.updatedAt === 'string'
+}
+
+function isNextQuestPlan(value: unknown): value is NextQuestPlan {
+  if (!isRecord(value) || !isLessonPurpose(value.purpose)) return false
+  if (value.status === 'content_needed') {
+    return typeof value.skillId === 'string'
+      && Number.isInteger(value.difficulty)
+      && typeof value.reason === 'string'
+  }
+  return value.status === 'available' && isLessonActivityCandidate(value.lesson, value.purpose)
+}
+
+function isLessonActivityCandidate(value: unknown, purpose: LessonPurpose): boolean {
+  return isRecord(value)
+    && typeof value.lessonId === 'string'
+    && typeof value.activityId === 'string'
+    && typeof value.skillId === 'string'
+    && Number.isInteger(value.gradeBand)
+    && Number.isInteger(value.difficulty)
+    && typeof value.worldId === 'string'
+    && typeof value.unitId === 'string'
+    && typeof value.packId === 'string'
+    && Array.isArray(value.benchmarkReferences)
+    && value.benchmarkReferences.every((reference) => typeof reference === 'string')
+    && Array.isArray(value.eligiblePurposes)
+    && value.eligiblePurposes.every(isLessonPurpose)
+    && value.eligiblePurposes.includes(purpose)
+    && Array.isArray(value.passageQuestionKeys)
+    && value.passageQuestionKeys.every((key) => typeof key === 'string')
+    && typeof value.contentVersion === 'string'
+}
+
+function isLastProgressionOutcome(value: unknown): boolean {
+  return isRecord(value)
+    && typeof value.completionId === 'string'
+    && isLearningState(value.decisionState)
+    && Array.isArray(value.reasonCodes)
+    && value.reasonCodes.every((code) => typeof code === 'string')
+    && isNonNegativeNumber(value.earnedXp)
+    && isNonNegativeNumber(value.earnedStars)
+    && typeof value.completedAt === 'string'
+    && (value.lessonRole === undefined || isLessonRole(value.lessonRole))
+}
+
+function isRemediationContext(value: unknown): boolean {
+  return isRecord(value)
+    && typeof value.originalSkillId === 'string'
+    && Number.isInteger(value.originalDifficulty)
+    && typeof value.remediationSkillId === 'string'
+    && Number.isInteger(value.remediationDifficulty)
+    && (value.reason === 'explicit_prerequisite' || value.reason === 'last_mastered_difficulty')
+}
+
+function isFluencyPracticeState(value: unknown): boolean {
+  return isRecord(value)
+    && typeof value.modelReadUsed === 'boolean'
+    && typeof value.phrasePracticeCompleted === 'boolean'
+    && isNonNegativeInteger(value.completedReadCount)
+    && (value.reflection === null || value.reflection === 'smooth' || value.reflection === 'some_pauses' || value.reflection === 'try_again')
+}
+
+const LEARNING_STATES = new Set<LearningState>([
+  'TEACH', 'GUIDED_PRACTICE', 'CHECKPOINT', 'FLUENCY_PRACTICE', 'VERIFY_MASTERY', 'ADVANCE',
+  'RETRY_SAME_DIFFICULTY', 'REMEDIATE_PREREQUISITE', 'SPACED_REVIEW', 'PARENT_REVIEW', 'MASTERED',
+])
+const LESSON_PURPOSES = new Set<LessonPurpose>(['progression', 'verification', 'remediation', 'review'])
+const LESSON_ROLES = new Set<LessonRole>(['GUIDED_PRACTICE', 'CHECKPOINT', 'FLUENCY_PRACTICE'])
+
+function isLearningState(value: unknown): value is LearningState {
+  return typeof value === 'string' && LEARNING_STATES.has(value as LearningState)
+}
+
+function isLessonPurpose(value: unknown): value is LessonPurpose {
+  return typeof value === 'string' && LESSON_PURPOSES.has(value as LessonPurpose)
+}
+
+function isLessonRole(value: unknown): value is LessonRole {
+  return typeof value === 'string' && LESSON_ROLES.has(value as LessonRole)
 }
 
 function isReviewQueueEntry(value: unknown): boolean {

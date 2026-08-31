@@ -94,9 +94,9 @@ function feature(record: PoemFormRecord, lessonIndex: number, questionIndex: num
 
 function transfer(record: PoemFormRecord, lessonIndex: number, questionIndex: number): ReadingQuestion {
   const target = record.transfer!
-  return multipleChoice(record, lessonIndex, questionIndex, target.prompt, FORM_LABELS[target.correctForm],
+  return multipleChoice(record, lessonIndex, questionIndex, `Compare the displayed poem with this new example. ${target.prompt}`, FORM_LABELS[target.correctForm],
     otherForms(target.correctForm).map((form) => FORM_LABELS[form]) as [string, string, string], target.explanation,
-    record.evidenceLineNumbers.slice(0, 2), ['poem-form-transfer', target.correctForm])
+    record.evidenceLineNumbers, ['poem-form-transfer', target.correctForm])
 }
 
 function multiselect(record: PoemFormRecord, lessonIndex: number, questionIndex: number): ReadingQuestion {

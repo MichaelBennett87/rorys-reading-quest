@@ -38,7 +38,12 @@ export function createLocalStorageQuestProgressStore(
       } catch (error) {
         return { state: fresh(), status: 'invalid_json', technicalDetail: errorMessage(error) }
       }
-      const validated = validatePersistedQuestProgress(parsed)
+      let validated
+      try {
+        validated = validatePersistedQuestProgress(parsed)
+      } catch (error) {
+        return { state: fresh(), status: 'invalid_state', technicalDetail: errorMessage(error) }
+      }
       if (validated.status !== 'valid') {
         return { state: fresh(), status: validated.status, technicalDetail: validated.reason }
       }

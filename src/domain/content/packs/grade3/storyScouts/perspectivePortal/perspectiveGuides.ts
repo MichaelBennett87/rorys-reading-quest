@@ -347,7 +347,7 @@ export const perspectivePortalStories: PerspectiveStoryRecord[] = [
     },
     characterB: {
       characterId: 'pp3-p6-arlo', name: 'Arlo',
-      perspective: 'Arlo believes reflective arrows and entrance markers should guide visitors whenever lantern light is blocked or a path divides.',
+      perspective: 'Arlo believes reflective arrows and entrance markers should guide visitors wherever the path divides.',
       motivation: 'He notices that light alone does not tell visitors which branch leads to each activity.',
       evidenceIds: ['pp3-p6-s3', 'pp3-p6-s7', 'pp3-p6-s13'], evidenceKinds: ['dialogue', 'thought', 'action'],
       feelingOnly: 'Arlo feels focused.', traitOnly: 'Arlo is inventive.',
@@ -437,7 +437,7 @@ export const perspectivePortalStories: PerspectiveStoryRecord[] = [
       { targetId: 'pp3-support-27', word: 'temporarily', sentenceId: 'pp3-p7-s3', focus: 'tempor', chunks: [{ displayText: 'tem', speechText: 'tem' }, { displayText: 'po', speechText: 'puh' }, { displayText: 'rar', speechText: 'rair' }, { displayText: 'i', speechText: 'uh' }, { displayText: 'ly', speechText: 'lee' }] },
       { targetId: 'pp3-support-28', word: 'alternate', sentenceId: 'pp3-p7-s14', focus: 'alter', chunks: [{ displayText: 'al', speechText: 'awl' }, { displayText: 'ter', speechText: 'tur' }, { displayText: 'nate', speechText: 'nut' }] },
     ],
-    minorEvidenceId: 'pp3-p7-s16',
+    minorEvidenceId: 'pp3-p7-s1',
   },
 ]
 

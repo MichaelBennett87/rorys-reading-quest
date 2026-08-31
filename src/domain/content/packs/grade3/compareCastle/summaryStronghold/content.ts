@@ -55,7 +55,7 @@ export const summaryTextRecords: SummaryTextRecord[] = [
       'The photograph showed that the final stop was beside the music room, but one hallway turn was hidden by glare.',
       'Ava asked Mr. Ruiz, the custodian, whether he had seen the card while moving a bench.',
       'He remembered placing a loose paper behind the lobby sign so it would not blow away.',
-      'Ava found the route card there, with one corner slightly bent.',
+      'Ava found the route card there.',
       'She compared the card with her photograph and marked the hidden turn on her copy.',
       'Ava led the waiting families through all three rooms without skipping a stop.',
       'Afterward, she thanked Mr. Ruiz and saved the photograph in the art-walk folder.',
@@ -74,7 +74,7 @@ export const summaryTextRecords: SummaryTextRecord[] = [
     theme: 'Using available clues and asking for help can solve a difficult problem.', themeEvidence: [6, 8, 10, 12],
     minor: [
       { id: 'ss1-minor-badge', sentence: 2, reason: 'The badge color and shape do not affect the problem or solution.' },
-      { id: 'ss1-minor-corner', sentence: 10, reason: 'The bent corner is descriptive but does not change the resolution.' },
+      { id: 'ss1-minor-folder', sentence: 13, reason: 'Saving the photograph in a folder happens after the problem is solved.' },
     ],
     modelSummary: 'Ava must guide families through a school art walk, but the route card is missing. She uses a practice photograph and asks Mr. Ruiz for help, then finds the card and leads the families through every stop. Her actions show that clues and teamwork can help solve a problem.',
     summaryRationale: 'The summary preserves the problem, essential attempts, resolution, and supported theme while omitting decorative details.',

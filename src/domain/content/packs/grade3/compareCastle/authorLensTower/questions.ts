@@ -149,9 +149,9 @@ function twoPart(record: Record, lessonIndex: number, questionIndex: number): Re
   const otherA = sentence(record, 'A', record.nonEvidence.textA)
   const otherB = sentence(record, 'B', record.nonEvidence.textB)
   const partBChoices = [
-    choice(data.questionIdentifier, 'b-1', `Text A: "${correctA}" Text B: "${correctB}"`),
-    choice(data.questionIdentifier, 'b-2', `Text A: "${correctB}" Text B: "${correctA}"`),
-    choice(data.questionIdentifier, 'b-3', `Text A: "${otherA}" Text B: "${otherB}"`),
+    choice(data.questionIdentifier, 'b-1', `Text A: ${correctA} Text B: ${correctB}`),
+    choice(data.questionIdentifier, 'b-2', `Text A: ${correctB} Text B: ${correctA}`),
+    choice(data.questionIdentifier, 'b-3', `Text A: ${otherA} Text B: ${otherB}`),
   ]
   return {
     ...data,

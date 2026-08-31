@@ -29,6 +29,7 @@ export interface PurposeDevelopmentRecord {
   hotCorrectSentence: number
   hotDistractorSentences: [number, number, number]
   support: [SupportPlan, SupportPlan, SupportPlan, SupportPlan]
+  preferredEvidenceSentences?: [number, number]
   transfer?: TransferPlan
 }
 
@@ -36,6 +37,22 @@ const p = PURPOSE_DEVELOPMENT_PASSAGE_IDS
 export const purposeSentenceId = (passageId: string, number: number) => `${passageId}-sentence-${number}`
 export const purposeSectionId = (passageId: string, number: number) => `${passageId}-section-${number}`
 const featureId = (passageId: string, key: string) => `${passageId}-feature-${key}`
+
+const GLOSSARY_DEFINITIONS: Record<string, string> = {
+  recycling: 'using old materials to make new things',
+  cactuses: 'desert plants with thick stems that store water',
+  drainage: 'the way extra water flows away from an area',
+  horizontal: 'level from side to side rather than upright',
+  invisible: 'unable to be seen',
+  surface: 'the outside or top layer of something',
+  elevated: 'raised to a higher position',
+}
+
+function glossaryDefinition(word: string): string {
+  const definition = GLOSSARY_DEFINITIONS[word.toLowerCase()]
+  if (!definition) throw new Error(`Missing Purpose Development glossary definition for ${word}.`)
+  return definition
+}
 
 const records: PurposeDevelopmentRecord[] = [
   {
@@ -386,6 +403,7 @@ const records: PurposeDevelopmentRecord[] = [
     passageId: p[6], title: 'Water Waiting High Above Town', difficulty: 3,
     topic: 'how a water tower works', purposeKind: 'explain-how',
     purpose: 'To explain how a water tower stores and delivers water to buildings.',
+    preferredEvidenceSentences: [3, 10],
     centralIdea: 'Pumps, an elevated tank, gravity, pipes, and controls work together to keep water moving when a community needs it.',
     headings: ['Pump Water Up', 'Let Gravity Help', 'Meet Changing Demand'], sectionEnds: [7, 14],
     sentences: [
@@ -460,7 +478,7 @@ export const purposeDevelopmentPassages: Passage[] = records.map((record) => {
   const glossaryFeature: InformationalFeature = {
     featureId: featureId(record.passageId, 'glossary'), kind: 'glossary', entries: [{
       entryId: `${featureId(record.passageId, 'glossary')}-entry`, term: record.support[0].word,
-      definition: `a useful word from this informational text about ${record.topic}`,
+      definition: glossaryDefinition(record.support[0].word),
     }],
   }
   const sidebarFeature: InformationalFeature = {

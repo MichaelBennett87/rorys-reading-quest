@@ -272,7 +272,7 @@ function buildCheckpointQuestions(config: CheckpointConfig): ReadingQuestion[] {
     multipleChoice({
       ...questionBase(config, 2, {
         prompt: `In its passage sentence, what job does ${third.derivedWord} do?`,
-        explanation: `${third.derivedWord} works as a ${third.derivedWordRole} in this sentence. ${third.transformationExplanation}`,
+        explanation: `${third.derivedWord} works as ${third.derivedWordRole === 'adjective' ? 'an' : 'a'} ${third.derivedWordRole} in this sentence. ${third.transformationExplanation}`,
         evidenceReferenceIds: [third.sentenceId], targetVocabulary: [third.derivedWord], soundOutChunks: third.readingChunks.map((chunk) => chunk.displayText), tags: tags('word-function-analysis', 'part-of-speech-change'),
       }),
       choices: roleChoices,

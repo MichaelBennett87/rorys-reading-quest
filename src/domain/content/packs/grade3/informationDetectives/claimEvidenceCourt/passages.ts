@@ -38,6 +38,22 @@ export const claimSentenceId = (passageId: string, number: number) => `${passage
 export const claimSectionId = (passageId: string, number: number) => `${passageId}-section-${number}`
 const featureId = (passageId: string, key: string) => `${passageId}-feature-${key}`
 
+const GLOSSARY_DEFINITIONS: Record<string, string> = {
+  native: 'growing or living naturally in a particular place',
+  reusable: 'able to be used more than once',
+  practical: 'useful and workable in a real situation',
+  decorative: 'meant mainly to make something look attractive',
+  recycling: 'sorting and using old materials to make new things',
+  controlled: 'kept under planned conditions for a fair comparison',
+  consistent: 'staying the same in pattern or quality',
+}
+
+function glossaryDefinition(word: string): string {
+  const definition = GLOSSARY_DEFINITIONS[word.toLowerCase()]
+  if (!definition) throw new Error(`Missing Claim and Evidence glossary definition for ${word}.`)
+  return definition
+}
+
 const records: ClaimEvidenceRecord[] = [
   {
     passageId: p[0], title: 'A Native Flower Strip for the Garden', difficulty: 3,
@@ -407,7 +423,7 @@ export const claimEvidencePassages: Passage[] = records.map((record) => {
   const glossaryFeature: InformationalFeature = {
     featureId: featureId(record.passageId, 'glossary'), kind: 'glossary', entries: [{
       entryId: `${featureId(record.passageId, 'glossary')}-entry`, term: record.support[0].word,
-      definition: `a useful word from this informational argument about ${record.topic}`,
+      definition: glossaryDefinition(record.support[0].word),
     }],
   }
   const sidebarFeature: InformationalFeature = {

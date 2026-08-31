@@ -90,8 +90,10 @@ function reasonQuestion(record: ClaimEvidenceRecord, lessonIndex: number, questi
 }
 
 function multiselect(record: ClaimEvidenceRecord, lessonIndex: number, questionIndex: number): ReadingQuestion {
-  const first = record.evidence[0]
-  const last = record.evidence.findLast((entry) => sectionFor(record, entry.sentence) !== sectionFor(record, first.sentence)) ?? record.evidence.at(-1)!
+  const strongEvidence = record.evidence.filter((entry) => entry.strength === 'strong')
+  const first = strongEvidence[0]
+  const last = strongEvidence.findLast((entry) => sectionFor(record, entry.sentence) !== sectionFor(record, first.sentence))
+  if (!first || !last) throw new Error(`${record.passageId} needs strong claim evidence from two sections.`)
   const weak = record.weakDetails[0]
   const data = base(record, lessonIndex, questionIndex, 'multi_select', 'Choose the two evidence details from different sections that support the author’s claim.',
     `“${record.sentences[first.sentence - 1]}” and “${record.sentences[last.sentence - 1]}” support declared reasons and connect those reasons to the claim: ${record.claim}`,

@@ -147,7 +147,7 @@ const passageSpecs: PassageSpec[] = [
       'Each team read the complete target word in context before deciding that its chunks worked.',
     ],
     targets: [
-      target('prototype', 2, [c('pro', 'proh', 'open'), c('to', 'toh', 'open'), c('type', 'type', 'vowel-consonant-e')], 2),
+      target('prototype', 2, [c('pro', 'proh', 'open'), c('to', 'tuh', 'open'), c('type', 'type', 'vowel-consonant-e')], 2),
       target('worktable', 3, [c('work', 'work', 'r-controlled'), c('ta', 'tay', 'open'), c('ble', 'buhl', 'consonant-le')], 2, [hint('work', 'compound-part'), hint('table', 'compound-part')]),
       target('rebuild', 4, [c('re', 'ree', 'open'), c('build', 'build', 'vowel-team')], 0, [hint('re', 'prefix'), hint('build', 'base')]),
       target('magnetic', 5, [c('mag', 'mag', 'closed'), c('net', 'net', 'closed'), c('ic', 'ik', 'closed')], 0),

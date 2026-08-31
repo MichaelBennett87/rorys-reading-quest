@@ -34,6 +34,10 @@ const patternLabel: Record<MultisyllablePatternLabel, string> = {
   'consonant-le': 'consonant-le ending',
 }
 
+function withIndefiniteArticle(label: string): string {
+  return `${/^[aeiou]/i.test(label) ? 'an' : 'a'} ${label}`
+}
+
 interface QuestionBase {
   questionIdentifier: string
   lessonIdentifier: string
@@ -192,15 +196,15 @@ function buildGuidedQuestions(config: LessonConfig): ReadingQuestion[] {
     multipleChoice({
       ...questionBase(config, 1, {
         prompt: `Which syllable pattern describes the chunk ${focusChunk.displayText} in ${second.surfaceWord}?`,
-        explanation: `${focusChunk.displayText} is a ${patternLabel[focusPattern]} in ${second.surfaceWord}.`,
+        explanation: `${focusChunk.displayText} is ${withIndefiniteArticle(patternLabel[focusPattern])} in ${second.surfaceWord}.`,
         evidenceReferenceIds: [second.sourceSentenceId], targetVocabulary: [second.surfaceWord], soundOutChunks: second.pronunciationChunks.map((chunk) => chunk.displayText), tags: tags(`${focusPattern}-decoding`),
       }),
       ...patternChoices,
     }),
     multiselect({
       ...questionBase(config, 2, {
-        prompt: `Choose two words that contain an ${patternLabel[config.multiPattern]}.`,
-        explanation: artifact.targets.filter((target) => target.syllablePatterns.includes(config.multiPattern)).map((target) => target.surfaceWord).join(' and ') + ` each contain an ${patternLabel[config.multiPattern]}.`,
+        prompt: `Choose two words that contain ${withIndefiniteArticle(patternLabel[config.multiPattern])}.`,
+        explanation: artifact.targets.filter((target) => target.syllablePatterns.includes(config.multiPattern)).map((target) => target.surfaceWord).join(' and ') + ` each contain ${withIndefiniteArticle(patternLabel[config.multiPattern])}.`,
         evidenceReferenceIds: artifact.targets.filter((target) => target.syllablePatterns.includes(config.multiPattern)).map((target) => target.sourceSentenceId), targetVocabulary: artifact.targets.map((target) => target.surfaceWord), soundOutChunks: [], tags: tags(`${config.multiPattern}-decoding`),
       }),
       choices: multiChoices,

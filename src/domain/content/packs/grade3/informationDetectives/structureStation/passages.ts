@@ -170,8 +170,8 @@ const records: StructureStationRecord[] = [
     sentences: [
       'A wind vane turns to show the direction from which the wind is blowing.',
       'First, place a lump of modeling clay in the middle of a sturdy paper plate.',
-      'Next, press a sharpened pencil into the clay with the eraser pointing up.',
-      'Push a straight pin through the center of a paper arrow and gently into the eraser.',
+      'Next, with an adult’s help, press a sharpened pencil into the clay with the eraser pointing up.',
+      'Ask the adult to push a straight pin through the center of a paper arrow and gently into the eraser.',
       'Then label the plate north, east, south, and west with help from a compass.',
       'Carry the wind vane outside and set it on a level surface.',
       'Finally, watch the arrow turn and record the direction it points from.',
@@ -337,7 +337,7 @@ const records: StructureStationRecord[] = [
     organizationHelp: 'Chronology helps readers follow how used pieces change into pulp, a damp layer, and a dry sheet.',
     evidenceSentenceNumbers: [2, 7],
     distractorReasons: ['It mainly compares recycled paper with plastic.', 'It explains that drying causes the paper to be torn first.', 'It lists paper facts that may be rearranged without changing the process.'],
-    hotPrompt: 'Select the sentence that tells what happens immediately after the pulp is spread on the screen.', hotCorrectSentence: 5, hotDistractorSentences: [2, 4, 7],
+    hotPrompt: 'Select the sentence that begins with the signal word showing the next step after the pulp is spread.', hotCorrectSentence: 5, hotDistractorSentences: [2, 4, 7],
     support: [
       { word: 'material', sentence: 1, chunks: ['ma', 'te', 'ri', 'al'], focus: 'te' },
       { word: 'mixture', sentence: 10, chunks: ['mix', 'ture'], focus: 'mix' },

@@ -75,7 +75,7 @@ function mc(record: PurposeDevelopmentRecord, lessonIndex: number, questionIndex
 }
 
 function purposeQuestion(record: PurposeDevelopmentRecord, lessonIndex: number, questionIndex: number): ReadingQuestion {
-  const evidence = [record.supportingDetails[0], record.supportingDetails.at(-1)!].map((detail) => purposeSentenceId(record.passageId, detail.sentence))
+  const evidence = selectCrossSectionEvidence(record).map((detail) => purposeSentenceId(record.passageId, detail.sentence))
   return mc(record, lessonIndex, questionIndex, `What is the author's precise purpose in "${record.title}"?`, record.purpose,
     [record.topic, record.centralIdea, 'To inform readers about this topic.'],
     `${record.purpose} The selected details and section design serve this precise goal, while the other choices are a topic, central idea, or overly broad label.`,
@@ -98,8 +98,7 @@ function sectionContributionQuestion(record: PurposeDevelopmentRecord, lessonInd
 }
 
 function multiselect(record: PurposeDevelopmentRecord, lessonIndex: number, questionIndex: number): ReadingQuestion {
-  const first = record.supportingDetails[0]
-  const last = record.supportingDetails.at(-1)!
+  const [first, last] = selectCrossSectionEvidence(record)
   const data = base(record, lessonIndex, questionIndex, 'multi_select', 'Choose the two details from different sections that most strongly support the author’s purpose.',
     `Both details serve the same precise purpose across sections: ${record.purpose}`,
     [first, last].map((detail) => purposeSentenceId(record.passageId, detail.sentence)), ['supporting-details', 'purpose-development', 'text-evidence'])
@@ -152,8 +151,7 @@ function transferQuestion(record: PurposeDevelopmentRecord, lessonIndex: number,
 }
 
 function twoPart(record: PurposeDevelopmentRecord, lessonIndex: number, questionIndex: number): ReadingQuestion {
-  const first = record.supportingDetails[0]
-  const last = record.supportingDetails.at(-1)!
+  const [first, last] = selectCrossSectionEvidence(record)
   const correctEvidence = `${record.sentences[first.sentence - 1]} / ${record.sentences[last.sentence - 1]}`
   const weakEvidence = `${record.sentences[record.weakDetails[0].sentence - 1]} / ${record.sentences[record.weakDetails[1].sentence - 1]}`
   const partialEvidence = `${record.sentences[first.sentence - 1]} / ${record.sentences[record.weakDetails[1].sentence - 1]}`
@@ -174,6 +172,23 @@ function twoPart(record: PurposeDevelopmentRecord, lessonIndex: number, question
     ...data, answerChoices: [...partAChoices, ...partBChoices].map((entry) => entry.text), correctAnswers: [partAChoices[0].text, partBChoices[0].text],
     questionContent: { type: 'two_part', partAPrompt: 'Part A: What is the author’s precise purpose?', partAChoices, partACorrectChoiceId: partAChoices[0].id, partBPrompt: 'Part B: Which pair of details from separate sections best supports Part A?', partBChoices, partBCorrectChoiceId: partBChoices[0].id },
   }
+}
+
+function selectCrossSectionEvidence(record: PurposeDevelopmentRecord) {
+  if (record.preferredEvidenceSentences) {
+    return record.preferredEvidenceSentences.map((sentence) => {
+      const detail = record.supportingDetails.find((candidate) => candidate.sentence === sentence)
+      if (!detail) throw new Error(`${record.passageId} is missing preferred evidence sentence ${sentence}.`)
+      return detail
+    }) as [PurposeDevelopmentRecord['supportingDetails'][number], PurposeDevelopmentRecord['supportingDetails'][number]]
+  }
+  const strong = record.supportingDetails.filter((detail) => detail.strength === 'strong')
+  const first = strong[0]
+  const sectionForSentence = (sentence: number) => sentence <= record.sectionEnds[0] ? 1 : sentence <= record.sectionEnds[1] ? 2 : 3
+  const firstSection = sectionForSentence(first.sentence)
+  const last = strong.findLast((detail) => sectionForSentence(detail.sentence) !== firstSection)
+  if (!first || !last) throw new Error(`${record.passageId} needs strong evidence from two sections.`)
+  return [first, last] as const
 }
 
 function guidedQuestions(record: PurposeDevelopmentRecord, lessonIndex: number): ReadingQuestion[] {

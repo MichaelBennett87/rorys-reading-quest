@@ -124,13 +124,15 @@ function multipleChoice(
 }
 
 function multiselect(story: CharacterArcStoryRecord, lessonIndex: number, questionIndex: number): ReadingQuestion {
+  const develops = story.arcs.length > 1 ? 'develop' : 'develops'
+  const does = story.arcs.length > 1 ? 'do' : 'does'
   const data = base(
     story,
     lessonIndex,
     questionIndex,
     'multi_select',
-    `Choose two details, one from the beginning and one from the end, that show how ${story.primaryCharacter} develops.`,
-    `The beginning detail shows the earlier response, and the ending detail shows what ${story.primaryCharacter} does differently after the plot events.`,
+    `Choose two details, one from the beginning and one from the end, that show how ${story.primaryCharacter} ${develops}.`,
+    `The beginning detail shows the earlier response, and the ending detail shows what ${story.primaryCharacter} ${does} differently after the plot events.`,
     [story.beginningEvidenceId, story.endingEvidenceId],
     ['beginning-state', 'ending-state', 'plot-development-link', 'action-evidence'],
   )
@@ -216,12 +218,13 @@ function tableMatch(story: CharacterArcStoryRecord, lessonIndex: number, questio
 }
 
 function twoPart(story: CharacterArcStoryRecord, lessonIndex: number, questionIndex: number): ReadingQuestion {
+  const develops = story.arcs.length > 1 ? 'develop' : 'develops'
   const data = base(
     story,
     lessonIndex,
     questionIndex,
     'two_part',
-    `Use the plot to explain how ${story.primaryCharacter} develops, then choose the evidence pair that supports the explanation.`,
+    `Use the plot to explain how ${story.primaryCharacter} ${develops}, then choose the evidence pair that supports the explanation.`,
     'The development explanation connects an earlier response with a different later response, and the evidence pair proves both stages.',
     [story.beginningEvidenceId, story.endingEvidenceId],
     ['beginning-state', 'ending-state', 'plot-development-link', 'static-trait-distinction', 'text-evidence'],
@@ -247,7 +250,7 @@ function twoPart(story: CharacterArcStoryRecord, lessonIndex: number, questionIn
     correctAnswers: [partAChoices[0].text, partBChoices[0].text],
     questionContent: {
       type: 'two_part',
-      partAPrompt: `Part A: Which statement best explains how ${story.primaryCharacter} develops?`,
+      partAPrompt: `Part A: Which statement best explains how ${story.primaryCharacter} ${develops}?`,
       partAChoices,
       partACorrectChoiceId: partAChoices[0].id,
       partBPrompt: 'Part B: Which beginning-and-ending evidence best supports Part A?',
@@ -270,10 +273,12 @@ function guidedQuestions(story: CharacterArcStoryRecord, lessonIndex: number): R
 
 function checkpointQuestions(story: CharacterArcStoryRecord, lessonIndex: number): ReadingQuestion[] {
   const developmentText = story.combinedDevelopmentChoice ?? story.developmentChoice
+  const does = story.arcs.length > 1 ? 'do' : 'does'
+  const develops = story.arcs.length > 1 ? 'develop' : 'develops'
   return [
-    multipleChoice(story, lessonIndex, 1, `How does ${story.primaryCharacter} respond near the beginning of the plot?`, story.beginningChoice, [story.turningChoice, story.endingChoice, story.unrelatedChoice], 'The beginning evidence shows the character’s earlier response before the turning point.', [story.beginningEvidenceId], ['beginning-state', 'text-evidence']),
+    multipleChoice(story, lessonIndex, 1, `How ${does} ${story.primaryCharacter} respond near the beginning of the plot?`, story.beginningChoice, [story.turningChoice, story.endingChoice, story.unrelatedChoice], 'The beginning evidence shows the character’s earlier response before the turning point.', [story.beginningEvidenceId], ['beginning-state', 'text-evidence']),
     multipleChoice(story, lessonIndex, 2, `Which event is the clearest turning point for ${story.primaryCharacter}?`, story.turningChoice, [story.beginningChoice, story.endingChoice, story.unrelatedChoice], 'The turning point creates or reveals the shift that leads to a different later response.', [story.turningEvidenceId], ['turning-point', 'plot-development-link', 'dialogue-evidence', 'thought-evidence']),
-    multipleChoice(story, lessonIndex, 3, `Which statement best explains ${story.primaryCharacter}’s development across the plot?`, developmentText, [story.traitOnlyChoice, story.endingChoice, story.unrelatedChoice], 'The best explanation connects the beginning, the plot’s turning point, and the changed response at the end.', [story.beginningEvidenceId, story.turningEvidenceId, story.endingEvidenceId], ['static-trait-distinction', 'ending-state', 'plot-development-link', ...(story.arcs.length === 2 ? ['two-character-development'] : [])]),
+    multipleChoice(story, lessonIndex, 3, `Which statement best explains how ${story.primaryCharacter} ${develops} across the plot?`, developmentText, [story.traitOnlyChoice, story.endingChoice, story.unrelatedChoice], 'The best explanation connects the beginning, the plot’s turning point, and the changed response at the end.', [story.beginningEvidenceId, story.turningEvidenceId, story.endingEvidenceId], ['static-trait-distinction', 'ending-state', 'plot-development-link', ...(story.arcs.length === 2 ? ['two-character-development'] : [])]),
     multiselect(story, lessonIndex, 4),
     hotText(story, lessonIndex, 5, 'ending'),
     tableMatch(story, lessonIndex, 6),

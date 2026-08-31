@@ -505,6 +505,27 @@ export function buildDataQuality(progress: QuestProgressV1, questionIndex: Map<s
 
 function buildFluencyPracticeSummary(progress: QuestProgressV1): DashboardFluencyPracticeSummary {
   const fluencyAttempts = progress.completedAttempts.filter((attempt) => attempt.lessonRole === 'FLUENCY_PRACTICE')
+  const requiredActivitiesByScope = new Map<string, Set<string>>()
+  for (const lesson of lessonCatalog) {
+    if (lesson.selectionStatus !== 'active' || lesson.lessonRole !== 'FLUENCY_PRACTICE') continue
+    const scope = `${lesson.gradeBand}::${lesson.unitId}::${lesson.contentVersion}`
+    const activities = requiredActivitiesByScope.get(scope) ?? new Set<string>()
+    activities.add(lesson.activityId)
+    requiredActivitiesByScope.set(scope, activities)
+  }
+  const completedActivitiesByScope = new Map<string, Set<string>>()
+  for (const attempt of fluencyAttempts) {
+    const lesson = lessonCatalog.find((candidate) => candidate.lessonId === attempt.lessonId)
+    if (!lesson || lesson.lessonRole !== 'FLUENCY_PRACTICE') continue
+    const scope = `${lesson.gradeBand}::${lesson.unitId}::${lesson.contentVersion}`
+    const activities = completedActivitiesByScope.get(scope) ?? new Set<string>()
+    activities.add(attempt.activityId)
+    completedActivitiesByScope.set(scope, activities)
+  }
+  const practiceComplete = requiredActivitiesByScope.size > 0 && [...requiredActivitiesByScope].every(([scope, required]) => {
+    const completed = completedActivitiesByScope.get(scope) ?? new Set<string>()
+    return [...required].every((activityId) => completed.has(activityId))
+  })
   const reflectionCounts = fluencyAttempts.reduce((counts, attempt) => {
     const reflection = attempt.fluencyPracticeSummary?.reflection ?? null
     if (reflection === 'smooth') counts.smooth += 1
@@ -525,7 +546,7 @@ function buildFluencyPracticeSummary(progress: QuestProgressV1): DashboardFluenc
     totalCompletedReads: fluencyAttempts.reduce((sum, attempt) => sum + (attempt.fluencyPracticeSummary?.completedReadCount ?? 0), 0),
     reflectionCounts,
     lastFluencyPracticeDate: latestAttemptDate(fluencyAttempts),
-    practiceComplete: new Set(fluencyAttempts.map((attempt) => attempt.activityId)).size >= 7,
+    practiceComplete,
     oralReadingMeasured: false,
   }
 }

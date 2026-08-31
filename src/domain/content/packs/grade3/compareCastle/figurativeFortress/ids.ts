@@ -14,6 +14,6 @@ export const FIGURATIVE_FORTRESS_LESSON_TITLES = [
   'Figurative Fortress Lab: Metaphor and Personification',
   'Figurative Fortress Lab: Hyperbole in Context',
   'Figurative Fortress Checkpoint: Stormy Signals',
-  'Figurative Fortress Checkpoint: The Night Garden',
+  'Figurative Fortress Checkpoint: Saturday Garden Signals',
   'Figurative Fortress Checkpoint: Words That Stretch',
 ]

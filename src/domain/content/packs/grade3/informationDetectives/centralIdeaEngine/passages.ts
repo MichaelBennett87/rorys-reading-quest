@@ -37,6 +37,22 @@ export const centralIdeaSentenceId = (passageId: string, number: number) => `${p
 export const centralIdeaSectionId = (passageId: string, number: number) => `${passageId}-section-${number}`
 const featureId = (passageId: string, key: string) => `${passageId}-feature-${key}`
 
+const GLOSSARY_DEFINITIONS: Record<string, string> = {
+  ocean: 'a very large body of salt water',
+  uncovered: 'not covered or no longer hidden',
+  helmet: 'a hard covering worn to protect the head',
+  structures: 'things built or arranged from connected parts',
+  wetland: 'land that stays covered or soaked with water for much of the time',
+  roofs: 'top coverings that protect buildings',
+  returned: 'came or went back to a place',
+}
+
+function glossaryDefinition(word: string): string {
+  const definition = GLOSSARY_DEFINITIONS[word.toLowerCase()]
+  if (!definition) throw new Error(`Missing Central Idea Engine glossary definition for ${word}.`)
+  return definition
+}
+
 const records: CentralIdeaEngineRecord[] = [
   {
     passageId: p[0], title: 'How Beach Grass Builds a Dune', difficulty: 1, topic: 'beach grass and sand dunes', mode: 'stated', explicitCentralIdeaSentence: 12,
@@ -298,7 +314,7 @@ const records: CentralIdeaEngineRecord[] = [
       'A monitor can show how much electricity the panels are producing.',
       'Clouds, shade, and the time of day can change the amount shown on the monitor.',
       'Many panels look dark blue or black from the ground.',
-      'The readings help adults check whether sunlight is moving through the system as expected.',
+      'The readings help adults check whether electricity is moving through the system as expected.',
       'Each part has a different job in carrying energy from the panels to useful equipment.',
     ],
     relevantDetails: [
@@ -405,7 +421,7 @@ export const centralIdeaEnginePassages: Passage[] = records.map((record) => {
   const glossaryFeature: InformationalFeature = {
     featureId: featureId(record.passageId, 'glossary'), kind: 'glossary', entries: [{
       entryId: `${featureId(record.passageId, 'glossary')}-entry`, term: record.support[0].word,
-      definition: `a useful word from the text about ${record.topic}`,
+      definition: glossaryDefinition(record.support[0].word),
     }],
   }
   const sidebarFeature: InformationalFeature = {
