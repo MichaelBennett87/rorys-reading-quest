@@ -12,8 +12,8 @@ describe('Phase 7B4 acceptance documentation and boundary', () => {
     expect(tasks).toContain('- [x] Phase 7B4 - Poem Form Observatory')
     expect(tasks).toContain('- [x] Phase 7B')
     expect(tasks).toContain('- [x] Phase 7C')
-    expect(tasks).toContain('- [ ] Phase 7D')
-    expect(tasks).toContain('- [ ] Phase 7')
+    expect(tasks).toContain('- [x] Phase 7D')
+    expect(tasks).toContain('- [x] Phase 7')
   })
 
   test('keeps every Grade 3 row DRAFT and makes only ELA.3.R.1.4 newly implemented', () => {

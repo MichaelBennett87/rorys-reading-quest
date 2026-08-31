@@ -17,7 +17,7 @@ describe('Phase 7C4 acceptance documentation and boundary', () => {
     expect(tasks).toContain('- [x] Phase 7C4: Claim and Evidence Court')
     expect(tasks).toContain('- [x] Phase 7C')
     expect(tasks).toContain('- [x] Phase 7D1: Figurative Fortress')
-    expect(tasks).toContain('- [ ] Phase 7')
+    expect(tasks).toContain('- [x] Phase 7')
   })
 
   test('keeps R.2.4 implemented DRAFT with exact current totals and Phase 7D planned', () => {

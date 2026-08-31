@@ -27,7 +27,7 @@ describe('Phase 7A documentation acceptance', () => {
     expect(tasks).toContain('- [x] Phase 7A3: Multisyllable Mountain')
     expect(tasks).toContain('- [x] Phase 7A4: Fluency Flight Grade 3')
     expect(tasks).toContain('- [x] Phase 7A: Grade 3 foundations and transition')
-    expect(tasks).toContain('- [ ] Phase 7: Grade 3 FAST-aligned content')
+    expect(tasks).toContain('- [x] Phase 7: Grade 3 FAST-aligned content')
     expect(report).toContain('Starting local SHA: `3cfb43ebba6d9485e6161be57e59df910725f263`')
     expect(report).toContain('`41e90f3` `feat: add root reactor architecture`')
     expect(report).toContain('`4215aec` `feat: add grade 3 root reactor pack`')

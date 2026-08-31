@@ -162,3 +162,6 @@ Meaning Maze persists no source or poem text, guide metadata, reference entry, t
 Glossary, dictionary-style, and thesaurus-style cards are original local curriculum content and never contact an external service. There is no backend, cloud synchronization, analytics, telemetry, microphone, speech recognition, live AI, learner-generated writing, or oral scoring.
 
 The child experience preserves semantic source and poem rendering, labeled reference cards, headings, keyboard operation, visible focus, non-color-only feedback, accessible multiselect, Hot Text, table match, and two-part controls, reduced motion, responsive layout, and optional Word Help audio. No typing or audio is required.
+## Phase 7D7 final privacy and security audit
+
+Schema version 1 and the three established storage keys remain unchanged. Child progress, parent access, and parent assessment records stay separated; the Parent PIN remains locally hashed. The final audit confirms no persisted curriculum text, guide metadata, questions, answers, passages, poems, reference entries, learner audio, or learner-written text. No backend, cloud sync, analytics, telemetry, advertising, microphone, speech recognition, external speech provider, remote dictionary, live AI, credential, or new dependency is introduced.

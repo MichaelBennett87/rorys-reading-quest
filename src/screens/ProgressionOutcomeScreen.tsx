@@ -50,7 +50,7 @@ export function ProgressionOutcomeScreen({
   onBackHome,
 }: ProgressionOutcomeScreenProps) {
   const titleRef = useRef<HTMLHeadingElement>(null)
-  const journeyComplete = outcome.nextQuest.status === 'content_needed' && outcome.nextQuest.skillId === 'unknown'
+  const journeyComplete = outcome.curriculumComplete
   const message = journeyComplete
     ? {
         title: 'Grade 3 Journey Complete!',

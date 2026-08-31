@@ -14,7 +14,7 @@ describe('Phase 7D6 acceptance documentation and boundary', () => {
     const report = read('docs/PHASE_7D6_REPORT.md')
 
     expect(tasks).toContain('    - [x] Phase 7D6: Meaning Maze')
-    expect(tasks).toContain('    - [ ] Phase 7D7: final Grade 3 audit')
+    expect(tasks).toContain('    - [x] Phase 7D7: final Grade 3 audit')
     expect(report).toContain('8410b400a78de36895b8040e347e85e5b021a79b')
     expect(report).toContain('ELA.3.V.1.3 is `IMPLEMENTED / DRAFT`')
     expect(report).toContain('Phase 7D remains incomplete pending Phase 7D7')

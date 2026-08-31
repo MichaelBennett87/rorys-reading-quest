@@ -42,6 +42,7 @@ export interface GlobalQuestPlan {
   displayName: string
   source: ActiveLearningFocusSource
   lesson: LessonActivityCandidate | null
+  curriculumComplete: boolean
   reason?: string
 }
 
@@ -71,6 +72,18 @@ export function discoverPlayableTracks(
     }))
     .filter((entry) => entry.activeLessonCandidates.length > 0)
     .sort((left, right) => compareTrackDefinitions(left.track, right.track))
+}
+
+export function isAuthoredCurriculumComplete(
+  state: QuestProgressV1,
+  availableLessons: readonly LessonActivityCandidate[],
+  tracks: readonly CurriculumTrackDefinition[] = curriculumTracks,
+): boolean {
+  const authoredTracks = discoverPlayableTracks(availableLessons, tracks)
+  return authoredTracks.length > 0 && authoredTracks.every(({ track }) => {
+    const progress = state.skillProgress[track.skillId]
+    return Boolean(progress && progress.currentDifficulty >= track.completionDifficulty)
+  })
 }
 
 export function areTrackPrerequisitesSatisfied(
@@ -226,6 +239,7 @@ export function planGlobalQuest(input: PlanGlobalQuestInput): GlobalQuestPlan {
     state,
     guidedTrack ? [guidedTrack] : playableTracks,
     guidedTrack?.track.skillId ?? null,
+    isAuthoredCurriculumComplete(state, input.availableLessons),
   )
 }
 
@@ -458,6 +472,7 @@ function buildPlanFromLesson(
     displayName,
     source,
     lesson,
+    curriculumComplete: false,
   }
 }
 
@@ -465,11 +480,12 @@ function buildContentNeededPlan(
   state: QuestProgressV1,
   playableTracks: readonly PlayableTrackDiscovery[],
   requiredSkillId: string | null = null,
+  curriculumComplete = false,
 ): GlobalQuestPlan {
-  const firstPlayableTrack = playableTracks[0]?.track ?? null
+  const firstPlayableTrack = getCurrentGuidedJourneyTrack(state, playableTracks)?.track ?? null
   const firstPlayableProgress = firstPlayableTrack ? state.skillProgress[firstPlayableTrack.skillId] : null
   const storedContentNeeded = state.plannedNextQuest?.status === 'content_needed' ? state.plannedNextQuest : null
-  const planned = storedContentNeeded && (!requiredSkillId || storedContentNeeded.skillId === requiredSkillId)
+  const planned = firstPlayableTrack && storedContentNeeded && (!requiredSkillId || storedContentNeeded.skillId === requiredSkillId)
     ? storedContentNeeded
     : null
   const skillId = planned?.skillId ?? firstPlayableTrack?.skillId ?? null
@@ -480,7 +496,9 @@ function buildContentNeededPlan(
   const reason = planned?.reason
     ?? (firstPlayableTrack
       ? `No compatible authored quest exists for ${firstPlayableTrack.displayName} at ${formatTrailDisplayLabel(difficulty)}.`
-      : 'Every currently authored Grade 2 and Grade 3 curriculum track is complete. Reviews will still appear when they are due.')
+      : curriculumComplete
+      ? 'Every currently authored Grade 2 and Grade 3 curriculum track is complete. Reviews will still appear when they are due.'
+      : 'No playable authored quest is currently available. Your saved progress remains safe.')
 
   return {
     status: 'content_needed',
@@ -496,9 +514,14 @@ function buildContentNeededPlan(
     worldId: firstPlayableTrack?.worldId ?? null,
     unitId: firstPlayableTrack?.entryUnitId ?? null,
     difficulty,
-    displayName: firstPlayableTrack ? `${firstPlayableTrack.displayName} ${formatTrailDisplayLabel(difficulty)}` : 'Grade 3 Journey Complete',
+    displayName: firstPlayableTrack
+      ? `${firstPlayableTrack.displayName} ${formatTrailDisplayLabel(difficulty)}`
+      : curriculumComplete
+      ? 'Grade 3 Journey Complete'
+      : 'More Quests Are Being Prepared',
     source: 'safe_fallback',
     lesson: null,
+    curriculumComplete,
     reason,
   }
 }

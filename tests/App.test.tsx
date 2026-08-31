@@ -72,6 +72,19 @@ function seedWordForgeComplete() {
   return progress
 }
 
+function seedAllAuthoredCurriculumComplete() {
+  const now = '2026-08-20T12:00:00.000Z'
+  const progress = createDefaultQuestProgress(now)
+  for (const track of curriculumTracks) {
+    progress.skillProgress[track.skillId] = createInitialSkillProgress(
+      track.skillId,
+      track.completionDifficulty,
+      track.completionDifficulty - 1,
+    )
+  }
+  window.localStorage.setItem(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(progress))
+}
+
 describe('simplified guided child journey', () => {
   test('renders the title and exactly the two approved Home navigation buttons', () => {
     render(<App />)
@@ -234,6 +247,7 @@ describe('simplified guided child journey', () => {
             difficulty: 1,
             reason: 'More guided quests are being prepared.',
           },
+          curriculumComplete: false,
         }}
         onContinueJourney={() => {}}
         onBackHome={() => {}}
@@ -243,6 +257,21 @@ describe('simplified guided child journey', () => {
     expect(screen.getAllByRole('button')).toHaveLength(1)
     expect(screen.getByRole('button', { name: 'Back Home' })).toBeTruthy()
     expect(screen.queryByRole('button', { name: /Return to Map|Continue Journey/i })).toBeNull()
+  })
+
+  test('full curriculum completion survives reload and returning Home without relaunching a lesson', () => {
+    seedAllAuthoredCurriculumComplete()
+    render(<App />)
+
+    startJourney()
+    expect(screen.getByRole('heading', { name: 'Grade 3 Journey Complete!' })).toBeTruthy()
+    expect(screen.getAllByRole('button')).toHaveLength(1)
+    fireEvent.click(screen.getByRole('button', { name: 'Back Home' }))
+
+    expect(getHomeButtons().map((button) => button.textContent?.trim())).toEqual(['Start Journey', 'Parent Area'])
+    startJourney()
+    expect(screen.getByRole('heading', { name: 'Grade 3 Journey Complete!' })).toBeTruthy()
+    expect(screen.queryByText(/Question 1 of/i)).toBeNull()
   })
 
   test('saved rewards and progress load without a schema migration', () => {

@@ -18,8 +18,8 @@ describe('Phase 7D5 acceptance documentation and boundary', () => {
 
     expect(tasks).toContain('    - [x] Phase 7D5: Root Meaning Vault')
     expect(tasks).toContain('    - [x] Phase 7D6: Meaning Maze')
-    expect(tasks).toContain('    - [ ] Phase 7D7: final Grade 3 audit')
-    expect(tasks).toContain('  - [ ] Phase 7D: Grade 3 across genres and vocabulary')
+    expect(tasks).toContain('    - [x] Phase 7D7: final Grade 3 audit')
+    expect(tasks).toContain('  - [x] Phase 7D: Grade 3 across genres and vocabulary')
     expect(report).toContain('Starting local SHA: `5dc0f670d170ed4691891cab1a2e0ffe9378084e`')
     expect(report).toContain('Coverage: `IMPLEMENTED / DRAFT`')
     expect(report).toContain('Vocabulary substitutions: zero')

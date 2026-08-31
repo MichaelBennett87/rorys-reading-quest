@@ -29,6 +29,7 @@ export interface ProgressionOutcomeViewModel {
   currentDifficulty: number
   nextQuest: NextQuestPlan
   completionId: string
+  curriculumComplete: boolean
 }
 
 export type JourneyLaunchDecision =
@@ -47,6 +48,7 @@ export type JourneyLaunchDecision =
   | {
       status: 'content_needed'
       plan: Extract<NextQuestPlan, { status: 'content_needed' }>
+      curriculumComplete: boolean
       state: QuestProgressV1
     }
   | {
@@ -161,11 +163,12 @@ export function useQuestProgress() {
       const recovered = recoverActiveLessonSession({ state: progressRef.current, availableLessons })
       const normalized = normalizeQuestProgressForPlanning(recovered.state, availableLessons)
       const reconciled = normalized.state
-      const nextQuest = planGlobalQuest({
+      const guidedPlan = planGlobalQuest({
         progress: reconciled,
         availableLessons,
         now: new Date().toISOString(),
-      }).nextQuest
+      })
+      const nextQuest = guidedPlan.nextQuest
       persist({ ...reconciled, plannedNextQuest: nextQuest })
       return {
         kind: nextQuest.status === 'content_needed'
@@ -177,6 +180,7 @@ export function useQuestProgress() {
           ?? lessonResult.difficulty,
         nextQuest,
         completionId,
+        curriculumComplete: guidedPlan.curriculumComplete,
       }
     }
 
@@ -200,11 +204,12 @@ export function useQuestProgress() {
         fluencyProgress,
         completedAt,
       })
-      const guidedNextQuest = planGlobalQuest({
+      const guidedPlan = planGlobalQuest({
         progress: completed.state,
         availableLessons,
         now: completedAt,
-      }).nextQuest
+      })
+      const guidedNextQuest = guidedPlan.nextQuest
       persist({ ...completed.state, plannedNextQuest: guidedNextQuest })
       return {
         kind: fluencyProgress.reasonCodes.includes('fluency_practice_chapter_completed')
@@ -217,6 +222,7 @@ export function useQuestProgress() {
         currentDifficulty: fluencyProgress.progress.currentDifficulty,
         nextQuest: guidedNextQuest,
         completionId,
+        curriculumComplete: guidedPlan.curriculumComplete,
       }
     }
 
@@ -242,6 +248,7 @@ export function useQuestProgress() {
         currentDifficulty: lessonResult.difficulty,
         nextQuest,
         completionId,
+        curriculumComplete: false,
       }
     }
 
@@ -252,11 +259,12 @@ export function useQuestProgress() {
       progression,
       completedAt,
     })
-    const guidedNextQuest = planGlobalQuest({
+    const guidedPlan = planGlobalQuest({
       progress: completed.state,
       availableLessons,
       now: completedAt,
-    }).nextQuest
+    })
+    const guidedNextQuest = guidedPlan.nextQuest
     persist({ ...completed.state, plannedNextQuest: guidedNextQuest })
     return {
       kind: guidedNextQuest.status === 'content_needed'
@@ -268,6 +276,7 @@ export function useQuestProgress() {
       currentDifficulty: progression.progress.currentDifficulty,
       nextQuest: guidedNextQuest,
       completionId,
+      curriculumComplete: guidedPlan.curriculumComplete,
     }
   }
 
@@ -300,14 +309,15 @@ export function useQuestProgress() {
       current = persist({ ...current, activeLessonSession: null })
     }
 
-    const plan = planGlobalQuest({
+    const globalPlan = planGlobalQuest({
       progress: current,
       availableLessons,
       now: new Date().toISOString(),
-    }).nextQuest
+    })
+    const plan = globalPlan.nextQuest
     if (plan.status === 'content_needed') {
       const state = persist({ ...current, plannedNextQuest: plan })
-      return { status: 'content_needed', plan, state }
+      return { status: 'content_needed', plan, curriculumComplete: globalPlan.curriculumComplete, state }
     }
 
     const selected = getLessonById(plan.lesson.lessonId)

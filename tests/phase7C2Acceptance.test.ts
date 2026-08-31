@@ -13,8 +13,8 @@ describe('Phase 7C2 acceptance documentation and boundary', () => {
     expect(tasks).toContain('- [x] Phase 7C2: Central Idea Engine')
     expect(tasks).toContain('- [x] Phase 7C3: Purpose Development Path')
     expect(tasks).toContain('- [x] Phase 7C')
-    expect(tasks).toContain('- [ ] Phase 7D')
-    expect(tasks).toContain('- [ ] Phase 7')
+    expect(tasks).toContain('- [x] Phase 7D')
+    expect(tasks).toContain('- [x] Phase 7')
   })
 
   test('records implemented DRAFT R.2.2 coverage without approving later rows', () => {

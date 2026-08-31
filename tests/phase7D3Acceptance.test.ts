@@ -18,7 +18,7 @@ describe('Phase 7D3 reconciliation and Phase 7D4 boundary', () => {
 
     expect(tasks).toContain('    - [x] Phase 7D3: Author Lens Tower')
     expect(tasks).toContain('    - [x] Phase 7D4: Academic Word Workshop Grade 3')
-    expect(tasks).toContain('  - [ ] Phase 7D: Grade 3 across genres and vocabulary')
+    expect(tasks).toContain('  - [x] Phase 7D: Grade 3 across genres and vocabulary')
     expect(report).toContain('Starting local SHA: `5fb733b0010b63e9b8b92d37c7e24cf04ab07426`')
     expect(report).toContain('Phase 7D4 Grade 3 Context Cavern: unstarted')
     expect(report).toContain('Final synchronized SHA: `5045e2dc874d087c32ecbbe0a29ba866256611d1`')

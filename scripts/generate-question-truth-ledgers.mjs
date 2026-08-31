@@ -176,6 +176,9 @@ async function loadPriorRecords(files) {
 
 function buildLedgerRecord(record, contract, prior) {
   if (!prior) throw new Error(`No preserved independent-review decision exists for ${record.questionId}.`)
+  if (prior.contentFingerprint !== record.contentFingerprint) {
+    throw new Error(`Question ${record.questionId} changed after independent review; update its reviewed ledger decision before regeneration.`)
+  }
   const independentlySolvedAnswerIds = [...prior.independentlySolvedAnswerIds]
   const independentlySolvedAnswerText = getAnswerText(record, independentlySolvedAnswerIds)
   const authoredAnswerIds = getAnswerIds(record.authoredCorrectAnswerRepresentation)

@@ -138,7 +138,7 @@ Phase 7D2 adds `Grade3SummaryGuide`, discriminated as `LiterarySummaryGuide` or 
 
 Phase 7D3 adds optional `Grade3AuthorComparisonGuide` metadata on a content pack. Each guide identifies one paired set, a meaningful same-topic or same-theme basis, Text A and Text B kinds and focus statements, presentation-feature similarities and differences, separately scoped evidence IDs from both texts, and a synthesis statement. `evidenceFromBothRequired` is always true. Guides remain DRAFT and content-version bound.
 
-The active pack contains 7 paired sets, 14 sources, 7 guides, and 28 lesson-level Word Help targets. Guide content, source text, comparison statements, evidence text, questions, explanations, keys, and Word Help curriculum are not persisted or printed. Current active registry totals are 37 packs, 259 lessons, 273 texts, 1,491 questions, and 1,027 support targets.
+At the Phase 7D3 checkpoint, the active pack contained 7 paired sets, 14 sources, 7 guides, and 28 lesson-level Word Help targets. Guide content, source text, comparison statements, evidence text, questions, explanations, keys, and Word Help curriculum are not persisted or printed. Historical Phase 7D3 active totals were 37 packs, 259 lessons, 273 texts, 1,491 questions, and 1,027 support targets.
 
 
 ## Phase 7D4 Grade 3 academic-vocabulary model
@@ -158,3 +158,6 @@ The pack contains 7 guides and 28 unique targets distributed exactly 7 / 7 / 7 /
 A `MeaningMazeGuide` owns exactly four source-bound targets plus any learner-visible local reference entries. Targets distinguish word from phrase form; unfamiliar, multiple-meaning, and figurative challenges; context, relationship, reference, background, and combined strategies; alternate senses; literal readings; and confirmation evidence. Reference entries distinguish glossary, dictionary, and thesaurus presentation without importing third-party text.
 
 The guide is authored DRAFT curriculum metadata. It is available to registration and semantic audits but excluded from schema-v1 progress, active sessions, attempts, reviews, assessments, Parent PIN records, and print. Word Help remains a separate assistance model and cannot silently disclose a scored meaning without assistance tracking.
+## Phase 7 final frozen content model
+
+The active registry contains 40 packs, 280 lessons, 294 texts, 1,614 questions, and 1,111 support targets. Grade 2 remains frozen at 22 packs, 154 lessons, 161 texts, 889 questions, and 614 support targets. Grade 3 is frozen for the Phase 7 completion gate at 18 packs, 126 lessons, 133 texts, 725 questions, and 497 support targets. Every active question has one current PASS ledger record. Phase 7D7 adds audit tests and reports only; no pack, lesson, source, question, support target, benchmark, track, or unit is added or removed.

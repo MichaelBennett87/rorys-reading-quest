@@ -75,6 +75,15 @@ describe('final Grade 3 repository audit', () => {
     expectUnique(pairs.map((pair) => pair.pairId))
     expectUnique(questions.map((question) => question.questionIdentifier))
     expectUnique(supportTargets.map((target) => target.targetId))
+    const grade2Texts = new Set(grade2Packs.flatMap((pack) => pack.passages).map((passage) => normalizeVisibleText(passage.passageText)))
+    const grade3Texts = grade3Packs.flatMap((pack) => pack.passages).map((passage) => normalizeVisibleText(passage.passageText))
+    expectUnique(grade3Texts)
+    expect(grade3Texts.filter((text) => grade2Texts.has(text))).toEqual([])
+    const grade3FullQuestions = grade3Packs.flatMap((pack) => pack.questions.map((question) => {
+      const source = pack.passages.find((passage) => passage.passageIdentifier === question.passageIdentifier)?.passageText ?? ''
+      return normalizeVisibleText(`${source}|${question.prompt}|${question.answerChoices.join('|')}`)
+    }))
+    expectUnique(grade3FullQuestions)
     expect(activePacks.some((pack) => pack.manifest.gradeBand === 4)).toBe(false)
     expect(questions.some((question) => question.gradeBand === 4)).toBe(false)
     expect(contentPackAudit, JSON.stringify(contentPackAudit, null, 2)).toEqual([])
@@ -188,6 +197,29 @@ describe('final Grade 3 repository audit', () => {
     expect(completionScreen).toContain('Grade 3 Journey Complete!')
     expect(completionScreen).toContain('Curriculum completion is not the same as learner mastery.')
   })
+
+  test('records the final Grade 3 coverage, audit, phase status, and next boundary', () => {
+    const readme = readFileSync('README.md', 'utf8')
+    const tasks = readFileSync('TASKS.md', 'utf8')
+    const coverage = readFileSync('docs/content/GRADE_3_FINAL_BENCHMARK_COVERAGE.md', 'utf8')
+    const audit = readFileSync('docs/content/GRADE_3_PHASE_7_FINAL_AUDIT.md', 'utf8')
+    const phase7d7 = readFileSync('docs/PHASE_7D7_REPORT.md', 'utf8')
+    const phase7 = readFileSync('docs/PHASE_7_FINAL_REPORT.md', 'utf8')
+
+    expect(readme).toContain('Phase 7 complete')
+    expect(readme).toContain('14 IMPLEMENTED / DRAFT rows and 2 SUPPORTIVE_PRACTICE / DRAFT rows')
+    expect(readme).toContain('Phase 8 Grade 4 work, Phase 9 FAST-style practice, and Phase 10 PWA/release hardening remain unstarted')
+    expect(tasks).toContain('- [x] Phase 7: Grade 3 FAST-aligned content')
+    expect(tasks).toContain('  - [x] Phase 7D: Grade 3 across genres and vocabulary')
+    expect(tasks).toContain('    - [x] Phase 7D7: final Grade 3 audit')
+    expect(coverage.match(/^\| ELA\.3\./gm)).toHaveLength(16)
+    expect(coverage).toContain('Implemented benchmark rows: 14')
+    expect(coverage).toContain('Supportive-practice rows: 2')
+    expect(audit).toContain('Grade 3 curriculum coverage is complete at DRAFT repository level')
+    expect(audit).toContain('This is not official FAST certification')
+    expect(phase7d7).toContain('No learner curriculum inventory was added or removed')
+    expect(phase7).toContain('The exact next boundary is Phase 8A0 only')
+  })
 })
 
 function registryCounts(packs: typeof activePacks) {
@@ -209,4 +241,8 @@ function countBy(values: readonly string[]): Record<string, number> {
     counts[value] = (counts[value] ?? 0) + 1
     return counts
   }, {})
+}
+
+function normalizeVisibleText(value: string): string {
+  return value.replace(/\s+/g, ' ').trim().toLowerCase()
 }

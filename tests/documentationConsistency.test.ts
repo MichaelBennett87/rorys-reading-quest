@@ -221,5 +221,23 @@ describe('documentation consistency', () => {
       activeQuestionCount: 1614,
       activeSupportTargetCount: 1111,
     })
+
+    const readme = readRepoFile('README.md')
+    const tasks = readRepoFile('TASKS.md')
+    const phase7d7 = readRepoFile('docs/PHASE_7D7_REPORT.md')
+    const phase7Final = readRepoFile('docs/PHASE_7_FINAL_REPORT.md')
+    const grade3Coverage = readRepoFile('docs/content/GRADE_3_FINAL_BENCHMARK_COVERAGE.md')
+    const grade3Audit = readRepoFile('docs/content/GRADE_3_PHASE_7_FINAL_AUDIT.md')
+
+    expect(readme).toContain('Phase 7 complete')
+    expect(readme).toContain('0 partial, 0 planned, 0 missing, and 0 APPROVED rows')
+    expect(tasks).toContain('    - [x] Phase 7D7: final Grade 3 audit')
+    expect(tasks).toContain('- [ ] Phase 8: Grade 4 stretch content')
+    expect(tasks).toContain('- [ ] Phase 9: FAST-style practice mode')
+    expect(tasks).toContain('- [ ] Phase 10: PWA, offline support, accessibility, and release hardening')
+    expect(phase7d7).toContain('Starting SHA `148805d2f9b7612821925a06c02e1b2405386d67`'.replace('Starting SHA ', 'synchronized local and remote SHA '))
+    expect(phase7Final).toContain('Phase 7 delivers complete Grade 3 repository-level curriculum coverage')
+    expect(grade3Coverage.match(/^\| ELA\.3\./gm)).toHaveLength(16)
+    expect(grade3Audit).toContain('This does not mean Rory mastered Grade 3')
   })
 })

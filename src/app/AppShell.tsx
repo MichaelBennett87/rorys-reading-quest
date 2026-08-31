@@ -54,20 +54,18 @@ export function AppShell() {
     setScreen('lesson_run')
   }
 
-  const showContentNeeded = (reason: string, difficulty: number) => {
+  const showContentNeeded = (
+    plan: Extract<ProgressionOutcomeViewModel['nextQuest'], { status: 'content_needed' }>,
+    curriculumComplete = false,
+  ) => {
     setOutcome({
       kind: 'CONTENT_NEEDED',
       earnedXp: 0,
       earnedStars: 0,
-      currentDifficulty: difficulty,
+      currentDifficulty: plan.difficulty,
       completionId: 'content-needed',
-      nextQuest: {
-        status: 'content_needed',
-        purpose: 'progression',
-        skillId: activeFocus.skillId ?? 'unknown',
-        difficulty,
-        reason,
-      },
+      nextQuest: plan,
+      curriculumComplete,
     })
     setScreen('progression_outcome')
   }
@@ -81,11 +79,17 @@ export function AppShell() {
       return
     }
     if (decision.status === 'content_needed') {
-      showContentNeeded(decision.plan.reason, decision.plan.difficulty)
+      showContentNeeded(decision.plan, decision.curriculumComplete)
       return
     }
     if (decision.status === 'unavailable') {
-      showContentNeeded(decision.reason, decision.difficulty)
+      showContentNeeded({
+        status: 'content_needed',
+        purpose: 'progression',
+        skillId: activeFocus.skillId ?? 'unknown',
+        difficulty: decision.difficulty,
+        reason: decision.reason,
+      })
     }
   }
 

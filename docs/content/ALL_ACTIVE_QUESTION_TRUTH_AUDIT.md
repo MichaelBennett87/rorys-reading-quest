@@ -169,3 +169,11 @@ Blind review confirmed every genuine word-part boundary, origin, composed clue, 
 Meaning Maze adds 41 independently reviewed questions under `g3-context-cavern-meaning-maze`. The production inventory now contains 1,614 active questions and 1,614 current PASS ledger records across 40 packs. The executable contract accepts 1,614 canonical submissions and 542 canonical-equivalent submissions, rejects 21,238 adversarial submissions, and completes 26,622 grading assertions.
 
 Blind review corrected two Hot Text keys, rewrote three checkpoint transfer-and-strategy items, and removed one unsupported reference-material strategy label before final registration. The pack contributes 41 canonical submissions, 14 canonical equivalents, 556 adversarial submissions, and 693 assertions. No final target, question, key, distractor, explanation, evidence reference, evaluator, unresolved ID, false positive, false negative, or stale fingerprint remains.
+
+## Phase 7D7 final active-question reconciliation
+
+The prior sections remain historical checkpoints. The Phase 7 final registry contains 1,614 active questions across 40 active packs and 40 ledger files. Exactly 1,614 current PASS records match current fingerprints. Grade 3 contributes 725 questions across 18 packs and Grade 2 remains frozen at 889 questions across 22 packs.
+
+The final evaluator contract accepts 1,614 canonical submissions and 542 canonical-equivalent submissions, rejects 21,238 adversarial submissions, and completes 26,622 assertions with zero false positives, zero false negatives, zero stale fingerprints, zero orphan records, and zero unresolved IDs.
+
+The final blind review corrected bounded Grade 3 wording, evidence, source metadata, speech support, persistence validation, completion copy, and audit-generator defects. No unresolved answer-key or production-evaluator defect remains. These are repository truth-gate results, not learner mastery, teacher approval, Florida approval, FAST certification, or FAST prediction.

@@ -12,8 +12,8 @@ describe('Phase 7C1 acceptance documentation and boundary', () => {
     expect(tasks).toContain('- [x] Phase 7C1: Structure Station')
     expect(tasks).toContain('- [x] Phase 7C2: Central Idea Engine')
     expect(tasks).toContain('- [x] Phase 7C')
-    expect(tasks).toContain('- [ ] Phase 7D')
-    expect(tasks).toContain('- [ ] Phase 7')
+    expect(tasks).toContain('- [x] Phase 7D')
+    expect(tasks).toContain('- [x] Phase 7')
   })
 
   test('keeps R.2.1 implemented while allowing the next authored row to advance', () => {

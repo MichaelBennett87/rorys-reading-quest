@@ -4,7 +4,7 @@
 
 Phase 7 extends the six existing reading worlds into separate Grade 3 curriculum tracks. Advancement is domain-specific: a Grade 3 track can become playable only after its matching Grade 2 track reaches its verified completion difficulty and active Grade 3 content exists. This is not a global grade diagnosis, a learner-mastery claim, or a FAST prediction.
 
-Phase 7A and Phase 7B are complete. Phase 7C1 through Phase 7C3 bring Grade 3 to 11 production packs, 77 DRAFT lessons, 77 original texts, 438 questions, and 301 Word Help targets. `ELA.3.F.1.3`, `ELA.3.R.1.1` through `ELA.3.R.1.4`, and `ELA.3.R.2.1` through `ELA.3.R.2.3` are IMPLEMENTED / DRAFT. `ELA.3.F.1.4` is SUPPORTIVE_PRACTICE / DRAFT with no oral measurement. No Grade 3 row is APPROVED and no status claims learner mastery. Phase 7C remains incomplete because Claim and Evidence Court is unstarted.
+Phase 7 is complete. Grade 3 contains 18 production packs, 126 DRAFT lessons, 133 original texts, 725 questions, and 497 Word Help targets. Fourteen inventory rows are IMPLEMENTED / DRAFT and two are SUPPORTIVE_PRACTICE / DRAFT. No row is partial, planned, missing, or APPROVED, and no status claims learner mastery or a FAST result.
 
 ## Instructional inventory
 
@@ -143,4 +143,8 @@ The Grade 3 snapshot is 13 implemented benchmark rows, 2 supportive-practice row
 - `g3-cc-unit-3` Meaning Maze: active and complete for curriculum delivery, `ELA.3.V.1.3` IMPLEMENTED / DRAFT.
 - Grade 3 Context Cavern reaches completion difficulty 4 and remains review-ready; curriculum completion does not infer mastery.
 - The Grade 3 snapshot is 14 implemented benchmark rows, 2 supportive-practice rows, and 0 planned, partial, missing, or approved rows.
-- Phase 7D6 is complete. Phase 7D remains incomplete pending Phase 7D7, which remains unstarted.
+- At the Phase 7D6 checkpoint, Phase 7D remained incomplete pending Phase 7D7.
+
+## Phase 7D7 final completion update
+
+The final audit confirms all 16 inventory rows, all expected patterns, all 18 Grade 3 packs, and all 725 Grade 3 questions at current DRAFT fingerprints. Grade 2 remains frozen, the six Grade 3 tracks retain domain-specific prerequisites and curriculum order 110 through 160, and the complete Grade 2-to-Grade 3 journey remains planner-driven. Phase 7D7, Phase 7D, and Phase 7 are complete. Phase 8 remains unstarted.

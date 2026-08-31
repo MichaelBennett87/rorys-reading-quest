@@ -5,6 +5,10 @@ import { describe, expect, test } from 'vitest'
 
 import { getActiveContentPacks } from '../src/domain/content/packs/registry'
 import type { ReadingQuestion } from '../src/domain/content/types'
+import { curriculumTracks, planGlobalQuest } from '../src/domain/curriculum'
+import { getLessonCandidates } from '../src/domain/lesson'
+import { createInitialSkillProgress } from '../src/domain/progression'
+import { createDefaultQuestProgress } from '../src/persistence'
 import { ProgressionOutcomeScreen } from '../src/screens/ProgressionOutcomeScreen'
 
 const packs = getActiveContentPacks()
@@ -37,6 +41,8 @@ describe('confirmed Phase 7D7 corrections', () => {
     expect(visibleText).not.toContain('How does Nia and Omar')
     expect(visibleText).not.toContain('Nia and Omar develops')
     expect(visibleText).not.toContain('Nia and Omar does differently')
+    expect(visibleText).toContain('show how Sora develops')
+    expect(visibleText).toContain('what Sora does differently')
   })
 
   test('uses genuine definitions and accurate informational evidence', () => {
@@ -87,10 +93,38 @@ describe('confirmed Phase 7D7 corrections', () => {
   })
 
   test('presents terminal curriculum completion without claiming learner mastery', () => {
+    const now = '2026-08-30T12:00:00.000Z'
+    const progress = createDefaultQuestProgress(now)
+    for (const track of curriculumTracks) {
+      progress.skillProgress[track.skillId] = createInitialSkillProgress(
+        track.skillId,
+        track.completionDifficulty,
+        track.completionDifficulty - 1,
+      )
+    }
+    const plan = planGlobalQuest({ progress, availableLessons: getLessonCandidates(), now })
+
+    expect(plan.status).toBe('content_needed')
+    expect(plan.skillId).toBeNull()
+    expect(plan.displayName).toBe('Grade 3 Journey Complete')
+    if (plan.nextQuest.status !== 'content_needed') throw new Error('Expected terminal content-needed plan.')
+    expect(plan.nextQuest.skillId).toBe('unknown')
+    expect(plan.curriculumComplete).toBe(true)
+
+    const noContentPlan = planGlobalQuest({
+      progress: createDefaultQuestProgress(now),
+      availableLessons: [],
+      now,
+    })
+    expect(noContentPlan.status).toBe('content_needed')
+    expect(noContentPlan.curriculumComplete).toBe(false)
+    expect(noContentPlan.displayName).toBe('More Quests Are Being Prepared')
+
     render(<ProgressionOutcomeScreen
       outcome={{
         kind: 'CONTENT_NEEDED', earnedXp: 0, earnedStars: 0, currentDifficulty: 4, completionId: 'complete',
-        nextQuest: { status: 'content_needed', purpose: 'progression', skillId: 'unknown', difficulty: 1, reason: 'All tracks complete.' },
+        nextQuest: plan.nextQuest,
+        curriculumComplete: plan.curriculumComplete,
       }}
       onContinueJourney={() => undefined}
       onBackHome={() => undefined}
@@ -106,6 +140,8 @@ describe('confirmed Phase 7D7 corrections', () => {
     const generator = readFileSync('scripts/generate-question-truth-ledgers.mjs', 'utf8')
     expect(generator).toContain('prior.independentlySolvedAnswerIds')
     expect(generator).toContain('No preserved independent-review decision exists')
+    expect(generator).toContain('prior.contentFingerprint !== record.contentFingerprint')
+    expect(generator).toContain('changed after independent review')
     expect(generator).not.toContain('const independentlySolvedAnswerIds = getAnswerIds(record.authoredCorrectAnswerRepresentation)')
     expect(generator).not.toContain("finalStatus: 'PASS'")
   })

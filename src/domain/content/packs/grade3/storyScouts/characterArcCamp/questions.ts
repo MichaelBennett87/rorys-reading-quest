@@ -61,6 +61,10 @@ function choice(questionId: string, suffix: string, text: string): Choice {
   return { id: `${questionId}-${suffix}`, text }
 }
 
+function usesPluralPrimaryCharacter(story: CharacterArcStoryRecord): boolean {
+  return story.primaryCharacter.includes(' and ')
+}
+
 function base(
   story: CharacterArcStoryRecord,
   lessonIndex: number,
@@ -124,8 +128,8 @@ function multipleChoice(
 }
 
 function multiselect(story: CharacterArcStoryRecord, lessonIndex: number, questionIndex: number): ReadingQuestion {
-  const develops = story.arcs.length > 1 ? 'develop' : 'develops'
-  const does = story.arcs.length > 1 ? 'do' : 'does'
+  const develops = usesPluralPrimaryCharacter(story) ? 'develop' : 'develops'
+  const does = usesPluralPrimaryCharacter(story) ? 'do' : 'does'
   const data = base(
     story,
     lessonIndex,
@@ -218,7 +222,7 @@ function tableMatch(story: CharacterArcStoryRecord, lessonIndex: number, questio
 }
 
 function twoPart(story: CharacterArcStoryRecord, lessonIndex: number, questionIndex: number): ReadingQuestion {
-  const develops = story.arcs.length > 1 ? 'develop' : 'develops'
+  const develops = usesPluralPrimaryCharacter(story) ? 'develop' : 'develops'
   const data = base(
     story,
     lessonIndex,
@@ -273,8 +277,8 @@ function guidedQuestions(story: CharacterArcStoryRecord, lessonIndex: number): R
 
 function checkpointQuestions(story: CharacterArcStoryRecord, lessonIndex: number): ReadingQuestion[] {
   const developmentText = story.combinedDevelopmentChoice ?? story.developmentChoice
-  const does = story.arcs.length > 1 ? 'do' : 'does'
-  const develops = story.arcs.length > 1 ? 'develop' : 'develops'
+  const does = usesPluralPrimaryCharacter(story) ? 'do' : 'does'
+  const develops = usesPluralPrimaryCharacter(story) ? 'develop' : 'develops'
   return [
     multipleChoice(story, lessonIndex, 1, `How ${does} ${story.primaryCharacter} respond near the beginning of the plot?`, story.beginningChoice, [story.turningChoice, story.endingChoice, story.unrelatedChoice], 'The beginning evidence shows the character’s earlier response before the turning point.', [story.beginningEvidenceId], ['beginning-state', 'text-evidence']),
     multipleChoice(story, lessonIndex, 2, `Which event is the clearest turning point for ${story.primaryCharacter}?`, story.turningChoice, [story.beginningChoice, story.endingChoice, story.unrelatedChoice], 'The turning point creates or reveals the shift that leads to a different later response.', [story.turningEvidenceId], ['turning-point', 'plot-development-link', 'dialogue-evidence', 'thought-evidence']),

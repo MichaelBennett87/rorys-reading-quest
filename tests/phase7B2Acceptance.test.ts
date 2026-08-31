@@ -21,7 +21,7 @@ describe('Phase 7B2 acceptance documentation and coverage', () => {
     expect(tasks).toContain('- [x] Phase 7B3 - Perspective Portal Grade 3')
     expect(tasks).toContain('- [x] Phase 7B4 - Poem Form Observatory')
     expect(tasks).toContain('- [x] Phase 7B')
-    expect(tasks).toContain('- [ ] Phase 7')
+    expect(tasks).toContain('- [x] Phase 7')
   })
 
   test('keeps registry totals and Grade 3 coverage exact', () => {

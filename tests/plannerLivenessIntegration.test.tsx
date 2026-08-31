@@ -197,6 +197,7 @@ describe('P0 planner liveness screenshot integration', () => {
           currentDifficulty: 1,
           completionId: 'recycled-plan',
           nextQuest: available,
+          curriculumComplete: false,
         }}
         onContinueJourney={() => {}}
         onBackHome={() => {}}
@@ -221,6 +222,7 @@ describe('P0 planner liveness screenshot integration', () => {
             difficulty: 99,
             reason: 'No authored compatible lesson exists for this skill, difficulty, and purpose.',
           },
+          curriculumComplete: false,
         }}
         onContinueJourney={() => {}}
         onBackHome={() => {}}

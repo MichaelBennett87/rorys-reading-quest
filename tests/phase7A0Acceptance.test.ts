@@ -21,7 +21,7 @@ describe('Phase 7A0 acceptance reconciliation', () => {
     expect(readme).toContain('Grade 2 frozen')
     expect(tasks).toContain('- [x] Phase 6.5: live UX, phonics, data, and content-integrity hardening')
     expect(tasks).toContain('- [x] Phase 6.6: dark experience, Sol Grade 2 audit, and final live acceptance')
-    expect(tasks).toContain('- [ ] Phase 7: Grade 3 FAST-aligned content')
+    expect(tasks).toContain('- [x] Phase 7: Grade 3 FAST-aligned content')
     expect(tasks).toContain('- [x] Phase 7A0: Grade 3 architecture, standards map, FAST blueprint, and progression bridge')
     expect(tasks).toContain('- [x] Phase 7A1: Root Reactor')
     expect(phase66Report).toContain('PHASE 6.6 COMPLETE - LIVE ACCEPTANCE PASSED')
