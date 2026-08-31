@@ -6,6 +6,7 @@ import {
   type QuestionEvaluationResult,
 } from '../domain/lesson'
 import type {
+  ActiveLessonLaunchContext,
   ActiveLessonSession,
   PersistedAssistanceEvent,
   PersistedAnswer,
@@ -16,6 +17,7 @@ export function createActiveLessonSession(
   lesson: LessonDefinition,
   sessionId: string,
   timestamp: string,
+  launchContext?: ActiveLessonLaunchContext,
 ): ActiveLessonSession {
   return {
     sessionId,
@@ -36,9 +38,37 @@ export function createActiveLessonSession(
           reflection: null,
         }
       : null,
+    ...(launchContext ? { launchContext: cloneActiveLessonLaunchContext(launchContext) } : {}),
     startedAt: timestamp,
     updatedAt: timestamp,
   }
+}
+
+export function cloneActiveLessonLaunchContext(
+  context: ActiveLessonLaunchContext,
+): ActiveLessonLaunchContext {
+  return {
+    purpose: context.purpose,
+    ...(context.reviewIdentity ? { reviewIdentity: { ...context.reviewIdentity } } : {}),
+    ...(context.returnLearningState ? { returnLearningState: context.returnLearningState } : {}),
+  }
+}
+
+export function sameActiveLessonLaunchContext(
+  left: ActiveLessonLaunchContext | undefined,
+  right: ActiveLessonLaunchContext | undefined,
+): boolean {
+  if (!left || !right) return left === right
+  if (left.purpose !== right.purpose || left.returnLearningState !== right.returnLearningState) return false
+  const leftReview = left.reviewIdentity
+  const rightReview = right.reviewIdentity
+  if (!leftReview || !rightReview) return leftReview === rightReview
+  return leftReview.skillId === rightReview.skillId
+    && leftReview.difficulty === rightReview.difficulty
+    && leftReview.unitId === rightReview.unitId
+    && leftReview.contentVersion === rightReview.contentVersion
+    && leftReview.reviewStep === rightReview.reviewStep
+    && leftReview.dueAt === rightReview.dueAt
 }
 
 export function checkpointSubmittedQuestion(

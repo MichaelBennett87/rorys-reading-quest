@@ -38,6 +38,10 @@ const copy: Record<string, { title: string; message: string }> = {
     title: 'Reading Flight Practice Complete!',
     message: 'You practiced modeled reading, phrase groups, rereading, and self-monitoring. The app did not record or score oral reading.',
   },
+  SPACED_REVIEW: {
+    title: 'Review Complete!',
+    message: 'You strengthened this reading power. Its next review will appear when it is ready.',
+  },
   CONTENT_NEEDED: {
     title: 'More Quests Are Being Prepared',
     message: 'You completed the available adventures for this trail. Your progress is safe.',

@@ -7,7 +7,7 @@ import {
   type SkillProgressState,
 } from '../progression'
 import { resolveReviewAffinity } from '../progression/reviewQueueAffinity'
-import type { QuestProgressV1 } from '../../persistence'
+import type { ActiveLessonLaunchContext, QuestProgressV1 } from '../../persistence'
 import type {
   ActiveLearningFocus,
   ActiveLearningFocusSource,
@@ -43,6 +43,7 @@ export interface GlobalQuestPlan {
   source: ActiveLearningFocusSource
   lesson: LessonActivityCandidate | null
   curriculumComplete: boolean
+  launchContext: ActiveLessonLaunchContext | null
   reason?: string
 }
 
@@ -212,7 +213,7 @@ export function planGlobalQuest(input: PlanGlobalQuestInput): GlobalQuestPlan {
   if (activeSessionPlan) return activeSessionPlan
 
   const urgentPlannedQuest = state.plannedNextQuest?.status === 'available'
-    && ['verification', 'remediation', 'review'].includes(state.plannedNextQuest.purpose)
+    && ['verification', 'remediation'].includes(state.plannedNextQuest.purpose)
     && isValidPlannedQuest(state, state.plannedNextQuest, input.availableLessons)
     ? buildPlanFromLesson(state.plannedNextQuest.lesson, state.plannedNextQuest.purpose, 'planned_quest')
     : null
@@ -320,7 +321,10 @@ function resolveActiveSessionPlan(
     && candidate.contentVersion === active.contentVersion
   ))
   if (!lesson) return null
-  return buildPlanFromLesson(lesson, lesson.eligiblePurposes[0] ?? 'progression', 'active_session')
+  const launchContext = active.launchContext ?? {
+    purpose: lesson.eligiblePurposes[0] ?? 'progression',
+  }
+  return buildPlanFromLesson(lesson, launchContext.purpose, 'active_session', launchContext)
 }
 
 function chooseDueReview(
@@ -346,6 +350,7 @@ function chooseDueReview(
     if (affinity.status === 'ambiguous' || affinity.status === 'missing') {
       continue
     }
+    if (!affinity.unitId || !affinity.contentVersion) continue
     const progress = state.skillProgress[entry.skillId]
       ?? createInitialSkillProgress(
         entry.skillId,
@@ -362,7 +367,18 @@ function chooseDueReview(
       preferredContentVersion: affinity.contentVersion,
     })
     if (plan.status === 'available') {
-      return buildPlanFromLesson(plan.lesson, 'review', 'global_planned_quest')
+      return buildPlanFromLesson(plan.lesson, 'review', 'global_planned_quest', {
+        purpose: 'review',
+        reviewIdentity: {
+          skillId: entry.skillId,
+          difficulty: entry.difficulty,
+          unitId: affinity.unitId,
+          contentVersion: affinity.contentVersion,
+          reviewStep: entry.reviewStep,
+          dueAt: entry.dueAt,
+        },
+        returnLearningState: progress.currentLearningState,
+      })
     }
   }
 
@@ -453,6 +469,7 @@ function buildPlanFromLesson(
   lesson: LessonActivityCandidate,
   purpose: NextQuestPlan['purpose'],
   source: ActiveLearningFocusSource,
+  launchContext: ActiveLessonLaunchContext = { purpose },
 ): GlobalQuestPlan {
   const track = getTrackBySkillId(lesson.skillId)
     ?? getTrackByUnitId(lesson.unitId)
@@ -473,6 +490,7 @@ function buildPlanFromLesson(
     source,
     lesson,
     curriculumComplete: false,
+    launchContext,
   }
 }
 
@@ -522,6 +540,7 @@ function buildContentNeededPlan(
     source: 'safe_fallback',
     lesson: null,
     curriculumComplete,
+    launchContext: null,
     reason,
   }
 }

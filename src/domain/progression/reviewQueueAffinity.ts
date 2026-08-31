@@ -16,6 +16,13 @@ export interface ReviewAffinityResolution {
   note: string | null
 }
 
+export interface ResolvedReviewQueueIdentity extends ReviewQueueIdentity {
+  unitId: string
+  contentVersion: string
+  reviewStep: number
+  dueAt: string
+}
+
 export function buildReviewQueueIdentity(entry: Pick<ReviewQueueEntry, 'skillId' | 'difficulty'> & {
   unitId?: string | null
   contentVersion?: string | null
@@ -122,6 +129,30 @@ export function buildReviewAffinityDataQualityNote(
     }
   }
   return null
+}
+
+export function findReviewQueueEntryByResolvedIdentity(
+  identity: ResolvedReviewQueueIdentity,
+  input: {
+    reviewQueue: readonly ReviewQueueEntry[]
+    completedAttempts: readonly CompletedLessonAttempt[]
+    availableLessons: readonly LessonActivityCandidate[]
+  },
+): ReviewQueueEntry | null {
+  const matches = input.reviewQueue.filter((entry) => {
+    if (
+      entry.skillId !== identity.skillId
+      || entry.difficulty !== identity.difficulty
+      || entry.reviewStep !== identity.reviewStep
+      || entry.dueAt !== identity.dueAt
+    ) return false
+    const affinity = resolveReviewAffinity(entry, input)
+    return affinity.status !== 'ambiguous'
+      && affinity.status !== 'missing'
+      && affinity.unitId === identity.unitId
+      && affinity.contentVersion === identity.contentVersion
+  })
+  return matches.length === 1 ? { ...matches[0] } : null
 }
 
 function inferFromCompletedAttempt(

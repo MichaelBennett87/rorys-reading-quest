@@ -1,6 +1,7 @@
 import type { LessonResult } from '../domain/lesson'
 import { getLessonCatalogMetadata } from '../domain/lesson'
 import type { AppliedLessonProgression } from '../domain/progression'
+import type { ReviewCompletionUpdate } from '../domain/progression/applyReviewLessonResult'
 import {
   type CompletedLessonAttempt,
   type PersistedAssistanceEvent,
@@ -15,6 +16,7 @@ export interface CompleteQuestProgressInput {
   lessonResult: LessonResult
   progression: AppliedLessonProgression
   completedAt: string
+  reviewCompletion?: ReviewCompletionUpdate
 }
 
 export interface CompleteQuestProgressResult {
@@ -68,7 +70,8 @@ export function completeQuestProgress(input: CompleteQuestProgressInput): Comple
     completedAt: input.completedAt,
     progressionDecisionState: input.progression.decision.decisionState,
     reasonCodes: [...input.progression.decision.reasonCodes],
-    nextReviewDate: input.progression.progress.nextReviewDate,
+    nextReviewDate: input.reviewCompletion?.nextEntry.dueAt
+      ?? input.progression.progress.nextReviewDate,
   }
   const usageKey = `${input.lessonResult.skillId}::${input.lessonResult.difficulty}`
   const nextReviewEntry = input.progression.progress.nextReviewDate
@@ -81,9 +84,15 @@ export function completeQuestProgress(input: CompleteQuestProgressInput): Comple
         contentVersion: lessonMetadata?.contentVersion,
       }
     : null
-  const reviewQueue = input.progression.progress.nextReviewDate
-    ? upsertReviewQueueEntry(input.state.reviewQueue, nextReviewEntry!)
-    : input.state.reviewQueue.map((entry) => ({ ...entry }))
+  const reviewQueue = input.reviewCompletion
+    ? replaceExactReviewQueueEntry(
+        input.state.reviewQueue,
+        input.reviewCompletion.queueEntry,
+        input.reviewCompletion.nextEntry,
+      )
+    : input.progression.progress.nextReviewDate
+      ? upsertReviewQueueEntry(input.state.reviewQueue, nextReviewEntry!)
+      : input.state.reviewQueue.map((entry) => ({ ...entry }))
 
   const state = normalizeQuestProgressForSave({
     ...input.state,
@@ -114,6 +123,33 @@ export function completeQuestProgress(input: CompleteQuestProgressInput): Comple
     metadata: { ...input.state.metadata, updatedAt: input.completedAt },
   })
   return { state, duplicate: false, earnedXp, earnedStars }
+}
+
+function replaceExactReviewQueueEntry(
+  queue: QuestProgressV1['reviewQueue'],
+  expected: QuestProgressV1['reviewQueue'][number],
+  replacement: QuestProgressV1['reviewQueue'][number],
+): QuestProgressV1['reviewQueue'] {
+  let replaced = false
+  return queue.map((entry) => {
+    if (!replaced && sameExactReviewQueueEntry(entry, expected)) {
+      replaced = true
+      return { ...replacement }
+    }
+    return { ...entry }
+  })
+}
+
+function sameExactReviewQueueEntry(
+  left: QuestProgressV1['reviewQueue'][number],
+  right: QuestProgressV1['reviewQueue'][number],
+): boolean {
+  return left.skillId === right.skillId
+    && left.difficulty === right.difficulty
+    && left.reviewStep === right.reviewStep
+    && left.dueAt === right.dueAt
+    && left.unitId === right.unitId
+    && left.contentVersion === right.contentVersion
 }
 
 function cloneAssistanceEvents(events: PersistedAssistanceEvent[]): PersistedAssistanceEvent[] {

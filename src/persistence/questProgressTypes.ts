@@ -6,7 +6,12 @@ import type {
 } from '../domain/progression'
 import type { LearningState } from '../domain/progression'
 import type { AssistanceEvent, AssistanceSummary } from '../domain/assistance'
-import type { ActiveFluencyPracticeState, FluencyPracticeSummary, LessonRole } from '../domain/lesson'
+import type {
+  ActiveFluencyPracticeState,
+  FluencyPracticeSummary,
+  LessonPurpose,
+  LessonRole,
+} from '../domain/lesson'
 
 export const QUEST_PROGRESS_SCHEMA_VERSION = 1 as const
 export const QUEST_PROGRESS_STORAGE_KEY = 'rorys-reading-quest.progress.v1'
@@ -45,6 +50,21 @@ export interface PersistedSubmittedQuestion extends PersistedQuestionSummary {
   submittedAnswer: PersistedAnswer
 }
 
+export interface ActiveReviewIdentity {
+  skillId: string
+  difficulty: number
+  unitId: string
+  contentVersion: string
+  reviewStep: number
+  dueAt: string
+}
+
+export interface ActiveLessonLaunchContext {
+  purpose: LessonPurpose
+  reviewIdentity?: ActiveReviewIdentity
+  returnLearningState?: LearningState
+}
+
 export interface ActiveLessonSession {
   sessionId: string
   lessonId: string
@@ -57,6 +77,7 @@ export interface ActiveLessonSession {
   submittedQuestions: PersistedSubmittedQuestion[]
   assistanceEvents: PersistedAssistanceEvent[]
   fluencyPracticeState?: ActiveFluencyPracticeState | null
+  launchContext?: ActiveLessonLaunchContext
   startedAt: string
   updatedAt: string
 }

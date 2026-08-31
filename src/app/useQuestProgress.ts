@@ -5,6 +5,7 @@ import { getLessonById, type LessonDefinition, type LessonResult } from '../doma
 import { completeFluencyPractice } from '../domain/progression/fluencyPractice'
 import {
   applyLessonResult,
+  applyReviewLessonResult,
   type NextQuestPlan,
   type SkillProgressState,
 } from '../domain/progression'
@@ -14,13 +15,16 @@ import {
   completeQuestProgress,
   completeFluencyPracticeProgress,
   createActiveLessonSession,
+  sameActiveLessonLaunchContext,
   createLocalStorageQuestProgressStore,
   getBrowserLocalStorage,
   recoverActiveLessonSession,
   type ActiveLessonSession,
+  type ActiveLessonLaunchContext,
   type QuestProgressStorageStatus,
   type QuestProgressV1,
 } from '../persistence'
+import { findReviewQueueEntryByResolvedIdentity } from '../domain/progression/reviewQueueAffinity'
 
 export interface ProgressionOutcomeViewModel {
   kind: string
@@ -101,7 +105,10 @@ export function useQuestProgress() {
     return saved.state
   }
 
-  const beginLesson = (lesson: LessonDefinition): {
+  const beginLessonWithContext = (
+    lesson: LessonDefinition,
+    launchContext: ActiveLessonLaunchContext,
+  ): {
     status: 'started' | 'resumed' | 'conflict'
     session: ActiveLessonSession
   } => {
@@ -122,10 +129,13 @@ export function useQuestProgress() {
       lesson,
       `${lesson.activityId}:${progressRef.current.completedSessionCount + 1}:${timestamp}`,
       timestamp,
+      launchContext,
     )
     persist({ ...progressRef.current, activeLessonSession: session })
     return { status: 'started', session }
   }
+
+  const beginLesson = (lesson: LessonDefinition) => beginLessonWithContext(lesson, { purpose: 'progression' })
 
   const saveActiveSession = (session: ActiveLessonSession): SaveActiveSessionResult => {
     const current = progressRef.current
@@ -141,6 +151,7 @@ export function useQuestProgress() {
       || active.contentVersion !== session.contentVersion
       || active.skillId !== session.skillId
       || active.difficulty !== session.difficulty
+      || !sameActiveLessonLaunchContext(active.launchContext, session.launchContext)
     ) {
       return { status: 'ignored_stale', state: current }
     }
@@ -184,8 +195,83 @@ export function useQuestProgress() {
       }
     }
 
-    const progressEntry = findActiveSkillProgress(progressRef.current, lessonResult)
     const completedAt = new Date().toISOString()
+    const active = progressRef.current.activeLessonSession
+    const activeMatchesResult = Boolean(
+      active
+      && active.sessionId === completionId
+      && active.lessonId === lessonResult.lessonId
+      && active.activityId === lessonResult.activityId
+      && active.skillId === lessonResult.skillId
+      && active.difficulty === lessonResult.difficulty
+      && (!active.lessonRole || active.lessonRole === lessonResult.lessonRole),
+    )
+    if (!activeMatchesResult) {
+      return buildRejectedCompletionOutcome(
+        progressRef.current,
+        lessonResult,
+        completionId,
+        'Lesson result does not match the active lesson session.',
+      )
+    }
+
+    const reviewContext = active?.launchContext?.purpose === 'review'
+      ? active.launchContext
+      : null
+    if (reviewContext?.reviewIdentity) {
+      const reviewEntry = findReviewQueueEntryByResolvedIdentity(reviewContext.reviewIdentity, {
+        reviewQueue: progressRef.current.reviewQueue,
+        completedAttempts: progressRef.current.completedAttempts,
+        availableLessons,
+      })
+      const reviewProgress = progressRef.current.skillProgress[reviewContext.reviewIdentity.skillId]
+      const reviewResult = reviewEntry && reviewProgress
+        && (!reviewContext.returnLearningState
+          || reviewProgress.currentLearningState === reviewContext.returnLearningState)
+        ? applyReviewLessonResult({
+            progress: reviewProgress,
+            lessonResult,
+            availableLessons,
+            reviewIdentity: reviewContext.reviewIdentity,
+            reviewEntry,
+            completedAt,
+          })
+        : null
+      if (!reviewResult || reviewResult.status === 'declined') {
+        return buildRejectedCompletionOutcome(
+          progressRef.current,
+          lessonResult,
+          completionId,
+          reviewResult?.reason ?? 'Review result does not match the authoritative review launch.',
+        )
+      }
+      const completed = completeQuestProgress({
+        state: progressRef.current,
+        completionId,
+        lessonResult,
+        progression: reviewResult,
+        reviewCompletion: reviewResult.reviewCompletion,
+        completedAt,
+      })
+      const guidedPlan = planGlobalQuest({
+        progress: completed.state,
+        availableLessons,
+        now: completedAt,
+      })
+      const guidedNextQuest = guidedPlan.nextQuest
+      persist({ ...completed.state, plannedNextQuest: guidedNextQuest })
+      return {
+        kind: 'SPACED_REVIEW',
+        earnedXp: completed.earnedXp,
+        earnedStars: completed.earnedStars,
+        currentDifficulty: reviewResult.progress.currentDifficulty,
+        nextQuest: guidedNextQuest,
+        completionId,
+        curriculumComplete: guidedPlan.curriculumComplete,
+      }
+    }
+
+    const progressEntry = findActiveSkillProgress(progressRef.current, lessonResult)
 
     if (lessonResult.lessonRole === 'FLUENCY_PRACTICE') {
       const track = getTrackBySkillId(lessonResult.skillId)
@@ -331,7 +417,10 @@ export function useQuestProgress() {
       }
     }
 
-    const begun = beginLesson(selected.lesson)
+    const begun = beginLessonWithContext(
+      selected.lesson,
+      globalPlan.launchContext ?? { purpose: plan.purpose },
+    )
     if (begun.status === 'conflict') {
       const conflictingLesson = getLessonById(begun.session.lessonId)
       if (conflictingLesson.lesson) {
@@ -368,6 +457,30 @@ export function useQuestProgress() {
     completeLesson,
     planContinue,
     prepareJourneyLaunch,
+  }
+}
+
+function buildRejectedCompletionOutcome(
+  state: QuestProgressV1,
+  lessonResult: LessonResult,
+  completionId: string,
+  reason: string,
+): ProgressionOutcomeViewModel {
+  return {
+    kind: 'CONTENT_NEEDED',
+    earnedXp: 0,
+    earnedStars: 0,
+    currentDifficulty: state.skillProgress[lessonResult.skillId]?.currentDifficulty
+      ?? lessonResult.difficulty,
+    nextQuest: {
+      status: 'content_needed',
+      purpose: 'progression',
+      skillId: lessonResult.skillId,
+      difficulty: lessonResult.difficulty,
+      reason,
+    },
+    completionId,
+    curriculumComplete: false,
   }
 }
 

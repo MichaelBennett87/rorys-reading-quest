@@ -6,6 +6,7 @@ import {
   QUEST_PROGRESS_SCHEMA_VERSION,
   RECENT_ACTIVITY_LIMIT_PER_TRAIL,
   type ActiveLessonSession,
+  type ActiveLessonLaunchContext,
   type CompletedLessonAttempt,
   type PersistedAssistanceEvent,
   type QuestProgressV1,
@@ -189,8 +190,23 @@ function isActiveLessonSession(value: unknown): value is ActiveLessonSession {
       && value.assistanceEvents.every(isAssistanceEvent)
     ))
     && (!('fluencyPracticeState' in value) || value.fluencyPracticeState === null || isFluencyPracticeState(value.fluencyPracticeState))
+    && (!('launchContext' in value) || isActiveLessonLaunchContext(value.launchContext))
     && typeof value.startedAt === 'string'
     && typeof value.updatedAt === 'string'
+}
+
+function isActiveLessonLaunchContext(value: unknown): value is ActiveLessonLaunchContext {
+  if (!isRecord(value) || !isLessonPurpose(value.purpose)) return false
+  if (value.returnLearningState !== undefined && !isLearningState(value.returnLearningState)) return false
+  if (value.purpose !== 'review') return value.reviewIdentity === undefined
+  const identity = value.reviewIdentity
+  return isRecord(identity)
+    && typeof identity.skillId === 'string'
+    && Number.isInteger(identity.difficulty)
+    && typeof identity.unitId === 'string'
+    && typeof identity.contentVersion === 'string'
+    && isNonNegativeInteger(identity.reviewStep)
+    && typeof identity.dueAt === 'string'
 }
 
 function isNextQuestPlan(value: unknown): value is NextQuestPlan {
@@ -312,6 +328,17 @@ function cloneActiveSession(session: ActiveLessonSession): ActiveLessonSession {
       submittedAnswer: structuredClone(question.submittedAnswer),
     })),
     assistanceEvents: (session.assistanceEvents ?? []).map(cloneAssistanceEvent),
+    ...(session.launchContext ? {
+      launchContext: {
+        purpose: session.launchContext.purpose,
+        ...(session.launchContext.reviewIdentity
+          ? { reviewIdentity: { ...session.launchContext.reviewIdentity } }
+          : {}),
+        ...(session.launchContext.returnLearningState
+          ? { returnLearningState: session.launchContext.returnLearningState }
+          : {}),
+      },
+    } : {}),
   }
 }
 
