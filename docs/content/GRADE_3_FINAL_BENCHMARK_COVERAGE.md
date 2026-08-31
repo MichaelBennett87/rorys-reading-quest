@@ -37,4 +37,3 @@ This is repository-level authored curriculum coverage. It does not mean Rory mas
 ## Derivation
 
 `buildGrade3CoverageSnapshot` intersects the immutable 16-row inventory with active Grade 3 pack benchmark mappings and `coveredPatterns`. The final audit requires at least one contributing pack and zero missing patterns for every row. Supportive-practice rows remain distinct from implemented benchmark rows.
-
