@@ -1,0 +1,915 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0058",
+  "batchFileSha256": "e61394415f00bd053605a573b9ff2c12696fd03cca85a808e6f5e997745c7c08",
+  "reviewerThreadId": "01a07bc1-57ca-7230-a515-d322b50c9d2e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0678",
+      "fingerprint": "5bff303735724fb231ab685026608626d01dfb8d31a0bce9d408a0352750206f",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence uses predict rather than explain.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Writing a report does not itself use or express explain.",
+              [
+                "S0064"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence uses observe rather than explain.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Explain correctly describes telling why the leaves looked brighter.",
+              [
+                "S0057"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0679",
+      "fingerprint": "a951adfb8b49334d76664cc0c069465714139ae55f20a6015fbec320a3742eca",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Observe correctly describes looking closely at the stems before and after watering.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence uses predict rather than observe.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Writing a report does not itself use or express observe.",
+              [
+                "S0064"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence uses explain rather than observe.",
+              [
+                "S0057"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0680",
+      "fingerprint": "d6e5cefd26073d96d3f1931d6d703ca5bbe6226eb66d0a43f98b88e5f5e05b11",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Writing a report does not express a guess about what may happen.",
+              [
+                "S0064"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence uses observe rather than predict.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence uses explain rather than predict.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Predict correctly means making a reasoned guess about what might happen next week.",
+              [
+                "S0061"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0681",
+      "fingerprint": "74f7f7ab80df40b2e933af2ee5d9216c2d36a961c338541d19b8fa1ce3a93531",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8"
+          ],
+          "ambiguity": "The prompt asks for two subjects, but result is an ordinary academic word in art, library work, social studies, reading, nature study, writing, science, and math; no visible criterion limits the set to two.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The word result can be used meaningfully in this subject; the prompt gives no subject-specific restriction.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The word result can be used meaningfully in this subject; the prompt gives no subject-specific restriction.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The word result can be used meaningfully in this subject; the prompt gives no subject-specific restriction.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The word result can be used meaningfully in this subject; the prompt gives no subject-specific restriction.",
+              []
+            ],
+            [
+              "A5",
+              "DEFENSIBLE",
+              "The word result can be used meaningfully in this subject; the prompt gives no subject-specific restriction.",
+              []
+            ],
+            [
+              "A6",
+              "DEFENSIBLE",
+              "The word result can be used meaningfully in this subject; the prompt gives no subject-specific restriction.",
+              []
+            ],
+            [
+              "A7",
+              "DEFENSIBLE",
+              "The word result can be used meaningfully in this subject; the prompt gives no subject-specific restriction.",
+              []
+            ],
+            [
+              "A8",
+              "DEFENSIBLE",
+              "The word result can be used meaningfully in this subject; the prompt gives no subject-specific restriction.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0682",
+      "fingerprint": "d26e792756d892dad7fca3f7921efecd92755f1637a3656a54a922fecee1bbef",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence uses predict rather than observe.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence uses explain rather than observe.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Observe correctly describes looking closely at stems before and after watering.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Writing a report does not itself use or express observe.",
+              [
+                "S0064"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0683",
+      "fingerprint": "30999c29bd1bcd95e9311828d290836b15492a074f32b616186f03c3d34acf25",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Predict means guess what may happen, not tell how or why.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Observe means look closely, not tell how or why.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Result names an outcome, not an explanation.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Explain means tell how or why something happens.",
+              [
+                "S0057"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Observe means look closely and notice details.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Predict means guess what may happen.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Result names an outcome.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Explain means tell how or why.",
+              [
+                "S0057"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Predict means make a smart guess about what may happen.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Result names what happened, not a guess.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Explain means tell how or why.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Observe means look closely at what is present.",
+              [
+                "S0059"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Explain tells how or why, not the outcome itself.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Observe means look closely.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Predict is a guess made before the outcome.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Result names what happens after something is done.",
+              [
+                "S0063"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0684",
+      "fingerprint": "1b8606df4ad439fd8bdfd1788b9f41b22de963aa53725dcb8c81de77c62cd329",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "A fact is information known to be true, not a guess about what may happen.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "A topic is what something is about, not a forecast.",
+              [
+                "S0068"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Predict directly means make a smart guess about what may happen.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "A detail is a small piece of information, not a future guess.",
+              [
+                "S0067"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [],
+          "ambiguity": "No option explains that predict means making a smart guess about what may happen. The generic academic-word statement applies equally to fact, topic, and detail, so it cannot establish why predict fits best.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "Predict does not merely name the topic.",
+              [
+                "S0061",
+                "S0068"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is true of every candidate academic word and does not explain why predict matches the clue.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "Predict is a school and academic word, so this statement is false.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "Predict is not just one small detail.",
+              [
+                "S0061",
+                "S0067"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0685",
+      "fingerprint": "59b1ef5f23466ac876ac57a3dbee19faa17f50bb4b98346500c65953af888639",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Removing the prefix un- from unpack leaves the meaningful base word pack.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Un is the prefix, not the base word.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Back is not a meaningful part of unpack in this use.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Cart is a separate source word, not the base inside unpack.",
+              [
+                "S0003"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0686",
+      "fingerprint": "5b69a0a2137f779384e0c1e67998b4ed7adf2bad35a5511f9069097cede557d7",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Slow is an opposite meaning, not the base inside faster.",
+              [
+                "S0005",
+                "S0009"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Friend is not a word part in faster.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Hope is not a word part in faster.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Removing the suffix -er from faster leaves the base word fast.",
+              [
+                "S0005"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0687",
+      "fingerprint": "6f7c3ca792277302ca1f4f8a1b1c7f3e8da51417a16be01552c85ea2375123c2",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Helpful keeps the complete base word help and adds the suffix -ful.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Unpack contains the base pack, not help.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Helping keeps the complete base word help and adds -ing.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Slowly contains the base slow, not help.",
+              [
+                "S0009"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0688",
+      "fingerprint": "4c9aa16d0cbed08ef9385a161e5448c4887c606fb124a558197084548236b9a1",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Ly is the suffix, not the base word.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Slowly is the complete affixed word, not its smaller base.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Removing -ly from slowly leaves the meaningful base word slow.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Moving is not a word part in slowly.",
+              [
+                "S0009"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0689",
+      "fingerprint": "3430cfcb1c2d30f7f07ebfad82773ca973f2837238d0c0c9af243b70c58c1809",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Cart is a separate source word, not inside unpack.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Supply is a separate modifier, not inside unpack.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Pack is the base word inside unpack.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Bag is neither present in nor the base of unpack.",
+              [
+                "S0003"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Kind helper is unrelated to the word parts in faster.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Fast is the base word inside faster.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Careless choice is unrelated to the word parts in faster.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Before the walk is a source phrase, not the base inside faster.",
+              [
+                "S0003",
+                "S0005"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [],
+          "ambiguity": "The prompt asks for the base word inside helping, which is help, but no option is exactly help. “Help happening now” describes the full word and merely contains the base inside a longer phrase.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Build again does not identify the base help.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "More than one does not identify the base help.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Slowly moving does not identify the base help.",
+              [
+                "S0007",
+                "S0009"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This phrase contains help and describes helping, but it is not the requested base-word answer help.",
+              [
+                "S0007"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [],
+          "ambiguity": "The prompt asks for the base word inside slowly, which is slow, but no option is exactly slow. “In a slow way” explains the full word rather than supplying the requested base word.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Count wrongly does not identify the base slow.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Most tall does not identify the base slow.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Heat before does not identify the base slow.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This phrase correctly explains slowly but is not the requested base-word answer slow.",
+              [
+                "S0009"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

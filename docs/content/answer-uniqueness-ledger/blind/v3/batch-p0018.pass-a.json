@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0018",
+  "batchFileSha256": "de48d152bcca0e0f63f69a73739a553db15022facf2d52e729dc6b8a71021cdf",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0455",
+      "fingerprint": "4fb4d8aef7fbfb89bf9ea1b853ab7827c54c94f45a104e519ff765568d8f46be",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Line 1 ends with site, not row.",
+              [
+                "S0036"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Line 4 ends with stool, returning to line 2's tool rhyme.",
+              [
+                "S0042"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Line 2 ends with tool, not row.",
+              [
+                "S0038"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Line 3 ends with row, the new sound placed between tool and stool.",
+              [
+                "S0040"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0460",
+      "fingerprint": "6c08ef6e85e144bfcf342720d83d60c5ee5164a4d3313cee5e2cd2ed2ea3f573",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Line 4 repeats the rope/hope B rhyme rather than introducing it.",
+              [
+                "S0052"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Line 2 repeats the gate/wait A rhyme.",
+              [
+                "S0048"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Line 1 introduces the A rhyme with gate.",
+              [
+                "S0046"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Line 3 first introduces B with rope, which line 4 repeats with hope.",
+              [
+                "S0050",
+                "S0052"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0465",
+      "fingerprint": "cab68c260fa86b1fa54c384d802094db4b7ef922362699e07d2c83f58d0c0878",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The poem has adjacent pairs, not only lines 2 and 4 sharing a rhyme.",
+              [
+                "S0046",
+                "S0048",
+                "S0050",
+                "S0052"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "gate/wait form the first pair and rope/hope form the second pair.",
+              [
+                "S0046",
+                "S0048",
+                "S0050",
+                "S0052"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The poem does not alternate its two rhyme sounds.",
+              [
+                "S0046",
+                "S0048",
+                "S0050",
+                "S0052"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The poem has four lines, so a six-line scheme does not fit.",
+              [
+                "S0046",
+                "S0052"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "gate rhymes with wait and rope rhymes with hope, proving both AABB pairs.",
+              [
+                "S0046",
+                "S0048",
+                "S0050",
+                "S0052"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "gate/wait proves only the first pair, not the complete scheme requested.",
+              [
+                "S0046",
+                "S0048"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "gate does not rhyme with hope, and wait does not rhyme with rope.",
+              [
+                "S0046",
+                "S0048",
+                "S0050",
+                "S0052"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "gate does not rhyme with rope, and wait does not rhyme with hope.",
+              [
+                "S0046",
+                "S0048",
+                "S0050",
+                "S0052"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0472",
+      "fingerprint": "15f24a3158e1eb19739efadf1299f96828f833de28caa5013fab9d87b1b1cc5a",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The eight-line poem uses alternating pairs rather than three adjacent pairs.",
+              [
+                "S0056",
+                "S0062"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "A four-line scheme cannot describe all eight lines.",
+              [
+                "S0056",
+                "S0062"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "ABCB does not account for both stanzas or the alternating first stanza.",
+              [
+                "S0056",
+                "S0065"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "row/blow, pace/place, high/sky, and light/night form ABABCDCD.",
+              [
+                "S0056",
+                "S0058",
+                "S0064",
+                "S0065",
+                "S0066",
+                "S0060",
+                "S0068",
+                "S0062"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "These are only the two rhyme pairs in the second stanza, not the complete scheme.",
+              [
+                "S0066",
+                "S0060",
+                "S0068",
+                "S0062"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The proposed pairs do not follow the poem's end-sound matches.",
+              [
+                "S0056",
+                "S0058",
+                "S0064",
+                "S0065",
+                "S0066",
+                "S0060",
+                "S0068",
+                "S0062"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The proposed pairs do not rhyme in ordinary pronunciation.",
+              [
+                "S0056",
+                "S0058",
+                "S0064",
+                "S0065",
+                "S0066",
+                "S0060",
+                "S0068",
+                "S0062"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "row/blow, pace/place, high/sky, and light/night prove every alternating pair.",
+              [
+                "S0056",
+                "S0058",
+                "S0064",
+                "S0065",
+                "S0066",
+                "S0060",
+                "S0068",
+                "S0062"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

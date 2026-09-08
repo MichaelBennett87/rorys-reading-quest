@@ -1,0 +1,2731 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "question-word-forge-fluency-practice-punctuation-pauses-1",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-7b35f7263d7191e2",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "0fd88d9bfc98530000539e5fd4cfc330cdc20458199039cb52705531f9be5beb",
+        "conclusionsSha256": "4765f6470f4ca9731b798e74354e601cd70686a47f9c1c7cf9d7c14a88fdc238",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0011.pass-a.json",
+        "receiptSha256": "4765f6470f4ca9731b798e74354e601cd70686a47f9c1c7cf9d7c14a88fdc238",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which mark tells the reader to pause gently in the weather passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "comma-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "comma-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "period-choice",
+              "verdict": "INCORRECT",
+              "rationale": "A period marks a full stop rather than the gentle internal pause requested.",
+              "evidenceIds": [
+                "weather-4"
+              ]
+            },
+            {
+              "answerId": "comma-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A comma marks the gentle pause taught and used inside the weather sentences.",
+              "evidenceIds": [
+                "weather-1"
+              ]
+            },
+            {
+              "answerId": "exclamation-choice",
+              "verdict": "INCORRECT",
+              "rationale": "An exclamation mark cues excitement rather than a gentle pause.",
+              "evidenceIds": [
+                "weather-5"
+              ]
+            },
+            {
+              "answerId": "question-choice",
+              "verdict": "INCORRECT",
+              "rationale": "A question mark marks a question rather than the requested comma pause.",
+              "evidenceIds": [
+                "weather-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-punctuation-pauses-2",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-bbcbc7bc947da4d8",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "0fd88d9bfc98530000539e5fd4cfc330cdc20458199039cb52705531f9be5beb",
+        "conclusionsSha256": "4765f6470f4ca9731b798e74354e601cd70686a47f9c1c7cf9d7c14a88fdc238",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0011.pass-a.json",
+        "receiptSha256": "4765f6470f4ca9731b798e74354e601cd70686a47f9c1c7cf9d7c14a88fdc238",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that should be read with a pause after the comma.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "weather-pause-sentence"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "weather-pause-sentence"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "weather-exclaim-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This exclamation has no comma after which to pause.",
+              "evidenceIds": [
+                "weather-5"
+              ]
+            },
+            {
+              "answerId": "weather-fast-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This statement has no comma.",
+              "evidenceIds": [
+                "weather-4"
+              ]
+            },
+            {
+              "answerId": "weather-pause-sentence",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence contains a comma after chart, where the reader pauses.",
+              "evidenceIds": [
+                "weather-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-punctuation-pauses-3",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-5f3853a7fa61401b",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "0fd88d9bfc98530000539e5fd4cfc330cdc20458199039cb52705531f9be5beb",
+        "conclusionsSha256": "4765f6470f4ca9731b798e74354e601cd70686a47f9c1c7cf9d7c14a88fdc238",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0011.pass-a.json",
+        "receiptSha256": "4765f6470f4ca9731b798e74354e601cd70686a47f9c1c7cf9d7c14a88fdc238",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words or marks that help the reader slow down in the weather passage.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "weather-comma",
+            "weather-gentle-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "weather-comma",
+            "weather-gentle-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "weather-comma",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A comma visibly signals a brief pause and slows the reading at that point.",
+              "evidenceIds": [
+                "weather-1"
+              ]
+            },
+            {
+              "answerId": "weather-map-choice",
+              "verdict": "INCORRECT",
+              "rationale": "map names an object and gives no pace or pause cue.",
+              "evidenceIds": [
+                "weather-4"
+              ]
+            },
+            {
+              "answerId": "weather-clouds-choice",
+              "verdict": "INCORRECT",
+              "rationale": "clouds names weather and gives no pace or pause cue.",
+              "evidenceIds": [
+                "weather-1"
+              ]
+            },
+            {
+              "answerId": "weather-gentle-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "gentle is the base of gently in the question and supports a gentle, unhurried delivery.",
+              "evidenceIds": [
+                "weather-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-punctuation-pauses-4",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-0f308df46fa38380",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "0fd88d9bfc98530000539e5fd4cfc330cdc20458199039cb52705531f9be5beb",
+        "conclusionsSha256": "4765f6470f4ca9731b798e74354e601cd70686a47f9c1c7cf9d7c14a88fdc238",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0018.second-pass.json",
+        "receiptSha256": "f4da50000724eb745b45b3de4c7623006ad0433adb4bc007a826871b3159d5d0",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "comma-row",
+          "prompt": "comma",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "comma-cue"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "comma-cue"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "comma-cue",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A comma signals a gentle internal pause.",
+              "evidenceIds": [
+                "weather-1"
+              ]
+            },
+            {
+              "answerId": "period-cue",
+              "verdict": "INCORRECT",
+              "rationale": "Stopping the sentence is the period's job.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-weather-announcement"
+              ]
+            },
+            {
+              "answerId": "question-cue",
+              "verdict": "INCORRECT",
+              "rationale": "A comma does not turn the sentence into a question.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-weather-announcement"
+              ]
+            },
+            {
+              "answerId": "exclamation-cue",
+              "verdict": "INCORRECT",
+              "rationale": "A comma does not by itself signal excitement.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-weather-announcement"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "period-row",
+          "prompt": "period",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "period-cue"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "period-cue"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "comma-cue-2",
+              "verdict": "INCORRECT",
+              "rationale": "A small internal pause is the comma cue, not the period's complete ending.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-weather-announcement"
+              ]
+            },
+            {
+              "answerId": "exclamation-cue-2",
+              "verdict": "INCORRECT",
+              "rationale": "Bright energy is associated with an exclamation, not a period.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-weather-announcement"
+              ]
+            },
+            {
+              "answerId": "question-cue-2",
+              "verdict": "INCORRECT",
+              "rationale": "A period does not mark a question.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-weather-announcement"
+              ]
+            },
+            {
+              "answerId": "period-cue",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A period tells the reader to stop at the end of the sentence.",
+              "evidenceIds": [
+                "weather-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "question-row",
+          "prompt": "question mark",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "question-cue"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "question-cue"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "question-cue",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The taught question-mark cue is to let the voice rise.",
+              "evidenceIds": [
+                "weather-3"
+              ]
+            },
+            {
+              "answerId": "comma-cue-3",
+              "verdict": "INCORRECT",
+              "rationale": "This describes a comma cue, not a question mark.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-weather-announcement"
+              ]
+            },
+            {
+              "answerId": "period-cue-3",
+              "verdict": "INCORRECT",
+              "rationale": "This describes a period cue, not a question mark.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-weather-announcement"
+              ]
+            },
+            {
+              "answerId": "exclamation-cue-3",
+              "verdict": "INCORRECT",
+              "rationale": "Bright energy is the exclamation cue, not the question-mark cue.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-weather-announcement"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "exclamation-row",
+          "prompt": "exclamation mark",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "exclamation-cue"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "exclamation-cue"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "comma-cue-4",
+              "verdict": "INCORRECT",
+              "rationale": "A soft pause is a comma cue, not an exclamation cue.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-weather-announcement"
+              ]
+            },
+            {
+              "answerId": "period-cue-4",
+              "verdict": "INCORRECT",
+              "rationale": "A period supplies the ordinary sentence-ending cue.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-weather-announcement"
+              ]
+            },
+            {
+              "answerId": "question-cue-4",
+              "verdict": "INCORRECT",
+              "rationale": "A rising question tone is not the exclamation cue requested.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-weather-announcement"
+              ]
+            },
+            {
+              "answerId": "exclamation-cue",
+              "verdict": "DEFENSIBLE",
+              "rationale": "An exclamation mark cues an excited reading.",
+              "evidenceIds": [
+                "weather-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-phrase-groups-1",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-304bf670997ab564",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "49d38a2dee61b802a89e6cf2ac272a4817eeec4925dceb76fe944889723d8c85",
+        "conclusionsSha256": "8882d62590b6763a9c43331207ec5dc9d7e84bce275d95d4a2a8685f3f40ba3e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0025.pass-a.json",
+        "receiptSha256": "8882d62590b6763a9c43331207ec5dc9d7e84bce275d95d4a2a8685f3f40ba3e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which phrase keeps the complete action of taking out lunch together?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "trail-lunch-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "trail-lunch-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "trail-bench-choice",
+              "verdict": "INCORRECT",
+              "rationale": "stable bench names a place or object, not the action of taking out lunch.",
+              "evidenceIds": [
+                "trail-2"
+              ]
+            },
+            {
+              "answerId": "trail-lunch-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "unpacked a small lunch keeps the verb and its complete lunch object together.",
+              "evidenceIds": [
+                "trail-1"
+              ]
+            },
+            {
+              "answerId": "trail-birds-choice",
+              "verdict": "INCORRECT",
+              "rationale": "listened for birds is a different action.",
+              "evidenceIds": [
+                "trail-2"
+              ]
+            },
+            {
+              "answerId": "trail-map-choice",
+              "verdict": "INCORRECT",
+              "rationale": "a helpful map is a noun phrase, not the lunch-unpacking action.",
+              "evidenceIds": [
+                "trail-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-phrase-groups-2",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-ba868a15c94d31f1",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "49d38a2dee61b802a89e6cf2ac272a4817eeec4925dceb76fe944889723d8c85",
+        "conclusionsSha256": "8882d62590b6763a9c43331207ec5dc9d7e84bce275d95d4a2a8685f3f40ba3e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0025.pass-a.json",
+        "receiptSha256": "8882d62590b6763a9c43331207ec5dc9d7e84bce275d95d4a2a8685f3f40ba3e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which phrase names one place to sit?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "trail-stable-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "trail-stable-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "trail-helpful-choice",
+              "verdict": "INCORRECT",
+              "rationale": "A helpful map is an object used for directions, not a place to sit.",
+              "evidenceIds": [
+                "trail-1"
+              ]
+            },
+            {
+              "answerId": "trail-birds-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "listened for birds is an action, not a place.",
+              "evidenceIds": [
+                "trail-2"
+              ]
+            },
+            {
+              "answerId": "trail-blue-choice",
+              "verdict": "INCORRECT",
+              "rationale": "A blue feather is an object, not a place to sit.",
+              "evidenceIds": [
+                "trail-3"
+              ]
+            },
+            {
+              "answerId": "trail-stable-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A stable bench names one place where the group can sit.",
+              "evidenceIds": [
+                "trail-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-phrase-groups-3",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-1972bfd05c7d9884",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "0fd88d9bfc98530000539e5fd4cfc330cdc20458199039cb52705531f9be5beb",
+        "conclusionsSha256": "4765f6470f4ca9731b798e74354e601cd70686a47f9c1c7cf9d7c14a88fdc238",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0018.second-pass.json",
+        "receiptSha256": "f4da50000724eb745b45b3de4c7623006ad0433adb4bc007a826871b3159d5d0",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that gives a calm instruction to read a sign carefully.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "trail-ranger-sentence"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "trail-ranger-sentence"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "trail-ending-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This narrates completed actions and gives no instruction to read a sign.",
+              "evidenceIds": [
+                "trail-4"
+              ]
+            },
+            {
+              "answerId": "trail-group-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This narrates unpacking lunch and a map, not an instruction.",
+              "evidenceIds": [
+                "trail-1"
+              ]
+            },
+            {
+              "answerId": "trail-ranger-sentence",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The ranger directly gives the calm instruction to read the sign carefully.",
+              "evidenceIds": [
+                "trail-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-phrase-groups-4",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-ec6e55fece5b84da",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "0fd88d9bfc98530000539e5fd4cfc330cdc20458199039cb52705531f9be5beb",
+        "conclusionsSha256": "4765f6470f4ca9731b798e74354e601cd70686a47f9c1c7cf9d7c14a88fdc238",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0011.pass-a.json",
+        "receiptSha256": "4765f6470f4ca9731b798e74354e601cd70686a47f9c1c7cf9d7c14a88fdc238",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "phrase-unpack-row",
+          "prompt": "unpacked a small lunch",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "phrase-unpack-cue"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "phrase-unpack-cue"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "phrase-lunch-cue",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase names one unpacking action rather than a list.",
+              "evidenceIds": [
+                "trail-1"
+              ]
+            },
+            {
+              "answerId": "phrase-unpack-cue",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The words belong together as one unpacking action phrase.",
+              "evidenceIds": [
+                "trail-1"
+              ]
+            },
+            {
+              "answerId": "phrase-path-cue",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase contains no exclamation.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-nature-trail-report"
+              ]
+            },
+            {
+              "answerId": "phrase-sign-cue",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase contains no question.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-nature-trail-report"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "phrase-sign-row",
+          "prompt": "Read the sign carefully",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "phrase-sign-cue"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "phrase-sign-cue"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "phrase-unpack-cue-2",
+              "verdict": "INCORRECT",
+              "rationale": "The words give a direction rather than ask a question.",
+              "evidenceIds": [
+                "trail-3"
+              ]
+            },
+            {
+              "answerId": "phrase-sign-cue",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Read the sign carefully forms one instruction phrase.",
+              "evidenceIds": [
+                "trail-3"
+              ]
+            },
+            {
+              "answerId": "phrase-lunch-cue-2",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase directs an action rather than merely naming something.",
+              "evidenceIds": [
+                "trail-3"
+              ]
+            },
+            {
+              "answerId": "phrase-path-cue-2",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase is not an exclamation.",
+              "evidenceIds": [
+                "trail-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "phrase-path-row",
+          "prompt": "checked the path",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "phrase-path-cue"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "phrase-path-cue"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "phrase-unpack-cue-3",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase states an action without excitement or an exclamation.",
+              "evidenceIds": [
+                "trail-4"
+              ]
+            },
+            {
+              "answerId": "phrase-lunch-cue-3",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase does not ask about the path.",
+              "evidenceIds": [
+                "trail-4"
+              ]
+            },
+            {
+              "answerId": "phrase-path-cue",
+              "verdict": "DEFENSIBLE",
+              "rationale": "checked the path is one path-checking action phrase.",
+              "evidenceIds": [
+                "trail-4"
+              ]
+            },
+            {
+              "answerId": "phrase-sign-cue-2",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase describes an action, not a name for the path.",
+              "evidenceIds": [
+                "trail-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "phrase-lunch-row",
+          "prompt": "a helpful map",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "phrase-lunch-cue"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "phrase-lunch-cue"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "phrase-unpack-cue-4",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase does not ask a question.",
+              "evidenceIds": [
+                "trail-1"
+              ]
+            },
+            {
+              "answerId": "phrase-lunch-cue",
+              "verdict": "DEFENSIBLE",
+              "rationale": "helpful describes the map, so the words form a descriptive phrase.",
+              "evidenceIds": [
+                "trail-1"
+              ]
+            },
+            {
+              "answerId": "phrase-sign-cue-3",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase names and describes the map but does not state an action.",
+              "evidenceIds": [
+                "trail-1"
+              ]
+            },
+            {
+              "answerId": "phrase-path-cue-3",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase contains no exclamation.",
+              "evidenceIds": [
+                "trail-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-questions-and-exclamations-1",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-77d9ce841f05bd80",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "0fd88d9bfc98530000539e5fd4cfc330cdc20458199039cb52705531f9be5beb",
+        "conclusionsSha256": "4765f6470f4ca9731b798e74354e601cd70686a47f9c1c7cf9d7c14a88fdc238",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0011.pass-a.json",
+        "receiptSha256": "4765f6470f4ca9731b798e74354e601cd70686a47f9c1c7cf9d7c14a88fdc238",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence should sound like a question?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "science-question-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "science-question-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "science-question-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Did the plan work? directly asks a question and ends with a question mark.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-science-demo"
+              ]
+            },
+            {
+              "answerId": "science-card-choice",
+              "verdict": "INCORRECT",
+              "rationale": "This is a statement even though it mentions a question card.",
+              "evidenceIds": [
+                "science-2"
+              ]
+            },
+            {
+              "answerId": "science-exclaim-choice",
+              "verdict": "INCORRECT",
+              "rationale": "This is an excited exclamation, not a question.",
+              "evidenceIds": [
+                "science-3"
+              ]
+            },
+            {
+              "answerId": "science-review-choice",
+              "verdict": "INCORRECT",
+              "rationale": "This is a statement about reviewing steps.",
+              "evidenceIds": [
+                "science-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-questions-and-exclamations-2",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-cd19a392ae58e056",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "0fd88d9bfc98530000539e5fd4cfc330cdc20458199039cb52705531f9be5beb",
+        "conclusionsSha256": "4765f6470f4ca9731b798e74354e601cd70686a47f9c1c7cf9d7c14a88fdc238",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0011.pass-a.json",
+        "receiptSha256": "4765f6470f4ca9731b798e74354e601cd70686a47f9c1c7cf9d7c14a88fdc238",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that should be read with excitement.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "science-exclaim-sentence"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "science-exclaim-sentence"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "science-review-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This is neutral narration about reviewing steps.",
+              "evidenceIds": [
+                "science-4"
+              ]
+            },
+            {
+              "answerId": "science-exclaim-sentence",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The words say exciting, use an exclamation mark, and are shouted.",
+              "evidenceIds": [
+                "science-3"
+              ]
+            },
+            {
+              "answerId": "science-question-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This is neutral narration about class work.",
+              "evidenceIds": [
+                "science-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-questions-and-exclamations-3",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-feb264951146d321",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "0fd88d9bfc98530000539e5fd4cfc330cdc20458199039cb52705531f9be5beb",
+        "conclusionsSha256": "4765f6470f4ca9731b798e74354e601cd70686a47f9c1c7cf9d7c14a88fdc238",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0011.pass-a.json",
+        "receiptSha256": "4765f6470f4ca9731b798e74354e601cd70686a47f9c1c7cf9d7c14a88fdc238",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice should be read with an excited voice?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "science-exclaim-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "science-exclaim-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "science-review-choice",
+              "verdict": "INCORRECT",
+              "rationale": "review the steps is a neutral action phrase in the passage.",
+              "evidenceIds": [
+                "science-4"
+              ]
+            },
+            {
+              "answerId": "science-note-choice",
+              "verdict": "INCORRECT",
+              "rationale": "one careful note is a neutral naming phrase.",
+              "evidenceIds": [
+                "science-2"
+              ]
+            },
+            {
+              "answerId": "science-question-choice",
+              "verdict": "INCORRECT",
+              "rationale": "question card names an object rather than expressing excitement.",
+              "evidenceIds": [
+                "science-2"
+              ]
+            },
+            {
+              "answerId": "science-exclaim-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "that is exciting is the content of the shouted exclamation.",
+              "evidenceIds": [
+                "science-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-questions-and-exclamations-4",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-00c5cac83e7297bc",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "0fd88d9bfc98530000539e5fd4cfc330cdc20458199039cb52705531f9be5beb",
+        "conclusionsSha256": "4765f6470f4ca9731b798e74354e601cd70686a47f9c1c7cf9d7c14a88fdc238",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0011.pass-a.json",
+        "receiptSha256": "4765f6470f4ca9731b798e74354e601cd70686a47f9c1c7cf9d7c14a88fdc238",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "question-mark-row",
+          "prompt": "question mark",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "question-cue-row"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "question-cue-row"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "question-cue-row",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The taught question-mark cue is to let the voice rise.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-science-demo"
+              ]
+            },
+            {
+              "answerId": "comma-cue-row",
+              "verdict": "INCORRECT",
+              "rationale": "This is a comma cue.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-science-demo"
+              ]
+            },
+            {
+              "answerId": "period-cue-row",
+              "verdict": "INCORRECT",
+              "rationale": "This is a period cue.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-science-demo"
+              ]
+            },
+            {
+              "answerId": "exclamation-cue-row",
+              "verdict": "INCORRECT",
+              "rationale": "This is an exclamation cue.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-science-demo"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "exclamation-mark-row",
+          "prompt": "exclamation mark",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "exclamation-cue-row"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "exclamation-cue-row"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "comma-cue-row-2",
+              "verdict": "INCORRECT",
+              "rationale": "This is a comma cue.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-science-demo"
+              ]
+            },
+            {
+              "answerId": "period-cue-row-2",
+              "verdict": "INCORRECT",
+              "rationale": "This is the ordinary period cue.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-science-demo"
+              ]
+            },
+            {
+              "answerId": "exclamation-cue-row",
+              "verdict": "DEFENSIBLE",
+              "rationale": "An exclamation mark cues reading with excitement.",
+              "evidenceIds": [
+                "science-3"
+              ]
+            },
+            {
+              "answerId": "question-cue-row-2",
+              "verdict": "INCORRECT",
+              "rationale": "A question mark, not an exclamation mark, marks a question.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-science-demo"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "comma-mark-row",
+          "prompt": "comma",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "comma-cue-row"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "comma-cue-row"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "exclamation-cue-row-2",
+              "verdict": "INCORRECT",
+              "rationale": "Bright energy is an exclamation cue.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-science-demo"
+              ]
+            },
+            {
+              "answerId": "comma-cue-row",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A comma tells the reader to pause gently at the mark.",
+              "evidenceIds": [
+                "science-2"
+              ]
+            },
+            {
+              "answerId": "period-cue-row-3",
+              "verdict": "INCORRECT",
+              "rationale": "A full stop is a period cue.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-science-demo"
+              ]
+            },
+            {
+              "answerId": "question-cue-row-3",
+              "verdict": "INCORRECT",
+              "rationale": "Lifting the tone is associated with a question cue, not the comma.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-science-demo"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "period-mark-row",
+          "prompt": "period",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "period-cue-row"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "period-cue-row"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "period-cue-row",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A period tells the reader to stop at the end.",
+              "evidenceIds": [
+                "science-4"
+              ]
+            },
+            {
+              "answerId": "comma-cue-row-3",
+              "verdict": "INCORRECT",
+              "rationale": "A soft internal pause is a comma cue.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-science-demo"
+              ]
+            },
+            {
+              "answerId": "exclamation-cue-row-3",
+              "verdict": "INCORRECT",
+              "rationale": "Excitement is an exclamation cue.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-science-demo"
+              ]
+            },
+            {
+              "answerId": "question-cue-row-4",
+              "verdict": "INCORRECT",
+              "rationale": "A rising voice is a question cue.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-science-demo"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-dialogue-and-character-voice-1",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-a576e1dcb1007780",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "8cf291c121d3c8ca81626e2a68fc4e41acde8869b62f614949f3774e4f71180d",
+        "conclusionsSha256": "cdd43b1d88fdc7d8271f5fb7173740f467b518eff0fbebcaa7d8893c27b2b074",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0026.pass-a.json",
+        "receiptSha256": "cdd43b1d88fdc7d8271f5fb7173740f467b518eff0fbebcaa7d8893c27b2b074",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which part of the museum passage is dialogue?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "museum-dialogue-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "museum-dialogue-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "museum-description-choice",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence narrates what the group did and is not spoken dialogue.",
+              "evidenceIds": [
+                "museum-4"
+              ]
+            },
+            {
+              "answerId": "museum-heard-choice",
+              "verdict": "INCORRECT",
+              "rationale": "This phrase narrates the guide's action and is outside quotation marks.",
+              "evidenceIds": [
+                "museum-3"
+              ]
+            },
+            {
+              "answerId": "museum-setting-choice",
+              "verdict": "INCORRECT",
+              "rationale": "This is a narration and speaker tag introducing dialogue.",
+              "evidenceIds": [
+                "museum-1"
+              ]
+            },
+            {
+              "answerId": "museum-dialogue-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The child's exact spoken question appears inside quotation marks.",
+              "evidenceIds": [
+                "museum-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-dialogue-and-character-voice-2",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-5d784e3bbf0c1f07",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "0fd88d9bfc98530000539e5fd4cfc330cdc20458199039cb52705531f9be5beb",
+        "conclusionsSha256": "4765f6470f4ca9731b798e74354e601cd70686a47f9c1c7cf9d7c14a88fdc238",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0011.pass-a.json",
+        "receiptSha256": "4765f6470f4ca9731b798e74354e601cd70686a47f9c1c7cf9d7c14a88fdc238",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence spoken as a curious question.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "museum-question-sentence"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "museum-question-sentence"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "museum-move-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This is steady narration and contains no spoken question.",
+              "evidenceIds": [
+                "museum-4"
+              ]
+            },
+            {
+              "answerId": "museum-guide-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This is the guide's reassuring exclamation, not the child's question.",
+              "evidenceIds": [
+                "museum-3"
+              ]
+            },
+            {
+              "answerId": "museum-question-sentence",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The child asks whether the ghost story is real, making this the curious question.",
+              "evidenceIds": [
+                "museum-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-dialogue-and-character-voice-3",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-82ba6512719c7426",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "8cf291c121d3c8ca81626e2a68fc4e41acde8869b62f614949f3774e4f71180d",
+        "conclusionsSha256": "cdd43b1d88fdc7d8271f5fb7173740f467b518eff0fbebcaa7d8893c27b2b074",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0026.pass-a.json",
+        "receiptSha256": "cdd43b1d88fdc7d8271f5fb7173740f467b518eff0fbebcaa7d8893c27b2b074",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words that help the reader notice who is speaking.",
+          "requestedSelectionCount": 3,
+          "keyedAnswerIds": [
+            "museum-guide-choice",
+            "museum-child-choice",
+            "museum-quotes-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "museum-guide-choice",
+            "museum-quotes-choice",
+            "museum-child-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "museum-card-choice",
+              "verdict": "INCORRECT",
+              "rationale": "story card names an object and does not identify or mark a speaker.",
+              "evidenceIds": [
+                "museum-3"
+              ]
+            },
+            {
+              "answerId": "museum-guide-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "the guide said names the speaker and uses a speech verb.",
+              "evidenceIds": [
+                "museum-1"
+              ]
+            },
+            {
+              "answerId": "museum-quotes-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Quotation marks show the boundaries of spoken words and help connect them to speaker tags.",
+              "evidenceIds": [
+                "passage-word-forge-fluency-museum-dialogue"
+              ]
+            },
+            {
+              "answerId": "museum-child-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "a child asked names the speaker and uses a speech verb.",
+              "evidenceIds": [
+                "museum-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-dialogue-and-character-voice-4",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-49b264c2a8f23ece",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "0fd88d9bfc98530000539e5fd4cfc330cdc20458199039cb52705531f9be5beb",
+        "conclusionsSha256": "4765f6470f4ca9731b798e74354e601cd70686a47f9c1c7cf9d7c14a88fdc238",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0011.pass-a.json",
+        "receiptSha256": "4765f6470f4ca9731b798e74354e601cd70686a47f9c1c7cf9d7c14a88fdc238",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "curious-row",
+          "prompt": "\"Is the ghost story real?\"",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "museum-curious-cue"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "museum-curious-cue"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "museum-soft-cue",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The text does not specifically cue a soft, calm ending for the child's question.",
+              "evidenceIds": [
+                "museum-2"
+              ]
+            },
+            {
+              "answerId": "museum-curious-cue",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The words are explicitly asked as a question about whether the story is real.",
+              "evidenceIds": [
+                "museum-2"
+              ]
+            },
+            {
+              "answerId": "museum-close-cue",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Nothing in the question suggests a chase or rushed pace.",
+              "evidenceIds": [
+                "museum-2"
+              ]
+            },
+            {
+              "answerId": "museum-story-cue",
+              "verdict": "INCORRECT",
+              "rationale": "The line asks a question and should not sound flat like a fact.",
+              "evidenceIds": [
+                "museum-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "soft-row",
+          "prompt": "The guide laughed softly",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "museum-soft-cue"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "museum-soft-cue"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "museum-soft-cue",
+              "verdict": "DEFENSIBLE",
+              "rationale": "laughed softly directly supports a soft, calm voice.",
+              "evidenceIds": [
+                "museum-3"
+              ]
+            },
+            {
+              "answerId": "museum-close-cue-2",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The passage gives no race or rushed cue.",
+              "evidenceIds": [
+                "museum-3"
+              ]
+            },
+            {
+              "answerId": "museum-curious-cue-2",
+              "verdict": "INCORRECT",
+              "rationale": "The guide's action is not a whispered question.",
+              "evidenceIds": [
+                "museum-3"
+              ]
+            },
+            {
+              "answerId": "museum-story-cue-2",
+              "verdict": "INCORRECT",
+              "rationale": "laughed softly supplies expression rather than a flat delivery.",
+              "evidenceIds": [
+                "museum-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "story-row",
+          "prompt": "It is only a story card",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "museum-story-cue"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "museum-story-cue"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "museum-story-cue",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The guide calmly explains that the ghost account is only a story card.",
+              "evidenceIds": [
+                "museum-3"
+              ]
+            },
+            {
+              "answerId": "museum-soft-cue-3",
+              "verdict": "INCORRECT",
+              "rationale": "This clause explains rather than shouts surprise.",
+              "evidenceIds": [
+                "museum-3"
+              ]
+            },
+            {
+              "answerId": "museum-curious-cue-3",
+              "verdict": "INCORRECT",
+              "rationale": "The clause is a statement, not a question.",
+              "evidenceIds": [
+                "museum-3"
+              ]
+            },
+            {
+              "answerId": "museum-close-cue-3",
+              "verdict": "INCORRECT",
+              "rationale": "The clause explains and does not command anyone.",
+              "evidenceIds": [
+                "museum-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "close-row",
+          "prompt": "The group moved from one case to the next",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "museum-close-cue"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "museum-close-cue"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "museum-story-cue-4",
+              "verdict": "INCORRECT",
+              "rationale": "The narration does not ask a question.",
+              "evidenceIds": [
+                "museum-4"
+              ]
+            },
+            {
+              "answerId": "museum-close-cue",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sentence steadily narrates the group's movement from case to case.",
+              "evidenceIds": [
+                "museum-4"
+              ]
+            },
+            {
+              "answerId": "museum-curious-cue-4",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The narration gives no questioning voice at a case.",
+              "evidenceIds": [
+                "museum-4"
+              ]
+            },
+            {
+              "answerId": "museum-soft-cue-4",
+              "verdict": "INCORRECT",
+              "rationale": "The narration is not an exclamation.",
+              "evidenceIds": [
+                "museum-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-nature-report-1",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-339d5a878a096753",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "8cf291c121d3c8ca81626e2a68fc4e41acde8869b62f614949f3774e4f71180d",
+        "conclusionsSha256": "cdd43b1d88fdc7d8271f5fb7173740f467b518eff0fbebcaa7d8893c27b2b074",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0026.pass-a.json",
+        "receiptSha256": "cdd43b1d88fdc7d8271f5fb7173740f467b518eff0fbebcaa7d8893c27b2b074",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which consonant-le word splits as bot | tle?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "animal-bottle-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "animal-bottle-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "animal-bottle-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "bottle reconstructs exactly from bot | tle.",
+              "evidenceIds": [
+                "animal-2"
+              ]
+            },
+            {
+              "answerId": "animal-stable-choice",
+              "verdict": "INCORRECT",
+              "rationale": "stable splits as sta | ble, not bot | tle.",
+              "evidenceIds": [
+                "animal-5"
+              ]
+            },
+            {
+              "answerId": "animal-slowly-choice",
+              "verdict": "INCORRECT",
+              "rationale": "slowly is not a consonant-le word.",
+              "evidenceIds": [
+                "animal-2"
+              ]
+            },
+            {
+              "answerId": "animal-candle-choice",
+              "verdict": "INCORRECT",
+              "rationale": "candle splits as can | dle, not bot | tle.",
+              "evidenceIds": [
+                "animal-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-nature-report-2",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-50b225e84f08f774",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "8cf291c121d3c8ca81626e2a68fc4e41acde8869b62f614949f3774e4f71180d",
+        "conclusionsSha256": "cdd43b1d88fdc7d8271f5fb7173740f467b518eff0fbebcaa7d8893c27b2b074",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0026.pass-a.json",
+        "receiptSha256": "cdd43b1d88fdc7d8271f5fb7173740f467b518eff0fbebcaa7d8893c27b2b074",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence says the team checked the stable crate?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "animal-stable-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "animal-stable-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "animal-stable-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence explicitly says the team checked the stable crate.",
+              "evidenceIds": [
+                "animal-5"
+              ]
+            },
+            {
+              "answerId": "animal-calm-choice",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence explains how to hold a bottle and move slowly.",
+              "evidenceIds": [
+                "animal-2"
+              ]
+            },
+            {
+              "answerId": "animal-drink-choice",
+              "verdict": "INCORRECT",
+              "rationale": "This question asks whether the pup drank.",
+              "evidenceIds": [
+                "animal-3"
+              ]
+            },
+            {
+              "answerId": "animal-warm-choice",
+              "verdict": "INCORRECT",
+              "rationale": "This phrase describes the room's temperature, not the team checking a crate.",
+              "evidenceIds": [
+                "animal-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-nature-report-3",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-08705e2df456b3f9",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "8cf291c121d3c8ca81626e2a68fc4e41acde8869b62f614949f3774e4f71180d",
+        "conclusionsSha256": "cdd43b1d88fdc7d8271f5fb7173740f467b518eff0fbebcaa7d8893c27b2b074",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0018.second-pass.json",
+        "receiptSha256": "f4da50000724eb745b45b3de4c7623006ad0433adb4bc007a826871b3159d5d0",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words that have a consonant-le ending or tell how to move.",
+          "requestedSelectionCount": 3,
+          "keyedAnswerIds": [
+            "animal-candle-choice",
+            "animal-bottle-choice-3",
+            "animal-slowly-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "animal-bottle-choice-3",
+            "animal-slowly-choice-2",
+            "animal-candle-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "animal-drink-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "drink names an action but neither has a consonant-le ending nor tells how movement occurs.",
+              "evidenceIds": [
+                "animal-3"
+              ]
+            },
+            {
+              "answerId": "animal-bottle-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "bottle ends with the consonant-le group tle.",
+              "evidenceIds": [
+                "animal-2"
+              ]
+            },
+            {
+              "answerId": "animal-slowly-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "slowly tells how the helper says to move.",
+              "evidenceIds": [
+                "animal-2"
+              ]
+            },
+            {
+              "answerId": "animal-candle-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "candle ends with the consonant-le group dle.",
+              "evidenceIds": [
+                "animal-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-nature-report-4",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-7dcf693684402b62",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "542660a56cdf65d596e47936a02519fc2d76ef3b3db188b03ec8a1bb02190f5d",
+        "conclusionsSha256": "8583c6ddeed4278215f4a8a44555bf197e84de6e5452324bd73cd3af384fbb10",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0018.second-pass.json",
+        "receiptSha256": "f4da50000724eb745b45b3de4c7623006ad0433adb4bc007a826871b3159d5d0",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence includes the direction to move slowly?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "animal-slow-sentence"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "animal-slow-sentence"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "animal-slow-sentence",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence explicitly directs the learner to move slowly.",
+              "evidenceIds": [
+                "animal-2"
+              ]
+            },
+            {
+              "answerId": "animal-stable-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes checking a crate and smiling, not moving slowly.",
+              "evidenceIds": [
+                "animal-5"
+              ]
+            },
+            {
+              "answerId": "animal-pup-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence asks whether the pup drank and gives no movement direction.",
+              "evidenceIds": [
+                "animal-3"
+              ]
+            },
+            {
+              "answerId": "animal-safe-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This shortened statement describes room temperature, not a direction to move slowly.",
+              "evidenceIds": [
+                "animal-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-community-announcement-1",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-dee63944fcfb68a0",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "542660a56cdf65d596e47936a02519fc2d76ef3b3db188b03ec8a1bb02190f5d",
+        "conclusionsSha256": "8583c6ddeed4278215f4a8a44555bf197e84de6e5452324bd73cd3af384fbb10",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0012.pass-a.json",
+        "receiptSha256": "8583c6ddeed4278215f4a8a44555bf197e84de6e5452324bd73cd3af384fbb10",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice ends with an exclamation mark and signals an excited voice?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "garden-share-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "garden-share-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "garden-table-choice",
+              "verdict": "INCORRECT",
+              "rationale": "This noun phrase has no exclamation mark or excited-voice cue.",
+              "evidenceIds": [
+                "garden-5"
+              ]
+            },
+            {
+              "answerId": "garden-bundle-choice",
+              "verdict": "INCORRECT",
+              "rationale": "This noun phrase has no exclamation mark or excited-voice cue.",
+              "evidenceIds": [
+                "garden-2"
+              ]
+            },
+            {
+              "answerId": "garden-steps-choice",
+              "verdict": "INCORRECT",
+              "rationale": "This list has commas but no exclamation mark.",
+              "evidenceIds": [
+                "garden-1"
+              ]
+            },
+            {
+              "answerId": "garden-share-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Please share! visibly ends with an exclamation mark and cues an excited voice.",
+              "evidenceIds": [
+                "garden-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-community-announcement-2",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-9442c5c2228106d6",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "8cf291c121d3c8ca81626e2a68fc4e41acde8869b62f614949f3774e4f71180d",
+        "conclusionsSha256": "cdd43b1d88fdc7d8271f5fb7173740f467b518eff0fbebcaa7d8893c27b2b074",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0026.pass-a.json",
+        "receiptSha256": "cdd43b1d88fdc7d8271f5fb7173740f467b518eff0fbebcaa7d8893c27b2b074",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that should be read as a list of steps.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "garden-list-sentence"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "garden-list-sentence"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "garden-speed-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes the team working quickly and contains no list of steps.",
+              "evidenceIds": [
+                "garden-4"
+              ]
+            },
+            {
+              "answerId": "garden-list-sentence",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence announces three steps and lists water, weed, and wait.",
+              "evidenceIds": [
+                "garden-1"
+              ]
+            },
+            {
+              "answerId": "garden-question-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence asks one question and contains no list of steps.",
+              "evidenceIds": [
+                "garden-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-community-announcement-3",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-7d084de53e1358a1",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "8cf291c121d3c8ca81626e2a68fc4e41acde8869b62f614949f3774e4f71180d",
+        "conclusionsSha256": "cdd43b1d88fdc7d8271f5fb7173740f467b518eff0fbebcaa7d8893c27b2b074",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0018.second-pass.json",
+        "receiptSha256": "f4da50000724eb745b45b3de4c7623006ad0433adb4bc007a826871b3159d5d0",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two words that end in -ly and tell how the work was done.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "garden-carefully-choice",
+            "garden-quickly-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "garden-carefully-choice",
+            "garden-quickly-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "garden-table-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "table does not end in -ly and does not tell how work was done.",
+              "evidenceIds": [
+                "garden-5"
+              ]
+            },
+            {
+              "answerId": "garden-bundle-choice",
+              "verdict": "INCORRECT",
+              "rationale": "bundle does not end in -ly and names an object.",
+              "evidenceIds": [
+                "garden-2"
+              ]
+            },
+            {
+              "answerId": "garden-carefully-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "carefully ends in -ly and tells how the children moved while working.",
+              "evidenceIds": [
+                "garden-2"
+              ]
+            },
+            {
+              "answerId": "garden-quickly-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "quickly ends in -ly and tells how the team worked.",
+              "evidenceIds": [
+                "garden-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-community-announcement-4",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-31191501d1f21dad",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "8cf291c121d3c8ca81626e2a68fc4e41acde8869b62f614949f3774e4f71180d",
+        "conclusionsSha256": "cdd43b1d88fdc7d8271f5fb7173740f467b518eff0fbebcaa7d8893c27b2b074",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0026.pass-a.json",
+        "receiptSha256": "cdd43b1d88fdc7d8271f5fb7173740f467b518eff0fbebcaa7d8893c27b2b074",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which phrase ends with an exclamation mark?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "garden-share-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "garden-share-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "garden-steps-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The list water, weed, and wait ends with a period.",
+              "evidenceIds": [
+                "garden-1"
+              ]
+            },
+            {
+              "answerId": "garden-table-choice",
+              "verdict": "INCORRECT",
+              "rationale": "This phrase is followed by other words and does not end in an exclamation mark.",
+              "evidenceIds": [
+                "garden-5"
+              ]
+            },
+            {
+              "answerId": "garden-bundle-choice",
+              "verdict": "INCORRECT",
+              "rationale": "This phrase is followed by more sentence content and has no exclamation mark.",
+              "evidenceIds": [
+                "garden-2"
+              ]
+            },
+            {
+              "answerId": "garden-share-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Please share! visibly ends with an exclamation mark.",
+              "evidenceIds": [
+                "garden-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-science-demonstration-1",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-e0bf81be210ef852",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "c22c06fe85c6b705797ca7dd8862ab074491b2e361a257df0fe6560e66103366",
+        "conclusionsSha256": "aba632f9ed3496ba6e06a106293d0bb2e8ecbc8b546f0c80452dc9acbfdd18c9",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0027.pass-a.json",
+        "receiptSha256": "aba632f9ed3496ba6e06a106293d0bb2e8ecbc8b546f0c80452dc9acbfdd18c9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the prefix mis- and means spell incorrectly?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "library-misspell-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "library-misspell-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "library-helpful-choice",
+              "verdict": "INCORRECT",
+              "rationale": "helpful has the suffix -ful, not the prefix mis-.",
+              "evidenceIds": [
+                "library-4"
+              ]
+            },
+            {
+              "answerId": "library-misspell-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "misspell begins with mis- and means to spell incorrectly.",
+              "evidenceIds": [
+                "library-3"
+              ]
+            },
+            {
+              "answerId": "library-read-choice",
+              "verdict": "INCORRECT",
+              "rationale": "read has neither the prefix mis- nor the requested meaning.",
+              "evidenceIds": [
+                "library-1",
+                "library-2"
+              ]
+            },
+            {
+              "answerId": "library-bubble-choice",
+              "verdict": "INCORRECT",
+              "rationale": "bubble has no mis- prefix and does not mean spell incorrectly.",
+              "evidenceIds": [
+                "library-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-science-demonstration-2",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-864703e3bdf8ad7f",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "542660a56cdf65d596e47936a02519fc2d76ef3b3db188b03ec8a1bb02190f5d",
+        "conclusionsSha256": "8583c6ddeed4278215f4a8a44555bf197e84de6e5452324bd73cd3af384fbb10",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0012.pass-a.json",
+        "receiptSha256": "8583c6ddeed4278215f4a8a44555bf197e84de6e5452324bd73cd3af384fbb10",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence shows a child planning to check the spelling of a title?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "library-check-sentence"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "library-check-sentence"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "library-check-sentence",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The child says the title may be misspelled and explicitly plans to check it.",
+              "evidenceIds": [
+                "library-3"
+              ]
+            },
+            {
+              "answerId": "library-helpful-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This approves the plan but does not state the child's spelling-check action.",
+              "evidenceIds": [
+                "library-4"
+              ]
+            },
+            {
+              "answerId": "library-parade-choice",
+              "verdict": "INCORRECT",
+              "rationale": "This instruction concerns a flyer and parade, not checking a title's spelling.",
+              "evidenceIds": [
+                "library-1"
+              ]
+            },
+            {
+              "answerId": "library-table-choice",
+              "verdict": "INCORRECT",
+              "rationale": "This describes lining up and does not mention checking spelling.",
+              "evidenceIds": [
+                "library-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-science-demonstration-3",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-09392fec23fa3078",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "542660a56cdf65d596e47936a02519fc2d76ef3b3db188b03ec8a1bb02190f5d",
+        "conclusionsSha256": "8583c6ddeed4278215f4a8a44555bf197e84de6e5452324bd73cd3af384fbb10",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0018.second-pass.json",
+        "receiptSha256": "f4da50000724eb745b45b3de4c7623006ad0433adb4bc007a826871b3159d5d0",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words that use a consonant-le ending, the prefix mis-, or the suffix -ful.",
+          "requestedSelectionCount": 3,
+          "keyedAnswerIds": [
+            "library-bubble-choice-2",
+            "library-misspell-choice-2",
+            "library-helpful-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "library-bubble-choice-2",
+            "library-misspell-choice-2",
+            "library-helpful-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "library-bubble-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "bubble ends with the consonant-le pattern ble.",
+              "evidenceIds": [
+                "library-1"
+              ]
+            },
+            {
+              "answerId": "library-misspell-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "misspell begins with the prefix mis- attached to spell.",
+              "evidenceIds": [
+                "library-3"
+              ]
+            },
+            {
+              "answerId": "library-quiet-choice",
+              "verdict": "INCORRECT",
+              "rationale": "quiet has none of the three requested word-part patterns.",
+              "evidenceIds": [
+                "library-2"
+              ]
+            },
+            {
+              "answerId": "library-helpful-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "helpful ends with the suffix -ful.",
+              "evidenceIds": [
+                "library-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-word-forge-fluency-practice-science-demonstration-4",
+      "packId": "g2-word-forge-fluency-practice-foundations",
+      "contentVersion": "g2-wf-fluency-practice-r0.1.0",
+      "contentFingerprint": "qta-v1-cde835652bec9c41",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "c22c06fe85c6b705797ca7dd8862ab074491b2e361a257df0fe6560e66103366",
+        "conclusionsSha256": "aba632f9ed3496ba6e06a106293d0bb2e8ecbc8b546f0c80452dc9acbfdd18c9",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0027.pass-a.json",
+        "receiptSha256": "aba632f9ed3496ba6e06a106293d0bb2e8ecbc8b546f0c80452dc9acbfdd18c9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence praises a plan?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "library-helpful-sentence"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "library-helpful-sentence"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "library-helpful-sentence",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Calling it a helpful plan praises the plan.",
+              "evidenceIds": [
+                "library-4"
+              ]
+            },
+            {
+              "answerId": "library-check-sentence-2",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence states the child's plan but does not praise it.",
+              "evidenceIds": [
+                "library-3"
+              ]
+            },
+            {
+              "answerId": "library-quiet-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes where children lined up, not a plan.",
+              "evidenceIds": [
+                "library-2"
+              ]
+            },
+            {
+              "answerId": "library-bubble-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence gives event directions rather than praising a plan.",
+              "evidenceIds": [
+                "library-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

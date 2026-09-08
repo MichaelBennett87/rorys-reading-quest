@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0032",
+  "batchFileSha256": "a6e1cacddb5c3fe24051d623e5397a5c9fd4e42c486b8136c206138ef9c658ad",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0754",
+      "fingerprint": "5699f5fe6e0165452cd8c8398d0c142e0ca9be06fa097da566802c5708e138da",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Context clues use surrounding text rather than the relationship itself.",
+              [
+                "S0107"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The glossary can define marker but does not name the strategy of relating marker to points.",
+              [
+                "S0122",
+                "S0124"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Background knowledge does not specifically use the relation between these words.",
+              [
+                "S0107"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Relating marker to points is a word-relationship strategy.",
+              [
+                "S0107"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0756",
+      "fingerprint": "85e297893dc02e9f233f372ae8e3069d04f4c3b1ce287c9783105efaaa2c19d5",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This passage sentence shows the hikers stopping for a break.",
+              [
+                "S0111"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This supplies the broad background fact connecting a break with settling down.",
+              []
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This defines narrow rather than settled.",
+              [
+                "S0105"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes a gravel surface rather than settled.",
+              [
+                "S0109"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0761",
+      "fingerprint": "ddd3c361e4b89486c3f6a7093891446e8f398aad9d2644913dec1d05f013d662",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Cluster and group are related words with overlapping meaning.",
+              [
+                "S0129",
+                "S0146"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Background knowledge does not specifically name the relation between the words.",
+              [
+                "S0129"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Context can help, but the prompt asks for the relationship between the words.",
+              [
+                "S0129"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The glossary gives a definition, but that is not the strategy named by the prompt.",
+              [
+                "S0144",
+                "S0146"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0763",
+      "fingerprint": "a5279809e899f20c155d0a3c36493055b0fbcfdcc3922c910abf55510cd060a6",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This passage clue connects season with cool conditions and gradual change.",
+              [
+                "S0133"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This concerns compost's soil benefit rather than season.",
+              [
+                "S0131"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This supplies the broad background fact that seasons have different weather patterns.",
+              []
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This defines scarce rather than season.",
+              [
+                "S0127"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0764",
+      "fingerprint": "1605cee10d45297e1969fed3ac981df8a925eeb6bf89aefa76d8612e66f8dfc0",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This defines scarce rather than cluster.",
+              [
+                "S0127"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This uses scarce and does not explain cluster.",
+              [
+                "S0134"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This directly defines cluster as a small group close together.",
+              [
+                "S0129"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This concerns migrate and season rather than cluster.",
+              [
+                "S0136"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

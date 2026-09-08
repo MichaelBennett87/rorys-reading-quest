@@ -1,0 +1,1015 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0011",
+  "batchFileSha256": "0fd88d9bfc98530000539e5fd4cfc330cdc20458199039cb52705531f9be5beb",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0288",
+      "fingerprint": "04b81a0a8c6b72211a0e23bc7188a424a3332270691bdc7a04e8ac7493e1f516",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "A period marks a full stop rather than the gentle internal pause requested.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "A comma marks the gentle pause taught and used inside the weather sentences.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "An exclamation mark cues excitement rather than a gentle pause.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "A question mark marks a question rather than the requested comma pause.",
+              [
+                "S0005"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0289",
+      "fingerprint": "072c923461ed831eb0f7bff45fa8f60f4ee36be8273b2165d797f0d316eb96c3",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This exclamation has no comma after which to pause.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This statement has no comma.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This sentence contains a comma after chart, where the reader pauses.",
+              [
+                "S0008"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0290",
+      "fingerprint": "bfec8a9a522234fda561f3f12bae7d56503d150f6c062655a89552ca54354503",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "A comma visibly signals a brief pause and slows the reading at that point.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "map names an object and gives no pace or pause cue.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "clouds names weather and gives no pace or pause cue.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "gentle is the base of gently in the question and supports a gentle, unhurried delivery.",
+              [
+                "S0005"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0291",
+      "fingerprint": "706cd6dabb374681106026d408b1af437a86855e70171c12d13582b32d7d3649",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "A comma signals a gentle internal pause.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Stopping the sentence is the period's job.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "A comma does not turn the sentence into a question.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "A comma does not by itself signal excitement.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "A small internal pause is the comma cue, not the period's complete ending.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Bright energy is associated with an exclamation, not a period.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "A period does not mark a question.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "A period tells the reader to stop at the end of the sentence.",
+              [
+                "S0009"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The taught question-mark cue is to let the voice rise.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This describes a comma cue, not a question mark.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This describes a period cue, not a question mark.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Bright energy is the exclamation cue, not the question-mark cue.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "A soft pause is a comma cue, not an exclamation cue.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "A period supplies the ordinary sentence-ending cue.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "A rising question tone is not the exclamation cue requested.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "An exclamation mark cues an excited reading.",
+              [
+                "S0007"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0294",
+      "fingerprint": "374a131a2da249a077ac830131bb9182723dafdbceecd1bbf26f904b56d04741",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This narrates completed actions and gives no instruction to read a sign.",
+              [
+                "S0017"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This narrates unpacking lunch and a map, not an instruction.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The ranger directly gives the calm instruction to read the sign carefully.",
+              [
+                "S0015"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0295",
+      "fingerprint": "085ba789ffa9c87e78cb65593acb37fbd9319aca583cacf72e56ac082da32ea5",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The phrase names one unpacking action rather than a list.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The words belong together as one unpacking action phrase.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The phrase contains no exclamation.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The phrase contains no question.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The words give a direction rather than ask a question.",
+              [
+                "S0015"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Read the sign carefully forms one instruction phrase.",
+              [
+                "S0015"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The phrase directs an action rather than merely naming something.",
+              [
+                "S0015"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The phrase is not an exclamation.",
+              [
+                "S0015"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The phrase states an action without excitement or an exclamation.",
+              [
+                "S0017"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The phrase does not ask about the path.",
+              [
+                "S0017"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "checked the path is one path-checking action phrase.",
+              [
+                "S0017"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The phrase describes an action, not a name for the path.",
+              [
+                "S0017"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The phrase does not ask a question.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "helpful describes the map, so the words form a descriptive phrase.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The phrase names and describes the map but does not state an action.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The phrase contains no exclamation.",
+              [
+                "S0012"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0296",
+      "fingerprint": "7353ef0c0a375c05088fc55e14d150cfc8c33476b2c7e684c75c86088b7e85ec",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Did the plan work? directly asks a question and ends with a question mark.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This is a statement even though it mentions a question card.",
+              [
+                "S0024"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This is an excited exclamation, not a question.",
+              [
+                "S0025"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is a statement about reviewing steps.",
+              [
+                "S0022"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0297",
+      "fingerprint": "ee1fc99cc5ed2d76766b4c59d57cbb737ba307b455b1b5eac7fd2128002da213",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is neutral narration about reviewing steps.",
+              [
+                "S0022"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The words say exciting, use an exclamation mark, and are shouted.",
+              [
+                "S0025"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This is neutral narration about class work.",
+              [
+                "S0024"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0298",
+      "fingerprint": "98aae2b94ca7c5226d8f861cbcb478ec8c4bc7fa566c89cfb31751f83c0bf2d7",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "review the steps is a neutral action phrase in the passage.",
+              [
+                "S0022"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "one careful note is a neutral naming phrase.",
+              [
+                "S0024"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "question card names an object rather than expressing excitement.",
+              [
+                "S0024"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "that is exciting is the content of the shouted exclamation.",
+              [
+                "S0025"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0299",
+      "fingerprint": "4fe7b02b7a532f5632bdded4d408c99567e1a656b0675ebd405495cc3933c1c3",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The taught question-mark cue is to let the voice rise.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This is a comma cue.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This is a period cue.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is an exclamation cue.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is a comma cue.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This is the ordinary period cue.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "An exclamation mark cues reading with excitement.",
+              [
+                "S0025"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "A question mark, not an exclamation mark, marks a question.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Bright energy is an exclamation cue.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "A comma tells the reader to pause gently at the mark.",
+              [
+                "S0024"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "A full stop is a period cue.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Lifting the tone is associated with a question cue, not the comma.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "A period tells the reader to stop at the end.",
+              [
+                "S0022"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "A soft internal pause is a comma cue.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Excitement is an exclamation cue.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "A rising voice is a question cue.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0301",
+      "fingerprint": "065b8c6d0165610b7e597fc0b48123de388f80eecba472b2ab4eff6d33bc8a49",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is steady narration and contains no spoken question.",
+              [
+                "S0033"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This is the guide's reassuring exclamation, not the child's question.",
+              [
+                "S0032"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The child asks whether the ghost story is real, making this the curious question.",
+              [
+                "S0031"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0303",
+      "fingerprint": "b76c65edb4aa85555453711c714b34e79fc81c9d7fac1bfe1bd9cdc683a0f7d6",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "UNSUPPORTED",
+              "The text does not specifically cue a soft, calm ending for the child's question.",
+              [
+                "S0031"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The words are explicitly asked as a question about whether the story is real.",
+              [
+                "S0031"
+              ]
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "Nothing in the question suggests a chase or rushed pace.",
+              [
+                "S0031"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The line asks a question and should not sound flat like a fact.",
+              [
+                "S0031"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "laughed softly directly supports a soft, calm voice.",
+              [
+                "S0032"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "The passage gives no race or rushed cue.",
+              [
+                "S0032"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The guide's action is not a whispered question.",
+              [
+                "S0032"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "laughed softly supplies expression rather than a flat delivery.",
+              [
+                "S0032"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The guide calmly explains that the ghost account is only a story card.",
+              [
+                "S0032"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This clause explains rather than shouts surprise.",
+              [
+                "S0032"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The clause is a statement, not a question.",
+              [
+                "S0032"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The clause explains and does not command anyone.",
+              [
+                "S0032"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The narration does not ask a question.",
+              [
+                "S0033"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The sentence steadily narrates the group's movement from case to case.",
+              [
+                "S0033"
+              ]
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "The narration gives no questioning voice at a case.",
+              [
+                "S0033"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The narration is not an exclamation.",
+              [
+                "S0033"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

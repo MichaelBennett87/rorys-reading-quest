@@ -1,0 +1,271 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-m0001",
+  "batchFileSha256": "0f2f0535c7de4d66b566534c22ea33d47ac80d3af56be7c724f12596fbff596c",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0218",
+      "fingerprint": "898fa937c6eee70e57774de8b855cf1e50c39779dada8e017a4787abfaef3eb0",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ],
+          "ambiguity": "The prompt asks for every word with a suffix, and every visible option contains an ordinary suffix; the visible lesson examples do not narrow the scored prompt to only three suffixes.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Quickly contains the suffix -ly and appears in the passage.",
+              [
+                "S0019"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Smallest contains the suffix -est and appears in the passage.",
+              [
+                "S0022"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Faster contains the suffix -er and appears in the passage.",
+              [
+                "S0022"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Careful contains the suffix -ful and appears in the passage.",
+              [
+                "S0024"
+              ]
+            ],
+            [
+              "A5",
+              "DEFENSIBLE",
+              "Helping contains the suffix -ing and appears in the passage.",
+              [
+                "S0019"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0369",
+      "fingerprint": "a488fcfae58363c703378afd3112e14774c4b21738a581cdf7aefde3973316f9",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "The prompt asks for all supporting details; Marco's truthful report, his evidence and cleanup help, and the successful shared repair all support the taught truth-and-trust theme.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Marco's decision to tell the truth directly supports the theme.",
+              [
+                "S0025"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The thanks and successful shared repair show the helpful result of his truthful choice.",
+              [
+                "S0029"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Showing where the spill began and helping clean it demonstrate honest, responsible action.",
+              [
+                "S0030"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The blue drops establish the problem but do not by themselves support the truth-and-trust message.",
+              [
+                "S0027"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0574",
+      "fingerprint": "f51ba3095552f8ddfc56d1771e0faff7ac9cb3616e783294473430371664d6aa",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "The passage and teaching do not establish a visible ranking that makes exactly two of the three bloom, row-comparison, and pollinator details most relevant to the broad author-purpose prompt.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Tall stems are a passage observation, but they do not directly connect the row comparison to pollinators.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The shady-row comparison contributes to the passage's comparison of the two garden rows.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The graph comparison is central to the passage's stated bloom-count focus.",
+              [
+                "S0055",
+                "S0067"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The bee-visit detail directly connects the sunny row to pollinator use.",
+              [
+                "S0057"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0575",
+      "fingerprint": "7aff648b85fda86f718ee3c350740f02b9133179306af8bbfbc95cd266b8b63d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "Without a narrower purpose statement, both the class's reason for comparing counts and the passage's broad explanation of how pollinator gardens help insects can reasonably inform author purpose.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The bee observation is relevant evidence but does not state the passage-wide purpose as directly as the broader choices.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This explicitly states why the class compared its counts and captures the investigation described across the passage.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This provides a broad explanatory idea about pollinator gardens that a learner could reasonably identify as the author's purpose.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one data-collection detail rather than a passage-wide purpose.",
+              [
+                "S0053"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0626",
+      "fingerprint": "4cfcef61456fc889f474a74794c9288365c77f4d9e76a809e59d46ecbfe60480",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [],
+          "ambiguity": "The source's direct water-dish evidence is not offered: birds drank from a puddle under the tree, and the map showed a shady place for the dish. The visible choices provide only indirect or unrelated facts.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Birds resting in leaves shows tree use, but it does not support their need for a water dish.",
+              [
+                "S0109"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The presence of a tree supplies a location, but not evidence that a water dish there would help birds.",
+              [
+                "S0107"
+              ]
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "Shrubs near the middle path do not support placing a water dish under the tree.",
+              [
+                "S0112"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "The displayed source never states that wind felt strong in an open yard.",
+              [
+                "S0099"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

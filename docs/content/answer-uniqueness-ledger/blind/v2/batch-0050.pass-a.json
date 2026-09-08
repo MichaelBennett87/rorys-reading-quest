@@ -1,0 +1,1047 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0050",
+  "batchFileSha256": "1c47b89ea36ad6f8a7a879d39f1142f76bccc25d05e6372321f650654caa63df",
+  "reviewerThreadId": "01a07bc1-d815-7c71-b972-e3c829df1777",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0582",
+      "fingerprint": "b41749bda703da0b2dcc6ae32a866ae1c257fa60c8c045827f94e3f74a5a936f",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the topic of this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A4"
+          ],
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Compost piles are absent from the seed-travel passage.",
+              [
+                "S0114"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Weather stations are absent from the seed-travel passage.",
+              [
+                "S0114"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Trail markers are absent from the seed-travel passage.",
+              [
+                "S0114"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The title, headings, map, and sentences all focus on routes by which seeds travel.",
+              [
+                "S0114",
+                "S0116",
+                "S0119",
+                "S0117",
+                "S0107"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0583",
+      "fingerprint": "be1749b3ce258cb0bb87ebf58defc21bf074e45ed7303ae84b38c414f1ea138a",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Why did the author most likely write this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "The passage explicitly includes wind, water, animals, shoes, and socks rather than wind only.",
+              [
+                "S0101",
+                "S0103",
+                "S0108",
+                "S0110"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The informational passage explains real seed movement rather than telling a made-up story.",
+              [
+                "S0114",
+                "S0117"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Multiple sections and the concluding sentence explain several ways seeds reach new places.",
+              [
+                "S0116",
+                "S0119",
+                "S0122",
+                "S0107"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "The passage gives no planting directions for a seed packet.",
+              [
+                "S0105",
+                "S0107"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0584",
+      "fingerprint": "fdbe41cf77def67cee3b7d33246e6ec24a727c0121f02cb360e636f64380c2bf",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail is most relevant to the author purpose?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1",
+            "A3",
+            "A4"
+          ],
+          "defensible": [
+            "A1",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "A1, A3, and A4 are equally direct examples of distinct ways seeds travel, so the prompt establishes no unique most-relevant detail.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Seeds riding on fur or feathers is one of the passage’s explained travel routes.",
+              [
+                "S0108"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This explains a benefit after arrival, not a way that seeds travel.",
+              [
+                "S0113"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Seeds hitching rides on shoes or socks is another explained travel route.",
+              [
+                "S0110"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Seeds floating on rainwater is another explained travel route.",
+              [
+                "S0103"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0585",
+      "fingerprint": "f72d2bd09b68f10acc834bfdc1586d7ef09ddff078dfbb863be830aa8043dae3",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details that are most relevant to the author purpose.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "defensible": [
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "A1, A2, and A3 each directly exemplify a different way seeds travel, so three defensible responses cannot fit the requested pair.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Fur or feathers directly exemplifies animal-assisted seed travel.",
+              [
+                "S0108"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Floating after rain directly exemplifies water-assisted seed travel.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Drifting in wind directly exemplifies wind-assisted seed travel.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The classroom map records where seeds traveled but is not itself a way seeds travel.",
+              [
+                "S0111"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0586",
+      "fingerprint": "2b76cb6150bc21216b0d9d1c8fcf0def1fecaa0e9f86dd52abfb56d161503053",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Tap the sentence that best helps readers understand the author purpose.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one animal-assisted travel example rather than the passage-wide purpose.",
+              [
+                "S0109"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes a classroom record rather than the seed-travel explanation.",
+              [
+                "S0111"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This concluding sentence summarizes multiple travel ways and their result in new plant growth.",
+              [
+                "S0107"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one water-assisted travel example rather than the full purpose.",
+              [
+                "S0103"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0587",
+      "fingerprint": "d2dac771dbc2ba145e97b272f322afa158b512b092822290f20977fba5c6a031",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "prompt": "What is the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one classroom detail, not the topic label.",
+              [
+                "S0111"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one animal-assisted travel detail, not the topic label.",
+              [
+                "S0109"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Seed travel routes names the subject established by the title, headings, and map.",
+              [
+                "S0114",
+                "S0117"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "prompt": "What is the author purpose?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2"
+          ],
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one travel example rather than a purpose statement.",
+              [
+                "S0108"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This complete statement explains why the author presents the several travel routes.",
+              [
+                "S0116",
+                "S0119",
+                "S0122",
+                "S0107"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one water-travel example rather than a purpose statement.",
+              [
+                "S0103"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "prompt": "Which is another true detail?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1",
+            "A2"
+          ],
+          "defensible": [
+            "A1",
+            "A2"
+          ],
+          "ambiguity": "A1 and A2 are both verbatim true passage statements, while the prompt supplies no constraint that distinguishes one.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The passage states that a classroom map shows where seeds traveled.",
+              [
+                "S0111"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The passage states that seed trips help plants grow in new places.",
+              [
+                "S0107"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the topic label rather than a detail.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0588",
+      "fingerprint": "a2480f7110a13e404ece84d089e17fd7e6a9409e6368eb6e87fb96cc576956ef",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "What is the author purpose of the text?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1"
+          ],
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This states the passage-wide explanatory purpose.",
+              [
+                "S0116",
+                "S0119",
+                "S0122",
+                "S0107"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one wind-travel detail rather than the purpose.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one classroom-map detail rather than the purpose.",
+              [
+                "S0111"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which detail best supports that answer?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2",
+            "A3"
+          ],
+          "defensible": [
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "A2 and A3 are equally direct examples of different seed-travel routes and both support the Part A purpose.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The classroom map records travel but does not identify one of the explained travel mechanisms.",
+              [
+                "S0111"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Birds dropping seeds after eating fruit directly supports animal-assisted travel.",
+              [
+                "S0109"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Light seeds drifting on wind directly supports wind-assisted travel.",
+              [
+                "S0101"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0589",
+      "fingerprint": "152eb21e4afc06b3176eddbd4c2948667f2bbf04973af0f1eb98e61abc5b3fbd",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the topic of this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Seed travel routes are absent from the compost passage.",
+              [
+                "S0145"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Trail markers are absent from the compost passage.",
+              [
+                "S0145"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The title, headings, graph, and sentences all concern what happens in compost piles.",
+              [
+                "S0145",
+                "S0147",
+                "S0150",
+                "S0153",
+                "S0148"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Weather station notes are absent from the compost passage.",
+              [
+                "S0145"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0590",
+      "fingerprint": "34d5ee00f92ec233c4d0be04561f15d735aa246ac82c839e1c6093e028c94e47",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Why did the author most likely write this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A4"
+          ],
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "UNSUPPORTED",
+              "The passage describes changes in a pile but does not give construction directions for a bin.",
+              [
+                "S0132",
+                "S0134",
+                "S0139"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The informational passage explains composting rather than telling a made-up worm story.",
+              [
+                "S0145",
+                "S0148"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The passage names food scraps, leaves, and paper but never argues that all paper belongs in compost.",
+              [
+                "S0132"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The sections trace inputs, changes, and the resulting compost that helps soil.",
+              [
+                "S0147",
+                "S0150",
+                "S0153",
+                "S0138",
+                "S0144"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0591",
+      "fingerprint": "448147d5690a78102e79940378f238bac142b482ff469e15ff73253c6f2532b2",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail is most relevant to the author purpose?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "Every choice directly supports a visible part of how inputs enter or change within the compost pile; no ranking criterion makes only one the most relevant.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Becoming darker and crumbly directly shows the pile changing toward compost.",
+              [
+                "S0136"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Warming and cooling directly shows the pile changing during composting.",
+              [
+                "S0140"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Scraps and leaves entering the pile directly identifies the materials that become compost.",
+              [
+                "S0132"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Smelling more like earth directly shows scraps changing toward compost.",
+              [
+                "S0142"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0592",
+      "fingerprint": "2ca26b5cabd064200dd69c982d55aa3b732fd172f42d3c21af040cd66b8a70d5",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details that are most relevant to the author purpose.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1",
+            "A2"
+          ],
+          "defensible": [
+            "A1",
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This states the final change into compost and its benefit for plants.",
+              [
+                "S0138"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This identifies organisms that help cause the pieces to break apart.",
+              [
+                "S0134"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Visible leaf bits are a minor observation and do not explain the overall transformation or benefit.",
+              [
+                "S0143"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Watching the graph is a class action, not a detail explaining how materials transform or help soil.",
+              [
+                "S0141"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0593",
+      "fingerprint": "272842cf013fbd13a796b37fb53d928edf1eb6b89cd8b31b3ad19666104b2533",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Tap the sentence that best helps readers understand the author purpose.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1",
+            "A2"
+          ],
+          "defensible": [
+            "A1",
+            "A2"
+          ],
+          "ambiguity": "A1 and A2 both summarize the transformation of scraps into useful compost, so either reasonably expresses the passage-wide purpose.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This sentence directly summarizes scraps and leaves changing into material that helps soil.",
+              [
+                "S0144"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This sentence likewise summarizes scraps becoming compost that helps plants grow.",
+              [
+                "S0138"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Turning the pile is one process detail rather than the full purpose.",
+              [
+                "S0139"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Darkening and crumbling is one change rather than the full purpose and result.",
+              [
+                "S0136"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0594",
+      "fingerprint": "c81fbe098636bb5a5d333d877b6b9ebed041cd21a36907461b4685402ee0aab9",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "prompt": "What is the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2"
+          ],
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one decomposition detail, not the topic label.",
+              [
+                "S0134"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Compost piles names the subject established by the title and sections.",
+              [
+                "S0145",
+                "S0147",
+                "S0150",
+                "S0153"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one class-observation detail, not the topic label.",
+              [
+                "S0141"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "prompt": "What is the author purpose?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1"
+          ],
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This complete statement explains the passage-wide transformation and benefit.",
+              [
+                "S0132",
+                "S0138",
+                "S0144"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Turning the pile is one process detail rather than the purpose.",
+              [
+                "S0139"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Darkening and crumbling is one change rather than the purpose.",
+              [
+                "S0136"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "prompt": "Which is another true detail?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1",
+            "A3"
+          ],
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "A1 and A3 are both verbatim true passage statements, and the prompt gives no relevance or specificity constraint to choose between them.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The passage states that the class can still see leaf bits.",
+              [
+                "S0143"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the topic label rather than a detail.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The passage states that composting changes scraps and leaves into material that helps soil.",
+              [
+                "S0144"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0595",
+      "fingerprint": "587d490724b81b22885c075713a76b4296cf595dc82b9f03ed31df1248ca7e3f",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "What is the author purpose of the text?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2"
+          ],
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one decomposition detail rather than the purpose.",
+              [
+                "S0134"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This states the full explanatory purpose: materials change into useful compost.",
+              [
+                "S0132",
+                "S0138",
+                "S0144"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one graph observation rather than the purpose.",
+              [
+                "S0140"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which detail best supports that answer?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1",
+            "A3"
+          ],
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "A1 identifies the materials entering the process and A3 identifies a process action; both directly support the explanation in Part A, with no visible basis for selecting only one.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This identifies the scraps and leaves that enter the pile and later become compost.",
+              [
+                "S0132"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Seeing remaining leaf bits is a minor observation that does not establish the transformation or its benefit.",
+              [
+                "S0143"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Turning the pile so air moves is a direct process detail supporting how the materials change.",
+              [
+                "S0139"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

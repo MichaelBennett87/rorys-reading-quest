@@ -1,0 +1,1071 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0116",
+  "batchFileSha256": "83386ffe150afaafb4ae8f87f40596af2bf17c9cb63dd3a4fc4ba03c2c55820d",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1355",
+      "fingerprint": "f6df2823933f2dd3bec027d2dccf149ff49b4b284c85ceb734953d6744506ab6",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This sentence directly states the route-specific recommendation.",
+              [
+                "S0171"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states author purpose rather than the claim.",
+              []
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This summarizes route features and functions as a central idea.",
+              [
+                "S0170",
+                "S0161",
+                "S0167"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This only names the topic.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1356",
+      "fingerprint": "eaf5acb21c7735cd974792b558e5ecee588a9462a9f2efe327059f50b3b06927",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This map measurement is evidence for the stated short-route reason.",
+              [
+                "S0170"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the claim itself.",
+              [
+                "S0171"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Seat color is explicitly irrelevant to the travel decision.",
+              [
+                "S0177",
+                "S0178"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The source explicitly introduces route length and path continuity as a reason.",
+              [
+                "S0172"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1357",
+      "fingerprint": "46e58099b0b12627efec11d5de088d79b306fd3555d38fb7077b9f30e5b3a233",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This names the example’s topic.",
+              []
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is an author-purpose statement.",
+              []
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This summarizes supporting features rather than stating the proposed action.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This final sentence states the supported recommendation.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1358",
+      "fingerprint": "a5114ecb44cb334b1a076b7931d6711cf919d5e9c6d57027c9924bcf273bce70",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Bus-seat color is irrelevant to route suitability.",
+              [
+                "S0177",
+                "S0178"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This first-section measurement supports that the route is short.",
+              [
+                "S0170"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the claim rather than evidence.",
+              [
+                "S0171"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This third-section observation supports coordinated adult supervision.",
+              [
+                "S0167"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1359",
+      "fingerprint": "bbcc6ad09b71ecb5edb6ba2fe72b88da54c393e830fb2437f5643d5bdbeb3b6b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Seat color is not a schedule result.",
+              [
+                "S0177"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This rejects an irrelevant feature but gives no travel-time result.",
+              [
+                "S0178"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This sentence states the full-schedule comparison result favoring walking.",
+              [
+                "S0176"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This introduces the visit and gives no schedule result.",
+              [
+                "S0168"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1360",
+      "fingerprint": "662d70d3ca1598528cb7a4c259b7fdf89c5faaca9dff25b62e80e02d2d1c4543",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A5"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The sentence is the position supported by later evidence.",
+              [
+                "S0171"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The source supplies route, schedule, and supervision support.",
+              [
+                "S0170",
+                "S0176",
+                "S0167"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "It states what choice should be made, not why.",
+              [
+                "S0171"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "It is the central proposal, not a weak detail.",
+              [
+                "S0171"
+              ]
+            ],
+            [
+              "A5",
+              "DEFENSIBLE",
+              "This is the author’s route-specific claim.",
+              [
+                "S0171"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Shortness and a continuous path directly support walking.",
+              [
+                "S0172"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The map supplies supporting measurements.",
+              [
+                "S0170",
+                "S0161"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The sentence is explicitly introduced as one reason.",
+              [
+                "S0172"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This broad rationale is supported by route evidence rather than being the measurement itself.",
+              [
+                "S0172",
+                "S0170"
+              ]
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "It supports the recommendation but does not state it.",
+              [
+                "S0171",
+                "S0172"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The measurement does not state the proposed travel choice.",
+              [
+                "S0170"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "It is a map measurement, not an opinion.",
+              [
+                "S0170"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The measured distance is evidence for the short-route reason.",
+              [
+                "S0170",
+                "S0172"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The distance directly bears on whether walking fits.",
+              [
+                "S0170"
+              ]
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "It is evidence supporting the reason, not the reason’s broad statement.",
+              [
+                "S0170",
+                "S0172"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The source explicitly says seat color does not aid the decision.",
+              [
+                "S0177",
+                "S0178"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The color statement is factual, not an opinion.",
+              [
+                "S0177"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "It gives no rationale for walking.",
+              [
+                "S0177",
+                "S0178"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Seat color is explicitly identified as irrelevant.",
+              [
+                "S0178"
+              ]
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "It does not state the travel recommendation.",
+              [
+                "S0177"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1361",
+      "fingerprint": "1aaa7357cb06cf14294660b8485281e9eee7ca129d9c67c2e22bdf165f33cab6",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states author purpose rather than the claim.",
+              []
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This only names the topic.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This is the article’s route-specific recommendation.",
+              [
+                "S0171"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "UNSUPPORTED",
+              "Repeating the claim is not evidence from separate sections.",
+              [
+                "S0171"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The distance measurement and supervision observation come from separate sections and support both reasons.",
+              [
+                "S0170",
+                "S0167"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The distance supports walking, but bus-seat color is irrelevant.",
+              [
+                "S0170",
+                "S0177",
+                "S0178"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1362",
+      "fingerprint": "bc38f5ed2343b2d88750f5f1f90b0e51c9ad41444f93637613cfc03b21a4bfdc",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This names the topic.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This sentence directly states the recommended return system.",
+              [
+                "S0204",
+                "S0218"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states author purpose rather than the claim.",
+              []
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This summarizes the cart’s benefits and functions as a central idea.",
+              [
+                "S0196",
+                "S0202"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1363",
+      "fingerprint": "2730edcfab623169481e7ff681adffe3ac1718e2383b1c3aed43262bc192691a",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The source explicitly introduces one visible return place as a reason.",
+              [
+                "S0196"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The decorative star is explicitly unrelated to system performance.",
+              [
+                "S0207",
+                "S0208"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the claim itself.",
+              [
+                "S0204"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sign description is evidence that the return place is visible and labeled, not the stated reason.",
+              [
+                "S0205",
+                "S0206"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1364",
+      "fingerprint": "099d1030865b40a57decab022f75ee0f0bf02eae54bccf21dcdee83704b3ed2d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This only names the topic.",
+              []
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states author purpose.",
+              []
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This explains a label benefit but does not state the room’s proposed action.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This final sentence states the supported recommendation.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1365",
+      "fingerprint": "60e14262422fcabe8c89cfda2e41ec940294931ec42fe78a6db0958bdbf7a4ba",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The paper star is explicitly unrelated to the system’s success.",
+              [
+                "S0207",
+                "S0208"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This later-section sorting result supports the divided-shelf reason.",
+              [
+                "S0215"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the claim rather than evidence.",
+              [
+                "S0204"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This middle-section return-rate result supports one visible return place.",
+              [
+                "S0210"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1366",
+      "fingerprint": "d4f210b8907939d0d91c8eb6ce7d552af9dfa8b6a7a68f5785e9e95554b880c1",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This measured result directly shows more mock cards reaching the labeled cart.",
+              [
+                "S0210"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The decorative star does not measure return success.",
+              [
+                "S0207",
+                "S0208"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a reasonable limitation, not the measured result supporting the plan.",
+              [
+                "S0213"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes the fictional method but gives no outcome.",
+              [
+                "S0209"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1367",
+      "fingerprint": "10c40aac9372dab95e7015e4007cd0fe6d5e767b13e142a1cf4d2df9ac74a6fd",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is the main recommendation, not an irrelevant detail.",
+              [
+                "S0204"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The sentence states the author’s proposed action.",
+              [
+                "S0204"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "It states what should be done rather than why.",
+              [
+                "S0204"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The claim has reasons and measured support.",
+              [
+                "S0196",
+                "S0210",
+                "S0202",
+                "S0215"
+              ]
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "It is not a measured or observed fact.",
+              [
+                "S0204"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This broad benefit is the reason supported by later measurements.",
+              [
+                "S0196",
+                "S0210"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "It supports but does not state the proposed action.",
+              [
+                "S0204",
+                "S0196"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The consistent return-place benefit is directly relevant.",
+              [
+                "S0196"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The source explicitly introduces this statement as one reason.",
+              [
+                "S0196"
+              ]
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "The source supplies a mock-week comparison.",
+              [
+                "S0210",
+                "S0211"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A5"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The sign description does not state the proposed action.",
+              [
+                "S0205"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Words and a book picture directly support a visible labeled return place.",
+              [
+                "S0205",
+                "S0196"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The sentence reports a drawing detail, not an opinion.",
+              [
+                "S0205"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "It supplies concrete support for the stated reason rather than stating the reason itself.",
+              [
+                "S0205",
+                "S0196"
+              ]
+            ],
+            [
+              "A5",
+              "DEFENSIBLE",
+              "This factual sign detail is evidence that the cart provides a visible labeled return place.",
+              [
+                "S0205",
+                "S0206"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "A decorative star gives no rationale for the return cart.",
+              [
+                "S0207",
+                "S0208"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The sentence is factual, not an opinion.",
+              [
+                "S0207"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The source explicitly says the star does not show whether the system works.",
+              [
+                "S0208"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The decorative star is expressly disconnected from system performance.",
+              [
+                "S0207",
+                "S0208"
+              ]
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "It does not state the recommendation.",
+              [
+                "S0207"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1368",
+      "fingerprint": "32d7f6f0d8cd2f4dcc83d369ef3571cc002b246d139369f47154643e69a0606f",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This sentence directly states the cart recommendation.",
+              [
+                "S0204",
+                "S0218"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states author purpose.",
+              []
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This only names the topic.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The return-rate and sorting-rate results come from separate sections and support both cart benefits.",
+              [
+                "S0210",
+                "S0215"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "Repeating the claim is not evidence from separate sections.",
+              [
+                "S0204"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The return-rate result supports the claim, but the decorative star is irrelevant.",
+              [
+                "S0210",
+                "S0207",
+                "S0208"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

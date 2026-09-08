@@ -1,0 +1,336 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0075",
+  "batchFileSha256": "205654b97b2c1bc81788700e8b68b9adff459f565601991c060fef06b6f12b0e",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0876",
+      "fingerprint": "53236bb939d2bff0d729e1d1c9aa8343b18c99f030b1c409d47518c5ec4a2e7f",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Neither informational text concerns preparing a music show.", ["S0123", "S0124"]],
+            ["A2", "INCORRECT", "Neither informational text concerns a kite.", ["S0123", "S0124"]],
+            ["A3", "INCORRECT", "Neither informational text concerns repairing a garden sign.", ["S0123", "S0124"]],
+            ["A4", "DEFENSIBLE", "Both texts explain ways roots support plants and keep soil in place.", ["S0135", "S0136", "S0130", "S0143", "S0145"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0877",
+      "fingerprint": "f9fa8829182e88d2a688dd3e75037e02cc46885e64b0f364e2cf826638ce2e7a",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Both texts state that roots help soil stay in place.", ["S0135", "S0143"]],
+            ["A2", "DEFENSIBLE", "Only Text 1 says pond-edge plants shelter small animals.", ["S0126"]],
+            ["A3", "INCORRECT", "Neither displayed text mentions a class gathering observation notes.", ["S0123", "S0124"]],
+            ["A4", "INCORRECT", "This is a comparison of both texts, not a detail unique to Text 1.", ["S0136", "S0145"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0878",
+      "fingerprint": "566fe1e3b3736c9c20c05f0db28f24ba290dc030a598164a84c3c0b98432eb3e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The pond edge being shallow describes the setting but does not explain the root-support comparison.", ["S0133"]],
+            ["A2", "INCORRECT", "Moving pond water helps explain the Text 1 setting in which roots hold soil.", ["S0135"]],
+            ["A3", "INCORRECT", "Keeping soil in place is a central function shared by both texts.", ["S0135", "S0143"]],
+            ["A4", "INCORRECT", "This states the important shared idea of the two texts.", ["S0136", "S0145"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0879",
+      "fingerprint": "3f05a38b20be87bba5a191ef2215ba0ed2930d334668776202d929e971666c5f",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "This Text 1 detail explains how pond-edge roots keep soil in place.", ["S0135"]],
+            ["A2", "INCORRECT", "Neither text concerns a sports day.", ["S0123", "S0124"]],
+            ["A3", "INCORRECT", "Neither text compares marker colors.", ["S0123", "S0124"]],
+            ["A4", "DEFENSIBLE", "This Text 2 detail parallels Text 1 by explaining how garden roots keep soil in place.", ["S0143"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0880",
+      "fingerprint": "8881fa8cd1fc7083484155b4182af0a7c4f28040488bb4af61de9e5ce0b58393",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This introduces where roots grow but does not state the text's main idea about support.", ["S0142"]],
+            ["A2", "INCORRECT", "This is one supporting detail about roots, not the full main idea.", ["S0130"]],
+            ["A3", "DEFENSIBLE", "This final sentence states the main idea that garden roots support both plants and soil.", ["S0145"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0881",
+      "fingerprint": "174d1a16f6f7ee6ffd028749fb32ec753ec5039dbcb93da31cc5f9521b8b0a96",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Only Text 1 says pond-edge plants shelter small animals.", ["S0126"]],
+            ["A2", "INCORRECT", "Text 2 does not mention sheltering small animals.", ["S0124"]],
+            ["A3", "INCORRECT", "This fact is absent from Text 2.", ["S0124"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The displayed garden-root detail appears only in Text 2.", ["S0130", "S0132"]],
+            ["A2", "INCORRECT", "Text 1 does not describe garden roots holding a plant upright.", ["S0123"]],
+            ["A3", "DEFENSIBLE", "Text 2 says garden roots hold the plant steady and support upright growth.", ["S0130", "S0132"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Both texts explain that roots keep soil in place.", ["S0135", "S0143"]],
+            ["A2", "INCORRECT", "The fact is not limited to Text 1.", ["S0143"]],
+            ["A3", "INCORRECT", "The fact is not limited to Text 2.", ["S0135"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0882",
+      "fingerprint": "7332fc572b1c3be411e2060d367ca5b679dcca420338d6db9bfaf6c7c09e5d84",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Both texts explain how roots support plants and soil.", ["S0136", "S0145"]],
+            ["A2", "INCORRECT", "Neither text concerns a kite.", ["S0123", "S0124"]],
+            ["A3", "INCORRECT", "Neither text concerns a stage show.", ["S0123", "S0124"]]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "These details belong to unrelated route-planning texts.", ["S0123", "S0124"]],
+            ["A2", "DEFENSIBLE", "The paired details directly show roots keeping soil in place in both settings.", ["S0135", "S0143"]],
+            ["A3", "INCORRECT", "These details concern wind and are absent from the displayed root texts.", ["S0123", "S0124"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0883",
+      "fingerprint": "69128b83f76be135b885f9b5ba9f5c2e33b5ea796f66a95d46dbe6fbf0dc9cdb",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Both texts show people preparing carefully for a shared event.", ["S0155", "S0163", "S0159", "S0161"]],
+            ["A2", "INCORRECT", "Neither text concerns weather tools.", ["S0152", "S0153"]],
+            ["A3", "INCORRECT", "Neither text explains seed travel.", ["S0152", "S0153"]],
+            ["A4", "INCORRECT", "Neither text concerns pond layers.", ["S0152", "S0153"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0884",
+      "fingerprint": "d88f2409165ece26db5ef40c9875e6f3fdddd92d53584c98de0fa519a149dbd4",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This picnic-table detail appears only in Text 1.", ["S0162"]],
+            ["A2", "DEFENSIBLE", "Only Text 2 includes the spotlight warming the stage.", ["S0170"]],
+            ["A3", "INCORRECT", "This is a similarity between the texts, not a Text 2-only detail.", ["S0155", "S0159"]],
+            ["A4", "INCORRECT", "This describes a shared movement from preparation to readiness, not a Text 2-only detail.", ["S0165", "S0175"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0885",
+      "fingerprint": "2f490906db96022699c78e57b95a88b2ab61363a71d4a5d767d7bbead0b6d0ee",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A2"],
+          "ambiguity": "The prompt gives no comparison focus or ranking rule that makes either the after-show bow or the during-show audience detail uniquely less important.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "DEFENSIBLE", "The helpers bowing after the show is a Text 2-only detail outside the shared preparation focus.", ["S0175"]],
+            ["A2", "DEFENSIBLE", "The audience listening during the show is also a Text 2-only detail outside the shared preparation focus.", ["S0172", "S0173"]],
+            ["A3", "INCORRECT", "Careful preparation before an event is the central comparison between the texts.", ["S0155", "S0159"]],
+            ["A4", "INCORRECT", "The before-show atmosphere supports Text 2's preparation and readiness sequence.", ["S0166"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0886",
+      "fingerprint": "890f5421af8c8c603a4801369adb4feaf81dad3d832d63ffe9a7d39e512766e3",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2", "A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Text 1 is not about music or rain, and Text 2 is not about rain.", ["S0152", "S0153"]],
+            ["A2", "DEFENSIBLE", "Both texts show helpers working together before their event.", ["S0155", "S0163", "S0159", "S0161"]],
+            ["A3", "INCORRECT", "Neither text concerns a bike race.", ["S0152", "S0153"]],
+            ["A4", "DEFENSIBLE", "Both texts progress from preparation toward a ready or calm state.", ["S0165", "S0175"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0887",
+      "fingerprint": "1bb6607bf8d97411ff954665fea9056fb957220f5e658e2160d33acec51a9a91",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A2"],
+          "ambiguity": "Both Text 1 sentences describe actions taken to prepare the camp gathering, so the single-select contract has two defensible answers.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "DEFENSIBLE", "Bringing an extra lantern and improving the table plan are preparation actions in Text 1.", ["S0164"]],
+            ["A2", "DEFENSIBLE", "Gathering materials before dusk is also a preparation action in Text 1.", ["S0155"]],
+            ["A3", "INCORRECT", "This sentence is not in Text 1 and does not describe a specific preparation action.", ["S0152", "S0166"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0888",
+      "fingerprint": "90f2d92c74292fc924dd0f68e6168efc7b4f09f646b7f830273e64b14e70d37b",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The sorting action occurs in Text 1, not Text 2.", ["S0162"]],
+            ["A2", "DEFENSIBLE", "Only Text 1 shows helpers sorting lanterns, cups, and blankets onto a table.", ["S0162"]],
+            ["A3", "INCORRECT", "Text 2 does not include this table-sorting detail.", ["S0153"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Both texts establish a calm or ready feeling before the shared event.", ["S0165", "S0166", "S0168"]],
+            ["A2", "INCORRECT", "The ready feeling is not limited to Text 2.", ["S0165"]],
+            ["A3", "INCORRECT", "The ready feeling is not limited to Text 1.", ["S0166", "S0168"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Only Text 2 describes a spotlight warming the stage.", ["S0170"]],
+            ["A2", "INCORRECT", "Text 1 has no stage spotlight.", ["S0152"]],
+            ["A3", "INCORRECT", "The spotlight detail is absent from Text 1.", ["S0152"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0889",
+      "fingerprint": "c5522c1752a944b75e4c5a0bad35d17826c35b5fe761f5d7b1472b1b173a21b6",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Both texts show helpers preparing for a shared camp or stage event.", ["S0155", "S0163", "S0159", "S0161"]],
+            ["A2", "INCORRECT", "Neither text concerns weather tools.", ["S0152", "S0153"]],
+            ["A3", "INCORRECT", "Neither text explains seed movement.", ["S0152", "S0153"]]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [],
+          "ambiguity": "No offered evidence pair directly supports the Part A claim that helpers in both texts get ready. The Text 2 half of A3 describes the room's atmosphere rather than a helper's preparation action.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "INCORRECT", "These details belong to unrelated pond-root texts.", ["S0152", "S0153"]],
+            ["A2", "INCORRECT", "These details belong to unrelated route-planning texts.", ["S0152", "S0153"]],
+            ["A3", "UNSUPPORTED", "The Text 1 sentence shows preparation, but the Text 2 sentence describes a room's atmosphere and does not directly show helpers getting ready.", ["S0155", "S0166"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

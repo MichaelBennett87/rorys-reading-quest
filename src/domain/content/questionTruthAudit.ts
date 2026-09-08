@@ -59,6 +59,7 @@ export interface ActiveQuestionTruthInventory {
 }
 
 export interface BlindQuestionTruthProjection {
+  projectionVersion: 2
   packId: string
   contentVersion: string
   gradeBand: number
@@ -71,14 +72,77 @@ export interface BlindQuestionTruthProjection {
   lessonObjective: string
   lessonRole: string
   difficulty: number
+  presentation: {
+    kind: 'single' | 'paired' | 'fluency'
+    instructions?: string
+    pairedText?: {
+      pairId: string
+      pairTitle: string
+      members: Array<{
+        passageId: string
+        label: string
+        displayTitle: string
+      }>
+    }
+  }
+  teachingBlock?: ContentPackLesson['teachingBlock']
+  fluencyPractice?: {
+    previewHeading: 'Passage Preview'
+    practiceGoal: string
+    passageTitle: string
+    supportedWords: string[]
+    safetyNotice: 'No score. No timer. No microphone.'
+    practiceStepsHeading: 'Practice Steps'
+    modelReading: {
+      heading: 'Hear a Model Read'
+      activeStatus: 'Voice is speaking'
+      instructions: string
+      actions: ['Hear a Model Read', 'Stop Voice']
+    }
+    phrasePractice: {
+      heading: 'Practice by Phrases'
+      instructions: string
+      phraseGroups: Array<{ text: string; cue?: string }>
+      action: 'I Practiced the Phrases'
+    }
+    repeatedReading: {
+      heading: 'Repeated Reading'
+      instructions: string
+      dynamicProgressLabel: 'Completed reads: [current] / 3'
+      actionLabels: ['Read It Once', 'Read It Again']
+    }
+    reflection: {
+      heading: 'Reflection'
+      instructions: string
+      choices: ['That felt smooth.', 'I needed a few pauses.', 'I want another try.']
+    }
+    understandingCheck: {
+      heading: 'Understanding Check'
+      scopeNotice: string
+      instructions: string
+      action: 'Start Understanding Check'
+      lockedMessage: string
+    }
+  }
+  wordHelpAvailability: Array<{
+    targetId: string
+    passageId: string
+    sentenceId: string
+    surfaceWord: string
+  }>
+  trackedAssistance?: {
+    kind: 'word_help'
+    assistanceTracked: true
+    targets: NonNullable<Passage['wordSupportTargets']>
+  }
   displayedTexts: Array<{
     passageId: string
-    readingContext: string
+    heading: string
     contentKind: Passage['contentKind']
-    passageText: string
-    sentences: Passage['sentences']
-    poemStructure: Passage['poemStructure']
-    informationalStructure: Passage['informationalStructure']
+    passageText?: string
+    sentences?: Passage['sentences']
+    poemStructure?: Passage['poemStructure']
+    informationalStructure?: Passage['informationalStructure']
   }>
   questionId: string
   questionType: string
@@ -144,8 +208,20 @@ export function buildBlindQuestionTruthProjection(packs: readonly ContentPack[])
   return inventory.records.map((record) => {
     const pack = packsById.get(record.packId)
     const passageById = new Map(pack?.passages.map((passage) => [passage.passageIdentifier, passage] as const) ?? [])
-    const questionPayload = pack?.questions.find((question) => question.questionIdentifier === record.questionId)?.questionContent
+    const question = pack?.questions.find((entry) => entry.questionIdentifier === record.questionId)
+    const questionPayload = question?.questionContent
+    const lesson = pack?.lessons.find((entry) => entry.lessonId === record.lessonIds[0])
+    const pairedText = lesson?.pairedTextSetId
+      ? pack?.pairedTextSets?.find((entry) => entry.pairId === lesson.pairedTextSetId)
+      : undefined
+    const displayedPassageIds = pairedText
+      ? pairedText.members.map((member) => member.passageId)
+      : question
+        ? [question.passageIdentifier]
+        : []
+    const presentationKind = lesson?.fluencyPracticeBlock ? 'fluency' : pairedText ? 'paired' : 'single'
     return {
+      projectionVersion: 2,
       packId: record.packId,
       contentVersion: record.contentVersion,
       gradeBand: record.gradeBand,
@@ -158,17 +234,94 @@ export function buildBlindQuestionTruthProjection(packs: readonly ContentPack[])
       lessonObjective: record.lessonObjective,
       lessonRole: record.lessonRole,
       difficulty: record.difficulty,
-      displayedTexts: record.passageIds.flatMap((passageId) => {
+      presentation: {
+        kind: presentationKind,
+        instructions: pairedText
+          ? 'Read both texts. Then compare the important details.'
+          : undefined,
+        pairedText: pairedText ? {
+          pairId: pairedText.pairId,
+          pairTitle: pairedText.pairTitle,
+          members: pairedText.members.map((member) => ({
+            passageId: member.passageId,
+            label: member.label,
+            displayTitle: member.displayTitle,
+          })),
+        } : undefined,
+      },
+      teachingBlock: lesson?.teachingBlock ? cloneLearnerVisible(lesson.teachingBlock) : undefined,
+      fluencyPractice: lesson?.fluencyPracticeBlock ? {
+        previewHeading: 'Passage Preview',
+        practiceGoal: lesson.fluencyPracticeBlock.learnerCue,
+        passageTitle: lesson.fluencyPracticeBlock.title ?? record.lessonTitle,
+        supportedWords: displayedPassageIds.flatMap((passageId) => passageById.get(passageId)?.wordSupportTargets?.map((target) => target.surfaceWord) ?? []),
+        safetyNotice: 'No score. No timer. No microphone.',
+        practiceStepsHeading: 'Practice Steps',
+        modelReading: {
+          heading: 'Hear a Model Read',
+          activeStatus: 'Voice is speaking',
+          instructions: 'Choose this only when you want to hear the passage read aloud. It is optional.',
+          actions: ['Hear a Model Read', 'Stop Voice'],
+        },
+        phrasePractice: {
+          heading: 'Practice by Phrases',
+          instructions: 'Read each phrase group smoothly. The cues can help you pause or show expression.',
+          phraseGroups: lesson.fluencyPracticeBlock.phraseGroups.map(({ text, cue }) => cue ? { text, cue } : { text }),
+          action: 'I Practiced the Phrases',
+        },
+        repeatedReading: {
+          heading: 'Repeated Reading',
+          instructions: 'Read the passage again when you are ready. You can do this more than once, up to the practice limit.',
+          dynamicProgressLabel: 'Completed reads: [current] / 3',
+          actionLabels: ['Read It Once', 'Read It Again'],
+        },
+        reflection: {
+          heading: 'Reflection',
+          instructions: 'Choose the one that fits how the reading felt. This is not a score.',
+          choices: ['That felt smooth.', 'I needed a few pauses.', 'I want another try.'],
+        },
+        understandingCheck: {
+          heading: 'Understanding Check',
+          scopeNotice: 'These questions check what you noticed in the passage. They are not a speaking score.',
+          instructions: 'When your practice steps are ready, start the understanding check.',
+          action: 'Start Understanding Check',
+          lockedMessage: 'Finish phrase practice, rereading, and reflection to unlock the questions. Model listening is optional.',
+        },
+      } : undefined,
+      wordHelpAvailability: displayedPassageIds.flatMap((passageId) => passageById.get(passageId)?.wordSupportTargets?.map((target) => ({
+        targetId: target.targetId,
+        passageId: target.passageId,
+        sentenceId: target.sentenceId,
+        surfaceWord: target.surfaceWord,
+      })) ?? []),
+      trackedAssistance: {
+        kind: 'word_help',
+        assistanceTracked: true,
+        targets: cloneLearnerVisible(
+          displayedPassageIds.flatMap((passageId) => passageById.get(passageId)?.wordSupportTargets ?? []),
+        ),
+      },
+      displayedTexts: displayedPassageIds.flatMap((passageId) => {
         const passage = passageById.get(passageId)
         if (!passage) return []
+        const pairMember = pairedText?.members.find((member) => member.passageId === passageId)
+        const usePlainPassage = presentationKind === 'fluency' || !passage.contentKind || passage.contentKind === 'prose'
         return [{
           passageId,
-          readingContext: passage.readingContext,
+          heading: pairMember
+            ? `${pairMember.label}: ${pairMember.displayTitle}`
+            : lesson?.fluencyPracticeBlock?.title ?? 'Reading Passage',
           contentKind: passage.contentKind,
-          passageText: passage.passageText,
-          sentences: passage.sentences ? structuredClone(passage.sentences) : undefined,
-          poemStructure: passage.poemStructure ? structuredClone(passage.poemStructure) : undefined,
-          informationalStructure: passage.informationalStructure ? structuredClone(passage.informationalStructure) : undefined,
+          passageText: usePlainPassage ? passage.passageText : undefined,
+          sentences: (usePlainPassage || passage.contentKind === 'informational') && passage.sentences
+            ? cloneLearnerVisible(passage.sentences)
+            : undefined,
+          poemStructure: presentationKind !== 'fluency' && passage.contentKind === 'poem' && passage.poemStructure
+            ? cloneLearnerVisible(passage.poemStructure)
+            : undefined,
+          informationalStructure: presentationKind !== 'fluency' && passage.contentKind === 'informational' && passage.informationalStructure
+            ? cloneLearnerVisible(passage.informationalStructure)
+            : undefined,
         }]
       }),
       questionId: record.questionId,
@@ -178,6 +331,20 @@ export function buildBlindQuestionTruthProjection(packs: readonly ContentPack[])
       visibleAnswerChoices: structuredClone(record.visibleAnswerChoices),
     }
   })
+}
+
+function cloneLearnerVisible<T>(value: T): T {
+  if (Array.isArray(value)) {
+    return value.map((entry) => cloneLearnerVisible(entry)) as T
+  }
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(
+      Object.entries(value)
+        .filter(([key]) => !['selectedForContext', 'reviewStatus', 'contentVersion', 'sourceReference'].includes(key))
+        .map(([key, entry]) => [key, cloneLearnerVisible(entry)]),
+    ) as T
+  }
+  return value
 }
 
 function getVisibleSubprompts(payload: QuestionContentPayload | undefined): string[] {

@@ -891,13 +891,13 @@ function buildQuestionSets() {
         },
         {
           prompt: 'helping',
-          correctChoiceText: 'help happening now',
-          optionTexts: ['help happening now', 'slowly moving', 'more than one', 'build again'],
+          correctChoiceText: 'help',
+          optionTexts: ['help', 'slowly moving', 'more than one', 'build again'],
         },
         {
           prompt: 'slowly',
-          correctChoiceText: 'in a slow way',
-          optionTexts: ['in a slow way', 'heat before', 'count wrongly', 'most tall'],
+          correctChoiceText: 'slow',
+          optionTexts: ['slow', 'heat before', 'count wrongly', 'most tall'],
         },
       ],
     }),
@@ -1089,7 +1089,7 @@ function buildQuestionSets() {
         {
           prompt: 'helpful',
           correctChoiceText: 'full of help',
-          optionTexts: ['full of help', 'before the test', 'kind helper', 'most tall'],
+          optionTexts: ['full of help', 'before the test', 'help happening now', 'most tall'],
         },
         {
           prompt: 'helped',

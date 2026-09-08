@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0005",
+  "batchSha256": "87973e2f5882d8d05bf65c803ccefa4a581a91ab1259c4f2db77ab9428cedb75",
+  "reviewerThreadId": "01a07bc1-d815-7c71-b972-e3c829df1777",
+  "records": [
+    {
+      "auditId": "Q0047",
+      "visibleProjectionFingerprint": "229da348108b01e60f9a84916800293c94d5254d2db8794844c7d04fd7cb2893",
+      "slots": [
+        {
+          "slotId": "response",
+          "independentlyDefensibleAnswerIds": ["A1", "A2", "A3"],
+          "optionJudgments": [
+            { "answerId": "A1", "verdict": "DEFENSIBLE", "rationale": "Coin has the same /oy/ vowel sound as boil.", "evidenceIds": ["S0012"] },
+            { "answerId": "A2", "verdict": "DEFENSIBLE", "rationale": "Boy uses oy but has the same /oy/ vowel sound as boil.", "evidenceIds": ["S0015"] },
+            { "answerId": "A3", "verdict": "DEFENSIBLE", "rationale": "Toy uses oy but has the same /oy/ vowel sound as boil.", "evidenceIds": ["S0012"] },
+            { "answerId": "A4", "verdict": "INCORRECT", "rationale": "Snow has the long-o sound, not the vowel sound in boil.", "evidenceIds": [] }
+          ],
+          "ambiguity": "The prompt asks about sound, and coin, boy, and toy all share boil's vowel sound, while the radio contract allows only one response.",
+          "selectionContractValid": false,
+          "projectionDefect": false
+        }
+      ]
+    },
+    {
+      "auditId": "Q0048",
+      "visibleProjectionFingerprint": "b597281702e269387fa09edc7a743c58004a9ecca2bdc44e4a64329a1a214364",
+      "slots": [
+        {
+          "slotId": "response",
+          "independentlyDefensibleAnswerIds": ["A1", "A2", "A3"],
+          "optionJudgments": [
+            { "answerId": "A1", "verdict": "DEFENSIBLE", "rationale": "Toy has the same /oy/ vowel sound as joy.", "evidenceIds": ["S0012"] },
+            { "answerId": "A2", "verdict": "DEFENSIBLE", "rationale": "Join uses oi but has the same /oy/ vowel sound as joy.", "evidenceIds": ["S0015"] },
+            { "answerId": "A3", "verdict": "DEFENSIBLE", "rationale": "Coin uses oi but has the same /oy/ vowel sound as joy.", "evidenceIds": ["S0012"] },
+            { "answerId": "A4", "verdict": "INCORRECT", "rationale": "Touch has the short-u sound, not the vowel sound in joy.", "evidenceIds": [] }
+          ],
+          "ambiguity": "The lesson explicitly teaches that oi and oy share a sound, so toy, join, and coin all satisfy the sound-based prompt despite the one-response control.",
+          "selectionContractValid": false,
+          "projectionDefect": false
+        }
+      ]
+    },
+    {
+      "auditId": "Q0049",
+      "visibleProjectionFingerprint": "ad491d6dd6df260d204a622a4c134945cdf6716e64c83cb3196b1cad3601e564",
+      "slots": [
+        {
+          "slotId": "response",
+          "independentlyDefensibleAnswerIds": ["A2", "A3"],
+          "optionJudgments": [
+            { "answerId": "A1", "verdict": "INCORRECT", "rationale": "Boy uses the letters oy, not oi.", "evidenceIds": ["S0015"] },
+            { "answerId": "A2", "verdict": "DEFENSIBLE", "rationale": "Coin contains the letters oi.", "evidenceIds": ["S0012"] },
+            { "answerId": "A3", "verdict": "DEFENSIBLE", "rationale": "Join contains the letters oi.", "evidenceIds": ["S0015"] },
+            { "answerId": "A4", "verdict": "INCORRECT", "rationale": "Toy uses the letters oy, not oi.", "evidenceIds": ["S0012"] }
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "projectionDefect": false
+        }
+      ]
+    },
+    {
+      "auditId": "Q0050",
+      "visibleProjectionFingerprint": "a33edadf4354dec3d2e88e2a1cf57c6b526c1d5ecc37cb3e0e7321655d7d5e77",
+      "slots": [
+        {
+          "slotId": "response",
+          "independentlyDefensibleAnswerIds": ["A2"],
+          "optionJudgments": [
+            { "answerId": "A1", "verdict": "INCORRECT", "rationale": "This sentence describes sorting coins at the toy box, not the boy and girl joining.", "evidenceIds": ["S0012"] },
+            { "answerId": "A2", "verdict": "DEFENSIBLE", "rationale": "This is the exact displayed sentence stating that a boy and a girl joined the game.", "evidenceIds": ["S0015"] },
+            { "answerId": "A3", "verdict": "INCORRECT", "rationale": "This sentence describes choosing a voice for turns, not joining the game.", "evidenceIds": ["S0017"] }
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "projectionDefect": false
+        }
+      ]
+    },
+    {
+      "auditId": "Q0051",
+      "visibleProjectionFingerprint": "1f123c3666ff5b7a37f6a1a9bab5d1b65bcca17b7dd6ac8d783ea584fbc2e8ff",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "independentlyDefensibleAnswerIds": ["A1", "A2"],
+          "optionJudgments": [
+            { "answerId": "A1", "verdict": "DEFENSIBLE", "rationale": "The lesson says oi and oy often share one sound, so calling toy's vowel the oi sound is phonetically defensible.", "evidenceIds": ["S0012"] },
+            { "answerId": "A2", "verdict": "DEFENSIBLE", "rationale": "Toy is spelled with oy and has the taught oi/oy vowel sound.", "evidenceIds": ["S0012"] },
+            { "answerId": "A3", "verdict": "INCORRECT", "rationale": "Toy does not use an ou spelling or a usual ou vowel sound.", "evidenceIds": ["S0012"] }
+          ],
+          "ambiguity": "The options say sound rather than spelling group, but oi and oy are taught as sharing the same sound; both oi sound and oy sound can therefore fit toy.",
+          "selectionContractValid": false,
+          "projectionDefect": false
+        }
+      ]
+    },
+    {
+      "auditId": "Q0052",
+      "visibleProjectionFingerprint": "57f03cf90d3b39156aacbd718dee2b2c507202b4f2048e8a318b9b5e38403058",
+      "slots": [
+        {
+          "slotId": "response",
+          "independentlyDefensibleAnswerIds": ["A2", "A3"],
+          "optionJudgments": [
+            { "answerId": "A1", "verdict": "INCORRECT", "rationale": "Snow has the long-o sound, not the /oo/ sound in group.", "evidenceIds": ["S0026"] },
+            { "answerId": "A2", "verdict": "DEFENSIBLE", "rationale": "Group necessarily has the same sound as the prompt's comparison word because it is that word.", "evidenceIds": ["S0021"] },
+            { "answerId": "A3", "verdict": "DEFENSIBLE", "rationale": "Soup has the same /oo/ vowel sound as group.", "evidenceIds": ["S0021"] },
+            { "answerId": "A4", "verdict": "INCORRECT", "rationale": "Toy has the /oy/ vowel sound, not the /oo/ sound in group.", "evidenceIds": [] }
+          ],
+          "ambiguity": "Both group itself and soup have the requested sound, but the radio contract permits only one selection.",
+          "selectionContractValid": false,
+          "projectionDefect": false
+        }
+      ]
+    },
+    {
+      "auditId": "Q0053",
+      "visibleProjectionFingerprint": "a2c1a36bee9376bcd54b607cddfa53bf155453c5a17c6879c2c3562adcb8c0c6",
+      "slots": [
+        {
+          "slotId": "response",
+          "independentlyDefensibleAnswerIds": ["A3"],
+          "optionJudgments": [
+            { "answerId": "A1", "verdict": "INCORRECT", "rationale": "Touch has the short-u sound, not the long-o sound in grow.", "evidenceIds": ["S0024"] },
+            { "answerId": "A2", "verdict": "INCORRECT", "rationale": "Group has the /oo/ sound, not the long-o sound in grow.", "evidenceIds": ["S0021"] },
+            { "answerId": "A3", "verdict": "DEFENSIBLE", "rationale": "Snow has the same long-o sound as grow.", "evidenceIds": ["S0026"] },
+            { "answerId": "A4", "verdict": "INCORRECT", "rationale": "Cloud has the /ow/ sound in loud, not the long-o sound in grow.", "evidenceIds": [] }
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "projectionDefect": false
+        }
+      ]
+    },
+    {
+      "auditId": "Q0054",
+      "visibleProjectionFingerprint": "a222314edd7ed7e9c6c3fd45a9262c50e3e73dbaadd4c73d74e6da2ad3040cda",
+      "slots": [
+        {
+          "slotId": "response",
+          "independentlyDefensibleAnswerIds": ["A1", "A2", "A3", "A4"],
+          "optionJudgments": [
+            { "answerId": "A1", "verdict": "DEFENSIBLE", "rationale": "Young literally contains ou, although its vowel sound differs from soup.", "evidenceIds": ["S0026"] },
+            { "answerId": "A2", "verdict": "DEFENSIBLE", "rationale": "Group contains ou and also has the same /oo/ sound as soup.", "evidenceIds": ["S0021"] },
+            { "answerId": "A3", "verdict": "DEFENSIBLE", "rationale": "Soup contains ou and is the prompt's comparison word.", "evidenceIds": ["S0021"] },
+            { "answerId": "A4", "verdict": "DEFENSIBLE", "rationale": "Touch literally contains ou, although its vowel sound differs from soup.", "evidenceIds": ["S0024"] }
+          ],
+          "ambiguity": "Have ou can reasonably ask for the spelling, making all four options correct, while like soup can reasonably ask for the /oo/ sound, making only group and soup correct.",
+          "selectionContractValid": false,
+          "projectionDefect": false
+        }
+      ]
+    },
+    {
+      "auditId": "Q0055",
+      "visibleProjectionFingerprint": "9675195a1483597718296d440cfb75fae5e67756d180a836fdf17ed1317e4772",
+      "slots": [
+        {
+          "slotId": "response",
+          "independentlyDefensibleAnswerIds": ["A1"],
+          "optionJudgments": [
+            { "answerId": "A1", "verdict": "DEFENSIBLE", "rationale": "This is the exact displayed sentence saying the child tried to touch the warm bowl.", "evidenceIds": ["S0024"] },
+            { "answerId": "A2", "verdict": "INCORRECT", "rationale": "This sentence says the group carried soup and does not describe the child touching the bowl.", "evidenceIds": ["S0021"] },
+            { "answerId": "A3", "verdict": "INCORRECT", "rationale": "This sentence describes an owl watching snow, not a child touching a bowl.", "evidenceIds": ["S0026"] }
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "projectionDefect": false
+        }
+      ]
+    },
+    {
+      "auditId": "Q0056",
+      "visibleProjectionFingerprint": "e2308b5b8970203c9142b304941322a14ac7fafc4f4bdc6f0081a4f6320ea4ee",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "independentlyDefensibleAnswerIds": ["A1"],
+          "optionJudgments": [
+            { "answerId": "A1", "verdict": "DEFENSIBLE", "rationale": "Young and touch use ou for the same short-u-style vowel sound.", "evidenceIds": ["S0024", "S0026"] },
+            { "answerId": "A2", "verdict": "INCORRECT", "rationale": "Young does not have the /oy/ sound represented by oi.", "evidenceIds": ["S0026"] },
+            { "answerId": "A3", "verdict": "INCORRECT", "rationale": "Young does not have either common ow sound represented by snow or cow.", "evidenceIds": ["S0026"] }
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "projectionDefect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0039",
+  "batchFileSha256": "722d5bbb8eb9ab710a486a0f68a022d821eaa9d64afc2bc4f68adde9b4949085",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1002",
+      "fingerprint": "405730eb1d5cdef26d245da8552d67ff1ff5f10ed7dd83f08c64bd6cef0e4042",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Prototype is neither the requested compound nor a word beginning with the prefix re-.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Worktable combines the complete words work and table.",
+              [
+                "S0065"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Rebuild begins with the prefix re- attached to build.",
+              [
+                "S0067"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Magnetic is neither the requested compound nor a word beginning with re-.",
+              [
+                "S0069"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

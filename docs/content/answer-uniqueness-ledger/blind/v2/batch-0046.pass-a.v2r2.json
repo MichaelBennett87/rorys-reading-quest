@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0046",
+  "batchFileSha256": "f68f2115bc9652421684ec132745c2bbd02abec76a3d4684e56a51bd13faf948",
+  "reviewerThreadId": "01a07bc2-33d0-74f2-84b3-1f74918ca45e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0536",
+      "fingerprint": "88d63cfde445a05bba7ae3a8f8edd9210133f15ef10afd80a5ba08a5781b14cf",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The passage describes weather tools and observations, not compost piles.", ["S0089", "S0077"]],
+            ["A2", "INCORRECT", "The passage describes weather observations, not seed travel.", ["S0089", "S0077"]],
+            ["A3", "DEFENSIBLE", "The title, daily measurements, charts, and comparisons establish weather station notes as the topic.", ["S0089", "S0082", "S0084", "S0088"]],
+            ["A4", "INCORRECT", "The passage contains no pollinator-patch counts.", ["S0077"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0537",
+      "fingerprint": "d41dbc0688093cde510bb169f68bb97a79a3e611c8923a6cb0a52c76b02b1f3a",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The thermometer's reading is one tool detail, not the complete idea.", ["S0078"]],
+            ["A2", "DEFENSIBLE", "This sentence directly states the passage-wide idea that tools and careful observations help the class learn about weather.", ["S0088"]],
+            ["A3", "INCORRECT", "Circling cloudy days is one observation action rather than the central idea.", ["S0086"]],
+            ["A4", "INCORRECT", "A wind sock's function is one tool detail rather than the complete idea.", ["S0085"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0538",
+      "fingerprint": "07b611406935a31bd9d1d6b771f73d2cfe6271ae9393769bc6b6d16e0fb96a5d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A2", "A3", "A4"],
+          "ambiguity": "The prompt requests two details, but all four options directly support the central idea: A1 and A2 are careful recording or comparison practices, while A3 and A4 are weather tools that provide useful observations. No visible criterion ranks only two above the others.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "DEFENSIBLE", "Circling cloudy days for later checking is a careful observation and comparison practice that helps reveal weather patterns.", ["S0086", "S0084", "S0088"]],
+            ["A2", "DEFENSIBLE", "Recording daily numbers in a chart is a careful observation practice used to learn about weather over time.", ["S0082", "S0088"]],
+            ["A3", "DEFENSIBLE", "The wind sock is a weather tool whose direction information helps the class observe weather.", ["S0085", "S0097", "S0088"]],
+            ["A4", "DEFENSIBLE", "The thermometer is a weather tool whose readings help the class observe temperature.", ["S0078", "S0088"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0539",
+      "fingerprint": "6a4c96bbb08c1bb00539fdcf0c3995347144cc2efb4c274704532067ec7f0885",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "This sentence explicitly combines tools, careful observations, and learning about weather, directly stating the central idea.", ["S0088"]],
+            ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This supports day-to-day observation but does not state the complete tools-and-learning idea as fully as A1.", ["S0087"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Comparing notes supports pattern finding but covers only one observation practice.", ["S0084"]],
+            ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "A rain gauge's function is one tool example rather than the complete central idea.", ["S0080"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0540",
+      "fingerprint": "f3e0b45ae4df24d8471fdc75f8d780bd2426e31c23c6b54886353dd40934061a",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Circling cloudy days is one observation detail, not the broad topic.", ["S0086"]],
+            ["A2", "DEFENSIBLE", "Weather station notes accurately names the broad subject established by the title and daily records.", ["S0089", "S0082"]],
+            ["A3", "INCORRECT", "A rain gauge reading is one tool detail, not the broad topic.", ["S0080"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Recording chart numbers is one observation detail rather than the complete idea.", ["S0082"]],
+            ["A2", "INCORRECT", "A thermometer's function is one tool detail rather than the complete idea.", ["S0078"]],
+            ["A3", "DEFENSIBLE", "This sentence directly states how tools and careful observations help the class learn about weather.", ["S0088"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "A wind sock pointing wind direction is a specific true passage detail.", ["S0085"]],
+            ["A2", "INCORRECT", "This states the central idea rather than another detail.", ["S0088"]],
+            ["A3", "INCORRECT", "Weather station notes names the topic rather than another detail.", ["S0089"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0541",
+      "fingerprint": "19663b37a2f21ed4f8ba53ed36481a4cd2801ebbdce5b35f4e115724c8a33a8b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The title, section headings, map, and body all focus on routes and methods by which seeds travel.", ["S0114", "S0116", "S0119", "S0117"]],
+            ["A2", "INCORRECT", "The passage contains no compost piles.", ["S0100"]],
+            ["A3", "INCORRECT", "The passage contains a seed-route map, not trail markers.", ["S0117"]],
+            ["A4", "INCORRECT", "The passage does not concern weather stations.", ["S0100"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0542",
+      "fingerprint": "5d8df549fd4a3c4a8bc745a53269043ddbac13e2f3ffb3e52f58e3e96360a63b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Wind drift is one seed-travel example, not the complete passage-wide idea.", ["S0101"]],
+            ["A2", "INCORRECT", "A classroom map is one representation detail rather than the central idea.", ["S0111"]],
+            ["A3", "INCORRECT", "Birds dropping seeds is one animal-route example rather than the complete idea.", ["S0109"]],
+            ["A4", "DEFENSIBLE", "This sentence directly states both parts of the passage-wide idea: varied seed travel and growth in new places.", ["S0107"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0543",
+      "fingerprint": "81e1755b78bafb8de2a77e594991aac68479d9438b2879f3b612b0c3ff85899b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A2", "A3", "A4"],
+          "ambiguity": "Every option directly supports a substantial part of the stated central idea: A1, A2, and A4 are distinct ways seeds travel, while A3 explains how reaching a new place helps a plant grow. The prompt provides no ranking rule that makes exactly one the most relevant.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "DEFENSIBLE", "Floating on water after rain is one of the different ways seeds travel.", ["S0103", "S0107"]],
+            ["A2", "DEFENSIBLE", "Hitching a ride on shoes or socks is another concrete way seeds travel.", ["S0110", "S0107"]],
+            ["A3", "DEFENSIBLE", "Sun, soil, and room at a new location directly explain how travel can help a new plant grow.", ["S0113", "S0107"]],
+            ["A4", "DEFENSIBLE", "Riding on fur or feathers is another different way seeds travel.", ["S0108", "S0107"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0544",
+      "fingerprint": "aec46d9f188fd980695692e7b7a88836ce0392839678e7253dcd8d20e40299de",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2", "A3", "A4"],
+          "ambiguity": "The prompt requests two details, but A2, A3, and A4 are three equally direct examples of the different ways seeds travel. No visible criterion selects only two of these travel methods.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The classroom map represents destinations, but it is not itself a natural seed-travel method and supports the central idea less directly than the other three.", ["S0111", "S0107"]],
+            ["A2", "DEFENSIBLE", "Floating on rainwater is a direct example of one way seeds travel.", ["S0103", "S0107"]],
+            ["A3", "DEFENSIBLE", "Drifting on wind is a direct example of one way seeds travel.", ["S0101", "S0107"]],
+            ["A4", "DEFENSIBLE", "Riding on fur or feathers is a direct example of one way seeds travel.", ["S0108", "S0107"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0545",
+      "fingerprint": "d0ba50bf1ab3b7837a4b7f5b38ed86cb8a19c6434bb5704cef81fd5455e73b0d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Birds dropping seeds is one animal-route example, not the complete central idea.", ["S0109"]],
+            ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The classroom map is one representation detail rather than the passage-wide idea.", ["S0111"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Floating after rain is one water-route example, not the complete central idea.", ["S0103"]],
+            ["A4", "DEFENSIBLE", "This sentence directly states both the varied travel methods and their role in new plant growth.", ["S0107"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0546",
+      "fingerprint": "544c9c1af0cfc63ec0a2c86910fae83a50f6cd712323f98ea41ce71803d7eace",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "A classroom map is one supporting representation, not the broad topic.", ["S0111"]],
+            ["A2", "DEFENSIBLE", "Seed travel routes accurately names the broad subject of the title, sections, and map.", ["S0114", "S0117"]],
+            ["A3", "INCORRECT", "Birds dropping seeds is one animal-route detail, not the broad topic.", ["S0109"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Floating after rain is one water-route detail, not the complete idea.", ["S0103"]],
+            ["A2", "INCORRECT", "Riding on fur or feathers is one animal-route detail, not the complete idea.", ["S0108"]],
+            ["A3", "DEFENSIBLE", "This sentence directly states the complete central idea about varied travel and growth in new places.", ["S0107"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The classroom map showing where seeds traveled is a specific true passage detail.", ["S0111"]],
+            ["A2", "INCORRECT", "Seed travel routes names the topic rather than another detail.", ["S0114"]],
+            ["A3", "INCORRECT", "This states the central idea rather than another detail.", ["S0107"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0547",
+      "fingerprint": "976c711271e46e23776ee1cca053369a31c2fbf18471b39cee4b14fff45dfbd7",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "A classroom map is one supporting representation, not the central idea.", ["S0111"]],
+            ["A2", "INCORRECT", "Wind drift is one travel-method detail, not the complete central idea.", ["S0101"]],
+            ["A3", "DEFENSIBLE", "This sentence states the passage-wide idea that varied travel helps plants grow in new places.", ["S0107"]]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": ["A1", "A2"],
+          "ambiguity": "Both A1 and A2 are equally direct examples of different seed-travel methods and therefore support the first major claim in Part A. The prompt provides no visible basis for ranking one method as the single best support.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "DEFENSIBLE", "Birds dropping seeds after eating fruit is a concrete animal-based method supporting the claim that seeds travel in different ways.", ["S0109", "S0107"]],
+            ["A2", "DEFENSIBLE", "Light seeds drifting on wind are a concrete wind-based method supporting the same claim.", ["S0101", "S0107"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The classroom map shows destinations but does not directly explain a travel method or resulting plant growth as the other two do.", ["S0111", "S0107"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

@@ -100,7 +100,7 @@ function sectionContributionQuestion(record: CentralIdeaEngineRecord, lessonInde
 function multiselect(record: CentralIdeaEngineRecord, lessonIndex: number, questionIndex: number): ReadingQuestion {
   const first = record.relevantDetails[0]
   const last = record.relevantDetails.at(-1)!
-  const data = base(record, lessonIndex, questionIndex, 'multi_select', 'Choose the two details from different sections that best support the central idea.',
+  const data = base(record, lessonIndex, questionIndex, 'multi_select', record.evidencePrompt ?? 'Choose the two details from different sections that best support the central idea.',
     `Both selected details support the same central idea across sections: ${record.centralIdea}`,
     [first, last].map((detail) => centralIdeaSentenceId(record.passageId, detail.sentence)), ['relevant-details', 'details-support-central-idea', 'evidence-across-sections'])
   const choices = [
@@ -156,7 +156,7 @@ function twoPart(record: CentralIdeaEngineRecord, lessonIndex: number, questionI
   const last = record.relevantDetails.at(-1)!
   const correctEvidence = `${record.sentences[first.sentence - 1]} / ${record.sentences[last.sentence - 1]}`
   const minorEvidence = `${record.sentences[record.minorDetails[0].sentence - 1]} / ${record.sentences[record.minorDetails[1].sentence - 1]}`
-  const partialEvidence = `${record.sentences[0]} / ${record.sentences[record.minorDetails[1].sentence - 1]}`
+  const partialEvidence = `${record.sentences[first.sentence - 1]} / ${record.sentences[record.minorDetails[1].sentence - 1]}`
   const data = base(record, lessonIndex, questionIndex, 'two_part', 'Identify the central idea, then choose details from separate sections that support it.',
     `${record.centralIdea} The correct evidence pair supports that idea with important details from separate sections.`,
     [first, last].map((detail) => centralIdeaSentenceId(record.passageId, detail.sentence)), ['central-idea', 'details-support-central-idea', 'evidence-across-sections'])

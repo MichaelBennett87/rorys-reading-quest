@@ -1,0 +1,354 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0036",
+  "batchFileSha256": "12c3edd5fac4fbcf501b8a8d2bf8917008905f286324e22bf966931c5761b9d7",
+  "reviewerThreadId": "01a07bc2-33d0-74f2-84b3-1f74918ca45e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0418",
+      "fingerprint": "6474fc590df331e643269afac350c98f07b5fca578b20786080d3d527ce029a7",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This describes Theo's wait-and-see perspective, not Lani's.", ["S0059"]],
+            ["A2", "INCORRECT", "The windy afternoon identifies the setting and threat, not Lani's perspective about protecting the plants.", ["S0058"]],
+            ["A3", "DEFENSIBLE", "Lani worries the storm will bend the stems, moves the trays inside, and later feels relieved that the choice kept them safe.", ["S0051", "S0053", "S0055"]],
+            ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This summarizes the children's shared action and outcome rather than describing Lani's individual view.", ["S0053", "S0057", "S0060"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0419",
+      "fingerprint": "654331ad312b98383c0f120f0b9a5d6d981f6c95769a012137aca95b09f7a870",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Theo sees the sun as still warm and wants to wait longer, so this reasonably states his initial view that waiting is acceptable.", ["S0059"]],
+            ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This summarizes the later shared action rather than Theo's own perspective before the storm.", ["S0057", "S0060"]],
+            ["A3", "INCORRECT", "This is a narration claim and does not describe Theo's view about protecting the seedlings.", []],
+            ["A4", "INCORRECT", "The windy afternoon is setting information, not Theo's perspective.", ["S0058"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0420",
+      "fingerprint": "d44a42dff6fd702c8d51bb4af19187aeacff5359d4b9000a1187a36c06e4493f",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "This contrasts Lani's immediate safety concern with Theo's initial wish to wait in the warm sun, matching their different views.", ["S0051", "S0059", "S0053"]],
+            ["A2", "INCORRECT", "A claim about the narrator does not compare the characters' perspectives.", []],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This describes their eventual shared action but does not explain how their original perspectives differ.", ["S0057", "S0060"]],
+            ["A4", "CONTRADICTED", "The source explicitly gives Lani and Theo different initial views about whether to move the seedlings immediately.", ["S0051", "S0059"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0421",
+      "fingerprint": "5af0c0322712c88dfa15b1cdd6d4bc3f120e55f9e31fe68e4e9ae73e2d777946",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2", "A3", "A4"],
+          "ambiguity": "The prompt requests two details, but three visible details support Lani's perspective: her worry supplies the reason, her action enacts her view, and her relief confirms that she valued the safety result. No visible criterion excludes one of these three.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "INCORRECT", "This supports Theo's initial perspective, not Lani's.", ["S0059"]],
+            ["A2", "DEFENSIBLE", "Lani's worry that the storm could bend the stems directly supplies the concern behind her protective perspective.", ["S0051"]],
+            ["A3", "DEFENSIBLE", "Lani's careful move of the trays into the shed is an action that directly supports her protective perspective.", ["S0053"]],
+            ["A4", "DEFENSIBLE", "Lani's relief that the earlier choice kept the plants safer directly confirms her view that moving them was protective.", ["S0055"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0422",
+      "fingerprint": "b325ea6b1ec71381b200d528151d92f79ac9ec23c419ee8ff5221b537e4677b8",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4", "A6"],
+          "ambiguity": "A6 directly shows Theo's initial perspective that they can wait, while A4 shows his later changed perspective through noticing danger and helping move the plants. The prompt does not specify which point in the story or which version of his perspective to select.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "INCORRECT", "This establishes the shared setting and task but gives no individual perspective.", ["S0058"]],
+            ["A2", "INCORRECT", "This states Lani's concern, not Theo's view.", ["S0051"]],
+            ["A3", "INCORRECT", "This is Lani's protective action, not Theo's perspective.", ["S0053"]],
+            ["A4", "DEFENSIBLE", "Theo notices worsening clouds and helps move the final flat, directly showing his later view that action is now needed.", ["S0057"]],
+            ["A5", "INCORRECT", "This reports Lani's relief, not Theo's perspective.", ["S0055"]],
+            ["A6", "DEFENSIBLE", "Theo explicitly thinks the sun is still warm and wants to wait, directly stating his initial perspective.", ["S0059"]],
+            ["A7", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This shared outcome says the plants were safe but does not isolate Theo's own view.", ["S0060"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0423",
+      "fingerprint": "0c3e15529825ed109c347c3dba982fad799f1a3349fbb33b3e04f1ef36cbcba3",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The windy afternoon is setting information rather than Lani's view of the danger and response.", ["S0058"]],
+            ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This gives a shared action summary rather than Lani's individual perspective.", ["S0053", "S0057", "S0060"]],
+            ["A3", "DEFENSIBLE", "Lani's worry, immediate action, and relief support the view that moving the seedlings inside will protect them.", ["S0051", "S0053", "S0055"]],
+            ["A4", "INCORRECT", "Narration is unrelated to how Lani sees the situation.", []]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This shared setting sentence does not give Theo's individual clue.", ["S0058"]],
+            ["A2", "DEFENSIBLE", "Theo's thought that the sun remains warm and his wish to wait directly reveal his initial perspective.", ["S0059"]],
+            ["A3", "INCORRECT", "This is Lani's later feeling, not a clue from Theo.", ["S0055"]],
+            ["A4", "INCORRECT", "This is Lani's concern, not a clue from Theo.", ["S0051"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The passage uses third-person names and pronouns, and narration is not the shared situation.", ["S0050"]],
+            ["A2", "DEFENSIBLE", "Both characters share the situation of deciding how to protect the seedlings before the storm, although this option is a phrase rather than the sentence named by the row prompt.", ["S0058", "S0060"]],
+            ["A3", "INCORRECT", "This states Theo's individual perspective rather than the situation shared by both characters.", ["S0059"]],
+            ["A4", "INCORRECT", "This states Lani's individual perspective rather than the shared situation.", ["S0051", "S0053", "S0055"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0424",
+      "fingerprint": "1c90ef7f6b4fd5f3e8ed3d48f6d1dbb749b24ae7f9512fe6ed7857866df85207",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This recounts shared action rather than Lani's individual perspective.", ["S0053", "S0057", "S0060"]],
+            ["A2", "INCORRECT", "This states Theo's perspective, not Lani's.", ["S0059"]],
+            ["A3", "DEFENSIBLE", "Lani's worry, immediate move, and relief show that she views moving the seedlings as the safer response.", ["S0051", "S0053", "S0055"]],
+            ["A4", "INCORRECT", "The windy afternoon names the setting rather than Lani's perspective.", ["S0058"]]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This states Theo's opposing initial view and does not support Lani's safety-first perspective.", ["S0059"]],
+            ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Lani's action is consistent with moving the seedlings, but by itself it does not state the protective belief as completely as A4.", ["S0053"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Lani's worry supplies the danger prompting her action, but it does not directly confirm that moving the seedlings kept them safer.", ["S0051"]],
+            ["A4", "DEFENSIBLE", "Lani's relief explicitly connects the earlier choice with keeping the plants safer, directly supporting the full Part A perspective.", ["S0055"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0425",
+      "fingerprint": "d9adaabe27bdd3ec7b6eaaa1798e2ba4c2dd2022032761497a557853d861e5e9",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The science-room exhibit identifies setting and purpose, not Sofia's perspective about construction.", ["S0069"]],
+            ["A2", "INCORRECT", "This describes Kai's initial view, not Sofia's.", ["S0071"]],
+            ["A3", "DEFENSIBLE", "Sofia calls for another measurement because the first attempt is uneven, and the resulting bridge fits better and stands steady.", ["S0070", "S0063", "S0066"]],
+            ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This broadly summarizes the shared project but does not describe Sofia's individual perspective and says they showed it where the source only says the class could see it.", ["S0069", "S0066"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0426",
+      "fingerprint": "a29f3dee6cc132cf60f8dc8eead903eafa580ed72961016c983b5e05a8d5c2c5",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Kai thinks the bridge is already fine and wants to glue quickly, so this accurately states his initial perspective.", ["S0071"]],
+            ["A2", "INCORRECT", "The exhibit identifies setting and purpose, not Kai's perspective.", ["S0069"]],
+            ["A3", "INCORRECT", "This is a narration claim and does not describe Kai's view of the bridge work.", []],
+            ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This broadly summarizes the shared task rather than Kai's own perspective and overstates that they showed it to the class.", ["S0069", "S0066"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0427",
+      "fingerprint": "264a7756f7b6b89d8d5a6006d0e96642137a6483fe2ee7f7a9f1d9eb17ef6bfe",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "This accurately contrasts Sofia's careful remeasurement view with Kai's initial belief that the bridge is fine and can be glued quickly.", ["S0070", "S0071", "S0063"]],
+            ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This broadly recounts their shared project rather than contrasting their views, and it overstates that they showed it to the class.", ["S0069", "S0066"]],
+            ["A3", "INCORRECT", "A narration claim does not compare the characters' perspectives.", []],
+            ["A4", "CONTRADICTED", "The source explicitly gives Sofia and Kai different initial views about whether more measuring is needed.", ["S0070", "S0071"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0428",
+      "fingerprint": "526f7969f8ff52606af79270b27cd4fba2f6e0183300e8fd38765bd77c31f3c4",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A3", "A4"],
+          "ambiguity": "The prompt requests two details, but three visible details support Sofia's perspective: her stated reason for remeasuring, her remeasurement action, and her shared pride that careful checking made the model strong. No visible ranking rule excludes one of the three.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "DEFENSIBLE", "Sofia explicitly says they should measure again because the first try is uneven, directly supporting her perspective.", ["S0070"]],
+            ["A2", "INCORRECT", "This states Kai's opposing initial perspective, not Sofia's.", ["S0071"]],
+            ["A3", "DEFENSIBLE", "Sofia is one of the two proud children, and their pride that careful checking strengthened the model supports her careful-checking perspective.", ["S0072"]],
+            ["A4", "DEFENSIBLE", "Sofia's preparation and second measurement are actions that directly enact her perspective.", ["S0063"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0429",
+      "fingerprint": "5cbc2e6ff0f8cfa50cf63603ae03caa3266a934ad7ba030b5ee493917645c063",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A3"],
+          "ambiguity": "A1 directly states Kai's initial perspective that the bridge is fine, while A3 shows his later changed perspective after he sees the pieces fit better. The prompt does not specify the initial view or a particular point in the story.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "DEFENSIBLE", "Kai explicitly thinks the bridge is fine and wants to glue quickly, directly stating his initial perspective.", ["S0071"]],
+            ["A2", "INCORRECT", "This establishes the shared setting and task but gives no individual perspective.", ["S0069"]],
+            ["A3", "DEFENSIBLE", "Kai sees that the pieces fit better and agrees to adjust the supports, directly showing his later changed perspective.", ["S0068"]],
+            ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This gives the bridge's result rather than Kai's individual view.", ["S0066"]],
+            ["A5", "INCORRECT", "This is Sofia's action, not Kai's perspective.", ["S0063"]],
+            ["A6", "INCORRECT", "This states Sofia's view, not Kai's.", ["S0070"]],
+            ["A7", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This shared feeling after success does not isolate Kai's perspective about the building decision.", ["S0072"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0430",
+      "fingerprint": "01cb63787e3eadbdc8a6a83a8c752289dc697b46a848a0928cd89e4f44f2c4ac",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This broadly summarizes the shared project rather than Sofia's individual view and overstates that they showed it to the class.", ["S0069", "S0066"]],
+            ["A2", "INCORRECT", "The exhibit identifies setting and purpose, not Sofia's perspective.", ["S0069"]],
+            ["A3", "DEFENSIBLE", "Sofia's stated concern about uneven sticks, remeasurement, and the steady result support this view.", ["S0070", "S0063", "S0066"]],
+            ["A4", "INCORRECT", "Narration is unrelated to Sofia's perspective about the bridge.", []]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This is shared setting information and gives no clue specific to Kai.", ["S0069"]],
+            ["A2", "DEFENSIBLE", "Kai's belief that the bridge is fine and his wish to glue quickly directly reveal his initial view.", ["S0071"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This is a shared feeling after success, not the requested clue that states Kai's view.", ["S0072"]],
+            ["A4", "INCORRECT", "This gives Sofia's clue, not Kai's.", ["S0070"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This states Sofia's individual perspective rather than the shared situation.", ["S0070", "S0063"]],
+            ["A2", "INCORRECT", "This states Kai's individual perspective rather than the shared situation.", ["S0071"]],
+            ["A3", "INCORRECT", "The passage uses third-person names and pronouns, and narration is not the shared situation.", ["S0062"]],
+            ["A4", "DEFENSIBLE", "Both characters share the situation of building a model bridge for the class exhibit, although this option is a phrase rather than the sentence named by the row prompt.", ["S0069"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0431",
+      "fingerprint": "3bfcffe8ccef1904ef4805d4d78dfa8dca21e97433bbc82ab2c1b63dcdecc556",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Sofia's stated concern about uneven sticks, her remeasurement, and the steady result support this description of her perspective.", ["S0070", "S0063", "S0066"]],
+            ["A2", "INCORRECT", "This states Kai's initial perspective, not Sofia's.", ["S0071"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This broadly summarizes the shared project rather than Sofia's individual view and overstates that they showed it to the class.", ["S0069", "S0066"]],
+            ["A4", "INCORRECT", "The exhibit identifies setting and purpose, not Sofia's perspective.", ["S0069"]]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Sofia's action is consistent with remeasuring, but it does not reveal her reason for believing another measurement is needed as directly as A3.", ["S0063"]],
+            ["A2", "INCORRECT", "This states Kai's opposing initial view and does not support Sofia's perspective.", ["S0071"]],
+            ["A3", "DEFENSIBLE", "Sofia explicitly says another measurement is needed because the first attempt looks uneven, directly stating the reasoning behind Part A.", ["S0070"]],
+            ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The shared pride and strong result confirm that careful checking helped, but they do not state Sofia's individual perspective as directly as her own words do.", ["S0072"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

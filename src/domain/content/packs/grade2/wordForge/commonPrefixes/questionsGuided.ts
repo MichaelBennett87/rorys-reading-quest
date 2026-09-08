@@ -97,7 +97,7 @@ export const guidedQuestions: ReadingQuestion[] = [
     lessonIdentifier: COMMON_PREFIX_LESSON_IDS.guidedUnRePre,
     activityIdentifier: 'activity-word-forge-common-prefixes-guided-un-re-pre-4',
     questionIdentifier: COMMON_PREFIX_QUESTION_IDS.guidedUnRePre[3],
-    prompt: 'Select the sentence that says a child could unroll a poster while the teacher retold the plan.',
+    prompt: 'Select the sentence that says a child could unroll a poster while the teacher could retell the plan.',
     explanation: 'The second sentence gives the clue about unroll and retell.',
     evidenceReference: 'sentence-clue',
     evidenceReferenceIds: ['school-preview-2'],

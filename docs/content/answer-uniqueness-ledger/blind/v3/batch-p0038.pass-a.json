@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0038",
+  "batchFileSha256": "69b484a11852a94d38648e9366c248848c487a202b5d36e153df242578a96579",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0957",
+      "fingerprint": "7531a0669669edd0389fed812ae4d8b01bf7e998a6a510e0e511f830fcdbc40e",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Splits inside the base color.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Separates the complete base color from suffix ful.",
+              [
+                "S0053"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Shows no base-suffix split.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Splits inside suffix ful.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Leaves an unhelpful one-letter chunk and most of the word unsplit.",
+              []
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Shows the whole word without reading chunks.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Divides colorful into pronounceable decoding chunks.",
+              [
+                "S0053"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Separates final l from the spoken word.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0964",
+      "fingerprint": "abba46921b2d48f0041103db9fc9b1ed53f12ef931f67c83e8732fcb23ece363",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Splits inside the base break.",
+              []
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Shows no base-suffix split.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Separates base break from suffix able.",
+              [
+                "S0067"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Splits inside suffix able.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Provides pronounceable chunks for decoding breakable.",
+              [
+                "S0067"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Leaves an unhelpful one-letter chunk and most of the word unsplit.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Separates silent final e from an unhelpful preceding chunk.",
+              []
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Shows the whole word without reading chunks.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0971",
+      "fingerprint": "9d27fe34acc0de777ac5d264b92efcd43be5dd90a90450167a932477ce1a0591",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Shows no base-suffix split.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Splits inside suffix able.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Splits inside the base wash.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Separates base wash from suffix able.",
+              [
+                "S0077"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Leaves an unhelpful one-letter chunk and most of the word unsplit.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Separates silent final e from an unhelpful preceding chunk.",
+              []
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Shows the whole word without reading chunks.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Provides pronounceable chunks for decoding washable.",
+              [
+                "S0077"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

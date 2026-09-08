@@ -1,0 +1,1036 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0033",
+  "batchFileSha256": "fcdc5c8a9d819865ad2460c12bf2cb4351d0357d1c6fbba2c3168c242f795383",
+  "reviewerThreadId": "01a07bc1-d815-7c71-b972-e3c829df1777",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0384",
+      "fingerprint": "fc134a685aa1a2d3dd18be8455df592e6a2e6c2f19049c29a8280b067d70cdbe",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is a plot detail about the failed first knot, not a general lesson.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This names the setting and subject, not a lesson that applies beyond the story.",
+              [
+                "S0053"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This recounts Ava's task, not a general lesson.",
+              [
+                "S0053"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The failed knot, Ava's changed approach, and the steady result support this general lesson.",
+              [
+                "S0060",
+                "S0059",
+                "S0055",
+                "S0057"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0385",
+      "fingerprint": "4ac4b368af856e0aa670c176afc21133203e108083d0d3bc282d2adcb729c44e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is a general lesson about responding to failure, so it is a theme rather than a topic.",
+              [
+                "S0060",
+                "S0057"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This is one plot event, not the broad subject named as a topic.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Hanging a birdhouse names the story's broad subject without stating a lesson.",
+              [
+                "S0053"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is the result of Ava's actions, not the broad subject.",
+              [
+                "S0057"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0386",
+      "fingerprint": "a5851089afa8298d8e2cd851de6e7bfacceabd400c20581836941d72c2fb0d4e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The birdhouse staying steady is a result, not a character action.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The knot slipping is the problem event, not an action Ava takes.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Ava pauses, examines the twine, and chooses a different plan, directly supporting the lesson about changing an unsuccessful approach.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The fence location is a setting detail, not a character action.",
+              [
+                "S0053"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0387",
+      "fingerprint": "5bbaa954b57a4b4b7f49dc1f67437ac6725c6ee16f9afecab7f2e540689bbe67",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Ava's decision to choose a new plan directly supports the theme.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Tying around the post and adding a loop shows Ava carrying out the new plan.",
+              [
+                "S0055"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The fence location does not help show that changing an unsuccessful plan can solve a problem.",
+              [
+                "S0053"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The slipping knot establishes that the first plan did not work, which is part of the theme's problem-and-response sequence.",
+              [
+                "S0060"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0388",
+      "fingerprint": "72d2395a54406d9d22edd01eaf0683c47537af24e6bebd8d80bc883a0411358a",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "Both A3 explicitly states that Ava chose a new plan and A1 states that she tried a new plan that solved the problem, which also shows that choice.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This sentence says Ava tried a new plan and that it solved the problem, so it shows she adopted a new plan.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This sentence shows the first plan failing but does not show Ava choosing another plan.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This sentence explicitly says Ava paused and chose a new plan.",
+              [
+                "S0059"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0389",
+      "fingerprint": "eeac03a7e5d044b64c4056e0b0b2c482a052f50f12ae20c105af752f3bb03536",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The repeated slipping directly shows that the first knotting plan failed.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Nothing in the detail mentions singing.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Nothing in the detail establishes that the garden had a tree.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "A slipping knot does not show whether the birdhouse was empty.",
+              [
+                "S0060"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Choosing a new plan means Ava tried a different approach.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The detail does not say the fence moved.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The detail does not mention watering the garden.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The detail does not say the wind stopped.",
+              [
+                "S0059"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The source says this new knot later stayed steady, not that it slipped again.",
+              [
+                "S0055",
+                "S0057"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The detail does not mention rain.",
+              [
+                "S0055"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Ava remained to finish the birdhouse rather than going home.",
+              [
+                "S0055"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The word instead marks tying around the post as a new way.",
+              [
+                "S0055"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "The steady birdhouse shows that the new plan worked, and the same detail also supports the offered true topic statement that the story is about a birdhouse.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The steady result shows that Ava's revised knotting plan worked.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The detail does not describe the weather as sunny.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The steady result contradicts the claim that the first knot slipped at this point.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "A detail centered on the birdhouse also supports the offered statement that the story is about a birdhouse.",
+              [
+                "S0057"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0390",
+      "fingerprint": "56f410b76e703cd7eb903ca4c258bafb0f74cccde98f1a6e4e9be633a0984bdf",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is a setting and object detail, not a general lesson.",
+              [
+                "S0053"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This is one problem event, not a general lesson.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The complete problem, changed plan, and successful result support this transferable lesson.",
+              [
+                "S0060",
+                "S0059",
+                "S0057"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This summarizes Ava's task and setting rather than stating a lesson.",
+              [
+                "S0053"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This sentence directly joins the new plan to the solved problem, fully supporting the Part A theme.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This shows Ava carrying out a new plan, but it does not by itself state that the original plan failed or that the change solved the problem.",
+              [
+                "S0055"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This shows the decision to change plans, but it does not by itself show the successful result.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This establishes the failed first plan but does not show the helpful new plan or outcome.",
+              [
+                "S0060"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0391",
+      "fingerprint": "9da6058ce14c152687d018feda4b28aa9e27ab9c8d1bf3d0ade0140d94e8f18c",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Eli's truthful repair actions and the teacher trusting him again support this general lesson.",
+              [
+                "S0065",
+                "S0063"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This is one repair action, not a general lesson.",
+              [
+                "S0065"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This names the story's setting and subject, not its lesson.",
+              [
+                "S0069"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is an opening plot detail, not a general lesson.",
+              [
+                "S0069"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0392",
+      "fingerprint": "3995a4c4d12008846984f2f739fb164cb81ef89ed6b9bd0adf44b197c6c539fd",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is a transferable lesson, so it is a theme.",
+              [
+                "S0065",
+                "S0063"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This is one character action, not the broad topic.",
+              [
+                "S0065"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This is one character reaction, not the broad topic.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Returning a library book names the story's broad subject without stating a lesson.",
+              [
+                "S0069",
+                "S0065"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0393",
+      "fingerprint": "370febf980ed218faa91d208fcf670ea3c5a33eb13ba8f008b98e64399cc76c4",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "A1 shows the failure to meet responsibility that creates the need to rebuild trust, while A4 shows the later repair actions; both character actions support development of the theme.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Forgetting the promised date and keeping the book all weekend shows the lapse in responsibility that makes later trust repair necessary.",
+              [
+                "S0068"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The shelf having books is a setting detail rather than a character action.",
+              [
+                "S0070"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Borrowing the book starts the plot but does not by itself develop the lesson about repairing trust.",
+              [
+                "S0069"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Telling the truth, returning the book, and apologizing directly show Eli taking responsibility.",
+              [
+                "S0065"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0394",
+      "fingerprint": "88c928f3b65034c7e658b7925fe227da4ec8316222bea8aa6a7f28e5a07af19e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "The prompt places no directness or story-stage limit on supporting details; even A4 establishes Eli's responsibility and promise, so all four offered details can support development of the theme.",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The teacher's smile and renewed trust show the positive result of Eli taking responsibility.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Telling the truth, returning the book, and apologizing show Eli repairing his mistake.",
+              [
+                "S0065"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Helping sort books is another responsible action after the mistake.",
+              [
+                "S0070"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Borrowing the book and promising a Friday return establish the responsibility and trust that Eli later has to repair.",
+              [
+                "S0069"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0395",
+      "fingerprint": "4cc5d6c8f68cb3c5ffc9e8d9b3cba7ef1c69fe19989d163ef47176e449e436fc",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "A3 shows Eli's concrete repair actions, while A2 shows their successful result in restored trust; both sentences show that he made things right.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This sentence shows Eli's mistake, not an effort or result that made it right.",
+              [
+                "S0068"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The teacher's smile and restored trust show that Eli successfully made things right.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Telling the truth, returning the book, and apologizing are the concrete actions Eli used to make things right.",
+              [
+                "S0065"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0396",
+      "fingerprint": "8c235557ec3f21b34268056c933c6d14697313d8ce288c0e952fe37e02e8d5e6",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Telling the truth does not show that Eli borrowed the book.",
+              [
+                "S0065"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The truthful choice is not evidence that it was the weekend.",
+              [
+                "S0065"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The detail says nothing about how full the shelf was.",
+              [
+                "S0065"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Telling the teacher the truth is an honest choice.",
+              [
+                "S0065"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Writing an apology does not show that the class was busy.",
+              [
+                "S0065"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The apology does not show that Eli had to wait.",
+              [
+                "S0065"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "An apology is an effort to acknowledge and repair the mistake.",
+              [
+                "S0065"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The note is an apology, not evidence that Eli wanted to read more.",
+              [
+                "S0065"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Helping with the new books is a responsible action that contributes to repairing the mistake.",
+              [
+                "S0070"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The helpful action does not show that Eli was sleepy.",
+              [
+                "S0070"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The source mentions one apology note, not another note during sorting.",
+              [
+                "S0070"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Sorting books does not show that Eli borrowed again.",
+              [
+                "S0070"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Renewed trust says nothing about the backpack being full.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Being trusted again shows that the damaged trust between Eli and his teacher was repaired.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Renewed trust does not establish that the book was new.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The forgotten date was the earlier problem, not what being trusted again shows.",
+              [
+                "S0063"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0397",
+      "fingerprint": "c9473011ea45ca7aea7b1083ddb01a142ca690280c0bb16f4d0a98f5a213e70f",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is a setting detail, not a general lesson.",
+              [
+                "S0070"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Eli's responsibility-taking actions and restored trust support this transferable lesson.",
+              [
+                "S0065",
+                "S0063"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This is the problem event, not a general lesson.",
+              [
+                "S0068"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is an opening plot event, not a general lesson.",
+              [
+                "S0069"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This establishes the mistake but not responsibility-taking or restored trust.",
+              [
+                "S0068"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This shows one responsible repair action but not the resulting return of trust.",
+              [
+                "S0070"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This sentence explicitly links Eli taking responsibility with being trusted again, fully supporting the Part A theme.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This shows several repair actions but does not by itself state the resulting restored trust.",
+              [
+                "S0065"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

@@ -1,0 +1,878 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0065",
+  "batchFileSha256": "592cfcf66ca32a93e0a7251be64305fce64440ff93b8b582530256dc6f0efcf5",
+  "reviewerThreadId": "01a07bc1-57ca-7230-a515-d322b50c9d2e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0760",
+      "fingerprint": "249e10c0cb39f6320b87f1aaa3ca3671906bea3d5d77d04fc8a8fa51700f3e28",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This defines cluster rather than scarce.",
+              [
+                "S0129",
+                "S0146"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This defines season rather than scarce.",
+              [
+                "S0136",
+                "S0133"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This defines compost rather than scarce.",
+              [
+                "S0145"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The passage directly defines scarce as not enough.",
+              [
+                "S0127",
+                "S0134"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0761",
+      "fingerprint": "9b0760d2d34db89b094df8e8a337676a712a99188b1cfd91a28f6811cbcfbe88",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "The sentence directly defines cluster while also saying the glossary explains it, and the displayed glossary repeats the same definition. Context clues and glossary are equally direct, so “most” does not identify one strategy.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The relationship between cluster and group helps, but it is supplied through a direct definition rather than a separate relationship clue.",
+              [
+                "S0129"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "General knowledge may help, but the source provides direct context and glossary definitions.",
+              [
+                "S0129",
+                "S0146"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The sentence itself directly defines cluster as a small group close together.",
+              [
+                "S0129"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The displayed glossary directly defines cluster.",
+              [
+                "S0144",
+                "S0146"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0762",
+      "fingerprint": "c1ffdf090056b2f6b7c7f16612bc9ccfa614de652410797a80ddd3ff00c56e8d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This defines season, not compost.",
+              [
+                "S0136",
+                "S0133"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This defines scarce, not compost.",
+              [
+                "S0127"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This defines cluster, not compost.",
+              [
+                "S0146"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This reproduces the displayed glossary definition of compost.",
+              [
+                "S0144",
+                "S0145"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0763",
+      "fingerprint": "ec64f42a3c61de6a36ef0a3177d91e583dc119908d0b487d649d929fe0ca509a",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [],
+          "ambiguity": "A1 has no learner-visible wording, and the other three choices define compost, scarce, or cluster rather than season. The requested two-clue set cannot be established from this projection.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "AMBIGUOUS",
+              "The raw internal identifier does not reveal the sentence or clue the learner should evaluate.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This sentence explains compost benefits, not the meaning of season.",
+              [
+                "S0131"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This defines scarce rather than season.",
+              [
+                "S0127"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This defines cluster rather than season.",
+              [
+                "S0129"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": "Option A1 is exposed as a raw internal sentence identifier instead of learner-visible text, so the option content and its evidence ownership cannot be audited."
+    },
+    {
+      "auditId": "Q0764",
+      "fingerprint": "0fbddb1dc7a8e140b5fa0405d3af9f222ad80330565f48c1036bbccd6a5c0c70",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This defines scarce, not cluster.",
+              [
+                "S0127"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This uses scarce in context and does not explain cluster.",
+              [
+                "S0134"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This sentence directly defines cluster as a small group close together.",
+              [
+                "S0129",
+                "S0146"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Gathering scraps into a cluster gives some contextual support, but it is less direct than the explicit definition.",
+              [
+                "S0135"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0765",
+      "fingerprint": "f41adde2f629ff06fd35f1e275590b0a885a4e23570b2a4938e95b42288fbe66",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This defines compost, not scarce.",
+              [
+                "S0145"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Scarce means not enough.",
+              [
+                "S0127"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This defines cluster, not scarce.",
+              [
+                "S0146"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This defines season, not scarce.",
+              [
+                "S0136",
+                "S0133"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This defines scarce, not cluster.",
+              [
+                "S0127"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This defines season, not cluster.",
+              [
+                "S0136",
+                "S0133"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This defines compost, not cluster.",
+              [
+                "S0145"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Cluster means a small group of things close together.",
+              [
+                "S0129",
+                "S0146"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This defines season, not compost.",
+              [
+                "S0136",
+                "S0133"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This defines cluster, not compost.",
+              [
+                "S0146"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This defines scarce, not compost.",
+              [
+                "S0127"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Compost is decayed plant and food scraps that can help soil.",
+              [
+                "S0145"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This defines scarce, not season.",
+              [
+                "S0127"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This defines compost, not season.",
+              [
+                "S0145"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "A season is a part of the year with similar weather, matching the cool-season context.",
+              [
+                "S0136",
+                "S0133"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This defines cluster, not season.",
+              [
+                "S0146"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0766",
+      "fingerprint": "6f669fe37f72fabb6a3f20291bff5aa1a8a36f67bbc481367184fa1070d190fb",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "A random detail is not the meaning of season.",
+              [
+                "S0136",
+                "S0133"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "A made-up meaning is not a definition.",
+              [
+                "S0136",
+                "S0133"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Season is not the passage topic.",
+              [
+                "S0137"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Season means a part of the year with similar weather.",
+              [
+                "S0136",
+                "S0133"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The phrase cool season connects season to a period characterized by similar cool weather.",
+              [
+                "S0133"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "This is not an actual learner-visible source sentence.",
+              [
+                "S0126"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The title concerns compost and soil, not the meaning of season.",
+              [
+                "S0137"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "A different glossary word cannot support the definition of season.",
+              [
+                "S0144"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0767",
+      "fingerprint": "15fc1e7c6829e282d538080718cb6e3fd0cb0200e7b662e9f69efd90ef0724ad",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "Two selectable sentences compare unlike things using like or as: a banner with a bright fish and a kite tail’s smoothness with a ribbon. The single-answer prompt does not distinguish them.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The banner is compared to a bright fish using like.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Lend a hand is an idiom meaning help, not a simile.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The kite tail’s smoothness is compared to a ribbon using as.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This uses repeated initial sounds but makes no like-or-as comparison.",
+              [
+                "S0007"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0768",
+      "fingerprint": "85a0ac3dd1f988b59fd4a1319d938ae1627b51a009e1052cb5124c6485b48a6d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Watching the booth is not the contextual meaning of lend a hand.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Painting a banner is not stated as the phrase meaning.",
+              [
+                "S0003",
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Holding or carrying string is one specific helping action, not the general idiom meaning.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The helpers hold string and pass tape, showing that lend a hand means help someone.",
+              [
+                "S0005"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0769",
+      "fingerprint": "976d095353c245760fa8104745dfc3b512547990533fbb0fa6dfeaa0049c9eae",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Holding the string is a concrete helping action that explains the idiom.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The last page of the plan does not explain lend a hand.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "A bright fish belongs to the banner simile, not the idiom.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Calling the people helpers directly supports the meaning help someone.",
+              [
+                "S0005"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0770",
+      "fingerprint": "b8df6c3fc7525420e1727fe0c537cf0b96abeaf48128030c88482551e6e6b17f",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "Blue banners bobbed repeats /b/ three times, beside the booth repeats /b/ twice, and kite and curled repeat initial /k/ within the first phrase. The one-answer prompt gives no rule excluding the shorter or nonconsecutive repetitions.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Kite and curled begin with the same /k/ sound within the phrase.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The words in this phrase do not repeat an initial consonant sound.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Blue, banners, and bobbed repeat the initial /b/ sound.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Beside and booth repeat the initial /b/ sound.",
+              [
+                "S0007"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0771",
+      "fingerprint": "f67efb20caa775fdba998972189d819f4e1df649fddd0c0eaf5f25e18b27b4bc",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Like a bright fish compares the banner to a fish using like, so it is a simile.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The phrase does not depend on repeated initial sounds.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This is a direct comparison, not an idiom.",
+              [
+                "S0003"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The phrase does not use repeated initial sounds.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The phrase does not compare two things with like or as.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Lend a hand is an idiom meaning help someone rather than literally lend a hand.",
+              [
+                "S0005"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The phrase has a literal meaning and is not an idiom.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The phrase does not use like or as to compare unlike things.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Blue, banners, and bobbed repeat the initial /b/ sound.",
+              [
+                "S0007"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The phrase is a comparison rather than an idiom.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Its main feature is not repeated initial sounds.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "As smooth as a ribbon compares the tail’s smoothness to a ribbon, so it is a simile.",
+              [
+                "S0009"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

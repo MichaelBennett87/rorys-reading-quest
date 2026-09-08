@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0067",
+  "batchFileSha256": "c49128db1ffdfd1c802ca40d555229ba047819d2a9073a44d9030de020df51f8",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0782",
+      "fingerprint": "26b30153d877595d11b2dccc4f0a4d38a3867bef75083301af577d3204f82ae6",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A1"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "DEFENSIBLE", "Line 1 explicitly compares the flags with orange kites using like.", ["S0039"]],
+          ["A2", "INCORRECT", "Line 3 uses repeated beginning sounds but does not compare flags with kites.", ["S0043"]],
+          ["A3", "INCORRECT", "Line 4 compares ropes with chalk lines, not flags with kites.", ["S0045"]],
+          ["A4", "INCORRECT", "Line 2 contains an idiom and no flags-to-kites comparison.", ["S0041"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0783",
+      "fingerprint": "cdb1110cb393c8c12bfcaa66dd8f2befa89e788193a23b780cad679ba231a716",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A1"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "DEFENSIBLE", "The familiar idiom means to begin thinking carefully before the game.", ["S0041"]],
+          ["A2", "INCORRECT", "The line gives no literal hats and the phrase is used as an idiom.", ["S0041"]],
+          ["A3", "INCORRECT", "Carrying ropes is unrelated to the phrase or its context.", ["S0041", "S0045"]],
+          ["A4", "INCORRECT", "Nothing in the phrase or nearby line means drawing the game.", ["S0041"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0784",
+      "fingerprint": "ee7632a00cd67df52d484d049dd6d9ddfcb239370337642b0d4ad9c5db56b4a9",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A2", "A4"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "The roof is a location in the line, not one side of the comparison.", ["S0039"]],
+          ["A2", "DEFENSIBLE", "The flags are the subject being compared.", ["S0039"]],
+          ["A3", "INCORRECT", "The game appears in another line and is not part of this simile.", ["S0039", "S0041"]],
+          ["A4", "DEFENSIBLE", "Orange kites are what the flags are compared with.", ["S0039"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0785",
+      "fingerprint": "213b1e98e928ed3518bf117017010ec96cfe1ec4a87ec18444321f91c8294b1a",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A2", "A3"],
+        "ambiguity": "Both 'The rooftop stayed steady' and 'Tiny tools tapped' repeat nearby beginning sounds, so a radio control cannot represent the defensible set.",
+        "selectionContractValid": false,
+        "options": [
+          ["A1", "INCORRECT", "The phrase does not repeat the same beginning sound across its important words.", ["S0041"]],
+          ["A2", "DEFENSIBLE", "Stayed and steady repeat the /st/ beginning sound in nearby words.", ["S0051"]],
+          ["A3", "DEFENSIBLE", "Tiny, tools, and tapped repeat the /t/ beginning sound.", ["S0043"]],
+          ["A4", "INCORRECT", "The flags climbed does not repeat a beginning sound.", ["S0039"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0786",
+      "fingerprint": "6c5219876d38dca39f407d1283d1cba2164bba3209f02824ec0ae34740e8b342",
+      "slots": [
+        {"slotId":"row_1","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[["A1","DEFENSIBLE","Like signals the comparison of flags with orange kites.",["S0039"]],["A2","INCORRECT","The expression does not repeat beginning sounds.",["S0039"]],["A3","INCORRECT","The expression is a direct comparison rather than an idiom.",["S0039"]]]},
+        {"slotId":"row_2","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[["A1","INCORRECT","The expression does not depend on repeated beginning sounds.",["S0041"]],["A2","INCORRECT","The expression makes no comparison with like or as.",["S0041"]],["A3","DEFENSIBLE","Put on our thinking caps is a familiar nonliteral expression for thinking carefully.",["S0041"]]]},
+        {"slotId":"row_3","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[["A1","INCORRECT","The expression is not a fixed nonliteral saying.",["S0043"]],["A2","INCORRECT","The expression makes no comparison.",["S0043"]],["A3","DEFENSIBLE","Tiny, tools, and tapped repeat the /t/ beginning sound.",["S0043"]]]},
+        {"slotId":"row_4","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[["A1","DEFENSIBLE","As straight as compares the ropes with chalk lines.",["S0045"]],["A2","INCORRECT","The expression does not repeat an initial sound pattern.",["S0045"]],["A3","INCORRECT","The expression is an explicit comparison rather than an idiom.",["S0045"]]]}
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0787",
+      "fingerprint": "a825e907a341643595c3f5519bad9d05e772816faa839440230a146cd2846194",
+      "slots": [{"slotId":"response","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[["A1","DEFENSIBLE","Like a narrow smile explicitly compares the bridge model with a smile.",["S0054"]],["A2","INCORRECT","Called it a day is an idiom, not a comparison.",["S0060"]],["A3","INCORRECT","The bridge model stood is literal and contains no comparison.",["S0054"]],["A4","INCORRECT","The class worked is neither the authored phrase nor a simile.",[]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0788",
+      "fingerprint": "a1cad7a883eb7f33a0ed524e36d2178d96f5aa725f4624b385b4a3f3b2d191e0",
+      "slots": [{"slotId":"response","defensible":["A4"],"ambiguity":"","selectionContractValid":true,"options":[["A1","INCORRECT","The idiom does not refer to holding a rope.",["S0056"]],["A2","INCORRECT","No literal boat or rowing appears in the situation.",["S0056"]],["A3","INCORRECT","Building a bridge is the activity, not the idiom's meaning.",["S0054","S0056"]],["A4","DEFENSIBLE","The glue problem affected the whole class, so they shared the same problem.",["S0056"]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0789",
+      "fingerprint": "3299b523085142dc3173c9b0f6ec828d4b612bca8ddcf510087debc3882466fc",
+      "slots": [{"slotId":"response","defensible":["A1","A4"],"ambiguity":"Both 'Brave builders balanced' and the nearby words 'tower' and 'tall' in 'The paper tower stayed tall' repeat beginning sounds.","selectionContractValid":false,"options":[["A1","DEFENSIBLE","Brave, builders, and balanced repeat the /b/ beginning sound.",["S0058"]],["A2","INCORRECT","In the same boat is an idiom without a repeated beginning-sound pattern.",["S0056"]],["A3","INCORRECT","The words begin with different sounds.",["S0063"]],["A4","DEFENSIBLE","Tower and tall are nearby words that repeat the /t/ beginning sound.",["S0061"]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0790",
+      "fingerprint": "3d31189cafb8156f3dcdf8057fc2924b0315e5fdad9c1a118715eebce698985b",
+      "slots": [{"slotId":"response","defensible":["A2","A4"],"ambiguity":"","selectionContractValid":true,"options":[["A1","INCORRECT","The sand tray does not explain why work stopped.",["S0061"]],["A2","DEFENSIBLE","Cleaning up signals that the class stopped working.",["S0060"]],["A3","INCORRECT","The toy car belongs to the later test and does not explain the idiom.",["S0063"]],["A4","DEFENSIBLE","The bell marks the time when the class stopped and cleaned up.",["S0060"]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0791",
+      "fingerprint": "8cce97363087e73aea9279a6bc5e0426e33d7b780809bab9b356152305f517b1",
+      "slots": [{"slotId":"response","defensible":["A2","A3"],"ambiguity":"Both 'Brave builders balanced' and 'The rooftop stayed steady' visibly contain repeated beginning sounds, so the single-select prompt has two defensible answers.","selectionContractValid":false,"options":[["A1","INCORRECT","The flags climbed does not repeat a beginning sound.",["S0039"]],["A2","DEFENSIBLE","Brave, builders, and balanced visibly repeat the /b/ beginning sound.",[]],["A3","DEFENSIBLE","Stayed and steady repeat the /st/ beginning sound.",["S0051"]],["A4","INCORRECT","The idiom does not repeat one beginning sound across nearby key words.",["S0041"]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0792",
+      "fingerprint": "83c1f211408316656bb26ba4fbf9b8239808503127e8b59575e6d84054cd0c3e",
+      "slots": [
+        {"slotId":"row_1","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[["A1","INCORRECT","The comparison does not rely on repeated beginning sounds.",["S0054"]],["A2","INCORRECT","The phrase is an explicit comparison rather than an idiom.",["S0054"]],["A3","DEFENSIBLE","Like compares the bridge model with a narrow smile.",["S0054"]]]},
+        {"slotId":"row_2","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[["A1","INCORRECT","The phrase does not use repeated initial sounds as its main feature.",["S0056"]],["A2","DEFENSIBLE","In the same boat is a familiar nonliteral expression for sharing a problem.",["S0056"]],["A3","INCORRECT","The phrase contains no comparison using like or as.",["S0056"]]]},
+        {"slotId":"row_3","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[["A1","DEFENSIBLE","Brave, builders, and balanced repeat the /b/ beginning sound.",["S0058"]],["A2","INCORRECT","The phrase is not a fixed nonliteral saying.",["S0058"]],["A3","INCORRECT","The phrase makes no comparison.",["S0058"]]]},
+        {"slotId":"row_4","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[["A1","DEFENSIBLE","Call it a day is a familiar idiom meaning to stop work for now.",["S0060"]],["A2","INCORRECT","The phrase makes no comparison.",["S0060"]],["A3","INCORRECT","The phrase does not repeat a beginning sound pattern.",["S0060"]]]}
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0793",
+      "fingerprint": "b5c8241696fb35b729d14c709bf6b240e84bc3704bcf431b67df2eab518926c3",
+      "slots": [
+        {"slotId":"part_a","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[["A1","INCORRECT","The phrase occurs when the class stops, not when it starts the bridge.",["S0060"]],["A2","DEFENSIBLE","The bell and cleanup show that the class stopped working for now.",["S0060"]],["A3","INCORRECT","The phrase does not mean carrying the toy car.",["S0060","S0063"]]]},
+        {"slotId":"part_b","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[["A1","DEFENSIBLE","The bell, the idiom, and cleanup directly show that work stopped.",["S0060"]],["A2","INCORRECT","The tower's position does not support the idiom's meaning.",["S0061"]],["A3","INCORRECT","The later bridge test does not explain why the class stopped.",["S0063"]]]}
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

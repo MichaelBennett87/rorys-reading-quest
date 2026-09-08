@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "stage": "SECOND_PASS_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-s0015",
+  "batchFileSha256": "2a90b6d64bfc7363ca1f56c9d880193a08d3a87395cf714592d85d8809196da7",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "independentReviewer": false,
+  "records": [
+    {
+      "auditId": "Q0165",
+      "fingerprint": "b9e2729bdca7f60c6960b3e9df6b7fc0390144367c1a912864401391b4bf05f8",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Unpack contains the genuine prefix un- before pack. The other choices are bare base words."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0174",
+      "fingerprint": "e5846f4960f3e15b4f70cceb8db8f3c22761182268a64a040a1d4bce246cb2b2",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Pretest splits into pre- plus test and means a test beforehand. Preschool also has pre- but does not mean before test; the prompt's full constraint makes A3 unique."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0176",
+      "fingerprint": "a3fdb981e40849348b97ff5964bf5500e4c62b76113587d20e33cd568dd9d875",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Pretest, unroll, preschool, and retell each begin with a genuine taught prefix. The open-ended all-defensible contract correctly includes all four."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0177",
+      "fingerprint": "6b0032e83a2ca5267c86434463ba4a7e6caf5f8b9177243e84bfdf2bd49a501b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "A1 exactly states both requested actions. The other sentences concern the school preview or preschool guests."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0178",
+      "fingerprint": "8776c698c40b5d32a2450c0856bb5a7afc2776fe22b2b60385de45e46c35de19",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Pretest splits at the genuine prefix-base boundary pre | test."
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Unroll splits at un | roll."
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Retell splits at re | tell."
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Preschool splits at pre | school."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0180",
+      "fingerprint": "c9eb6533575bbb88c3717e9f20c4ed5e4ee5cf3e9f3754d583f3d11ed9b4e335",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Disagree combines dis- with agree and means not agree. Disconnect has the prefix but not the requested meaning; the others lack dis-."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0205",
+      "fingerprint": "a1f2e8e3e08b2d62d230c43041874f3a81971fdcaa6fe4ec37adc82256979689",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "The genuine boundary is pre | test."
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "The genuine boundary is un | roll."
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "The genuine boundary is re | tell."
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "The genuine boundary is pre | school."
+        }
+      ]
+    }
+  ]
+}

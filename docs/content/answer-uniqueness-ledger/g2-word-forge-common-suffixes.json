@@ -1,0 +1,4245 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "q-word-forge-common-suffixes-guided-base-and-ending-1",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-cd12b92cd7852088",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "782220a51dab0dcf6c4629d8c88460e42b9055e119d1a8391d023c2d5b223f86",
+        "conclusionsSha256": "37bd7ec6fa98a80c69ee749f3befec20ea04c43dfc1a4926983b1f849459606d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0018.pass-a.json",
+        "receiptSha256": "37bd7ec6fa98a80c69ee749f3befec20ea04c43dfc1a4926983b1f849459606d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the suffix -ed and means put a plant in soil?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "planted-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "planted-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "plants-choice",
+              "verdict": "INCORRECT",
+              "rationale": "plants ends with plural -s, not -ed, and names growing things or the act of putting them in soil.",
+              "evidenceIds": [
+                "suffix-garden-1"
+              ]
+            },
+            {
+              "answerId": "helpful-choice",
+              "verdict": "INCORRECT",
+              "rationale": "helpful ends with -ful and means giving help.",
+              "evidenceIds": [
+                "suffix-garden-2"
+              ]
+            },
+            {
+              "answerId": "planted-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "planted is plant plus -ed and means put a plant or seed in soil.",
+              "evidenceIds": [
+                "suffix-garden-1"
+              ]
+            },
+            {
+              "answerId": "watered-choice",
+              "verdict": "INCORRECT",
+              "rationale": "watered has -ed but means gave water, not put a plant in soil.",
+              "evidenceIds": [
+                "suffix-garden-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-guided-base-and-ending-2",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-6f50121fb520b97b",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "782220a51dab0dcf6c4629d8c88460e42b9055e119d1a8391d023c2d5b223f86",
+        "conclusionsSha256": "37bd7ec6fa98a80c69ee749f3befec20ea04c43dfc1a4926983b1f849459606d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0018.pass-a.json",
+        "receiptSha256": "37bd7ec6fa98a80c69ee749f3befec20ea04c43dfc1a4926983b1f849459606d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the suffix -ful and means full of help?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "helpful-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "helpful-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "boxes-choice",
+              "verdict": "INCORRECT",
+              "rationale": "boxes ends with plural -es, not -ful.",
+              "evidenceIds": [
+                "suffix-garden-2"
+              ]
+            },
+            {
+              "answerId": "careful-choice",
+              "verdict": "INCORRECT",
+              "rationale": "careful has -ful but means full of care or cautious, not full of help.",
+              "evidenceIds": [
+                "suffix-garden-3"
+              ]
+            },
+            {
+              "answerId": "helpful-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "helpful is help plus -ful and means giving or full of help.",
+              "evidenceIds": [
+                "suffix-garden-2"
+              ]
+            },
+            {
+              "answerId": "planted-choice",
+              "verdict": "INCORRECT",
+              "rationale": "planted ends with -ed, not -ful.",
+              "evidenceIds": [
+                "suffix-garden-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-guided-base-and-ending-3",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-1e089181e837fb5d",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "782220a51dab0dcf6c4629d8c88460e42b9055e119d1a8391d023c2d5b223f86",
+        "conclusionsSha256": "37bd7ec6fa98a80c69ee749f3befec20ea04c43dfc1a4926983b1f849459606d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0018.pass-a.json",
+        "receiptSha256": "37bd7ec6fa98a80c69ee749f3befec20ea04c43dfc1a4926983b1f849459606d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words in the garden passage that have suffixes.",
+          "requestedSelectionCount": 5,
+          "keyedAnswerIds": [
+            "plants-choice",
+            "planted-choice",
+            "watered-choice",
+            "helped-choice",
+            "helpful-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "plants-choice",
+            "helpful-choice",
+            "watered-choice",
+            "planted-choice",
+            "helped-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "plants-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "plants appears in the passage and is plant plus the plural suffix -s.",
+              "evidenceIds": [
+                "suffix-garden-1"
+              ]
+            },
+            {
+              "answerId": "helpful-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "helpful appears in the passage and is help plus the suffix -ful.",
+              "evidenceIds": [
+                "suffix-garden-2"
+              ]
+            },
+            {
+              "answerId": "watered-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "watered appears in the passage and is water plus the suffix -ed.",
+              "evidenceIds": [
+                "suffix-garden-1"
+              ]
+            },
+            {
+              "answerId": "planted-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "planted appears in the passage and is plant plus the suffix -ed.",
+              "evidenceIds": [
+                "suffix-garden-1"
+              ]
+            },
+            {
+              "answerId": "helped-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "helped appears in the passage and is help plus the suffix -ed.",
+              "evidenceIds": [
+                "suffix-garden-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-guided-base-and-ending-4",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-866ef0fb983d775f",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "782220a51dab0dcf6c4629d8c88460e42b9055e119d1a8391d023c2d5b223f86",
+        "conclusionsSha256": "37bd7ec6fa98a80c69ee749f3befec20ea04c43dfc1a4926983b1f849459606d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0018.pass-a.json",
+        "receiptSha256": "37bd7ec6fa98a80c69ee749f3befec20ea04c43dfc1a4926983b1f849459606d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that tells about the team working carefully.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "suffix-garden-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "suffix-garden-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "suffix-garden-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence tells what the class planted and watered.",
+              "evidenceIds": [
+                "suffix-garden-1"
+              ]
+            },
+            {
+              "answerId": "suffix-garden-2",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence tells what a helper carried and cleaned.",
+              "evidenceIds": [
+                "suffix-garden-2"
+              ]
+            },
+            {
+              "answerId": "suffix-garden-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence explicitly says the team worked carefully.",
+              "evidenceIds": [
+                "suffix-garden-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-guided-base-and-ending-5",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-a760a57d5731fcc9",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "782220a51dab0dcf6c4629d8c88460e42b9055e119d1a8391d023c2d5b223f86",
+        "conclusionsSha256": "37bd7ec6fa98a80c69ee749f3befec20ea04c43dfc1a4926983b1f849459606d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0018.pass-a.json",
+        "receiptSha256": "37bd7ec6fa98a80c69ee749f3befec20ea04c43dfc1a4926983b1f849459606d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "planted-row",
+          "prompt": "planted",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "plant-base"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "plant-base"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "water-base",
+              "verdict": "INCORRECT",
+              "rationale": "water is the base of watered, not planted.",
+              "evidenceIds": [
+                "suffix-garden-1"
+              ]
+            },
+            {
+              "answerId": "plant-base",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Removing -ed from planted leaves the base plant.",
+              "evidenceIds": [
+                "suffix-garden-1"
+              ]
+            },
+            {
+              "answerId": "care-base",
+              "verdict": "INCORRECT",
+              "rationale": "care is not the base of planted.",
+              "evidenceIds": [
+                "suffix-garden-1"
+              ]
+            },
+            {
+              "answerId": "helpful-base",
+              "verdict": "INCORRECT",
+              "rationale": "help is the base of helped or helpful, not planted.",
+              "evidenceIds": [
+                "suffix-garden-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "watered-row",
+          "prompt": "watered",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "water-base-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "water-base-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "care-base-2",
+              "verdict": "INCORRECT",
+              "rationale": "care is not the base of watered.",
+              "evidenceIds": [
+                "suffix-garden-1"
+              ]
+            },
+            {
+              "answerId": "paint-base",
+              "verdict": "INCORRECT",
+              "rationale": "paint is not the base of watered.",
+              "evidenceIds": [
+                "suffix-garden-1"
+              ]
+            },
+            {
+              "answerId": "water-base-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Removing -ed from watered leaves the base water.",
+              "evidenceIds": [
+                "suffix-garden-1"
+              ]
+            },
+            {
+              "answerId": "help-base-2",
+              "verdict": "INCORRECT",
+              "rationale": "help is not the base of watered.",
+              "evidenceIds": [
+                "suffix-garden-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "helped-row",
+          "prompt": "helped",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "help-base-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "help-base-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "box-base",
+              "verdict": "INCORRECT",
+              "rationale": "box is not the base of helped.",
+              "evidenceIds": [
+                "suffix-garden-2"
+              ]
+            },
+            {
+              "answerId": "help-base-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Removing -ed from helped leaves the base help.",
+              "evidenceIds": [
+                "suffix-garden-2"
+              ]
+            },
+            {
+              "answerId": "sign-base",
+              "verdict": "INCORRECT",
+              "rationale": "sign is not the base of helped.",
+              "evidenceIds": [
+                "suffix-garden-2"
+              ]
+            },
+            {
+              "answerId": "water-base-3",
+              "verdict": "INCORRECT",
+              "rationale": "water is not the base of helped.",
+              "evidenceIds": [
+                "suffix-garden-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "helpful-row",
+          "prompt": "helpful",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "help-base-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "help-base-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "plant-base-2",
+              "verdict": "INCORRECT",
+              "rationale": "plant is not the base of helpful.",
+              "evidenceIds": [
+                "suffix-garden-2"
+              ]
+            },
+            {
+              "answerId": "care-base-3",
+              "verdict": "INCORRECT",
+              "rationale": "care is the base of careful, not helpful.",
+              "evidenceIds": [
+                "suffix-garden-2"
+              ]
+            },
+            {
+              "answerId": "wish-base",
+              "verdict": "INCORRECT",
+              "rationale": "wish is not the base of helpful.",
+              "evidenceIds": [
+                "suffix-garden-2"
+              ]
+            },
+            {
+              "answerId": "help-base-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Removing -ful from helpful leaves the base help.",
+              "evidenceIds": [
+                "suffix-garden-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-guided-ending-sound-1",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-171a528c5f9d4880",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "782220a51dab0dcf6c4629d8c88460e42b9055e119d1a8391d023c2d5b223f86",
+        "conclusionsSha256": "37bd7ec6fa98a80c69ee749f3befec20ea04c43dfc1a4926983b1f849459606d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0018.pass-a.json",
+        "receiptSha256": "37bd7ec6fa98a80c69ee749f3befec20ea04c43dfc1a4926983b1f849459606d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word ends with -es and means more than one box?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "boxes-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "boxes-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "fearless-choice",
+              "verdict": "INCORRECT",
+              "rationale": "fearless ends with -less and means without fear.",
+              "evidenceIds": [
+                "suffix-shelter-3"
+              ]
+            },
+            {
+              "answerId": "dishes-choice",
+              "verdict": "INCORRECT",
+              "rationale": "dishes ends with -es but means more than one dish, not box.",
+              "evidenceIds": [
+                "suffix-shelter-2"
+              ]
+            },
+            {
+              "answerId": "softly-choice",
+              "verdict": "INCORRECT",
+              "rationale": "softly ends with -ly and describes how something is done.",
+              "evidenceIds": [
+                "suffix-shelter-2"
+              ]
+            },
+            {
+              "answerId": "boxes-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "boxes is box plus -es and means more than one box.",
+              "evidenceIds": [
+                "suffix-shelter-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-guided-ending-sound-2",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-5521cd6fd81c7b4b",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "782220a51dab0dcf6c4629d8c88460e42b9055e119d1a8391d023c2d5b223f86",
+        "conclusionsSha256": "37bd7ec6fa98a80c69ee749f3befec20ea04c43dfc1a4926983b1f849459606d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0018.pass-a.json",
+        "receiptSha256": "37bd7ec6fa98a80c69ee749f3befec20ea04c43dfc1a4926983b1f849459606d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the suffix -less and means without fear?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "fearless-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "fearless-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "softly-choice",
+              "verdict": "INCORRECT",
+              "rationale": "softly ends with -ly and means in a soft way.",
+              "evidenceIds": [
+                "suffix-shelter-2"
+              ]
+            },
+            {
+              "answerId": "boxes-choice",
+              "verdict": "INCORRECT",
+              "rationale": "boxes ends with plural -es, not -less.",
+              "evidenceIds": [
+                "suffix-shelter-1"
+              ]
+            },
+            {
+              "answerId": "dishes-choice",
+              "verdict": "INCORRECT",
+              "rationale": "dishes ends with plural -es, not -less.",
+              "evidenceIds": [
+                "suffix-shelter-2"
+              ]
+            },
+            {
+              "answerId": "fearless-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "fearless is fear plus -less and means without fear.",
+              "evidenceIds": [
+                "suffix-shelter-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-guided-ending-sound-3",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-ff6dfd28f5cfa1dc",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "782220a51dab0dcf6c4629d8c88460e42b9055e119d1a8391d023c2d5b223f86",
+        "conclusionsSha256": "37bd7ec6fa98a80c69ee749f3befec20ea04c43dfc1a4926983b1f849459606d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0018.pass-a.json",
+        "receiptSha256": "37bd7ec6fa98a80c69ee749f3befec20ea04c43dfc1a4926983b1f849459606d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words in the shelter passage that have visible suffixes.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "boxes-choice",
+            "dishes-choice",
+            "softly-choice",
+            "fearless-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "softly-choice",
+            "boxes-choice",
+            "dishes-choice",
+            "fearless-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "softly-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "softly appears in the passage and visibly ends with -ly.",
+              "evidenceIds": [
+                "suffix-shelter-2"
+              ]
+            },
+            {
+              "answerId": "boxes-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "boxes appears in the passage and visibly ends with plural -es.",
+              "evidenceIds": [
+                "suffix-shelter-1"
+              ]
+            },
+            {
+              "answerId": "dishes-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "dishes appears in the passage and visibly ends with plural -es.",
+              "evidenceIds": [
+                "suffix-shelter-2"
+              ]
+            },
+            {
+              "answerId": "kind-choice",
+              "verdict": "INCORRECT",
+              "rationale": "kind is a base word here and has none of the taught visible suffix endings.",
+              "evidenceIds": [
+                "suffix-shelter-2"
+              ]
+            },
+            {
+              "answerId": "fearless-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "fearless appears in the passage and visibly ends with -less.",
+              "evidenceIds": [
+                "suffix-shelter-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-guided-ending-sound-4",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-07687386d67981b2",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "782220a51dab0dcf6c4629d8c88460e42b9055e119d1a8391d023c2d5b223f86",
+        "conclusionsSha256": "37bd7ec6fa98a80c69ee749f3befec20ea04c43dfc1a4926983b1f849459606d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0018.pass-a.json",
+        "receiptSha256": "37bd7ec6fa98a80c69ee749f3befec20ea04c43dfc1a4926983b1f849459606d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that tells how the volunteer moved.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "suffix-shelter-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "suffix-shelter-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "suffix-shelter-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes boxes and blankets, not how the volunteer moved.",
+              "evidenceIds": [
+                "suffix-shelter-1"
+              ]
+            },
+            {
+              "answerId": "suffix-shelter-3",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes the dogs, not the volunteer's movement.",
+              "evidenceIds": [
+                "suffix-shelter-3"
+              ]
+            },
+            {
+              "answerId": "suffix-shelter-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "walked softly tells how the volunteer moved.",
+              "evidenceIds": [
+                "suffix-shelter-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-guided-ending-sound-5",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-c0aa50f1abce09ed",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "782220a51dab0dcf6c4629d8c88460e42b9055e119d1a8391d023c2d5b223f86",
+        "conclusionsSha256": "37bd7ec6fa98a80c69ee749f3befec20ea04c43dfc1a4926983b1f849459606d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0018.pass-a.json",
+        "receiptSha256": "37bd7ec6fa98a80c69ee749f3befec20ea04c43dfc1a4926983b1f849459606d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "boxes-row",
+          "prompt": "boxes",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "boxes-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "boxes-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "softly-split",
+              "verdict": "INCORRECT",
+              "rationale": "soft | ly reconstructs softly, not boxes.",
+              "evidenceIds": [
+                "suffix-shelter-1"
+              ]
+            },
+            {
+              "answerId": "boxes-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "box | es reconstructs boxes and separates its base and suffix.",
+              "evidenceIds": [
+                "suffix-shelter-1"
+              ]
+            },
+            {
+              "answerId": "fearless-split",
+              "verdict": "INCORRECT",
+              "rationale": "fear | less reconstructs fearless, not boxes.",
+              "evidenceIds": [
+                "suffix-shelter-1"
+              ]
+            },
+            {
+              "answerId": "dishes-split",
+              "verdict": "INCORRECT",
+              "rationale": "dish | es reconstructs dishes, not boxes.",
+              "evidenceIds": [
+                "suffix-shelter-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "dishes-row",
+          "prompt": "dishes",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "dishes-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "dishes-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "boxes-split-2",
+              "verdict": "INCORRECT",
+              "rationale": "box | es reconstructs boxes, not dishes.",
+              "evidenceIds": [
+                "suffix-shelter-2"
+              ]
+            },
+            {
+              "answerId": "softly-split-2",
+              "verdict": "INCORRECT",
+              "rationale": "soft | ly reconstructs softly, not dishes.",
+              "evidenceIds": [
+                "suffix-shelter-2"
+              ]
+            },
+            {
+              "answerId": "fearless-split-2",
+              "verdict": "INCORRECT",
+              "rationale": "fear | less reconstructs fearless, not dishes.",
+              "evidenceIds": [
+                "suffix-shelter-2"
+              ]
+            },
+            {
+              "answerId": "dishes-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "dish | es reconstructs dishes and separates its base and suffix.",
+              "evidenceIds": [
+                "suffix-shelter-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "softly-row",
+          "prompt": "softly",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "softly-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "softly-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "boxes-split-3",
+              "verdict": "INCORRECT",
+              "rationale": "box | es reconstructs boxes, not softly.",
+              "evidenceIds": [
+                "suffix-shelter-2"
+              ]
+            },
+            {
+              "answerId": "softly-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "soft | ly reconstructs softly and separates its base and suffix.",
+              "evidenceIds": [
+                "suffix-shelter-2"
+              ]
+            },
+            {
+              "answerId": "dishes-split-2",
+              "verdict": "INCORRECT",
+              "rationale": "dish | es reconstructs dishes, not softly.",
+              "evidenceIds": [
+                "suffix-shelter-2"
+              ]
+            },
+            {
+              "answerId": "fearless-split-3",
+              "verdict": "INCORRECT",
+              "rationale": "fear | less reconstructs fearless, not softly.",
+              "evidenceIds": [
+                "suffix-shelter-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "fearless-row",
+          "prompt": "fearless",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "fearless-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "fearless-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "boxes-split-4",
+              "verdict": "INCORRECT",
+              "rationale": "box | es reconstructs boxes, not fearless.",
+              "evidenceIds": [
+                "suffix-shelter-3"
+              ]
+            },
+            {
+              "answerId": "fearless-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "fear | less reconstructs fearless and separates its base and suffix.",
+              "evidenceIds": [
+                "suffix-shelter-3"
+              ]
+            },
+            {
+              "answerId": "dishes-split-3",
+              "verdict": "INCORRECT",
+              "rationale": "dish | es reconstructs dishes, not fearless.",
+              "evidenceIds": [
+                "suffix-shelter-3"
+              ]
+            },
+            {
+              "answerId": "softly-split-3",
+              "verdict": "INCORRECT",
+              "rationale": "soft | ly reconstructs softly, not fearless.",
+              "evidenceIds": [
+                "suffix-shelter-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-guided-action-endings-1",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-a4f81b747a17e160",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "683e85bf4aa09dbd6635e8a5b9f6d17373386216ad7760dafdea942c5cf7244a",
+        "conclusionsSha256": "8f23ab9e8a963f3db001e868a90082cf7cc384d8f40baaa34889b6f7289297af",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0019.pass-a.json",
+        "receiptSha256": "8f23ab9e8a963f3db001e868a90082cf7cc384d8f40baaa34889b6f7289297af",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the suffix -ing and shows the action is happening now?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "helping-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "helping-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "quickly-choice",
+              "verdict": "INCORRECT",
+              "rationale": "quickly ends in -ly, not -ing.",
+              "evidenceIds": [
+                "suffix-trail-1"
+              ]
+            },
+            {
+              "answerId": "helping-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "helping has the suffix -ing and names the action in progress in the sentence.",
+              "evidenceIds": [
+                "suffix-trail-1"
+              ]
+            },
+            {
+              "answerId": "smallest-choice",
+              "verdict": "INCORRECT",
+              "rationale": "smallest ends in -est, not -ing.",
+              "evidenceIds": [
+                "suffix-trail-2"
+              ]
+            },
+            {
+              "answerId": "faster-choice",
+              "verdict": "INCORRECT",
+              "rationale": "faster ends in -er, not -ing.",
+              "evidenceIds": [
+                "suffix-trail-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-guided-action-endings-2",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-06b0606b28e2c047",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "683e85bf4aa09dbd6635e8a5b9f6d17373386216ad7760dafdea942c5cf7244a",
+        "conclusionsSha256": "8f23ab9e8a963f3db001e868a90082cf7cc384d8f40baaa34889b6f7289297af",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0016.second-pass.json",
+        "receiptSha256": "2cdb1fdf02551741dc689f54914232fe171de7dc73acfb017878ef81d1c4ff3d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the suffix -er and compares two things?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "faster-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "faster-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "quickly-choice",
+              "verdict": "INCORRECT",
+              "rationale": "quickly ends in -ly and does not make the comparison.",
+              "evidenceIds": [
+                "suffix-trail-1"
+              ]
+            },
+            {
+              "answerId": "smallest-choice",
+              "verdict": "INCORRECT",
+              "rationale": "smallest ends in -est and identifies the least small among three or more.",
+              "evidenceIds": [
+                "suffix-trail-2"
+              ]
+            },
+            {
+              "answerId": "faster-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "faster ends in -er and compares the current movement with before.",
+              "evidenceIds": [
+                "suffix-trail-2"
+              ]
+            },
+            {
+              "answerId": "helping-choice",
+              "verdict": "INCORRECT",
+              "rationale": "helping ends in -ing and names an action in progress.",
+              "evidenceIds": [
+                "suffix-trail-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-guided-action-endings-3",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-843f71eb5805beb7",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "e6d562a30358fc677dced85546feb8271b93e260e3dba830e6d109e7e093a52f",
+        "conclusionsSha256": "9678dd068f14ae824586f68f88d972bf031a95943ecafe0b6730f3db75332eea",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "CORRECTION_REREVIEW",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/corrections-v6-initial/batch-c0002.pass-a.json",
+        "receiptSha256": "9678dd068f14ae824586f68f88d972bf031a95943ecafe0b6730f3db75332eea",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words in the trail passage that end with -ing, -ly, -er, or -est.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "helping-choice",
+            "quickly-choice",
+            "faster-choice",
+            "smallest-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "quickly-choice",
+            "smallest-choice",
+            "faster-choice",
+            "helping-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "quickly-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Quickly ends with the named suffix -ly.",
+              "evidenceIds": [
+                "suffix-trail-1"
+              ]
+            },
+            {
+              "answerId": "smallest-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Smallest ends with the named suffix -est.",
+              "evidenceIds": [
+                "suffix-trail-2"
+              ]
+            },
+            {
+              "answerId": "faster-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Faster ends with the named suffix -er.",
+              "evidenceIds": [
+                "suffix-trail-2"
+              ]
+            },
+            {
+              "answerId": "careful-choice",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Careful has -ful, which is a suffix but is not one of the four endings named in the prompt.",
+              "evidenceIds": [
+                "suffix-trail-3"
+              ]
+            },
+            {
+              "answerId": "helping-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Helping ends with the named suffix -ing.",
+              "evidenceIds": [
+                "suffix-trail-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": true,
+      "correctionSummary": "Learner-visible content was corrected and re-reviewed in docs/content/answer-uniqueness-ledger/blind/corrections-v6-initial/batch-c0002.pass-a.json.",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-guided-action-endings-4",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-139c4f01829a2c4d",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "683e85bf4aa09dbd6635e8a5b9f6d17373386216ad7760dafdea942c5cf7244a",
+        "conclusionsSha256": "8f23ab9e8a963f3db001e868a90082cf7cc384d8f40baaa34889b6f7289297af",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0019.pass-a.json",
+        "receiptSha256": "8f23ab9e8a963f3db001e868a90082cf7cc384d8f40baaa34889b6f7289297af",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that tells about the smallest sticks.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "suffix-trail-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "suffix-trail-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "suffix-trail-3",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes the team's feelings, not the sticks.",
+              "evidenceIds": [
+                "suffix-trail-3"
+              ]
+            },
+            {
+              "answerId": "suffix-trail-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes children helping quickly, not the smallest sticks.",
+              "evidenceIds": [
+                "suffix-trail-1"
+              ]
+            },
+            {
+              "answerId": "suffix-trail-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence explicitly says the team sorted the smallest sticks.",
+              "evidenceIds": [
+                "suffix-trail-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-guided-action-endings-5",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-a6af91bacf4c030e",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "683e85bf4aa09dbd6635e8a5b9f6d17373386216ad7760dafdea942c5cf7244a",
+        "conclusionsSha256": "8f23ab9e8a963f3db001e868a90082cf7cc384d8f40baaa34889b6f7289297af",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0019.pass-a.json",
+        "receiptSha256": "8f23ab9e8a963f3db001e868a90082cf7cc384d8f40baaa34889b6f7289297af",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "helping-row",
+          "prompt": "helping",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "helping-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "helping-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "quickly-split",
+              "verdict": "INCORRECT",
+              "rationale": "quick / ly reconstructs quickly, not helping.",
+              "evidenceIds": [
+                "suffix-trail-1"
+              ]
+            },
+            {
+              "answerId": "faster-split",
+              "verdict": "INCORRECT",
+              "rationale": "fast / er reconstructs faster, not helping.",
+              "evidenceIds": [
+                "suffix-trail-1"
+              ]
+            },
+            {
+              "answerId": "helping-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "help / ing reconstructs helping at its base-suffix boundary.",
+              "evidenceIds": [
+                "suffix-trail-1"
+              ]
+            },
+            {
+              "answerId": "smallest-split",
+              "verdict": "INCORRECT",
+              "rationale": "small / est reconstructs smallest, not helping.",
+              "evidenceIds": [
+                "suffix-trail-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "quickly-row",
+          "prompt": "quickly",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "quickly-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "quickly-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "smallest-split-2",
+              "verdict": "INCORRECT",
+              "rationale": "small / est reconstructs smallest, not quickly.",
+              "evidenceIds": [
+                "suffix-trail-1"
+              ]
+            },
+            {
+              "answerId": "faster-split-2",
+              "verdict": "INCORRECT",
+              "rationale": "fast / er reconstructs faster, not quickly.",
+              "evidenceIds": [
+                "suffix-trail-1"
+              ]
+            },
+            {
+              "answerId": "helping-split-2",
+              "verdict": "INCORRECT",
+              "rationale": "help / ing reconstructs helping, not quickly.",
+              "evidenceIds": [
+                "suffix-trail-1"
+              ]
+            },
+            {
+              "answerId": "quickly-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "quick / ly reconstructs quickly at its base-suffix boundary.",
+              "evidenceIds": [
+                "suffix-trail-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "faster-row",
+          "prompt": "faster",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "faster-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "faster-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "smallest-split-3",
+              "verdict": "INCORRECT",
+              "rationale": "small / est reconstructs smallest, not faster.",
+              "evidenceIds": [
+                "suffix-trail-2"
+              ]
+            },
+            {
+              "answerId": "quickly-split-2",
+              "verdict": "INCORRECT",
+              "rationale": "quick / ly reconstructs quickly, not faster.",
+              "evidenceIds": [
+                "suffix-trail-2"
+              ]
+            },
+            {
+              "answerId": "helping-split-3",
+              "verdict": "INCORRECT",
+              "rationale": "help / ing reconstructs helping, not faster.",
+              "evidenceIds": [
+                "suffix-trail-2"
+              ]
+            },
+            {
+              "answerId": "faster-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "fast / er reconstructs faster at its base-suffix boundary.",
+              "evidenceIds": [
+                "suffix-trail-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "smallest-row",
+          "prompt": "smallest",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "smallest-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "smallest-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "quickly-split-3",
+              "verdict": "INCORRECT",
+              "rationale": "quick / ly reconstructs quickly, not smallest.",
+              "evidenceIds": [
+                "suffix-trail-2"
+              ]
+            },
+            {
+              "answerId": "smallest-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "small / est reconstructs smallest at its base-suffix boundary.",
+              "evidenceIds": [
+                "suffix-trail-2"
+              ]
+            },
+            {
+              "answerId": "faster-split-3",
+              "verdict": "INCORRECT",
+              "rationale": "fast / er reconstructs faster, not smallest.",
+              "evidenceIds": [
+                "suffix-trail-2"
+              ]
+            },
+            {
+              "answerId": "helping-split-4",
+              "verdict": "INCORRECT",
+              "rationale": "help / ing reconstructs helping, not smallest.",
+              "evidenceIds": [
+                "suffix-trail-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-guided-meaning-endings-1",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-f32f1c82c1e068f6",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "683e85bf4aa09dbd6635e8a5b9f6d17373386216ad7760dafdea942c5cf7244a",
+        "conclusionsSha256": "8f23ab9e8a963f3db001e868a90082cf7cc384d8f40baaa34889b6f7289297af",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0016.second-pass.json",
+        "receiptSha256": "2cdb1fdf02551741dc689f54914232fe171de7dc73acfb017878ef81d1c4ff3d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the suffix -est and compares three or more things?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "calmest-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "calmest-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "kindly-choice",
+              "verdict": "INCORRECT",
+              "rationale": "kindly ends in -ly, not -est.",
+              "evidenceIds": [
+                "suffix-weather-2"
+              ]
+            },
+            {
+              "answerId": "hopeful-choice",
+              "verdict": "INCORRECT",
+              "rationale": "hopeful ends in -ful, not -est.",
+              "evidenceIds": [
+                "suffix-weather-3"
+              ]
+            },
+            {
+              "answerId": "warmer-choice",
+              "verdict": "INCORRECT",
+              "rationale": "warmer ends in -er and compares two states.",
+              "evidenceIds": [
+                "suffix-weather-3"
+              ]
+            },
+            {
+              "answerId": "calmest-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "calmest ends in -est and is the superlative form used for three or more.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-guided-meaning-endings-2",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-f19fa56ff13966a3",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "683e85bf4aa09dbd6635e8a5b9f6d17373386216ad7760dafdea942c5cf7244a",
+        "conclusionsSha256": "8f23ab9e8a963f3db001e868a90082cf7cc384d8f40baaa34889b6f7289297af",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0019.pass-a.json",
+        "receiptSha256": "8f23ab9e8a963f3db001e868a90082cf7cc384d8f40baaa34889b6f7289297af",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the suffix -ful and means full of hope?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "hopeful-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "hopeful-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "warmer-choice",
+              "verdict": "INCORRECT",
+              "rationale": "warmer ends in comparative -er, not -ful.",
+              "evidenceIds": [
+                "suffix-weather-3"
+              ]
+            },
+            {
+              "answerId": "calmest-choice",
+              "verdict": "INCORRECT",
+              "rationale": "calmest ends in superlative -est, not -ful.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-4"
+              ]
+            },
+            {
+              "answerId": "hopeful-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "hopeful is hope plus -ful and means full of hope.",
+              "evidenceIds": [
+                "suffix-weather-3"
+              ]
+            },
+            {
+              "answerId": "kindly-choice",
+              "verdict": "INCORRECT",
+              "rationale": "kindly ends in -ly, not -ful.",
+              "evidenceIds": [
+                "suffix-weather-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-guided-meaning-endings-3",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-aeb85c43fff4e06f",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "683e85bf4aa09dbd6635e8a5b9f6d17373386216ad7760dafdea942c5cf7244a",
+        "conclusionsSha256": "8f23ab9e8a963f3db001e868a90082cf7cc384d8f40baaa34889b6f7289297af",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0019.pass-a.json",
+        "receiptSha256": "8f23ab9e8a963f3db001e868a90082cf7cc384d8f40baaa34889b6f7289297af",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words in the weather passage that have visible suffixes.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "calmer-choice",
+            "kindly-choice",
+            "hopeful-choice",
+            "warmer-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "warmer-choice",
+            "calmer-choice",
+            "kindly-choice",
+            "hopeful-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "clear-choice",
+              "verdict": "INCORRECT",
+              "rationale": "clear is the unsuffixed base word; its final letters are not an added -er suffix here.",
+              "evidenceIds": [
+                "suffix-weather-1"
+              ]
+            },
+            {
+              "answerId": "warmer-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "warmer is warm plus the visible suffix -er.",
+              "evidenceIds": [
+                "suffix-weather-3"
+              ]
+            },
+            {
+              "answerId": "calmer-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "calmer is calm plus the visible suffix -er.",
+              "evidenceIds": [
+                "suffix-weather-2"
+              ]
+            },
+            {
+              "answerId": "kindly-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "kindly is kind plus the visible suffix -ly.",
+              "evidenceIds": [
+                "suffix-weather-2"
+              ]
+            },
+            {
+              "answerId": "hopeful-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "hopeful is hope plus the visible suffix -ful.",
+              "evidenceIds": [
+                "suffix-weather-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-guided-meaning-endings-4",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-a03ccb1d66077a81",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "683e85bf4aa09dbd6635e8a5b9f6d17373386216ad7760dafdea942c5cf7244a",
+        "conclusionsSha256": "8f23ab9e8a963f3db001e868a90082cf7cc384d8f40baaa34889b6f7289297af",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0016.second-pass.json",
+        "receiptSha256": "2cdb1fdf02551741dc689f54914232fe171de7dc73acfb017878ef81d1c4ff3d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that tells about the warmer wind.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "suffix-weather-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "suffix-weather-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "suffix-weather-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence tells that the sky stayed clear.",
+              "evidenceIds": [
+                "suffix-weather-1"
+              ]
+            },
+            {
+              "answerId": "suffix-weather-2",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes a calmer note and kind listening.",
+              "evidenceIds": [
+                "suffix-weather-2"
+              ]
+            },
+            {
+              "answerId": "suffix-weather-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence explicitly mentions the warmer wind passing.",
+              "evidenceIds": [
+                "suffix-weather-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-guided-meaning-endings-5",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-70099f4a2c4ec936",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "683e85bf4aa09dbd6635e8a5b9f6d17373386216ad7760dafdea942c5cf7244a",
+        "conclusionsSha256": "8f23ab9e8a963f3db001e868a90082cf7cc384d8f40baaa34889b6f7289297af",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0019.pass-a.json",
+        "receiptSha256": "8f23ab9e8a963f3db001e868a90082cf7cc384d8f40baaa34889b6f7289297af",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "calmer-row",
+          "prompt": "calmer",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "calmer-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "calmer-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "kindly-split",
+              "verdict": "INCORRECT",
+              "rationale": "kind / ly reconstructs kindly, not calmer.",
+              "evidenceIds": [
+                "suffix-weather-2"
+              ]
+            },
+            {
+              "answerId": "warmer-split",
+              "verdict": "INCORRECT",
+              "rationale": "warm / er reconstructs warmer, not calmer.",
+              "evidenceIds": [
+                "suffix-weather-2"
+              ]
+            },
+            {
+              "answerId": "calmer-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "calm / er reconstructs calmer at its base-suffix boundary.",
+              "evidenceIds": [
+                "suffix-weather-2"
+              ]
+            },
+            {
+              "answerId": "hopeful-split",
+              "verdict": "INCORRECT",
+              "rationale": "hope / ful reconstructs hopeful, not calmer.",
+              "evidenceIds": [
+                "suffix-weather-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "kindly-row",
+          "prompt": "kindly",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "kindly-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "kindly-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "calmer-split-2",
+              "verdict": "INCORRECT",
+              "rationale": "calm / er reconstructs calmer, not kindly.",
+              "evidenceIds": [
+                "suffix-weather-2"
+              ]
+            },
+            {
+              "answerId": "hopeful-split-2",
+              "verdict": "INCORRECT",
+              "rationale": "hope / ful reconstructs hopeful, not kindly.",
+              "evidenceIds": [
+                "suffix-weather-2"
+              ]
+            },
+            {
+              "answerId": "warmer-split-2",
+              "verdict": "INCORRECT",
+              "rationale": "warm / er reconstructs warmer, not kindly.",
+              "evidenceIds": [
+                "suffix-weather-2"
+              ]
+            },
+            {
+              "answerId": "kindly-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "kind / ly reconstructs kindly at its base-suffix boundary.",
+              "evidenceIds": [
+                "suffix-weather-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "hopeful-row",
+          "prompt": "hopeful",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "hopeful-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "hopeful-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "warmer-split-3",
+              "verdict": "INCORRECT",
+              "rationale": "warm / er reconstructs warmer, not hopeful.",
+              "evidenceIds": [
+                "suffix-weather-3"
+              ]
+            },
+            {
+              "answerId": "kindly-split-2",
+              "verdict": "INCORRECT",
+              "rationale": "kind / ly reconstructs kindly, not hopeful.",
+              "evidenceIds": [
+                "suffix-weather-3"
+              ]
+            },
+            {
+              "answerId": "hopeful-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "hope / ful reconstructs hopeful at its base-suffix boundary.",
+              "evidenceIds": [
+                "suffix-weather-3"
+              ]
+            },
+            {
+              "answerId": "calmer-split-3",
+              "verdict": "INCORRECT",
+              "rationale": "calm / er reconstructs calmer, not hopeful.",
+              "evidenceIds": [
+                "suffix-weather-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "warmer-row",
+          "prompt": "warmer",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "warmer-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "warmer-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "kindly-split-3",
+              "verdict": "INCORRECT",
+              "rationale": "kind / ly reconstructs kindly, not warmer.",
+              "evidenceIds": [
+                "suffix-weather-3"
+              ]
+            },
+            {
+              "answerId": "warmer-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "warm / er reconstructs warmer at its base-suffix boundary.",
+              "evidenceIds": [
+                "suffix-weather-3"
+              ]
+            },
+            {
+              "answerId": "hopeful-split-3",
+              "verdict": "INCORRECT",
+              "rationale": "hope / ful reconstructs hopeful, not warmer.",
+              "evidenceIds": [
+                "suffix-weather-3"
+              ]
+            },
+            {
+              "answerId": "calmer-split-4",
+              "verdict": "INCORRECT",
+              "rationale": "calm / er reconstructs calmer, not warmer.",
+              "evidenceIds": [
+                "suffix-weather-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-checkpoint-a-1",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-52202302f6001b86",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "4afcfe3355e9d07ed7ec371fb7e703edb6c17580205f4ec98875cf3de44fdc04",
+        "conclusionsSha256": "79a22898461a4905e0368121149020e7c57efaff5db383d59552fa223bab386f",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0016.second-pass.json",
+        "receiptSha256": "2cdb1fdf02551741dc689f54914232fe171de7dc73acfb017878ef81d1c4ff3d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the suffix -s or -es?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "signs-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "signs-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "careless-choice",
+              "verdict": "INCORRECT",
+              "rationale": "careless ends in the suffix -less, not plural -s or -es.",
+              "evidenceIds": [
+                "suffix-sign-3"
+              ]
+            },
+            {
+              "answerId": "painted-choice",
+              "verdict": "INCORRECT",
+              "rationale": "painted ends in -ed, not -s or -es.",
+              "evidenceIds": [
+                "suffix-sign-1"
+              ]
+            },
+            {
+              "answerId": "jumping-choice",
+              "verdict": "INCORRECT",
+              "rationale": "jumping ends in -ing, not -s or -es.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-5"
+              ]
+            },
+            {
+              "answerId": "signs-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "signs is sign plus the plural suffix -s.",
+              "evidenceIds": [
+                "suffix-sign-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-checkpoint-a-2",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-25dbfb733645e4cf",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "4afcfe3355e9d07ed7ec371fb7e703edb6c17580205f4ec98875cf3de44fdc04",
+        "conclusionsSha256": "79a22898461a4905e0368121149020e7c57efaff5db383d59552fa223bab386f",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0020.pass-a.json",
+        "receiptSha256": "79a22898461a4905e0368121149020e7c57efaff5db383d59552fa223bab386f",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the suffix -ed?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "painted-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "painted-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "jumping-choice",
+              "verdict": "INCORRECT",
+              "rationale": "jumping ends in -ing, not -ed.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-5"
+              ]
+            },
+            {
+              "answerId": "painted-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "painted is paint plus the suffix -ed.",
+              "evidenceIds": [
+                "suffix-sign-1"
+              ]
+            },
+            {
+              "answerId": "careless-choice",
+              "verdict": "INCORRECT",
+              "rationale": "careless ends in -less, not -ed.",
+              "evidenceIds": [
+                "suffix-sign-3"
+              ]
+            },
+            {
+              "answerId": "signs-choice",
+              "verdict": "INCORRECT",
+              "rationale": "signs ends in -s, not -ed.",
+              "evidenceIds": [
+                "suffix-sign-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-checkpoint-a-3",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-dd57d31a3e361146",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "4afcfe3355e9d07ed7ec371fb7e703edb6c17580205f4ec98875cf3de44fdc04",
+        "conclusionsSha256": "79a22898461a4905e0368121149020e7c57efaff5db383d59552fa223bab386f",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0020.pass-a.json",
+        "receiptSha256": "79a22898461a4905e0368121149020e7c57efaff5db383d59552fa223bab386f",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the suffix -ing?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "jumping-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "jumping-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "kinder-choice",
+              "verdict": "INCORRECT",
+              "rationale": "kinder ends in -er, not -ing.",
+              "evidenceIds": [
+                "suffix-science-3"
+              ]
+            },
+            {
+              "answerId": "wanted-choice",
+              "verdict": "INCORRECT",
+              "rationale": "wanted ends in -ed, not -ing.",
+              "evidenceIds": [
+                "suffix-science-1"
+              ]
+            },
+            {
+              "answerId": "cleanest-choice",
+              "verdict": "INCORRECT",
+              "rationale": "cleanest ends in -est, not -ing.",
+              "evidenceIds": [
+                "suffix-science-1"
+              ]
+            },
+            {
+              "answerId": "jumping-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "jumping is jump plus the suffix -ing.",
+              "evidenceIds": [
+                "suffix-science-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-checkpoint-a-4",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-0c178393a39d45ef",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "4afcfe3355e9d07ed7ec371fb7e703edb6c17580205f4ec98875cf3de44fdc04",
+        "conclusionsSha256": "79a22898461a4905e0368121149020e7c57efaff5db383d59552fa223bab386f",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0020.pass-a.json",
+        "receiptSha256": "79a22898461a4905e0368121149020e7c57efaff5db383d59552fa223bab386f",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the suffix -less and means without care?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "careless-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "careless-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "careful-choice",
+              "verdict": "INCORRECT",
+              "rationale": "careful ends in -ful and means showing care, not without care.",
+              "evidenceIds": [
+                "suffix-pantry-1"
+              ]
+            },
+            {
+              "answerId": "wishes-choice",
+              "verdict": "INCORRECT",
+              "rationale": "wishes ends in plural -es, not -less.",
+              "evidenceIds": [
+                "suffix-pantry-2"
+              ]
+            },
+            {
+              "answerId": "cleaned-choice",
+              "verdict": "INCORRECT",
+              "rationale": "cleaned ends in -ed, not -less.",
+              "evidenceIds": [
+                "suffix-pantry-1"
+              ]
+            },
+            {
+              "answerId": "careless-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "careless is care plus -less and means without care.",
+              "evidenceIds": [
+                "suffix-pantry-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-checkpoint-a-5",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-08c72f3ed9d7fcda",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "e90453890d4597bfeb8b013e57c19e40fd2542624325c3dcf1c2671a009112bc",
+        "conclusionsSha256": "0eb9aec6e409525ed86e6360c126ed3929c0fc3e60ce5c0cb09713dae6cbb294",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0016.second-pass.json",
+        "receiptSha256": "2cdb1fdf02551741dc689f54914232fe171de7dc73acfb017878ef81d1c4ff3d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words that use -er or -est to compare things.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "smaller-choice",
+            "kinder-choice",
+            "fastest-choice",
+            "cleanest-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "kinder-choice",
+            "smaller-choice",
+            "cleanest-choice",
+            "fastest-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "kinder-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "kinder uses -er to compare how kind people or actions are.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-7"
+              ]
+            },
+            {
+              "answerId": "smaller-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "smaller uses -er to compare size.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-7"
+              ]
+            },
+            {
+              "answerId": "cleanest-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "cleanest uses -est to compare cleanliness.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-7"
+              ]
+            },
+            {
+              "answerId": "careful-choice",
+              "verdict": "INCORRECT",
+              "rationale": "careful ends in -ful, not a comparative -er or superlative -est suffix.",
+              "evidenceIds": [
+                "suffix-pantry-1"
+              ]
+            },
+            {
+              "answerId": "fastest-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "fastest uses -est to compare speed.",
+              "evidenceIds": [
+                "suffix-pantry-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-checkpoint-a-6",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-3651569feb03795b",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "e90453890d4597bfeb8b013e57c19e40fd2542624325c3dcf1c2671a009112bc",
+        "conclusionsSha256": "0eb9aec6e409525ed86e6360c126ed3929c0fc3e60ce5c0cb09713dae6cbb294",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0008.pass-a.json",
+        "receiptSha256": "0eb9aec6e409525ed86e6360c126ed3929c0fc3e60ce5c0cb09713dae6cbb294",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that uses the word quickly to describe how the spill was wiped.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "suffix-pantry-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "suffix-pantry-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "suffix-pantry-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes bags and shelves and does not use quickly.",
+              "evidenceIds": [
+                "suffix-pantry-1"
+              ]
+            },
+            {
+              "answerId": "suffix-pantry-2",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes the cart, signs, and wishes and does not use quickly.",
+              "evidenceIds": [
+                "suffix-pantry-2"
+              ]
+            },
+            {
+              "answerId": "suffix-pantry-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence says the spill was wiped quickly.",
+              "evidenceIds": [
+                "suffix-pantry-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-checkpoint-a-7",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-6fd51c77a57252e3",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "4afcfe3355e9d07ed7ec371fb7e703edb6c17580205f4ec98875cf3de44fdc04",
+        "conclusionsSha256": "79a22898461a4905e0368121149020e7c57efaff5db383d59552fa223bab386f",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0016.second-pass.json",
+        "receiptSha256": "2cdb1fdf02551741dc689f54914232fe171de7dc73acfb017878ef81d1c4ff3d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "signs-row",
+          "prompt": "signs",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "sign-base"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "sign-base"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "paint-base",
+              "verdict": "INCORRECT",
+              "rationale": "paint is the base of painted, not signs.",
+              "evidenceIds": [
+                "suffix-sign-1"
+              ]
+            },
+            {
+              "answerId": "jump-base",
+              "verdict": "INCORRECT",
+              "rationale": "jump is the base of jumping, not signs.",
+              "evidenceIds": [
+                "suffix-sign-1"
+              ]
+            },
+            {
+              "answerId": "help-base",
+              "verdict": "INCORRECT",
+              "rationale": "help is the base of helpful, not signs.",
+              "evidenceIds": [
+                "suffix-sign-1"
+              ]
+            },
+            {
+              "answerId": "sign-base",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Removing plural -s from signs leaves the base sign.",
+              "evidenceIds": [
+                "suffix-sign-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "painted-row",
+          "prompt": "painted",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "paint-base"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "paint-base"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "paint-base",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Removing -ed from painted leaves the base paint.",
+              "evidenceIds": [
+                "suffix-sign-1"
+              ]
+            },
+            {
+              "answerId": "sign-base-2",
+              "verdict": "INCORRECT",
+              "rationale": "sign is the base of signs, not painted.",
+              "evidenceIds": [
+                "suffix-sign-1"
+              ]
+            },
+            {
+              "answerId": "help-base-2",
+              "verdict": "INCORRECT",
+              "rationale": "help is the base of helpful, not painted.",
+              "evidenceIds": [
+                "suffix-sign-1"
+              ]
+            },
+            {
+              "answerId": "jump-base-2",
+              "verdict": "INCORRECT",
+              "rationale": "jump is the base of jumping, not painted.",
+              "evidenceIds": [
+                "suffix-sign-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "jumping-row",
+          "prompt": "jumping",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "jump-base"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "jump-base"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "jump-base",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Removing -ing from jumping leaves the base jump.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-5"
+              ]
+            },
+            {
+              "answerId": "sign-base-3",
+              "verdict": "INCORRECT",
+              "rationale": "sign is the base of signs, not jumping.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-5"
+              ]
+            },
+            {
+              "answerId": "help-base-3",
+              "verdict": "INCORRECT",
+              "rationale": "help is the base of helpful, not jumping.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-5"
+              ]
+            },
+            {
+              "answerId": "paint-base-3",
+              "verdict": "INCORRECT",
+              "rationale": "paint is the base of painted, not jumping.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "helpful-row",
+          "prompt": "helpful",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "help-base-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "help-base-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "jump-base-4",
+              "verdict": "INCORRECT",
+              "rationale": "jump is the base of jumping, not helpful.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-5"
+              ]
+            },
+            {
+              "answerId": "sign-base-4",
+              "verdict": "INCORRECT",
+              "rationale": "sign is the base of signs, not helpful.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-5"
+              ]
+            },
+            {
+              "answerId": "paint-base-4",
+              "verdict": "INCORRECT",
+              "rationale": "paint is the base of painted, not helpful.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-5"
+              ]
+            },
+            {
+              "answerId": "help-base-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Removing -ful from helpful leaves the base help.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-checkpoint-b-1",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-e46611129399e0d6",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "4afcfe3355e9d07ed7ec371fb7e703edb6c17580205f4ec98875cf3de44fdc04",
+        "conclusionsSha256": "79a22898461a4905e0368121149020e7c57efaff5db383d59552fa223bab386f",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0020.pass-a.json",
+        "receiptSha256": "79a22898461a4905e0368121149020e7c57efaff5db383d59552fa223bab386f",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the suffix -s or -es?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "wishes-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "wishes-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "wanted-choice",
+              "verdict": "INCORRECT",
+              "rationale": "wanted ends in -ed, not -s or -es.",
+              "evidenceIds": [
+                "suffix-science-1"
+              ]
+            },
+            {
+              "answerId": "cleanest-choice",
+              "verdict": "INCORRECT",
+              "rationale": "cleanest ends in -est, not plural -s or -es.",
+              "evidenceIds": [
+                "suffix-science-1"
+              ]
+            },
+            {
+              "answerId": "wishes-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "wishes is wish plus the suffix -es.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-6"
+              ]
+            },
+            {
+              "answerId": "jumping-choice",
+              "verdict": "INCORRECT",
+              "rationale": "jumping ends in -ing, not -s or -es.",
+              "evidenceIds": [
+                "suffix-science-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-checkpoint-b-2",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-35fd6179513ee145",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "4afcfe3355e9d07ed7ec371fb7e703edb6c17580205f4ec98875cf3de44fdc04",
+        "conclusionsSha256": "79a22898461a4905e0368121149020e7c57efaff5db383d59552fa223bab386f",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0020.pass-a.json",
+        "receiptSha256": "79a22898461a4905e0368121149020e7c57efaff5db383d59552fa223bab386f",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the suffix -ed?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "wanted-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "wanted-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "cleanest-choice",
+              "verdict": "INCORRECT",
+              "rationale": "cleanest ends in -est, not -ed.",
+              "evidenceIds": [
+                "suffix-science-1"
+              ]
+            },
+            {
+              "answerId": "wanted-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "wanted is want plus the suffix -ed.",
+              "evidenceIds": [
+                "suffix-science-1"
+              ]
+            },
+            {
+              "answerId": "jumping-choice",
+              "verdict": "INCORRECT",
+              "rationale": "jumping ends in -ing, not -ed.",
+              "evidenceIds": [
+                "suffix-science-2"
+              ]
+            },
+            {
+              "answerId": "wishes-choice",
+              "verdict": "INCORRECT",
+              "rationale": "wishes ends in -es, not -ed.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-checkpoint-b-3",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-74d8abb9dc342fa5",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "4afcfe3355e9d07ed7ec371fb7e703edb6c17580205f4ec98875cf3de44fdc04",
+        "conclusionsSha256": "79a22898461a4905e0368121149020e7c57efaff5db383d59552fa223bab386f",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0020.pass-a.json",
+        "receiptSha256": "79a22898461a4905e0368121149020e7c57efaff5db383d59552fa223bab386f",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the suffix -ing?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "jumping-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "jumping-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "jumping-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "jumping is jump plus the suffix -ing.",
+              "evidenceIds": [
+                "suffix-science-2"
+              ]
+            },
+            {
+              "answerId": "cleanest-choice",
+              "verdict": "INCORRECT",
+              "rationale": "cleanest ends in -est, not -ing.",
+              "evidenceIds": [
+                "suffix-science-1"
+              ]
+            },
+            {
+              "answerId": "wanted-choice",
+              "verdict": "INCORRECT",
+              "rationale": "wanted ends in -ed, not -ing.",
+              "evidenceIds": [
+                "suffix-science-1"
+              ]
+            },
+            {
+              "answerId": "wishes-choice",
+              "verdict": "INCORRECT",
+              "rationale": "wishes ends in -es, not -ing.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-checkpoint-b-4",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-09a92e0d5a7303d1",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "4afcfe3355e9d07ed7ec371fb7e703edb6c17580205f4ec98875cf3de44fdc04",
+        "conclusionsSha256": "79a22898461a4905e0368121149020e7c57efaff5db383d59552fa223bab386f",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0020.pass-a.json",
+        "receiptSha256": "79a22898461a4905e0368121149020e7c57efaff5db383d59552fa223bab386f",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the suffix -ful or -less?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "careful-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "careful-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "wishes-choice",
+              "verdict": "INCORRECT",
+              "rationale": "wishes ends in -es, not -ful or -less.",
+              "evidenceIds": [
+                "suffix-pantry-2"
+              ]
+            },
+            {
+              "answerId": "cleaned-choice",
+              "verdict": "INCORRECT",
+              "rationale": "cleaned ends in -ed, not -ful or -less.",
+              "evidenceIds": [
+                "suffix-pantry-1"
+              ]
+            },
+            {
+              "answerId": "fastest-choice",
+              "verdict": "INCORRECT",
+              "rationale": "fastest ends in -est, not -ful or -less.",
+              "evidenceIds": [
+                "suffix-pantry-2"
+              ]
+            },
+            {
+              "answerId": "careful-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "careful is care plus the suffix -ful.",
+              "evidenceIds": [
+                "suffix-pantry-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-checkpoint-b-5",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-2b357e7ec32879d2",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "e90453890d4597bfeb8b013e57c19e40fd2542624325c3dcf1c2671a009112bc",
+        "conclusionsSha256": "0eb9aec6e409525ed86e6360c126ed3929c0fc3e60ce5c0cb09713dae6cbb294",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0008.pass-a.json",
+        "receiptSha256": "0eb9aec6e409525ed86e6360c126ed3929c0fc3e60ce5c0cb09713dae6cbb294",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words that use -er or -est to compare things.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "kinder-choice",
+            "fastest-choice",
+            "cleanest-choice",
+            "warmer-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "cleanest-choice",
+            "fastest-choice",
+            "warmer-choice",
+            "kinder-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "cleanest-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "cleanest uses -est to compare cleanliness.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-7"
+              ]
+            },
+            {
+              "answerId": "fastest-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "fastest uses -est to compare speed.",
+              "evidenceIds": [
+                "suffix-pantry-2"
+              ]
+            },
+            {
+              "answerId": "careful-choice",
+              "verdict": "INCORRECT",
+              "rationale": "careful ends in -ful, not a comparative -er or superlative -est suffix.",
+              "evidenceIds": [
+                "suffix-pantry-1"
+              ]
+            },
+            {
+              "answerId": "warmer-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "warmer uses -er to compare temperature.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-7"
+              ]
+            },
+            {
+              "answerId": "kinder-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "kinder uses -er to compare how kind people or actions are.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-checkpoint-b-6",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-712a16e87b59e4b4",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "e90453890d4597bfeb8b013e57c19e40fd2542624325c3dcf1c2671a009112bc",
+        "conclusionsSha256": "0eb9aec6e409525ed86e6360c126ed3929c0fc3e60ce5c0cb09713dae6cbb294",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0008.pass-a.json",
+        "receiptSha256": "0eb9aec6e409525ed86e6360c126ed3929c0fc3e60ce5c0cb09713dae6cbb294",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that uses the word quickly to describe how the spill was wiped.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "suffix-pantry-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "suffix-pantry-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "suffix-pantry-2",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes the cart, signs, and wishes and does not use quickly.",
+              "evidenceIds": [
+                "suffix-pantry-2"
+              ]
+            },
+            {
+              "answerId": "suffix-pantry-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes bags and shelves and does not use quickly.",
+              "evidenceIds": [
+                "suffix-pantry-1"
+              ]
+            },
+            {
+              "answerId": "suffix-pantry-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence says the spill was wiped quickly.",
+              "evidenceIds": [
+                "suffix-pantry-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-checkpoint-b-7",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-3f1445975941ef53",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "4afcfe3355e9d07ed7ec371fb7e703edb6c17580205f4ec98875cf3de44fdc04",
+        "conclusionsSha256": "79a22898461a4905e0368121149020e7c57efaff5db383d59552fa223bab386f",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0020.pass-a.json",
+        "receiptSha256": "79a22898461a4905e0368121149020e7c57efaff5db383d59552fa223bab386f",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "wishes-row",
+          "prompt": "wishes",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "wishes-base"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "wishes-base"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "jumping-base",
+              "verdict": "INCORRECT",
+              "rationale": "jump is the base of jumping, not wishes.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-6"
+              ]
+            },
+            {
+              "answerId": "cleanest-base",
+              "verdict": "INCORRECT",
+              "rationale": "clean is the base of cleanest, not wishes.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-6"
+              ]
+            },
+            {
+              "answerId": "wishes-base",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Changing plural wishes back to singular leaves the base wish.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-6"
+              ]
+            },
+            {
+              "answerId": "wanted-base",
+              "verdict": "INCORRECT",
+              "rationale": "want is the base of wanted, not wishes.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "wanted-row",
+          "prompt": "wanted",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "want-base"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "want-base"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "jumping-base-2",
+              "verdict": "INCORRECT",
+              "rationale": "jump is the base of jumping, not wanted.",
+              "evidenceIds": [
+                "suffix-science-1"
+              ]
+            },
+            {
+              "answerId": "cleanest-base-2",
+              "verdict": "INCORRECT",
+              "rationale": "clean is the base of cleanest, not wanted.",
+              "evidenceIds": [
+                "suffix-science-1"
+              ]
+            },
+            {
+              "answerId": "want-base",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Removing -ed from wanted leaves the base want.",
+              "evidenceIds": [
+                "suffix-science-1"
+              ]
+            },
+            {
+              "answerId": "wish-base-2",
+              "verdict": "INCORRECT",
+              "rationale": "wish is the base of wishes, not wanted.",
+              "evidenceIds": [
+                "suffix-science-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "jumping-row",
+          "prompt": "jumping",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "jump-base"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "jump-base"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "jump-base",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Removing -ing from jumping leaves the base jump.",
+              "evidenceIds": [
+                "suffix-science-2"
+              ]
+            },
+            {
+              "answerId": "wish-base-3",
+              "verdict": "INCORRECT",
+              "rationale": "wish is the base of wishes, not jumping.",
+              "evidenceIds": [
+                "suffix-science-2"
+              ]
+            },
+            {
+              "answerId": "want-base-2",
+              "verdict": "INCORRECT",
+              "rationale": "want is the base of wanted, not jumping.",
+              "evidenceIds": [
+                "suffix-science-2"
+              ]
+            },
+            {
+              "answerId": "cleanest-base-3",
+              "verdict": "INCORRECT",
+              "rationale": "clean is the base of cleanest, not jumping.",
+              "evidenceIds": [
+                "suffix-science-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "cleanest-row",
+          "prompt": "cleanest",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "clean-base"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "clean-base"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "wish-base-4",
+              "verdict": "INCORRECT",
+              "rationale": "wish is the base of wishes, not cleanest.",
+              "evidenceIds": [
+                "suffix-science-1"
+              ]
+            },
+            {
+              "answerId": "jump-base-2",
+              "verdict": "INCORRECT",
+              "rationale": "jump is the base of jumping, not cleanest.",
+              "evidenceIds": [
+                "suffix-science-1"
+              ]
+            },
+            {
+              "answerId": "want-base-3",
+              "verdict": "INCORRECT",
+              "rationale": "want is the base of wanted, not cleanest.",
+              "evidenceIds": [
+                "suffix-science-1"
+              ]
+            },
+            {
+              "answerId": "clean-base",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Removing -est from cleanest leaves the base clean.",
+              "evidenceIds": [
+                "suffix-science-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-checkpoint-c-1",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-5ff9ee5e12f7f912",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "71daf626a4d5598633f9854bda1db5d5a1d12af076836b689775af9e419d2da6",
+        "conclusionsSha256": "3aa96228788d61b26d901238c2c8e26ca129fe0cb6c38c8e3545a99dbddbef99",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0016.second-pass.json",
+        "receiptSha256": "2cdb1fdf02551741dc689f54914232fe171de7dc73acfb017878ef81d1c4ff3d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the suffix -s or -es?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "wishes-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "wishes-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "fastest-choice",
+              "verdict": "INCORRECT",
+              "rationale": "fastest uses the suffix -est, not -s or -es.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-5"
+              ]
+            },
+            {
+              "answerId": "cleaned-choice",
+              "verdict": "INCORRECT",
+              "rationale": "cleaned uses the suffix -ed, not -s or -es.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-5"
+              ]
+            },
+            {
+              "answerId": "careless-choice",
+              "verdict": "INCORRECT",
+              "rationale": "careless uses the suffix -less, not plural -s or -es.",
+              "evidenceIds": [
+                "target-g2-word-forge-common-suffixes-5-careless",
+                "suffix-sign-3"
+              ]
+            },
+            {
+              "answerId": "wishes-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "wishes is wish plus the suffix -es.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-checkpoint-c-2",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-5bb8bf9d6824ae49",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "71daf626a4d5598633f9854bda1db5d5a1d12af076836b689775af9e419d2da6",
+        "conclusionsSha256": "3aa96228788d61b26d901238c2c8e26ca129fe0cb6c38c8e3545a99dbddbef99",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0016.second-pass.json",
+        "receiptSha256": "2cdb1fdf02551741dc689f54914232fe171de7dc73acfb017878ef81d1c4ff3d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the suffix -ed?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "cleaned-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "cleaned-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "careless-choice",
+              "verdict": "INCORRECT",
+              "rationale": "careless uses -less, not -ed.",
+              "evidenceIds": [
+                "target-g2-word-forge-common-suffixes-5-careless",
+                "suffix-sign-3"
+              ]
+            },
+            {
+              "answerId": "cleaned-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "cleaned is clean plus the suffix -ed.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-5"
+              ]
+            },
+            {
+              "answerId": "fastest-choice",
+              "verdict": "INCORRECT",
+              "rationale": "fastest uses -est, not -ed.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-5"
+              ]
+            },
+            {
+              "answerId": "wishes-choice",
+              "verdict": "INCORRECT",
+              "rationale": "wishes uses -es, not -ed.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-checkpoint-c-3",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-1ab359b17383a0ed",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "71daf626a4d5598633f9854bda1db5d5a1d12af076836b689775af9e419d2da6",
+        "conclusionsSha256": "3aa96228788d61b26d901238c2c8e26ca129fe0cb6c38c8e3545a99dbddbef99",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0021.pass-a.json",
+        "receiptSha256": "3aa96228788d61b26d901238c2c8e26ca129fe0cb6c38c8e3545a99dbddbef99",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the suffix -ing?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "jumping-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "jumping-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "smaller-choice",
+              "verdict": "INCORRECT",
+              "rationale": "smaller uses -er, not -ing.",
+              "evidenceIds": [
+                "target-g2-word-forge-common-suffixes-5-smaller",
+                "suffix-sign-2"
+              ]
+            },
+            {
+              "answerId": "jumping-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "jumping is jump plus the suffix -ing.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-5"
+              ]
+            },
+            {
+              "answerId": "careless-choice",
+              "verdict": "INCORRECT",
+              "rationale": "careless uses -less, not -ing.",
+              "evidenceIds": [
+                "target-g2-word-forge-common-suffixes-5-careless",
+                "suffix-sign-3"
+              ]
+            },
+            {
+              "answerId": "hopeful-choice",
+              "verdict": "INCORRECT",
+              "rationale": "hopeful uses -ful, not -ing.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-checkpoint-c-4",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-92f700bf0219acab",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "71daf626a4d5598633f9854bda1db5d5a1d12af076836b689775af9e419d2da6",
+        "conclusionsSha256": "3aa96228788d61b26d901238c2c8e26ca129fe0cb6c38c8e3545a99dbddbef99",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0016.second-pass.json",
+        "receiptSha256": "2cdb1fdf02551741dc689f54914232fe171de7dc73acfb017878ef81d1c4ff3d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the suffix -less and means without care?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "careless-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "careless-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "jumping-choice",
+              "verdict": "INCORRECT",
+              "rationale": "jumping uses -ing and does not mean without care.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-5"
+              ]
+            },
+            {
+              "answerId": "smaller-choice",
+              "verdict": "INCORRECT",
+              "rationale": "smaller uses -er and means more small.",
+              "evidenceIds": [
+                "target-g2-word-forge-common-suffixes-5-smaller",
+                "suffix-sign-2"
+              ]
+            },
+            {
+              "answerId": "hopeful-choice",
+              "verdict": "INCORRECT",
+              "rationale": "hopeful uses -ful and means full of hope.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-5"
+              ]
+            },
+            {
+              "answerId": "careless-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "careless is care plus -less and means without care.",
+              "evidenceIds": [
+                "target-g2-word-forge-common-suffixes-5-careless",
+                "suffix-sign-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-checkpoint-c-5",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-f6cff10d98dab971",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "e90453890d4597bfeb8b013e57c19e40fd2542624325c3dcf1c2671a009112bc",
+        "conclusionsSha256": "0eb9aec6e409525ed86e6360c126ed3929c0fc3e60ce5c0cb09713dae6cbb294",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0008.pass-a.json",
+        "receiptSha256": "0eb9aec6e409525ed86e6360c126ed3929c0fc3e60ce5c0cb09713dae6cbb294",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words that use -er or -est to compare things.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "smaller-choice",
+            "fastest-choice",
+            "cleanest-choice",
+            "kinder-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "cleanest-choice",
+            "fastest-choice",
+            "kinder-choice",
+            "smaller-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "cleanest-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "cleanest uses -est to compare cleanliness.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-7"
+              ]
+            },
+            {
+              "answerId": "careful-choice",
+              "verdict": "INCORRECT",
+              "rationale": "careful ends in -ful, not a comparative -er or superlative -est suffix.",
+              "evidenceIds": [
+                "suffix-pantry-1"
+              ]
+            },
+            {
+              "answerId": "fastest-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "fastest uses -est to compare speed.",
+              "evidenceIds": [
+                "suffix-pantry-2"
+              ]
+            },
+            {
+              "answerId": "kinder-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "kinder uses -er to compare how kind people or actions are.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-7"
+              ]
+            },
+            {
+              "answerId": "smaller-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "smaller uses -er to compare size.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-suffixes-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-checkpoint-c-6",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-2887a86547e31461",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "e90453890d4597bfeb8b013e57c19e40fd2542624325c3dcf1c2671a009112bc",
+        "conclusionsSha256": "0eb9aec6e409525ed86e6360c126ed3929c0fc3e60ce5c0cb09713dae6cbb294",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0008.pass-a.json",
+        "receiptSha256": "0eb9aec6e409525ed86e6360c126ed3929c0fc3e60ce5c0cb09713dae6cbb294",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that uses the word quickly to describe how the spill was wiped.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "suffix-pantry-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "suffix-pantry-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "suffix-pantry-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence says the spill was wiped quickly.",
+              "evidenceIds": [
+                "suffix-pantry-3"
+              ]
+            },
+            {
+              "answerId": "suffix-pantry-2",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes the cart, signs, and wishes and does not use quickly.",
+              "evidenceIds": [
+                "suffix-pantry-2"
+              ]
+            },
+            {
+              "answerId": "suffix-pantry-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes bags and shelves and does not use quickly.",
+              "evidenceIds": [
+                "suffix-pantry-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-suffixes-checkpoint-c-7",
+      "packId": "g2-word-forge-common-suffixes",
+      "contentVersion": "g2-wf-common-suffixes-r0.1.0",
+      "contentFingerprint": "qta-v1-b69f530ac3ba3f1e",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "71daf626a4d5598633f9854bda1db5d5a1d12af076836b689775af9e419d2da6",
+        "conclusionsSha256": "3aa96228788d61b26d901238c2c8e26ca129fe0cb6c38c8e3545a99dbddbef99",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0021.pass-a.json",
+        "receiptSha256": "3aa96228788d61b26d901238c2c8e26ca129fe0cb6c38c8e3545a99dbddbef99",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "wishes-row",
+          "prompt": "wishes",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "wish-base"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "wish-base"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "clean-base",
+              "verdict": "INCORRECT",
+              "rationale": "clean is the base of cleaned, not wishes.",
+              "evidenceIds": [
+                "target-g2-word-forge-common-suffixes-7-cleaned"
+              ]
+            },
+            {
+              "answerId": "care-base",
+              "verdict": "INCORRECT",
+              "rationale": "care is the base of careful, not wishes.",
+              "evidenceIds": [
+                "target-g2-word-forge-common-suffixes-7-careful"
+              ]
+            },
+            {
+              "answerId": "fast-base",
+              "verdict": "INCORRECT",
+              "rationale": "fast is the base of fastest, not wishes.",
+              "evidenceIds": [
+                "target-g2-word-forge-common-suffixes-7-fastest"
+              ]
+            },
+            {
+              "answerId": "wish-base",
+              "verdict": "DEFENSIBLE",
+              "rationale": "wish is the base word of wishes.",
+              "evidenceIds": [
+                "target-g2-word-forge-common-suffixes-7-wishes",
+                "suffix-pantry-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "cleaned-row",
+          "prompt": "cleaned",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "clean-base-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "clean-base-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "wish-base-2",
+              "verdict": "INCORRECT",
+              "rationale": "wish is the base of wishes, not cleaned.",
+              "evidenceIds": [
+                "target-g2-word-forge-common-suffixes-7-wishes"
+              ]
+            },
+            {
+              "answerId": "care-base-2",
+              "verdict": "INCORRECT",
+              "rationale": "care is the base of careful, not cleaned.",
+              "evidenceIds": [
+                "target-g2-word-forge-common-suffixes-7-careful"
+              ]
+            },
+            {
+              "answerId": "clean-base-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "clean is the base word of cleaned.",
+              "evidenceIds": [
+                "target-g2-word-forge-common-suffixes-7-cleaned",
+                "suffix-pantry-1"
+              ]
+            },
+            {
+              "answerId": "fast-base-2",
+              "verdict": "INCORRECT",
+              "rationale": "fast is the base of fastest, not cleaned.",
+              "evidenceIds": [
+                "target-g2-word-forge-common-suffixes-7-fastest"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "fastest-row",
+          "prompt": "fastest",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "fast-base"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "fast-base"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "fast-base",
+              "verdict": "DEFENSIBLE",
+              "rationale": "fast is the base word of fastest.",
+              "evidenceIds": [
+                "target-g2-word-forge-common-suffixes-7-fastest",
+                "suffix-pantry-2"
+              ]
+            },
+            {
+              "answerId": "care-base-3",
+              "verdict": "INCORRECT",
+              "rationale": "care is the base of careful, not fastest.",
+              "evidenceIds": [
+                "target-g2-word-forge-common-suffixes-7-careful"
+              ]
+            },
+            {
+              "answerId": "wish-base-3",
+              "verdict": "INCORRECT",
+              "rationale": "wish is the base of wishes, not fastest.",
+              "evidenceIds": [
+                "target-g2-word-forge-common-suffixes-7-wishes"
+              ]
+            },
+            {
+              "answerId": "clean-base-3",
+              "verdict": "INCORRECT",
+              "rationale": "clean is the base of cleaned, not fastest.",
+              "evidenceIds": [
+                "target-g2-word-forge-common-suffixes-7-cleaned"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "careful-row",
+          "prompt": "careful",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "care-base"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "care-base"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "wish-base-4",
+              "verdict": "INCORRECT",
+              "rationale": "wish is the base of wishes, not careful.",
+              "evidenceIds": [
+                "target-g2-word-forge-common-suffixes-7-wishes"
+              ]
+            },
+            {
+              "answerId": "fast-base-3",
+              "verdict": "INCORRECT",
+              "rationale": "fast is the base of fastest, not careful.",
+              "evidenceIds": [
+                "target-g2-word-forge-common-suffixes-7-fastest"
+              ]
+            },
+            {
+              "answerId": "care-base",
+              "verdict": "DEFENSIBLE",
+              "rationale": "care is the base word of careful.",
+              "evidenceIds": [
+                "target-g2-word-forge-common-suffixes-7-careful",
+                "suffix-pantry-1"
+              ]
+            },
+            {
+              "answerId": "clean-base-4",
+              "verdict": "INCORRECT",
+              "rationale": "clean is the base of cleaned, not careful.",
+              "evidenceIds": [
+                "target-g2-word-forge-common-suffixes-7-cleaned"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

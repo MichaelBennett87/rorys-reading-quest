@@ -1,0 +1,875 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0026",
+  "batchFileSha256": "af7534aa2783fd9fe37240524008e2097e76a56257145a3831fce6cdf1d671fa",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0569",
+      "fingerprint": "b08659f085a75de696adb9a08a4b35dbd3241bfeb1650933c21e7c2f724b0d7d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Daily cleaning and water do not directly provide the requested quiet space or prevent crowding.",
+              [
+                "S0033"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "One-way paths directly prevent animals from feeling crowded.",
+              [
+                "S0030"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The front-desk list identifies rest needs but does not itself give each animal a quiet space.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This directly gives each animal a low-noise resting space.",
+              [
+                "S0028"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0571",
+      "fingerprint": "9c1072eeb058800f271d741b6548e2d063cd1a3904c00474ed928cb2b661e39b",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "One-way paths are one detail.",
+              [
+                "S0030"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Animal shelters are the broad subject.",
+              [
+                "S0037"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Water bowls are one detail.",
+              [
+                "S0026"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This purpose explains the passage's calm-rest-and-safety focus.",
+              [
+                "S0032",
+                "S0036"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a source detail, not an author's purpose.",
+              [
+                "S0030"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a source detail, not an author's purpose.",
+              [
+                "S0033"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the topic phrase, not a front-desk record.",
+              [
+                "S0037"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This directly identifies the list kept at the front desk.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the central idea, not the named record.",
+              [
+                "S0032"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0576",
+      "fingerprint": "e1b47f4068203f5255993adb11f400714c9c9f4ab7c7fa01bd702f41a71bbcff",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one shady-row detail.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one bee-visit detail.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Pollinator patch counts name the broad subject.",
+              [
+                "S0064"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one graph detail, not a purpose statement.",
+              [
+                "S0055"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one stem detail, not a purpose statement.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This explains the author's whole-text goal across both garden rows.",
+              [
+                "S0057",
+                "S0061",
+                "S0062"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states the central benefit rather than the requested row comparison.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the topic phrase.",
+              [
+                "S0064"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This directly compares blooms and leaves in the shady row.",
+              [
+                "S0061"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0579",
+      "fingerprint": "16ca7987688e5facef9eddf4ecbd204fca8a537ee2ae84dc9d6fe0721399811a",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This shows the class recording numbers.",
+              [
+                "S0082"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This saves cloudy-day marks but is not the requested number-recording detail.",
+              [
+                "S0086"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "A thermometer is the named temperature tool.",
+              [
+                "S0078"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "A wind sock measures direction, not temperature.",
+              [
+                "S0085"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0580",
+      "fingerprint": "f8995a3c55e10efbefa66977146cc2df942a83d51c3e565f11cda77a9f540abb",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states what tools help the class watch, but not the requested result of tools and careful observations together.",
+              [
+                "S0087"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one rain-gauge function.",
+              [
+                "S0080"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states what comparing notes reveals, not the full requested tools-and-observations result.",
+              [
+                "S0084"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This explicitly states what the class learns through tools and careful observations.",
+              [
+                "S0088"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0581",
+      "fingerprint": "1f20a15a3d17985daff9d948a7e83f5a240f33d9161d3512ce2aba712dfc6c24",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one tool detail.",
+              [
+                "S0080"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one chart detail.",
+              [
+                "S0086"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Weather station notes name the broad subject.",
+              [
+                "S0089"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one recording detail, not a purpose statement.",
+              [
+                "S0082"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one thermometer detail, not a purpose statement.",
+              [
+                "S0078"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This states the author's explanatory goal for the whole weather-station text.",
+              [
+                "S0087",
+                "S0088"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the topic phrase.",
+              [
+                "S0089"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states the broad learning result, not the wind sock's function.",
+              [
+                "S0088"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This directly states that a wind sock shows wind direction.",
+              [
+                "S0085"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0584",
+      "fingerprint": "b76ea0b6b964456683f3ad4a2fa302b2965136e8047a3acf21e74acf6fe03fd2",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Fur and feathers are parts of an animal's body carrying the seed.",
+              [
+                "S0108"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes the destination, not animal-body travel.",
+              [
+                "S0113"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "Shoes and socks are objects worn by people, not an animal's body.",
+              [
+                "S0110"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "This describes water travel.",
+              [
+                "S0103"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0585",
+      "fingerprint": "f1a26e94c2972430faedf4fddeaa8993a3466ecf0b941e0d2d902be060362292",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Fur or feathers show travel on an animal.",
+              [
+                "S0108"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "This is water travel.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Wind carries the seed through the air.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This records travel but does not identify air or animal travel.",
+              [
+                "S0111"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0587",
+      "fingerprint": "efda0c1c8e1f70f9e3359687751132e3f259da7c251e75c6869650524c4c598c",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one map detail.",
+              [
+                "S0111"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one animal-travel detail.",
+              [
+                "S0109"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Seed travel routes name the broad subject.",
+              [
+                "S0114"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one example, not a purpose statement.",
+              [
+                "S0108"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This states the author's explanatory goal across the seed-travel methods.",
+              [
+                "S0101",
+                "S0103",
+                "S0108"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one example, not a purpose statement.",
+              [
+                "S0103"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This directly names the classroom map record.",
+              [
+                "S0111"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the central idea, not the requested record.",
+              [
+                "S0107"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a topic phrase, not a record sentence.",
+              [
+                "S0114"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0588",
+      "fingerprint": "33e18e56c839b959b255613e818d939cfa853d8156a14956d71d248e0ef1ba67",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This states the whole-text explanatory purpose.",
+              [
+                "S0101",
+                "S0103",
+                "S0108"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one wind example, not an author-purpose statement.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one map detail, not an author-purpose statement.",
+              [
+                "S0111"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a record of routes rather than a wind example.",
+              [
+                "S0111"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "This is an animal example rather than a wind example.",
+              [
+                "S0109"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This directly supplies a wind-based travel example.",
+              [
+                "S0101"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0591",
+      "fingerprint": "f82c266d4a4fb5c56fcaca42d05e897322cd1fb1deddfb296815101c820f00ac",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes a later texture change.",
+              [
+                "S0136"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes a later temperature change.",
+              [
+                "S0140"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This names the food scraps, leaves, and paper placed into the pile.",
+              [
+                "S0132"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes a later smell change.",
+              [
+                "S0142"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0593",
+      "fingerprint": "0c23236a2479a4298d47c6d7d0acbeb9028c076ab1d04528f9d95e890e022386",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This explicitly names composting and states its soil-helping result.",
+              [
+                "S0144"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states a result but does not name the process as composting.",
+              [
+                "S0138"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one step and omits the overall result.",
+              [
+                "S0139"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one change and omits the named process and overall result.",
+              [
+                "S0136"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

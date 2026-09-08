@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0105",
+  "batchFileSha256": "ed5e56ac6787a29e14645c9e4ee42fa32c2b9aae1dbf55d0839c497e91e9cc0b",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1225",
+      "fingerprint": "1f03155c6f3242cad1048fe5b992fc4dbf8d7456f84c49cc2b943136133754b1",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A3"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "The passage does not organize its main ideas as causes and results.", ["S0116"]],
+          ["A2", "CONTRADICTED", "The details are deliberately organized side by side rather than presented as unrelated facts.", ["S0116"]],
+          ["A3", "DEFENSIBLE", "The passage explicitly compares what the two bridge designs share and how they differ.", ["S0113", "S0116"]],
+          ["A4", "INCORRECT", "The passage does not organize bridge information by time or ordered steps.", ["S0116"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1226",
+      "fingerprint": "64be0b4b5a943a3aecdd703c2a63a3d7f76f1ff596aea50f506022419329fc82",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A2"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "UNSUPPORTED", "The diagram contains bridge labels, not author information.", ["S0120"]],
+          ["A2", "DEFENSIBLE", "The labeled straight deck and curved arch present the shapes side by side for comparison.", ["S0120", "S0125", "S0126"]],
+          ["A3", "CONTRADICTED", "The passage supplies important details beyond the diagram.", ["S0105", "S0111"]],
+          ["A4", "CONTRADICTED", "The labels add information about each bridge shape.", ["S0125", "S0126"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1227",
+      "fingerprint": "790502562fae8301aefc477cfd1ee4196a0393a81430c23116db1f056f1b1dc2",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A4"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "Being alike and different is not an order-in-time relationship.", []],
+          ["A2", "CONTRADICTED", "The stated alike-and-different relationship supplies a clear organization.", []],
+          ["A3", "INCORRECT", "The prompt gives similarities and differences, not causes and results.", []],
+          ["A4", "DEFENSIBLE", "Comparison organizes how two subjects are alike and different.", []]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1228",
+      "fingerprint": "0a7ce4635760feb5150d765d15bc391143817787094caed907dab928a47b0122",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A1", "A3", "A4"],
+        "ambiguity": "The prompt requests two details, but the parallel beam detail, parallel arch detail, and explicit side-by-side comparison sentence all reasonably help prove comparison.",
+        "selectionContractValid": false,
+        "options": [
+          ["A1", "DEFENSIBLE", "This supplies the beam side of the passage's side-by-side treatment of the two bridge shapes.", ["S0105"]],
+          ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The glossary detail defines pier but does not compare the two bridge designs.", ["S0109"]],
+          ["A3", "DEFENSIBLE", "This supplies the arch side of the passage's side-by-side treatment of the two bridge shapes.", ["S0111"]],
+          ["A4", "DEFENSIBLE", "This sentence explicitly states that the details are organized side by side to show similarities and differences.", ["S0116"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1229",
+      "fingerprint": "8391215d01c297f765d7e46fc99c95fb38f63e0322caa8cd3e03fc2d6bfe1b3d",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A2"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This describes only the beam bridge and states no similarity with an arch bridge.", ["S0105"]],
+          ["A2", "DEFENSIBLE", "The phrase Both kinds directly states a shared need of beam and arch bridges.", ["S0107"]],
+          ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This defines pier without stating a similarity between both bridge types.", ["S0109"]],
+          ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This describes only the arch bridge and states no similarity with a beam bridge.", ["S0111"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1230",
+      "fingerprint": "a629436f29875791ac683ea1ad9091337edbd681b5d83dd6250cb86632714c3d",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Comparison organization explains shared purposes and differing solutions across the two bridge types.", ["S0116"]],
+            ["A2", "UNSUPPORTED", "The comparison does not rank facts or present an author opinion.", ["S0116"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This describes the labeled diagram's contribution rather than the comparison organization as a whole.", ["S0120"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "UNSUPPORTED", "The diagram does not give the author's opinion or rank facts.", ["S0120"]],
+            ["A2", "DEFENSIBLE", "The diagram's side-by-side labels make the straight and curved shapes easy to compare.", ["S0120", "S0125", "S0126"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This describes what comparison organization contributes, not the labeled diagram specifically.", ["S0116"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1231",
+      "fingerprint": "f9a1891a220bf345507ef697d1df8e1069e93e102cef08bee4dfc754fa9d99c5",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The passage does not organize its important ideas by time or ordered steps.", ["S0116"]],
+            ["A2", "DEFENSIBLE", "The passage organizes beam and arch bridge details to show shared and differing features.", ["S0113", "S0116"]],
+            ["A3", "INCORRECT", "Cause and effect is not the passage's main organizational relationship.", ["S0116"]]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The paired details present the beam's straight deck beside the arch's curved structure.", ["S0105", "S0111"]],
+            ["A2", "CONTRADICTED", "The passage contains no date-ordered bridge inventions.", ["S0103", "S0116"]],
+            ["A3", "CONTRADICTED", "The passage does not say one bridge type causes the other to form.", ["S0105", "S0111"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1232",
+      "fingerprint": "ca38c406428653b26ced3eadee8eb9b10d13463cfd05f4d99b1f5a8136c62435",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A2"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "The passage does not mainly compare two subjects.", ["S0137"]],
+          ["A2", "DEFENSIBLE", "The passage explicitly connects causes and effects of runoff and rain-garden soaking.", ["S0133", "S0139", "S0137"]],
+          ["A3", "INCORRECT", "The passage explains relationships rather than a required sequence of steps.", ["S0137"]],
+          ["A4", "CONTRADICTED", "The facts are connected by causes and results rather than being unrelated.", ["S0137"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1233",
+      "fingerprint": "fab95f080c03467ca0118abfba558b83b6cba2fda73f5315910839d9f45e4483",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A1"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "DEFENSIBLE", "The labeled diagram traces runoff from the roof through the garden and into soil.", ["S0141", "S0147", "S0152", "S0153", "S0154"]],
+          ["A2", "CONTRADICTED", "The diagram adds labeled information about runoff's path.", ["S0147"]],
+          ["A3", "UNSUPPORTED", "The diagram contains no author information.", ["S0147"]],
+          ["A4", "CONTRADICTED", "The passage includes important causes, effects, and safety details beyond the diagram.", ["S0133", "S0139", "S0143"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1234",
+      "fingerprint": "fef587f04197c47c49f58bf7dfa8f02710a6cc2401407c20ff07429bba04ffb1",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A2"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "The statement explains why droplets form rather than ordering events as the main construct.", []],
+          ["A2", "DEFENSIBLE", "Cold air cooling vapor is the cause and droplets forming is the effect.", []],
+          ["A3", "INCORRECT", "The statement does not compare two subjects.", []],
+          ["A4", "CONTRADICTED", "The word so explicitly connects the two facts as cause and effect.", []]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1235",
+      "fingerprint": "4e56a9ec46492059eb23e969fa3e49c1468ac37d46ea935426f3f053fa2a3037",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A2", "A3", "A4"],
+        "ambiguity": "The prompt requests two details, but the explicit structure statement, a because sentence, and an as-a-result sentence all reasonably prove cause-and-effect organization.",
+        "selectionContractValid": false,
+        "options": [
+          ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The safety reminder does not present the passage's cause-and-effect relationship.", ["S0143"]],
+          ["A2", "DEFENSIBLE", "This sentence explicitly states that the passage uses causes and effects.", ["S0137"]],
+          ["A3", "DEFENSIBLE", "Because visibly connects hard surfaces that block soaking with water gathering or rushing away.", ["S0133"]],
+          ["A4", "DEFENSIBLE", "As a result visibly states the outcome of water soaking into the planted area.", ["S0139"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1236",
+      "fingerprint": "5dcdbffedca9c07a7f74be414e433de10323bb575cf021778d0ee4aa3bec2546",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A1"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "DEFENSIBLE", "The sentence directly states that soaking leaves less surface water as a puddle.", ["S0139"]],
+          ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This describes runoff before it enters a rain garden, not a result of soaking.", ["S0131"]],
+          ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This describes the diagram and water's direction, not the result of soaking.", ["S0141"]],
+          ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This defines a rain garden rather than stating a result of water soaking into it.", ["S0135"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1237",
+      "fingerprint": "23eb01c29080bc89ac5b413e92573e0da36d89ce8faef8ebacdd5ce18afa99e2",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This describes what the labeled diagram contributes rather than the passage's overall organization.", ["S0141", "S0147"]],
+            ["A2", "DEFENSIBLE", "This mapping identifies the linked causes and effects that the passage organization helps readers understand.", ["S0133", "S0139", "S0137"]],
+            ["A3", "UNSUPPORTED", "The organization presents relationships, not an author opinion or fact ranking.", ["S0137"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "UNSUPPORTED", "The diagram gives no author opinion or fact ranking.", ["S0147"]],
+            ["A2", "DEFENSIBLE", "The diagram's labels trace runoff from a roof through the garden and into soil.", ["S0141", "S0147", "S0152", "S0153", "S0154"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This describes the passage's cause-and-effect organization rather than the labeled diagram specifically.", ["S0137"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1238",
+      "fingerprint": "30c2f37b9a9b86f651be34dbf6621143d5660364fad9aeeb7ed3d73f7ff954eb",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The passage does not primarily teach ordered construction steps.", ["S0137"]],
+            ["A2", "DEFENSIBLE", "The passage links hard surfaces and runoff with soaking water and fewer puddles.", ["S0133", "S0139", "S0137"]],
+            ["A3", "INCORRECT", "The passage does not mainly compare rain gardens with other gardens.", ["S0137"]]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "CONTRADICTED", "The passage does not give exact construction steps that must be followed in order.", ["S0135", "S0143"]],
+            ["A2", "CONTRADICTED", "The passage does not compare rain gardens with four other garden types.", ["S0135", "S0137"]],
+            ["A3", "DEFENSIBLE", "The paired details explicitly state a cause involving blocked soaking and a result involving fewer puddles.", ["S0133", "S0139"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

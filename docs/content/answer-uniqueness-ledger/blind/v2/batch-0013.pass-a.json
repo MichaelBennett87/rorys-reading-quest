@@ -1,0 +1,867 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0013",
+  "batchFileSha256": "d1218c1d72f9eeed051e461c2384978adfc8806aac4d54833d60cb6416d622c5",
+  "reviewerThreadId": "01a07bc1-57ca-7230-a515-d322b50c9d2e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0139",
+      "fingerprint": "6a7376d8a951a43d58c17e1ecc394b9487fa2eadb6ed715bf6e7737c15aa7a3d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "bundle splits bun | dle; bun is closed.",
+              [
+                "S0035",
+                "S0036"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "jungle splits jun | gle; jun is closed.",
+              [
+                "S0028",
+                "S0030"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "dimple splits dim | ple; dim is closed.",
+              [
+                "S0031",
+                "S0032"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "stable splits sta | ble; sta is open before consonant-le.",
+              [
+                "S0033",
+                "S0034"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0140",
+      "fingerprint": "0adbfcacee86c963e40174ca6f2aeac883d0ca7f16dff980732aef8339894ac4",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "jungle is reconstructed by jun | gle.",
+              [
+                "S0028",
+                "S0030"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "stable splits sta | ble, not jun | gle.",
+              [
+                "S0033",
+                "S0034"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "bundle splits bun | dle, not jun | gle.",
+              [
+                "S0035",
+                "S0036"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "dimple splits dim | ple, not jun | gle.",
+              [
+                "S0031",
+                "S0032"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0141",
+      "fingerprint": "3ac022b7a25cf2b9b56da0d6568c9ed35278f2e81f16f555f0be6a2c4ac41e62",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "dimple appears in the passage and ends with consonant-le ple.",
+              [
+                "S0031",
+                "S0032"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "stable appears in the passage and ends with consonant-le ble.",
+              [
+                "S0033",
+                "S0034"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "jungle appears in the passage and ends with consonant-le gle.",
+              [
+                "S0028",
+                "S0030"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "bundle appears in the passage and ends with consonant-le dle.",
+              [
+                "S0035",
+                "S0036"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0142",
+      "fingerprint": "a1b3ea9ab7d434f26393503263da830966ef1de14ae6da081460eaa1bc091329",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This sentence describes a dimple card marking animal homes.",
+              [
+                "S0032"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This sentence describes the jungle habitat model and table.",
+              [
+                "S0030"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This sentence exactly says the little monkey crossed a stable bridge.",
+              [
+                "S0034"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0143",
+      "fingerprint": "9dc1a8a1654c7203e82f2e742c9fc653c38e625b2a65687c7f4790003d807f8e",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "ju | ngle does not isolate the final consonant-le chunk gle.",
+              [
+                "S0028"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "jun | g le splits inside the consonant-le chunk.",
+              [
+                "S0028"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "jun | gle correctly preserves the final consonant-le chunk.",
+              [
+                "S0028"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "jung | le separates le from its preceding consonant.",
+              [
+                "S0028"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "dim | ple correctly preserves the final consonant-le chunk.",
+              [
+                "S0031"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "dim | p le splits inside the consonant-le chunk.",
+              [
+                "S0031"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "di | mple does not isolate the final consonant-le chunk ple.",
+              [
+                "S0031"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "dimp | le separates le from its preceding consonant.",
+              [
+                "S0031"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "sta | ble correctly preserves the final consonant-le chunk.",
+              [
+                "S0033"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "st | able does not split before the final ble chunk.",
+              [
+                "S0033"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "stab | le separates le from its preceding consonant.",
+              [
+                "S0033"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "sta | b le splits inside the consonant-le chunk.",
+              [
+                "S0033"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "bund | le separates le from its preceding consonant.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "bu | ndle does not isolate the final dle chunk.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "bun | d le splits inside the consonant-le chunk.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "bun | dle correctly preserves the final consonant-le chunk.",
+              [
+                "S0035"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0144",
+      "fingerprint": "c9499dcefad7a95e9cfa720122a2b30077493de67a7f7c6746beb3c553f22cfe",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "dimple splits dim | ple, not jun | gle.",
+              [
+                "S0031",
+                "S0032"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "table splits ta | ble, not jun | gle.",
+              [
+                "S0030"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "bundle splits bun | dle, not jun | gle.",
+              [
+                "S0035",
+                "S0036"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "jungle is reconstructed by jun | gle.",
+              [
+                "S0028",
+                "S0030"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0145",
+      "fingerprint": "0e99c42bf30c1d40e05e26371b9de7a3b38013bed6111be769fe6c1e06a83e19",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "bo | ttle does not isolate the final consonant-le chunk tle.",
+              [
+                "S0037",
+                "S0039"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "bot | t le splits inside the consonant-le chunk.",
+              [
+                "S0037",
+                "S0039"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "bot | tle correctly preserves the final consonant-le chunk.",
+              [
+                "S0037",
+                "S0039"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "bott | le separates le from its preceding consonant.",
+              [
+                "S0037",
+                "S0039"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0146",
+      "fingerprint": "d8c9170ebc9e466355649423199a1293db59b3482b522626260ecdd9b1edf96f",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "stable splits sta | ble; sta is an open syllable.",
+              [
+                "S0033",
+                "S0034"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "dimple splits dim | ple; dim is closed.",
+              [
+                "S0031",
+                "S0032"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "jungle splits jun | gle; jun is closed.",
+              [
+                "S0028",
+                "S0030"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "bundle splits bun | dle; bun is closed.",
+              [
+                "S0035",
+                "S0036"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0147",
+      "fingerprint": "87b60fa641c7aa993cf8bbfe014539857445c2f3aa6bcebccf4df4fb3134e925",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "bundle splits bun | dle, not peb | ble.",
+              [
+                "S0039"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "stable splits sta | ble, not peb | ble.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "candle splits can | dle, not peb | ble.",
+              [
+                "S0041",
+                "S0042"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "pebble is reconstructed by peb | ble.",
+              [
+                "S0040",
+                "S0039"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0148",
+      "fingerprint": "1970508c966d9022a908a2d7c825b509e6e28b87fb40910b3440cc2f97d6a474",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "stable appears in the habitat passage and ends with ble.",
+              [
+                "S0033",
+                "S0034"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "jungle appears in the habitat passage and ends with gle.",
+              [
+                "S0028",
+                "S0030"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "bundle appears in the habitat passage and ends with dle.",
+              [
+                "S0035",
+                "S0036"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "dimple appears in the habitat passage and ends with ple.",
+              [
+                "S0031",
+                "S0032"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0149",
+      "fingerprint": "390251031a760d83e82530bcaf17460195ef1099269d276e290eb8f134705251",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This sentence describes a maple leaf near the water.",
+              [
+                "S0051"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This sentence describes the rattle fan.",
+              [
+                "S0053"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This sentence exactly says the bubble jar sat on a table.",
+              [
+                "S0048"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0150",
+      "fingerprint": "bfce44292380c3c52443bad5dabb97abf4d9f64ac3b4f3143efe5125652c208c",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "bott | le separates le from its preceding consonant.",
+              [
+                "S0037"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "bo | ttle does not isolate the final tle chunk.",
+              [
+                "S0037"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "bot | tle correctly preserves the final consonant-le chunk.",
+              [
+                "S0037"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "bot | t le splits inside the consonant-le chunk.",
+              [
+                "S0037"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "peb | ble correctly preserves the final consonant-le chunk.",
+              [
+                "S0040"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "peb | le omits a written b and does not reconstruct pebble.",
+              [
+                "S0040"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "peb | b le splits inside the consonant-le chunk.",
+              [
+                "S0040"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "pe | bble does not isolate the final ble chunk.",
+              [
+                "S0040"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "can | d le splits inside the consonant-le chunk.",
+              [
+                "S0041"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "can | dle correctly preserves the final consonant-le chunk.",
+              [
+                "S0041"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "ca | ndle does not isolate the final dle chunk.",
+              [
+                "S0041"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "cand | le separates le from its preceding consonant.",
+              [
+                "S0041"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "ap | ple correctly preserves the final consonant-le chunk.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "app | le separates le from its preceding consonant.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "a | pple does not isolate the final ple chunk.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "ap | p le splits inside the consonant-le chunk.",
+              [
+                "S0043"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

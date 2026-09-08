@@ -78,7 +78,7 @@ const records: PoemFormRecord[] = [
   },
   {
     passageId: POEM_FORM_PASSAGE_IDS[2], title: 'Cardinal Morning', difficulty: 1, form: 'haiku', formLabel: 'Haiku',
-    lines: ['Soft snow covers grass', 'One red cardinal settles', 'Morning holds its breath'],
+    lines: ['Soft snow covers grass', 'One bright red bird settles here', 'Morning holds its breath'],
     stanzaLineNumbers: [[1, 2, 3]],
     bestFeature: 'This classroom haiku has three lines with an audited 5-7-5 syllable pattern.',
     secondFeature: 'It captures one quiet observation from nature.',
@@ -88,7 +88,7 @@ const records: PoemFormRecord[] = [
     classroomSyllablePattern: [5, 7, 5],
     support: [
       { key: 'covers', line: 1, word: 'covers', chunks: ['cov', 'ers'], focus: 'cov' },
-      { key: 'cardinal', line: 2, word: 'cardinal', chunks: ['car', 'di', 'nal'], focus: 'car' },
+      { key: 'bright', line: 2, word: 'bright', chunks: ['br', 'ight'], focus: 'ight' },
       { key: 'settles', line: 2, word: 'settles', chunks: ['set', 'tles'], focus: 'tles' },
       { key: 'morning', line: 3, word: 'Morning', chunks: ['Morn', 'ing'], focus: 'Morn' },
     ],
@@ -143,7 +143,7 @@ const records: PoemFormRecord[] = [
     secondFeature: 'The rhyme returns on alternating lines instead of neighboring pairs.',
     featureDistractors: ['It is a limerick because any poem with rhyme is a limerick.', 'It has three lines in a classroom 5-7-5 pattern.', 'It has no required fixed rhyme pattern.'],
     evidenceLineNumbers: [1, 2, 3, 4],
-    hotPrompt: 'Select the line whose end word rhymes with "sun" in line 1.', hotCorrectLine: 3, hotDistractorLines: [1, 2, 4],
+    hotPrompt: 'Select the other line whose end word rhymes with "sun" in line 1.', hotCorrectLine: 3, hotDistractorLines: [1, 2, 4],
     rhymeScheme: 'ABAB',
     rhymePlans: [
       { endWord: 'sun', rhymeKey: 'un', rhymeLabel: 'A' }, { endWord: 'wall', rhymeKey: 'all', rhymeLabel: 'B' },
@@ -156,7 +156,7 @@ const records: PoemFormRecord[] = [
       { key: 'every', line: 4, word: 'every', chunks: ['ev', 'ery'], focus: 'ev' },
     ],
     transfer: {
-      prompt: 'A different poem has five playful lines and an AABBA rhyme. Which form is it?',
+      prompt: 'A different poem has five playful lines and an AABBA rhyme. Which of these taught poem forms gives the most exact name for it?',
       correctForm: 'limerick', explanation: 'Five playful lines plus the AABBA rhyme relationship identify a limerick.',
     },
   },

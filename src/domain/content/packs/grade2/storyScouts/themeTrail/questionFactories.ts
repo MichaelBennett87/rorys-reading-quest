@@ -38,6 +38,7 @@ export function createEvidencePairQuestion(
   spec: BaseQuestionSpec & {
     partAChoices: ChoiceLike[]
     partACorrectChoiceId: string
+    partBPrompt?: string
     partBChoices: ChoiceLike[]
     partBCorrectChoiceId: string
   },
@@ -55,7 +56,7 @@ export function createEvidencePairQuestion(
       partAPrompt: spec.prompt,
       partAChoices: spec.partAChoices,
       partACorrectChoiceId: spec.partACorrectChoiceId,
-      partBPrompt: 'Which choice best supports that answer?',
+      partBPrompt: spec.partBPrompt ?? 'Which choice best supports that answer?',
       partBChoices: spec.partBChoices,
       partBCorrectChoiceId: spec.partBCorrectChoiceId,
     },

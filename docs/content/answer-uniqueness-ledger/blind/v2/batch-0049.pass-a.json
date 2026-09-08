@@ -1,0 +1,753 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0049",
+  "batchFileSha256": "06f35620b4fb73e3a671d4c33ec06fc6a360941909aa9c31e8b174f864d054fc",
+  "reviewerThreadId": "01a07bc1-d815-7c71-b972-e3c829df1777",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0572",
+      "fingerprint": "ac314fcbb3766a5e2f7d9372f9a8e24be6633c04539a89b983ab848f0142ca8b",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the topic of this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A4"
+          ],
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Seed travel routes do not match the pollinator-patch title, row headings, bloom counts, or pollinator observations.",
+              [
+                "S0064",
+                "S0066",
+                "S0069"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Weather tools are absent from this pollinator-patch passage.",
+              [
+                "S0064"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Compost piles are absent from this pollinator-patch passage.",
+              [
+                "S0064"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The title, headings, graph, and class comparisons all concern counts in a pollinator patch.",
+              [
+                "S0064",
+                "S0066",
+                "S0069",
+                "S0067",
+                "S0063"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0573",
+      "fingerprint": "fe66a022f25d7a68674a5e3c91456223fab8727819f2765bf855c57a417a96c7",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Why did the author most likely write this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1"
+          ],
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The two sections contrast sunny and shady rows, then state that the class compared which row helped pollinators most.",
+              [
+                "S0066",
+                "S0069",
+                "S0057",
+                "S0061",
+                "S0062",
+                "S0063"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The passage compares several bloom colors and never urges readers to choose only blue flowers.",
+              [
+                "S0053",
+                "S0055",
+                "S0067"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The passage is an informational class observation, not a made-up bee story.",
+              [
+                "S0064",
+                "S0053",
+                "S0063"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "The passage gives observations and comparisons, not directions for planting a garden.",
+              [
+                "S0053",
+                "S0063"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0574",
+      "fingerprint": "f51ba3095552f8ddfc56d1771e0faff7ac9cb3616e783294473430371664d6aa",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details that are most relevant to the author purpose.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2",
+            "A4"
+          ],
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Stem height is true but does not directly show how the rows support pollinators differently.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Fewer blooms but more leaves distinguishes the shady row and helps explain its different support.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The flower-color count is true but does not compare the two rows or directly show pollinator use.",
+              [
+                "S0055",
+                "S0067"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Bee visits directly show pollinator use of the sunny row.",
+              [
+                "S0057"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0575",
+      "fingerprint": "7aff648b85fda86f718ee3c350740f02b9133179306af8bbfbc95cd266b8b63d",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Tap the sentence that best helps readers understand the author purpose.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2"
+          ],
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one sunny-row observation, not the passage-wide purpose.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This sentence explicitly states that the class compared the rows to determine which helped pollinators most.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This general fact explains pollinator gardens but not why this passage compares row counts.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one count from one row rather than the full purpose.",
+              [
+                "S0053"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0576",
+      "fingerprint": "7944de2dd311c65090e70986818e648307054fcfe2e14bd3bf9bebce5ae182bf",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "prompt": "What is the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one shady-row detail, not the topic label.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one bee-visit detail, not the topic label.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Pollinator patch counts names the subject of the title, graph, and class comparison.",
+              [
+                "S0064",
+                "S0067",
+                "S0063"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "prompt": "What is the author purpose?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This graph detail does not state the passage-wide purpose.",
+              [
+                "S0055"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This stem-height detail does not state the passage-wide purpose.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This complete statement explains why the author presents sunny and shady row observations.",
+              [
+                "S0066",
+                "S0069",
+                "S0063"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "prompt": "Which is another true detail?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1",
+            "A3"
+          ],
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "Both A1 and A3 are verbatim true passage details, and the prompt supplies no relevance or specificity constraint that distinguishes one.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The passage states that a pollinator garden gives insects food and rest.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the topic label rather than a detail.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The passage states that the shady row had fewer blooms but more leaves.",
+              [
+                "S0061"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0577",
+      "fingerprint": "c03b34e948e3c6d4e8cd873bd24d89a90e28ba4dc4614ff2239b36cfef3b93cb",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the topic of this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1"
+          ],
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The title, measuring and pattern sections, chart notes, and tools all concern weather-station notes.",
+              [
+                "S0089",
+                "S0091",
+                "S0094",
+                "S0082",
+                "S0084"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Pollinator patch counts are absent from the weather-station passage.",
+              [
+                "S0089"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Seed travel routes are absent from the weather-station passage.",
+              [
+                "S0089"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Compost piles are absent from the weather-station passage.",
+              [
+                "S0089"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0578",
+      "fingerprint": "38dd10ae6412104eca2ef582f79ddf3b579e9eaf15215694a9680ec720f536f2",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Why did the author most likely write this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2"
+          ],
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "The informational passage reports class tools and observations, not a made-up storm story.",
+              [
+                "S0078",
+                "S0080",
+                "S0082"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The passage explains weather tools, recorded notes, comparisons, and watching changes over time.",
+              [
+                "S0078",
+                "S0080",
+                "S0082",
+                "S0084",
+                "S0087"
+              ]
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "The passage states a wind sock function but gives no building directions.",
+              [
+                "S0085"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The passage presents several useful tools and does not argue that one is best.",
+              [
+                "S0078",
+                "S0080",
+                "S0085"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0579",
+      "fingerprint": "95b584e0b69988016b6b5fb4a05078233f3372d7d1d2d6901d164567edd7a83a",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details that are most relevant to the author purpose.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "All four choices directly support how weather tools or recorded notes help the class observe changes, so the requested pair has no unique exact set.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Recording daily numbers in a chart directly supports the notes part of the author purpose.",
+              [
+                "S0082"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Marking cloudy days for later checking directly supports using notes to observe patterns.",
+              [
+                "S0086"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Using a thermometer to notice temperature changes directly supports weather observation.",
+              [
+                "S0078"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Using a wind sock to observe wind direction directly supports weather observation.",
+              [
+                "S0085"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0580",
+      "fingerprint": "f15cb6dc9f44d4fec0594b06d158ba599d6334285e273ba894525cec654b7f85",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Tap the sentence that best helps readers understand the author purpose.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1",
+            "A4"
+          ],
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "A1 and A4 are both passage-wide summaries that explain tools and observation helping the class understand weather; the visible prompt gives no clear ranking rule that excludes either.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This sentence directly states that the tools help the class watch weather changes over time.",
+              [
+                "S0087"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one tool function rather than the full author purpose.",
+              [
+                "S0080"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This supports noticing patterns through notes but covers only one part of the full purpose.",
+              [
+                "S0084"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This sentence also summarizes that tools and careful observation help the class learn about weather.",
+              [
+                "S0088"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0581",
+      "fingerprint": "db76a28e1034d37cfaa8312b03fd3004c5a2946621577f05e9dec4b6032a3645",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "prompt": "What is the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one rain-gauge detail, not the topic label.",
+              [
+                "S0080"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one chart detail, not the topic label.",
+              [
+                "S0086"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Weather station notes names the subject established by the title and passage.",
+              [
+                "S0089",
+                "S0082",
+                "S0084"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "prompt": "What is the author purpose?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one note-taking detail, not the passage-wide purpose.",
+              [
+                "S0082"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one thermometer detail, not the passage-wide purpose.",
+              [
+                "S0078"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This complete statement explains why the author presents the tools and notes.",
+              [
+                "S0078",
+                "S0080",
+                "S0082",
+                "S0084",
+                "S0087"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "prompt": "Which is another true detail?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2",
+            "A3"
+          ],
+          "defensible": [
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "A2 and A3 are both verbatim true passage statements, and the prompt does not distinguish a broad concluding detail from a specific tool detail.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the topic label rather than a detail.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The passage states that tools and observations help the class learn about weather.",
+              [
+                "S0088"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The passage states that a wind sock points in the direction the wind blows.",
+              [
+                "S0085"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

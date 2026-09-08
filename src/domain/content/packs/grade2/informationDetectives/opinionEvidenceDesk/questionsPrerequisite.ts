@@ -79,8 +79,8 @@ export const opinionEvidenceDeskPrerequisiteQuestions = [
     passageIdentifier: opinionEvidenceDeskPassageIds.shadedRestSpots.passageId,
     lessonIdentifier: opinionEvidenceDeskLessonIds.prereqFactOpinionTopic,
     questionIdentifier: opinionEvidenceDeskQuestionIds.prereqFactOpinionTopic[2],
-    prompt: 'Choose two details that help explain why the author wants more shaded rest spots.',
-    explanation: 'These details show why the shaded bench is a good place to stop.',
+    prompt: 'Choose the measured temperature detail and the detail that directly says the shaded bench felt more comfortable. Select two.',
+    explanation: 'The bench was measured as cooler, and visitors stayed longer because it felt more comfortable.',
     evidenceReference: opinionEvidenceDeskSentenceIds.shadedRestSpots[3],
     evidenceReferenceIds: [
       opinionEvidenceDeskSentenceIds.shadedRestSpots[2],
@@ -168,7 +168,7 @@ export const opinionEvidenceDeskPrerequisiteQuestions = [
       },
       {
         id: 'shaded-detail-row',
-        prompt: 'Which sentence is another true detail?',
+        prompt: 'Which sentence reports what the ranger said families do after the steep hill?',
         correctChoiceId: 'shaded-detail-answer',
         options: [
           choice('shaded-detail-answer', 'The ranger said families often rest there after the steep hill.'),

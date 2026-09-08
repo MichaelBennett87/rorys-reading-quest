@@ -89,7 +89,7 @@ function featureQuestion(record: StructureStationRecord, lessonIndex: number, qu
     ['text-features-contribute-to-meaning', 'feature-contribution'])
 }
 function multiselect(record: StructureStationRecord, lessonIndex: number, questionIndex: number): ReadingQuestion {
-  const data = base(record, lessonIndex, questionIndex, 'multi_select', `Choose the two details that best prove the passage uses ${record.structureLabel.toLowerCase()}.`,
+  const data = base(record, lessonIndex, questionIndex, 'multi_select', record.evidencePrompt ?? `Choose the two details that best prove the passage uses ${record.structureLabel.toLowerCase()}.`,
     `The selected details work together across the passage. ${record.structureReason}`,
     record.evidenceSentenceNumbers.map((number) => sentenceId(record.passageId, number)), ['structure-evidence', `${record.structure}-structure`])
   const correctTexts = record.evidenceSentenceNumbers.map((number) => record.sentences[number - 1])

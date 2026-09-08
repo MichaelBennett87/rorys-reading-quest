@@ -30,6 +30,7 @@ export interface PurposeDevelopmentRecord {
   hotDistractorSentences: [number, number, number]
   support: [SupportPlan, SupportPlan, SupportPlan, SupportPlan]
   preferredEvidenceSentences?: [number, number]
+  evidencePrompt?: string
   transfer?: TransferPlan
 }
 
@@ -59,6 +60,7 @@ const records: PurposeDevelopmentRecord[] = [
     passageId: p[0], title: 'A New Sheet from Used Paper', difficulty: 2,
     topic: 'recycling used classroom paper', purposeKind: 'explain-process',
     purpose: 'To explain the steps that turn used classroom paper into new sheets.',
+    evidencePrompt: 'Choose the detail explaining how soaking changes paper fibers and the later detail explaining how the damp layer becomes a firm sheet.',
     centralIdea: 'Used paper can become a new sheet when its fibers are softened, separated, spread, pressed, and dried.',
     headings: ['Collect and Soak', 'Make the Pulp', 'Form a New Sheet'], sectionEnds: [4, 8],
     sentences: [
@@ -97,7 +99,7 @@ const records: PurposeDevelopmentRecord[] = [
     synthesis: 'The ordered details across all three sections develop the purpose by following used paper through each major recycling step.',
     narrowPurpose: 'To explain why one batch of paper may look pale blue.',
     claimDistractor: 'To convince every class that handmade paper is better than all other paper.',
-    hotPrompt: 'Select the sentence that best reveals that the author is explaining a step in making a new sheet.',
+    hotPrompt: 'Select the sentence that explains the step where watery pulp begins forming on a screen.',
     hotCorrectSentence: 9, hotDistractorSentences: [2, 8, 14],
     support: [
       { word: 'recycling', sentence: 1, chunks: ['re', 'cy', 'cling'], focus: 'cy' },
@@ -317,7 +319,7 @@ const records: PurposeDevelopmentRecord[] = [
     synthesis: 'Cause-and-effect details across all three sections develop the purpose by explaining several reasons puddle drying times differ.',
     narrowPurpose: 'To explain why students draw chalk circles around puddles.',
     claimDistractor: 'To argue that playgrounds should never have puddles after rain.',
-    hotPrompt: 'Select the sentence that best explains why humid air can change a puddle\'s drying time.',
+    hotPrompt: 'Select the sentence that best explains how humid air can change a puddle\'s drying time.',
     hotCorrectSentence: 11, hotDistractorSentences: [7, 13, 19],
     support: [
       { word: 'invisible', sentence: 2, chunks: ['in', 'vis', 'i', 'ble'], focus: 'vis' },
@@ -335,6 +337,8 @@ const records: PurposeDevelopmentRecord[] = [
   },
   {
     passageId: p[5], title: 'A Pond Through Four Seasons', difficulty: 3,
+    evidencePrompt:
+      'Choose the winter-ice detail and the later detail showing the pond returning to colder winter conditions.',
     topic: 'seasonal changes in a pond', purposeKind: 'explain-change',
     purpose: 'To explain how a pond and its living things change across the four seasons.',
     centralIdea: 'Changes in light, temperature, water, and plant growth create different pond conditions during winter, spring, summer, and fall.',

@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0127",
+  "batchFileSha256": "4c71362f916c9ada4148d26e8365d5ad200b4258185cb21ea9d952ea2705004a",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1485",
+      "fingerprint": "70f98fe409a60106b0ea80f071d70c3f9ce910515512ccc77b3c10e94d5bb549",
+      "projectionDefect": "",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A2"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The two incidental objects differ; this does not state a shared way the authors present erosion.", ["S0209", "S0222"]],
+          ["A2", "DEFENSIBLE", "Both texts connect downhill-moving water with transported soil.", ["S0205", "S0206", "S0217", "S0221"]],
+          ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This accurately states the central presentation difference, not a similarity.", ["S0199", "S0223", "S0224"]],
+          ["A4", "CONTRADICTED", "Text A traces one storm while Text B compares prevention methods, so their organization and details are not identical.", ["S0199", "S0223"]]
+        ]
+      }]
+    },
+    {
+      "auditId": "Q1486",
+      "fingerprint": "23ea195f385545b457097d587a13f40bbcabf909fcaa33815f6970e705e885b1",
+      "projectionDefect": "",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A1"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "DEFENSIBLE", "Text A traces storm causes and effects, while Text B presents several erosion-reduction methods.", ["S0199", "S0217", "S0223"]],
+          ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This is a meaningful similarity, but the question asks for the presentation difference.", ["S0206", "S0217"]],
+          ["A3", "CONTRADICTED", "The description reverses the roles of the two texts.", ["S0199", "S0223"]],
+          ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The details differ, but both are explicitly incidental and do not define the authors' main presentation choices.", ["S0209", "S0222"]]
+        ]
+      }]
+    },
+    {
+      "auditId": "Q1487",
+      "fingerprint": "b7c2fb4dad89bae3c4d20bdaa70eb4b51f350e1712349a90d89477078fcb96a2",
+      "projectionDefect": "",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A3"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "This names only one text and does not compare how the two authors present the topic.", ["S0212"]],
+          ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This merely lists one incidental fact from each text, which the prompt explicitly distinguishes from presentation.", ["S0209", "S0222"]],
+          ["A3", "DEFENSIBLE", "It compares both the shared water-and-soil idea and the different organizational approaches.", ["S0199", "S0217", "S0223"]],
+          ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Titles and sentences are surface features, not how the authors explain the shared erosion topic.", ["S0212", "S0225"]]
+        ]
+      }]
+    },
+    {
+      "auditId": "Q1488",
+      "fingerprint": "4777d2eab41f36a6d9ea7bf644d93cf3094564c25ca3cde9c5c5a3ac16124547",
+      "projectionDefect": "",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A1", "A4"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "DEFENSIBLE", "This Text B detail exemplifies a method for protecting and holding soil.", ["S0218"]],
+          ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The bottle cap is explicitly separated from the soil and does not support Text A's erosion cause-and-effect presentation.", ["S0209"]],
+          ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The drainpipe color is explicitly said not to control erosion, so it does not support Text B's methods presentation.", ["S0222"]],
+          ["A4", "DEFENSIBLE", "This Text A detail shows a cause in the storm's erosion chain.", ["S0197", "S0199"]]
+        ]
+      }]
+    },
+    {
+      "auditId": "Q1489",
+      "fingerprint": "b001fca4d3c20a72e523e42468e2e38219f2a7c4d76ff956b99ceea468e99ba2",
+      "projectionDefect": "",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A2"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This is one cause in the account, but it does not identify the overall cause-and-effect presentation as clearly as the explicit summary does.", ["S0197"]],
+          ["A2", "DEFENSIBLE", "The sentence explicitly names the chain of causes and effects that organizes Text A.", ["S0199"]],
+          ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The bottle cap is an incidental contrast and is explicitly not part of the soil process.", ["S0209"]]
+        ]
+      }]
+    },
+    {
+      "auditId": "Q1490",
+      "fingerprint": "30c50b081cb20464ecede0a72c1951fa36c530a2df087dd4baf0e40de0dc5f02",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "CONTRADICTED", "Text B compares erosion-reduction methods rather than tracing one storm.", ["S0217", "S0223"]],
+            ["A2", "DEFENSIBLE", "Text A follows a single storm through a stated cause-and-effect chain.", ["S0204", "S0199"]],
+            ["A3", "CONTRADICTED", "Only Text A traces one storm; Text B does not.", ["S0199", "S0223"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Text B presents plants, mulch, borders, and terraces as different erosion-reduction methods.", ["S0218", "S0219", "S0220", "S0201", "S0223"]],
+            ["A2", "CONTRADICTED", "Text A explains erosion during one storm and does not compare prevention methods.", ["S0199"]],
+            ["A3", "CONTRADICTED", "Only Text B compares several protective methods.", ["S0223"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "CONTRADICTED", "Text B also describes moving water carrying soil, so the connection is not Text A alone.", ["S0217", "S0221"]],
+            ["A2", "DEFENSIBLE", "Both texts connect downhill-moving water with soil movement.", ["S0205", "S0206", "S0217", "S0221"]],
+            ["A3", "CONTRADICTED", "Text A also describes moving water carrying soil, so the connection is not Text B alone.", ["S0205", "S0206"]]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1491",
+      "fingerprint": "229a6e0a413638afe3e73d3580684027ff399e48196783d96cf4f8ed9d8d139c",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The incidental objects differ, but that does not capture the strongest difference in presenting erosion.", ["S0209", "S0222"]],
+            ["A2", "DEFENSIBLE", "It contrasts Text A's storm cause-and-effect account with Text B's erosion-reduction methods.", ["S0199", "S0217", "S0223"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This is a similarity, not a presentation difference.", ["S0206", "S0217"]]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "CONTRADICTED", "The details are assigned to the wrong texts.", ["S0197", "S0218"]],
+            ["A2", "DEFENSIBLE", "The Text A cause and Text B prevention method directly support the defensible Part A contrast.", ["S0197", "S0218"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This pair supports only the incidental-object contrast, not the strongest presentation difference selected in Part A.", ["S0209", "S0222"]]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1492",
+      "fingerprint": "e1fdee6e11c2232facfafb5981185835b1ee21f95fa18a907927944476a147f1",
+      "projectionDefect": "",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A1"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "DEFENSIBLE", "Studying all measurements for a pattern describes analyzing the trial results.", ["S0003"]],
+          ["A2", "CONTRADICTED", "Choosing first ignores the trial results rather than analyzing them.", ["S0013"]],
+          ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Decorating a chart does not examine the measurements or their pattern.", ["S0003"]],
+          ["A4", "CONTRADICTED", "Removing units makes the table less accurate and does not analyze the data.", ["S0009"]]
+        ]
+      }]
+    },
+    {
+      "auditId": "Q1493",
+      "fingerprint": "9ea1c5ff42c93519091a477ba73b8c81d9b970196466b31b54044c8fefe6ad37",
+      "projectionDefect": "",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A2"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "CONTRADICTED", "A pre-test choice is not information produced by the investigation.", ["S0010", "S0013"]],
+          ["A2", "DEFENSIBLE", "The measurements from repeated trials are information that supports the team's science conclusion.", ["S0005", "S0007"]],
+          ["A3", "CONTRADICTED", "Missing information cannot support the idea.", ["S0005"]],
+          ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "A border color does not address the measured amount of water.", ["S0010", "S0009"]]
+        ]
+      }]
+    },
+    {
+      "auditId": "Q1494",
+      "fingerprint": "12fd2759f6fd9713a6a1c35e54523e521610b797ba4f086d4611d05d2c5b9c9f",
+      "projectionDefect": "",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A2", "A4"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "CONTRADICTED", "Leaving out a trial makes the record incomplete rather than accurate.", ["S0013", "S0009"]],
+          ["A2", "DEFENSIBLE", "Checking copied numbers against the recorded trials protects accuracy.", ["S0015"]],
+          ["A3", "CONTRADICTED", "Changing a measurement to fit a guess makes it inaccurate.", ["S0017", "S0009"]],
+          ["A4", "DEFENSIBLE", "Copying every measurement and its correct unit follows the passage's definition of an accurate table.", ["S0009"]]
+        ]
+      }]
+    },
+    {
+      "auditId": "Q1495",
+      "fingerprint": "08c4c0e0d4ab89c58114990cd40d173dc8edd19de10b5c5331ac03ae7642a4ec",
+      "projectionDefect": "",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A1"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "DEFENSIBLE", "The sentence explicitly states the team's conclusion and links it to the repeated measurements.", ["S0007"]],
+          ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Repeating trials improves evidence quality but does not state the conclusion.", ["S0013"]],
+          ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This identifies the evidence but does not state what the team concluded from it.", ["S0005"]],
+          ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "It describes how the result was explained but does not reveal the conclusion itself.", ["S0017"]]
+        ]
+      }]
+    },
+    {
+      "auditId": "Q1496",
+      "fingerprint": "6a46fa171f75507efdde489cca5f6e625712255de393a7ff9009cbc17517fc68",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Accurate describes correctness; it does not name the act of studying measurements for a pattern.", ["S0009"]],
+            ["A2", "DEFENSIBLE", "Analyze means studying the measurements to find a pattern.", ["S0003"]],
+            ["A3", "INCORRECT", "Evidence is the supporting information, not the act of examining it.", ["S0005"]],
+            ["A4", "INCORRECT", "Conclude means deciding after review, not performing the close study itself.", ["S0007"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Accurate describes correctness rather than information that supports an idea.", ["S0009"]],
+            ["A2", "INCORRECT", "Analyze is an action performed on information, not the information itself.", ["S0003"]],
+            ["A3", "DEFENSIBLE", "Evidence is information used to support an idea or conclusion.", ["S0005", "S0007"]],
+            ["A4", "INCORRECT", "Conclude is the act of deciding after reviewing evidence.", ["S0007"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Accurate describes a table that copies measurements correctly for the task.", ["S0009"]],
+            ["A2", "INCORRECT", "Analyze names the act of studying results, not their correctness.", ["S0003"]],
+            ["A3", "INCORRECT", "Evidence names supporting information, not whether a measurement record is correct.", ["S0005"]],
+            ["A4", "INCORRECT", "Conclude names a decision after review, not correctness.", ["S0007"]]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Accurate describes correctness rather than deciding what the results mean.", ["S0009"]],
+            ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Analyzing happens before the decision, but it is not the final act of deciding.", ["S0003", "S0007"]],
+            ["A3", "INCORRECT", "Evidence supplies information for the decision but is not the deciding action.", ["S0005"]],
+            ["A4", "DEFENSIBLE", "Conclude means deciding what makes sense after reviewing the results.", ["S0007"]]
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,689 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0066",
+  "batchFileSha256": "151f877ec00a7c0453d92d9336e8680831d881a1ee0f4fe01f8c15f7629fec8a",
+  "reviewerThreadId": "01a07bc1-57ca-7230-a515-d322b50c9d2e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0772",
+      "fingerprint": "8e096265d25a475b568b76f5725ae9520e420bea70d542a5b64cc1234251cbba",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence uses repeated initial /k/ sounds rather than a like-or-as comparison.",
+              [
+                "S0019"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "On the same page is an idiom about agreement, not a simile.",
+              [
+                "S0017"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The hall’s quietness is compared to a cloud using as.",
+              [
+                "S0015"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Keep an eye on is an idiom meaning watch, not a simile.",
+              [
+                "S0021"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0773",
+      "fingerprint": "860c91818a698ba6a6bd2c233df2866408d8d001c4f35294a24ae9c1cb7fd533",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Watch the shelf is the meaning of keep an eye on, not on the same page.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The source does not use on the same page to mean move chairs.",
+              [
+                "S0017"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "In the book-club context, on the same page means the readers agree about the plan.",
+              [
+                "S0017"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Turning a literal book page conflicts with the plan-agreement context.",
+              [
+                "S0017"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0774",
+      "fingerprint": "c82ab2b3cb1ed9791ba400966337b051edaab9eb3397bc8286c1e7e3eacbbdd2",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [],
+          "ambiguity": "None of the selectable fragments shows agreement. “The readers” identifies who and “the book club plan” identifies what they discussed, but the omitted phrase “on the same page” is the only visible wording that conveys agreement.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The quiet hall describes the setting and does not show agreement.",
+              [
+                "S0015"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The book club plan identifies the subject of agreement but does not show that agreement occurred.",
+              [
+                "S0017"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The readers identifies the people but does not show that they agreed.",
+              [
+                "S0017"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The returns shelf is connected to a different idiom and does not show agreement.",
+              [
+                "S0021"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0775",
+      "fingerprint": "361e84a0ad1ccc98852e5eda7c591eaafa06630432c28871541eac5ab1636d85",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Careful, cats, and carried repeat the initial /k/ sound.",
+              [
+                "S0019"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Even aside from its source-text mismatch, the phrase does not use repeated initial sounds.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The words do not repeat an initial consonant sound.",
+              [
+                "S0019"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The words do not repeat an initial consonant sound.",
+              [
+                "S0015"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": "Selectable Hot Text option A2 does not appear verbatim in the displayed source: the option says “kept an eye,” while source sentence S0021 says “keep an eye.” This is a source-ownership/projection mismatch."
+    },
+    {
+      "auditId": "Q0776",
+      "fingerprint": "3cddb828d95fe70774f75afbf85121f282df39a0131e551225eceeaf0d3ca50e",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The phrase is not built around repeated initial sounds.",
+              [
+                "S0015"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This is a direct comparison, not an idiom.",
+              [
+                "S0015"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "As quiet as a cloud compares unlike things using as, so it is a simile.",
+              [
+                "S0015"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "On the same page is an idiom meaning agree rather than literally share a page.",
+              [
+                "S0017"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The phrase does not depend on repeated initial sounds.",
+              [
+                "S0017"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The phrase does not compare unlike things with like or as.",
+              [
+                "S0017"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The phrase is literal rather than an idiom.",
+              [
+                "S0019"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "It does not make a like-or-as comparison.",
+              [
+                "S0019"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Careful, cats, and carried repeat the initial /k/ sound.",
+              [
+                "S0019"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The phrase does not make a like-or-as comparison.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The phrase does not use repeated initial sounds.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Keep an eye on is an idiom meaning watch carefully rather than literally retain an eye on something.",
+              [
+                "S0021"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0777",
+      "fingerprint": "490c11c88f838ab5e1ca463f57949039e93cd4747b80fefb6ab70bfd0990d24b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Like a tiny boat compares the seed tray to a boat using like.",
+              [
+                "S0027"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This names the subject of the comparison without the comparing phrase.",
+              [
+                "S0027"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Watering the sprouts is a literal action, not a comparison.",
+              [
+                "S0029"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Made tall labels is a literal action, not a simile.",
+              [
+                "S0031"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0778",
+      "fingerprint": "abf7c5d6bd3ae03f01a12d10c45fc1e5488fe59e74e5165221b265ad39ff8194",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Maya waters first, showing that get the ball rolling means start the work.",
+              [
+                "S0029"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "No literal ball appears in the planting context.",
+              [
+                "S0029"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The phrase does not mean repair the tray.",
+              [
+                "S0027",
+                "S0029"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Starting by watering is not the same as decorating the finished display.",
+              [
+                "S0029",
+                "S0036"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0779",
+      "fingerprint": "01f308f1b036ad0f49fe2eac27a47895f4d0763a86a11dd4312c07d0e75127ad",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The tall labels are not part of this simile.",
+              [
+                "S0031"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The seed tray is the first thing being compared.",
+              [
+                "S0027"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The class is not compared to a boat.",
+              [
+                "S0034"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The tiny boat is the second thing in the comparison.",
+              [
+                "S0027"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0780",
+      "fingerprint": "8e1c1a152105d08c61dab5a0c9a95ebb7394a699953ebbde69491226f7fb7eb3",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The idiom does not use repeated initial sounds, and the selectable wording does not match S0029 verbatim.",
+              [
+                "S0029"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Paper, petals, and pushed repeat the initial /p/ sound.",
+              [
+                "S0033"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The phrase does not repeat an initial consonant sound.",
+              [
+                "S0036"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The phrase does not repeat an initial consonant sound.",
+              [
+                "S0027"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": "Selectable Hot Text option A1 does not appear verbatim in the displayed source: it says “Maya got the ball rolling,” while S0029 says “Maya helped get the ball rolling.” This is a source-ownership/projection mismatch."
+    },
+    {
+      "auditId": "Q0781",
+      "fingerprint": "e0b030570571a36a081193437788eacab1433106dd4acf99ede4eb0662afa947",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Like a tiny boat compares the seed tray to a boat, so it is a simile.",
+              [
+                "S0027"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The phrase does not rely on repeated initial sounds.",
+              [
+                "S0027"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This is a direct comparison, not an idiom.",
+              [
+                "S0027"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The phrase does not compare two things with like or as.",
+              [
+                "S0029"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Get the ball rolling is an idiom meaning start the work.",
+              [
+                "S0029"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The phrase does not use repeated initial sounds.",
+              [
+                "S0029"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Merry, markers, and made repeat the initial /m/ sound.",
+              [
+                "S0031"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The phrase does not use like or as to compare unlike things.",
+              [
+                "S0031"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The phrase is literal rather than an idiom.",
+              [
+                "S0031"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Paper, petals, and pushed repeat the initial /p/ sound.",
+              [
+                "S0033"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The phrase is literal rather than an idiom.",
+              [
+                "S0033"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The phrase does not compare unlike things with like or as.",
+              [
+                "S0033"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

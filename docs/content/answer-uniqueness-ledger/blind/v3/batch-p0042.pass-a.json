@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0042",
+  "batchFileSha256": "1226ef49d1b706a2b0934255cb9fd64b47fc8e685e6c981cc4f8a0a5731226af",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1195",
+      "fingerprint": "cf07959497980a278b1e8f1da2c7098029fa2721aa2f948305cf1379a5204bfa",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Wall rhymes with tall, not sun.",
+              [
+                "S0066",
+                "S0064"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Done rhymes with sun and is the other line requested.",
+              [
+                "S0059",
+                "S0062"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is line 1 itself, while the prompt asks for the other line.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Tall rhymes with wall, not sun.",
+              [
+                "S0064",
+                "S0066"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1197",
+      "fingerprint": "f78bb85d6fae785a11cc82129114beb1a49afa8d4553bb8710ae1b65d02b6c53",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The poem has an intentional ABAB end-rhyme organization.",
+              [
+                "S0059",
+                "S0066",
+                "S0062",
+                "S0064"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "It has four lines, not the taught three-line haiku form.",
+              []
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The fixed rhyme pattern makes rhymed verse the more exact taught name.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Not every rhymed poem is a limerick, and this poem lacks five AABBA lines.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Sun/done and wall/tall accurately describe the visible ABAB rhyme.",
+              [
+                "S0059",
+                "S0066",
+                "S0062",
+                "S0064"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The poem has four lines, not three.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1198",
+      "fingerprint": "5b5f016f8ec6c6db6147abd0f9b717e3bc274d77dbc944bd8dcb5e95a39d370e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "It is rhymed, but limerick is the more exact taught form requested.",
+              [
+                "S0069",
+                "S0071",
+                "S0076",
+                "S0077",
+                "S0074"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "It is not the taught three-line haiku form.",
+              []
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "It has a fixed AABBA rhyme organization.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Five playful lines use bay/day/tray and high/sigh in AABBA form.",
+              [
+                "S0069",
+                "S0071",
+                "S0076",
+                "S0077",
+                "S0074"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1204",
+      "fingerprint": "9f72faaa275e05b48d07c686159f7425660beae0393a52ec3f4b8513af7f6e2c",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "The poem has a fixed rhyme and limerick structure.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Five playful AABBA lines match the taught limerick form.",
+              [
+                "S0069",
+                "S0071",
+                "S0076",
+                "S0077",
+                "S0074"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Rhymed verse is broader than the exact limerick form requested.",
+              [
+                "S0069",
+                "S0071",
+                "S0076",
+                "S0077",
+                "S0074"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "Varying line lengths do not override the fixed limerick structure.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Accurately states the five-line AABBA rhyme evidence.",
+              [
+                "S0069",
+                "S0071",
+                "S0076",
+                "S0077",
+                "S0074"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Describing an animal does not make a poem a haiku.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

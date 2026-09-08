@@ -1,0 +1,3996 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "g3-cg-ss-q1-1",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-e83909683dd1f22c",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "1b62a7bacf752ae62d35b44cf31d606b9e1a8031b8fa536a26932135722dfc6c",
+        "conclusionsSha256": "5077064b650be0461692f4134bb4594c57ddf2583efa416ea6088723f07dced6",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0120.pass-a.json",
+        "receiptSha256": "5077064b650be0461692f4134bb4594c57ddf2583efa416ea6088723f07dced6",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice is the best concise and accurate summary?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q1-1-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q1-1-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q1-1-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names the character and setting but omits the central problem, response, and outcome.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-1-sentence-1",
+                "g3-cg-summary-passage-1-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q1-1-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This concisely includes the task, missing-card problem, clue and help, resolution, and source-supported lesson.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-1-sentence-3",
+                "g3-cg-summary-passage-1-sentence-4",
+                "g3-cg-summary-passage-1-sentence-6",
+                "g3-cg-summary-passage-1-sentence-8",
+                "g3-cg-summary-passage-1-sentence-10",
+                "g3-cg-summary-passage-1-sentence-12",
+                "g3-cg-summary-passage-1-sentence-14"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q1-1-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This lists minor details, includes an unstated bent corner, and omits the main resolution.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-1-sentence-2",
+                "g3-cg-summary-passage-1-sentence-5",
+                "g3-cg-summary-passage-1-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q1-1-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "Ava finds the card, guides every group, and does not send families home.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-1-sentence-10",
+                "g3-cg-summary-passage-1-sentence-12"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q1-2",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-054cb304f1970700",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "6e40caf49ee4a40a3eec199187d32dac801fb680297f2864c4febd608aad2ed6",
+        "conclusionsSha256": "f0c9d5ee4bb9efb9b30d98cc174d6ed4d0f126aad7a294f4ee5eb2259a97ccfe",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/corrections-v9/batch-c0005.second-pass.json",
+        "receiptSha256": "ba12fe48559217b6aa433cffc61a08a9d575697bea54a27798e50780d6aec5d2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail most directly states the source's central problem or main idea?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q1-2-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q1-2-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q1-2-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This source-supported closing detail does not state the story's central problem or main idea.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-1-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q1-2-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The badge is a decorative detail and does not state the story's problem or main idea.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-1-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q1-2-choice-4",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The source does not add this event, and the option does not state its central problem or main idea.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-1"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q1-2-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The missing route card directly states the central problem Ava must solve.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-1-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": true,
+      "correctionSummary": "Learner-visible content was corrected and re-reviewed in docs/content/answer-uniqueness-ledger/blind/corrections-v9-final/batch-c0005.pass-a.json.",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q1-3",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-1b906b2d33b3c8f1",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "1b62a7bacf752ae62d35b44cf31d606b9e1a8031b8fa536a26932135722dfc6c",
+        "conclusionsSha256": "5077064b650be0461692f4134bb4594c57ddf2583efa416ea6088723f07dced6",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0120.pass-a.json",
+        "receiptSha256": "5077064b650be0461692f4134bb4594c57ddf2583efa416ea6088723f07dced6",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two details that belong in a concise summary.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q1-3-choice-1",
+            "g3-cg-ss-q1-3-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q1-3-choice-1",
+            "g3-cg-ss-q1-3-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q1-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The missing route card is the central problem.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-1-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q1-3-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The later thanks and file location are not needed to explain the problem or solution.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-1-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q1-3-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Badge shape does not affect the events.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-1-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q1-3-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Remembering the photograph is a key action that helps Ava solve the route problem.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-1-sentence-6",
+                "g3-cg-summary-passage-1-sentence-7",
+                "g3-cg-summary-passage-1-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q1-4",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-78f9b23b360e406f",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "1b62a7bacf752ae62d35b44cf31d606b9e1a8031b8fa536a26932135722dfc6c",
+        "conclusionsSha256": "5077064b650be0461692f4134bb4594c57ddf2583efa416ea6088723f07dced6",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0120.pass-a.json",
+        "receiptSha256": "5077064b650be0461692f4134bb4594c57ddf2583efa416ea6088723f07dced6",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the source detail that can be omitted because it is minor.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q1-4-segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q1-4-segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q1-4-segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The badge description does not affect the conflict, solution, or outcome.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-1-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q1-4-segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "The missing route card is the central conflict.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-1-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q1-4-segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "Remembering the photograph is a key step toward solving the route problem.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-1-sentence-6",
+                "g3-cg-summary-passage-1-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q1-5",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-2d9094f6c24d53ba",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "1b62a7bacf752ae62d35b44cf31d606b9e1a8031b8fa536a26932135722dfc6c",
+        "conclusionsSha256": "5077064b650be0461692f4134bb4594c57ddf2583efa416ea6088723f07dced6",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0120.pass-a.json",
+        "receiptSha256": "5077064b650be0461692f4134bb4594c57ddf2583efa416ea6088723f07dced6",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-cg-ss-q1-5-row-1",
+          "prompt": "When the first families entered, the route card was missing from the welcome table.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q1-5-important"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q1-5-important"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q1-5-important",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The missing route card establishes the central problem.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-1-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q1-5-minor",
+              "verdict": "INCORRECT",
+              "rationale": "Omitting the conflict would make the solution unclear.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-1-sentence-4",
+                "g3-cg-summary-passage-1-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ss-q1-5-row-2",
+          "prompt": "She wore a green badge shaped like a star.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q1-5-minor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q1-5-minor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q1-5-important",
+              "verdict": "INCORRECT",
+              "rationale": "Badge shape does not affect the problem or solution.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-1-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q1-5-minor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This descriptive detail can be omitted from a concise account.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-1-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ss-q1-5-row-3",
+          "prompt": "Then she remembered taking a photograph of the route during practice the day before.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q1-5-important"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q1-5-important"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q1-5-minor",
+              "verdict": "INCORRECT",
+              "rationale": "Remembering the photograph drives Ava’s solution.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-1-sentence-6",
+                "g3-cg-summary-passage-1-sentence-7",
+                "g3-cg-summary-passage-1-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q1-5-important",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This key action belongs in a concise summary.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-1-sentence-6",
+                "g3-cg-summary-passage-1-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ss-q1-5-row-4",
+          "prompt": "Afterward, she thanked Mr. Ruiz and saved the photograph in the art-walk folder.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q1-5-minor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q1-5-minor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q1-5-minor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The post-event thanks and folder storage can be omitted after the successful route outcome.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-1-sentence-12",
+                "g3-cg-summary-passage-1-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q1-5-important",
+              "verdict": "INCORRECT",
+              "rationale": "These after-the-resolution details are not needed to explain what problem Ava solved or how.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-1-sentence-4",
+                "g3-cg-summary-passage-1-sentence-6",
+                "g3-cg-summary-passage-1-sentence-8",
+                "g3-cg-summary-passage-1-sentence-10",
+                "g3-cg-summary-passage-1-sentence-12"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q2-1",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-7b2e3b5b977a74d7",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ab5d4ad414fd6b5562259c382f7f35577e4c606fcda90ad53a4ee17a1e9bb1e6",
+        "conclusionsSha256": "39d610ff55f72bb1bcc0eaa3e858cbb1979ca69dd7e0e7b1e7bd773e999a2d44",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0121.pass-a.json",
+        "receiptSha256": "39d610ff55f72bb1bcc0eaa3e858cbb1979ca69dd7e0e7b1e7bd773e999a2d44",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice is the best concise and accurate summary?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q2-1-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q2-1-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q2-1-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This lists minor color, single-leaf, and insect details but omits the process.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-2-sentence-4",
+                "g3-cg-summary-passage-2-sentence-9",
+                "g3-cg-summary-passage-2-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q2-1-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This concisely preserves compost formation, decomposers, conditions, gradual change, and use.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-2-sentence-1",
+                "g3-cg-summary-passage-2-sentence-6",
+                "g3-cg-summary-passage-2-sentence-7",
+                "g3-cg-summary-passage-2-sentence-14",
+                "g3-cg-summary-passage-2-sentence-15"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q2-1-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This identifies only the topic and omits the central idea and key details.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-2-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q2-1-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source says the process is gradual, excludes some scraps, and depends on decomposers, air, and moisture.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-2-sentence-5",
+                "g3-cg-summary-passage-2-sentence-6",
+                "g3-cg-summary-passage-2-sentence-7",
+                "g3-cg-summary-passage-2-sentence-15"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q2-2",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-2541d735d8132801",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "6e40caf49ee4a40a3eec199187d32dac801fb680297f2864c4febd608aad2ed6",
+        "conclusionsSha256": "f0c9d5ee4bb9efb9b30d98cc174d6ed4d0f126aad7a294f4ee5eb2259a97ccfe",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "CORRECTION_REREVIEW",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/corrections-v9-final/batch-c0005.pass-a.json",
+        "receiptSha256": "f0c9d5ee4bb9efb9b30d98cc174d6ed4d0f126aad7a294f4ee5eb2259a97ccfe",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail most directly states the source's central problem or main idea?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q2-2-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q2-2-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q2-2-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence directly states what compost is and the overall process explained by the source.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-2-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q2-2-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The collection bucket's possible color is minor and does not state the main idea.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-2-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q2-2-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "One leaf retaining its shape is a narrow example, not the source's main idea.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-2-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q2-2-choice-3",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The source does not ask the reader to add an event, and this does not state the main idea.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": true,
+      "correctionSummary": "Learner-visible content was corrected and re-reviewed in docs/content/answer-uniqueness-ledger/blind/corrections-v9-final/batch-c0005.pass-a.json.",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q2-3",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-604c45bf7e65e8b3",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "ab5d4ad414fd6b5562259c382f7f35577e4c606fcda90ad53a4ee17a1e9bb1e6",
+        "conclusionsSha256": "39d610ff55f72bb1bcc0eaa3e858cbb1979ca69dd7e0e7b1e7bd773e999a2d44",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0121.pass-a.json",
+        "receiptSha256": "39d610ff55f72bb1bcc0eaa3e858cbb1979ca69dd7e0e7b1e7bd773e999a2d44",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two details that belong in a concise summary.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q2-3-choice-1",
+            "g3-cg-ss-q2-3-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q2-3-choice-1",
+            "g3-cg-ss-q2-3-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q2-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This states what compost is and how it forms.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-2-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q2-3-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This identifies decomposers as a main cause of breakdown.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-2-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q2-3-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "One dry leaf is a narrow example rather than an essential process detail.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-2-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q2-3-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Collection-bucket color is incidental.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-2-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q2-4",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-39fa1bbab96c11fe",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "ab5d4ad414fd6b5562259c382f7f35577e4c606fcda90ad53a4ee17a1e9bb1e6",
+        "conclusionsSha256": "39d610ff55f72bb1bcc0eaa3e858cbb1979ca69dd7e0e7b1e7bd773e999a2d44",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0121.pass-a.json",
+        "receiptSha256": "39d610ff55f72bb1bcc0eaa3e858cbb1979ca69dd7e0e7b1e7bd773e999a2d44",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the source detail that can be omitted because it is minor.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q2-4-segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q2-4-segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q2-4-segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "The definition of compost is essential to the central idea.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-2-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q2-4-segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Bucket color can be omitted without changing the compost process.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-2-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q2-4-segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "Decomposers are a main cause of scraps breaking down.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-2-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q2-5",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-15a78cd0bc8bd05c",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "ab5d4ad414fd6b5562259c382f7f35577e4c606fcda90ad53a4ee17a1e9bb1e6",
+        "conclusionsSha256": "39d610ff55f72bb1bcc0eaa3e858cbb1979ca69dd7e0e7b1e7bd773e999a2d44",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0121.pass-a.json",
+        "receiptSha256": "39d610ff55f72bb1bcc0eaa3e858cbb1979ca69dd7e0e7b1e7bd773e999a2d44",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-cg-ss-q2-5-row-1",
+          "prompt": "Compost forms when plant scraps and other once-living materials break down into a dark, crumbly mixture.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q2-5-important"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q2-5-important"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q2-5-important",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This defines the central process.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-2-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q2-5-minor",
+              "verdict": "INCORRECT",
+              "rationale": "Omitting the definition would remove essential meaning.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-2-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ss-q2-5-row-2",
+          "prompt": "A classroom collection bucket might be brown or green.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q2-5-minor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q2-5-minor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q2-5-important",
+              "verdict": "INCORRECT",
+              "rationale": "Bucket color does not explain formation or use.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-2-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q2-5-minor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This incidental color detail can be omitted.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-2-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ss-q2-5-row-3",
+          "prompt": "Tiny living decomposers help break the scraps into smaller materials.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q2-5-important"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q2-5-important"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q2-5-important",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Decomposers perform a central role in breakdown.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-2-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q2-5-minor",
+              "verdict": "INCORRECT",
+              "rationale": "Omitting the decomposer role would remove a key cause.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-2-sentence-6",
+                "g3-cg-summary-passage-2-sentence-15"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ss-q2-5-row-4",
+          "prompt": "One dry leaf may keep its shape for a while before becoming brittle.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q2-5-minor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q2-5-minor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q2-5-minor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "One leaf’s temporary shape is a narrow example that can be omitted.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-2-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q2-5-important",
+              "verdict": "INCORRECT",
+              "rationale": "The example is not needed to state that composting is gradual.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-2-sentence-9",
+                "g3-cg-summary-passage-2-sentence-15"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q3-1",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-8128e0b4958f6170",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ab5d4ad414fd6b5562259c382f7f35577e4c606fcda90ad53a4ee17a1e9bb1e6",
+        "conclusionsSha256": "39d610ff55f72bb1bcc0eaa3e858cbb1979ca69dd7e0e7b1e7bd773e999a2d44",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0121.pass-a.json",
+        "receiptSha256": "39d610ff55f72bb1bcc0eaa3e858cbb1979ca69dd7e0e7b1e7bd773e999a2d44",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice is the best concise and accurate summary?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q3-1-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q3-1-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q3-1-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "They protect and deliver the books on time instead of abandoning them.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-3-sentence-6",
+                "g3-cg-summary-passage-3-sentence-16"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q3-1-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This lists minor details and omits the central problem and solution.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-3-sentence-2",
+                "g3-cg-summary-passage-3-sentence-10",
+                "g3-cg-summary-passage-3-sentence-13",
+                "g3-cg-summary-passage-3-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q3-1-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This only names characters, objects, and setting.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-3-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q3-1-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This preserves the task, locked-wheel problem, safer revised plan, successful outcome, and lesson.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-3-sentence-1",
+                "g3-cg-summary-passage-3-sentence-4",
+                "g3-cg-summary-passage-3-sentence-6",
+                "g3-cg-summary-passage-3-sentence-9",
+                "g3-cg-summary-passage-3-sentence-12",
+                "g3-cg-summary-passage-3-sentence-16",
+                "g3-cg-summary-passage-3-sentence-18"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q3-2",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-c3feda3764121fb3",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "6e40caf49ee4a40a3eec199187d32dac801fb680297f2864c4febd608aad2ed6",
+        "conclusionsSha256": "f0c9d5ee4bb9efb9b30d98cc174d6ed4d0f126aad7a294f4ee5eb2259a97ccfe",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "CORRECTION_REREVIEW",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/corrections-v9-final/batch-c0005.pass-a.json",
+        "receiptSha256": "f0c9d5ee4bb9efb9b30d98cc174d6ed4d0f126aad7a294f4ee5eb2259a97ccfe",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail most directly states the source's central problem or main idea?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q3-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q3-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q3-2-choice-4",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Adding an invented event is not source information and does not state the central problem.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q3-2-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The old ribbon is decorative and unrelated to the central cart problem.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-3-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q3-2-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The clock's click adds atmosphere but does not state the central problem.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-3-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q3-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The locked wheel directly creates and states the story's central problem.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-3-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": true,
+      "correctionSummary": "Learner-visible content was corrected and re-reviewed in docs/content/answer-uniqueness-ledger/blind/corrections-v9-final/batch-c0005.pass-a.json.",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q3-3",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-6d16bd8f5c662343",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "ab5d4ad414fd6b5562259c382f7f35577e4c606fcda90ad53a4ee17a1e9bb1e6",
+        "conclusionsSha256": "39d610ff55f72bb1bcc0eaa3e858cbb1979ca69dd7e0e7b1e7bd773e999a2d44",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0121.pass-a.json",
+        "receiptSha256": "39d610ff55f72bb1bcc0eaa3e858cbb1979ca69dd7e0e7b1e7bd773e999a2d44",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two details that belong in a concise summary.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q3-3-choice-1",
+            "g3-cg-ss-q3-3-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q3-3-choice-3",
+            "g3-cg-ss-q3-3-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q3-3-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The clock’s click does not change the plot.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-3-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q3-3-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Nia’s action prevents the books and cart from tipping and moves the characters toward a safer plan.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-3-sentence-5",
+                "g3-cg-summary-passage-3-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q3-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The locked wheel begins the central conflict.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-3-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q3-3-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The old ribbon is decorative and unrelated to the conflict.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-3-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q3-4",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-febaa84ff277938b",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "ab5d4ad414fd6b5562259c382f7f35577e4c606fcda90ad53a4ee17a1e9bb1e6",
+        "conclusionsSha256": "39d610ff55f72bb1bcc0eaa3e858cbb1979ca69dd7e0e7b1e7bd773e999a2d44",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0121.pass-a.json",
+        "receiptSha256": "39d610ff55f72bb1bcc0eaa3e858cbb1979ca69dd7e0e7b1e7bd773e999a2d44",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the source detail that can be omitted because it is minor.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q3-4-segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q3-4-segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q3-4-segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The ribbon can be omitted without changing the problem or solution.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-3-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q3-4-segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "The locked wheel creates the central conflict.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-3-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q3-4-segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "Nia’s intervention prevents the situation from worsening.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-3-sentence-5",
+                "g3-cg-summary-passage-3-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q3-5",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-0554490f86e637c3",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "ab5d4ad414fd6b5562259c382f7f35577e4c606fcda90ad53a4ee17a1e9bb1e6",
+        "conclusionsSha256": "39d610ff55f72bb1bcc0eaa3e858cbb1979ca69dd7e0e7b1e7bd773e999a2d44",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0025.second-pass.json",
+        "receiptSha256": "4549cf3555da23a9471e5537a46ea66a181261945d8e592c4142ebdb1ac09f4c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-cg-ss-q3-5-row-1",
+          "prompt": "Halfway down the first hallway, one front wheel locked and dragged across the floor.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q3-5-important"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q3-5-important"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q3-5-minor",
+              "verdict": "INCORRECT",
+              "rationale": "The locked wheel initiates the main problem.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-3-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q3-5-important",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This conflict belongs in a concise summary.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-3-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ss-q3-5-row-2",
+          "prompt": "A blue ribbon from last month still hung from the cart handle.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q3-5-minor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q3-5-minor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q3-5-minor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The decorative ribbon can be omitted.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-3-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q3-5-important",
+              "verdict": "INCORRECT",
+              "rationale": "The ribbon has no effect on the plot.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-3-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ss-q3-5-row-3",
+          "prompt": "Nia caught the books and asked Theo to stop before the cart tipped.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q3-5-important"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q3-5-important"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q3-5-important",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Nia’s action protects the books and stops the unsafe approach.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-3-sentence-5",
+                "g3-cg-summary-passage-3-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q3-5-minor",
+              "verdict": "INCORRECT",
+              "rationale": "Omitting this action would weaken how the central problem develops.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-3-sentence-5",
+                "g3-cg-summary-passage-3-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ss-q3-5-row-4",
+          "prompt": "The wall clock made a soft click as its minute hand moved.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q3-5-minor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q3-5-minor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q3-5-minor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The clock sound is incidental and can be omitted.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-3-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q3-5-important",
+              "verdict": "INCORRECT",
+              "rationale": "The clock sound does not affect the conflict or solution.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-3-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q4-1",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-7f76bbf74cbe94d3",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "7cf0656afd4ae436c44d24fd521bdfb5b9fb0c7a96f0d1e883fcb7a25a388bba",
+        "conclusionsSha256": "3e45158a894099fb97b96c87a891aede6f3ecc96b685ceed3c50eb9c52ec4687",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0122.pass-a.json",
+        "receiptSha256": "3e45158a894099fb97b96c87a891aede6f3ecc96b685ceed3c50eb9c52ec4687",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice is the best concise and accurate summary?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q4-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q4-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q4-1-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This lists narrow descriptive examples and omits the three transport methods and common result.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-4-sentence-6",
+                "g3-cg-summary-passage-4-sentence-11",
+                "g3-cg-summary-passage-4-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q4-1-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This gives only the topic.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-4-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q4-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This concisely preserves wind, animal, and water mechanisms and their shared spreading result.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-4-sentence-2",
+                "g3-cg-summary-passage-4-sentence-4",
+                "g3-cg-summary-passage-4-sentence-7",
+                "g3-cg-summary-passage-4-sentence-8",
+                "g3-cg-summary-passage-4-sentence-14",
+                "g3-cg-summary-passage-4-sentence-17"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q4-1-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "Seeds move in several ways, and not every traveling seed grows.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-4-sentence-1",
+                "g3-cg-summary-passage-4-sentence-17",
+                "g3-cg-summary-passage-4-sentence-16"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q4-2",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-1627642a4f42a786",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "6e40caf49ee4a40a3eec199187d32dac801fb680297f2864c4febd608aad2ed6",
+        "conclusionsSha256": "f0c9d5ee4bb9efb9b30d98cc174d6ed4d0f126aad7a294f4ee5eb2259a97ccfe",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "CORRECTION_REREVIEW",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/corrections-v9-final/batch-c0005.pass-a.json",
+        "receiptSha256": "f0c9d5ee4bb9efb9b30d98cc174d6ed4d0f126aad7a294f4ee5eb2259a97ccfe",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail most directly states the source's central problem or main idea?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q4-2-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q4-2-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q4-2-choice-4",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Adding an invented event is not source information and does not state the main idea.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q4-2-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The fox's fur color is explicitly unrelated to how seeds travel.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-4-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q4-2-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The wing comparison is a narrow image rather than the source's main idea.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-4-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q4-2-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence directly states the source's broad idea that seed structures support travel by wind, animals, or water.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-4-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": true,
+      "correctionSummary": "Learner-visible content was corrected and re-reviewed in docs/content/answer-uniqueness-ledger/blind/corrections-v9-final/batch-c0005.pass-a.json.",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q4-3",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-1a8b78c3649bee9f",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "7cf0656afd4ae436c44d24fd521bdfb5b9fb0c7a96f0d1e883fcb7a25a388bba",
+        "conclusionsSha256": "3e45158a894099fb97b96c87a891aede6f3ecc96b685ceed3c50eb9c52ec4687",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0122.pass-a.json",
+        "receiptSha256": "3e45158a894099fb97b96c87a891aede6f3ecc96b685ceed3c50eb9c52ec4687",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two details that belong in a concise summary.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q4-3-choice-1",
+            "g3-cg-ss-q4-3-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q4-3-choice-1",
+            "g3-cg-ss-q4-3-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q4-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This states the overall role of seed shape and covering across transport methods.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-4-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q4-3-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The tiny-wing appearance is descriptive and not needed to explain seed travel.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-4-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q4-3-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The source explicitly says fur color does not control seed travel.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-4-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q4-3-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This representative example explains how a structure enables wind travel.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-4-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q4-4",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-f48be6c93ba2c96d",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "7cf0656afd4ae436c44d24fd521bdfb5b9fb0c7a96f0d1e883fcb7a25a388bba",
+        "conclusionsSha256": "3e45158a894099fb97b96c87a891aede6f3ecc96b685ceed3c50eb9c52ec4687",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0122.pass-a.json",
+        "receiptSha256": "3e45158a894099fb97b96c87a891aede6f3ecc96b685ceed3c50eb9c52ec4687",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the source detail that can be omitted because it is minor.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q4-4-segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q4-4-segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q4-4-segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The tiny-wing comparison can be omitted without losing how seeds travel.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-4-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q4-4-segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "The dandelion tuft supplies a clear mechanism for wind transport.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-4-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q4-4-segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "This states the passage’s broad central mechanism.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-4-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q4-5",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-bec4644947e584fd",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "7cf0656afd4ae436c44d24fd521bdfb5b9fb0c7a96f0d1e883fcb7a25a388bba",
+        "conclusionsSha256": "3e45158a894099fb97b96c87a891aede6f3ecc96b685ceed3c50eb9c52ec4687",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0122.pass-a.json",
+        "receiptSha256": "3e45158a894099fb97b96c87a891aede6f3ecc96b685ceed3c50eb9c52ec4687",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-cg-ss-q4-5-row-1",
+          "prompt": "The shape and covering of a seed can help it move by wind, animals, or water.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q4-5-important"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q4-5-important"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q4-5-minor",
+              "verdict": "INCORRECT",
+              "rationale": "This statement spans the passage’s three main transport categories.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-4-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q4-5-important",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The shape-and-covering mechanism belongs in a concise summary.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-4-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ss-q4-5-row-2",
+          "prompt": "The spinning motion may look like a tiny turning wing.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q4-5-minor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q4-5-minor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q4-5-minor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The tiny-wing image is descriptive and can be omitted.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-4-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q4-5-important",
+              "verdict": "INCORRECT",
+              "rationale": "A summary can explain spinning without this appearance detail.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-4-sentence-5",
+                "g3-cg-summary-passage-4-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ss-q4-5-row-3",
+          "prompt": "A dandelion seed has a tuft that slows its fall and lets wind carry it away from the parent plant.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q4-5-important"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q4-5-important"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q4-5-important",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The dandelion example clearly shows a structure enabling wind travel.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-4-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q4-5-minor",
+              "verdict": "INCORRECT",
+              "rationale": "This representative mechanism supports the central idea.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-4-sentence-2",
+                "g3-cg-summary-passage-4-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ss-q4-5-row-4",
+          "prompt": "A fox has reddish fur, but its fur color does not control seed travel.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q4-5-minor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q4-5-minor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q4-5-minor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Fox fur color is explicitly unrelated to seed travel.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-4-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q4-5-important",
+              "verdict": "INCORRECT",
+              "rationale": "The detail adds no transport mechanism or outcome.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-4-sentence-11",
+                "g3-cg-summary-passage-4-sentence-12"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q5-1",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-e793142b7fa07f17",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "7cf0656afd4ae436c44d24fd521bdfb5b9fb0c7a96f0d1e883fcb7a25a388bba",
+        "conclusionsSha256": "3e45158a894099fb97b96c87a891aede6f3ecc96b685ceed3c50eb9c52ec4687",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0122.pass-a.json",
+        "receiptSha256": "3e45158a894099fb97b96c87a891aede6f3ecc96b685ceed3c50eb9c52ec4687",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice is the best concise and accurate summary?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q5-1-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q5-1-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q5-1-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This gives only topic and setting, omitting conflict, response, outcome, and theme.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q5-1-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This preserves the rain conflict, tested adaptations, successful outcome, and teamwork theme.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-3",
+                "g3-cg-summary-passage-5-sentence-4",
+                "g3-cg-summary-passage-5-sentence-6",
+                "g3-cg-summary-passage-5-sentence-9",
+                "g3-cg-summary-passage-5-sentence-11",
+                "g3-cg-summary-passage-5-sentence-16",
+                "g3-cg-summary-passage-5-sentence-18",
+                "g3-cg-summary-passage-5-sentence-20",
+                "g3-cg-summary-passage-5-sentence-22"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q5-1-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The class protects the scenery, rehearses indoors, and performs successfully.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-14",
+                "g3-cg-summary-passage-5-sentence-18",
+                "g3-cg-summary-passage-5-sentence-20",
+                "g3-cg-summary-passage-5-sentence-21"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q5-1-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This lists minor details and omits the central problem and solution.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-2",
+                "g3-cg-summary-passage-5-sentence-12",
+                "g3-cg-summary-passage-5-sentence-3",
+                "g3-cg-summary-passage-5-sentence-19"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q5-2",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-09a0ec75541e3319",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "6e40caf49ee4a40a3eec199187d32dac801fb680297f2864c4febd608aad2ed6",
+        "conclusionsSha256": "f0c9d5ee4bb9efb9b30d98cc174d6ed4d0f126aad7a294f4ee5eb2259a97ccfe",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "CORRECTION_REREVIEW",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/corrections-v9-final/batch-c0005.pass-a.json",
+        "receiptSha256": "f0c9d5ee4bb9efb9b30d98cc174d6ed4d0f126aad7a294f4ee5eb2259a97ccfe",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail most directly states the source's central problem or main idea?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q5-2-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q5-2-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q5-2-choice-4",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Adding an invented event is not source information and does not state the central problem.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q5-2-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The umbrella is incidental and does not state the rehearsal problem.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q5-2-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Wet-sensitive scenery and the short deadline directly state the central rehearsal problem.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q5-2-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The lantern scratch does not affect the problem or solution.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-12"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": true,
+      "correctionSummary": "Learner-visible content was corrected and re-reviewed in docs/content/answer-uniqueness-ledger/blind/corrections-v9-final/batch-c0005.pass-a.json.",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q5-3",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-9abd082389d8a357",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "7cf0656afd4ae436c44d24fd521bdfb5b9fb0c7a96f0d1e883fcb7a25a388bba",
+        "conclusionsSha256": "3e45158a894099fb97b96c87a891aede6f3ecc96b685ceed3c50eb9c52ec4687",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0122.pass-a.json",
+        "receiptSha256": "3e45158a894099fb97b96c87a891aede6f3ecc96b685ceed3c50eb9c52ec4687",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which supported theme can help preserve the story's important meaning in a complete summary?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q5-3-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q5-3-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q5-3-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The students succeed by changing and testing their plan.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-9",
+                "g3-cg-summary-passage-5-sentence-11",
+                "g3-cg-summary-passage-5-sentence-16",
+                "g3-cg-summary-passage-5-sentence-20",
+                "g3-cg-summary-passage-5-sentence-22"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q5-3-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The group’s tested adaptations overcome rain, cramped space, lighting, and cue obstacles.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-6",
+                "g3-cg-summary-passage-5-sentence-9",
+                "g3-cg-summary-passage-5-sentence-11",
+                "g3-cg-summary-passage-5-sentence-16",
+                "g3-cg-summary-passage-5-sentence-18",
+                "g3-cg-summary-passage-5-sentence-22"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q5-3-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The umbrella is a minor detail, not a theme.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q5-3-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names a topic rather than a transferable message.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q5-4",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-5c712dbaa1079f1e",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "7cf0656afd4ae436c44d24fd521bdfb5b9fb0c7a96f0d1e883fcb7a25a388bba",
+        "conclusionsSha256": "3e45158a894099fb97b96c87a891aede6f3ecc96b685ceed3c50eb9c52ec4687",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0122.pass-a.json",
+        "receiptSha256": "3e45158a894099fb97b96c87a891aede6f3ecc96b685ceed3c50eb9c52ec4687",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two details that belong in a concise summary.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q5-4-choice-1",
+            "g3-cg-ss-q5-4-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q5-4-choice-1",
+            "g3-cg-ss-q5-4-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q5-4-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The scenery risk and deadline establish why the rehearsal plan must change.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q5-4-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The lantern scratch does not affect the lighting solution.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q5-4-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Testing the cramped roof explains why the first alternative is rejected.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-5",
+                "g3-cg-summary-passage-5-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q5-4-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The striped umbrella is incidental.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q5-5",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-db6834a75eb5bbbb",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "7cf0656afd4ae436c44d24fd521bdfb5b9fb0c7a96f0d1e883fcb7a25a388bba",
+        "conclusionsSha256": "3e45158a894099fb97b96c87a891aede6f3ecc96b685ceed3c50eb9c52ec4687",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0122.pass-a.json",
+        "receiptSha256": "3e45158a894099fb97b96c87a891aede6f3ecc96b685ceed3c50eb9c52ec4687",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the source detail that can be omitted because it is minor.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q5-5-segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q5-5-segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q5-5-segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "Mina’s test rules out the first proposed replacement space.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-5",
+                "g3-cg-summary-passage-5-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q5-5-segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The striped umbrella can be omitted without changing the conflict or solution.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q5-5-segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "The wet-scenery risk and deadline create the central conflict.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q5-6",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-f1804ff683565f6a",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "7cf0656afd4ae436c44d24fd521bdfb5b9fb0c7a96f0d1e883fcb7a25a388bba",
+        "conclusionsSha256": "3e45158a894099fb97b96c87a891aede6f3ecc96b685ceed3c50eb9c52ec4687",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0122.pass-a.json",
+        "receiptSha256": "3e45158a894099fb97b96c87a891aede6f3ecc96b685ceed3c50eb9c52ec4687",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-cg-ss-q5-6-row-1",
+          "prompt": "The paper scenery could not get wet, and the final rehearsal was scheduled to begin in twenty minutes.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q5-6-important"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q5-6-important"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q5-6-minor",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence establishes the central stakes.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q5-6-important",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The risk and deadline belong in a concise summary.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ss-q5-6-row-2",
+          "prompt": "He carried a striped umbrella even though the morning sky was clear.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q5-6-minor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q5-6-minor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q5-6-minor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The umbrella is an incidental detail.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q5-6-important",
+              "verdict": "INCORRECT",
+              "rationale": "It does not affect the rehearsal problem or solution.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ss-q5-6-row-3",
+          "prompt": "Mina tested that space and showed that the tallest puppet would strike the low ceiling.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q5-6-important"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q5-6-important"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q5-6-important",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Mina’s test explains why the group rejects the cramped space.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-5",
+                "g3-cg-summary-passage-5-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q5-6-minor",
+              "verdict": "INCORRECT",
+              "rationale": "This decision-driving result belongs in a concise summary.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ss-q5-6-row-4",
+          "prompt": "One lantern had a small scratch near its switch.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q5-6-minor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q5-6-minor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q5-6-minor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The scratch has no effect on whether the lantern solves the lighting concern.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-11",
+                "g3-cg-summary-passage-5-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q5-6-important",
+              "verdict": "INCORRECT",
+              "rationale": "The lighting solution matters, but the scratch does not.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-11",
+                "g3-cg-summary-passage-5-sentence-12"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q5-7",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-e6673a57ded930cb",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "7cf0656afd4ae436c44d24fd521bdfb5b9fb0c7a96f0d1e883fcb7a25a388bba",
+        "conclusionsSha256": "3e45158a894099fb97b96c87a891aede6f3ecc96b685ceed3c50eb9c52ec4687",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0025.second-pass.json",
+        "receiptSha256": "4549cf3555da23a9471e5537a46ea66a181261945d8e592c4142ebdb1ac09f4c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Part A: Which is the best summary?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q5-7-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q5-7-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q5-7-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This preserves the conflict, tested solutions, outcome, and supported theme.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-4",
+                "g3-cg-summary-passage-5-sentence-6",
+                "g3-cg-summary-passage-5-sentence-9",
+                "g3-cg-summary-passage-5-sentence-11",
+                "g3-cg-summary-passage-5-sentence-16",
+                "g3-cg-summary-passage-5-sentence-18",
+                "g3-cg-summary-passage-5-sentence-22"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q5-7-a-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This only identifies topic and setting.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q5-7-a-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The scenery stays dry and the performance succeeds.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-14",
+                "g3-cg-summary-passage-5-sentence-18",
+                "g3-cg-summary-passage-5-sentence-21"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q5-7-a-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This lists minor details while omitting the plot.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-2",
+                "g3-cg-summary-passage-5-sentence-12",
+                "g3-cg-summary-passage-5-sentence-19"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Part B: Which important source detail supports that choice?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q5-7-b-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q5-7-b-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q5-7-b-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Mina’s test directly supports the summary’s statement that the class tested and rejected a cramped space.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-5",
+                "g3-cg-summary-passage-5-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q5-7-b-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The umbrella is not an important source detail for the summary.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q5-7-b-3",
+              "verdict": "INCORRECT",
+              "rationale": "A prediction absent from the source cannot support a summary.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q6-1",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-7b773159c51772e5",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "145f1c39e11d50192bdc150dc69ba04ab61de35f5c18defd9e8dff6a8f38f6eb",
+        "conclusionsSha256": "9040d141c23d90ddcdbee2ef80225f507f32e0a47737330ff37490bf7f70d166",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0123.pass-a.json",
+        "receiptSha256": "9040d141c23d90ddcdbee2ef80225f507f32e0a47737330ff37490bf7f70d166",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice is the best concise and accurate summary?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q6-1-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q6-1-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q6-1-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This gives only the broad topic.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q6-1-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This concisely explains runoff entry, slowing, spreading, soaking, benefits, and safe placement.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-2",
+                "g3-cg-summary-passage-6-sentence-3",
+                "g3-cg-summary-passage-6-sentence-4",
+                "g3-cg-summary-passage-6-sentence-6",
+                "g3-cg-summary-passage-6-sentence-8",
+                "g3-cg-summary-passage-6-sentence-9",
+                "g3-cg-summary-passage-6-sentence-16",
+                "g3-cg-summary-passage-6-sentence-20"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q6-1-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "Rain gardens are shallow, drain after rain, use soil and plants, and must direct water away from foundations.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-3",
+                "g3-cg-summary-passage-6-sentence-7",
+                "g3-cg-summary-passage-6-sentence-13",
+                "g3-cg-summary-passage-6-sentence-14"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q6-1-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This lists minor stone color, bee, and label details rather than the water-management process.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-5",
+                "g3-cg-summary-passage-6-sentence-12",
+                "g3-cg-summary-passage-6-sentence-18"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q6-2",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-67fecfb5b8051e51",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "6e40caf49ee4a40a3eec199187d32dac801fb680297f2864c4febd608aad2ed6",
+        "conclusionsSha256": "f0c9d5ee4bb9efb9b30d98cc174d6ed4d0f126aad7a294f4ee5eb2259a97ccfe",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "CORRECTION_REREVIEW",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/corrections-v9-final/batch-c0005.pass-a.json",
+        "receiptSha256": "f0c9d5ee4bb9efb9b30d98cc174d6ed4d0f126aad7a294f4ee5eb2259a97ccfe",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail most directly states the source's central problem or main idea?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q6-2-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q6-2-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q6-2-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The stones' color is a narrow decorative detail rather than the runoff problem or main idea.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q6-2-choice-3",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Adding an invented event is not source information and does not state its problem or main idea.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q6-2-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The visiting bee is unrelated to how the rain garden manages runoff.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q6-2-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence directly identifies runoff, the central water problem the rain garden is designed to manage.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": true,
+      "correctionSummary": "Learner-visible content was corrected and re-reviewed in docs/content/answer-uniqueness-ledger/blind/corrections-v9-final/batch-c0005.pass-a.json.",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q6-3",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-01bbf62e07ce66da",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "145f1c39e11d50192bdc150dc69ba04ab61de35f5c18defd9e8dff6a8f38f6eb",
+        "conclusionsSha256": "9040d141c23d90ddcdbee2ef80225f507f32e0a47737330ff37490bf7f70d166",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0123.pass-a.json",
+        "receiptSha256": "9040d141c23d90ddcdbee2ef80225f507f32e0a47737330ff37490bf7f70d166",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which statement gives the central idea that a complete informational summary must support?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q6-3-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q6-3-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q6-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This complete statement expresses how the connected parts manage runoff safely.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-4",
+                "g3-cg-summary-passage-6-sentence-3",
+                "g3-cg-summary-passage-6-sentence-8",
+                "g3-cg-summary-passage-6-sentence-9",
+                "g3-cg-summary-passage-6-sentence-15",
+                "g3-cg-summary-passage-6-sentence-20"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q6-3-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source gives limitations and site conditions rather than a universal guarantee.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-13",
+                "g3-cg-summary-passage-6-sentence-14",
+                "g3-cg-summary-passage-6-sentence-20"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q6-3-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names the topic but not the central understanding.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q6-3-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The gray-stone detail is one narrow example.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q6-4",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-272f9c91a3f052dd",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "145f1c39e11d50192bdc150dc69ba04ab61de35f5c18defd9e8dff6a8f38f6eb",
+        "conclusionsSha256": "9040d141c23d90ddcdbee2ef80225f507f32e0a47737330ff37490bf7f70d166",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0025.second-pass.json",
+        "receiptSha256": "4549cf3555da23a9471e5537a46ea66a181261945d8e592c4142ebdb1ac09f4c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two details that belong in a concise summary.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q6-4-choice-1",
+            "g3-cg-ss-q6-4-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q6-4-choice-1",
+            "g3-cg-ss-q6-4-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q6-4-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This states the runoff problem created by hard surfaces.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-1",
+                "g3-cg-summary-passage-6-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q6-4-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The bee visit does not explain water management.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q6-4-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This defines the rain garden and its central function.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q6-4-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Gray stone appearance is a narrow site detail without the stone function.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q6-5",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-912be1ee1481684a",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "145f1c39e11d50192bdc150dc69ba04ab61de35f5c18defd9e8dff6a8f38f6eb",
+        "conclusionsSha256": "9040d141c23d90ddcdbee2ef80225f507f32e0a47737330ff37490bf7f70d166",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0025.second-pass.json",
+        "receiptSha256": "4549cf3555da23a9471e5537a46ea66a181261945d8e592c4142ebdb1ac09f4c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the source detail that can be omitted because it is minor.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q6-5-segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q6-5-segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q6-5-segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "This definition and function are central to the passage.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q6-5-segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Stone color can be omitted without changing how the system works.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-5",
+                "g3-cg-summary-passage-6-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q6-5-segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "Runoff is the central water movement the garden manages.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-1",
+                "g3-cg-summary-passage-6-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q6-6",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-d3760946dd36fe2a",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "145f1c39e11d50192bdc150dc69ba04ab61de35f5c18defd9e8dff6a8f38f6eb",
+        "conclusionsSha256": "9040d141c23d90ddcdbee2ef80225f507f32e0a47737330ff37490bf7f70d166",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0123.pass-a.json",
+        "receiptSha256": "9040d141c23d90ddcdbee2ef80225f507f32e0a47737330ff37490bf7f70d166",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-cg-ss-q6-6-row-1",
+          "prompt": "Instead, the water flows downhill as runoff.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q6-6-important"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q6-6-important"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q6-6-minor",
+              "verdict": "INCORRECT",
+              "rationale": "Runoff flowing from hard surfaces establishes the main problem.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-1",
+                "g3-cg-summary-passage-6-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q6-6-important",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This process detail belongs in a concise explanation of rain gardens.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ss-q6-6-row-2",
+          "prompt": "The channel at one school garden is lined with smooth gray stones.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q6-6-minor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q6-6-minor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q6-6-important",
+              "verdict": "INCORRECT",
+              "rationale": "The gray color does not explain the channel’s function.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-5",
+                "g3-cg-summary-passage-6-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q6-6-minor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This appearance detail can be omitted.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ss-q6-6-row-3",
+          "prompt": "A rain garden is a shallow planted area designed to receive some runoff and let it soak into the ground.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q6-6-important"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q6-6-important"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q6-6-important",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This defines the system and its main function.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q6-6-minor",
+              "verdict": "INCORRECT",
+              "rationale": "Omitting it would remove the passage’s central mechanism.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ss-q6-6-row-4",
+          "prompt": "A bee may visit a flower while the soil below is dry.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q6-6-minor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q6-6-minor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q6-6-minor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The bee visit is unrelated to runoff management.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q6-6-important",
+              "verdict": "INCORRECT",
+              "rationale": "It does not explain channel, basin, soil, roots, or safe placement.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-12",
+                "g3-cg-summary-passage-6-sentence-15"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q6-7",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-46e0111e3088e94a",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "145f1c39e11d50192bdc150dc69ba04ab61de35f5c18defd9e8dff6a8f38f6eb",
+        "conclusionsSha256": "9040d141c23d90ddcdbee2ef80225f507f32e0a47737330ff37490bf7f70d166",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0123.pass-a.json",
+        "receiptSha256": "9040d141c23d90ddcdbee2ef80225f507f32e0a47737330ff37490bf7f70d166",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Part A: Which is the best summary?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q6-7-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q6-7-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q6-7-a-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This lists minor details and omits the water-management process.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-5",
+                "g3-cg-summary-passage-6-sentence-12",
+                "g3-cg-summary-passage-6-sentence-18"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q6-7-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This preserves the source’s central process, connected parts, benefits, and safety condition.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-3",
+                "g3-cg-summary-passage-6-sentence-4",
+                "g3-cg-summary-passage-6-sentence-6",
+                "g3-cg-summary-passage-6-sentence-8",
+                "g3-cg-summary-passage-6-sentence-9",
+                "g3-cg-summary-passage-6-sentence-16",
+                "g3-cg-summary-passage-6-sentence-20"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q6-7-a-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states only the topic.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q6-7-a-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "Rain gardens are shallow, drain, and require soil, plants, and safe siting.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-3",
+                "g3-cg-summary-passage-6-sentence-7",
+                "g3-cg-summary-passage-6-sentence-13",
+                "g3-cg-summary-passage-6-sentence-14"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Part B: Which important source detail supports that choice?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q6-7-b-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q6-7-b-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q6-7-b-3",
+              "verdict": "INCORRECT",
+              "rationale": "An unstated prediction cannot support a source summary.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q6-7-b-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The stone appearance is a minor detail and does not itself explain slowing or soaking.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q6-7-b-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This definition directly supports the summary’s description of a shallow planted basin receiving and soaking runoff.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-6-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q7-1",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-0042c3cf24309fcb",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "145f1c39e11d50192bdc150dc69ba04ab61de35f5c18defd9e8dff6a8f38f6eb",
+        "conclusionsSha256": "9040d141c23d90ddcdbee2ef80225f507f32e0a47737330ff37490bf7f70d166",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0123.pass-a.json",
+        "receiptSha256": "9040d141c23d90ddcdbee2ef80225f507f32e0a47737330ff37490bf7f70d166",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice is the best concise and accurate summary?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q7-1-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q7-1-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q7-1-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This preserves the damaged-sign conflict, tested replacement and route checks, successful outcome, and lesson.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-6",
+                "g3-cg-summary-passage-7-sentence-7",
+                "g3-cg-summary-passage-7-sentence-12",
+                "g3-cg-summary-passage-7-sentence-13",
+                "g3-cg-summary-passage-7-sentence-14",
+                "g3-cg-summary-passage-7-sentence-16",
+                "g3-cg-summary-passage-7-sentence-17",
+                "g3-cg-summary-passage-7-sentence-18",
+                "g3-cg-summary-passage-7-sentence-21",
+                "g3-cg-summary-passage-7-sentence-24"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q7-1-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This lists minor details and omits the main problem and solution.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-5",
+                "g3-cg-summary-passage-7-sentence-11",
+                "g3-cg-summary-passage-7-sentence-20",
+                "g3-cg-summary-passage-7-sentence-22"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q7-1-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This gives only the character, task, and setting.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-1",
+                "g3-cg-summary-passage-7-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q7-1-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "Priya stores damaged signs, checks and corrects the route, and families follow the signs successfully.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-20",
+                "g3-cg-summary-passage-7-sentence-16",
+                "g3-cg-summary-passage-7-sentence-18",
+                "g3-cg-summary-passage-7-sentence-21"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q7-2",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-1e9a35f273b7199e",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "6e40caf49ee4a40a3eec199187d32dac801fb680297f2864c4febd608aad2ed6",
+        "conclusionsSha256": "f0c9d5ee4bb9efb9b30d98cc174d6ed4d0f126aad7a294f4ee5eb2259a97ccfe",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "CORRECTION_REREVIEW",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/corrections-v9-final/batch-c0005.pass-a.json",
+        "receiptSha256": "f0c9d5ee4bb9efb9b30d98cc174d6ed4d0f126aad7a294f4ee5eb2259a97ccfe",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail most directly states the source's central problem or main idea?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q7-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q7-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q7-2-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The brass bell is an incidental setting detail and does not state the central problem.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q7-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The smeared arrows directly create and state Priya's central sign problem.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q7-2-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The ladybug is incidental and does not affect the sign problem.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q7-2-choice-4",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Adding an invented event is not source information and does not state the central problem.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": true,
+      "correctionSummary": "Learner-visible content was corrected and re-reviewed in docs/content/answer-uniqueness-ledger/blind/corrections-v9-final/batch-c0005.pass-a.json.",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q7-3",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-b55697e5ae6dba99",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "145f1c39e11d50192bdc150dc69ba04ab61de35f5c18defd9e8dff6a8f38f6eb",
+        "conclusionsSha256": "9040d141c23d90ddcdbee2ef80225f507f32e0a47737330ff37490bf7f70d166",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0123.pass-a.json",
+        "receiptSha256": "9040d141c23d90ddcdbee2ef80225f507f32e0a47737330ff37490bf7f70d166",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which supported theme can help preserve the story's important meaning in a complete summary?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q7-3-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q7-3-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q7-3-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The ladybug detail is not a theme.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q7-3-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Priya and Mateo test water resistance and route information, producing dependable signs.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-13",
+                "g3-cg-summary-passage-7-sentence-14",
+                "g3-cg-summary-passage-7-sentence-16",
+                "g3-cg-summary-passage-7-sentence-17",
+                "g3-cg-summary-passage-7-sentence-18",
+                "g3-cg-summary-passage-7-sentence-19",
+                "g3-cg-summary-passage-7-sentence-24"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q7-3-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "They improve the outcome by changing and testing the plan.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-12",
+                "g3-cg-summary-passage-7-sentence-13",
+                "g3-cg-summary-passage-7-sentence-18"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q7-3-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names a topic rather than a complete transferable idea.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q7-4",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-3a2b95d64ae94eb2",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "145f1c39e11d50192bdc150dc69ba04ab61de35f5c18defd9e8dff6a8f38f6eb",
+        "conclusionsSha256": "9040d141c23d90ddcdbee2ef80225f507f32e0a47737330ff37490bf7f70d166",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0123.pass-a.json",
+        "receiptSha256": "9040d141c23d90ddcdbee2ef80225f507f32e0a47737330ff37490bf7f70d166",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two details that belong in a concise summary.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q7-4-choice-1",
+            "g3-cg-ss-q7-4-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q7-4-choice-3",
+            "g3-cg-ss-q7-4-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q7-4-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The brass bell does not affect the events.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q7-4-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Mateo’s warning prevents an ineffective repaint and leads to a stronger replacement plan.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-9",
+                "g3-cg-summary-passage-7-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q7-4-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The blurred arrows create the central conflict.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-6",
+                "g3-cg-summary-passage-7-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q7-4-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The ladybug is incidental.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q7-5",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-59eab9f2dca22b76",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "145f1c39e11d50192bdc150dc69ba04ab61de35f5c18defd9e8dff6a8f38f6eb",
+        "conclusionsSha256": "9040d141c23d90ddcdbee2ef80225f507f32e0a47737330ff37490bf7f70d166",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0123.pass-a.json",
+        "receiptSha256": "9040d141c23d90ddcdbee2ef80225f507f32e0a47737330ff37490bf7f70d166",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the source detail that can be omitted because it is minor.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q7-5-segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q7-5-segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q7-5-segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "The blurred arrows establish the central problem.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-6",
+                "g3-cg-summary-passage-7-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q7-5-segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "Mateo’s warning changes the attempted solution.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-9",
+                "g3-cg-summary-passage-7-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q7-5-segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The ladybug can be omitted without changing the plot.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q7-6",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-f555ceb103aaf38d",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "145f1c39e11d50192bdc150dc69ba04ab61de35f5c18defd9e8dff6a8f38f6eb",
+        "conclusionsSha256": "9040d141c23d90ddcdbee2ef80225f507f32e0a47737330ff37490bf7f70d166",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0123.pass-a.json",
+        "receiptSha256": "9040d141c23d90ddcdbee2ef80225f507f32e0a47737330ff37490bf7f70d166",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-cg-ss-q7-6-row-1",
+          "prompt": "Drops struck the cardboard before she could move every sign, and blue paint blurred across two arrows.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q7-6-important"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q7-6-important"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q7-6-minor",
+              "verdict": "INCORRECT",
+              "rationale": "The damaged arrows create the central conflict.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-6",
+                "g3-cg-summary-passage-7-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q7-6-important",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This problem belongs in a concise summary.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ss-q7-6-row-2",
+          "prompt": "A red ladybug rested on the bench arm for several minutes.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q7-6-minor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q7-6-minor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q7-6-minor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The ladybug is incidental.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q7-6-important",
+              "verdict": "INCORRECT",
+              "rationale": "It does not affect any choice or outcome.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ss-q7-6-row-3",
+          "prompt": "She wanted to repaint immediately, but Mateo pointed out that wet cardboard would bend and smear again.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q7-6-important"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q7-6-important"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q7-6-important",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Mateo’s warning redirects Priya from a rushed repaint to a tested replacement.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-9",
+                "g3-cg-summary-passage-7-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q7-6-minor",
+              "verdict": "INCORRECT",
+              "rationale": "This decision-driving advice belongs in the solution sequence.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-9"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ss-q7-6-row-4",
+          "prompt": "A small brass bell hung beside the shed door.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q7-6-minor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q7-6-minor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q7-6-minor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The brass bell has no effect on the signs or route.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q7-6-important",
+              "verdict": "INCORRECT",
+              "rationale": "It is an incidental shed detail.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ss-q7-7",
+      "packId": "g3-compare-castle-summary-stronghold",
+      "contentVersion": "g3-cg-summary-stronghold-r0.1.0",
+      "contentFingerprint": "qta-v1-da8de60afbf20ede",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "145f1c39e11d50192bdc150dc69ba04ab61de35f5c18defd9e8dff6a8f38f6eb",
+        "conclusionsSha256": "9040d141c23d90ddcdbee2ef80225f507f32e0a47737330ff37490bf7f70d166",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0123.pass-a.json",
+        "receiptSha256": "9040d141c23d90ddcdbee2ef80225f507f32e0a47737330ff37490bf7f70d166",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Part A: Which is the best summary?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q7-7-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q7-7-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q7-7-a-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This gives only character, task, and setting.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-1",
+                "g3-cg-summary-passage-7-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q7-7-a-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This lists minor details instead of the problem and resolution.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-5",
+                "g3-cg-summary-passage-7-sentence-11",
+                "g3-cg-summary-passage-7-sentence-20",
+                "g3-cg-summary-passage-7-sentence-22"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q7-7-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This preserves the conflict, tested material and route corrections, successful outcome, and lesson.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-7",
+                "g3-cg-summary-passage-7-sentence-12",
+                "g3-cg-summary-passage-7-sentence-13",
+                "g3-cg-summary-passage-7-sentence-16",
+                "g3-cg-summary-passage-7-sentence-18",
+                "g3-cg-summary-passage-7-sentence-21",
+                "g3-cg-summary-passage-7-sentence-24"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q7-7-a-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "Priya stores the cardboard, checks the route, and families use corrected signs.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-20",
+                "g3-cg-summary-passage-7-sentence-16",
+                "g3-cg-summary-passage-7-sentence-18",
+                "g3-cg-summary-passage-7-sentence-21"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Part B: Which important source detail supports that choice?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ss-q7-7-b-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ss-q7-7-b-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ss-q7-7-b-3",
+              "verdict": "INCORRECT",
+              "rationale": "An unstated prediction cannot support a summary.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q7-7-b-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The ladybug does not support the summary’s problem or solution.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ss-q7-7-b-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Mateo’s warning directly supports the summary’s shift from a rushed repaint to tested boards.",
+              "evidenceIds": [
+                "g3-cg-summary-passage-7-sentence-9",
+                "g3-cg-summary-passage-7-sentence-12"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

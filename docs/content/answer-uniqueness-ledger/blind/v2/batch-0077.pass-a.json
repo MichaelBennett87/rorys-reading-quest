@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0077",
+  "batchFileSha256": "f186940ff925f7ef39405d90ab9e9735cf6e9784e93240fcd910da9f904aeac8",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0900",
+      "fingerprint": "345e538bcc4887d6de663fa3ac3bc7162684b8c5154a72c812eea126e16ff46e",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A1"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "DEFENSIBLE", "Tele is the familiar useful part displayed in telescope.", ["S0025", "S0033"]],
+          ["A2", "INCORRECT", "Graph is displayed in autograph, not telescope.", ["S0031"]],
+          ["A3", "INCORRECT", "Geo is displayed in geology, not telescope.", ["S0027"]],
+          ["A4", "INCORRECT", "Photo is displayed in photocopy, not telescope.", ["S0029"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0901",
+      "fingerprint": "ec9e50d607326a5c0c6c800e4bdcf25d56f331912a8846580a64b7bfc7c7871f",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A2"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Geo and logy show meaningful parts, while the lesson distinguishes those from the pronunciation chunks requested here.", ["S0027", "S0033", "S0034"]],
+          ["A2", "DEFENSIBLE", "These chunks reconstruct geology and follow the lesson's pronunciation-focused routine.", ["S0027", "S0034"]],
+          ["A3", "INCORRECT", "A single letter plus the unsplit remainder does not follow the taught chunking routine.", ["S0027", "S0034"]],
+          ["A4", "INCORRECT", "The unsplit word is not a set of reading chunks.", ["S0027"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0902",
+      "fingerprint": "1f46080689df097354027804d3249d69be0a995628f81d8463876e09981a4da7",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A1", "A4"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "DEFENSIBLE", "To is one displayed reading chunk in photocopy.", ["S0029"]],
+          ["A2", "INCORRECT", "Telescope is a different complete word, not a chunk in photocopy.", ["S0025", "S0029"]],
+          ["A3", "INCORRECT", "Autograph is a different complete word, not a chunk in photocopy.", ["S0029", "S0031"]],
+          ["A4", "DEFENSIBLE", "Pho is another displayed reading chunk in photocopy.", ["S0029"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0903",
+      "fingerprint": "1f83adbd4f0d7aeeaf0b00199f3bc72f3b9321f5b85d82bdd91d4eaff0ae35da",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A2"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "Auto is the other useful part in autograph, not the requested graph part.", ["S0031"]],
+          ["A2", "DEFENSIBLE", "Graph is the exact requested part at the end of autograph.", ["S0031"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0904",
+      "fingerprint": "10e7cf69c3979eb68893f732a5d503c9660c915996ed5cd9d0a8492b48300070",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Photo belongs to photocopy.", ["S0029"]],
+            ["A2", "INCORRECT", "Graph belongs to autograph.", ["S0031"]],
+            ["A3", "INCORRECT", "Geo belongs to geology.", ["S0027"]],
+            ["A4", "DEFENSIBLE", "Tele is the primary useful part displayed in telescope.", ["S0025"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Photo belongs to photocopy.", ["S0029"]],
+            ["A2", "INCORRECT", "Tele belongs to telescope.", ["S0025"]],
+            ["A3", "DEFENSIBLE", "Geo is the primary useful part displayed in geology.", ["S0027"]],
+            ["A4", "INCORRECT", "Graph belongs to autograph.", ["S0031"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Graph belongs to autograph.", ["S0031"]],
+            ["A2", "INCORRECT", "Tele belongs to telescope.", ["S0025"]],
+            ["A3", "INCORRECT", "Geo belongs to geology.", ["S0027"]],
+            ["A4", "DEFENSIBLE", "Photo is the primary useful part displayed in photocopy.", ["S0029"]]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Photo belongs to photocopy.", ["S0029"]],
+            ["A2", "INCORRECT", "Geo belongs to geology.", ["S0027"]],
+            ["A3", "INCORRECT", "Tele belongs to telescope.", ["S0025"]],
+            ["A4", "DEFENSIBLE", "Graph is the primary useful part displayed in autograph.", ["S0031"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0905",
+      "fingerprint": "7ebf2c76909b69d3a2e55035596c4a5c652aeff34de5201ef7ad0b2e424aac08",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A1"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "DEFENSIBLE", "Port is the useful root displayed in transport.", ["S0037", "S0045"]],
+          ["A2", "INCORRECT", "Tract is displayed in tractor, not transport.", ["S0039"]],
+          ["A3", "INCORRECT", "Rupt is displayed in erupt, not transport.", ["S0041"]],
+          ["A4", "INCORRECT", "Sub- is displayed in submarine, not transport.", ["S0043"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0906",
+      "fingerprint": "2d27aa17773817a4433b56ec85d2fadb4e9c0dab815c71f18b067f527ba625cc",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A2"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "The complete unsplit word is not a set of reading chunks.", ["S0039"]],
+          ["A2", "DEFENSIBLE", "Trac and tor are the pronunciation chunks explicitly modeled for tractor.", ["S0039"]],
+          ["A3", "INCORRECT", "A single letter plus the unsplit remainder does not follow the taught chunking routine.", ["S0039"]],
+          ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Tract and -or show word construction, while the lesson explicitly distinguishes those boundaries from the requested pronunciation chunks.", ["S0039", "S0045"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0907",
+      "fingerprint": "febb6cd4ba6f65a7acad630722a7c5c9bd931a25350993b46d131d6ab991f7e7",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A1", "A2"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "DEFENSIBLE", "Rupt is one displayed reading chunk in erupt.", ["S0041"]],
+          ["A2", "DEFENSIBLE", "E is the other displayed reading chunk in erupt.", ["S0041"]],
+          ["A3", "INCORRECT", "Submarine is a different complete word, not a chunk in erupt.", ["S0041", "S0043"]],
+          ["A4", "INCORRECT", "Transport is a different complete word, not a chunk in erupt.", ["S0037", "S0041"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0908",
+      "fingerprint": "a40bcd650b833ff329c2ed8458b6b93ac822c67d5d18aaba3e2fe2e040d89c3c",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A1"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "DEFENSIBLE", "Sub is the exact requested prefix at the start of submarine.", ["S0043", "S0045"]],
+          ["A2", "INCORRECT", "Marine is the remainder after the requested prefix.", ["S0043"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0909",
+      "fingerprint": "9262750e2ffaa992baab45f5ba6f2c248d00e22b2bf25ce680ae6675ea59139a",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Tract belongs to tractor.", ["S0039"]],
+            ["A2", "INCORRECT", "Rupt belongs to erupt.", ["S0041"]],
+            ["A3", "DEFENSIBLE", "Port is the primary useful part displayed in transport.", ["S0037"]],
+            ["A4", "INCORRECT", "Sub- belongs to submarine.", ["S0043"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Tract is the primary useful part displayed in tractor.", ["S0039"]],
+            ["A2", "INCORRECT", "Sub- belongs to submarine.", ["S0043"]],
+            ["A3", "INCORRECT", "Port belongs to transport.", ["S0037"]],
+            ["A4", "INCORRECT", "Rupt belongs to erupt.", ["S0041"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Sub- belongs to submarine.", ["S0043"]],
+            ["A2", "DEFENSIBLE", "Rupt is the primary useful part displayed in erupt.", ["S0041"]],
+            ["A3", "INCORRECT", "Tract belongs to tractor.", ["S0039"]],
+            ["A4", "INCORRECT", "Port belongs to transport.", ["S0037"]]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Tract belongs to tractor.", ["S0039"]],
+            ["A2", "INCORRECT", "Rupt belongs to erupt.", ["S0041"]],
+            ["A3", "INCORRECT", "Port belongs to transport.", ["S0037"]],
+            ["A4", "DEFENSIBLE", "Sub- is the primary useful part displayed in submarine.", ["S0043"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

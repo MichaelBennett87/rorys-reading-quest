@@ -1,0 +1,639 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0041",
+  "batchFileSha256": "e96a88394b5099effc9113f4e0784e5a46632afebd39de934db8fde610b935ae",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1164",
+      "fingerprint": "e0b5bb2cb7b52ebca745ca1ed477307141f97d6ebe03e621f0a1c1e514ebbc0e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Flexible line lengths and breaks occur without a fixed end-rhyme pattern.",
+              [
+                "S0009",
+                "S0003",
+                "S0011",
+                "S0012",
+                "S0006",
+                "S0013",
+                "S0008"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The poem does not use five playful AABBA lines.",
+              []
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "Its end words do not form an intentional fixed rhyme pattern.",
+              []
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "It has seven lines rather than the taught short three-line haiku form.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1169",
+      "fingerprint": "c36af368b8112871e7513f360baad120a404b7cf5b2769564fe6559f39928288",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The poem has a deliberate fixed AABB rhyme, so the taught exact form is rhymed verse.",
+              [
+                "S0016",
+                "S0018",
+                "S0020",
+                "S0022"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "It has four lines, not the taught five-line AABBA limerick form.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Light/right and hum/drum form two intentional neighboring rhyme pairs.",
+              [
+                "S0016",
+                "S0018",
+                "S0020",
+                "S0022"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "It is not a three-line classroom haiku.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1174",
+      "fingerprint": "7550fd9032997eea550086638f871007b459da25dac3e60720042aa7752d5efe",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The three-line nature observation follows the taught classroom haiku clues.",
+              [
+                "S0026",
+                "S0028",
+                "S0031"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The line endings do not form a fixed rhyme organization.",
+              []
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "It lacks five playful AABBA lines.",
+              []
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Haiku is the more exact taught form for these combined clues.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1175",
+      "fingerprint": "fd2aad547de6b2a994385ea26b03d9d2df1041aaae774124299b08a76d0bb191",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "The poem has three lines and no AABBA organization.",
+              []
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "It does not have four lines with neighboring rhyme pairs.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "It states the poem's audited three-line classroom 5-7-5 structure.",
+              [
+                "S0026",
+                "S0028",
+                "S0031"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Lack of rhyme alone neither proves free verse nor outweighs the haiku clues.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1176",
+      "fingerprint": "64bdf765348109290d27454ab5f6c63fee6ceb856b36ba4044daeb8333b46bf3",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "The poem has three lines and no AABBA rhyme.",
+              []
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "It does not have four lines or two neighboring rhyme pairs.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The poem captures a quiet snow-and-bird nature observation.",
+              [
+                "S0026",
+                "S0028",
+                "S0031"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Its three lines follow the taught classroom 5-7-5 pattern.",
+              [
+                "S0026",
+                "S0028",
+                "S0031"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1177",
+      "fingerprint": "8d0e75be718c240bcacc7a7a5f664476c0b1742db23a57e1326f879923c8cb00",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Morning holds its breath has five syllables in ordinary pronunciation.",
+              [
+                "S0031"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "One bright red bird settles here counts as seven syllables.",
+              [
+                "S0028"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Soft snow covers grass has five syllables.",
+              [
+                "S0026"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1178",
+      "fingerprint": "ed11a9d9b2597f1e8f9779f07742c5050be53059d2847b1805b4fd37dc39361a",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a structural clue, not a poem-form name.",
+              [
+                "S0026",
+                "S0028",
+                "S0031"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Free verse is less exact than the taught haiku classification.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Haiku is the taught form matching the poem's combined clues.",
+              [
+                "S0026",
+                "S0028",
+                "S0031"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Haiku names the form rather than stating its structural clue.",
+              []
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Free verse is a different form name, not a clue.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "States the exact three-line classroom 5-7-5 structural evidence.",
+              [
+                "S0026",
+                "S0028",
+                "S0031"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1179",
+      "fingerprint": "79c88676defc5c9c0aafc8df169326d8b0c5189db4d85a90ff0a8900777eee78",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Five playful lines use the taught AABBA rhyme relationship.",
+              [
+                "S0035",
+                "S0037",
+                "S0042",
+                "S0043",
+                "S0040"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The poem has a fixed rhyme and limerick structure.",
+              []
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "It is rhymed, but limerick is the more exact taught form requested.",
+              [
+                "S0035",
+                "S0037",
+                "S0042",
+                "S0043",
+                "S0040"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "It is not the taught three-line haiku form.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1184",
+      "fingerprint": "13e4a6d5ec275f42acdff01ac3a9fab6a8cae40eb2a90c580651227508ccfb0e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "The poem does not organize its line endings into a fixed rhyme pattern.",
+              []
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "It lacks five playful AABBA lines.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Flexible line lengths and intentional breaks shape the seven-line poem without fixed rhyme.",
+              [
+                "S0053",
+                "S0046",
+                "S0048",
+                "S0055",
+                "S0050",
+                "S0056",
+                "S0052"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "It is not the taught three-line haiku form.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1190",
+      "fingerprint": "89756b9efead05ca2dd27f2f670f7d01041b148c12a276a998fe9c1c06fe5daa",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The poem uses flexible lines without a required fixed rhyme pattern.",
+              [
+                "S0053",
+                "S0046",
+                "S0048",
+                "S0055",
+                "S0050",
+                "S0056",
+                "S0052"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "No intentional fixed end-rhyme organization appears.",
+              []
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The poem is not a three-line classroom haiku.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Accurately states the visible structural evidence supporting free verse.",
+              [
+                "S0053",
+                "S0046",
+                "S0048",
+                "S0055",
+                "S0050",
+                "S0056",
+                "S0052"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The poem has seven lines, not a three-line 5-7-5 pattern.",
+              []
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The poem has seven lines and no AABBA pattern.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1191",
+      "fingerprint": "6ed651c621660322e93f281b83be38ea5e7cf60cd0511cd8347a854883e7e952",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "It has four lines rather than the taught three-line haiku form.",
+              []
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The fixed alternating end rhymes make rhymed verse the exact taught form.",
+              [
+                "S0059",
+                "S0066",
+                "S0062",
+                "S0064"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Sun/done and wall/tall create an intentional ABAB rhyme.",
+              [
+                "S0059",
+                "S0066",
+                "S0062",
+                "S0064"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "It lacks five playful AABBA lines.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1193",
+      "fingerprint": "98498d38589123e73159ee035fcd447b0df69944cfff40335fc244acbbf1b227",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "Five playful AABBA lines do not match the taught haiku form.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The prompt supplies the defining taught combination of five playful AABBA lines.",
+              []
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Rhymed verse is broader; limerick is the most exact taught name requested.",
+              []
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The supplied example has a fixed rhyme organization.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

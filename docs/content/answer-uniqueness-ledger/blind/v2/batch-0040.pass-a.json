@@ -1,0 +1,1307 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0040",
+  "batchFileSha256": "bcd3833735e77ec6f25317109c56cf2a9411689aaaa843fea75d35ca19f2154d",
+  "reviewerThreadId": "01a07bc1-57ca-7230-a515-d322b50c9d2e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0466",
+      "fingerprint": "bd324a2e16e3d1f12fd7138a15abb6b3086af7959df3ca0926570203dda9e453",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The poem does not use four consecutive same-sound pairs; its rhymes alternate within each four-line group.",
+              [
+                "S0056",
+                "S0058",
+                "S0064",
+                "S0065",
+                "S0066",
+                "S0060",
+                "S0068",
+                "S0062"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "ABCB describes four lines and does not account for the poem’s eight-line alternating pairs.",
+              [
+                "S0056",
+                "S0058",
+                "S0064",
+                "S0065",
+                "S0066",
+                "S0060",
+                "S0068",
+                "S0062"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "AABB describes four lines with consecutive pairs, unlike this eight-line poem.",
+              [
+                "S0056",
+                "S0058",
+                "S0064",
+                "S0065"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Row/blow form A, pace/place B, high/sky C, and light/night D, giving ABABCDCD.",
+              [
+                "S0056",
+                "S0058",
+                "S0064",
+                "S0065",
+                "S0066",
+                "S0060",
+                "S0068",
+                "S0062"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0467",
+      "fingerprint": "0d1700bc31e4b218565c9b930f376937109e6cd0af74c10692d2539057164fcc",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Line 4 ends with place, which rhymes with pace rather than row.",
+              [
+                "S0056",
+                "S0065"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Line 2 ends with pace, which does not rhyme with row.",
+              [
+                "S0056",
+                "S0058"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Line 5 ends with high, which does not rhyme with row.",
+              [
+                "S0056",
+                "S0066"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Line 3 ends with blow, which rhymes with line 1 end word row.",
+              [
+                "S0056",
+                "S0064"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0468",
+      "fingerprint": "5428fa11b09e2230f51b69f5005ee3fa8442d6e6514d933315a4d4a612868660",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Line 4 ends with place, which does not rhyme with line 6 end word light.",
+              [
+                "S0060",
+                "S0065"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Line 8 ends with night, which rhymes with line 6 end word light.",
+              [
+                "S0060",
+                "S0062"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Line 1 ends with row, which does not rhyme with light.",
+              [
+                "S0056",
+                "S0060"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Line 7 ends with sky, which does not rhyme with light.",
+              [
+                "S0060",
+                "S0068"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0469",
+      "fingerprint": "a550b8a3d7c27b43419006592ddd3b6b493fe634da026db312ba56c1837e91a4",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Row does not rhyme with pace.",
+              [
+                "S0056"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Place rhymes with pace.",
+              [
+                "S0065"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This line ends with the reference word pace.",
+              [
+                "S0058"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Sky does not rhyme with pace.",
+              [
+                "S0068"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0470",
+      "fingerprint": "100c42e999f85499a568b8757cdb742ee309bee7e5fec265242c672dad053b51",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Light does not rhyme with line 5 end word high.",
+              [
+                "S0066",
+                "S0060"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the reference line itself rather than the other line sharing its rhyme.",
+              [
+                "S0066"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Line 7 ends with sky, which rhymes with line 5 end word high.",
+              [
+                "S0066",
+                "S0068"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0471",
+      "fingerprint": "8a4bd89329a2160ac0d9c168107d6b12ed9d4be91ed6254705c7eeda41ef1f66",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "B is the pace/place sound, not line 1 end word row.",
+              [
+                "S0056",
+                "S0058",
+                "S0065"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Row starts the first rhyme and receives A.",
+              [
+                "S0056"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "D belongs to light/night, not row.",
+              [
+                "S0056",
+                "S0060",
+                "S0062"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "C belongs to high/sky, not row.",
+              [
+                "S0056",
+                "S0066",
+                "S0068"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "C belongs to high/sky, not pace.",
+              [
+                "S0058",
+                "S0066",
+                "S0068"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "D belongs to light/night, not pace.",
+              [
+                "S0058",
+                "S0060",
+                "S0062"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Pace introduces the second rhyme and receives B.",
+              [
+                "S0058"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "A belongs to row/blow, not pace.",
+              [
+                "S0056",
+                "S0058",
+                "S0064"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "D belongs to light/night, not blow.",
+              [
+                "S0064",
+                "S0060",
+                "S0062"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Blow rhymes with row, so line 3 repeats A.",
+              [
+                "S0056",
+                "S0064"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "B belongs to pace/place, not blow.",
+              [
+                "S0058",
+                "S0064",
+                "S0065"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "C belongs to high/sky, not blow.",
+              [
+                "S0064",
+                "S0066",
+                "S0068"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "A belongs to row/blow, not place.",
+              [
+                "S0056",
+                "S0064",
+                "S0065"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Place rhymes with pace, so line 4 repeats B.",
+              [
+                "S0058",
+                "S0065"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "C belongs to high/sky, not place.",
+              [
+                "S0065",
+                "S0066",
+                "S0068"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "D belongs to light/night, not place.",
+              [
+                "S0065",
+                "S0060",
+                "S0062"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_5",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "B belongs to pace/place, not high.",
+              [
+                "S0058",
+                "S0065",
+                "S0066"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "High introduces the third rhyme and receives C.",
+              [
+                "S0066"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "D belongs to light/night, not high.",
+              [
+                "S0066",
+                "S0060",
+                "S0062"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "A belongs to row/blow, not high.",
+              [
+                "S0056",
+                "S0064",
+                "S0066"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_6",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Light introduces the fourth rhyme and receives D.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "B belongs to pace/place, not light.",
+              [
+                "S0058",
+                "S0065",
+                "S0060"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "C belongs to high/sky, not light.",
+              [
+                "S0066",
+                "S0068",
+                "S0060"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "A belongs to row/blow, not light.",
+              [
+                "S0056",
+                "S0064",
+                "S0060"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_7",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Sky rhymes with high, so line 7 repeats C.",
+              [
+                "S0066",
+                "S0068"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "D belongs to light/night, not sky.",
+              [
+                "S0060",
+                "S0062",
+                "S0068"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "B belongs to pace/place, not sky.",
+              [
+                "S0058",
+                "S0065",
+                "S0068"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "A belongs to row/blow, not sky.",
+              [
+                "S0056",
+                "S0064",
+                "S0068"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_8",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Night rhymes with light, so line 8 repeats D.",
+              [
+                "S0060",
+                "S0062"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "B belongs to pace/place, not night.",
+              [
+                "S0058",
+                "S0065",
+                "S0062"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "A belongs to row/blow, not night.",
+              [
+                "S0056",
+                "S0064",
+                "S0062"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "C belongs to high/sky, not night.",
+              [
+                "S0066",
+                "S0068",
+                "S0062"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0472",
+      "fingerprint": "d6f7a7a8efecf3678d5fca56cecfbba651c9705e13746fd2c073194b84270d79",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "A six-letter scheme cannot account for all eight lines.",
+              [
+                "S0056",
+                "S0058",
+                "S0064",
+                "S0065",
+                "S0066",
+                "S0060",
+                "S0068",
+                "S0062"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "AABB describes four consecutive pairings, unlike the eight-line alternating pattern.",
+              [
+                "S0056",
+                "S0058",
+                "S0064",
+                "S0065"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "ABCB describes only four lines and does not match the first stanza.",
+              [
+                "S0056",
+                "S0058",
+                "S0064",
+                "S0065"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Row/blow, pace/place, high/sky, and light/night form ABABCDCD.",
+              [
+                "S0056",
+                "S0058",
+                "S0064",
+                "S0065",
+                "S0066",
+                "S0060",
+                "S0068",
+                "S0062"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "Both light/night and high/sky are equally direct end-word pairs supporting the repeated C and D letters in ABABCDCD, but Part B permits only one answer.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Sky and night do not rhyme.",
+              [
+                "S0068",
+                "S0062"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Row and slow rhyme as words, but slow is inside line 2 rather than its end word, so the pair does not establish the rhyme scheme.",
+              [
+                "S0056",
+                "S0058"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Light and night are end words that rhyme, directly supporting the repeated D in ABABCDCD.",
+              [
+                "S0060",
+                "S0062"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "High and sky are end words that rhyme, directly supporting the repeated C in ABABCDCD.",
+              [
+                "S0066",
+                "S0068"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0473",
+      "fingerprint": "51ffb39c9c0f6bbb8d613a3c0f4b93306a875c22b09451f3707a6f323f93ec58",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Line 1 ends with show and line 3 with door, so they do not form the alternating A pair required by ABAB.",
+              [
+                "S0071",
+                "S0075"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The end sounds are show (A), page (B), door (C), and page (B), producing ABCB.",
+              [
+                "S0071",
+                "S0073",
+                "S0075",
+                "S0077"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "A six-letter scheme cannot describe this four-line poem.",
+              [
+                "S0071",
+                "S0073",
+                "S0075",
+                "S0077"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Show and page do not rhyme, and door and page do not rhyme, so the poem is not AABB.",
+              [
+                "S0071",
+                "S0073",
+                "S0075",
+                "S0077"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0474",
+      "fingerprint": "d04707a15de8c81a3f52b8701a1fd7eea81941d2a42b2e106c5c6b63594a187c",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Line 3 ends with door, the third distinct end sound, so it introduces C.",
+              [
+                "S0075"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Line 1 begins the scheme with A.",
+              [
+                "S0071"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Line 4 repeats the page rhyme from line 2 and therefore receives B.",
+              [
+                "S0073",
+                "S0077"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Line 2 introduces the second rhyme and receives B.",
+              [
+                "S0073"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0475",
+      "fingerprint": "8a0904db7708ee1e5db49159804532bff70bcc085cc92850d55262c53f40080c",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Line 4 also ends with page, so it shares line 2 rhyme sound.",
+              [
+                "S0073",
+                "S0077"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Line 3 ends with door, which does not rhyme with page.",
+              [
+                "S0073",
+                "S0075"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Line 1 ends with show, which does not rhyme with page.",
+              [
+                "S0071",
+                "S0073"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Line 2 is the reference line itself, not the other line that shares its rhyme sound.",
+              [
+                "S0073"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0476",
+      "fingerprint": "cfd43557b24c37716a9400c6e6a2fc09a667f4a78f12de04011c5b012c8352cb",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Line 3 ends with door and receives C.",
+              [
+                "S0075"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Line 4 ends with page and repeats B.",
+              [
+                "S0077"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Line 1 ends with show and receives A.",
+              [
+                "S0071"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Line 2 ends with page and introduces B.",
+              [
+                "S0073"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0477",
+      "fingerprint": "f9ffd033b992d0d21be43179447be556c27ec908f548e710b75396657f8e0b8c",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Line 4 ends with page, the same rhyme sound as line 2.",
+              [
+                "S0073",
+                "S0077"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Door does not rhyme with page.",
+              [
+                "S0073",
+                "S0075"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Show does not rhyme with page.",
+              [
+                "S0071",
+                "S0073"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0478",
+      "fingerprint": "4c81e0bb90f1d1e4c427b535f9527d0efa881033ede177736c55f7353c9f4a23",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "C belongs to the distinct door sound on line 3.",
+              [
+                "S0071",
+                "S0075"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "B belongs to page on lines 2 and 4.",
+              [
+                "S0071",
+                "S0073",
+                "S0077"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Show begins the first rhyme and receives A.",
+              [
+                "S0071"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Page introduces the second rhyme and receives B.",
+              [
+                "S0073"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "A belongs to line 1 end word show.",
+              [
+                "S0071",
+                "S0073"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "C belongs to line 3 end word door.",
+              [
+                "S0073",
+                "S0075"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "B belongs to page on lines 2 and 4, not door.",
+              [
+                "S0073",
+                "S0075",
+                "S0077"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Door introduces the third distinct rhyme and receives C.",
+              [
+                "S0075"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "A belongs to line 1 end word show.",
+              [
+                "S0071",
+                "S0075"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Line 4 ends with page and does not repeat the A sound show.",
+              [
+                "S0071",
+                "S0077"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Line 4 repeats page from line 2 and therefore receives B.",
+              [
+                "S0073",
+                "S0077"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Page does not rhyme with the C sound door.",
+              [
+                "S0075",
+                "S0077"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0479",
+      "fingerprint": "555a4936c9508e29600cbdddc3ac2de99b703cd76ff8c6c06a21283a16189b13",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Show and door do not rhyme, so the poem does not alternate ABAB.",
+              [
+                "S0071",
+                "S0075"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The end sounds are show (A), page (B), door (C), and page (B), giving ABCB.",
+              [
+                "S0071",
+                "S0073",
+                "S0075",
+                "S0077"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The first two and last two lines do not form consecutive rhyme pairs.",
+              [
+                "S0071",
+                "S0073",
+                "S0075",
+                "S0077"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "A six-letter scheme cannot describe this four-line poem.",
+              [
+                "S0071",
+                "S0073",
+                "S0075",
+                "S0077"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Page is the end word on both lines 2 and 4, directly proving that those lines share B in ABCB.",
+              [
+                "S0073",
+                "S0077"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Stage is inside line 1 rather than its end word, and stage does not rhyme with door.",
+              [
+                "S0071",
+                "S0075"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Page and door do not rhyme.",
+              [
+                "S0073",
+                "S0075"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Stage and page rhyme as isolated words, but stage is not the end word of line 1 and therefore does not support the poem rhyme scheme.",
+              [
+                "S0071",
+                "S0073"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

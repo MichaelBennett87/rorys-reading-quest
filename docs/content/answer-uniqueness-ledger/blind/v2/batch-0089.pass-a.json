@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0089",
+  "batchFileSha256": "a12c4af4db6472efeed5f51b0019da7b650b8cae94d13d7ce73a6c6c61af2597",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1041",
+      "fingerprint": "5a8edf8f50570dbe0249f7348003d06e7d6e2ea71adbbd6871a03dae630aefd2",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "At the beginning Mina has a useful idea but doubts herself and keeps it private, establishing the behavior that later changes.", ["S0010", "S0005"]],
+            ["A2", "INCORRECT", "Confidently labeling the next turn happens at the end, not the beginning.", ["S0009"]],
+            ["A3", "UNSUPPORTED", "The passage does not say Mina likes walking beside creeks.", ["S0003"]],
+            ["A4", "INCORRECT", "The damaged map and Ana's question occur in the middle and help trigger change rather than establish Mina at the beginning.", ["S0011", "S0012"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1042",
+      "fingerprint": "77d255922f64bd14a78cefe86831a511909094f5df7971fc17834ecbba584ffa",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "This statement compares Mina's early self-doubt with her later confident sharing and links the change to her clue helping the group.", ["S0010", "S0013", "S0009"]],
+            ["A2", "UNSUPPORTED", "The passage does not establish a preference for creek walks and the statement traces no change.", ["S0003"]],
+            ["A3", "INCORRECT", "This names middle plot events but does not explain Mina's differing responses across stages.", ["S0011", "S0012"]],
+            ["A4", "INCORRECT", "Careful is only a trait and does not explain development across the plot.", ["S0003"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1043",
+      "fingerprint": "489331dcc77764c30af9a5df9495745c83ddcf4853bcfe2ffd1b2f8a02196092",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2", "A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The damaged arrow and Ana's question are middle events, not a beginning or ending behavior from Mina.", ["S0011", "S0012"]],
+            ["A2", "DEFENSIBLE", "At the end Mina confidently labels the next turn aloud.", ["S0009"]],
+            ["A3", "UNSUPPORTED", "The passage never states that Mina likes creek walks.", ["S0003"]],
+            ["A4", "DEFENSIBLE", "At the beginning Mina has a useful idea but keeps it to herself.", ["S0010", "S0005"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1044",
+      "fingerprint": "dc88cbae02b088bb38cfcdfd73aabbbf54cb912158e500775830ac82bd75aca9",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This sentence shows the successful ending after Mina has already changed.", ["S0009"]],
+            ["A2", "DEFENSIBLE", "Ana's question is the middle catalyst immediately before Mina opens her map and begins sharing the idea she had withheld.", ["S0012", "S0013"]],
+            ["A3", "INCORRECT", "Drawing the map establishes the opening situation before the challenge and change.", ["S0003"]],
+            ["A4", "INCORRECT", "Keeping her useful idea private establishes Mina's beginning behavior rather than the turning point.", ["S0010"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1045",
+      "fingerprint": "7031c682726fd397a23cdaf1184622b698546c3ea924269bef71e7c3c5afc176",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "UNSUPPORTED", "The passage does not state this preference.", ["S0003"]],
+            ["A2", "INCORRECT", "Confidently labeling a turn is Mina's ending behavior.", ["S0009"]],
+            ["A3", "INCORRECT", "The missing arrow and Ana's question occur in the middle.", ["S0011", "S0012"]],
+            ["A4", "DEFENSIBLE", "Mina begins with a useful idea she keeps to herself.", ["S0010", "S0005"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Confidently labeling a turn occurs at the end.", ["S0009"]],
+            ["A2", "UNSUPPORTED", "The passage does not state this preference.", ["S0003"]],
+            ["A3", "INCORRECT", "Keeping the idea private is the beginning state.", ["S0010"]],
+            ["A4", "DEFENSIBLE", "The missing arrow creates the middle problem and Ana's question prompts Mina to act differently.", ["S0011", "S0012"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The missing arrow and question are middle events.", ["S0011", "S0012"]],
+            ["A2", "UNSUPPORTED", "The passage does not state this preference.", ["S0003"]],
+            ["A3", "INCORRECT", "Keeping the idea private is the beginning state.", ["S0010"]],
+            ["A4", "DEFENSIBLE", "Mina confidently labels the next turn aloud at the end.", ["S0009"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1046",
+      "fingerprint": "8b1e3134276fbeea58e565f3c460486c6f3a992753e04eda39a1e7760f7ebca4",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Theo's desire to finish first causes him to rush and skip checking, establishing the behavior that changes.", ["S0018", "S0023"]],
+            ["A2", "INCORRECT", "Checking every knot and asking for a test happen at the end.", ["S0026"]],
+            ["A3", "UNSUPPORTED", "The passage does not compare paper and wooden signs or state this preference.", ["S0016"]],
+            ["A4", "INCORRECT", "Noticing the consequence occurs in the middle after the frame fails.", ["S0020"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1047",
+      "fingerprint": "30fab4358925ccf2ebc178d630e3f44002ccbcfc8e69c2e4468bcad8b4bfe42b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "This compares Theo's early rushing with his later responsibility and careful checking, linked by the bent frame.", ["S0023", "S0024", "S0022", "S0026"]],
+            ["A2", "INCORRECT", "This is one middle realization and does not trace Theo's responses across stages.", ["S0020"]],
+            ["A3", "UNSUPPORTED", "Creative is only an unsupported trait and does not explain development.", ["S0016"]],
+            ["A4", "UNSUPPORTED", "The passage does not state a preference between kinds of signs.", ["S0016"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1048",
+      "fingerprint": "146ec1e8c34f5b2be19e9214dcb50951240bf4b03e0f856f6f00437200e2989c",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2", "A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "UNSUPPORTED", "The passage does not state this preference.", ["S0016"]],
+            ["A2", "DEFENSIBLE", "At the beginning Theo rushes because he wants to finish first.", ["S0023"]],
+            ["A3", "INCORRECT", "This realization occurs in the middle, not at the beginning or end.", ["S0020"]],
+            ["A4", "DEFENSIBLE", "At the end Theo checks every knot and invites a partner to test the sign.", ["S0026"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1049",
+      "fingerprint": "00796ffaed4fb9c223abd676b50aa1a7a39f98c2f9c15532e563d885594d0186",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This establishes Theo's rushed beginning behavior before the consequence.", ["S0023"]],
+            ["A2", "INCORRECT", "This shows Theo's changed careful behavior at the end.", ["S0026"]],
+            ["A3", "DEFENSIBLE", "Theo's realization that his rushed choice stopped the group is the middle turning point leading him to accept responsibility.", ["S0020", "S0025"]],
+            ["A4", "INCORRECT", "Gathering materials establishes the opening situation and does not show the change.", ["S0016"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1050",
+      "fingerprint": "0fae792066973595e1442b53bff6f5416cfc47fab0986ddc7553db537d970e86",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Theo notices the consequence in the middle.", ["S0020"]],
+            ["A2", "INCORRECT", "Theo checks and asks for testing at the end.", ["S0026"]],
+            ["A3", "UNSUPPORTED", "The passage does not state this preference.", ["S0016"]],
+            ["A4", "DEFENSIBLE", "Theo begins by rushing because he wants to finish first.", ["S0023"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Rushing to finish first establishes the beginning.", ["S0023"]],
+            ["A2", "INCORRECT", "Careful checking and partner testing occur at the end.", ["S0026"]],
+            ["A3", "UNSUPPORTED", "The passage does not state this preference.", ["S0016"]],
+            ["A4", "DEFENSIBLE", "Realizing that his rushed choice stopped the group is the middle turning point.", ["S0020"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The realization is the middle turning point.", ["S0020"]],
+            ["A2", "DEFENSIBLE", "At the end Theo checks every knot and asks a partner to test the sign.", ["S0026"]],
+            ["A3", "INCORRECT", "Rushing to finish first establishes the beginning.", ["S0023"]],
+            ["A4", "UNSUPPORTED", "The passage does not state this preference.", ["S0016"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0102",
+  "batchFileSha256": "38d9d56660f584f49285531a81dc39938b7ad421f7bd6bf7c9a1eccf5e620739",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId":"Q1191","fingerprint":"85469e7a65d2c923bcabe8685258b8701263438f77a6a13e7cbbb5625fac25d9","slots":[{"slotId":"response","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","CONTRADICTED","The poem has four lines rather than a three-line haiku structure.",["S0059","S0066","S0062","S0064"]],
+        ["A2","CONTRADICTED","The poem uses an intentional ABAB rhyme pattern rather than unrestricted rhyme.",["S0059","S0066","S0062","S0064"]],
+        ["A3","DEFENSIBLE","Sun/done and wall/tall create an intentional four-line ABAB rhymed verse.",["S0059","S0066","S0062","S0064"]],
+        ["A4","CONTRADICTED","The poem has four lines and ABAB rhyme, not the five-line AABBA limerick form.",["S0059","S0066","S0062","S0064"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1192","fingerprint":"89f3644b6a4602a05e07a95fdb93b6f23cf3646e21cbd77b8c99212fe1b92c92","slots":[{"slotId":"response","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","DEFENSIBLE","The alternating sun/done and wall/tall end rhymes directly establish ABAB rhymed verse.",["S0059","S0066","S0062","S0064"]],
+        ["A2","CONTRADICTED","Not every rhymed poem is a limerick, and this poem lacks five AABBA lines.",["S0059","S0066","S0062","S0064"]],
+        ["A3","CONTRADICTED","The poem has a required fixed ABAB rhyme pattern.",["S0059","S0066","S0062","S0064"]],
+        ["A4","CONTRADICTED","The poem has four lines rather than three.",["S0059","S0066","S0062","S0064"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1193","fingerprint":"642074ff6cae46f6809475f8a268789868bab63b55f8fe6a9bc2fcdd953c099a","slots":[{"slotId":"response","defensible":["A2","A3"],"ambiguity":"A five-line playful AABBA poem is both a limerick and rhymed verse; the prompt does not ask for the more exact taught form.","selectionContractValid":false,"options":[
+        ["A1","CONTRADICTED","A haiku is not the described five-line AABBA form.",[]],
+        ["A2","DEFENSIBLE","Five playful lines with AABBA rhyme specifically identify a limerick.",[]],
+        ["A3","DEFENSIBLE","A limerick intentionally rhymes throughout, so rhymed verse is also a true broader form under the literal prompt.",[]],
+        ["A4","CONTRADICTED","A fixed AABBA rhyme scheme is not the taught free-verse structure.",[]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1194","fingerprint":"5ea7a12beb83aa6c1f6758c0e36470345f5dbb81d45bedded70dbb7f4501e0c3","slots":[{"slotId":"response","defensible":["A1","A3"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","DEFENSIBLE","Sun/done and wall/tall return on alternating lines rather than neighboring pairs.",["S0059","S0066","S0062","S0064"]],
+        ["A2","CONTRADICTED","The poem has four lines rather than three.",["S0059","S0066","S0062","S0064"]],
+        ["A3","DEFENSIBLE","The named end-word pairs accurately state the ABAB rhyme evidence.",["S0059","S0066","S0062","S0064"]],
+        ["A4","CONTRADICTED","Rhyme alone does not make a poem a limerick, and this poem is not five-line AABBA.",["S0059","S0066","S0062","S0064"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1195","fingerprint":"8b3fbf18712effca9007e4ccde23932b7b8b5f6a82a583337d268d7ca8c76002","slots":[{"slotId":"response","defensible":["A2","A3"],"ambiguity":"The prompt asks for a line whose end word rhymes with sun but includes the original sun line itself; without the word other, a literal learner can select either the matching done line or the exemplar line.","selectionContractValid":false,"options":[
+        ["A1","CONTRADICTED","Wall rhymes with tall, not sun.",["S0066","S0064"]],
+        ["A2","DEFENSIBLE","Done is the intended distinct end word that rhymes with sun.",["S0059","S0062"]],
+        ["A3","DEFENSIBLE","The option is the line named by the prompt and ends in sun itself; the prompt does not explicitly exclude that exemplar line.",["S0059"]],
+        ["A4","CONTRADICTED","Tall rhymes with wall, not sun.",["S0066","S0064"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1196","fingerprint":"baecf8c49852e3611745346e6160f5c799c79409850582cf7e5e0987fb54f9a7","slots":[
+        {"slotId":"row_1","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","CONTRADICTED","The fixed ABAB rhyme conflicts with free verse.",["S0059","S0066","S0062","S0064"]],
+          ["A2","DEFENSIBLE","Rhymed verse correctly names the poem's broad taught form.",["S0059","S0066","S0062","S0064"]],
+          ["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This is the structural clue rather than a poem-form name.",["S0059","S0066","S0062","S0064"]]
+        ]},
+        {"slotId":"row_2","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","DEFENSIBLE","The named ABAB end-rhyme pairs are the strongest structural clue.",["S0059","S0066","S0062","S0064"]],
+          ["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Rhymed verse names the form rather than the requested clue.",["S0059","S0066","S0062","S0064"]],
+          ["A3","CONTRADICTED","Free verse is neither the form nor a supported structural clue here.",["S0059","S0066","S0062","S0064"]]
+        ]}
+      ],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1197","fingerprint":"9a4f15124e101e465e26faccbaf4b8455b2f488cf42598593d4354760e4c8dc3","slots":[
+        {"slotId":"part_a","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","DEFENSIBLE","The four-line intentional ABAB rhyme supports the broad rhymed-verse form.",["S0059","S0066","S0062","S0064"]],
+          ["A2","CONTRADICTED","The poem is not a three-line haiku.",["S0059","S0066","S0062","S0064"]],
+          ["A3","CONTRADICTED","The poem has a fixed rhyme pattern, unlike the taught free-verse category.",["S0059","S0066","S0062","S0064"]]
+        ]},
+        {"slotId":"part_b","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","CONTRADICTED","The poem is not a limerick, and the statement gives no valid rhyme criterion.",["S0059","S0066","S0062","S0064"]],
+          ["A2","DEFENSIBLE","The ABAB end-rhyme evidence directly supports Part A's rhymed-verse classification.",["S0059","S0066","S0062","S0064"]],
+          ["A3","CONTRADICTED","The poem has four lines rather than three.",["S0059","S0066","S0062","S0064"]]
+        ]}
+      ],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1198","fingerprint":"18f69632156587ce1cd2480bdbb65b4bacef5a0b5877d8395fcc69802be57d65","slots":[{"slotId":"response","defensible":["A1","A4"],"ambiguity":"The Crab Collection is both a limerick and rhymed verse, while the prompt does not ask for the most exact taught form.","selectionContractValid":false,"options":[
+        ["A1","DEFENSIBLE","The poem uses intentional rhyme throughout, so rhymed verse is a true broad category.",["S0069","S0071","S0076","S0077","S0074"]],
+        ["A2","CONTRADICTED","The poem has five lines rather than a three-line haiku structure.",["S0069","S0071","S0076","S0077","S0074"]],
+        ["A3","CONTRADICTED","The fixed AABBA rhyme and limerick structure conflict with the taught free-verse category.",["S0069","S0071","S0076","S0077","S0074"]],
+        ["A4","DEFENSIBLE","Five playful lines with bay/day/tray and high/sigh AABBA rhyme specifically identify a limerick.",["S0069","S0071","S0076","S0077","S0074"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1199","fingerprint":"824caf1ed3ccc2b3c3941c9d4919ce1c42c27be0adcd399b774108c09f6fde14","slots":[{"slotId":"response","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","CONTRADICTED","Varying line length does not erase the poem's fixed AABBA rhyme and limerick structure.",["S0069","S0071","S0076","S0077","S0074"]],
+        ["A2","DEFENSIBLE","The five playful lines and named AABBA rhyme pairs directly identify a limerick.",["S0069","S0071","S0076","S0077","S0074"]],
+        ["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Rhymed verse is too broad and the statement wrongly says line count and rhyme organization need not be checked.",["S0069","S0071","S0076","S0077","S0074"]],
+        ["A4","CONTRADICTED","Describing an animal does not make a poem a haiku, and this poem has five AABBA lines.",["S0069","S0071","S0076","S0077","S0074"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1200","fingerprint":"cedaa7688173c4a3bcf0775e455ca556579598ec561c2335d76fe83ebef4c756","slots":[{"slotId":"response","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","CONTRADICTED","The example has four lines rather than the required five-line AABBA limerick structure.",[]],
+        ["A2","UNSUPPORTED","No three-line nature-observation or classroom haiku pattern is described.",[]],
+        ["A3","DEFENSIBLE","Intentional rhyme throughout supports the broad rhymed-verse category when the specific limerick structure is absent.",[]],
+        ["A4","CONTRADICTED","Intentional rhyme throughout conflicts with the taught no-required-rhyme free-verse clue.",[]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1201","fingerprint":"d9f700468e4abcd873d8258ed369a3f3145ebcffa7deae153bfb2d15ee57196e","slots":[{"slotId":"response","defensible":["A1","A4"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","DEFENSIBLE","The short playful event fits the recognizable limerick structure taught with the rhyme evidence.",["S0069","S0071","S0076","S0077","S0074"]],
+        ["A2","CONTRADICTED","The poem's fixed AABBA rhyme contradicts the free-verse claim.",["S0069","S0071","S0076","S0077","S0074"]],
+        ["A3","CONTRADICTED","An animal subject alone does not identify haiku, and this poem has five AABBA lines.",["S0069","S0071","S0076","S0077","S0074"]],
+        ["A4","DEFENSIBLE","Five playful lines with the named AABBA rhyme pairs directly identify the limerick form.",["S0069","S0071","S0076","S0077","S0074"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1202","fingerprint":"45451445640b6390bfe5cd1a9cf99c12fb5894f926a6dd344a8cf63dc5eace44","slots":[{"slotId":"response","defensible":["A4"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","CONTRADICTED","High is the first B-rhyme ending, not the final return to A.",["S0076"]],
+        ["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Day is an A-rhyme ending, but it is line 2 rather than the final post-B return.",["S0071"]],
+        ["A3","CONTRADICTED","Sigh is the second B-rhyme ending, not the return to A.",["S0077"]],
+        ["A4","DEFENSIBLE","The final end word tray returns to the bay/day A rhyme after high/sigh.",["S0069","S0071","S0076","S0077","S0074"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1203","fingerprint":"adfadda415866bacab237b42fe6bac98d1eb3673da06051c13d6da0f095ef854","slots":[
+        {"slotId":"row_1","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This is the structural clue rather than a form name.",["S0069","S0071","S0076","S0077","S0074"]],
+          ["A2","CONTRADICTED","The fixed AABBA rhyme conflicts with free verse.",["S0069","S0071","S0076","S0077","S0074"]],
+          ["A3","DEFENSIBLE","Limerick is the specific taught poem form.",["S0069","S0071","S0076","S0077","S0074"]]
+        ]},
+        {"slotId":"row_2","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","CONTRADICTED","Free verse is neither an accurate form nor a structural clue here.",["S0069","S0071","S0076","S0077","S0074"]],
+          ["A2","DEFENSIBLE","The five-line AABBA rhyme statement is the strongest structural clue.",["S0069","S0071","S0076","S0077","S0074"]],
+          ["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Limerick names the form rather than the requested clue.",["S0069","S0071","S0076","S0077","S0074"]]
+        ]}
+      ],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1204","fingerprint":"b3cb814918e4ae7c659a7250029e975f66e34dcb3bcaf7bd23719bfee656e6f7","slots":[
+        {"slotId":"part_a","defensible":["A2","A3"],"ambiguity":"The poem is both a limerick and rhymed verse; best does not provide a visible rule requiring the more specific form.","selectionContractValid":false,"options":[
+          ["A1","CONTRADICTED","The fixed AABBA rhyme and limerick structure conflict with free verse.",["S0069","S0071","S0076","S0077","S0074"]],
+          ["A2","DEFENSIBLE","Five playful AABBA lines specifically identify a limerick.",["S0069","S0071","S0076","S0077","S0074"]],
+          ["A3","DEFENSIBLE","A limerick intentionally rhymes, so rhymed verse is also substantively true under the broad Part A wording.",["S0069","S0071","S0076","S0077","S0074"]]
+        ]},
+        {"slotId":"part_b","defensible":["A2"],"ambiguity":"The AABBA clue supports both defensible Part A labels, so it cannot establish a unique Part A answer until that prompt requests the most exact taught form.","selectionContractValid":false,"options":[
+          ["A1","CONTRADICTED","Line-length variation does not make this fixed-rhyme poem free verse.",["S0069","S0071","S0076","S0077","S0074"]],
+          ["A2","DEFENSIBLE","The five-line AABBA structure is the only accurate structural clue, although it currently supports both Part A categories.",["S0069","S0071","S0076","S0077","S0074"]],
+          ["A3","CONTRADICTED","An animal subject does not establish haiku, and the poem has five AABBA lines.",["S0069","S0071","S0076","S0077","S0074"]]
+        ]}
+      ],"projectionDefect":""
+    }
+  ]
+}

@@ -1,0 +1,3163 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "q-word-forge-oo-ea-checkpoint-a-1",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-d1c83c11fd057a95",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "f18b0aad54e29464ed485c03742d110c9948a47aa6418ca4e819d58231970236",
+        "conclusionsSha256": "83815c47cca99b5244c15a845052d2996725d9c05dff806d060a5ad9474738fb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0021.second-pass.json",
+        "receiptSha256": "375d458923cf88288594f7e0d7147d557c66939d1efd6ed62aa38fa3fc93692d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has ea like clean?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "leaf-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "leaf-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "moon-choice",
+              "verdict": "INCORRECT",
+              "rationale": "moon uses oo, not ea.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-5"
+              ]
+            },
+            {
+              "answerId": "boot-choice",
+              "verdict": "INCORRECT",
+              "rationale": "boot uses oo, not ea.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-5"
+              ]
+            },
+            {
+              "answerId": "leaf-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "leaf has ea with the same long-e sound as clean.",
+              "evidenceIds": [
+                "g2-oo-ea-p5-leaf",
+                "oo-ea-p5-s1",
+                "g2-oo-ea-p5-clean"
+              ]
+            },
+            {
+              "answerId": "book-choice",
+              "verdict": "INCORRECT",
+              "rationale": "book uses oo, not ea.",
+              "evidenceIds": [
+                "oo-ea-p5-s1",
+                "g2-oo-ea-p5-book"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-checkpoint-a-2",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-4f92142f57f50293",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "f18b0aad54e29464ed485c03742d110c9948a47aa6418ca4e819d58231970236",
+        "conclusionsSha256": "83815c47cca99b5244c15a845052d2996725d9c05dff806d060a5ad9474738fb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0001.pass-a.json",
+        "receiptSha256": "83815c47cca99b5244c15a845052d2996725d9c05dff806d060a5ad9474738fb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has oo like good?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "book-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "book-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "dream-choice",
+              "verdict": "INCORRECT",
+              "rationale": "dream uses ea, not oo.",
+              "evidenceIds": [
+                "g2-oo-ea-p5-dream",
+                "oo-ea-p5-s2"
+              ]
+            },
+            {
+              "answerId": "book-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "book has oo with the same vowel sound as good.",
+              "evidenceIds": [
+                "oo-ea-p5-s1",
+                "g2-oo-ea-p5-book"
+              ]
+            },
+            {
+              "answerId": "ready-choice",
+              "verdict": "INCORRECT",
+              "rationale": "ready does not contain oo.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-5"
+              ]
+            },
+            {
+              "answerId": "clean-choice",
+              "verdict": "INCORRECT",
+              "rationale": "clean uses ea, not oo.",
+              "evidenceIds": [
+                "oo-ea-p5-s1",
+                "g2-oo-ea-p5-clean"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-checkpoint-a-3",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-d5b2de2cd745a828",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "f18b0aad54e29464ed485c03742d110c9948a47aa6418ca4e819d58231970236",
+        "conclusionsSha256": "83815c47cca99b5244c15a845052d2996725d9c05dff806d060a5ad9474738fb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0001.pass-a.json",
+        "receiptSha256": "83815c47cca99b5244c15a845052d2996725d9c05dff806d060a5ad9474738fb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the ea words in the passage.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "leaf-choice",
+            "clean-choice",
+            "dream-choice",
+            "team-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "leaf-choice",
+            "clean-choice",
+            "dream-choice",
+            "team-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "leaf-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "leaf appears in the passage and contains ea.",
+              "evidenceIds": [
+                "g2-oo-ea-p5-leaf",
+                "oo-ea-p5-s1"
+              ]
+            },
+            {
+              "answerId": "clean-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "clean appears in the passage and contains ea.",
+              "evidenceIds": [
+                "oo-ea-p5-s1",
+                "g2-oo-ea-p5-clean"
+              ]
+            },
+            {
+              "answerId": "dream-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "dream appears in the passage and contains ea.",
+              "evidenceIds": [
+                "g2-oo-ea-p5-dream",
+                "oo-ea-p5-s2"
+              ]
+            },
+            {
+              "answerId": "team-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "team appears in the passage and contains ea.",
+              "evidenceIds": [
+                "oo-ea-p5-s1",
+                "g2-oo-ea-p5-team",
+                "oo-ea-p5-s3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-checkpoint-a-4",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-6d9c96040ed0f980",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "f18b0aad54e29464ed485c03742d110c9948a47aa6418ca4e819d58231970236",
+        "conclusionsSha256": "83815c47cca99b5244c15a845052d2996725d9c05dff806d060a5ad9474738fb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0001.pass-a.json",
+        "receiptSha256": "83815c47cca99b5244c15a845052d2996725d9c05dff806d060a5ad9474738fb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that tells about the dream, the green branch, and the little pond.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "dream-sentence"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "dream-sentence"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "soft-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence concerns the leaf and team talking.",
+              "evidenceIds": [
+                "oo-ea-p5-s3"
+              ]
+            },
+            {
+              "answerId": "work-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence concerns materials carried into the tree room.",
+              "evidenceIds": [
+                "oo-ea-p5-s1"
+              ]
+            },
+            {
+              "answerId": "dream-sentence",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence explicitly mentions the dream, green branch, and little pond.",
+              "evidenceIds": [
+                "oo-ea-p5-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-checkpoint-a-5",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-ac31516aca0b2c06",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "2e9f2ada1f62ec7cd7a23190545e0e5b504332abd6e097301f4dea598ebce799",
+        "conclusionsSha256": "d42f5b68ed17e2f69229bcef2fda0ead26c6dc86d19a064f69157bd2a6a394d8",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0021.second-pass.json",
+        "receiptSha256": "375d458923cf88288594f7e0d7147d557c66939d1efd6ed62aa38fa3fc93692d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "leaf-row",
+          "prompt": "leaf",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "leaf-sound"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "leaf-sound"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "leaf-sound",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Leaf contains the vowel-team spelling ea.",
+              "evidenceIds": [
+                "oo-ea-p5-s1"
+              ]
+            },
+            {
+              "answerId": "blend-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Leaf does contain ea, so neither does not match the printed word.",
+              "evidenceIds": [
+                "oo-ea-p5-s1"
+              ]
+            },
+            {
+              "answerId": "book-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Leaf does not contain the spelling oo.",
+              "evidenceIds": [
+                "oo-ea-p5-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-checkpoint-a-6",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-42402782efb2c016",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "f18b0aad54e29464ed485c03742d110c9948a47aa6418ca4e819d58231970236",
+        "conclusionsSha256": "83815c47cca99b5244c15a845052d2996725d9c05dff806d060a5ad9474738fb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0001.pass-a.json",
+        "receiptSha256": "83815c47cca99b5244c15a845052d2996725d9c05dff806d060a5ad9474738fb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has ea like team?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "clean-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "clean-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "moon-choice",
+              "verdict": "INCORRECT",
+              "rationale": "moon uses oo, not ea.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-5"
+              ]
+            },
+            {
+              "answerId": "book-choice",
+              "verdict": "INCORRECT",
+              "rationale": "book uses oo, not ea.",
+              "evidenceIds": [
+                "oo-ea-p5-s1",
+                "g2-oo-ea-p5-book"
+              ]
+            },
+            {
+              "answerId": "boot-choice",
+              "verdict": "INCORRECT",
+              "rationale": "boot uses oo, not ea.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-5"
+              ]
+            },
+            {
+              "answerId": "clean-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "clean has ea with the same long-e sound as team.",
+              "evidenceIds": [
+                "oo-ea-p5-s1",
+                "g2-oo-ea-p5-clean",
+                "g2-oo-ea-p5-team"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-checkpoint-a-7",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-ec8ff5f4afa60e00",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "f18b0aad54e29464ed485c03742d110c9948a47aa6418ca4e819d58231970236",
+        "conclusionsSha256": "83815c47cca99b5244c15a845052d2996725d9c05dff806d060a5ad9474738fb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0021.second-pass.json",
+        "receiptSha256": "375d458923cf88288594f7e0d7147d557c66939d1efd6ed62aa38fa3fc93692d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the oo words in the passage.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "book-choice",
+            "room-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "book-choice",
+            "room-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "book-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "book appears in the passage and contains oo.",
+              "evidenceIds": [
+                "oo-ea-p5-s1",
+                "g2-oo-ea-p5-book"
+              ]
+            },
+            {
+              "answerId": "clean-choice",
+              "verdict": "INCORRECT",
+              "rationale": "clean contains ea, not oo.",
+              "evidenceIds": [
+                "oo-ea-p5-s1",
+                "g2-oo-ea-p5-clean"
+              ]
+            },
+            {
+              "answerId": "dream-choice",
+              "verdict": "INCORRECT",
+              "rationale": "dream contains ea, not oo.",
+              "evidenceIds": [
+                "g2-oo-ea-p5-dream",
+                "oo-ea-p5-s2"
+              ]
+            },
+            {
+              "answerId": "room-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "room appears in the passage and contains oo.",
+              "evidenceIds": [
+                "oo-ea-p5-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-checkpoint-b-1",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-6375e45f669ecb13",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "f18b0aad54e29464ed485c03742d110c9948a47aa6418ca4e819d58231970236",
+        "conclusionsSha256": "83815c47cca99b5244c15a845052d2996725d9c05dff806d060a5ad9474738fb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0001.pass-a.json",
+        "receiptSha256": "83815c47cca99b5244c15a845052d2996725d9c05dff806d060a5ad9474738fb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has oo like moon?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "pool-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "pool-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "seat-choice",
+              "verdict": "INCORRECT",
+              "rationale": "seat uses ea, not oo.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-6"
+              ]
+            },
+            {
+              "answerId": "head-choice",
+              "verdict": "INCORRECT",
+              "rationale": "head uses ea, not oo.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-6"
+              ]
+            },
+            {
+              "answerId": "pool-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "pool has oo with the same long-oo sound as moon.",
+              "evidenceIds": [
+                "g2-oo-ea-p6-pool",
+                "oo-ea-p6-s1",
+                "oo-ea-p6-s3"
+              ]
+            },
+            {
+              "answerId": "team-choice",
+              "verdict": "INCORRECT",
+              "rationale": "team uses ea, not oo.",
+              "evidenceIds": [
+                "oo-ea-p6-s1",
+                "g2-oo-ea-p6-team"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-checkpoint-b-2",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-4562d0e7f1d9b8fb",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "f18b0aad54e29464ed485c03742d110c9948a47aa6418ca4e819d58231970236",
+        "conclusionsSha256": "83815c47cca99b5244c15a845052d2996725d9c05dff806d060a5ad9474738fb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0001.pass-a.json",
+        "receiptSha256": "83815c47cca99b5244c15a845052d2996725d9c05dff806d060a5ad9474738fb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has ea like leaf?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "team-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "team-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "moon-choice",
+              "verdict": "INCORRECT",
+              "rationale": "moon uses oo, not ea.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-6"
+              ]
+            },
+            {
+              "answerId": "team-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "team has ea with the same long-e sound as leaf.",
+              "evidenceIds": [
+                "oo-ea-p6-s1",
+                "g2-oo-ea-p6-team",
+                "oo-ea-p6-s3"
+              ]
+            },
+            {
+              "answerId": "good-choice",
+              "verdict": "INCORRECT",
+              "rationale": "good uses oo, not ea.",
+              "evidenceIds": [
+                "oo-ea-p6-s2",
+                "g2-oo-ea-p6-good"
+              ]
+            },
+            {
+              "answerId": "boot-choice",
+              "verdict": "INCORRECT",
+              "rationale": "boot uses oo, not ea.",
+              "evidenceIds": [
+                "oo-ea-p6-s1",
+                "g2-oo-ea-p6-boot"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-checkpoint-b-3",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-8d9f1ba0b75cafcc",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "f18b0aad54e29464ed485c03742d110c9948a47aa6418ca4e819d58231970236",
+        "conclusionsSha256": "83815c47cca99b5244c15a845052d2996725d9c05dff806d060a5ad9474738fb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0001.pass-a.json",
+        "receiptSha256": "83815c47cca99b5244c15a845052d2996725d9c05dff806d060a5ad9474738fb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the oo words in the passage.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "pool-choice",
+            "boot-choice",
+            "spoon-choice",
+            "good-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "spoon-choice",
+            "pool-choice",
+            "good-choice",
+            "boot-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "spoon-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "spoon appears in the passage and contains oo.",
+              "evidenceIds": [
+                "oo-ea-p6-s1"
+              ]
+            },
+            {
+              "answerId": "pool-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "pool appears in the passage and contains oo.",
+              "evidenceIds": [
+                "g2-oo-ea-p6-pool",
+                "oo-ea-p6-s1",
+                "oo-ea-p6-s3"
+              ]
+            },
+            {
+              "answerId": "good-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "good appears in the passage and contains oo.",
+              "evidenceIds": [
+                "oo-ea-p6-s2",
+                "g2-oo-ea-p6-good"
+              ]
+            },
+            {
+              "answerId": "boot-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "boot appears in the passage and contains oo.",
+              "evidenceIds": [
+                "oo-ea-p6-s1",
+                "g2-oo-ea-p6-boot"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-checkpoint-b-4",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-21d2eefc65cad718",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "f18b0aad54e29464ed485c03742d110c9948a47aa6418ca4e819d58231970236",
+        "conclusionsSha256": "83815c47cca99b5244c15a845052d2996725d9c05dff806d060a5ad9474738fb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0001.pass-a.json",
+        "receiptSha256": "83815c47cca99b5244c15a845052d2996725d9c05dff806d060a5ad9474738fb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that says the food tasted good.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "food-sentence"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "food-sentence"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "party-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes the team, boot, spoon, and fruit.",
+              "evidenceIds": [
+                "oo-ea-p6-s1"
+              ]
+            },
+            {
+              "answerId": "card-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes the pool card and taking turns.",
+              "evidenceIds": [
+                "oo-ea-p6-s3"
+              ]
+            },
+            {
+              "answerId": "food-sentence",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence explicitly says the food tasted good.",
+              "evidenceIds": [
+                "oo-ea-p6-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-checkpoint-b-5",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-cceda920ab78bf9c",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "2e9f2ada1f62ec7cd7a23190545e0e5b504332abd6e097301f4dea598ebce799",
+        "conclusionsSha256": "d42f5b68ed17e2f69229bcef2fda0ead26c6dc86d19a064f69157bd2a6a394d8",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0001.pass-a.json",
+        "receiptSha256": "d42f5b68ed17e2f69229bcef2fda0ead26c6dc86d19a064f69157bd2a6a394d8",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "boot-row",
+          "prompt": "boot",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "boot-sound"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "boot-sound"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "ea-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Boot does not contain the spelling ea.",
+              "evidenceIds": [
+                "oo-ea-p6-s1"
+              ]
+            },
+            {
+              "answerId": "boot-sound",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Boot contains the vowel-team spelling oo.",
+              "evidenceIds": [
+                "oo-ea-p6-s1"
+              ]
+            },
+            {
+              "answerId": "mix-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Boot contains oo, so neither does not match the printed word.",
+              "evidenceIds": [
+                "oo-ea-p6-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-checkpoint-b-6",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-3d0b7f77cee7baa3",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "f18b0aad54e29464ed485c03742d110c9948a47aa6418ca4e819d58231970236",
+        "conclusionsSha256": "83815c47cca99b5244c15a845052d2996725d9c05dff806d060a5ad9474738fb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0001.pass-a.json",
+        "receiptSha256": "83815c47cca99b5244c15a845052d2996725d9c05dff806d060a5ad9474738fb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has oo like food?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "spoon-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "spoon-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "head-choice",
+              "verdict": "INCORRECT",
+              "rationale": "head uses ea, not oo.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-6"
+              ]
+            },
+            {
+              "answerId": "leaf-choice",
+              "verdict": "INCORRECT",
+              "rationale": "leaf uses ea, not oo.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-6"
+              ]
+            },
+            {
+              "answerId": "spoon-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "spoon has oo with the same long-oo sound as food.",
+              "evidenceIds": [
+                "oo-ea-p6-s1"
+              ]
+            },
+            {
+              "answerId": "clean-choice",
+              "verdict": "INCORRECT",
+              "rationale": "clean uses ea, not oo.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-checkpoint-b-7",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-7b1e13c510499a61",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "f18b0aad54e29464ed485c03742d110c9948a47aa6418ca4e819d58231970236",
+        "conclusionsSha256": "83815c47cca99b5244c15a845052d2996725d9c05dff806d060a5ad9474738fb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0001.pass-a.json",
+        "receiptSha256": "83815c47cca99b5244c15a845052d2996725d9c05dff806d060a5ad9474738fb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the ea words in the passage.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "team-choice",
+            "each-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "team-choice",
+            "each-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "good-choice",
+              "verdict": "INCORRECT",
+              "rationale": "good contains oo, not ea.",
+              "evidenceIds": [
+                "oo-ea-p6-s2",
+                "g2-oo-ea-p6-good"
+              ]
+            },
+            {
+              "answerId": "team-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "team appears in the passage and contains ea.",
+              "evidenceIds": [
+                "oo-ea-p6-s1",
+                "g2-oo-ea-p6-team",
+                "oo-ea-p6-s3"
+              ]
+            },
+            {
+              "answerId": "boot-choice",
+              "verdict": "INCORRECT",
+              "rationale": "boot contains oo, not ea.",
+              "evidenceIds": [
+                "oo-ea-p6-s1",
+                "g2-oo-ea-p6-boot"
+              ]
+            },
+            {
+              "answerId": "each-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "each appears in the passage and contains ea.",
+              "evidenceIds": [
+                "oo-ea-p6-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-checkpoint-c-1",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-6a9d7ebb2da56a1f",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "22c9674db6a134aee4693b3c47b29cd4b096677bd4134f60eb9a86cbb67cc6ac",
+        "conclusionsSha256": "18059254de22b2e5fbc21ab5490cd60744262e56b412a957d1244b416ce2519a",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0002.pass-a.json",
+        "receiptSha256": "18059254de22b2e5fbc21ab5490cd60744262e56b412a957d1244b416ce2519a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has ea like bread?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "head-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "head-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "head-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "head uses ea with the same short-e sound as bread.",
+              "evidenceIds": [
+                "oo-ea-p7-s1"
+              ]
+            },
+            {
+              "answerId": "boot-choice",
+              "verdict": "INCORRECT",
+              "rationale": "boot is spelled with oo, not ea.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-7"
+              ]
+            },
+            {
+              "answerId": "spoon-choice",
+              "verdict": "INCORRECT",
+              "rationale": "spoon is spelled with oo, not ea.",
+              "evidenceIds": [
+                "oo-ea-p7-s2"
+              ]
+            },
+            {
+              "answerId": "moon-choice",
+              "verdict": "INCORRECT",
+              "rationale": "moon is spelled with oo, not ea.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-checkpoint-c-2",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-f0db9eb358ab2c27",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "22c9674db6a134aee4693b3c47b29cd4b096677bd4134f60eb9a86cbb67cc6ac",
+        "conclusionsSha256": "18059254de22b2e5fbc21ab5490cd60744262e56b412a957d1244b416ce2519a",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0002.pass-a.json",
+        "receiptSha256": "18059254de22b2e5fbc21ab5490cd60744262e56b412a957d1244b416ce2519a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has oo like moon?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "spoon-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "spoon-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "spoon-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "spoon uses oo with the same long-oo sound as moon.",
+              "evidenceIds": [
+                "oo-ea-p7-s2"
+              ]
+            },
+            {
+              "answerId": "beach-choice",
+              "verdict": "INCORRECT",
+              "rationale": "beach uses ea with a long-e sound.",
+              "evidenceIds": [
+                "oo-ea-p7-s2"
+              ]
+            },
+            {
+              "answerId": "clean-choice",
+              "verdict": "INCORRECT",
+              "rationale": "clean uses ea with a long-e sound.",
+              "evidenceIds": [
+                "oo-ea-p7-s1"
+              ]
+            },
+            {
+              "answerId": "ready-choice",
+              "verdict": "INCORRECT",
+              "rationale": "ready uses ea with a short-e sound, not moon's oo sound.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-checkpoint-c-3",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-56a1a84c62031bc0",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "22c9674db6a134aee4693b3c47b29cd4b096677bd4134f60eb9a86cbb67cc6ac",
+        "conclusionsSha256": "18059254de22b2e5fbc21ab5490cd60744262e56b412a957d1244b416ce2519a",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0002.pass-a.json",
+        "receiptSha256": "18059254de22b2e5fbc21ab5490cd60744262e56b412a957d1244b416ce2519a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the ea words in the passage.",
+          "requestedSelectionCount": 3,
+          "keyedAnswerIds": [
+            "head-choice",
+            "clean-choice",
+            "beach-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "beach-choice",
+            "clean-choice",
+            "head-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "beach-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "beach appears in the passage and contains ea.",
+              "evidenceIds": [
+                "oo-ea-p7-s2"
+              ]
+            },
+            {
+              "answerId": "seed-choice",
+              "verdict": "INCORRECT",
+              "rationale": "seed appears in the passage but is spelled with ee, not ea.",
+              "evidenceIds": [
+                "oo-ea-p7-s2"
+              ]
+            },
+            {
+              "answerId": "clean-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "clean appears in the passage and contains ea.",
+              "evidenceIds": [
+                "oo-ea-p7-s1"
+              ]
+            },
+            {
+              "answerId": "head-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "head appears in the passage and contains ea.",
+              "evidenceIds": [
+                "oo-ea-p7-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-checkpoint-c-4",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-ab1318da1d5b098e",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "22c9674db6a134aee4693b3c47b29cd4b096677bd4134f60eb9a86cbb67cc6ac",
+        "conclusionsSha256": "18059254de22b2e5fbc21ab5490cd60744262e56b412a957d1244b416ce2519a",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0002.pass-a.json",
+        "receiptSha256": "18059254de22b2e5fbc21ab5490cd60744262e56b412a957d1244b416ce2519a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that mentions the beach path.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "beach-sentence"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "beach-sentence"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "good-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence mentions the plant and noon, not the beach path.",
+              "evidenceIds": [
+                "oo-ea-p7-s3"
+              ]
+            },
+            {
+              "answerId": "garden-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes the team and gardener, not the beach path.",
+              "evidenceIds": [
+                "oo-ea-p7-s1"
+              ]
+            },
+            {
+              "answerId": "beach-sentence",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence explicitly says near the beach path.",
+              "evidenceIds": [
+                "oo-ea-p7-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-checkpoint-c-5",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-f0086d62497266ce",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "2e9f2ada1f62ec7cd7a23190545e0e5b504332abd6e097301f4dea598ebce799",
+        "conclusionsSha256": "d42f5b68ed17e2f69229bcef2fda0ead26c6dc86d19a064f69157bd2a6a394d8",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0001.pass-a.json",
+        "receiptSha256": "d42f5b68ed17e2f69229bcef2fda0ead26c6dc86d19a064f69157bd2a6a394d8",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "beach-row",
+          "prompt": "beach",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "beach-sound"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "beach-sound"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "mix-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Beach contains ea, so neither does not match the printed word.",
+              "evidenceIds": [
+                "oo-ea-p7-s2"
+              ]
+            },
+            {
+              "answerId": "pool-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Beach does not contain the spelling oo.",
+              "evidenceIds": [
+                "oo-ea-p7-s2"
+              ]
+            },
+            {
+              "answerId": "beach-sound",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Beach contains the vowel-team spelling ea.",
+              "evidenceIds": [
+                "oo-ea-p7-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-checkpoint-c-6",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-6ef8a911a2dd04ad",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "22c9674db6a134aee4693b3c47b29cd4b096677bd4134f60eb9a86cbb67cc6ac",
+        "conclusionsSha256": "18059254de22b2e5fbc21ab5490cd60744262e56b412a957d1244b416ce2519a",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0002.pass-a.json",
+        "receiptSha256": "18059254de22b2e5fbc21ab5490cd60744262e56b412a957d1244b416ce2519a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has oo like book?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "good-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "good-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "head-choice",
+              "verdict": "INCORRECT",
+              "rationale": "head uses ea with a short-e sound.",
+              "evidenceIds": [
+                "oo-ea-p7-s1"
+              ]
+            },
+            {
+              "answerId": "good-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "good uses oo with the same short-oo sound as book.",
+              "evidenceIds": [
+                "oo-ea-p7-s3"
+              ]
+            },
+            {
+              "answerId": "beach-choice",
+              "verdict": "INCORRECT",
+              "rationale": "beach uses ea with a long-e sound.",
+              "evidenceIds": [
+                "oo-ea-p7-s2"
+              ]
+            },
+            {
+              "answerId": "clean-choice",
+              "verdict": "INCORRECT",
+              "rationale": "clean uses ea with a long-e sound.",
+              "evidenceIds": [
+                "oo-ea-p7-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-checkpoint-c-7",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-68056e0c1dcaac30",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "22c9674db6a134aee4693b3c47b29cd4b096677bd4134f60eb9a86cbb67cc6ac",
+        "conclusionsSha256": "18059254de22b2e5fbc21ab5490cd60744262e56b412a957d1244b416ce2519a",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0021.second-pass.json",
+        "receiptSha256": "375d458923cf88288594f7e0d7147d557c66939d1efd6ed62aa38fa3fc93692d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the oo words in the passage.",
+          "requestedSelectionCount": 3,
+          "keyedAnswerIds": [
+            "spoon-choice",
+            "good-choice",
+            "noon-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "noon-choice",
+            "spoon-choice",
+            "good-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "noon-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "noon appears in the passage and contains oo.",
+              "evidenceIds": [
+                "oo-ea-p7-s3"
+              ]
+            },
+            {
+              "answerId": "clean-choice",
+              "verdict": "INCORRECT",
+              "rationale": "clean is spelled with ea, not oo.",
+              "evidenceIds": [
+                "oo-ea-p7-s1"
+              ]
+            },
+            {
+              "answerId": "spoon-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "spoon appears in the passage and contains oo.",
+              "evidenceIds": [
+                "oo-ea-p7-s2"
+              ]
+            },
+            {
+              "answerId": "good-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "good appears in the passage and contains oo.",
+              "evidenceIds": [
+                "oo-ea-p7-s3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-guided-a-1",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-516b5280940ac804",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "22c9674db6a134aee4693b3c47b29cd4b096677bd4134f60eb9a86cbb67cc6ac",
+        "conclusionsSha256": "18059254de22b2e5fbc21ab5490cd60744262e56b412a957d1244b416ce2519a",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0021.second-pass.json",
+        "receiptSha256": "375d458923cf88288594f7e0d7147d557c66939d1efd6ed62aa38fa3fc93692d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has oo like spoon?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "moon-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "moon-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "clean-choice",
+              "verdict": "INCORRECT",
+              "rationale": "clean uses ea, not the long-oo sound in spoon.",
+              "evidenceIds": [
+                "oo-ea-p1-s1"
+              ]
+            },
+            {
+              "answerId": "moon-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "moon uses oo with the same long-oo sound as spoon.",
+              "evidenceIds": [
+                "oo-ea-p1-s1"
+              ]
+            },
+            {
+              "answerId": "team-choice",
+              "verdict": "INCORRECT",
+              "rationale": "team uses ea with a long-e sound.",
+              "evidenceIds": [
+                "oo-ea-p1-s1"
+              ]
+            },
+            {
+              "answerId": "bread-choice",
+              "verdict": "INCORRECT",
+              "rationale": "bread uses ea with a short-e sound.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-guided-a-2",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-f14afc3a4f934f7e",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "22c9674db6a134aee4693b3c47b29cd4b096677bd4134f60eb9a86cbb67cc6ac",
+        "conclusionsSha256": "18059254de22b2e5fbc21ab5490cd60744262e56b412a957d1244b416ce2519a",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0002.pass-a.json",
+        "receiptSha256": "18059254de22b2e5fbc21ab5490cd60744262e56b412a957d1244b416ce2519a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words spelled with oo.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "moon-choice",
+            "book-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "book-choice",
+            "moon-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "clean-choice",
+              "verdict": "INCORRECT",
+              "rationale": "clean is spelled with ea, not oo.",
+              "evidenceIds": [
+                "oo-ea-p1-s1"
+              ]
+            },
+            {
+              "answerId": "team-choice",
+              "verdict": "INCORRECT",
+              "rationale": "team is spelled with ea, not oo.",
+              "evidenceIds": [
+                "oo-ea-p1-s1"
+              ]
+            },
+            {
+              "answerId": "book-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "book appears in the passage and is spelled with oo.",
+              "evidenceIds": [
+                "oo-ea-p1-s2"
+              ]
+            },
+            {
+              "answerId": "moon-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "moon appears in the passage and is spelled with oo.",
+              "evidenceIds": [
+                "oo-ea-p1-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-guided-a-3",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-bb6df5532c485547",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "2e9f2ada1f62ec7cd7a23190545e0e5b504332abd6e097301f4dea598ebce799",
+        "conclusionsSha256": "d42f5b68ed17e2f69229bcef2fda0ead26c6dc86d19a064f69157bd2a6a394d8",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0001.pass-a.json",
+        "receiptSha256": "d42f5b68ed17e2f69229bcef2fda0ead26c6dc86d19a064f69157bd2a6a394d8",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that names the moon room.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "moon-room-sentence"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "moon-room-sentence"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "moon-glow-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence mentions a room and the moon separately but does not name the place the moon room.",
+              "evidenceIds": [
+                "oo-ea-p1-s3"
+              ]
+            },
+            {
+              "answerId": "spoon-book-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence names objects Nia carried, not the moon room.",
+              "evidenceIds": [
+                "oo-ea-p1-s2"
+              ]
+            },
+            {
+              "answerId": "moon-room-sentence",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence explicitly names the place the moon room.",
+              "evidenceIds": [
+                "oo-ea-p1-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-guided-a-4",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-401f830f127662db",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "22c9674db6a134aee4693b3c47b29cd4b096677bd4134f60eb9a86cbb67cc6ac",
+        "conclusionsSha256": "18059254de22b2e5fbc21ab5490cd60744262e56b412a957d1244b416ce2519a",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0002.pass-a.json",
+        "receiptSha256": "18059254de22b2e5fbc21ab5490cd60744262e56b412a957d1244b416ce2519a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "moon-row",
+          "prompt": "moon",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "moon-sound"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "moon-sound"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "bread-sound",
+              "verdict": "INCORRECT",
+              "rationale": "moon does not have the short-e vowel sound modeled by bread.",
+              "evidenceIds": [
+                "oo-ea-p1-s1"
+              ]
+            },
+            {
+              "answerId": "team-sound",
+              "verdict": "INCORRECT",
+              "rationale": "moon does not have the long-e vowel sound modeled by team.",
+              "evidenceIds": [
+                "oo-ea-p1-s1"
+              ]
+            },
+            {
+              "answerId": "moon-sound",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The target word moon matches the Moon sound group directly.",
+              "evidenceIds": [
+                "oo-ea-p1-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-guided-a-5",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-b89477b3802d240f",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "22c9674db6a134aee4693b3c47b29cd4b096677bd4134f60eb9a86cbb67cc6ac",
+        "conclusionsSha256": "18059254de22b2e5fbc21ab5490cd60744262e56b412a957d1244b416ce2519a",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0002.pass-a.json",
+        "receiptSha256": "18059254de22b2e5fbc21ab5490cd60744262e56b412a957d1244b416ce2519a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has ea like leaf?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "team-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "team-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "book-choice",
+              "verdict": "INCORRECT",
+              "rationale": "book uses oo with a short-oo sound, not ea like leaf.",
+              "evidenceIds": [
+                "oo-ea-p1-s2"
+              ]
+            },
+            {
+              "answerId": "spoon-choice",
+              "verdict": "INCORRECT",
+              "rationale": "spoon uses oo with a long-oo sound, not ea.",
+              "evidenceIds": [
+                "oo-ea-p1-s2"
+              ]
+            },
+            {
+              "answerId": "moon-choice",
+              "verdict": "INCORRECT",
+              "rationale": "moon uses oo with a long-oo sound, not ea.",
+              "evidenceIds": [
+                "oo-ea-p1-s1"
+              ]
+            },
+            {
+              "answerId": "team-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "team uses ea with the same long-e sound as leaf.",
+              "evidenceIds": [
+                "oo-ea-p1-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-guided-b-1",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-e57651cab98bbb76",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "4c4ab348cdb36d32a1eec141c4a3e2d9a8412a11ecb113ee713dea2cc1fd30fc",
+        "conclusionsSha256": "850678c99be5b2dbc3471ecd6e0376426b04eb76e71791d156907bc7323398c5",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0003.pass-a.json",
+        "receiptSha256": "850678c99be5b2dbc3471ecd6e0376426b04eb76e71791d156907bc7323398c5",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has ea like team?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "beach-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "beach-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "moon-choice",
+              "verdict": "INCORRECT",
+              "rationale": "moon uses oo, not the ea pattern in team.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-2"
+              ]
+            },
+            {
+              "answerId": "beach-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "beach contains ea with the same long-e sound as team.",
+              "evidenceIds": [
+                "oo-ea-p2-s1"
+              ]
+            },
+            {
+              "answerId": "good-choice",
+              "verdict": "INCORRECT",
+              "rationale": "good uses oo, not the ea pattern in team.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-2"
+              ]
+            },
+            {
+              "answerId": "boots-choice",
+              "verdict": "INCORRECT",
+              "rationale": "boots uses oo, not the ea pattern in team.",
+              "evidenceIds": [
+                "oo-ea-p2-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-guided-b-2",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-b8ad60e99fb6e9d5",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "4c4ab348cdb36d32a1eec141c4a3e2d9a8412a11ecb113ee713dea2cc1fd30fc",
+        "conclusionsSha256": "850678c99be5b2dbc3471ecd6e0376426b04eb76e71791d156907bc7323398c5",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0003.pass-a.json",
+        "receiptSha256": "850678c99be5b2dbc3471ecd6e0376426b04eb76e71791d156907bc7323398c5",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words that have oo like boots.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "boots-choice",
+            "pool-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "pool-choice",
+            "boots-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "pool-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "pool has oo with the same long vowel sound as boots.",
+              "evidenceIds": [
+                "oo-ea-p2-s2"
+              ]
+            },
+            {
+              "answerId": "clean-choice",
+              "verdict": "INCORRECT",
+              "rationale": "clean is spelled with ea, not oo.",
+              "evidenceIds": [
+                "oo-ea-p2-s1"
+              ]
+            },
+            {
+              "answerId": "leaf-choice",
+              "verdict": "INCORRECT",
+              "rationale": "leaf is spelled with ea, not oo.",
+              "evidenceIds": [
+                "oo-ea-p2-s3"
+              ]
+            },
+            {
+              "answerId": "boots-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "boots is the comparison word and has the requested oo sound.",
+              "evidenceIds": [
+                "oo-ea-p2-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-guided-b-3",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-27a0a16258ae2bf6",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "2e9f2ada1f62ec7cd7a23190545e0e5b504332abd6e097301f4dea598ebce799",
+        "conclusionsSha256": "d42f5b68ed17e2f69229bcef2fda0ead26c6dc86d19a064f69157bd2a6a394d8",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0001.pass-a.json",
+        "receiptSha256": "d42f5b68ed17e2f69229bcef2fda0ead26c6dc86d19a064f69157bd2a6a394d8",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that shows the team cleaning up trash at the beach.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "boots-pool-sentence"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "boots-pool-sentence"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "cleanup-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This establishes that the team met at the beach but does not show trash being collected.",
+              "evidenceIds": [
+                "oo-ea-p2-s1"
+              ]
+            },
+            {
+              "answerId": "boots-pool-sentence",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence directly says the team picked up trash during the beach scene.",
+              "evidenceIds": [
+                "oo-ea-p2-s2"
+              ]
+            },
+            {
+              "answerId": "leaf-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This describes a leaf and the group smiling, not cleaning up trash.",
+              "evidenceIds": [
+                "oo-ea-p2-s3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-guided-b-4",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-396cbb28492bbfcc",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "4c4ab348cdb36d32a1eec141c4a3e2d9a8412a11ecb113ee713dea2cc1fd30fc",
+        "conclusionsSha256": "850678c99be5b2dbc3471ecd6e0376426b04eb76e71791d156907bc7323398c5",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0003.pass-a.json",
+        "receiptSha256": "850678c99be5b2dbc3471ecd6e0376426b04eb76e71791d156907bc7323398c5",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "leaf-row",
+          "prompt": "leaf",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "leaf-sound"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "leaf-sound"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "bread-sound",
+              "verdict": "INCORRECT",
+              "rationale": "leaf does not use the short-e sound heard in bread.",
+              "evidenceIds": [
+                "oo-ea-p2-s3"
+              ]
+            },
+            {
+              "answerId": "team-sound",
+              "verdict": "INCORRECT",
+              "rationale": "leaf contains ea rather than oo.",
+              "evidenceIds": [
+                "oo-ea-p2-s3"
+              ]
+            },
+            {
+              "answerId": "leaf-sound",
+              "verdict": "DEFENSIBLE",
+              "rationale": "leaf belongs with the taught long-e ea examples.",
+              "evidenceIds": [
+                "oo-ea-p2-s3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-guided-b-5",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-7ea3fb54d7cb1500",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "4c4ab348cdb36d32a1eec141c4a3e2d9a8412a11ecb113ee713dea2cc1fd30fc",
+        "conclusionsSha256": "850678c99be5b2dbc3471ecd6e0376426b04eb76e71791d156907bc7323398c5",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0021.second-pass.json",
+        "receiptSha256": "375d458923cf88288594f7e0d7147d557c66939d1efd6ed62aa38fa3fc93692d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has ea like clean?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "leaf-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "leaf-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "moon-choice",
+              "verdict": "INCORRECT",
+              "rationale": "moon uses oo rather than ea.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-2"
+              ]
+            },
+            {
+              "answerId": "boot-choice",
+              "verdict": "INCORRECT",
+              "rationale": "boot uses oo rather than ea.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-2"
+              ]
+            },
+            {
+              "answerId": "bread-choice",
+              "verdict": "INCORRECT",
+              "rationale": "bread has ea but uses a short-e sound, unlike clean.",
+              "evidenceIds": [
+                "oo-ea-p2-s1"
+              ]
+            },
+            {
+              "answerId": "leaf-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "leaf has ea with the same long-e sound as clean.",
+              "evidenceIds": [
+                "oo-ea-p2-s1",
+                "oo-ea-p2-s3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-guided-c-1",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-d01a8977e82dba3b",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "4c4ab348cdb36d32a1eec141c4a3e2d9a8412a11ecb113ee713dea2cc1fd30fc",
+        "conclusionsSha256": "850678c99be5b2dbc3471ecd6e0376426b04eb76e71791d156907bc7323398c5",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0003.pass-a.json",
+        "receiptSha256": "850678c99be5b2dbc3471ecd6e0376426b04eb76e71791d156907bc7323398c5",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has ea like head?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "bread-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "bread-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "good-choice",
+              "verdict": "INCORRECT",
+              "rationale": "good uses oo and does not share head's ea spelling and sound.",
+              "evidenceIds": [
+                "oo-ea-p3-s3"
+              ]
+            },
+            {
+              "answerId": "bread-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "bread has ea with the same short-e sound as head.",
+              "evidenceIds": [
+                "oo-ea-p3-s1",
+                "oo-ea-p3-s3"
+              ]
+            },
+            {
+              "answerId": "moon-choice",
+              "verdict": "INCORRECT",
+              "rationale": "moon uses oo and has a different vowel sound.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-3"
+              ]
+            },
+            {
+              "answerId": "spoon-choice",
+              "verdict": "INCORRECT",
+              "rationale": "spoon uses oo and has a different vowel sound.",
+              "evidenceIds": [
+                "oo-ea-p3-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-guided-c-2",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-90ea550f8f52aa2b",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "4c4ab348cdb36d32a1eec141c4a3e2d9a8412a11ecb113ee713dea2cc1fd30fc",
+        "conclusionsSha256": "850678c99be5b2dbc3471ecd6e0376426b04eb76e71791d156907bc7323398c5",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0003.pass-a.json",
+        "receiptSha256": "850678c99be5b2dbc3471ecd6e0376426b04eb76e71791d156907bc7323398c5",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words spelled with ea.",
+          "requestedSelectionCount": 3,
+          "keyedAnswerIds": [
+            "tea-choice",
+            "bread-choice",
+            "ready-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "tea-choice",
+            "bread-choice",
+            "ready-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "tea-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "tea contains the consecutive letters ea.",
+              "evidenceIds": [
+                "oo-ea-p3-s2"
+              ]
+            },
+            {
+              "answerId": "bread-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "bread contains the consecutive letters ea.",
+              "evidenceIds": [
+                "oo-ea-p3-s1",
+                "oo-ea-p3-s3"
+              ]
+            },
+            {
+              "answerId": "ready-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "ready contains the consecutive letters ea.",
+              "evidenceIds": [
+                "oo-ea-p3-s3"
+              ]
+            },
+            {
+              "answerId": "boot-choice",
+              "verdict": "INCORRECT",
+              "rationale": "boot is spelled with oo, not ea.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-guided-c-3",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-a199e2234abf538f",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "4c4ab348cdb36d32a1eec141c4a3e2d9a8412a11ecb113ee713dea2cc1fd30fc",
+        "conclusionsSha256": "850678c99be5b2dbc3471ecd6e0376426b04eb76e71791d156907bc7323398c5",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0021.second-pass.json",
+        "receiptSha256": "375d458923cf88288594f7e0d7147d557c66939d1efd6ed62aa38fa3fc93692d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that shows the bread on the tray.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "bread-sentence"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "bread-sentence"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "tea-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes ingredients and tools, not bread on a tray.",
+              "evidenceIds": [
+                "oo-ea-p3-s2"
+              ]
+            },
+            {
+              "answerId": "bread-sentence",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence explicitly places the bread on the tray.",
+              "evidenceIds": [
+                "oo-ea-p3-s3"
+              ]
+            },
+            {
+              "answerId": "dad-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes baking bread for dinner but not its location on the tray.",
+              "evidenceIds": [
+                "oo-ea-p3-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-guided-c-4",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-a2fdd935130a1a41",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "2e9f2ada1f62ec7cd7a23190545e0e5b504332abd6e097301f4dea598ebce799",
+        "conclusionsSha256": "d42f5b68ed17e2f69229bcef2fda0ead26c6dc86d19a064f69157bd2a6a394d8",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0001.pass-a.json",
+        "receiptSha256": "d42f5b68ed17e2f69229bcef2fda0ead26c6dc86d19a064f69157bd2a6a394d8",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "ready-row",
+          "prompt": "ready",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "ready-sound"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "ready-sound"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "mix-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Ready contains ea, so neither does not match the printed word.",
+              "evidenceIds": [
+                "oo-ea-p3-s3"
+              ]
+            },
+            {
+              "answerId": "moo-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Ready does not contain the spelling oo.",
+              "evidenceIds": [
+                "oo-ea-p3-s3"
+              ]
+            },
+            {
+              "answerId": "ready-sound",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Ready contains the vowel-team spelling ea.",
+              "evidenceIds": [
+                "oo-ea-p3-s3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-guided-c-5",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-972caffc3deb2438",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "4c4ab348cdb36d32a1eec141c4a3e2d9a8412a11ecb113ee713dea2cc1fd30fc",
+        "conclusionsSha256": "850678c99be5b2dbc3471ecd6e0376426b04eb76e71791d156907bc7323398c5",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0003.pass-a.json",
+        "receiptSha256": "850678c99be5b2dbc3471ecd6e0376426b04eb76e71791d156907bc7323398c5",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has oo like moon?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "spoon-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "spoon-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "spoon-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "spoon has oo with the same long vowel sound as moon.",
+              "evidenceIds": [
+                "oo-ea-p3-s2"
+              ]
+            },
+            {
+              "answerId": "tea-choice",
+              "verdict": "INCORRECT",
+              "rationale": "tea uses ea rather than oo.",
+              "evidenceIds": [
+                "oo-ea-p3-s2"
+              ]
+            },
+            {
+              "answerId": "leaf-choice",
+              "verdict": "INCORRECT",
+              "rationale": "leaf uses ea rather than oo.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-3"
+              ]
+            },
+            {
+              "answerId": "bread-choice",
+              "verdict": "INCORRECT",
+              "rationale": "bread uses ea rather than oo.",
+              "evidenceIds": [
+                "oo-ea-p3-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-guided-d-1",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-c15ef92c47d9ddd0",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "3e7eba399d3be932e1670032832e92c9785f93ee35ecbfbd1cb229109844ffa8",
+        "conclusionsSha256": "53f28d1ee5e018bccf8d1250b923f2ffcda40e4a8f0e57c3d83d93e3168331c5",
+        "reviewer": "primary-agent",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0004.pass-a.json",
+        "receiptSha256": "53f28d1ee5e018bccf8d1250b923f2ffcda40e4a8f0e57c3d83d93e3168331c5",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has ea like bread?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "weather-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "weather-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "boot-choice",
+              "verdict": "INCORRECT",
+              "rationale": "boot has oo, not ea.",
+              "evidenceIds": [
+                "oo-ea-p4-s2"
+              ]
+            },
+            {
+              "answerId": "weather-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "weather contains ea pronounced like the ea in bread.",
+              "evidenceIds": [
+                "oo-ea-p4-s1"
+              ]
+            },
+            {
+              "answerId": "moon-choice",
+              "verdict": "INCORRECT",
+              "rationale": "moon has oo, not ea.",
+              "evidenceIds": [
+                "oo-ea-p4-s1"
+              ]
+            },
+            {
+              "answerId": "good-choice",
+              "verdict": "INCORRECT",
+              "rationale": "good has oo, not ea.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-guided-d-2",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-1019e45f3c4069f3",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "3e7eba399d3be932e1670032832e92c9785f93ee35ecbfbd1cb229109844ffa8",
+        "conclusionsSha256": "53f28d1ee5e018bccf8d1250b923f2ffcda40e4a8f0e57c3d83d93e3168331c5",
+        "reviewer": "primary-agent",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0004.pass-a.json",
+        "receiptSha256": "53f28d1ee5e018bccf8d1250b923f2ffcda40e4a8f0e57c3d83d93e3168331c5",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words spelled with oo.",
+          "requestedSelectionCount": 3,
+          "keyedAnswerIds": [
+            "room-choice",
+            "wood-choice",
+            "boot-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "boot-choice",
+            "room-choice",
+            "wood-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "boot-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "boot is spelled with oo.",
+              "evidenceIds": [
+                "oo-ea-p4-s2"
+              ]
+            },
+            {
+              "answerId": "room-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "room is spelled with oo.",
+              "evidenceIds": [
+                "oo-ea-p4-s1"
+              ]
+            },
+            {
+              "answerId": "seat-choice",
+              "verdict": "INCORRECT",
+              "rationale": "seat is spelled with ea.",
+              "evidenceIds": [
+                "oo-ea-p4-s2"
+              ]
+            },
+            {
+              "answerId": "wood-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "wood is spelled with oo.",
+              "evidenceIds": [
+                "oo-ea-p4-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-guided-d-3",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-a1d5842fb08ac06b",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "2e9f2ada1f62ec7cd7a23190545e0e5b504332abd6e097301f4dea598ebce799",
+        "conclusionsSha256": "d42f5b68ed17e2f69229bcef2fda0ead26c6dc86d19a064f69157bd2a6a394d8",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0001.pass-a.json",
+        "receiptSha256": "d42f5b68ed17e2f69229bcef2fda0ead26c6dc86d19a064f69157bd2a6a394d8",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that names the weather team.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "weather-sentence"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "weather-sentence"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "weather-sentence",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence explicitly names the weather team.",
+              "evidenceIds": [
+                "oo-ea-p4-s1"
+              ]
+            },
+            {
+              "answerId": "bench-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence lists objects the team found without naming the weather team.",
+              "evidenceIds": [
+                "oo-ea-p4-s2"
+              ]
+            },
+            {
+              "answerId": "glass-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes the room and rain without naming the weather team.",
+              "evidenceIds": [
+                "oo-ea-p4-s3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-guided-d-4",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-b2d6d53b916d5fe7",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "2e9f2ada1f62ec7cd7a23190545e0e5b504332abd6e097301f4dea598ebce799",
+        "conclusionsSha256": "d42f5b68ed17e2f69229bcef2fda0ead26c6dc86d19a064f69157bd2a6a394d8",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0001.pass-a.json",
+        "receiptSha256": "d42f5b68ed17e2f69229bcef2fda0ead26c6dc86d19a064f69157bd2a6a394d8",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "seat-row",
+          "prompt": "seat",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "seat-sound"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "seat-sound"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "hood-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Seat does not contain the spelling oo.",
+              "evidenceIds": [
+                "oo-ea-p4-s2"
+              ]
+            },
+            {
+              "answerId": "mix-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Seat contains ea, so neither does not match the printed word.",
+              "evidenceIds": [
+                "oo-ea-p4-s2"
+              ]
+            },
+            {
+              "answerId": "seat-sound",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Seat contains the vowel-team spelling ea.",
+              "evidenceIds": [
+                "oo-ea-p4-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-oo-ea-guided-d-5",
+      "packId": "g2-word-forge-variable-vowels-oo-ea",
+      "contentVersion": "g2-wf-oo-ea-r0.1.0",
+      "contentFingerprint": "qta-v1-dae2b717ce3666c3",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "3e7eba399d3be932e1670032832e92c9785f93ee35ecbfbd1cb229109844ffa8",
+        "conclusionsSha256": "53f28d1ee5e018bccf8d1250b923f2ffcda40e4a8f0e57c3d83d93e3168331c5",
+        "reviewer": "primary-agent",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0004.pass-a.json",
+        "receiptSha256": "53f28d1ee5e018bccf8d1250b923f2ffcda40e4a8f0e57c3d83d93e3168331c5",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has oo like good?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "wood-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "wood-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "head-choice",
+              "verdict": "INCORRECT",
+              "rationale": "head has ea and a different vowel sound.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-4"
+              ]
+            },
+            {
+              "answerId": "leaf-choice",
+              "verdict": "INCORRECT",
+              "rationale": "leaf has ea and a different vowel sound.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-4"
+              ]
+            },
+            {
+              "answerId": "tea-choice",
+              "verdict": "INCORRECT",
+              "rationale": "tea has ea and a different vowel sound.",
+              "evidenceIds": [
+                "passage-g2-word-forge-oo-ea-4"
+              ]
+            },
+            {
+              "answerId": "wood-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "wood has oo pronounced like the oo in good.",
+              "evidenceIds": [
+                "oo-ea-p4-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

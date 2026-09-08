@@ -79,7 +79,7 @@ function multipleChoice(record: PoemFormRecord, lessonIndex: number, questionInd
 }
 
 function classification(record: PoemFormRecord, lessonIndex: number, questionIndex: number): ReadingQuestion {
-  return multipleChoice(record, lessonIndex, questionIndex, `Which type of poem is "${record.title}"?`, record.formLabel,
+  return multipleChoice(record, lessonIndex, questionIndex, `Which of these taught poem forms gives the most exact name for "${record.title}"?`, record.formLabel,
     otherForms(record.form).map((form) => FORM_LABELS[form]) as [string, string, string],
     `${record.bestFeature} These combined structural clues best support ${record.formLabel.toLowerCase()}.`,
     record.evidenceLineNumbers, ['form-classification'])
@@ -147,7 +147,7 @@ function twoPart(record: PoemFormRecord, lessonIndex: number, questionIndex: num
   const partBChoices = [choice(data.questionIdentifier, 'b-correct', record.bestFeature), choice(data.questionIdentifier, 'b-wrong-1', record.featureDistractors[0]), choice(data.questionIdentifier, 'b-wrong-2', record.featureDistractors[1])]
   return {
     ...data, answerChoices: [...partAChoices, ...partBChoices].map((entry) => entry.text), correctAnswers: [partAChoices[0].text, partBChoices[0].text],
-    questionContent: { type: 'two_part', partAPrompt: 'Part A: Which poem form is best supported?', partAChoices, partACorrectChoiceId: partAChoices[0].id, partBPrompt: 'Part B: Which structural clue best supports Part A?', partBChoices, partBCorrectChoiceId: partBChoices[0].id },
+    questionContent: { type: 'two_part', partAPrompt: 'Part A: Which of these taught poem forms gives the most exact name?', partAChoices, partACorrectChoiceId: partAChoices[0].id, partBPrompt: 'Part B: Which structural clue best supports Part A?', partBChoices, partBCorrectChoiceId: partBChoices[0].id },
   }
 }
 

@@ -1,0 +1,782 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0131",
+  "batchFileSha256": "7a698c76ba28bf54d421297a62f1f91a0eded9768df62c9701c53ffcbdb30058",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1533",
+      "fingerprint": "845d4de5c2d0b507622f02f8e266f777abab2a4273b0296536e48f7032c46d29",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This describes unclear, not preview.",
+              [
+                "S0009",
+                "S0014"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This describes reread, not preview.",
+              [
+                "S0005",
+                "S0012"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This describes miscount, not preview.",
+              [
+                "S0007",
+                "S0013"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The preview is an early look through the rooms before visitors arrive.",
+              [
+                "S0003",
+                "S0011"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1534",
+      "fingerprint": "73b961b768e0e114e7294a049f3557b674d529f579565e208cf1366282136cf8",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The prefix re- and base read combine as read again, which the next sentence confirms.",
+              [
+                "S0005",
+                "S0012"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Not clear explains unclear.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "A look before explains preview.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Counting wrongly explains miscount.",
+              [
+                "S0007"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1535",
+      "fingerprint": "8d0463542d7762a6dee686a142c290ed79604f53ad64ccafce77e9eb10814452",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The genuine prefix mis- contributes the meaning wrongly in miscount.",
+              [
+                "S0007",
+                "S0013"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "Counting one more time describes recounting; the passage identifies the original wrong total as the miscount.",
+              [
+                "S0007",
+                "S0013"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Eight listed when seven are present directly confirms a wrong count.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "In this word mis- means wrongly, not simply not.",
+              [
+                "S0007",
+                "S0013"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1536",
+      "fingerprint": "59096a7eca20a52ae61d74b5957ee3766881201b766e92e0a8238d07e3d35e8f",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Being unable to tell where the sign belonged directly shows the direction was not easy to understand.",
+              [
+                "S0009",
+                "S0014"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This confirms miscount, not unclear.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This confirms reread, not unclear.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This confirms preview, not unclear.",
+              [
+                "S0003"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1537",
+      "fingerprint": "a5f5aa3060e158a0488286878a92c42593e06f83f44433113f8b061a7c95b85f",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Preview is a look before an event begins.",
+              [
+                "S0003",
+                "S0011"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Read again is reread.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Count wrongly is miscount.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Not easy to understand is unclear.",
+              [
+                "S0009"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Reread means read again.",
+              [
+                "S0005",
+                "S0012"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "A look before is preview.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Count wrongly is miscount.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Not easy to understand is unclear.",
+              [
+                "S0009"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Not easy to understand is unclear.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "A look before is preview.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Miscount means count something wrongly.",
+              [
+                "S0007",
+                "S0013"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Read again is reread.",
+              [
+                "S0005"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Unclear means not easy to understand.",
+              [
+                "S0009",
+                "S0014"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Count wrongly is miscount.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "A look before is preview.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Read again is reread.",
+              [
+                "S0005"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1538",
+      "fingerprint": "9858d0aedb419f65d01d5f48afa531c1748131fd8e69660021fc58bd7e04f537",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This describes kindness.",
+              [
+                "S0024",
+                "S0029"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This describes washable.",
+              [
+                "S0022",
+                "S0028"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This describes careless.",
+              [
+                "S0020",
+                "S0027"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The team feels hope and expects the project to go well.",
+              [
+                "S0018",
+                "S0026"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1539",
+      "fingerprint": "f5261331bc55f8e064269075bea4d25b339aeb2381998e3e79be9e9114fa0f6b",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Care plus -less means without enough care, confirmed by unsafe packing.",
+              [
+                "S0020",
+                "S0027"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This describes kindness.",
+              [
+                "S0024",
+                "S0029"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This describes washable.",
+              [
+                "S0022",
+                "S0028"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This describes hopeful.",
+              [
+                "S0018",
+                "S0026"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1540",
+      "fingerprint": "cda0077a6911b02f3bdc7312a8c4c9e8fc4c4b76f6dbcecb065d9340a09846a1",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "Without careful attention describes careless, not washable.",
+              [
+                "S0020"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Wash means clean with water, not caring.",
+              [
+                "S0022",
+                "S0028"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The sentence explicitly explains that the cloth can be cleaned with water and reused.",
+              [
+                "S0022"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The base wash contributes the meaning clean with water.",
+              [
+                "S0022",
+                "S0028"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1541",
+      "fingerprint": "678176bc7a6d82e248096f0c54ffb210da0b95187ccaf6d848456c8dfbf5b4f1",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This sentence confirms careless behavior.",
+              [
+                "S0020"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Listening, sharing, and thanking are caring actions that demonstrate the quality of being kind.",
+              [
+                "S0024",
+                "S0029"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This sentence confirms hopeful.",
+              [
+                "S0018"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This sentence confirms washable.",
+              [
+                "S0022"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1542",
+      "fingerprint": "68b58de9a740562a297b197df0395c38fab58807bc04ef17bdbfcc17a5e496a7",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Able to be washed is washable.",
+              [
+                "S0022"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Without enough care is careless.",
+              [
+                "S0020"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Hopeful means feeling or showing hope.",
+              [
+                "S0018",
+                "S0026"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The quality of being kind is kindness.",
+              [
+                "S0024"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Careless means without enough care.",
+              [
+                "S0020",
+                "S0027"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The quality of being kind is kindness.",
+              [
+                "S0024"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Showing hope is hopeful.",
+              [
+                "S0018"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Able to be washed is washable.",
+              [
+                "S0022"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Washable means able to be washed.",
+              [
+                "S0022",
+                "S0028"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Without enough care is careless.",
+              [
+                "S0020"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The quality of being kind is kindness.",
+              [
+                "S0024"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Showing hope is hopeful.",
+              [
+                "S0018"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Able to be washed is washable.",
+              [
+                "S0022"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Without enough care is careless.",
+              [
+                "S0020"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Kindness means the quality of being kind.",
+              [
+                "S0024",
+                "S0029"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Showing hope is hopeful.",
+              [
+                "S0018"
+              ]
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

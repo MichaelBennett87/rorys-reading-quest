@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0010",
+  "batchFileSha256": "ae24b2a743229f5f5a8941220d37869b7eb002393b4a99911abca5361ea5bd68",
+  "reviewerThreadId": "01a07bc1-d815-7c71-b972-e3c829df1777",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0103",
+      "fingerprint": "ad5fafc59966bf5cdfbfd096cdd71675cedfcf7d6338ca8cbeb0c65649b4d281",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Photo has long-o sounds rather than two short vowel sounds.", []],
+            ["A2", "DEFENSIBLE", "Picnic divides as pic / nic, with a short i sound in both syllables.", ["S0009"]],
+            ["A3", "INCORRECT", "Music begins with a long-u sound, so it does not have two short vowel sounds.", []],
+            ["A4", "INCORRECT", "Robot begins with a long-o sound, so it does not have two short vowel sounds.", []]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0104",
+      "fingerprint": "c1f8d807a37bd6e9263d1ecaa4b48b3c0145b4af10aab2c2ef13b57f6ebf66eb",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Napkin begins with the closed syllable nap and a short-a sound.", []],
+            ["A2", "INCORRECT", "Sunset begins with the closed syllable sun and a short-u sound.", []],
+            ["A3", "INCORRECT", "Helmet begins with the closed syllable hel and a short-e sound.", []],
+            ["A4", "DEFENSIBLE", "Music begins with the open syllable mu and a long-u sound.", ["S0014"]]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0105",
+      "fingerprint": "4f2a070ca09863e9a19072b248ab1bc0ba800f0d405f6131b9a66fe084c980df",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A2", "A3", "A4"],
+          "ambiguity": "Short-vowel two-syllable words can mean words with two short-vowel syllables, which selects sunset, rabbit, and picnic, or any two-syllable word containing a short vowel, which also makes robot defensible. The prompt also says passages although only one passage is displayed.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "DEFENSIBLE", "Sunset divides as sun / set, with two closed syllables and short vowel sounds.", ["S0021"]],
+            ["A2", "DEFENSIBLE", "Robot contains a short vowel in its second closed syllable, although its first syllable has long o.", []],
+            ["A3", "DEFENSIBLE", "Rabbit divides as rab / bit, with short vowel sounds in both syllables.", ["S0027"]],
+            ["A4", "DEFENSIBLE", "Picnic divides as pic / nic, with short vowel sounds in both syllables.", ["S0021"]]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0106",
+      "fingerprint": "dc212c8d83b7b47f20abb9ae53e15184d8feed2b647b3166d1e68c3772c7d5fd",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This sentence describes the robot standing on the stage, not the pilot playing music.", ["S0012"]],
+            ["A2", "DEFENSIBLE", "This is the exact displayed sentence stating that a pilot played music while the model spun.", ["S0014"]],
+            ["A3", "INCORRECT", "This sentence describes a photo card and zero, not the pilot playing music.", ["S0017"]]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0107",
+      "fingerprint": "38a7ee5fbd1e2a7cf29dc5b625c0a3cf4990a60de7f40a4d8621f149ca7e6c98",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Robot divides into the two spoken syllables ro / bot.", ["S0012"]],
+            ["A2", "INCORRECT", "Sun / set divides sunset, not robot.", []],
+            ["A3", "INCORRECT", "Pic / nic divides picnic, not robot.", []]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Mag / net divides magnet, not photo.", []],
+            ["A2", "DEFENSIBLE", "Photo divides into the two spoken syllables pho / to.", ["S0017"]],
+            ["A3", "INCORRECT", "Rab / bit divides rabbit, not photo.", []]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0108",
+      "fingerprint": "c3320fc0eb8bc6e2e2499ee090401f2fc9b07ea87fe9c215511c63d106cb2697",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Kitten begins with the closed syllable kit.", []],
+            ["A2", "INCORRECT", "Napkin begins with the closed syllable nap.", []],
+            ["A3", "INCORRECT", "Basket begins with the closed syllable bas.", []],
+            ["A4", "DEFENSIBLE", "Robot begins with the open syllable ro.", ["S0012"]]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0109",
+      "fingerprint": "75dfdb3c5f650b5acc6e6f0cf60e79f1cf81b41efef414c51d4089f7d5fd455c",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Robot begins with the open syllable ro.", []],
+            ["A2", "INCORRECT", "Photo begins with the open syllable pho.", []],
+            ["A3", "INCORRECT", "Music begins with the open syllable mu.", []],
+            ["A4", "DEFENSIBLE", "Rabbit begins with the closed syllable rab.", ["S0003"]]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0110",
+      "fingerprint": "c82cb3ba79209d3aade4a03ff3e780fb6e16631f01a7cde765c3100fdbd09fcb",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4"],
+          "ambiguity": "Magnet is often taught as mag / net with short a and short e, but many ordinary pronunciations reduce its second vowel to schwa, so two short vowel sounds is not dialect-stable.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "INCORRECT", "Music begins with a long-u sound and therefore does not have two short vowel sounds.", ["S0030"]],
+            ["A2", "INCORRECT", "Robot begins with a long-o sound and therefore does not have two short vowel sounds.", ["S0030"]],
+            ["A3", "INCORRECT", "Photo uses long-o sounds rather than two short vowel sounds.", ["S0035"]],
+            ["A4", "DEFENSIBLE", "In careful classroom syllabification, magnet is mag / net with short a and short e, though the second vowel is commonly reduced in speech.", []]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0111",
+      "fingerprint": "7e0f448ea7fbe68f9984e383d9f3a42cc7cbfde9d1558facb6d785ce5e455292",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Helmet begins with the closed syllable hel and a short-e sound.", []],
+            ["A2", "INCORRECT", "Basket begins with the closed syllable bas and a short-a sound.", []],
+            ["A3", "INCORRECT", "Sunset begins with the closed syllable sun and a short-u sound.", []],
+            ["A4", "DEFENSIBLE", "Tulip begins with the open syllable tu and a long-u sound.", ["S0032"]]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0112",
+      "fingerprint": "2d596f9c59bff6cbb741f1ae1d4c7bceedc0656c7c5a80f86d355954dd605b73",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A2", "A3", "A4"],
+          "ambiguity": "Long-vowel two-syllable words can mean words containing a long-vowel syllable, which makes all four options defensible, or words with long vowels in both syllables, which selects only solo and photo. The prompt also says passages although only one passage is displayed.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "DEFENSIBLE", "Music begins with the open syllable mu and a long-u sound, although its second vowel is short.", ["S0030"]],
+            ["A2", "DEFENSIBLE", "Solo has open syllables with long-o sounds.", ["S0032"]],
+            ["A3", "DEFENSIBLE", "Photo has open syllables with long-o sounds.", ["S0035"]],
+            ["A4", "DEFENSIBLE", "Tulip begins with the open syllable tu and a long-u sound, although its second vowel is short.", ["S0032"]]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0113",
+      "fingerprint": "b1f26860b3e23ad1422f00666badb4e48182ea08b08c5d72456b90e394499cb5",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This sentence describes a tulip poster and solo chair, not the photo of the zero sign.", ["S0032"]],
+            ["A2", "INCORRECT", "This sentence describes music and a robot, not the photo of the zero sign.", ["S0030"]],
+            ["A3", "DEFENSIBLE", "This is the exact displayed sentence stating that a photo of the zero sign stayed on the wall.", ["S0035"]]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0114",
+      "fingerprint": "afd9e87b5f55dffb2d91ea10fafa51d5b0be8fea0366eca812872c9cae3e6035",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Pilot divides as pi / lot, with an open first syllable and long-i sound.", ["S0039"]],
+            ["A2", "INCORRECT", "Rab / bit divides rabbit, not pilot.", ["S0045"]],
+            ["A3", "INCORRECT", "Sun / set divides sunset, not pilot.", ["S0044"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Mag / net divides magnet, not photo.", ["S0042"]],
+            ["A2", "DEFENSIBLE", "Photo divides as pho / to, with open syllables and long-o sounds.", ["S0042"]],
+            ["A3", "INCORRECT", "Kit / ten divides kitten, not photo.", []]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0115",
+      "fingerprint": "4f5f276a72ccd41b9b4d4d30406a37c8b05fa5c2687c2c73df2555b016630068",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Picnic begins with the closed syllable pic.", []],
+            ["A2", "DEFENSIBLE", "Solo begins with the open syllable so.", []],
+            ["A3", "INCORRECT", "Helmet begins with the closed syllable hel.", []],
+            ["A4", "INCORRECT", "Basket begins with the closed syllable bas.", ["S0045"]]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0116",
+      "fingerprint": "485ac3f2279e05558db06f74102941ab308eef6f4aae22e916a57944163e3e67",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Photo begins with the open syllable pho.", ["S0042"]],
+            ["A2", "DEFENSIBLE", "Basket begins with the closed syllable bas.", ["S0045"]],
+            ["A3", "INCORRECT", "Music begins with the open syllable mu.", []],
+            ["A4", "INCORRECT", "Robot begins with the open syllable ro.", []]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    }
+  ]
+}

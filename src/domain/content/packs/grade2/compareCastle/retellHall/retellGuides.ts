@@ -200,7 +200,7 @@ export const retellHallRetellGuides: readonly RetellGuide[] = [
       },
       {
         pieceId: 'g2-cg-retell-map-card-search-piece-4',
-        text: 'The friends follow the painted arrows, tuck the card beside the sign, and place it back in the folder.',
+        text: 'The friends follow the painted arrows, find the card tucked beside the sign, and place it back in the folder.',
         sequenceIndex: 4,
         role: 'Important event 2',
         evidenceReferenceIds: [sentenceId(RETELL_HALL_PASSAGE_IDS.literaryMapCardSearch, 3), sentenceId(RETELL_HALL_PASSAGE_IDS.literaryMapCardSearch, 4), sentenceId(RETELL_HALL_PASSAGE_IDS.literaryMapCardSearch, 6)],

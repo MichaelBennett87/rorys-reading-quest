@@ -1,0 +1,364 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0016",
+  "batchFileSha256": "ace0837a4e84ecf2da249f5bf2d3625d4fecd6e81193d5a3dedd461a9d067952",
+  "reviewerThreadId": "01a07bc1-d815-7c71-b972-e3c829df1777",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0179",
+      "fingerprint": "3ee42597b5cda5a92056380fc83e7c98701ca8801a4180fe8b05275ae9612512",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4"],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This sentence says the tray was unsafe while cooling, not that the class preheated the oven.", ["S0017"]],
+            ["A2", "INCORRECT", "This sentence describes a preview card and repainting a sign, not preheating the oven.", ["S0014"]],
+            ["A3", "INCORRECT", "This sentence says everyone waited calmly and does not mention the oven.", ["S0018"]],
+            ["A4", "DEFENSIBLE", "This is the exact visible sentence stating that the class had to preheat the oven before it started.", ["S0012"]]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0180",
+      "fingerprint": "c9eb6533575bbb88c3717e9f20c4ed5e4ee5cf3e9f3754d583f3d11ed9b4e335",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Disconnect means separate a connection, not fail to agree.", ["S0034"]],
+            ["A2", "INCORRECT", "Agree is the unprefixed base and expresses agreement rather than not agreeing.", ["S0030"]],
+            ["A3", "DEFENSIBLE", "Disagree is dis- plus agree and means not agree.", ["S0030"]],
+            ["A4", "INCORRECT", "Place has neither the prefix dis- nor the meaning not agree.", ["S0032"]]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0181",
+      "fingerprint": "c0a9516cbc1bf852aad98da919e093ae494d308ea73d8982b60a004053f76774",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4"],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Disagree uses dis- and means not agree, not put in the wrong place.", ["S0030"]],
+            ["A2", "INCORRECT", "Disobey uses dis- and means not obey, not put in the wrong place.", ["S0034"]],
+            ["A3", "INCORRECT", "Disconnect uses dis- and means separate a connection, not put in the wrong place.", ["S0034"]],
+            ["A4", "DEFENSIBLE", "Misplace is mis- plus place and means put in the wrong place.", ["S0032"]]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0182",
+      "fingerprint": "1a6e34b5967a2d26313f08323fa21f00907d33f602e8941cf08c424bc50e6f37",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A2", "A3", "A4"],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Disconnect contains the meaningful prefix dis- before connect.", ["S0034"]],
+            ["A2", "DEFENSIBLE", "Misplace contains the meaningful prefix mis- before place.", ["S0032"]],
+            ["A3", "DEFENSIBLE", "Disagree contains the meaningful prefix dis- before agree.", ["S0030"]],
+            ["A4", "DEFENSIBLE", "Disobey contains the meaningful prefix dis- before obey.", ["S0034"]]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0183",
+      "fingerprint": "9567f40b54861c543c4382ee38d824dfd0c84186bf6a2bfbb0434cf880f9d33f",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A4"],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This split breaks the base agree into nonmeaningful pieces.", ["S0030"]],
+            ["A2", "INCORRECT", "Disa is not the taught prefix and gree is not the base word.", ["S0030"]],
+            ["A3", "INCORRECT", "This split separates the first letter from the base agree.", ["S0030"]],
+            ["A4", "DEFENSIBLE", "Disagree divides cleanly into prefix dis- and base agree.", ["S0030"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A3"],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Misp is not the prefix and lace is not the base word.", ["S0032"]],
+            ["A2", "INCORRECT", "This split breaks the base place into nonmeaningful pieces.", ["S0032"]],
+            ["A3", "DEFENSIBLE", "Misplace divides cleanly into prefix mis- and base place.", ["S0032"]],
+            ["A4", "INCORRECT", "Mi is not the taught prefix and splace is not the base word.", ["S0032"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A2"],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "D is not the taught prefix and isconnect is not the base word.", ["S0034"]],
+            ["A2", "DEFENSIBLE", "Disconnect divides cleanly into prefix dis- and base connect.", ["S0034"]],
+            ["A3", "INCORRECT", "This split breaks the base connect into nonmeaningful pieces.", ["S0034"]],
+            ["A4", "INCORRECT", "Disco is not the prefix and nnect is not the base word.", ["S0034"]]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": ["A4"],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "D is not the taught prefix and isobey is not the base word.", ["S0034"]],
+            ["A2", "INCORRECT", "This split breaks the base obey into nonmeaningful pieces.", ["S0034"]],
+            ["A3", "INCORRECT", "Diso is not the prefix and bey is not the base word.", ["S0034"]],
+            ["A4", "DEFENSIBLE", "Disobey divides cleanly into prefix dis- and base obey.", ["S0034"]]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0184",
+      "fingerprint": "1e9a21a9eca68fbb59aeb4260c4d1d97d06b229a00b6148153477a05a3805845",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A4"],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Connect is the base of disconnect, not disagree.", ["S0034"]],
+            ["A2", "INCORRECT", "Obey is the base of disobey, not disagree.", ["S0034"]],
+            ["A3", "INCORRECT", "Place is the base of misplace, not disagree.", ["S0032"]],
+            ["A4", "DEFENSIBLE", "Removing dis- from disagree leaves the base agree.", ["S0030"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A2"],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Agree is the base of disagree, not misplace.", ["S0030"]],
+            ["A2", "DEFENSIBLE", "Removing mis- from misplace leaves the base place.", ["S0032"]],
+            ["A3", "INCORRECT", "Connect is the base of disconnect, not misplace.", ["S0034"]],
+            ["A4", "INCORRECT", "Obey is the base of disobey, not misplace.", ["S0034"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A4"],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Obey is the base of disobey, not disconnect.", ["S0034"]],
+            ["A2", "INCORRECT", "Agree is the base of disagree, not disconnect.", ["S0030"]],
+            ["A3", "INCORRECT", "Place is the base of misplace, not disconnect.", ["S0032"]],
+            ["A4", "DEFENSIBLE", "Removing dis- from disconnect leaves the base connect.", ["S0034"]]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": ["A1"],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Removing dis- from disobey leaves the base obey.", ["S0034"]],
+            ["A2", "INCORRECT", "Place is the base of misplace, not disobey.", ["S0032"]],
+            ["A3", "INCORRECT", "Agree is the base of disagree, not disobey.", ["S0030"]],
+            ["A4", "INCORRECT", "Connect is the base of disconnect, not disobey.", ["S0034"]]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0185",
+      "fingerprint": "ce0e16a09377126274333a3d10630d4d88a67593ddb704db0072eadd9f1fa453",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Unhappy means not happy and fits the child's feeling when the page was hard.", ["S0039"]],
+            ["A2", "INCORRECT", "Replay means play again, not not happy.", ["S0042"]],
+            ["A3", "INCORRECT", "Unlock means open a lock or make accessible, not not happy.", ["S0039"]],
+            ["A4", "INCORRECT", "Happy means pleased and is the opposite of not happy.", ["S0039"]]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0186",
+      "fingerprint": "0cfd9d78ada5301b747cb91a87ba98199e559179aeb20c06c08f68713e3dbcc4",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4"],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Happy has no re- prefix and does not mean play again.", ["S0039"]],
+            ["A2", "INCORRECT", "Unlock uses un- with lock and does not mean play again.", ["S0039"]],
+            ["A3", "INCORRECT", "Unkind uses un- with kind and does not mean play again.", ["S0042"]],
+            ["A4", "DEFENSIBLE", "Replay is re- plus play and means play again.", ["S0042"]]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0187",
+      "fingerprint": "5755873592f09e24dbfb7822c49f2c351f5be7600e0a94b1b850614fb5586090",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Rebuild uses re- with build and means build again.", ["S0048"]],
+            ["A2", "INCORRECT", "Unpack uses un- with pack and is unrelated to heating beforehand.", ["S0048"]],
+            ["A3", "DEFENSIBLE", "Preheat is pre- plus heat and means to heat beforehand.", ["S0048"]],
+            ["A4", "INCORRECT", "Dislike uses dis- with like and means not like.", ["S0052"]]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0188",
+      "fingerprint": "f84b164bdb54c2ac595b84a84cde1ec3850bbfce054e60cef173c8ed1d8e10c6",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4"],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Heat is the base of preheat, not rebuild.", ["S0048"]],
+            ["A2", "INCORRECT", "Pack is the base of unpack, not rebuild.", ["S0048"]],
+            ["A3", "INCORRECT", "Re is the prefix in rebuild, not its base word.", ["S0048"]],
+            ["A4", "DEFENSIBLE", "Removing re- from rebuild leaves the base word build.", ["S0048"]]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0189",
+      "fingerprint": "65c3e964190d04858c9de954c96011b980bc40986ef6fde848387680b187f481",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A2", "A3", "A4"],
+          "ambiguity": true,
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Miscount is the exact visible prefixed word mis- plus count.", ["S0057"]],
+            ["A2", "DEFENSIBLE", "Misspell is the exact visible prefixed word mis- plus spell.", ["S0059"]],
+            ["A3", "DEFENSIBLE", "Misprint is the exact visible prefixed word mis- plus print.", ["S0059"]],
+            ["A4", "AMBIGUOUS", "Unroll has the prefix un- and is the base form of visible unrolled, but the exact option text unroll does not appear in the passage as the prompt states.", ["S0062"]]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0190",
+      "fingerprint": "bd1becc887fef56e86eb3a114e325032f2736d32be49ee5417bcff87b863ef4a",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This sentence concerns disliking the plan and ignoring the chart, not the three project actions in the prompt.", ["S0052"]],
+            ["A2", "DEFENSIBLE", "This is the exact visible sentence naming unpacking boxes, rebuilding a shelf, and preheating soup.", ["S0048"]],
+            ["A3", "INCORRECT", "This sentence concerns retelling steps and painting a sign, not the three project actions in the prompt.", ["S0053"]]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0191",
+      "fingerprint": "0b1d23e1d4e8747c01772779cb6e256f2cfe6f66bd82c04ab689da2ccfd8e629",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A1"],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Unpack divides cleanly into prefix un- and base pack.", ["S0048"]],
+            ["A2", "INCORRECT", "U is not the taught prefix and npack is not the base word.", ["S0048"]],
+            ["A3", "INCORRECT", "This split breaks the base pack into nonmeaningful pieces.", ["S0048"]],
+            ["A4", "INCORRECT", "Unp is not the prefix and ack is not the base word.", ["S0048"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A4"],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This split breaks the base build into nonmeaningful pieces.", ["S0048"]],
+            ["A2", "INCORRECT", "R is not the taught prefix and ebuild is not the base word.", ["S0048"]],
+            ["A3", "INCORRECT", "Reb is not the prefix and uild is not the base word.", ["S0048"]],
+            ["A4", "DEFENSIBLE", "Rebuild divides cleanly into prefix re- and base build.", ["S0048"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A1"],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Preheat divides cleanly into prefix pre- and base heat.", ["S0048"]],
+            ["A2", "INCORRECT", "Preh is not the prefix and eat is not the base heat.", ["S0048"]],
+            ["A3", "INCORRECT", "Pr is not the taught prefix and eheat is not the base word.", ["S0048"]],
+            ["A4", "INCORRECT", "This split breaks the base heat into nonmeaningful pieces.", ["S0048"]]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": ["A4"],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This split breaks the base like into nonmeaningful pieces.", ["S0052"]],
+            ["A2", "INCORRECT", "Di is not the taught prefix and slike is not the base word.", ["S0052"]],
+            ["A3", "INCORRECT", "Disl is not the prefix and ike is not the base word.", ["S0052"]],
+            ["A4", "DEFENSIBLE", "Dislike divides cleanly into prefix dis- and base like.", ["S0052"]]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    }
+  ]
+}

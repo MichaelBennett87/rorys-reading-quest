@@ -163,7 +163,7 @@ export const themeTrailGuidedQuestions: ReadingQuestion[] = [
     rows: [
       {
         id: 'row-1',
-        prompt: 'What does Marco told Ms. Reed the truth show?',
+        prompt: 'What does Marco telling Ms. Reed the truth show?',
         correctChoiceId: 'honesty-choice',
         options: [
           { id: 'honesty-choice', text: 'choosing honesty' },
@@ -174,18 +174,18 @@ export const themeTrailGuidedQuestions: ReadingQuestion[] = [
       },
       {
         id: 'row-2',
-        prompt: 'What does he showed where the spill began and helped wipe the floor show?',
+        prompt: 'What does Marco showing where the spill began and helping wipe the floor show?',
         correctChoiceId: 'help-choice',
         options: [
           { id: 'help-choice', text: 'helping solve the problem' },
           { id: 'wall-choice', text: 'the mural wall was big' },
-          { id: 'drop-choice', text: 'paint drops were on the floor' },
+          { id: 'drop-choice', text: 'Marco ignored the spill' },
           { id: 'school-choice', text: 'it happened at school' },
         ],
       },
       {
         id: 'row-3',
-        prompt: 'What does the class fixed the mural together show?',
+        prompt: 'What does the class fixing the mural together show?',
         correctChoiceId: 'team-choice',
         options: [
           { id: 'team-choice', text: 'working as a team' },
@@ -196,7 +196,7 @@ export const themeTrailGuidedQuestions: ReadingQuestion[] = [
       },
       {
         id: 'row-4',
-        prompt: 'What does Ms. Reed thanked him show?',
+        prompt: 'What does Ms. Reed thanking Marco show?',
         correctChoiceId: 'trust-choice',
         options: [
           { id: 'trust-choice', text: 'the class could trust him' },
@@ -285,7 +285,7 @@ export const themeTrailGuidedQuestions: ReadingQuestion[] = [
     passageIdentifier: THEME_TRAIL_PASSAGE_IDS.springFair,
     lessonIdentifier: lessonBId,
     questionIdentifier: themeTrailQuestionId('guided-b', 'ht-1'),
-    prompt: 'Select the sentence that shows careful preparation.',
+    prompt: 'Select the sentence that lists the steps Lila took to prepare the supplies.',
     explanation: 'The third sentence shows Lila carefully getting the supplies ready.',
     evidenceReference: 'sentence-clue',
     evidenceReferenceIds: ['g2-story-scouts-theme-trail-passage-spring-fair-sentence-3'],

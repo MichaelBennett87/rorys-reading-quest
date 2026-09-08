@@ -1,0 +1,4796 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-guided-quiet-beginnings-1",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-5052061f2a18dca3",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "71daf626a4d5598633f9854bda1db5d5a1d12af076836b689775af9e419d2da6",
+        "conclusionsSha256": "3aa96228788d61b26d901238c2c8e26ca129fe0cb6c38c8e3545a99dbddbef99",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0021.pass-a.json",
+        "receiptSha256": "3aa96228788d61b26d901238c2c8e26ca129fe0cb6c38c8e3545a99dbddbef99",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word in the museum passage begins with quiet kn and names the statue?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "knight-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "knight-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "ghost-choice",
+              "verdict": "INCORRECT",
+              "rationale": "ghost neither begins with kn nor names the displayed statue.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "knight-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "knight begins with silent k in kn and names the statue.",
+              "evidenceIds": [
+                "silent-letter-combinations-1-target-1",
+                "silent-letter-combinations-1-s1"
+              ]
+            },
+            {
+              "answerId": "wrap-choice",
+              "verdict": "INCORRECT",
+              "rationale": "wrap begins with quiet wr and does not name the statue.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "island-choice",
+              "verdict": "INCORRECT",
+              "rationale": "island does not begin with kn and does not name the statue.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-guided-quiet-beginnings-2",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-77a4036ef707e3d2",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "71daf626a4d5598633f9854bda1db5d5a1d12af076836b689775af9e419d2da6",
+        "conclusionsSha256": "3aa96228788d61b26d901238c2c8e26ca129fe0cb6c38c8e3545a99dbddbef99",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0021.pass-a.json",
+        "receiptSha256": "3aa96228788d61b26d901238c2c8e26ca129fe0cb6c38c8e3545a99dbddbef99",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word begins with quiet kn and names a body part?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "knee-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "knee-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "wrap-choice",
+              "verdict": "INCORRECT",
+              "rationale": "wrap begins with wr and is not a body part.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "ghost-choice",
+              "verdict": "INCORRECT",
+              "rationale": "ghost does not begin with kn and is not a body part.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "knee-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "knee begins with quiet kn and names a body part.",
+              "evidenceIds": [
+                "silent-letter-combinations-1-target-2",
+                "silent-letter-combinations-1-s1"
+              ]
+            },
+            {
+              "answerId": "island-choice",
+              "verdict": "INCORRECT",
+              "rationale": "island does not begin with kn and is not a body part.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-guided-quiet-beginnings-3",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-cce65e5f0872488b",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "71daf626a4d5598633f9854bda1db5d5a1d12af076836b689775af9e419d2da6",
+        "conclusionsSha256": "3aa96228788d61b26d901238c2c8e26ca129fe0cb6c38c8e3545a99dbddbef99",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0019.second-pass.json",
+        "receiptSha256": "6aff5941368145aaf272a0ac120924f50d949bd996786c728dd34a5075b686ea",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word in the museum passage begins with quiet kn and means to tap softly?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "knock-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "knock-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "knock-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "knock begins with quiet kn and means to tap.",
+              "evidenceIds": [
+                "silent-letter-combinations-1-target-3",
+                "silent-letter-combinations-1-s2"
+              ]
+            },
+            {
+              "answerId": "wrong-choice",
+              "verdict": "INCORRECT",
+              "rationale": "wrong begins with quiet wr, not kn, and does not mean tap.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "ghost-choice",
+              "verdict": "INCORRECT",
+              "rationale": "ghost does not begin with kn and does not mean tap.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "comb-choice",
+              "verdict": "INCORRECT",
+              "rationale": "comb does not begin with kn and does not mean tap.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-guided-quiet-beginnings-4",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-8c95746ed8bc5532",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "71daf626a4d5598633f9854bda1db5d5a1d12af076836b689775af9e419d2da6",
+        "conclusionsSha256": "3aa96228788d61b26d901238c2c8e26ca129fe0cb6c38c8e3545a99dbddbef99",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0021.pass-a.json",
+        "receiptSha256": "3aa96228788d61b26d901238c2c8e26ca129fe0cb6c38c8e3545a99dbddbef99",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the quiet-kn words in the passage.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "knight-choice",
+            "knee-choice",
+            "knock-choice",
+            "knit-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "knee-choice",
+            "knit-choice",
+            "knight-choice",
+            "knock-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "knee-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "knee appears in the passage and begins with quiet kn.",
+              "evidenceIds": [
+                "silent-letter-combinations-1-target-2",
+                "silent-letter-combinations-1-s1"
+              ]
+            },
+            {
+              "answerId": "knit-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "knit appears in the passage and begins with quiet kn.",
+              "evidenceIds": [
+                "silent-letter-combinations-1-target-4",
+                "silent-letter-combinations-1-s3"
+              ]
+            },
+            {
+              "answerId": "knight-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "knight appears in the passage and begins with quiet kn.",
+              "evidenceIds": [
+                "silent-letter-combinations-1-target-1",
+                "silent-letter-combinations-1-s1"
+              ]
+            },
+            {
+              "answerId": "knock-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "knock appears in the passage and begins with quiet kn.",
+              "evidenceIds": [
+                "silent-letter-combinations-1-target-3",
+                "silent-letter-combinations-1-s2"
+              ]
+            },
+            {
+              "answerId": "wrap-choice",
+              "verdict": "INCORRECT",
+              "rationale": "wrap begins with quiet wr and does not appear in the passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-guided-quiet-beginnings-5",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-eb2e8b120f8ece56",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "71daf626a4d5598633f9854bda1db5d5a1d12af076836b689775af9e419d2da6",
+        "conclusionsSha256": "3aa96228788d61b26d901238c2c8e26ca129fe0cb6c38c8e3545a99dbddbef99",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0021.pass-a.json",
+        "receiptSha256": "3aa96228788d61b26d901238c2c8e26ca129fe0cb6c38c8e3545a99dbddbef99",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Tap the word with quiet kn.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "knight-segment"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "knight-segment"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "shield-segment",
+              "verdict": "INCORRECT",
+              "rationale": "shield does not begin with kn.",
+              "evidenceIds": [
+                "silent-letter-combinations-1-s1"
+              ]
+            },
+            {
+              "answerId": "closer-segment",
+              "verdict": "INCORRECT",
+              "rationale": "closer does not begin with kn.",
+              "evidenceIds": [
+                "silent-letter-combinations-1-s2"
+              ]
+            },
+            {
+              "answerId": "museum-segment",
+              "verdict": "INCORRECT",
+              "rationale": "museum does not begin with kn.",
+              "evidenceIds": [
+                "silent-letter-combinations-1-s1"
+              ]
+            },
+            {
+              "answerId": "knight-segment",
+              "verdict": "DEFENSIBLE",
+              "rationale": "knight begins with quiet kn.",
+              "evidenceIds": [
+                "silent-letter-combinations-1-target-1",
+                "silent-letter-combinations-1-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-guided-quiet-endings-1",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-5758b300c7401474",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "98c1d33c2abad29e294e81e90b42425263bf2959692d85143230b12ae463f4ff",
+        "conclusionsSha256": "36de6db80d4aa5558fe6c73ae03ab8194011ee64221a4f8af2e27cd45f055aca",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0022.pass-a.json",
+        "receiptSha256": "36de6db80d4aa5558fe6c73ae03ab8194011ee64221a4f8af2e27cd45f055aca",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word in the wrap station passage begins with quiet wr?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "wrap-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "wrap-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "ghost-choice",
+              "verdict": "INCORRECT",
+              "rationale": "ghost does not begin with wr and is not in the passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-3"
+              ]
+            },
+            {
+              "answerId": "wrap-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "wrap appears in the passage and begins with silent w in wr.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-target-1",
+                "silent-letter-combinations-3-s1"
+              ]
+            },
+            {
+              "answerId": "comb-choice",
+              "verdict": "INCORRECT",
+              "rationale": "comb ends with silent mb rather than beginning with wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-3"
+              ]
+            },
+            {
+              "answerId": "island-choice",
+              "verdict": "INCORRECT",
+              "rationale": "island has a silent internal s rather than beginning with wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-guided-quiet-endings-2",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-1a96bf93518e8c77",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "98c1d33c2abad29e294e81e90b42425263bf2959692d85143230b12ae463f4ff",
+        "conclusionsSha256": "36de6db80d4aa5558fe6c73ae03ab8194011ee64221a4f8af2e27cd45f055aca",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0022.pass-a.json",
+        "receiptSha256": "36de6db80d4aa5558fe6c73ae03ab8194011ee64221a4f8af2e27cd45f055aca",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word in the wrap station passage begins with quiet wr and names a body part?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "wrist-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "wrist-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "night-choice",
+              "verdict": "INCORRECT",
+              "rationale": "night does not begin with wr and is not a body part.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-3"
+              ]
+            },
+            {
+              "answerId": "knock-choice",
+              "verdict": "INCORRECT",
+              "rationale": "knock begins with kn and is not a body part.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-3"
+              ]
+            },
+            {
+              "answerId": "lamb-choice",
+              "verdict": "INCORRECT",
+              "rationale": "lamb ends with mb and names an animal.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-3"
+              ]
+            },
+            {
+              "answerId": "wrist-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "wrist appears in the passage, begins with silent wr, and names a body part.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-target-2",
+                "silent-letter-combinations-3-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-guided-quiet-endings-3",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-1894da0b93939127",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "98c1d33c2abad29e294e81e90b42425263bf2959692d85143230b12ae463f4ff",
+        "conclusionsSha256": "36de6db80d4aa5558fe6c73ae03ab8194011ee64221a4f8af2e27cd45f055aca",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0022.pass-a.json",
+        "receiptSha256": "36de6db80d4aa5558fe6c73ae03ab8194011ee64221a4f8af2e27cd45f055aca",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the quiet-wr words in the passage.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "wrap-choice",
+            "wrist-choice",
+            "write-choice",
+            "wrong-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "wrist-choice",
+            "wrap-choice",
+            "wrong-choice",
+            "write-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "comb-choice",
+              "verdict": "INCORRECT",
+              "rationale": "comb ends with quiet mb and does not appear in this passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-3"
+              ]
+            },
+            {
+              "answerId": "wrist-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "wrist appears in the passage and begins with quiet wr.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-target-2",
+                "silent-letter-combinations-3-s2"
+              ]
+            },
+            {
+              "answerId": "wrap-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "wrap appears in the passage and begins with quiet wr.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-target-1",
+                "silent-letter-combinations-3-s1"
+              ]
+            },
+            {
+              "answerId": "wrong-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "wrong appears in the passage and begins with quiet wr.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-target-4",
+                "silent-letter-combinations-3-s3"
+              ]
+            },
+            {
+              "answerId": "write-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "write appears in the passage and begins with quiet wr.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-target-3",
+                "silent-letter-combinations-3-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-guided-quiet-endings-4",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-c782a721e979293d",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "98c1d33c2abad29e294e81e90b42425263bf2959692d85143230b12ae463f4ff",
+        "conclusionsSha256": "36de6db80d4aa5558fe6c73ae03ab8194011ee64221a4f8af2e27cd45f055aca",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0022.pass-a.json",
+        "receiptSha256": "36de6db80d4aa5558fe6c73ae03ab8194011ee64221a4f8af2e27cd45f055aca",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Tap the word that tells what the helper did.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "write-segment"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "write-segment"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "write-segment",
+              "verdict": "DEFENSIBLE",
+              "rationale": "write is the action the sentence says the helper performs.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-target-3",
+                "silent-letter-combinations-3-s2"
+              ]
+            },
+            {
+              "answerId": "label-segment",
+              "verdict": "INCORRECT",
+              "rationale": "label is the noun receiving the action in this sentence.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-s2"
+              ]
+            },
+            {
+              "answerId": "helper-segment",
+              "verdict": "INCORRECT",
+              "rationale": "helper names the person, not what that person did.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-s2"
+              ]
+            },
+            {
+              "answerId": "wrist-segment",
+              "verdict": "INCORRECT",
+              "rationale": "wrist modifies card and does not state the helper action.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-target-2",
+                "silent-letter-combinations-3-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-guided-quiet-endings-5",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-3147ce8e72f3b142",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "98c1d33c2abad29e294e81e90b42425263bf2959692d85143230b12ae463f4ff",
+        "conclusionsSha256": "36de6db80d4aa5558fe6c73ae03ab8194011ee64221a4f8af2e27cd45f055aca",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0022.pass-a.json",
+        "receiptSha256": "36de6db80d4aa5558fe6c73ae03ab8194011ee64221a4f8af2e27cd45f055aca",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "wrap-row",
+          "prompt": "wrap",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "wrap-family"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "wrap-family"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "knight-family",
+              "verdict": "INCORRECT",
+              "rationale": "wrap begins with wr, not kn.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-target-1",
+                "silent-letter-combinations-3-s1"
+              ]
+            },
+            {
+              "answerId": "wrap-family",
+              "verdict": "DEFENSIBLE",
+              "rationale": "wrap begins with silent w in wr.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-target-1",
+                "silent-letter-combinations-3-s1"
+              ]
+            },
+            {
+              "answerId": "island-family",
+              "verdict": "INCORRECT",
+              "rationale": "wrap is not an island-family word.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-target-1",
+                "silent-letter-combinations-3-s1"
+              ]
+            },
+            {
+              "answerId": "mb-family",
+              "verdict": "INCORRECT",
+              "rationale": "wrap does not end with mb.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-target-1",
+                "silent-letter-combinations-3-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "wrist-row",
+          "prompt": "wrist",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "wrist-family"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "wrist-family"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "mb-family-2",
+              "verdict": "INCORRECT",
+              "rationale": "wrist does not end with mb.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-target-2",
+                "silent-letter-combinations-3-s2"
+              ]
+            },
+            {
+              "answerId": "ghost-family",
+              "verdict": "INCORRECT",
+              "rationale": "wrist does not contain the silent-gh family.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-target-2",
+                "silent-letter-combinations-3-s2"
+              ]
+            },
+            {
+              "answerId": "island-family-2",
+              "verdict": "INCORRECT",
+              "rationale": "wrist is not an island-family word.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-target-2",
+                "silent-letter-combinations-3-s2"
+              ]
+            },
+            {
+              "answerId": "wrist-family",
+              "verdict": "DEFENSIBLE",
+              "rationale": "wrist begins with silent w in wr.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-target-2",
+                "silent-letter-combinations-3-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "write-row",
+          "prompt": "write",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "write-family"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "write-family"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "ghost-family-2",
+              "verdict": "INCORRECT",
+              "rationale": "write does not contain the silent-gh family.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-target-3",
+                "silent-letter-combinations-3-s2"
+              ]
+            },
+            {
+              "answerId": "write-family",
+              "verdict": "DEFENSIBLE",
+              "rationale": "write begins with silent w in wr.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-target-3",
+                "silent-letter-combinations-3-s2"
+              ]
+            },
+            {
+              "answerId": "knight-family-2",
+              "verdict": "INCORRECT",
+              "rationale": "write begins with wr, not kn.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-target-3",
+                "silent-letter-combinations-3-s2"
+              ]
+            },
+            {
+              "answerId": "mb-family-3",
+              "verdict": "INCORRECT",
+              "rationale": "write does not end with mb.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-target-3",
+                "silent-letter-combinations-3-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "wrong-row",
+          "prompt": "wrong",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "wrong-family"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "wrong-family"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "wrong-family",
+              "verdict": "DEFENSIBLE",
+              "rationale": "wrong begins with silent w in wr.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-target-4",
+                "silent-letter-combinations-3-s3"
+              ]
+            },
+            {
+              "answerId": "mb-family-4",
+              "verdict": "INCORRECT",
+              "rationale": "wrong does not end with mb.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-target-4",
+                "silent-letter-combinations-3-s3"
+              ]
+            },
+            {
+              "answerId": "ghost-family-3",
+              "verdict": "INCORRECT",
+              "rationale": "wrong does not contain the silent-gh family.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-target-4",
+                "silent-letter-combinations-3-s3"
+              ]
+            },
+            {
+              "answerId": "island-family-3",
+              "verdict": "INCORRECT",
+              "rationale": "wrong is not an island-family word.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-target-4",
+                "silent-letter-combinations-3-s3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-guided-quiet-review-1",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-be49df94e0655818",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "98c1d33c2abad29e294e81e90b42425263bf2959692d85143230b12ae463f4ff",
+        "conclusionsSha256": "36de6db80d4aa5558fe6c73ae03ab8194011ee64221a4f8af2e27cd45f055aca",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0022.pass-a.json",
+        "receiptSha256": "36de6db80d4aa5558fe6c73ae03ab8194011ee64221a4f8af2e27cd45f055aca",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word in the shelter passage ends with quiet mb and names an animal?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lamb-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lamb-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "ghost-choice",
+              "verdict": "INCORRECT",
+              "rationale": "ghost does not end with mb and is not the passage animal.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-4"
+              ]
+            },
+            {
+              "answerId": "lamb-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "lamb appears in the passage, names an animal, and ends with silent mb.",
+              "evidenceIds": [
+                "silent-letter-combinations-4-target-1",
+                "silent-letter-combinations-4-s1"
+              ]
+            },
+            {
+              "answerId": "wren-choice",
+              "verdict": "INCORRECT",
+              "rationale": "wren names an animal but begins with wr and is absent from the passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-4"
+              ]
+            },
+            {
+              "answerId": "comb-choice",
+              "verdict": "INCORRECT",
+              "rationale": "comb ends with silent mb but names a grooming tool, not an animal.",
+              "evidenceIds": [
+                "silent-letter-combinations-4-target-2",
+                "silent-letter-combinations-4-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-guided-quiet-review-2",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-d55a7e54739235e8",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "c1f78a1f34423e4a6444e286e5a3dc7e6a0c7619eb8fef7c9a90dfcf493df645",
+        "conclusionsSha256": "667996fc7fff9696d677a217fbe84ff7e6c1176f35b1397153efa77ae7e7c0c2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0019.second-pass.json",
+        "receiptSha256": "6aff5941368145aaf272a0ac120924f50d949bd996786c728dd34a5075b686ea",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word in the shelter passage ends with quiet mb and names a tool?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "comb-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "comb-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "wrist-choice",
+              "verdict": "INCORRECT",
+              "rationale": "wrist begins with a quiet w pattern and is not the named shelter tool.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-4"
+              ]
+            },
+            {
+              "answerId": "wrong-choice",
+              "verdict": "INCORRECT",
+              "rationale": "wrong begins with a quiet w pattern and is not a tool in the passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-4"
+              ]
+            },
+            {
+              "answerId": "island-choice",
+              "verdict": "INCORRECT",
+              "rationale": "island has a quiet s and is not a tool in the shelter passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-4"
+              ]
+            },
+            {
+              "answerId": "comb-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "comb ends in quiet mb and names the tool beside the lamb.",
+              "evidenceIds": [
+                "silent-letter-combinations-4-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-guided-quiet-review-3",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-b6fcbb54389c58f8",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "c1f78a1f34423e4a6444e286e5a3dc7e6a0c7619eb8fef7c9a90dfcf493df645",
+        "conclusionsSha256": "667996fc7fff9696d677a217fbe84ff7e6c1176f35b1397153efa77ae7e7c0c2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0009.pass-a.json",
+        "receiptSha256": "667996fc7fff9696d677a217fbe84ff7e6c1176f35b1397153efa77ae7e7c0c2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word in the shelter passage ends with quiet mb and shows movement up the ramp?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "climb-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "climb-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "thumb-choice",
+              "verdict": "INCORRECT",
+              "rationale": "thumb ends in quiet mb but does not name movement up the ramp.",
+              "evidenceIds": [
+                "silent-letter-combinations-4-s2"
+              ]
+            },
+            {
+              "answerId": "night-choice",
+              "verdict": "INCORRECT",
+              "rationale": "night does not end in mb and does not name the ramp movement.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-4"
+              ]
+            },
+            {
+              "answerId": "climb-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "climb ends in quiet mb and names the movement up the ramp.",
+              "evidenceIds": [
+                "silent-letter-combinations-4-s2"
+              ]
+            },
+            {
+              "answerId": "island-choice",
+              "verdict": "INCORRECT",
+              "rationale": "island does not end in mb and does not name movement.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-guided-quiet-review-4",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-845ed46966d1133d",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "98c1d33c2abad29e294e81e90b42425263bf2959692d85143230b12ae463f4ff",
+        "conclusionsSha256": "36de6db80d4aa5558fe6c73ae03ab8194011ee64221a4f8af2e27cd45f055aca",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0019.second-pass.json",
+        "receiptSha256": "6aff5941368145aaf272a0ac120924f50d949bd996786c728dd34a5075b686ea",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the quiet-mb words in the passage.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "lamb-choice",
+            "comb-choice",
+            "thumb-choice",
+            "climb-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lamb-choice",
+            "climb-choice",
+            "comb-choice",
+            "thumb-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lamb-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "lamb appears in the passage and ends with quiet mb.",
+              "evidenceIds": [
+                "silent-letter-combinations-4-target-1",
+                "silent-letter-combinations-4-s1"
+              ]
+            },
+            {
+              "answerId": "climb-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "climb appears in the passage and ends with quiet mb.",
+              "evidenceIds": [
+                "silent-letter-combinations-4-target-4",
+                "silent-letter-combinations-4-s2"
+              ]
+            },
+            {
+              "answerId": "comb-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "comb appears in the passage and ends with quiet mb.",
+              "evidenceIds": [
+                "silent-letter-combinations-4-target-2",
+                "silent-letter-combinations-4-s1"
+              ]
+            },
+            {
+              "answerId": "ghost-choice",
+              "verdict": "INCORRECT",
+              "rationale": "ghost neither ends with mb nor appears in the passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-4"
+              ]
+            },
+            {
+              "answerId": "thumb-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "thumb appears in the passage and ends with quiet mb.",
+              "evidenceIds": [
+                "silent-letter-combinations-4-target-3",
+                "silent-letter-combinations-4-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-guided-quiet-review-5",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-774a0a4839b4c12c",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "c1f78a1f34423e4a6444e286e5a3dc7e6a0c7619eb8fef7c9a90dfcf493df645",
+        "conclusionsSha256": "667996fc7fff9696d677a217fbe84ff7e6c1176f35b1397153efa77ae7e7c0c2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0009.pass-a.json",
+        "receiptSha256": "667996fc7fff9696d677a217fbe84ff7e6c1176f35b1397153efa77ae7e7c0c2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Tap the word that completes the action meaning \"look through the list.\"",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "thumb-segment"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "thumb-segment"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "team-segment",
+              "verdict": "INCORRECT",
+              "rationale": "The team will is only the lead-in and does not supply the action word meaning look through.",
+              "evidenceIds": [
+                "silent-letter-combinations-4-s2"
+              ]
+            },
+            {
+              "answerId": "list-segment",
+              "verdict": "INCORRECT",
+              "rationale": "through the list completes the phrase after the action but does not name the action.",
+              "evidenceIds": [
+                "silent-letter-combinations-4-s2"
+              ]
+            },
+            {
+              "answerId": "ramp-segment",
+              "verdict": "INCORRECT",
+              "rationale": "then climb the ramp names a different action.",
+              "evidenceIds": [
+                "silent-letter-combinations-4-s2"
+              ]
+            },
+            {
+              "answerId": "thumb-segment",
+              "verdict": "DEFENSIBLE",
+              "rationale": "thumb completes thumb through the list, meaning look through the list.",
+              "evidenceIds": [
+                "silent-letter-combinations-4-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-guided-quiet-families-1",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-4eb959b4d9d58178",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "96a69f2a2be3ddc8c48af49df83eb480b1c55de8553359d1785fb125fb2366b0",
+        "conclusionsSha256": "d9ffa6fccb044a9d4de6f108de50fd48a873567821979f7be1ab8cfc2376d11a",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0023.pass-a.json",
+        "receiptSha256": "d9ffa6fccb044a9d4de6f108de50fd48a873567821979f7be1ab8cfc2376d11a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word in the night picnic passage has a quiet gh family?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "ghost-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "ghost-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "island-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Island has a quiet s pattern and does not occur in the night picnic passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-5"
+              ]
+            },
+            {
+              "answerId": "knight-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Knight has quiet kn and gh patterns but does not occur in the night picnic passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-5"
+              ]
+            },
+            {
+              "answerId": "ghost-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Ghost is visible in the passage and is explicitly taught as a quiet-gh family word.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s1"
+              ]
+            },
+            {
+              "answerId": "crumb-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Crumb is visible but belongs to the final-mb silent-letter family, not the gh family.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-guided-quiet-families-2",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-1dfb95dfd418a1eb",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "96a69f2a2be3ddc8c48af49df83eb480b1c55de8553359d1785fb125fb2366b0",
+        "conclusionsSha256": "d9ffa6fccb044a9d4de6f108de50fd48a873567821979f7be1ab8cfc2376d11a",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0023.pass-a.json",
+        "receiptSha256": "d9ffa6fccb044a9d4de6f108de50fd48a873567821979f7be1ab8cfc2376d11a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word in the night picnic passage has a quiet gh family and tells about the time of day?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "night-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "night-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "night-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Night contains quiet gh, appears in the passage, and names the time of day.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s1",
+                "silent-letter-combinations-5-s3"
+              ]
+            },
+            {
+              "answerId": "wrap-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Wrap begins with quiet wr, is absent from this passage, and does not name a time of day.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-5"
+              ]
+            },
+            {
+              "answerId": "comb-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Comb ends with quiet mb, is absent from this passage, and does not name a time of day.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-5"
+              ]
+            },
+            {
+              "answerId": "wren-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Wren begins with quiet wr, is absent from this passage, and does not name a time of day.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-guided-quiet-families-3",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-bae3a75f5e9a1cf3",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "96a69f2a2be3ddc8c48af49df83eb480b1c55de8553359d1785fb125fb2366b0",
+        "conclusionsSha256": "d9ffa6fccb044a9d4de6f108de50fd48a873567821979f7be1ab8cfc2376d11a",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0023.pass-a.json",
+        "receiptSha256": "d9ffa6fccb044a9d4de6f108de50fd48a873567821979f7be1ab8cfc2376d11a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the quiet-gh words in the passage.",
+          "requestedSelectionCount": 3,
+          "keyedAnswerIds": [
+            "ghost-choice",
+            "night-choice",
+            "bright-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "night-choice",
+            "ghost-choice",
+            "bright-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lamb-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Lamb has a quiet final b, not the gh pattern, and is absent from this passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-5"
+              ]
+            },
+            {
+              "answerId": "night-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Night is a visible passage word whose gh is not pronounced.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s1",
+                "silent-letter-combinations-5-s3"
+              ]
+            },
+            {
+              "answerId": "crumb-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Crumb has a quiet final b in the mb family, not a gh pattern.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s2"
+              ]
+            },
+            {
+              "answerId": "ghost-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Ghost is visible and is included in the taught quiet-gh family.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s1"
+              ]
+            },
+            {
+              "answerId": "bright-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Bright is a visible passage word whose gh is not pronounced.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-guided-quiet-families-4",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-ab4e59eb62db9f3f",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "96a69f2a2be3ddc8c48af49df83eb480b1c55de8553359d1785fb125fb2366b0",
+        "conclusionsSha256": "d9ffa6fccb044a9d4de6f108de50fd48a873567821979f7be1ab8cfc2376d11a",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0023.pass-a.json",
+        "receiptSha256": "d9ffa6fccb044a9d4de6f108de50fd48a873567821979f7be1ab8cfc2376d11a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Tap the word that shows the snack trail near the table.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "crumb-segment"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "crumb-segment"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "crumb-segment",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Crumb is the single word that identifies the snack-made trail.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s2"
+              ]
+            },
+            {
+              "answerId": "lantern-segment",
+              "verdict": "INCORRECT",
+              "rationale": "A bright lantern names the light source, not the snack trail, and is a phrase rather than the requested word.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s2"
+              ]
+            },
+            {
+              "answerId": "table-segment",
+              "verdict": "INCORRECT",
+              "rationale": "Near the table gives the trail's location, not what kind of trail it is, and is a phrase rather than one word.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s2"
+              ]
+            },
+            {
+              "answerId": "lights-segment",
+              "verdict": "INCORRECT",
+              "rationale": "Lights describes what the lantern does; it does not identify the snack trail.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-guided-quiet-families-5",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-14a6bcc6a2049532",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "96a69f2a2be3ddc8c48af49df83eb480b1c55de8553359d1785fb125fb2366b0",
+        "conclusionsSha256": "d9ffa6fccb044a9d4de6f108de50fd48a873567821979f7be1ab8cfc2376d11a",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0023.pass-a.json",
+        "receiptSha256": "d9ffa6fccb044a9d4de6f108de50fd48a873567821979f7be1ab8cfc2376d11a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "ghost-row",
+          "prompt": "ghost",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "ghost-family"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "ghost-family"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "island-family",
+              "verdict": "INCORRECT",
+              "rationale": "Ghost is not an island-family word.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s1"
+              ]
+            },
+            {
+              "answerId": "knight-family",
+              "verdict": "INCORRECT",
+              "rationale": "Ghost does not begin with kn.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s1"
+              ]
+            },
+            {
+              "answerId": "crumb-family",
+              "verdict": "INCORRECT",
+              "rationale": "Ghost does not end with mb.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s1"
+              ]
+            },
+            {
+              "answerId": "ghost-family",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Ghost is included in the taught quiet-gh family.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "night-row",
+          "prompt": "night",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "night-family"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "night-family"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "island-family-2",
+              "verdict": "INCORRECT",
+              "rationale": "Night is not an island-family word.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s1",
+                "silent-letter-combinations-5-s3"
+              ]
+            },
+            {
+              "answerId": "knight-family-2",
+              "verdict": "INCORRECT",
+              "rationale": "Night does not begin with kn.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s1",
+                "silent-letter-combinations-5-s3"
+              ]
+            },
+            {
+              "answerId": "crumb-family-2",
+              "verdict": "INCORRECT",
+              "rationale": "Night does not end with mb.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s1",
+                "silent-letter-combinations-5-s3"
+              ]
+            },
+            {
+              "answerId": "night-family",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The gh in night is not pronounced.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s1",
+                "silent-letter-combinations-5-s3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "bright-row",
+          "prompt": "bright",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "bright-family"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "bright-family"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "crumb-family-3",
+              "verdict": "INCORRECT",
+              "rationale": "Bright does not end with mb.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s2"
+              ]
+            },
+            {
+              "answerId": "island-family-3",
+              "verdict": "INCORRECT",
+              "rationale": "Bright is not an island-family word.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s2"
+              ]
+            },
+            {
+              "answerId": "bright-family",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The gh in bright is not pronounced.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s2"
+              ]
+            },
+            {
+              "answerId": "knight-family-3",
+              "verdict": "INCORRECT",
+              "rationale": "Bright does not begin with kn.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "crumb-row",
+          "prompt": "crumb",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "crumb-family"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "crumb-family"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "crumb-family",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Crumb belongs to the final-mb family because its b is not pronounced.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s2"
+              ]
+            },
+            {
+              "answerId": "knight-family-4",
+              "verdict": "INCORRECT",
+              "rationale": "Crumb does not begin with kn.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s2"
+              ]
+            },
+            {
+              "answerId": "island-family-4",
+              "verdict": "INCORRECT",
+              "rationale": "Crumb is not an island-family word.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s2"
+              ]
+            },
+            {
+              "answerId": "ghost-family-2",
+              "verdict": "INCORRECT",
+              "rationale": "Crumb contains no gh pattern.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-checkpoint-a-1",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-a11ee8f34d35f8af",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "96a69f2a2be3ddc8c48af49df83eb480b1c55de8553359d1785fb125fb2366b0",
+        "conclusionsSha256": "d9ffa6fccb044a9d4de6f108de50fd48a873567821979f7be1ab8cfc2376d11a",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0023.pass-a.json",
+        "receiptSha256": "d9ffa6fccb044a9d4de6f108de50fd48a873567821979f7be1ab8cfc2376d11a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word in the museum passage begins with quiet kn and names the statue?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "knight-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "knight-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "comb-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Comb ends with quiet mb and is absent from the museum passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "wrap-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Wrap begins with quiet wr and is absent from the museum passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "ghost-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Ghost uses a gh pattern and is absent from the museum passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "knight-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Knight begins with quiet kn, appears in the museum passage, and names the statue.",
+              "evidenceIds": [
+                "silent-letter-combinations-1-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-checkpoint-a-2",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-adb73d4973e6c055",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "96a69f2a2be3ddc8c48af49df83eb480b1c55de8553359d1785fb125fb2366b0",
+        "conclusionsSha256": "d9ffa6fccb044a9d4de6f108de50fd48a873567821979f7be1ab8cfc2376d11a",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0023.pass-a.json",
+        "receiptSha256": "d9ffa6fccb044a9d4de6f108de50fd48a873567821979f7be1ab8cfc2376d11a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word in the wrap station passage begins with quiet wr and tells what the helper will do?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "write-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "write-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "island-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Island has a quiet s and is absent from the wrap station passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-3"
+              ]
+            },
+            {
+              "answerId": "write-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Write begins with quiet wr and names what the helper is helped to do.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-s2"
+              ]
+            },
+            {
+              "answerId": "comb-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Comb ends with quiet mb and is absent from the wrap station passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-3"
+              ]
+            },
+            {
+              "answerId": "knight-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Knight begins with quiet kn and is absent from the wrap station passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-checkpoint-a-3",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-403666f69e77e1ba",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "c1f78a1f34423e4a6444e286e5a3dc7e6a0c7619eb8fef7c9a90dfcf493df645",
+        "conclusionsSha256": "667996fc7fff9696d677a217fbe84ff7e6c1176f35b1397153efa77ae7e7c0c2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0009.pass-a.json",
+        "receiptSha256": "667996fc7fff9696d677a217fbe84ff7e6c1176f35b1397153efa77ae7e7c0c2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word in the shelter passage ends with quiet mb and names a tool?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "comb-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "comb-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "island-choice",
+              "verdict": "INCORRECT",
+              "rationale": "island neither ends in mb nor names a tool in the shelter passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-4"
+              ]
+            },
+            {
+              "answerId": "comb-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "comb ends in quiet mb and names the tool beside the lamb.",
+              "evidenceIds": [
+                "silent-letter-combinations-4-s1"
+              ]
+            },
+            {
+              "answerId": "wrist-choice",
+              "verdict": "INCORRECT",
+              "rationale": "wrist begins with a quiet w pattern and is not the named tool.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-4"
+              ]
+            },
+            {
+              "answerId": "ghost-choice",
+              "verdict": "INCORRECT",
+              "rationale": "ghost does not end in mb and is not the named tool.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-checkpoint-a-4",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-82ac764af075bd2e",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "96a69f2a2be3ddc8c48af49df83eb480b1c55de8553359d1785fb125fb2366b0",
+        "conclusionsSha256": "d9ffa6fccb044a9d4de6f108de50fd48a873567821979f7be1ab8cfc2376d11a",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0019.second-pass.json",
+        "receiptSha256": "6aff5941368145aaf272a0ac120924f50d949bd996786c728dd34a5075b686ea",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word in the night picnic passage has the quiet gh family and names the story figure?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "ghost-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "ghost-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "comb-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Comb belongs to the mb family and is absent from the night picnic passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-5"
+              ]
+            },
+            {
+              "answerId": "wrap-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Wrap belongs to the wr family and is absent from the night picnic passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-5"
+              ]
+            },
+            {
+              "answerId": "knight-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Knight has quiet kn and gh patterns but is absent from the night picnic passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-5"
+              ]
+            },
+            {
+              "answerId": "ghost-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Ghost is the quiet-gh word that names the figure in the ghost story.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-checkpoint-a-5",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-129d6186a0de933a",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "c1f78a1f34423e4a6444e286e5a3dc7e6a0c7619eb8fef7c9a90dfcf493df645",
+        "conclusionsSha256": "667996fc7fff9696d677a217fbe84ff7e6c1176f35b1397153efa77ae7e7c0c2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0009.pass-a.json",
+        "receiptSha256": "667996fc7fff9696d677a217fbe84ff7e6c1176f35b1397153efa77ae7e7c0c2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words that have a quiet letter pattern.",
+          "requestedSelectionCount": 5,
+          "keyedAnswerIds": [
+            "knight-choice",
+            "wrap-choice",
+            "comb-choice",
+            "ghost-choice",
+            "island-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "wrap-choice",
+            "comb-choice",
+            "island-choice",
+            "ghost-choice",
+            "knight-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "wrap-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "wrap begins with the quiet w spelling wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "music-choice",
+              "verdict": "INCORRECT",
+              "rationale": "music has no quiet-letter pattern taught in this set.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "comb-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "comb ends with a quiet b in mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "island-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "island contains a quiet s.",
+              "evidenceIds": [
+                "silent-letter-combinations-7-s1"
+              ]
+            },
+            {
+              "answerId": "ghost-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "ghost contains the pack's quiet h in the gh pattern.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "knight-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "knight begins with a quiet k in kn and also contains quiet gh.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-checkpoint-a-6",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-f8fe660bed0d84c7",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "96a69f2a2be3ddc8c48af49df83eb480b1c55de8553359d1785fb125fb2366b0",
+        "conclusionsSha256": "d9ffa6fccb044a9d4de6f108de50fd48a873567821979f7be1ab8cfc2376d11a",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0019.second-pass.json",
+        "receiptSha256": "6aff5941368145aaf272a0ac120924f50d949bd996786c728dd34a5075b686ea",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Tap the word that belongs to the island family.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "island-segment"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "island-segment"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "comb-segment",
+              "verdict": "INCORRECT",
+              "rationale": "Comb belongs to the final-mb silent-letter family, not the island family.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "island-segment",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Island is visible and belongs to the family in which its written s is not pronounced.",
+              "evidenceIds": [
+                "silent-letter-combinations-7-s1"
+              ]
+            },
+            {
+              "answerId": "wrap-segment",
+              "verdict": "INCORRECT",
+              "rationale": "Wrap belongs to the initial-wr family, not the island family.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "ghost-segment",
+              "verdict": "INCORRECT",
+              "rationale": "Ghost belongs to the taught gh family, not the island family.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-checkpoint-a-7",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-1bfa02cf3429ed53",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "c1f78a1f34423e4a6444e286e5a3dc7e6a0c7619eb8fef7c9a90dfcf493df645",
+        "conclusionsSha256": "667996fc7fff9696d677a217fbe84ff7e6c1176f35b1397153efa77ae7e7c0c2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0009.pass-a.json",
+        "receiptSha256": "667996fc7fff9696d677a217fbe84ff7e6c1176f35b1397153efa77ae7e7c0c2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "knight-row",
+          "prompt": "kneel",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "knight-family-a1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "knight-family-a1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "ghost-family-a1",
+              "verdict": "INCORRECT",
+              "rationale": "kneel does not use a gh pattern.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "island-family-a1",
+              "verdict": "INCORRECT",
+              "rationale": "kneel is not in the island quiet-s family.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "wrap-family-a1",
+              "verdict": "INCORRECT",
+              "rationale": "kneel does not begin with wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "comb-family-a1",
+              "verdict": "INCORRECT",
+              "rationale": "kneel does not end with mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "knight-family-a1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "kneel begins with silent k in kn.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "wrap-row",
+          "prompt": "wrap",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "wrap-family-a2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "wrap-family-a2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "island-family-a2",
+              "verdict": "INCORRECT",
+              "rationale": "wrap is not in the island quiet-s family.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "knight-family-a2",
+              "verdict": "INCORRECT",
+              "rationale": "wrap does not begin with kn.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "comb-family-a2",
+              "verdict": "INCORRECT",
+              "rationale": "wrap does not end with mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "wrap-family-a2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "wrap begins with silent w in wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "ghost-family-a2",
+              "verdict": "INCORRECT",
+              "rationale": "wrap does not use a gh pattern.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "comb-row",
+          "prompt": "comb",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "comb-family-a3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "comb-family-a3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "ghost-family-a3",
+              "verdict": "INCORRECT",
+              "rationale": "comb does not use a gh pattern.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "island-family-a3",
+              "verdict": "INCORRECT",
+              "rationale": "comb is not in the island quiet-s family.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "comb-family-a3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "comb ends with silent b in mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "wrap-family-a3",
+              "verdict": "INCORRECT",
+              "rationale": "comb does not begin with wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "knight-family-a3",
+              "verdict": "INCORRECT",
+              "rationale": "comb does not begin with kn.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "ghost-row",
+          "prompt": "ghost",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "ghost-family-a4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "ghost-family-a4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "knight-family-a4",
+              "verdict": "INCORRECT",
+              "rationale": "ghost does not begin with kn.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "ghost-family-a4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "ghost uses the pack's quiet h in the gh pattern.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "comb-family-a4",
+              "verdict": "INCORRECT",
+              "rationale": "ghost does not end with mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "wrap-family-a4",
+              "verdict": "INCORRECT",
+              "rationale": "ghost does not begin with wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "island-family-a4",
+              "verdict": "INCORRECT",
+              "rationale": "ghost is not in the island quiet-s family.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "island-row",
+          "prompt": "island",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "island-family-a5"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "island-family-a5"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "comb-family-a5",
+              "verdict": "INCORRECT",
+              "rationale": "island does not end with mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "knight-family-a5",
+              "verdict": "INCORRECT",
+              "rationale": "island does not begin with kn.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "wrap-family-a5",
+              "verdict": "INCORRECT",
+              "rationale": "island does not begin with wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "ghost-family-a5",
+              "verdict": "INCORRECT",
+              "rationale": "island does not use a gh pattern.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "island-family-a5",
+              "verdict": "DEFENSIBLE",
+              "rationale": "island contains the quiet s represented by this family label.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-checkpoint-b-1",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-ebe71daa8866bc16",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "c1f78a1f34423e4a6444e286e5a3dc7e6a0c7619eb8fef7c9a90dfcf493df645",
+        "conclusionsSha256": "667996fc7fff9696d677a217fbe84ff7e6c1176f35b1397153efa77ae7e7c0c2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0009.pass-a.json",
+        "receiptSha256": "667996fc7fff9696d677a217fbe84ff7e6c1176f35b1397153efa77ae7e7c0c2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word in the workshop passage begins with quiet kn and names an action?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "kneel-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "kneel-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "ghost-choice",
+              "verdict": "INCORRECT",
+              "rationale": "ghost neither begins with kn nor names the workshop action.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-2"
+              ]
+            },
+            {
+              "answerId": "wrong-choice",
+              "verdict": "INCORRECT",
+              "rationale": "wrong begins with wr, not kn, and is not the action in the passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-2"
+              ]
+            },
+            {
+              "answerId": "island-choice",
+              "verdict": "INCORRECT",
+              "rationale": "island does not begin with kn and does not name the action.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-2"
+              ]
+            },
+            {
+              "answerId": "kneel-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "kneel begins with quiet k in kn and names Maya's action.",
+              "evidenceIds": [
+                "silent-letter-combinations-2-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-checkpoint-b-2",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-4231b0dd3b349a41",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "e840663e1a5958c8a2b5c59ac206a0d79797466588ff7fbedc8b58e8c48c80c0",
+        "conclusionsSha256": "b66a0ffd9e956ed975174eb2343940aa101c50768c027b3789d89594dce6e465",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0019.second-pass.json",
+        "receiptSha256": "6aff5941368145aaf272a0ac120924f50d949bd996786c728dd34a5075b686ea",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word in the garden passage begins with quiet wr and names a bird?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "wren-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "wren-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "comb-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Comb ends with quiet mb, is not a bird, and is absent from the garden passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "ghost-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Ghost uses the gh family, is not the bird named in the garden passage, and is absent from it.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "wren-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Wren begins with quiet wr, appears in the garden passage, and names a bird.",
+              "evidenceIds": [
+                "silent-letter-combinations-6-s1"
+              ]
+            },
+            {
+              "answerId": "island-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Island uses an island-family quiet s, does not name a bird, and is absent from the garden passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-checkpoint-b-3",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-642a3c109f3e2ee4",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "e840663e1a5958c8a2b5c59ac206a0d79797466588ff7fbedc8b58e8c48c80c0",
+        "conclusionsSha256": "b66a0ffd9e956ed975174eb2343940aa101c50768c027b3789d89594dce6e465",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0024.pass-a.json",
+        "receiptSha256": "b66a0ffd9e956ed975174eb2343940aa101c50768c027b3789d89594dce6e465",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word in the shelter passage ends with quiet mb and names the way up the ramp?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "climb-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "climb-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "thumb-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Thumb ends with quiet mb, but in the source it names moving through a list rather than the way up the ramp.",
+              "evidenceIds": [
+                "silent-letter-combinations-4-s2"
+              ]
+            },
+            {
+              "answerId": "climb-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Climb ends with quiet mb and names the movement up the ramp.",
+              "evidenceIds": [
+                "silent-letter-combinations-4-s2"
+              ]
+            },
+            {
+              "answerId": "night-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Night uses quiet gh and is absent from the shelter passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-4"
+              ]
+            },
+            {
+              "answerId": "island-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Island uses an island-family quiet s and is absent from the shelter passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-checkpoint-b-4",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-a785b7ecbe189940",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "c1f78a1f34423e4a6444e286e5a3dc7e6a0c7619eb8fef7c9a90dfcf493df645",
+        "conclusionsSha256": "667996fc7fff9696d677a217fbe84ff7e6c1176f35b1397153efa77ae7e7c0c2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0009.pass-a.json",
+        "receiptSha256": "667996fc7fff9696d677a217fbe84ff7e6c1176f35b1397153efa77ae7e7c0c2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words that have a quiet letter pattern.",
+          "requestedSelectionCount": 5,
+          "keyedAnswerIds": [
+            "knight-choice",
+            "wrong-choice",
+            "thumb-choice",
+            "bright-choice",
+            "island-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "knight-choice",
+            "bright-choice",
+            "thumb-choice",
+            "island-choice",
+            "wrong-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "music-choice",
+              "verdict": "INCORRECT",
+              "rationale": "music has no quiet-letter pattern taught in this set.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-5"
+              ]
+            },
+            {
+              "answerId": "knight-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "knight begins with quiet k in kn and contains quiet gh.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-5"
+              ]
+            },
+            {
+              "answerId": "bright-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "bright contains silent gh.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s2"
+              ]
+            },
+            {
+              "answerId": "thumb-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "thumb ends with silent b in mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-5"
+              ]
+            },
+            {
+              "answerId": "island-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "island contains a quiet s.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-5"
+              ]
+            },
+            {
+              "answerId": "wrong-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "wrong begins with silent w in wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-checkpoint-b-5",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-1d4192a3687a67bf",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "e840663e1a5958c8a2b5c59ac206a0d79797466588ff7fbedc8b58e8c48c80c0",
+        "conclusionsSha256": "b66a0ffd9e956ed975174eb2343940aa101c50768c027b3789d89594dce6e465",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0019.second-pass.json",
+        "receiptSha256": "6aff5941368145aaf272a0ac120924f50d949bd996786c728dd34a5075b686ea",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Tap the word that belongs to the island family.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "island-segment"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "island-segment"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "shore-segment",
+              "verdict": "INCORRECT",
+              "rationale": "Shore is a location word and does not have the island-family quiet s pattern.",
+              "evidenceIds": [
+                "silent-letter-combinations-7-s3"
+              ]
+            },
+            {
+              "answerId": "island-segment",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Island is visible and belongs to the family in which its written s is not pronounced.",
+              "evidenceIds": [
+                "silent-letter-combinations-7-s1"
+              ]
+            },
+            {
+              "answerId": "finger-segment",
+              "verdict": "INCORRECT",
+              "rationale": "Finger has no island-family silent-letter pattern.",
+              "evidenceIds": [
+                "silent-letter-combinations-7-s1"
+              ]
+            },
+            {
+              "answerId": "map-segment",
+              "verdict": "INCORRECT",
+              "rationale": "Map has no island-family silent-letter pattern.",
+              "evidenceIds": [
+                "silent-letter-combinations-7-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-checkpoint-b-6",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-d6e3fe959897ae81",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "e840663e1a5958c8a2b5c59ac206a0d79797466588ff7fbedc8b58e8c48c80c0",
+        "conclusionsSha256": "b66a0ffd9e956ed975174eb2343940aa101c50768c027b3789d89594dce6e465",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0019.second-pass.json",
+        "receiptSha256": "6aff5941368145aaf272a0ac120924f50d949bd996786c728dd34a5075b686ea",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "knot-row",
+          "prompt": "knot",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "knot-family-b1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "knot-family-b1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "comb-family-b1",
+              "verdict": "INCORRECT",
+              "rationale": "knot does not use the silent mb pattern; its quiet-letter family is silent kn.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "wrist-family-b1",
+              "verdict": "INCORRECT",
+              "rationale": "knot does not use the silent wr pattern; its quiet-letter family is silent kn.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "aisle-family-b1",
+              "verdict": "INCORRECT",
+              "rationale": "knot does not use the silent island pattern; its quiet-letter family is silent kn.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "knot-family-b1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "knot begins with kn- and its initial k is not pronounced.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "light-family-b1",
+              "verdict": "INCORRECT",
+              "rationale": "knot does not use the silent gh pattern; its quiet-letter family is silent kn.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "wrist-row",
+          "prompt": "wrist",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "wrist-family-b2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "wrist-family-b2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "aisle-family-b2",
+              "verdict": "INCORRECT",
+              "rationale": "wrist does not use the silent island pattern; its quiet-letter family is silent wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "light-family-b2",
+              "verdict": "INCORRECT",
+              "rationale": "wrist does not use the silent gh pattern; its quiet-letter family is silent wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "wrist-family-b2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "wrist begins with wr- and its initial w is not pronounced.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "knight-family-2",
+              "verdict": "INCORRECT",
+              "rationale": "wrist does not use the silent kn pattern; its quiet-letter family is silent wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "comb-family-b2",
+              "verdict": "INCORRECT",
+              "rationale": "wrist does not use the silent mb pattern; its quiet-letter family is silent wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "comb-row",
+          "prompt": "comb",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "comb-family-b3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "comb-family-b3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "comb-family-b3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "comb ends with mb and its final b is not pronounced.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "knight-family-3",
+              "verdict": "INCORRECT",
+              "rationale": "comb does not use the silent kn pattern; its quiet-letter family is silent mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "wrist-family-b3",
+              "verdict": "INCORRECT",
+              "rationale": "comb does not use the silent wr pattern; its quiet-letter family is silent mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "light-family-b3",
+              "verdict": "INCORRECT",
+              "rationale": "comb does not use the silent gh pattern; its quiet-letter family is silent mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "aisle-family-b3",
+              "verdict": "INCORRECT",
+              "rationale": "comb does not use the silent island pattern; its quiet-letter family is silent mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "light-row",
+          "prompt": "light",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "light-family-b4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "light-family-b4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "light-family-b4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The gh in light is not pronounced.",
+              "evidenceIds": [
+                "silent-letter-combinations-6-s2"
+              ]
+            },
+            {
+              "answerId": "comb-family-b4",
+              "verdict": "INCORRECT",
+              "rationale": "light does not use the silent mb pattern; its quiet-letter family is silent gh.",
+              "evidenceIds": [
+                "silent-letter-combinations-6-s2"
+              ]
+            },
+            {
+              "answerId": "aisle-family-b4",
+              "verdict": "INCORRECT",
+              "rationale": "light does not use the silent island pattern; its quiet-letter family is silent gh.",
+              "evidenceIds": [
+                "silent-letter-combinations-6-s2"
+              ]
+            },
+            {
+              "answerId": "wrist-family-b4",
+              "verdict": "INCORRECT",
+              "rationale": "light does not use the silent wr pattern; its quiet-letter family is silent gh.",
+              "evidenceIds": [
+                "silent-letter-combinations-6-s2"
+              ]
+            },
+            {
+              "answerId": "knight-family-b4",
+              "verdict": "INCORRECT",
+              "rationale": "light does not use the silent kn pattern; its quiet-letter family is silent gh.",
+              "evidenceIds": [
+                "silent-letter-combinations-6-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "aisle-row",
+          "prompt": "aisle",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "aisle-family-b5"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "aisle-family-b5"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "aisle-family-b5",
+              "verdict": "DEFENSIBLE",
+              "rationale": "aisle belongs to the island family because its written s is not pronounced.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "wrist-family-b5",
+              "verdict": "INCORRECT",
+              "rationale": "aisle does not use the silent wr pattern; its quiet-letter family is silent island.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "light-family-b5",
+              "verdict": "INCORRECT",
+              "rationale": "aisle does not use the silent gh pattern; its quiet-letter family is silent island.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "knight-family-b5",
+              "verdict": "INCORRECT",
+              "rationale": "aisle does not use the silent kn pattern; its quiet-letter family is silent island.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "comb-family-b5",
+              "verdict": "INCORRECT",
+              "rationale": "aisle does not use the silent mb pattern; its quiet-letter family is silent island.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-checkpoint-b-7",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-e631cf9d6fc54201",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "c1f78a1f34423e4a6444e286e5a3dc7e6a0c7619eb8fef7c9a90dfcf493df645",
+        "conclusionsSha256": "667996fc7fff9696d677a217fbe84ff7e6c1176f35b1397153efa77ae7e7c0c2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0009.pass-a.json",
+        "receiptSha256": "667996fc7fff9696d677a217fbe84ff7e6c1176f35b1397153efa77ae7e7c0c2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "kneel-row",
+          "prompt": "kneel",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "kneel-family-c1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "kneel-family-c1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "kneel-family-c1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "kneel begins with silent k in kn.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "thumb-family-c1",
+              "verdict": "INCORRECT",
+              "rationale": "kneel does not end with mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "ghost-family-c1",
+              "verdict": "INCORRECT",
+              "rationale": "kneel does not use a gh pattern.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "islander-family-c1",
+              "verdict": "INCORRECT",
+              "rationale": "kneel is not in the island quiet-s family.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "wrong-family-c1",
+              "verdict": "INCORRECT",
+              "rationale": "kneel does not begin with wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "wrong-row",
+          "prompt": "wrong",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "wrong-family-c2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "wrong-family-c2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "islander-family-c2",
+              "verdict": "INCORRECT",
+              "rationale": "wrong is not in the island quiet-s family.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "wrong-family-c2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "wrong begins with silent w in wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "thumb-family-c2",
+              "verdict": "INCORRECT",
+              "rationale": "wrong does not end with mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "ghost-family-c2",
+              "verdict": "INCORRECT",
+              "rationale": "wrong does not use a gh pattern.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "kneel-family-c2",
+              "verdict": "INCORRECT",
+              "rationale": "wrong does not begin with kn.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "thumb-row",
+          "prompt": "thumb",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "thumb-family-c3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "thumb-family-c3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "ghost-family-c3",
+              "verdict": "INCORRECT",
+              "rationale": "thumb does not use a gh pattern.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "kneel-family-c3",
+              "verdict": "INCORRECT",
+              "rationale": "thumb does not begin with kn.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "wrong-family-c3",
+              "verdict": "INCORRECT",
+              "rationale": "thumb does not begin with wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "thumb-family-c3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "thumb ends with silent b in mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "islander-family-c3",
+              "verdict": "INCORRECT",
+              "rationale": "thumb is not in the island quiet-s family.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "ghost-row",
+          "prompt": "ghost",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "ghost-family-c4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "ghost-family-c4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "wrong-family-c4",
+              "verdict": "INCORRECT",
+              "rationale": "ghost does not begin with wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "islander-family-c4",
+              "verdict": "INCORRECT",
+              "rationale": "ghost is not in the island quiet-s family.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "thumb-family-c4",
+              "verdict": "INCORRECT",
+              "rationale": "ghost does not end with mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "kneel-family-c4",
+              "verdict": "INCORRECT",
+              "rationale": "ghost does not begin with kn.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "ghost-family-c4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "ghost uses the pack's quiet h in the gh pattern.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "islander-row",
+          "prompt": "islander",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "islander-family-c5"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "islander-family-c5"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "kneel-family-c5",
+              "verdict": "INCORRECT",
+              "rationale": "islander does not begin with kn.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "thumb-family-c5",
+              "verdict": "INCORRECT",
+              "rationale": "islander does not end with mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "ghost-family-c5",
+              "verdict": "INCORRECT",
+              "rationale": "islander does not use a gh pattern.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "islander-family-c5",
+              "verdict": "DEFENSIBLE",
+              "rationale": "islander keeps the quiet s pattern from island.",
+              "evidenceIds": [
+                "silent-letter-combinations-7-s1"
+              ]
+            },
+            {
+              "answerId": "wrong-family-c5",
+              "verdict": "INCORRECT",
+              "rationale": "islander does not begin with wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-checkpoint-c-1",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-d0863fdf2fc09513",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "e840663e1a5958c8a2b5c59ac206a0d79797466588ff7fbedc8b58e8c48c80c0",
+        "conclusionsSha256": "b66a0ffd9e956ed975174eb2343940aa101c50768c027b3789d89594dce6e465",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0024.pass-a.json",
+        "receiptSha256": "b66a0ffd9e956ed975174eb2343940aa101c50768c027b3789d89594dce6e465",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word in the museum passage begins with quiet kn and names a body part?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "knee-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "knee-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "wrap-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Wrap begins with quiet wr, does not name a body part, and is absent from the museum passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "ghost-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Ghost uses the gh family, does not name a body part, and is absent from the museum passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            },
+            {
+              "answerId": "knee-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Knee begins with quiet kn, appears in the museum passage, and names a body part.",
+              "evidenceIds": [
+                "silent-letter-combinations-1-s1"
+              ]
+            },
+            {
+              "answerId": "comb-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Comb ends with quiet mb, does not name a body part, and is absent from the museum passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-checkpoint-c-2",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-23e844e678bc5482",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "e840663e1a5958c8a2b5c59ac206a0d79797466588ff7fbedc8b58e8c48c80c0",
+        "conclusionsSha256": "b66a0ffd9e956ed975174eb2343940aa101c50768c027b3789d89594dce6e465",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0024.pass-a.json",
+        "receiptSha256": "b66a0ffd9e956ed975174eb2343940aa101c50768c027b3789d89594dce6e465",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word in the wrap station passage begins with quiet wr and means to make a label with letters?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "write-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "write-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "island-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Island does not begin with wr and is absent from the wrap station passage.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-3"
+              ]
+            },
+            {
+              "answerId": "knit-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Knit begins with quiet kn, not wr, and does not mean make a label with letters.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-3"
+              ]
+            },
+            {
+              "answerId": "comb-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Comb ends with quiet mb and does not mean make a label with letters.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-3"
+              ]
+            },
+            {
+              "answerId": "write-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Write begins with quiet wr and is the action used to make the label with letters.",
+              "evidenceIds": [
+                "silent-letter-combinations-3-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-checkpoint-c-3",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-7a298cd846f8b9b4",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "c1f78a1f34423e4a6444e286e5a3dc7e6a0c7619eb8fef7c9a90dfcf493df645",
+        "conclusionsSha256": "667996fc7fff9696d677a217fbe84ff7e6c1176f35b1397153efa77ae7e7c0c2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0009.pass-a.json",
+        "receiptSha256": "667996fc7fff9696d677a217fbe84ff7e6c1176f35b1397153efa77ae7e7c0c2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word in the shelter passage ends with quiet mb and shows movement up the ramp?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "climb-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "climb-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "ghost-choice",
+              "verdict": "INCORRECT",
+              "rationale": "ghost does not end with mb and does not name ramp movement.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-4"
+              ]
+            },
+            {
+              "answerId": "wren-choice",
+              "verdict": "INCORRECT",
+              "rationale": "wren does not end with mb and does not name ramp movement.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-4"
+              ]
+            },
+            {
+              "answerId": "island-choice",
+              "verdict": "INCORRECT",
+              "rationale": "island does not end with mb and does not name movement.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-4"
+              ]
+            },
+            {
+              "answerId": "climb-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "climb ends in quiet mb and names the movement up the ramp.",
+              "evidenceIds": [
+                "silent-letter-combinations-4-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-checkpoint-c-4",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-83102d1a9697837e",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "c1f78a1f34423e4a6444e286e5a3dc7e6a0c7619eb8fef7c9a90dfcf493df645",
+        "conclusionsSha256": "667996fc7fff9696d677a217fbe84ff7e6c1176f35b1397153efa77ae7e7c0c2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0019.second-pass.json",
+        "receiptSha256": "6aff5941368145aaf272a0ac120924f50d949bd996786c728dd34a5075b686ea",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words that have a quiet letter pattern.",
+          "requestedSelectionCount": 5,
+          "keyedAnswerIds": [
+            "knot-choice",
+            "wrist-choice",
+            "lamb-choice",
+            "ghost-choice",
+            "isle-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lamb-choice",
+            "ghost-choice",
+            "knot-choice",
+            "wrist-choice",
+            "isle-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lamb-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "lamb ends with silent b in mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-5"
+              ]
+            },
+            {
+              "answerId": "music-choice",
+              "verdict": "INCORRECT",
+              "rationale": "music has no quiet-letter pattern taught in this set.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-5"
+              ]
+            },
+            {
+              "answerId": "ghost-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "ghost contains the pack's quiet h in the gh pattern.",
+              "evidenceIds": [
+                "silent-letter-combinations-5-s1"
+              ]
+            },
+            {
+              "answerId": "knot-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "knot begins with silent k in kn.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-5"
+              ]
+            },
+            {
+              "answerId": "wrist-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "wrist begins with silent w in wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-5"
+              ]
+            },
+            {
+              "answerId": "isle-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "isle contains a quiet s.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-checkpoint-c-5",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-5be4e2e4bb750a90",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "e840663e1a5958c8a2b5c59ac206a0d79797466588ff7fbedc8b58e8c48c80c0",
+        "conclusionsSha256": "b66a0ffd9e956ed975174eb2343940aa101c50768c027b3789d89594dce6e465",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0019.second-pass.json",
+        "receiptSha256": "6aff5941368145aaf272a0ac120924f50d949bd996786c728dd34a5075b686ea",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Tap the word that names the island family word in the sentence.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "island-segment"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "island-segment"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "path-segment",
+              "verdict": "INCORRECT",
+              "rationale": "Path has no island-family silent-letter pattern.",
+              "evidenceIds": [
+                "silent-letter-combinations-7-s3"
+              ]
+            },
+            {
+              "answerId": "shore-segment",
+              "verdict": "INCORRECT",
+              "rationale": "Shore has no island-family silent-letter pattern.",
+              "evidenceIds": [
+                "silent-letter-combinations-7-s3"
+              ]
+            },
+            {
+              "answerId": "island-segment",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Island is the visible word whose written s is not pronounced.",
+              "evidenceIds": [
+                "silent-letter-combinations-7-s1"
+              ]
+            },
+            {
+              "answerId": "finger-segment",
+              "verdict": "INCORRECT",
+              "rationale": "Finger has no island-family silent-letter pattern.",
+              "evidenceIds": [
+                "silent-letter-combinations-7-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-checkpoint-c-6",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-83e0a60157e7f945",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "c1f78a1f34423e4a6444e286e5a3dc7e6a0c7619eb8fef7c9a90dfcf493df645",
+        "conclusionsSha256": "667996fc7fff9696d677a217fbe84ff7e6c1176f35b1397153efa77ae7e7c0c2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0009.pass-a.json",
+        "receiptSha256": "667996fc7fff9696d677a217fbe84ff7e6c1176f35b1397153efa77ae7e7c0c2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "knock-row",
+          "prompt": "knock",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "knock-family-c1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "knock-family-c1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "aisle-family-c1",
+              "verdict": "INCORRECT",
+              "rationale": "knock is not in the island quiet-s family.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "bright-family-c1",
+              "verdict": "INCORRECT",
+              "rationale": "knock does not use a gh pattern.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "knock-family-c1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "knock begins with silent k in kn.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "write-family-c1",
+              "verdict": "INCORRECT",
+              "rationale": "knock does not begin with wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "thumb-family-c1",
+              "verdict": "INCORRECT",
+              "rationale": "knock does not end with mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "write-row",
+          "prompt": "write",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "write-family-c2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "write-family-c2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "knock-family-c2",
+              "verdict": "INCORRECT",
+              "rationale": "write does not begin with kn.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "bright-family-c2",
+              "verdict": "INCORRECT",
+              "rationale": "write does not use a gh pattern.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "write-family-c2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "write begins with silent w in wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "thumb-family-c2",
+              "verdict": "INCORRECT",
+              "rationale": "write does not end with mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "aisle-family-c2",
+              "verdict": "INCORRECT",
+              "rationale": "write is not in the island quiet-s family.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "thumb-row",
+          "prompt": "thumb",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "thumb-family-c3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "thumb-family-c3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "bright-family-c3",
+              "verdict": "INCORRECT",
+              "rationale": "thumb does not use a gh pattern.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "thumb-family-c3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "thumb ends with silent b in mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "aisle-family-c3",
+              "verdict": "INCORRECT",
+              "rationale": "thumb is not in the island quiet-s family.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "knock-family-c3",
+              "verdict": "INCORRECT",
+              "rationale": "thumb does not begin with kn.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "write-family-c3",
+              "verdict": "INCORRECT",
+              "rationale": "thumb does not begin with wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "bright-row",
+          "prompt": "bright",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "bright-family-c4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "bright-family-c4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "aisle-family-c4",
+              "verdict": "INCORRECT",
+              "rationale": "bright is not in the island quiet-s family.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "bright-family-c4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "bright contains silent gh.",
+              "evidenceIds": [
+                "silent-letter-combinations-6-s2"
+              ]
+            },
+            {
+              "answerId": "write-family-c4",
+              "verdict": "INCORRECT",
+              "rationale": "bright does not begin with wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "thumb-family-c4",
+              "verdict": "INCORRECT",
+              "rationale": "bright does not end with mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "knock-family-c4",
+              "verdict": "INCORRECT",
+              "rationale": "bright does not begin with kn.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "aisle-row",
+          "prompt": "aisle",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "aisle-family-c5"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "aisle-family-c5"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "thumb-family-c5",
+              "verdict": "INCORRECT",
+              "rationale": "aisle does not end with mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "bright-family-c5",
+              "verdict": "INCORRECT",
+              "rationale": "aisle does not use a gh pattern.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "write-family-c5",
+              "verdict": "INCORRECT",
+              "rationale": "aisle does not begin with wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "aisle-family-c5",
+              "verdict": "DEFENSIBLE",
+              "rationale": "aisle contains the quiet s represented by the island-family label.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            },
+            {
+              "answerId": "knock-family-c5",
+              "verdict": "INCORRECT",
+              "rationale": "aisle does not begin with kn.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-silent-letter-combinations-checkpoint-c-7",
+      "packId": "g2-word-forge-silent-letter-combinations",
+      "contentVersion": "g2-wf-silent-letter-combinations-r0.1.0",
+      "contentFingerprint": "qta-v1-47574afc6da59210",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "64c304005f6230ffc55e39dbe1e53c908bb873d6cda540e6d2a8954af94b7f0b",
+        "conclusionsSha256": "902e1528e88eeb3c0dae32fcfb95835d0a7a011fcc0b7aaf17104bec88c7da3d",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0010.pass-a.json",
+        "receiptSha256": "902e1528e88eeb3c0dae32fcfb95835d0a7a011fcc0b7aaf17104bec88c7da3d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "knee-row",
+          "prompt": "knee",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "knee-family-d1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "knee-family-d1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "wrong-family-d1",
+              "verdict": "INCORRECT",
+              "rationale": "knee does not begin with wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "island-family-d1",
+              "verdict": "INCORRECT",
+              "rationale": "knee is not in the island quiet-s family.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "high-family-d1",
+              "verdict": "INCORRECT",
+              "rationale": "knee does not use a gh pattern.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "knee-family-d1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "knee begins with silent k in kn.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "comb-family-d1",
+              "verdict": "INCORRECT",
+              "rationale": "knee does not end with mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "wrong-row",
+          "prompt": "wrong",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "wrong-family-d2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "wrong-family-d2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "comb-family-d2",
+              "verdict": "INCORRECT",
+              "rationale": "wrong does not end with mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "high-family-d2",
+              "verdict": "INCORRECT",
+              "rationale": "wrong does not use a gh pattern.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "island-family-d2",
+              "verdict": "INCORRECT",
+              "rationale": "wrong is not in the island quiet-s family.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "wrong-family-d2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "wrong begins with silent w in wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "knee-family-d2",
+              "verdict": "INCORRECT",
+              "rationale": "wrong does not begin with kn.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "comb-row",
+          "prompt": "comb",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "comb-family-d3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "comb-family-d3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "island-family-d3",
+              "verdict": "INCORRECT",
+              "rationale": "comb is not in the island quiet-s family.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "wrong-family-d3",
+              "verdict": "INCORRECT",
+              "rationale": "comb does not begin with wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "comb-family-d3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "comb ends with silent b in mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "high-family-d3",
+              "verdict": "INCORRECT",
+              "rationale": "comb does not use a gh pattern.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "knee-family-d3",
+              "verdict": "INCORRECT",
+              "rationale": "comb does not begin with kn.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "high-row",
+          "prompt": "high",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "high-family-d4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "high-family-d4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "island-family-d4",
+              "verdict": "INCORRECT",
+              "rationale": "high is not in the island quiet-s family.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "comb-family-d4",
+              "verdict": "INCORRECT",
+              "rationale": "high does not end with mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "wrong-family-d4",
+              "verdict": "INCORRECT",
+              "rationale": "high does not begin with wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "high-family-d4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "high contains silent gh.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "knee-family-d4",
+              "verdict": "INCORRECT",
+              "rationale": "high does not begin with kn.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "island-row",
+          "prompt": "island",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "island-family-d5"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "island-family-d5"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "island-family-d5",
+              "verdict": "DEFENSIBLE",
+              "rationale": "island contains the quiet s represented by this family label.",
+              "evidenceIds": [
+                "silent-letter-combinations-7-s1"
+              ]
+            },
+            {
+              "answerId": "wrong-family-d5",
+              "verdict": "INCORRECT",
+              "rationale": "island does not begin with wr.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "knee-family-d5",
+              "verdict": "INCORRECT",
+              "rationale": "island does not begin with kn.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "high-family-d5",
+              "verdict": "INCORRECT",
+              "rationale": "island does not use a gh pattern.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            },
+            {
+              "answerId": "comb-family-d5",
+              "verdict": "INCORRECT",
+              "rationale": "island does not end with mb.",
+              "evidenceIds": [
+                "passage-g2-word-forge-silent-letter-combinations-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

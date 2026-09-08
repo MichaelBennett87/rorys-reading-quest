@@ -1,0 +1,301 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0086",
+  "batchFileSha256": "f5242b98d89ccb48aae3d5d08acfbac6bb7453779fa7811a9e67f2389c6deaa2",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1006",
+      "fingerprint": "4f181ad01d6968bea5134ba331f578fdc28fa828c412ea6b450c630060d6bf2e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Both syllables are not closed: camp ends with a consonant, but sta ends with a vowel sound.", ["S0081", "S0083"]],
+            ["A2", "INCORRECT", "Both syllables are not open because camp ends with a consonant.", ["S0081", "S0083"]],
+            ["A3", "INCORRECT", "This reverses the syllable types shown in stable and campground.", ["S0081", "S0083"]],
+            ["A4", "DEFENSIBLE", "Sta ends in a vowel sound and is open, while camp ends in a consonant and is closed.", ["S0081", "S0083"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1007",
+      "fingerprint": "7563610e21ca2db66e488fd674a78b1c3695d5b1f2077217c7e7596f9d2dafee",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Campground begins with camp, not a vowel-team syllable.", ["S0074", "S0083"]],
+            ["A2", "INCORRECT", "Returning begins with the prefix re-, not a vowel-team syllable.", ["S0079", "S0083"]],
+            ["A3", "DEFENSIBLE", "Trailblazer begins with trail, whose vowel team spells one vowel sound.", ["S0075", "S0083"]],
+            ["A4", "INCORRECT", "Stable begins with sta, an open syllable rather than a vowel-team syllable.", ["S0081", "S0083"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1008",
+      "fingerprint": "701dba9d459384b9261187047cfe51dfda987afc1d57b54c936f1015efbf7cfe",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Stable ends with the consonant-le syllable ble.", ["S0081", "S0083"]],
+            ["A2", "INCORRECT", "Trailblazer ends with zer, not a consonant-le syllable.", ["S0075", "S0083"]],
+            ["A3", "INCORRECT", "Returning ends with ing, not a consonant-le syllable.", ["S0079", "S0083"]],
+            ["A4", "INCORRECT", "Campground ends with ground, not a consonant-le syllable.", ["S0074", "S0083"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1009",
+      "fingerprint": "b8227324b9fc9a9b85efaf16a37e26dee1cab4d602a1fbe917509d8393be8c64",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Campground divides at the compound boundary camp|ground.", ["S0074", "S0083"]],
+            ["A2", "DEFENSIBLE", "Trailblazer divides at the compound boundary trail|blazer.", ["S0075", "S0083"]],
+            ["A3", "INCORRECT", "Stable is not formed from two source words joined as a compound.", ["S0081", "S0083"]],
+            ["A4", "INCORRECT", "Returning uses the prefix re- and suffix -ing rather than a compound boundary.", ["S0079", "S0083"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1010",
+      "fingerprint": "7c7894f10b39baa49637ea67e160c64457da17a3d92fcc8ece9280b9aeeaf4ea",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Re- is the prefix at the beginning of returning.", ["S0079", "S0083"]],
+            ["A2", "INCORRECT", "Turn is the base word, not the prefix.", ["S0079", "S0083"]],
+            ["A3", "INCORRECT", "-ing is the ending suffix, not the beginning prefix.", ["S0079", "S0083"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1011",
+      "fingerprint": "5490d784acebef470eda9ff49c50cbc44f40dac5ecee499d42c3e9f26a9b4ad4",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Camp|ground divides campground, not trailblazer.", ["S0074", "S0075", "S0083"]],
+            ["A2", "INCORRECT", "Sta|ble divides stable, not trailblazer.", ["S0075", "S0081", "S0083"]],
+            ["A3", "INCORRECT", "Re|turn|ing divides returning, not trailblazer.", ["S0075", "S0079", "S0083"]],
+            ["A4", "DEFENSIBLE", "Trail|bla|zer matches the taught pronunciation chunks for trailblazer.", ["S0075", "S0083"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Sta|ble divides stable, not campground.", ["S0074", "S0081", "S0083"]],
+            ["A2", "DEFENSIBLE", "Camp|ground is the compound division of campground.", ["S0074", "S0083"]],
+            ["A3", "INCORRECT", "Re|turn|ing divides returning, not campground.", ["S0074", "S0079", "S0083"]],
+            ["A4", "INCORRECT", "Trail|bla|zer divides trailblazer, not campground.", ["S0074", "S0075", "S0083"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Trail|bla|zer divides trailblazer, not returning.", ["S0075", "S0079", "S0083"]],
+            ["A2", "DEFENSIBLE", "Re|turn|ing identifies the prefix, base, and ending in returning.", ["S0079", "S0083"]],
+            ["A3", "INCORRECT", "Camp|ground divides campground, not returning.", ["S0074", "S0079", "S0083"]],
+            ["A4", "INCORRECT", "Sta|ble divides stable, not returning.", ["S0079", "S0081", "S0083"]]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Camp|ground divides campground, not stable.", ["S0074", "S0081", "S0083"]],
+            ["A2", "DEFENSIBLE", "Sta|ble is the correct syllable division of stable.", ["S0081", "S0083"]],
+            ["A3", "INCORRECT", "Re|turn|ing divides returning, not stable.", ["S0079", "S0081", "S0083"]],
+            ["A4", "INCORRECT", "Trail|bla|zer divides trailblazer, not stable.", ["S0075", "S0081", "S0083"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1012",
+      "fingerprint": "22936d1482fffb244b0a6101706e7dd36b9a3b6e846f79952e50ddccf73cadc4",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Trail|bla|zer is a pronunciation-chunk division, not the requested meaningful compound-part division.", ["S0075", "S0083"]],
+            ["A2", "INCORRECT", "The unsplit word does not show its meaningful parts.", ["S0075", "S0083"]],
+            ["A3", "DEFENSIBLE", "Trail|blazer separates the two meaningful words in the compound.", ["S0075", "S0083"]],
+            ["A4", "INCORRECT", "T is not a meaningful word part in trailblazer.", ["S0075", "S0083"]]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The unsplit word does not show pronunciation chunks.", ["S0075", "S0083"]],
+            ["A2", "DEFENSIBLE", "Trail|bla|zer matches the learner-visible pronunciation chunks.", ["S0075", "S0083"]],
+            ["A3", "INCORRECT", "Trail|blazer shows the compound boundary but does not break blazer into the taught pronunciation chunks.", ["S0075", "S0083"]],
+            ["A4", "INCORRECT", "Splitting off the final r does not form pronounceable chunks.", ["S0075", "S0083"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1013",
+      "fingerprint": "89028285f0f2834545976a67d545d7f1dce438193e921e925ffe4b19dc93b852",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "A question mark signals a question rather than the brief pause in the target sentence.", ["S0008", "S0009"]],
+            ["A2", "INCORRECT", "An exclamation mark signals strong feeling rather than the brief pause in the target sentence.", ["S0005", "S0010"]],
+            ["A3", "DEFENSIBLE", "The comma in the target sentence signals the brief pause.", ["S0008"]],
+            ["A4", "INCORRECT", "A period makes a full stop rather than the brief pause within the target sentence.", ["S0008"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1014",
+      "fingerprint": "49a9edde638395241754ffb36b9c28668e9a730ff3ca54a431769b8f82222474",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The quoted sentence asks whether the glider is ready and ends with a question mark.", ["S0009"]],
+            ["A2", "INCORRECT", "The glider statement reports an action and is not a question.", ["S0007"]],
+            ["A3", "INCORRECT", "The sentence about pausing reports an action and is not a question.", ["S0008"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1015",
+      "fingerprint": "8887262cf13dfa95b44a77219540e2187611692b9f4ef2a1c6524b1f7585ad47",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2", "A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The line is a question; its question mark signals asking rather than the strong exclamatory energy requested.", ["S0009"]],
+            ["A2", "DEFENSIBLE", "The short command ends with an exclamation mark and is read with strong energy.", ["S0010"]],
+            ["A3", "DEFENSIBLE", "The launch response ends with an exclamation mark and is read with strong energy.", ["S0005"]],
+            ["A4", "INCORRECT", "The marker sentence is narration and does not contain an energetic quoted line.", ["S0007"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1016",
+      "fingerprint": "6dd20155921e940b04e67cf88cac59cd7f403c95ba592eaf5869138c0dca568a",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "A comma does not require a full stop.", ["S0003", "S0008"]],
+            ["A2", "DEFENSIBLE", "A comma signals a brief pause.", ["S0003", "S0008"]],
+            ["A3", "INCORRECT", "A comma does not by itself turn a sentence into a question.", ["S0003", "S0008"]],
+            ["A4", "INCORRECT", "A comma does not signal the strong feeling of an exclamation mark.", ["S0003", "S0008"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "A period marks a full stop at the end of a statement.", ["S0007", "S0008"]],
+            ["A2", "INCORRECT", "A brief internal pause is the comma behavior, not the period behavior.", ["S0007", "S0008"]],
+            ["A3", "INCORRECT", "A period does not mark a question.", ["S0007", "S0008"]],
+            ["A4", "INCORRECT", "A period does not signal strong feeling by itself.", ["S0007", "S0008"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "A question mark does not merely mark an ordinary full-stop statement.", ["S0009"]],
+            ["A2", "INCORRECT", "A question mark does not signal the comma's brief pause.", ["S0009"]],
+            ["A3", "DEFENSIBLE", "A question mark tells the reader to read the line as a question.", ["S0009"]],
+            ["A4", "INCORRECT", "Strong exclamatory feeling is not the defining role of a question mark here.", ["S0009"]]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "An exclamation mark does more than mark an ordinary full stop in this lesson.", ["S0005", "S0010"]],
+            ["A2", "INCORRECT", "An exclamation mark does not signal the comma's brief pause.", ["S0005", "S0010"]],
+            ["A3", "INCORRECT", "An exclamation mark does not turn the line into a question.", ["S0005", "S0010"]],
+            ["A4", "DEFENSIBLE", "An exclamation mark signals strong feeling or energy in the quoted launch lines.", ["S0005", "S0010"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

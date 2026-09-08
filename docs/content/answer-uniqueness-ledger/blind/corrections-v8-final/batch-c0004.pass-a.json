@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-c0004",
+  "batchFileSha256": "902c97a0a83cee13430e6a008eed62f19d4c4f9b4b822fadd420a389a9b29d45",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0811",
+      "fingerprint": "f0167d6174a08b559acd4268bfa9adc66fd45a08cac3f76d43649faea0d575a8",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the literal last sentence, but it explicitly says the eraser did not matter to the mural work.",
+              [
+                "S0013"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "This states that the mural still needs a final label, so the work is not complete yet.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This completes one repair step but does not establish that all mural work is complete.",
+              [
+                "S0011"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The mural has its neat title and the phrase At last signals that the work is complete.",
+              [
+                "S0012"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0832",
+      "fingerprint": "e818ae177de22af8b175dc4b2a55886386c38525da7411696a5e2e421153ba9d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "This states the poster goal before the curled-corner problem is solved.",
+              [
+                "S0069"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes arranging name cards, not solving the poster problem.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The clock is merely the literal final detail and provides no evidence that the poster problem was solved.",
+              [
+                "S0073"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The poster now hangs neatly, directly showing that its curled-corner problem has been solved.",
+              [
+                "S0072"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

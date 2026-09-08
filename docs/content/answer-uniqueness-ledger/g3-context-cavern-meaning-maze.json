@@ -1,0 +1,4699 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "lesson-g3-cc-mm-context-clue-compass-q-1",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-4a0c2d08be7569a4",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "fa4657add4332f21f22332df7366630b6a1241c63594ccb370186fe0e310ac0c",
+        "conclusionsSha256": "a81b068b7c6f21cd6c19fefee4a200991efae8f37924fe657efb4fb7d816ea56",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0027.second-pass.json",
+        "receiptSha256": "942849a998cbcfd5e822e7061660c6479a2b44922f39151ed8fe62e0dbed4bc7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does nocturnal mean in the garden report?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-context-clue-compass-q-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-context-clue-compass-q-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-1-choice-2",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The report does not connect nocturnal animals with being hidden under soil.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-1-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "A moth and bat move after dark; inability to fly is not the meaning.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The report explicitly defines nocturnal animals as active after dark.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-1",
+                "g3-cc-mm-context-clue-compass-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-1-choice-3",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Color is not part of the definition.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-context-clue-compass-q-2",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-35b983506f36accc",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "fa4657add4332f21f22332df7366630b6a1241c63594ccb370186fe0e310ac0c",
+        "conclusionsSha256": "a81b068b7c6f21cd6c19fefee4a200991efae8f37924fe657efb4fb7d816ea56",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0134.pass-a.json",
+        "receiptSha256": "a81b068b7c6f21cd6c19fefee4a200991efae8f37924fe657efb4fb7d816ea56",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which meaning of saturated fits the sponge?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-context-clue-compass-q-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-context-clue-compass-q-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-2-choice-3",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Floating is not discussed.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-9"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sponge has absorbed so much rain that water drips from it.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-9",
+                "g3-cc-mm-context-clue-compass-sentence-12"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-2-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The sponge is wet from rain, not covered with dry dust.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-9"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-2-choice-4",
+              "verdict": "UNSUPPORTED",
+              "rationale": "No cutting occurs.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-9"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-context-clue-compass-q-3",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-9d4e80edfba340c9",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "fa4657add4332f21f22332df7366630b6a1241c63594ccb370186fe0e310ac0c",
+        "conclusionsSha256": "a81b068b7c6f21cd6c19fefee4a200991efae8f37924fe657efb4fb7d816ea56",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0134.pass-a.json",
+        "receiptSha256": "a81b068b7c6f21cd6c19fefee4a200991efae8f37924fe657efb4fb7d816ea56",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details that help explain the unfamiliar words. Select two.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-context-clue-compass-q-3-choice-1",
+            "lesson-g3-cc-mm-context-clue-compass-q-3-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-context-clue-compass-q-3-choice-1",
+            "lesson-g3-cc-mm-context-clue-compass-q-3-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The restatement sleepy enough to yawn directly explains drowsy.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-3-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Saving notes is an event but gives no word-meaning clue.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-5"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-3-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Only a small amount restates the meaning of scarce.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-7",
+                "g3-cc-mm-context-clue-compass-sentence-8"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-3-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Location beside beds does not explain an unfamiliar target word.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-context-clue-compass-q-4",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-2b7acc61d8311b6d",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "fa4657add4332f21f22332df7366630b6a1241c63594ccb370186fe0e310ac0c",
+        "conclusionsSha256": "a81b068b7c6f21cd6c19fefee4a200991efae8f37924fe657efb4fb7d816ea56",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0134.pass-a.json",
+        "receiptSha256": "a81b068b7c6f21cd6c19fefee4a200991efae8f37924fe657efb4fb7d816ea56",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that uses a contrast to explain scarce.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-context-clue-compass-q-4-segment-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-context-clue-compass-q-4-segment-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-4-segment-3",
+              "verdict": "INCORRECT",
+              "rationale": "This uses cause and effect to explain saturated.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-9",
+                "g3-cc-mm-context-clue-compass-sentence-12"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-4-segment-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes the students strategy, not a contrast explaining scarce.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-10"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-4-segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "This uses restatement to explain drowsy.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-4",
+                "g3-cc-mm-context-clue-compass-sentence-11"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-4-segment-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Plentiful is contrasted with scarce using but, showing only a small amount of soil.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-7",
+                "g3-cc-mm-context-clue-compass-sentence-8",
+                "g3-cc-mm-context-clue-compass-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-context-clue-compass-q-5",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-f6f84aa8d6100684",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "fa4657add4332f21f22332df7366630b6a1241c63594ccb370186fe0e310ac0c",
+        "conclusionsSha256": "a81b068b7c6f21cd6c19fefee4a200991efae8f37924fe657efb4fb7d816ea56",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0134.pass-a.json",
+        "receiptSha256": "a81b068b7c6f21cd6c19fefee4a200991efae8f37924fe657efb4fb7d816ea56",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "lesson-g3-cc-mm-context-clue-compass-q-5-row-1",
+          "prompt": "nocturnal",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This is scarce.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-7"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "This is saturated.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-9"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source explicitly supports nocturnal.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This is drowsy.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Nocturnal means active at night.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-1",
+                "g3-cc-mm-context-clue-compass-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-g3-cc-mm-context-clue-compass-q-5-row-2",
+          "prompt": "drowsy",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "This is saturated.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-9"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This is nocturnal.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Drowsy means sleepy.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This is scarce.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-7"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source directly restates drowsy.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-g3-cc-mm-context-clue-compass-q-5-row-3",
+          "prompt": "scarce",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This is nocturnal.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This is drowsy.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source explains scarce by contrast and restatement.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-7",
+                "g3-cc-mm-context-clue-compass-sentence-8"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "This is saturated.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-9"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Scarce means available only in a small amount.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-7",
+                "g3-cc-mm-context-clue-compass-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-g3-cc-mm-context-clue-compass-q-5-row-4",
+          "prompt": "saturated",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This is scarce.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-7"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Saturated means completely soaked.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-9",
+                "g3-cc-mm-context-clue-compass-sentence-12"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source explains saturated by cause and effect.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-9"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This is nocturnal.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-context-clue-compass-q-5-meaning-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This is drowsy.",
+              "evidenceIds": [
+                "g3-cc-mm-context-clue-compass-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-relationship-ropes-q-1",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-6c7c29c78f7c711b",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "0f16794768ce9b6b73f823c0f0d8796e21806c2d425d93d4b01cd601f2965f2d",
+        "conclusionsSha256": "05e65549bd5d27a4a183b08fd71119d08a55c8d57b1b01b0506d7b0882973423",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0135.pass-a.json",
+        "receiptSha256": "05e65549bd5d27a4a183b08fd71119d08a55c8d57b1b01b0506d7b0882973423",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word relationship best helps explain swift?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-relationship-ropes-q-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-relationship-ropes-q-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-1-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "Quick restates swift rather than opposing it.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-2",
+                "g3-cc-mm-relationship-ropes-sentence-12"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Quick is used as a same-meaning clue for swift.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-2",
+                "g3-cc-mm-relationship-ropes-sentence-12"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-1-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Quick is a speed description, not a gate function.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-2",
+                "g3-cc-mm-relationship-ropes-sentence-13"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-1-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Quick is not a physical part of a rabbit.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-relationship-ropes-q-2",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-cd4b54171a6de3eb",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "0f16794768ce9b6b73f823c0f0d8796e21806c2d425d93d4b01cd601f2965f2d",
+        "conclusionsSha256": "05e65549bd5d27a4a183b08fd71119d08a55c8d57b1b01b0506d7b0882973423",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0135.pass-a.json",
+        "receiptSha256": "05e65549bd5d27a4a183b08fd71119d08a55c8d57b1b01b0506d7b0882973423",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does hinge mean in the story?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-relationship-ropes-q-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-relationship-ropes-q-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-2-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This describes the rabbit, not the gate part.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-2-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This describes the sapling.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The story defines the hinge as the metal jointed part that lets the gate swing.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-8",
+                "g3-cc-mm-relationship-ropes-sentence-9",
+                "g3-cc-mm-relationship-ropes-sentence-10"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-2-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "A hinge is distinct from the latch and its function is movement, not frightening the fawn.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-8",
+                "g3-cc-mm-relationship-ropes-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-relationship-ropes-q-3",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-2a569a20fcbe0fbc",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "0f16794768ce9b6b73f823c0f0d8796e21806c2d425d93d4b01cd601f2965f2d",
+        "conclusionsSha256": "05e65549bd5d27a4a183b08fd71119d08a55c8d57b1b01b0506d7b0882973423",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0135.pass-a.json",
+        "receiptSha256": "05e65549bd5d27a4a183b08fd71119d08a55c8d57b1b01b0506d7b0882973423",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two accurate relationship clues. Select two.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-relationship-ropes-q-3-choice-1",
+            "lesson-g3-cc-mm-relationship-ropes-q-3-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-relationship-ropes-q-3-choice-1",
+            "lesson-g3-cc-mm-relationship-ropes-q-3-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-3-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "Swift and quick are synonyms, not a slower-than relation.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-2",
+                "g3-cc-mm-relationship-ropes-sentence-12"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The passage explicitly places sapling in the tree category.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-4",
+                "g3-cc-mm-relationship-ropes-sentence-13"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-3-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "A hinge is a gate part, not an animal.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-8",
+                "g3-cc-mm-relationship-ropes-sentence-13"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-3-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Not bold and the fawn behavior establish bold as an antonym clue for timid.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-5",
+                "g3-cc-mm-relationship-ropes-sentence-6",
+                "g3-cc-mm-relationship-ropes-sentence-12"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-relationship-ropes-q-4",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-15efe18fc87490db",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "0f16794768ce9b6b73f823c0f0d8796e21806c2d425d93d4b01cd601f2965f2d",
+        "conclusionsSha256": "05e65549bd5d27a4a183b08fd71119d08a55c8d57b1b01b0506d7b0882973423",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0027.second-pass.json",
+        "receiptSha256": "942849a998cbcfd5e822e7061660c6479a2b44922f39151ed8fe62e0dbed4bc7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that confirms timid means shy or easily frightened.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-relationship-ropes-q-4-segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-relationship-ropes-q-4-segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-4-segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Not bold, one hesitant step, and pulling back confirm shy or easily frightened.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-5",
+                "g3-cc-mm-relationship-ropes-sentence-6",
+                "g3-cc-mm-relationship-ropes-sentence-7"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-4-segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "This confirms sapling.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-4-segment-4",
+              "verdict": "INCORRECT",
+              "rationale": "This describes repairing the hinge.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-9"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-4-segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "This confirms swift.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-relationship-ropes-q-5",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-5425dba7d6488493",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "0f16794768ce9b6b73f823c0f0d8796e21806c2d425d93d4b01cd601f2965f2d",
+        "conclusionsSha256": "05e65549bd5d27a4a183b08fd71119d08a55c8d57b1b01b0506d7b0882973423",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0135.pass-a.json",
+        "receiptSha256": "05e65549bd5d27a4a183b08fd71119d08a55c8d57b1b01b0506d7b0882973423",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "lesson-g3-cc-mm-relationship-ropes-q-5-row-1",
+          "prompt": "swift",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Bold is the antonym clue for timid.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Gate-swinging is the hinge function.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-8"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Quick is a synonym clue for swift.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-2",
+                "g3-cc-mm-relationship-ropes-sentence-12"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source directly supports swift.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Tree is the category for sapling.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-g3-cc-mm-relationship-ropes-q-5-row-2",
+          "prompt": "timid",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "This is hinge.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-8"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source directly supports timid.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This is sapling.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This is swift.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Bold is the contrasting antonym clue for timid.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-6",
+                "g3-cc-mm-relationship-ropes-sentence-12"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-g3-cc-mm-relationship-ropes-q-5-row-3",
+          "prompt": "sapling",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "This is hinge.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-8"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A sapling is identified as a member of the tree category.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-4",
+                "g3-cc-mm-relationship-ropes-sentence-13"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source directly supports sapling.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This is timid.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This is swift.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-g3-cc-mm-relationship-ropes-q-5-row-4",
+          "prompt": "hinge",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This is sapling.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This is timid.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source directly supports hinge.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-8"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The hinge is explained through its object-function relation: it lets the gate swing.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-8",
+                "g3-cc-mm-relationship-ropes-sentence-13"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-relationship-ropes-q-5-meaning-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This is swift.",
+              "evidenceIds": [
+                "g3-cc-mm-relationship-ropes-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-reference-tool-room-q-1",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-1f199f0525251bc9",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "0f16794768ce9b6b73f823c0f0d8796e21806c2d425d93d4b01cd601f2965f2d",
+        "conclusionsSha256": "05e65549bd5d27a4a183b08fd71119d08a55c8d57b1b01b0506d7b0882973423",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0135.pass-a.json",
+        "receiptSha256": "05e65549bd5d27a4a183b08fd71119d08a55c8d57b1b01b0506d7b0882973423",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which local reference meaning fits habitat?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-reference-tool-room-q-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-reference-tool-room-q-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-1-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This is the glossary meaning of route.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-sentence-4",
+                "g3-cc-mm-reference-tool-room-sentence-5",
+                "g3-cc-mm-reference-tool-room-glossary-route"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The local glossary and source define habitat as a place supplying an organism needs.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-sentence-2",
+                "g3-cc-mm-reference-tool-room-sentence-3",
+                "g3-cc-mm-reference-tool-room-glossary-habitat"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-1-choice-4",
+              "verdict": "UNSUPPORTED",
+              "rationale": "A list of questions is not a habitat meaning.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-sentence-7"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-1-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This is an alternate dictionary sense of observe.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-sentence-13",
+                "observe-custom"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-reference-tool-room-q-2",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-9195db43e664a79f",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "0f16794768ce9b6b73f823c0f0d8796e21806c2d425d93d4b01cd601f2965f2d",
+        "conclusionsSha256": "05e65549bd5d27a4a183b08fd71119d08a55c8d57b1b01b0506d7b0882973423",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0135.pass-a.json",
+        "receiptSha256": "05e65549bd5d27a4a183b08fd71119d08a55c8d57b1b01b0506d7b0882973423",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which dictionary sense of observe fits the pond directions?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-reference-tool-room-q-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-reference-tool-room-q-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-2-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Choosing a route is unrelated to the dictionary senses of observe.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-sentence-4",
+                "g3-cc-mm-reference-tool-room-sentence-5"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-2-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "This genuine alternate sense does not fit because the source discusses no holiday.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-sentence-11",
+                "g3-cc-mm-reference-tool-room-sentence-13",
+                "observe-custom"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The directions say students watch and record animals, selecting the careful-watching sense.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-sentence-6",
+                "g3-cc-mm-reference-tool-room-sentence-11",
+                "observe-watch"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-2-choice-3",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Building shelter is not an offered or contextual sense of observe.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-sentence-2",
+                "observe-watch"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-reference-tool-room-q-3",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-a9b6eff02bca123c",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "0f16794768ce9b6b73f823c0f0d8796e21806c2d425d93d4b01cd601f2965f2d",
+        "conclusionsSha256": "05e65549bd5d27a4a183b08fd71119d08a55c8d57b1b01b0506d7b0882973423",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0135.pass-a.json",
+        "receiptSha256": "05e65549bd5d27a4a183b08fd71119d08a55c8d57b1b01b0506d7b0882973423",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two clues that support the meaning of route: a reference clue and a source clue.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-reference-tool-room-q-3-choice-1",
+            "lesson-g3-cc-mm-reference-tool-room-q-3-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-reference-tool-room-q-3-choice-2",
+            "lesson-g3-cc-mm-reference-tool-room-q-3-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-3-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The drawn path from garden to pond supplies the source clue for a travel route.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-sentence-4",
+                "g3-cc-mm-reference-tool-room-sentence-5"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-3-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Shade describes one path condition but does not explain what route means.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-sentence-8"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-3-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an observe sense and supplies no clue for route.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-sentence-13",
+                "observe-custom"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The local glossary explicitly defines route as a path used to travel.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-glossary-route"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-reference-tool-room-q-4",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-6a001248a1f581b4",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "0f16794768ce9b6b73f823c0f0d8796e21806c2d425d93d4b01cd601f2965f2d",
+        "conclusionsSha256": "05e65549bd5d27a4a183b08fd71119d08a55c8d57b1b01b0506d7b0882973423",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0027.second-pass.json",
+        "receiptSha256": "942849a998cbcfd5e822e7061660c6479a2b44922f39151ed8fe62e0dbed4bc7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that shows what in contrast means in this source.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-reference-tool-room-q-4-segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-reference-tool-room-q-4-segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-4-segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Wide and sunny are set against narrow and shaded, directly demonstrating a contrast.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-sentence-8",
+                "g3-cc-mm-reference-tool-room-sentence-9"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-4-segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "This explains observe.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-4-segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "This explains route.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-4-segment-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes a checking strategy, not the phrase meaning.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-sentence-12"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-reference-tool-room-q-5",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-29b50685c504aa91",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "0f16794768ce9b6b73f823c0f0d8796e21806c2d425d93d4b01cd601f2965f2d",
+        "conclusionsSha256": "05e65549bd5d27a4a183b08fd71119d08a55c8d57b1b01b0506d7b0882973423",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0135.pass-a.json",
+        "receiptSha256": "05e65549bd5d27a4a183b08fd71119d08a55c8d57b1b01b0506d7b0882973423",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "lesson-g3-cc-mm-reference-tool-room-q-5-row-1",
+          "prompt": "habitat",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "Habitat has a source-supported glossary definition.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-sentence-2",
+                "g3-cc-mm-reference-tool-room-glossary-habitat"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Travel path is route.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-glossary-route"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The living-place glossary definition is the most useful tool for habitat.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-sentence-2",
+                "g3-cc-mm-reference-tool-room-glossary-habitat"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Opposite path descriptions explain in contrast.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-sentence-8"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Dictionary watching sense explains observe.",
+              "evidenceIds": [
+                "observe-watch"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-g3-cc-mm-reference-tool-room-q-5-row-2",
+          "prompt": "route",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This explains observe.",
+              "evidenceIds": [
+                "observe-watch"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "Route is supported by a local glossary.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-glossary-route"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "This explains in contrast.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-sentence-8"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The travel-path glossary definition directly explains route.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-sentence-5",
+                "g3-cc-mm-reference-tool-room-glossary-route"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This explains habitat.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-glossary-habitat"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-g3-cc-mm-reference-tool-room-q-5-row-3",
+          "prompt": "observe",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This explains route.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-glossary-route"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "This explains in contrast.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-sentence-8"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The dictionary watching sense plus the quiet watching context select observe.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-sentence-6",
+                "g3-cc-mm-reference-tool-room-sentence-11",
+                "observe-watch"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This explains habitat.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-glossary-habitat"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "Observe is supported by the reference and source.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-sentence-6",
+                "observe-watch"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-g3-cc-mm-reference-tool-room-q-5-row-4",
+          "prompt": "in contrast",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This explains route.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-glossary-route"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This explains habitat.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-glossary-habitat"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase is supported by opposite descriptions.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-sentence-8",
+                "g3-cc-mm-reference-tool-room-sentence-9"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The nearby opposite descriptions show that in contrast points out a difference.",
+              "evidenceIds": [
+                "g3-cc-mm-reference-tool-room-sentence-8",
+                "g3-cc-mm-reference-tool-room-sentence-9"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-reference-tool-room-q-5-meaning-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This explains observe.",
+              "evidenceIds": [
+                "observe-watch"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-background-knowledge-bridge-q-1",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-5494a2d2414dc36e",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "dbee853e1f073d184a4a1cf0f3e72af2c222e198b871101130563aac9c24cd06",
+        "conclusionsSha256": "1aa6b120e75e44a367e049fd9c626b31e1667a69708e8cd619d9c190f8d53b01",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0027.second-pass.json",
+        "receiptSha256": "942849a998cbcfd5e822e7061660c6479a2b44922f39151ed8fe62e0dbed4bc7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does sturdy mean in the story?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-background-knowledge-bridge-q-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-background-knowledge-bridge-q-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-1-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This describes the canopy.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The chosen post stays firm in a push test, unlike a cracked leaning post.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-5",
+                "g3-cc-mm-background-knowledge-bridge-sentence-6",
+                "g3-cc-mm-background-knowledge-bridge-sentence-12"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-1-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This describes the signal.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-7"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-1-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "This describes carrying out the plan.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-9",
+                "g3-cc-mm-background-knowledge-bridge-sentence-14"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-background-knowledge-bridge-q-2",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-1ee61c513977c4c5",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "dbee853e1f073d184a4a1cf0f3e72af2c222e198b871101130563aac9c24cd06",
+        "conclusionsSha256": "1aa6b120e75e44a367e049fd9c626b31e1667a69708e8cd619d9c190f8d53b01",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0136.pass-a.json",
+        "receiptSha256": "1aa6b120e75e44a367e049fd9c626b31e1667a69708e8cd619d9c190f8d53b01",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does carry out the plan mean here?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-background-knowledge-bridge-q-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-background-knowledge-bridge-q-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-2-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The story explicitly rejects the literal map-carrying reading.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-14"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Following and completing each mapped step means performing the planned actions.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-9",
+                "g3-cc-mm-background-knowledge-bridge-sentence-10",
+                "g3-cc-mm-background-knowledge-bridge-sentence-14"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-2-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The team follows the checked plan rather than changing it.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-9"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-2-choice-3",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The phrase does not mean carrying all posts.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-2",
+                "g3-cc-mm-background-knowledge-bridge-sentence-14"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-background-knowledge-bridge-q-3",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-8f329fdf2e91f5d3",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "dbee853e1f073d184a4a1cf0f3e72af2c222e198b871101130563aac9c24cd06",
+        "conclusionsSha256": "1aa6b120e75e44a367e049fd9c626b31e1667a69708e8cd619d9c190f8d53b01",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0136.pass-a.json",
+        "receiptSha256": "1aa6b120e75e44a367e049fd9c626b31e1667a69708e8cd619d9c190f8d53b01",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two cases where broad knowledge helps and the story confirms it. Select two.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-background-knowledge-bridge-q-3-choice-1",
+            "lesson-g3-cc-mm-background-knowledge-bridge-q-3-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-background-knowledge-bridge-q-3-choice-2",
+            "lesson-g3-cc-mm-background-knowledge-bridge-q-3-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-3-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Broad knowledge that visible signs communicate combines with the helper visible response.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-7",
+                "g3-cc-mm-background-knowledge-bridge-sentence-8",
+                "g3-cc-mm-background-knowledge-bridge-sentence-13"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-3-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source explicitly distinguishes doing the plan from literally carrying a map.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-14"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "General knowledge about firm materials is confirmed by this post remaining steady in the push test.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-5",
+                "g3-cc-mm-background-knowledge-bridge-sentence-6",
+                "g3-cc-mm-background-knowledge-bridge-sentence-12"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-3-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "Leafy branches form the canopy; they are not all signals.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-3",
+                "g3-cc-mm-background-knowledge-bridge-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-background-knowledge-bridge-q-4",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-d8b27c2de2e48b71",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "dbee853e1f073d184a4a1cf0f3e72af2c222e198b871101130563aac9c24cd06",
+        "conclusionsSha256": "1aa6b120e75e44a367e049fd9c626b31e1667a69708e8cd619d9c190f8d53b01",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0136.pass-a.json",
+        "receiptSha256": "1aa6b120e75e44a367e049fd9c626b31e1667a69708e8cd619d9c190f8d53b01",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that names the parts making up the canopy.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-background-knowledge-bridge-q-4-segment-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-background-knowledge-bridge-q-4-segment-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-4-segment-3",
+              "verdict": "INCORRECT",
+              "rationale": "This explains signal.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-7"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-4-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This lists supplies, not canopy parts.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-4-segment-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "It identifies the canopy as the leafy upper layer formed by overhead branches.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-3",
+                "g3-cc-mm-background-knowledge-bridge-sentence-11"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-4-segment-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This lists plan steps, not canopy parts.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-background-knowledge-bridge-q-5",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-34ec77577779cccb",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "dbee853e1f073d184a4a1cf0f3e72af2c222e198b871101130563aac9c24cd06",
+        "conclusionsSha256": "1aa6b120e75e44a367e049fd9c626b31e1667a69708e8cd619d9c190f8d53b01",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0136.pass-a.json",
+        "receiptSha256": "1aa6b120e75e44a367e049fd9c626b31e1667a69708e8cd619d9c190f8d53b01",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "lesson-g3-cc-mm-background-knowledge-bridge-q-5-row-1",
+          "prompt": "canopy",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This is signal.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-7"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source directly defines canopy.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This is sturdy.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-5"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "This is carry out the plan.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-14"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Canopy is the upper layer of leaves and branches.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-3",
+                "g3-cc-mm-background-knowledge-bridge-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-g3-cc-mm-background-knowledge-bridge-q-5-row-2",
+          "prompt": "sturdy",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Sturdy means strong and steady.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-5",
+                "g3-cc-mm-background-knowledge-bridge-sentence-12"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source directly supports sturdy.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-5"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This is canopy.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This is signal.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-7"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "This is carry out the plan.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-14"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-g3-cc-mm-background-knowledge-bridge-q-5-row-3",
+          "prompt": "signal",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This is canopy.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A signal is a sign or action that communicates.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-7",
+                "g3-cc-mm-background-knowledge-bridge-sentence-8",
+                "g3-cc-mm-background-knowledge-bridge-sentence-13"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "This is carry out the plan.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-14"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This is sturdy.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-5"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source directly supports signal.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-g3-cc-mm-background-knowledge-bridge-q-5-row-4",
+          "prompt": "carry out the plan",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This is sturdy.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-5"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source directly supports the phrase.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-9",
+                "g3-cc-mm-background-knowledge-bridge-sentence-14"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This is signal.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-7"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Carry out the plan means perform the planned actions.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-9",
+                "g3-cc-mm-background-knowledge-bridge-sentence-10",
+                "g3-cc-mm-background-knowledge-bridge-sentence-14"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-background-knowledge-bridge-q-5-meaning-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This is canopy.",
+              "evidenceIds": [
+                "g3-cc-mm-background-knowledge-bridge-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-more-than-one-door-q-1",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-a0bac089ac3ffa65",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "dbee853e1f073d184a4a1cf0f3e72af2c222e198b871101130563aac9c24cd06",
+        "conclusionsSha256": "1aa6b120e75e44a367e049fd9c626b31e1667a69708e8cd619d9c190f8d53b01",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0027.second-pass.json",
+        "receiptSha256": "942849a998cbcfd5e822e7061660c6479a2b44922f39151ed8fe62e0dbed4bc7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which meaning of bank fits the stream study?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-more-than-one-door-q-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-more-than-one-door-q-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-1-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source explicitly says no money was stored there.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The grassy location beside the stream selects land beside water.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-2",
+                "g3-cc-mm-more-than-one-door-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-1-choice-3",
+              "verdict": "UNSUPPORTED",
+              "rationale": "No switch row appears in the stream study.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-1-choice-4",
+              "verdict": "UNSUPPORTED",
+              "rationale": "No airplane action appears.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-more-than-one-door-q-2",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-9dce276e760d1b6a",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "dbee853e1f073d184a4a1cf0f3e72af2c222e198b871101130563aac9c24cd06",
+        "conclusionsSha256": "1aa6b120e75e44a367e049fd9c626b31e1667a69708e8cd619d9c190f8d53b01",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0136.pass-a.json",
+        "receiptSha256": "1aa6b120e75e44a367e049fd9c626b31e1667a69708e8cd619d9c190f8d53b01",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which dictionary sense of draft fits Ana’s report?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-more-than-one-door-q-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-more-than-one-door-q-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-2-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The dictionary lists cool air as another sense, but Ana revises writing.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-6",
+                "g3-cc-mm-more-than-one-door-sentence-7",
+                "g3-cc-mm-more-than-one-door-dictionary-draft"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-2-choice-4",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Boat depth is unrelated to the report context.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-2-choice-3",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Team selection is unrelated to the writing context.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Ana writes a version before revising the final copy, matching the local dictionary sense.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-6",
+                "g3-cc-mm-more-than-one-door-sentence-7",
+                "draft-writing"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-more-than-one-door-q-3",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-0455c9d7669bf91b",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "dbee853e1f073d184a4a1cf0f3e72af2c222e198b871101130563aac9c24cd06",
+        "conclusionsSha256": "1aa6b120e75e44a367e049fd9c626b31e1667a69708e8cd619d9c190f8d53b01",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0136.pass-a.json",
+        "receiptSha256": "1aa6b120e75e44a367e049fd9c626b31e1667a69708e8cd619d9c190f8d53b01",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "In a new schedule, the sentence says, “The current meeting time is 2:00.” Which strategy best confirms that current means happening now?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-more-than-one-door-q-3-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-more-than-one-door-q-3-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-3-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The new schedule sentence does not concern moving water.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-4",
+                "g3-cc-mm-more-than-one-door-sentence-5"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-3-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Root splitting without context cannot select this multiple-meaning sense.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-1",
+                "g3-cc-mm-more-than-one-door-sentence-15"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Comparing possible senses with the whole schedule sentence selects happening now.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-5",
+                "g3-cc-mm-more-than-one-door-sentence-14",
+                "g3-cc-mm-more-than-one-door-sentence-15"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-3-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Meaning length is not evidence and ignores context.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-15"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-more-than-one-door-q-4",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-4e58a0d1a162bf15",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "dbee853e1f073d184a4a1cf0f3e72af2c222e198b871101130563aac9c24cd06",
+        "conclusionsSha256": "1aa6b120e75e44a367e049fd9c626b31e1667a69708e8cd619d9c190f8d53b01",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0027.second-pass.json",
+        "receiptSha256": "942849a998cbcfd5e822e7061660c6479a2b44922f39151ed8fe62e0dbed4bc7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details that support the map meaning of scale. Select two.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-more-than-one-door-q-4-choice-1",
+            "lesson-g3-cc-mm-more-than-one-door-q-4-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-more-than-one-door-q-4-choice-2",
+            "lesson-g3-cc-mm-more-than-one-door-q-4-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-4-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The map setting narrows scale toward a map-distance rule.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-9"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-4-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Fish plates are a genuine alternate scale sense that does not fit the map.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-10"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-4-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "A weighing device is another genuine scale sense that does not fit the map.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-10"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-4-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The one-centimeter-to-ten-meters ratio directly states the map scale rule.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-9"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-more-than-one-door-q-5",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-c1602bac11fe0d38",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "dbee853e1f073d184a4a1cf0f3e72af2c222e198b871101130563aac9c24cd06",
+        "conclusionsSha256": "1aa6b120e75e44a367e049fd9c626b31e1667a69708e8cd619d9c190f8d53b01",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0027.second-pass.json",
+        "receiptSha256": "942849a998cbcfd5e822e7061660c6479a2b44922f39151ed8fe62e0dbed4bc7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that confirms draft means an early version of writing.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-more-than-one-door-q-5-segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-more-than-one-door-q-5-segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-5-segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "This confirms the water-flow sense of current.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-5-segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "This confirms the shore sense of bank.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-5-segment-4",
+              "verdict": "INCORRECT",
+              "rationale": "This confirms the map-distance sense of scale.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-9"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-5-segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A version written before revision into a final copy confirms an early writing version.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-6",
+                "g3-cc-mm-more-than-one-door-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-more-than-one-door-q-6",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-0070929ba2bf5dff",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "dbee853e1f073d184a4a1cf0f3e72af2c222e198b871101130563aac9c24cd06",
+        "conclusionsSha256": "1aa6b120e75e44a367e049fd9c626b31e1667a69708e8cd619d9c190f8d53b01",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0027.second-pass.json",
+        "receiptSha256": "942849a998cbcfd5e822e7061660c6479a2b44922f39151ed8fe62e0dbed4bc7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "lesson-g3-cc-mm-more-than-one-door-q-6-row-1",
+          "prompt": "bank",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This is current.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Bank means land beside water here.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-2",
+                "g3-cc-mm-more-than-one-door-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source directly supports bank.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This is draft.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "This is scale.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-9"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-g3-cc-mm-more-than-one-door-q-6-row-2",
+          "prompt": "current",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Current means moving water here.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-4",
+                "g3-cc-mm-more-than-one-door-sentence-5"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This is bank.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This is draft.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source directly supports current.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "This is scale.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-9"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-g3-cc-mm-more-than-one-door-q-6-row-3",
+          "prompt": "draft",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source and dictionary support draft.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-6",
+                "g3-cc-mm-more-than-one-door-sentence-7"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This is bank.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This is current.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "This is scale.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-9"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Draft means an early writing version.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-6",
+                "g3-cc-mm-more-than-one-door-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-g3-cc-mm-more-than-one-door-q-6-row-4",
+          "prompt": "scale",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This is bank.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This is draft.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source directly supports scale.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-9"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Scale is the map distance rule here.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-9",
+                "g3-cc-mm-more-than-one-door-sentence-10"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-6-meaning-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This is current.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-more-than-one-door-q-7",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-fbe5e24044ac39ec",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "dbee853e1f073d184a4a1cf0f3e72af2c222e198b871101130563aac9c24cd06",
+        "conclusionsSha256": "1aa6b120e75e44a367e049fd9c626b31e1667a69708e8cd619d9c190f8d53b01",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0136.pass-a.json",
+        "receiptSha256": "1aa6b120e75e44a367e049fd9c626b31e1667a69708e8cd619d9c190f8d53b01",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Which meaning of draft fits the source?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-more-than-one-door-q-7-a-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-more-than-one-door-q-7-a-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-7-a-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The local dictionary lists this sense, but the writing context rejects it.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-6",
+                "g3-cc-mm-more-than-one-door-dictionary-draft",
+                "draft-air"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-7-a-choice-3",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Boat depth is absent from the source and local card.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-dictionary-draft"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-7-a-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The local entry and revise-into-final-copy context select an early writing version.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-6",
+                "g3-cc-mm-more-than-one-door-sentence-7",
+                "draft-writing"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-7-a-choice-4",
+              "verdict": "UNSUPPORTED",
+              "rationale": "A selected group is absent from the source and card.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-dictionary-draft"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which detail best confirms that meaning?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-more-than-one-door-q-7-b-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-more-than-one-door-q-7-b-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-7-b-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Map centimeters support the scale sense.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-9"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-7-b-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Revision into a final copy confirms that the draft was an earlier writing version.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-7-b-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "A downstream leaf supports the moving-water sense of current.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-more-than-one-door-q-7-b-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Standing beside a stream supports the land sense of bank.",
+              "evidenceIds": [
+                "g3-cc-mm-more-than-one-door-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-figurative-phrase-paths-q-1",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-3a6779744d3bed10",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "40407c310ad9e879d55487175606a5bb8c9539cbc1bb0e0a330aabb6c73708e2",
+        "conclusionsSha256": "97b5310c56ef43657e2df24f497bb24d8a9574efc86743b4146c267fb6585a70",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0137.pass-a.json",
+        "receiptSha256": "97b5310c56ef43657e2df24f497bb24d8a9574efc86743b4146c267fb6585a70",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does a blanket of fog mean in the poem?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-figurative-phrase-paths-q-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-figurative-phrase-paths-q-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-1-choice-4",
+              "verdict": "UNSUPPORTED",
+              "rationale": "No one sleeps beside the path.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-1",
+                "g3-cc-mm-figurative-phrase-paths-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-1-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The covering is fog and gray, not snow.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-2",
+                "g3-cc-mm-figurative-phrase-paths-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Fog covers every stone and hides the path until light thins it.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-1",
+                "g3-cc-mm-figurative-phrase-paths-sentence-2",
+                "g3-cc-mm-figurative-phrase-paths-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-1-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "No cloth blanket lies on the trail; the fog itself covers the view.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-figurative-phrase-paths-q-2",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-b6306e302399c164",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "40407c310ad9e879d55487175606a5bb8c9539cbc1bb0e0a330aabb6c73708e2",
+        "conclusionsSha256": "97b5310c56ef43657e2df24f497bb24d8a9574efc86743b4146c267fb6585a70",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0137.pass-a.json",
+        "receiptSha256": "97b5310c56ef43657e2df24f497bb24d8a9574efc86743b4146c267fb6585a70",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does the idea took root mean?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-figurative-phrase-paths-q-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-figurative-phrase-paths-q-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-2-choice-3",
+              "verdict": "UNSUPPORTED",
+              "rationale": "No roots block the trail.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-6",
+                "g3-cc-mm-figurative-phrase-paths-sentence-7"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-2-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The following line develops a plan, not a literal plant.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-6",
+                "g3-cc-mm-figurative-phrase-paths-sentence-7"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-2-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The group adds to the idea rather than forgetting it.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-6",
+                "g3-cc-mm-figurative-phrase-paths-sentence-7"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Everyone adds a useful step and the plan grows, showing group acceptance and development.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-6",
+                "g3-cc-mm-figurative-phrase-paths-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-figurative-phrase-paths-q-3",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-cff636de70edede2",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "40407c310ad9e879d55487175606a5bb8c9539cbc1bb0e0a330aabb6c73708e2",
+        "conclusionsSha256": "97b5310c56ef43657e2df24f497bb24d8a9574efc86743b4146c267fb6585a70",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0027.second-pass.json",
+        "receiptSha256": "942849a998cbcfd5e822e7061660c6479a2b44922f39151ed8fe62e0dbed4bc7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "A new project note says, “The plan hit a snag when the only wheel cracked.” Which strategy best confirms the phrase means the plan met a problem?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-figurative-phrase-paths-q-3-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-figurative-phrase-paths-q-3-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-3-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The plan is not paper caught on a branch; a cracked wheel causes the project problem.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-8",
+                "g3-cc-mm-figurative-phrase-paths-sentence-9"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-3-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Naming a device does not determine the phrase meaning from the event.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-8",
+                "g3-cc-mm-figurative-phrase-paths-sentence-9"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-3-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The familiar word hit alone cannot explain the whole phrase.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-8",
+                "g3-cc-mm-figurative-phrase-paths-sentence-9"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A cracked only wheel is a project obstacle, so event and context confirm met a problem.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-8",
+                "g3-cc-mm-figurative-phrase-paths-sentence-9"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-figurative-phrase-paths-q-4",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-cf07dc54b4bb3820",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "17e814c8f485c99a75bc6e93a6159b71221fa33958f471ab521348836fc513af",
+        "conclusionsSha256": "414f56825b23206a010f859171b9e2203ec7c8f98815ab0387e185525e68f8d8",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0046.pass-a.json",
+        "receiptSha256": "414f56825b23206a010f859171b9e2203ec7c8f98815ab0387e185525e68f8d8",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two details in the line immediately after time slipped away that show time passed before the work was finished. Select two.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-figurative-phrase-paths-q-4-choice-1",
+            "lesson-g3-cc-mm-figurative-phrase-paths-q-4-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-figurative-phrase-paths-q-4-choice-1",
+            "lesson-g3-cc-mm-figurative-phrase-paths-q-4-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-4-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The washed-away board appears earlier and is not in the immediately following line.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-8"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-4-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The immediately following line says the sun moved low, showing time passed.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-11"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-4-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Opening the map occurs near the morning beginning, not in the immediately following line.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-4-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The immediately following line says the final loop remained unfinished.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-figurative-phrase-paths-q-5",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-e805378fd923de1b",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "17e814c8f485c99a75bc6e93a6159b71221fa33958f471ab521348836fc513af",
+        "conclusionsSha256": "414f56825b23206a010f859171b9e2203ec7c8f98815ab0387e185525e68f8d8",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0027.second-pass.json",
+        "receiptSha256": "942849a998cbcfd5e822e7061660c6479a2b44922f39151ed8fe62e0dbed4bc7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the next line after the idea took root that confirms the idea was accepted and developed by the group.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-figurative-phrase-paths-q-5-segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-figurative-phrase-paths-q-5-segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-5-segment-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Repeats the target line rather than the next confirming line.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-5-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the preceding line where Mira introduces the thought.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-5"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-5-segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The next line shows everyone adding to the accepted idea so the plan grows.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-7"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-5-segment-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This later line responds to a bridge problem rather than confirming acceptance of the idea.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-9"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-figurative-phrase-paths-q-6",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-b0120aca2445eebe",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "40407c310ad9e879d55487175606a5bb8c9539cbc1bb0e0a330aabb6c73708e2",
+        "conclusionsSha256": "97b5310c56ef43657e2df24f497bb24d8a9574efc86743b4146c267fb6585a70",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0137.pass-a.json",
+        "receiptSha256": "97b5310c56ef43657e2df24f497bb24d8a9574efc86743b4146c267fb6585a70",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "lesson-g3-cc-mm-figurative-phrase-paths-q-6-row-1",
+          "prompt": "a blanket of fog",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This is the idea took root.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-6",
+                "g3-cc-mm-figurative-phrase-paths-sentence-7"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "This is time slipped away.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-10",
+                "g3-cc-mm-figurative-phrase-paths-sentence-11"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A blanket of fog means thick fog covered the view.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-1",
+                "g3-cc-mm-figurative-phrase-paths-sentence-2",
+                "g3-cc-mm-figurative-phrase-paths-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This is hit a snag.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-8"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem supports the phrase.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-g3-cc-mm-figurative-phrase-paths-q-6-row-2",
+          "prompt": "the idea took root",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This is hit a snag.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-8"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "This is time slipped away.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-10"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This is blanket of fog.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem supports the phrase.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-6",
+                "g3-cc-mm-figurative-phrase-paths-sentence-7"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The idea took root means the group developed the idea.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-6",
+                "g3-cc-mm-figurative-phrase-paths-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-g3-cc-mm-figurative-phrase-paths-q-6-row-3",
+          "prompt": "the plan hit a snag",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This is idea took root.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "This is time slipped away.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-10"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This is blanket of fog.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem supports the phrase.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-8",
+                "g3-cc-mm-figurative-phrase-paths-sentence-9"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The washed-away board creates a problem for the plan.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-8",
+                "g3-cc-mm-figurative-phrase-paths-sentence-9"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-g3-cc-mm-figurative-phrase-paths-q-6-row-4",
+          "prompt": "time slipped away",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Time slipped away means time passed quickly before work was finished.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-10",
+                "g3-cc-mm-figurative-phrase-paths-sentence-11"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This is blanket of fog.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem supports the phrase.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-10",
+                "g3-cc-mm-figurative-phrase-paths-sentence-11"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This is idea took root.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-6-meaning-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This is hit a snag.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-figurative-phrase-paths-q-7",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-4076325d8ed899d1",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "40407c310ad9e879d55487175606a5bb8c9539cbc1bb0e0a330aabb6c73708e2",
+        "conclusionsSha256": "97b5310c56ef43657e2df24f497bb24d8a9574efc86743b4146c267fb6585a70",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0027.second-pass.json",
+        "receiptSha256": "942849a998cbcfd5e822e7061660c6479a2b44922f39151ed8fe62e0dbed4bc7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "What does a blanket of fog mean?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-figurative-phrase-paths-q-7-a-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-figurative-phrase-paths-q-7-a-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-7-a-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "No bedding is dropped; fog is the covering.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-7-a-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The fog hides the path and covers every stone.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-1",
+                "g3-cc-mm-figurative-phrase-paths-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-7-a-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The scene begins in morning, not sudden night.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-7-a-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem names fog and gray, not snow.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-2",
+                "g3-cc-mm-figurative-phrase-paths-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which line best confirms that meaning?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-figurative-phrase-paths-q-7-b-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-figurative-phrase-paths-q-7-b-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-7-b-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Light thinning the gray directly confirms a fog covering that can clear.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-2",
+                "g3-cc-mm-figurative-phrase-paths-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-7-b-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This supports idea development.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-7"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-7-b-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This introduces the idea, not the fog.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-5"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-figurative-phrase-paths-q-7-b-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "This concerns unfinished work, not the fog covering.",
+              "evidenceIds": [
+                "g3-cc-mm-figurative-phrase-paths-sentence-12"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-unknown-words-phrases-q-1",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-a8d0837a66c20586",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "40407c310ad9e879d55487175606a5bb8c9539cbc1bb0e0a330aabb6c73708e2",
+        "conclusionsSha256": "97b5310c56ef43657e2df24f497bb24d8a9574efc86743b4146c267fb6585a70",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0137.pass-a.json",
+        "receiptSha256": "97b5310c56ef43657e2df24f497bb24d8a9574efc86743b4146c267fb6585a70",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which meaning of point fits the museum display?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-unknown-words-phrases-q-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-unknown-words-phrases-q-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-1-choice-4",
+              "verdict": "UNSUPPORTED",
+              "rationale": "No finger-pointing action defines point.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-1-choice-3",
+              "verdict": "UNSUPPORTED",
+              "rationale": "No game score is involved.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The source directly defines each main point as an idea visitors should understand.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-2",
+                "g3-cc-mm-unknown-words-phrases-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-1-choice-2",
+              "verdict": "UNSUPPORTED",
+              "rationale": "No sharp tip sense appears.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-unknown-words-phrases-q-2",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-d3369cf729b0c493",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "40407c310ad9e879d55487175606a5bb8c9539cbc1bb0e0a330aabb6c73708e2",
+        "conclusionsSha256": "97b5310c56ef43657e2df24f497bb24d8a9574efc86743b4146c267fb6585a70",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0137.pass-a.json",
+        "receiptSha256": "97b5310c56ef43657e2df24f497bb24d8a9574efc86743b4146c267fb6585a70",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which meaning of track fits the heron sentence?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-unknown-words-phrases-q-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-unknown-words-phrases-q-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-2-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source explicitly rejects the racing-path sense.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The damp-mud context and explicit definition identify a line of heron prints.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-5",
+                "g3-cc-mm-unknown-words-phrases-sentence-6",
+                "g3-cc-mm-unknown-words-phrases-sentence-7"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-2-choice-4",
+              "verdict": "UNSUPPORTED",
+              "rationale": "No school subject plan appears.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-2-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source explicitly rejects the music-recording sense.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-unknown-words-phrases-q-3",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-d4c8d3bd31a48b49",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "40407c310ad9e879d55487175606a5bb8c9539cbc1bb0e0a330aabb6c73708e2",
+        "conclusionsSha256": "97b5310c56ef43657e2df24f497bb24d8a9574efc86743b4146c267fb6585a70",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0137.pass-a.json",
+        "receiptSha256": "97b5310c56ef43657e2df24f497bb24d8a9574efc86743b4146c267fb6585a70",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "A new science procedure says, “Measure one plant every two minutes at a steady pace, without rushing.” Which strategy best confirms the phrase?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-unknown-words-phrases-q-3-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-unknown-words-phrases-q-3-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-3-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Root searching ignores the complete phrase and timing context.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-8",
+                "g3-cc-mm-unknown-words-phrases-sentence-9"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The regular two-minute schedule agrees with the local thesaurus words evenly and regularly.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-8",
+                "g3-cc-mm-unknown-words-phrases-sentence-9",
+                "g3-cc-mm-unknown-words-phrases-thesaurus-steady-pace",
+                "steady-pace-regular"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-3-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "One familiar word alone cannot confirm the complete phrase.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-12"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-3-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "Suddenly opposes the regular-speed meaning, and related words are not universally interchangeable.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-9"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-unknown-words-phrases-q-4",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-086e2fe9307f05cd",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "40407c310ad9e879d55487175606a5bb8c9539cbc1bb0e0a330aabb6c73708e2",
+        "conclusionsSha256": "97b5310c56ef43657e2df24f497bb24d8a9574efc86743b4146c267fb6585a70",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0137.pass-a.json",
+        "receiptSha256": "97b5310c56ef43657e2df24f497bb24d8a9574efc86743b4146c267fb6585a70",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two clues showing that words painted a picture is figurative. Select two.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-unknown-words-phrases-q-4-choice-1",
+            "lesson-g3-cc-mm-unknown-words-phrases-q-4-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-unknown-words-phrases-q-4-choice-2",
+            "lesson-g3-cc-mm-unknown-words-phrases-q-4-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-4-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The explicit absence of paint rules out the literal reading.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-11"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-4-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Library location does not explain the phrase meaning.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-4-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "A water-depth measurement supports a point but not the painted-picture phrase.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-4-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Vivid reeds, frogs, and heron details create the mental image.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-10",
+                "g3-cc-mm-unknown-words-phrases-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-unknown-words-phrases-q-5",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-dcf5b2f00cff62b4",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "40407c310ad9e879d55487175606a5bb8c9539cbc1bb0e0a330aabb6c73708e2",
+        "conclusionsSha256": "97b5310c56ef43657e2df24f497bb24d8a9574efc86743b4146c267fb6585a70",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0137.pass-a.json",
+        "receiptSha256": "97b5310c56ef43657e2df24f497bb24d8a9574efc86743b4146c267fb6585a70",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that defines point as a main idea in this source.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-unknown-words-phrases-q-5-segment-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-unknown-words-phrases-q-5-segment-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-5-segment-4",
+              "verdict": "INCORRECT",
+              "rationale": "This explains the painted-picture phrase.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-10"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-5-segment-3",
+              "verdict": "INCORRECT",
+              "rationale": "This explains steady pace.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-8"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-5-segment-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sentence directly defines point as an idea visitors should understand.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-5-segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "This introduces the heron track.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-unknown-words-phrases-q-6",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-3fcb86ac608b0c18",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "40407c310ad9e879d55487175606a5bb8c9539cbc1bb0e0a330aabb6c73708e2",
+        "conclusionsSha256": "97b5310c56ef43657e2df24f497bb24d8a9574efc86743b4146c267fb6585a70",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0137.pass-a.json",
+        "receiptSha256": "97b5310c56ef43657e2df24f497bb24d8a9574efc86743b4146c267fb6585a70",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "lesson-g3-cc-mm-unknown-words-phrases-q-6-row-1",
+          "prompt": "point",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This is words painted a picture.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-10"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Point means main idea here.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This is track.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "This is steady pace.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-8"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source directly supports point.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-g3-cc-mm-unknown-words-phrases-q-6-row-2",
+          "prompt": "track",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Track means a line of animal prints here.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-5",
+                "g3-cc-mm-unknown-words-phrases-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "This is steady pace.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-8"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source directly supports track.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This is point.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This is painted a picture.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-g3-cc-mm-unknown-words-phrases-q-6-row-3",
+          "prompt": "words painted a picture",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "This is steady pace.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-8"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The vivid words created a clear mental image.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-10",
+                "g3-cc-mm-unknown-words-phrases-sentence-11"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source directly supports the phrase.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-10",
+                "g3-cc-mm-unknown-words-phrases-sentence-11"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This is point.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This is track.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-g3-cc-mm-unknown-words-phrases-q-6-row-4",
+          "prompt": "at a steady pace",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This is painted a picture.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-10"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "At a steady pace means at a regular speed.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-8",
+                "g3-cc-mm-unknown-words-phrases-sentence-9"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-5",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source and thesaurus support the phrase.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-8",
+                "g3-cc-mm-unknown-words-phrases-thesaurus-steady-pace"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This is point.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-6-meaning-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This is track.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-g3-cc-mm-unknown-words-phrases-q-7",
+      "packId": "g3-context-cavern-meaning-maze",
+      "contentVersion": "g3-cc-meaning-maze-r0.1.0",
+      "contentFingerprint": "qta-v1-8ea091911567cefd",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "40407c310ad9e879d55487175606a5bb8c9539cbc1bb0e0a330aabb6c73708e2",
+        "conclusionsSha256": "97b5310c56ef43657e2df24f497bb24d8a9574efc86743b4146c267fb6585a70",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0027.second-pass.json",
+        "receiptSha256": "942849a998cbcfd5e822e7061660c6479a2b44922f39151ed8fe62e0dbed4bc7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "What does track mean here?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-unknown-words-phrases-q-7-a-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-unknown-words-phrases-q-7-a-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-7-a-choice-4",
+              "verdict": "UNSUPPORTED",
+              "rationale": "No train route is discussed.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-5",
+                "g3-cc-mm-unknown-words-phrases-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-7-a-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source explicitly rejects the racing-path sense.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-7-a-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The damp-mud heron context selects a line of prints.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-5",
+                "g3-cc-mm-unknown-words-phrases-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-7-a-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source explicitly rejects the sound-recording sense.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which detail confirms the sense?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-g3-cc-mm-unknown-words-phrases-q-7-b-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-g3-cc-mm-unknown-words-phrases-q-7-b-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-7-b-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Library location does not identify the track sense.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-7-b-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Naming the prints and where the heron walked directly confirms the contextual sense.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-6",
+                "g3-cc-mm-unknown-words-phrases-sentence-15"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-7-b-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "This concerns point, not track.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-g3-cc-mm-unknown-words-phrases-q-7-b-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This concerns steady pace, not track.",
+              "evidenceIds": [
+                "g3-cc-mm-unknown-words-phrases-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

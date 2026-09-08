@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0079",
+  "batchFileSha256": "4c56540256fd099f649d005947e446d833596151492f030b215b90a11f31e3e7",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0924", "fingerprint": "a092c87e0b04e9fdbe32e44fe1b7219c174439ec53cfb396b87a7c88dd1375ac",
+      "slots": [{"slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Micro is the useful root at the start of microphone.", ["S0077", "S0086"]],
+        ["A2", "INCORRECT", "Trans- starts transform and transplant, not microphone.", ["S0081", "S0083"]],
+        ["A3", "INCORRECT", "Rupt appears in disrupt, not microphone.", ["S0079"]],
+        ["A4", "INCORRECT", "Form appears in transform, not microphone.", ["S0081"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0925", "fingerprint": "8a439e968d7a5745298f94fc67f6ac14e01564e63cd3190d2551e8cd61125a27",
+      "slots": [{"slotId": "response", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Rupt appears in disrupt and does not start transplant.", ["S0079", "S0083"]],
+        ["A2", "INCORRECT", "Form appears in transform and does not start transplant.", ["S0081", "S0083"]],
+        ["A3", "INCORRECT", "Micro starts microphone, not transplant.", ["S0077", "S0083"]],
+        ["A4", "DEFENSIBLE", "Trans- is the affix at the start of transplant.", ["S0083", "S0085"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0926", "fingerprint": "7ec059c3706569bd5952bd03c5c494de6d4ef046b0adf76d49ddda6d252034af",
+      "slots": [{"slotId": "response", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Transform means change and does not fit cords obstructing a walkway.", ["S0079", "S0081"]],
+        ["A2", "DEFENSIBLE", "Disrupt exactly completes the displayed sentence about cords interfering with the walkway.", ["S0079"]],
+        ["A3", "INCORRECT", "Transplant means move a plant and does not fit the cords sentence.", ["S0079", "S0083"]],
+        ["A4", "INCORRECT", "Microphone is a noun and cannot name what cords could do to the walkway.", ["S0077", "S0079"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0927", "fingerprint": "9211c34ca60e3c4ea48c94fa6e07c4eb3e051cd1d867cd3b2656dd4c27cf8016",
+      "slots": [{"slotId": "response", "defensible": ["A1", "A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Microphone starts with micro.", ["S0077", "S0086"]],
+        ["A2", "INCORRECT", "Transplant does not contain micro.", ["S0083"]],
+        ["A3", "DEFENSIBLE", "Microscope starts with micro.", ["S0076"]],
+        ["A4", "INCORRECT", "Disrupt does not contain micro.", ["S0079"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0928", "fingerprint": "4fcc3c595afba8dfdee9cea1aeb0cd8abc395949c6d4c5616385467cf86612f8",
+      "slots": [{"slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Micro is the exact requested meaningful part at the start of microphone.", ["S0077", "S0086"]],
+        ["A2", "INCORRECT", "Phone is the other meaningful part, not the requested micro part.", ["S0086"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0929", "fingerprint": "9339639d56fb65f21292025bf2c34e162ecceac8c552649731126aaab9b53e64",
+      "slots": [
+        {"slotId": "row_1", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "The unsplit word is not a chunk split.", ["S0086"]],
+          ["A2", "DEFENSIBLE", "The passage explicitly gives mi, cro, and phone as microphone's reading chunks.", ["S0086"]],
+          ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Micro and phone are the meaningful parts, not the requested reading chunks.", ["S0086"]],
+          ["A4", "INCORRECT", "A single initial letter plus the remainder is not the authored split.", ["S0086"]]
+        ]},
+        {"slotId": "row_2", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "The unsplit word is not a chunk split.", ["S0079"]],
+          ["A2", "INCORRECT", "Disrup leaves a final single consonant rather than the authored chunks.", ["S0079"]],
+          ["A3", "INCORRECT", "A single initial letter plus the remainder is not the authored split.", ["S0079"]],
+          ["A4", "DEFENSIBLE", "Dis and rupt form the authored pronounceable split for disrupt.", ["S0079"]]
+        ]},
+        {"slotId": "row_3", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "The unsplit word is not a chunk split.", ["S0081"]],
+          ["A2", "DEFENSIBLE", "Trans and form form the authored pronounceable split for transform.", ["S0081"]],
+          ["A3", "INCORRECT", "A single initial letter plus the remainder is not the authored split.", ["S0081"]],
+          ["A4", "INCORRECT", "Transfor leaves a final single consonant rather than the authored chunks.", ["S0081"]]
+        ]},
+        {"slotId": "row_4", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Transplan leaves a final single consonant rather than the authored chunks.", ["S0083"]],
+          ["A2", "INCORRECT", "A single initial letter plus the remainder is not the authored split.", ["S0083"]],
+          ["A3", "DEFENSIBLE", "Trans and plant form the authored pronounceable split for transplant.", ["S0083"]],
+          ["A4", "INCORRECT", "The unsplit word is not a chunk split.", ["S0083"]]
+        ]}
+      ], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0930", "fingerprint": "7cb536afd134dfc46ce3cf11c85a944090e418a9e5c8d08953d8ffb57053d6a9",
+      "slots": [
+        {"slotId": "part_a", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "A single initial letter plus the remainder is not the meaningful split.", ["S0086"]],
+          ["A2", "DEFENSIBLE", "The passage explicitly names micro and phone as the meaningful parts.", ["S0086"]],
+          ["A3", "INCORRECT", "The passage identifies mi, cro, and phone as reading chunks, not meaningful parts.", ["S0086"]],
+          ["A4", "INCORRECT", "The unsplit word does not show meaningful-part boundaries.", ["S0086"]]
+        ]},
+        {"slotId": "part_b", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Mi plus the unsplit remainder does not match the complete reading split.", ["S0086"]],
+          ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Micro and phone are the meaningful parts, not the requested reading chunks.", ["S0086"]],
+          ["A3", "DEFENSIBLE", "The passage explicitly names mi, cro, and phone as the reading chunks.", ["S0086"]],
+          ["A4", "INCORRECT", "The unsplit word does not show reading chunks.", ["S0086"]]
+        ]}
+      ], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0931", "fingerprint": "a23c922584dcc2626c7a7ead2a335bbfae3643d23a6fa98895bcf81c9deb4f36",
+      "slots": [{"slotId": "response", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Adding -er to kind does not build kindness.", ["S0003"]],
+        ["A2", "INCORRECT", "Adding -ment to kind does not build kindness.", ["S0003"]],
+        ["A3", "DEFENSIBLE", "Kind plus -ness exactly builds kindness.", ["S0003"]],
+        ["A4", "INCORRECT", "Adding -ful to kind does not build kindness.", ["S0003"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0932", "fingerprint": "91872aba0e48c860024cdd5ea6575c5c63d4fd95332be561d35adca6fb5a1f33",
+      "slots": [{"slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Help is the base word and -er is the suffix in helper.", ["S0005"]],
+        ["A2", "INCORRECT", "Helpe is not the base word in helper.", ["S0005"]],
+        ["A3", "INCORRECT", "The unsplit word does not show the base and suffix.", ["S0005"]],
+        ["A4", "INCORRECT", "H is not the base word in helper.", ["S0005"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0933", "fingerprint": "2d799553e067ca0742d0440315c8c9cf759ce3a96ecf5ac44be4ee8f348d679f",
+      "slots": [{"slotId": "response", "defensible": ["A1", "A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Kindness names the idea Maya showed, so it is a noun in the passage.", ["S0003"]],
+        ["A2", "INCORRECT", "Helpful describes the picture card, so it is an adjective here.", ["S0007"]],
+        ["A3", "DEFENSIBLE", "Helper names a person who carried tools, so it is a noun in the passage.", ["S0005"]],
+        ["A4", "INCORRECT", "Quickly describes how Maya checked and is an adverb, not a noun.", ["S0009"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0934", "fingerprint": "5bd86bbf74dce12c148d9b4e7b8276a92d9dbe724d00c44294633229685360de",
+      "slots": [{"slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Ly is the suffix added to quick in quickly.", ["S0009"]],
+        ["A2", "INCORRECT", "Quick is the base word, not the requested suffix.", ["S0009"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0935", "fingerprint": "8ad917acb5af18ce8868f5cd8d22311699ccacb62be5c9d74a21b8609d72c4ba",
+      "slots": [
+        {"slotId": "row_1", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Kind plus -er does not build kindness.", ["S0003"]], ["A2", "INCORRECT", "Kind plus -ly does not build kindness.", ["S0003"]],
+          ["A3", "DEFENSIBLE", "Kind plus -ness builds kindness.", ["S0003"]], ["A4", "INCORRECT", "Kind plus -ful does not build kindness.", ["S0003"]]
+        ]},
+        {"slotId": "row_2", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "DEFENSIBLE", "Help plus -er builds helper.", ["S0005"]], ["A2", "INCORRECT", "Help plus -ful builds helpful, not helper.", ["S0005", "S0007"]],
+          ["A3", "INCORRECT", "Help plus -ness does not build helper.", ["S0005"]], ["A4", "INCORRECT", "Help plus -ly does not build helper.", ["S0005"]]
+        ]},
+        {"slotId": "row_3", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Help plus -ness does not build helpful.", ["S0007"]], ["A2", "INCORRECT", "Help plus -er builds helper, not helpful.", ["S0005", "S0007"]],
+          ["A3", "DEFENSIBLE", "Help plus -ful builds helpful.", ["S0007"]], ["A4", "INCORRECT", "Help plus -ly does not build helpful.", ["S0007"]]
+        ]},
+        {"slotId": "row_4", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Quick plus -er does not build quickly.", ["S0009"]], ["A2", "DEFENSIBLE", "Quick plus -ly builds quickly.", ["S0009"]],
+          ["A3", "INCORRECT", "Quick plus -ful does not build quickly.", ["S0009"]], ["A4", "INCORRECT", "Quick plus -ness does not build quickly.", ["S0009"]]
+        ]}
+      ], "projectionDefect": ""
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0094",
+  "batchFileSha256": "47dc193fc8d341e5a282d5e159c305093666581b259eebe0607905518af5f6f3",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1097", "fingerprint": "72c83d45231972ccdebbfd949f27c33df66fd66647162064433e454851c28855",
+      "slots": [{"slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Noor's fixed first plan fails in new weather, while the adapted panels preserve the same display goal and work safely.", ["S0053", "S0061", "S0055", "S0062", "S0065", "S0066"]],
+        ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This summarizes Noor's actions but does not state the broader message.", ["S0061", "S0057"]],
+        ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Flexibility is only a topic, not a complete theme statement.", ["S0062", "S0064"]],
+        ["A4", "CONTRADICTED", "The prepared first plan fails, and changing it produces the successful result.", ["S0053", "S0061", "S0065"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1098", "fingerprint": "aa6dd97a0e3ea9df497ff7636f26193e79661b889fd9aa83b450ff3528f7f1f4",
+      "slots": [{"slotId": "response", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "CONTRADICTED", "The plot shows the first prepared plan failing and adaptation succeeding.", ["S0061", "S0065"]],
+        ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This is a brief summary and does not explain theme development across stages.", ["S0061", "S0057"]],
+        ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This gives only Noor's beginning response.", ["S0053"]],
+        ["A4", "DEFENSIBLE", "This traces refusal, new wind evidence and a successful test, the adapted solution, and Noor's retained learning.", ["S0053", "S0061", "S0062", "S0063", "S0065", "S0066"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1099", "fingerprint": "717d37e8d0d27575ec86c27488e6085a8a42d0d75bd0d5cf1fc3e63401b56d4d",
+      "slots": [{"slotId": "response", "defensible": ["A3", "A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "The market setting is neutral setup and does not develop the flexibility theme.", ["S0058"]],
+        ["A2", "CONTRADICTED", "The story shows that sticking to the first plan fails under new conditions.", ["S0053", "S0061", "S0065"]],
+        ["A3", "DEFENSIBLE", "At the beginning Noor insists the original long banner will work.", ["S0053"]],
+        ["A4", "DEFENSIBLE", "At the end Noor preserves the successful adapted measurements for future displays.", ["S0066"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1100", "fingerprint": "2c65a23ac5b9d0b743b1206f76f4884fa5dcac6336838ef7857d57bac06143ca",
+      "slots": [{"slotId": "response", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "This establishes the project before the conflict.", ["S0058"]],
+        ["A2", "INCORRECT", "This shows Noor clinging to her original beginning strategy.", ["S0053"]],
+        ["A3", "DEFENSIBLE", "Noor responds to the torn banner by testing a different form, beginning the successful strategy change.", ["S0061", "S0062", "S0063"]],
+        ["A4", "INCORRECT", "Saving the new measurements is the ending transfer after the turning point.", ["S0066"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1101", "fingerprint": "bbea75bf03e7f1da9dd19288c7cefcb9941580e64663f08fea49c73c965e81b4",
+      "slots": [
+        {"slotId": "row_1", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "The tear and forecast occur in the middle.", ["S0061", "S0055"]],
+          ["A2", "INCORRECT", "Saving successful measurements occurs at the end.", ["S0066"]],
+          ["A3", "DEFENSIBLE", "Noor's insistence on the unchanged plan is the theme-relevant beginning response.", ["S0053"]],
+          ["A4", "INCORRECT", "The market setting is setup rather than a choice that develops the theme.", ["S0058"]]
+        ]},
+        {"slotId": "row_2", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Insisting on the original plan is the beginning response.", ["S0053"]],
+          ["A2", "INCORRECT", "Saving measurements occurs at the end.", ["S0066"]],
+          ["A3", "INCORRECT", "The market setting is neutral setup.", ["S0058"]],
+          ["A4", "DEFENSIBLE", "The tear and stronger-wind forecast supply the middle evidence that the original plan must change.", ["S0061", "S0055"]]
+        ]},
+        {"slotId": "row_3", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "DEFENSIBLE", "Noor saves the successful adaptation for future work at the end.", ["S0066"]],
+          ["A2", "INCORRECT", "The tear and forecast occur in the middle.", ["S0061", "S0055"]],
+          ["A3", "INCORRECT", "The market setting is neutral setup.", ["S0058"]],
+          ["A4", "INCORRECT", "Insisting on the original plan is the beginning response.", ["S0053"]]
+        ]}
+      ], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1102", "fingerprint": "0cfa66a040889644fdea8bc59b7a3a06bb1667da3016433042534c13592867e6",
+      "slots": [{"slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Ren's measured fixes and repeated tests steadily improve the cart and turn the first failure into useful evidence.", ["S0078", "S0073", "S0080", "S0081", "S0082", "S0083", "S0085"]],
+        ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This summarizes events but does not state a broader message.", ["S0077", "S0083"]],
+        ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Perseverance is only a topic, not a complete theme statement.", ["S0081", "S0082"]],
+        ["A4", "CONTRADICTED", "Ren succeeds through repeated testing and adjustment rather than instant talent.", ["S0073", "S0082", "S0083"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1103", "fingerprint": "242552b5581a56265bdd3a4ccdd0931e79566349412109324f7c87b2aee0b86e",
+      "slots": [{"slotId": "response", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "This is a plot summary, not only a broad subject label.", ["S0077", "S0083"]],
+        ["A2", "INCORRECT", "This is a complete but unsupported message, not merely a topic.", ["S0073", "S0082"]],
+        ["A3", "INCORRECT", "This is the complete supported theme statement, not merely a topic.", ["S0073", "S0082", "S0083"]],
+        ["A4", "DEFENSIBLE", "Perseverance is the single broad subject word and not a complete message.", ["S0081", "S0082"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1104", "fingerprint": "28d779f65ae667437006c1e94b77eeb702f97152c8089de4eb5df66eed5080c6",
+      "slots": [{"slotId": "response", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "CONTRADICTED", "The plot develops success through testing and revisions rather than natural talent.", ["S0073", "S0082", "S0083"]],
+        ["A2", "DEFENSIBLE", "This follows Ren's urge to quit, partial improvement, renewed adjustment, success, and changed view of failure across the plot.", ["S0078", "S0080", "S0081", "S0083", "S0084", "S0085"]],
+        ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This gives only Ren's beginning response.", ["S0078"]],
+        ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This summarizes actions without explaining how the theme develops stage by stage.", ["S0077", "S0083"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1105", "fingerprint": "f32313923c12039796eef5ccbcbcf474bff8f808c627e994b8d9cdb60b96f1f9",
+      "slots": [{"slotId": "response", "defensible": ["A1", "A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "At the end Ren values the first wobble as guidance for later improvement.", ["S0084", "S0085"]],
+        ["A2", "DEFENSIBLE", "At the beginning Ren considers replacing the cart after the failed run.", ["S0078"]],
+        ["A3", "INCORRECT", "Carrying the cart into the room is neutral setup and does not develop the perseverance theme.", ["S0076"]],
+        ["A4", "CONTRADICTED", "Repeated testing and adjustment, not natural talent, produce success.", ["S0073", "S0082", "S0083"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1106", "fingerprint": "a7da21ac866c4d2ef90ac0c45c532ac647920acf436b84b11745c9808e68ee21",
+      "slots": [{"slotId": "response", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "This shows Ren considering giving up near the beginning.", ["S0078"]],
+        ["A2", "INCORRECT", "This is opening setup before the setbacks and effort.", ["S0076"]],
+        ["A3", "INCORRECT", "This is the middle decision to keep investigating.", ["S0081"]],
+        ["A4", "DEFENSIBLE", "The final sentence shows Ren now values the first failure as the starting evidence for successful improvements.", ["S0085", "S0084"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1107", "fingerprint": "ce0d3320d4ac6c584fa49918d9624160bf52920d6f041e571c7471caccd91bcc",
+      "slots": [
+        {"slotId": "row_1", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Partial improvement with continued wobble occurs in the middle.", ["S0080"]],
+          ["A2", "INCORRECT", "Carrying the cart into the room is setup and does not develop the theme.", ["S0076"]],
+          ["A3", "INCORRECT", "Valuing the first wobble is the ending insight.", ["S0084", "S0085"]],
+          ["A4", "DEFENSIBLE", "Considering replacement after the failed test establishes Ren's beginning response to setback.", ["S0078"]]
+        ]},
+        {"slotId": "row_2", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Carrying the cart into the room is neutral setup.", ["S0076"]],
+          ["A2", "INCORRECT", "Valuing the first wobble is the ending insight.", ["S0084", "S0085"]],
+          ["A3", "INCORRECT", "Considering replacement establishes the beginning response.", ["S0078"]],
+          ["A4", "DEFENSIBLE", "The partial improvement and continued wobble are middle evidence that small progress invites another adjustment.", ["S0080", "S0081"]]
+        ]},
+        {"slotId": "row_3", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "DEFENSIBLE", "Ren's final value for the first wobble completes his changed understanding of setbacks.", ["S0084", "S0085"]],
+          ["A2", "INCORRECT", "Partial improvement occurs in the middle.", ["S0080"]],
+          ["A3", "INCORRECT", "Carrying the cart into the room is opening setup.", ["S0076"]],
+          ["A4", "INCORRECT", "Considering replacement is the beginning response.", ["S0078"]]
+        ]}
+      ], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1108", "fingerprint": "b41b8c785daa53af5579cab3ef832fe668f15081b9440f4f56d217606e3c0f2c",
+      "slots": [
+        {"slotId": "part_a", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "DEFENSIBLE", "This complete message is supported by the cart's incremental improvement and Ren's repeated adjustments.", ["S0073", "S0080", "S0081", "S0082", "S0083"]],
+          ["A2", "CONTRADICTED", "The story shows practice and adjustment producing success, not natural talent.", ["S0073", "S0082", "S0083"]],
+          ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This is a plot summary rather than a theme statement.", ["S0077", "S0083"]]
+        ]},
+        {"slotId": "part_b", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "DEFENSIBLE", "This spans Ren's urge to quit, renewed investigation, and final appreciation of the first failure as useful evidence.", ["S0078", "S0081", "S0085"]],
+          ["A2", "INCORRECT", "This has a beginning response and neutral setup but lacks the turning point and ending.", ["S0078", "S0076"]],
+          ["A3", "INCORRECT", "This has a middle result and neutral setup but lacks the requested beginning, turning point, and ending arc.", ["S0080", "S0076"]]
+        ]}
+      ], "projectionDefect": ""
+    }
+  ]
+}

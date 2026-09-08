@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0096",
+  "batchFileSha256": "8c29d3f74743da0b8d6c1bba70dd5896266f6608ed2ef56da55143312caccace",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1123",
+      "fingerprint": "390c840ae4e24828149d43260ba9f2ba81bd23e42cb0df85c581efbf99dd598a",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Being energetic is a trait, not Talia's view about how the barrel should be prepared.", ["S0011", "S0003"]],
+            ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Feeling eager does not explain Talia's proposed action or reason.", ["S0011"]],
+            ["A3", "INCORRECT", "This accurately states Owen's perspective, not Talia's.", ["S0012", "S0014", "S0007"]],
+            ["A4", "DEFENSIBLE", "Talia identifies the shed location and urges immediate placement so the approaching rain can be collected.", ["S0011", "S0003", "S0015"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1124",
+      "fingerprint": "40df76221ec93be0db093ef7cb9648422e4206df6cf2eb677085890efaa87247",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "CONTRADICTED", "Owen explicitly asks to test the soft ground before placing the barrel.", ["S0012", "S0014", "S0005"]],
+            ["A2", "DEFENSIBLE", "The answer accurately contrasts Talia's urgency with Owen's concern about making a level, firm base.", ["S0011", "S0012", "S0015", "S0007"]],
+            ["A3", "UNSUPPORTED", "Third-person narration does not show that the narrator favors Owen.", ["S0010", "S0009"]],
+            ["A4", "CONTRADICTED", "The answer reverses the characters' concerns; Talia emphasizes collecting rain and Owen emphasizes the ground.", ["S0011", "S0012"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1125",
+      "fingerprint": "f7e846f47e24df5946bb994053bb82d238d64c468cf56e4f0efdc858bd5b2037",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Talia's hose placement and shortest-path marking show that she wants to set up the barrel beside the shed promptly.", ["S0003"]],
+            ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This establishes the situation but reveals no view held by Talia.", ["S0010"]],
+            ["A3", "INCORRECT", "The quoted concern belongs to Owen, not Talia.", ["S0012"]],
+            ["A4", "DEFENSIBLE", "Talia directly states her preferred location, timing, and reason.", ["S0011"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1126",
+      "fingerprint": "c966d3301669dd47d2c777cbef1482a91522581b2b290618273a2a5fa4193411",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The sentence introduces the club and storm but does not reveal Owen's view.", ["S0010"]],
+            ["A2", "INCORRECT", "This action belongs to Talia and reflects her plan, not Owen's perspective.", ["S0003"]],
+            ["A3", "INCORRECT", "This is Talia's direct statement of her own perspective.", ["S0011"]],
+            ["A4", "DEFENSIBLE", "Owen directly explains that the heavy barrel requires testing the ground first.", ["S0012"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1127",
+      "fingerprint": "5d41aea6074386712f62275594782643f66d29a92bd6461214a98b84437cea51",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Narrator type is not Talia's perspective about preparing the barrel.", ["S0010", "S0009"]],
+            ["A2", "DEFENSIBLE", "Talia wants immediate placement by the shed so the storm's water can be collected.", ["S0011", "S0003"]],
+            ["A3", "INCORRECT", "This is Owen's perspective, not Talia's.", ["S0012", "S0007"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Owen tests the soft ground and proposes a level stone-and-gravel base before placement.", ["S0012", "S0014", "S0005", "S0007"]],
+            ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Narrator type is not Owen's perspective about preparing the barrel.", ["S0010", "S0009"]],
+            ["A3", "INCORRECT", "This is Talia's perspective, not Owen's.", ["S0011", "S0003"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1128",
+      "fingerprint": "2d9058f4dd6084bc90248a06270ee274a8c6b8c560528e2f966b795c58d3e547",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Responsibility is a trait, not Priya's complete view about continuing rehearsal.", ["S0027", "S0024"]],
+            ["A2", "INCORRECT", "This states Mateo's perspective, not Priya's.", ["S0028", "S0030", "S0026"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Worry is a feeling and does not state Priya's proposed rehearsal plan.", ["S0027", "S0029"]],
+            ["A4", "DEFENSIBLE", "Priya says everyone should stop until the button is found and treats fastening safety as necessary before rejoining.", ["S0027", "S0024", "S0029", "S0033"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1129",
+      "fingerprint": "8196b82f740ddd3851861345477e2515a6b770c1f6044c83d7c1ef73529948d6",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "CONTRADICTED", "Neither character asks every actor to leave and search alone.", ["S0027", "S0028", "S0032"]],
+            ["A2", "UNSUPPORTED", "The narrator reports both views without ranking costumes above rehearsal.", ["S0027", "S0028", "S0031"]],
+            ["A3", "DEFENSIBLE", "Both want the button found, while their direct statements differ over whether everyone or most actors should pause.", ["S0027", "S0028"]],
+            ["A4", "CONTRADICTED", "Priya insists on addressing the button, and Mateo keeps most rehearsal going rather than canceling the performance.", ["S0027", "S0028", "S0030"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1130",
+      "fingerprint": "a2a2a4e44aa45dd9aa7403138ec3d5d6a22e66729332862d3bc9bc9e8f3f657c",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3", "A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This gives the time pressure but does not reveal Priya's view.", ["S0020"]],
+            ["A2", "INCORRECT", "The quoted perspective belongs to Mateo.", ["S0028"]],
+            ["A3", "DEFENSIBLE", "Priya directly states that everyone should stop until the button is found for safety.", ["S0027"]],
+            ["A4", "DEFENSIBLE", "Priya's inspection and redirection of actors show her concern with preventing a larger costume or safety problem.", ["S0024", "S0029"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1131",
+      "fingerprint": "e6acb9c64781e230c9f52a7d0fcf0574ab63f218596990ea6b357190bde7e432",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This sentence directly reveals Priya's perspective.", ["S0027"]],
+            ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The rehearsal time establishes context but not Mateo's view.", ["S0020"]],
+            ["A3", "DEFENSIBLE", "Mateo directly states that the cast can continue while he searches.", ["S0028"]],
+            ["A4", "INCORRECT", "This action belongs to Priya, not Mateo.", ["S0024"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1132",
+      "fingerprint": "d673696507819b37324de481be0cc565975e8b345c42500938bbec623afbf436",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This states Mateo's perspective, not Priya's.", ["S0028", "S0030", "S0026"]],
+            ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Narrator type is not Priya's perspective about the rehearsal problem.", ["S0020", "S0034"]],
+            ["A3", "DEFENSIBLE", "Priya calls for a full pause until the button is found and checks the costume before rejoining.", ["S0027", "S0024", "S0029", "S0033"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Mateo keeps most actors practicing while he searches in a protected area to use the limited time.", ["S0028", "S0030", "S0026"]],
+            ["A2", "INCORRECT", "This states Priya's perspective, not Mateo's.", ["S0027", "S0029"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Narrator type is not Mateo's perspective about the rehearsal problem.", ["S0020", "S0034"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

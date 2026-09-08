@@ -1,0 +1,946 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0047",
+  "batchFileSha256": "88b8b2de52563f39a2eecfc414697d74f8066e487efe11727e83d2aebd20b278",
+  "reviewerThreadId": "01a07bc1-57ca-7230-a515-d322b50c9d2e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0548",
+      "fingerprint": "c31b2e2664a24977eaa3a808abd5cdde12de91fc74d0a0bc1522b211e7bb871c",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This choice does not name the repeated subject; the source consistently discusses compost piles and composting.",
+              [
+                "S0132",
+                "S0138",
+                "S0145"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Compost piles are the repeated subject in the title, process details, and conclusion.",
+              [
+                "S0132",
+                "S0138",
+                "S0145"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This choice does not name the source subject established by the compost inputs and final compost.",
+              [
+                "S0132",
+                "S0138"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This choice does not identify the compost-focused subject repeated across the source.",
+              [
+                "S0132",
+                "S0138",
+                "S0144"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0549",
+      "fingerprint": "3e6ef692e1467c91ac9cc46ceb943471baa7d5a9537c4e32199bcd4e872936a2",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This choice does not explain the source-wide idea that composting changes scraps into material that helps soil and plants.",
+              [
+                "S0138",
+                "S0144"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "It combines the composting process with its result: scraps and leaves become useful compost.",
+              [
+                "S0132",
+                "S0138",
+                "S0144"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This may reflect one process detail, but it does not state what the whole source explains about composting.",
+              [
+                "S0134",
+                "S0138",
+                "S0144"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This choice does not match the process-and-result idea stated across the source and its conclusion.",
+              [
+                "S0132",
+                "S0138",
+                "S0144"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0550",
+      "fingerprint": "6c4649ca0b39b696a9ccc82393ddede969b5191caee9f771d9bb9857142df803",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "Both the smell changing toward earth and the pile becoming darker and crumbly directly show the compost transformation; the prompt supplies no visible basis for ranking only one as most relevant.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The warming-and-cooling graph is a true process detail, but it is less direct evidence of the visible change into finished compost.",
+              [
+                "S0140",
+                "S0148"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The smell changing from scraps toward earth directly describes the pile becoming compost.",
+              [
+                "S0142",
+                "S0138"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Naming the starting materials explains what enters the pile, not how the pile changes into compost.",
+              [
+                "S0132",
+                "S0138"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Becoming darker and crumbly directly describes the transformation into finished compost.",
+              [
+                "S0136",
+                "S0138"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0551",
+      "fingerprint": "a8f17f44481352bed19b42bf20edba317c4392e743a39b2dba823f4093ffb851",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Bugs and worms breaking pieces apart explains a mechanism in the composting process.",
+              [
+                "S0134"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The remaining leaf bits are an observation, but they do not explain the process or its useful outcome as directly.",
+              [
+                "S0143",
+                "S0138"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Watching the graph is an action by a learner, not a detail explaining what composting does.",
+              [
+                "S0141"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The scraps becoming compost that helps plants states the process result and why it matters.",
+              [
+                "S0138",
+                "S0144"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0552",
+      "fingerprint": "49590ab7c976be7f3b2c2275822d13e446633fd76eb469d4b572e061a81fcf43",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "One option states the central idea directly and another accurately restates the same process-and-benefit idea; the single-answer prompt does not distinguish them.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This directly states that composting changes scraps into material that helps soil or plants.",
+              [
+                "S0144"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is at most a narrow source detail and does not express the complete central idea.",
+              [
+                "S0132",
+                "S0138",
+                "S0144"
+              ]
+            ],
+            [
+              "A3",
+              "EQUIVALENT_TO_KEY",
+              "This restates the same source-wide idea: scraps become helpful compost.",
+              [
+                "S0138",
+                "S0144"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This does not match the source-wide composting process and benefit.",
+              [
+                "S0132",
+                "S0138",
+                "S0144"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0553",
+      "fingerprint": "f0fde0c80204062703a4eb69a7cc227158434450abb1d541aa0927584ca9456a",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a detail or subtopic, not the overall topic repeated across the source.",
+              [
+                "S0132",
+                "S0138"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Compost piles are the source topic.",
+              [
+                "S0132",
+                "S0138",
+                "S0145"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is narrower than the overall compost-pile topic.",
+              [
+                "S0132",
+                "S0145"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This expresses the source-wide idea that composting changes scraps into useful material.",
+              [
+                "S0138",
+                "S0144"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This names the topic but does not state what the source teaches about it.",
+              [
+                "S0145",
+                "S0144"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a supporting detail rather than the complete central idea.",
+              [
+                "S0143",
+                "S0144"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the central idea rather than the requested additional detail.",
+              [
+                "S0144"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The teacher seeing leaf bits is an explicit additional source detail.",
+              [
+                "S0143"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This names the topic rather than an additional factual detail.",
+              [
+                "S0145"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0554",
+      "fingerprint": "c1b76c35120dd6f4509d2008a59c5d882dd6b63391393dc0a0bea1738854bc93",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is too narrow to capture the complete process-and-benefit idea.",
+              [
+                "S0132",
+                "S0138"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This does not match the source-wide explanation of scraps becoming useful compost.",
+              [
+                "S0138",
+                "S0144"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This states the complete central idea about scraps changing into compost that helps plants.",
+              [
+                "S0138",
+                "S0144"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A1",
+            "A2"
+          ],
+          "ambiguity": "Turning the pile supplies air and adding scraps, leaves, and paper identifies the materials being transformed; both support the compost-process idea, and the prompt gives no unique basis for choosing one.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Turning the pile for air directly supports how the composting process works.",
+              [
+                "S0139",
+                "S0144"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The listed scraps, leaves, and paper are the materials the source says become compost.",
+              [
+                "S0132",
+                "S0138"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This observation is true but does not support the complete process-and-result idea as directly.",
+              [
+                "S0143",
+                "S0144"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0555",
+      "fingerprint": "cc8ef9eb2c7a4c99c39f797326977c3bc8543a57d1977c7eabbbf67207e7c151",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This choice is not the repeated subject of the trail source.",
+              [
+                "S0161",
+                "S0168",
+                "S0173"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Trail markers are repeated in the source title and route details.",
+              [
+                "S0161",
+                "S0168",
+                "S0174"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one location or feature, not the overall topic.",
+              [
+                "S0165",
+                "S0173"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a route detail rather than the repeated topic.",
+              [
+                "S0163",
+                "S0173"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0556",
+      "fingerprint": "8eaef7ffc8077c6dc508523bde643c56b8c26de26f73f812869a1df95a8c1904",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a narrow route detail and does not explain the full role of trail markers.",
+              [
+                "S0163",
+                "S0173"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This does not match the source-wide explanation of markers guiding people safely.",
+              [
+                "S0161",
+                "S0173"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "It combines the marker topic with their purpose: keeping people on the path and guiding them safely to the end.",
+              [
+                "S0161",
+                "S0170",
+                "S0172",
+                "S0173"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This reflects only one event or feature rather than the complete central idea.",
+              [
+                "S0165",
+                "S0173"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0557",
+      "fingerprint": "10d891f8e8095793182946a0ccdc723f62714641212b39f77eb5d7be49250bf6",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "Three choices directly support separate parts of the stated central idea: following the marked path, using a safe side path, and reaching the end sign. The prompt offers no ranking rule that makes only one most relevant.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The marker directing the path directly supports staying on the route.",
+              [
+                "S0161",
+                "S0168"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The map is a true navigation detail but is less direct evidence about what trail markers do.",
+              [
+                "S0163",
+                "S0177"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The safe side path supports the central idea that route guidance helps travelers avoid danger.",
+              [
+                "S0165",
+                "S0170"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The end sign directly supports markers guiding travelers to the route destination.",
+              [
+                "S0172",
+                "S0173"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0558",
+      "fingerprint": "1a7b7fb58bab082ec8e39ad0da2d203aa41ee9601439ddc7450bffd7a15d261e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "The prompt asks for two, but three choices directly support the central idea through path guidance, safe rerouting, and reaching the endpoint.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This marker detail supports keeping travelers on the route.",
+              [
+                "S0161",
+                "S0168"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This map detail is true but is not as directly about marker guidance.",
+              [
+                "S0163",
+                "S0177"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This safe-path detail supports avoiding a dangerous route.",
+              [
+                "S0165",
+                "S0170"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This end-sign detail supports reaching the route destination.",
+              [
+                "S0172",
+                "S0173"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0559",
+      "fingerprint": "cdf2d55f7a43fd12046504af4fc340cc8e371ab2a5358217f7d89dc3b82780ed",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one route detail rather than a statement of the complete central idea.",
+              [
+                "S0163",
+                "S0173"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one example of safe guidance, not the source-wide idea.",
+              [
+                "S0165",
+                "S0173"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one marker result but omits the broader path-and-safety idea.",
+              [
+                "S0172",
+                "S0173"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This states the full idea that trail markers keep travelers on the path and guide them safely to the end.",
+              [
+                "S0173"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0560",
+      "fingerprint": "a2f327d9bd7d79cd88c8a87458cb11ad62ca2c5952c2daf92a84109cbcbbe044",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Trail markers are the repeated source topic.",
+              [
+                "S0161",
+                "S0168",
+                "S0174"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a particular route feature, not the overall topic.",
+              [
+                "S0165"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a destination detail rather than the overall topic.",
+              [
+                "S0172"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This names the topic but does not explain what markers do.",
+              [
+                "S0174",
+                "S0173"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a supporting route detail rather than the complete source-wide idea.",
+              [
+                "S0165",
+                "S0173"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This expresses the complete idea about staying on the path and reaching the end safely.",
+              [
+                "S0173"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This is an explicit source detail about marker guidance.",
+              [
+                "S0172"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This gives the central idea, not another individual detail.",
+              [
+                "S0173"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This names the topic rather than an additional source fact.",
+              [
+                "S0174"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0561",
+      "fingerprint": "b58acf516efdbd4549f4ecb9794c32411806f6eb1fd5723e8ae2e5f05ff93c7e",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is narrower than the source-wide path-and-safety idea.",
+              [
+                "S0163",
+                "S0173"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This states the complete central idea about markers guiding travelers safely along the route.",
+              [
+                "S0173"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This does not match the source-wide role of trail markers.",
+              [
+                "S0161",
+                "S0173"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "All three details directly support the central idea: one shows staying on the marked route, one shows avoiding a steep bank, and one shows reaching the endpoint. A single-answer contract cannot distinguish them.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This detail supports following the marked route.",
+              [
+                "S0161",
+                "S0168"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This detail supports safety by keeping travelers away from the steep bank.",
+              [
+                "S0170"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This detail supports reaching the end of the route.",
+              [
+                "S0172"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

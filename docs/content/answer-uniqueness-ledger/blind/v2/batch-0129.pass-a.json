@@ -1,0 +1,918 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0129",
+  "batchFileSha256": "2774092c791fa81b2ebd1b85f56617646dd6dbe7010e3bb7e398aef775bf38ab",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1507",
+      "fingerprint": "182a4f760926987b4b6a2e8b5839c185a061e9dc2177b2cae309378ec8ad8042",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Changing the pencil does not improve the proposal content.",
+              [
+                "S0071"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Reading may help find a need, but leaving the draft unchanged is not revising it.",
+              [
+                "S0071"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Moving the request and adding evidence are substantive changes that make the proposal clearer and stronger.",
+              [
+                "S0080",
+                "S0071",
+                "S0081"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "Copying the same vague phrase preserves the identified weakness rather than revising it.",
+              [
+                "S0082"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1508",
+      "fingerprint": "9b20b1d9bbd1b3f10b148861f817024f640907d38577765426a993a72e4e611e",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "An arrangement does not estimate a word count.",
+              [
+                "S0077"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This uses structure as an unsupported verb about a pencil, not the requested noun.",
+              [
+                "S0077"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The noun names the proposal arrangement of an opening claim, reasons, and closing.",
+              [
+                "S0077"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "Paper color is not the arrangement of connected proposal parts.",
+              [
+                "S0075",
+                "S0077"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1509",
+      "fingerprint": "e88dcfcb9a5a1898a913adf86f2f8d1a0c268c7030f8abd9c1f575523dd7e9dc",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Naming the evidence makes the spoken reason easier to understand.",
+              [
+                "S0085"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "An empty sentence cannot make every detail clearer.",
+              [
+                "S0073"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "A useful diagram label can make the diagram meaning clearer in writing.",
+              [
+                "S0073",
+                "S0081"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "Removing a necessary step makes directions less clear and incomplete.",
+              [
+                "S0085"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1510",
+      "fingerprint": "a31a7b966d48168d6a6e9d4b2c50cba86d44192d30ea3409a89aa63ebb888065",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This checks relevance after revision but does not put the information into order.",
+              [
+                "S0086"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This clarifies one reason rather than ordering the proposal sections.",
+              [
+                "S0073"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This announces revision but does not state the ordering action.",
+              [
+                "S0071"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Using headings to arrange request, evidence, cost, and closing explicitly puts information in useful order.",
+              [
+                "S0075",
+                "S0083"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1511",
+      "fingerprint": "ce129ca451be6fac5fcbfccebf9ba6a7b4c4962d1a11729dc3a0167264cb2d12",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Clarify makes an idea easier to understand, which is narrower than changing the overall work.",
+              [
+                "S0073"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Organize puts ideas in order or groups.",
+              [
+                "S0075"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Revise means change work so it becomes clearer or stronger.",
+              [
+                "S0071",
+                "S0081"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Structure is the arrangement of connected parts.",
+              [
+                "S0077"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Structure names an arrangement, not the act of making one idea easier to understand.",
+              [
+                "S0077"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Revise can include many kinds of changes; clarify is the precise job described.",
+              [
+                "S0071",
+                "S0073"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Clarify means make an idea easier to understand.",
+              [
+                "S0073",
+                "S0085"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Organize puts ideas into order or groups.",
+              [
+                "S0075"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Revise means improve work through changes, not specifically order or group ideas.",
+              [
+                "S0071"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Clarify makes an idea easier to understand.",
+              [
+                "S0073"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Structure is the resulting arrangement, while the row asks for the action.",
+              [
+                "S0077"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Organize means put ideas into a useful order or groups.",
+              [
+                "S0075",
+                "S0083"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Structure is the arrangement of connected parts.",
+              [
+                "S0077"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Organize is the action of putting ideas in order.",
+              [
+                "S0075"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Clarify makes an idea easier to understand.",
+              [
+                "S0073"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Revise changes work to improve it.",
+              [
+                "S0071"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1512",
+      "fingerprint": "70ec52cd88dba45c1c6a22bafdaffa255407bcd0010a626a45e9fc3570903207",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "A process is the full connected series of engineering steps.",
+              [
+                "S0099",
+                "S0108"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "A factor is something that can affect the result.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Outcome names a result, not the chosen testing way.",
+              [
+                "S0113"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The passage defines method as the chosen way to carry out a task or test.",
+              [
+                "S0097",
+                "S0104"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1513",
+      "fingerprint": "4e952b464bc2c6c7e4b1b0d504ef3adc0a836779b2695f99bd2046d783483ce2",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "The connected steps form a process, not one factor.",
+              [
+                "S0099",
+                "S0108"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Fold shape is explicitly one condition that could affect bridge strength.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "Nothing in the test indicates that the title affects how many counters the bridge holds.",
+              [
+                "S0105",
+                "S0106"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The chosen way of adding counters is a method, not the factor named in the explanation.",
+              [
+                "S0097",
+                "S0104"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1514",
+      "fingerprint": "87d9c69e8068baf698c81d67f29fedc58a919d9de4650afdd42f95d353af2be6",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "Choosing an answer before testing does not investigate the question fairly.",
+              [
+                "S0095",
+                "S0103"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Changing title color does not gather information about the bridge question.",
+              [
+                "S0095"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Testing both designs gathers information to answer whether folded paper holds more weight.",
+              [
+                "S0095",
+                "S0107"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Making a ruler stronger is unrelated to the stated investigation.",
+              [
+                "S0095"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1515",
+      "fingerprint": "8e7d946add8149f144cf716ef377f9a0c92a97c25766ea191c6e135ab4ba4865",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "A single measuring choice is a method detail, not the connected full process.",
+              [
+                "S0108"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Planning, testing, and revising are connected steps in the design process.",
+              [
+                "S0099"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Adding one counter at a time is the chosen method for one testing part.",
+              [
+                "S0097",
+                "S0104"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "Every change across the whole project describes a process rather than one method.",
+              [
+                "S0099",
+                "S0108"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1516",
+      "fingerprint": "ac32c426e46462ea020e06031bc900ef7bed22a30541b882218a930fe558f25e",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This proposes a next test but does not identify the condition affecting the result.",
+              [
+                "S0111"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The sentence explicitly identifies fold shape as one factor affecting held weight.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This names the full process rather than one result-affecting condition.",
+              [
+                "S0099"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states the test method, not the factor whose effect is being compared.",
+              [
+                "S0097"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1517",
+      "fingerprint": "e39f9fac3d2c23bdd18a5723943a2bc3a529325861c04cc98d16e5612df4e8b3",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Investigate means ask a question and gather information to answer it.",
+              [
+                "S0095",
+                "S0107"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Process is a connected series of steps.",
+              [
+                "S0099"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Factor is one condition that can affect a result.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Method is a chosen way to carry out a task.",
+              [
+                "S0104"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Process is a connected series of steps.",
+              [
+                "S0099"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Factor can affect a result.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Investigate means gather information about a question.",
+              [
+                "S0095"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Method is explicitly defined as a chosen way to carry out a task.",
+              [
+                "S0104"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Factor is one condition affecting a result.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Investigate is the act of gathering information to answer a question.",
+              [
+                "S0095"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Method is a chosen way to do one part.",
+              [
+                "S0104",
+                "S0108"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Process is a connected series of steps.",
+              [
+                "S0099",
+                "S0108"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Factor is one thing that can affect a result.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Method is the chosen way to do a task.",
+              [
+                "S0104"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Investigate is the act of gathering information.",
+              [
+                "S0095"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Process is a series of connected steps.",
+              [
+                "S0099"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1518",
+      "fingerprint": "4d80d048cd5e225027229ce816dd5e7e6dd466107fd19630efb087de303c07fb",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "Conclude is deciding after evidence, not testing before the decision.",
+              [
+                "S0114"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Select means choose; it does not name gathering information through repeated tests.",
+              [
+                "S0095"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Summarize means briefly state important information, not test shapes.",
+              [
+                "S0095"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Investigate fits gathering information through repeated tests before deciding.",
+              [
+                "S0095",
+                "S0107"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This defines summarize, not investigate.",
+              [
+                "S0095"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "Investigation gathers information before a final decision rather than stating one first.",
+              [
+                "S0095",
+                "S0103"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "Choosing without testing is the opposite of the described investigation.",
+              [
+                "S0095"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "It accurately explains investigating as asking a question and gathering information before deciding.",
+              [
+                "S0095",
+                "S0107"
+              ]
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

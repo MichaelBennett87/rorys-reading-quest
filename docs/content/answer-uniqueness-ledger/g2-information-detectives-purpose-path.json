@@ -1,0 +1,3915 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "lesson-purpose-topic-purpose-detail-q-1",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-1eccfad2b885c99e",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "0c2c5dec22d1864aa32dfaeac47addae329affc8c695865daae8ff03b4078739",
+        "conclusionsSha256": "df2b80a1f060cf54d648c08b0dd1e028dba9e4c868537c1595cc245c6efa6c2c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0048.pass-a.json",
+        "receiptSha256": "df2b80a1f060cf54d648c08b0dd1e028dba9e4c868537c1595cc245c6efa6c2c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the topic of this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "rain-gardens"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rain-gardens"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "flower-blooming",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a feature or detail, not the repeated topic of the whole source.",
+              "evidenceIds": [
+                "g2-id-purpose-rain-gauge-readings-sentence-1",
+                "g2-id-purpose-rain-gauge-readings-sentence-8"
+              ]
+            },
+            {
+              "answerId": "safe-place",
+              "verdict": "INCORRECT",
+              "rationale": "This does not name the rain-garden subject repeated across the passage.",
+              "evidenceIds": [
+                "g2-id-purpose-rain-gauge-readings-sentence-1",
+                "g2-id-purpose-rain-gauge-readings-sentence-8",
+                "g2-id-purpose-rain-gauge-readings-title"
+              ]
+            },
+            {
+              "answerId": "water-rushes",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one effect or participant, not the overall source topic.",
+              "evidenceIds": [
+                "g2-id-purpose-rain-gauge-readings-sentence-6",
+                "g2-id-purpose-rain-gauge-readings-sentence-8"
+              ]
+            },
+            {
+              "answerId": "rain-gardens",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Rain gardens are named in the title and explained throughout the source.",
+              "evidenceIds": [
+                "g2-id-purpose-rain-gauge-readings-sentence-1",
+                "g2-id-purpose-rain-gauge-readings-sentence-8",
+                "g2-id-purpose-rain-gauge-readings-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-topic-purpose-detail-q-2",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-565d1c9f5509bb7b",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "0c2c5dec22d1864aa32dfaeac47addae329affc8c695865daae8ff03b4078739",
+        "conclusionsSha256": "df2b80a1f060cf54d648c08b0dd1e028dba9e4c868537c1595cc245c6efa6c2c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0048.pass-a.json",
+        "receiptSha256": "df2b80a1f060cf54d648c08b0dd1e028dba9e4c868537c1595cc245c6efa6c2c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Why did the author most likely write this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "central-soak"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "central-soak"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "detail-rocks",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This reflects a narrow source detail rather than the author purpose across the whole passage.",
+              "evidenceIds": [
+                "g2-id-purpose-rain-gauge-readings-sentence-6",
+                "g2-id-purpose-rain-gauge-readings-sentence-8"
+              ]
+            },
+            {
+              "answerId": "central-soak",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The source explains how a rain garden catches water and helps it soak safely into soil.",
+              "evidenceIds": [
+                "g2-id-purpose-rain-gauge-readings-sentence-1",
+                "g2-id-purpose-rain-gauge-readings-sentence-2",
+                "g2-id-purpose-rain-gauge-readings-sentence-8"
+              ]
+            },
+            {
+              "answerId": "detail-catch",
+              "verdict": "INCORRECT",
+              "rationale": "This does not match the explanatory treatment of rain gardens and water.",
+              "evidenceIds": [
+                "g2-id-purpose-rain-gauge-readings-sentence-1",
+                "g2-id-purpose-rain-gauge-readings-sentence-8"
+              ]
+            },
+            {
+              "answerId": "detail-bloom",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is at most one source action or detail, not the complete author purpose.",
+              "evidenceIds": [
+                "g2-id-purpose-rain-gauge-readings-sentence-3",
+                "g2-id-purpose-rain-gauge-readings-sentence-4",
+                "g2-id-purpose-rain-gauge-readings-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-topic-purpose-detail-q-3",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-53a3b21f23418be3",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "0c2c5dec22d1864aa32dfaeac47addae329affc8c695865daae8ff03b4078739",
+        "conclusionsSha256": "df2b80a1f060cf54d648c08b0dd1e028dba9e4c868537c1595cc245c6efa6c2c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0009.second-pass.json",
+        "receiptSha256": "9813d7f924ea75fc6f0ce02f61b3ed31aadbbf142e0b6ec7990beb236245c788",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details that are most relevant to the author purpose.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "bed-catches-rain",
+            "soil-holds-water"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "soil-holds-water",
+            "bed-catches-rain"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "soil-holds-water",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Soil holding water so it can soak in directly explains how the garden manages rainwater.",
+              "evidenceIds": [
+                "g2-id-purpose-rain-gauge-readings-sentence-2"
+              ]
+            },
+            {
+              "answerId": "children-watch",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Watching water disappear is a true observation, but it is less direct evidence of how the garden catches and absorbs rain.",
+              "evidenceIds": [
+                "g2-id-purpose-rain-gauge-readings-sentence-7",
+                "g2-id-purpose-rain-gauge-readings-sentence-8"
+              ]
+            },
+            {
+              "answerId": "bed-catches-rain",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Catching rain from a roof or walkway directly supports the passage purpose.",
+              "evidenceIds": [
+                "g2-id-purpose-rain-gauge-readings-sentence-1"
+              ]
+            },
+            {
+              "answerId": "bees-bloom",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Bees and butterflies are a true added benefit, but they do not directly explain rainwater capture and soaking.",
+              "evidenceIds": [
+                "g2-id-purpose-rain-gauge-readings-sentence-6",
+                "g2-id-purpose-rain-gauge-readings-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-topic-purpose-detail-q-4",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-b4539386eaa40452",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "0c2c5dec22d1864aa32dfaeac47addae329affc8c695865daae8ff03b4078739",
+        "conclusionsSha256": "df2b80a1f060cf54d648c08b0dd1e028dba9e4c868537c1595cc245c6efa6c2c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0048.pass-a.json",
+        "receiptSha256": "df2b80a1f060cf54d648c08b0dd1e028dba9e4c868537c1595cc245c6efa6c2c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Tap the sentence that best shows what the author explains.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-id-purpose-rain-gauge-readings-sentence-8"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-id-purpose-rain-gauge-readings-sentence-8"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-id-purpose-rain-gauge-readings-sentence-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one supporting detail and does not summarize why the author explains the rain garden.",
+              "evidenceIds": [
+                "g2-id-purpose-rain-gauge-readings-sentence-3",
+                "g2-id-purpose-rain-gauge-readings-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g2-id-purpose-rain-gauge-readings-sentence-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a narrower observation rather than the source-wide explanatory purpose.",
+              "evidenceIds": [
+                "g2-id-purpose-rain-gauge-readings-sentence-7",
+                "g2-id-purpose-rain-gauge-readings-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g2-id-purpose-rain-gauge-readings-sentence-8",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This concluding sentence directly combines water soaking with the garden being safer for plants, capturing the author purpose.",
+              "evidenceIds": [
+                "g2-id-purpose-rain-gauge-readings-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g2-id-purpose-rain-gauge-readings-sentence-5",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one additional detail rather than the clearest statement of the source-wide purpose.",
+              "evidenceIds": [
+                "g2-id-purpose-rain-gauge-readings-sentence-6",
+                "g2-id-purpose-rain-gauge-readings-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-topic-purpose-detail-q-5",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-2f215e7abbc8c52e",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "0c2c5dec22d1864aa32dfaeac47addae329affc8c695865daae8ff03b4078739",
+        "conclusionsSha256": "df2b80a1f060cf54d648c08b0dd1e028dba9e4c868537c1595cc245c6efa6c2c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0048.pass-a.json",
+        "receiptSha256": "df2b80a1f060cf54d648c08b0dd1e028dba9e4c868537c1595cc245c6efa6c2c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "rain-topic",
+          "prompt": "What is the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "rain-topic-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rain-topic-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "rain-detail-answer",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a rain-garden feature, not the overall topic.",
+              "evidenceIds": [
+                "g2-id-purpose-rain-gauge-readings-sentence-3"
+              ]
+            },
+            {
+              "answerId": "rain-other-answer",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one effect or detail, not the overall topic.",
+              "evidenceIds": [
+                "g2-id-purpose-rain-gauge-readings-sentence-6"
+              ]
+            },
+            {
+              "answerId": "rain-topic-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Rain gardens are the repeated subject of the passage and title.",
+              "evidenceIds": [
+                "g2-id-purpose-rain-gauge-readings-sentence-1",
+                "g2-id-purpose-rain-gauge-readings-sentence-8",
+                "g2-id-purpose-rain-gauge-readings-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "rain-central",
+          "prompt": "What is the author purpose?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "rain-central-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rain-central-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "rain-central-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This explains the source-wide purpose: showing how a rain garden catches water and helps it soak in.",
+              "evidenceIds": [
+                "g2-id-purpose-rain-gauge-readings-sentence-1",
+                "g2-id-purpose-rain-gauge-readings-sentence-2",
+                "g2-id-purpose-rain-gauge-readings-sentence-8"
+              ]
+            },
+            {
+              "answerId": "rain-other1-answer",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a supporting fact rather than the author purpose.",
+              "evidenceIds": [
+                "g2-id-purpose-rain-gauge-readings-sentence-6"
+              ]
+            },
+            {
+              "answerId": "rain-other2-answer",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names the topic without stating why the author wrote about it.",
+              "evidenceIds": [
+                "g2-id-purpose-rain-gauge-readings-title",
+                "g2-id-purpose-rain-gauge-readings-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "rain-other",
+          "prompt": "Which is another true detail?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "rain-other-answer-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rain-other-answer-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "rain-other-answer-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The source explicitly says bees and butterflies visit the flowers.",
+              "evidenceIds": [
+                "g2-id-purpose-rain-gauge-readings-sentence-6"
+              ]
+            },
+            {
+              "answerId": "rain-topic-answer-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the broader purpose rather than another individual detail.",
+              "evidenceIds": [
+                "g2-id-purpose-rain-gauge-readings-sentence-8"
+              ]
+            },
+            {
+              "answerId": "rain-central-answer-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names the topic rather than an additional source fact.",
+              "evidenceIds": [
+                "g2-id-purpose-rain-gauge-readings-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-find-author-goal-q-1",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-1c5fe836d0923cea",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "0c2c5dec22d1864aa32dfaeac47addae329affc8c695865daae8ff03b4078739",
+        "conclusionsSha256": "df2b80a1f060cf54d648c08b0dd1e028dba9e4c868537c1595cc245c6efa6c2c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0048.pass-a.json",
+        "receiptSha256": "df2b80a1f060cf54d648c08b0dd1e028dba9e4c868537c1595cc245c6efa6c2c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the topic of this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "quiet-shelter-topic"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "quiet-shelter-topic"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "low-lights",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one shelter feature, not the overall topic of the passage.",
+              "evidenceIds": [
+                "g2-id-purpose-nest-builder-notes-sentence-1",
+                "g2-id-purpose-nest-builder-notes-sentence-8"
+              ]
+            },
+            {
+              "answerId": "soft-beds",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one route detail, not the repeated source subject.",
+              "evidenceIds": [
+                "g2-id-purpose-nest-builder-notes-sentence-4",
+                "g2-id-purpose-nest-builder-notes-sentence-8"
+              ]
+            },
+            {
+              "answerId": "one-way-paths",
+              "verdict": "INCORRECT",
+              "rationale": "This does not name the animal-shelter subject established by the title and details.",
+              "evidenceIds": [
+                "g2-id-purpose-nest-builder-notes-sentence-1",
+                "g2-id-purpose-nest-builder-notes-title"
+              ]
+            },
+            {
+              "answerId": "quiet-shelter-topic",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Animal shelters are the subject described throughout the passage and title.",
+              "evidenceIds": [
+                "g2-id-purpose-nest-builder-notes-sentence-1",
+                "g2-id-purpose-nest-builder-notes-sentence-6",
+                "g2-id-purpose-nest-builder-notes-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-find-author-goal-q-2",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-126103939072cf0f",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "0c2c5dec22d1864aa32dfaeac47addae329affc8c695865daae8ff03b4078739",
+        "conclusionsSha256": "df2b80a1f060cf54d648c08b0dd1e028dba9e4c868537c1595cc245c6efa6c2c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0048.pass-a.json",
+        "receiptSha256": "df2b80a1f060cf54d648c08b0dd1e028dba9e4c868537c1595cc245c6efa6c2c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Why did the author most likely write this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "quiet-central"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "quiet-central"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "quiet-detail-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The passage describes shelters; it does not try to persuade every reader to visit every shelter.",
+              "evidenceIds": [
+                "g2-id-purpose-nest-builder-notes-sentence-1",
+                "g2-id-purpose-nest-builder-notes-sentence-6",
+                "g2-id-purpose-nest-builder-notes-sentence-8"
+              ]
+            },
+            {
+              "answerId": "quiet-detail-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Room cleaning is one detail, not a set of directions or the source-wide purpose.",
+              "evidenceIds": [
+                "g2-id-purpose-nest-builder-notes-sentence-3",
+                "g2-id-purpose-nest-builder-notes-sentence-8"
+              ]
+            },
+            {
+              "answerId": "quiet-detail-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source is informational and does not tell a made-up story about a lost pet.",
+              "evidenceIds": [
+                "g2-id-purpose-nest-builder-notes-sentence-1",
+                "g2-id-purpose-nest-builder-notes-sentence-6"
+              ]
+            },
+            {
+              "answerId": "quiet-central",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The passage describes how quiet spaces, clean beds, and clear paths help animals rest and feel safe.",
+              "evidenceIds": [
+                "g2-id-purpose-nest-builder-notes-sentence-2",
+                "g2-id-purpose-nest-builder-notes-sentence-6",
+                "g2-id-purpose-nest-builder-notes-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-find-author-goal-q-3",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-f0a83fa56ed96ac1",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "af7534aa2783fd9fe37240524008e2097e76a56257145a3831fce6cdf1d671fa",
+        "conclusionsSha256": "49d432b84c69cb5076bb046e3d41c89a5d4b8b91a3439ef0a9fdfb9b7e40d115",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0026.pass-a.json",
+        "receiptSha256": "49d432b84c69cb5076bb046e3d41c89a5d4b8b91a3439ef0a9fdfb9b7e40d115",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the detail that gives each animal a quiet resting space and the detail that prevents crowding. Select two.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "quiet-rest",
+            "quiet-path"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "quiet-path",
+            "quiet-rest"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "quiet-clean",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Daily cleaning and water do not directly provide the requested quiet space or prevent crowding.",
+              "evidenceIds": [
+                "g2-id-purpose-nest-builder-notes-sentence-3"
+              ]
+            },
+            {
+              "answerId": "quiet-path",
+              "verdict": "DEFENSIBLE",
+              "rationale": "One-way paths directly prevent animals from feeling crowded.",
+              "evidenceIds": [
+                "g2-id-purpose-nest-builder-notes-sentence-4"
+              ]
+            },
+            {
+              "answerId": "quiet-list",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The front-desk list identifies rest needs but does not itself give each animal a quiet space.",
+              "evidenceIds": [
+                "g2-id-purpose-nest-builder-notes-sentence-7"
+              ]
+            },
+            {
+              "answerId": "quiet-rest",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly gives each animal a low-noise resting space.",
+              "evidenceIds": [
+                "g2-id-purpose-nest-builder-notes-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-find-author-goal-q-4",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-a210ca4b80f22577",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "0c2c5dec22d1864aa32dfaeac47addae329affc8c695865daae8ff03b4078739",
+        "conclusionsSha256": "df2b80a1f060cf54d648c08b0dd1e028dba9e4c868537c1595cc245c6efa6c2c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0048.pass-a.json",
+        "receiptSha256": "df2b80a1f060cf54d648c08b0dd1e028dba9e4c868537c1595cc245c6efa6c2c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Tap the sentence that best helps readers understand the author purpose.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-id-purpose-nest-builder-notes-sentence-8"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-id-purpose-nest-builder-notes-sentence-8"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-id-purpose-nest-builder-notes-sentence-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This directly supports calm movement, but it is one path detail rather than the best synthesis of the author purpose.",
+              "evidenceIds": [
+                "g2-id-purpose-nest-builder-notes-sentence-4",
+                "g2-id-purpose-nest-builder-notes-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g2-id-purpose-nest-builder-notes-sentence-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This directly supports rest, but it is one room detail rather than the source-wide synthesis.",
+              "evidenceIds": [
+                "g2-id-purpose-nest-builder-notes-sentence-2",
+                "g2-id-purpose-nest-builder-notes-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g2-id-purpose-nest-builder-notes-sentence-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This lists helpful shelter features but does not connect the major ideas across the source as completely as the conclusion.",
+              "evidenceIds": [
+                "g2-id-purpose-nest-builder-notes-sentence-1",
+                "g2-id-purpose-nest-builder-notes-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g2-id-purpose-nest-builder-notes-sentence-8",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This concluding sentence connects quiet rooms, clean beds, and clear paths, matching the taught criterion that the best detail links ideas across sections.",
+              "evidenceIds": [
+                "g2-id-purpose-nest-builder-notes-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-find-author-goal-q-5",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-5076c198437b3e4c",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "af7534aa2783fd9fe37240524008e2097e76a56257145a3831fce6cdf1d671fa",
+        "conclusionsSha256": "49d432b84c69cb5076bb046e3d41c89a5d4b8b91a3439ef0a9fdfb9b7e40d115",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0026.pass-a.json",
+        "receiptSha256": "49d432b84c69cb5076bb046e3d41c89a5d4b8b91a3439ef0a9fdfb9b7e40d115",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "quiet-topic",
+          "prompt": "What is the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "quiet-topic-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "quiet-topic-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "quiet-topic-detail",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "One-way paths are one detail.",
+              "evidenceIds": [
+                "g2-id-purpose-nest-builder-notes-sentence-4"
+              ]
+            },
+            {
+              "answerId": "quiet-topic-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Animal shelters are the broad subject.",
+              "evidenceIds": [
+                "g2-id-purpose-nest-builder-notes-title"
+              ]
+            },
+            {
+              "answerId": "quiet-topic-other",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Water bowls are one detail.",
+              "evidenceIds": [
+                "g2-id-purpose-nest-builder-notes-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "quiet-central",
+          "prompt": "What is the author purpose?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "quiet-central-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "quiet-central-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "quiet-central-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This purpose explains the passage's calm-rest-and-safety focus.",
+              "evidenceIds": [
+                "g2-id-purpose-nest-builder-notes-sentence-6",
+                "g2-id-purpose-nest-builder-notes-sentence-8"
+              ]
+            },
+            {
+              "answerId": "quiet-central-other2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a source detail, not an author's purpose.",
+              "evidenceIds": [
+                "g2-id-purpose-nest-builder-notes-sentence-4"
+              ]
+            },
+            {
+              "answerId": "quiet-central-other1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a source detail, not an author's purpose.",
+              "evidenceIds": [
+                "g2-id-purpose-nest-builder-notes-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "quiet-other",
+          "prompt": "Which detail describes a record kept at the front desk?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "quiet-other-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "quiet-other-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "quiet-other-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the topic phrase, not a front-desk record.",
+              "evidenceIds": [
+                "g2-id-purpose-nest-builder-notes-title"
+              ]
+            },
+            {
+              "answerId": "quiet-other-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly identifies the list kept at the front desk.",
+              "evidenceIds": [
+                "g2-id-purpose-nest-builder-notes-sentence-7"
+              ]
+            },
+            {
+              "answerId": "quiet-other-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the central idea, not the named record.",
+              "evidenceIds": [
+                "g2-id-purpose-nest-builder-notes-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-what-is-author-trying-to-explain-q-1",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-b5fca6b3a7ada6ff",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "06f35620b4fb73e3a671d4c33ec06fc6a360941909aa9c31e8b174f864d054fc",
+        "conclusionsSha256": "a49a3c6e9f15e4ec8718de583e4dfa95ecce7ebe99af8bab6e424100db5ab2b9",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0049.pass-a.json",
+        "receiptSha256": "a49a3c6e9f15e4ec8718de583e4dfa95ecce7ebe99af8bab6e424100db5ab2b9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the topic of this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "pollinator-topic"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "pollinator-topic"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "seed-topic",
+              "verdict": "INCORRECT",
+              "rationale": "Seed travel routes do not match the pollinator-patch title, row headings, bloom counts, or pollinator observations.",
+              "evidenceIds": [
+                "g2-id-purpose-bee-pollen-path-title",
+                "g2-id-purpose-bee-pollen-path-heading-1",
+                "g2-id-purpose-bee-pollen-path-heading-2"
+              ]
+            },
+            {
+              "answerId": "weather-topic",
+              "verdict": "INCORRECT",
+              "rationale": "Weather tools are absent from this pollinator-patch passage.",
+              "evidenceIds": [
+                "g2-id-purpose-bee-pollen-path-title"
+              ]
+            },
+            {
+              "answerId": "compost-topic",
+              "verdict": "INCORRECT",
+              "rationale": "Compost piles are absent from this pollinator-patch passage.",
+              "evidenceIds": [
+                "g2-id-purpose-bee-pollen-path-title"
+              ]
+            },
+            {
+              "answerId": "pollinator-topic",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The title, headings, graph, and class comparisons all concern counts in a pollinator patch.",
+              "evidenceIds": [
+                "g2-id-purpose-bee-pollen-path-title",
+                "g2-id-purpose-bee-pollen-path-heading-1",
+                "g2-id-purpose-bee-pollen-path-heading-2",
+                "g2-id-purpose-bee-pollen-path-graph",
+                "g2-id-purpose-bee-pollen-path-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-what-is-author-trying-to-explain-q-2",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-839dd72efb9d9cda",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "06f35620b4fb73e3a671d4c33ec06fc6a360941909aa9c31e8b174f864d054fc",
+        "conclusionsSha256": "a49a3c6e9f15e4ec8718de583e4dfa95ecce7ebe99af8bab6e424100db5ab2b9",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0049.pass-a.json",
+        "receiptSha256": "a49a3c6e9f15e4ec8718de583e4dfa95ecce7ebe99af8bab6e424100db5ab2b9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Why did the author most likely write this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "pollinator-central"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "pollinator-central"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "pollinator-central",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The two sections contrast sunny and shady rows, then state that the class compared which row helped pollinators most.",
+              "evidenceIds": [
+                "g2-id-purpose-bee-pollen-path-heading-1",
+                "g2-id-purpose-bee-pollen-path-heading-2",
+                "g2-id-purpose-bee-pollen-path-sentence-3",
+                "g2-id-purpose-bee-pollen-path-sentence-5",
+                "g2-id-purpose-bee-pollen-path-sentence-6",
+                "g2-id-purpose-bee-pollen-path-sentence-7"
+              ]
+            },
+            {
+              "answerId": "pollinator-detail-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The passage compares several bloom colors and never urges readers to choose only blue flowers.",
+              "evidenceIds": [
+                "g2-id-purpose-bee-pollen-path-sentence-1",
+                "g2-id-purpose-bee-pollen-path-sentence-2",
+                "g2-id-purpose-bee-pollen-path-graph"
+              ]
+            },
+            {
+              "answerId": "pollinator-detail-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The passage is an informational class observation, not a made-up bee story.",
+              "evidenceIds": [
+                "g2-id-purpose-bee-pollen-path-title",
+                "g2-id-purpose-bee-pollen-path-sentence-1",
+                "g2-id-purpose-bee-pollen-path-sentence-7"
+              ]
+            },
+            {
+              "answerId": "pollinator-detail-2",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The passage gives observations and comparisons, not directions for planting a garden.",
+              "evidenceIds": [
+                "g2-id-purpose-bee-pollen-path-sentence-1",
+                "g2-id-purpose-bee-pollen-path-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-what-is-author-trying-to-explain-q-3",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-4d82c2b2914e5516",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "d48dadefa742894272c26f9101458b13d36d5ff4e25c51e2e1a345143c5be699",
+        "conclusionsSha256": "0e3bf3befa51600d2446eff07ccf4af289d11341a25125f79594d6166bac3fd3",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "CORRECTION_REREVIEW",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/corrections-v7-final/batch-c0003.pass-a.json",
+        "receiptSha256": "0e3bf3befa51600d2446eff07ccf4af289d11341a25125f79594d6166bac3fd3",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two details that count flowers or describe pollinator visits in the sunny row.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "pollinator-blue",
+            "pollinator-bees"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "pollinator-blue",
+            "pollinator-bees"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "pollinator-stems",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes stem height; it neither counts flowers nor describes pollinator visits.",
+              "evidenceIds": [
+                "g2-id-purpose-bee-pollen-path-sentence-4"
+              ]
+            },
+            {
+              "answerId": "pollinator-balance",
+              "verdict": "CONTRADICTED",
+              "rationale": "This concerns the shady row, not the sunny row required by the prompt.",
+              "evidenceIds": [
+                "g2-id-purpose-bee-pollen-path-sentence-5"
+              ]
+            },
+            {
+              "answerId": "pollinator-blue",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This compares counted blue and red flowers in the sunny row.",
+              "evidenceIds": [
+                "g2-id-purpose-bee-pollen-path-sentence-2",
+                "g2-id-purpose-bee-pollen-path-graph"
+              ]
+            },
+            {
+              "answerId": "pollinator-bees",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This describes bee pollinators visiting the sunny row.",
+              "evidenceIds": [
+                "g2-id-purpose-bee-pollen-path-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": true,
+      "correctionSummary": "Learner-visible content was corrected and re-reviewed in docs/content/answer-uniqueness-ledger/blind/corrections-v7-final/batch-c0003.pass-a.json.",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-what-is-author-trying-to-explain-q-4",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-6cf93ad6499e2b7a",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "e6d562a30358fc677dced85546feb8271b93e260e3dba830e6d109e7e093a52f",
+        "conclusionsSha256": "9678dd068f14ae824586f68f88d972bf031a95943ecafe0b6730f3db75332eea",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0009.second-pass.json",
+        "receiptSha256": "9813d7f924ea75fc6f0ce02f61b3ed31aadbbf142e0b6ec7990beb236245c788",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Tap the sentence that states the broad idea the author explains about pollinator gardens.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-id-purpose-bee-pollen-path-sentence-8"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-id-purpose-bee-pollen-path-sentence-8"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-id-purpose-bee-pollen-path-sentence-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one sunny-row observation, not the broad idea about pollinator gardens.",
+              "evidenceIds": [
+                "g2-id-purpose-bee-pollen-path-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g2-id-purpose-bee-pollen-path-sentence-7",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the class's comparison purpose, not the broad idea the author explains about pollinator gardens.",
+              "evidenceIds": [
+                "g2-id-purpose-bee-pollen-path-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g2-id-purpose-bee-pollen-path-sentence-8",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly states the broad idea that pollinator gardens provide food and rest for insects.",
+              "evidenceIds": [
+                "g2-id-purpose-bee-pollen-path-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g2-id-purpose-bee-pollen-path-sentence-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one bloom-count detail, not the broad explanatory idea.",
+              "evidenceIds": [
+                "g2-id-purpose-bee-pollen-path-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": true,
+      "correctionSummary": "Learner-visible content was corrected and re-reviewed in docs/content/answer-uniqueness-ledger/blind/corrections-v6-initial/batch-c0002.pass-a.json.",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-what-is-author-trying-to-explain-q-5",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-2ab6a175f47f6989",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "af7534aa2783fd9fe37240524008e2097e76a56257145a3831fce6cdf1d671fa",
+        "conclusionsSha256": "49d432b84c69cb5076bb046e3d41c89a5d4b8b91a3439ef0a9fdfb9b7e40d115",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0009.second-pass.json",
+        "receiptSha256": "9813d7f924ea75fc6f0ce02f61b3ed31aadbbf142e0b6ec7990beb236245c788",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "pollinator-topic",
+          "prompt": "What is the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "pollinator-topic-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "pollinator-topic-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "pollinator-topic-other",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one shady-row detail.",
+              "evidenceIds": [
+                "g2-id-purpose-bee-pollen-path-sentence-5"
+              ]
+            },
+            {
+              "answerId": "pollinator-topic-detail",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one bee-visit detail.",
+              "evidenceIds": [
+                "g2-id-purpose-bee-pollen-path-sentence-3"
+              ]
+            },
+            {
+              "answerId": "pollinator-topic-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Pollinator patch counts name the broad subject.",
+              "evidenceIds": [
+                "g2-id-purpose-bee-pollen-path-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "pollinator-central",
+          "prompt": "What is the author purpose?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "pollinator-central-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "pollinator-central-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "pollinator-central-other1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one graph detail, not a purpose statement.",
+              "evidenceIds": [
+                "g2-id-purpose-bee-pollen-path-sentence-2"
+              ]
+            },
+            {
+              "answerId": "pollinator-central-other2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one stem detail, not a purpose statement.",
+              "evidenceIds": [
+                "g2-id-purpose-bee-pollen-path-sentence-4"
+              ]
+            },
+            {
+              "answerId": "pollinator-central-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This explains the author's whole-text goal across both garden rows.",
+              "evidenceIds": [
+                "g2-id-purpose-bee-pollen-path-sentence-3",
+                "g2-id-purpose-bee-pollen-path-sentence-5",
+                "g2-id-purpose-bee-pollen-path-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "pollinator-other",
+          "prompt": "Which detail compares blooms and leaves in the shady row?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "pollinator-other-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "pollinator-other-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "pollinator-other-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the central benefit rather than the requested row comparison.",
+              "evidenceIds": [
+                "g2-id-purpose-bee-pollen-path-sentence-8"
+              ]
+            },
+            {
+              "answerId": "pollinator-other-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the topic phrase.",
+              "evidenceIds": [
+                "g2-id-purpose-bee-pollen-path-title"
+              ]
+            },
+            {
+              "answerId": "pollinator-other-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly compares blooms and leaves in the shady row.",
+              "evidenceIds": [
+                "g2-id-purpose-bee-pollen-path-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-use-whole-text-purpose-q-1",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-71fdd4e7c46fcb5b",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "06f35620b4fb73e3a671d4c33ec06fc6a360941909aa9c31e8b174f864d054fc",
+        "conclusionsSha256": "a49a3c6e9f15e4ec8718de583e4dfa95ecce7ebe99af8bab6e424100db5ab2b9",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0049.pass-a.json",
+        "receiptSha256": "a49a3c6e9f15e4ec8718de583e4dfa95ecce7ebe99af8bab6e424100db5ab2b9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the topic of this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "weather-topic"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "weather-topic"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "weather-topic",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The title, measuring and pattern sections, chart notes, and tools all concern weather-station notes.",
+              "evidenceIds": [
+                "g2-id-purpose-trail-marker-system-title",
+                "g2-id-purpose-trail-marker-system-heading-1",
+                "g2-id-purpose-trail-marker-system-heading-2",
+                "g2-id-purpose-trail-marker-system-sentence-3",
+                "g2-id-purpose-trail-marker-system-sentence-5"
+              ]
+            },
+            {
+              "answerId": "pollinator-topic",
+              "verdict": "INCORRECT",
+              "rationale": "Pollinator patch counts are absent from the weather-station passage.",
+              "evidenceIds": [
+                "g2-id-purpose-trail-marker-system-title"
+              ]
+            },
+            {
+              "answerId": "seed-topic",
+              "verdict": "INCORRECT",
+              "rationale": "Seed travel routes are absent from the weather-station passage.",
+              "evidenceIds": [
+                "g2-id-purpose-trail-marker-system-title"
+              ]
+            },
+            {
+              "answerId": "compost-topic",
+              "verdict": "INCORRECT",
+              "rationale": "Compost piles are absent from the weather-station passage.",
+              "evidenceIds": [
+                "g2-id-purpose-trail-marker-system-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-use-whole-text-purpose-q-2",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-f18bc953ba118b6f",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "06f35620b4fb73e3a671d4c33ec06fc6a360941909aa9c31e8b174f864d054fc",
+        "conclusionsSha256": "a49a3c6e9f15e4ec8718de583e4dfa95ecce7ebe99af8bab6e424100db5ab2b9",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0049.pass-a.json",
+        "receiptSha256": "a49a3c6e9f15e4ec8718de583e4dfa95ecce7ebe99af8bab6e424100db5ab2b9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Why did the author most likely write this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "weather-central"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "weather-central"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "weather-detail-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The informational passage reports class tools and observations, not a made-up storm story.",
+              "evidenceIds": [
+                "g2-id-purpose-trail-marker-system-sentence-1",
+                "g2-id-purpose-trail-marker-system-sentence-2",
+                "g2-id-purpose-trail-marker-system-sentence-3"
+              ]
+            },
+            {
+              "answerId": "weather-central",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The passage explains weather tools, recorded notes, comparisons, and watching changes over time.",
+              "evidenceIds": [
+                "g2-id-purpose-trail-marker-system-sentence-1",
+                "g2-id-purpose-trail-marker-system-sentence-2",
+                "g2-id-purpose-trail-marker-system-sentence-3",
+                "g2-id-purpose-trail-marker-system-sentence-5",
+                "g2-id-purpose-trail-marker-system-sentence-7"
+              ]
+            },
+            {
+              "answerId": "weather-detail-2",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The passage states a wind sock function but gives no building directions.",
+              "evidenceIds": [
+                "g2-id-purpose-trail-marker-system-sentence-4"
+              ]
+            },
+            {
+              "answerId": "weather-detail-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The passage presents several useful tools and does not argue that one is best.",
+              "evidenceIds": [
+                "g2-id-purpose-trail-marker-system-sentence-1",
+                "g2-id-purpose-trail-marker-system-sentence-2",
+                "g2-id-purpose-trail-marker-system-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-use-whole-text-purpose-q-3",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-dcf4781cbaa59e78",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "af7534aa2783fd9fe37240524008e2097e76a56257145a3831fce6cdf1d671fa",
+        "conclusionsSha256": "49d432b84c69cb5076bb046e3d41c89a5d4b8b91a3439ef0a9fdfb9b7e40d115",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0026.pass-a.json",
+        "receiptSha256": "49d432b84c69cb5076bb046e3d41c89a5d4b8b91a3439ef0a9fdfb9b7e40d115",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the detail that names a temperature tool and the detail that shows the class recording numbers. Select two.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "weather-thermometer",
+            "weather-chart"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "weather-chart",
+            "weather-thermometer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "weather-chart",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This shows the class recording numbers.",
+              "evidenceIds": [
+                "g2-id-purpose-trail-marker-system-sentence-3"
+              ]
+            },
+            {
+              "answerId": "weather-clouds",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This saves cloudy-day marks but is not the requested number-recording detail.",
+              "evidenceIds": [
+                "g2-id-purpose-trail-marker-system-sentence-6"
+              ]
+            },
+            {
+              "answerId": "weather-thermometer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A thermometer is the named temperature tool.",
+              "evidenceIds": [
+                "g2-id-purpose-trail-marker-system-sentence-1"
+              ]
+            },
+            {
+              "answerId": "weather-wind",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "A wind sock measures direction, not temperature.",
+              "evidenceIds": [
+                "g2-id-purpose-trail-marker-system-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-use-whole-text-purpose-q-4",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-2295b90cecd3dcc0",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "af7534aa2783fd9fe37240524008e2097e76a56257145a3831fce6cdf1d671fa",
+        "conclusionsSha256": "49d432b84c69cb5076bb046e3d41c89a5d4b8b91a3439ef0a9fdfb9b7e40d115",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0026.pass-a.json",
+        "receiptSha256": "49d432b84c69cb5076bb046e3d41c89a5d4b8b91a3439ef0a9fdfb9b7e40d115",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Tap the sentence that states what the class learns by using tools and careful observations.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-id-purpose-trail-marker-system-sentence-8"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-id-purpose-trail-marker-system-sentence-8"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-id-purpose-trail-marker-system-sentence-7",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states what tools help the class watch, but not the requested result of tools and careful observations together.",
+              "evidenceIds": [
+                "g2-id-purpose-trail-marker-system-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g2-id-purpose-trail-marker-system-sentence-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one rain-gauge function.",
+              "evidenceIds": [
+                "g2-id-purpose-trail-marker-system-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g2-id-purpose-trail-marker-system-sentence-5",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states what comparing notes reveals, not the full requested tools-and-observations result.",
+              "evidenceIds": [
+                "g2-id-purpose-trail-marker-system-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g2-id-purpose-trail-marker-system-sentence-8",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This explicitly states what the class learns through tools and careful observations.",
+              "evidenceIds": [
+                "g2-id-purpose-trail-marker-system-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-use-whole-text-purpose-q-5",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-3b59190af593474e",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "af7534aa2783fd9fe37240524008e2097e76a56257145a3831fce6cdf1d671fa",
+        "conclusionsSha256": "49d432b84c69cb5076bb046e3d41c89a5d4b8b91a3439ef0a9fdfb9b7e40d115",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0026.pass-a.json",
+        "receiptSha256": "49d432b84c69cb5076bb046e3d41c89a5d4b8b91a3439ef0a9fdfb9b7e40d115",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "weather-topic",
+          "prompt": "What is the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "weather-topic-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "weather-topic-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "weather-topic-detail",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one tool detail.",
+              "evidenceIds": [
+                "g2-id-purpose-trail-marker-system-sentence-2"
+              ]
+            },
+            {
+              "answerId": "weather-topic-other",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one chart detail.",
+              "evidenceIds": [
+                "g2-id-purpose-trail-marker-system-sentence-6"
+              ]
+            },
+            {
+              "answerId": "weather-topic-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Weather station notes name the broad subject.",
+              "evidenceIds": [
+                "g2-id-purpose-trail-marker-system-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "weather-central",
+          "prompt": "What is the author purpose?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "weather-central-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "weather-central-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "weather-central-other2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one recording detail, not a purpose statement.",
+              "evidenceIds": [
+                "g2-id-purpose-trail-marker-system-sentence-3"
+              ]
+            },
+            {
+              "answerId": "weather-central-other1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one thermometer detail, not a purpose statement.",
+              "evidenceIds": [
+                "g2-id-purpose-trail-marker-system-sentence-1"
+              ]
+            },
+            {
+              "answerId": "weather-central-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This states the author's explanatory goal for the whole weather-station text.",
+              "evidenceIds": [
+                "g2-id-purpose-trail-marker-system-sentence-7",
+                "g2-id-purpose-trail-marker-system-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "weather-other",
+          "prompt": "Which detail explains what the wind sock shows?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "weather-other-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "weather-other-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "weather-other-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the topic phrase.",
+              "evidenceIds": [
+                "g2-id-purpose-trail-marker-system-title"
+              ]
+            },
+            {
+              "answerId": "weather-other-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the broad learning result, not the wind sock's function.",
+              "evidenceIds": [
+                "g2-id-purpose-trail-marker-system-sentence-8"
+              ]
+            },
+            {
+              "answerId": "weather-other-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly states that a wind sock shows wind direction.",
+              "evidenceIds": [
+                "g2-id-purpose-trail-marker-system-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-checkpoint-a-q-1",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-c251f1b5564d3689",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "1c47b89ea36ad6f8a7a879d39f1142f76bccc25d05e6372321f650654caa63df",
+        "conclusionsSha256": "ce1bf49507a940c4db0288df343f483f5a139ae9a1aca1939976463ce0963e65",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0050.pass-a.json",
+        "receiptSha256": "ce1bf49507a940c4db0288df343f483f5a139ae9a1aca1939976463ce0963e65",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the topic of this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "seed-topic"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "seed-topic"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "compost-topic",
+              "verdict": "INCORRECT",
+              "rationale": "Compost piles are absent from the seed-travel passage.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-title"
+              ]
+            },
+            {
+              "answerId": "weather-topic",
+              "verdict": "INCORRECT",
+              "rationale": "Weather stations are absent from the seed-travel passage.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-title"
+              ]
+            },
+            {
+              "answerId": "trail-topic",
+              "verdict": "INCORRECT",
+              "rationale": "Trail markers are absent from the seed-travel passage.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-title"
+              ]
+            },
+            {
+              "answerId": "seed-topic",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The title, headings, map, and sentences all focus on routes by which seeds travel.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-title",
+                "g2-id-purpose-shade-garden-study-heading-1",
+                "g2-id-purpose-shade-garden-study-heading-2",
+                "g2-id-purpose-shade-garden-study-illustration",
+                "g2-id-purpose-shade-garden-study-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-checkpoint-a-q-2",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-ce061f7e634319d2",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "1c47b89ea36ad6f8a7a879d39f1142f76bccc25d05e6372321f650654caa63df",
+        "conclusionsSha256": "ce1bf49507a940c4db0288df343f483f5a139ae9a1aca1939976463ce0963e65",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0050.pass-a.json",
+        "receiptSha256": "ce1bf49507a940c4db0288df343f483f5a139ae9a1aca1939976463ce0963e65",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Why did the author most likely write this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "seed-central"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "seed-central"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "seed-detail-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The passage explicitly includes wind, water, animals, shoes, and socks rather than wind only.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-1",
+                "g2-id-purpose-shade-garden-study-sentence-2",
+                "g2-id-purpose-shade-garden-study-sentence-4",
+                "g2-id-purpose-shade-garden-study-sentence-6"
+              ]
+            },
+            {
+              "answerId": "seed-detail-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The informational passage explains real seed movement rather than telling a made-up story.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-title",
+                "g2-id-purpose-shade-garden-study-illustration"
+              ]
+            },
+            {
+              "answerId": "seed-central",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Multiple sections and the concluding sentence explain several ways seeds reach new places.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-heading-1",
+                "g2-id-purpose-shade-garden-study-heading-2",
+                "g2-id-purpose-shade-garden-study-heading-3",
+                "g2-id-purpose-shade-garden-study-sentence-10"
+              ]
+            },
+            {
+              "answerId": "seed-detail-2",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The passage gives no planting directions for a seed packet.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-3",
+                "g2-id-purpose-shade-garden-study-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-checkpoint-a-q-3",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-0fa0859e5546101a",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "af7534aa2783fd9fe37240524008e2097e76a56257145a3831fce6cdf1d671fa",
+        "conclusionsSha256": "49d432b84c69cb5076bb046e3d41c89a5d4b8b91a3439ef0a9fdfb9b7e40d115",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0026.pass-a.json",
+        "receiptSha256": "49d432b84c69cb5076bb046e3d41c89a5d4b8b91a3439ef0a9fdfb9b7e40d115",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail shows a seed traveling on an animal's body?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "seed-fur"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "seed-fur"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "seed-fur",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Fur and feathers are parts of an animal's body carrying the seed.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-4"
+              ]
+            },
+            {
+              "answerId": "seed-room",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes the destination, not animal-body travel.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-9"
+              ]
+            },
+            {
+              "answerId": "seed-shoes",
+              "verdict": "CONTRADICTED",
+              "rationale": "Shoes and socks are objects worn by people, not an animal's body.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-6"
+              ]
+            },
+            {
+              "answerId": "seed-water",
+              "verdict": "CONTRADICTED",
+              "rationale": "This describes water travel.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-checkpoint-a-q-4",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-cf30ed448db80390",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "af7534aa2783fd9fe37240524008e2097e76a56257145a3831fce6cdf1d671fa",
+        "conclusionsSha256": "49d432b84c69cb5076bb046e3d41c89a5d4b8b91a3439ef0a9fdfb9b7e40d115",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0009.second-pass.json",
+        "receiptSha256": "9813d7f924ea75fc6f0ce02f61b3ed31aadbbf142e0b6ec7990beb236245c788",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the detail that shows a seed traveling through the air and the detail that shows a seed traveling on an animal. Select two.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "seed-wind",
+            "seed-fur-detail"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "seed-fur-detail",
+            "seed-wind"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "seed-fur-detail",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Fur or feathers show travel on an animal.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-4"
+              ]
+            },
+            {
+              "answerId": "seed-water-detail",
+              "verdict": "CONTRADICTED",
+              "rationale": "This is water travel.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-2"
+              ]
+            },
+            {
+              "answerId": "seed-wind",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Wind carries the seed through the air.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-1"
+              ]
+            },
+            {
+              "answerId": "seed-map",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This records travel but does not identify air or animal travel.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-checkpoint-a-q-5",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-09b7237f61a1f7e3",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "1c47b89ea36ad6f8a7a879d39f1142f76bccc25d05e6372321f650654caa63df",
+        "conclusionsSha256": "ce1bf49507a940c4db0288df343f483f5a139ae9a1aca1939976463ce0963e65",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0050.pass-a.json",
+        "receiptSha256": "ce1bf49507a940c4db0288df343f483f5a139ae9a1aca1939976463ce0963e65",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Tap the sentence that best helps readers understand the author purpose.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-id-purpose-shade-garden-study-sentence-10"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-id-purpose-shade-garden-study-sentence-10"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-id-purpose-shade-garden-study-sentence-5",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one animal-assisted travel example rather than the passage-wide purpose.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g2-id-purpose-shade-garden-study-sentence-7",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes a classroom record rather than the seed-travel explanation.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g2-id-purpose-shade-garden-study-sentence-10",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This concluding sentence summarizes multiple travel ways and their result in new plant growth.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g2-id-purpose-shade-garden-study-sentence-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one water-assisted travel example rather than the full purpose.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-checkpoint-a-q-6",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-ac96a6c11aca53cd",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "af7534aa2783fd9fe37240524008e2097e76a56257145a3831fce6cdf1d671fa",
+        "conclusionsSha256": "49d432b84c69cb5076bb046e3d41c89a5d4b8b91a3439ef0a9fdfb9b7e40d115",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0026.pass-a.json",
+        "receiptSha256": "49d432b84c69cb5076bb046e3d41c89a5d4b8b91a3439ef0a9fdfb9b7e40d115",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "seed-topic",
+          "prompt": "What is the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "seed-topic-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "seed-topic-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "seed-topic-detail",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one map detail.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-7"
+              ]
+            },
+            {
+              "answerId": "seed-topic-other",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one animal-travel detail.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-5"
+              ]
+            },
+            {
+              "answerId": "seed-topic-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Seed travel routes name the broad subject.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "seed-central",
+          "prompt": "What is the author purpose?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "seed-central-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "seed-central-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "seed-central-other2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one example, not a purpose statement.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-4"
+              ]
+            },
+            {
+              "answerId": "seed-central-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This states the author's explanatory goal across the seed-travel methods.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-1",
+                "g2-id-purpose-shade-garden-study-sentence-2",
+                "g2-id-purpose-shade-garden-study-sentence-4"
+              ]
+            },
+            {
+              "answerId": "seed-central-other1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one example, not a purpose statement.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "seed-other",
+          "prompt": "Which detail describes a classroom record of where seeds traveled?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "seed-other-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "seed-other-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "seed-other-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly names the classroom map record.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-7"
+              ]
+            },
+            {
+              "answerId": "seed-other-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the central idea, not the requested record.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-10"
+              ]
+            },
+            {
+              "answerId": "seed-other-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a topic phrase, not a record sentence.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-checkpoint-a-q-7",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-6f44f1075ad541db",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "af7534aa2783fd9fe37240524008e2097e76a56257145a3831fce6cdf1d671fa",
+        "conclusionsSha256": "49d432b84c69cb5076bb046e3d41c89a5d4b8b91a3439ef0a9fdfb9b7e40d115",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0026.pass-a.json",
+        "receiptSha256": "49d432b84c69cb5076bb046e3d41c89a5d4b8b91a3439ef0a9fdfb9b7e40d115",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "What is the author purpose of the text?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "seed-part-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "seed-part-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "seed-part-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This states the whole-text explanatory purpose.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-1",
+                "g2-id-purpose-shade-garden-study-sentence-2",
+                "g2-id-purpose-shade-garden-study-sentence-4"
+              ]
+            },
+            {
+              "answerId": "seed-part-a-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one wind example, not an author-purpose statement.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-1"
+              ]
+            },
+            {
+              "answerId": "seed-part-a-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one map detail, not an author-purpose statement.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which detail gives a wind-based example that supports that answer?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "seed-part-b-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "seed-part-b-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "seed-part-b-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a record of routes rather than a wind example.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-7"
+              ]
+            },
+            {
+              "answerId": "seed-part-b-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "This is an animal example rather than a wind example.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-5"
+              ]
+            },
+            {
+              "answerId": "seed-part-b-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly supplies a wind-based travel example.",
+              "evidenceIds": [
+                "g2-id-purpose-shade-garden-study-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-checkpoint-b-q-1",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-34cbaef11958363d",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "1c47b89ea36ad6f8a7a879d39f1142f76bccc25d05e6372321f650654caa63df",
+        "conclusionsSha256": "ce1bf49507a940c4db0288df343f483f5a139ae9a1aca1939976463ce0963e65",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0050.pass-a.json",
+        "receiptSha256": "ce1bf49507a940c4db0288df343f483f5a139ae9a1aca1939976463ce0963e65",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the topic of this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "compost-topic"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "compost-topic"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "seed-topic",
+              "verdict": "INCORRECT",
+              "rationale": "Seed travel routes are absent from the compost passage.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-title"
+              ]
+            },
+            {
+              "answerId": "trail-topic",
+              "verdict": "INCORRECT",
+              "rationale": "Trail markers are absent from the compost passage.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-title"
+              ]
+            },
+            {
+              "answerId": "compost-topic",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The title, headings, graph, and sentences all concern what happens in compost piles.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-title",
+                "g2-id-purpose-recycling-sort-station-heading-1",
+                "g2-id-purpose-recycling-sort-station-heading-2",
+                "g2-id-purpose-recycling-sort-station-heading-3",
+                "g2-id-purpose-recycling-sort-station-graph"
+              ]
+            },
+            {
+              "answerId": "weather-topic",
+              "verdict": "INCORRECT",
+              "rationale": "Weather station notes are absent from the compost passage.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-checkpoint-b-q-2",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-c50ff7e435450b50",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "1c47b89ea36ad6f8a7a879d39f1142f76bccc25d05e6372321f650654caa63df",
+        "conclusionsSha256": "ce1bf49507a940c4db0288df343f483f5a139ae9a1aca1939976463ce0963e65",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0050.pass-a.json",
+        "receiptSha256": "ce1bf49507a940c4db0288df343f483f5a139ae9a1aca1939976463ce0963e65",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Why did the author most likely write this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "compost-central"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "compost-central"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "compost-detail-2",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The passage describes changes in a pile but does not give construction directions for a bin.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-1",
+                "g2-id-purpose-recycling-sort-station-sentence-2",
+                "g2-id-purpose-recycling-sort-station-sentence-3"
+              ]
+            },
+            {
+              "answerId": "compost-detail-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The informational passage explains composting rather than telling a made-up worm story.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-title",
+                "g2-id-purpose-recycling-sort-station-graph"
+              ]
+            },
+            {
+              "answerId": "compost-detail-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The passage names food scraps, leaves, and paper but never argues that all paper belongs in compost.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-1"
+              ]
+            },
+            {
+              "answerId": "compost-central",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sections trace inputs, changes, and the resulting compost that helps soil.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-heading-1",
+                "g2-id-purpose-recycling-sort-station-heading-2",
+                "g2-id-purpose-recycling-sort-station-heading-3",
+                "g2-id-purpose-recycling-sort-station-sentence-8",
+                "g2-id-purpose-recycling-sort-station-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-checkpoint-b-q-3",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-a398da9b6175fc7f",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "af7534aa2783fd9fe37240524008e2097e76a56257145a3831fce6cdf1d671fa",
+        "conclusionsSha256": "49d432b84c69cb5076bb046e3d41c89a5d4b8b91a3439ef0a9fdfb9b7e40d115",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0009.second-pass.json",
+        "receiptSha256": "9813d7f924ea75fc6f0ce02f61b3ed31aadbbf142e0b6ec7990beb236245c788",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail names the materials at the beginning of the composting process?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "compost-scraps"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "compost-scraps"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "compost-dark",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes a later texture change.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-4"
+              ]
+            },
+            {
+              "answerId": "compost-graph",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes a later temperature change.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-5"
+              ]
+            },
+            {
+              "answerId": "compost-scraps",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This names the food scraps, leaves, and paper placed into the pile.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-1"
+              ]
+            },
+            {
+              "answerId": "compost-smell",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes a later smell change.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-checkpoint-b-q-4",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-82346ed54c5fdf29",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "1c47b89ea36ad6f8a7a879d39f1142f76bccc25d05e6372321f650654caa63df",
+        "conclusionsSha256": "ce1bf49507a940c4db0288df343f483f5a139ae9a1aca1939976463ce0963e65",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0050.pass-a.json",
+        "receiptSha256": "ce1bf49507a940c4db0288df343f483f5a139ae9a1aca1939976463ce0963e65",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details that are most relevant to the author purpose.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "compost-bugs",
+            "compost-useful"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "compost-useful",
+            "compost-bugs"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "compost-useful",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This states the final change into compost and its benefit for plants.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-8"
+              ]
+            },
+            {
+              "answerId": "compost-bugs",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This identifies organisms that help cause the pieces to break apart.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-2"
+              ]
+            },
+            {
+              "answerId": "compost-leaf",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Visible leaf bits are a minor observation and do not explain the overall transformation or benefit.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-9"
+              ]
+            },
+            {
+              "answerId": "compost-week",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Watching the graph is a class action, not a detail explaining how materials transform or help soil.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-checkpoint-b-q-5",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-a9f55b11d361db4d",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "af7534aa2783fd9fe37240524008e2097e76a56257145a3831fce6cdf1d671fa",
+        "conclusionsSha256": "49d432b84c69cb5076bb046e3d41c89a5d4b8b91a3439ef0a9fdfb9b7e40d115",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0026.pass-a.json",
+        "receiptSha256": "49d432b84c69cb5076bb046e3d41c89a5d4b8b91a3439ef0a9fdfb9b7e40d115",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Tap the sentence that names the composting process and explains its overall result.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-id-purpose-recycling-sort-station-sentence-10"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-id-purpose-recycling-sort-station-sentence-10"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-id-purpose-recycling-sort-station-sentence-10",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This explicitly names composting and states its soil-helping result.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g2-id-purpose-recycling-sort-station-sentence-8",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states a result but does not name the process as composting.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g2-id-purpose-recycling-sort-station-sentence-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one step and omits the overall result.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g2-id-purpose-recycling-sort-station-sentence-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one change and omits the named process and overall result.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-checkpoint-b-q-6",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-068aef399ba3268d",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "0582e4d2f3f5d18a251a6703a97d5b136901bde93f6bdbcf9557e2c68e6889a8",
+        "conclusionsSha256": "ce4e7e1746843b87bce20254d89d39ac929cacac6cfe79b92769ed9568552d88",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0027.pass-a.json",
+        "receiptSha256": "ce4e7e1746843b87bce20254d89d39ac929cacac6cfe79b92769ed9568552d88",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "compost-topic",
+          "prompt": "What is the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "compost-topic-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "compost-topic-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "compost-topic-detail",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one decomposition detail.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-2"
+              ]
+            },
+            {
+              "answerId": "compost-topic-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Compost piles name the broad subject.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-title"
+              ]
+            },
+            {
+              "answerId": "compost-topic-other",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one observation detail.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "compost-central",
+          "prompt": "What is the author purpose?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "compost-central-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "compost-central-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "compost-central-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This states the whole-text explanatory purpose.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-1",
+                "g2-id-purpose-recycling-sort-station-sentence-8",
+                "g2-id-purpose-recycling-sort-station-sentence-10"
+              ]
+            },
+            {
+              "answerId": "compost-central-other2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one process detail, not a purpose statement.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-3"
+              ]
+            },
+            {
+              "answerId": "compost-central-other1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one change detail, not a purpose statement.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "compost-other",
+          "prompt": "Which detail reports what the teacher can still see in the pile?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "compost-other-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "compost-other-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "compost-other-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly reports what the teacher says remains visible.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-9"
+              ]
+            },
+            {
+              "answerId": "compost-other-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the topic phrase.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-title"
+              ]
+            },
+            {
+              "answerId": "compost-other-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the broad process result, not the teacher's observation.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-checkpoint-b-q-7",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-438ef73d39c68c61",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "0582e4d2f3f5d18a251a6703a97d5b136901bde93f6bdbcf9557e2c68e6889a8",
+        "conclusionsSha256": "ce4e7e1746843b87bce20254d89d39ac929cacac6cfe79b92769ed9568552d88",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0009.second-pass.json",
+        "receiptSha256": "9813d7f924ea75fc6f0ce02f61b3ed31aadbbf142e0b6ec7990beb236245c788",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "What is the author purpose of the text?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "compost-part-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "compost-part-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "compost-part-a-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one detail rather than an author-purpose statement.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-2"
+              ]
+            },
+            {
+              "answerId": "compost-part-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This states the author's explanatory goal across the process and result.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-1",
+                "g2-id-purpose-recycling-sort-station-sentence-8",
+                "g2-id-purpose-recycling-sort-station-sentence-10"
+              ]
+            },
+            {
+              "answerId": "compost-part-a-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one graph detail rather than an author-purpose statement.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which detail names the materials that change during composting?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "compost-part-b-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "compost-part-b-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "compost-part-b-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly names the starting materials.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-1"
+              ]
+            },
+            {
+              "answerId": "compost-part-b-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This identifies only leftover leaf bits, not all changing materials.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-9"
+              ]
+            },
+            {
+              "answerId": "compost-part-b-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes turning the pile but does not name the materials.",
+              "evidenceIds": [
+                "g2-id-purpose-recycling-sort-station-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-checkpoint-c-q-1",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-c614caa27d7f1d56",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "f9f16235d1dd40c986f6637521799228432fa05ba67352669e9a4bf8065fc6fa",
+        "conclusionsSha256": "11a6cd79fb665785bf4166ef8281cf46180b22aa6442a379b3b2c5300e04e790",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0051.pass-a.json",
+        "receiptSha256": "11a6cd79fb665785bf4166ef8281cf46180b22aa6442a379b3b2c5300e04e790",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the topic of this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "trail-topic"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "trail-topic"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "compost-topic",
+              "verdict": "INCORRECT",
+              "rationale": "Compost piles are absent from the trail-marker passage.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-title"
+              ]
+            },
+            {
+              "answerId": "weather-topic",
+              "verdict": "INCORRECT",
+              "rationale": "Weather station notes are absent from the trail-marker passage.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-title"
+              ]
+            },
+            {
+              "answerId": "trail-topic",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The title, headings, map, and sentences all concern trail markers guiding visitors.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-title",
+                "g2-id-purpose-compost-change-notes-heading-1",
+                "g2-id-purpose-compost-change-notes-heading-2",
+                "g2-id-purpose-compost-change-notes-heading-3",
+                "g2-id-purpose-compost-change-notes-map"
+              ]
+            },
+            {
+              "answerId": "seed-topic",
+              "verdict": "INCORRECT",
+              "rationale": "Seed travel routes are absent from the trail-marker passage.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-checkpoint-c-q-2",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-4358f850da7fcbdc",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "f9f16235d1dd40c986f6637521799228432fa05ba67352669e9a4bf8065fc6fa",
+        "conclusionsSha256": "11a6cd79fb665785bf4166ef8281cf46180b22aa6442a379b3b2c5300e04e790",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0051.pass-a.json",
+        "receiptSha256": "11a6cd79fb665785bf4166ef8281cf46180b22aa6442a379b3b2c5300e04e790",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Why did the author most likely write this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "trail-central"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "trail-central"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "trail-detail-2",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The passage explains existing signs and paths but gives no painting directions.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-1",
+                "g2-id-purpose-compost-change-notes-sentence-2"
+              ]
+            },
+            {
+              "answerId": "trail-detail-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The informational passage explains trail guidance rather than telling a made-up lost-hiker story.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-title",
+                "g2-id-purpose-compost-change-notes-map"
+              ]
+            },
+            {
+              "answerId": "trail-central",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sections and conclusion explain how markers and maps guide visitors safely to the end.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-heading-1",
+                "g2-id-purpose-compost-change-notes-heading-2",
+                "g2-id-purpose-compost-change-notes-heading-3",
+                "g2-id-purpose-compost-change-notes-sentence-8",
+                "g2-id-purpose-compost-change-notes-sentence-10"
+              ]
+            },
+            {
+              "answerId": "trail-detail-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The passage says the trail keeps walkers away from a steep bank rather than urging steep paths.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-checkpoint-c-q-3",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-567784077e44005b",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "0582e4d2f3f5d18a251a6703a97d5b136901bde93f6bdbcf9557e2c68e6889a8",
+        "conclusionsSha256": "ce4e7e1746843b87bce20254d89d39ac929cacac6cfe79b92769ed9568552d88",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0027.pass-a.json",
+        "receiptSha256": "ce4e7e1746843b87bce20254d89d39ac929cacac6cfe79b92769ed9568552d88",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail states the basic job of the bright trail markers?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "trail-marker-detail"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "trail-marker-detail"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "trail-end-detail",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes one end sign.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-9"
+              ]
+            },
+            {
+              "answerId": "trail-marker-detail",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly states the bright markers' basic path-guidance job.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-1"
+              ]
+            },
+            {
+              "answerId": "trail-map-detail",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes the map rather than the markers.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-2"
+              ]
+            },
+            {
+              "answerId": "trail-safe-detail",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one hazard-specific marking event.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-checkpoint-c-q-4",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-7c33d1689f3201b4",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "0582e4d2f3f5d18a251a6703a97d5b136901bde93f6bdbcf9557e2c68e6889a8",
+        "conclusionsSha256": "ce4e7e1746843b87bce20254d89d39ac929cacac6cfe79b92769ed9568552d88",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0009.second-pass.json",
+        "receiptSha256": "9813d7f924ea75fc6f0ce02f61b3ed31aadbbf142e0b6ec7990beb236245c788",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the detail that shows a hazard being marked and the detail that names a problem markers prevent. Select two.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "trail-safe",
+            "trail-lost"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "trail-safe",
+            "trail-lost"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "trail-safe",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This names a fallen-branch hazard and a marked safe route.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-4"
+              ]
+            },
+            {
+              "answerId": "trail-loop",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes following a marker but neither requested category.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-7"
+              ]
+            },
+            {
+              "answerId": "trail-turn",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes map directions rather than a hazard or prevented problem.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-2"
+              ]
+            },
+            {
+              "answerId": "trail-lost",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This names getting lost as the problem markers prevent.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-checkpoint-c-q-5",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-2df0f2b06a743f0c",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "f9f16235d1dd40c986f6637521799228432fa05ba67352669e9a4bf8065fc6fa",
+        "conclusionsSha256": "11a6cd79fb665785bf4166ef8281cf46180b22aa6442a379b3b2c5300e04e790",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0051.pass-a.json",
+        "receiptSha256": "11a6cd79fb665785bf4166ef8281cf46180b22aa6442a379b3b2c5300e04e790",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Tap the sentence that best helps readers understand the author purpose.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-id-purpose-compost-change-notes-sentence-10"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-id-purpose-compost-change-notes-sentence-10"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-id-purpose-compost-change-notes-sentence-5",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one arrow detail rather than the full purpose.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g2-id-purpose-compost-change-notes-sentence-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This covers map guidance but not the full markers-and-safety purpose.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g2-id-purpose-compost-change-notes-sentence-8",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states one benefit of markers but omits reaching the end and the map.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g2-id-purpose-compost-change-notes-sentence-10",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This concluding sentence summarizes staying on the right path and reaching the end safely.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-checkpoint-c-q-6",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-7146b6ee775d2912",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "0582e4d2f3f5d18a251a6703a97d5b136901bde93f6bdbcf9557e2c68e6889a8",
+        "conclusionsSha256": "ce4e7e1746843b87bce20254d89d39ac929cacac6cfe79b92769ed9568552d88",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0027.pass-a.json",
+        "receiptSha256": "ce4e7e1746843b87bce20254d89d39ac929cacac6cfe79b92769ed9568552d88",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "trail-topic",
+          "prompt": "What is the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "trail-topic-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "trail-topic-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "trail-topic-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Trail markers name the broad subject.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-title"
+              ]
+            },
+            {
+              "answerId": "trail-topic-other",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one endpoint detail.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-9"
+              ]
+            },
+            {
+              "answerId": "trail-topic-detail",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one marker detail.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "trail-central",
+          "prompt": "What is the author purpose?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "trail-central-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "trail-central-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "trail-central-other2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one route detail, not a purpose statement.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-7"
+              ]
+            },
+            {
+              "answerId": "trail-central-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This states the author's explanatory goal across markers, maps, and safety.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-1",
+                "g2-id-purpose-compost-change-notes-sentence-2",
+                "g2-id-purpose-compost-change-notes-sentence-10"
+              ]
+            },
+            {
+              "answerId": "trail-central-other1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one map detail, not a purpose statement.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "trail-other",
+          "prompt": "Which detail explains where the end sign leads?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "trail-other-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "trail-other-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "trail-other-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the broad central idea, not where the end sign leads.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-10"
+              ]
+            },
+            {
+              "answerId": "trail-other-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the topic phrase.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-title"
+              ]
+            },
+            {
+              "answerId": "trail-other-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly identifies the parking area as the endpoint.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-9"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-purpose-checkpoint-c-q-7",
+      "packId": "g2-information-detectives-purpose-path",
+      "contentVersion": "g2-id-purpose-r0.1.0",
+      "contentFingerprint": "qta-v1-4fb1ec4cc384b3c8",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "0582e4d2f3f5d18a251a6703a97d5b136901bde93f6bdbcf9557e2c68e6889a8",
+        "conclusionsSha256": "ce4e7e1746843b87bce20254d89d39ac929cacac6cfe79b92769ed9568552d88",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0027.pass-a.json",
+        "receiptSha256": "ce4e7e1746843b87bce20254d89d39ac929cacac6cfe79b92769ed9568552d88",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "What is the author purpose of the text?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "trail-part-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "trail-part-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "trail-part-a-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one marker detail, not an author-purpose statement.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-1"
+              ]
+            },
+            {
+              "answerId": "trail-part-a-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one map detail, not an author-purpose statement.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-2"
+              ]
+            },
+            {
+              "answerId": "trail-part-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This states the whole-text explanatory purpose.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-1",
+                "g2-id-purpose-compost-change-notes-sentence-2",
+                "g2-id-purpose-compost-change-notes-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which detail states how bright markers guide visitors at a path choice?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "trail-part-b-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "trail-part-b-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "trail-part-b-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes continuing around the loop, not choosing a path.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-7"
+              ]
+            },
+            {
+              "answerId": "trail-part-b-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes the endpoint, not a path choice.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-9"
+              ]
+            },
+            {
+              "answerId": "trail-part-b-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly states how bright markers guide a path choice.",
+              "evidenceIds": [
+                "g2-id-purpose-compost-change-notes-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

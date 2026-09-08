@@ -1,0 +1,4375 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-building-block-a-mc-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-2fe7674a60e935a6",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "8a11a80b69333d2e45fb0eae7f98764caf63517e7fbd9a714f3b05d473c4c74a",
+        "conclusionsSha256": "4d65ce75342224d0db94fde0d9803283cb565f41e427387711e44bf813be7be9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0010.second-pass.json",
+        "receiptSha256": "63b6ff404e88c9d3bec7451abb58e860b9dca7e4ff4aa7c617469291470d9cc2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does the title Feeder Watch help the reader understand?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "Neither the title nor text concerns painting animal signs.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-title"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "The text observes feeder visits rather than explaining birdhouse construction.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-title",
+                "g2-information-detectives-text-feature-hunt-passage-feeder-watch-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Feeder Watch previews the text's focus on birds visiting a feeder.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-title",
+                "g2-information-detectives-text-feature-hunt-passage-feeder-watch-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "The text contains a bird graph, not a garden path map.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-title",
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-graph"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-building-block-a-mc-2",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-2f2ec591a460ac75",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "8a11a80b69333d2e45fb0eae7f98764caf63517e7fbd9a714f3b05d473c4c74a",
+        "conclusionsSha256": "4d65ce75342224d0db94fde0d9803283cb565f41e427387711e44bf813be7be9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0019.pass-a.json",
+        "receiptSha256": "4d65ce75342224d0db94fde0d9803283cb565f41e427387711e44bf813be7be9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does the heading Counting Visitors tell the reader?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-d"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-d"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "The section counts feeder birds, not a storm.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-heading-count",
+                "g2-information-detectives-text-feature-hunt-passage-feeder-watch-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The heading and section sentences concern counting bird visitors.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-heading-count",
+                "g2-information-detectives-text-feature-hunt-passage-feeder-watch-sentence-1",
+                "g2-information-detectives-text-feature-hunt-passage-feeder-watch-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "The displayed graph is about bird visits, not the moon.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-heading-count",
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-graph"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "The section does not explain making a flower bed.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-heading-count"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-building-block-a-ms-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-6b84f4bfd8ed6043",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "8a11a80b69333d2e45fb0eae7f98764caf63517e7fbd9a714f3b05d473c4c74a",
+        "conclusionsSha256": "4d65ce75342224d0db94fde0d9803283cb565f41e427387711e44bf813be7be9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0019.pass-a.json",
+        "receiptSha256": "4d65ce75342224d0db94fde0d9803283cb565f41e427387711e44bf813be7be9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two features that help the reader compare bird visits.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "choice-a",
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a",
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "The title previews feeder watching but supplies no comparative counts.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-title"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The graph displays each bird's count in comparable bars.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-graph"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The caption interprets the tallest bar as the bird seen most often.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-caption"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "The glossary defines observe and does not compare bird counts.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-glossary"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-building-block-a-ht-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-6fa7a742b7a7f886",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "8a11a80b69333d2e45fb0eae7f98764caf63517e7fbd9a714f3b05d473c4c74a",
+        "conclusionsSha256": "4d65ce75342224d0db94fde0d9803283cb565f41e427387711e44bf813be7be9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0019.pass-a.json",
+        "receiptSha256": "4d65ce75342224d0db94fde0d9803283cb565f41e427387711e44bf813be7be9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that tells what the graph helps the reader do.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-information-detectives-text-feature-hunt-passage-feeder-watch-sentence-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-information-detectives-text-feature-hunt-passage-feeder-watch-sentence-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-feeder-watch-sentence-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly says the graph lets the class compare which bird appears most often.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-feeder-watch-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-feeder-watch-sentence-2",
+              "verdict": "INCORRECT",
+              "rationale": "This narrates visit order and counts but does not state the graph's job.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-feeder-watch-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-feeder-watch-sentence-4",
+              "verdict": "INCORRECT",
+              "rationale": "This states the glossary's job, not the graph's.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-feeder-watch-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-feeder-watch-sentence-1",
+              "verdict": "INCORRECT",
+              "rationale": "This describes recording counts on a chart, not what the graph helps readers do.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-feeder-watch-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-building-block-a-tm-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-03a587e2bfa9c08e",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "8a11a80b69333d2e45fb0eae7f98764caf63517e7fbd9a714f3b05d473c4c74a",
+        "conclusionsSha256": "4d65ce75342224d0db94fde0d9803283cb565f41e427387711e44bf813be7be9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0010.second-pass.json",
+        "receiptSha256": "63b6ff404e88c9d3bec7451abb58e860b9dca7e4ff4aa7c617469291470d9cc2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-title",
+          "prompt": "Title",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-title"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-title"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-title",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The title Feeder Watch gives a clue about the whole text.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-title"
+              ]
+            },
+            {
+              "answerId": "option-glossary",
+              "verdict": "INCORRECT",
+              "rationale": "Defining a word is the glossary's job.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-glossary"
+              ]
+            },
+            {
+              "answerId": "option-caption",
+              "verdict": "INCORRECT",
+              "rationale": "Explaining the blue bar is the caption's job.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-caption"
+              ]
+            },
+            {
+              "answerId": "option-graph",
+              "verdict": "INCORRECT",
+              "rationale": "Comparing counts is the graph's job.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-graph"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-graph",
+          "prompt": "Graph",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-graph-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-graph-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-title-2",
+              "verdict": "INCORRECT",
+              "rationale": "The title, not the graph, gives the broad whole-text clue.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-title"
+              ]
+            },
+            {
+              "answerId": "option-graph-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The graph displays bird counts so readers can compare them.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-graph"
+              ]
+            },
+            {
+              "answerId": "option-glossary-2",
+              "verdict": "INCORRECT",
+              "rationale": "The glossary defines the special word.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-glossary"
+              ]
+            },
+            {
+              "answerId": "option-caption-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The caption explains the tall blue bar; the graph's broader job is comparing all counts.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-caption",
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-graph"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-caption",
+          "prompt": "Caption",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-caption-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-caption-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-graph-3",
+              "verdict": "INCORRECT",
+              "rationale": "The graph compares the counts.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-graph"
+              ]
+            },
+            {
+              "answerId": "option-caption-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The caption directly explains what the tall blue bar means.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-caption"
+              ]
+            },
+            {
+              "answerId": "option-title-3",
+              "verdict": "INCORRECT",
+              "rationale": "The title gives the whole-text clue.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-title"
+              ]
+            },
+            {
+              "answerId": "option-glossary-3",
+              "verdict": "INCORRECT",
+              "rationale": "The glossary defines a word.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-glossary"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-glossary",
+          "prompt": "Glossary",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-glossary-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-glossary-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-caption-4",
+              "verdict": "INCORRECT",
+              "rationale": "The caption explains the bar.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-caption"
+              ]
+            },
+            {
+              "answerId": "option-graph-4",
+              "verdict": "INCORRECT",
+              "rationale": "The graph compares counts.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-graph"
+              ]
+            },
+            {
+              "answerId": "option-title-4",
+              "verdict": "INCORRECT",
+              "rationale": "The title previews the whole text.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-title"
+              ]
+            },
+            {
+              "answerId": "option-glossary-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The glossary defines observe from the text.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-glossary",
+                "g2-information-detectives-text-feature-hunt-feature-feeder-watch-glossary-observe"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-building-block-b-mc-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-8359b2cb23d9904f",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "8a11a80b69333d2e45fb0eae7f98764caf63517e7fbd9a714f3b05d473c4c74a",
+        "conclusionsSha256": "4d65ce75342224d0db94fde0d9803283cb565f41e427387711e44bf813be7be9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0010.second-pass.json",
+        "receiptSha256": "63b6ff404e88c9d3bec7451abb58e860b9dca7e4ff4aa7c617469291470d9cc2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does the title Garden Grid help the reader understand?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-c"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "The title and text concern a garden, not weather.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-title"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "The text includes a map and illustration, not a class graph.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-title",
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-map"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Garden Grid previews a garden map and the plant picture shown in the text.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-title",
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-map",
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-illustration"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "The text contains no moon notes.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-building-block-b-mc-2",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-18faa737329ab123",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "8a11a80b69333d2e45fb0eae7f98764caf63517e7fbd9a714f3b05d473c4c74a",
+        "conclusionsSha256": "4d65ce75342224d0db94fde0d9803283cb565f41e427387711e44bf813be7be9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0019.pass-a.json",
+        "receiptSha256": "4d65ce75342224d0db94fde0d9803283cb565f41e427387711e44bf813be7be9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which feature shows the bean bed, compost bin, and watering shelf in their different grid positions?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The map places the bean bed, compost bin, and watering shelf on its grid.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-map",
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-map-bean-bed",
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-map-compost-bin",
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-map-hose-shelf"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "No glossary supplies grid positions.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-garden-grid-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "The title names the topic but does not show locations.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-title"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "The caption points to the bean bed but does not show all three grid positions.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-caption"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-building-block-b-ms-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-7adc62bb440e3867",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "8a11a80b69333d2e45fb0eae7f98764caf63517e7fbd9a714f3b05d473c4c74a",
+        "conclusionsSha256": "4d65ce75342224d0db94fde0d9803283cb565f41e427387711e44bf813be7be9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0019.pass-a.json",
+        "receiptSha256": "4d65ce75342224d0db94fde0d9803283cb565f41e427387711e44bf813be7be9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two features that help the reader locate the bean bed.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "choice-a",
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a",
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "The illustration labels plant parts and does not locate the garden bed.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-illustration"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "The title previews the garden-grid topic but does not locate the bean bed.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-title"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The map places the bean bed at row 1, column 3 near the sunny corner.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-map",
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-map-bean-bed"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The caption points readers to the bean bed near the sunny corner.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-caption"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-building-block-b-ht-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-334eb389877017c5",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "8a11a80b69333d2e45fb0eae7f98764caf63517e7fbd9a714f3b05d473c4c74a",
+        "conclusionsSha256": "4d65ce75342224d0db94fde0d9803283cb565f41e427387711e44bf813be7be9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0019.pass-a.json",
+        "receiptSha256": "4d65ce75342224d0db94fde0d9803283cb565f41e427387711e44bf813be7be9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that tells what the map helps the reader do.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-information-detectives-text-feature-hunt-passage-garden-grid-sentence-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-information-detectives-text-feature-hunt-passage-garden-grid-sentence-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-garden-grid-sentence-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This says the children study the map but not what it helps readers do.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-garden-grid-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-garden-grid-sentence-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly says the map lets the class locate each place quickly.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-garden-grid-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-garden-grid-sentence-3",
+              "verdict": "INCORRECT",
+              "rationale": "This states the caption's job.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-garden-grid-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-garden-grid-sentence-4",
+              "verdict": "INCORRECT",
+              "rationale": "This states the illustration and glossary jobs.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-garden-grid-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-building-block-b-tm-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-5dda08e43171c5e8",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "8a11a80b69333d2e45fb0eae7f98764caf63517e7fbd9a714f3b05d473c4c74a",
+        "conclusionsSha256": "4d65ce75342224d0db94fde0d9803283cb565f41e427387711e44bf813be7be9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0019.pass-a.json",
+        "receiptSha256": "4d65ce75342224d0db94fde0d9803283cb565f41e427387711e44bf813be7be9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-title",
+          "prompt": "Title",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-title"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-title"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-caption",
+              "verdict": "INCORRECT",
+              "rationale": "Pointing to the sunny corner is the caption's job.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-caption"
+              ]
+            },
+            {
+              "answerId": "option-illustration",
+              "verdict": "INCORRECT",
+              "rationale": "Picturing the plant is the illustration's job.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-illustration"
+              ]
+            },
+            {
+              "answerId": "option-title",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The title Garden Grid gives a clue about the whole text.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-title"
+              ]
+            },
+            {
+              "answerId": "option-map",
+              "verdict": "INCORRECT",
+              "rationale": "Showing locations is the map's job.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-map"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-map",
+          "prompt": "Map",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-map-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-map-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-map-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The map shows where the garden places are.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-map"
+              ]
+            },
+            {
+              "answerId": "option-illustration-2",
+              "verdict": "INCORRECT",
+              "rationale": "The illustration helps picture the bean plant.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-illustration"
+              ]
+            },
+            {
+              "answerId": "option-title-2",
+              "verdict": "INCORRECT",
+              "rationale": "The title gives the whole-text clue.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-title"
+              ]
+            },
+            {
+              "answerId": "option-caption-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The caption points to one location; the map's defining job is showing all locations.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-caption",
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-map"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-caption",
+          "prompt": "Caption",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-caption-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-caption-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-title-3",
+              "verdict": "INCORRECT",
+              "rationale": "The title gives the whole-text clue.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-title"
+              ]
+            },
+            {
+              "answerId": "option-caption-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The caption tells readers to start near the sunny corner.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-caption"
+              ]
+            },
+            {
+              "answerId": "option-map-3",
+              "verdict": "INCORRECT",
+              "rationale": "The map broadly shows where places are.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-map"
+              ]
+            },
+            {
+              "answerId": "option-illustration-3",
+              "verdict": "INCORRECT",
+              "rationale": "The illustration helps picture the plant.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-illustration"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-illustration",
+          "prompt": "Illustration",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-illustration-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-illustration-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-map-4",
+              "verdict": "INCORRECT",
+              "rationale": "The map shows where places are.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-map"
+              ]
+            },
+            {
+              "answerId": "option-illustration-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The illustration visually shows and labels the bean plant and trellis.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-illustration"
+              ]
+            },
+            {
+              "answerId": "option-title-4",
+              "verdict": "INCORRECT",
+              "rationale": "The title gives the whole-text clue.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-title"
+              ]
+            },
+            {
+              "answerId": "option-caption-4",
+              "verdict": "INCORRECT",
+              "rationale": "The caption points readers to the sunny corner.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-garden-grid-caption"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-guided-a-mc-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-a9e40418f1d1f9dc",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "8a11a80b69333d2e45fb0eae7f98764caf63517e7fbd9a714f3b05d473c4c74a",
+        "conclusionsSha256": "4d65ce75342224d0db94fde0d9803283cb565f41e427387711e44bf813be7be9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0010.second-pass.json",
+        "receiptSha256": "63b6ff404e88c9d3bec7451abb58e860b9dca7e4ff4aa7c617469291470d9cc2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does the title Rain Gauge Notes help the reader understand?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-d"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-d"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "The title refers to a rain gauge, not the moon.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-title"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Rain Gauge Notes previews recorded rain information from the storm.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-title",
+                "g2-information-detectives-text-feature-hunt-passage-rain-gauge-sentence-1",
+                "g2-information-detectives-text-feature-hunt-passage-rain-gauge-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "The text contains no recycling bins.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-title"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "The text concerns measuring rain, not a garden trail.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-guided-a-mc-2",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-4cf916763bcf5842",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "8a11a80b69333d2e45fb0eae7f98764caf63517e7fbd9a714f3b05d473c4c74a",
+        "conclusionsSha256": "4d65ce75342224d0db94fde0d9803283cb565f41e427387711e44bf813be7be9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0019.pass-a.json",
+        "receiptSha256": "4d65ce75342224d0db94fde0d9803283cb565f41e427387711e44bf813be7be9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does the heading Measuring the Storm tell the reader?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "The section does not discuss recycling bins.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-heading-graph"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "The section does not discuss garden plants.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-heading-graph"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "The section does not contain a trail map.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-heading-graph"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The heading and its section describe measuring storm rainfall.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-heading-graph",
+                "g2-information-detectives-text-feature-hunt-passage-rain-gauge-sentence-1",
+                "g2-information-detectives-text-feature-hunt-passage-rain-gauge-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-guided-a-ms-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-f56d6df9bc01abf5",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "59b3c3b86f4ba985f6b9fdedee0e84f8b39bddb86740da3ecbb51e8011083910",
+        "conclusionsSha256": "f3dd031577e3ace72c2e7a5feffdff69e5cd115e46f16e89e125be4ed1fcdb01",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0020.pass-a.json",
+        "receiptSha256": "f3dd031577e3ace72c2e7a5feffdff69e5cd115e46f16e89e125be4ed1fcdb01",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two features that help the reader compare rain amounts.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "choice-a",
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a",
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The graph displays each day's rainfall as comparable bars.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-graph"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The caption explains how bar height represents more rain.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-caption"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "The title previews rain-gauge notes but supplies no comparative amounts.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-title"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "The glossary defines millimeter and does not compare daily amounts.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-glossary"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-guided-a-ht-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-281baef5c1fd8ba9",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "59b3c3b86f4ba985f6b9fdedee0e84f8b39bddb86740da3ecbb51e8011083910",
+        "conclusionsSha256": "f3dd031577e3ace72c2e7a5feffdff69e5cd115e46f16e89e125be4ed1fcdb01",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0020.pass-a.json",
+        "receiptSha256": "f3dd031577e3ace72c2e7a5feffdff69e5cd115e46f16e89e125be4ed1fcdb01",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that tells what the caption explains.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-information-detectives-text-feature-hunt-passage-rain-gauge-sentence-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-information-detectives-text-feature-hunt-passage-rain-gauge-sentence-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-rain-gauge-sentence-1",
+              "verdict": "INCORRECT",
+              "rationale": "This describes collecting rainfall data, not the caption's explanation.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-rain-gauge-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-rain-gauge-sentence-4",
+              "verdict": "INCORRECT",
+              "rationale": "This states the glossary definition.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-rain-gauge-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-rain-gauge-sentence-2",
+              "verdict": "INCORRECT",
+              "rationale": "This states what the graph displays.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-rain-gauge-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-rain-gauge-sentence-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly states that the caption explains taller bars mean more rain.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-rain-gauge-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-guided-a-tm-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-24b176175bae8d5b",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "59b3c3b86f4ba985f6b9fdedee0e84f8b39bddb86740da3ecbb51e8011083910",
+        "conclusionsSha256": "f3dd031577e3ace72c2e7a5feffdff69e5cd115e46f16e89e125be4ed1fcdb01",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0020.pass-a.json",
+        "receiptSha256": "f3dd031577e3ace72c2e7a5feffdff69e5cd115e46f16e89e125be4ed1fcdb01",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-title",
+          "prompt": "Title",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-title"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-title"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-graph",
+              "verdict": "INCORRECT",
+              "rationale": "The graph compares rain amounts.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-graph"
+              ]
+            },
+            {
+              "answerId": "option-glossary",
+              "verdict": "INCORRECT",
+              "rationale": "The glossary defines the special word.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-glossary"
+              ]
+            },
+            {
+              "answerId": "option-caption",
+              "verdict": "INCORRECT",
+              "rationale": "The caption explains the graph bars.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-caption"
+              ]
+            },
+            {
+              "answerId": "option-title",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The title Rain Gauge Notes gives a clue about the whole text.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-graph",
+          "prompt": "Graph",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-graph-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-graph-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-caption-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The caption explains bar meaning; the graph's broader job is comparing amounts.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-caption",
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-graph"
+              ]
+            },
+            {
+              "answerId": "option-graph-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The graph displays daily rainfall so readers can compare amounts.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-graph"
+              ]
+            },
+            {
+              "answerId": "option-title-2",
+              "verdict": "INCORRECT",
+              "rationale": "The title gives the whole-text clue.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-title"
+              ]
+            },
+            {
+              "answerId": "option-glossary-2",
+              "verdict": "INCORRECT",
+              "rationale": "The glossary defines a special word.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-glossary"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-caption",
+          "prompt": "Caption",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-caption-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-caption-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-glossary-3",
+              "verdict": "INCORRECT",
+              "rationale": "The glossary defines a word.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-glossary"
+              ]
+            },
+            {
+              "answerId": "option-caption-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The caption explains what taller graph bars mean.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-caption"
+              ]
+            },
+            {
+              "answerId": "option-graph-3",
+              "verdict": "INCORRECT",
+              "rationale": "The graph compares amounts.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-graph"
+              ]
+            },
+            {
+              "answerId": "option-title-3",
+              "verdict": "INCORRECT",
+              "rationale": "The title gives the whole-text clue.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-glossary",
+          "prompt": "Glossary",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-glossary-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-glossary-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-title-4",
+              "verdict": "INCORRECT",
+              "rationale": "The title gives the whole-text clue.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-title"
+              ]
+            },
+            {
+              "answerId": "option-caption-4",
+              "verdict": "INCORRECT",
+              "rationale": "The caption explains the bars.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-caption"
+              ]
+            },
+            {
+              "answerId": "option-glossary-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The glossary defines millimeter.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-glossary",
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-glossary-millimeter"
+              ]
+            },
+            {
+              "answerId": "option-graph-4",
+              "verdict": "INCORRECT",
+              "rationale": "The graph compares rainfall amounts.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-rain-gauge-graph"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-guided-b-mc-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-ba4202de0fa24e6a",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "59b3c3b86f4ba985f6b9fdedee0e84f8b39bddb86740da3ecbb51e8011083910",
+        "conclusionsSha256": "f3dd031577e3ace72c2e7a5feffdff69e5cd115e46f16e89e125be4ed1fcdb01",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0020.pass-a.json",
+        "receiptSha256": "f3dd031577e3ace72c2e7a5feffdff69e5cd115e46f16e89e125be4ed1fcdb01",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does the title Nature Center Trail help the reader understand?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-c"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Nature Center Trail directly previews the trail and map topic.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-title",
+                "g2-information-detectives-text-feature-hunt-passage-trail-map-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "The text contains no bird-feeder counts.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-title"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "The text contains no moon shapes.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-title"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "The text contains no recycling survey.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-guided-b-mc-2",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-3d338e966e007b7a",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "59b3c3b86f4ba985f6b9fdedee0e84f8b39bddb86740da3ecbb51e8011083910",
+        "conclusionsSha256": "f3dd031577e3ace72c2e7a5feffdff69e5cd115e46f16e89e125be4ed1fcdb01",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0010.second-pass.json",
+        "receiptSha256": "63b6ff404e88c9d3bec7451abb58e860b9dca7e4ff4aa7c617469291470d9cc2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does the heading Reading the Map tell the reader?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-d"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-d"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "The section does not discuss lunch cleanup.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-heading-map"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "The section does not count moon shapes.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-heading-map"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "The trail-sign picture belongs to the later Looking Closely section.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-heading-illustration",
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-illustration"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The heading Reading the Map identifies the section's map-reading content.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-heading-map",
+                "g2-information-detectives-text-feature-hunt-passage-trail-map-sentence-1",
+                "g2-information-detectives-text-feature-hunt-passage-trail-map-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-guided-b-ms-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-c2028e5254cb6b16",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "59b3c3b86f4ba985f6b9fdedee0e84f8b39bddb86740da3ecbb51e8011083910",
+        "conclusionsSha256": "f3dd031577e3ace72c2e7a5feffdff69e5cd115e46f16e89e125be4ed1fcdb01",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0020.pass-a.json",
+        "receiptSha256": "f3dd031577e3ace72c2e7a5feffdff69e5cd115e46f16e89e125be4ed1fcdb01",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two features that show or explain the dashed route between the pond, oak tree, and overlook.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "choice-a",
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a",
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The map shows the trail locations and the route connecting them.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-map",
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-map-pond",
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-map-oak",
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-map-overlook"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "The title names the overall trail topic but does not show or explain the dashed route.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-title"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "The illustration pictures a trail sign and reeds rather than the route among all three places.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-illustration"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The caption explains that the dashed line marks the walking route.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-caption"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-guided-b-ht-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-a1e2493384ce78e7",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "59b3c3b86f4ba985f6b9fdedee0e84f8b39bddb86740da3ecbb51e8011083910",
+        "conclusionsSha256": "f3dd031577e3ace72c2e7a5feffdff69e5cd115e46f16e89e125be4ed1fcdb01",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0020.pass-a.json",
+        "receiptSha256": "f3dd031577e3ace72c2e7a5feffdff69e5cd115e46f16e89e125be4ed1fcdb01",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that tells what the glossary means.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-information-detectives-text-feature-hunt-passage-trail-map-sentence-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-information-detectives-text-feature-hunt-passage-trail-map-sentence-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-trail-map-sentence-3",
+              "verdict": "INCORRECT",
+              "rationale": "This states the caption's route explanation.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-trail-map-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-trail-map-sentence-2",
+              "verdict": "INCORRECT",
+              "rationale": "This states what the map shows.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-trail-map-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-trail-map-sentence-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly gives the glossary meaning of route.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-trail-map-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-trail-map-sentence-1",
+              "verdict": "INCORRECT",
+              "rationale": "This narrates the family's map use and does not define the glossary word.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-trail-map-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-guided-b-tm-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-390b3962a1ee31ce",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "59b3c3b86f4ba985f6b9fdedee0e84f8b39bddb86740da3ecbb51e8011083910",
+        "conclusionsSha256": "f3dd031577e3ace72c2e7a5feffdff69e5cd115e46f16e89e125be4ed1fcdb01",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0020.pass-a.json",
+        "receiptSha256": "f3dd031577e3ace72c2e7a5feffdff69e5cd115e46f16e89e125be4ed1fcdb01",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-title",
+          "prompt": "Title",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-title"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-title"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-illustration",
+              "verdict": "INCORRECT",
+              "rationale": "The illustration helps picture the trail sign.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-illustration"
+              ]
+            },
+            {
+              "answerId": "option-caption",
+              "verdict": "INCORRECT",
+              "rationale": "The caption explains the dashed line.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-caption"
+              ]
+            },
+            {
+              "answerId": "option-title",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The title gives a clue about the whole trail text.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-title"
+              ]
+            },
+            {
+              "answerId": "option-map",
+              "verdict": "INCORRECT",
+              "rationale": "The map shows trail locations.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-map"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-map",
+          "prompt": "Map",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-map-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-map-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-caption-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The caption explains the dashed line; that is not the map's full job.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-caption"
+              ]
+            },
+            {
+              "answerId": "option-title-2",
+              "verdict": "INCORRECT",
+              "rationale": "The title gives the broad whole-text clue.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-title"
+              ]
+            },
+            {
+              "answerId": "option-illustration-2",
+              "verdict": "INCORRECT",
+              "rationale": "The illustration pictures the trail sign.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-illustration"
+              ]
+            },
+            {
+              "answerId": "option-map-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The map shows where the pond, tree, and overlook are on the trail.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-map"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-caption",
+          "prompt": "Caption",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-caption-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-caption-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-map-3",
+              "verdict": "INCORRECT",
+              "rationale": "The map shows where trail places are.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-map"
+              ]
+            },
+            {
+              "answerId": "option-illustration-3",
+              "verdict": "INCORRECT",
+              "rationale": "The illustration helps picture the sign.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-illustration"
+              ]
+            },
+            {
+              "answerId": "option-caption-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The caption directly explains the dashed route line.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-caption"
+              ]
+            },
+            {
+              "answerId": "option-title-3",
+              "verdict": "INCORRECT",
+              "rationale": "The title gives the whole-text clue.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-illustration",
+          "prompt": "Illustration",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-illustration-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-illustration-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-caption-4",
+              "verdict": "INCORRECT",
+              "rationale": "The caption explains the dashed line.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-caption"
+              ]
+            },
+            {
+              "answerId": "option-map-4",
+              "verdict": "INCORRECT",
+              "rationale": "The map shows trail locations.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-map"
+              ]
+            },
+            {
+              "answerId": "option-illustration-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The illustration visually helps readers picture the trail sign.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-illustration"
+              ]
+            },
+            {
+              "answerId": "option-title-4",
+              "verdict": "INCORRECT",
+              "rationale": "The title gives the whole-text clue.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-trail-map-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-checkpoint-a-mc-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-234b704990dfd52d",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "59b3c3b86f4ba985f6b9fdedee0e84f8b39bddb86740da3ecbb51e8011083910",
+        "conclusionsSha256": "f3dd031577e3ace72c2e7a5feffdff69e5cd115e46f16e89e125be4ed1fcdb01",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0010.second-pass.json",
+        "receiptSha256": "63b6ff404e88c9d3bec7451abb58e860b9dca7e4ff4aa7c617469291470d9cc2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does the title Moon Notes help the reader understand?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "The title and source do not concern recycling bins.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-title"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "The source has a moon graph, not a garden map.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-title",
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-graph"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Moon Notes previews the class log of observed moon shapes.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-title",
+                "g2-information-detectives-text-feature-hunt-passage-moon-notes-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "The source contains no trail sign.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-checkpoint-a-mc-2",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-e816e6e7a6de5bbb",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "a915db271f53862b8d1c47b0821030f87990a2d9a2c639f59eca597ec0615109",
+        "conclusionsSha256": "aabd9f358f14370fb36c0f8114eae334f1a6111c80e79c111d839b9dab9528bf",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "CORRECTION_REREVIEW",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/corrections-v5/batch-c0001.pass-a.json",
+        "receiptSha256": "aabd9f358f14370fb36c0f8114eae334f1a6111c80e79c111d839b9dab9528bf",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does the heading Moon Shape Counts tell the reader?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-c"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-a",
+              "verdict": "CONTRADICTED",
+              "rationale": "The heading names moon shapes, not birds.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-heading-graph"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "CONTRADICTED",
+              "rationale": "The heading names moon shapes, not compost changes.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-heading-graph"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The heading and nearby section describe counts of moon shapes observed across several nights.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-heading-graph",
+                "g2-information-detectives-text-feature-hunt-passage-moon-notes-sentence-1",
+                "g2-information-detectives-text-feature-hunt-passage-moon-notes-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "CONTRADICTED",
+              "rationale": "The heading names moon-shape counts, not a trail map.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-heading-graph"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": true,
+      "correctionSummary": "Learner-visible content was corrected and re-reviewed in docs/content/answer-uniqueness-ledger/blind/corrections-v5/batch-c0001.pass-a.json.",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-checkpoint-a-mc-3",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-7191886f34b07d33",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "a915db271f53862b8d1c47b0821030f87990a2d9a2c639f59eca597ec0615109",
+        "conclusionsSha256": "aabd9f358f14370fb36c0f8114eae334f1a6111c80e79c111d839b9dab9528bf",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "CORRECTION_REREVIEW",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/corrections-v5/batch-c0001.pass-a.json",
+        "receiptSha256": "aabd9f358f14370fb36c0f8114eae334f1a6111c80e79c111d839b9dab9528bf",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does the graph help the reader do?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The displayed graph contains moon-shape counts and no bean-bed map.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-graph"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The text explicitly says the graph lets readers compare how many nights each moon shape was seen.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-moon-notes-sentence-2",
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-graph"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The graph does not display recycling gloves.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-graph"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The graph supplies counts rather than a definition of route.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-graph"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": true,
+      "correctionSummary": "Learner-visible content was corrected and re-reviewed in docs/content/answer-uniqueness-ledger/blind/corrections-v5/batch-c0001.pass-a.json.",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-checkpoint-a-ms-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-a828fd0e448f0e52",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "59b3c3b86f4ba985f6b9fdedee0e84f8b39bddb86740da3ecbb51e8011083910",
+        "conclusionsSha256": "f3dd031577e3ace72c2e7a5feffdff69e5cd115e46f16e89e125be4ed1fcdb01",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0020.pass-a.json",
+        "receiptSha256": "f3dd031577e3ace72c2e7a5feffdff69e5cd115e46f16e89e125be4ed1fcdb01",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details: one tells what the graph counts, and one explains what its tallest bar means.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "choice-a",
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a",
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes Priya's nightly log but does not state what the graph counts or what its tallest bar means.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-moon-notes-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This states that the graph counts nights for each moon shape.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-moon-notes-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This states that the tallest bar identifies the most-often-seen shape.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-moon-notes-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This defines observe and answers neither requested graph detail.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-moon-notes-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-checkpoint-a-ht-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-667307a3461ba40f",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "9a1eafad9dad4e0b57e429b825adfc21c9bb6e64887200091ad122190cc0a3b1",
+        "conclusionsSha256": "94f313b940dad669e34565874bc6f579f907eb32b1846edc4a755bb93c9ecc50",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0010.second-pass.json",
+        "receiptSha256": "63b6ff404e88c9d3bec7451abb58e860b9dca7e4ff4aa7c617469291470d9cc2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that tells what the glossary means.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-information-detectives-text-feature-hunt-passage-moon-notes-sentence-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-information-detectives-text-feature-hunt-passage-moon-notes-sentence-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-moon-notes-sentence-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes the caption rather than the glossary's meaning.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-moon-notes-sentence-3",
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-caption"
+              ]
+            },
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-moon-notes-sentence-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes the graph rather than the glossary's meaning.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-moon-notes-sentence-2",
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-graph"
+              ]
+            },
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-moon-notes-sentence-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence directly states the glossary definition of observe.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-moon-notes-sentence-4",
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-glossary"
+              ]
+            },
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-moon-notes-sentence-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes Priya's observation routine but does not state the glossary meaning.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-moon-notes-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-checkpoint-a-tm-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-a93ffded5c5a4951",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "9a1eafad9dad4e0b57e429b825adfc21c9bb6e64887200091ad122190cc0a3b1",
+        "conclusionsSha256": "94f313b940dad669e34565874bc6f579f907eb32b1846edc4a755bb93c9ecc50",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0021.pass-a.json",
+        "receiptSha256": "94f313b940dad669e34565874bc6f579f907eb32b1846edc4a755bb93c9ecc50",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-title",
+          "prompt": "Title",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-title"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-title"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-graph",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Comparing moon shapes is the graph's function, not the title's.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-graph"
+              ]
+            },
+            {
+              "answerId": "option-title",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The title Moon Notes gives a clue about the topic of the whole text.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-title"
+              ]
+            },
+            {
+              "answerId": "option-caption",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Explaining the tallest bar is the caption's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-caption"
+              ]
+            },
+            {
+              "answerId": "option-glossary",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Defining a special word is the glossary's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-glossary"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-graph",
+          "prompt": "Graph",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-graph-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-graph-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-glossary-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Defining a word is the glossary's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-glossary"
+              ]
+            },
+            {
+              "answerId": "option-caption-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Explaining the tallest bar is the caption's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-caption"
+              ]
+            },
+            {
+              "answerId": "option-graph-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The graph displays moon-shape counts so readers can compare them.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-moon-notes-sentence-2",
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-graph"
+              ]
+            },
+            {
+              "answerId": "option-title-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Giving a whole-text clue is the title's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-caption",
+          "prompt": "Caption",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-caption-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-caption-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-title-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Giving a whole-text clue is the title's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-title"
+              ]
+            },
+            {
+              "answerId": "option-graph-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Comparing moon shapes is the graph's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-graph"
+              ]
+            },
+            {
+              "answerId": "option-glossary-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Defining a word is the glossary's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-glossary"
+              ]
+            },
+            {
+              "answerId": "option-caption-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The caption explicitly explains what the tallest bar means.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-moon-notes-sentence-3",
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-caption"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-glossary",
+          "prompt": "Glossary",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-glossary-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-glossary-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-title-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Giving a whole-text clue is the title's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-title"
+              ]
+            },
+            {
+              "answerId": "option-glossary-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The glossary defines the special word observe.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-moon-notes-sentence-4",
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-glossary"
+              ]
+            },
+            {
+              "answerId": "option-graph-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Comparing moon shapes is the graph's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-graph"
+              ]
+            },
+            {
+              "answerId": "option-caption-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Explaining the tallest bar is the caption's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-caption"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-checkpoint-a-ep-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-60b91d4fba406133",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "9a1eafad9dad4e0b57e429b825adfc21c9bb6e64887200091ad122190cc0a3b1",
+        "conclusionsSha256": "94f313b940dad669e34565874bc6f579f907eb32b1846edc4a755bb93c9ecc50",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0010.second-pass.json",
+        "receiptSha256": "63b6ff404e88c9d3bec7451abb58e860b9dca7e4ff4aa7c617469291470d9cc2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "How does the graph help the reader understand the moon notes?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "part-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "part-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "part-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The graph counts the nights for each moon shape.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-moon-notes-sentence-2",
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-graph"
+              ]
+            },
+            {
+              "answerId": "part-a-3",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Neither the graph nor the displayed glossary explains route.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-graph",
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-glossary"
+              ]
+            },
+            {
+              "answerId": "part-a-2",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The source contains no bean bed and the graph concerns moon shapes.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-moon-notes-graph"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which sentence states that job directly?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "part-b-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "part-b-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "part-b-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly states that the graph counts nights for each moon shape.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-moon-notes-sentence-2"
+              ]
+            },
+            {
+              "answerId": "part-b-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the glossary's job, not the graph-counting job from Part A.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-moon-notes-sentence-4"
+              ]
+            },
+            {
+              "answerId": "part-b-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This explains only the tallest bar rather than directly stating that the graph counts each shape.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-moon-notes-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-checkpoint-b-mc-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-afd78cc68d807ae2",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "9a1eafad9dad4e0b57e429b825adfc21c9bb6e64887200091ad122190cc0a3b1",
+        "conclusionsSha256": "94f313b940dad669e34565874bc6f579f907eb32b1846edc4a755bb93c9ecc50",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0010.second-pass.json",
+        "receiptSha256": "63b6ff404e88c9d3bec7451abb58e860b9dca7e4ff4aa7c617469291470d9cc2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does the title Recycling Sort help the reader understand?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-d"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-d"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-b",
+              "verdict": "CONTRADICTED",
+              "rationale": "The title and source concern recycling, not moon notes.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-title",
+                "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "CONTRADICTED",
+              "rationale": "The title and source concern recycling, not a trail map.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-title",
+                "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The title and opening sentence establish that the text is about sorting recyclables.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-title",
+                "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "CONTRADICTED",
+              "rationale": "The title and source concern recycling, not birds.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-title",
+                "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-checkpoint-b-mc-2",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-99942a0efd4ef8c2",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "9a1eafad9dad4e0b57e429b825adfc21c9bb6e64887200091ad122190cc0a3b1",
+        "conclusionsSha256": "94f313b940dad669e34565874bc6f579f907eb32b1846edc4a755bb93c9ecc50",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0021.pass-a.json",
+        "receiptSha256": "94f313b940dad669e34565874bc6f579f907eb32b1846edc4a755bb93c9ecc50",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does the heading Counting the Bins tell the reader?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-a",
+              "verdict": "CONTRADICTED",
+              "rationale": "This section presents recycling-bin counts, not compost.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-heading-graph",
+                "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "CONTRADICTED",
+              "rationale": "The graph counts recycling bags, not weather.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-heading-graph",
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-graph"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "CONTRADICTED",
+              "rationale": "The section contains no trail sign.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-heading-graph",
+                "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The heading directly previews the section about counting recycling bins.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-heading-graph",
+                "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-checkpoint-b-mc-3",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-9c34a358d25e3bb4",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "9a1eafad9dad4e0b57e429b825adfc21c9bb6e64887200091ad122190cc0a3b1",
+        "conclusionsSha256": "94f313b940dad669e34565874bc6f579f907eb32b1846edc4a755bb93c9ecc50",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0010.second-pass.json",
+        "receiptSha256": "63b6ff404e88c9d3bec7451abb58e860b9dca7e4ff4aa7c617469291470d9cc2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which feature helps readers picture the sorting station?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-d"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-d"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The graph compares bag counts but does not depict the sorting station.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-graph"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The caption explains a graph bar rather than picturing the station.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-caption"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The title names the topic but does not picture the station.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-title"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The illustration depicts and labels parts of the sorting station.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-4",
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-illustration"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-checkpoint-b-ms-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-be56835b25e6f71f",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "9a1eafad9dad4e0b57e429b825adfc21c9bb6e64887200091ad122190cc0a3b1",
+        "conclusionsSha256": "94f313b940dad669e34565874bc6f579f907eb32b1846edc4a755bb93c9ecc50",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0010.second-pass.json",
+        "receiptSha256": "63b6ff404e88c9d3bec7451abb58e860b9dca7e4ff4aa7c617469291470d9cc2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details: one tells what the graph counts, and one explains what its tallest bar means.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "choice-a",
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-b",
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-d",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This explains the illustration and does not state what the graph counts or what its tallest bar means.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This explains that the tallest graph bar represents the paper bin.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-3",
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-caption"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names sorted materials but does not describe the graph's count or tallest bar.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This states that the graph counts bags in each bin and compares the bars.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-2",
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-graph"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-checkpoint-b-ht-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-e0cb70579eb83e73",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "9a1eafad9dad4e0b57e429b825adfc21c9bb6e64887200091ad122190cc0a3b1",
+        "conclusionsSha256": "94f313b940dad669e34565874bc6f579f907eb32b1846edc4a755bb93c9ecc50",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0021.pass-a.json",
+        "receiptSha256": "94f313b940dad669e34565874bc6f579f907eb32b1846edc4a755bb93c9ecc50",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that tells what the illustration shows.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This sentence explains the caption and graph rather than the illustration.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence directly tells what the illustration labels and shows.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-4",
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-illustration"
+              ]
+            },
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes the class activity, not what the illustration shows.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes the graph, not the illustration.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-checkpoint-b-tm-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-d1b55cf686cf2cf2",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "9a1eafad9dad4e0b57e429b825adfc21c9bb6e64887200091ad122190cc0a3b1",
+        "conclusionsSha256": "94f313b940dad669e34565874bc6f579f907eb32b1846edc4a755bb93c9ecc50",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0021.pass-a.json",
+        "receiptSha256": "94f313b940dad669e34565874bc6f579f907eb32b1846edc4a755bb93c9ecc50",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-title",
+          "prompt": "Title",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-title"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-title"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-illustration",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Showing the station is the illustration's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-illustration"
+              ]
+            },
+            {
+              "answerId": "option-caption",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Explaining the tallest bar is the caption's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-caption"
+              ]
+            },
+            {
+              "answerId": "option-title",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The title gives a clue about the whole recycling text.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-title"
+              ]
+            },
+            {
+              "answerId": "option-graph",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Comparing bin counts is the graph's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-graph"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-graph",
+          "prompt": "Graph",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-graph-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-graph-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-graph-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The graph displays bag counts for comparison across bins.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-2",
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-graph"
+              ]
+            },
+            {
+              "answerId": "option-illustration-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Showing the station is the illustration's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-illustration"
+              ]
+            },
+            {
+              "answerId": "option-title-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Giving a whole-text clue is the title's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-title"
+              ]
+            },
+            {
+              "answerId": "option-caption-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Explaining the tallest bar is the caption's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-caption"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-caption",
+          "prompt": "Caption",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-caption-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-caption-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-illustration-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Showing the station is the illustration's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-illustration"
+              ]
+            },
+            {
+              "answerId": "option-graph-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Comparing bin counts is the graph's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-graph"
+              ]
+            },
+            {
+              "answerId": "option-caption-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The caption points to and explains the tallest bar.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-3",
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-caption"
+              ]
+            },
+            {
+              "answerId": "option-title-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Giving a whole-text clue is the title's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-illustration",
+          "prompt": "Illustration",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-illustration-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-illustration-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-caption-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Explaining the tallest bar is the caption's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-caption"
+              ]
+            },
+            {
+              "answerId": "option-graph-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Comparing bin counts is the graph's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-graph"
+              ]
+            },
+            {
+              "answerId": "option-illustration-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The illustration shows and labels the sorting station.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-4",
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-illustration"
+              ]
+            },
+            {
+              "answerId": "option-title-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Giving a whole-text clue is the title's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-checkpoint-b-ep-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-18e1e1489b6994cc",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "9a1eafad9dad4e0b57e429b825adfc21c9bb6e64887200091ad122190cc0a3b1",
+        "conclusionsSha256": "94f313b940dad669e34565874bc6f579f907eb32b1846edc4a755bb93c9ecc50",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0021.pass-a.json",
+        "receiptSha256": "94f313b940dad669e34565874bc6f579f907eb32b1846edc4a755bb93c9ecc50",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "How does the illustration help the reader understand the sorting station?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "part-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "part-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "part-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The illustration's labels and arrows show how items are sorted.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-4",
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-illustration"
+              ]
+            },
+            {
+              "answerId": "part-a-2",
+              "verdict": "UNSUPPORTED",
+              "rationale": "No bean bed appears in the displayed source.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-illustration"
+              ]
+            },
+            {
+              "answerId": "part-a-3",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The displayed source has no glossary entry for observe.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-illustration"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which choice best supports that answer?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "part-b-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "part-b-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "part-b-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The labeled bin lids, arrows, and gloves directly support how the illustration shows sorting.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-4",
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-illustration"
+              ]
+            },
+            {
+              "answerId": "part-b-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The graph's largest count does not explain how the illustration shows sorting.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-recycle-sort-sentence-2",
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-graph"
+              ]
+            },
+            {
+              "answerId": "part-b-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The title identifies the topic but does not show how items are sorted.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-recycle-sort-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-checkpoint-c-mc-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-4d2b0c1baf7000c7",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "9a1eafad9dad4e0b57e429b825adfc21c9bb6e64887200091ad122190cc0a3b1",
+        "conclusionsSha256": "94f313b940dad669e34565874bc6f579f907eb32b1846edc4a755bb93c9ecc50",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0021.pass-a.json",
+        "receiptSha256": "94f313b940dad669e34565874bc6f579f907eb32b1846edc4a755bb93c9ecc50",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does the title Compost Change help the reader understand?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-c"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The title and opening sentence establish a text about compost changing into soil-like material.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-title",
+                "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source concerns compost, not birds.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-title",
+                "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "CONTRADICTED",
+              "rationale": "Although a map appears, the whole text is about compost change rather than a trail map.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-title",
+                "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source concerns compost, not moon shapes.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-title",
+                "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-checkpoint-c-mc-2",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-9afab81e1da3aefa",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "9a1eafad9dad4e0b57e429b825adfc21c9bb6e64887200091ad122190cc0a3b1",
+        "conclusionsSha256": "94f313b940dad669e34565874bc6f579f907eb32b1846edc4a755bb93c9ecc50",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0021.pass-a.json",
+        "receiptSha256": "94f313b940dad669e34565874bc6f579f907eb32b1846edc4a755bb93c9ecc50",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does the heading Where It Stays tell the reader?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-b",
+              "verdict": "CONTRADICTED",
+              "rationale": "The section and map concern the compost bin, not the moon.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-heading-map",
+                "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The heading previews the section explaining where the compost bin is located.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-heading-map",
+                "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "CONTRADICTED",
+              "rationale": "The section is not about counting recycling bins.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-heading-map",
+                "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "CONTRADICTED",
+              "rationale": "The section contains no bird visitors.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-heading-map",
+                "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-checkpoint-c-mc-3",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-c54b08eb49992d4f",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "25003c67dcae81271c29266822b9806f2033925447056bc6b0542b8efd985e1d",
+        "conclusionsSha256": "825718cdf313dfc99e6f21a54b84787d42982c7e17babae1c2ba30aacd64b004",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0010.second-pass.json",
+        "receiptSha256": "63b6ff404e88c9d3bec7451abb58e860b9dca7e4ff4aa7c617469291470d9cc2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which feature shows the compost bin beside both the herb bed and the hose hook?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-d"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-d"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-b",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The caption explains shade, not all three locations.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-caption"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The glossary defines compost rather than showing locations.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-glossary"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The title names the topic but does not show the locations.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-title"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The map displays the compost bin beside the herb bed and near the hose hook.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-2",
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-map"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-checkpoint-c-ms-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-1025a8555727dfe1",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "25003c67dcae81271c29266822b9806f2033925447056bc6b0542b8efd985e1d",
+        "conclusionsSha256": "825718cdf313dfc99e6f21a54b84787d42982c7e17babae1c2ba30aacd64b004",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0022.pass-a.json",
+        "receiptSha256": "825718cdf313dfc99e6f21a54b84787d42982c7e17babae1c2ba30aacd64b004",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details: one tells where the compost bin sits, and one explains why that spot helps the compost.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "choice-a",
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a",
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-d",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This defines compost but gives neither its location nor why the shaded spot helps.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes compost changing but not its location or the benefit of that spot.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This identifies where the bin sits.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-2",
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-map"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This explains that shade keeps the bin cool and slows the change.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-3",
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-caption"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-checkpoint-c-ht-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-6946012e8868073a",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "25003c67dcae81271c29266822b9806f2033925447056bc6b0542b8efd985e1d",
+        "conclusionsSha256": "825718cdf313dfc99e6f21a54b84787d42982c7e17babae1c2ba30aacd64b004",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0022.pass-a.json",
+        "receiptSha256": "825718cdf313dfc99e6f21a54b84787d42982c7e17babae1c2ba30aacd64b004",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that tells what the glossary means.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes compost changing but does not state its glossary definition.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This explains the caption, not the glossary meaning.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence directly states the glossary definition of compost.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-4",
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-glossary"
+              ]
+            },
+            {
+              "answerId": "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes the map and bin location, not the glossary meaning.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-checkpoint-c-tm-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-51d5d9ea623aa76e",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "25003c67dcae81271c29266822b9806f2033925447056bc6b0542b8efd985e1d",
+        "conclusionsSha256": "825718cdf313dfc99e6f21a54b84787d42982c7e17babae1c2ba30aacd64b004",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0010.second-pass.json",
+        "receiptSha256": "63b6ff404e88c9d3bec7451abb58e860b9dca7e4ff4aa7c617469291470d9cc2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-title",
+          "prompt": "Title",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-title"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-title"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-map",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Showing locations is the map's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-map"
+              ]
+            },
+            {
+              "answerId": "option-title",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The title Compost Change names the whole text's topic.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-title"
+              ]
+            },
+            {
+              "answerId": "option-glossary",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Defining compost is the glossary's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-glossary"
+              ]
+            },
+            {
+              "answerId": "option-caption",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Explaining the shade is the caption's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-caption"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-map",
+          "prompt": "Map",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-map-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-map-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-glossary-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Defining compost is the glossary's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-glossary"
+              ]
+            },
+            {
+              "answerId": "option-map-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The map shows the bin's position relative to the herb bed and hose hook.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-2",
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-map"
+              ]
+            },
+            {
+              "answerId": "option-title-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Naming the whole topic is the title's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-title"
+              ]
+            },
+            {
+              "answerId": "option-caption-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Explaining the shade is the caption's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-caption"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-caption",
+          "prompt": "Caption",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-caption-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-caption-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-glossary-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Defining compost is the glossary's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-glossary"
+              ]
+            },
+            {
+              "answerId": "option-map-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Showing locations is the map's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-map"
+              ]
+            },
+            {
+              "answerId": "option-caption-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The caption explains how shade affects the compost change.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-3",
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-caption"
+              ]
+            },
+            {
+              "answerId": "option-title-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Naming the whole topic is the title's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-glossary",
+          "prompt": "Glossary",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-glossary-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-glossary-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-title-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Naming the whole topic is the title's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-title"
+              ]
+            },
+            {
+              "answerId": "option-glossary-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The glossary supplies the meaning of compost.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-4",
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-glossary"
+              ]
+            },
+            {
+              "answerId": "option-map-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Showing locations is the map's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-map"
+              ]
+            },
+            {
+              "answerId": "option-caption-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Explaining the shade is the caption's function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-caption"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-information-detectives-text-feature-hunt-checkpoint-c-ep-1",
+      "packId": "g2-information-detectives-text-feature-hunt",
+      "contentVersion": "g2-id-text-features-r0.1.0",
+      "contentFingerprint": "qta-v1-cd297642959e4d76",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "25003c67dcae81271c29266822b9806f2033925447056bc6b0542b8efd985e1d",
+        "conclusionsSha256": "825718cdf313dfc99e6f21a54b84787d42982c7e17babae1c2ba30aacd64b004",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0022.pass-a.json",
+        "receiptSha256": "825718cdf313dfc99e6f21a54b84787d42982c7e17babae1c2ba30aacd64b004",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "How does the map help the reader understand compost corner?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "part-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "part-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "part-a-2",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The compost source does not define observe, and that is not the map's job.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-map"
+              ]
+            },
+            {
+              "answerId": "part-a-3",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The source contains no moon graph.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-map"
+              ]
+            },
+            {
+              "answerId": "part-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The map shows the compost bin's location relative to nearby places.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-2",
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-map"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which choice best supports that answer?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "part-b-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "part-b-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "part-b-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The glossary definition does not support the map-location answer.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-4"
+              ]
+            },
+            {
+              "answerId": "part-b-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly states that the map shows where the bin sits.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-passage-compost-change-sentence-2"
+              ]
+            },
+            {
+              "answerId": "part-b-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The title names the topic but does not support the map's location function.",
+              "evidenceIds": [
+                "g2-information-detectives-text-feature-hunt-feature-compost-change-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

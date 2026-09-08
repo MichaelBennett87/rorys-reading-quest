@@ -88,7 +88,7 @@ export const characterArcStories: CharacterArcStoryRecord[] = [
     traitOnlyChoice: 'Mina is careful.',
     unrelatedChoice: 'Mina likes walking beside creeks.',
     beginningEvidenceId: 'cac-p1-s2',
-    turningEvidenceId: 'cac-p1-s6',
+    turningEvidenceId: 'cac-p1-s7',
     endingEvidenceId: 'cac-p1-s8',
     minorEvidenceId: 'cac-p1-s1',
   },

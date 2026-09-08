@@ -1,0 +1,995 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0014",
+  "batchFileSha256": "617d0a00587f7a33a053b5e4026d2da31de46b358ee22c4b4bda0f133ae9c80d",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0357",
+      "fingerprint": "dea06df71b62c6ff636cc4d149faed3e5731a95831f3d2140991526e0a7e8885",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is one story event, not a general message.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This is an inaccurate topic statement because the story centers on fixing the sign with help.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Tia struggles alone, asks Ben, succeeds together, and says help made the job easier.",
+              [
+                "S0010",
+                "S0005",
+                "S0008"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This states the sign problem, not a broader theme.",
+              [
+                "S0009"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0358",
+      "fingerprint": "80993f581726dcc54ee8bbfd91d6b32c318feae4d35d9ac0174783bc7f08b0ec",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is an ending event rather than a topic label.",
+              [
+                "S0008"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This is a short summary of a character action, not the clearest subject label.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "fixing the welcome sign is a short phrase naming the story's subject.",
+              [
+                "S0009",
+                "S0005"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This complete general message is a theme, not merely a topic.",
+              [
+                "S0010",
+                "S0008"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0359",
+      "fingerprint": "a1f4be74111574ddab0ce59e287ec52e986a1bd0ab37c5d9170fd6ea694b7413",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The seed swap beginning does not explain why asking for help eases a hard task.",
+              [
+                "S0008"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Holding the sign together directly shows cooperation making the repair possible.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Tia asking Ben for help is the key choice in the theme.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The board wobbling when Tia works alone establishes why help makes the task easier.",
+              [
+                "S0010"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0360",
+      "fingerprint": "515cc1b888ed862d5cac635a614ada332eb3cb90f0250cef25aa503e55dc06b5",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This describes the final result and Tia's feeling, not what both characters did together.",
+              [
+                "S0008"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This describes Tia working alone.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This sentence says Tia and Ben held the sign together while tightening the rope.",
+              [
+                "S0005"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0361",
+      "fingerprint": "4babf9938eb8c5ebd39f91b95ba96c44c124bd65cdb37046f53840042f0e2a26",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Asking Ben directly shows asking for help.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The request itself does not show that the rope was tight.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The request is unrelated to when the seed swap began.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The earlier wobble and sideways sign show crookedness, not the act of asking Ben.",
+              [
+                "S0010"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "They hold the sign; the phrase does not say both move the rope.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "They repair the sign rather than read it.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Holding the sign together directly shows working together.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The phrase describes repair work, not waiting for visitors.",
+              [
+                "S0005"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The statement does not say the sign was new.",
+              [
+                "S0008"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The statement credits help, not a change in wind.",
+              [
+                "S0008"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The wording directly states that help made the hard job easier.",
+              [
+                "S0008"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The statement says nothing about garden noise.",
+              [
+                "S0008"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "A straight sign shows the repair task was successfully finished.",
+              [
+                "S0008"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The successful straight sign does not make the story sad.",
+              [
+                "S0008"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The straight sign shows the help succeeded, not that it was lost.",
+              [
+                "S0008"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The sign's condition does not show the topic changed.",
+              [
+                "S0008"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0371",
+      "fingerprint": "eec9613d6f0125da1903392f82df7a378739db0a0ddc8e8ea8859d058725419c",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Telling Ms. Reed the truth shows Marco choosing honesty.",
+              [
+                "S0025"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The truth-telling choice does not establish the paint color.",
+              [
+                "S0025"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The cracked jar was already found and is not what his truth-telling choice shows.",
+              [
+                "S0023"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The time setting is unrelated to what the choice shows.",
+              [
+                "S0023"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Showing the spill and wiping the floor directly help solve the problem.",
+              [
+                "S0030"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "These actions do not show the mural wall's size.",
+              [
+                "S0030"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The school setting is established elsewhere and is not the meaning of these actions.",
+              [
+                "S0023"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "Marco actively addresses the spill rather than ignoring it.",
+              [
+                "S0030"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The class fixing the mural together directly shows teamwork.",
+              [
+                "S0029"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The joint repair does not show the jar was new.",
+              [
+                "S0029"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The repair action does not merely show the floor was dirty.",
+              [
+                "S0030"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The class repairs the mural rather than hiding the jar.",
+              [
+                "S0029"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The teacher's thanks says nothing about a lunch line.",
+              [
+                "S0029"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The teacher's thanks says nothing about hallway noise.",
+              [
+                "S0029"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Thanking Marco after he tells the truth supports that his honesty earned trust.",
+              [
+                "S0025",
+                "S0029"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "Marco helps repair the problem rather than making it bigger.",
+              [
+                "S0030",
+                "S0029"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0375",
+      "fingerprint": "58bcc7ca66be0f2306e474eec3da9902dacfbfbca84610c6ef54f97127dbdc7f",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This gives the weather clue, not Lila's preparation steps.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This sentence lists taping, covering, and moving supplies.",
+              [
+                "S0033"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This states the theme and Lila's feeling after the outcome.",
+              [
+                "S0037"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0379",
+      "fingerprint": "ce0c4ba9d865b84ffb087bac352a3a97ba24b1dab57d5e9af425d0cd29963449",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Talking, swapping jobs, and trying again explicitly show a changed plan using both strengths.",
+              [
+                "S0049"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Balancing supports uses Jun's strength but does not itself show both friends changing their plan.",
+              [
+                "S0050"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The standing bridge is the result, not the plan-changing action.",
+              [
+                "S0046"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Omar's measuring strength is relevant but does not state the action of changing plans together.",
+              [
+                "S0043"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0381",
+      "fingerprint": "a16cbeb0a7889c9c2e1d2919fc22e71323dc78f03dfd06c8adea99a38d31c58d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This sentence identifies Omar's measuring strength and Jun's steady-holding strength.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This says their strengths worked together but does not identify each strength.",
+              [
+                "S0046"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This describes a failed attempt and job swap, not each friend's specific strength.",
+              [
+                "S0049"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0383",
+      "fingerprint": "d5e2c872ab6248ec6e7f8576e241664e1c055bf45f43a7f7cdf2d8e5c72437d0",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is a setting fact, not a general theme.",
+              [
+                "S0048"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This names the topic, not a complete theme.",
+              [
+                "S0048"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The story shows the friends combining different strengths to make the bridge work.",
+              [
+                "S0043",
+                "S0046"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is a material detail, not a general message.",
+              [
+                "S0048"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "UNSUPPORTED",
+              "The displayed story does not mention a window and this would not support the theme.",
+              [
+                "S0048"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states the changed plan but not the successful result explaining the theme.",
+              [
+                "S0049"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This states the successful result and explicitly credits their different strengths working together.",
+              [
+                "S0046"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This shows divided roles but does not state the result or explain the theme as requested.",
+              [
+                "S0050"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0388",
+      "fingerprint": "c4ed42d2513f5607aae59ca5cfa29e9e89324f859f03a486321045c0d9187611",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This states the successful result after the new plan.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This states why the first plan failed.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This directly identifies the moment Ava pauses and chooses a new plan.",
+              [
+                "S0059"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0389",
+      "fingerprint": "4963bd8bc361ee8fa0defb500de6b04fc4794a878434756082b790325ce6d4fe",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The knot slipping twice directly shows the first plan failed.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "The story gives no singing detail.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "A tree is not relevant to the knot slipping.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "The knot slipping does not show whether the birdhouse was empty.",
+              [
+                "S0060"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The sentence directly says Ava chose a new plan.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "The sentence does not say the fence moved.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "The sentence does not say Ava watered the garden.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "The sentence does not say the wind stopped.",
+              [
+                "S0059"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "Tying around the post is the revised action, not another reported slip.",
+              [
+                "S0055"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "The sentence does not mention rain.",
+              [
+                "S0055"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "Ava stays and repairs the birdhouse rather than going home.",
+              [
+                "S0055"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Tying the knot around the post instead is a new way to solve the problem.",
+              [
+                "S0055"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The steady birdhouse is direct evidence that the new plan worked.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "The ending does not say the garden became sunny.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The first knot's slip describes the old plan, not what the steady result shows.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Birdhouse is the topic, but that does not answer what the steady result shows about the plan.",
+              [
+                "S0057"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

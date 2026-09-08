@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0063",
+  "batchFileSha256": "347be9ac24f83100e3611bbe0865489535dbbe705b9d6496dabdcb27b1fcb2eb",
+  "reviewerThreadId": "01a07bc2-33d0-74f2-84b3-1f74918ca45e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0736",
+      "fingerprint": "83ebc46697e54da1b4802795e34d574ab449564902d74c461ef72158b05d686e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This defines sprout, a different target word.", ["S0049"]],
+            ["A2", "INCORRECT", "This defines filter, a different target word.", ["S0050", "S0059"]],
+            ["A3", "DEFENSIBLE", "The passage explicitly states that absorb means soak up, matching what the sponge does with water.", ["S0051", "S0043", "S0052"]],
+            ["A4", "INCORRECT", "This defines surface, a different target word.", ["S0045", "S0060"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0737",
+      "fingerprint": "2ed88b9e0bb938b528fe90cf414959f1b2f85caef780a07545e360ed76d80a12",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A3"],
+          "ambiguity": "The learner sees both a glossary entry defining filter and a nearby definition sentence stating what a filter is. Both glossary and context clues are fully useful strategies, and the prompt gives no basis for choosing only one as helping most.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "DEFENSIBLE", "The displayed glossary directly defines filter as a tool that removes small bits from water or air.", ["S0058", "S0059"]],
+            ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "General knowledge about filters could help, but the passage supplies two direct authored definitions that are stronger and sufficient.", []],
+            ["A3", "DEFENSIBLE", "The nearby sentence directly defines a filter as a tool that removes small bits from water.", ["S0050"]],
+            ["A4", "INCORRECT", "No displayed word relationship such as synonym, antonym, category, part-whole, or object-function pairing is needed to determine filter here.", ["S0047", "S0050"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0738",
+      "fingerprint": "9f0aeb0f9b11288b04d77b44cab47d508b688bfb1340ac32f941787510cae94f",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A2"],
+          "ambiguity": "A4 is displayed as the raw internal string g2-cc-meaning-clues-water-filter-station-sentence-3 rather than learner-readable clue text. The remaining semantic answer set is still exactly A1 and A2, but the malformed visible option is a child-facing content defect.",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "A sponge taking extra water from a tray gives a concrete use of absorb that supports the soak-up meaning.", ["S0043", "S0051"]],
+            ["A2", "DEFENSIBLE", "Water remaining on the surface only until the sponge touches it supports the inference that the sponge takes the water in.", ["S0045", "S0043"]],
+            ["A3", "INCORRECT", "Pouring muddy water into a filter concerns filter use and does not explain absorb.", ["S0047"]],
+            ["A4", "INCORRECT", "This is a raw internal identifier, not a learner-readable sentence or semantic clue.", []]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0739",
+      "fingerprint": "122031bcf0f9ef381cb61947bd77e83e0d42775b86a8ef776c2939d610fcb362",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This shows filter use but does not explain what the filter does.", ["S0047"]],
+            ["A2", "DEFENSIBLE", "This sentence directly defines a filter and therefore best helps determine its meaning.", ["S0050"]],
+            ["A3", "INCORRECT", "This sentence concerns absorb and a sponge, not filter meaning.", ["S0043"]],
+            ["A4", "INCORRECT", "This defines absorb, not filter.", ["S0051"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0740",
+      "fingerprint": "758e37fd2a2a8c1723ff9a364c4875c2b7cc5a07df6eebb98ba46482de716978",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The source explicitly defines absorb as soak up.", ["S0051"]],
+            ["A2", "INCORRECT", "This defines surface, not absorb.", ["S0060"]],
+            ["A3", "INCORRECT", "This defines filter, not absorb.", ["S0059"]],
+            ["A4", "INCORRECT", "This defines sprout, not absorb.", ["S0049"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This defines filter, not surface.", ["S0059"]],
+            ["A2", "INCORRECT", "This defines absorb, not surface.", ["S0051"]],
+            ["A3", "DEFENSIBLE", "The glossary defines surface as the top part of something.", ["S0060", "S0045"]],
+            ["A4", "INCORRECT", "This defines sprout, not surface.", ["S0049"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The passage and glossary identify a filter as a tool that removes small bits from water or air.", ["S0050", "S0059"]],
+            ["A2", "INCORRECT", "This defines sprout, not filter.", ["S0049"]],
+            ["A3", "INCORRECT", "This defines absorb, not filter.", ["S0051"]],
+            ["A4", "INCORRECT", "This defines surface, not filter.", ["S0060"]]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This defines filter, not sprout.", ["S0059"]],
+            ["A2", "INCORRECT", "This defines surface, not sprout.", ["S0060"]],
+            ["A3", "DEFENSIBLE", "The context shows a sprout beginning to grow after moisture, supporting the definition of a newly growing young plant.", ["S0049"]],
+            ["A4", "INCORRECT", "This defines absorb, not sprout.", ["S0051"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0741",
+      "fingerprint": "8b8377381e8995a9cb4f85bf298a0b4570fc0e07d650f1bdbd2943077111dcb6",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This defines glide, not dim.", ["S0065"]],
+            ["A2", "DEFENSIBLE", "The passage directly defines dim as not very bright.", ["S0063", "S0070"]],
+            ["A3", "INCORRECT", "This defines drift, not dim.", ["S0080"]],
+            ["A4", "INCORRECT", "This defines gather, not dim.", ["S0071", "S0079"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0742",
+      "fingerprint": "5417a854af147de1a358930ff60914a395fca1c80b6f5cc723f42c1f18ca6d14",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A4"],
+          "ambiguity": "The learner sees both a glossary entry defining gather and a nearby direct definition sentence that says the glossary explains it. Both glossary and context clues fully determine the meaning, and the prompt does not establish why only one helps most.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "DEFENSIBLE", "The displayed glossary directly defines gather as bringing things together in one place.", ["S0078", "S0079"]],
+            ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "General knowledge of gathering could help, but the displayed source provides two direct authored definitions.", []],
+            ["A3", "INCORRECT", "No synonym, antonym, category, part-whole, or object-function pairing is needed for gather here.", ["S0067", "S0071"]],
+            ["A4", "DEFENSIBLE", "The nearby sentence directly defines gather as bringing things together in one place.", ["S0071"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0743",
+      "fingerprint": "8317e514c7a05b75b9a53ad5cb15e4fec969604d6974fefc885c2a7f335877bd",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "The prompt requires two clues, but only A3 is a learner-readable clue for dim. A1 is displayed as the raw internal string g2-cc-meaning-clues-weather-notes-shade-sentence-1 rather than the cloudy-morning sentence it appears intended to reference, so the requested two-answer contract cannot be satisfied.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "INCORRECT", "This is a raw internal identifier, not a learner-readable sentence or clue.", []],
+            ["A2", "INCORRECT", "Gathering notes concerns gather and does not explain dim.", ["S0067"]],
+            ["A3", "DEFENSIBLE", "This sentence directly defines dim as not very bright.", ["S0063"]],
+            ["A4", "INCORRECT", "This sentence explains glide through float and does not explain dim.", ["S0065"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0744",
+      "fingerprint": "cef82e4eb18f79c25113ad7759f0cf885e5e79e76f5a0d0199362e2fc00440a5",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This explains glide through float, not gather.", ["S0065"]],
+            ["A2", "DEFENSIBLE", "Gathered is used with weather notes being brought together in one chart, providing the relevant contextual example.", ["S0067", "S0071"]],
+            ["A3", "INCORRECT", "This gives context for dim, not gather.", ["S0070"]],
+            ["A4", "INCORRECT", "This defines dim, not gather.", ["S0063"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0745",
+      "fingerprint": "08328c0e497aef3e790a92ab9cf142b8c2e705b02f83e4ce504e061a9401d29e",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The passage directly defines dim as not very bright.", ["S0063"]],
+            ["A2", "INCORRECT", "This defines drift, not dim.", ["S0080"]],
+            ["A3", "INCORRECT", "This defines glide, not dim.", ["S0065"]],
+            ["A4", "INCORRECT", "This defines gather, not dim.", ["S0071"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This defines drift, not glide.", ["S0080"]],
+            ["A2", "INCORRECT", "This defines dim, not glide.", ["S0063"]],
+            ["A3", "DEFENSIBLE", "The passage pairs glide with float, supporting smooth, easy movement.", ["S0065"]],
+            ["A4", "INCORRECT", "This defines gather, not glide.", ["S0071"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This defines drift, not gather.", ["S0080"]],
+            ["A2", "DEFENSIBLE", "The passage and glossary define gather as bringing things together in one place.", ["S0071", "S0079"]],
+            ["A3", "INCORRECT", "This defines dim, not gather.", ["S0063"]],
+            ["A4", "INCORRECT", "This defines glide, not gather.", ["S0065"]]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This defines glide, not drift.", ["S0065"]],
+            ["A2", "DEFENSIBLE", "The glossary defines drift as moving slowly through air or water, matching the balloon's slow movement.", ["S0080", "S0069"]],
+            ["A3", "INCORRECT", "This defines gather, not drift.", ["S0071"]],
+            ["A4", "INCORRECT", "This defines dim, not drift.", ["S0063"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

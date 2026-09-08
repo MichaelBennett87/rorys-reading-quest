@@ -1,0 +1,4082 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "lesson-cg-wordplay-prereq-spot-the-comparison-q-1",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-b56ddc466928932a",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "451d87778bb7629bc18cbb6fb980ccc6b9b16e4658f8be5214d5cd86d6b78df0",
+        "conclusionsSha256": "a1d2bcdb7e5a7ebc2789513325b21034671151f38c1448652967a25dd8905045",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0033.pass-a.json",
+        "receiptSha256": "a1d2bcdb7e5a7ebc2789513325b21034671151f38c1448652967a25dd8905045",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence compares the banner to a bright fish?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "s2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "s2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "s2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly compares the banner with a bright fish using like.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-1"
+              ]
+            },
+            {
+              "answerId": "s1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This idiom describes helping and does not compare the banner to a fish.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-2"
+              ]
+            },
+            {
+              "answerId": "s4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This compares a kite tail with a ribbon, not the banner with a fish.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-4"
+              ]
+            },
+            {
+              "answerId": "s3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This uses repeated b sounds but contains no fish comparison.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-prereq-spot-the-comparison-q-2",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-c1da96965b1ac20a",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "592cfcf66ca32a93e0a7251be64305fce64440ff93b8b582530256dc6f0efcf5",
+        "conclusionsSha256": "3b20f1b97c892ad96d5af2e1b7939d1458510b78addabe9fb03b3f93adcff202",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0065.pass-a.json",
+        "receiptSha256": "3b20f1b97c892ad96d5af2e1b7939d1458510b78addabe9fb03b3f93adcff202",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does lend a hand mean?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "h2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "h2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "h3",
+              "verdict": "INCORRECT",
+              "rationale": "Watching the booth is not the contextual meaning of lend a hand.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-2"
+              ]
+            },
+            {
+              "answerId": "h4",
+              "verdict": "INCORRECT",
+              "rationale": "Painting a banner is not stated as the phrase meaning.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-1",
+                "g2-cg-wordplay-kite-parade-sentence-2"
+              ]
+            },
+            {
+              "answerId": "h1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Holding or carrying string is one specific helping action, not the general idiom meaning.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-2"
+              ]
+            },
+            {
+              "answerId": "h2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The helpers hold string and pass tape, showing that lend a hand means help someone.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-prereq-spot-the-comparison-q-3",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-6a505dfe539e7f3a",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "592cfcf66ca32a93e0a7251be64305fce64440ff93b8b582530256dc6f0efcf5",
+        "conclusionsSha256": "3b20f1b97c892ad96d5af2e1b7939d1458510b78addabe9fb03b3f93adcff202",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0003.second-pass.json",
+        "receiptSha256": "8e2778212335a5e47c8801f56c0f81196376e8134292ef773e0ce30611333242",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two clues that help explain lend a hand.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "c2",
+            "c3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "c3",
+            "c2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Holding the string is a concrete helping action that explains the idiom.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-2"
+              ]
+            },
+            {
+              "answerId": "c4",
+              "verdict": "INCORRECT",
+              "rationale": "The last page of the plan does not explain lend a hand.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-7"
+              ]
+            },
+            {
+              "answerId": "c1",
+              "verdict": "INCORRECT",
+              "rationale": "A bright fish belongs to the banner simile, not the idiom.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-1"
+              ]
+            },
+            {
+              "answerId": "c2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Calling the people helpers directly supports the meaning help someone.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-prereq-spot-the-comparison-q-4",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-0ad09cb5eecdc3c9",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "451d87778bb7629bc18cbb6fb980ccc6b9b16e4658f8be5214d5cd86d6b78df0",
+        "conclusionsSha256": "a1d2bcdb7e5a7ebc2789513325b21034671151f38c1448652967a25dd8905045",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0033.pass-a.json",
+        "receiptSha256": "a1d2bcdb7e5a7ebc2789513325b21034671151f38c1448652967a25dd8905045",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the three-word phrase in which every word begins with the /b/ sound.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "h2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "h2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "h4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The words begin with different sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-4"
+              ]
+            },
+            {
+              "answerId": "h1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The words begin with different sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-1"
+              ]
+            },
+            {
+              "answerId": "h2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Blue, banners, and bobbed all begin with the /b/ sound.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-3"
+              ]
+            },
+            {
+              "answerId": "h3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The word the begins with /th/, so all three words do not begin with /b/.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-prereq-spot-the-comparison-q-5",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-4c17b38873b9fa54",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "592cfcf66ca32a93e0a7251be64305fce64440ff93b8b582530256dc6f0efcf5",
+        "conclusionsSha256": "3b20f1b97c892ad96d5af2e1b7939d1458510b78addabe9fb03b3f93adcff202",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0003.second-pass.json",
+        "receiptSha256": "8e2778212335a5e47c8801f56c0f81196376e8134292ef773e0ce30611333242",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "r1",
+          "prompt": "like a bright fish",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "simile"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "simile"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "simile",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Like a bright fish compares the banner to a fish using like, so it is a simile.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-1"
+              ]
+            },
+            {
+              "answerId": "alliteration",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase does not depend on repeated initial sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-1"
+              ]
+            },
+            {
+              "answerId": "idiom",
+              "verdict": "INCORRECT",
+              "rationale": "This is a direct comparison, not an idiom.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "r2",
+          "prompt": "lend a hand",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "idiom"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "idiom"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "alliteration",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase does not use repeated initial sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-2"
+              ]
+            },
+            {
+              "answerId": "simile",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase does not compare two things with like or as.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-2"
+              ]
+            },
+            {
+              "answerId": "idiom",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Lend a hand is an idiom meaning help someone rather than literally lend a hand.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "r3",
+          "prompt": "blue banners bobbed",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "alliteration"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "alliteration"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "idiom",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase has a literal meaning and is not an idiom.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-3"
+              ]
+            },
+            {
+              "answerId": "simile",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase does not use like or as to compare unlike things.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-3"
+              ]
+            },
+            {
+              "answerId": "alliteration",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Blue, banners, and bobbed repeat the initial /b/ sound.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "r4",
+          "prompt": "as smooth as a ribbon",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "simile"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "simile"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "idiom",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase is a comparison rather than an idiom.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-4"
+              ]
+            },
+            {
+              "answerId": "alliteration",
+              "verdict": "INCORRECT",
+              "rationale": "Its main feature is not repeated initial sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-4"
+              ]
+            },
+            {
+              "answerId": "simile",
+              "verdict": "DEFENSIBLE",
+              "rationale": "As smooth as a ribbon compares the tail’s smoothness to a ribbon, so it is a simile.",
+              "evidenceIds": [
+                "g2-cg-wordplay-kite-parade-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-prereq-meaning-beyond-the-words-q-1",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-e0800dfb4cd7f20f",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "151f877ec00a7c0453d92d9336e8680831d881a1ee0f4fe01f8c15f7629fec8a",
+        "conclusionsSha256": "45573585e5e898d6e4dec2dbef47f97b015385e40c0f467b8a136531b73a4953",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0003.second-pass.json",
+        "receiptSha256": "8e2778212335a5e47c8801f56c0f81196376e8134292ef773e0ce30611333242",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence contains the simile?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "s2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "s2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "s1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This sentence uses repeated initial /k/ sounds rather than a like-or-as comparison.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-3"
+              ]
+            },
+            {
+              "answerId": "s3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "On the same page is an idiom about agreement, not a simile.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-2"
+              ]
+            },
+            {
+              "answerId": "s2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The hall’s quietness is compared to a cloud using as.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-1"
+              ]
+            },
+            {
+              "answerId": "s4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Keep an eye on is an idiom meaning watch, not a simile.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-prereq-meaning-beyond-the-words-q-2",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-da330eec20f8c878",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "151f877ec00a7c0453d92d9336e8680831d881a1ee0f4fe01f8c15f7629fec8a",
+        "conclusionsSha256": "45573585e5e898d6e4dec2dbef47f97b015385e40c0f467b8a136531b73a4953",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0003.second-pass.json",
+        "receiptSha256": "8e2778212335a5e47c8801f56c0f81196376e8134292ef773e0ce30611333242",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does on the same page mean?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "m2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "m2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "m3",
+              "verdict": "INCORRECT",
+              "rationale": "Watch the shelf is the meaning of keep an eye on, not on the same page.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-4"
+              ]
+            },
+            {
+              "answerId": "m4",
+              "verdict": "INCORRECT",
+              "rationale": "The source does not use on the same page to mean move chairs.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-2"
+              ]
+            },
+            {
+              "answerId": "m2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "In the book-club context, on the same page means the readers agree about the plan.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-2"
+              ]
+            },
+            {
+              "answerId": "m1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Turning a literal book page conflicts with the plan-agreement context.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-prereq-meaning-beyond-the-words-q-3",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-9a40245d2e627411",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "451d87778bb7629bc18cbb6fb980ccc6b9b16e4658f8be5214d5cd86d6b78df0",
+        "conclusionsSha256": "a1d2bcdb7e5a7ebc2789513325b21034671151f38c1448652967a25dd8905045",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0033.pass-a.json",
+        "receiptSha256": "a1d2bcdb7e5a7ebc2789513325b21034671151f38c1448652967a25dd8905045",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose 2: the phrase that shows agreement and the words that name what the readers agreed about.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "c2",
+            "c4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "c4",
+            "c2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The quiet hall is neither the agreement phrase nor its topic.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-1"
+              ]
+            },
+            {
+              "answerId": "c4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The book club plan names what the readers agreed about.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-2"
+              ]
+            },
+            {
+              "answerId": "c2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "On the same page is the phrase showing agreement.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-2"
+              ]
+            },
+            {
+              "answerId": "c3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The returns shelf belongs to a different sentence.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-prereq-meaning-beyond-the-words-q-4",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-bdfea2db14c9cb7f",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "451d87778bb7629bc18cbb6fb980ccc6b9b16e4658f8be5214d5cd86d6b78df0",
+        "conclusionsSha256": "a1d2bcdb7e5a7ebc2789513325b21034671151f38c1448652967a25dd8905045",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0033.pass-a.json",
+        "receiptSha256": "a1d2bcdb7e5a7ebc2789513325b21034671151f38c1448652967a25dd8905045",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the three-word phrase in which every word begins with the same sound.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "h2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "h2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "h2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Careful, cats, and carried begin with the same /k/ sound.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-3"
+              ]
+            },
+            {
+              "answerId": "h4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The words begin with different sounds and the segment exceeds three words.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-4"
+              ]
+            },
+            {
+              "answerId": "h3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The words begin with different sounds and the segment exceeds three words.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-3"
+              ]
+            },
+            {
+              "answerId": "h1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The words begin with different sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-prereq-meaning-beyond-the-words-q-5",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-8eaaa3600d765f3c",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "151f877ec00a7c0453d92d9336e8680831d881a1ee0f4fe01f8c15f7629fec8a",
+        "conclusionsSha256": "45573585e5e898d6e4dec2dbef47f97b015385e40c0f467b8a136531b73a4953",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0066.pass-a.json",
+        "receiptSha256": "45573585e5e898d6e4dec2dbef47f97b015385e40c0f467b8a136531b73a4953",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "r1",
+          "prompt": "as quiet as a cloud",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "simile"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "simile"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "alliteration",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase is not built around repeated initial sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-1"
+              ]
+            },
+            {
+              "answerId": "idiom",
+              "verdict": "INCORRECT",
+              "rationale": "This is a direct comparison, not an idiom.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-1"
+              ]
+            },
+            {
+              "answerId": "simile",
+              "verdict": "DEFENSIBLE",
+              "rationale": "As quiet as a cloud compares unlike things using as, so it is a simile.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "r2",
+          "prompt": "on the same page",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "idiom"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "idiom"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "idiom",
+              "verdict": "DEFENSIBLE",
+              "rationale": "On the same page is an idiom meaning agree rather than literally share a page.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-2"
+              ]
+            },
+            {
+              "answerId": "alliteration",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase does not depend on repeated initial sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-2"
+              ]
+            },
+            {
+              "answerId": "simile",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase does not compare unlike things with like or as.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "r3",
+          "prompt": "careful cats carried",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "alliteration"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "alliteration"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "idiom",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase is literal rather than an idiom.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-3"
+              ]
+            },
+            {
+              "answerId": "simile",
+              "verdict": "INCORRECT",
+              "rationale": "It does not make a like-or-as comparison.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-3"
+              ]
+            },
+            {
+              "answerId": "alliteration",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Careful, cats, and carried repeat the initial /k/ sound.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "r4",
+          "prompt": "keep an eye on",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "idiom"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "idiom"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "simile",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase does not make a like-or-as comparison.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-4"
+              ]
+            },
+            {
+              "answerId": "alliteration",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase does not use repeated initial sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-4"
+              ]
+            },
+            {
+              "answerId": "idiom",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Keep an eye on is an idiom meaning watch carefully rather than literally retain an eye on something.",
+              "evidenceIds": [
+                "g2-cg-wordplay-library-helpers-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-guided-similes-and-idioms-in-context-q-1",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-c87f89ac7a7dee88",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "151f877ec00a7c0453d92d9336e8680831d881a1ee0f4fe01f8c15f7629fec8a",
+        "conclusionsSha256": "45573585e5e898d6e4dec2dbef47f97b015385e40c0f467b8a136531b73a4953",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0066.pass-a.json",
+        "receiptSha256": "45573585e5e898d6e4dec2dbef47f97b015385e40c0f467b8a136531b73a4953",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which phrase is a simile?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "c2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "c2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Like a tiny boat compares the seed tray to a boat using like.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-1"
+              ]
+            },
+            {
+              "answerId": "c1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names the subject of the comparison without the comparing phrase.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-1"
+              ]
+            },
+            {
+              "answerId": "c3",
+              "verdict": "INCORRECT",
+              "rationale": "Watering the sprouts is a literal action, not a comparison.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-2"
+              ]
+            },
+            {
+              "answerId": "c4",
+              "verdict": "INCORRECT",
+              "rationale": "Made tall labels is a literal action, not a simile.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-guided-similes-and-idioms-in-context-q-2",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-b03b2b966ffe6bd2",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "151f877ec00a7c0453d92d9336e8680831d881a1ee0f4fe01f8c15f7629fec8a",
+        "conclusionsSha256": "45573585e5e898d6e4dec2dbef47f97b015385e40c0f467b8a136531b73a4953",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0066.pass-a.json",
+        "receiptSha256": "45573585e5e898d6e4dec2dbef47f97b015385e40c0f467b8a136531b73a4953",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does get the ball rolling mean?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "c3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "c3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Maya waters first, showing that get the ball rolling means start the work.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-2"
+              ]
+            },
+            {
+              "answerId": "c1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "No literal ball appears in the planting context.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-2"
+              ]
+            },
+            {
+              "answerId": "c4",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase does not mean repair the tray.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-1",
+                "g2-cg-wordplay-garden-display-sentence-2"
+              ]
+            },
+            {
+              "answerId": "c2",
+              "verdict": "INCORRECT",
+              "rationale": "Starting by watering is not the same as decorating the finished display.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-2",
+                "g2-cg-wordplay-garden-display-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-guided-similes-and-idioms-in-context-q-3",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-2f175a9b1392c2e7",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "151f877ec00a7c0453d92d9336e8680831d881a1ee0f4fe01f8c15f7629fec8a",
+        "conclusionsSha256": "45573585e5e898d6e4dec2dbef47f97b015385e40c0f467b8a136531b73a4953",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0066.pass-a.json",
+        "receiptSha256": "45573585e5e898d6e4dec2dbef47f97b015385e40c0f467b8a136531b73a4953",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two things the simile compares.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "c2",
+            "c3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "c2",
+            "c3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c4",
+              "verdict": "INCORRECT",
+              "rationale": "The tall labels are not part of this simile.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-3"
+              ]
+            },
+            {
+              "answerId": "c2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The seed tray is the first thing being compared.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-1"
+              ]
+            },
+            {
+              "answerId": "c1",
+              "verdict": "INCORRECT",
+              "rationale": "The class is not compared to a boat.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-5"
+              ]
+            },
+            {
+              "answerId": "c3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The tiny boat is the second thing in the comparison.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-guided-similes-and-idioms-in-context-q-4",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-b3e9db36a16358e2",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "451d87778bb7629bc18cbb6fb980ccc6b9b16e4658f8be5214d5cd86d6b78df0",
+        "conclusionsSha256": "a1d2bcdb7e5a7ebc2789513325b21034671151f38c1448652967a25dd8905045",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0033.pass-a.json",
+        "receiptSha256": "a1d2bcdb7e5a7ebc2789513325b21034671151f38c1448652967a25dd8905045",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the three-word phrase in which every word begins with the same sound.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "h3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "h3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "h2",
+              "verdict": "CONTRADICTED",
+              "rationale": "This segment exceeds three words and does not share one initial sound.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-2"
+              ]
+            },
+            {
+              "answerId": "h3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Paper, petals, and pushed all begin with /p/.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-4"
+              ]
+            },
+            {
+              "answerId": "h4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The words begin with different sounds and the segment exceeds three words.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-7"
+              ]
+            },
+            {
+              "answerId": "h1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The words begin with different sounds and the segment exceeds three words.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-guided-similes-and-idioms-in-context-q-5",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-c80a2ca13e56ede5",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "151f877ec00a7c0453d92d9336e8680831d881a1ee0f4fe01f8c15f7629fec8a",
+        "conclusionsSha256": "45573585e5e898d6e4dec2dbef47f97b015385e40c0f467b8a136531b73a4953",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0066.pass-a.json",
+        "receiptSha256": "45573585e5e898d6e4dec2dbef47f97b015385e40c0f467b8a136531b73a4953",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "r1",
+          "prompt": "like a tiny boat",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "simile"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "simile"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "simile",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Like a tiny boat compares the seed tray to a boat, so it is a simile.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-1"
+              ]
+            },
+            {
+              "answerId": "alliteration",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase does not rely on repeated initial sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-1"
+              ]
+            },
+            {
+              "answerId": "idiom",
+              "verdict": "INCORRECT",
+              "rationale": "This is a direct comparison, not an idiom.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "r2",
+          "prompt": "get the ball rolling",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "idiom"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "idiom"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "simile",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase does not compare two things with like or as.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-2"
+              ]
+            },
+            {
+              "answerId": "idiom",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Get the ball rolling is an idiom meaning start the work.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-2"
+              ]
+            },
+            {
+              "answerId": "alliteration",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase does not use repeated initial sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "r3",
+          "prompt": "merry markers made",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "alliteration"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "alliteration"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "alliteration",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Merry, markers, and made repeat the initial /m/ sound.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-3"
+              ]
+            },
+            {
+              "answerId": "simile",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase does not use like or as to compare unlike things.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-3"
+              ]
+            },
+            {
+              "answerId": "idiom",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase is literal rather than an idiom.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "r4",
+          "prompt": "paper petals pushed",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "alliteration"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "alliteration"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "alliteration",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Paper, petals, and pushed repeat the initial /p/ sound.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-4"
+              ]
+            },
+            {
+              "answerId": "idiom",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase is literal rather than an idiom.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-4"
+              ]
+            },
+            {
+              "answerId": "simile",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase does not compare unlike things with like or as.",
+              "evidenceIds": [
+                "g2-cg-wordplay-garden-display-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-guided-sound-patterns-in-a-poem-q-1",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-db016f36cee97502",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "c49128db1ffdfd1c802ca40d555229ba047819d2a9073a44d9030de020df51f8",
+        "conclusionsSha256": "61d94b4e55a22ebfdc36141dac13b3d04c998fadbfbfb7ed4af7fe026176cb8e",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0067.pass-a.json",
+        "receiptSha256": "61d94b4e55a22ebfdc36141dac13b3d04c998fadbfbfb7ed4af7fe026176cb8e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which line contains the simile that compares the flags to kites?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "c3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "c3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 1 explicitly compares the flags with orange kites using like.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-1"
+              ]
+            },
+            {
+              "answerId": "c4",
+              "verdict": "INCORRECT",
+              "rationale": "Line 3 uses repeated beginning sounds but does not compare flags with kites.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-3"
+              ]
+            },
+            {
+              "answerId": "c1",
+              "verdict": "INCORRECT",
+              "rationale": "Line 4 compares ropes with chalk lines, not flags with kites.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-4"
+              ]
+            },
+            {
+              "answerId": "c2",
+              "verdict": "INCORRECT",
+              "rationale": "Line 2 contains an idiom and no flags-to-kites comparison.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-guided-sound-patterns-in-a-poem-q-2",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-983b30f5f29569b9",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "c49128db1ffdfd1c802ca40d555229ba047819d2a9073a44d9030de020df51f8",
+        "conclusionsSha256": "61d94b4e55a22ebfdc36141dac13b3d04c998fadbfbfb7ed4af7fe026176cb8e",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0067.pass-a.json",
+        "receiptSha256": "61d94b4e55a22ebfdc36141dac13b3d04c998fadbfbfb7ed4af7fe026176cb8e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does put on our thinking caps mean?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "c2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "c2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The familiar idiom means to begin thinking carefully before the game.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-2"
+              ]
+            },
+            {
+              "answerId": "c1",
+              "verdict": "INCORRECT",
+              "rationale": "The line gives no literal hats and the phrase is used as an idiom.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-2"
+              ]
+            },
+            {
+              "answerId": "c4",
+              "verdict": "INCORRECT",
+              "rationale": "Carrying ropes is unrelated to the phrase or its context.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-2",
+                "g2-cg-wordplay-rooftop-poem-line-4"
+              ]
+            },
+            {
+              "answerId": "c3",
+              "verdict": "INCORRECT",
+              "rationale": "Nothing in the phrase or nearby line means drawing the game.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-guided-sound-patterns-in-a-poem-q-3",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-1389c6a8dd25f87c",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "c49128db1ffdfd1c802ca40d555229ba047819d2a9073a44d9030de020df51f8",
+        "conclusionsSha256": "61d94b4e55a22ebfdc36141dac13b3d04c998fadbfbfb7ed4af7fe026176cb8e",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0003.second-pass.json",
+        "receiptSha256": "8e2778212335a5e47c8801f56c0f81196376e8134292ef773e0ce30611333242",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two things the simile compares.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "c2",
+            "c3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "c2",
+            "c3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c1",
+              "verdict": "INCORRECT",
+              "rationale": "The roof is a location in the line, not one side of the comparison.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-1"
+              ]
+            },
+            {
+              "answerId": "c2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The flags are the subject being compared.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-1"
+              ]
+            },
+            {
+              "answerId": "c4",
+              "verdict": "INCORRECT",
+              "rationale": "The game appears in another line and is not part of this simile.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-1",
+                "g2-cg-wordplay-rooftop-poem-line-2"
+              ]
+            },
+            {
+              "answerId": "c3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Orange kites are what the flags are compared with.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-guided-sound-patterns-in-a-poem-q-4",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-fe91f3cd08a34849",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "451d87778bb7629bc18cbb6fb980ccc6b9b16e4658f8be5214d5cd86d6b78df0",
+        "conclusionsSha256": "a1d2bcdb7e5a7ebc2789513325b21034671151f38c1448652967a25dd8905045",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0003.second-pass.json",
+        "receiptSha256": "8e2778212335a5e47c8801f56c0f81196376e8134292ef773e0ce30611333242",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the phrase that uses alliteration.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "h3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "h3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "h2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase does not repeat one beginning sound across its content words.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-2"
+              ]
+            },
+            {
+              "answerId": "h4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase does not repeat one beginning sound.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-6"
+              ]
+            },
+            {
+              "answerId": "h3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Tiny, tools, and tapped repeat the initial /t/ sound.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-3"
+              ]
+            },
+            {
+              "answerId": "h1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase does not repeat one beginning sound.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-guided-sound-patterns-in-a-poem-q-5",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-2457c9a0420ea08c",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "c49128db1ffdfd1c802ca40d555229ba047819d2a9073a44d9030de020df51f8",
+        "conclusionsSha256": "61d94b4e55a22ebfdc36141dac13b3d04c998fadbfbfb7ed4af7fe026176cb8e",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0067.pass-a.json",
+        "receiptSha256": "61d94b4e55a22ebfdc36141dac13b3d04c998fadbfbfb7ed4af7fe026176cb8e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "r1",
+          "prompt": "like orange kites",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "simile"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "simile"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "simile",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Like signals the comparison of flags with orange kites.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-1"
+              ]
+            },
+            {
+              "answerId": "alliteration",
+              "verdict": "INCORRECT",
+              "rationale": "The expression does not repeat beginning sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-1"
+              ]
+            },
+            {
+              "answerId": "idiom",
+              "verdict": "INCORRECT",
+              "rationale": "The expression is a direct comparison rather than an idiom.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "r2",
+          "prompt": "put on our thinking caps",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "idiom"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "idiom"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "alliteration",
+              "verdict": "INCORRECT",
+              "rationale": "The expression does not depend on repeated beginning sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-2"
+              ]
+            },
+            {
+              "answerId": "simile",
+              "verdict": "INCORRECT",
+              "rationale": "The expression makes no comparison with like or as.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-2"
+              ]
+            },
+            {
+              "answerId": "idiom",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Put on our thinking caps is a familiar nonliteral expression for thinking carefully.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "r3",
+          "prompt": "tiny tools tapped",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "alliteration"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "alliteration"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "idiom",
+              "verdict": "INCORRECT",
+              "rationale": "The expression is not a fixed nonliteral saying.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-3"
+              ]
+            },
+            {
+              "answerId": "simile",
+              "verdict": "INCORRECT",
+              "rationale": "The expression makes no comparison.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-3"
+              ]
+            },
+            {
+              "answerId": "alliteration",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Tiny, tools, and tapped repeat the /t/ beginning sound.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "r4",
+          "prompt": "as straight as chalk lines",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "simile"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "simile"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "simile",
+              "verdict": "DEFENSIBLE",
+              "rationale": "As straight as compares the ropes with chalk lines.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-4"
+              ]
+            },
+            {
+              "answerId": "alliteration",
+              "verdict": "INCORRECT",
+              "rationale": "The expression does not repeat an initial sound pattern.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-4"
+              ]
+            },
+            {
+              "answerId": "idiom",
+              "verdict": "INCORRECT",
+              "rationale": "The expression is an explicit comparison rather than an idiom.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-checkpoint-a-q-1",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-491d19267f3e1aea",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "c49128db1ffdfd1c802ca40d555229ba047819d2a9073a44d9030de020df51f8",
+        "conclusionsSha256": "61d94b4e55a22ebfdc36141dac13b3d04c998fadbfbfb7ed4af7fe026176cb8e",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0067.pass-a.json",
+        "receiptSha256": "61d94b4e55a22ebfdc36141dac13b3d04c998fadbfbfb7ed4af7fe026176cb8e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which phrase is a simile?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "c2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "c2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Like a narrow smile explicitly compares the bridge model with a smile.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-1"
+              ]
+            },
+            {
+              "answerId": "c4",
+              "verdict": "INCORRECT",
+              "rationale": "Called it a day is an idiom, not a comparison.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-4"
+              ]
+            },
+            {
+              "answerId": "c1",
+              "verdict": "INCORRECT",
+              "rationale": "The bridge model stood is literal and contains no comparison.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-1"
+              ]
+            },
+            {
+              "answerId": "c3",
+              "verdict": "INCORRECT",
+              "rationale": "The class worked is neither the authored phrase nor a simile.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-checkpoint-a-q-2",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-da56f74b2df46d07",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "c49128db1ffdfd1c802ca40d555229ba047819d2a9073a44d9030de020df51f8",
+        "conclusionsSha256": "61d94b4e55a22ebfdc36141dac13b3d04c998fadbfbfb7ed4af7fe026176cb8e",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0067.pass-a.json",
+        "receiptSha256": "61d94b4e55a22ebfdc36141dac13b3d04c998fadbfbfb7ed4af7fe026176cb8e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does in the same boat mean?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "c1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "c1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c4",
+              "verdict": "INCORRECT",
+              "rationale": "The idiom does not refer to holding a rope.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-2"
+              ]
+            },
+            {
+              "answerId": "c2",
+              "verdict": "INCORRECT",
+              "rationale": "No literal boat or rowing appears in the situation.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-2"
+              ]
+            },
+            {
+              "answerId": "c3",
+              "verdict": "INCORRECT",
+              "rationale": "Building a bridge is the activity, not the idiom's meaning.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-1",
+                "g2-cg-wordplay-bridge-model-sentence-2"
+              ]
+            },
+            {
+              "answerId": "c1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The glue problem affected the whole class, so they shared the same problem.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-checkpoint-a-q-3",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-fb96559ce06734e0",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "451d87778bb7629bc18cbb6fb980ccc6b9b16e4658f8be5214d5cd86d6b78df0",
+        "conclusionsSha256": "a1d2bcdb7e5a7ebc2789513325b21034671151f38c1448652967a25dd8905045",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0033.pass-a.json",
+        "receiptSha256": "a1d2bcdb7e5a7ebc2789513325b21034671151f38c1448652967a25dd8905045",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which phrase uses alliteration?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "c2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "c2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Brave, builders, and balanced repeat the initial /b/ sound.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-3"
+              ]
+            },
+            {
+              "answerId": "c1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an idiom without repeated initial sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-2"
+              ]
+            },
+            {
+              "answerId": "c4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The words begin with different sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-7"
+              ]
+            },
+            {
+              "answerId": "c3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The words begin with different sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-checkpoint-a-q-4",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-e2d03b532139f287",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "c49128db1ffdfd1c802ca40d555229ba047819d2a9073a44d9030de020df51f8",
+        "conclusionsSha256": "61d94b4e55a22ebfdc36141dac13b3d04c998fadbfbfb7ed4af7fe026176cb8e",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0067.pass-a.json",
+        "receiptSha256": "61d94b4e55a22ebfdc36141dac13b3d04c998fadbfbfb7ed4af7fe026176cb8e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two clues that help explain called it a day.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "c1",
+            "c3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "c3",
+            "c1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c2",
+              "verdict": "INCORRECT",
+              "rationale": "The sand tray does not explain why work stopped.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-5"
+              ]
+            },
+            {
+              "answerId": "c3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Cleaning up signals that the class stopped working.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-4"
+              ]
+            },
+            {
+              "answerId": "c4",
+              "verdict": "INCORRECT",
+              "rationale": "The toy car belongs to the later test and does not explain the idiom.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-7"
+              ]
+            },
+            {
+              "answerId": "c1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The bell marks the time when the class stopped and cleaned up.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-checkpoint-a-q-5",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-0dd06262fd0f6b26",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "451d87778bb7629bc18cbb6fb980ccc6b9b16e4658f8be5214d5cd86d6b78df0",
+        "conclusionsSha256": "a1d2bcdb7e5a7ebc2789513325b21034671151f38c1448652967a25dd8905045",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0003.second-pass.json",
+        "receiptSha256": "8e2778212335a5e47c8801f56c0f81196376e8134292ef773e0ce30611333242",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the phrase that uses alliteration.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "h3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "h3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "h1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase does not repeat one beginning sound.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-1"
+              ]
+            },
+            {
+              "answerId": "h3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Tiny, tools, and tapped repeat the initial /t/ sound.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-3"
+              ]
+            },
+            {
+              "answerId": "h4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase does not repeat one beginning sound.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-6"
+              ]
+            },
+            {
+              "answerId": "h2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase does not repeat one beginning sound across its content words.",
+              "evidenceIds": [
+                "g2-cg-wordplay-rooftop-poem-line-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-checkpoint-a-q-6",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-ec7c2998b355e154",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "c49128db1ffdfd1c802ca40d555229ba047819d2a9073a44d9030de020df51f8",
+        "conclusionsSha256": "61d94b4e55a22ebfdc36141dac13b3d04c998fadbfbfb7ed4af7fe026176cb8e",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0067.pass-a.json",
+        "receiptSha256": "61d94b4e55a22ebfdc36141dac13b3d04c998fadbfbfb7ed4af7fe026176cb8e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "r1",
+          "prompt": "like a narrow smile",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "simile"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "simile"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "alliteration",
+              "verdict": "INCORRECT",
+              "rationale": "The comparison does not rely on repeated beginning sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-1"
+              ]
+            },
+            {
+              "answerId": "idiom",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase is an explicit comparison rather than an idiom.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-1"
+              ]
+            },
+            {
+              "answerId": "simile",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Like compares the bridge model with a narrow smile.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "r2",
+          "prompt": "in the same boat",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "idiom"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "idiom"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "alliteration",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase does not use repeated initial sounds as its main feature.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-2"
+              ]
+            },
+            {
+              "answerId": "idiom",
+              "verdict": "DEFENSIBLE",
+              "rationale": "In the same boat is a familiar nonliteral expression for sharing a problem.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-2"
+              ]
+            },
+            {
+              "answerId": "simile",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase contains no comparison using like or as.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "r3",
+          "prompt": "brave builders balanced",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "alliteration"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "alliteration"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "alliteration",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Brave, builders, and balanced repeat the /b/ beginning sound.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-3"
+              ]
+            },
+            {
+              "answerId": "idiom",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase is not a fixed nonliteral saying.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-3"
+              ]
+            },
+            {
+              "answerId": "simile",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase makes no comparison.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "r4",
+          "prompt": "call it a day",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "idiom"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "idiom"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "idiom",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Call it a day is a familiar idiom meaning to stop work for now.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-4"
+              ]
+            },
+            {
+              "answerId": "simile",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase makes no comparison.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-4"
+              ]
+            },
+            {
+              "answerId": "alliteration",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase does not repeat a beginning sound pattern.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-checkpoint-a-q-7",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-97914abfd10aba4b",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "c49128db1ffdfd1c802ca40d555229ba047819d2a9073a44d9030de020df51f8",
+        "conclusionsSha256": "61d94b4e55a22ebfdc36141dac13b3d04c998fadbfbfb7ed4af7fe026176cb8e",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0067.pass-a.json",
+        "receiptSha256": "61d94b4e55a22ebfdc36141dac13b3d04c998fadbfbfb7ed4af7fe026176cb8e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "What does the phrase mean?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "a1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "a1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "a2",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase occurs when the class stops, not when it starts the bridge.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-4"
+              ]
+            },
+            {
+              "answerId": "a1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The bell and cleanup show that the class stopped working for now.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-4"
+              ]
+            },
+            {
+              "answerId": "a3",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase does not mean carrying the toy car.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-4",
+                "g2-cg-wordplay-bridge-model-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which detail supports that meaning?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "b2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "b2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "b2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The bell, the idiom, and cleanup directly show that work stopped.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-4"
+              ]
+            },
+            {
+              "answerId": "b3",
+              "verdict": "INCORRECT",
+              "rationale": "The tower's position does not support the idiom's meaning.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-5"
+              ]
+            },
+            {
+              "answerId": "b1",
+              "verdict": "INCORRECT",
+              "rationale": "The later bridge test does not explain why the class stopped.",
+              "evidenceIds": [
+                "g2-cg-wordplay-bridge-model-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-checkpoint-b-q-1",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-ab66286e8fab750a",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "451d87778bb7629bc18cbb6fb980ccc6b9b16e4658f8be5214d5cd86d6b78df0",
+        "conclusionsSha256": "a1d2bcdb7e5a7ebc2789513325b21034671151f38c1448652967a25dd8905045",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0033.pass-a.json",
+        "receiptSha256": "a1d2bcdb7e5a7ebc2789513325b21034671151f38c1448652967a25dd8905045",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which phrase is a simile?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "c2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "c2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an idiom, not a comparison using like or as.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-4"
+              ]
+            },
+            {
+              "answerId": "c1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This incomplete phrase does not include the comparison.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-1"
+              ]
+            },
+            {
+              "answerId": "c2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "As calm as a pond is a direct comparison using as.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-2"
+              ]
+            },
+            {
+              "answerId": "c4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a literal statement without a comparison.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-checkpoint-b-q-2",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-3987ef44f9a3e008",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "451d87778bb7629bc18cbb6fb980ccc6b9b16e4658f8be5214d5cd86d6b78df0",
+        "conclusionsSha256": "a1d2bcdb7e5a7ebc2789513325b21034671151f38c1448652967a25dd8905045",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0033.pass-a.json",
+        "receiptSha256": "a1d2bcdb7e5a7ebc2789513325b21034671151f38c1448652967a25dd8905045",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "How do the clues explain keep an eye on?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "c2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "c2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The guide's warning about the mud patch shows the phrase means watch carefully.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-4"
+              ]
+            },
+            {
+              "answerId": "c4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase does not mean fold a map.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-4",
+                "g2-cg-wordplay-trail-map-sentence-6"
+              ]
+            },
+            {
+              "answerId": "c1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The guide's warning means notice, not ignore, the mud patch.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-4"
+              ]
+            },
+            {
+              "answerId": "c3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase concerns the mud patch, not looking for a pond.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-checkpoint-b-q-3",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-a2b7f5ce49ffac7a",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "451d87778bb7629bc18cbb6fb980ccc6b9b16e4658f8be5214d5cd86d6b78df0",
+        "conclusionsSha256": "a1d2bcdb7e5a7ebc2789513325b21034671151f38c1448652967a25dd8905045",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0003.second-pass.json",
+        "receiptSha256": "8e2778212335a5e47c8801f56c0f81196376e8134292ef773e0ce30611333242",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which phrase uses alliteration?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "c3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "c3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an idiom without repeated initial sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-4"
+              ]
+            },
+            {
+              "answerId": "c3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Path, posts, and pointed repeat the initial /p/ sound.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-3"
+              ]
+            },
+            {
+              "answerId": "c4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The words begin with different sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-6"
+              ]
+            },
+            {
+              "answerId": "c1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a simile, not alliteration.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-checkpoint-b-q-4",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-ae10b709fb23003d",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "451d87778bb7629bc18cbb6fb980ccc6b9b16e4658f8be5214d5cd86d6b78df0",
+        "conclusionsSha256": "a1d2bcdb7e5a7ebc2789513325b21034671151f38c1448652967a25dd8905045",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0033.pass-a.json",
+        "receiptSha256": "a1d2bcdb7e5a7ebc2789513325b21034671151f38c1448652967a25dd8905045",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two things the simile compares.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "c1",
+            "c3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "c1",
+            "c3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Our group is the first thing described in the simile.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-2"
+              ]
+            },
+            {
+              "answerId": "c4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The mud patch appears in the idiom sentence, not the simile.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-4"
+              ]
+            },
+            {
+              "answerId": "c3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A pond is what the group's calmness is compared with.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-2"
+              ]
+            },
+            {
+              "answerId": "c2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The trail sign appears in a different comparison.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-checkpoint-b-q-5",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-09551f852598c0a9",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "f5d658e347ec0c94ba71e375b67b17bf4ef212857a5f1673f8cb4d16eeff6e9e",
+        "conclusionsSha256": "7fe565d3879ea0b5f235ee7c6c776bfda224eccfc248f3efa0e286f68c927027",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0034.pass-a.json",
+        "receiptSha256": "7fe565d3879ea0b5f235ee7c6c776bfda224eccfc248f3efa0e286f68c927027",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the phrase that uses alliteration.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "h3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "h3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "h3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Green, gates, and guarded repeat the initial /g/ sound.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-4"
+              ]
+            },
+            {
+              "answerId": "h1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The words begin with different sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-1"
+              ]
+            },
+            {
+              "answerId": "h4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The words begin with different sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-8"
+              ]
+            },
+            {
+              "answerId": "h2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an idiom without repeated initial sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-checkpoint-b-q-6",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-3d262655c0b77211",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "f5d658e347ec0c94ba71e375b67b17bf4ef212857a5f1673f8cb4d16eeff6e9e",
+        "conclusionsSha256": "7fe565d3879ea0b5f235ee7c6c776bfda224eccfc248f3efa0e286f68c927027",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0034.pass-a.json",
+        "receiptSha256": "7fe565d3879ea0b5f235ee7c6c776bfda224eccfc248f3efa0e286f68c927027",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "r1",
+          "prompt": "as calm as a pond",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "simile"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "simile"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "simile",
+              "verdict": "DEFENSIBLE",
+              "rationale": "As calm as a pond is a comparison using as.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-2"
+              ]
+            },
+            {
+              "answerId": "alliteration",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase does not repeat initial sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-2"
+              ]
+            },
+            {
+              "answerId": "idiom",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase is a direct comparison, not an idiom.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "r2",
+          "prompt": "keep an eye on",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "idiom"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "idiom"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "alliteration",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase does not repeat initial sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-4"
+              ]
+            },
+            {
+              "answerId": "idiom",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Keep an eye on is a nonliteral expression meaning watch carefully.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-4"
+              ]
+            },
+            {
+              "answerId": "simile",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase makes no like-or-as comparison.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "r3",
+          "prompt": "path posts pointed",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "alliteration"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "alliteration"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "simile",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase makes no comparison.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-3"
+              ]
+            },
+            {
+              "answerId": "alliteration",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Path, posts, and pointed repeat the initial /p/ sound.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-3"
+              ]
+            },
+            {
+              "answerId": "idiom",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase has a literal meaning, not an idiom.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "r4",
+          "prompt": "like a friendly arrow",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "simile"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "simile"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "alliteration",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase does not repeat initial sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-1"
+              ]
+            },
+            {
+              "answerId": "idiom",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase is a comparison rather than an idiom.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-1"
+              ]
+            },
+            {
+              "answerId": "simile",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Like a friendly arrow is a comparison using like.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-checkpoint-b-q-7",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-b2e7517b3f400c07",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "f5d658e347ec0c94ba71e375b67b17bf4ef212857a5f1673f8cb4d16eeff6e9e",
+        "conclusionsSha256": "7fe565d3879ea0b5f235ee7c6c776bfda224eccfc248f3efa0e286f68c927027",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0034.pass-a.json",
+        "receiptSha256": "7fe565d3879ea0b5f235ee7c6c776bfda224eccfc248f3efa0e286f68c927027",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "What does the phrase mean?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "a1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "a1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "a2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase does not literally instruct someone to keep an eye still.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-4"
+              ]
+            },
+            {
+              "answerId": "a3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Walking on the trail is the setting, not the idiom's meaning.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-4"
+              ]
+            },
+            {
+              "answerId": "a1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "In the warning context, keep an eye on means watch carefully.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which detail supports that meaning?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "b2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "b2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "b2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The warning about the mud patch directly supports watch carefully.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-4"
+              ]
+            },
+            {
+              "answerId": "b3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The last bend does not explain the idiom.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-7"
+              ]
+            },
+            {
+              "answerId": "b1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The folded map does not explain the idiom.",
+              "evidenceIds": [
+                "g2-cg-wordplay-trail-map-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-checkpoint-c-q-1",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-897dc1c2f05fe796",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "f5d658e347ec0c94ba71e375b67b17bf4ef212857a5f1673f8cb4d16eeff6e9e",
+        "conclusionsSha256": "7fe565d3879ea0b5f235ee7c6c776bfda224eccfc248f3efa0e286f68c927027",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0003.second-pass.json",
+        "receiptSha256": "8e2778212335a5e47c8801f56c0f81196376e8134292ef773e0ce30611333242",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which line contains the simile?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "c2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "c2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Line 4 uses alliteration and personification, not a like-or-as comparison.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-4"
+              ]
+            },
+            {
+              "answerId": "c2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 1 compares seed movement with a drifting feather using like.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-1"
+              ]
+            },
+            {
+              "answerId": "c3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Line 3 uses alliteration, not a simile.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-3"
+              ]
+            },
+            {
+              "answerId": "c4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Line 2 contains an idiom, not a simile.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-checkpoint-c-q-2",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-f29c1dbf225209db",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "f5d658e347ec0c94ba71e375b67b17bf4ef212857a5f1673f8cb4d16eeff6e9e",
+        "conclusionsSha256": "7fe565d3879ea0b5f235ee7c6c776bfda224eccfc248f3efa0e286f68c927027",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0034.pass-a.json",
+        "receiptSha256": "7fe565d3879ea0b5f235ee7c6c776bfda224eccfc248f3efa0e286f68c927027",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does sit tight mean?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "c1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "c1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c4",
+              "verdict": "CONTRADICTED",
+              "rationale": "Sit tight does not mean dig soil.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-2"
+              ]
+            },
+            {
+              "answerId": "c3",
+              "verdict": "CONTRADICTED",
+              "rationale": "Sit tight does not mean carry water.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-2"
+              ]
+            },
+            {
+              "answerId": "c2",
+              "verdict": "CONTRADICTED",
+              "rationale": "Sit tight does not mean run faster.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-2"
+              ]
+            },
+            {
+              "answerId": "c1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Waiting while the rain continues shows sit tight means wait patiently.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-checkpoint-c-q-3",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-5c7dba92900d337e",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "f5d658e347ec0c94ba71e375b67b17bf4ef212857a5f1673f8cb4d16eeff6e9e",
+        "conclusionsSha256": "7fe565d3879ea0b5f235ee7c6c776bfda224eccfc248f3efa0e286f68c927027",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0034.pass-a.json",
+        "receiptSha256": "7fe565d3879ea0b5f235ee7c6c776bfda224eccfc248f3efa0e286f68c927027",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which phrase uses alliteration?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "c2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "c2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a simile rather than alliteration.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-1"
+              ]
+            },
+            {
+              "answerId": "c2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Spry, sprouts, and swayed repeat the initial /s/ sound.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-3"
+              ]
+            },
+            {
+              "answerId": "c4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an idiom without repeated initial sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-2"
+              ]
+            },
+            {
+              "answerId": "c1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The words begin with different sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-checkpoint-c-q-4",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-8dfde50ae67534b6",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "f5d658e347ec0c94ba71e375b67b17bf4ef212857a5f1673f8cb4d16eeff6e9e",
+        "conclusionsSha256": "7fe565d3879ea0b5f235ee7c6c776bfda224eccfc248f3efa0e286f68c927027",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0034.pass-a.json",
+        "receiptSha256": "7fe565d3879ea0b5f235ee7c6c776bfda224eccfc248f3efa0e286f68c927027",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two clues that help explain sit tight.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "c1",
+            "c3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "c3",
+            "c1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This occurs much later and does not explain sit tight.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-8"
+              ]
+            },
+            {
+              "answerId": "c3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "While the rain continued supplies the waiting duration.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-2"
+              ]
+            },
+            {
+              "answerId": "c1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Had to shows the speaker was required to remain and wait.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-2"
+              ]
+            },
+            {
+              "answerId": "c2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The sprout movement does not explain sit tight.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-checkpoint-c-q-5",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-cbdd2cb25b87885e",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "f5d658e347ec0c94ba71e375b67b17bf4ef212857a5f1673f8cb4d16eeff6e9e",
+        "conclusionsSha256": "7fe565d3879ea0b5f235ee7c6c776bfda224eccfc248f3efa0e286f68c927027",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0034.pass-a.json",
+        "receiptSha256": "7fe565d3879ea0b5f235ee7c6c776bfda224eccfc248f3efa0e286f68c927027",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the phrase that uses alliteration.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "h3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "h3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "h2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an idiom without alliteration.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-2"
+              ]
+            },
+            {
+              "answerId": "h1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The words begin with different sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-1"
+              ]
+            },
+            {
+              "answerId": "h3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Green, gates, and guarded repeat the initial /g/ sound.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-4"
+              ]
+            },
+            {
+              "answerId": "h4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The words begin with different sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-checkpoint-c-q-6",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-194584d18428f6bd",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "f5d658e347ec0c94ba71e375b67b17bf4ef212857a5f1673f8cb4d16eeff6e9e",
+        "conclusionsSha256": "7fe565d3879ea0b5f235ee7c6c776bfda224eccfc248f3efa0e286f68c927027",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0034.pass-a.json",
+        "receiptSha256": "7fe565d3879ea0b5f235ee7c6c776bfda224eccfc248f3efa0e286f68c927027",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "r1",
+          "prompt": "like a drifting feather",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "simile"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "simile"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "idiom",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase is a direct comparison rather than an idiom.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-1"
+              ]
+            },
+            {
+              "answerId": "simile",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Like a drifting feather is a comparison using like.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-1"
+              ]
+            },
+            {
+              "answerId": "alliteration",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase does not repeat initial sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "r2",
+          "prompt": "sit tight",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "idiom"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "idiom"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "simile",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase makes no comparison.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-2"
+              ]
+            },
+            {
+              "answerId": "alliteration",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase does not repeat initial sounds.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-2"
+              ]
+            },
+            {
+              "answerId": "idiom",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Sit tight is a nonliteral expression meaning wait patiently.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "r3",
+          "prompt": "spry sprouts swayed",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "alliteration"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "alliteration"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "alliteration",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Spry, sprouts, and swayed repeat the initial /s/ sound.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-3"
+              ]
+            },
+            {
+              "answerId": "idiom",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase has a literal meaning, not an idiom.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-3"
+              ]
+            },
+            {
+              "answerId": "simile",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase makes no comparison.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "r4",
+          "prompt": "green gates guarded",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "alliteration"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "alliteration"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "alliteration",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Green, gates, and guarded repeat the initial /g/ sound.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-4"
+              ]
+            },
+            {
+              "answerId": "simile",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase makes no comparison.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-4"
+              ]
+            },
+            {
+              "answerId": "idiom",
+              "verdict": "CONTRADICTED",
+              "rationale": "The phrase is literal, not an idiom.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cg-wordplay-checkpoint-c-q-7",
+      "packId": "g2-compare-castle-wordplay-watchtower",
+      "contentVersion": "g2-cg-wordplay-r0.1.0",
+      "contentFingerprint": "qta-v1-5f07f06e45223ee2",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "f5d658e347ec0c94ba71e375b67b17bf4ef212857a5f1673f8cb4d16eeff6e9e",
+        "conclusionsSha256": "7fe565d3879ea0b5f235ee7c6c776bfda224eccfc248f3efa0e286f68c927027",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0003.second-pass.json",
+        "receiptSha256": "8e2778212335a5e47c8801f56c0f81196376e8134292ef773e0ce30611333242",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "What does the phrase mean?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "a1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "a1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "a3",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The phrase does not describe a bench or waiting.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-1"
+              ]
+            },
+            {
+              "answerId": "a1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A drifting feather suggests light, gentle movement.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-1"
+              ]
+            },
+            {
+              "answerId": "a2",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The phrase describes movement rather than growing taller.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which detail supports that meaning?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "b2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "b2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "b3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This alliterative line does not support the feather comparison.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-4"
+              ]
+            },
+            {
+              "answerId": "b1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This personified garden line does not support the feather comparison.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-8"
+              ]
+            },
+            {
+              "answerId": "b2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This is the exact line comparing seed movement with a drifting feather.",
+              "evidenceIds": [
+                "g2-cg-wordplay-seed-song-line-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

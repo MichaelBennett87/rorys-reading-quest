@@ -82,7 +82,7 @@ export const retellHallPrerequisiteQuestions = [
     passageIdentifier: mural.passageId,
     lessonIdentifier: RETELL_HALL_LESSON_IDS.prereqStoryPartsInOrder,
     questionIdentifier: RETELL_HALL_QUESTION_IDS.prereqStoryPartsInOrder[3],
-    prompt: 'Select the sentence that shows the ending.',
+    prompt: 'Select the sentence that shows the mural work is complete.',
     explanation: 'Sentence 7 shows that the mural is finished and ready for the visitors.',
     evidenceReference: mural.sentences[6].sentenceId,
     evidenceReferenceIds: [mural.sentences[6].sentenceId],
@@ -200,8 +200,8 @@ export const retellHallPrerequisiteQuestions = [
     passageIdentifier: seedTravel.passageId,
     lessonIdentifier: RETELL_HALL_LESSON_IDS.prereqCentralIdeaAndImportantDetails,
     questionIdentifier: RETELL_HALL_QUESTION_IDS.prereqCentralIdeaAndImportantDetails[1],
-    prompt: 'Which detail is most relevant to the central idea?',
-    explanation: 'The sentence about wind shows one way seeds travel to new places.',
+    prompt: 'Which detail tells how wind carries seeds?',
+    explanation: 'The sentence about wind explains that light seeds can ride on the wind and float far away.',
     evidenceReference: seedTravel.sentences[1].sentenceId,
     evidenceReferenceIds: [seedTravel.sentences[1].sentenceId],
     targetVocabulary: ['relevant', 'detail'],
@@ -229,7 +229,7 @@ export const retellHallPrerequisiteQuestions = [
       choice('i1', 'A gardener may notice a seed packet in a pocket.'),
       choice('i2', 'Some light seeds ride gently on the wind and float far away.'),
       choice('i3', 'Tiny hooks cling to animal fur.'),
-      choice('i4', 'Each move helps a plant begin in a new spot.'),
+      choice('i4', 'Every seed travels in the same way.'),
     ],
     correctChoiceIds: ['i2', 'i3'],
   }),
@@ -257,8 +257,8 @@ export const retellHallPrerequisiteQuestions = [
     passageIdentifier: seedTravel.passageId,
     lessonIdentifier: RETELL_HALL_LESSON_IDS.prereqCentralIdeaAndImportantDetails,
     questionIdentifier: RETELL_HALL_QUESTION_IDS.prereqCentralIdeaAndImportantDetails[4],
-    prompt: 'Build the retell. Choose one retell piece for each place. Each piece can be used only once. One extra detail does not belong in the retell.',
-    explanation: 'The retell starts with the central idea, then uses the three important details. The extra detail stays out.',
+    prompt: 'Build the retell in source order. Choose one retell piece for each place. Each piece can be used only once. One extra detail does not belong in the retell.',
+    explanation: 'The retell starts with the central idea, then uses the wind, animal-fur, and water details in source order. The extra detail stays out.',
     evidenceReference: seedTravel.sentences[0].sentenceId,
     evidenceReferenceIds: seedTravel.sentences.map((sentence) => sentence.sentenceId),
     targetVocabulary: ['central idea', 'relevant details'],
@@ -279,7 +279,7 @@ export const retellHallPrerequisiteQuestions = [
       },
       {
         id: 'r2',
-        prompt: 'Relevant detail 1',
+        prompt: 'First relevant detail',
         correctChoiceId: 'seed-piece-2',
         options: [
           choice('seed-piece-1', 'Seeds travel to new places in several ways.'),
@@ -291,7 +291,7 @@ export const retellHallPrerequisiteQuestions = [
       },
       {
         id: 'r3',
-        prompt: 'Relevant detail 2',
+        prompt: 'Second relevant detail',
         correctChoiceId: 'seed-piece-3',
         options: [
           choice('seed-piece-1', 'Seeds travel to new places in several ways.'),
@@ -303,7 +303,7 @@ export const retellHallPrerequisiteQuestions = [
       },
       {
         id: 'r4',
-        prompt: 'Relevant detail 3',
+        prompt: 'Third relevant detail',
         correctChoiceId: 'seed-piece-4',
         options: [
           choice('seed-piece-1', 'Seeds travel to new places in several ways.'),

@@ -394,6 +394,7 @@ export const sampleContent: ContentSample = {
       tags: ['bridge', 'hot-text', 'g2'],
       questionContent: {
         type: 'hot_text',
+        selectionMode: 'multiple',
         selectableSegments: [
           {
             id: 'seed-1',
@@ -439,6 +440,7 @@ export const sampleContent: ContentSample = {
       tags: ['bridge', 'hot-text', 'g2'],
       questionContent: {
         type: 'hot_text',
+        selectionMode: 'multiple',
         selectableSegments: [
           {
             id: 'seed-4',

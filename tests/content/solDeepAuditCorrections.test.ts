@@ -119,6 +119,6 @@ describe('GPT-5.6 Sol Grade 2 curricular corrections', () => {
       .join(' ')
 
     expect(checkpointWording).toContain('Brave builders balanced')
-    expect(checkpointWording).toContain('Path markers pointed')
+    expect(checkpointWording).toContain('Path posts pointed')
   })
 })

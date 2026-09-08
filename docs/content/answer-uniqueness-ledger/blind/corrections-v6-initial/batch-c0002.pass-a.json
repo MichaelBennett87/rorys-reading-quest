@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-c0002",
+  "batchFileSha256": "e6d562a30358fc677dced85546feb8271b93e260e3dba830e6d109e7e093a52f",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0218",
+      "fingerprint": "f8f76016009edc169a7b71b355bcb7f75b102126e8b59916c29697e455b05b8c",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A5"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Quickly ends with the named suffix -ly.",
+              [
+                "S0019"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Smallest ends with the named suffix -est.",
+              [
+                "S0022"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Faster ends with the named suffix -er.",
+              [
+                "S0022"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Careful has -ful, which is a suffix but is not one of the four endings named in the prompt.",
+              [
+                "S0024"
+              ]
+            ],
+            [
+              "A5",
+              "DEFENSIBLE",
+              "Helping ends with the named suffix -ing.",
+              [
+                "S0019"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0574",
+      "fingerprint": "026f8506d03e86ae627a26f107f08868827e2fa3179f43240b80fa77bae336d5",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "Tallest stems in the sunny row can reasonably be understood as a detail about the flowers growing there, so the wording still permits a third response beyond the requested pair.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The tallest stems are in the sunny flower row and can reasonably be treated as a detail about those flowers.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "This detail concerns the shady row rather than the sunny row.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This compares flower counts in the sunny row.",
+              [
+                "S0055",
+                "S0067"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This describes bee pollinators visiting the sunny row.",
+              [
+                "S0057"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0575",
+      "fingerprint": "77db49c1263bc8d065abdbb79fedb44f151f72f232de39f40b9ae17d26d93c89",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one sunny-row observation, not the broad idea about pollinator gardens.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states the class's comparison purpose, not the broad idea the author explains about pollinator gardens.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This directly states the broad idea that pollinator gardens provide food and rest for insects.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one bloom-count detail, not the broad explanatory idea.",
+              [
+                "S0053"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0626",
+      "fingerprint": "2e6e61edbf3e7286b34e61c1df4b9fde603ace2bbc4826c3ca7f0680167dd6a6",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Resting in leaves concerns shelter and does not support adding a water dish.",
+              [
+                "S0109"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Birds drinking from a puddle under the tree directly shows a need for water there.",
+              [
+                "S0108"
+              ]
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "Shrubs near the middle path do not support placing a water dish under the tree.",
+              [
+                "S0112"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The map's shady spot directly supports a suitable place for the dish under the tree.",
+              [
+                "S0111"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

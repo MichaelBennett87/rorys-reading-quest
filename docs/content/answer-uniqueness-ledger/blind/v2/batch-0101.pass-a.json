@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0101",
+  "batchFileSha256": "debf4856d163619d2869d3b5b8ad14bb5484db554e242c2023d46e5ad7ffc3fe",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId":"Q1179","fingerprint":"9b68540c427ffe9294c057e407f54dbf2eb512a3cd10fdb1503ebea97c58193f","slots":[{"slotId":"response","defensible":["A1","A3"],"ambiguity":"A limerick is also a type of rhymed verse, and the prompt does not ask for the more specific taught form, so both A1 and A3 are substantively correct.","selectionContractValid":false,"options":[
+        ["A1","DEFENSIBLE","Five playful lines with an AABBA rhyme make the poem a limerick.",["S0035","S0037","S0042","S0043","S0040"]],
+        ["A2","CONTRADICTED","The fixed AABBA rhyme and limerick structure do not fit the taught free-verse category.",["S0035","S0037","S0042","S0043","S0040"]],
+        ["A3","DEFENSIBLE","The poem intentionally rhymes throughout, so rhymed verse is also a true broader type under the literal prompt.",["S0035","S0037","S0042","S0043","S0040"]],
+        ["A4","CONTRADICTED","The poem has five lines rather than the taught three-line haiku form.",["S0035","S0037","S0042","S0043","S0040"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1180","fingerprint":"6c7a552d21bc4e72b08dee75870b0d7ab9964669d9dc055f0554c32116ffa6d2","slots":[{"slotId":"response","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","DEFENSIBLE","The five playful lines and kite/delight/sight plus tree/free AABBA rhyme directly support limerick.",["S0035","S0037","S0042","S0043","S0040"]],
+        ["A2","CONTRADICTED","The poem has five lines and an AABBA rhyme, not three 5-7-5 observational lines.",["S0035","S0037","S0042","S0043","S0040"]],
+        ["A3","CONTRADICTED","The poem has a required fixed AABBA rhyme pattern.",["S0035","S0037","S0042","S0043","S0040"]],
+        ["A4","PARTIALLY_TRUE_BUT_NONRESPONSIVE","One rhyme alone would not identify a limerick and does not describe this poem's complete structure.",["S0035","S0037","S0042","S0043","S0040"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1181","fingerprint":"77813095cde539f7e8960c3504c854787c0296df371c22dd692372e299cb6c50","slots":[{"slotId":"response","defensible":["A3","A4"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","CONTRADICTED","The poem follows a fixed AABBA rhyme pattern.",["S0035","S0037","S0042","S0043","S0040"]],
+        ["A2","CONTRADICTED","The poem has five lines and is not a three-line classroom haiku.",["S0035","S0037","S0042","S0043","S0040"]],
+        ["A3","DEFENSIBLE","The five-line AABBA rhyme organization is the defining structural evidence.",["S0035","S0037","S0042","S0043","S0040"]],
+        ["A4","DEFENSIBLE","The poem presents a short playful event with the bouncing rhythm taught for limericks.",["S0035","S0037","S0042","S0043","S0040"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1182","fingerprint":"e0543948799ff48d78390501845720c7fe15710c0fe088aa9e5576a715ef8e29","slots":[{"slotId":"response","defensible":["A4"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","CONTRADICTED","Tree is the first B-rhyme ending, not the final return to A.",["S0042"]],
+        ["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Delight is an A-rhyme ending, but it is line 2 rather than the final post-B return.",["S0037"]],
+        ["A3","CONTRADICTED","Free is the second B-rhyme ending, not the return to A.",["S0043"]],
+        ["A4","DEFENSIBLE","The final end word sight returns to the kite/delight A rhyme after tree/free.",["S0035","S0037","S0042","S0043","S0040"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1183","fingerprint":"3b945891d312e2f21f27c5a612bd1cfba2fd167c18d792feebb292084df71dc7","slots":[
+        {"slotId":"row_1","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","DEFENSIBLE","Limerick is the poem's specific taught form.",["S0035","S0037","S0042","S0043","S0040"]],
+          ["A2","CONTRADICTED","The fixed AABBA structure conflicts with the taught free-verse category.",["S0035","S0037","S0042","S0043","S0040"]],
+          ["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This is the structural clue rather than a form name.",["S0035","S0037","S0042","S0043","S0040"]]
+        ]},
+        {"slotId":"row_2","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","DEFENSIBLE","The five-line AABBA rhyme statement is the strongest structural clue.",["S0035","S0037","S0042","S0043","S0040"]],
+          ["A2","CONTRADICTED","Free verse is neither an accurate form nor a structural clue for this poem.",["S0035","S0037","S0042","S0043","S0040"]],
+          ["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Limerick names the form rather than the requested clue.",["S0035","S0037","S0042","S0043","S0040"]]
+        ]}
+      ],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1184","fingerprint":"21637f2644758eb7809b98f73d697d2f41ae69611693bf559cd4172bf6e1eb8d","slots":[{"slotId":"response","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","CONTRADICTED","The line endings do not form an intentional fixed rhyme pattern.",["S0053","S0046","S0048","S0055","S0050","S0056","S0052"]],
+        ["A2","CONTRADICTED","The poem has seven flexible lines rather than five AABBA lines.",["S0053","S0046","S0048","S0055","S0050","S0056","S0052"]],
+        ["A3","DEFENSIBLE","Varied line lengths and intentional breaks without a fixed rhyme pattern support free verse.",["S0053","S0046","S0048","S0055","S0050","S0056","S0052"]],
+        ["A4","CONTRADICTED","The poem has seven lines and is not the taught three-line haiku form.",["S0053","S0046","S0048","S0055","S0050","S0056","S0052"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1185","fingerprint":"6b4dcc1f8c5dde738aec38f975efe30e8dccc9ee07549b1778a257adbcb06d44","slots":[{"slotId":"response","defensible":["A4"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","CONTRADICTED","The poem has seven lines and no AABBA rhyme.",["S0053","S0046","S0048","S0055","S0050","S0056","S0052"]],
+        ["A2","CONTRADICTED","The line endings do not form a repeating ABAB rhyme.",["S0053","S0046","S0048","S0055","S0050","S0056","S0052"]],
+        ["A3","CONTRADICTED","The poem has seven lines rather than three.",["S0053","S0046","S0048","S0055","S0050","S0056","S0052"]],
+        ["A4","DEFENSIBLE","The displayed flexible lineation and lack of required fixed rhyme directly identify free verse.",["S0053","S0046","S0048","S0050","S0052"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1186","fingerprint":"48d037de7bb15c003eea7deca19cf7627b83e514fc0728bbbefe36b871e18c00","slots":[{"slotId":"response","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","CONTRADICTED","The example's stated classroom 5-7-5 organization is a fixed pattern, not unrestricted free verse.",[]],
+        ["A2","UNSUPPORTED","The example provides no intentional end-rhyme relationship.",[]],
+        ["A3","DEFENSIBLE","Three lines, a quiet natural observation, and the qualified classroom 5-7-5 pattern jointly identify haiku.",[]],
+        ["A4","CONTRADICTED","A limerick requires five playful lines and AABBA rhyme, neither of which is described.",[]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1187","fingerprint":"429c27a907bd0aa468c4839fb1c899f78c261b164048d3304148d4f28c677db9","slots":[{"slotId":"response","defensible":["A1","A4"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","DEFENSIBLE","The isolated opening Overhead creates the stated visual pause before the whale appears.",["S0053","S0046"]],
+        ["A2","CONTRADICTED","The poem has seven lines and no AABBA pattern.",["S0053","S0046","S0048","S0055","S0050","S0056","S0052"]],
+        ["A3","CONTRADICTED","The poem has seven lines and does not use a classroom 5-7-5 pattern.",["S0053","S0046","S0048","S0055","S0050","S0056","S0052"]],
+        ["A4","DEFENSIBLE","Flexible line lengths and intentional breaks without fixed rhyme are supported throughout the poem.",["S0053","S0046","S0048","S0050","S0052"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1188","fingerprint":"5bba0b4c225644d7654abe2bb1c4817a0cee7a0f9f8c220bcb6f7e045c40d133","slots":[{"slotId":"response","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","DEFENSIBLE","Overhead is the only one-word opening and its line break pauses before the whale appears.",["S0053","S0046"]],
+        ["A2","CONTRADICTED","This four-word third line is neither one word nor the opening.",["S0048"]],
+        ["A3","CONTRADICTED","This three-word fifth line is not the opening.",["S0050"]],
+        ["A4","CONTRADICTED","This four-word second line introduces the whale after the pause.",["S0046"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1189","fingerprint":"f44c61b676796189a0a5b65bb0f78c97921300089ed0193e03e2fb91cdf59eb6","slots":[
+        {"slotId":"row_1","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","CONTRADICTED","The poem lacks intentional fixed rhyme.",["S0053","S0046","S0048","S0055","S0050","S0056","S0052"]],
+          ["A2","DEFENSIBLE","Free verse correctly names the poem's form.",["S0053","S0046","S0048","S0055","S0050","S0056","S0052"]],
+          ["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This is the structural clue rather than the requested form name.",["S0053","S0046","S0048","S0050","S0052"]]
+        ]},
+        {"slotId":"row_2","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","DEFENSIBLE","Flexible lineation without a required fixed rhyme is the strongest structural clue.",["S0053","S0046","S0048","S0050","S0052"]],
+          ["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Free verse names the form rather than the requested clue.",["S0053","S0046","S0048","S0050","S0052"]],
+          ["A3","CONTRADICTED","Rhymed verse is neither an accurate form nor a structural clue here.",["S0053","S0046","S0048","S0055","S0050","S0056","S0052"]]
+        ]}
+      ],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1190","fingerprint":"3efb7db9a2b0a9419a41d0cdfa6cccae4d3653720fc591132736b128e8349dfe","slots":[
+        {"slotId":"part_a","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","DEFENSIBLE","The varied intentional line breaks without fixed rhyme best support free verse.",["S0053","S0046","S0048","S0050","S0052"]],
+          ["A2","CONTRADICTED","The poem has no intentional fixed rhyme pattern.",["S0053","S0046","S0048","S0055","S0050","S0056","S0052"]],
+          ["A3","CONTRADICTED","The poem has seven lines and is not the taught three-line haiku form.",["S0053","S0046","S0048","S0055","S0050","S0056","S0052"]]
+        ]},
+        {"slotId":"part_b","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","DEFENSIBLE","This clue directly supports the free-verse answer in Part A.",["S0053","S0046","S0048","S0050","S0052"]],
+          ["A2","CONTRADICTED","The poem has seven lines and no classroom 5-7-5 pattern.",["S0053","S0046","S0048","S0055","S0050","S0056","S0052"]],
+          ["A3","CONTRADICTED","The poem has seven lines and no AABBA pattern.",["S0053","S0046","S0048","S0055","S0050","S0056","S0052"]]
+        ]}
+      ],"projectionDefect":""
+    }
+  ]
+}

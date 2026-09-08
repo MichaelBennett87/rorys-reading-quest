@@ -1,0 +1,1024 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0061",
+  "batchFileSha256": "65ab5d4d8372fa045be73cb378a1644f730f2053d3cdf4a425f3dcf6adc56349",
+  "reviewerThreadId": "01a07bc1-57ca-7230-a515-d322b50c9d2e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0712",
+      "fingerprint": "13e576dfe9dca8a604272d4d69f88ce832a24d3409b926260f6a0b94ca2e30aa",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Again is the prefix meaning contribution, not the base word.",
+              [
+                "S0097"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Snack is a separate source word, not part of rebuild.",
+              [
+                "S0097",
+                "S0108"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Re is the prefix, not the base word.",
+              [
+                "S0097"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Removing re- from rebuild leaves the meaningful base word build.",
+              [
+                "S0097"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0713",
+      "fingerprint": "6d50083ee99ace7677105637dfd5b52067170e8395c238991f83d41347447804",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Pre- does not mean without.",
+              [
+                "S0099"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "In preheat, pre- means before: the oven is heated before it is needed.",
+              [
+                "S0099",
+                "S0104"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Pre- does not express a superlative meaning.",
+              [
+                "S0099"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Again is the meaning of re-, not pre-.",
+              [
+                "S0097",
+                "S0099"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0714",
+      "fingerprint": "acd3839904538fd185638036350435925cfa9fdc2e6ffc098d555f69da02af6f",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Careless does not mean before.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Careless does not express a faster comparison.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Careless transparently means without care, matching the crumbs left on the edge.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Full of help describes helpful, not careless.",
+              [
+                "S0101",
+                "S0103"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0715",
+      "fingerprint": "948d460003d886af212382eb98e61371b77b1170f013ffda4544505f88d8808f",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Preheat begins with the prefix pre-.",
+              [
+                "S0099"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Rebuild begins with the prefix re-.",
+              [
+                "S0097"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Slowly ends with the suffix -ly rather than beginning with a prefix.",
+              []
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Helped ends with the suffix -ed rather than beginning with a prefix.",
+              [
+                "S0101"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0716",
+      "fingerprint": "bf9d2f968a38b3842c3d06dbe1eab18bfb53c242cf8a8f140662301508730642",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Ed is the suffix added after the base help in helped.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Help is the base word, not the suffix.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Before is a meaning word and is not a chunk of helped.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Helped is the whole word, not its suffix.",
+              [
+                "S0101"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0717",
+      "fingerprint": "f06ecbf070f37deb0c2914a7dff154c4cd699f597b1a006bf2475a68d09193c4",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Full of help describes helpful, not rebuild.",
+              [
+                "S0097"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Count wrongly describes miscount.",
+              [
+                "S0097"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Rebuild means build again.",
+              [
+                "S0097",
+                "S0105"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "More fast describes faster, not rebuild.",
+              [
+                "S0097"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Look before describes preview, not preheat.",
+              [
+                "S0099"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "More than one plant does not describe preheat.",
+              [
+                "S0099"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Before the test is not the meaning of preheat.",
+              [
+                "S0099"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Preheat means heat before the oven is needed.",
+              [
+                "S0099",
+                "S0104"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Slowly moving does not describe helped.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Kind helper names a person, not the past action helped.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Helped means the helping action already happened.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Most tall describes tallest, not helped.",
+              [
+                "S0101"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Again is a prefix meaning unrelated to careless.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "One box does not describe careless.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Wrongly is too general and does not capture the -less meaning in careless.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Careless means without care.",
+              [
+                "S0103"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0718",
+      "fingerprint": "ddf0df60709873e4b9c3cc8150387d298258f22218e702090c06d04a041aba97",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Re- is the prefix at the start of rebuild.",
+              [
+                "S0097"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Dis- does not appear in rebuild.",
+              [
+                "S0097"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Un- does not appear in rebuild.",
+              [
+                "S0097"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Pre- appears in preheat, not rebuild.",
+              [
+                "S0099"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Heat before describes preheat.",
+              [
+                "S0099"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Rebuild means build again.",
+              [
+                "S0097",
+                "S0105"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Full of help describes helpful.",
+              [
+                "S0097"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Count wrongly describes miscount.",
+              [
+                "S0097"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0719",
+      "fingerprint": "147f88abfeda0a275e21b7f166d76d3891a49b093a5f28daa6ad5aafa057c4bb",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Most is the superlative meaning contribution, not the base.",
+              [
+                "S0121"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Quickly is a related adverb, not the base inside fastest.",
+              [
+                "S0121"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Faster is another affixed form, not the base word inside fastest.",
+              [
+                "S0121"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Removing -est from fastest leaves the base word fast.",
+              [
+                "S0121"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0720",
+      "fingerprint": "58197e8e8d4311301da4dfc679969d79c612fd72a9294c5297c2f6edb09f7fc2",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The suffix -ly makes slowly mean in a particular, slow way.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Before is associated with pre-, not -ly.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Again is associated with re-, not -ly.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Without is associated with -less, not -ly.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0721",
+      "fingerprint": "cef9a3ebc31fd411d0d3caea6582ed8109c965ab557638a22ca339b318648233",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Miscount means count wrongly, matching the need to recount.",
+              [
+                "S0117",
+                "S0124"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Full of help describes helpful, not miscount.",
+              [
+                "S0117"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Heat before describes preheat.",
+              [
+                "S0117"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "More than one is a plural idea, not miscount.",
+              [
+                "S0117"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0722",
+      "fingerprint": "eb1c9a2d365bfa4725bac6c340d4ac734d0e1623b1654ddb53df400529c09959",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Plants is plural but does not express comparison.",
+              [
+                "S0121"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Faster uses -er to compare speed.",
+              [
+                "S0121"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Helped marks a past action and does not express comparison.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Tallest uses -est to compare and identify the highest degree.",
+              [
+                "S0123"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0723",
+      "fingerprint": "440b104bde7d4927edc5949ef0b1bc2e036b94efd0ddd677c7d5c64465f068b6",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Mis is the prefix before the base count.",
+              [
+                "S0117"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Count is the base word, not the prefix.",
+              [
+                "S0117"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Miscount is the whole word, not its prefix.",
+              [
+                "S0117"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Wrongly is the prefix meaning contribution, not the written chunk.",
+              [
+                "S0117"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0724",
+      "fingerprint": "9613fa8aeb8e1157ef50189663746f0c1029229cfb82cfed80d37174d3a86a8b",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Full of help does not describe miscount.",
+              [
+                "S0117"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Before the test does not describe miscount.",
+              [
+                "S0117"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "More than one plant does not describe miscount.",
+              [
+                "S0117"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Miscount means count wrongly.",
+              [
+                "S0117",
+                "S0124"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Heat before describes preheat, not slowly.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Without care describes careless.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Slowly means in a slow way.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Build again describes rebuild.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Again is not the meaning of faster.",
+              [
+                "S0121"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "One box does not describe faster.",
+              [
+                "S0121"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Faster means more fast.",
+              [
+                "S0121"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Kind helper does not describe faster.",
+              [
+                "S0121"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Not agree does not describe tallest.",
+              [
+                "S0123"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Wrongly is unrelated to tallest.",
+              [
+                "S0123"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Tallest means most tall.",
+              [
+                "S0123"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Slowly moving does not describe tallest.",
+              [
+                "S0123"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0725",
+      "fingerprint": "4f77e796f1311de6c3189c19a9010674526d9fc7bbcf7c1c1e4c0dec1ceb84f3",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Un- does not appear in miscount.",
+              [
+                "S0117"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Pre- does not appear in miscount.",
+              [
+                "S0117"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Mis- is the prefix at the start of miscount.",
+              [
+                "S0117"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Re- does not appear in miscount.",
+              [
+                "S0117"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Build again describes rebuild.",
+              [
+                "S0117"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Full of help describes helpful.",
+              [
+                "S0117"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Heat before describes preheat.",
+              [
+                "S0117"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Miscount means count wrongly.",
+              [
+                "S0117",
+                "S0124"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

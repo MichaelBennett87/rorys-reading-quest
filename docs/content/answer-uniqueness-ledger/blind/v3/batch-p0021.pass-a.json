@@ -1,0 +1,937 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0021",
+  "batchFileSha256": "9a1eafad9dad4e0b57e429b825adfc21c9bb6e64887200091ad122190cc0a3b1",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0504",
+      "fingerprint": "1d35cde1ff8a8d50239ebc2141823f66161532c747c3924884a3bb1ce742fcd5",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes the caption rather than the glossary's meaning.",
+              [
+                "S0097",
+                "S0104"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes the graph rather than the glossary's meaning.",
+              [
+                "S0095",
+                "S0103"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This sentence directly states the glossary definition of observe.",
+              [
+                "S0099",
+                "S0107"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes Priya's observation routine but does not state the glossary meaning.",
+              [
+                "S0093"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0505",
+      "fingerprint": "bb1efb5a0ea8384eaf68512259df4fe5fb5494e3d2cc45ac8d53d31e1153ebef",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Comparing moon shapes is the graph's function, not the title's.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The title Moon Notes gives a clue about the topic of the whole text.",
+              [
+                "S0100"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Explaining the tallest bar is the caption's function.",
+              [
+                "S0104"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Defining a special word is the glossary's function.",
+              [
+                "S0107"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Defining a word is the glossary's function.",
+              [
+                "S0107"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Explaining the tallest bar is the caption's function.",
+              [
+                "S0104"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The graph displays moon-shape counts so readers can compare them.",
+              [
+                "S0095",
+                "S0103"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Giving a whole-text clue is the title's function.",
+              [
+                "S0100"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Giving a whole-text clue is the title's function.",
+              [
+                "S0100"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Comparing moon shapes is the graph's function.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Defining a word is the glossary's function.",
+              [
+                "S0107"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The caption explicitly explains what the tallest bar means.",
+              [
+                "S0097",
+                "S0104"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Giving a whole-text clue is the title's function.",
+              [
+                "S0100"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The glossary defines the special word observe.",
+              [
+                "S0099",
+                "S0107"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Comparing moon shapes is the graph's function.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Explaining the tallest bar is the caption's function.",
+              [
+                "S0104"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0506",
+      "fingerprint": "bb455f294f957a86fcb0fa9b2946149a57f6452a208383ec1148ffd360cb51d4",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The graph counts the nights for each moon shape.",
+              [
+                "S0095",
+                "S0103"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "Neither the graph nor the displayed glossary explains route.",
+              [
+                "S0103",
+                "S0107"
+              ]
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "The source contains no bean bed and the graph concerns moon shapes.",
+              [
+                "S0103"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This directly states that the graph counts nights for each moon shape.",
+              [
+                "S0095"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states the glossary's job, not the graph-counting job from Part A.",
+              [
+                "S0099"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This explains only the tallest bar rather than directly stating that the graph counts each shape.",
+              [
+                "S0097"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0507",
+      "fingerprint": "2b14a845e9bfc32be6fdcc7c843b8297585d99250cbe81830f6b1da1c3531bf8",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "The title and source concern recycling, not moon notes.",
+              [
+                "S0121",
+                "S0114"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The title and source concern recycling, not a trail map.",
+              [
+                "S0121",
+                "S0114"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The title and opening sentence establish that the text is about sorting recyclables.",
+              [
+                "S0121",
+                "S0114"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The title and source concern recycling, not birds.",
+              [
+                "S0121",
+                "S0114"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0508",
+      "fingerprint": "ea6649d8e84349bbe84167fbfb512dc086473fa9513b5f6b548b5fbc0f178912",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "This section presents recycling-bin counts, not compost.",
+              [
+                "S0123",
+                "S0116"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The graph counts recycling bags, not weather.",
+              [
+                "S0123",
+                "S0124"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The section contains no trail sign.",
+              [
+                "S0123",
+                "S0116"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The heading directly previews the section about counting recycling bins.",
+              [
+                "S0123",
+                "S0116"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0509",
+      "fingerprint": "27ed629731e6cef9687217c01f08ca844af0848272dd803e421919b506c3c883",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The graph compares bag counts but does not depict the sorting station.",
+              [
+                "S0124"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The caption explains a graph bar rather than picturing the station.",
+              [
+                "S0125"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The title names the topic but does not picture the station.",
+              [
+                "S0121"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The illustration depicts and labels parts of the sorting station.",
+              [
+                "S0120",
+                "S0128"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0510",
+      "fingerprint": "c9b005cf16fd39da4defd49b113d73c0150c5bdb3ca8677e51dda96b3f376082",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This explains the illustration and does not state what the graph counts or what its tallest bar means.",
+              [
+                "S0120"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This explains that the tallest graph bar represents the paper bin.",
+              [
+                "S0118",
+                "S0125"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This names sorted materials but does not describe the graph's count or tallest bar.",
+              [
+                "S0114"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This states that the graph counts bags in each bin and compares the bars.",
+              [
+                "S0116",
+                "S0124"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0511",
+      "fingerprint": "59c9db201411ded9838503afd30245bc4b4929530f41db954ab7507e2cb17f26",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence explains the caption and graph rather than the illustration.",
+              [
+                "S0118"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This sentence directly tells what the illustration labels and shows.",
+              [
+                "S0120",
+                "S0128"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes the class activity, not what the illustration shows.",
+              [
+                "S0114"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes the graph, not the illustration.",
+              [
+                "S0116"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0512",
+      "fingerprint": "70adbf40a5fe814c1d8ff3e4d395f1bc44fb44b5e68a4a5fc96b6929395f4962",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Showing the station is the illustration's function.",
+              [
+                "S0128"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Explaining the tallest bar is the caption's function.",
+              [
+                "S0125"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The title gives a clue about the whole recycling text.",
+              [
+                "S0121"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Comparing bin counts is the graph's function.",
+              [
+                "S0124"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The graph displays bag counts for comparison across bins.",
+              [
+                "S0116",
+                "S0124"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Showing the station is the illustration's function.",
+              [
+                "S0128"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Giving a whole-text clue is the title's function.",
+              [
+                "S0121"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Explaining the tallest bar is the caption's function.",
+              [
+                "S0125"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Showing the station is the illustration's function.",
+              [
+                "S0128"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Comparing bin counts is the graph's function.",
+              [
+                "S0124"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The caption points to and explains the tallest bar.",
+              [
+                "S0118",
+                "S0125"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Giving a whole-text clue is the title's function.",
+              [
+                "S0121"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Explaining the tallest bar is the caption's function.",
+              [
+                "S0125"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Comparing bin counts is the graph's function.",
+              [
+                "S0124"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The illustration shows and labels the sorting station.",
+              [
+                "S0120",
+                "S0128"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Giving a whole-text clue is the title's function.",
+              [
+                "S0121"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0513",
+      "fingerprint": "b48aeabde652605e9e63573d5fc260b15901c549f6cde12b50c35e96d6d4b741",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The illustration's labels and arrows show how items are sorted.",
+              [
+                "S0120",
+                "S0128"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "No bean bed appears in the displayed source.",
+              [
+                "S0128"
+              ]
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "The displayed source has no glossary entry for observe.",
+              [
+                "S0128"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The labeled bin lids, arrows, and gloves directly support how the illustration shows sorting.",
+              [
+                "S0120",
+                "S0128"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The graph's largest count does not explain how the illustration shows sorting.",
+              [
+                "S0116",
+                "S0124"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The title identifies the topic but does not show how items are sorted.",
+              [
+                "S0121"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0514",
+      "fingerprint": "8ef6495e7294ebb705c81e38ac6d0c016901bece489214e52c37e7ae64f94078",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The title and opening sentence establish a text about compost changing into soil-like material.",
+              [
+                "S0143",
+                "S0136"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The source concerns compost, not birds.",
+              [
+                "S0143",
+                "S0136"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "Although a map appears, the whole text is about compost change rather than a trail map.",
+              [
+                "S0143",
+                "S0136"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The source concerns compost, not moon shapes.",
+              [
+                "S0143",
+                "S0136"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0515",
+      "fingerprint": "1c990d192903cf572a5546bca45a867c4886a901842b3839a97ab0094a449bdd",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "The section and map concern the compost bin, not the moon.",
+              [
+                "S0145",
+                "S0138"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The heading previews the section explaining where the compost bin is located.",
+              [
+                "S0145",
+                "S0138"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The section is not about counting recycling bins.",
+              [
+                "S0145",
+                "S0138"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The section contains no bird visitors.",
+              [
+                "S0145",
+                "S0138"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

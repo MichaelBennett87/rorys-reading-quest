@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0103",
+  "batchFileSha256": "96ba7b4c5154306cdde2a49d3cc829b671e00384f4fa935432b809d709678d7c",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId":"Q1205","fingerprint":"3d210a3113d8e563453be0f201904361c4cf9641961f40505303e3aeb2f41ad9","slots":[{"slotId":"response","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","CONTRADICTED","The facts form one connected daily sequence rather than an unrelated collection.",["S0003","S0009","S0006","S0010","S0011"]],
+        ["A2","DEFENSIBLE","Morning, next, noon, later, and finally organize the important actions by time.",["S0003","S0009","S0006","S0010","S0011","S0012"]],
+        ["A3","CONTRADICTED","The text does not explain one event causing another; it follows observation steps over time.",["S0003","S0009","S0006","S0010","S0011"]],
+        ["A4","CONTRADICTED","The passage does not organize ideas around similarities and differences between subjects.",["S0003","S0013"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1206","fingerprint":"b904fc9ed418f0bfc4bda7a846ba43c2231567abf7f0c27e1804e8b1dc0bf430","slots":[{"slotId":"response","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","DEFENSIBLE","The ordered morning, noon, and afternoon entries visually summarize the day's work.",["S0021","S0022","S0023","S0012"]],
+        ["A2","UNSUPPORTED","The timeline contains task times and descriptions, not authorship information.",["S0021","S0022","S0023"]],
+        ["A3","CONTRADICTED","The timeline adds an ordered summary of the observations.",["S0021","S0022","S0023"]],
+        ["A4","CONTRADICTED","The timeline summarizes selected steps but does not replace passage details such as instruments and the glossary.",["S0003","S0008","S0021","S0022","S0023"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1207","fingerprint":"229c9afe925d667954c407af84380425c9cb3a3cdf2763184062299a1c798f11","slots":[{"slotId":"response","defensible":["A1","A2","A4"],"ambiguity":"The prompt broadly asks for two details proving chronology, but A1 explicitly names ordered details while A2 and A4 are time-marked first/final actions; all three support the structure.","selectionContractValid":false,"options":[
+        ["A1","DEFENSIBLE","The conclusion explicitly states that the details are ordered across one day.",["S0013"]],
+        ["A2","DEFENSIBLE","Early in the morning marks an initial action in the time sequence.",["S0003"]],
+        ["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","The glossary definition is accurate but does not establish chronological organization.",["S0008"]],
+        ["A4","DEFENSIBLE","Finally marks the last observer action in the sequence.",["S0011"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1208","fingerprint":"ecf16bfa56d79c29738ae1f875a0b347145f9d275b76dc0512b49708fc13cf6b","slots":[{"slotId":"response","defensible":["A4"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","CONTRADICTED","The noon wind measurement occurs before the afternoon reading and final log step.",["S0006","S0010","S0011"]],
+        ["A2","CONTRADICTED","This is the early-morning first action.",["S0003"]],
+        ["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","The glossary sentence defines a tool and is not an observer step.",["S0008"]],
+        ["A4","DEFENSIBLE","The sentence explicitly marks placing all records in the log as the final action.",["S0011"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1209","fingerprint":"8ba00b7f7a7425672c01fc5e1ed92033d8cb63ff54f6e578287e84dd42ede829","slots":[
+        {"slotId":"row_1","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","DEFENSIBLE","This explains how the overall chronology organization orders tasks from first check to final log.",["S0003","S0011","S0013"]],
+          ["A2","UNSUPPORTED","Chronology supplies order, not the author's opinion about a best fact.",["S0003","S0011"]],
+          ["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This specifically explains the timeline feature rather than the overall organization row.",["S0021","S0022","S0023"]]
+        ]},
+        {"slotId":"row_2","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","DEFENSIBLE","This directly states how the displayed timeline helps readers follow the work.",["S0021","S0022","S0023"]],
+          ["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This explains the passage's chronology organization rather than the timeline feature row.",["S0003","S0011","S0013"]],
+          ["A3","UNSUPPORTED","The timeline gives ordered tasks, not an author opinion.",["S0021","S0022","S0023"]]
+        ]}
+      ],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1210","fingerprint":"21a55c8afcc583dc43eb0fad49d431e696d40ef0ba17179e412c096085840ee8","slots":[{"slotId":"response","defensible":["A4"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","CONTRADICTED","The facts are related through similarities and differences between two foxes.",["S0027","S0038"]],
+        ["A2","CONTRADICTED","Individual features have effects, but the passage as a whole is organized by comparing the foxes.",["S0029","S0034","S0038"]],
+        ["A3","CONTRADICTED","The passage does not follow events or steps through time.",["S0027","S0038"]],
+        ["A4","DEFENSIBLE","The text repeatedly presents meaningful similarities and differences between desert and Arctic foxes.",["S0027","S0029","S0034","S0036","S0038"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1211","fingerprint":"62bfa26ee6da4e246966b3eea5e72b45911ff2811c3014bab85fc3b45fff0f3b","slots":[{"slotId":"response","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","DEFENSIBLE","The side-by-side illustration labels each fox's ears and coat, making their differences visible.",["S0042","S0046","S0047","S0048"]],
+        ["A2","CONTRADICTED","The diagram adds focused comparisons but does not replace all passage information.",["S0027","S0036","S0042"]],
+        ["A3","UNSUPPORTED","The diagram provides animal labels, not author information.",["S0042","S0046","S0047","S0048"]],
+        ["A4","CONTRADICTED","Its labels add information about how ears and coats differ.",["S0042","S0046","S0047","S0048"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1212","fingerprint":"273148fb5d119d387226cabfee5d28200a6e3b8498c497b9a18ad29d99671a86","slots":[{"slotId":"response","defensible":["A1","A2","A3"],"ambiguity":"The broad prompt asks for two details proving comparison, but each fox's contrasting ear sentence and the explicit similarities-and-differences conclusion all establish comparison.","selectionContractValid":false,"options":[
+        ["A1","DEFENSIBLE","The Arctic fox's smaller heat-holding ears contrast directly with the desert fox detail.",["S0034"]],
+        ["A2","DEFENSIBLE","The conclusion explicitly says similarities and differences connect the two foxes to their homes.",["S0038"]],
+        ["A3","DEFENSIBLE","The desert fox's large heat-releasing ears contrast directly with the Arctic fox detail.",["S0029"]],
+        ["A4","PARTIALLY_TRUE_BUT_NONRESPONSIVE","The habitat definition supports vocabulary but does not establish comparison organization.",["S0033","S0049"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1213","fingerprint":"c3b0f3a721b7767b34a03fbe8d1f2686a7409d4d785326d93e640a2299423cbd","slots":[{"slotId":"response","defensible":["A4"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This states a desert-fox feature only, not a similarity between both foxes.",["S0029"]],
+        ["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This states an Arctic-fox feature only, not a similarity between both foxes.",["S0034"]],
+        ["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","The glossary definition does not compare the foxes.",["S0033"]],
+        ["A4","DEFENSIBLE","The sentence explicitly states that both foxes share sharp hearing used for the same purpose.",["S0036"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1214","fingerprint":"8189df8899736d0d692cb90483fb8ec2709f905194a91a94ae92b3ceff43dc16","slots":[
+        {"slotId":"row_1","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","UNSUPPORTED","Comparison organization does not supply an author opinion about a best fact.",["S0027","S0038"]],
+          ["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This specifically explains the labeled diagram rather than the overall comparison organization.",["S0042","S0046","S0047","S0048"]],
+          ["A3","DEFENSIBLE","This explains how comparison connects both foxes' features to their habitats.",["S0027","S0029","S0034","S0036","S0038"]]
+        ]},
+        {"slotId":"row_2","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","DEFENSIBLE","This directly explains how the side-by-side labeled diagram helps comparison.",["S0042","S0046","S0047","S0048"]],
+          ["A2","UNSUPPORTED","The diagram contains labels, not an author opinion.",["S0042","S0046","S0047","S0048"]],
+          ["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This explains the passage's comparison organization rather than the diagram row.",["S0027","S0038"]]
+        ]}
+      ],"projectionDefect":""
+    }
+  ]
+}

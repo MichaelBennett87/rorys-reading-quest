@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0012",
+  "batchFileSha256": "542660a56cdf65d596e47936a02519fc2d76ef3b3db188b03ec8a1bb02190f5d",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0307",
+      "fingerprint": "ae42953d355314ecaecd6fc7e136936335fc7814634f92da1557265bbd1881e9",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This sentence explicitly directs the learner to move slowly.",
+              [
+                "S0038"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This sentence describes checking a crate and smiling, not moving slowly.",
+              [
+                "S0040"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This sentence asks whether the pup drank and gives no movement direction.",
+              [
+                "S0041"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This shortened statement describes room temperature, not a direction to move slowly.",
+              [
+                "S0036"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0308",
+      "fingerprint": "9a6761d5a19973597c372e007a6a16a00860dcf2fdf083f09c0f212cda92b25a",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This noun phrase has no exclamation mark or excited-voice cue.",
+              [
+                "S0049"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This noun phrase has no exclamation mark or excited-voice cue.",
+              [
+                "S0045"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This list has commas but no exclamation mark.",
+              [
+                "S0050"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Please share! visibly ends with an exclamation mark and cues an excited voice.",
+              [
+                "S0049"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0313",
+      "fingerprint": "ef19481cc2a8c57fc0b54aa1d72925e782943314254fa8f38c97a2484d452000",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The child says the title may be misspelled and explicitly plans to check it.",
+              [
+                "S0056"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This approves the plan but does not state the child's spelling-check action.",
+              [
+                "S0058"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This instruction concerns a flyer and parade, not checking a title's spelling.",
+              [
+                "S0054"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This describes lining up and does not mention checking spelling.",
+              [
+                "S0059"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0314",
+      "fingerprint": "3ad636457727648d10b0bee638300a14ebb5fc948171d59be9a66a06c9d5b0bf",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "bubble ends with the consonant-le pattern ble.",
+              [
+                "S0054"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "misspell begins with the prefix mis- attached to spell.",
+              [
+                "S0056"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "quiet has none of the three requested word-part patterns.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "helpful ends with the suffix -ful.",
+              [
+                "S0058"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

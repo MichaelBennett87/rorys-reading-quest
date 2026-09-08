@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0076",
+  "batchFileSha256": "0cf9733a777935e3161d86036ae94d7b19f1d4a068acab4a5fec81caac579549",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0890",
+      "fingerprint": "81342e750d100403a5ffc9d1d0ee02d3dda37d8dc02fdbb25550cbaab44d52ba",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A3"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "Geo is the useful part shown in geography, not telephone.", ["S0005"]],
+          ["A2", "INCORRECT", "Bi- is the useful beginning shown in bicycle, not telephone.", ["S0007"]],
+          ["A3", "DEFENSIBLE", "The passage explicitly points out tele before the complete word telephone.", ["S0003"]],
+          ["A4", "INCORRECT", "Tri- is the useful beginning shown in triangle, not telephone.", ["S0009"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0891",
+      "fingerprint": "857cb2986777c8f1288c646ed85dce1a60d913cc3fd75c3a810f1b6e840f2374",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A4"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Geo and graph identify meaningful word parts, while the lesson distinguishes those boundaries from the pronounceable reading chunks requested here.", ["S0005"]],
+          ["A2", "INCORRECT", "A single letter plus the unsplit remainder does not follow the taught chunking routine.", ["S0005"]],
+          ["A3", "INCORRECT", "The complete unsplit word is not a set of reading chunks.", ["S0005"]],
+          ["A4", "DEFENSIBLE", "These chunks reconstruct geography and follow the lesson's pronunciation-focused chunking routine.", ["S0005"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0892",
+      "fingerprint": "7b4a7c7fa7534d0be471fc4c9dd91f44a8348b394d9319a72dc38833921009db",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A2", "A4"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "Telephone is a different complete word, not a chunk in bicycle.", ["S0003", "S0007"]],
+          ["A2", "DEFENSIBLE", "Bi is the first displayed reading chunk in bicycle.", ["S0007"]],
+          ["A3", "INCORRECT", "Triangle is a different complete word, not a chunk in bicycle.", ["S0007", "S0009"]],
+          ["A4", "DEFENSIBLE", "Cy is another displayed reading chunk in bicycle.", ["S0007"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0893",
+      "fingerprint": "2e6c4ab29fc7371314c804de07a40043ffcf088d2347186791294f93d662a75e",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A2"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "Angle is the remainder of triangle after tri-, not the requested beginning.", ["S0009"]],
+          ["A2", "DEFENSIBLE", "Tri is the exact useful beginning identified in triangle.", ["S0009"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0894",
+      "fingerprint": "d41e7b19802040bfe0dcaac329c4ab683d1830cc4d6094111173e433f8ed53d3",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Tri- belongs to triangle.", ["S0009"]],
+            ["A2", "INCORRECT", "Geo belongs to geography.", ["S0005"]],
+            ["A3", "DEFENSIBLE", "Tele is the primary useful part displayed in telephone.", ["S0003"]],
+            ["A4", "INCORRECT", "Bi- belongs to bicycle.", ["S0007"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Bi- belongs to bicycle.", ["S0007"]],
+            ["A2", "DEFENSIBLE", "Geo is the primary useful part displayed in geography.", ["S0005"]],
+            ["A3", "INCORRECT", "Tri- belongs to triangle.", ["S0009"]],
+            ["A4", "INCORRECT", "Tele belongs to telephone.", ["S0003"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Tri- belongs to triangle.", ["S0009"]],
+            ["A2", "DEFENSIBLE", "Bi- is the primary useful part displayed in bicycle.", ["S0007"]],
+            ["A3", "INCORRECT", "Tele belongs to telephone.", ["S0003"]],
+            ["A4", "INCORRECT", "Geo belongs to geography.", ["S0005"]]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Geo belongs to geography.", ["S0005"]],
+            ["A2", "INCORRECT", "Tele belongs to telephone.", ["S0003"]],
+            ["A3", "INCORRECT", "Bi- belongs to bicycle.", ["S0007"]],
+            ["A4", "DEFENSIBLE", "Tri- is the primary useful part displayed in triangle.", ["S0009"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0895",
+      "fingerprint": "54d0b08953b1c455976fbeb36e636c07f2c32742a2d132d936d699e8b9ffba35",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A3"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "Micro is the useful part displayed in microscope.", ["S0018"]],
+          ["A2", "INCORRECT", "Bio is the useful part displayed in biology.", ["S0016"]],
+          ["A3", "DEFENSIBLE", "The passage and teaching both identify photo as a useful part in photograph.", ["S0014"]],
+          ["A4", "INCORRECT", "Bi- is the useful beginning displayed in biplane.", ["S0020"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0896",
+      "fingerprint": "b703c61afad9f6859601699391d4a7212783aec5c5a1056c487cd63cf5c473da",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A2"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Bio and logy identify meaningful parts, while the lesson asks for the pronunciation-focused reading chunks.", ["S0016"]],
+          ["A2", "DEFENSIBLE", "These chunks reconstruct biology and follow the taught reading-chunk routine.", ["S0016"]],
+          ["A3", "INCORRECT", "A single letter plus the unsplit remainder does not follow the taught chunking routine.", ["S0016"]],
+          ["A4", "INCORRECT", "The complete unsplit word is not a set of reading chunks.", ["S0016"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0897",
+      "fingerprint": "717c602bfc9ad83f8b7fcfdc3b42f62bca88e457a502e322ab811a8a11bbdda3",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A2", "A4"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "Biplane is a different complete word, not a chunk in microscope.", ["S0018", "S0020"]],
+          ["A2", "DEFENSIBLE", "Mi is one of the reading chunks explicitly modeled for microscope.", ["S0018"]],
+          ["A3", "INCORRECT", "Photograph is a different complete word, not a chunk in microscope.", ["S0014", "S0018"]],
+          ["A4", "DEFENSIBLE", "Cro is another reading chunk explicitly modeled for microscope.", ["S0018"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0898",
+      "fingerprint": "67d098cc4fea8219c84323cbf110f8ef762b0baa17c48b7cac6200c46c461baf",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A2"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "Plane is the remainder of biplane after the requested beginning.", ["S0020"]],
+          ["A2", "DEFENSIBLE", "Bi is the useful beginning identified in biplane.", ["S0020"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0899",
+      "fingerprint": "d2f765e74c8f397a82d0d7bdd6421eba5bd491c41a766b91ce76472f4db2b698",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Bio belongs to biology.", ["S0016"]],
+            ["A2", "INCORRECT", "Micro belongs to microscope.", ["S0018"]],
+            ["A3", "DEFENSIBLE", "Photo is the primary useful part displayed in photograph.", ["S0014"]],
+            ["A4", "INCORRECT", "Bi- belongs to biplane.", ["S0020"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Bi- belongs to biplane.", ["S0020"]],
+            ["A2", "INCORRECT", "Micro belongs to microscope.", ["S0018"]],
+            ["A3", "DEFENSIBLE", "Bio is the primary useful part displayed in biology.", ["S0016"]],
+            ["A4", "INCORRECT", "Photo belongs to photograph.", ["S0014"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Bio belongs to biology.", ["S0016"]],
+            ["A2", "DEFENSIBLE", "Micro is the primary useful part displayed in microscope.", ["S0018"]],
+            ["A3", "INCORRECT", "Photo belongs to photograph.", ["S0014"]],
+            ["A4", "INCORRECT", "Bi- belongs to biplane.", ["S0020"]]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Bi- is the primary useful part displayed in biplane.", ["S0020"]],
+            ["A2", "INCORRECT", "Bio belongs to biology.", ["S0016"]],
+            ["A3", "INCORRECT", "Micro belongs to microscope.", ["S0018"]],
+            ["A4", "INCORRECT", "Photo belongs to photograph.", ["S0014"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

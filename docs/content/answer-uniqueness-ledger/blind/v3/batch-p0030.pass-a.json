@@ -1,0 +1,361 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0030",
+  "batchFileSha256": "0b051af496a11eedd0556bc2013ba4549c5d8d461b0974ab76acf5ac8563077e",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0689",
+      "fingerprint": "802c9685402f388c9e17e7d80c4ba712d1fc7ac6ca12bbc77e1d07fc72c1f18d",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "UNSUPPORTED",
+              "Cart is a separate passage word, not the base inside unpack.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "Supply is a separate passage word, not the base inside unpack.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Unpack contains the base word pack after the prefix un-.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "Bag is not contained in unpack.",
+              [
+                "S0003"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "UNSUPPORTED",
+              "Kind helper is not the base inside faster.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Faster contains the base word fast before -er.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "Careless choice is neither a base word nor part of faster.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "Before the walk is a phrase, not the base inside faster.",
+              [
+                "S0005"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "UNSUPPORTED",
+              "Build again is not the base inside helping.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "More than one is not the base inside helping.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "Slowly moving is not the base inside helping.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Helping contains the base word help before -ing.",
+              [
+                "S0007"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "UNSUPPORTED",
+              "Count wrongly is not the base inside slowly.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "Most tall is not the base inside slowly.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "Heat before is not the base inside slowly.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Slowly contains the base word slow before -ly.",
+              [
+                "S0009"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0699",
+      "fingerprint": "a4d57dffa065941ab8a37f9964972068b175b93c5ebe06245923e5a87cecbbde",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "Preheat does not mean more than one plant.",
+              [
+                "S0039"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "Preheat does not mean count wrongly.",
+              [
+                "S0039"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "In context, preheat means to heat the oven before the demonstration.",
+              [
+                "S0039",
+                "S0048"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "Preheat does not mean without care.",
+              [
+                "S0039"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "Preview does not mean build again.",
+              [
+                "S0046"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "Preview does not mean in a slow way.",
+              [
+                "S0046"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "Preview does not mean full of help.",
+              [
+                "S0046"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The preview card lets the class look at the ordered steps beforehand.",
+              [
+                "S0046"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "Helpful does not mean most tall.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Helpful means full of or giving help.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "Help happening now describes helping, not helpful.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "Helpful does not mean before the test.",
+              [
+                "S0043"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "Helped does not mean one box.",
+              [
+                "S0045"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "Helped does not mean slowly moving.",
+              [
+                "S0045"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The -ed form helped shows that the help already happened.",
+              [
+                "S0045"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "Helped does not mean again.",
+              [
+                "S0045"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

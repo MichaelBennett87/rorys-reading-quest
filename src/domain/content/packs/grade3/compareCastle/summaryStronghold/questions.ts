@@ -65,7 +65,7 @@ function bestSummary(record: SummaryTextRecord, lessonIndex: number, questionInd
 function essentialDetail(record: SummaryTextRecord, lessonIndex: number, questionIndex: number): ReadingQuestion {
   const key = important(record)[0]
   const minors = minor(record)
-  return mc(record, lessonIndex, questionIndex, 'Which detail is important enough to include in a summary?', key.statement,
+  return mc(record, lessonIndex, questionIndex, "Which detail most directly states the source's central problem or main idea?", key.statement,
     [minors[0].statement, minors[1].statement, 'The reader should add a new event that is not in the source.'],
     `${key.statement} ${key.importanceReason}`, key.evidenceIds, ['relevant-details', 'important-vs-minor', record.kind === 'literary' ? 'plot' : 'central-idea'])
 }

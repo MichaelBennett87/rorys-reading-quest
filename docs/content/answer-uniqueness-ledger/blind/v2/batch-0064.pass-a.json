@@ -1,0 +1,372 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0064",
+  "batchFileSha256": "58021e6863c4ca73b3e2c9f39a9942a942aa27496d65521e6b70e340c8a5f57f",
+  "reviewerThreadId": "01a07bc2-33d0-74f2-84b3-1f74918ca45e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0746",
+      "fingerprint": "2b1e3a473c03fec3c52415aebba8fcf524b2bb639f15ea60bf668df7e7cd56da",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This defines hollow, not shallow.", ["S0089"]],
+            ["A2", "INCORRECT", "This defines deep, the opposite of shallow.", ["S0085"]],
+            ["A3", "DEFENSIBLE", "The passage and glossary explicitly define shallow as not deep.", ["S0091", "S0102"]],
+            ["A4", "INCORRECT", "This defines migrate, not shallow.", ["S0087", "S0101"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0747",
+      "fingerprint": "c8520d98427c4744a367fc32cc9efd611835bf691b716cbe4e2beccd5c02b33a",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "General knowledge of depth can help, but the text supplies the explicit shallow-deep opposition.", []],
+            ["A2", "DEFENSIBLE", "The direct statement that shallow means not deep establishes an antonym relationship that most precisely reveals deep as far downward or having depth.", ["S0091", "S0085"]],
+            ["A3", "INCORRECT", "The displayed glossary defines shallow and migrate, not deep.", ["S0100", "S0101", "S0102"]],
+            ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The deep-soil sentence gives a useful example, but it is less exact than the explicit antonym relationship.", ["S0085", "S0091"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0748",
+      "fingerprint": "59fc9a456af91d740587adbc3690852317c68c2d6a209fc85562df380d0cc6e6",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The glossary defines migrate as moving from one place to another during a season.", ["S0100", "S0101"]],
+            ["A2", "INCORRECT", "This is the glossary meaning of shallow, not migrate.", ["S0102"]],
+            ["A3", "INCORRECT", "This defines hollow, not migrate.", ["S0089"]],
+            ["A4", "INCORRECT", "This defines deep, not migrate.", ["S0085"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0749",
+      "fingerprint": "9ce0629088d7d4a499d81744a588c0837ebb63202d2df78d66032194a13393ed",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [],
+          "ambiguity": "The prompt requires two clues for hollow, but none of the four visible choices supplies a readable clue for that word. A3 is the raw internal string g2-cc-meaning-clues-seed-travel-ground-sentence-6 instead of the learner-visible hollow-log sentence, while A1, A2, and A4 concern other words.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "INCORRECT", "This defines migrate and does not explain hollow.", ["S0087"]],
+            ["A2", "INCORRECT", "This illustrates shallow soil and does not explain hollow.", ["S0083"]],
+            ["A3", "INCORRECT", "This is a raw internal identifier, not a learner-readable sentence or clue.", []],
+            ["A4", "INCORRECT", "This illustrates deep soil and does not explain a hollow interior.", ["S0085"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0750",
+      "fingerprint": "bf55dbc1bdb14142815b81cbf9e2f9fb8d7630b69612887ef177e5c15d067531",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2", "A4"],
+          "ambiguity": "A2 uses deep in a context where greater depth gives roots more room, while A4 explicitly defines shallow as not deep and therefore supplies a direct antonym clue. Both sentences help determine deep, and the prompt gives no clear basis for selecting only one as best.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This uses shallow but does not itself state the shallow-deep relationship or directly use deep.", ["S0090"]],
+            ["A2", "DEFENSIBLE", "The sentence uses deep soil with the result that roots have more room to grow, providing a direct contextual meaning clue.", ["S0085"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This explains a result of shallow soil but does not state the relationship to deep as directly as A4.", ["S0083"]],
+            ["A4", "DEFENSIBLE", "The explicit definition of shallow as not deep directly establishes deep through an antonym relationship.", ["S0091"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0751",
+      "fingerprint": "8cc7cae704d3ee6b1778f8911375697a9c1342ed7e0cced0fc8a11a1c6a89d84",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This defines hollow, not shallow.", ["S0089"]],
+            ["A2", "INCORRECT", "This defines migrate, not shallow.", ["S0087"]],
+            ["A3", "INCORRECT", "This defines deep, the opposite of shallow.", ["S0085"]],
+            ["A4", "DEFENSIBLE", "The passage and glossary define shallow as not deep.", ["S0091", "S0102"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Deep means extending far downward or having substantial depth, consistent with soil giving roots more room.", ["S0085", "S0091"]],
+            ["A2", "INCORRECT", "This defines hollow, not deep.", ["S0089"]],
+            ["A3", "INCORRECT", "This defines shallow, the opposite of deep.", ["S0091"]],
+            ["A4", "INCORRECT", "This defines migrate, not deep.", ["S0087"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This defines hollow, not migrate.", ["S0089"]],
+            ["A2", "DEFENSIBLE", "The passage and glossary define migrate as seasonal movement from one place to another.", ["S0087", "S0101"]],
+            ["A3", "INCORRECT", "This defines shallow, not migrate.", ["S0091"]],
+            ["A4", "INCORRECT", "This defines deep, not migrate.", ["S0085"]]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This defines migrate, not hollow.", ["S0087"]],
+            ["A2", "INCORRECT", "This defines deep, not hollow.", ["S0085"]],
+            ["A3", "INCORRECT", "This defines shallow, not hollow.", ["S0091"]],
+            ["A4", "DEFENSIBLE", "A hollow object has an empty interior, consistent with a log providing an inside space for plants.", ["S0089"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0752",
+      "fingerprint": "d4e1f9e3df610c01c587449c3281aeb68eab8d04e0717ba98fb6c04459180d21",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The topic of the passage is not a word meaning for hollow.", ["S0093"]],
+            ["A2", "INCORRECT", "A random detail is not a meaning of hollow.", []],
+            ["A3", "INCORRECT", "A made-up meaning is not an answer to the word-meaning question.", []],
+            ["A4", "DEFENSIBLE", "Hollow means empty inside, fitting the log's interior space.", ["S0089"]]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "An unspecified unrelated sentence cannot support the hollow meaning.", []],
+            ["A2", "INCORRECT", "A glossary entry for another word would not support hollow.", ["S0100"]],
+            ["A3", "INCORRECT", "The title concerns seeds moving to new ground and does not establish hollow as empty inside.", ["S0093"]],
+            ["A4", "DEFENSIBLE", "A hollow log providing a warm place for plants implies usable empty space inside the log.", ["S0089"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0753",
+      "fingerprint": "516b2c76c23c0f83f8755285d9f3d1dec6a60a7a805e64094287e63f3e386cb8",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This defines surface, not narrow.", ["S0113", "S0123"]],
+            ["A2", "INCORRECT", "This defines marker, not narrow.", ["S0107", "S0124"]],
+            ["A3", "INCORRECT", "This defines settled, not narrow.", ["S0111"]],
+            ["A4", "DEFENSIBLE", "The passage directly defines narrow as not wide.", ["S0105", "S0112"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0754",
+      "fingerprint": "f4333bdf78eb5c6d2cd234e169aeba3142d0bc2e68689878384e6fd717f361da",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The trail sentence gives a useful example of a marker pointing, but it is less complete than the displayed glossary definition.", ["S0107"]],
+            ["A2", "DEFENSIBLE", "The glossary explicitly and completely defines marker as a sign or object that points to or identifies a place.", ["S0122", "S0124"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Familiarity with trail signs may help, but the text supplies an exact local definition.", []],
+            ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The marker's pointing function is an object-function relationship, but the glossary gives the most complete direct meaning.", ["S0107", "S0124"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0755",
+      "fingerprint": "3095b594f778c03f16087a17f3ccf4beaeb17ce19db1dda5e0cd98d40b6af572",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This defines settled, not surface.", ["S0111"]],
+            ["A2", "DEFENSIBLE", "The glossary defines surface as the top part of something.", ["S0122", "S0123"]],
+            ["A3", "INCORRECT", "This defines narrow, not surface.", ["S0105"]],
+            ["A4", "INCORRECT", "This defines marker, not surface.", ["S0124"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0756",
+      "fingerprint": "1ae1186ff736070ed02a1b00d82670c57a0e47bc9a2bf4f94e3998f3aab5f169",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "The prompt requires two clues for settled, but only A3 is a learner-readable supporting clue. A1 is displayed as the raw internal string g2-cc-meaning-clues-trail-map-helpers-sentence-6 rather than the hikers-settled sentence, while A2 and A4 concern narrow and surface.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "INCORRECT", "This is a raw internal identifier, not a learner-readable sentence or clue.", []],
+            ["A2", "INCORRECT", "This defines narrow and does not explain settled.", ["S0105"]],
+            ["A3", "DEFENSIBLE", "A rest stop is a place where stopping and getting comfortable for a break makes sense, supporting settled down.", ["S0107", "S0111"]],
+            ["A4", "INCORRECT", "This describes the trail surface and does not explain settled.", ["S0109"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0757",
+      "fingerprint": "fd62c7b8d7d4b16e801c9454563aa4bd21a407459a9cc45b20091480b94beda2",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This defines narrow, not marker.", ["S0105"]],
+            ["A2", "INCORRECT", "This contrasts path widths and does not explain marker.", ["S0112"]],
+            ["A3", "DEFENSIBLE", "A marker pointing to a rest stop directly demonstrates its signposting function.", ["S0107", "S0124"]],
+            ["A4", "INCORRECT", "This explains surface in the map context, not marker.", ["S0109"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0758",
+      "fingerprint": "8b79ddb90ac929d38ea18af4424860422e10a7578804641f4b0f2299774c50df",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This defines surface, not narrow.", ["S0123"]],
+            ["A2", "INCORRECT", "This defines marker, not narrow.", ["S0124"]],
+            ["A3", "DEFENSIBLE", "The passage defines narrow as not wide.", ["S0105"]],
+            ["A4", "INCORRECT", "This defines settled, not narrow.", ["S0111"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This defines narrow, not marker.", ["S0105"]],
+            ["A2", "DEFENSIBLE", "The glossary defines marker as a sign or object that points to or identifies a place.", ["S0124"]],
+            ["A3", "INCORRECT", "This defines settled, not marker.", ["S0111"]],
+            ["A4", "INCORRECT", "This defines surface, not marker.", ["S0123"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The passage and glossary define surface as the top part of something.", ["S0113", "S0123"]],
+            ["A2", "INCORRECT", "This defines narrow, not surface.", ["S0105"]],
+            ["A3", "INCORRECT", "This defines settled, not surface.", ["S0111"]],
+            ["A4", "INCORRECT", "This defines marker, not surface.", ["S0124"]]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This defines narrow, not settled.", ["S0105"]],
+            ["A2", "INCORRECT", "This defines marker, not settled.", ["S0124"]],
+            ["A3", "INCORRECT", "This defines surface, not settled.", ["S0123"]],
+            ["A4", "DEFENSIBLE", "Settled down for a break means stopped moving and became comfortable.", ["S0111"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0759",
+      "fingerprint": "330808ccd6ef1a04302927d4fcf31013b6c4534ba75744e6a155b654de41798b",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "A random detail is not a meaning of settled.", []],
+            ["A2", "INCORRECT", "A made-up meaning does not answer the word-meaning question.", []],
+            ["A3", "INCORRECT", "The passage topic is not the meaning of settled.", ["S0115"]],
+            ["A4", "DEFENSIBLE", "In context, settled down for a break means stopped moving and got comfortable.", ["S0111"]]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The sentence directly uses settled down for a break, showing the hikers stopped and became comfortable.", ["S0111"]],
+            ["A2", "INCORRECT", "The title only previews trail-map help and does not explain settled.", ["S0115"]],
+            ["A3", "INCORRECT", "A glossary entry for another word cannot support settled.", ["S0122"]],
+            ["A4", "INCORRECT", "An unspecified unrelated sentence cannot support the meaning.", []]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

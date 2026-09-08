@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "stage": "SECOND_PASS_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-s0022",
+  "batchFileSha256": "5cfd2bed3ec9acf8f15099724cc00ab86b8f73927fd3f9e741526c7f9975ea26",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "independentReviewer": false,
+  "records": [
+    {
+      "auditId": "Q0060",
+      "fingerprint": "f3579d43ac2e8415e66270f5476510a9bcbe8d69ec9bc9cb22c181cb3bc5a4fd",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Only A3 states that the announcer's voice told the story; the other sentences describe the market and a choice."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0061",
+      "fingerprint": "fc7ee8da80cc1486da2924ffb39e732ace47c9b1467164600072e630797d66bf",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Boy ends with the vowel-team spelling oy, not oi or ou."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0070",
+      "fingerprint": "4bb10e9116bbdb8d722025ecea3b472235efada71015d34dd0609cfaacf616e5",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Choice is the only option spelled with oi and shares the /oi/ vowel sound in noise. Toy uses oy; round and cow use other patterns."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0073",
+      "fingerprint": "6512ad35eb51fe9441155f65c4402db6323a233a1fd8ee9dd73583ad926b98d6",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Round, cow, choice, and toy all occur in the cleanup passage and respectively show ou, ow, oi, and oy Trail 2 patterns."
+        }
+      ]
+    }
+  ]
+}

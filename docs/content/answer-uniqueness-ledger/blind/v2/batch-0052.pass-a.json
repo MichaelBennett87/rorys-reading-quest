@@ -1,0 +1,784 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0052",
+  "batchFileSha256": "bcf0bd29f7328c82cb781766acaf28d89c0d4e59d50b2671e9a0354406ac316b",
+  "reviewerThreadId": "01a07bc1-d815-7c71-b972-e3c829df1777",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0608",
+      "fingerprint": "3d3a5c2d180d7e99ef85a5417c3d641297d095c9eac68459f18826736793ba58",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence is the author opinion about the flowers?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2"
+          ],
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is a checkable description of the illustration, not an opinion.",
+              [
+                "S0034",
+                "S0039"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Should signals the author recommendation to include more native flowers.",
+              [
+                "S0033"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The bee-visit comparison is presented as an observation from the passage.",
+              [
+                "S0025"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a topic phrase, not a sentence expressing an opinion.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0609",
+      "fingerprint": "aea6ea943772a0f5744a8362477cdd4aebe386b59747dfa86ce8e32ce8c678c0",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail best supports the opinion that the garden should include more native flowers?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2"
+          ],
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a different opinion about plant placement, not evidence for adding native flowers.",
+              [
+                "S0030"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "More bee visits to native than nonnative flowers directly supports including more native flowers.",
+              [
+                "S0025"
+              ]
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "The existence of sunny and shady beds does not compare or justify native flowers.",
+              [
+                "S0031"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "Fewer blooms and more leaves in shade concerns light conditions, not native versus nonnative flowers.",
+              [
+                "S0035"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0610",
+      "fingerprint": "136b9d1c09dab9e6cbe3087cd4c6b1260d9fbbf9d615369f41dd52baffaeedb2",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details that help explain the opinion about plant placement.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2",
+            "A3"
+          ],
+          "defensible": [
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Bees near native flowers concerns flower type, not where tall and short plants should be placed.",
+              [
+                "S0034",
+                "S0039"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Fewer blooms in the shady bed supports protecting shorter plants from excess shade.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Tall plants casting shadows directly explains why their placement affects shorter plants’ sun.",
+              [
+                "S0032"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Naming sunny and shady beds supplies setting but does not explain the placement recommendation.",
+              [
+                "S0031"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0611",
+      "fingerprint": "de027b8ec3919ded82dcd10bd5e0a2216fced953bc328106ee30f197a4f62e2c",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that gives a strong clue about why the author wants more native flowers.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "UNSUPPORTED",
+              "The two bed types do not explain a preference for native flowers.",
+              [
+                "S0031"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "Shade-related blooms and leaves do not compare native and nonnative flowers.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The greater number of bee visits to native flowers directly supports wanting more of them.",
+              [
+                "S0025"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a separate plant-placement recommendation, not evidence about native flowers.",
+              [
+                "S0030"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0612",
+      "fingerprint": "b802eca20c467d5f3b3f7516726957a3e0744601e7d7bde9c9695fafee1ca2a0",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "prompt": "What is the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one bee observation rather than the topic label.",
+              [
+                "S0025"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the author opinion rather than the topic label.",
+              [
+                "S0033"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Native flowers names the subject emphasized by the title, bee evidence, and recommendation.",
+              [
+                "S0036",
+                "S0025",
+                "S0033"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "prompt": "What is the central idea?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one flower recommendation, not the complete idea covering flowers and placement.",
+              [
+                "S0033"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one shadow detail rather than the passage-wide central idea.",
+              [
+                "S0032"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This combines the passage’s native-flower evidence with its placement-and-sunlight evidence.",
+              [
+                "S0025",
+                "S0032",
+                "S0033",
+                "S0030"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "prompt": "Which sentence is the opinion about flowers?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is a checkable observation about the shady bed.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a central-idea summary rather than the author’s explicit flower recommendation.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Should identifies the author recommendation about adding native flowers.",
+              [
+                "S0033"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "prompt": "Which sentence is another true detail?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1"
+          ],
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This is a factual observation stated in the passage.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a central-idea summary rather than a source detail.",
+              []
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a recommendation about what should happen, not a checkable factual detail.",
+              [
+                "S0030"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0613",
+      "fingerprint": "44f2dd37b4987e68d609d5998c55171720733cc8298bc30477f05426e7bb1936",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice is the author opinion rather than the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is an author-purpose statement, not the author’s opinion or the topic.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This is a checkable explanation of two legend symbols.",
+              [
+                "S0056"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Should states the author recommendation for clearer symbols.",
+              [
+                "S0050"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the topic phrase, not an opinion.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0614",
+      "fingerprint": "04ccdb51455709cfa6419d0daae6ccbd2c813c396416af156a838a9c2cba8447",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice is the author opinion rather than the central idea?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A4"
+          ],
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is a factual description of what a legend does.",
+              [
+                "S0052"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states the benefit and contributes to the central idea, but it is not the explicit recommendation.",
+              [
+                "S0058"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is an author-purpose statement rather than an opinion.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Should identifies the author recommendation for clearer trail-map symbols.",
+              [
+                "S0050"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0615",
+      "fingerprint": "999a32940932ff6bc11dbde28ff4ae32060a9ec7cb9a40ca89f941db57463874",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details that help explain why the author wants clearer symbols.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1",
+            "A3",
+            "A4"
+          ],
+          "defensible": [
+            "A1",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "A1 identifies the confusion, while both A3 and A4 show the clarifying legend/key response; all three reasonably explain the recommendation, exceeding the requested pair.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The family’s inability to identify the rest-stop symbol directly shows the clarity problem.",
+              [
+                "S0054"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The direction of one path marker does not show that map symbols are unclear.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "A legend connecting symbols to meanings directly shows how clarity helps visitors.",
+              [
+                "S0052"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The ranger adding a key is a direct response that supports the need to clarify symbols.",
+              [
+                "S0055"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0616",
+      "fingerprint": "32248058063a31b6ef534d9de083cf7ad4ddcf00c3eaf87781ad7e74dc795f4c",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that gives a strong clue about the opinion.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1",
+            "A3"
+          ],
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "A1 shows the problem caused by unclear symbols and A3 states the benefit of clear symbols; both strongly support the recommendation.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The family pausing because the rest-stop symbol was unclear directly supports the need for clearer symbols.",
+              [
+                "S0054"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This explains two symbol meanings but does not state the problem or broad benefit as strongly.",
+              [
+                "S0056"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This directly states that clear symbols prevent visitors from getting turned around.",
+              [
+                "S0058"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "Listing the symbols does not show why they should be clearer.",
+              [
+                "S0048"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0617",
+      "fingerprint": "ae2f459e32cbdc05a8fc842a1bf33157d5190c8b488a30af8ebb677b39352291",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "prompt": "What is the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1"
+          ],
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Trail map symbols names the subject established by the title and passage.",
+              [
+                "S0059",
+                "S0048"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is an author-purpose statement rather than the topic label.",
+              []
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the author opinion rather than the topic label.",
+              [
+                "S0050"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "prompt": "Which sentence is the opinion?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is a checkable path-marker detail.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is an author-purpose statement rather than the opinion.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Should states the author recommendation for clearer symbols.",
+              [
+                "S0050"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "prompt": "Which sentence is the purpose?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1"
+          ],
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This explains why the author presents symbols, a legend, and visitor-navigation details.",
+              [
+                "S0048",
+                "S0052",
+                "S0058"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the author opinion rather than the purpose.",
+              [
+                "S0050"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one factual legend detail rather than the purpose.",
+              [
+                "S0052"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "prompt": "Which sentence is another true detail?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2"
+          ],
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is an author-purpose statement rather than a source detail.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The passage states that the river path marker bends left.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the author recommendation already classified as opinion.",
+              [
+                "S0050"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

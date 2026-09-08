@@ -1,0 +1,610 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0029",
+  "batchFileSha256": "0116a2f57ea6a7c232d007a2a5268c3f8fde3fe7f9baab5789ddfcd6e92f9c02",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0646",
+      "fingerprint": "d0954a277dfedb2625d079f4e6a7f0b5a3083b26e3eefb4ce7a4e12d85af2264",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "One scene is an example used to show the story's lesson.",
+              []
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Measuring length does not use an example to show an idea.",
+              []
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Ordering steps uses sequence rather than an example.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "One sample is an example used to show how the chart works.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0651",
+      "fingerprint": "196ab0da84dfb6718b89e175f40ae54fc07de2241eaf8f7ab0c22784ede3502c",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Measuring height does not arrange actions or events in order.",
+              []
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Describing colors does not show an order.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Ordering story events uses sequence.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Listing planting steps first to last uses sequence.",
+              [
+                "S0025"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0656",
+      "fingerprint": "8cf827fefdfc93edd4470d5a339969f5261fc2bf4163acdf044cb3bea720dd3c",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Comparing characters does not measure length or height.",
+              []
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Naming colors does not measure length or height.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Finding a sprout's height is a height measurement.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Using a ruler to find line length is a length measurement.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0657",
+      "fingerprint": "09cc8377de17d9e762458577dde001e080f996d5d13372873c921c59b87ece62",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence concerns note storage and does not use category.",
+              [
+                "S0047"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This correctly uses category to mean a group of similar plants.",
+              [
+                "S0045"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence describes leaves and does not use category.",
+              [
+                "S0039"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence concerns tracking changes and does not use category.",
+              [
+                "S0046"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0661",
+      "fingerprint": "0b21e675db7d00dc27983ffd8c90aa19efbfca3e9aa79615fd242a6669f7aec7",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Describing a finished picture concerns what already exists.",
+              []
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Recording what already happened is not a prediction.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Saying what may happen next from clues is a prediction.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Saying how a sprout may change from observations is a prediction.",
+              [
+                "S0061"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0667",
+      "fingerprint": "b06d8b5a6b4dc2785c96d895e19ae3ddce9e85366db83d001ad0d70395de4fa2",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Measuring a table does not focus on a small fact that adds information.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The task explicitly adds a small fact to clarify a report.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The task explicitly identifies a small supporting fact.",
+              [
+                "S0081"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Ordering events concerns sequence, not a detail.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0670",
+      "fingerprint": "0ad201e1ab09d2e1b8a9cd84d36de236427b565f793605bf9370e21bb5f60165",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "A fact may be true but is not specifically a sample used to show an idea.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Example means a sample used to show an idea.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Topic names a subject rather than a sample.",
+              []
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Detail means a small fact rather than necessarily a sample.",
+              [
+                "S0081"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "Example is an appropriate school word.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This defines detail, not example.",
+              [
+                "S0081"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This defines topic, not example.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This accurately explains why example fits the sample-based task.",
+              [
+                "S0079"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0674",
+      "fingerprint": "382f6fb582601f0e1c676d02420ca7223ae88b8f0cc56d2daecd37a8452e22be",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "One scene is an example used to show a lesson.",
+              []
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Ordering steps uses sequence rather than an example.",
+              []
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Measuring length does not use an example to show an idea.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "One sample is an example used to show how a chart works.",
+              [
+                "S0009"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0677",
+      "fingerprint": "44c14c537c5235e12927e5cebae31181ac7305c32453f1f4d65d556aa9cf6dc6",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Fact means something true, not what happens afterward.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Result means what happens after an action.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Detail means a small fact, not an outcome.",
+              []
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Topic names a subject, not an outcome.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes detail rather than result.",
+              []
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "Result is an appropriate school word.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This accurately explains that a result follows an action.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes topic rather than result.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0681",
+      "fingerprint": "cb160307e6a62376ce544c26b2c4d3473d73aae0ed76e13362272322568ea192",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "Predicting concerns what may happen before the outcome.",
+              []
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Listing materials concerns preparation before an action.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This task explicitly asks what happened after an experiment.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This task explicitly asks what happened after a character's action.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0684",
+      "fingerprint": "c78e75d08f2949b671c11c5cf98b2669cbcdbaae7ac8f0b71adc041f5d716dc4",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Fact means something known to be true, not a future guess.",
+              []
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Topic names a subject, not a future guess.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Predict means to make a reasoned guess about what may happen.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Detail means a small fact, not a future guess.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes topic rather than predict.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This accurately defines predict for the task.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "Predict is an appropriate school word.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes detail rather than predict.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

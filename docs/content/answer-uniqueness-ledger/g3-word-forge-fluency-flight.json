@@ -1,0 +1,2738 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "question-g3-fluency-flight-punctuation-pilot-1",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-44f4380c0a93d210",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "f5242b98d89ccb48aae3d5d08acfbac6bb7453779fa7811a9e67f2389c6deaa2",
+        "conclusionsSha256": "8fa8e33af91b5f79da246f6d7c4560d9eeb01ca21a36ed45973444ac99db54aa",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0086.pass-a.json",
+        "receiptSha256": "8fa8e33af91b5f79da246f6d7c4560d9eeb01ca21a36ed45973444ac99db54aa",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which mark tells the reader to pause briefly after \"Before sunrise\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "hilltop-comma"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "hilltop-comma"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "hilltop-question",
+              "verdict": "INCORRECT",
+              "rationale": "A question mark signals a question rather than the brief pause in the target sentence.",
+              "evidenceIds": [
+                "hilltop-2",
+                "hilltop-3"
+              ]
+            },
+            {
+              "answerId": "hilltop-exclamation",
+              "verdict": "INCORRECT",
+              "rationale": "An exclamation mark signals strong feeling rather than the brief pause in the target sentence.",
+              "evidenceIds": [
+                "hilltop-4",
+                "hilltop-5"
+              ]
+            },
+            {
+              "answerId": "hilltop-comma",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The comma in the target sentence signals the brief pause.",
+              "evidenceIds": [
+                "hilltop-2"
+              ]
+            },
+            {
+              "answerId": "hilltop-period",
+              "verdict": "INCORRECT",
+              "rationale": "A period makes a full stop rather than the brief pause within the target sentence.",
+              "evidenceIds": [
+                "hilltop-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-punctuation-pilot-2",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-f820b23c339fcf60",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "f5242b98d89ccb48aae3d5d08acfbac6bb7453779fa7811a9e67f2389c6deaa2",
+        "conclusionsSha256": "8fa8e33af91b5f79da246f6d7c4560d9eeb01ca21a36ed45973444ac99db54aa",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0086.pass-a.json",
+        "receiptSha256": "8fa8e33af91b5f79da246f6d7c4560d9eeb01ca21a36ed45973444ac99db54aa",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that should sound like a question.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "hilltop-question-sentence"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "hilltop-question-sentence"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "hilltop-question-sentence",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The quoted sentence asks whether the glider is ready and ends with a question mark.",
+              "evidenceIds": [
+                "hilltop-3"
+              ]
+            },
+            {
+              "answerId": "hilltop-landing-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "The glider statement reports an action and is not a question.",
+              "evidenceIds": [
+                "hilltop-6"
+              ]
+            },
+            {
+              "answerId": "hilltop-breath-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence about pausing reports an action and is not a question.",
+              "evidenceIds": [
+                "hilltop-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-punctuation-pilot-3",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-714f77f8a4cf48c4",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "f5242b98d89ccb48aae3d5d08acfbac6bb7453779fa7811a9e67f2389c6deaa2",
+        "conclusionsSha256": "8fa8e33af91b5f79da246f6d7c4560d9eeb01ca21a36ed45973444ac99db54aa",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0037.second-pass.json",
+        "receiptSha256": "3f2a49091228e1f384a219aab24dade24ae2f2e0e27c8798c8d247807d5e8704",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two quoted lines that should be read with strong energy.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "hilltop-ready-line",
+            "hilltop-now-line"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "hilltop-now-line",
+            "hilltop-ready-line"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "hilltop-question-line",
+              "verdict": "INCORRECT",
+              "rationale": "The line is a question; its question mark signals asking rather than the strong exclamatory energy requested.",
+              "evidenceIds": [
+                "hilltop-3"
+              ]
+            },
+            {
+              "answerId": "hilltop-now-line",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The short command ends with an exclamation mark and is read with strong energy.",
+              "evidenceIds": [
+                "hilltop-5"
+              ]
+            },
+            {
+              "answerId": "hilltop-ready-line",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The launch response ends with an exclamation mark and is read with strong energy.",
+              "evidenceIds": [
+                "hilltop-4"
+              ]
+            },
+            {
+              "answerId": "hilltop-marker-line",
+              "verdict": "INCORRECT",
+              "rationale": "The marker sentence is narration and does not contain an energetic quoted line.",
+              "evidenceIds": [
+                "hilltop-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-punctuation-pilot-4",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-7f69188d58a13cc1",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "f5242b98d89ccb48aae3d5d08acfbac6bb7453779fa7811a9e67f2389c6deaa2",
+        "conclusionsSha256": "8fa8e33af91b5f79da246f6d7c4560d9eeb01ca21a36ed45973444ac99db54aa",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0086.pass-a.json",
+        "receiptSha256": "8fa8e33af91b5f79da246f6d7c4560d9eeb01ca21a36ed45973444ac99db54aa",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "hilltop-comma-row",
+          "prompt": "comma",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "hilltop-table-comma-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "hilltop-table-comma-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "hilltop-table-comma-stop",
+              "verdict": "INCORRECT",
+              "rationale": "A comma does not require a full stop.",
+              "evidenceIds": [
+                "hilltop-1",
+                "hilltop-2"
+              ]
+            },
+            {
+              "answerId": "hilltop-table-comma-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A comma signals a brief pause.",
+              "evidenceIds": [
+                "hilltop-1",
+                "hilltop-2"
+              ]
+            },
+            {
+              "answerId": "hilltop-table-comma-energy",
+              "verdict": "INCORRECT",
+              "rationale": "A comma does not by itself turn a sentence into a question.",
+              "evidenceIds": [
+                "hilltop-1",
+                "hilltop-2"
+              ]
+            },
+            {
+              "answerId": "hilltop-table-comma-question",
+              "verdict": "INCORRECT",
+              "rationale": "A comma does not signal the strong feeling of an exclamation mark.",
+              "evidenceIds": [
+                "hilltop-1",
+                "hilltop-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "hilltop-period-row",
+          "prompt": "period",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "hilltop-table-period-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "hilltop-table-period-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "hilltop-table-period-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A period marks a full stop at the end of a statement.",
+              "evidenceIds": [
+                "hilltop-6",
+                "hilltop-2"
+              ]
+            },
+            {
+              "answerId": "hilltop-table-period-question",
+              "verdict": "INCORRECT",
+              "rationale": "A brief internal pause is the comma behavior, not the period behavior.",
+              "evidenceIds": [
+                "hilltop-6",
+                "hilltop-2"
+              ]
+            },
+            {
+              "answerId": "hilltop-table-period-energy",
+              "verdict": "INCORRECT",
+              "rationale": "A period does not mark a question.",
+              "evidenceIds": [
+                "hilltop-6",
+                "hilltop-2"
+              ]
+            },
+            {
+              "answerId": "hilltop-table-period-pause",
+              "verdict": "INCORRECT",
+              "rationale": "A period does not signal strong feeling by itself.",
+              "evidenceIds": [
+                "hilltop-6",
+                "hilltop-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "hilltop-question-row",
+          "prompt": "question mark",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "hilltop-table-question-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "hilltop-table-question-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "hilltop-table-question-stop",
+              "verdict": "INCORRECT",
+              "rationale": "A question mark does not merely mark an ordinary full-stop statement.",
+              "evidenceIds": [
+                "hilltop-3"
+              ]
+            },
+            {
+              "answerId": "hilltop-table-question-pause",
+              "verdict": "INCORRECT",
+              "rationale": "A question mark does not signal the comma's brief pause.",
+              "evidenceIds": [
+                "hilltop-3"
+              ]
+            },
+            {
+              "answerId": "hilltop-table-question-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A question mark tells the reader to read the line as a question.",
+              "evidenceIds": [
+                "hilltop-3"
+              ]
+            },
+            {
+              "answerId": "hilltop-table-question-energy",
+              "verdict": "INCORRECT",
+              "rationale": "Strong exclamatory feeling is not the defining role of a question mark here.",
+              "evidenceIds": [
+                "hilltop-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "hilltop-exclamation-row",
+          "prompt": "exclamation mark",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "hilltop-table-exclamation-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "hilltop-table-exclamation-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "hilltop-table-exclamation-pause",
+              "verdict": "INCORRECT",
+              "rationale": "An exclamation mark does more than mark an ordinary full stop in this lesson.",
+              "evidenceIds": [
+                "hilltop-4",
+                "hilltop-5"
+              ]
+            },
+            {
+              "answerId": "hilltop-table-exclamation-question",
+              "verdict": "INCORRECT",
+              "rationale": "An exclamation mark does not signal the comma's brief pause.",
+              "evidenceIds": [
+                "hilltop-4",
+                "hilltop-5"
+              ]
+            },
+            {
+              "answerId": "hilltop-table-exclamation-stop",
+              "verdict": "INCORRECT",
+              "rationale": "An exclamation mark does not turn the line into a question.",
+              "evidenceIds": [
+                "hilltop-4",
+                "hilltop-5"
+              ]
+            },
+            {
+              "answerId": "hilltop-table-exclamation-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "An exclamation mark signals strong feeling or energy in the quoted launch lines.",
+              "evidenceIds": [
+                "hilltop-4",
+                "hilltop-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-phrase-formation-1",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-13205fdb2be1013f",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "8b446897bed91810c30a4a2ba2d8a95ce130e2582a1a1c1b8770e2bae7f91190",
+        "conclusionsSha256": "8ca6ce50684b83c54651bdb8e31823fe96ac8786db7d1281651ba6ab91de5d37",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0087.pass-a.json",
+        "receiptSha256": "8ca6ce50684b83c54651bdb8e31823fe96ac8786db7d1281651ba6ab91de5d37",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which words should be read together because they name one complete action?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "glider-lift-phrase"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "glider-lift-phrase"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "glider-time-fragment",
+              "verdict": "INCORRECT",
+              "rationale": "A short is an incomplete phrase and does not name a complete action.",
+              "evidenceIds": [
+                "glider-3"
+              ]
+            },
+            {
+              "answerId": "glider-lift-phrase",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Helps create lift keeps the helping verb and action together as one complete action.",
+              "evidenceIds": [
+                "glider-3"
+              ]
+            },
+            {
+              "answerId": "glider-floor-fragment",
+              "verdict": "INCORRECT",
+              "rationale": "The floor for crosses phrase boundaries and does not name an action.",
+              "evidenceIds": [
+                "glider-3"
+              ]
+            },
+            {
+              "answerId": "glider-shape-fragment",
+              "verdict": "INCORRECT",
+              "rationale": "The wing's is an incomplete noun phrase and does not name an action.",
+              "evidenceIds": [
+                "glider-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-phrase-formation-2",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-f8fcfbdf51f352eb",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "8b446897bed91810c30a4a2ba2d8a95ce130e2582a1a1c1b8770e2bae7f91190",
+        "conclusionsSha256": "8ca6ce50684b83c54651bdb8e31823fe96ac8786db7d1281651ba6ab91de5d37",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0087.pass-a.json",
+        "receiptSha256": "8ca6ce50684b83c54651bdb8e31823fe96ac8786db7d1281651ba6ab91de5d37",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which grouping keeps the opening idea and the air movement clear?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "glider-grouping-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "glider-grouping-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "glider-grouping-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The comma after forward closes the complete opening idea before the air-movement clause.",
+              "evidenceIds": [
+                "glider-2"
+              ]
+            },
+            {
+              "answerId": "glider-grouping-4",
+              "verdict": "INCORRECT",
+              "rationale": "Pausing after As separates the opening connector from the idea it introduces.",
+              "evidenceIds": [
+                "glider-2"
+              ]
+            },
+            {
+              "answerId": "glider-grouping-3",
+              "verdict": "INCORRECT",
+              "rationale": "Pausing after glider splits the subject from its action within the opening idea.",
+              "evidenceIds": [
+                "glider-2"
+              ]
+            },
+            {
+              "answerId": "glider-grouping-2",
+              "verdict": "INCORRECT",
+              "rationale": "Pausing after the splits a determiner from its noun.",
+              "evidenceIds": [
+                "glider-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-phrase-formation-3",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-2aeff2146e2e4150",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "8b446897bed91810c30a4a2ba2d8a95ce130e2582a1a1c1b8770e2bae7f91190",
+        "conclusionsSha256": "8ca6ce50684b83c54651bdb8e31823fe96ac8786db7d1281651ba6ab91de5d37",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0087.pass-a.json",
+        "receiptSha256": "8ca6ce50684b83c54651bdb8e31823fe96ac8786db7d1281651ba6ab91de5d37",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence with an opening phrase followed by a comma.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "glider-opening-sentence"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "glider-opening-sentence"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "glider-first-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence has no opening phrase followed by a comma.",
+              "evidenceIds": [
+                "glider-1"
+              ]
+            },
+            {
+              "answerId": "glider-opening-sentence",
+              "verdict": "DEFENSIBLE",
+              "rationale": "As the glider travels forward is an opening phrase followed by a comma.",
+              "evidenceIds": [
+                "glider-2"
+              ]
+            },
+            {
+              "answerId": "glider-balanced-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence has no opening phrase followed by a comma.",
+              "evidenceIds": [
+                "glider-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-phrase-formation-4",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-77932df88b81053c",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "8b446897bed91810c30a4a2ba2d8a95ce130e2582a1a1c1b8770e2bae7f91190",
+        "conclusionsSha256": "8ca6ce50684b83c54651bdb8e31823fe96ac8786db7d1281651ba6ab91de5d37",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0037.second-pass.json",
+        "receiptSha256": "3f2a49091228e1f384a219aab24dade24ae2f2e0e27c8798c8d247807d5e8704",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two words after which the reader makes a full stop in the first two sentences.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "glider-wings-stop",
+            "glider-wing-stop"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "glider-wing-stop",
+            "glider-wings-stop"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "glider-because-middle",
+              "verdict": "INCORRECT",
+              "rationale": "Because occurs inside the first sentence and is not followed by ending punctuation.",
+              "evidenceIds": [
+                "glider-1"
+              ]
+            },
+            {
+              "answerId": "glider-wing-stop",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Wing is followed by the period that ends the second sentence.",
+              "evidenceIds": [
+                "glider-2"
+              ]
+            },
+            {
+              "answerId": "glider-wings-stop",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Wings is followed by the period that ends the first sentence.",
+              "evidenceIds": [
+                "glider-1"
+              ]
+            },
+            {
+              "answerId": "glider-forward-comma",
+              "verdict": "INCORRECT",
+              "rationale": "Forward is followed by a comma, which marks a brief pause rather than a full stop.",
+              "evidenceIds": [
+                "glider-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-dialogue-voices-1",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-2406aa4bb51d44df",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "8b446897bed91810c30a4a2ba2d8a95ce130e2582a1a1c1b8770e2bae7f91190",
+        "conclusionsSha256": "8ca6ce50684b83c54651bdb8e31823fe96ac8786db7d1281651ba6ab91de5d37",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0087.pass-a.json",
+        "receiptSha256": "8ca6ce50684b83c54651bdb8e31823fe96ac8786db7d1281651ba6ab91de5d37",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which quoted line should sound curious because it asks a question?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "map-breeze-question"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "map-breeze-question"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "map-breeze-question",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Could the breeze have moved it asks a question and supports a curious or thoughtful question voice.",
+              "evidenceIds": [
+                "map-5"
+              ]
+            },
+            {
+              "answerId": "map-compass-statement",
+              "verdict": "INCORRECT",
+              "rationale": "I placed it beside the compass is a calm statement, not a question.",
+              "evidenceIds": [
+                "map-2"
+              ]
+            },
+            {
+              "answerId": "map-not-there-exclaim",
+              "verdict": "INCORRECT",
+              "rationale": "It isn't there now is an exclamation of surprise, not a question.",
+              "evidenceIds": [
+                "map-3"
+              ]
+            },
+            {
+              "answerId": "map-mystery-exclaim",
+              "verdict": "INCORRECT",
+              "rationale": "The mystery line is an exclamation celebrating the discovery, not a question.",
+              "evidenceIds": [
+                "map-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-dialogue-voices-2",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-8ffd875603419f72",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "8b446897bed91810c30a4a2ba2d8a95ce130e2582a1a1c1b8770e2bae7f91190",
+        "conclusionsSha256": "8ca6ce50684b83c54651bdb8e31823fe96ac8786db7d1281651ba6ab91de5d37",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0037.second-pass.json",
+        "receiptSha256": "3f2a49091228e1f384a219aab24dade24ae2f2e0e27c8798c8d247807d5e8704",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the line that clearly shows surprise with an exclamation mark.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "map-surprise-line"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "map-surprise-line"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "map-surprise-line",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The exclamation mark and Mateo cried clearly show surprise that the map is gone.",
+              "evidenceIds": [
+                "map-3"
+              ]
+            },
+            {
+              "answerId": "map-quiet-line",
+              "verdict": "INCORRECT",
+              "rationale": "This narration calmly describes Nia's discovery and contains no exclamation mark.",
+              "evidenceIds": [
+                "map-4"
+              ]
+            },
+            {
+              "answerId": "map-return-line",
+              "verdict": "INCORRECT",
+              "rationale": "This narration describes their final action and contains no exclamation mark.",
+              "evidenceIds": [
+                "map-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-dialogue-voices-3",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-20727ee0c0c54ac4",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "8b446897bed91810c30a4a2ba2d8a95ce130e2582a1a1c1b8770e2bae7f91190",
+        "conclusionsSha256": "8ca6ce50684b83c54651bdb8e31823fe96ac8786db7d1281651ba6ab91de5d37",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0087.pass-a.json",
+        "receiptSha256": "8ca6ce50684b83c54651bdb8e31823fe96ac8786db7d1281651ba6ab91de5d37",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two quoted lines that should be read as questions.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "map-where-question",
+            "map-could-question"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "map-where-question",
+            "map-could-question"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "map-placed-statement",
+              "verdict": "INCORRECT",
+              "rationale": "This quoted line states where Nia placed the map and ends with a period.",
+              "evidenceIds": [
+                "map-2"
+              ]
+            },
+            {
+              "answerId": "map-where-question",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This quoted line asks where the map went and ends with a question mark.",
+              "evidenceIds": [
+                "map-1"
+              ]
+            },
+            {
+              "answerId": "map-landed-exclaim",
+              "verdict": "INCORRECT",
+              "rationale": "This quoted line celebrates the solved mystery and ends with an exclamation mark.",
+              "evidenceIds": [
+                "map-6"
+              ]
+            },
+            {
+              "answerId": "map-could-question",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This quoted line asks whether the breeze moved the map and ends with a question mark.",
+              "evidenceIds": [
+                "map-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-dialogue-voices-4",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-c7c6355d60bea391",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "8b446897bed91810c30a4a2ba2d8a95ce130e2582a1a1c1b8770e2bae7f91190",
+        "conclusionsSha256": "8ca6ce50684b83c54651bdb8e31823fe96ac8786db7d1281651ba6ab91de5d37",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0087.pass-a.json",
+        "receiptSha256": "8ca6ce50684b83c54651bdb8e31823fe96ac8786db7d1281651ba6ab91de5d37",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "map-table-question-row",
+          "prompt": "\"Where did the flight map go?\"",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "map-table-question-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "map-table-question-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "map-table-question-joy",
+              "verdict": "INCORRECT",
+              "rationale": "The line asks about a missing map rather than cheering about good news.",
+              "evidenceIds": [
+                "map-1"
+              ]
+            },
+            {
+              "answerId": "map-table-question-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The wording asks for missing information and the question mark signals questioning.",
+              "evidenceIds": [
+                "map-1"
+              ]
+            },
+            {
+              "answerId": "map-table-question-calm",
+              "verdict": "INCORRECT",
+              "rationale": "The line is a question, not a quiet factual statement.",
+              "evidenceIds": [
+                "map-1"
+              ]
+            },
+            {
+              "answerId": "map-table-question-surprise",
+              "verdict": "INCORRECT",
+              "rationale": "The line seeks information and does not report a startling discovery.",
+              "evidenceIds": [
+                "map-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "map-table-surprise-row",
+          "prompt": "\"It isn't there now!\"",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "map-table-surprise-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "map-table-surprise-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "map-table-surprise-calm",
+              "verdict": "INCORRECT",
+              "rationale": "Mateo cries the line with an exclamation mark, so it is not a calm statement.",
+              "evidenceIds": [
+                "map-3"
+              ]
+            },
+            {
+              "answerId": "map-table-surprise-question",
+              "verdict": "INCORRECT",
+              "rationale": "The line does not ask a question.",
+              "evidenceIds": [
+                "map-3"
+              ]
+            },
+            {
+              "answerId": "map-table-surprise-joy",
+              "verdict": "INCORRECT",
+              "rationale": "The missing map is a problem, not a success being celebrated.",
+              "evidenceIds": [
+                "map-3"
+              ]
+            },
+            {
+              "answerId": "map-table-surprise-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Mateo's exclamation and the new discovery that the map is absent show surprise.",
+              "evidenceIds": [
+                "map-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "map-table-calm-row",
+          "prompt": "\"I placed it beside the compass.\"",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "map-table-calm-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "map-table-calm-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "map-table-calm-question",
+              "verdict": "INCORRECT",
+              "rationale": "The line gives information and does not ask a question.",
+              "evidenceIds": [
+                "map-2"
+              ]
+            },
+            {
+              "answerId": "map-table-calm-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Nia calmly explains where she placed the map.",
+              "evidenceIds": [
+                "map-2"
+              ]
+            },
+            {
+              "answerId": "map-table-calm-surprise",
+              "verdict": "INCORRECT",
+              "rationale": "The line reports an earlier action rather than reacting to sudden news.",
+              "evidenceIds": [
+                "map-2"
+              ]
+            },
+            {
+              "answerId": "map-table-calm-joy",
+              "verdict": "INCORRECT",
+              "rationale": "The line does not celebrate a success.",
+              "evidenceIds": [
+                "map-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "map-table-joy-row",
+          "prompt": "\"Yes, and our mystery has landed!\"",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "map-table-joy-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "map-table-joy-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "map-table-joy-calm",
+              "verdict": "INCORRECT",
+              "rationale": "The exclamation and playful wording do not present a quiet fact.",
+              "evidenceIds": [
+                "map-6"
+              ]
+            },
+            {
+              "answerId": "map-table-joy-surprise",
+              "verdict": "INCORRECT",
+              "rationale": "The line celebrates solving the mystery rather than expressing worry.",
+              "evidenceIds": [
+                "map-6"
+              ]
+            },
+            {
+              "answerId": "map-table-joy-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The exclamation and playful landing image joyfully celebrate finding the map.",
+              "evidenceIds": [
+                "map-6"
+              ]
+            },
+            {
+              "answerId": "map-table-joy-question",
+              "verdict": "INCORRECT",
+              "rationale": "The line answers and celebrates; it does not ask for an answer.",
+              "evidenceIds": [
+                "map-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-reread-route-1",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-d8cc3ec34657c3e7",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "8b446897bed91810c30a4a2ba2d8a95ce130e2582a1a1c1b8770e2bae7f91190",
+        "conclusionsSha256": "8ca6ce50684b83c54651bdb8e31823fe96ac8786db7d1281651ba6ab91de5d37",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0087.pass-a.json",
+        "receiptSha256": "8ca6ce50684b83c54651bdb8e31823fe96ac8786db7d1281651ba6ab91de5d37",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word signals that the first direction begins the procedure?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "rotor-first-word"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rotor-first-word"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "rotor-first-word",
+              "verdict": "DEFENSIBLE",
+              "rationale": "First is the sequence word that signals the procedure is beginning.",
+              "evidenceIds": [
+                "rotor-1"
+              ]
+            },
+            {
+              "answerId": "rotor-paper-word",
+              "verdict": "INCORRECT",
+              "rationale": "Paper names the material and does not signal sequence.",
+              "evidenceIds": [
+                "rotor-1"
+              ]
+            },
+            {
+              "answerId": "rotor-strip-word",
+              "verdict": "INCORRECT",
+              "rationale": "Strip names the object to fold and does not signal sequence.",
+              "evidenceIds": [
+                "rotor-1"
+              ]
+            },
+            {
+              "answerId": "rotor-half-word",
+              "verdict": "INCORRECT",
+              "rationale": "Half describes how to fold the strip and does not signal sequence.",
+              "evidenceIds": [
+                "rotor-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-reread-route-2",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-5296700c621202a8",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "8b446897bed91810c30a4a2ba2d8a95ce130e2582a1a1c1b8770e2bae7f91190",
+        "conclusionsSha256": "8ca6ce50684b83c54651bdb8e31823fe96ac8786db7d1281651ba6ab91de5d37",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0087.pass-a.json",
+        "receiptSha256": "8ca6ce50684b83c54651bdb8e31823fe96ac8786db7d1281651ba6ab91de5d37",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which line should be reread in three smooth action groups instead of one word at a time?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "rotor-three-actions"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rotor-three-actions"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "rotor-three-actions",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Its two commas visibly divide the direction into the three modeled action groups hold, release, and watch.",
+              "evidenceIds": [
+                "rotor-5"
+              ]
+            },
+            {
+              "answerId": "rotor-balance-line",
+              "verdict": "INCORRECT",
+              "rationale": "This direction contains one main action and no three-action comma series.",
+              "evidenceIds": [
+                "rotor-4"
+              ]
+            },
+            {
+              "answerId": "rotor-fold-line",
+              "verdict": "INCORRECT",
+              "rationale": "This direction has an opening transition plus one action, not three action groups.",
+              "evidenceIds": [
+                "rotor-1"
+              ]
+            },
+            {
+              "answerId": "rotor-blades-line",
+              "verdict": "INCORRECT",
+              "rationale": "This direction coordinates two folding actions, not three action groups.",
+              "evidenceIds": [
+                "rotor-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-reread-route-3",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-3433bda819b6468c",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "8b446897bed91810c30a4a2ba2d8a95ce130e2582a1a1c1b8770e2bae7f91190",
+        "conclusionsSha256": "8ca6ce50684b83c54651bdb8e31823fe96ac8786db7d1281651ba6ab91de5d37",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0087.pass-a.json",
+        "receiptSha256": "8ca6ce50684b83c54651bdb8e31823fe96ac8786db7d1281651ba6ab91de5d37",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the direction that tells what to do if the rotor does not spin evenly.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "rotor-adjust-direction"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rotor-adjust-direction"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "rotor-adjust-direction",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This conditional direction explicitly says to adjust a blade and try again when rotation is uneven.",
+              "evidenceIds": [
+                "rotor-6"
+              ]
+            },
+            {
+              "answerId": "rotor-clip-direction",
+              "verdict": "INCORRECT",
+              "rationale": "Attaching the paper clip is an earlier construction step, not the direction for an uneven spin.",
+              "evidenceIds": [
+                "rotor-4"
+              ]
+            },
+            {
+              "answerId": "rotor-cut-direction",
+              "verdict": "INCORRECT",
+              "rationale": "Cutting rotor blades is an earlier construction step, not the direction for an uneven spin.",
+              "evidenceIds": [
+                "rotor-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-reread-route-4",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-b9cb73e6370be83a",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "8b446897bed91810c30a4a2ba2d8a95ce130e2582a1a1c1b8770e2bae7f91190",
+        "conclusionsSha256": "8ca6ce50684b83c54651bdb8e31823fe96ac8786db7d1281651ba6ab91de5d37",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0087.pass-a.json",
+        "receiptSha256": "8ca6ce50684b83c54651bdb8e31823fe96ac8786db7d1281651ba6ab91de5d37",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two commas that divide the three actions in the rotor-release direction.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "rotor-space-comma",
+            "rotor-it-comma"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rotor-space-comma",
+            "rotor-it-comma"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "rotor-space-comma",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The comma after space divides the hold action from release.",
+              "evidenceIds": [
+                "rotor-5"
+              ]
+            },
+            {
+              "answerId": "rotor-it-comma",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The comma after it divides release from the final watch action.",
+              "evidenceIds": [
+                "rotor-5"
+              ]
+            },
+            {
+              "answerId": "rotor-spin-period",
+              "verdict": "INCORRECT",
+              "rationale": "Spin is followed by a period that ends the direction, not a comma dividing actions.",
+              "evidenceIds": [
+                "rotor-5"
+              ]
+            },
+            {
+              "answerId": "rotor-release-word",
+              "verdict": "INCORRECT",
+              "rationale": "Release is not followed by a comma in the displayed direction.",
+              "evidenceIds": [
+                "rotor-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-marsh-morning-1",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-ca99d6b05bd0c47c",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "aaddda66fc4524a7cb668e0f527b991be743843f9d70cf116d98f6f515734761",
+        "conclusionsSha256": "3efb49a97582477fe8cf481139c61e97bd7f0d24de0a4535abbfc195cf8a0845",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0088.pass-a.json",
+        "receiptSha256": "3efb49a97582477fe8cf481139c61e97bd7f0d24de0a4535abbfc195cf8a0845",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which words name one place and should be read together as a phrase?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "marsh-deck-phrase"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "marsh-deck-phrase"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "marsh-shore-fragment",
+              "verdict": "INCORRECT",
+              "rationale": "Searched the is an incomplete action phrase and does not name a place.",
+              "evidenceIds": [
+                "marsh-3"
+              ]
+            },
+            {
+              "answerId": "marsh-deck-phrase",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The observation deck is the complete noun phrase naming one place.",
+              "evidenceIds": [
+                "marsh-3"
+              ]
+            },
+            {
+              "answerId": "marsh-children-fragment",
+              "verdict": "INCORRECT",
+              "rationale": "Deck, two crosses the comma boundary and does not form a place name.",
+              "evidenceIds": [
+                "marsh-3"
+              ]
+            },
+            {
+              "answerId": "marsh-from-fragment",
+              "verdict": "INCORRECT",
+              "rationale": "From the is an incomplete prepositional phrase and does not name the place by itself.",
+              "evidenceIds": [
+                "marsh-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-marsh-morning-2",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-889e4803bf3020af",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "aaddda66fc4524a7cb668e0f527b991be743843f9d70cf116d98f6f515734761",
+        "conclusionsSha256": "3efb49a97582477fe8cf481139c61e97bd7f0d24de0a4535abbfc195cf8a0845",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0088.pass-a.json",
+        "receiptSha256": "3efb49a97582477fe8cf481139c61e97bd7f0d24de0a4535abbfc195cf8a0845",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which words should be grouped to describe how the heron stood?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "marsh-still-phrase"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "marsh-still-phrase"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "marsh-heron-fragment",
+              "verdict": "INCORRECT",
+              "rationale": "A heron names the subject rather than describing how it stood.",
+              "evidenceIds": [
+                "marsh-4"
+              ]
+            },
+            {
+              "answerId": "marsh-reflection-fragment",
+              "verdict": "INCORRECT",
+              "rationale": "Silver reflection names what was beside the heron rather than how it stood.",
+              "evidenceIds": [
+                "marsh-4"
+              ]
+            },
+            {
+              "answerId": "marsh-still-phrase",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Perfectly still directly describes how the heron stood.",
+              "evidenceIds": [
+                "marsh-4"
+              ]
+            },
+            {
+              "answerId": "marsh-beside-fragment",
+              "verdict": "INCORRECT",
+              "rationale": "Beside a is an incomplete location phrase and does not describe manner.",
+              "evidenceIds": [
+                "marsh-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-marsh-morning-3",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-4feb5ad1d947a365",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "aaddda66fc4524a7cb668e0f527b991be743843f9d70cf116d98f6f515734761",
+        "conclusionsSha256": "3efb49a97582477fe8cf481139c61e97bd7f0d24de0a4535abbfc195cf8a0845",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0088.pass-a.json",
+        "receiptSha256": "3efb49a97582477fe8cf481139c61e97bd7f0d24de0a4535abbfc195cf8a0845",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which line should be read with the strongest excitement?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "marsh-amazing-line"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "marsh-amazing-line"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "marsh-heron-line",
+              "verdict": "INCORRECT",
+              "rationale": "This calm descriptive statement supports quiet emphasis rather than the strongest excitement.",
+              "evidenceIds": [
+                "marsh-4"
+              ]
+            },
+            {
+              "answerId": "marsh-deck-line",
+              "verdict": "INCORRECT",
+              "rationale": "This descriptive action has a comma pause but no strong-feeling cue.",
+              "evidenceIds": [
+                "marsh-3"
+              ]
+            },
+            {
+              "answerId": "marsh-amazing-line",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The amazed quotation and exclamation mark explicitly cue the strongest excitement among the choices.",
+              "evidenceIds": [
+                "marsh-6"
+              ]
+            },
+            {
+              "answerId": "marsh-light-line",
+              "verdict": "INCORRECT",
+              "rationale": "This calm scene-setting statement contains no strong-feeling cue.",
+              "evidenceIds": [
+                "marsh-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-marsh-morning-4",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-3e21208c92ae9070",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "aaddda66fc4524a7cb668e0f527b991be743843f9d70cf116d98f6f515734761",
+        "conclusionsSha256": "3efb49a97582477fe8cf481139c61e97bd7f0d24de0a4535abbfc195cf8a0845",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0037.second-pass.json",
+        "receiptSha256": "3f2a49091228e1f384a219aab24dade24ae2f2e0e27c8798c8d247807d5e8704",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "marsh-table-place-row",
+          "prompt": "the observation deck",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "marsh-table-place-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "marsh-table-place-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "marsh-table-place-question",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase is not a question.",
+              "evidenceIds": [
+                "marsh-3"
+              ]
+            },
+            {
+              "answerId": "marsh-table-place-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The observation deck is one complete phrase naming a place.",
+              "evidenceIds": [
+                "marsh-3"
+              ]
+            },
+            {
+              "answerId": "marsh-table-place-energy",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase has no exclamation or excited meaning.",
+              "evidenceIds": [
+                "marsh-3"
+              ]
+            },
+            {
+              "answerId": "marsh-table-place-pause",
+              "verdict": "INCORRECT",
+              "rationale": "Stopping after every word would split the place name.",
+              "evidenceIds": [
+                "marsh-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "marsh-table-pause-row",
+          "prompt": "From the observation deck,",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "marsh-table-pause-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "marsh-table-pause-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "marsh-table-pause-question",
+              "verdict": "INCORRECT",
+              "rationale": "The opening phrase does not ask a question.",
+              "evidenceIds": [
+                "marsh-3"
+              ]
+            },
+            {
+              "answerId": "marsh-table-pause-place",
+              "verdict": "INCORRECT",
+              "rationale": "The comma signals a brief pause, not a sentence-ending stop.",
+              "evidenceIds": [
+                "marsh-3"
+              ]
+            },
+            {
+              "answerId": "marsh-table-pause-energy",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase supplies a location and does not cue excitement.",
+              "evidenceIds": [
+                "marsh-3"
+              ]
+            },
+            {
+              "answerId": "marsh-table-pause-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The comma after the opening phrase signals a brief pause.",
+              "evidenceIds": [
+                "marsh-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "marsh-table-description-row",
+          "prompt": "perfectly still",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "marsh-table-description-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "marsh-table-description-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "marsh-table-description-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Perfectly still forms one complete description of how the heron stood.",
+              "evidenceIds": [
+                "marsh-4"
+              ]
+            },
+            {
+              "answerId": "marsh-table-description-place",
+              "verdict": "INCORRECT",
+              "rationale": "The words describe manner and do not name a place.",
+              "evidenceIds": [
+                "marsh-4"
+              ]
+            },
+            {
+              "answerId": "marsh-table-description-energy",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase is a calm description, not an excited command.",
+              "evidenceIds": [
+                "marsh-4"
+              ]
+            },
+            {
+              "answerId": "marsh-table-description-pause",
+              "verdict": "INCORRECT",
+              "rationale": "Pausing between the two words would split the one description.",
+              "evidenceIds": [
+                "marsh-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "marsh-table-energy-row",
+          "prompt": "\"What an amazing morning!\"",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "marsh-table-energy-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "marsh-table-energy-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "marsh-table-energy-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The amazed wording and exclamation mark cue strong excitement.",
+              "evidenceIds": [
+                "marsh-6"
+              ]
+            },
+            {
+              "answerId": "marsh-table-energy-place",
+              "verdict": "INCORRECT",
+              "rationale": "The quotation expresses wonder and does not name a place.",
+              "evidenceIds": [
+                "marsh-6"
+              ]
+            },
+            {
+              "answerId": "marsh-table-energy-pause",
+              "verdict": "INCORRECT",
+              "rationale": "Breaking every word would destroy the natural expressive phrase.",
+              "evidenceIds": [
+                "marsh-6"
+              ]
+            },
+            {
+              "answerId": "marsh-table-energy-question",
+              "verdict": "INCORRECT",
+              "rationale": "The line is an exclamation, not a question.",
+              "evidenceIds": [
+                "marsh-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-first-launch-1",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-b6ed3d0a0b2aacde",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "aaddda66fc4524a7cb668e0f527b991be743843f9d70cf116d98f6f515734761",
+        "conclusionsSha256": "3efb49a97582477fe8cf481139c61e97bd7f0d24de0a4535abbfc195cf8a0845",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0088.pass-a.json",
+        "receiptSha256": "3efb49a97582477fe8cf481139c61e97bd7f0d24de0a4535abbfc195cf8a0845",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which words should Mira read together as her brother's one helpful reminder?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "launch-reminder-phrase"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "launch-reminder-phrase"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "launch-quote-fragment",
+              "verdict": "INCORRECT",
+              "rationale": "Pull, her crosses the quotation boundary and does not form the reminder.",
+              "evidenceIds": [
+                "launch-3"
+              ]
+            },
+            {
+              "answerId": "launch-reminder-phrase",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Remember the steady pull is the complete quoted reminder from Mira's brother.",
+              "evidenceIds": [
+                "launch-3"
+              ]
+            },
+            {
+              "answerId": "launch-brother-fragment",
+              "verdict": "INCORRECT",
+              "rationale": "Her brother said is the dialogue tag, not the reminder's words.",
+              "evidenceIds": [
+                "launch-3"
+              ]
+            },
+            {
+              "answerId": "launch-gently-word",
+              "verdict": "INCORRECT",
+              "rationale": "Gently describes how he spoke but is not the reminder itself.",
+              "evidenceIds": [
+                "launch-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-first-launch-2",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-4b01447f4d87b833",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "aaddda66fc4524a7cb668e0f527b991be743843f9d70cf116d98f6f515734761",
+        "conclusionsSha256": "3efb49a97582477fe8cf481139c61e97bd7f0d24de0a4535abbfc195cf8a0845",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0088.pass-a.json",
+        "receiptSha256": "3efb49a97582477fe8cf481139c61e97bd7f0d24de0a4535abbfc195cf8a0845",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which punctuation mark tells the reader that Mira's words have strong feeling?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "launch-exclamation-mark"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "launch-exclamation-mark"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "launch-period-mark",
+              "verdict": "INCORRECT",
+              "rationale": "A period ends a statement but is not the strong-feeling mark in Mira's words.",
+              "evidenceIds": [
+                "launch-6"
+              ]
+            },
+            {
+              "answerId": "launch-comma-mark",
+              "verdict": "INCORRECT",
+              "rationale": "A comma signals a pause and is not the strong-feeling mark in Mira's words.",
+              "evidenceIds": [
+                "launch-6"
+              ]
+            },
+            {
+              "answerId": "launch-question-mark",
+              "verdict": "INCORRECT",
+              "rationale": "Mira's words do not ask a question.",
+              "evidenceIds": [
+                "launch-6"
+              ]
+            },
+            {
+              "answerId": "launch-exclamation-mark",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The exclamation mark in I did it! signals Mira's strong joyful feeling.",
+              "evidenceIds": [
+                "launch-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-first-launch-3",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-65df5c1a8381ab96",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "aaddda66fc4524a7cb668e0f527b991be743843f9d70cf116d98f6f515734761",
+        "conclusionsSha256": "3efb49a97582477fe8cf481139c61e97bd7f0d24de0a4535abbfc195cf8a0845",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0088.pass-a.json",
+        "receiptSha256": "3efb49a97582477fe8cf481139c61e97bd7f0d24de0a4535abbfc195cf8a0845",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that should be reread slowly enough to show Mira's nervous feeling.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "launch-nervous-sentence"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "launch-nervous-sentence"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "launch-circle-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This ending sentence shows relief and smooth success, not nervousness.",
+              "evidenceIds": [
+                "launch-7"
+              ]
+            },
+            {
+              "answerId": "launch-kite-sentence",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence reports the kite's successful climb and does not show Mira's nervous feeling.",
+              "evidenceIds": [
+                "launch-5"
+              ]
+            },
+            {
+              "answerId": "launch-nervous-sentence",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Her trembling hands directly show nervousness and support a slower expressive reading.",
+              "evidenceIds": [
+                "launch-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-first-launch-4",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-c7327a3a65c1e2c6",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "aaddda66fc4524a7cb668e0f527b991be743843f9d70cf116d98f6f515734761",
+        "conclusionsSha256": "3efb49a97582477fe8cf481139c61e97bd7f0d24de0a4535abbfc195cf8a0845",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0088.pass-a.json",
+        "receiptSha256": "3efb49a97582477fe8cf481139c61e97bd7f0d24de0a4535abbfc195cf8a0845",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two quoted lines that call for clearly different character voices.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "launch-gentle-line",
+            "launch-joy-line"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "launch-gentle-line",
+            "launch-joy-line"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "launch-cloud-line",
+              "verdict": "INCORRECT",
+              "rationale": "This is narration rather than a quoted character line.",
+              "evidenceIds": [
+                "launch-1"
+              ]
+            },
+            {
+              "answerId": "launch-circle-line",
+              "verdict": "INCORRECT",
+              "rationale": "This is narration rather than a quoted character line.",
+              "evidenceIds": [
+                "launch-7"
+              ]
+            },
+            {
+              "answerId": "launch-gentle-line",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The brother's gentle quoted reminder calls for a calm encouraging voice.",
+              "evidenceIds": [
+                "launch-3"
+              ]
+            },
+            {
+              "answerId": "launch-joy-line",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Mira's shouted exclamation calls for a joyful energetic voice distinct from the brother's.",
+              "evidenceIds": [
+                "launch-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-formation-facts-1",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-9f844373965a910f",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "aaddda66fc4524a7cb668e0f527b991be743843f9d70cf116d98f6f515734761",
+        "conclusionsSha256": "3efb49a97582477fe8cf481139c61e97bd7f0d24de0a4535abbfc195cf8a0845",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0088.pass-a.json",
+        "receiptSha256": "3efb49a97582477fe8cf481139c61e97bd7f0d24de0a4535abbfc195cf8a0845",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which two words should be read together because they name the birds being explained?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "geese-subject-phrase"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "geese-subject-phrase"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "geese-v-fragment",
+              "verdict": "INCORRECT",
+              "rationale": "A V-shaped describes the formation and does not name the birds.",
+              "evidenceIds": [
+                "geese-1"
+              ]
+            },
+            {
+              "answerId": "geese-formation-fragment",
+              "verdict": "INCORRECT",
+              "rationale": "Formation names their arrangement rather than the birds.",
+              "evidenceIds": [
+                "geese-1"
+              ]
+            },
+            {
+              "answerId": "geese-subject-phrase",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Migrating geese is the complete two-word phrase naming the birds being explained.",
+              "evidenceIds": [
+                "geese-1"
+              ]
+            },
+            {
+              "answerId": "geese-often-fragment",
+              "verdict": "INCORRECT",
+              "rationale": "Geese often crosses the subject and adverb boundary and does not form the complete bird name.",
+              "evidenceIds": [
+                "geese-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-formation-facts-2",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-e920abb04507875c",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "aaddda66fc4524a7cb668e0f527b991be743843f9d70cf116d98f6f515734761",
+        "conclusionsSha256": "3efb49a97582477fe8cf481139c61e97bd7f0d24de0a4535abbfc195cf8a0845",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0088.pass-a.json",
+        "receiptSha256": "3efb49a97582477fe8cf481139c61e97bd7f0d24de0a4535abbfc195cf8a0845",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Where should the reader pause briefly in the sentence about the tired lead goose?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "geese-tired-comma"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "geese-tired-comma"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "geese-after-another",
+              "verdict": "INCORRECT",
+              "rationale": "There is no punctuation after another.",
+              "evidenceIds": [
+                "geese-4"
+              ]
+            },
+            {
+              "answerId": "geese-after-lead",
+              "verdict": "INCORRECT",
+              "rationale": "There is no punctuation after lead.",
+              "evidenceIds": [
+                "geese-4"
+              ]
+            },
+            {
+              "answerId": "geese-after-when",
+              "verdict": "INCORRECT",
+              "rationale": "Pausing after When would split the opening connector from its clause.",
+              "evidenceIds": [
+                "geese-4"
+              ]
+            },
+            {
+              "answerId": "geese-tired-comma",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The comma after tired marks the brief pause following the complete opening condition.",
+              "evidenceIds": [
+                "geese-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-formation-facts-3",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-c213d12787f0454b",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "aaddda66fc4524a7cb668e0f527b991be743843f9d70cf116d98f6f515734761",
+        "conclusionsSha256": "3efb49a97582477fe8cf481139c61e97bd7f0d24de0a4535abbfc195cf8a0845",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0037.second-pass.json",
+        "receiptSha256": "3f2a49091228e1f384a219aab24dade24ae2f2e0e27c8798c8d247807d5e8704",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which grouping keeps the two actions in the wing sentence clear?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "geese-actions-grouping"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "geese-actions-grouping"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "geese-actions-grouping-4",
+              "verdict": "INCORRECT",
+              "rationale": "This split separates the article a from helpful current instead of preserving the second action phrase.",
+              "evidenceIds": [
+                "geese-2"
+              ]
+            },
+            {
+              "answerId": "geese-actions-grouping-3",
+              "verdict": "INCORRECT",
+              "rationale": "This split separates the verb move from its object air.",
+              "evidenceIds": [
+                "geese-2"
+              ]
+            },
+            {
+              "answerId": "geese-actions-grouping",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Move the air and create a helpful current are the two complete coordinated actions.",
+              "evidenceIds": [
+                "geese-2"
+              ]
+            },
+            {
+              "answerId": "geese-actions-grouping-2",
+              "verdict": "INCORRECT",
+              "rationale": "This split separates move from its object and obscures the first action.",
+              "evidenceIds": [
+                "geese-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "question-g3-fluency-flight-formation-facts-4",
+      "packId": "g3-word-forge-fluency-flight",
+      "contentVersion": "g3-wf-fluency-flight-r0.1.0",
+      "contentFingerprint": "qta-v1-3b4fd1e0e19db8e4",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "aaddda66fc4524a7cb668e0f527b991be743843f9d70cf116d98f6f515734761",
+        "conclusionsSha256": "3efb49a97582477fe8cf481139c61e97bd7f0d24de0a4535abbfc195cf8a0845",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0088.pass-a.json",
+        "receiptSha256": "3efb49a97582477fe8cf481139c61e97bd7f0d24de0a4535abbfc195cf8a0845",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "geese-table-subject-row",
+          "prompt": "Migrating geese",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "geese-table-subject-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "geese-table-subject-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "geese-table-subject-pause",
+              "verdict": "INCORRECT",
+              "rationale": "Pausing between the words would split the complete subject.",
+              "evidenceIds": [
+                "geese-1"
+              ]
+            },
+            {
+              "answerId": "geese-table-subject-stop",
+              "verdict": "INCORRECT",
+              "rationale": "No period follows the subject phrase.",
+              "evidenceIds": [
+                "geese-1"
+              ]
+            },
+            {
+              "answerId": "geese-table-subject-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Migrating geese is the complete subject and should be read together.",
+              "evidenceIds": [
+                "geese-1"
+              ]
+            },
+            {
+              "answerId": "geese-table-subject-question",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase is not a question.",
+              "evidenceIds": [
+                "geese-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "geese-table-pause-row",
+          "prompt": "becomes tired,",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "geese-table-pause-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "geese-table-pause-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "geese-table-pause-stop",
+              "verdict": "INCORRECT",
+              "rationale": "The comma marks a brief pause rather than a complete stop.",
+              "evidenceIds": [
+                "geese-4"
+              ]
+            },
+            {
+              "answerId": "geese-table-pause-subject",
+              "verdict": "INCORRECT",
+              "rationale": "Becomes tired is part of the opening condition, not the sentence subject.",
+              "evidenceIds": [
+                "geese-4"
+              ]
+            },
+            {
+              "answerId": "geese-table-pause-question",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase does not ask a question.",
+              "evidenceIds": [
+                "geese-4"
+              ]
+            },
+            {
+              "answerId": "geese-table-pause-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The comma after the opening condition marks a brief pause.",
+              "evidenceIds": [
+                "geese-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "geese-table-action-row",
+          "prompt": "create a helpful current",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "geese-table-action-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "geese-table-action-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "geese-table-action-question",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase is a statement action, not a question.",
+              "evidenceIds": [
+                "geese-2"
+              ]
+            },
+            {
+              "answerId": "geese-table-action-pause",
+              "verdict": "INCORRECT",
+              "rationale": "Pausing after every word would split the one action.",
+              "evidenceIds": [
+                "geese-2"
+              ]
+            },
+            {
+              "answerId": "geese-table-action-subject",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase is the second coordinated action, not the opening subject.",
+              "evidenceIds": [
+                "geese-2"
+              ]
+            },
+            {
+              "answerId": "geese-table-action-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Create a helpful current is one complete action and should be read together.",
+              "evidenceIds": [
+                "geese-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "geese-table-stop-row",
+          "prompt": "during a long journey.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "geese-table-stop-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "geese-table-stop-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "geese-table-stop-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The period after journey marks the end of the complete fact and a full stop.",
+              "evidenceIds": [
+                "geese-3"
+              ]
+            },
+            {
+              "answerId": "geese-table-stop-question",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase does not ask a question.",
+              "evidenceIds": [
+                "geese-3"
+              ]
+            },
+            {
+              "answerId": "geese-table-stop-subject",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase completes the current sentence and does not begin a new subject.",
+              "evidenceIds": [
+                "geese-3"
+              ]
+            },
+            {
+              "answerId": "geese-table-stop-pause",
+              "verdict": "INCORRECT",
+              "rationale": "A period requires a full stop rather than a brief continuing pause.",
+              "evidenceIds": [
+                "geese-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

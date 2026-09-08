@@ -1,0 +1,515 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0009",
+  "batchFileSha256": "56481d9607145175e12a40e68b661937f25f21f2d540cdcfed52c1d390b8f017",
+  "reviewerThreadId": "01a07bc1-57ca-7230-a515-d322b50c9d2e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0093",
+      "fingerprint": "b0f459a517adbaf1f004fad1f6482dcb41ef67ec899d9cd7e0c41e26da34d3ee",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "music begins with a long-u open syllable, so both syllables do not have short i.",
+              [
+                "S0020"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "robot has long o in its first syllable, not short i in both syllables.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "photo uses long-o syllables, not short i.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "picnic chunks as pic / nic, with short i in both syllables.",
+              [
+                "S0019",
+                "S0021"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0094",
+      "fingerprint": "6bfc6b879591401435198ce5674e3b257d57f2f11dbd808c6f4f72a585e8fb33",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "solo does not contain the requested short-u and short-e syllables.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "pilot does not contain the requested short-u and short-e syllables.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "tulip begins with long u and ends with short i, not short u and short e.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "sunset chunks as sun / set, with short u followed by short e.",
+              [
+                "S0022",
+                "S0021"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0095",
+      "fingerprint": "019f07a011471654bd524592f6af3b49ec55a7b94643ceca6ba12dd61fbbcdbe",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "robot is not in the picnic passage.",
+              [
+                "S0020"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "music is not in the picnic passage.",
+              [
+                "S0020"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "sunset appears in the passage and chunks as sun / set with short vowels.",
+              [
+                "S0022",
+                "S0021"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "picnic appears in the passage and chunks as pic / nic with short vowels.",
+              [
+                "S0019",
+                "S0021"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0096",
+      "fingerprint": "a8336029a8fc2fa8493f8a69b35395fa9a8895170034ea2722e897c5672f5d6a",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This sentence describes the picnic team, blanket, and sunset tree.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This sentence exactly says they packed a basket, napkin, and magnet chart.",
+              [
+                "S0024"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This sentence describes a helmet near the lunch plan.",
+              [
+                "S0026"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0097",
+      "fingerprint": "db0214f4b3ae2cce101b8bac7e296a2a7b99ef8eb18f3ac6c51b62a3aa2b552c",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "pic / nic reconstructs picnic and gives the taught short-vowel chunks.",
+              [
+                "S0019",
+                "S0021"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "tu / lip spells and chunks tulip, not picnic.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "ro / bot spells and chunks robot, not picnic.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "so / lo spells and chunks solo, not magnet.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "pho / to spells and chunks photo, not magnet.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "mag / net reconstructs magnet with its two short-vowel chunks.",
+              [
+                "S0023",
+                "S0024"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0098",
+      "fingerprint": "2a5995baec0f05d451b4c1b94ed6b2a00f8f50ba9533919ed672c2a26414d084",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "helmet begins with the closed syllable hel and short e.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "kitten begins with the closed syllable kit and short i.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "robot chunks as ro / bot; open ro begins with long o.",
+              [
+                "S0030"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "basket begins with the closed syllable bas and short a.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0099",
+      "fingerprint": "93d63cf8c33b6dbb4c2836552ef25e968436fd85edea05d4ac3b63dd50b92275",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "sunset begins with closed sun and short u.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "music chunks as mu / sic; open mu begins with long u.",
+              [
+                "S0028",
+                "S0030"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "magnet begins with closed mag and short a.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "napkin begins with closed nap and short a.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0100",
+      "fingerprint": "2bd450dc3a3e2584fac0ac5553f2c6e6ffab58a60258ad014b790d870fe33270",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "tulip appears in the passage and chunks tu / lip with long u in open tu.",
+              [
+                "S0031",
+                "S0032"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "solo appears in the passage and chunks so / lo with open long-o syllables.",
+              [
+                "S0033",
+                "S0032"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "photo appears in the passage and chunks pho / to with open long-o syllables.",
+              [
+                "S0034",
+                "S0035"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "music appears in the passage and chunks mu / sic with long u in open mu.",
+              [
+                "S0028",
+                "S0030"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0101",
+      "fingerprint": "e3d7eabd0e0846ef77d8f1597e379b4b00bffd60a7927d65d3e01e0e189f6528",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This sentence exactly says a photo of the zero sign stayed on the wall.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This sentence describes a tulip poster and solo chair.",
+              [
+                "S0032"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This sentence describes music and a robot keeping a beat.",
+              [
+                "S0030"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0102",
+      "fingerprint": "7e7f4fe201ef8b4fd0beda9538e0e2b0894cb1842917dc3ef33ccf9e32f423eb",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "mu / sic reconstructs music and matches its taught long-vowel chunking.",
+              [
+                "S0028",
+                "S0030"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "rab / bit spells and chunks rabbit, not music.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "pic / nic spells and chunks picnic, not music.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "sun / set spells and chunks sunset, not photo.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "mag / net spells and chunks magnet, not photo.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "pho / to reconstructs photo and matches its long-vowel chunking.",
+              [
+                "S0034",
+                "S0035"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

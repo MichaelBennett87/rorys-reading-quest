@@ -1,0 +1,765 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0006",
+  "batchFileSha256": "2472388de2aeed85de451a263f73050aa89fd672639ad6af7858d68a31921d2c",
+  "reviewerThreadId": "01a07bc1-57ca-7230-a515-d322b50c9d2e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0057",
+      "fingerprint": "c037aa5887b2cefb0e988a0f6515aa1da56e38286a26b7ff8941aa9dd70c9108",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "All four choices normally use /ɔɪ/ like boil, but the radio permits only one.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "boy has /ɔɪ/, the same vowel sound as boil.",
+              [
+                "S0034",
+                "S0035"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "choice has /ɔɪ/, the same vowel sound as boil.",
+              [
+                "S0032",
+                "S0033"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "coin has /ɔɪ/, the same vowel sound as boil.",
+              [
+                "S0028",
+                "S0030"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "toy has /ɔɪ/, the same vowel sound as boil.",
+              [
+                "S0031",
+                "S0030"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0058",
+      "fingerprint": "ee8db170c7c4d2c7a1518edd5581a3e845f56015f4a9a1118de7fdac03a65501",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "toy, coin, and join all normally use /ɔɪ/ like joy, but the radio permits only one.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "toy has /ɔɪ/, the same vowel sound as joy.",
+              [
+                "S0031",
+                "S0030"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "coin has /ɔɪ/, the same vowel sound as joy.",
+              [
+                "S0028",
+                "S0030"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "join has /ɔɪ/, the same vowel sound as joy.",
+              [
+                "S0033"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "touch has /ʌ/, not the /ɔɪ/ sound in joy.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0059",
+      "fingerprint": "ef63f54628a152f6b5f3ef06c02623d31cc7573afdfb26c7ae12e50f8e2eef62",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "choice appears in the passage and contains the oi spelling.",
+              [
+                "S0032",
+                "S0033"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "voice appears in the passage and contains the oi spelling.",
+              [
+                "S0036"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "boy uses oy, so it fails the explicit requirement to have oi.",
+              [
+                "S0034",
+                "S0035"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "coin appears in the passage and contains the oi spelling.",
+              [
+                "S0028",
+                "S0030"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0060",
+      "fingerprint": "f3579d43ac2e8415e66270f5476510a9bcbe8d69ec9bc9cb22c181cb3bc5a4fd",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This sentence describes the coin jar and toy.",
+              [
+                "S0030"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This sentence describes a choice and joining the line.",
+              [
+                "S0033"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This sentence exactly says the announcer voice told the story.",
+              [
+                "S0036"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0061",
+      "fingerprint": "4b0118b386d3e0be82cf6918bddfb03a826c26e9b2a3ad40c69a6c6e8859875b",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1",
+            "A2"
+          ],
+          "ambiguity": "The labels call spellings sound groups; boy has oy but its /ɔɪ/ is also the sound represented by oi.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "boy visibly uses oy and has the taught /ɔɪ/ sound.",
+              [
+                "S0034",
+                "S0035"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "boy has /ɔɪ/, the same sound the teaching assigns to oi in coin.",
+              [
+                "S0028",
+                "S0034",
+                "S0035"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "boy does not use the ou spelling or its taught sound.",
+              [
+                "S0034",
+                "S0035"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0062",
+      "fingerprint": "3fd0ef9f2d52c4744f29a5b6ec9e5ac7664ba9396b43281ac25a4b3bb96cd6ee",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "coin has /ɔɪ/, not the /aʊ/ sound in loud.",
+              [
+                "S0040",
+                "S0041"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "snow has /oʊ/, not the /aʊ/ sound in loud.",
+              [
+                "S0043",
+                "S0044"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "toy has /ɔɪ/, not the /aʊ/ sound in loud.",
+              [
+                "S0042",
+                "S0041"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "cloud has /aʊ/, the same vowel sound as loud.",
+              [
+                "S0037",
+                "S0039"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0063",
+      "fingerprint": "2471b39c383a02bd3acf9cab760b4936e4b6021fd8d35bb4417d8fafaaba33a9",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "coin and toy both normally use /ɔɪ/ like boil, but the radio permits only one.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "coin has /ɔɪ/, the same vowel sound as boil.",
+              [
+                "S0040",
+                "S0041"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "cloud has /aʊ/, not the /ɔɪ/ sound in boil.",
+              [
+                "S0037",
+                "S0039"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "snow has /oʊ/, not the /ɔɪ/ sound in boil.",
+              [
+                "S0043",
+                "S0044"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "toy has /ɔɪ/, the same vowel sound as boil.",
+              [
+                "S0042",
+                "S0041"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0064",
+      "fingerprint": "4d7cc82892e9e9cf9f2314ed519653ef587cfd5b491f40652386149cdb8aaa48",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "toy and boy both normally use /ɔɪ/ like joy, but the radio permits only one.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "cloud has /aʊ/, not the /ɔɪ/ sound in joy.",
+              [
+                "S0037",
+                "S0039"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "toy has /ɔɪ/, the same vowel sound as joy.",
+              [
+                "S0042",
+                "S0041"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "snow has /oʊ/, not the /ɔɪ/ sound in joy.",
+              [
+                "S0043",
+                "S0044"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "boy has /ɔɪ/, the same vowel sound as joy.",
+              [
+                "S0041"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0065",
+      "fingerprint": "bb1229606ab2d7ef07eeff23d1e8c51e161123706c6a43c0daac7d9edb474fbb",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "coin has /ɔɪ/, not the /oʊ/ sound in grow.",
+              [
+                "S0040",
+                "S0041"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "cloud has /aʊ/, not the /oʊ/ sound in grow.",
+              [
+                "S0037",
+                "S0039"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "snow has /oʊ/, the same vowel sound as grow.",
+              [
+                "S0043",
+                "S0044"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "toy has /ɔɪ/, not the /oʊ/ sound in grow.",
+              [
+                "S0042",
+                "S0041"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0066",
+      "fingerprint": "06c8737c0fbdc12033380c9e954e22b4cc50f007dcd23f34113ba3fe2bd5a705",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "snow appears in the fair passage and shows the ow pattern.",
+              [
+                "S0043",
+                "S0044"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "coin appears in the fair passage and shows the oi pattern.",
+              [
+                "S0040",
+                "S0041"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "toy appears in the fair passage and shows the oy pattern.",
+              [
+                "S0042",
+                "S0041"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "cloud appears in the fair passage and shows the ou pattern.",
+              [
+                "S0037",
+                "S0039"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0067",
+      "fingerprint": "a3bf35c5a7f77334db0ee1a15b9cc08530a8ef5837316c9732dbb96c6178bc08",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This sentence describes smoke rising from the soup tent.",
+              [
+                "S0039"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This sentence describes the crowd, line, and snow maker.",
+              [
+                "S0044"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This sentence exactly says a coin spun beside a toy wagon.",
+              [
+                "S0041"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0068",
+      "fingerprint": "9a7d1b5cf61083999fcc7f7a8e0bde5cdf58561aba1069c17eef89ac2f560bf3",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "cloud is written with ou, but its /aʊ/ is also a common ow sound; the prompt asks for sound rather than spelling.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "cloud does not have the /ɔɪ/ sound associated with oi.",
+              [
+                "S0037",
+                "S0039"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "cloud does not have the /ɔɪ/ sound associated with oy.",
+              [
+                "S0037",
+                "S0039"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "cloud has /aʊ/, a sound commonly represented by ow as in cow.",
+              [
+                "S0037",
+                "S0039"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "cloud visibly uses ou and has the lesson ou sound.",
+              [
+                "S0037",
+                "S0039"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "coin is written with oi, but /ɔɪ/ is equally the taught oy sound; the prompt asks for sound rather than spelling.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "coin does not have an ow vowel sound.",
+              [
+                "S0040",
+                "S0041"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "coin has /ɔɪ/, the same sound represented by oy in toy.",
+              [
+                "S0040",
+                "S0041",
+                "S0042"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "coin does not have the lesson ou sound.",
+              [
+                "S0040",
+                "S0041"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "coin visibly uses oi and has the lesson oi sound.",
+              [
+                "S0040",
+                "S0041"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "toy is written with oy, but /ɔɪ/ is equally the taught oi sound; the prompt asks for sound rather than spelling.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "toy has /ɔɪ/, the same sound represented by oi in coin.",
+              [
+                "S0040",
+                "S0041",
+                "S0042"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "toy does not have an ow vowel sound.",
+              [
+                "S0042",
+                "S0041"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "toy visibly uses oy and has the lesson oy sound.",
+              [
+                "S0042",
+                "S0041"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "toy does not have the lesson ou sound.",
+              [
+                "S0042",
+                "S0041"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "snow visibly uses ow and has the /oʊ/ sound contrasted in this lesson.",
+              [
+                "S0043",
+                "S0044"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The lesson ou example is cloud with /aʊ/, not snow with /oʊ/.",
+              [
+                "S0037",
+                "S0043",
+                "S0044"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "snow does not have the /ɔɪ/ sound associated with oi.",
+              [
+                "S0043",
+                "S0044"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "snow does not have the /ɔɪ/ sound associated with oy.",
+              [
+                "S0043",
+                "S0044"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

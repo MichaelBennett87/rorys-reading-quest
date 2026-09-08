@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0044",
+  "batchFileSha256": "2e46b349bf1c3fb98661e14ba21c026ffea7dbc9fe2d3b22017816d8667a15d4",
+  "reviewerThreadId": "01a07bc2-8812-7cc2-a5b2-df5dabbc4bb9",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0514",
+      "fingerprint": "370f22518f895295cbac8f57881418c4745f7403e5c21ea504674a79c0203d04",
+      "slots": [{
+        "slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "DEFENSIBLE", "The title names compost changing, and the passage describes scraps becoming soil-like bits.", ["S0143", "S0136"]],
+          ["A2", "INCORRECT", "The passage does not concern bird visitors.", ["S0143", "S0136"]],
+          ["A3", "INCORRECT", "The source contains a compost-corner map, not a trail map, and that is not the title's main clue.", ["S0143", "S0146"]],
+          ["A4", "INCORRECT", "The passage does not concern moon shapes.", ["S0143", "S0136"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0515",
+      "fingerprint": "31dd9e170efd4f9adc3d92ea1789bab5a224a9a0c275d5fa0dc9e3ab2a52bda3",
+      "slots": [{
+        "slotId": "response", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "The section concerns compost location rather than moon changes.", ["S0145", "S0136", "S0138"]],
+          ["A2", "DEFENSIBLE", "Where It Stays introduces the section that locates the compost bin near the herb bed and hose hook.", ["S0145", "S0136", "S0138"]],
+          ["A3", "INCORRECT", "The section locates one compost bin rather than counting recycling bins.", ["S0145", "S0138"]],
+          ["A4", "INCORRECT", "The section does not discuss birds.", ["S0145", "S0136", "S0138"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0516",
+      "fingerprint": "3b06fdf1b49a44a5407d20816f97de8a824f836fb148e44e336a2de74c370f59",
+      "slots": [{
+        "slotId": "response", "defensible": ["A1", "A4"],
+        "ambiguity": "The map directly places the bin beside named landmarks, but the caption also says the shaded spot keeps the bin cool, which reasonably conveys another location for the bin.",
+        "selectionContractValid": false,
+        "options": [
+          ["A1", "DEFENSIBLE", "The caption identifies a shaded spot associated with keeping the bin cool, so a learner can use it as location information.", ["S0140", "S0147"]],
+          ["A2", "INCORRECT", "The glossary defines compost and gives no bin location.", ["S0142", "S0150", "S0156"]],
+          ["A3", "INCORRECT", "The title gives the topic but no location for the bin.", ["S0143"]],
+          ["A4", "DEFENSIBLE", "The map explicitly shows the bin beside the herb bed and hose hook.", ["S0138", "S0146", "S0151", "S0153"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0517",
+      "fingerprint": "4193f21cadafe9b7645819a435060aa6b45325a2d63359bc89578f700a5a6772",
+      "slots": [{
+        "slotId": "response", "defensible": ["A2", "A3", "A4"],
+        "ambiguity": "The prompt requests two details, but A2 locates the compost activity near the herb bed, A3 directly locates the bin, and A4 places the bin in a shaded spot by ordinary inference.",
+        "selectionContractValid": false,
+        "options": [
+          ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The glossary tells what compost is, not where the bin is.", ["S0142", "S0150", "S0156"]],
+          ["A2", "DEFENSIBLE", "This sentence places the compost-changing activity near the herb bed, which is a reasonable clue to the bin's location in context.", ["S0136", "S0138"]],
+          ["A3", "DEFENSIBLE", "This sentence directly states the bin's position beside the herb bed and hose hook.", ["S0138", "S0146", "S0151", "S0153"]],
+          ["A4", "DEFENSIBLE", "A shaded spot that keeps the bin cool reasonably tells the learner where the bin is situated.", ["S0140", "S0147", "S0154"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0518",
+      "fingerprint": "3baff3d0ab41169610e1eba2edcac084a65fba23f7379d5c892c8a7e49506a97",
+      "slots": [{
+        "slotId": "response", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "This sentence describes compost changing but does not state what the glossary means.", ["S0136"]],
+          ["A2", "INCORRECT", "This sentence explains the caption rather than the glossary.", ["S0140", "S0147"]],
+          ["A3", "DEFENSIBLE", "It explicitly states that the glossary defines compost and gives the definition.", ["S0142", "S0150", "S0156"]],
+          ["A4", "INCORRECT", "This sentence explains the map rather than the glossary.", ["S0138", "S0146"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0519",
+      "fingerprint": "755cae05a4eda51152c734be36460dd43bb6296d92d6dfcf6ce8e5b7156362d7",
+      "slots": [
+        {
+          "slotId": "row_1", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Showing where the bin sits is a map function, not the title's function.", ["S0146"]],
+            ["A2", "DEFENSIBLE", "Compost Change gives a clue about the whole text's topic.", ["S0143"]],
+            ["A3", "INCORRECT", "Defining compost is the glossary's function.", ["S0150", "S0156"]],
+            ["A4", "INCORRECT", "Explaining the shaded spot is a caption or map-legend function, not the title's function.", ["S0147", "S0154"]]
+          ]
+        },
+        {
+          "slotId": "row_2", "defensible": ["A2", "A4"],
+          "ambiguity": "The map both locates the compost bin and includes a Cool spot legend entry explaining that the shaded spot keeps the bin cool.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "INCORRECT", "The glossary, not the map, defines compost.", ["S0150", "S0156"]],
+            ["A2", "DEFENSIBLE", "The map explicitly places the compost bin beside the herb bed.", ["S0146", "S0151"]],
+            ["A3", "INCORRECT", "The title, not the map, provides the broad whole-text clue.", ["S0143"]],
+            ["A4", "DEFENSIBLE", "The map's Cool spot legend explicitly explains that the shaded spot keeps the bin cool.", ["S0146", "S0154"]]
+          ]
+        },
+        {
+          "slotId": "row_3", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The glossary, not the caption, defines compost.", ["S0150", "S0156"]],
+            ["A2", "INCORRECT", "The map directly shows where the bin sits; the caption's stated role is different.", ["S0146", "S0151"]],
+            ["A3", "DEFENSIBLE", "The caption explicitly explains that the shaded spot keeps the bin cool.", ["S0140", "S0147"]],
+            ["A4", "INCORRECT", "The title, not the caption, provides the whole-text clue.", ["S0143"]]
+          ]
+        },
+        {
+          "slotId": "row_4", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The title, not the glossary, gives the whole-text clue.", ["S0143"]],
+            ["A2", "DEFENSIBLE", "The glossary entry directly defines compost.", ["S0142", "S0150", "S0156"]],
+            ["A3", "INCORRECT", "The map, not the glossary, shows where the bin sits.", ["S0146", "S0151"]],
+            ["A4", "INCORRECT", "The caption and map legend, not the glossary, explain the shaded spot.", ["S0147", "S0154"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0520",
+      "fingerprint": "51d164756a013e75be5cf33b92911c7c5c733f7dd7726565febb18572087e4c8",
+      "slots": [
+        {
+          "slotId": "part_a", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Observe is not the glossary headword in this source, and the map does not define it.", ["S0150", "S0156"]],
+            ["A2", "INCORRECT", "No moon-shape graph appears in this source.", ["S0146"]],
+            ["A3", "DEFENSIBLE", "The map explicitly shows the compost bin's position.", ["S0138", "S0146", "S0151"]]
+          ]
+        },
+        {
+          "slotId": "part_b", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The glossary definition does not support how the map locates the bin.", ["S0142", "S0150", "S0156"]],
+            ["A2", "DEFENSIBLE", "This statement directly supplies the map's location evidence and supports Part A.", ["S0138", "S0146", "S0151", "S0153"]],
+            ["A3", "INCORRECT", "The title identifies the topic but does not locate the bin.", ["S0143"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0521",
+      "fingerprint": "9293342b2e23068f76e381f49fef9464017412f961cdf3f1fee290a996e2863d",
+      "slots": [{
+        "slotId": "response", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "Water rushing is one detail within the passage, not its overall topic.", ["S0010", "S0016"]],
+          ["A2", "INCORRECT", "Blooming flowers are one detail within the plant section, not the whole topic.", ["S0012", "S0020"]],
+          ["A3", "DEFENSIBLE", "The title and every section describe rain gardens, making rain gardens the overall topic.", ["S0014", "S0016", "S0020"]],
+          ["A4", "INCORRECT", "A safer place to grow is one benefit in the central idea, not the topic label.", ["S0009"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0522",
+      "fingerprint": "efb66b6cb3617a73d3b930d3c4c3c0ef85e802c658f7775312cab397efaa4b45",
+      "slots": [{
+        "slotId": "response", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This is a narrow rock-and-water detail from one section.", ["S0010"]],
+          ["A2", "DEFENSIBLE", "This sentence states the broad idea spanning water soaking and plant growth across both sections.", ["S0009", "S0016", "S0020"]],
+          ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This sentence defines a rain garden and one function but omits the plant contribution.", ["S0003", "S0020"]],
+          ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This is a minor detail about flower visitors, not the passage-wide idea.", ["S0012"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0523",
+      "fingerprint": "634c131b88d09edb81931dcb0f66580c933aab8e9cc7158e7510488f15cc0ff5",
+      "slots": [{
+        "slotId": "response", "defensible": ["A1", "A2", "A3"],
+        "ambiguity": "A1 and A2 directly support the rain garden's water function, but A3 also supports soaking by describing the observable result that water disappears after a storm; the prompt supplies no clear ranking rule that excludes it. A4 also has an indirect connection to successful plant growth.",
+        "selectionContractValid": false,
+        "options": [
+          ["A1", "DEFENSIBLE", "Holding water briefly so it can soak directly supports the first half of the central idea.", ["S0005", "S0009"]],
+          ["A2", "DEFENSIBLE", "Catching rain is a direct rain-garden function that supports the water-handling idea.", ["S0003", "S0009"]],
+          ["A3", "DEFENSIBLE", "Water disappearing after a storm is a reasonable observable sign of the soaking described in context.", ["S0013", "S0005", "S0009"]],
+          ["A4", "AMBIGUOUS", "Blooming flowers and their visitors indirectly show that plants grow there, but the connection to a safer growing place is less direct than the other details.", ["S0012", "S0009"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0524",
+      "fingerprint": "e1a9363dc217b9a8f336c9a636900944153ab8b162c308e58fa610d5108669af",
+      "slots": [{
+        "slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "DEFENSIBLE", "This sentence explicitly states the broad idea covering both water soaking and plant growth.", ["S0009", "S0016", "S0020"]],
+          ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This is one plant-root detail, not the passage-wide central idea.", ["S0007"]],
+          ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This is one water-soaking detail, not the complete central idea.", ["S0005"]],
+          ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This is a definition and one function, but it does not cover the plant section.", ["S0003", "S0020"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0525",
+      "fingerprint": "31bed37da9765a94b2ed18efe36b22ad28f2b71442dec005342533bd56090e7a",
+      "slots": [
+        {
+          "slotId": "row_1", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Rain gardens is the concise overall subject named by the title and developed by both sections.", ["S0014", "S0016", "S0020"]],
+            ["A2", "INCORRECT", "This is a complete water detail, not the topic label.", ["S0005"]],
+            ["A3", "INCORRECT", "This is a complete flower-visitor detail, not the topic label.", ["S0012"]]
+          ]
+        },
+        {
+          "slotId": "row_2", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The rocks statement is a narrow detail from the water section.", ["S0010"]],
+            ["A2", "DEFENSIBLE", "This statement unites the passage's main water and plant ideas.", ["S0009", "S0016", "S0020"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Children watching water is a narrow activity detail rather than the central idea.", ["S0013"]]
+          ]
+        },
+        {
+          "slotId": "row_3", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The source explicitly gives this as a true supporting detail about the flowers.", ["S0012"]],
+            ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Rain gardens is the topic, not a supporting-detail statement.", ["S0014"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This is the passage's central idea, not another supporting detail.", ["S0009"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

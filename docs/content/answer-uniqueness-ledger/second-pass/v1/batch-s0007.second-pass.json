@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "stage": "SECOND_PASS_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-s0007",
+  "batchFileSha256": "9d7f736a8061e10ebd2761027b8ca70abe9e445b8d0fa8d18d9a3c5838d15395",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "independentReviewer": false,
+  "records": [
+    {
+      "auditId": "Q0523",
+      "fingerprint": "805bf8486df95d34a735192c6b853cb15c75d4132c264a6ae7b5c16ab8d3a1ff",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "A2 states where the bed catches rain and A1 states how the soil holds it. Watching water later and visiting pollinators do not explain the first catch-and-hold process."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0539",
+      "fingerprint": "5091199bdf736658e377679645cb53368ea749cb8ff225abe9c85b970531e56c",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "A1 alone combines tools, observations, and the resulting learning about weather. Each other option supplies only one or two of those required parts."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0555",
+      "fingerprint": "cc8ef9eb2c7a4c99c39f797326977c3bc8543a57d1977c7eabbbf67207e7c151",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "The entire passage concerns trail markers; the other topics do not appear as its subject."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0560",
+      "fingerprint": "a2f327d9bd7d79cd88c8a87458cb11ad62ca2c5952c2daf92a84109cbcbbe044",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Trail markers names the broad topic; the other choices are full source details."
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "A3 combines the passage's main guidance and safety ideas. A1 and A2 are narrower supporting details."
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "A1 is a specific true source detail. A2 is only the topic label and A3 is the central idea rather than another detail."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0561",
+      "fingerprint": "28e5eafe77d5a1a0a73f92f00e68c9da68fba19fed10e4c5bc1567b0a5cd2b0e",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "A2 covers the whole passage by combining staying on the path and reaching the end safely. A1 and A3 are narrower details."
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "A2 explicitly states how bright markers guide a path choice. The same-color and end-sign details address following or finishing, not the choice point."
+        }
+      ]
+    }
+  ]
+}

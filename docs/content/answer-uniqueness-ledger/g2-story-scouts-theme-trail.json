@@ -1,0 +1,4333 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "g2-story-scouts-theme-trail-prerequisite-a-mc-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-5f744be1194e2d7d",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "617d0a00587f7a33a053b5e4026d2da31de46b358ee22c4b4bda0f133ae9c80d",
+        "conclusionsSha256": "26da0b5e51a6aa3190e3dd60a7175c3ca8579bbf56c307ee52b011d4b697cc78",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0014.pass-a.json",
+        "receiptSha256": "26da0b5e51a6aa3190e3dd60a7175c3ca8579bbf56c307ee52b011d4b697cc78",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence is the best-supported theme?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This is one story event, not a general message.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This is an inaccurate topic statement because the story centers on fixing the sign with help.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Tia struggles alone, asks Ben, succeeds together, and says help made the job easier.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-3",
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-4",
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "This states the sign problem, not a broader theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-prerequisite-a-mc-2",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-95fc8fe49fbf3328",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "617d0a00587f7a33a053b5e4026d2da31de46b358ee22c4b4bda0f133ae9c80d",
+        "conclusionsSha256": "26da0b5e51a6aa3190e3dd60a7175c3ca8579bbf56c307ee52b011d4b697cc78",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0014.pass-a.json",
+        "receiptSha256": "26da0b5e51a6aa3190e3dd60a7175c3ca8579bbf56c307ee52b011d4b697cc78",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice names the topic, not the theme?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This is an ending event rather than a topic label.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This is a short summary of a character action, not the clearest subject label.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "fixing the welcome sign is a short phrase naming the story's subject.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-2",
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "This complete general message is a theme, not merely a topic.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-3",
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-prerequisite-a-ms-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-83623c36977206fa",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "617d0a00587f7a33a053b5e4026d2da31de46b358ee22c4b4bda0f133ae9c80d",
+        "conclusionsSha256": "26da0b5e51a6aa3190e3dd60a7175c3ca8579bbf56c307ee52b011d4b697cc78",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0014.pass-a.json",
+        "receiptSha256": "26da0b5e51a6aa3190e3dd60a7175c3ca8579bbf56c307ee52b011d4b697cc78",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the details that support the theme.",
+          "requestedSelectionCount": 3,
+          "keyedAnswerIds": [
+            "choice-a",
+            "choice-b",
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-c",
+            "choice-b",
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "The seed swap beginning does not explain why asking for help eases a hard task.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Holding the sign together directly shows cooperation making the repair possible.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Tia asking Ben for help is the key choice in the theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The board wobbling when Tia works alone establishes why help makes the task easier.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-prerequisite-a-ht-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-ba4ba26095c41ac4",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "617d0a00587f7a33a053b5e4026d2da31de46b358ee22c4b4bda0f133ae9c80d",
+        "conclusionsSha256": "26da0b5e51a6aa3190e3dd60a7175c3ca8579bbf56c307ee52b011d4b697cc78",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0014.pass-a.json",
+        "receiptSha256": "26da0b5e51a6aa3190e3dd60a7175c3ca8579bbf56c307ee52b011d4b697cc78",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that describes what Tia and Ben did together.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "segment-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "segment-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "segment-3",
+              "verdict": "INCORRECT",
+              "rationale": "This describes the final result and Tia's feeling, not what both characters did together.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-5"
+              ]
+            },
+            {
+              "answerId": "segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "This describes Tia working alone.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-3"
+              ]
+            },
+            {
+              "answerId": "segment-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence says Tia and Ben held the sign together while tightening the rope.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-prerequisite-a-tm-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-5f375cefb446ea23",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "617d0a00587f7a33a053b5e4026d2da31de46b358ee22c4b4bda0f133ae9c80d",
+        "conclusionsSha256": "26da0b5e51a6aa3190e3dd60a7175c3ca8579bbf56c307ee52b011d4b697cc78",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0014.pass-a.json",
+        "receiptSha256": "26da0b5e51a6aa3190e3dd60a7175c3ca8579bbf56c307ee52b011d4b697cc78",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-1",
+          "prompt": "What does Tia asking Ben for help show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "help-question"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "help-question"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "help-question",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Asking Ben directly shows asking for help.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-4"
+              ]
+            },
+            {
+              "answerId": "rope-question",
+              "verdict": "INCORRECT",
+              "rationale": "The request itself does not show that the rope was tight.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-4"
+              ]
+            },
+            {
+              "answerId": "swap-question",
+              "verdict": "INCORRECT",
+              "rationale": "The request is unrelated to when the seed swap began.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-4"
+              ]
+            },
+            {
+              "answerId": "sign-question",
+              "verdict": "INCORRECT",
+              "rationale": "The earlier wobble and sideways sign show crookedness, not the act of asking Ben.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-2",
+          "prompt": "What does they carefully held the sign together show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "work-question"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "work-question"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "move-question",
+              "verdict": "INCORRECT",
+              "rationale": "They hold the sign; the phrase does not say both move the rope.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-4"
+              ]
+            },
+            {
+              "answerId": "read-question",
+              "verdict": "INCORRECT",
+              "rationale": "They repair the sign rather than read it.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-4"
+              ]
+            },
+            {
+              "answerId": "work-question",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Holding the sign together directly shows working together.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-4"
+              ]
+            },
+            {
+              "answerId": "visitor-question",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase describes repair work, not waiting for visitors.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-3",
+          "prompt": "What does the job felt easier with help show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "easy-question"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "easy-question"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "new-question",
+              "verdict": "INCORRECT",
+              "rationale": "The statement does not say the sign was new.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-5"
+              ]
+            },
+            {
+              "answerId": "wind-question",
+              "verdict": "INCORRECT",
+              "rationale": "The statement credits help, not a change in wind.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-5"
+              ]
+            },
+            {
+              "answerId": "easy-question",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The wording directly states that help made the hard job easier.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-5"
+              ]
+            },
+            {
+              "answerId": "loud-question",
+              "verdict": "INCORRECT",
+              "rationale": "The statement says nothing about garden noise.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-4",
+          "prompt": "What does the sign stood straight show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "finished-question"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "finished-question"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "finished-question",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A straight sign shows the repair task was successfully finished.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-5"
+              ]
+            },
+            {
+              "answerId": "sad-question",
+              "verdict": "INCORRECT",
+              "rationale": "The successful straight sign does not make the story sad.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-5"
+              ]
+            },
+            {
+              "answerId": "lost-question",
+              "verdict": "INCORRECT",
+              "rationale": "The straight sign shows the help succeeded, not that it was lost.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-5"
+              ]
+            },
+            {
+              "answerId": "topic-question",
+              "verdict": "INCORRECT",
+              "rationale": "The sign's condition does not show the topic changed.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-garden-help-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-prerequisite-b-mc-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-5ab2cd57f6907ceb",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "a9397c36d176d18b315b26698aedfddaa86448472765a3f8fb68fbdfeec9793a",
+        "conclusionsSha256": "89f6d3e1aa6d2690f7519bd2997a3429b85bd3064d0c2d7e034dc3749e2fdf59",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0031.pass-a.json",
+        "receiptSha256": "89f6d3e1aa6d2690f7519bd2997a3429b85bd3064d0c2d7e034dc3749e2fdf59",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence is the best-supported theme?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "Rainy afternoons name a setting detail, not the story's message.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "This retells one story event rather than stating a general message.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This states the ending result rather than a transferable theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Nia's patience leads her to notice the missing label, directly supporting this full-sentence message.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-3",
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-prerequisite-b-mc-2",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-72fd321c172fd498",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "a9397c36d176d18b315b26698aedfddaa86448472765a3f8fb68fbdfeec9793a",
+        "conclusionsSha256": "89f6d3e1aa6d2690f7519bd2997a3429b85bd3064d0c2d7e034dc3749e2fdf59",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0014.second-pass.json",
+        "receiptSha256": "9bf0c6b4b184787e928baa543a666fa7a9247e609d4c118a9957167abe302dc8",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice is the topic, not the theme?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This is a specific plot event, not the broader subject topic.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "This complete general message is a theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-3",
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This is a specific ending detail, not the broader topic.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "sorting books names the broad subject without stating a message.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-prerequisite-b-ms-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-755bc29a6714f59e",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "a9397c36d176d18b315b26698aedfddaa86448472765a3f8fb68fbdfeec9793a",
+        "conclusionsSha256": "89f6d3e1aa6d2690f7519bd2997a3429b85bd3064d0c2d7e034dc3749e2fdf59",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0014.second-pass.json",
+        "receiptSha256": "9bf0c6b4b184787e928baa543a666fa7a9247e609d4c118a9957167abe302dc8",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the details that support the theme.",
+          "requestedSelectionCount": 3,
+          "keyedAnswerIds": [
+            "choice-a",
+            "choice-b",
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-c",
+            "choice-b",
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The successful display is the result of Nia's patient, careful work.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Noticing the hidden label is the important detail patience helped Nia find.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "The books being picture books does not connect patience with noticing details.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly shows Nia acting patiently before finding the missing label.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-prerequisite-b-ht-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-52790596629c8fba",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "a9397c36d176d18b315b26698aedfddaa86448472765a3f8fb68fbdfeec9793a",
+        "conclusionsSha256": "89f6d3e1aa6d2690f7519bd2997a3429b85bd3064d0c2d7e034dc3749e2fdf59",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0031.pass-a.json",
+        "receiptSha256": "89f6d3e1aa6d2690f7519bd2997a3429b85bd3064d0c2d7e034dc3749e2fdf59",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that shows Nia noticed an important detail.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence explicitly says Nia noticed the missing label.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-4"
+              ]
+            },
+            {
+              "answerId": "segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence shows patience but does not yet show what detail she noticed.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-3"
+              ]
+            },
+            {
+              "answerId": "segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence shows her initial wish and the messy stack, not noticing the label.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-prerequisite-b-tm-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-39b0895071130d8c",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "a9397c36d176d18b315b26698aedfddaa86448472765a3f8fb68fbdfeec9793a",
+        "conclusionsSha256": "89f6d3e1aa6d2690f7519bd2997a3429b85bd3064d0c2d7e034dc3749e2fdf59",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0014.second-pass.json",
+        "receiptSha256": "9bf0c6b4b184787e928baa543a666fa7a9247e609d4c118a9957167abe302dc8",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-1",
+          "prompt": "What does Nia patiently counted the books again show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "patient-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "patient-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "book-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Counting the books again is not reading a new book.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-3"
+              ]
+            },
+            {
+              "answerId": "time-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The detail does not tell the time of day.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-3"
+              ]
+            },
+            {
+              "answerId": "quiet-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The detail concerns counting and waiting, not library volume.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-3"
+              ]
+            },
+            {
+              "answerId": "patient-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The words patiently and waited directly show patience.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-2",
+          "prompt": "What does she noticed a missing label show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "detail-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "detail-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "detail-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A hidden missing label is an important detail Nia notices.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-4"
+              ]
+            },
+            {
+              "answerId": "book-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence says she notices a label, not that she sorts books.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-4"
+              ]
+            },
+            {
+              "answerId": "story-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence contains no storytelling action.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-4"
+              ]
+            },
+            {
+              "answerId": "rain-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence does not concern waiting for rain.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-3",
+          "prompt": "What does the display looked ready for story time show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "fix-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "fix-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "fix-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A ready display shows the messy-label problem has been fixed.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-5"
+              ]
+            },
+            {
+              "answerId": "sleep-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Story time is not identified as bedtime.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-5"
+              ]
+            },
+            {
+              "answerId": "label-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The display being ready contradicts the label remaining missing.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-5"
+              ]
+            },
+            {
+              "answerId": "mess-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Ready contradicts the shelf becoming messier.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-4",
+          "prompt": "What does placing the label in the right spot show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "care-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "care-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "shout-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Placing a label does not show a loud voice.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-5"
+              ]
+            },
+            {
+              "answerId": "run-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Nia stays and fixes the display rather than running away.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-5"
+              ]
+            },
+            {
+              "answerId": "song-choice",
+              "verdict": "INCORRECT",
+              "rationale": "No singing occurs.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-5"
+              ]
+            },
+            {
+              "answerId": "care-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Choosing the correct location for the missing label shows careful thinking.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-library-pause-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-guided-a-mc-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-1b6d86d070c0d4dc",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "a9397c36d176d18b315b26698aedfddaa86448472765a3f8fb68fbdfeec9793a",
+        "conclusionsSha256": "89f6d3e1aa6d2690f7519bd2997a3429b85bd3064d0c2d7e034dc3749e2fdf59",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0014.second-pass.json",
+        "receiptSha256": "9bf0c6b4b184787e928baa543a666fa7a9247e609d4c118a9957167abe302dc8",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence is the best-supported theme?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This is an ending event, not a general message.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "Lunch at school is a setting detail, not the story's theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "This is one plot event rather than a transferable message.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Marco tells the truth, helps address the spill, and joins a successful group solution.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-3",
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-4",
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-guided-a-mc-2",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-2d131eb9f592c8ad",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "a9397c36d176d18b315b26698aedfddaa86448472765a3f8fb68fbdfeec9793a",
+        "conclusionsSha256": "89f6d3e1aa6d2690f7519bd2997a3429b85bd3064d0c2d7e034dc3749e2fdf59",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0031.pass-a.json",
+        "receiptSha256": "89f6d3e1aa6d2690f7519bd2997a3429b85bd3064d0c2d7e034dc3749e2fdf59",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice is the topic, not the theme?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This is a specific ending event, not the broad subject.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This is a specific character action.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "telling the truth names the broad subject without stating a lesson.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "This complete general message is a theme, not merely a topic.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-3",
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-guided-a-ms-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-34f46632fcd5ea5e",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "a13907452233329d694b9411f21a8ed89e25a5bc9f4df818979246a20ff70c5e",
+        "conclusionsSha256": "f2f459b4cb1137b5bcf2520b75aa74a8096051812b48984a6df575fa2c06b6ea",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_ADJUDICATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/adjudications-v7-final/batch-a0001.pass-a.json",
+        "receiptSha256": "f2f459b4cb1137b5bcf2520b75aa74a8096051812b48984a6df575fa2c06b6ea",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the details that support the theme.",
+          "requestedSelectionCount": 3,
+          "keyedAnswerIds": [
+            "choice-a",
+            "choice-b",
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a",
+            "choice-c",
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Marco's decision to tell the truth directly supports the truth-and-trust theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The thanks and shared repair show the positive result of his truthful choice.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Showing where the spill began and helping clean it demonstrate honest, responsible action.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The blue drops establish the problem but do not by themselves support the story's truth-and-trust message.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-guided-a-ht-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-4aba9afa3d86c34e",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "a9397c36d176d18b315b26698aedfddaa86448472765a3f8fb68fbdfeec9793a",
+        "conclusionsSha256": "89f6d3e1aa6d2690f7519bd2997a3429b85bd3064d0c2d7e034dc3749e2fdf59",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0031.pass-a.json",
+        "receiptSha256": "89f6d3e1aa6d2690f7519bd2997a3429b85bd3064d0c2d7e034dc3749e2fdf59",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that shows Marco told the truth.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "segment-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "segment-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "segment-3",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence shows the response after Marco's truthful action.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-5"
+              ]
+            },
+            {
+              "answerId": "segment-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence explicitly says Marco told Ms. Reed the truth.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-3"
+              ]
+            },
+            {
+              "answerId": "segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence shows Marco knew what happened, not that he told anyone.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-guided-a-tm-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-292e6445cafa01a1",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "617d0a00587f7a33a053b5e4026d2da31de46b358ee22c4b4bda0f133ae9c80d",
+        "conclusionsSha256": "26da0b5e51a6aa3190e3dd60a7175c3ca8579bbf56c307ee52b011d4b697cc78",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0014.pass-a.json",
+        "receiptSha256": "26da0b5e51a6aa3190e3dd60a7175c3ca8579bbf56c307ee52b011d4b697cc78",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-1",
+          "prompt": "What does Marco telling Ms. Reed the truth show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "honesty-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "honesty-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "honesty-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Telling Ms. Reed the truth shows Marco choosing honesty.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-3"
+              ]
+            },
+            {
+              "answerId": "paint-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The truth-telling choice does not establish the paint color.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-3"
+              ]
+            },
+            {
+              "answerId": "jar-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The cracked jar was already found and is not what his truth-telling choice shows.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lunch-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The time setting is unrelated to what the choice shows.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-2",
+          "prompt": "What does Marco showing where the spill began and helping wipe the floor show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "help-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "help-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "help-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Showing the spill and wiping the floor directly help solve the problem.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-4"
+              ]
+            },
+            {
+              "answerId": "wall-choice",
+              "verdict": "INCORRECT",
+              "rationale": "These actions do not show the mural wall's size.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-4"
+              ]
+            },
+            {
+              "answerId": "school-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The school setting is established elsewhere and is not the meaning of these actions.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-1"
+              ]
+            },
+            {
+              "answerId": "drop-choice",
+              "verdict": "CONTRADICTED",
+              "rationale": "Marco actively addresses the spill rather than ignoring it.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-3",
+          "prompt": "What does the class fixing the mural together show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "team-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "team-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "team-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The class fixing the mural together directly shows teamwork.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-5"
+              ]
+            },
+            {
+              "answerId": "paint-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "The joint repair does not show the jar was new.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-5"
+              ]
+            },
+            {
+              "answerId": "dirt-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The repair action does not merely show the floor was dirty.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-4"
+              ]
+            },
+            {
+              "answerId": "hide-choice",
+              "verdict": "CONTRADICTED",
+              "rationale": "The class repairs the mural rather than hiding the jar.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-4",
+          "prompt": "What does Ms. Reed thanking Marco show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "trust-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "trust-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lunch-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "The teacher's thanks says nothing about a lunch line.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-5"
+              ]
+            },
+            {
+              "answerId": "noise-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The teacher's thanks says nothing about hallway noise.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-5"
+              ]
+            },
+            {
+              "answerId": "trust-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Thanking Marco after he tells the truth supports that his honesty earned trust.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-3",
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-5"
+              ]
+            },
+            {
+              "answerId": "wrong-choice",
+              "verdict": "CONTRADICTED",
+              "rationale": "Marco helps repair the problem rather than making it bigger.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-4",
+                "g2-story-scouts-theme-trail-passage-hallway-truth-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-guided-b-mc-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-98378e87b1c404a3",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "f7374ddafebdb8609c180e0aa9318ac255fe7ee31040479482cee842cd692db2",
+        "conclusionsSha256": "774211b08362d0ee095ef4dc6ff484d5cfe0d7707cb52226c50460c2a01cff27",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0032.pass-a.json",
+        "receiptSha256": "774211b08362d0ee095ef4dc6ff484d5cfe0d7707cb52226c50460c2a01cff27",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence is the best-supported theme?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This describes the story's topic rather than a transferable message.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "This retells one setup event rather than stating a theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This states the weather sequence, not the larger message.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-2",
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Lila prepares for the forecast rain and thereby keeps the supplies dry and safe.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-3",
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-4",
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-guided-b-mc-2",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-f0bb9d16bf7929c2",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "f7374ddafebdb8609c180e0aa9318ac255fe7ee31040479482cee842cd692db2",
+        "conclusionsSha256": "774211b08362d0ee095ef4dc6ff484d5cfe0d7707cb52226c50460c2a01cff27",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0032.pass-a.json",
+        "receiptSha256": "774211b08362d0ee095ef4dc6ff484d5cfe0d7707cb52226c50460c2a01cff27",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice is a complete theme, not just a topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This is a story-specific setting fact, not a general message.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This complete general statement gives the lesson supported by preparation and outcome.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-3",
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This is one weather event, not a theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "getting ready for the fair names the topic but does not state a message.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-guided-b-ms-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-0d42cd89f098cad5",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "f7374ddafebdb8609c180e0aa9318ac255fe7ee31040479482cee842cd692db2",
+        "conclusionsSha256": "774211b08362d0ee095ef4dc6ff484d5cfe0d7707cb52226c50460c2a01cff27",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0032.pass-a.json",
+        "receiptSha256": "774211b08362d0ee095ef4dc6ff484d5cfe0d7707cb52226c50460c2a01cff27",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the details that support the theme.",
+          "requestedSelectionCount": 3,
+          "keyedAnswerIds": [
+            "choice-a",
+            "choice-b",
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-c",
+            "choice-b",
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The dry supplies are the successful outcome showing preparation prevented damage.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "These careful actions directly show Lila preparing and protecting the supplies.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Remembering the forecast supplies the weather clue that motivates preparation.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "The community-center setting does not show that careful preparation prevented a problem.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-guided-b-ht-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-ee91fee85034f9d4",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "617d0a00587f7a33a053b5e4026d2da31de46b358ee22c4b4bda0f133ae9c80d",
+        "conclusionsSha256": "26da0b5e51a6aa3190e3dd60a7175c3ca8579bbf56c307ee52b011d4b697cc78",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0014.second-pass.json",
+        "receiptSha256": "9bf0c6b4b184787e928baa543a666fa7a9247e609d4c118a9957167abe302dc8",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that lists the steps Lila took to prepare the supplies.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "segment-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "segment-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "This gives the weather clue, not Lila's preparation steps.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-2"
+              ]
+            },
+            {
+              "answerId": "segment-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence lists taping, covering, and moving supplies.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-3"
+              ]
+            },
+            {
+              "answerId": "segment-3",
+              "verdict": "INCORRECT",
+              "rationale": "This states the theme and Lila's feeling after the outcome.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-guided-b-tm-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-8921556911d22b6d",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "f7374ddafebdb8609c180e0aa9318ac255fe7ee31040479482cee842cd692db2",
+        "conclusionsSha256": "774211b08362d0ee095ef4dc6ff484d5cfe0d7707cb52226c50460c2a01cff27",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0032.pass-a.json",
+        "receiptSha256": "774211b08362d0ee095ef4dc6ff484d5cfe0d7707cb52226c50460c2a01cff27",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-1",
+          "prompt": "What does Lila remembered the forecast show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "weather-clue"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "weather-clue"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "game-clue",
+              "verdict": "INCORRECT",
+              "rationale": "Remembering a forecast does not show wanting to play a game.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-2"
+              ]
+            },
+            {
+              "answerId": "weather-clue",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The forecast is a weather clue Lila notices and remembers.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-2"
+              ]
+            },
+            {
+              "answerId": "music-clue",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence mentions no music.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-2"
+              ]
+            },
+            {
+              "answerId": "book-clue",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence mentions no book.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-2",
+          "prompt": "What does she carefully taped the labels to the crates show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "prepare-clue"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "prepare-clue"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "mess-clue",
+              "verdict": "INCORRECT",
+              "rationale": "Carefully attaching labels organizes rather than messes up the supplies.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-3"
+              ]
+            },
+            {
+              "answerId": "run-clue",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence shows Lila working, not rushing away.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-3"
+              ]
+            },
+            {
+              "answerId": "song-clue",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence contains no singing.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-3"
+              ]
+            },
+            {
+              "answerId": "prepare-clue",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Carefully taping labels to crates is a supply-preparation action.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-3",
+          "prompt": "What does the supplies stayed dry show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "problem-clue"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "problem-clue"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "fair-clue",
+              "verdict": "INCORRECT",
+              "rationale": "Dry supplies do not show that the fair moved.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-4"
+              ]
+            },
+            {
+              "answerId": "noise-clue",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence gives no information about sound.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-4"
+              ]
+            },
+            {
+              "answerId": "rain-clue",
+              "verdict": "INCORRECT",
+              "rationale": "Dry supplies do not establish that the rain grew stronger.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-4"
+              ]
+            },
+            {
+              "answerId": "problem-clue",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The supplies staying dry shows rain damage was prevented.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-4",
+          "prompt": "What does careful preparation kept the fair materials safe show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "theme-clue"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "theme-clue"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "detail-clue",
+              "verdict": "INCORRECT",
+              "rationale": "This minor crate detail does not express the larger lesson.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-3"
+              ]
+            },
+            {
+              "answerId": "topic-clue",
+              "verdict": "INCORRECT",
+              "rationale": "This names a topic rather than what preparation teaches.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-5"
+              ]
+            },
+            {
+              "answerId": "theme-clue",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Keeping materials safe through preparation supports the general lesson that planning protects important things.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-5"
+              ]
+            },
+            {
+              "answerId": "summary-clue",
+              "verdict": "INCORRECT",
+              "rationale": "This weather sequence omits the preparation-and-protection meaning.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-2",
+                "g2-story-scouts-theme-trail-passage-spring-fair-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-checkpoint-a-mc-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-01242bdfc50fe4eb",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "f7374ddafebdb8609c180e0aa9318ac255fe7ee31040479482cee842cd692db2",
+        "conclusionsSha256": "774211b08362d0ee095ef4dc6ff484d5cfe0d7707cb52226c50460c2a01cff27",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0014.second-pass.json",
+        "receiptSha256": "9bf0c6b4b184787e928baa543a666fa7a9247e609d4c118a9957167abe302dc8",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence is the best-supported theme?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "Science club is a setting and topic detail, not a theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The boys combine measuring and balancing strengths to make the bridge succeed.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-2",
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-4",
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This is the initial problem, not a general message.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "This retells the construction setup rather than stating a theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-checkpoint-a-mc-2",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-2b8184d20f34e97e",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "f7374ddafebdb8609c180e0aa9318ac255fe7ee31040479482cee842cd692db2",
+        "conclusionsSha256": "774211b08362d0ee095ef4dc6ff484d5cfe0d7707cb52226c50460c2a01cff27",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0032.pass-a.json",
+        "receiptSha256": "774211b08362d0ee095ef4dc6ff484d5cfe0d7707cb52226c50460c2a01cff27",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice is the topic, not the theme?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This is a specific ending event.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "building a model bridge names the broad story subject without a message.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This is a specific action detail.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "This complete transferable message is a theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-checkpoint-a-mc-3",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-ea0a6041b8607665",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "617d0a00587f7a33a053b5e4026d2da31de46b358ee22c4b4bda0f133ae9c80d",
+        "conclusionsSha256": "26da0b5e51a6aa3190e3dd60a7175c3ca8579bbf56c307ee52b011d4b697cc78",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0014.pass-a.json",
+        "receiptSha256": "26da0b5e51a6aa3190e3dd60a7175c3ca8579bbf56c307ee52b011d4b697cc78",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which action shows Omar and Jun changing their plan so they can use their strengths together?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Talking, swapping jobs, and trying again explicitly show a changed plan using both strengths.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Balancing supports uses Jun's strength but does not itself show both friends changing their plan.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "The standing bridge is the result, not the plan-changing action.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Omar's measuring strength is relevant but does not state the action of changing plans together.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-checkpoint-a-ms-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-a76e11d62991cf7a",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "f7374ddafebdb8609c180e0aa9318ac255fe7ee31040479482cee842cd692db2",
+        "conclusionsSha256": "774211b08362d0ee095ef4dc6ff484d5cfe0d7707cb52226c50460c2a01cff27",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0032.pass-a.json",
+        "receiptSha256": "774211b08362d0ee095ef4dc6ff484d5cfe0d7707cb52226c50460c2a01cff27",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the details that support the theme.",
+          "requestedSelectionCount": 3,
+          "keyedAnswerIds": [
+            "choice-a",
+            "choice-b",
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a",
+            "choice-b",
+            "choice-c"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sentence identifies the boys' different useful strengths.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Their discussion, job swap, and retry show cooperation after a problem.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "The passage never says the table was beside a window, and the detail would not support the theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The successful bridge and explicit statement that their strengths worked together directly support the theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-checkpoint-a-ht-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-b36e40bbb475b4ff",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "617d0a00587f7a33a053b5e4026d2da31de46b358ee22c4b4bda0f133ae9c80d",
+        "conclusionsSha256": "26da0b5e51a6aa3190e3dd60a7175c3ca8579bbf56c307ee52b011d4b697cc78",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0014.pass-a.json",
+        "receiptSha256": "26da0b5e51a6aa3190e3dd60a7175c3ca8579bbf56c307ee52b011d4b697cc78",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that identifies a different strength for each friend.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "segment-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "segment-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "segment-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence identifies Omar's measuring strength and Jun's steady-holding strength.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-2"
+              ]
+            },
+            {
+              "answerId": "segment-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This says their strengths worked together but does not identify each strength.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-5"
+              ]
+            },
+            {
+              "answerId": "segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "This describes a failed attempt and job swap, not each friend's specific strength.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-checkpoint-a-tm-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-857a49e2952ac816",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "f7374ddafebdb8609c180e0aa9318ac255fe7ee31040479482cee842cd692db2",
+        "conclusionsSha256": "774211b08362d0ee095ef4dc6ff484d5cfe0d7707cb52226c50460c2a01cff27",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0032.pass-a.json",
+        "receiptSha256": "774211b08362d0ee095ef4dc6ff484d5cfe0d7707cb52226c50460c2a01cff27",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-1",
+          "prompt": "What does Omar was good at measuring show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "skill-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "skill-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "storm-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Measuring ability is unrelated to weather.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-2"
+              ]
+            },
+            {
+              "answerId": "skill-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Being good at measuring identifies one useful strength Omar contributes.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-2"
+              ]
+            },
+            {
+              "answerId": "time-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The statement gives no time.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-2"
+              ]
+            },
+            {
+              "answerId": "food-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The statement gives no food information.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-2",
+          "prompt": "What does Their first try sagged in the middle show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "problem-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "problem-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "song-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The sagging bridge does not show singing.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-3"
+              ]
+            },
+            {
+              "answerId": "finish-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Sagging shows the work was not finished successfully.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-3"
+              ]
+            },
+            {
+              "answerId": "problem-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The bridge sagging directly shows a problem with the first plan.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-3"
+              ]
+            },
+            {
+              "answerId": "window-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The passage does not place them near a window.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-3",
+          "prompt": "What does they talked, swapped jobs, and tried again show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "retry-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "retry-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "quiet-choice",
+              "verdict": "INCORRECT",
+              "rationale": "They talked rather than staying silent.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-3"
+              ]
+            },
+            {
+              "answerId": "stop-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Trying again contradicts quitting.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-3"
+              ]
+            },
+            {
+              "answerId": "book-choice",
+              "verdict": "INCORRECT",
+              "rationale": "They worked on a bridge, not a book.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-3"
+              ]
+            },
+            {
+              "answerId": "retry-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Talking, changing jobs, and retrying show that they kept trying a new plan.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-4",
+          "prompt": "What does their different strengths worked together show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "theme-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "theme-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "smile-choice",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The boys smiled in the full sentence, but the target phrase explains collaboration rather than merely happiness.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-5"
+              ]
+            },
+            {
+              "answerId": "bridge-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase says nothing about bridge materials.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-5"
+              ]
+            },
+            {
+              "answerId": "club-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase says nothing about setting.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-5"
+              ]
+            },
+            {
+              "answerId": "theme-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The phrase directly states that working together combined different strengths.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-checkpoint-a-ep-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-645b3d74d36c6ee0",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "617d0a00587f7a33a053b5e4026d2da31de46b358ee22c4b4bda0f133ae9c80d",
+        "conclusionsSha256": "26da0b5e51a6aa3190e3dd60a7175c3ca8579bbf56c307ee52b011d4b697cc78",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0014.pass-a.json",
+        "receiptSha256": "26da0b5e51a6aa3190e3dd60a7175c3ca8579bbf56c307ee52b011d4b697cc78",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Which theme is best supported by the story?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "part-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "part-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "part-a-3",
+              "verdict": "INCORRECT",
+              "rationale": "This is a setting fact, not a general theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-1"
+              ]
+            },
+            {
+              "answerId": "part-a-2",
+              "verdict": "INCORRECT",
+              "rationale": "This names the topic, not a complete theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-1"
+              ]
+            },
+            {
+              "answerId": "part-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The story shows the friends combining different strengths to make the bridge work.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-2",
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-5"
+              ]
+            },
+            {
+              "answerId": "part-a-4",
+              "verdict": "INCORRECT",
+              "rationale": "This is a material detail, not a general message.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which choice states the result and explains how it supports that theme?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "part-b-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "part-b-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "part-b-2",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The displayed story does not mention a window and this would not support the theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-1"
+              ]
+            },
+            {
+              "answerId": "part-b-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the changed plan but not the successful result explaining the theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-3"
+              ]
+            },
+            {
+              "answerId": "part-b-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This states the successful result and explicitly credits their different strengths working together.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-5"
+              ]
+            },
+            {
+              "answerId": "part-b-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This shows divided roles but does not state the result or explain the theme as requested.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-model-bridge-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-checkpoint-b-mc-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-87ca830a04d68d06",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "fcdc5c8a9d819865ad2460c12bf2cb4351d0357d1c6fbba2c3168c242f795383",
+        "conclusionsSha256": "c663f5304dda3f2a3acd1714a7323b18057023d5a9a2d898d64096a331b2d7b3",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0033.pass-a.json",
+        "receiptSha256": "c663f5304dda3f2a3acd1714a7323b18057023d5a9a2d898d64096a331b2d7b3",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence is the best-supported theme?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This is a plot detail about the failed first knot, not a general lesson.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This names the setting and subject, not a lesson that applies beyond the story.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "This recounts Ava's task, not a general lesson.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The failed knot, Ava's changed approach, and the steady result support this general lesson.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-2",
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-3",
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-4",
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-checkpoint-b-mc-2",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-0cdcf8b24ec05b76",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "fcdc5c8a9d819865ad2460c12bf2cb4351d0357d1c6fbba2c3168c242f795383",
+        "conclusionsSha256": "c663f5304dda3f2a3acd1714a7323b18057023d5a9a2d898d64096a331b2d7b3",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0033.pass-a.json",
+        "receiptSha256": "c663f5304dda3f2a3acd1714a7323b18057023d5a9a2d898d64096a331b2d7b3",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice is the topic, not the theme?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "This is a general lesson about responding to failure, so it is a theme rather than a topic.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-2",
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This is one plot event, not the broad subject named as a topic.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Hanging a birdhouse names the story's broad subject without stating a lesson.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This is the result of Ava's actions, not the broad subject.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-checkpoint-b-mc-3",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-0b7627d07655b4d4",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "fcdc5c8a9d819865ad2460c12bf2cb4351d0357d1c6fbba2c3168c242f795383",
+        "conclusionsSha256": "c663f5304dda3f2a3acd1714a7323b18057023d5a9a2d898d64096a331b2d7b3",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0033.pass-a.json",
+        "receiptSha256": "c663f5304dda3f2a3acd1714a7323b18057023d5a9a2d898d64096a331b2d7b3",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice shows a character action that supports the theme?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "The birdhouse staying steady is a result, not a character action.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "The knot slipping is the problem event, not an action Ava takes.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Ava pauses, examines the twine, and chooses a different plan, directly supporting the lesson about changing an unsuccessful approach.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "The fence location is a setting detail, not a character action.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-checkpoint-b-ms-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-321db0abe30d1df7",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "fcdc5c8a9d819865ad2460c12bf2cb4351d0357d1c6fbba2c3168c242f795383",
+        "conclusionsSha256": "c663f5304dda3f2a3acd1714a7323b18057023d5a9a2d898d64096a331b2d7b3",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0033.pass-a.json",
+        "receiptSha256": "c663f5304dda3f2a3acd1714a7323b18057023d5a9a2d898d64096a331b2d7b3",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the details that support the theme.",
+          "requestedSelectionCount": 3,
+          "keyedAnswerIds": [
+            "choice-a",
+            "choice-b",
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-b",
+            "choice-c",
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Ava's decision to choose a new plan directly supports the theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Tying around the post and adding a loop shows Ava carrying out the new plan.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "The fence location does not help show that changing an unsuccessful plan can solve a problem.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The slipping knot establishes that the first plan did not work, which is part of the theme's problem-and-response sequence.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-checkpoint-b-ht-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-febebd9ca7fa1298",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "617d0a00587f7a33a053b5e4026d2da31de46b358ee22c4b4bda0f133ae9c80d",
+        "conclusionsSha256": "26da0b5e51a6aa3190e3dd60a7175c3ca8579bbf56c307ee52b011d4b697cc78",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0014.pass-a.json",
+        "receiptSha256": "26da0b5e51a6aa3190e3dd60a7175c3ca8579bbf56c307ee52b011d4b697cc78",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that states the moment Ava decides to change plans.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "segment-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "segment-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "segment-3",
+              "verdict": "INCORRECT",
+              "rationale": "This states the successful result after the new plan.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-5"
+              ]
+            },
+            {
+              "answerId": "segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "This states why the first plan failed.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-2"
+              ]
+            },
+            {
+              "answerId": "segment-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly identifies the moment Ava pauses and chooses a new plan.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-checkpoint-b-tm-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-885987206133cddc",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "617d0a00587f7a33a053b5e4026d2da31de46b358ee22c4b4bda0f133ae9c80d",
+        "conclusionsSha256": "26da0b5e51a6aa3190e3dd60a7175c3ca8579bbf56c307ee52b011d4b697cc78",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0014.pass-a.json",
+        "receiptSha256": "26da0b5e51a6aa3190e3dd60a7175c3ca8579bbf56c307ee52b011d4b697cc78",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-1",
+          "prompt": "What does the first knot slipping twice show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "first-plan-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "first-plan-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "first-plan-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The knot slipping twice directly shows the first plan failed.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-2"
+              ]
+            },
+            {
+              "answerId": "song-choice",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The story gives no singing detail.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-2"
+              ]
+            },
+            {
+              "answerId": "tree-choice",
+              "verdict": "UNSUPPORTED",
+              "rationale": "A tree is not relevant to the knot slipping.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-2"
+              ]
+            },
+            {
+              "answerId": "bird-choice",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The knot slipping does not show whether the birdhouse was empty.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-2",
+          "prompt": "What does Ava pausing, looking at the twine, and choosing a new plan show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "new-plan-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "new-plan-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "new-plan-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sentence directly says Ava chose a new plan.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-3"
+              ]
+            },
+            {
+              "answerId": "fence-choice",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The sentence does not say the fence moved.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-3"
+              ]
+            },
+            {
+              "answerId": "garden-choice",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The sentence does not say Ava watered the garden.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-3"
+              ]
+            },
+            {
+              "answerId": "wind-choice",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The sentence does not say the wind stopped.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-3",
+          "prompt": "What does tying the knot around the post instead show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "instead-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "instead-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "slip-choice",
+              "verdict": "CONTRADICTED",
+              "rationale": "Tying around the post is the revised action, not another reported slip.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-4"
+              ]
+            },
+            {
+              "answerId": "rain-choice",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The sentence does not mention rain.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-4"
+              ]
+            },
+            {
+              "answerId": "sleep-choice",
+              "verdict": "CONTRADICTED",
+              "rationale": "Ava stays and repairs the birdhouse rather than going home.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-4"
+              ]
+            },
+            {
+              "answerId": "instead-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Tying the knot around the post instead is a new way to solve the problem.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-4",
+          "prompt": "What does the birdhouse staying steady show about Ava's new plan?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "outcome-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "outcome-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "outcome-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The steady birdhouse is direct evidence that the new plan worked.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-5"
+              ]
+            },
+            {
+              "answerId": "garden-choice-2",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The ending does not say the garden became sunny.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-5"
+              ]
+            },
+            {
+              "answerId": "problem-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The first knot's slip describes the old plan, not what the steady result shows.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-2"
+              ]
+            },
+            {
+              "answerId": "topic-choice",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Birdhouse is the topic, but that does not answer what the steady result shows about the plan.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-checkpoint-b-ep-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-364302456189f1f9",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "7ae308cc96507758782c6cce134c7005ac10f17aa5220e278e299b9a31f3e264",
+        "conclusionsSha256": "5aa70ecc4e89e0f13a72aefe66f6449e145d41d6804f0db559c167b1d0d09d07",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0014.second-pass.json",
+        "receiptSha256": "9bf0c6b4b184787e928baa543a666fa7a9247e609d4c118a9957167abe302dc8",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Which theme is best supported by the story?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "part-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "part-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "part-a-4",
+              "verdict": "INCORRECT",
+              "rationale": "This is a setting detail, not a general theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-1"
+              ]
+            },
+            {
+              "answerId": "part-a-3",
+              "verdict": "INCORRECT",
+              "rationale": "This is the initial problem, not a general message.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-2"
+              ]
+            },
+            {
+              "answerId": "part-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Ava's failed knot, changed plan, and successful result support this general lesson.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-2",
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-3",
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-5"
+              ]
+            },
+            {
+              "answerId": "part-a-2",
+              "verdict": "INCORRECT",
+              "rationale": "This summarizes a setting and action rather than stating a theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which choice states the result and explains how it supports that theme?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "part-b-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "part-b-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "part-b-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This states the steady result and explicitly explains that the new plan solved the problem.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-5"
+              ]
+            },
+            {
+              "answerId": "part-b-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the revised action but not its result or why it supports the theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-4"
+              ]
+            },
+            {
+              "answerId": "part-b-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the decision to change but not the result explaining the theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-3"
+              ]
+            },
+            {
+              "answerId": "part-b-4",
+              "verdict": "INCORRECT",
+              "rationale": "This states the failed first plan, not the result of trying a new one.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-checkpoint-c-mc-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-5f2008b447ee8db8",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "fcdc5c8a9d819865ad2460c12bf2cb4351d0357d1c6fbba2c3168c242f795383",
+        "conclusionsSha256": "c663f5304dda3f2a3acd1714a7323b18057023d5a9a2d898d64096a331b2d7b3",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0033.pass-a.json",
+        "receiptSha256": "c663f5304dda3f2a3acd1714a7323b18057023d5a9a2d898d64096a331b2d7b3",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence is the best-supported theme?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Eli's truthful repair actions and the teacher trusting him again support this general lesson.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-3",
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This is one repair action, not a general lesson.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This names the story's setting and subject, not its lesson.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "This is an opening plot detail, not a general lesson.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-checkpoint-c-mc-2",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-90021083d701ea47",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "fcdc5c8a9d819865ad2460c12bf2cb4351d0357d1c6fbba2c3168c242f795383",
+        "conclusionsSha256": "c663f5304dda3f2a3acd1714a7323b18057023d5a9a2d898d64096a331b2d7b3",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0033.pass-a.json",
+        "receiptSha256": "c663f5304dda3f2a3acd1714a7323b18057023d5a9a2d898d64096a331b2d7b3",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice is the topic, not the theme?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "This is a transferable lesson, so it is a theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-3",
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This is one character action, not the broad topic.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This is one character reaction, not the broad topic.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Returning a library book names the story's broad subject without stating a lesson.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-1",
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-checkpoint-c-mc-3",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-10622f755fae5e99",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "7ae308cc96507758782c6cce134c7005ac10f17aa5220e278e299b9a31f3e264",
+        "conclusionsSha256": "5aa70ecc4e89e0f13a72aefe66f6449e145d41d6804f0db559c167b1d0d09d07",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0015.pass-a.json",
+        "receiptSha256": "5aa70ecc4e89e0f13a72aefe66f6449e145d41d6804f0db559c167b1d0d09d07",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which action shows Eli taking responsibility after his mistake?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "Forgetting and leaving the book describes Eli's mistake, not taking responsibility afterward.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The passage does not present this as an action Eli takes after the mistake.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "Borrowing the book happens before the mistake and is not the repair action.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Telling the truth, returning the book, and apologizing directly show responsibility after the mistake.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-checkpoint-c-ms-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-5a878772b5eaabb6",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "7ae308cc96507758782c6cce134c7005ac10f17aa5220e278e299b9a31f3e264",
+        "conclusionsSha256": "5aa70ecc4e89e0f13a72aefe66f6449e145d41d6804f0db559c167b1d0d09d07",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0015.pass-a.json",
+        "receiptSha256": "5aa70ecc4e89e0f13a72aefe66f6449e145d41d6804f0db559c167b1d0d09d07",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the details that show how Eli repaired trust after he forgot the book.",
+          "requestedSelectionCount": 3,
+          "keyedAnswerIds": [
+            "choice-a",
+            "choice-b",
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-c",
+            "choice-a",
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The teacher's response directly confirms that Eli's responsibility rebuilt trust.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Truth-telling, returning the book, and apologizing are direct trust-repair actions.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Helping sort books is an additional responsible action after the mistake.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "Borrowing and promising occur before Eli forgets the book, so they do not show how he repaired trust afterward.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-checkpoint-c-ht-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-a79dfc677a1366f3",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "7ae308cc96507758782c6cce134c7005ac10f17aa5220e278e299b9a31f3e264",
+        "conclusionsSha256": "5aa70ecc4e89e0f13a72aefe66f6449e145d41d6804f0db559c167b1d0d09d07",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0015.pass-a.json",
+        "receiptSha256": "5aa70ecc4e89e0f13a72aefe66f6449e145d41d6804f0db559c167b1d0d09d07",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that lists Eli's actions to make things right.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "segment-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "segment-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "This states Eli's mistake rather than actions to make it right.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-2"
+              ]
+            },
+            {
+              "answerId": "segment-3",
+              "verdict": "INCORRECT",
+              "rationale": "This gives the teacher's response and result rather than listing Eli's corrective actions.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-5"
+              ]
+            },
+            {
+              "answerId": "segment-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This lists Eli telling the truth, returning the book, and writing an apology.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-checkpoint-c-tm-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-81ad0ce86e11dbf4",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "fcdc5c8a9d819865ad2460c12bf2cb4351d0357d1c6fbba2c3168c242f795383",
+        "conclusionsSha256": "c663f5304dda3f2a3acd1714a7323b18057023d5a9a2d898d64096a331b2d7b3",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0033.pass-a.json",
+        "receiptSha256": "c663f5304dda3f2a3acd1714a7323b18057023d5a9a2d898d64096a331b2d7b3",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-1",
+          "prompt": "What does Eli told his teacher the truth show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "honest-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "honest-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "book-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Telling the truth does not show that Eli borrowed the book.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-3"
+              ]
+            },
+            {
+              "answerId": "week-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The truthful choice is not evidence that it was the weekend.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-3"
+              ]
+            },
+            {
+              "answerId": "shelf-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The detail says nothing about how full the shelf was.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-3"
+              ]
+            },
+            {
+              "answerId": "honest-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Telling the teacher the truth is an honest choice.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-2",
+          "prompt": "What does wrote an apology note show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "fix-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "fix-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "class-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Writing an apology does not show that the class was busy.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-3"
+              ]
+            },
+            {
+              "answerId": "wait-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The apology does not show that Eli had to wait.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-3"
+              ]
+            },
+            {
+              "answerId": "fix-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "An apology is an effort to acknowledge and repair the mistake.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-3"
+              ]
+            },
+            {
+              "answerId": "read-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The note is an apology, not evidence that Eli wanted to read more.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-3",
+          "prompt": "What does helped sort the new books show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "responsible-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "responsible-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "responsible-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Helping with the new books is a responsible action that contributes to repairing the mistake.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-4"
+              ]
+            },
+            {
+              "answerId": "sleep-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The helpful action does not show that Eli was sleepy.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-4"
+              ]
+            },
+            {
+              "answerId": "note-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The source mentions one apology note, not another note during sorting.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-4"
+              ]
+            },
+            {
+              "answerId": "borrow-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Sorting books does not show that Eli borrowed again.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-4",
+          "prompt": "What does he could be trusted again show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "trust-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "trust-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "backpack-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Renewed trust says nothing about the backpack being full.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-5"
+              ]
+            },
+            {
+              "answerId": "trust-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Being trusted again shows that the damaged trust between Eli and his teacher was repaired.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-5"
+              ]
+            },
+            {
+              "answerId": "book-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Renewed trust does not establish that the book was new.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-5"
+              ]
+            },
+            {
+              "answerId": "date-choice",
+              "verdict": "INCORRECT",
+              "rationale": "The forgotten date was the earlier problem, not what being trusted again shows.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-theme-trail-checkpoint-c-ep-1",
+      "packId": "g2-story-scouts-theme-trail",
+      "contentVersion": "g2-ss-theme-r0.1.0",
+      "contentFingerprint": "qta-v1-0661b080d31ea39c",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "7ae308cc96507758782c6cce134c7005ac10f17aa5220e278e299b9a31f3e264",
+        "conclusionsSha256": "5aa70ecc4e89e0f13a72aefe66f6449e145d41d6804f0db559c167b1d0d09d07",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0015.pass-a.json",
+        "receiptSha256": "5aa70ecc4e89e0f13a72aefe66f6449e145d41d6804f0db559c167b1d0d09d07",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Which theme is best supported by the story?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "part-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "part-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "part-a-4",
+              "verdict": "INCORRECT",
+              "rationale": "This is a setting detail, not a general theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-3"
+              ]
+            },
+            {
+              "answerId": "part-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Eli's responsible actions and the teacher trusting him again support this message.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-3",
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-5"
+              ]
+            },
+            {
+              "answerId": "part-a-3",
+              "verdict": "INCORRECT",
+              "rationale": "This states the mistake, not a general message.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-2"
+              ]
+            },
+            {
+              "answerId": "part-a-2",
+              "verdict": "INCORRECT",
+              "rationale": "This is one plot event, not a general theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which choice states the result and explains how it supports that theme?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "part-b-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "part-b-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "part-b-4",
+              "verdict": "INCORRECT",
+              "rationale": "This states the mistake and does not show rebuilt trust.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-2"
+              ]
+            },
+            {
+              "answerId": "part-b-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Helping sort books is responsible, but this choice does not state the trust result or explain the theme.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-4"
+              ]
+            },
+            {
+              "answerId": "part-b-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This states the result and explicitly connects Eli's responsibility to being trusted again.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-5"
+              ]
+            },
+            {
+              "answerId": "part-b-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "These are repair actions, but the choice does not state the result or explain that trust was rebuilt.",
+              "evidenceIds": [
+                "g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

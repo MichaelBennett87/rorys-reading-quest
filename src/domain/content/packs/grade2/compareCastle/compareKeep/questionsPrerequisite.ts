@@ -67,11 +67,11 @@ export const compareKeepPrerequisiteQuestions: ReadingQuestion[] = [
     activityIdentifier: 'activity-compare-castle-compare-keep-prereq-find-what-both-texts-share',
     questionIdentifier: COMPARE_KEEP_QUESTION_IDS.prereqFindWhatBothTextsShare[1],
     prompt: 'Which detail belongs in both stories?',
-    explanation: 'Each story starts with a problem that needs careful help.',
+    explanation: 'Each story shows two helpers solving a problem in a shared school space.',
     evidenceReference: createScopedEvidenceReference(COMPARE_KEEP_PASSAGE_IDS.literaryProseA, 'ck-lit-prose-1-s1'),
     evidenceReferenceIds: [
       createScopedEvidenceReference(COMPARE_KEEP_PASSAGE_IDS.literaryProseA, 'ck-lit-prose-1-s1'),
-      createScopedEvidenceReference(COMPARE_KEEP_PASSAGE_IDS.literaryProseB, 'ck-lit-prose-2-s1'),
+      createScopedEvidenceReference(COMPARE_KEEP_PASSAGE_IDS.literaryProseB, 'ck-lit-prose-2-s5'),
     ],
     targetVocabulary: ['important', 'problem'],
     soundOutChunks: ['im', 'por', 'tant'],
@@ -79,7 +79,7 @@ export const compareKeepPrerequisiteQuestions: ReadingQuestion[] = [
     contentVersion: COMPARE_KEEP_CONTENT_VERSION,
     tags: ['paired-text', 'same-theme'],
     choices: [
-      choice('problem-first', 'The text starts with a problem that needs help.'),
+      choice('problem-first', 'Helpers solve a problem in a shared space.'),
       choice('ocean-shore', 'The text starts at the ocean shore.'),
       choice('birthday-cake', 'The text starts with a birthday cake.'),
       choice('train-station', 'The text starts at a train station.'),
@@ -298,8 +298,8 @@ export const compareKeepPrerequisiteQuestions: ReadingQuestion[] = [
     lessonIdentifier: COMPARE_KEEP_LESSON_IDS.prereqFindWhatEachTextAdds,
     activityIdentifier: 'activity-compare-castle-compare-keep-prereq-find-what-each-text-adds',
     questionIdentifier: COMPARE_KEEP_QUESTION_IDS.prereqFindWhatEachTextAdds[3],
-    prompt: 'Select the sentence in Text 1 that explains how seeds spread.',
-    explanation: 'The sentence about the seed moving to new soil shows the important process.',
+    prompt: 'Select the sentence in Text 1 that tells what happens when a seed reaches new soil.',
+    explanation: 'The sentence says the seed rubs off near soil and starts a new plant home.',
     evidenceReference: createScopedEvidenceReference(COMPARE_KEEP_PASSAGE_IDS.informationalA, 'ck-info-1-s4'),
     evidenceReferenceIds: [
       createScopedEvidenceReference(COMPARE_KEEP_PASSAGE_IDS.informationalA, 'ck-info-1-s4'),

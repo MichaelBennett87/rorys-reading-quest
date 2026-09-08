@@ -1,0 +1,338 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0001",
+  "batchFileSha256": "2e9f2ada1f62ec7cd7a23190545e0e5b504332abd6e097301f4dea598ebce799",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0005",
+      "fingerprint": "d348dfdc2be392c85bd8985c53d01b0776f0ba7bf4aa66040d1f537939dfe226",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Leaf contains the vowel-team spelling ea.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Leaf does contain ea, so neither does not match the printed word.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Leaf does not contain the spelling oo.",
+              [
+                "S0003"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0012",
+      "fingerprint": "b5d0c19b7ba8bafdb07dc499040373fc8d9ff4cdcec56290e12824b5075caa0b",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Boot does not contain the spelling ea.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Boot contains the vowel-team spelling oo.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Boot contains oo, so neither does not match the printed word.",
+              [
+                "S0012"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0019",
+      "fingerprint": "70b6521759a60c3e4bb4ccddba6f6bace10079b84f08135b138eacda2c2d0532",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Beach contains ea, so neither does not match the printed word.",
+              [
+                "S0024"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Beach does not contain the spelling oo.",
+              [
+                "S0024"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Beach contains the vowel-team spelling ea.",
+              [
+                "S0024"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0024",
+      "fingerprint": "f2004a3fcc8225be3ad8ff82090a19637057dbbcb09978ef954376b2d70e68fe",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This sentence mentions a room and the moon separately but does not name the place the moon room.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This sentence names objects Nia carried, not the moon room.",
+              [
+                "S0033"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This sentence explicitly names the place the moon room.",
+              [
+                "S0030"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0029",
+      "fingerprint": "21ebac13ca7edd8919205d9b55d2096f3a42240ae2f7b8cf4e1030578e2e5069",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This establishes that the team met at the beach but does not show trash being collected.",
+              [
+                "S0038"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This sentence directly says the team picked up trash during the beach scene.",
+              [
+                "S0041"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This describes a leaf and the group smiling, not cleaning up trash.",
+              [
+                "S0043"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0035",
+      "fingerprint": "8c4dbf4df7e87d6e133e028bb939a2d419e8d61d84e620bcbfa47a8e8e57d040",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Ready contains ea, so neither does not match the printed word.",
+              [
+                "S0051"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Ready does not contain the spelling oo.",
+              [
+                "S0051"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Ready contains the vowel-team spelling ea.",
+              [
+                "S0051"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0039",
+      "fingerprint": "3a57445a91ebad8e53f4ca8f5109cd917d6cb2c2a37d742eb1fab4271f47ff28",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This sentence explicitly names the weather team.",
+              [
+                "S0055"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This sentence lists objects the team found without naming the weather team.",
+              [
+                "S0058"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This sentence describes the room and rain without naming the weather team.",
+              [
+                "S0061"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0040",
+      "fingerprint": "cbaa3cf49b7a15d60b357885c00572e6d7cd41308be0fdd732b7c191aa665c8a",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Seat does not contain the spelling oo.",
+              [
+                "S0058"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Seat contains ea, so neither does not match the printed word.",
+              [
+                "S0058"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Seat contains the vowel-team spelling ea.",
+              [
+                "S0058"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

@@ -193,6 +193,80 @@ const WORD_INFO: Record<string, {
   },
 }
 
+type ContextTaskChoice = {
+  text: string
+  correct: boolean
+}
+
+type ContextTaskSet = {
+  prompt: string
+  explanation: string
+  choices: readonly ContextTaskChoice[]
+}
+
+const CONTEXT_TASK_SETS: Record<string, ContextTaskSet> = {
+  example: {
+    prompt: 'Which two school tasks use an example to show an idea? Choose two.',
+    explanation: 'Pointing to one scene and giving one sample both use an example to show an idea.',
+    choices: [
+      { text: "Point to one scene that shows a story's lesson.", correct: true },
+      { text: 'Give one sample that shows how a chart works.', correct: true },
+      { text: 'Measure the length of a pencil with a ruler.', correct: false },
+      { text: 'Put planting steps in the order they happen.', correct: false },
+    ],
+  },
+  sequence: {
+    prompt: 'Which two school tasks use a sequence to show an order? Choose two.',
+    explanation: 'Ordering story events and listing planting steps from first to last both use a sequence.',
+    choices: [
+      { text: 'Put story events in the order they happen.', correct: true },
+      { text: 'List the planting steps from first to last.', correct: true },
+      { text: 'Measure the height of a sprout.', correct: false },
+      { text: 'Describe the colors in a painting.', correct: false },
+    ],
+  },
+  measure: {
+    prompt: 'Which two school tasks involve measuring a length or height? Choose two.',
+    explanation: 'Using a ruler to find length and finding a sprout\'s height are both measuring tasks.',
+    choices: [
+      { text: 'Use a ruler to find the length of a line.', correct: true },
+      { text: 'Find the height of a sprout each Friday.', correct: true },
+      { text: 'Tell how two story characters are alike.', correct: false },
+      { text: 'Name the colors in a finished picture.', correct: false },
+    ],
+  },
+  predict: {
+    prompt: 'Which two school tasks ask a student to predict what may happen? Choose two.',
+    explanation: 'Using clues to say what may happen in a story or to a plant both require a prediction.',
+    choices: [
+      { text: 'Use story clues to say what may happen next.', correct: true },
+      { text: 'Use plant observations to say how a sprout may change.', correct: true },
+      { text: 'Record what already happened in a chart.', correct: false },
+      { text: 'Describe the colors in a finished picture.', correct: false },
+    ],
+  },
+  detail: {
+    prompt: 'Which two school tasks focus on a detail, or small fact, that adds information? Choose two.',
+    explanation: 'A supporting fact from a passage and a clarifying fact in a report are both details.',
+    choices: [
+      { text: 'Point to a small fact that supports an idea in a passage.', correct: true },
+      { text: 'Add a small fact that makes a report clearer.', correct: true },
+      { text: 'Put four events in time order.', correct: false },
+      { text: 'Measure the length of a table.', correct: false },
+    ],
+  },
+  result: {
+    prompt: 'Which two school tasks focus on a result, or what happened after an action? Choose two.',
+    explanation: 'What happened after an experiment or a character\'s choice is a result.',
+    choices: [
+      { text: 'Tell what happened after an experiment.', correct: true },
+      { text: 'Explain what happened after a character made a choice.', correct: true },
+      { text: 'Predict what might happen before a seed grows.', correct: false },
+      { text: 'List the materials needed before an art project.', correct: false },
+    ],
+  },
+}
+
 const createTitle = (featureId: string, text: string): InformationalTitleFeature => ({ featureId, kind: 'title', text })
 const createHeading = (featureId: string, sectionId: string, text: string): InformationalHeadingFeature => ({
   featureId,
@@ -379,13 +453,11 @@ function buildContextMultiselectQuestion(
   questionId: string,
   passage: Passage,
   target: TargetSpec,
-  prompt: string,
-  explanation: string,
   difficulty: 0 | 1,
 ): ReadingQuestion {
-  const allContexts = ['science', 'math', 'reading', 'writing', 'art', 'social studies', 'nature study', 'library']
-  const choices = allContexts.map((context, index) => choice(`${questionId}-choice-${index + 1}`, context))
-  const correctContexts = [...target.subjectContexts]
+  const taskSet = CONTEXT_TASK_SETS[target.word]
+  if (!taskSet) throw new Error(`Missing context task choices for ${target.word}.`)
+  const choices = taskSet.choices.map((task, index) => choice(`${questionId}-choice-${index + 1}`, task.text))
   return createMultiselectQuestion({
     benchmarkReference: 'ELA.2.V.1.1',
     skillIdentifier: contextCavernAcademicWordWorkshopPrimarySkillId,
@@ -399,15 +471,17 @@ function buildContextMultiselectQuestion(
     passageIdentifier: passage.passageIdentifier,
     lessonIdentifier: lessonId,
     questionIdentifier: questionId,
-    prompt,
-    explanation,
+    prompt: taskSet.prompt,
+    explanation: taskSet.explanation,
     evidenceReference: target.sentenceId,
     evidenceReferenceIds: [target.sentenceId],
     targetVocabulary: [target.word],
     soundOutChunks: [target.word],
     tags: [...academicVocabularyTags],
     choices,
-    correctChoiceIds: correctContexts.map((context) => choices.find((choiceItem) => choiceItem.text === context)!.id),
+    correctChoiceIds: taskSet.choices
+      .map((task, index) => task.correct ? choices[index].id : null)
+      .filter((choiceId): choiceId is string => choiceId !== null),
   })
 }
 
@@ -423,7 +497,8 @@ function buildHotTextQuestion(
 ): ReadingQuestion {
   const passageSentences = passage.sentences ?? []
   const distractors = passageSentences
-    .filter((sentence) => sentence.sentenceId !== target.sentenceId)
+    .filter((sentence) => sentence.sentenceId !== target.sentenceId
+      && !sentence.text.toLowerCase().split(/[^a-z]+/).includes(target.word.toLowerCase()))
     .slice(0, 3)
   const selectableSegments = rotate([
     { id: `${questionId}-segment-1`, text: target.sentenceText },
@@ -521,7 +596,7 @@ function buildTwoPartQuestion(
     choice(`${questionId}-part-a-4`, 'fact'),
   ], 1)
   const partBChoices = rotate([
-    choice(`${questionId}-part-b-1`, 'It is a useful academic word for speaking or writing.'),
+    choice(`${questionId}-part-b-1`, target.meaning),
     choice(`${questionId}-part-b-2`, 'It names the topic only.'),
     choice(`${questionId}-part-b-3`, 'It is just one small detail.'),
     choice(`${questionId}-part-b-4`, 'It is not a school word.'),
@@ -549,7 +624,7 @@ function buildTwoPartQuestion(
     partAPrompt: `Which word best fits the speaking or writing sentence about ${target.clue}?`,
     partAChoices,
     partACorrectChoiceId: partAChoices.find((choiceItem) => choiceItem.text === target.word)!.id,
-    partBPrompt: 'Why does the word fit best?',
+    partBPrompt: 'Which explanation shows why the word fits?',
     partBChoices,
     partBCorrectChoiceId: partBChoices[0].id,
   })
@@ -588,8 +663,6 @@ function buildFiveQuestionLessonQuestions(
       questionIds[2],
       passage,
       third,
-      `Choose two subjects where ${third.word} would fit.`,
-      `The word fits the two school subjects the student would use most often.`,
       0,
     ),
     buildHotTextQuestion(
@@ -657,8 +730,6 @@ function buildCheckpointQuestions(
       questionIds[3],
       passage,
       fourth,
-      `Choose two subjects where ${fourth.word} would fit.`,
-      `The word fits the two school subjects the student would use most often.`,
       1,
     ),
     buildHotTextQuestion(

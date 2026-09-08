@@ -1,0 +1,954 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0126",
+  "batchFileSha256": "5627105ef6f5de939966bdcc4ce7220a307b11e309a0d13042d9764b273ee7de",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1471",
+      "fingerprint": "f46d9d1b60b208e395344b1cec70bd1999337a26d6951b60a714d3fa70796b77",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Both texts pair named flowers with bees, butterflies, or other visitors.",
+              [
+                "S0140",
+                "S0143",
+                "S0144",
+                "S0154",
+                "S0155",
+                "S0156"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "Text A is chronological observation; Text B groups planning features.",
+              [
+                "S0140",
+                "S0142",
+                "S0144",
+                "S0153",
+                "S0157",
+                "S0158"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This names a surface difference rather than a similarity.",
+              [
+                "S0140",
+                "S0158"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This accurately states the main presentation difference.",
+              [
+                "S0140",
+                "S0142",
+                "S0147",
+                "S0153",
+                "S0157"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1472",
+      "fingerprint": "9322a7f56588df2c7610eb76632b1f0629be3c4d08a36573f8a95ccf1b93c74e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "White clover and a water dish are minor different details, not main presentation methods.",
+              [
+                "S0140",
+                "S0158"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a meaningful similarity.",
+              [
+                "S0140",
+                "S0144",
+                "S0155",
+                "S0156"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "This reverses the two texts’ organizations.",
+              [
+                "S0140",
+                "S0142",
+                "S0153",
+                "S0157"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Text A advances by morning times, while Text B groups useful garden features.",
+              [
+                "S0140",
+                "S0142",
+                "S0144",
+                "S0147",
+                "S0153",
+                "S0157",
+                "S0158"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1473",
+      "fingerprint": "6e3b51cb17e172bad05e8ce316911b360c9eea311f4998cca47c386cad0bad80",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a topic label, not a comparison of author choices.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This compares shared examples and distinct timed-observation versus feature-grouping methods.",
+              [
+                "S0140",
+                "S0144",
+                "S0155",
+                "S0156",
+                "S0153",
+                "S0157"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Titles and sentences are generic format facts, not meaningful presentation analysis.",
+              []
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This lists one fact from each text without analyzing presentation.",
+              [
+                "S0140",
+                "S0158"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1474",
+      "fingerprint": "5c9a4608889f17b56bbdc85651a390517b264cc7e89db7cc1973ef7e6e3dba27",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The eight-o’clock marker directly reveals Text A’s chronological morning observation.",
+              [
+                "S0140"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The wooden marker is an incidental Text B detail, not a useful garden feature for pollinator visits.",
+              [
+                "S0160"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The counting rule explains observation method but does not directly establish chronological organization.",
+              [
+                "S0146"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Choosing plants by bloom time directly represents Text B’s grouped planning features.",
+              [
+                "S0153"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1475",
+      "fingerprint": "eba58d363d1c8adbb21bb3c08dc8817e322e4a34bd6575aa11e1f22b08bd63d1",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes counting criteria but not the time-order focus.",
+              [
+                "S0146"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The exact eight-o’clock marker clearly reveals chronological observation.",
+              [
+                "S0140"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This observation detail lacks a time marker and does not reveal the main organization by itself.",
+              [
+                "S0141"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1476",
+      "fingerprint": "9c8cf5092b9ac273180660854a2c41cf3217ddfb7f103746a0b249154f92ea28",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Text B groups garden-planning features rather than one morning’s chronology.",
+              [
+                "S0153",
+                "S0157"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Text A moves from eight to nine to later to noon.",
+              [
+                "S0140",
+                "S0142",
+                "S0144",
+                "S0147"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Only Text A records one morning in time order.",
+              [
+                "S0133",
+                "S0147"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Text B groups bloom times, shapes, patches, water, and safe conditions.",
+              [
+                "S0153",
+                "S0154",
+                "S0157",
+                "S0158",
+                "S0159"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Text A observes existing visits rather than planning garden features.",
+              [
+                "S0133",
+                "S0145"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The garden-feature planning focus belongs to Text B.",
+              [
+                "S0137",
+                "S0139"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Both texts connect specific flower forms with bees, butterflies, or other visitors.",
+              [
+                "S0140",
+                "S0143",
+                "S0144",
+                "S0154",
+                "S0155",
+                "S0156"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Text B also uses specific flowers and visitors.",
+              [
+                "S0154",
+                "S0155",
+                "S0156"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Text A also uses specific flowers and insects.",
+              [
+                "S0140",
+                "S0143",
+                "S0144"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1477",
+      "fingerprint": "55f9c85f475f852a24707ed91e0bf66b13d6073c414118a57cbac4d5a9ed23f1",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This states the main chronological-versus-feature-grouping difference.",
+              [
+                "S0140",
+                "S0147",
+                "S0153",
+                "S0157"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a similarity rather than a difference.",
+              [
+                "S0140",
+                "S0155"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a minor factual difference, not the strongest presentation distinction.",
+              [
+                "S0140",
+                "S0158"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "The sentences are assigned to the wrong source labels.",
+              [
+                "S0153",
+                "S0140"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "These details do not directly show time order or grouped pollinator-support features.",
+              [
+                "S0146",
+                "S0160"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The time marker from Text A and bloom-time planning from Text B directly support Part A.",
+              [
+                "S0140",
+                "S0153"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1478",
+      "fingerprint": "2a3c67d9a48411b8e7f49ffdfa36ed8fa671d8cc711505d18c92c35c96686164",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Uncoordinated drawing creates overlaps, and uncoordinated pushing turns the bench crooked.",
+              [
+                "S0178",
+                "S0179",
+                "S0174"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Pencils and a cushion are surface differences.",
+              [
+                "S0177",
+                "S0186"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The tasks, settings, dialogue, and action patterns differ.",
+              [
+                "S0180",
+                "S0189"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This accurately states the main presentation difference.",
+              [
+                "S0180",
+                "S0181",
+                "S0188",
+                "S0189",
+                "S0190"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1479",
+      "fingerprint": "1c11c200b15d08dbb3009d7bf53f1d9a2a186ce3895f3aa154af78a0dab500a3",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "This reverses the methods used by the two texts.",
+              [
+                "S0180",
+                "S0181",
+                "S0189",
+                "S0190"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the central similarity, not a difference.",
+              [
+                "S0179",
+                "S0174"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Text A uses spoken planning and coordination; Text B emphasizes assigned physical actions.",
+              [
+                "S0180",
+                "S0181",
+                "S0183",
+                "S0188",
+                "S0189",
+                "S0190"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Pencils and cushion are minor surface details.",
+              [
+                "S0177",
+                "S0186"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1480",
+      "fingerprint": "55fbaf74f1d3579cdf1ee412d86a7c431ab3aedafdcdb606ed7fd397e8e38353",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Generic format facts do not analyze author presentation.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This compares a shared failed-first-attempt structure and different dialogue-versus-action methods.",
+              [
+                "S0178",
+                "S0179",
+                "S0180",
+                "S0181",
+                "S0174",
+                "S0188",
+                "S0189"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a topic label, not a presentation comparison.",
+              []
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This lists one object from each text without analyzing author choices.",
+              [
+                "S0177",
+                "S0186"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1481",
+      "fingerprint": "b3a30a5a821fb005c4a8bdb5a61993eaf125d69beac50de99441f394e6f67a0b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The pencil count is incidental and does not show planning dialogue.",
+              [
+                "S0177"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The cushion is incidental and does not show coordinated physical roles.",
+              [
+                "S0186"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Elena’s quoted statement directly shows Text A’s dialogue-based shared plan.",
+              [
+                "S0180"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Mei’s rug-removal action directly shows Text B’s coordinated physical work.",
+              [
+                "S0188"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1482",
+      "fingerprint": "011bdf725bfb8e7c4174148f16e07016410cd27a675fabc93133a6f36a703d54",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This adjustment shows coordination but not the defining planning dialogue.",
+              [
+                "S0184"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The pencil count is incidental.",
+              [
+                "S0177"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Elena’s statement directly initiates the shared planning discussion.",
+              [
+                "S0180",
+                "S0181"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1483",
+      "fingerprint": "10395aaf9b8f2a39ef574e930506377e3fd3fc8e5e6090484f4ce97f8d07eef3",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Text A uses dialogue, suggestions, grid agreements, and shared-edge calls.",
+              [
+                "S0180",
+                "S0181",
+                "S0182",
+                "S0183"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Text B coordinates a bench move through physical roles, not shared drawing dialogue.",
+              [
+                "S0188",
+                "S0189"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Only Text A uses this design-and-dialogue method.",
+              [
+                "S0180"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Text B assigns lifting and guiding roles and uses synchronized steps.",
+              [
+                "S0188",
+                "S0189",
+                "S0190"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Text A coordinates artwork rather than a timed physical move.",
+              [
+                "S0181",
+                "S0183"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Only Text B uses these physical roles.",
+              [
+                "S0189",
+                "S0190"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Text A also begins with an uncoordinated problem.",
+              [
+                "S0178",
+                "S0179"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Both the overlapping mural and crooked bench result from uncoordinated first attempts.",
+              [
+                "S0178",
+                "S0179",
+                "S0174"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Text B also begins with an uncoordinated problem.",
+              [
+                "S0174"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1484",
+      "fingerprint": "cdda6968c4db96536e8b0b2f4de2f59c9b59da1ae45a5e2851373f12207ace48",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Pencils and cushion are minor object differences.",
+              [
+                "S0177",
+                "S0186"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This states the main dialogue-versus-physical-action presentation difference.",
+              [
+                "S0180",
+                "S0181",
+                "S0188",
+                "S0189",
+                "S0190"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a similarity rather than a difference.",
+              [
+                "S0179",
+                "S0174"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "These minor objects do not support the main presentation difference.",
+              [
+                "S0177",
+                "S0186"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Elena’s dialogue and Mei’s physical action provide one correctly owned clue from each text.",
+              [
+                "S0180",
+                "S0188"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The two source details are assigned to the wrong text labels.",
+              [
+                "S0188",
+                "S0180"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

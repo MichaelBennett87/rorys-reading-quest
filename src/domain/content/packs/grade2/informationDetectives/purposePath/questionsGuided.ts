@@ -75,8 +75,8 @@ export const purposePathGuidedQuestions = [
     passageIdentifier: purposePathPassageIds.beePollenPath.passageId,
     lessonIdentifier: purposePathLessonIds.guidedExplainWhatTryingToExplain,
     questionIdentifier: purposePathQuestionIds.guidedExplainWhatTryingToExplain[2],
-    prompt: 'Choose two details that are most relevant to the author purpose.',
-    explanation: 'The best details help readers see how the class compares the patch and notices insect visits.',
+    prompt: 'Choose the two details that count flowers or describe pollinator visits in the sunny row.',
+    explanation: 'The graph compares flowers in the sunny row, and the bee detail names pollinators visiting that row.',
     evidenceReference: purposePathFeatureIds.beePollenPath.caption,
     evidenceReferenceIds: [
       purposePathSentenceIds.beePollenPath[1],
@@ -99,8 +99,8 @@ export const purposePathGuidedQuestions = [
     passageIdentifier: purposePathPassageIds.beePollenPath.passageId,
     lessonIdentifier: purposePathLessonIds.guidedExplainWhatTryingToExplain,
     questionIdentifier: purposePathQuestionIds.guidedExplainWhatTryingToExplain[3],
-    prompt: 'Tap the sentence that best helps readers understand the author purpose.',
-    explanation: 'This sentence puts the passage idea into a complete thought.',
+    prompt: 'Tap the sentence that states the broad idea the author explains about pollinator gardens.',
+    explanation: 'This sentence states the broad idea that pollinator gardens give insects places to find food and rest.',
     evidenceReference: purposePathSentenceIds.beePollenPath[7],
     evidenceReferenceIds: [purposePathSentenceIds.beePollenPath[7]],
     targetVocabulary: ['author purpose'],
@@ -153,7 +153,7 @@ export const purposePathGuidedQuestions = [
       },
       {
         id: 'pollinator-other',
-        prompt: 'Which is another true detail?',
+        prompt: 'Which detail compares blooms and leaves in the shady row?',
         correctChoiceId: 'pollinator-other-answer',
         options: [
           choice('pollinator-other-answer', 'The shady row had fewer blooms but more leaves.'),
@@ -211,8 +211,8 @@ export const purposePathGuidedQuestions = [
     passageIdentifier: purposePathPassageIds.trailMarkerSystem.passageId,
     lessonIdentifier: purposePathLessonIds.guidedUseWholeTextPurpose,
     questionIdentifier: purposePathQuestionIds.guidedUseWholeTextPurpose[2],
-    prompt: 'Choose two details that are most relevant to the author purpose.',
-    explanation: 'These details show how the class uses tools and records to learn about weather.',
+    prompt: 'Choose the detail that names a temperature tool and the detail that shows the class recording numbers. Select two.',
+    explanation: 'The thermometer checks temperature, and the chart records the class numbers.',
     evidenceReference: purposePathFeatureIds.trailMarkerSystem.caption,
     evidenceReferenceIds: [
       purposePathSentenceIds.trailMarkerSystem[0],
@@ -235,8 +235,8 @@ export const purposePathGuidedQuestions = [
     passageIdentifier: purposePathPassageIds.trailMarkerSystem.passageId,
     lessonIdentifier: purposePathLessonIds.guidedUseWholeTextPurpose,
     questionIdentifier: purposePathQuestionIds.guidedUseWholeTextPurpose[3],
-    prompt: 'Tap the sentence that best helps readers understand the author purpose.',
-    explanation: 'This sentence brings the weather tools and notes together into one idea.',
+    prompt: 'Tap the sentence that states what the class learns by using tools and careful observations.',
+    explanation: 'This sentence states that tools and careful observations help the class learn more about weather.',
     evidenceReference: purposePathSentenceIds.trailMarkerSystem[7],
     evidenceReferenceIds: [purposePathSentenceIds.trailMarkerSystem[7]],
     targetVocabulary: ['author purpose'],
@@ -289,7 +289,7 @@ export const purposePathGuidedQuestions = [
       },
       {
         id: 'weather-other',
-        prompt: 'Which is another true detail?',
+        prompt: 'Which detail explains what the wind sock shows?',
         correctChoiceId: 'weather-other-answer',
         options: [
           choice('weather-other-answer', 'A wind sock points the direction the wind blows.'),

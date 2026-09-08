@@ -1,0 +1,960 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0014",
+  "batchFileSha256": "a6c5f7458324e6a5ac8374169374608dcebb871a06e3b0d4706de5e1ab4fb259",
+  "reviewerThreadId": "01a07bc1-57ca-7230-a515-d322b50c9d2e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0151",
+      "fingerprint": "92a933781f14821d5b60903a21b4cb6d84bcadf189df33fbaaef98b69c83f966",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "apple splits ap | ple, not ma | ple.",
+              [
+                "S0001",
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "cable splits ca | ble, not ma | ple.",
+              [
+                "S0007",
+                "S0008"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "maple is reconstructed by ma | ple.",
+              [
+                "S0005",
+                "S0006"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "table splits ta | ble, not ma | ple.",
+              [
+                "S0004",
+                "S0003"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0152",
+      "fingerprint": "6b677406328d359c2b81fb6b610cc13a077123f645ff584c6df71c9add6e2cee",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "sample splits sam | ple, not puz | zle.",
+              [
+                "S0061",
+                "S0062"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "simple splits sim | ple, not puz | zle.",
+              [
+                "S0058",
+                "S0057"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "puzzle is reconstructed by puz | zle.",
+              [
+                "S0055",
+                "S0057"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "bottle splits bot | tle, not puz | zle.",
+              [
+                "S0059",
+                "S0060"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0153",
+      "fingerprint": "4f46577cfc0a2e6f0053d0e08016c43d4181c9f44c1e82096d8407446d17df2f",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "table splits ta | ble; ta is open.",
+              [
+                "S0004",
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "maple splits ma | ple; ma is open.",
+              [
+                "S0005",
+                "S0006"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "cable splits ca | ble; ca is open.",
+              [
+                "S0007",
+                "S0008"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "apple splits ap | ple; ap is closed.",
+              [
+                "S0001",
+                "S0003"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0154",
+      "fingerprint": "d39fc06b23aa4232c1119818b78acc491ea59af35db2e41bd35d8445f573a94e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [],
+          "ambiguity": "No offered option both belongs to the displayed puzzle club lesson and has an open syllable before consonant-le.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "bottle is in the puzzle lesson but splits bot | tle; bot is closed.",
+              [
+                "S0059",
+                "S0060"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "simple is in the puzzle lesson but splits sim | ple; sim is closed.",
+              [
+                "S0058",
+                "S0057"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "table splits ta | ble with open ta, but table does not appear in the displayed puzzle club lesson.",
+              [
+                "S0056"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "puzzle is in the puzzle lesson but splits puz | zle; puz is closed.",
+              [
+                "S0055",
+                "S0057"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0155",
+      "fingerprint": "edbecdee8d4c5e691daf0d7df722b3e13c64a8feb2f2a850d0bcb09172addf46",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "table appears in the orchard passage and ends with ble.",
+              [
+                "S0004",
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "apple appears in the orchard passage and ends with ple.",
+              [
+                "S0001",
+                "S0003"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "maple appears in the orchard passage and ends with ple.",
+              [
+                "S0005",
+                "S0006"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "cable appears in the orchard passage and ends with ble.",
+              [
+                "S0007",
+                "S0008"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0156",
+      "fingerprint": "aa5e8b1c8f5a988711640d87f5afa263025cbd250936691f0c320de752fb7a3f",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This sentence exactly says the puzzle club built a simple model.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This sentence describes a pebble holding a note corner.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This sentence describes a bottle on a rattle tray.",
+              [
+                "S0060"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0157",
+      "fingerprint": "348c66985439f80204f85f135bbdf3d3746079947417c450ce2995b15a4437a5",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "puz | le omits a written z and does not reconstruct puzzle.",
+              [
+                "S0055"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "puz | zle correctly preserves the final consonant-le chunk.",
+              [
+                "S0055"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "puz | z le splits inside the consonant-le chunk.",
+              [
+                "S0055"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "puzz | le separates le from its preceding consonant.",
+              [
+                "S0055"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "simp | le separates le from its preceding consonant.",
+              [
+                "S0058"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "si | mple does not isolate the final ple chunk.",
+              [
+                "S0058"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "sim | ple correctly preserves the final consonant-le chunk.",
+              [
+                "S0058"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "sim | p le splits inside the consonant-le chunk.",
+              [
+                "S0058"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "bo | ttle does not isolate the final tle chunk.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "bot | tle correctly preserves the final consonant-le chunk.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "bott | le separates le from its preceding consonant.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "bot | t le splits inside the consonant-le chunk.",
+              [
+                "S0059"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "sa | mple does not isolate the final ple chunk.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "sam | p le splits inside the consonant-le chunk.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "samp | le separates le from its preceding consonant.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "sam | ple correctly preserves the final consonant-le chunk.",
+              [
+                "S0061"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0158",
+      "fingerprint": "794415358c79168748f2c99934b4a81b18a762e03b37f38a7ecdd4c53508f6bd",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "little splits lit | tle, not can | dle.",
+              [
+                "S0014",
+                "S0015"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "candle is reconstructed by can | dle.",
+              [
+                "S0010",
+                "S0012"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "stable splits sta | ble, not can | dle.",
+              [
+                "S0013",
+                "S0012"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "simple splits sim | ple, not can | dle.",
+              [
+                "S0016",
+                "S0017"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0159",
+      "fingerprint": "7b23adb5fa29bd277e70fabbb06fa14b47f08e3356980d2eccd1bb7f2e62737d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "noble splits no | ble, not ti | tle.",
+              [
+                "S0025",
+                "S0026"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "bubble splits bub | ble, not ti | tle.",
+              [
+                "S0023",
+                "S0024"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "title is reconstructed by ti | tle.",
+              [
+                "S0019",
+                "S0021"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "handle splits han | dle, not ti | tle.",
+              [
+                "S0022",
+                "S0021"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0160",
+      "fingerprint": "4b63c6c678697964ca89c330286d8bcd87cd753d72e9dc039a4738e1712e501c",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "handle is reconstructed by han | dle.",
+              [
+                "S0022",
+                "S0021"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "title splits ti | tle, not han | dle.",
+              [
+                "S0019",
+                "S0021"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "bubble splits bub | ble, not han | dle.",
+              [
+                "S0023",
+                "S0024"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "noble splits no | ble, not han | dle.",
+              [
+                "S0025",
+                "S0026"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0161",
+      "fingerprint": "a06576334491cd15df2b7499ed4f9c36bb9908d016ed9afc96e40ae64991c37a",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "little splits lit | tle, not sim | ple.",
+              [
+                "S0014",
+                "S0015"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "stable splits sta | ble, not sim | ple.",
+              [
+                "S0013",
+                "S0012"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "simple is reconstructed by sim | ple.",
+              [
+                "S0016",
+                "S0017"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "candle splits can | dle, not sim | ple.",
+              [
+                "S0010",
+                "S0012"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0162",
+      "fingerprint": "c392e83b7a9c8d02dd767022405dfa6eaec1c35d4583d9b7c7c935ce41f3b572",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "little appears in the safety demo and ends with tle.",
+              [
+                "S0014",
+                "S0015"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "simple appears in the safety demo and ends with ple.",
+              [
+                "S0016",
+                "S0017"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "candle appears in the safety demo and ends with dle.",
+              [
+                "S0010",
+                "S0012"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "stable appears in the safety demo and ends with ble.",
+              [
+                "S0013",
+                "S0012"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0163",
+      "fingerprint": "5be4aed08165560cd568c304155ff289bd0f3fb424849775ab7b792b41364a2c",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This sentence exactly mentions a bubble tube and stable wheel.",
+              [
+                "S0024"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This sentence describes a title card and handle.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This sentence describes the noble guide and model.",
+              [
+                "S0026"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0164",
+      "fingerprint": "b543a9ed52fe710ccdf2f3b4736825f081b0f1c62dd589ca59121cbe8b91860a",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "can | d le splits inside the consonant-le chunk.",
+              [
+                "S0041"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "can | dle correctly preserves the final consonant-le chunk.",
+              [
+                "S0041",
+                "S0042"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "ca | ndle does not isolate the final dle chunk.",
+              [
+                "S0041"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "cand | le separates le from its preceding consonant.",
+              [
+                "S0041"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "ti | t le splits inside the consonant-le chunk.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "tit | le separates le from its preceding consonant.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "ti | tle correctly preserves the final consonant-le chunk.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "t | itle does not isolate the final tle chunk.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "han | d le splits inside the consonant-le chunk.",
+              [
+                "S0045"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "han | dle correctly preserves the final consonant-le chunk.",
+              [
+                "S0045"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "ha | ndle does not isolate the final dle chunk.",
+              [
+                "S0045"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "hand | le separates le from its preceding consonant.",
+              [
+                "S0045"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "sim | ple correctly preserves the final consonant-le chunk.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "sim | p le splits inside the consonant-le chunk.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "simp | le separates le from its preceding consonant.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "si | mple does not isolate the final ple chunk.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

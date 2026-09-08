@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-c0007",
+  "batchFileSha256": "260053f5b5b3090e6dcde0be02c457456a97604c6be1d1611ee483367f2d3303",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1044",
+      "fingerprint": "cfb63ed281ea936d268990512ccdbb19f88e3853e584dc2064b41a6e9d97b261",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is Mina's confident end state after the turning point, not the turning-point action itself.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Mina chooses to share the idea she had withheld, which directly marks the change in her response.",
+              [
+                "S0013"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Drawing the map establishes the opening situation but does not show Mina changing.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Keeping her useful idea to herself shows Mina's beginning state before she changes.",
+              [
+                "S0010"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

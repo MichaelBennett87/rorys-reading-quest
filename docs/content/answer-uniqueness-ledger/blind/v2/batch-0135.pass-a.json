@@ -1,0 +1,857 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0135",
+  "batchFileSha256": "0f16794768ce9b6b73f823c0f0d8796e21806c2d425d93d4b01cd601f2965f2d",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1579",
+      "fingerprint": "19ccb986be3fa65267c8828cfb52dd491eed4d8111f2eba397a56533b77104f5",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "Quick restates swift rather than opposing it.",
+              [
+                "S0025",
+                "S0039"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Quick is used as a same-meaning clue for swift.",
+              [
+                "S0025",
+                "S0039"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Quick is a speed description, not a gate function.",
+              [
+                "S0025",
+                "S0040"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Quick is not a physical part of a rabbit.",
+              [
+                "S0025"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1580",
+      "fingerprint": "50c7b407974b978aa141532505273f56004ef194e28faa381621356691f5b587",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This describes the rabbit, not the gate part.",
+              [
+                "S0025"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This describes the sapling.",
+              [
+                "S0027"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The story defines the hinge as the metal jointed part that lets the gate swing.",
+              [
+                "S0031",
+                "S0036",
+                "S0037"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "A hinge is distinct from the latch and its function is movement, not frightening the fawn.",
+              [
+                "S0031",
+                "S0037"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1581",
+      "fingerprint": "a1f8d2ec80e1ba09b17dd3acc64ec6e0051f7d27c86689ced6ec59f83d6a9829",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "Swift and quick are synonyms, not a slower-than relation.",
+              [
+                "S0025",
+                "S0039"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The passage explicitly places sapling in the tree category.",
+              [
+                "S0027",
+                "S0040"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "A hinge is a gate part, not an animal.",
+              [
+                "S0031",
+                "S0040"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Not bold and the fawn behavior establish bold as an antonym clue for timid.",
+              [
+                "S0029",
+                "S0034",
+                "S0039"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1582",
+      "fingerprint": "b658ab34c94ad59fbc32369f0b81fa1b67e4fe97d028a372ced34cecda5d02c1",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Not bold, one hesitant step, and pulling back confirm shy or easily frightened.",
+              [
+                "S0029",
+                "S0034",
+                "S0035"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This confirms sapling.",
+              [
+                "S0027"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This describes repairing the hinge.",
+              [
+                "S0036"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This confirms swift.",
+              [
+                "S0025"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1583",
+      "fingerprint": "4ec53ab36efae8b006cbcca7d7f2aa38093d171f67d05a23934746a84f00d54e",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Bold is the antonym clue for timid.",
+              [
+                "S0034"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Gate-swinging is the hinge function.",
+              [
+                "S0031"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Quick is a synonym clue for swift.",
+              [
+                "S0025",
+                "S0039"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The source directly supports swift.",
+              [
+                "S0025"
+              ]
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "Tree is the category for sapling.",
+              [
+                "S0027"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A5"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is hinge.",
+              [
+                "S0031"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The source directly supports timid.",
+              [
+                "S0034"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This is sapling.",
+              [
+                "S0027"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is swift.",
+              [
+                "S0025"
+              ]
+            ],
+            [
+              "A5",
+              "DEFENSIBLE",
+              "Bold is the contrasting antonym clue for timid.",
+              [
+                "S0034",
+                "S0039"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is hinge.",
+              [
+                "S0031"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "A sapling is identified as a member of the tree category.",
+              [
+                "S0027",
+                "S0040"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The source directly supports sapling.",
+              [
+                "S0027"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is timid.",
+              [
+                "S0034"
+              ]
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "This is swift.",
+              [
+                "S0025"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is sapling.",
+              [
+                "S0027"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This is timid.",
+              [
+                "S0034"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The source directly supports hinge.",
+              [
+                "S0031"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The hinge is explained through its object-function relation: it lets the gate swing.",
+              [
+                "S0031",
+                "S0040"
+              ]
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "This is swift.",
+              [
+                "S0025"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1584",
+      "fingerprint": "bbaf5a073fc5de524957051cae7f5126c3c901887efaa0a3f69d65f9ba38126d",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is the glossary meaning of route.",
+              [
+                "S0046",
+                "S0053",
+                "S0070"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The local glossary and source define habitat as a place supplying an organism needs.",
+              [
+                "S0044",
+                "S0052",
+                "S0069"
+              ]
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "A list of questions is not a habitat meaning.",
+              [
+                "S0054"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is an alternate dictionary sense of observe.",
+              [
+                "S0059",
+                "S0072"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1585",
+      "fingerprint": "d115e8f248e7a9f8fd2042d7627a94a7d34770a8f8cbd965b885d25a5e31fe4e",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Choosing a route is unrelated to the dictionary senses of observe.",
+              [
+                "S0046",
+                "S0053"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "This genuine alternate sense does not fit because the source discusses no holiday.",
+              [
+                "S0057",
+                "S0059",
+                "S0072"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The directions say students watch and record animals, selecting the careful-watching sense.",
+              [
+                "S0048",
+                "S0057",
+                "S0071"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "Building shelter is not an offered or contextual sense of observe.",
+              [
+                "S0044",
+                "S0071"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1586",
+      "fingerprint": "8f21b5a1948fa801ecbe726a4b2b472cd8a1e0d3dd17cce8d8b8c70ded00d43e",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The drawn path from garden to pond supplies the source clue for a travel route.",
+              [
+                "S0046",
+                "S0053"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Shade describes one path condition but does not explain what route means.",
+              [
+                "S0050"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is an observe sense and supplies no clue for route.",
+              [
+                "S0059",
+                "S0072"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The local glossary explicitly defines route as a path used to travel.",
+              [
+                "S0070"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1587",
+      "fingerprint": "434867eccf094ee3f7181c3a0f2db38496b2ef8c04d8db0956036cdc84890597",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Wide and sunny are set against narrow and shaded, directly demonstrating a contrast.",
+              [
+                "S0050",
+                "S0055"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This explains observe.",
+              [
+                "S0048"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This explains route.",
+              [
+                "S0046"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes a checking strategy, not the phrase meaning.",
+              [
+                "S0058"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1588",
+      "fingerprint": "9b15510040a632e273861831be9d7527fa3196cc2cf42291dd7686433a8115ee",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "Habitat has a source-supported glossary definition.",
+              [
+                "S0044",
+                "S0069"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Travel path is route.",
+              [
+                "S0070"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The living-place glossary definition is the most useful tool for habitat.",
+              [
+                "S0044",
+                "S0069"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Opposite path descriptions explain in contrast.",
+              [
+                "S0050"
+              ]
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "Dictionary watching sense explains observe.",
+              [
+                "S0071"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This explains observe.",
+              [
+                "S0071"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "Route is supported by a local glossary.",
+              [
+                "S0070"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This explains in contrast.",
+              [
+                "S0050"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The travel-path glossary definition directly explains route.",
+              [
+                "S0053",
+                "S0070"
+              ]
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "This explains habitat.",
+              [
+                "S0069"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This explains route.",
+              [
+                "S0070"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This explains in contrast.",
+              [
+                "S0050"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The dictionary watching sense plus the quiet watching context select observe.",
+              [
+                "S0048",
+                "S0057",
+                "S0071"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This explains habitat.",
+              [
+                "S0069"
+              ]
+            ],
+            [
+              "A5",
+              "CONTRADICTED",
+              "Observe is supported by the reference and source.",
+              [
+                "S0048",
+                "S0071"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This explains route.",
+              [
+                "S0070"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This explains habitat.",
+              [
+                "S0069"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The phrase is supported by opposite descriptions.",
+              [
+                "S0050",
+                "S0055"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The nearby opposite descriptions show that in contrast points out a difference.",
+              [
+                "S0050",
+                "S0055"
+              ]
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "This explains observe.",
+              [
+                "S0071"
+              ]
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

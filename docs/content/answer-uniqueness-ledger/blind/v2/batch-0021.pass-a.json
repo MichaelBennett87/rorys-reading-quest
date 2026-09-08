@@ -1,0 +1,711 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0021",
+  "batchFileSha256": "71daf626a4d5598633f9854bda1db5d5a1d12af076836b689775af9e419d2da6",
+  "reviewerThreadId": "01a07bc1-57ca-7230-a515-d322b50c9d2e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0240",
+      "fingerprint": "0a70ff550e275cb89bf1b85035e86b4dd44f7c7b85fa4d06e5924f7499136b2b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "fastest uses the suffix -est, not -s or -es.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "cleaned uses the suffix -ed, not -s or -es.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "careless uses the suffix -less, not plural -s or -es.",
+              [
+                "S0039",
+                "S0040"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "wishes is wish plus the suffix -es.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0241",
+      "fingerprint": "309d4e0a98119a4c554c6164909cf396d710e79444b0fba9e523e4dead973940",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "careless uses -less, not -ed.",
+              [
+                "S0039",
+                "S0040"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "cleaned is clean plus the suffix -ed.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "fastest uses -est, not -ed.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "wishes uses -es, not -ed.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0242",
+      "fingerprint": "3e81da6815149159a1ab0fd1aba14f15c282eb7d006c043b0d308a01c3a8ca4d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "smaller uses -er, not -ing.",
+              [
+                "S0037",
+                "S0038"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "jumping is jump plus the suffix -ing.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "careless uses -less, not -ing.",
+              [
+                "S0039",
+                "S0040"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "hopeful uses -ful, not -ing.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0243",
+      "fingerprint": "58613110478e842d3c67e8d96c146fd1e2dc0f16769d0b9bd56a33fdf1eb1827",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "jumping uses -ing and does not mean without care.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "smaller uses -er and means more small.",
+              [
+                "S0037",
+                "S0038"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "hopeful uses -ful and means full of hope.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "careless is care plus -less and means without care.",
+              [
+                "S0039",
+                "S0040"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0244",
+      "fingerprint": "b9c3c1abb18b8178d21e44786d6fad92616b2c0f68b070e4bec218ea9da2d39b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "Only S0050 is displayed: it verifies fastest, but passage membership for cleanest, kinder, and smaller cannot be checked even though those forms also express comparison.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "cleanest compares three or more things, but it does not appear in the displayed checkpoint passage.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "careful describes having care and does not compare degrees.",
+              [
+                "S0055",
+                "S0053"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "fastest appears in the displayed passage and compares three or more carts by speed.",
+              [
+                "S0054",
+                "S0051"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "kinder compares two things, but it does not appear in the displayed checkpoint passage.",
+              []
+            ],
+            [
+              "A5",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "smaller compares two things, but it does not appear in the displayed checkpoint passage.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": "Prompt references checkpoint passages in the plural, but only passage S0050 is learner-visible in this projection."
+    },
+    {
+      "auditId": "Q0245",
+      "fingerprint": "e2fdf90c24b15dfad3b3f36bb0e89962a5a6e51342c110b907e210d083c6a52e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2"
+          ],
+          "ambiguity": "Both wiping something quickly and a fastest cart rolling describe an action performed quickly, but the radio permits one sentence.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The sentence explicitly says the spill was wiped quickly.",
+              [
+                "S0056"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The fastest cart rolling describes rolling more quickly than the compared carts.",
+              [
+                "S0051",
+                "S0054"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The sentence describes carrying bags and cleaning shelves without a speed clue.",
+              [
+                "S0053"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0246",
+      "fingerprint": "d5dea4af73b0d9abb6a77d12986d0013de7846ff5fc20c5fee6044da5567f356",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "clean is the base of cleaned, not wishes.",
+              [
+                "S0052"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "care is the base of careful, not wishes.",
+              [
+                "S0055"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "fast is the base of fastest, not wishes.",
+              [
+                "S0054"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "wish is the base word of wishes.",
+              [
+                "S0049",
+                "S0051"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "wish is the base of wishes, not cleaned.",
+              [
+                "S0049"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "care is the base of careful, not cleaned.",
+              [
+                "S0055"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "clean is the base word of cleaned.",
+              [
+                "S0052",
+                "S0053"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "fast is the base of fastest, not cleaned.",
+              [
+                "S0054"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "fast is the base word of fastest.",
+              [
+                "S0054",
+                "S0051"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "care is the base of careful, not fastest.",
+              [
+                "S0055"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "wish is the base of wishes, not fastest.",
+              [
+                "S0049"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "clean is the base of cleaned, not fastest.",
+              [
+                "S0052"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "wish is the base of wishes, not careful.",
+              [
+                "S0049"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "fast is the base of fastest, not careful.",
+              [
+                "S0054"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "care is the base word of careful.",
+              [
+                "S0055",
+                "S0053"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "clean is the base of cleaned, not careful.",
+              [
+                "S0052"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0247",
+      "fingerprint": "39a17cd5aa730155949720e19b538342b63cebae4d1398650299713e0b54d2a2",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "ghost neither begins with kn nor names the displayed statue.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "knight begins with silent k in kn and names the statue.",
+              [
+                "S0001",
+                "S0003"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "wrap begins with quiet wr and does not name the statue.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "island does not begin with kn and does not name the statue.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0248",
+      "fingerprint": "a4aaf97201650aa6c78158adf32906e791d0002bb691572b4b76813c872bd562",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "wrap begins with wr and is not a body part.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "ghost does not begin with kn and is not a body part.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "knee begins with quiet kn and names a body part.",
+              [
+                "S0004",
+                "S0003"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "island does not begin with kn and is not a body part.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0249",
+      "fingerprint": "7cf0ea69ad48fa15c61efab098d293b3e9192ab3b7ef94917776f79826136c8c",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "knock begins with quiet kn and means to tap.",
+              [
+                "S0005",
+                "S0006"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "wrong begins with quiet wr, not kn, and does not mean tap.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "ghost does not begin with kn and does not mean tap.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "comb does not begin with kn and does not mean tap.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0250",
+      "fingerprint": "836753bce79706aea857c3be224ceed5422c99c6b195c8306762212b911e4bc0",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "knee appears in the passage and begins with quiet kn.",
+              [
+                "S0004",
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "knit appears in the passage and begins with quiet kn.",
+              [
+                "S0007",
+                "S0008"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "knight appears in the passage and begins with quiet kn.",
+              [
+                "S0001",
+                "S0003"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "knock appears in the passage and begins with quiet kn.",
+              [
+                "S0005",
+                "S0006"
+              ]
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "wrap begins with quiet wr and does not appear in the passage.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0251",
+      "fingerprint": "c33acecdf8dca1bf9a1f5ccd2d6ab4a3416035ab032f5a52e4e3c6d77b21234b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "shield does not begin with kn.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "closer does not begin with kn.",
+              [
+                "S0006"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "museum does not begin with kn.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "knight begins with quiet kn.",
+              [
+                "S0001",
+                "S0003"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

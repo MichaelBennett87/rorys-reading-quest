@@ -1,0 +1,953 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0134",
+  "batchFileSha256": "fa4657add4332f21f22332df7366630b6a1241c63594ccb370186fe0e310ac0c",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1567",
+      "fingerprint": "88e05493033b6990e917c4142b59b46146343445a01237145920b7c47a89c69b",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Inspect means look closely, confirmed by checking hoses for small defects.",
+              [
+                "S0120",
+                "S0128",
+                "S0132"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This describes making labels readable.",
+              [
+                "S0126"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This describes refillable.",
+              [
+                "S0124"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This describes an aqueduct.",
+              [
+                "S0122"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1568",
+      "fingerprint": "bdc390a114771b396b3acbecc790a33fa5c75bd62b9c83ec7ee793f9b626afc9",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This describes readable.",
+              [
+                "S0126"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This describes refillable.",
+              [
+                "S0124"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This describes inspect.",
+              [
+                "S0120"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Aqua and duct supply water and carrying clues, confirmed by the channel and arrows.",
+              [
+                "S0122",
+                "S0129",
+                "S0133"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1569",
+      "fingerprint": "5c1a1c241980064ecf6730e8944d2ef9999a4d8f0f0a78fd65c27e539719752f",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Read is the meaningful base and -able contributes the possible-to-be meaning.",
+              [
+                "S0126",
+                "S0135"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Neither piece follows the genuine base-plus-suffix boundary.",
+              [
+                "S0135",
+                "S0136"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "These pieces do not build the displayed meaning.",
+              [
+                "S0135",
+                "S0136"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The source explicitly rejects re plus adable as a false split.",
+              [
+                "S0136"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1570",
+      "fingerprint": "1ee3d7597a2d3ae6c97dbb986532daa57ce11576b57b4113befb14f58910b037",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Refill contributes the meaning fill again.",
+              [
+                "S0124",
+                "S0134"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "Read is the base of readable, not refill.",
+              [
+                "S0126"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "Looking closely describes inspect, not refillable.",
+              [
+                "S0120"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The sentence explicitly confirms that the container can be filled again after emptying.",
+              [
+                "S0124"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1571",
+      "fingerprint": "32527cfd24cbe77be9090ae2de78fcc778dd7f3396226a51fa828d57fb43436a",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The sentence directly states that the large letters can be read easily from the path.",
+              [
+                "S0126",
+                "S0131"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This confirms refillable.",
+              [
+                "S0124"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This confirms aqueduct.",
+              [
+                "S0122"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This confirms inspect.",
+              [
+                "S0120"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1572",
+      "fingerprint": "866eefffc0e321f5ca8ff76ff3c3a8c6eba5c5b5a95dfe96b5450865e320aefd",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Inspect means look closely.",
+              [
+                "S0120",
+                "S0132"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This is readable.",
+              [
+                "S0126"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This is refillable.",
+              [
+                "S0124"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is aqueduct.",
+              [
+                "S0122"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is inspect.",
+              [
+                "S0120"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This is readable.",
+              [
+                "S0126"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "An aqueduct is a structure that carries water.",
+              [
+                "S0122",
+                "S0133"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is refillable.",
+              [
+                "S0124"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Refillable means able to be filled again.",
+              [
+                "S0124",
+                "S0134"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This is aqueduct.",
+              [
+                "S0122"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This is readable.",
+              [
+                "S0126"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is inspect.",
+              [
+                "S0120"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Readable means able to be read easily.",
+              [
+                "S0126",
+                "S0135"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This is inspect.",
+              [
+                "S0120"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This is refillable.",
+              [
+                "S0124"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is aqueduct.",
+              [
+                "S0122"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1573",
+      "fingerprint": "75b9e24a418ec8bda3f29f48af64d01dc4a57ab1318776e7c818a9bfe39d2c4d",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Inspect means look closely at something.",
+              [
+                "S0120",
+                "S0128"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This is refill.",
+              [
+                "S0124"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This is make readable.",
+              [
+                "S0126"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is the function of an aqueduct.",
+              [
+                "S0122"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "A familiar sound fragment does not replace context and genuine roots.",
+              [
+                "S0132"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "Pronunciation chunks alone do not establish the meaning.",
+              [
+                "S0132"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "It combines the genuine roots and confirms them with the exact close-looking action.",
+              [
+                "S0120",
+                "S0132"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The full roots and surrounding sentence provide useful information.",
+              [
+                "S0120",
+                "S0132"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1574",
+      "fingerprint": "939510ba371331b78964ae46518372b4872d6b01b98f9d060d9580e508e01e49",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "UNSUPPORTED",
+              "The report does not connect nocturnal animals with being hidden under soil.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "A moth and bat move after dark; inability to fly is not the meaning.",
+              [
+                "S0011"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The report explicitly defines nocturnal animals as active after dark.",
+              [
+                "S0010",
+                "S0003"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "Color is not part of the definition.",
+              [
+                "S0003"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1575",
+      "fingerprint": "67b739140410cca989ce348c1db5692487e35ae34a18ade8ac38cb3eb2f764aa",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "UNSUPPORTED",
+              "Floating is not discussed.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The sponge has absorbed so much rain that water drips from it.",
+              [
+                "S0009",
+                "S0017"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The sponge is wet from rain, not covered with dry dust.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "No cutting occurs.",
+              [
+                "S0009"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1576",
+      "fingerprint": "0d8c7a3a79d3f2d4c5f18ea8f8dfed805b368b472f368267c0dc832dcbaa34fa",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The restatement sleepy enough to yawn directly explains drowsy.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Saving notes is an event but gives no word-meaning clue.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Only a small amount restates the meaning of scarce.",
+              [
+                "S0007",
+                "S0014"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Location beside beds does not explain an unfamiliar target word.",
+              [
+                "S0013"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1577",
+      "fingerprint": "52313cbbfd4e3467398e2856c71f604f02462f243b9aff3358d5944c27c59f6b",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This uses cause and effect to explain saturated.",
+              [
+                "S0009",
+                "S0017"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes the students strategy, not a contrast explaining scarce.",
+              [
+                "S0015"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This uses restatement to explain drowsy.",
+              [
+                "S0005",
+                "S0016"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Plentiful is contrasted with scarce using but, showing only a small amount of soil.",
+              [
+                "S0007",
+                "S0014",
+                "S0016"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1578",
+      "fingerprint": "5a3db543a170d4d70b6435c234df496925fea46a0b9a60fb8b5f89a1630e0384",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A5"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is scarce.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This is saturated.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The source explicitly supports nocturnal.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is drowsy.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A5",
+              "DEFENSIBLE",
+              "Nocturnal means active at night.",
+              [
+                "S0010",
+                "S0003"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is saturated.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This is nocturnal.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Drowsy means sleepy.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is scarce.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A5",
+              "CONTRADICTED",
+              "The source directly restates drowsy.",
+              [
+                "S0005"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A5"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is nocturnal.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This is drowsy.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The source explains scarce by contrast and restatement.",
+              [
+                "S0007",
+                "S0014"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is saturated.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A5",
+              "DEFENSIBLE",
+              "Scarce means available only in a small amount.",
+              [
+                "S0007",
+                "S0014"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is scarce.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Saturated means completely soaked.",
+              [
+                "S0009",
+                "S0017"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The source explains saturated by cause and effect.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is nocturnal.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "This is drowsy.",
+              [
+                "S0005"
+              ]
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

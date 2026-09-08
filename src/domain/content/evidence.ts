@@ -53,10 +53,10 @@ export function resolveLessonEvidence(
 export function buildPassageEvidenceIndex(passage: Passage): ReadonlyMap<string, PassageEvidenceEntry> {
   const entries = new Map<string, PassageEvidenceEntry>()
 
-  for (const sentence of passage.sentences ?? []) {
+  for (const [index, sentence] of (passage.sentences ?? []).entries()) {
     entries.set(sentence.sentenceId, {
       evidenceId: sentence.sentenceId,
-      label: passage.contentKind === 'poem' ? `Line ${sentence.lineNumber ?? 0}` : `Sentence ${sentence.lineNumber ?? 0}`,
+      label: passage.contentKind === 'poem' ? `Line ${sentence.lineNumber ?? index + 1}` : `Sentence ${sentence.lineNumber ?? index + 1}`,
       text: sentence.text,
     })
   }

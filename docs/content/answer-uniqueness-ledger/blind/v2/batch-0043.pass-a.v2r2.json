@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0043",
+  "batchFileSha256": "f67296f0da0fb1a16e5999a08f90bcb3b5576c4b1b94d0f74deae47a935fd0d1",
+  "reviewerThreadId": "01a07bc2-8812-7cc2-a5b2-df5dabbc4bb9",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0500",
+      "fingerprint": "dfb3c336d1ea4d17d64ee60bc5b23ba32e6c104420ff7020e0b7a881ae0f1e6e",
+      "slots": [{
+        "slotId": "response", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "The title and passage concern moon observations, not recycling bins.", ["S0100", "S0093"]],
+          ["A2", "INCORRECT", "No garden map is named or shown in this passage.", ["S0100", "S0103"]],
+          ["A3", "DEFENSIBLE", "Moon Notes previews the moon shapes recorded in the class log.", ["S0100", "S0093"]],
+          ["A4", "INCORRECT", "No trail sign is named or shown in this passage.", ["S0100", "S0103"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0501",
+      "fingerprint": "c73267c47329137df1196a94395e909a84138d83d460555c5dd000b82bfc2ad5",
+      "slots": [{
+        "slotId": "response", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "The section records moon shapes rather than birds.", ["S0102", "S0093", "S0095"]],
+          ["A2", "INCORRECT", "The section does not discuss compost.", ["S0102", "S0093", "S0095"]],
+          ["A3", "DEFENSIBLE", "Night by Night introduces observations made across several nights.", ["S0102", "S0093", "S0095"]],
+          ["A4", "INCORRECT", "The section contains a moon graph, not a trail map.", ["S0102", "S0103"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0502",
+      "fingerprint": "6caac6b749b0fa11548b227893e135cfce3d4da2d1149f757bb3a257520e2673",
+      "slots": [{
+        "slotId": "response", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "The graph contains moon-shape bars and no bean-bed map.", ["S0103"]],
+          ["A2", "DEFENSIBLE", "The graph compares the frequencies of the moon shapes observed across the week.", ["S0095", "S0103", "S0108", "S0109", "S0110"]],
+          ["A3", "INCORRECT", "The graph does not depict recycling gloves.", ["S0103"]],
+          ["A4", "INCORRECT", "The glossary defines observe, not route, and the graph defines neither.", ["S0103", "S0107", "S0111"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0503",
+      "fingerprint": "b29b268e8a427b5715c68165bc7f9988dd440ac63f03dc6803ee5120ae86d557",
+      "slots": [{
+        "slotId": "response", "defensible": ["A1", "A2", "A3"],
+        "ambiguity": "The prompt requests two details, but A1 explains the graph's observation source, A2 explains its purpose, and A3 explains how to interpret its tallest bar.",
+        "selectionContractValid": false,
+        "options": [
+          ["A1", "DEFENSIBLE", "Priya's nightly logging explains where the graph's moon-shape observations come from.", ["S0093", "S0103"]],
+          ["A2", "DEFENSIBLE", "This sentence directly explains what the graph displays and why readers use it.", ["S0095", "S0103"]],
+          ["A3", "DEFENSIBLE", "The caption directly explains how to interpret the tallest graph bar.", ["S0097", "S0104"]],
+          ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The glossary explains the word observe but does not explain the graph's data or visual meaning.", ["S0099", "S0107", "S0111"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0504",
+      "fingerprint": "949d6e007ae43b009e6069daa68d30ba0c2555a43d1e6f5743e91d76cb01b379",
+      "slots": [{
+        "slotId": "response", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "This sentence explains the caption, not the glossary.", ["S0097", "S0104"]],
+          ["A2", "INCORRECT", "This sentence explains the graph, not the glossary.", ["S0095", "S0103"]],
+          ["A3", "DEFENSIBLE", "It explicitly states that the glossary gives the meaning of observe.", ["S0099", "S0107", "S0111"]],
+          ["A4", "INCORRECT", "This sentence describes Priya's logging activity, not the glossary.", ["S0093"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0505",
+      "fingerprint": "58b1fc9cb67c9dd91c8e9c6ca49df31a2ba39fc7a366c3371c2acb6724b09333",
+      "slots": [
+        {
+          "slotId": "row_1", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Comparing moon shapes is the graph's function.", ["S0103"]],
+            ["A2", "DEFENSIBLE", "The title Moon Notes previews the topic of the whole text.", ["S0100"]],
+            ["A3", "INCORRECT", "Explaining the tallest bar is the caption's function.", ["S0104"]],
+            ["A4", "INCORRECT", "Defining a special word is the glossary's function.", ["S0107", "S0111"]]
+          ]
+        },
+        {
+          "slotId": "row_2", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The glossary, not the graph, defines a special word.", ["S0107", "S0111"]],
+            ["A2", "INCORRECT", "The caption, not the graph alone, explains the tallest bar.", ["S0104"]],
+            ["A3", "DEFENSIBLE", "The graph's bars compare the observed moon shapes by number of nights.", ["S0103", "S0108", "S0109", "S0110"]],
+            ["A4", "INCORRECT", "The title gives the clue about the whole text.", ["S0100"]]
+          ]
+        },
+        {
+          "slotId": "row_3", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The title gives the whole-text clue.", ["S0100"]],
+            ["A2", "INCORRECT", "The graph compares moon shapes.", ["S0103"]],
+            ["A3", "INCORRECT", "The glossary defines a special word.", ["S0107", "S0111"]],
+            ["A4", "DEFENSIBLE", "The caption states that the tallest bar marks the most-often-seen shape.", ["S0104"]]
+          ]
+        },
+        {
+          "slotId": "row_4", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The title gives the whole-text clue.", ["S0100"]],
+            ["A2", "DEFENSIBLE", "The glossary defines observe as watching carefully over time.", ["S0107", "S0111"]],
+            ["A3", "INCORRECT", "The graph compares moon shapes.", ["S0103"]],
+            ["A4", "INCORRECT", "The caption explains the tallest bar.", ["S0104"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0506",
+      "fingerprint": "f51a973e348bd40a6144a197db64b1e8afa49260e3ffdfd078ba3bb2cebb3fca",
+      "slots": [
+        {
+          "slotId": "part_a", "defensible": ["A1"],
+          "ambiguity": "A1 repeats the passage's claim, but the displayed graph aggregates counts by moon shape and does not identify the shape observed on each individual night.",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The passage expressly says the graph shows which moon shape was seen each night, although the rendered bars only show aggregate frequencies.", ["S0095", "S0103", "S0108", "S0109", "S0110"]],
+            ["A2", "INCORRECT", "The source defines observe, not route, and the graph defines neither.", ["S0107", "S0111"]],
+            ["A3", "INCORRECT", "No bean bed or location map appears in the source.", ["S0103"]]
+          ]
+        },
+        {
+          "slotId": "part_b", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "This sentence directly states the claim selected in Part A.", ["S0095"]],
+            ["A2", "INCORRECT", "The glossary definition of observe does not support the claimed graph function.", ["S0099", "S0107", "S0111"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The caption explains the tallest bar but does not establish which shape appeared on each individual night.", ["S0097", "S0104"]]
+          ]
+        }
+      ],
+      "projectionDefect": "The learner-visible sentence says the graph identifies each night's shape, but the rendered graph contains only aggregate shape counts with no night-by-night labels."
+    },
+    {
+      "auditId": "Q0507",
+      "fingerprint": "5855958ad8c28c416b0d71b87ef13fd79df52f66ed804114f58499af86223aa3",
+      "slots": [{
+        "slotId": "response", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "The title and passage concern recycling, not moon notes.", ["S0121", "S0114"]],
+          ["A2", "INCORRECT", "No trail map appears in this passage.", ["S0121", "S0124", "S0128"]],
+          ["A3", "DEFENSIBLE", "Recycling Sort previews the class sorting paper, plastic, and cans for recycling.", ["S0121", "S0114"]],
+          ["A4", "INCORRECT", "No feeder or bird visitors appear in the passage.", ["S0121", "S0114"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0508",
+      "fingerprint": "597966b2b71f15a3534944fdb6f6bf7eab258ef37750a686f0cfa3df98e7507e",
+      "slots": [{
+        "slotId": "response", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "The section counts recycling bins rather than discussing compost.", ["S0123", "S0114", "S0116"]],
+          ["A2", "INCORRECT", "The graph is about recycling bags, not weather.", ["S0123", "S0124"]],
+          ["A3", "INCORRECT", "No trail sign appears in the section.", ["S0123", "S0114", "S0116"]],
+          ["A4", "DEFENSIBLE", "Counting the Bins directly signals that the section is about bin counts.", ["S0123", "S0114", "S0116"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0509",
+      "fingerprint": "0217fdbc5429c31b0247201cdfc189745b55384d4b2b2a2d320bbdf353215deb",
+      "slots": [{
+        "slotId": "response", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "The graph displays counts rather than picturing the station and its parts.", ["S0124"]],
+          ["A2", "INCORRECT", "The caption interprets the tallest graph bar rather than picturing the station.", ["S0125"]],
+          ["A3", "INCORRECT", "The title identifies the topic but does not depict the station.", ["S0121"]],
+          ["A4", "DEFENSIBLE", "The illustration depicts and labels the station's lids, arrows, and gloves.", ["S0118", "S0120", "S0128", "S0132", "S0133"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0510",
+      "fingerprint": "a80a10fb3a14e6f037685a05b5e494193ef82a0f482d86d1e9fc81a660acc0e8",
+      "slots": [{
+        "slotId": "response", "defensible": ["A2", "A4"],
+        "ambiguity": "A2 and A4 are the two comparison details, but A4 and the source call the highest bag total the bin that filled fastest even though the graph contains no elapsed-time or fill-rate data.",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The illustration labels station parts and sorting flow but does not compare bin quantities.", ["S0120", "S0128", "S0132", "S0133"]],
+          ["A2", "DEFENSIBLE", "The caption identifies the tallest bar as paper, helping readers compare the categories.", ["S0118", "S0125"]],
+          ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This sentence names the sorting categories but gives no relative amount or comparison.", ["S0114"]],
+          ["A4", "DEFENSIBLE", "It explicitly directs readers to compare the bars, although its filled-fastest wording overstates what bag totals prove.", ["S0116", "S0124", "S0129", "S0130", "S0131"]]
+        ]
+      }],
+      "projectionDefect": "The learner-visible sentence interprets a graph of bag totals as fill speed, but the graph provides no time or rate measurement."
+    },
+    {
+      "auditId": "Q0511",
+      "fingerprint": "8e213fe7415c7d00e80795b1cd9df03c69de07ab08065a300a48b8078bd1bdc0",
+      "slots": [{
+        "slotId": "response", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "This sentence explains the graph caption rather than the illustration.", ["S0118", "S0125"]],
+          ["A2", "DEFENSIBLE", "It directly states what the illustration labels and shows.", ["S0120", "S0128", "S0132", "S0133"]],
+          ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This sentence describes the class action but not what the illustration displays.", ["S0114"]],
+          ["A4", "INCORRECT", "This sentence describes the graph rather than the illustration.", ["S0116", "S0124"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0512",
+      "fingerprint": "afc94087357361b5173b6da165c04a9dda53f3376831d99871635a828656779f",
+      "slots": [
+        {
+          "slotId": "row_1", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The illustration shows the sorting station.", ["S0128"]],
+            ["A2", "INCORRECT", "The caption explains the tallest bar.", ["S0125"]],
+            ["A3", "DEFENSIBLE", "The title Recycling Sort previews the whole text.", ["S0121"]],
+            ["A4", "INCORRECT", "The graph compares the bin counts.", ["S0124"]]
+          ]
+        },
+        {
+          "slotId": "row_2", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The graph's bars compare paper, plastic, and can bag counts.", ["S0124", "S0129", "S0130", "S0131"]],
+            ["A2", "INCORRECT", "The illustration shows the sorting station.", ["S0128"]],
+            ["A3", "INCORRECT", "The title gives the whole-text clue.", ["S0121"]],
+            ["A4", "INCORRECT", "The caption explains the tallest bar.", ["S0125"]]
+          ]
+        },
+        {
+          "slotId": "row_3", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The illustration shows the sorting station.", ["S0128"]],
+            ["A2", "INCORRECT", "The graph compares the bin counts.", ["S0124"]],
+            ["A3", "DEFENSIBLE", "The caption identifies and explains the tallest bar.", ["S0118", "S0125"]],
+            ["A4", "INCORRECT", "The title gives the whole-text clue.", ["S0121"]]
+          ]
+        },
+        {
+          "slotId": "row_4", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The caption explains the tallest bar.", ["S0125"]],
+            ["A2", "INCORRECT", "The graph compares bin counts.", ["S0124"]],
+            ["A3", "DEFENSIBLE", "The illustration depicts and labels the sorting station.", ["S0120", "S0128", "S0132", "S0133"]],
+            ["A4", "INCORRECT", "The title gives the whole-text clue.", ["S0121"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0513",
+      "fingerprint": "5b8c9c1a325e5ded6b4583c39653b44683da38f7f5f9a38a04ec157e0f8bc3a8",
+      "slots": [
+        {
+          "slotId": "part_a", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The illustration's labeled lids and arrows show how items are sorted.", ["S0120", "S0128", "S0132"]],
+            ["A2", "INCORRECT", "No bean bed appears in this source.", ["S0128"]],
+            ["A3", "INCORRECT", "Observe is not part of this source, and an illustration is not used to define it.", ["S0128"]]
+          ]
+        },
+        {
+          "slotId": "part_b", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The labels on the bin lids and sorting arrows directly support how the illustration shows sorting.", ["S0120", "S0128", "S0132", "S0133"]],
+            ["A2", "INCORRECT", "The graph's fill comparison does not explain how the illustration shows sorting.", ["S0116", "S0124"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The title names sorting as the topic but does not show how the illustration represents the process.", ["S0121"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

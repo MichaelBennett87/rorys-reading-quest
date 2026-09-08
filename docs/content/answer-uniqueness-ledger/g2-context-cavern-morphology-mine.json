@@ -1,0 +1,4360 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "lesson-cc-morphology-prereq-find-base-word-q-1",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-f74521fedef35b6a",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "e61394415f00bd053605a573b9ff2c12696fd03cca85a808e6f5e997745c7c08",
+        "conclusionsSha256": "055e6bc18a8cb2298fece730f20d7356d68985c5337d2c2ff5cbc56cded7bdbb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0058.pass-a.json",
+        "receiptSha256": "055e6bc18a8cb2298fece730f20d7356d68985c5337d2c2ff5cbc56cded7bdbb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the base word in unpack?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-prereq-find-base-word-q-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-prereq-find-base-word-q-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Removing the prefix un- from unpack leaves the meaningful base word pack.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-1-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Un is the prefix, not the base word.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-1-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Back is not a meaningful part of unpack in this use.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-1-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Cart is a separate source word, not the base inside unpack.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-prereq-find-base-word-q-2",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-be6017fd6c11fdd9",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "e61394415f00bd053605a573b9ff2c12696fd03cca85a808e6f5e997745c7c08",
+        "conclusionsSha256": "055e6bc18a8cb2298fece730f20d7356d68985c5337d2c2ff5cbc56cded7bdbb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0006.second-pass.json",
+        "receiptSha256": "bca71ddab082fb15721b386330bff1cf82ed65195700bb13b8974c9fac7a3ad4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the base word in faster?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-prereq-find-base-word-q-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-prereq-find-base-word-q-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-2-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Slow is an opposite meaning, not the base inside faster.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-2",
+                "g2-cc-morphology-unpack-supply-cart-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-2-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Friend is not a word part in faster.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-2-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Hope is not a word part in faster.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Removing the suffix -er from faster leaves the base word fast.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-prereq-find-base-word-q-3",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-f912325bd0bbdabf",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "e61394415f00bd053605a573b9ff2c12696fd03cca85a808e6f5e997745c7c08",
+        "conclusionsSha256": "055e6bc18a8cb2298fece730f20d7356d68985c5337d2c2ff5cbc56cded7bdbb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0058.pass-a.json",
+        "receiptSha256": "055e6bc18a8cb2298fece730f20d7356d68985c5337d2c2ff5cbc56cded7bdbb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two words that keep the base word help.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-prereq-find-base-word-q-3-choice-1",
+            "lesson-cc-morphology-prereq-find-base-word-q-3-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-prereq-find-base-word-q-3-choice-1",
+            "lesson-cc-morphology-prereq-find-base-word-q-3-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Helpful keeps the complete base word help and adds the suffix -ful.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-3-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Unpack contains the base pack, not help.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-3-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Helping keeps the complete base word help and adds -ing.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-3-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Slowly contains the base slow, not help.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-prereq-find-base-word-q-4",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-43d5dc4800543bf4",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "e61394415f00bd053605a573b9ff2c12696fd03cca85a808e6f5e997745c7c08",
+        "conclusionsSha256": "055e6bc18a8cb2298fece730f20d7356d68985c5337d2c2ff5cbc56cded7bdbb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0058.pass-a.json",
+        "receiptSha256": "055e6bc18a8cb2298fece730f20d7356d68985c5337d2c2ff5cbc56cded7bdbb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which chunk is the base word in slowly?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-prereq-find-base-word-q-4-segment-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-prereq-find-base-word-q-4-segment-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-4-segment-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Ly is the suffix, not the base word.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-4-segment-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Slowly is the complete affixed word, not its smaller base.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-4-segment-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Removing -ly from slowly leaves the meaningful base word slow.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-4-segment-4",
+              "verdict": "INCORRECT",
+              "rationale": "Moving is not a word part in slowly.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-prereq-find-base-word-q-5",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-2b514db0e379826c",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "0b051af496a11eedd0556bc2013ba4549c5d8d461b0974ab76acf5ac8563077e",
+        "conclusionsSha256": "c0bdc7b9afb7361ecbe744a6ad51e18d37f0d521bf93d400d6c022af0d280583",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0030.pass-a.json",
+        "receiptSha256": "c0bdc7b9afb7361ecbe744a6ad51e18d37f0d521bf93d400d6c022af0d280583",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "lesson-cc-morphology-prereq-find-base-word-q-5-row-1",
+          "prompt": "unpack",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-prereq-find-base-word-q-5-row-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-prereq-find-base-word-q-5-row-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-5-row-1-choice-3",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Cart is a separate passage word, not the base inside unpack.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-5-row-1-choice-4",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Supply is a separate passage word, not the base inside unpack.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-5-row-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Unpack contains the base word pack after the prefix un-.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-5-row-1-choice-2",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Bag is not contained in unpack.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-cc-morphology-prereq-find-base-word-q-5-row-2",
+          "prompt": "faster",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-prereq-find-base-word-q-5-row-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-prereq-find-base-word-q-5-row-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-5-row-2-choice-2",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Kind helper is not the base inside faster.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-5-row-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Faster contains the base word fast before -er.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-5-row-2-choice-3",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Careless choice is neither a base word nor part of faster.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-5-row-2-choice-4",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Before the walk is a phrase, not the base inside faster.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-cc-morphology-prereq-find-base-word-q-5-row-3",
+          "prompt": "helping",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-prereq-find-base-word-q-5-row-3-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-prereq-find-base-word-q-5-row-3-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-5-row-3-choice-4",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Build again is not the base inside helping.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-5-row-3-choice-3",
+              "verdict": "UNSUPPORTED",
+              "rationale": "More than one is not the base inside helping.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-5-row-3-choice-2",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Slowly moving is not the base inside helping.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-5-row-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Helping contains the base word help before -ing.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-cc-morphology-prereq-find-base-word-q-5-row-4",
+          "prompt": "slowly",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-prereq-find-base-word-q-5-row-4-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-prereq-find-base-word-q-5-row-4-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-5-row-4-choice-3",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Count wrongly is not the base inside slowly.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-5-row-4-choice-4",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Most tall is not the base inside slowly.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-5-row-4-choice-2",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Heat before is not the base inside slowly.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-find-base-word-q-5-row-4-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Slowly contains the base word slow before -ly.",
+              "evidenceIds": [
+                "g2-cc-morphology-unpack-supply-cart-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-prereq-match-affix-meaning-q-1",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-0ce43662c71f0786",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "dc6a28d1c046ec81cf132bea0b2ac519e2e80fb0c0ec9aaa47c2f29cef782b53",
+        "conclusionsSha256": "cce3109a4928b61ae0da13b249db7fd8bc3a84b5f01cff302a77b22c6c49989e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0059.pass-a.json",
+        "receiptSha256": "cce3109a4928b61ae0da13b249db7fd8bc3a84b5f01cff302a77b22c6c49989e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does re- mean in rebuild?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-prereq-match-affix-meaning-q-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-prereq-match-affix-meaning-q-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-1-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Without is the usual contribution of -less, not re-.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-1-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "More than one is the plural contribution of -s or -es, not re-.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Re- means again, so rebuild means build again after the windy-day damage.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-1-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Before is the usual contribution of pre-, not re-.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-prereq-match-affix-meaning-q-2",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-484f2350fb9eb934",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "dc6a28d1c046ec81cf132bea0b2ac519e2e80fb0c0ec9aaa47c2f29cef782b53",
+        "conclusionsSha256": "cce3109a4928b61ae0da13b249db7fd8bc3a84b5f01cff302a77b22c6c49989e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0059.pass-a.json",
+        "receiptSha256": "cce3109a4928b61ae0da13b249db7fd8bc3a84b5f01cff302a77b22c6c49989e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does -less mean in careless?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-prereq-match-affix-meaning-q-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-prereq-match-affix-meaning-q-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-2-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Most is not the meaning contributed by -less.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-2-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Again is the usual contribution of re-, not -less.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "-less means without, so careless describes acting without enough care.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-2-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Before is the usual contribution of pre-, not -less.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-prereq-match-affix-meaning-q-3",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-053eca694ae0bb3d",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "dc6a28d1c046ec81cf132bea0b2ac519e2e80fb0c0ec9aaa47c2f29cef782b53",
+        "conclusionsSha256": "cce3109a4928b61ae0da13b249db7fd8bc3a84b5f01cff302a77b22c6c49989e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0059.pass-a.json",
+        "receiptSha256": "cce3109a4928b61ae0da13b249db7fd8bc3a84b5f01cff302a77b22c6c49989e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two words in the passage that mean more than one after the suffix is added.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-prereq-match-affix-meaning-q-3-choice-1",
+            "lesson-cc-morphology-prereq-match-affix-meaning-q-3-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-prereq-match-affix-meaning-q-3-choice-1",
+            "lesson-cc-morphology-prereq-match-affix-meaning-q-3-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-3-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Careless uses -less to mean without care, not more than one.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Plants uses plural -s to mean more than one plant.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-3-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Rebuild uses re- to mean build again, not more than one.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-3-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Boxes uses plural -es to mean more than one box.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-prereq-match-affix-meaning-q-4",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-b35b9b814afc9175",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "dc6a28d1c046ec81cf132bea0b2ac519e2e80fb0c0ec9aaa47c2f29cef782b53",
+        "conclusionsSha256": "cce3109a4928b61ae0da13b249db7fd8bc3a84b5f01cff302a77b22c6c49989e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0059.pass-a.json",
+        "receiptSha256": "cce3109a4928b61ae0da13b249db7fd8bc3a84b5f01cff302a77b22c6c49989e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which chunk is the prefix in rebuild?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-prereq-match-affix-meaning-q-4-segment-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-prereq-match-affix-meaning-q-4-segment-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-4-segment-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Re is the word part added before the base build.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-4-segment-4",
+              "verdict": "INCORRECT",
+              "rationale": "Again is the prefix meaning, not the visible chunk.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-4-segment-3",
+              "verdict": "INCORRECT",
+              "rationale": "Rebuild is the complete word, not just the prefix.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-4-segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "Build is the base word, not the prefix.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-prereq-match-affix-meaning-q-5",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-2e49b10c71618760",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "dc6a28d1c046ec81cf132bea0b2ac519e2e80fb0c0ec9aaa47c2f29cef782b53",
+        "conclusionsSha256": "cce3109a4928b61ae0da13b249db7fd8bc3a84b5f01cff302a77b22c6c49989e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0059.pass-a.json",
+        "receiptSha256": "cce3109a4928b61ae0da13b249db7fd8bc3a84b5f01cff302a77b22c6c49989e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-1",
+          "prompt": "re-",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-1-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Re- does not mean wrongly.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-1-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Before is the meaning of pre-, not re-.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Re- commonly means again, as in rebuild.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-1-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Re- does not mean opposite.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-2",
+          "prompt": "-less",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "-less commonly means without, as in careless.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-2-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Build again describes rebuild, not -less.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-2-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "More fast is neither grammatical nor the meaning of -less.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-2-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Full of help describes helpful and -ful, not -less.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-3",
+          "prompt": "-s",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-3-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-3-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "In plants, plural -s means more than one plant.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-3-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Heat before describes preheat, not -s.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-3-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Kind helper does not express plural -s.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-3-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Slowly moving describes drift, not -s.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-4",
+          "prompt": "-es",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-4-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-4-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-4-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Careful is unrelated to plural -es.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-4-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "In boxes, plural -es means more than one box.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-4-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Count wrongly does not express plural -es.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-prereq-match-affix-meaning-q-5-row-4-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Most tall describes a superlative idea, not plural -es.",
+              "evidenceIds": [
+                "g2-cc-morphology-rebuild-plant-shelf"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-1",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-4c7ec1be16195d7a",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "dc6a28d1c046ec81cf132bea0b2ac519e2e80fb0c0ec9aaa47c2f29cef782b53",
+        "conclusionsSha256": "cce3109a4928b61ae0da13b249db7fd8bc3a84b5f01cff302a77b22c6c49989e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0059.pass-a.json",
+        "receiptSha256": "cce3109a4928b61ae0da13b249db7fd8bc3a84b5f01cff302a77b22c6c49989e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does pre- mean in preheat?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-guided-prefixes-build-meanings-q-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-guided-prefixes-build-meanings-q-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-1-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "More than one is a plural meaning, not pre-.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Pre- means before, so preheat means heat before the demo begins.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo-sentence-1",
+                "g2-cc-morphology-preheat-snack-demo-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-1-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Again is the usual meaning of re-, not pre-.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-1-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Without is the usual meaning of -less, not pre-.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-2",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-926ec1605589bf2c",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "dc6a28d1c046ec81cf132bea0b2ac519e2e80fb0c0ec9aaa47c2f29cef782b53",
+        "conclusionsSha256": "cce3109a4928b61ae0da13b249db7fd8bc3a84b5f01cff302a77b22c6c49989e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0059.pass-a.json",
+        "receiptSha256": "cce3109a4928b61ae0da13b249db7fd8bc3a84b5f01cff302a77b22c6c49989e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word means heat before the snack demo?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-guided-prefixes-build-meanings-q-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-guided-prefixes-build-meanings-q-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-2-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Preview means see or show beforehand, not heat beforehand.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-2-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Rebuild means build again and does not concern heating.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Preheat directly means heat before, matching the oven action before the snack demo.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo-sentence-1",
+                "g2-cc-morphology-preheat-snack-demo-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-2-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Helping means giving assistance and does not concern heating.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-3",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-525b9ed348acc887",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "dc6a28d1c046ec81cf132bea0b2ac519e2e80fb0c0ec9aaa47c2f29cef782b53",
+        "conclusionsSha256": "cce3109a4928b61ae0da13b249db7fd8bc3a84b5f01cff302a77b22c6c49989e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0059.pass-a.json",
+        "receiptSha256": "cce3109a4928b61ae0da13b249db7fd8bc3a84b5f01cff302a77b22c6c49989e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two words in the passage that start with pre-.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-guided-prefixes-build-meanings-q-3-choice-1",
+            "lesson-cc-morphology-guided-prefixes-build-meanings-q-3-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-guided-prefixes-build-meanings-q-3-choice-1",
+            "lesson-cc-morphology-guided-prefixes-build-meanings-q-3-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Preheat visibly begins with pre- and appears in the passage.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-3-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Helped does not begin with pre-.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo-sentence-7"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-3-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Preview visibly begins with pre- and appears in the passage.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-3-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Faster does not begin with pre- and is not in the displayed passage.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-4",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-8a4db302777e0fd6",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "dc6a28d1c046ec81cf132bea0b2ac519e2e80fb0c0ec9aaa47c2f29cef782b53",
+        "conclusionsSha256": "cce3109a4928b61ae0da13b249db7fd8bc3a84b5f01cff302a77b22c6c49989e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0059.pass-a.json",
+        "receiptSha256": "cce3109a4928b61ae0da13b249db7fd8bc3a84b5f01cff302a77b22c6c49989e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which chunk is the prefix in preheat?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-guided-prefixes-build-meanings-q-4-segment-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-guided-prefixes-build-meanings-q-4-segment-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-4-segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "Heat is the base word, not the prefix.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-4-segment-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Pre is the word part added before heat.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-4-segment-3",
+              "verdict": "INCORRECT",
+              "rationale": "Preheat is the complete word, not just the prefix.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-4-segment-4",
+              "verdict": "INCORRECT",
+              "rationale": "Before is the prefix meaning, not the visible chunk.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-5",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-f20809d8ff60d04c",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "0b051af496a11eedd0556bc2013ba4549c5d8d461b0974ab76acf5ac8563077e",
+        "conclusionsSha256": "c0bdc7b9afb7361ecbe744a6ad51e18d37f0d521bf93d400d6c022af0d280583",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0030.pass-a.json",
+        "receiptSha256": "c0bdc7b9afb7361ecbe744a6ad51e18d37f0d521bf93d400d6c022af0d280583",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-1",
+          "prompt": "preheat",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-1-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "Preheat does not mean more than one plant.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-1-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "Preheat does not mean count wrongly.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "In context, preheat means to heat the oven before the demonstration.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo-sentence-1",
+                "g2-cc-morphology-preheat-snack-demo-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-1-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "Preheat does not mean without care.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-2",
+          "prompt": "preview",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-2-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "Preview does not mean build again.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-2-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "Preview does not mean in a slow way.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-2-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "Preview does not mean full of help.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The preview card lets the class look at the ordered steps beforehand.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-3",
+          "prompt": "helpful",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-3-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-3-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-3-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "Helpful does not mean most tall.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Helpful means full of or giving help.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-3-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "Help happening now describes helping, not helpful.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-3-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "Helpful does not mean before the test.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-4",
+          "prompt": "helped",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-4-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-4-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-4-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "Helped does not mean one box.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo-sentence-7"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-4-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "Helped does not mean slowly moving.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo-sentence-7"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-4-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The -ed form helped shows that the help already happened.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo-sentence-7"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-prefixes-build-meanings-q-5-row-4-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "Helped does not mean again.",
+              "evidenceIds": [
+                "g2-cc-morphology-preheat-snack-demo-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-1",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-d9c139a1c536c425",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ecb8d7ca1316851a5204540d614fe9a93894741569356fdaaa27cba338ff4bbb",
+        "conclusionsSha256": "710410d55dd365f6da3d9c04a1db7282dbc35232b3176fcfdf34710e22879f5e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0060.pass-a.json",
+        "receiptSha256": "710410d55dd365f6da3d9c04a1db7282dbc35232b3176fcfdf34710e22879f5e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does -s mean in plants?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-guided-suffixes-build-meanings-q-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-guided-suffixes-build-meanings-q-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The plural -s in plants means more than one plant.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-1-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Without is associated with -less, not plural -s.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-1-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Again is associated with re-, not plural -s.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-1-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Before is associated with pre-, not plural -s.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-2",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-833e592dcee68561",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ecb8d7ca1316851a5204540d614fe9a93894741569356fdaaa27cba338ff4bbb",
+        "conclusionsSha256": "710410d55dd365f6da3d9c04a1db7282dbc35232b3176fcfdf34710e22879f5e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0006.second-pass.json",
+        "receiptSha256": "bca71ddab082fb15721b386330bff1cf82ed65195700bb13b8974c9fac7a3ad4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does -ly mean in slowly?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-guided-suffixes-build-meanings-q-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-guided-suffixes-build-meanings-q-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-2-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Again is associated with re-, not -ly.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-2-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Without is associated with -less, not -ly.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "-ly forms an expression of manner, so slowly means in a slow way.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-2-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Before is associated with pre-, not -ly.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-3",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-08b1eae4fc38b3f0",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "ecb8d7ca1316851a5204540d614fe9a93894741569356fdaaa27cba338ff4bbb",
+        "conclusionsSha256": "710410d55dd365f6da3d9c04a1db7282dbc35232b3176fcfdf34710e22879f5e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0060.pass-a.json",
+        "receiptSha256": "710410d55dd365f6da3d9c04a1db7282dbc35232b3176fcfdf34710e22879f5e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two words whose suffix tells about more than one or a way of doing something.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-guided-suffixes-build-meanings-q-3-choice-1",
+            "lesson-cc-morphology-guided-suffixes-build-meanings-q-3-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-guided-suffixes-build-meanings-q-3-choice-2",
+            "lesson-cc-morphology-guided-suffixes-build-meanings-q-3-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-3-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Slowly uses -ly to tell the way the notes moved.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Plants uses plural -s to mean more than one plant.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-3-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Miscount begins with the prefix mis- and does not use a suffix for either requested meaning.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-3-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Rebuild begins with re- and does not use a suffix for either requested meaning.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-4",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-6197a63e5c3003fa",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "ecb8d7ca1316851a5204540d614fe9a93894741569356fdaaa27cba338ff4bbb",
+        "conclusionsSha256": "710410d55dd365f6da3d9c04a1db7282dbc35232b3176fcfdf34710e22879f5e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0060.pass-a.json",
+        "receiptSha256": "710410d55dd365f6da3d9c04a1db7282dbc35232b3176fcfdf34710e22879f5e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which chunk is the suffix in tallest?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-guided-suffixes-build-meanings-q-4-segment-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-guided-suffixes-build-meanings-q-4-segment-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-4-segment-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Est is the ending added to tall to form tallest.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-4-segment-4",
+              "verdict": "INCORRECT",
+              "rationale": "Most is the suffix meaning, not the visible chunk.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-4-segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "Tall is the base word, not the suffix.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-4-segment-3",
+              "verdict": "INCORRECT",
+              "rationale": "Tallest is the complete word, not just the suffix.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-5",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-c13107982adf355c",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "ecb8d7ca1316851a5204540d614fe9a93894741569356fdaaa27cba338ff4bbb",
+        "conclusionsSha256": "710410d55dd365f6da3d9c04a1db7282dbc35232b3176fcfdf34710e22879f5e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0060.pass-a.json",
+        "receiptSha256": "710410d55dd365f6da3d9c04a1db7282dbc35232b3176fcfdf34710e22879f5e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-1",
+          "prompt": "miscount",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-1-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Not agree describes disagree, not miscount.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Miscount means count wrongly, matching the possible first count error.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-1-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Full of help describes helpful, not miscount.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-1-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Before the test does not describe miscount.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-2",
+          "prompt": "tallest",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-2-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Without care describes careless, not tallest.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-2-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Heat before describes preheat, not tallest.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Tallest means most tall in the box comparison.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-2-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Build again describes rebuild, not tallest.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-3",
+          "prompt": "plants",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-3-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-3-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-3-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Slowly moving describes an action, not plants.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-3-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Kind helper does not describe plants.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-3-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Wrongly is associated with mis-, not plants.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Plants is the plural form meaning more than one plant.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-4",
+          "prompt": "slowly",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-4-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-4-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-4-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Slowly means in a slow way, matching how the notes moved.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-4-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "More fast is the opposite manner and is ungrammatical here.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-4-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Again does not describe slowly.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-guided-suffixes-build-meanings-q-5-row-4-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "One box does not describe slowly.",
+              "evidenceIds": [
+                "g2-cc-morphology-tool-shelf-sort"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-checkpoint-a-q-1",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-36cf45be6982fc6a",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ecb8d7ca1316851a5204540d614fe9a93894741569356fdaaa27cba338ff4bbb",
+        "conclusionsSha256": "710410d55dd365f6da3d9c04a1db7282dbc35232b3176fcfdf34710e22879f5e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0006.second-pass.json",
+        "receiptSha256": "bca71ddab082fb15721b386330bff1cf82ed65195700bb13b8974c9fac7a3ad4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the base word in unpack?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-a-q-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-a-q-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-1-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Again is a meaning, not a word part in unpack.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-1-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Un is the prefix, not the base word.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Pack is the meaningful base remaining after removing un-.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-1-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Cart is a separate noun in the passage, not part of unpack.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-checkpoint-a-q-2",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-7315001664534cea",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ecb8d7ca1316851a5204540d614fe9a93894741569356fdaaa27cba338ff4bbb",
+        "conclusionsSha256": "710410d55dd365f6da3d9c04a1db7282dbc35232b3176fcfdf34710e22879f5e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0060.pass-a.json",
+        "receiptSha256": "710410d55dd365f6da3d9c04a1db7282dbc35232b3176fcfdf34710e22879f5e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does helpful mean in the passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-a-q-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-a-q-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-2-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "More fast does not describe the partner who carried the box.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Full of help expresses that the partner gave useful assistance by carrying the box.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-2-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Before does not describe helpful.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-2-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Without care is unrelated to helpful and contradicts the helpful action.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-checkpoint-a-q-3",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-0ea10361623b9f95",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ecb8d7ca1316851a5204540d614fe9a93894741569356fdaaa27cba338ff4bbb",
+        "conclusionsSha256": "710410d55dd365f6da3d9c04a1db7282dbc35232b3176fcfdf34710e22879f5e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0060.pass-a.json",
+        "receiptSha256": "710410d55dd365f6da3d9c04a1db7282dbc35232b3176fcfdf34710e22879f5e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does disagree mean in the passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-a-q-3-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-a-q-3-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-3-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Count wrongly describes miscount, not disagree.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Disagree means not agree, matching the students’ different views about marker placement.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-3-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "More than one is a plural meaning, not disagree.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-3-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Most tall describes tallest, not disagree.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-checkpoint-a-q-4",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-fd9c64c5cc59fac1",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "ecb8d7ca1316851a5204540d614fe9a93894741569356fdaaa27cba338ff4bbb",
+        "conclusionsSha256": "710410d55dd365f6da3d9c04a1db7282dbc35232b3176fcfdf34710e22879f5e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0006.second-pass.json",
+        "receiptSha256": "bca71ddab082fb15721b386330bff1cf82ed65195700bb13b8974c9fac7a3ad4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two words in the passage that start with a prefix.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-a-q-4-choice-1",
+            "lesson-cc-morphology-checkpoint-a-q-4-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-a-q-4-choice-1",
+            "lesson-cc-morphology-checkpoint-a-q-4-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-4-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Unpack begins with the prefix un-.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-4-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Helpful ends with the suffix -ful rather than beginning with a prefix.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-4-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Boxes ends with plural -es and is not in the displayed checkpoint passage.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-4-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Disagree begins with the prefix dis-.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-checkpoint-a-q-5",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-2e4ee54e3a928412",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "ecb8d7ca1316851a5204540d614fe9a93894741569356fdaaa27cba338ff4bbb",
+        "conclusionsSha256": "710410d55dd365f6da3d9c04a1db7282dbc35232b3176fcfdf34710e22879f5e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0060.pass-a.json",
+        "receiptSha256": "710410d55dd365f6da3d9c04a1db7282dbc35232b3176fcfdf34710e22879f5e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which chunk is the suffix in helping?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-a-q-5-segment-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-a-q-5-segment-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-5-segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "Help is the base word, not the suffix.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-5-segment-4",
+              "verdict": "INCORRECT",
+              "rationale": "Again is a meaning and is not a chunk in helping.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-5-segment-3",
+              "verdict": "INCORRECT",
+              "rationale": "Helping is the complete word, not just the suffix.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-5-segment-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Ing is the ending added to help in helping.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-checkpoint-a-q-6",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-52461c4186c92ac5",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "ecb8d7ca1316851a5204540d614fe9a93894741569356fdaaa27cba338ff4bbb",
+        "conclusionsSha256": "710410d55dd365f6da3d9c04a1db7282dbc35232b3176fcfdf34710e22879f5e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0006.second-pass.json",
+        "receiptSha256": "bca71ddab082fb15721b386330bff1cf82ed65195700bb13b8974c9fac7a3ad4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "lesson-cc-morphology-checkpoint-a-q-6-row-1",
+          "prompt": "unpack",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-a-q-6-row-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-a-q-6-row-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-6-row-1-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "More than one box describes boxes, not unpack.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-6-row-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Unpack means take something out of a pack, fitting the cart reset.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-6-row-1-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Not agree describes disagree, not unpack.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-6-row-1-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Kind helper describes a person, not unpack.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-cc-morphology-checkpoint-a-q-6-row-2",
+          "prompt": "helpful",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-a-q-6-row-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-a-q-6-row-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-6-row-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Full of help fits the partner who assists by carrying the box.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-6-row-2-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Heat before describes preheat, not helpful.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-6-row-2-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "More fast does not describe helpful.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-6-row-2-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Count wrongly describes miscount, not helpful.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-cc-morphology-checkpoint-a-q-6-row-3",
+          "prompt": "helping",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-a-q-6-row-3-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-a-q-6-row-3-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-6-row-3-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Most tall describes tallest, not helping.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-6-row-3-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Without care describes careless, not helping.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-6-row-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Helping is happening now matches the continuing action in were helping.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-6-row-3-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Before does not describe helping.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-cc-morphology-checkpoint-a-q-6-row-4",
+          "prompt": "disagree",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-a-q-6-row-4-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-a-q-6-row-4-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-6-row-4-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "More than one plant describes plants, not disagree.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-6-row-4-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Disagree means not agree, matching the students’ differing placement views.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-6-row-4-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "In a slow way describes slowly, not disagree.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-6-row-4-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Again does not describe disagree.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-checkpoint-a-q-7",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-5c6206a5bd242ec1",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "ecb8d7ca1316851a5204540d614fe9a93894741569356fdaaa27cba338ff4bbb",
+        "conclusionsSha256": "710410d55dd365f6da3d9c04a1db7282dbc35232b3176fcfdf34710e22879f5e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0060.pass-a.json",
+        "receiptSha256": "710410d55dd365f6da3d9c04a1db7282dbc35232b3176fcfdf34710e22879f5e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Which prefix appears in disagree?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-a-q-7-part-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-a-q-7-part-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-7-part-a-4",
+              "verdict": "INCORRECT",
+              "rationale": "Pre- does not appear at the start of disagree.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-7-part-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Dis- is the visible prefix before agree.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-7-part-a-3",
+              "verdict": "INCORRECT",
+              "rationale": "Re- does not appear at the start of disagree.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-7-part-a-2",
+              "verdict": "INCORRECT",
+              "rationale": "Un- does not appear at the start of disagree.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "What does disagree mean?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-a-q-7-part-b-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-a-q-7-part-b-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-7-part-b-4",
+              "verdict": "INCORRECT",
+              "rationale": "More than one is a plural meaning, not disagree.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-7-part-b-2",
+              "verdict": "INCORRECT",
+              "rationale": "Build again describes rebuild, not disagree.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-7-part-b-3",
+              "verdict": "INCORRECT",
+              "rationale": "Heat before describes preheat, not disagree.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-a-q-7-part-b-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Disagree means not agree, matching the students’ differing views.",
+              "evidenceIds": [
+                "g2-cc-morphology-kitchen-crew-practice-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-checkpoint-b-q-1",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-2e68f1eed069b712",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "65ab5d4d8372fa045be73cb378a1644f730f2053d3cdf4a425f3dcf6adc56349",
+        "conclusionsSha256": "98379f933e956cdb8af8bd3cb91ff8e487a7c71404cf0e7b00f1292ef1d3705d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0061.pass-a.json",
+        "receiptSha256": "98379f933e956cdb8af8bd3cb91ff8e487a7c71404cf0e7b00f1292ef1d3705d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the base word in rebuild?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-b-q-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-b-q-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-1-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Again is the prefix meaning contribution, not the base word.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-1-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Snack is a separate source word, not part of rebuild.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-1",
+                "g2-cc-morphology-reading-table-reset-title"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-1-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Re is the prefix, not the base word.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Removing re- from rebuild leaves the meaningful base word build.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-checkpoint-b-q-2",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-8fc9a24aa92368f6",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "65ab5d4d8372fa045be73cb378a1644f730f2053d3cdf4a425f3dcf6adc56349",
+        "conclusionsSha256": "98379f933e956cdb8af8bd3cb91ff8e487a7c71404cf0e7b00f1292ef1d3705d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0006.second-pass.json",
+        "receiptSha256": "bca71ddab082fb15721b386330bff1cf82ed65195700bb13b8974c9fac7a3ad4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does pre- mean in preheat?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-b-q-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-b-q-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-2-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Pre- does not mean without.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "In preheat, pre- means before: the oven is heated before it is needed.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-2",
+                "g2-cc-morphology-reading-table-reset-sentence-5"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-2-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Pre- does not express a superlative meaning.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-2-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Again is the meaning of re-, not pre-.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-1",
+                "g2-cc-morphology-reading-table-reset-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-checkpoint-b-q-3",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-259a63df080ab89b",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "65ab5d4d8372fa045be73cb378a1644f730f2053d3cdf4a425f3dcf6adc56349",
+        "conclusionsSha256": "98379f933e956cdb8af8bd3cb91ff8e487a7c71404cf0e7b00f1292ef1d3705d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0061.pass-a.json",
+        "receiptSha256": "98379f933e956cdb8af8bd3cb91ff8e487a7c71404cf0e7b00f1292ef1d3705d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does careless mean in the passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-b-q-3-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-b-q-3-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-3-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Careless does not mean before.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-3-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Careless does not express a faster comparison.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Careless transparently means without care, matching the crumbs left on the edge.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-3-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Full of help describes helpful, not careless.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-3",
+                "g2-cc-morphology-reading-table-reset-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-checkpoint-b-q-4",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-afe797f572ce6c81",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "65ab5d4d8372fa045be73cb378a1644f730f2053d3cdf4a425f3dcf6adc56349",
+        "conclusionsSha256": "98379f933e956cdb8af8bd3cb91ff8e487a7c71404cf0e7b00f1292ef1d3705d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0061.pass-a.json",
+        "receiptSha256": "98379f933e956cdb8af8bd3cb91ff8e487a7c71404cf0e7b00f1292ef1d3705d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two words in the passage that begin with a prefix.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-b-q-4-choice-1",
+            "lesson-cc-morphology-checkpoint-b-q-4-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-b-q-4-choice-2",
+            "lesson-cc-morphology-checkpoint-b-q-4-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-4-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Preheat begins with the prefix pre-.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-4-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Rebuild begins with the prefix re-.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-4-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Slowly ends with the suffix -ly rather than beginning with a prefix.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-4-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Helped ends with the suffix -ed rather than beginning with a prefix.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-checkpoint-b-q-5",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-bda4f11cb13cbb08",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "65ab5d4d8372fa045be73cb378a1644f730f2053d3cdf4a425f3dcf6adc56349",
+        "conclusionsSha256": "98379f933e956cdb8af8bd3cb91ff8e487a7c71404cf0e7b00f1292ef1d3705d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0061.pass-a.json",
+        "receiptSha256": "98379f933e956cdb8af8bd3cb91ff8e487a7c71404cf0e7b00f1292ef1d3705d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which chunk is the suffix in helped?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-b-q-5-segment-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-b-q-5-segment-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-5-segment-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Ed is the suffix added after the base help in helped.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-5-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Help is the base word, not the suffix.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-5-segment-4",
+              "verdict": "INCORRECT",
+              "rationale": "Before is a meaning word and is not a chunk of helped.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-5-segment-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Helped is the whole word, not its suffix.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-checkpoint-b-q-6",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-88b80297beb38fcb",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "65ab5d4d8372fa045be73cb378a1644f730f2053d3cdf4a425f3dcf6adc56349",
+        "conclusionsSha256": "98379f933e956cdb8af8bd3cb91ff8e487a7c71404cf0e7b00f1292ef1d3705d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0061.pass-a.json",
+        "receiptSha256": "98379f933e956cdb8af8bd3cb91ff8e487a7c71404cf0e7b00f1292ef1d3705d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "lesson-cc-morphology-checkpoint-b-q-6-row-1",
+          "prompt": "rebuild",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-b-q-6-row-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-b-q-6-row-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-6-row-1-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Full of help describes helpful, not rebuild.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-6-row-1-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Count wrongly describes miscount.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-6-row-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Rebuild means build again.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-1",
+                "g2-cc-morphology-reading-table-reset-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-6-row-1-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "More fast describes faster, not rebuild.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-cc-morphology-checkpoint-b-q-6-row-2",
+          "prompt": "preheat",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-b-q-6-row-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-b-q-6-row-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-6-row-2-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Look before describes preview, not preheat.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-6-row-2-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "More than one plant does not describe preheat.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-6-row-2-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Before the test is not the meaning of preheat.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-6-row-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Preheat means heat before the oven is needed.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-2",
+                "g2-cc-morphology-reading-table-reset-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-cc-morphology-checkpoint-b-q-6-row-3",
+          "prompt": "helped",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-b-q-6-row-3-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-b-q-6-row-3-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-6-row-3-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Slowly moving does not describe helped.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-6-row-3-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Kind helper names a person, not the past action helped.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-6-row-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Helped means the helping action already happened.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-6-row-3-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Most tall describes tallest, not helped.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-cc-morphology-checkpoint-b-q-6-row-4",
+          "prompt": "careless",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-b-q-6-row-4-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-b-q-6-row-4-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-6-row-4-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Again is a prefix meaning unrelated to careless.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-6-row-4-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "One box does not describe careless.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-6-row-4-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Wrongly is too general and does not capture the -less meaning in careless.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-6-row-4-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Careless means without care.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-checkpoint-b-q-7",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-aaa581aacafb0c76",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "65ab5d4d8372fa045be73cb378a1644f730f2053d3cdf4a425f3dcf6adc56349",
+        "conclusionsSha256": "98379f933e956cdb8af8bd3cb91ff8e487a7c71404cf0e7b00f1292ef1d3705d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0006.second-pass.json",
+        "receiptSha256": "bca71ddab082fb15721b386330bff1cf82ed65195700bb13b8974c9fac7a3ad4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Which prefix appears in rebuild?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-b-q-7-part-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-b-q-7-part-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-7-part-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Re- is the prefix at the start of rebuild.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-7-part-a-3",
+              "verdict": "INCORRECT",
+              "rationale": "Dis- does not appear in rebuild.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-7-part-a-2",
+              "verdict": "INCORRECT",
+              "rationale": "Un- does not appear in rebuild.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-7-part-a-4",
+              "verdict": "INCORRECT",
+              "rationale": "Pre- appears in preheat, not rebuild.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "What does rebuild mean?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-b-q-7-part-b-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-b-q-7-part-b-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-7-part-b-3",
+              "verdict": "INCORRECT",
+              "rationale": "Heat before describes preheat.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-2"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-7-part-b-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Rebuild means build again.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-1",
+                "g2-cc-morphology-reading-table-reset-sentence-6"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-7-part-b-4",
+              "verdict": "INCORRECT",
+              "rationale": "Full of help describes helpful.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-b-q-7-part-b-2",
+              "verdict": "INCORRECT",
+              "rationale": "Count wrongly describes miscount.",
+              "evidenceIds": [
+                "g2-cc-morphology-reading-table-reset-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-checkpoint-c-q-1",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-d2d9a6c9c5d7b7ad",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "65ab5d4d8372fa045be73cb378a1644f730f2053d3cdf4a425f3dcf6adc56349",
+        "conclusionsSha256": "98379f933e956cdb8af8bd3cb91ff8e487a7c71404cf0e7b00f1292ef1d3705d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0061.pass-a.json",
+        "receiptSha256": "98379f933e956cdb8af8bd3cb91ff8e487a7c71404cf0e7b00f1292ef1d3705d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the base word in fastest?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-c-q-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-c-q-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-1-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Most is the superlative meaning contribution, not the base.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-1-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Quickly is a related adverb, not the base inside fastest.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-1-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Faster is another affixed form, not the base word inside fastest.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Removing -est from fastest leaves the base word fast.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-checkpoint-c-q-2",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-c752f70692c7c622",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "65ab5d4d8372fa045be73cb378a1644f730f2053d3cdf4a425f3dcf6adc56349",
+        "conclusionsSha256": "98379f933e956cdb8af8bd3cb91ff8e487a7c71404cf0e7b00f1292ef1d3705d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0006.second-pass.json",
+        "receiptSha256": "bca71ddab082fb15721b386330bff1cf82ed65195700bb13b8974c9fac7a3ad4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does -ly mean in slowly?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-c-q-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-c-q-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The suffix -ly makes slowly mean in a particular, slow way.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-2-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Before is associated with pre-, not -ly.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-2-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Again is associated with re-, not -ly.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-2-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Without is associated with -less, not -ly.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-checkpoint-c-q-3",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-36d3ed01443e939d",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "65ab5d4d8372fa045be73cb378a1644f730f2053d3cdf4a425f3dcf6adc56349",
+        "conclusionsSha256": "98379f933e956cdb8af8bd3cb91ff8e487a7c71404cf0e7b00f1292ef1d3705d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0061.pass-a.json",
+        "receiptSha256": "98379f933e956cdb8af8bd3cb91ff8e487a7c71404cf0e7b00f1292ef1d3705d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does miscount mean in the passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-c-q-3-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-c-q-3-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Miscount means count wrongly, matching the need to recount.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-1",
+                "g2-cc-morphology-count-and-compare-sentence-5"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-3-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Full of help describes helpful, not miscount.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-3-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Heat before describes preheat.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-3-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "More than one is a plural idea, not miscount.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-checkpoint-c-q-4",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-3ce0eba284f85806",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "65ab5d4d8372fa045be73cb378a1644f730f2053d3cdf4a425f3dcf6adc56349",
+        "conclusionsSha256": "98379f933e956cdb8af8bd3cb91ff8e487a7c71404cf0e7b00f1292ef1d3705d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0061.pass-a.json",
+        "receiptSha256": "98379f933e956cdb8af8bd3cb91ff8e487a7c71404cf0e7b00f1292ef1d3705d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two words in the passage that show comparison.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-c-q-4-choice-1",
+            "lesson-cc-morphology-checkpoint-c-q-4-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-c-q-4-choice-1",
+            "lesson-cc-morphology-checkpoint-c-q-4-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-4-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Plants is plural but does not express comparison.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-4-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Faster uses -er to compare speed.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-4-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Helped marks a past action and does not express comparison.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-4-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Tallest uses -est to compare and identify the highest degree.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-checkpoint-c-q-5",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-fb0641a2a9f58c5e",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "65ab5d4d8372fa045be73cb378a1644f730f2053d3cdf4a425f3dcf6adc56349",
+        "conclusionsSha256": "98379f933e956cdb8af8bd3cb91ff8e487a7c71404cf0e7b00f1292ef1d3705d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0006.second-pass.json",
+        "receiptSha256": "bca71ddab082fb15721b386330bff1cf82ed65195700bb13b8974c9fac7a3ad4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which chunk is the prefix in miscount?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-c-q-5-segment-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-c-q-5-segment-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-5-segment-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Mis is the prefix before the base count.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-5-segment-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Count is the base word, not the prefix.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-5-segment-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Miscount is the whole word, not its prefix.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-5-segment-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Wrongly is the prefix meaning contribution, not the written chunk.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-checkpoint-c-q-6",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-a94e7890895496c4",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "65ab5d4d8372fa045be73cb378a1644f730f2053d3cdf4a425f3dcf6adc56349",
+        "conclusionsSha256": "98379f933e956cdb8af8bd3cb91ff8e487a7c71404cf0e7b00f1292ef1d3705d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0061.pass-a.json",
+        "receiptSha256": "98379f933e956cdb8af8bd3cb91ff8e487a7c71404cf0e7b00f1292ef1d3705d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "lesson-cc-morphology-checkpoint-c-q-6-row-1",
+          "prompt": "miscount",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-c-q-6-row-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-c-q-6-row-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-6-row-1-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Full of help does not describe miscount.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-6-row-1-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Before the test does not describe miscount.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-6-row-1-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "More than one plant does not describe miscount.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-6-row-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Miscount means count wrongly.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-1",
+                "g2-cc-morphology-count-and-compare-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-cc-morphology-checkpoint-c-q-6-row-2",
+          "prompt": "slowly",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-c-q-6-row-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-c-q-6-row-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-6-row-2-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Heat before describes preheat, not slowly.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-6-row-2-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Without care describes careless.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-6-row-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Slowly means in a slow way.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-6-row-2-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Build again describes rebuild.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-cc-morphology-checkpoint-c-q-6-row-3",
+          "prompt": "faster",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-c-q-6-row-3-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-c-q-6-row-3-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-6-row-3-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Again is not the meaning of faster.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-6-row-3-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "One box does not describe faster.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-6-row-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Faster means more fast.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-3"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-6-row-3-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Kind helper does not describe faster.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "lesson-cc-morphology-checkpoint-c-q-6-row-4",
+          "prompt": "tallest",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-c-q-6-row-4-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-c-q-6-row-4-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-6-row-4-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Not agree does not describe tallest.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-6-row-4-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Wrongly is unrelated to tallest.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-6-row-4-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Tallest means most tall.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-4"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-6-row-4-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Slowly moving does not describe tallest.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-cc-morphology-checkpoint-c-q-7",
+      "packId": "g2-context-cavern-morphology-mine",
+      "contentVersion": "g2-cc-morphology-r0.1.0",
+      "contentFingerprint": "qta-v1-3ac6b1c6804834d2",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "65ab5d4d8372fa045be73cb378a1644f730f2053d3cdf4a425f3dcf6adc56349",
+        "conclusionsSha256": "98379f933e956cdb8af8bd3cb91ff8e487a7c71404cf0e7b00f1292ef1d3705d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0061.pass-a.json",
+        "receiptSha256": "98379f933e956cdb8af8bd3cb91ff8e487a7c71404cf0e7b00f1292ef1d3705d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Which prefix appears in miscount?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-c-q-7-part-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-c-q-7-part-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-7-part-a-4",
+              "verdict": "INCORRECT",
+              "rationale": "Un- does not appear in miscount.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-7-part-a-3",
+              "verdict": "INCORRECT",
+              "rationale": "Pre- does not appear in miscount.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-7-part-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Mis- is the prefix at the start of miscount.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-7-part-a-2",
+              "verdict": "INCORRECT",
+              "rationale": "Re- does not appear in miscount.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "What does miscount mean?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "lesson-cc-morphology-checkpoint-c-q-7-part-b-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "lesson-cc-morphology-checkpoint-c-q-7-part-b-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-7-part-b-2",
+              "verdict": "INCORRECT",
+              "rationale": "Build again describes rebuild.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-7-part-b-4",
+              "verdict": "INCORRECT",
+              "rationale": "Full of help describes helpful.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-7-part-b-3",
+              "verdict": "INCORRECT",
+              "rationale": "Heat before describes preheat.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-1"
+              ]
+            },
+            {
+              "answerId": "lesson-cc-morphology-checkpoint-c-q-7-part-b-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Miscount means count wrongly.",
+              "evidenceIds": [
+                "g2-cc-morphology-count-and-compare-sentence-1",
+                "g2-cc-morphology-count-and-compare-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

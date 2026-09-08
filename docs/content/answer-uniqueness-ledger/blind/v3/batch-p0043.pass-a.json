@@ -1,0 +1,354 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0043",
+  "batchFileSha256": "e6054fd08e5a65b2c4c371404004029b24ed6f9a446609ded5801755bd7bf3e4",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1207",
+      "fingerprint": "1262b07a81c3d2bd1ccd4ae8d29594cca2c6ce296ac43611a6271e8ee6d13f98",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Summarizes the ordered details but is not a first or final action.",
+              [
+                "S0013"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Early in the morning marks the first observation action.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Defines a tool rather than marking an action step.",
+              [
+                "S0008"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Finally marks the last action of placing records in the log.",
+              [
+                "S0011"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1212",
+      "fingerprint": "50f8e542f9a4077b6db090898a2cf8b3d8577808639b8b050ea2a5f303eb862c",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "States the Arctic fox's smaller ears and heat-retaining function.",
+              [
+                "S0034"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Summarizes the comparison but does not state either ear-size contrast detail.",
+              [
+                "S0038"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "States the desert fox's larger ears and heat-releasing function.",
+              [
+                "S0029"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Defines habitat rather than contrasting ears.",
+              [
+                "S0033"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1217",
+      "fingerprint": "5f3477218837c74a900ff3c205e87e8a2e9b00dfe0545984fb82ccc80e50da21",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Summarizes the overall cause-effect pattern rather than supplying either specifically requested sentence.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "States the caption's moisture conclusion, not the requested cause or exact result sentence.",
+              [
+                "S0062"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "States the requested sunny warming and water-loss cause for bare soil.",
+              [
+                "S0052"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Directly states the requested result that covered soil loses water more slowly.",
+              [
+                "S0060"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1222",
+      "fingerprint": "765f85d2faea5c1cd8613f63ea0de0cd637de0fa35ea1053f77f873765968797",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Defines direction rather than marking an action step.",
+              [
+                "S0089"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Explains why sequence matters rather than giving the marked first or final action.",
+              [
+                "S0083"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Finally marks the concluding observation action.",
+              [
+                "S0087"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "First marks the beginning construction action.",
+              [
+                "S0079"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1228",
+      "fingerprint": "609c00add1c48c2cf69e0bad0bf0d3a8fd6a6014bbea9e73e2f1912d90570ef9",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Describes the beam bridge's straight deck shape.",
+              [
+                "S0105"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Defines a support but does not describe either compared bridge shape.",
+              [
+                "S0109"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Describes the arch bridge's upward curve.",
+              [
+                "S0111"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Explains the organization, not the two bridge shapes themselves.",
+              [
+                "S0116"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1235",
+      "fingerprint": "13d236bd67153290a47c2dfa73ce6e31f1c1cc34e547e8bb1d8e857ad0d127b0",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Gives a safety note, not the hard-surface cause or puddle result.",
+              [
+                "S0148"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Summarizes the cause-effect organization without stating either requested detail.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Explains that water cannot soak through the hard surfaces and therefore gathers or runs off.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Directly states the requested result of less nearby puddled water.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1242",
+      "fingerprint": "c0f72061971cda68e3b9bd19d5c03ca0d953ecb2d4a5082b1822411424b6f673",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Finally marks the last action, when the new sheet dries for use.",
+              [
+                "S0168"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Defines pulp rather than marking a process action.",
+              [
+                "S0159"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "First marks the beginning action of soaking used paper.",
+              [
+                "S0164"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Summarizes the ordered process rather than giving its first or final action.",
+              [
+                "S0163"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

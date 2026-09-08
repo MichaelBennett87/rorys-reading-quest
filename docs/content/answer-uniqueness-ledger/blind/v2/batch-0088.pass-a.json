@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0088",
+  "batchFileSha256": "aaddda66fc4524a7cb668e0f527b991be743843f9d70cf116d98f6f515734761",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1029",
+      "fingerprint": "4577d0faed3b6524e2c23fb7092ac31f542b37765dc37b7a63ea79fcbe4aa7c0",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Searched the is an incomplete action phrase and does not name a place.", ["S0045"]],
+            ["A2", "DEFENSIBLE", "The observation deck is the complete noun phrase naming one place.", ["S0045"]],
+            ["A3", "INCORRECT", "Deck, two crosses the comma boundary and does not form a place name.", ["S0045"]],
+            ["A4", "INCORRECT", "From the is an incomplete prepositional phrase and does not name the place by itself.", ["S0045"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1030",
+      "fingerprint": "dcb7f9a0a1b1b0a7e22e823bbea6bac34dd52d740aa4fe5a9c754bef0783feaa",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "A heron names the subject rather than describing how it stood.", ["S0048"]],
+            ["A2", "INCORRECT", "Silver reflection names what was beside the heron rather than how it stood.", ["S0048"]],
+            ["A3", "DEFENSIBLE", "Perfectly still directly describes how the heron stood.", ["S0048"]],
+            ["A4", "INCORRECT", "Beside a is an incomplete location phrase and does not describe manner.", ["S0048"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1031",
+      "fingerprint": "56df945f2b1802cd9303a15e3b00c26743feb53f1cdb11ccddfa39fd3b5fe686",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This calm descriptive statement supports quiet emphasis rather than the strongest excitement.", ["S0048"]],
+            ["A2", "INCORRECT", "This descriptive action has a comma pause but no strong-feeling cue.", ["S0045"]],
+            ["A3", "DEFENSIBLE", "The amazed quotation and exclamation mark explicitly cue the strongest excitement among the choices.", ["S0052"]],
+            ["A4", "INCORRECT", "This calm scene-setting statement contains no strong-feeling cue.", ["S0049"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1032",
+      "fingerprint": "caf482bc41cb5c282d744005e0e99a82a8bc83c1349baa2f143c6ea20ebace1b",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The phrase is not a question.", ["S0045"]],
+            ["A2", "DEFENSIBLE", "The observation deck is one complete phrase naming a place.", ["S0045"]],
+            ["A3", "INCORRECT", "The phrase has no exclamation or excited meaning.", ["S0045"]],
+            ["A4", "INCORRECT", "Stopping after every word would split the place name.", ["S0045"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The opening phrase does not ask a question.", ["S0045"]],
+            ["A2", "INCORRECT", "The comma signals a brief pause, not a sentence-ending stop.", ["S0045"]],
+            ["A3", "INCORRECT", "The phrase supplies a location and does not cue excitement.", ["S0045"]],
+            ["A4", "DEFENSIBLE", "The comma after the opening phrase signals a brief pause.", ["S0045"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Perfectly still forms one complete description of how the heron stood.", ["S0048"]],
+            ["A2", "INCORRECT", "The words describe manner and do not name a place.", ["S0048"]],
+            ["A3", "INCORRECT", "The phrase is a calm description, not an excited command.", ["S0048"]],
+            ["A4", "INCORRECT", "Pausing between the two words would split the one description.", ["S0048"]]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The amazed wording and exclamation mark cue strong excitement.", ["S0052"]],
+            ["A2", "INCORRECT", "The quotation expresses wonder and does not name a place.", ["S0052"]],
+            ["A3", "INCORRECT", "Breaking every word would destroy the natural expressive phrase.", ["S0052"]],
+            ["A4", "INCORRECT", "The line is an exclamation, not a question.", ["S0052"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1033",
+      "fingerprint": "74597a5735a88fb1b3db5323455a4157509b297fce9ba9272c82e381bf42e485",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Pull, her crosses the quotation boundary and does not form the reminder.", ["S0058"]],
+            ["A2", "DEFENSIBLE", "Remember the steady pull is the complete quoted reminder from Mira's brother.", ["S0058"]],
+            ["A3", "INCORRECT", "Her brother said is the dialogue tag, not the reminder's words.", ["S0058"]],
+            ["A4", "INCORRECT", "Gently describes how he spoke but is not the reminder itself.", ["S0058"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1034",
+      "fingerprint": "f6efb2e1c005bdb68dcda96f717af3bdf606498cab622bb4235a1b4bc389143b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "A period ends a statement but is not the strong-feeling mark in Mira's words.", ["S0062"]],
+            ["A2", "INCORRECT", "A comma signals a pause and is not the strong-feeling mark in Mira's words.", ["S0062"]],
+            ["A3", "INCORRECT", "Mira's words do not ask a question.", ["S0062"]],
+            ["A4", "DEFENSIBLE", "The exclamation mark in I did it! signals Mira's strong joyful feeling.", ["S0062"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1035",
+      "fingerprint": "5132c608ff79f0e89c12b4dd69319bd141994347843ab8be8361250a0be3683f",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This ending sentence shows relief and smooth success, not nervousness.", ["S0063"]],
+            ["A2", "INCORRECT", "This sentence reports the kite's successful climb and does not show Mira's nervous feeling.", ["S0061"]],
+            ["A3", "DEFENSIBLE", "Her trembling hands directly show nervousness and support a slower expressive reading.", ["S0055"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1036",
+      "fingerprint": "f82f7a1a34b5548e7d1f925f43611dfbe579a47fd5e33c1853b96c7bc8e5679d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3", "A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This is narration rather than a quoted character line.", ["S0059"]],
+            ["A2", "INCORRECT", "This is narration rather than a quoted character line.", ["S0063"]],
+            ["A3", "DEFENSIBLE", "The brother's gentle quoted reminder calls for a calm encouraging voice.", ["S0058"]],
+            ["A4", "DEFENSIBLE", "Mira's shouted exclamation calls for a joyful energetic voice distinct from the brother's.", ["S0062"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1037",
+      "fingerprint": "fe0587de4508763484a39fe1f4b406d2b21d0519103d5dc1cadac17e28377405",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "A V-shaped describes the formation and does not name the birds.", ["S0066"]],
+            ["A2", "INCORRECT", "Formation names their arrangement rather than the birds.", ["S0066"]],
+            ["A3", "DEFENSIBLE", "Migrating geese is the complete two-word phrase naming the birds being explained.", ["S0066"]],
+            ["A4", "INCORRECT", "Geese often crosses the subject and adverb boundary and does not form the complete bird name.", ["S0066"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1038",
+      "fingerprint": "d81b1a3b60b9cec529a2262a80e1a2c7f996dd7000fe955f6236ad5ab5fa3d66",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "There is no punctuation after another.", ["S0072"]],
+            ["A2", "INCORRECT", "There is no punctuation after lead.", ["S0072"]],
+            ["A3", "INCORRECT", "Pausing after When would split the opening connector from its clause.", ["S0072"]],
+            ["A4", "DEFENSIBLE", "The comma after tired marks the brief pause following the complete opening condition.", ["S0072"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1039",
+      "fingerprint": "27809f7bcda226e9b7ff3c32b2465074d139ccafbf7d87cd9f05953f193978e1",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This split separates the article a from helpful current instead of preserving the second action phrase.", ["S0070"]],
+            ["A2", "INCORRECT", "This split separates the verb move from its object air.", ["S0070"]],
+            ["A3", "DEFENSIBLE", "Move the air and create a helpful current are the two complete coordinated actions.", ["S0070"]],
+            ["A4", "INCORRECT", "This split separates move from its object and obscures the first action.", ["S0070"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1040",
+      "fingerprint": "1716fa18743b36498708d9a3c6999d1a41001edb75dbf99645874eb75712d715",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Pausing between the words would split the complete subject.", ["S0066"]],
+            ["A2", "INCORRECT", "No period follows the subject phrase.", ["S0066"]],
+            ["A3", "DEFENSIBLE", "Migrating geese is the complete subject and should be read together.", ["S0066"]],
+            ["A4", "INCORRECT", "The phrase is not a question.", ["S0066"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The comma marks a brief pause rather than a complete stop.", ["S0072"]],
+            ["A2", "INCORRECT", "Becomes tired is part of the opening condition, not the sentence subject.", ["S0072"]],
+            ["A3", "INCORRECT", "The phrase does not ask a question.", ["S0072"]],
+            ["A4", "DEFENSIBLE", "The comma after the opening condition marks a brief pause.", ["S0072"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The phrase is a statement action, not a question.", ["S0070"]],
+            ["A2", "INCORRECT", "Pausing after every word would split the one action.", ["S0070"]],
+            ["A3", "INCORRECT", "The phrase is the second coordinated action, not the opening subject.", ["S0070"]],
+            ["A4", "DEFENSIBLE", "Create a helpful current is one complete action and should be read together.", ["S0070"]]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The period after journey marks the end of the complete fact and a full stop.", ["S0071"]],
+            ["A2", "INCORRECT", "The phrase does not ask a question.", ["S0071"]],
+            ["A3", "INCORRECT", "The phrase completes the current sentence and does not begin a new subject.", ["S0071"]],
+            ["A4", "INCORRECT", "A period requires a full stop rather than a brief continuing pause.", ["S0071"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

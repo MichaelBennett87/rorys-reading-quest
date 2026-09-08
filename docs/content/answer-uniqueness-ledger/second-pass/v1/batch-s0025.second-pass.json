@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "stage": "SECOND_PASS_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-s0025",
+  "batchFileSha256": "a7cca616e7841eb82807a42d0944be95182aab5d48ce0183c3dea3589732b0e8",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "independentReviewer": false,
+  "records": [
+    {
+      "auditId": "Q1411",
+      "fingerprint": "d19bf1752f7991900c05da8aae7fd8d00122fef30a62dafb39801ec88617a54e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "The broad prompt does not define a ranking criterion. A4 is the central problem, but A1 can also reasonably belong in a summary because it closes Ava's use-of-help arc and records what she did afterward.",
+          "selectionContractValid": false,
+          "challengeSummary": "A4 is clearly central, while A1 is also source-supported and connected to the resolution/theme. The single-answer wording does not make A1 demonstrably too minor."
+        }
+      ]
+    },
+    {
+      "auditId": "Q1424",
+      "fingerprint": "2cac332c67c1b113e96c5b6c84f76ce6758e5f65259261b54f5be068e2630b39",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "The locked wheel creates the story's central problem, so it is important to include."
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "The old blue ribbon does not affect the problem, response, or resolution, so it is minor."
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Nia stopping the tilting cart protects the books and triggers the safer response, so it is important."
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "The clock's soft click does not change the plan or outcome, so it is minor."
+        }
+      ]
+    },
+    {
+      "auditId": "Q1436",
+      "fingerprint": "b22cb4c16f21fdbbbfb29ec29d8a3699aaf444d56ab99a3c742cefc2a99ccdc6",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "A1 accurately and concisely includes the rain problem, tested solution, key adjustments, outcome, and supported lesson. A2 is incomplete, A3 contradicts the source, and A4 lists minor details."
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Testing the cramped space is an important obstacle-and-adaptation detail included in the summary. The umbrella is minor and the prediction is not source evidence."
+        }
+      ]
+    },
+    {
+      "auditId": "Q1440",
+      "fingerprint": "94bfe56b3f7c9770c280dfb046b43353208f2ab16726a7006f3177f9241fd463",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "A1 explains the runoff problem and A3 defines the rain-garden solution. The visiting bee and the channel's gray stones are minor details."
+        }
+      ]
+    },
+    {
+      "auditId": "Q1441",
+      "fingerprint": "5fbf567d329159cf70f147b074a96f911972073664fcff5b27046e79d4b3eb4c",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "The channel's gray-stone detail can be omitted without losing the explanation; the other options establish runoff and the rain garden's purpose."
+        }
+      ]
+    }
+  ]
+}

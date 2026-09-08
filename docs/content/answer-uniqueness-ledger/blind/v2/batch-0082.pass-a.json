@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0082",
+  "batchFileSha256": "f1089dc819f8a7250f2b39bcc4a297e47060ca6b6aa023bbf5b2743bf43f4b96",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0958", "fingerprint": "ed9c2cb7174611614bf605bcc118db2ffc05f216f59c878a09dc033698cc4bc1",
+      "slots": [{"slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Soft plus -ness builds softness.", ["S0063"]], ["A2", "INCORRECT", "Soft plus -ment does not build softness.", ["S0063"]], ["A3", "INCORRECT", "Soft plus -ful does not build softness.", ["S0063"]], ["A4", "INCORRECT", "Soft plus -er does not build softness.", ["S0063"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0959", "fingerprint": "8eb12468ba7fdd09ba6a413851389c32e60cdba21a8af67ae9cce9513a81aa79",
+      "slots": [{"slotId": "response", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "This pair forms breakable, not the requested fearless.", ["S0065", "S0067"]], ["A2", "DEFENSIBLE", "Fear plus -less exactly forms fearless.", ["S0065"]],
+        ["A3", "INCORRECT", "This pair forms softness, not the requested fearless.", ["S0063", "S0065"]], ["A4", "INCORRECT", "This pair forms slowly, not the requested fearless.", ["S0065", "S0069"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0960", "fingerprint": "fc973290f1b8eaf475c75837582283c80663bfa6c50e2cc8fea108c1707e1386",
+      "slots": [{"slotId": "response", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Breakable does not tell how an action happens in this sentence.", ["S0067"]], ["A2", "INCORRECT", "Breakable does not show an action or state here.", ["S0067"]],
+        ["A3", "INCORRECT", "Breakable does not name a person, place, thing, or idea here.", ["S0067"]], ["A4", "DEFENSIBLE", "Breakable describes the clay shell, so it is an adjective.", ["S0067"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0961", "fingerprint": "67550cc47fb4980c92b2b938dff2ff30ae0995d4e9f06fb8746925a560ca6402",
+      "slots": [{"slotId": "response", "defensible": ["A3", "A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Softness names a quality, so it is a noun here.", ["S0063"]], ["A2", "INCORRECT", "Slowly tells how the snail moved, so it is an adverb.", ["S0069"]],
+        ["A3", "DEFENSIBLE", "Breakable describes the shell, so it is an adjective.", ["S0067"]], ["A4", "DEFENSIBLE", "Fearless describes the guide, so it is an adjective.", ["S0065"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0962", "fingerprint": "1d7ac85cc5faa6d235143db65d9ae98e894b14a009bb9092e2915f4832556078",
+      "slots": [{"slotId": "response", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Slow is the base word, not the requested suffix.", ["S0069"]], ["A2", "DEFENSIBLE", "Ly is the suffix added to slow in slowly.", ["S0069"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0963", "fingerprint": "6784ea630d1fc2fc416b1549bcacbd3f2773763b646547d8d84c0ea92765bff9",
+      "slots": [
+        {"slotId": "row_1", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Softness is not an adjective made from a verb.", ["S0063"]], ["A2", "INCORRECT", "Softness is not an adverb.", ["S0063"]], ["A3", "DEFENSIBLE", "Soft is an adjective and softness is a noun.", ["S0063"]], ["A4", "INCORRECT", "Softness is not an adjective made from a noun.", ["S0063"]]
+        ]},
+        {"slotId": "row_2", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "DEFENSIBLE", "Fear is a noun and fearless is an adjective.", ["S0065"]], ["A2", "INCORRECT", "Fearless is not a noun made from an adjective.", ["S0065"]], ["A3", "INCORRECT", "Fearless is not an adverb.", ["S0065"]], ["A4", "INCORRECT", "Fearless is not an adjective made from a verb.", ["S0065"]]
+        ]},
+        {"slotId": "row_3", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Breakable is not a noun made from an adjective.", ["S0067"]], ["A2", "INCORRECT", "Breakable is not an adjective made from a noun in this derivation.", ["S0067"]], ["A3", "DEFENSIBLE", "Break is a verb and breakable is an adjective.", ["S0067"]], ["A4", "INCORRECT", "Breakable is not an adverb.", ["S0067"]]
+        ]},
+        {"slotId": "row_4", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Slowly is not a noun.", ["S0069"]], ["A2", "INCORRECT", "Slowly is not an adjective made from a verb.", ["S0069"]], ["A3", "DEFENSIBLE", "Slow is an adjective and slowly is an adverb.", ["S0069"]], ["A4", "INCORRECT", "Slowly is not an adjective made from a noun.", ["S0069"]]
+        ]}
+      ], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0964", "fingerprint": "12200d1f1f8927cd0a43ca4ddf6443e84d5b9fdae5db9a98333b985af9263eff",
+      "slots": [
+        {"slotId": "part_a", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "B is not the base word in breakable.", ["S0067"]], ["A2", "INCORRECT", "The unsplit word does not show the base-suffix boundary.", ["S0067"]], ["A3", "DEFENSIBLE", "Break is the base word and -able is the suffix.", ["S0067"]], ["A4", "INCORRECT", "Breaka is not the base word in breakable.", ["S0067"]]
+        ]},
+        {"slotId": "part_b", "defensible": ["A1", "A4"], "ambiguity": "Both break | a | ble and break | able consist of pronounceable pieces that can reasonably help a learner decode breakable; the prompt does not make the authored three-chunk convention exclusive.", "selectionContractValid": false, "options": [
+          ["A1", "DEFENSIBLE", "Break, a, and ble form a usable pronunciation-oriented split.", ["S0067", "S0072"]], ["A2", "INCORRECT", "The unsplit word does not show reading chunks.", ["S0067"]], ["A3", "INCORRECT", "A single initial letter plus the remainder is not a useful reading split.", ["S0067"]], ["A4", "DEFENSIBLE", "Break and able are both pronounceable and also provide a reasonable decoding route for the complete word.", ["S0067", "S0072"]]
+        ]}
+      ], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0965", "fingerprint": "5250d8b34adc121599177bb527aa88e0d560904141df832c95e8618b88cf7a75",
+      "slots": [{"slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Still plus -ness builds stillness.", ["S0075"]], ["A2", "INCORRECT", "Still plus -er does not build stillness.", ["S0075"]], ["A3", "INCORRECT", "Still plus -ful does not build stillness.", ["S0075"]], ["A4", "INCORRECT", "Still plus -ment does not build stillness.", ["S0075"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0966", "fingerprint": "3f4bfc17c092b596884ee60dbc4313b896d0f97c517d21e6ced71f91bf230d56",
+      "slots": [{"slotId": "response", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "This pair forms stillness, not the requested washable.", ["S0075", "S0077"]], ["A2", "DEFENSIBLE", "Wash plus -able exactly forms washable.", ["S0077"]],
+        ["A3", "INCORRECT", "This pair forms dusty, not the requested washable.", ["S0077", "S0081"]], ["A4", "INCORRECT", "This pair forms rainy, not the requested washable.", ["S0077", "S0079"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0967", "fingerprint": "048cea5b69d24c009675d07e65994bb6dfc29b700b95b0953806346cabe724a3",
+      "slots": [{"slotId": "response", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Rainy does not name a person, place, thing, or idea here.", ["S0079"]], ["A2", "INCORRECT", "Rainy does not show an action or state here.", ["S0079"]],
+        ["A3", "DEFENSIBLE", "Rainy describes the afternoon, so it is an adjective.", ["S0079"]], ["A4", "INCORRECT", "Rainy does not tell how an action happens here.", ["S0079"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0968", "fingerprint": "5340a75bc0c85f957c1f776002decb2e59038dc9e010ff000a58ccfb390dcabc",
+      "slots": [{"slotId": "response", "defensible": ["A2", "A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Stillness uses -ness, not -y.", ["S0075"]], ["A2", "DEFENSIBLE", "Dusty uses the suffix -y.", ["S0081"]],
+        ["A3", "INCORRECT", "Washable uses -able, not -y.", ["S0077"]], ["A4", "DEFENSIBLE", "Rainy uses the suffix -y.", ["S0079"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0969", "fingerprint": "fefacf1ad1a3d5ae5b9a08084327619e36f478cc4679f32f551f058ce851aa18",
+      "slots": [{"slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Y is the suffix added to dust in dusty.", ["S0081"]], ["A2", "INCORRECT", "Dust is the base word, not the suffix.", ["S0081"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0970", "fingerprint": "de85309d126c27904417263149c470efbd6ad87c22d52f70788bdda3219cd317",
+      "slots": [
+        {"slotId": "row_1", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Stillness is not an adjective made from a noun.", ["S0075"]], ["A2", "DEFENSIBLE", "Still is an adjective and stillness is a noun.", ["S0075"]], ["A3", "INCORRECT", "Stillness is not an adjective made from a verb.", ["S0075"]]
+        ]},
+        {"slotId": "row_2", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Washable is not a noun made from an adjective.", ["S0077"]], ["A2", "DEFENSIBLE", "Wash is a verb and washable is an adjective.", ["S0077"]], ["A3", "INCORRECT", "Washable is not an adjective made from a noun in this derivation.", ["S0077"]]
+        ]},
+        {"slotId": "row_3", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "DEFENSIBLE", "Rain is a noun and rainy is an adjective.", ["S0079"]], ["A2", "INCORRECT", "Rainy is not an adjective made from a verb here.", ["S0079"]], ["A3", "INCORRECT", "Rainy is not a noun made from an adjective.", ["S0079"]]
+        ]},
+        {"slotId": "row_4", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Dusty is not a noun made from an adjective.", ["S0081"]], ["A2", "INCORRECT", "Dusty is not an adjective made from a verb here.", ["S0081"]], ["A3", "DEFENSIBLE", "Dust is a noun and dusty is an adjective.", ["S0081"]]
+        ]}
+      ], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0971", "fingerprint": "124cf4775b3040b51d45ec6682af8c6c40267a22dd67087a93911a1854d2b967",
+      "slots": [
+        {"slotId": "part_a", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "The unsplit word does not show the base-suffix boundary.", ["S0077"]], ["A2", "INCORRECT", "Washa is not the base word in washable.", ["S0077"]], ["A3", "INCORRECT", "W is not the base word in washable.", ["S0077"]], ["A4", "DEFENSIBLE", "Wash is the base word and -able is the suffix.", ["S0077"]]
+        ]},
+        {"slotId": "part_b", "defensible": ["A3", "A4"], "ambiguity": "Both wash | able and wash | a | ble consist of pronounceable pieces that can reasonably help a learner decode washable; the prompt does not make the authored three-chunk convention exclusive.", "selectionContractValid": false, "options": [
+          ["A1", "INCORRECT", "The unsplit word does not show reading chunks.", ["S0077"]], ["A2", "INCORRECT", "A single initial letter plus the remainder is not a useful reading split.", ["S0077"]], ["A3", "DEFENSIBLE", "Wash and able are both pronounceable and provide a reasonable decoding route.", ["S0077", "S0084"]], ["A4", "DEFENSIBLE", "Wash, a, and ble form the authored pronunciation-oriented split.", ["S0077", "S0084"]]
+        ]}
+      ], "projectionDefect": ""
+    }
+  ]
+}

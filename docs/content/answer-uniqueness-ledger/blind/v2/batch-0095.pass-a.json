@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0095",
+  "batchFileSha256": "d40e5e693a5369eca0617a533790aa814dd649cd8aba4f36a8149a3ff0c02e0a",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1109", "fingerprint": "360dbf751e6d1d145d377f1c15532613c69896afb3c92fc296c42ce159713274",
+      "slots": [{"slotId": "response", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This summarizes Imani's actions but does not state a broader message.", ["S0099", "S0101"]],
+        ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Asking for help is only a topic, not a complete theme statement.", ["S0099", "S0104"]],
+        ["A3", "CONTRADICTED", "Imani's private guessing creates repeated errors, while asking for help enables success and contribution.", ["S0091", "S0097", "S0099", "S0104"]],
+        ["A4", "DEFENSIBLE", "Imani's question resolves confusion, fixes the signs, and later lets her help another learner.", ["S0099", "S0100", "S0101", "S0104", "S0093"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1110", "fingerprint": "0bf78ed8285b7c25a7c70e4646343f4d3283706655c2ee98fd2528d449bbe3d7",
+      "slots": [{"slotId": "response", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "This is a complete but unsupported message, not only a broad topic.", ["S0096", "S0097"]],
+        ["A2", "DEFENSIBLE", "Asking for help is the brief broad subject rather than a complete message.", ["S0099", "S0104"]],
+        ["A3", "INCORRECT", "This is a plot summary, not only a broad topic.", ["S0099", "S0101"]],
+        ["A4", "INCORRECT", "This is the complete supported theme statement.", ["S0099", "S0104"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1111", "fingerprint": "e437c32ae84af782539d258bbedc87b561f315f0d3e46ee213578457fda74f3e",
+      "slots": [{"slotId": "response", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This gives only Imani's beginning choice.", ["S0096"]],
+        ["A2", "DEFENSIBLE", "This traces hidden confusion, the repeated-error consequence, the question for help, and later support for another learner.", ["S0096", "S0097", "S0099", "S0104"]],
+        ["A3", "CONTRADICTED", "Working alone and guessing cause the problem rather than proving independence.", ["S0096", "S0097"]],
+        ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This summarizes selected events without explaining how the theme develops across stages.", ["S0099", "S0101"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1112", "fingerprint": "48f4e6432dde1a2f3e16c3b4507973799e30d09d3ecde3e90c0fef27dac6c6e3",
+      "slots": [{"slotId": "response", "defensible": ["A1", "A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "At the end Imani uses what she learned to help another learner and names the value of questions.", ["S0104"]],
+        ["A2", "INCORRECT", "Volunteering at the garden is neutral setup and does not develop the asking-for-help theme.", ["S0094"]],
+        ["A3", "DEFENSIBLE", "At the beginning Imani hides confusion and guesses because she wants to appear capable.", ["S0096"]],
+        ["A4", "CONTRADICTED", "Private guessing causes repeated mistakes; asking for help produces learning.", ["S0091", "S0097", "S0099"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1113", "fingerprint": "8a4fa61c2b3ec29242647e8fcce9392e388d7d8e67ef9f0f49d319346f46e37f",
+      "slots": [{"slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "The ending shows Imani transferring what she learned by helping another learner and affirming that questions helped her.", ["S0104"]],
+        ["A2", "INCORRECT", "This is the middle turning point when Imani first asks for help.", ["S0099"]],
+        ["A3", "INCORRECT", "This is opening setup before the conflict.", ["S0094"]],
+        ["A4", "INCORRECT", "This is Imani's mistaken beginning choice.", ["S0096"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1114", "fingerprint": "61b3ca9b868eae0cb098ad04fbc2c8ac534e7b53104beb4161d6048031df3a24",
+      "slots": [
+        {"slotId": "row_1", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Volunteering is neutral setup rather than the theme-building beginning choice.", ["S0094"]],
+          ["A2", "DEFENSIBLE", "Imani begins by guessing to look capable instead of asking for help.", ["S0096"]],
+          ["A3", "INCORRECT", "The repeated wrong route is the middle consequence.", ["S0091", "S0097"]],
+          ["A4", "INCORRECT", "Helping another learner occurs at the end.", ["S0104"]]
+        ]},
+        {"slotId": "row_2", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "DEFENSIBLE", "The volunteers' wrong destination is the middle consequence of Imani's repeated guess.", ["S0091", "S0097"]],
+          ["A2", "INCORRECT", "Guessing to look capable is the beginning choice.", ["S0096"]],
+          ["A3", "INCORRECT", "Volunteering is neutral setup.", ["S0094"]],
+          ["A4", "INCORRECT", "Helping another learner occurs at the end.", ["S0104"]]
+        ]},
+        {"slotId": "row_3", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Guessing to look capable is the beginning choice.", ["S0096"]],
+          ["A2", "DEFENSIBLE", "Imani's support for another learner and explanation about questions complete the theme at the end.", ["S0104"]],
+          ["A3", "INCORRECT", "Volunteering is opening setup.", ["S0094"]],
+          ["A4", "INCORRECT", "The repeated wrong route is a middle consequence.", ["S0091", "S0097"]]
+        ]}
+      ], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1115", "fingerprint": "e7d0e646089b5b1d8822a0c627b67e668030879dc0a7cad7b6517fe83079993c",
+      "slots": [
+        {"slotId": "part_a", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "CONTRADICTED", "Private guessing causes confusion while asking for help creates learning and contribution.", ["S0096", "S0097", "S0099", "S0104"]],
+          ["A2", "DEFENSIBLE", "This complete message matches Imani's successful question, correction, and later help for another learner.", ["S0099", "S0101", "S0104"]],
+          ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This is a plot summary rather than a complete theme statement.", ["S0099", "S0101"]]
+        ]},
+        {"slotId": "part_b", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "This pairs a middle consequence with neutral setup and omits the requested beginning, turning point, and end.", ["S0097", "S0094"]],
+          ["A2", "INCORRECT", "This pairs the beginning mistake with neutral setup and omits the turning point and ending.", ["S0096", "S0094"]],
+          ["A3", "DEFENSIBLE", "This spans Imani's hidden confusion and guess, her direct question for help, and her later support for another learner.", ["S0096", "S0099", "S0104"]]
+        ]}
+      ], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1116", "fingerprint": "7329f0fd09cb62a2032dea60c52b848c2292f381aa8565296b2d46149857182e",
+      "slots": [{"slotId": "response", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "CONTRADICTED", "Caleb's confident first proposal overlooks other groups and creates access problems.", ["S0116", "S0117", "S0111"]],
+        ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Fairness is only a topic, not a complete theme statement.", ["S0120", "S0123"]],
+        ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This is a plot summary rather than a general message.", ["S0118", "S0121"]],
+        ["A4", "DEFENSIBLE", "The failed first location, gathered route evidence, and shared solution support this complete message.", ["S0117", "S0111", "S0118", "S0120", "S0123", "S0124"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1117", "fingerprint": "334cd9d7ccd1e1fa7d10211ce8ab6fda931a2a3264438d0ccf9cabb2275961a6",
+      "slots": [{"slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Fairness is the brief broad subject rather than a complete message.", ["S0120", "S0123"]],
+        ["A2", "INCORRECT", "This is a complete but unsupported message, not only a topic.", ["S0116", "S0117"]],
+        ["A3", "INCORRECT", "This is a plot summary, not only a broad topic.", ["S0118", "S0121"]],
+        ["A4", "INCORRECT", "This is the complete supported theme statement.", ["S0117", "S0123", "S0124"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1118", "fingerprint": "259c073e368994bd4f241bae104b9b82151874802ff40b9270ea09abd4d65c97",
+      "slots": [{"slotId": "response", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This summarizes the plan change but does not explain theme development across stages.", ["S0118", "S0121"]],
+        ["A2", "DEFENSIBLE", "This traces Caleb's narrow first assumption, the revealed effects, gathered evidence, successful shared solution, and ending habit.", ["S0116", "S0117", "S0111", "S0120", "S0123", "S0124"]],
+        ["A3", "CONTRADICTED", "Caleb's confident first decision causes problems for overlooked groups.", ["S0116", "S0117", "S0111"]],
+        ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This gives only Caleb's beginning response.", ["S0116"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1119", "fingerprint": "1db3a147b1c8ee23f54ab44afbfb11b833466df8e9d15a6abefe71b3f5275a57",
+      "slots": [{"slotId": "response", "defensible": ["A2", "A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "The temporary courtyard shelter is neutral setup and does not develop the fairness theme.", ["S0107"]],
+        ["A2", "DEFENSIBLE", "At the beginning Caleb bases his choice on his own group and assumes it serves the most people.", ["S0114", "S0116"]],
+        ["A3", "DEFENSIBLE", "At the end Caleb asks whose needs remain unheard before another decision.", ["S0124"]],
+        ["A4", "CONTRADICTED", "The confident first decision overlooks others and produces an unfair result.", ["S0117", "S0111"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1120", "fingerprint": "407f35f697fe96c2f530a3054bb35acd5eb00e4c6c3b38537e66436ad48b311d",
+      "slots": [{"slotId": "response", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "This states Caleb's narrow beginning assumption.", ["S0116"]],
+        ["A2", "INCORRECT", "This is Caleb's middle realization that triggers change.", ["S0118"]],
+        ["A3", "INCORRECT", "This is opening setup before Caleb's choice.", ["S0107"]],
+        ["A4", "DEFENSIBLE", "The final sentence shows Caleb carrying the fairness lesson into a future decision by asking whose needs are missing.", ["S0124"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1121", "fingerprint": "b86c0741a04dd51466f347ed0d359da4f9753e522c45b695625a2c05ac0632d3",
+      "slots": [
+        {"slotId": "row_1", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "DEFENSIBLE", "Caleb's focus on his own group's location is the theme-relevant beginning response.", ["S0114", "S0116"]],
+          ["A2", "INCORRECT", "The temporary shelter is neutral setup.", ["S0107"]],
+          ["A3", "INCORRECT", "Asking whose needs remain unheard occurs at the end.", ["S0124"]],
+          ["A4", "INCORRECT", "The wet line and blocked path are the middle consequences.", ["S0117", "S0111"]]
+        ]},
+        {"slotId": "row_2", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Caleb's narrow assumption is the beginning response.", ["S0116"]],
+          ["A2", "INCORRECT", "The temporary shelter is neutral setup.", ["S0107"]],
+          ["A3", "DEFENSIBLE", "The practice test reveals middle consequences for the library line and accessible art path.", ["S0117", "S0111"]],
+          ["A4", "INCORRECT", "Asking whose needs remain unheard occurs at the end.", ["S0124"]]
+        ]},
+        {"slotId": "row_3", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "The temporary shelter is neutral setup.", ["S0107"]],
+          ["A2", "DEFENSIBLE", "At the end Caleb asks whose needs remain unheard before planning again.", ["S0124"]],
+          ["A3", "INCORRECT", "The failed test consequences occur in the middle.", ["S0117", "S0111"]],
+          ["A4", "INCORRECT", "Caleb's narrow assumption is the beginning response.", ["S0116"]]
+        ]}
+      ], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1122", "fingerprint": "fdd334c0e26b32bd62fb0d53a07bad554ede5e34dbc6f9f30e7ecbc58ebac2f6",
+      "slots": [
+        {"slotId": "part_a", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "CONTRADICTED", "The confident first decision overlooks other groups and produces access problems.", ["S0116", "S0117", "S0111"]],
+          ["A2", "DEFENSIBLE", "This complete message is supported by the failed narrow choice, wider evidence gathering, and fair shared result.", ["S0117", "S0111", "S0120", "S0123", "S0124"]],
+          ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This is a plot summary rather than a complete theme statement.", ["S0118", "S0121"]]
+        ]},
+        {"slotId": "part_b", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "DEFENSIBLE", "This spans Caleb's narrow beginning claim, his realization that he counted only his group, and his ending question about unheard needs.", ["S0116", "S0118", "S0124"]],
+          ["A2", "INCORRECT", "This pairs the beginning response with neutral setup but lacks the turning point and ending.", ["S0116", "S0107"]],
+          ["A3", "INCORRECT", "This pairs a middle consequence with neutral setup but lacks the requested complete three-stage evidence.", ["S0111", "S0107"]]
+        ]}
+      ], "projectionDefect": ""
+    }
+  ]
+}

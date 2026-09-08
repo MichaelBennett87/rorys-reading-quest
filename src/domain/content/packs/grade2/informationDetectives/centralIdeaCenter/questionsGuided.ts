@@ -211,11 +211,11 @@ export const centralIdeaCenterGuidedQuestions = [
     passageIdentifier: centralIdeaCenterPassageIds.weatherStationNotes.passageId,
     lessonIdentifier: centralIdeaCenterLessonIds.guidedPutImportantDetailsTogether,
     questionIdentifier: centralIdeaCenterQuestionIds.guidedPutImportantDetailsTogether[2],
-    prompt: 'Choose two details that are most relevant to the central idea.',
-    explanation: 'These details show how the class uses tools and records to learn about weather.',
+    prompt: 'Choose the two details that show the class saves weather observations to check later. Select two.',
+    explanation: 'The chart records weather numbers, and the circled cloudy days are saved so the class can check them later.',
     evidenceReference: centralIdeaCenterFeatureIds.weatherStationNotes.caption,
     evidenceReferenceIds: [
-      centralIdeaCenterSentenceIds.weatherStationNotes[0],
+      centralIdeaCenterSentenceIds.weatherStationNotes[5],
       centralIdeaCenterSentenceIds.weatherStationNotes[2],
     ],
     targetVocabulary: ['relevant detail', 'weather', 'chart'],
@@ -227,7 +227,7 @@ export const centralIdeaCenterGuidedQuestions = [
       choice('weather-clouds', 'A student circles cloudy days on the chart so the group can check them later.'),
       choice('weather-wind', 'A wind sock points the direction the wind blows.'),
     ],
-    correctChoiceIds: ['weather-thermometer', 'weather-chart'],
+    correctChoiceIds: ['weather-chart', 'weather-clouds'],
   }),
   createHotTextQuestion({
     ...base,
@@ -235,8 +235,8 @@ export const centralIdeaCenterGuidedQuestions = [
     passageIdentifier: centralIdeaCenterPassageIds.weatherStationNotes.passageId,
     lessonIdentifier: centralIdeaCenterLessonIds.guidedPutImportantDetailsTogether,
     questionIdentifier: centralIdeaCenterQuestionIds.guidedPutImportantDetailsTogether[3],
-    prompt: 'Tap the sentence that best helps readers understand the central idea.',
-    explanation: 'This sentence brings the weather tools and notes together into one idea.',
+    prompt: 'Tap the sentence that combines tools, observations, and what the class learns about weather.',
+    explanation: 'This sentence combines the tools, careful observations, and learning about weather into one idea.',
     evidenceReference: centralIdeaCenterSentenceIds.weatherStationNotes[7],
     evidenceReferenceIds: [centralIdeaCenterSentenceIds.weatherStationNotes[7]],
     targetVocabulary: ['central idea'],
@@ -300,4 +300,3 @@ export const centralIdeaCenterGuidedQuestions = [
     ],
   }),
 ] as const
-

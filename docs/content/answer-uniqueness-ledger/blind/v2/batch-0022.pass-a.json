@@ -1,0 +1,646 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0022",
+  "batchFileSha256": "98c1d33c2abad29e294e81e90b42425263bf2959692d85143230b12ae463f4ff",
+  "reviewerThreadId": "01a07bc1-57ca-7230-a515-d322b50c9d2e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0252",
+      "fingerprint": "7567abe0b7ddc60402d80e6702f1d68e0695b9515c2119213659bac0a0d804b2",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "ghost does not begin with wr and is not in the passage.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "wrap appears in the passage and begins with silent w in wr.",
+              [
+                "S0009",
+                "S0011"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "comb ends with silent mb rather than beginning with wr.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "island has a silent internal s rather than beginning with wr.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0253",
+      "fingerprint": "fc22205971e1f1afe8740273fe4145081e444aca53c3e986af96d3ce7ec66f4b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "night does not begin with wr and is not a body part.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "knock begins with kn and is not a body part.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "lamb ends with mb and names an animal.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "wrist appears in the passage, begins with silent wr, and names a body part.",
+              [
+                "S0012",
+                "S0013"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0254",
+      "fingerprint": "2b98a1d4665b0af65c66d417f39d9143c330660df54ec0607d4f8d5f4dd08737",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "comb ends with quiet mb and does not appear in this passage.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "wrist appears in the passage and begins with quiet wr.",
+              [
+                "S0012",
+                "S0013"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "wrap appears in the passage and begins with quiet wr.",
+              [
+                "S0009",
+                "S0011"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "wrong appears in the passage and begins with quiet wr.",
+              [
+                "S0015",
+                "S0016"
+              ]
+            ],
+            [
+              "A5",
+              "DEFENSIBLE",
+              "write appears in the passage and begins with quiet wr.",
+              [
+                "S0014",
+                "S0013"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0255",
+      "fingerprint": "7b34afc9e4a90680645dd372c86af152c5a16f7826491a1a9b9e1af392320817",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "write is the action the sentence says the helper performs.",
+              [
+                "S0014",
+                "S0013"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "label is the noun receiving the action in this sentence.",
+              [
+                "S0013"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "helper names the person, not what that person did.",
+              [
+                "S0013"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "wrist modifies card and does not state the helper action.",
+              [
+                "S0012",
+                "S0013"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0256",
+      "fingerprint": "f748debfbd83e8002670813616a95efe095c811ece910c16e79bf0e68f17fa09",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "wrap begins with wr, not kn.",
+              [
+                "S0009",
+                "S0011"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "wrap begins with silent w in wr.",
+              [
+                "S0009",
+                "S0011"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "wrap is not an island-family word.",
+              [
+                "S0009",
+                "S0011"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "wrap does not end with mb.",
+              [
+                "S0009",
+                "S0011"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "wrist does not end with mb.",
+              [
+                "S0012",
+                "S0013"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "wrist does not contain the silent-gh family.",
+              [
+                "S0012",
+                "S0013"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "wrist is not an island-family word.",
+              [
+                "S0012",
+                "S0013"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "wrist begins with silent w in wr.",
+              [
+                "S0012",
+                "S0013"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "write does not contain the silent-gh family.",
+              [
+                "S0014",
+                "S0013"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "write begins with silent w in wr.",
+              [
+                "S0014",
+                "S0013"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "write begins with wr, not kn.",
+              [
+                "S0014",
+                "S0013"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "write does not end with mb.",
+              [
+                "S0014",
+                "S0013"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "wrong begins with silent w in wr.",
+              [
+                "S0015",
+                "S0016"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "wrong does not end with mb.",
+              [
+                "S0015",
+                "S0016"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "wrong does not contain the silent-gh family.",
+              [
+                "S0015",
+                "S0016"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "wrong is not an island-family word.",
+              [
+                "S0015",
+                "S0016"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0257",
+      "fingerprint": "12380cf944f0466317985bc425db5bd3530785996b14839fcf85218d53d72462",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "ghost does not end with mb and is not the passage animal.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "lamb appears in the passage, names an animal, and ends with silent mb.",
+              [
+                "S0017",
+                "S0019"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "wren names an animal but begins with wr and is absent from the passage.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "comb ends with silent mb but names a grooming tool, not an animal.",
+              [
+                "S0020",
+                "S0019"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0258",
+      "fingerprint": "32660c248f9570a03de1f98bddc7bd4aa81644260ec12cdfca7351e1d8933ec5",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [],
+          "ambiguity": "The passage includes a comb but never describes it as shiny, so no option fully satisfies every visible prompt condition.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "wrist neither ends with mb nor appears in the shelter passage.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "wrong neither ends with mb nor appears in the shelter passage.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "island neither ends with mb nor appears in the shelter passage.",
+              []
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "comb appears and ends with silent mb and can be a tool, but the passage gives no support that it is shiny.",
+              [
+                "S0020",
+                "S0019"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0259",
+      "fingerprint": "8a4b73a3495356296d7f27408f31d580d6ed7d43768b186da72b18e8e0a179e4",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [],
+          "ambiguity": "The passage says climb the ramp but supplies no clue that the movement is careful, so no option fully satisfies the prompt.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "thumb appears as part of thumb through the list, not movement up the ramp.",
+              [
+                "S0021",
+                "S0022"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "night does not end with mb and is absent from the passage.",
+              []
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "climb ends with silent mb and means movement up the ramp, but the passage never characterizes that movement as careful.",
+              [
+                "S0023",
+                "S0022"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "island does not end with mb and is absent from the passage.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0260",
+      "fingerprint": "bf7959a8a59f543b9b9fa8b55fe4ddf582f372b7594294554446ed63de87891d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A5"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "lamb appears in the passage and ends with quiet mb.",
+              [
+                "S0017",
+                "S0019"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "climb appears in the passage and ends with quiet mb.",
+              [
+                "S0023",
+                "S0022"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "comb appears in the passage and ends with quiet mb.",
+              [
+                "S0020",
+                "S0019"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "ghost neither ends with mb nor appears in the passage.",
+              []
+            ],
+            [
+              "A5",
+              "DEFENSIBLE",
+              "thumb appears in the passage and ends with quiet mb.",
+              [
+                "S0021",
+                "S0022"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0261",
+      "fingerprint": "4395cbe4f7be363d7c1c1424d5d3bbf510e83f49b9f4fbda6b919f104e631657",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [],
+          "ambiguity": "The passage names the team, not a helper, and uses thumb as a verb in thumb through; it does not name something used to feel paper.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The team will identifies the actor and tense, not an object used to feel paper.",
+              [
+                "S0022"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "through the list completes the verb phrase but does not name an object used to feel paper.",
+              [
+                "S0022"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "then climb the ramp describes a separate action.",
+              [
+                "S0022"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "thumb can name a body part used for touch, but here thumb is a verb in thumb through the list, and no helper is named.",
+              [
+                "S0021",
+                "S0022"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": "The prompt introduces a helper and a paper-feeling action absent from displayed passage S0018."
+    }
+  ]
+}

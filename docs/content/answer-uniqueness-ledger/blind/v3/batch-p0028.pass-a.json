@@ -1,0 +1,648 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0028",
+  "batchFileSha256": "3107a4ce20807b499ec555413e1b7e3c3e5c0ba2829bd6fc4b2439b361d4b048",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0605",
+      "fingerprint": "1dc6c13be4b37243a8f30b224352fa0b9c1685611fb059afee0966beab6a830e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This directly says the shaded bench felt more comfortable.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This reports the number of benches, not temperature or comfort.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This says families rest there but does not directly state comfort or measured temperature.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This directly gives the measured three-degree temperature difference.",
+              [
+                "S0005"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0607",
+      "fingerprint": "d57954cb6bbf0ab2e8e0cddce312125e4f578a68e0cb78f73d6b63e019f917e6",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a measured detail.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Shaded rest spots name the broad subject.",
+              [
+                "S0014"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the author's opinion.",
+              [
+                "S0003"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This reports what the ranger said rather than recommending an action.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The word should marks this as a recommendation or opinion.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "This is a measured fact.",
+              [
+                "S0005"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a topic phrase, not a factual sentence.",
+              [
+                "S0014"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This reports a measurable temperature result.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "This is a should recommendation rather than a fact report.",
+              [
+                "S0003"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the recommendation, not the ranger report.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This directly states what the ranger reported families do.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the temperature measurement, not the ranger report.",
+              [
+                "S0005"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0615",
+      "fingerprint": "b3293fe1c5a34c81c4682481f86e6f03fbf3ce10a9aa01b49fc9fb39ff2eff93",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This directly describes a family confused by an unclear symbol.",
+              [
+                "S0054"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes a path marker direction, not confusion or a legend definition.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This directly explains that a legend lists symbols and meanings.",
+              [
+                "S0052"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes adding a key but not what a legend lists.",
+              [
+                "S0055"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0616",
+      "fingerprint": "4aaed067fb45a9678d80c2875cf693776cb491049aeb6a8e9ab06bfc0f6644ac",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This directly states the visitor confusion caused by not understanding a symbol.",
+              [
+                "S0054"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This explains clear symbol meanings rather than showing the problem.",
+              [
+                "S0056"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states the benefit of clear symbols, not the specific confusion event.",
+              [
+                "S0058"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This lists symbols without showing a visitor problem.",
+              [
+                "S0048"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0620",
+      "fingerprint": "4601a0c615c2749f2a2f1aa45b337fd195ddf6b3ff21cdd053003b25260df958",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This directly reports fewer discarded wrappers.",
+              [
+                "S0080"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This defines reusable in general but does not state that the same boxes were reused.",
+              [
+                "S0083"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This directly says each box could be washed and used again.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes collecting empty boxes, not reuse or wrapper reduction.",
+              [
+                "S0081"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0621",
+      "fingerprint": "00cd61199fcdcd670d6d34daa7f9895be2ea06a9df517101642756011549c5eb",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a cost comparison, not cleaning and reuse.",
+              [
+                "S0082"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states what the boxes held, not that they can be cleaned and reused.",
+              [
+                "S0075"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This directly states both washing and reusing each box.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes where empty boxes were collected.",
+              [
+                "S0081"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0627",
+      "fingerprint": "9c39576ad908f46b6b25fbcc18706c00703c826aea444f16b775ee3d8775770d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This recommends shrubs without comparing visit counts.",
+              [
+                "S0100"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This directly compares more visits near shrubs with fewer near the fence.",
+              [
+                "S0110"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes bird behavior at the tree, not a shrub-fence comparison.",
+              [
+                "S0106"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This gives shrub location, not visit counts.",
+              [
+                "S0112"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0633",
+      "fingerprint": "70b839f96361891186285a78e6118a60654aa9657217fc4cd15389fac63099b0",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This directly reports that wrong items became less frequent after the signs.",
+              [
+                "S0139"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This directly states the pre-sign sorting mistake.",
+              [
+                "S0134"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is another positive result but does not directly state that mistakes dropped.",
+              [
+                "S0140"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes a sign image, not the before problem or after mistake count.",
+              [
+                "S0136"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0634",
+      "fingerprint": "bc93102bd99b7af6d94d61f7e6924db00f461d3ec53815d0445bdd9e495cc80e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states the action of adding signs, not the change afterward.",
+              [
+                "S0132"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a recommendation, not a reported after-sign change.",
+              [
+                "S0130"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This directly reports fewer wrong items after the signs went up.",
+              [
+                "S0139"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes a guide paper rather than the after-sign result.",
+              [
+                "S0142"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0640",
+      "fingerprint": "52c223bdce5b2445d9aa8d560f66edc68ff0f0d0730a641f3b7e10c0042f5f77",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Drying beds directly show the need for water.",
+              [
+                "S0167"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This explains catching runoff but does not directly state bed need or reduced hose use.",
+              [
+                "S0165"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This directly states that barrel water could reduce hose use.",
+              [
+                "S0163"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The compost pile location does not address either requested point.",
+              [
+                "S0170"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0641",
+      "fingerprint": "c1da24be319b9ece3f0c1c3e989040446d5e69290b450ddd45d3cdc8a99c1ff5",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This gives the proposed benefit, not the hot-afternoon problem.",
+              [
+                "S0163"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes capturing runoff, not the bed problem.",
+              [
+                "S0165"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This reports dry-soil measurements on rainless days, not specifically the hot-afternoon bed problem.",
+              [
+                "S0169"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This directly states that the beds dry quickly on hot afternoons.",
+              [
+                "S0167"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

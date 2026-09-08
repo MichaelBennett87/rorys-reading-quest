@@ -25,6 +25,7 @@ export interface StructureStationRecord {
   structureReason: string
   organizationHelp: string
   evidenceSentenceNumbers: [number, number]
+  evidencePrompt?: string
   distractorReasons: [string, string, string]
   hotPrompt: string
   hotCorrectSentence: number
@@ -71,6 +72,7 @@ const records: StructureStationRecord[] = [
     structureReason: 'The important observations are arranged in the time order they happen during one day.',
     organizationHelp: 'Chronology helps the reader follow each weather-station task from the first morning check to the finished log.',
     evidenceSentenceNumbers: [1, 5],
+    evidencePrompt: 'Choose the two time-marked action sentences that show the first and final steps in the observer\'s day.',
     distractorReasons: ['It mainly explains similarities and differences between two weather stations.', 'It mainly explains why rain causes every tool to change.', 'It lists unrelated weather facts with no meaningful order.'],
     hotPrompt: 'Select the sentence that shows the final step in the observer\'s day.', hotCorrectSentence: 5, hotDistractorSentences: [1, 3, 7],
     support: [
@@ -113,6 +115,7 @@ const records: StructureStationRecord[] = [
     structureReason: 'The text is organized around meaningful similarities and differences between desert and Arctic foxes.',
     organizationHelp: 'Comparison helps readers connect each fox\'s ears, coat, and hearing to its habitat.',
     evidenceSentenceNumbers: [2, 4],
+    evidencePrompt: 'Choose the two animal-feature sentences that directly contrast the foxes\' ear sizes and how those ears handle body heat.',
     distractorReasons: ['It puts every detail in the order the foxes discovered it.', 'It explains that one fox directly causes the other fox to change.', 'It describes only the desert fox and never relates it to another animal.'],
     hotPrompt: 'Select the sentence that states a meaningful similarity between the two foxes.', hotCorrectSentence: 6, hotDistractorSentences: [2, 4, 8],
     support: [
@@ -156,6 +159,7 @@ const records: StructureStationRecord[] = [
     structureReason: 'The text explains what causes soil to lose water and how shade or mulch changes that result.',
     organizationHelp: 'Cause-and-effect organization helps readers connect sunlight, moving air, cover, and soil moisture.',
     evidenceSentenceNumbers: [1, 5],
+    evidencePrompt: 'Choose the cause sentence about sunlight warming bare soil and the result sentence stating that covered soil loses water more slowly.',
     distractorReasons: ['It lists gardening actions only in the order they must always be completed.', 'It mainly compares two kinds of foxes.', 'It names soil facts without explaining why any result happens.'],
     hotPrompt: 'Select the sentence that states the result of placing mulch over soil.', hotCorrectSentence: 5, hotDistractorSentences: [1, 3, 7],
     support: [
@@ -199,6 +203,7 @@ const records: StructureStationRecord[] = [
     structureReason: 'The important ideas are organized as a sequence of building, labeling, and testing steps.',
     organizationHelp: 'Chronology helps readers perform the steps in a useful order and understand when the wind vane is ready to test.',
     evidenceSentenceNumbers: [2, 7],
+    evidencePrompt: 'Choose the two action sentences marked First and Finally that show the beginning and end of the wind-vane process.',
     distractorReasons: ['It mainly compares two different wind vanes.', 'It explains that every step causes the wind to blow.', 'It presents unrelated facts that may be read in any order.'],
     hotPrompt: 'Select the sentence that tells what to do immediately before taking the wind vane outside.', hotCorrectSentence: 5, hotDistractorSentences: [2, 4, 7],
     support: [
@@ -244,6 +249,7 @@ const records: StructureStationRecord[] = [
     structureReason: 'The passage organizes details around similarities and differences between beam and arch bridges.',
     organizationHelp: 'Comparison helps readers understand how two bridge shapes solve a similar crossing problem in different ways.',
     evidenceSentenceNumbers: [2, 4],
+    evidencePrompt: 'Choose the two details that describe the different bridge shapes being compared.',
     distractorReasons: ['It puts bridge inventions in date order.', 'It explains that a beam bridge causes an arch bridge to form.', 'It describes only one bridge without relating it to another design.'],
     hotPrompt: 'Select the sentence that states a similarity between beam and arch bridges.', hotCorrectSentence: 6, hotDistractorSentences: [2, 4, 10],
     support: [
@@ -289,6 +295,7 @@ const records: StructureStationRecord[] = [
     structureReason: 'The passage explains why puddles form and how a rain garden changes where some runoff goes.',
     organizationHelp: 'Cause-and-effect organization connects hard surfaces, moving runoff, plant roots, soaking water, and fewer puddles.',
     evidenceSentenceNumbers: [2, 5],
+    evidencePrompt: 'Choose the cause detail about hard surfaces and the result detail about fewer puddles.',
     distractorReasons: ['It gives exact construction steps that must be followed in order.', 'It mainly compares rain gardens with four other gardens.', 'It lists storm facts without explaining any result.'],
     hotPrompt: 'Select the sentence that gives a result of water soaking into the rain garden.', hotCorrectSentence: 5, hotDistractorSentences: [1, 3, 7],
     support: [
@@ -336,6 +343,7 @@ const records: StructureStationRecord[] = [
     structureReason: 'The passage organizes a paper-making process in the order its steps must happen.',
     organizationHelp: 'Chronology helps readers follow how used pieces change into pulp, a damp layer, and a dry sheet.',
     evidenceSentenceNumbers: [2, 7],
+    evidencePrompt: 'Choose the first and final action sentences that mark the beginning and end of the paper-making process.',
     distractorReasons: ['It mainly compares recycled paper with plastic.', 'It explains that drying causes the paper to be torn first.', 'It lists paper facts that may be rearranged without changing the process.'],
     hotPrompt: 'Select the sentence that begins with the signal word showing the next step after the pulp is spread.', hotCorrectSentence: 5, hotDistractorSentences: [2, 4, 7],
     support: [

@@ -289,7 +289,7 @@ export const checkpointQuestions: ReadingQuestion[] = [
     lessonIdentifier: CONSONANT_LE_LESSON_IDS.checkpointB,
     activityIdentifier: 'activity-word-forge-consonant-le-checkpoint-b-4',
     questionIdentifier: CONSONANT_LE_QUESTION_IDS.checkpointB[3],
-    prompt: 'Which word has an open syllable before consonant-le in the puzzle club lesson?',
+    prompt: 'Which word has an open syllable before consonant-le?',
     explanation: 'Table has ta | ble, so the first syllable is open.',
     evidenceReference: 'word-pattern',
     evidenceReferenceIds: ['table-choice'],

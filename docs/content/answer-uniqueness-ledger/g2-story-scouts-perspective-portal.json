@@ -1,0 +1,4253 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "g2-story-scouts-perspective-portal-prerequisite-a-mc-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-051e30056b9ef961",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "09731b1452f593b727d462021d909b408ef3f6684515d7c05c4e8670ba26b7ee",
+        "conclusionsSha256": "6fb217e4f926733e081586343c08c5fe1359a8fbb555d259668d5853f13666a4",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0034.pass-a.json",
+        "receiptSha256": "6fb217e4f926733e081586343c08c5fe1359a8fbb555d259668d5853f13666a4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence best describes Maya's perspective about preparing the community garden before the seed swap?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "The rainy morning names the shared setting, not Maya's view of what should be done.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This describes Theo's initial view, not Maya's perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Maya says the gray clouds mean the seedlings should be covered immediately, directly stating her perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This is a shared outcome and does not state Maya's individual view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-prerequisite-a-mc-2",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-ddd520c232cf77de",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "09731b1452f593b727d462021d909b408ef3f6684515d7c05c4e8670ba26b7ee",
+        "conclusionsSha256": "6fb217e4f926733e081586343c08c5fe1359a8fbb555d259668d5853f13666a4",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0012.second-pass.json",
+        "receiptSha256": "c77f5c9a34d7375ade5abd7c538cc2501a6c2db3fde2c9ceedfed757a55acfda",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence best describes Theo's perspective about preparing the community garden before the seed swap?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This is a statement about narration, not Theo's view of the garden preparation.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Theo thinks there is still time to finish the sign despite the drizzle, supporting this description of his perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "The rainy morning names the setting, not Theo's view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This is a shared outcome and does not state Theo's individual view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-prerequisite-a-ms-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-5fa1562afade8c86",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "09731b1452f593b727d462021d909b408ef3f6684515d7c05c4e8670ba26b7ee",
+        "conclusionsSha256": "6fb217e4f926733e081586343c08c5fe1359a8fbb555d259668d5853f13666a4",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0034.pass-a.json",
+        "receiptSha256": "6fb217e4f926733e081586343c08c5fe1359a8fbb555d259668d5853f13666a4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two details that best support Maya's perspective.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "choice-b",
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-c",
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This explicitly states Theo's initial view, not Maya's.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Maya's action of covering the plants supports her view that they needed protection.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "This establishes the rainy setting but does not reveal what Maya thinks should be done.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Maya's statement that the seedlings should be covered immediately directly supports her perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-prerequisite-a-ht-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-5f1a2aeb2c2f8507",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "962c0230fab4b38917d92cf1dd1eb3280d3a65b3a34c898adb7126681a12bad5",
+        "conclusionsSha256": "d06e14b3cd3d55b042b6e7b699d5e491730cee7d290fc0c8f361c0dbb97d96ef",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0016.pass-a.json",
+        "receiptSha256": "d06e14b3cd3d55b042b6e7b699d5e491730cee7d290fc0c8f361c0dbb97d96ef",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that states Theo's first view of what should happen.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "segment-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This shows both characters acting, not Theo's first stated view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-4"
+              ]
+            },
+            {
+              "answerId": "segment-6",
+              "verdict": "INCORRECT",
+              "rationale": "This is their later joint outcome.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-6"
+              ]
+            },
+            {
+              "answerId": "segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly states Theo's first view that there was still time to finish the sign.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-3"
+              ]
+            },
+            {
+              "answerId": "segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "This establishes setting and characters, not Theo's view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-1"
+              ]
+            },
+            {
+              "answerId": "segment-5",
+              "verdict": "INCORRECT",
+              "rationale": "This is Theo's later response after the wind strengthens.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-5"
+              ]
+            },
+            {
+              "answerId": "segment-7",
+              "verdict": "INCORRECT",
+              "rationale": "This states Maya's ending feeling and result.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-7"
+              ]
+            },
+            {
+              "answerId": "segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "This states Maya's view, not Theo's.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-prerequisite-a-tm-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-017e2ff9ad3d17dd",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "09731b1452f593b727d462021d909b408ef3f6684515d7c05c4e8670ba26b7ee",
+        "conclusionsSha256": "6fb217e4f926733e081586343c08c5fe1359a8fbb555d259668d5853f13666a4",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0034.pass-a.json",
+        "receiptSha256": "6fb217e4f926733e081586343c08c5fe1359a8fbb555d259668d5853f13666a4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-1",
+          "prompt": "Maya thinks the situation should be handled how?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-a",
+              "verdict": "INCORRECT",
+              "rationale": "The rainy morning is the situation, not Maya's view of how to handle it.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-1"
+              ]
+            },
+            {
+              "answerId": "option-c",
+              "verdict": "INCORRECT",
+              "rationale": "Finishing the sign is a shared outcome, not Maya's stated approach.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-6"
+              ]
+            },
+            {
+              "answerId": "option-d",
+              "verdict": "INCORRECT",
+              "rationale": "This describes Theo's initial approach, not Maya's.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-3"
+              ]
+            },
+            {
+              "answerId": "option-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Maya believes the rainy sky calls for covering the seedlings right away.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-2",
+          "prompt": "Which detail shows Theo's view?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-c"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Theo's thought that there is still time for the sign directly shows his view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-3"
+              ]
+            },
+            {
+              "answerId": "option-b",
+              "verdict": "INCORRECT",
+              "rationale": "This detail states Maya's view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-2"
+              ]
+            },
+            {
+              "answerId": "option-d",
+              "verdict": "INCORRECT",
+              "rationale": "This gives Maya's final reaction, not Theo's view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-7"
+              ]
+            },
+            {
+              "answerId": "option-a",
+              "verdict": "INCORRECT",
+              "rationale": "This is the shared setting and does not reveal Theo's view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-3",
+          "prompt": "Which choice tells about the shared situation?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-d",
+              "verdict": "INCORRECT",
+              "rationale": "The passage uses third-person names and pronouns, so this narration claim is false and does not name the shared situation.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-1"
+              ]
+            },
+            {
+              "answerId": "option-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both characters are preparing the community garden before the seed swap, making this the shared situation.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-1"
+              ]
+            },
+            {
+              "answerId": "option-c",
+              "verdict": "INCORRECT",
+              "rationale": "This is Theo's individual perspective within the situation.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-3"
+              ]
+            },
+            {
+              "answerId": "option-b",
+              "verdict": "INCORRECT",
+              "rationale": "This is Maya's individual perspective within the situation.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-rainy-garden-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-prerequisite-b-mc-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-105fe49cd01337f8",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "09731b1452f593b727d462021d909b408ef3f6684515d7c05c4e8670ba26b7ee",
+        "conclusionsSha256": "6fb217e4f926733e081586343c08c5fe1359a8fbb555d259668d5853f13666a4",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0034.pass-a.json",
+        "receiptSha256": "6fb217e4f926733e081586343c08c5fe1359a8fbb555d259668d5853f13666a4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence best describes Nia's perspective about setting up a new library display after school?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This describes a shared action and an outcome, not Nia's individual perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-1",
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-6"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This describes Leo's perspective, not Nia's.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "The afternoon in the library names the shared setting, not Nia's view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Nia imagines smiling children and says the display should be cheerful and colorful, supporting this description of her perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-prerequisite-b-mc-2",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-d65282aa3c7fe576",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "09731b1452f593b727d462021d909b408ef3f6684515d7c05c4e8670ba26b7ee",
+        "conclusionsSha256": "6fb217e4f926733e081586343c08c5fe1359a8fbb555d259668d5853f13666a4",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0034.pass-a.json",
+        "receiptSha256": "6fb217e4f926733e081586343c08c5fe1359a8fbb555d259668d5853f13666a4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence best describes Leo's perspective about setting up a new library display after school?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This describes shared actions and an outcome, not Leo's individual perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-1",
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-6"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "The afternoon in the library names the shared setting, not Leo's view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This is a narration statement, not Leo's perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Leo notices disorder and says clear labels will help readers find books, supporting this description of his perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-3",
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-prerequisite-b-ms-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-bec3af9149d38e5d",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "09731b1452f593b727d462021d909b408ef3f6684515d7c05c4e8670ba26b7ee",
+        "conclusionsSha256": "6fb217e4f926733e081586343c08c5fe1359a8fbb555d259668d5853f13666a4",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0034.pass-a.json",
+        "receiptSha256": "6fb217e4f926733e081586343c08c5fe1359a8fbb555d259668d5853f13666a4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two details that best support Nia's perspective.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "choice-b",
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-c",
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This detail states Leo's concern with order, not Nia's perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Nia's thought that the display should be cheerful and colorful directly supports her perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "This establishes the shared setting and task but does not reveal Nia's view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Nia's bright-picture choice and imagined smiling children show her welcoming, colorful view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-prerequisite-b-ht-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-c06bdc74e9d59ba0",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "962c0230fab4b38917d92cf1dd1eb3280d3a65b3a34c898adb7126681a12bad5",
+        "conclusionsSha256": "d06e14b3cd3d55b042b6e7b699d5e491730cee7d290fc0c8f361c0dbb97d96ef",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0016.pass-a.json",
+        "receiptSha256": "d06e14b3cd3d55b042b6e7b699d5e491730cee7d290fc0c8f361c0dbb97d96ef",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that states Leo's first view of what should happen.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "This describes Nia's action and imagination.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-2"
+              ]
+            },
+            {
+              "answerId": "segment-6",
+              "verdict": "INCORRECT",
+              "rationale": "This is the later combined solution.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-6"
+              ]
+            },
+            {
+              "answerId": "segment-4",
+              "verdict": "INCORRECT",
+              "rationale": "This states Nia's view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-4"
+              ]
+            },
+            {
+              "answerId": "segment-5",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a later explanation of Leo's preference, not his first stated view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-5"
+              ]
+            },
+            {
+              "answerId": "segment-7",
+              "verdict": "INCORRECT",
+              "rationale": "This states both children's ending feeling.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-7"
+              ]
+            },
+            {
+              "answerId": "segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "This establishes setting and characters.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-1"
+              ]
+            },
+            {
+              "answerId": "segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This first states Leo's view that the crooked order should be fixed before visitors arrive.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-prerequisite-b-tm-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-e8ade33e060766d2",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "09731b1452f593b727d462021d909b408ef3f6684515d7c05c4e8670ba26b7ee",
+        "conclusionsSha256": "6fb217e4f926733e081586343c08c5fe1359a8fbb555d259668d5853f13666a4",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0034.pass-a.json",
+        "receiptSha256": "6fb217e4f926733e081586343c08c5fe1359a8fbb555d259668d5853f13666a4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-1",
+          "prompt": "Nia thinks the situation should be handled how?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Nia's words and imagined smiling children show that she wants a cheerful, colorful, welcoming display.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-4"
+              ]
+            },
+            {
+              "answerId": "option-d",
+              "verdict": "INCORRECT",
+              "rationale": "This describes Leo's approach, not Nia's.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-5"
+              ]
+            },
+            {
+              "answerId": "option-a",
+              "verdict": "INCORRECT",
+              "rationale": "The afternoon in the library is the setting, not Nia's approach.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-1"
+              ]
+            },
+            {
+              "answerId": "option-c",
+              "verdict": "INCORRECT",
+              "rationale": "This is a shared action and outcome, not Nia's individual view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-1",
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-2",
+          "prompt": "Which detail shows Leo's view?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-c"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-a",
+              "verdict": "INCORRECT",
+              "rationale": "This establishes the shared task and setting but not Leo's view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-1"
+              ]
+            },
+            {
+              "answerId": "option-b",
+              "verdict": "INCORRECT",
+              "rationale": "This detail shows Nia's perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-2"
+              ]
+            },
+            {
+              "answerId": "option-d",
+              "verdict": "INCORRECT",
+              "rationale": "This is a shared final reaction rather than Leo's individual view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-7"
+              ]
+            },
+            {
+              "answerId": "option-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Leo noticing the crooked card and wanting to fix the order directly shows his view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-3",
+          "prompt": "Which choice tells about the shared situation?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-b",
+              "verdict": "INCORRECT",
+              "rationale": "This is Nia's individual perspective within the situation.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-4"
+              ]
+            },
+            {
+              "answerId": "option-c",
+              "verdict": "INCORRECT",
+              "rationale": "This is Leo's individual perspective within the situation.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-3",
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-5"
+              ]
+            },
+            {
+              "answerId": "option-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both characters are setting up a new library display after school, so this names their shared situation.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-1"
+              ]
+            },
+            {
+              "answerId": "option-d",
+              "verdict": "INCORRECT",
+              "rationale": "The passage uses third-person names and pronouns, and this narration claim does not name the shared situation.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-library-display-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-guided-a-mc-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-51a63c588e2b04a4",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "9338a0bd1eee4916316c51a9cd9c3cd47455a18d882bcfee928e471e33272e08",
+        "conclusionsSha256": "d5bef7704162fa8f3560df7b0f7aa44d02a44678a79682124a568d1c0e76eb94",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0012.second-pass.json",
+        "receiptSha256": "c77f5c9a34d7375ade5abd7c538cc2501a6c2db3fde2c9ceedfed757a55acfda",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence best describes Aria's perspective about choosing a route on an evening walk?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "The evening sky is a setting detail, not Aria's view about which route to take.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This describes the children's shared movement and does not state Aria's perspective; it also says marker post where the source says marked route.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-6"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This combines Aria's stated excitement about exploring with her belief that the new path could offer a better creek view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This accurately describes Ben's preference, not Aria's perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-3",
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-guided-a-mc-2",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-e6964f737064aa17",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "9338a0bd1eee4916316c51a9cd9c3cd47455a18d882bcfee928e471e33272e08",
+        "conclusionsSha256": "d5bef7704162fa8f3560df7b0f7aa44d02a44678a79682124a568d1c0e76eb94",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0035.pass-a.json",
+        "receiptSha256": "d5bef7704162fa8f3560df7b0f7aa44d02a44678a79682124a568d1c0e76eb94",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence best describes Ben's perspective about choosing a route on an evening walk?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This is a claim about narration and does not describe Ben's view of the route choice.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Ben wants the familiar route and says the marker makes him feel safe, so this accurately states his perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-3",
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "The evening sky is a setting detail, not Ben's perspective about the route.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This recounts shared movement rather than Ben's own view, and the source says marked route rather than marker post.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-guided-a-ms-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-7e0c9b15d6b2a501",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "9338a0bd1eee4916316c51a9cd9c3cd47455a18d882bcfee928e471e33272e08",
+        "conclusionsSha256": "d5bef7704162fa8f3560df7b0f7aa44d02a44678a79682124a568d1c0e76eb94",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0035.pass-a.json",
+        "receiptSha256": "d5bef7704162fa8f3560df7b0f7aa44d02a44678a79682124a568d1c0e76eb94",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two details that best support Aria's perspective.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "choice-b",
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-c",
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Aria's statement that the new path might reveal a better creek view directly supports her positive view of exploring it.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "This only establishes the time, companions, and location of the walk; it gives no route preference from Aria.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This supports Ben's preference for the regular route, not Aria's perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Aria's thought that exploring the new path would be exciting directly supports her perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-guided-a-ht-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-800e2afacbe0dc46",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "962c0230fab4b38917d92cf1dd1eb3280d3a65b3a34c898adb7126681a12bad5",
+        "conclusionsSha256": "d06e14b3cd3d55b042b6e7b699d5e491730cee7d290fc0c8f361c0dbb97d96ef",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0012.second-pass.json",
+        "receiptSha256": "c77f5c9a34d7375ade5abd7c538cc2501a6c2db3fde2c9ceedfed757a55acfda",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that states Ben's first view of what should happen.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "This states Aria's view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-2"
+              ]
+            },
+            {
+              "answerId": "segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "This establishes setting and characters.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-1"
+              ]
+            },
+            {
+              "answerId": "segment-6",
+              "verdict": "INCORRECT",
+              "rationale": "This is their later compromise.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-6"
+              ]
+            },
+            {
+              "answerId": "segment-5",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This later explains why Ben prefers the familiar trail, not his first stated view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-5"
+              ]
+            },
+            {
+              "answerId": "segment-7",
+              "verdict": "INCORRECT",
+              "rationale": "This states the ending result and feeling.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-7"
+              ]
+            },
+            {
+              "answerId": "segment-4",
+              "verdict": "INCORRECT",
+              "rationale": "This gives Aria's reason for her view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-4"
+              ]
+            },
+            {
+              "answerId": "segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This first states Ben's wish to stay on the regular route.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-guided-a-tm-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-772e2459682139e5",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "9338a0bd1eee4916316c51a9cd9c3cd47455a18d882bcfee928e471e33272e08",
+        "conclusionsSha256": "d5bef7704162fa8f3560df7b0f7aa44d02a44678a79682124a568d1c0e76eb94",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0035.pass-a.json",
+        "receiptSha256": "d5bef7704162fa8f3560df7b0f7aa44d02a44678a79682124a568d1c0e76eb94",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-1",
+          "prompt": "Aria thinks the situation should be handled how?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-a",
+              "verdict": "INCORRECT",
+              "rationale": "The evening sky names setting rather than how Aria thinks the route choice should be handled.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-1"
+              ]
+            },
+            {
+              "answerId": "option-d",
+              "verdict": "INCORRECT",
+              "rationale": "This is Ben's view, not Aria's.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-3",
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-5"
+              ]
+            },
+            {
+              "answerId": "option-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Aria views the new path as exciting and potentially better for seeing the creek.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-4"
+              ]
+            },
+            {
+              "answerId": "option-c",
+              "verdict": "INCORRECT",
+              "rationale": "This recounts shared action and inaccurately substitutes marker post for marked route; it does not state Aria's perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-2",
+          "prompt": "Which detail shows Ben's view?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-c"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Ben's desire to stay on the regular route directly shows his view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-3"
+              ]
+            },
+            {
+              "answerId": "option-b",
+              "verdict": "INCORRECT",
+              "rationale": "This shows Aria's view, not Ben's.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-2"
+              ]
+            },
+            {
+              "answerId": "option-a",
+              "verdict": "INCORRECT",
+              "rationale": "This is shared setting information and gives no individual view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-1"
+              ]
+            },
+            {
+              "answerId": "option-d",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This gives the shared outcome after compromise rather than Ben's view of the route choice.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-3",
+          "prompt": "Which choice tells about the shared situation?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-c",
+              "verdict": "INCORRECT",
+              "rationale": "This describes Ben's individual perspective rather than the situation both children share.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-3",
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-5"
+              ]
+            },
+            {
+              "answerId": "option-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both children are participating in the shared situation of deciding which route to take on their evening walk.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-1",
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-6"
+              ]
+            },
+            {
+              "answerId": "option-d",
+              "verdict": "INCORRECT",
+              "rationale": "The passage uses third-person names and pronouns, and narration type is not the shared route-choice situation.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route"
+              ]
+            },
+            {
+              "answerId": "option-b",
+              "verdict": "INCORRECT",
+              "rationale": "This describes Aria's individual perspective rather than the shared situation.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-trail-route-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-guided-b-mc-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-ee7ade8316dd1677",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "9338a0bd1eee4916316c51a9cd9c3cd47455a18d882bcfee928e471e33272e08",
+        "conclusionsSha256": "d5bef7704162fa8f3560df7b0f7aa44d02a44678a79682124a568d1c0e76eb94",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0035.pass-a.json",
+        "receiptSha256": "d5bef7704162fa8f3560df7b0f7aa44d02a44678a79682124a568d1c0e76eb94",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence best describes Jada's perspective about setting up the community art table before the spring fair?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This broadly recounts the setup but does not describe Jada's particular perspective; the source also does not say they waited.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-1",
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-7"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "The spring fair names the event, not Jada's perspective about preparing the table.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Jada thinks sorting first will keep the table ready, and her careful organizing supports this view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This accurately describes Omar's perspective, not Jada's.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-guided-b-mc-2",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-2fb7ed637f107acf",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "9338a0bd1eee4916316c51a9cd9c3cd47455a18d882bcfee928e471e33272e08",
+        "conclusionsSha256": "d5bef7704162fa8f3560df7b0f7aa44d02a44678a79682124a568d1c0e76eb94",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0035.pass-a.json",
+        "receiptSha256": "d5bef7704162fa8f3560df7b0f7aa44d02a44678a79682124a568d1c0e76eb94",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence best describes Omar's perspective about setting up the community art table before the spring fair?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-d",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This broadly recounts the setup but does not describe Omar's particular perspective; the source also does not say they waited.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-1",
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-7"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This is a narration claim rather than Omar's view about preparing the table.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Omar wants the banner up immediately so the space will feel welcoming, which directly states his perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "The spring fair names the event, not Omar's perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-guided-b-ms-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-4b097600fc87a804",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "9338a0bd1eee4916316c51a9cd9c3cd47455a18d882bcfee928e471e33272e08",
+        "conclusionsSha256": "d5bef7704162fa8f3560df7b0f7aa44d02a44678a79682124a568d1c0e76eb94",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0035.pass-a.json",
+        "receiptSha256": "d5bef7704162fa8f3560df7b0f7aa44d02a44678a79682124a568d1c0e76eb94",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two details that best support Jada's perspective.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "choice-b",
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-c",
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Jada's careful lining up and counting are actions that support her organized, ready-first perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "This establishes the shared setting and task but does not support Jada's particular view of how to prepare.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Jada explicitly thinks sorting first will keep the table ready, directly supporting her perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This supports Omar's welcoming-banner perspective, not Jada's.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-guided-b-ht-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-710590c4e2a12420",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "962c0230fab4b38917d92cf1dd1eb3280d3a65b3a34c898adb7126681a12bad5",
+        "conclusionsSha256": "d06e14b3cd3d55b042b6e7b699d5e491730cee7d290fc0c8f361c0dbb97d96ef",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0016.pass-a.json",
+        "receiptSha256": "d06e14b3cd3d55b042b6e7b699d5e491730cee7d290fc0c8f361c0dbb97d96ef",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that states Omar's first view of what should happen.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "segment-7",
+              "verdict": "INCORRECT",
+              "rationale": "This states both characters' ending feeling.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-7"
+              ]
+            },
+            {
+              "answerId": "segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "This states Jada's view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-2"
+              ]
+            },
+            {
+              "answerId": "segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly states Omar's first view that the banner should go up right away.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-3"
+              ]
+            },
+            {
+              "answerId": "segment-5",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This shows Omar acting later, not his first stated view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-5"
+              ]
+            },
+            {
+              "answerId": "segment-6",
+              "verdict": "INCORRECT",
+              "rationale": "This is the successful outcome.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-6"
+              ]
+            },
+            {
+              "answerId": "segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "This establishes setting and characters.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-1"
+              ]
+            },
+            {
+              "answerId": "segment-4",
+              "verdict": "INCORRECT",
+              "rationale": "This shows Jada acting on her view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-guided-b-tm-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-ede540742d149208",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "9338a0bd1eee4916316c51a9cd9c3cd47455a18d882bcfee928e471e33272e08",
+        "conclusionsSha256": "d5bef7704162fa8f3560df7b0f7aa44d02a44678a79682124a568d1c0e76eb94",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0035.pass-a.json",
+        "receiptSha256": "d5bef7704162fa8f3560df7b0f7aa44d02a44678a79682124a568d1c0e76eb94",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-1",
+          "prompt": "Jada thinks the situation should be handled how?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-d",
+              "verdict": "INCORRECT",
+              "rationale": "This states Omar's individual approach rather than Jada's.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-3"
+              ]
+            },
+            {
+              "answerId": "option-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Jada believes sorting first will keep the table ready, and her actions organize the supplies.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-4"
+              ]
+            },
+            {
+              "answerId": "option-a",
+              "verdict": "INCORRECT",
+              "rationale": "The fair names the event and does not say how Jada thinks setup should be handled.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-1"
+              ]
+            },
+            {
+              "answerId": "option-c",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This broadly recounts the shared setup and adds an unsupported wait; it does not state Jada's view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-1",
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-2",
+          "prompt": "Which detail shows Omar's view?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-c"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-b",
+              "verdict": "INCORRECT",
+              "rationale": "This states Jada's view, not Omar's.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-2"
+              ]
+            },
+            {
+              "answerId": "option-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Omar's wish to hang the banner so the room feels welcoming directly shows his view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-3"
+              ]
+            },
+            {
+              "answerId": "option-a",
+              "verdict": "INCORRECT",
+              "rationale": "This establishes the shared setting and task without showing Omar's view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-1"
+              ]
+            },
+            {
+              "answerId": "option-d",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This reports both characters' shared feeling after setup rather than Omar's individual view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-3",
+          "prompt": "Which choice tells about the shared situation?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-c",
+              "verdict": "INCORRECT",
+              "rationale": "This describes Omar's individual perspective, not the shared situation.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-3"
+              ]
+            },
+            {
+              "answerId": "option-b",
+              "verdict": "INCORRECT",
+              "rationale": "This describes Jada's individual perspective, not the shared situation.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-4"
+              ]
+            },
+            {
+              "answerId": "option-d",
+              "verdict": "INCORRECT",
+              "rationale": "The source is written in third person, and narration is not the shared setup situation.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table"
+              ]
+            },
+            {
+              "answerId": "option-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both characters share the situation of preparing the community art table before the fair.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-art-table-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-checkpoint-a-mc-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-cc05e3c53a6034c9",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "12c3edd5fac4fbcf501b8a8d2bf8917008905f286324e22bf966931c5761b9d7",
+        "conclusionsSha256": "695731791f82f04074bb2c77e566038170b1bea5e6fb59d44758524343f38a08",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0036.pass-a.json",
+        "receiptSha256": "695731791f82f04074bb2c77e566038170b1bea5e6fb59d44758524343f38a08",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence best describes Lani's perspective about protecting seedlings before the windy afternoon storm?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This describes Theo's wait-and-see perspective, not Lani's.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "The windy afternoon identifies the setting and threat, not Lani's perspective about protecting the plants.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Lani worries the storm will bend the stems, moves the trays inside, and later feels relieved that the choice kept them safe.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-4",
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-7"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This summarizes the children's shared action and outcome rather than describing Lani's individual view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-4",
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-5",
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-checkpoint-a-mc-2",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-edd7f6b9d2bfc5a5",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "12c3edd5fac4fbcf501b8a8d2bf8917008905f286324e22bf966931c5761b9d7",
+        "conclusionsSha256": "695731791f82f04074bb2c77e566038170b1bea5e6fb59d44758524343f38a08",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0036.pass-a.json",
+        "receiptSha256": "695731791f82f04074bb2c77e566038170b1bea5e6fb59d44758524343f38a08",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence best describes Theo's perspective about protecting seedlings before the windy afternoon storm?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Theo sees the sun as still warm and wants to wait longer, so this reasonably states his initial view that waiting is acceptable.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This summarizes the later shared action rather than Theo's own perspective before the storm.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-5",
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-6"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This is a narration claim and does not describe Theo's view about protecting the seedlings.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "The windy afternoon is setting information, not Theo's perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-checkpoint-a-mc-3",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-c026b3deb3c7434a",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "12c3edd5fac4fbcf501b8a8d2bf8917008905f286324e22bf966931c5761b9d7",
+        "conclusionsSha256": "695731791f82f04074bb2c77e566038170b1bea5e6fb59d44758524343f38a08",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0036.pass-a.json",
+        "receiptSha256": "695731791f82f04074bb2c77e566038170b1bea5e6fb59d44758524343f38a08",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice best shows how the two characters see protecting seedlings before the windy afternoon storm differently?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This contrasts Lani's immediate safety concern with Theo's initial wish to wait in the warm sun, matching their different views.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-3",
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "A claim about the narrator does not compare the characters' perspectives.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes their eventual shared action but does not explain how their original perspectives differ.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-5",
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-6"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source explicitly gives Lani and Theo different initial views about whether to move the seedlings immediately.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-checkpoint-a-ms-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-ce77f68db1811c89",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "962c0230fab4b38917d92cf1dd1eb3280d3a65b3a34c898adb7126681a12bad5",
+        "conclusionsSha256": "d06e14b3cd3d55b042b6e7b699d5e491730cee7d290fc0c8f361c0dbb97d96ef",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0012.second-pass.json",
+        "receiptSha256": "c77f5c9a34d7375ade5abd7c538cc2501a6c2db3fde2c9ceedfed757a55acfda",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details: one that states Lani's view and one that shows Lani acting on it.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "choice-a",
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a",
+            "choice-c"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "This states Theo's view, not Lani's.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This states Lani's concern that the storm could bend the seedlings.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This shows Lani acting by carrying the trays into shelter.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This gives Lani's later feeling and result, not the requested view-plus-action pair.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-checkpoint-a-ht-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-dafb61656110a7e9",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "962c0230fab4b38917d92cf1dd1eb3280d3a65b3a34c898adb7126681a12bad5",
+        "conclusionsSha256": "d06e14b3cd3d55b042b6e7b699d5e491730cee7d290fc0c8f361c0dbb97d96ef",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0016.pass-a.json",
+        "receiptSha256": "d06e14b3cd3d55b042b6e7b699d5e491730cee7d290fc0c8f361c0dbb97d96ef",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that states Theo's first view of what should happen.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "This establishes setting and characters.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-1"
+              ]
+            },
+            {
+              "answerId": "segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "This states Lani's view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-2"
+              ]
+            },
+            {
+              "answerId": "segment-4",
+              "verdict": "INCORRECT",
+              "rationale": "This shows Lani acting.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-4"
+              ]
+            },
+            {
+              "answerId": "segment-5",
+              "verdict": "INCORRECT",
+              "rationale": "This shows Theo's later changed response.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-5"
+              ]
+            },
+            {
+              "answerId": "segment-7",
+              "verdict": "INCORRECT",
+              "rationale": "This states Lani's ending feeling.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-7"
+              ]
+            },
+            {
+              "answerId": "segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly states Theo's first view that they should wait longer.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-3"
+              ]
+            },
+            {
+              "answerId": "segment-6",
+              "verdict": "INCORRECT",
+              "rationale": "This states the joint outcome.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-checkpoint-a-tm-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-be7a286cdfcb1d58",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "12c3edd5fac4fbcf501b8a8d2bf8917008905f286324e22bf966931c5761b9d7",
+        "conclusionsSha256": "695731791f82f04074bb2c77e566038170b1bea5e6fb59d44758524343f38a08",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0036.pass-a.json",
+        "receiptSha256": "695731791f82f04074bb2c77e566038170b1bea5e6fb59d44758524343f38a08",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-1",
+          "prompt": "Lani sees the situation as...",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-a",
+              "verdict": "INCORRECT",
+              "rationale": "The windy afternoon is setting information rather than Lani's view of the danger and response.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-1"
+              ]
+            },
+            {
+              "answerId": "option-c",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This gives a shared action summary rather than Lani's individual perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-4",
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-5",
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-6"
+              ]
+            },
+            {
+              "answerId": "option-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Lani's worry, immediate action, and relief support the view that moving the seedlings inside will protect them.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-4",
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-7"
+              ]
+            },
+            {
+              "answerId": "option-d",
+              "verdict": "INCORRECT",
+              "rationale": "Narration is unrelated to how Lani sees the situation.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-2",
+          "prompt": "Theo gives this clue...",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-c"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-a",
+              "verdict": "INCORRECT",
+              "rationale": "This shared setting sentence does not give Theo's individual clue.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-1"
+              ]
+            },
+            {
+              "answerId": "option-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Theo's thought that the sun remains warm and his wish to wait directly reveal his initial perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-3"
+              ]
+            },
+            {
+              "answerId": "option-d",
+              "verdict": "INCORRECT",
+              "rationale": "This is Lani's later feeling, not a clue from Theo.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-7"
+              ]
+            },
+            {
+              "answerId": "option-b",
+              "verdict": "INCORRECT",
+              "rationale": "This is Lani's concern, not a clue from Theo.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-3",
+          "prompt": "This sentence shows the shared situation.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-d",
+              "verdict": "INCORRECT",
+              "rationale": "The passage uses third-person names and pronouns, and narration is not the shared situation.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm"
+              ]
+            },
+            {
+              "answerId": "option-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both characters share the situation of deciding how to protect the seedlings before the storm, although this option is a phrase rather than the sentence named by the row prompt.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-1",
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-6"
+              ]
+            },
+            {
+              "answerId": "option-c",
+              "verdict": "INCORRECT",
+              "rationale": "This states Theo's individual perspective rather than the situation shared by both characters.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-3"
+              ]
+            },
+            {
+              "answerId": "option-b",
+              "verdict": "INCORRECT",
+              "rationale": "This states Lani's individual perspective rather than the shared situation.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-4",
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-checkpoint-a-ep-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-84ce6cfaa30b90e6",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "962c0230fab4b38917d92cf1dd1eb3280d3a65b3a34c898adb7126681a12bad5",
+        "conclusionsSha256": "d06e14b3cd3d55b042b6e7b699d5e491730cee7d290fc0c8f361c0dbb97d96ef",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0016.pass-a.json",
+        "receiptSha256": "d06e14b3cd3d55b042b6e7b699d5e491730cee7d290fc0c8f361c0dbb97d96ef",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Which statement best describes Lani's perspective about protecting seedlings before the windy afternoon storm?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This summarizes later actions rather than Lani's perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-4",
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-6"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This describes Theo's perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Lani's concern and immediate action show she thinks moving the seedlings inside will protect them.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "This is only a time/weather phrase, not a complete perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which detail shows Lani acting on that perspective?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-c"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "This states Theo's view rather than Lani acting.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Carrying the trays inside directly enacts Lani's protective view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states Lani's concern but not an action.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This is Lani's feeling after the result, not the protective action.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-seedlings-storm-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-checkpoint-b-mc-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-6660b4057cbff8d1",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "12c3edd5fac4fbcf501b8a8d2bf8917008905f286324e22bf966931c5761b9d7",
+        "conclusionsSha256": "695731791f82f04074bb2c77e566038170b1bea5e6fb59d44758524343f38a08",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0036.pass-a.json",
+        "receiptSha256": "695731791f82f04074bb2c77e566038170b1bea5e6fb59d44758524343f38a08",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence best describes Sofia's perspective about building a model bridge for a class exhibit?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "The science-room exhibit identifies setting and purpose, not Sofia's perspective about construction.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This describes Kai's initial view, not Sofia's.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Sofia calls for another measurement because the first attempt is uneven, and the resulting bridge fits better and stands steady.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-4",
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-6"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This broadly summarizes the shared project but does not describe Sofia's individual perspective and says they showed it where the source only says the class could see it.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-1",
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-checkpoint-b-mc-2",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-82096b3c7d604448",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "12c3edd5fac4fbcf501b8a8d2bf8917008905f286324e22bf966931c5761b9d7",
+        "conclusionsSha256": "695731791f82f04074bb2c77e566038170b1bea5e6fb59d44758524343f38a08",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0036.pass-a.json",
+        "receiptSha256": "695731791f82f04074bb2c77e566038170b1bea5e6fb59d44758524343f38a08",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence best describes Kai's perspective about building a model bridge for a class exhibit?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Kai thinks the bridge is already fine and wants to glue quickly, so this accurately states his initial perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "The exhibit identifies setting and purpose, not Kai's perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This is a narration claim and does not describe Kai's view of the bridge work.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This broadly summarizes the shared task rather than Kai's own perspective and overstates that they showed it to the class.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-1",
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-checkpoint-b-mc-3",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-10a29d70e07b47ac",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "12c3edd5fac4fbcf501b8a8d2bf8917008905f286324e22bf966931c5761b9d7",
+        "conclusionsSha256": "695731791f82f04074bb2c77e566038170b1bea5e6fb59d44758524343f38a08",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0036.pass-a.json",
+        "receiptSha256": "695731791f82f04074bb2c77e566038170b1bea5e6fb59d44758524343f38a08",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice best shows how the two characters see building a model bridge for a class exhibit differently?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This accurately contrasts Sofia's careful remeasurement view with Kai's initial belief that the bridge is fine and can be glued quickly.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-3",
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This broadly recounts their shared project rather than contrasting their views, and it overstates that they showed it to the class.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-1",
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-6"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "A narration claim does not compare the characters' perspectives.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source explicitly gives Sofia and Kai different initial views about whether more measuring is needed.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-checkpoint-b-ms-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-dd813d4c99caf770",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "962c0230fab4b38917d92cf1dd1eb3280d3a65b3a34c898adb7126681a12bad5",
+        "conclusionsSha256": "d06e14b3cd3d55b042b6e7b699d5e491730cee7d290fc0c8f361c0dbb97d96ef",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0016.pass-a.json",
+        "receiptSha256": "d06e14b3cd3d55b042b6e7b699d5e491730cee7d290fc0c8f361c0dbb97d96ef",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details: one that states Sofia's view and one that shows Sofia acting on it.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "choice-a",
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a",
+            "choice-c"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This states Sofia's view that the uneven bridge should be measured again.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "This states Kai's view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This gives the ending result and feeling, not Sofia's stated view and action.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-7"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This shows Sofia acting by preparing the ruler and measuring again.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-checkpoint-b-ht-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-72ed61af265f1ab3",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "962c0230fab4b38917d92cf1dd1eb3280d3a65b3a34c898adb7126681a12bad5",
+        "conclusionsSha256": "d06e14b3cd3d55b042b6e7b699d5e491730cee7d290fc0c8f361c0dbb97d96ef",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0016.pass-a.json",
+        "receiptSha256": "d06e14b3cd3d55b042b6e7b699d5e491730cee7d290fc0c8f361c0dbb97d96ef",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that states Kai's first view of what should happen.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly states Kai's first view that the bridge was fine and should be glued quickly.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-3"
+              ]
+            },
+            {
+              "answerId": "segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "This establishes setting and characters.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-1"
+              ]
+            },
+            {
+              "answerId": "segment-5",
+              "verdict": "INCORRECT",
+              "rationale": "This shows Kai later changing his view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-5"
+              ]
+            },
+            {
+              "answerId": "segment-6",
+              "verdict": "INCORRECT",
+              "rationale": "This is the successful result.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-6"
+              ]
+            },
+            {
+              "answerId": "segment-4",
+              "verdict": "INCORRECT",
+              "rationale": "This shows Sofia acting.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-4"
+              ]
+            },
+            {
+              "answerId": "segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "This states Sofia's view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-2"
+              ]
+            },
+            {
+              "answerId": "segment-7",
+              "verdict": "INCORRECT",
+              "rationale": "This states both children's ending feeling and lesson.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-checkpoint-b-tm-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-70e8299ef4fa00d2",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "12c3edd5fac4fbcf501b8a8d2bf8917008905f286324e22bf966931c5761b9d7",
+        "conclusionsSha256": "695731791f82f04074bb2c77e566038170b1bea5e6fb59d44758524343f38a08",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0012.second-pass.json",
+        "receiptSha256": "c77f5c9a34d7375ade5abd7c538cc2501a6c2db3fde2c9ceedfed757a55acfda",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-1",
+          "prompt": "Sofia sees the situation as...",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-c",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This broadly summarizes the shared project rather than Sofia's individual view and overstates that they showed it to the class.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-1",
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-6"
+              ]
+            },
+            {
+              "answerId": "option-a",
+              "verdict": "INCORRECT",
+              "rationale": "The exhibit identifies setting and purpose, not Sofia's perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-1"
+              ]
+            },
+            {
+              "answerId": "option-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Sofia's stated concern about uneven sticks, remeasurement, and the steady result support this view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-4",
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-6"
+              ]
+            },
+            {
+              "answerId": "option-d",
+              "verdict": "INCORRECT",
+              "rationale": "Narration is unrelated to Sofia's perspective about the bridge.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-2",
+          "prompt": "Kai gives this clue...",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-c"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-a",
+              "verdict": "INCORRECT",
+              "rationale": "This is shared setting information and gives no clue specific to Kai.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-1"
+              ]
+            },
+            {
+              "answerId": "option-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Kai's belief that the bridge is fine and his wish to glue quickly directly reveal his initial view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-3"
+              ]
+            },
+            {
+              "answerId": "option-d",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a shared feeling after success, not the requested clue that states Kai's view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-7"
+              ]
+            },
+            {
+              "answerId": "option-b",
+              "verdict": "INCORRECT",
+              "rationale": "This gives Sofia's clue, not Kai's.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-3",
+          "prompt": "This sentence shows the shared situation.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-b",
+              "verdict": "INCORRECT",
+              "rationale": "This states Sofia's individual perspective rather than the shared situation.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-4"
+              ]
+            },
+            {
+              "answerId": "option-c",
+              "verdict": "INCORRECT",
+              "rationale": "This states Kai's individual perspective rather than the shared situation.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-3"
+              ]
+            },
+            {
+              "answerId": "option-d",
+              "verdict": "INCORRECT",
+              "rationale": "The passage uses third-person names and pronouns, and narration is not the shared situation.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure"
+              ]
+            },
+            {
+              "answerId": "option-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both characters share the situation of building a model bridge for the class exhibit, although this option is a phrase rather than the sentence named by the row prompt.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-checkpoint-b-ep-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-b886238f229831eb",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "962c0230fab4b38917d92cf1dd1eb3280d3a65b3a34c898adb7126681a12bad5",
+        "conclusionsSha256": "d06e14b3cd3d55b042b6e7b699d5e491730cee7d290fc0c8f361c0dbb97d96ef",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0016.pass-a.json",
+        "receiptSha256": "d06e14b3cd3d55b042b6e7b699d5e491730cee7d290fc0c8f361c0dbb97d96ef",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Which statement best describes Sofia's perspective about building a model bridge for a class exhibit?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Sofia says measuring again is needed, acts on it, and the pieces fit better before the bridge stands steady.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-4",
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-5",
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-6"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This describes Kai's perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This is a broad event summary rather than Sofia's view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-1",
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-6"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "This is a setting/topic phrase, not a complete perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which detail shows Sofia acting on that perspective?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-c"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Preparing the ruler and measuring again directly show Sofia acting on her view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "This states Kai's view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states Sofia's perspective but does not show her acting on it.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This gives the ending result and feeling, not Sofia's action.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-bridge-measure-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-checkpoint-c-mc-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-550c5adf7993c75b",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "d03e87d5650e8026e01c155f40c322c40ec8d1044f328f33deee6cd611f9344f",
+        "conclusionsSha256": "40445f7baff2943552dda2815e3f39822631166436f4eb8279d9e3f67b598343",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0012.second-pass.json",
+        "receiptSha256": "c77f5c9a34d7375ade5abd7c538cc2501a6c2db3fde2c9ceedfed757a55acfda",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence best describes Mira's perspective about finishing a neighborhood cleanup near the park?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This describes Ben's finish-first perspective, not Mira's water-first view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-3",
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This reports the shared outcome rather than Mira's perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-6"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "A location fragment does not describe a character's perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Mira believes helping the tired volunteers with water should come first.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-checkpoint-c-mc-2",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-438cd6b722e29d13",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "d03e87d5650e8026e01c155f40c322c40ec8d1044f328f33deee6cd611f9344f",
+        "conclusionsSha256": "40445f7baff2943552dda2815e3f39822631166436f4eb8279d9e3f67b598343",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0037.pass-a.json",
+        "receiptSha256": "40445f7baff2943552dda2815e3f39822631166436f4eb8279d9e3f67b598343",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence best describes Ben's perspective about finishing a neighborhood cleanup near the park?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Ben wants to finish the remaining bags before taking a break or serving water.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-3",
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "A location fragment does not describe Ben's perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This reports the shared outcome rather than Ben's view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-6"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "Narrator scope does not state Ben's perspective and is unsupported.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-checkpoint-c-mc-3",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-6d9fbd6727246373",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "d03e87d5650e8026e01c155f40c322c40ec8d1044f328f33deee6cd611f9344f",
+        "conclusionsSha256": "40445f7baff2943552dda2815e3f39822631166436f4eb8279d9e3f67b598343",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0037.pass-a.json",
+        "receiptSha256": "40445f7baff2943552dda2815e3f39822631166436f4eb8279d9e3f67b598343",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice best shows how the two characters see finishing a neighborhood cleanup near the park differently?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-a",
+              "verdict": "CONTRADICTED",
+              "rationale": "Mira wants water first while Ben wants the bags finished first, so their views differ.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This accurately contrasts Mira's water-first care with Ben's finish-first priority.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-3",
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-4",
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "A claim about the narrator does not compare the characters' perspectives.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This shared action reports what happened but does not show their differing views.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-checkpoint-c-ms-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-31114efef07c5d2a",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "962c0230fab4b38917d92cf1dd1eb3280d3a65b3a34c898adb7126681a12bad5",
+        "conclusionsSha256": "d06e14b3cd3d55b042b6e7b699d5e491730cee7d290fc0c8f361c0dbb97d96ef",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0016.pass-a.json",
+        "receiptSha256": "d06e14b3cd3d55b042b6e7b699d5e491730cee7d290fc0c8f361c0dbb97d96ef",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details: one that states Mira's view and one that shows Mira acting on it.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "choice-a",
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a",
+            "choice-c"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This states Mira's view that the tired volunteers need water first.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "This states Ben's view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the later shared feeling and result, not Mira's view-plus-action pair.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-7"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This shows Mira acting by bringing water and pointing out the tired helpers.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-checkpoint-c-ht-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-339b548daf57b939",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "962c0230fab4b38917d92cf1dd1eb3280d3a65b3a34c898adb7126681a12bad5",
+        "conclusionsSha256": "d06e14b3cd3d55b042b6e7b699d5e491730cee7d290fc0c8f361c0dbb97d96ef",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0016.pass-a.json",
+        "receiptSha256": "d06e14b3cd3d55b042b6e7b699d5e491730cee7d290fc0c8f361c0dbb97d96ef",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that states Ben's first view of what should happen.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This first states Ben's view that the last bags should be finished before a break.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-3"
+              ]
+            },
+            {
+              "answerId": "segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "This establishes setting and the ongoing work.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-1"
+              ]
+            },
+            {
+              "answerId": "segment-4",
+              "verdict": "INCORRECT",
+              "rationale": "This shows Mira acting on her view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-4"
+              ]
+            },
+            {
+              "answerId": "segment-6",
+              "verdict": "INCORRECT",
+              "rationale": "This gives the later joint actions and outcome.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-6"
+              ]
+            },
+            {
+              "answerId": "segment-5",
+              "verdict": "INCORRECT",
+              "rationale": "This is Ben's later decision after the bags are done, not his first view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-5"
+              ]
+            },
+            {
+              "answerId": "segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "This states Mira's view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-2"
+              ]
+            },
+            {
+              "answerId": "segment-7",
+              "verdict": "INCORRECT",
+              "rationale": "This states both children's ending feeling.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-checkpoint-c-tm-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-6a9c0259f1253375",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "d03e87d5650e8026e01c155f40c322c40ec8d1044f328f33deee6cd611f9344f",
+        "conclusionsSha256": "40445f7baff2943552dda2815e3f39822631166436f4eb8279d9e3f67b598343",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0037.pass-a.json",
+        "receiptSha256": "40445f7baff2943552dda2815e3f39822631166436f4eb8279d9e3f67b598343",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-1",
+          "prompt": "Mira sees the situation as...",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-c",
+              "verdict": "INCORRECT",
+              "rationale": "The shared outcome does not complete Mira's distinct view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-6"
+              ]
+            },
+            {
+              "answerId": "option-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Mira sees water-first care for tired volunteers as the priority.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-4"
+              ]
+            },
+            {
+              "answerId": "option-d",
+              "verdict": "INCORRECT",
+              "rationale": "Narrator scope does not describe Mira's perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water"
+              ]
+            },
+            {
+              "answerId": "option-a",
+              "verdict": "INCORRECT",
+              "rationale": "A location fragment is not a perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-2",
+          "prompt": "Ben gives this clue...",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-c"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence directly gives Ben's finish-first clue.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-3"
+              ]
+            },
+            {
+              "answerId": "option-b",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence gives Mira's thought, not Ben's clue.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-2"
+              ]
+            },
+            {
+              "answerId": "option-a",
+              "verdict": "INCORRECT",
+              "rationale": "This shared setting action does not reveal Ben's distinct view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-1"
+              ]
+            },
+            {
+              "answerId": "option-d",
+              "verdict": "INCORRECT",
+              "rationale": "This shared ending does not state Ben's perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-3",
+          "prompt": "This sentence shows the shared situation.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "option-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "option-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "option-d",
+              "verdict": "INCORRECT",
+              "rationale": "The third-person narrator is not first person.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water"
+              ]
+            },
+            {
+              "answerId": "option-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both characters share the situation of finishing the neighborhood cleanup near the park.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-1",
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-6"
+              ]
+            },
+            {
+              "answerId": "option-c",
+              "verdict": "INCORRECT",
+              "rationale": "This describes only Ben's perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-3",
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-5"
+              ]
+            },
+            {
+              "answerId": "option-b",
+              "verdict": "INCORRECT",
+              "rationale": "This describes only Mira's perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-perspective-portal-checkpoint-c-ep-1",
+      "packId": "g2-story-scouts-perspective-portal",
+      "contentVersion": "g2-ss-perspective-r0.1.0",
+      "contentFingerprint": "qta-v1-bbd53ed23f9f175e",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "2430450384bb702e978af292fa6655064fb8d2207d6b13c143828409ac5ba8aa",
+        "conclusionsSha256": "49c080813988e22f9f7d10603555da6de6abe604eb42437617f6b71b6c9d0c51",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0012.second-pass.json",
+        "receiptSha256": "c77f5c9a34d7375ade5abd7c538cc2501a6c2db3fde2c9ceedfed757a55acfda",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Which statement best describes Mira's perspective about finishing a neighborhood cleanup near the park?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "This summarizes the later joint outcome rather than Mira's perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-6"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Mira thinks bringing water first will help tired volunteers, and her words and action show care.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-2",
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This describes Ben's perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "This is only a setting phrase, not a complete perspective.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which detail shows Mira acting on that perspective?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-c"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "This states Ben's view, not Mira acting.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "This gives both characters' ending feeling, not Mira's action.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-7"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Carrying the water jug and pointing out the tired helpers directly enact Mira's view.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states Mira's perspective but does not show her acting on it.",
+              "evidenceIds": [
+                "g2-story-scouts-perspective-portal-passage-cleanup-water-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

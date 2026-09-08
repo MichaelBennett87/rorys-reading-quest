@@ -82,7 +82,7 @@
       "g3-id-ss-passage-1"
     ],
     "questionType": "multi_select",
-    "contentFingerprint": "qta-v1-13bf22e1b7558885",
+    "contentFingerprint": "qta-v1-af69b006f3321faa",
     "independentlySolvedAnswerText": [
       "Early in the morning, a weather observer checks the thermometer and writes down the air temperature.",
       "Finally, the observer places all four records in the daily weather log."
@@ -95,15 +95,23 @@
     "authoredKeyMatch": "EXACT_MATCH",
     "evaluatorCanonicalPass": true,
     "evaluatorAdversarialPass": true,
-    "distractorStatus": "PASS - visible alternatives were reviewed and are not defensible answers to the prompt.",
-    "ambiguityStatus": "PASS - one canonical response or exact canonical response set is defensible.",
-    "explanationStatus": "PASS - explanation agrees with the independently solved response.",
-    "evidenceStatus": "PASS - evidence resolves within the displayed lesson context and supports the response.",
-    "ownershipStatus": "PASS - pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.",
-    "promptLeakageStatus": "PASS - no transfer prompt repeats its keyed exemplar.",
-    "difficultyStatus": "PASS - wording and response demand fit the authored DRAFT lesson sequence.",
+    "distractorStatus": "PASS - every visible option has a current fingerprint-bound semantic judgment and no unkeyed option is defensible.",
+    "ambiguityStatus": "PASS - the complete current defensible response set exactly matches the authored response contract.",
+    "explanationStatus": "PASS - final semantic reconciliation confirms the current explanation agrees with the defensible response and learner-visible evidence.",
+    "evidenceStatus": "PASS - current option-level judgments use source-owned evidence and support or exclude every visible response.",
+    "ownershipStatus": "PASS - current pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.",
+    "promptLeakageStatus": "PASS - the current learner-visible projection was reviewed without authored answer metadata and exposes no keyed-answer leakage.",
+    "difficultyStatus": "PASS - current wording and response demand passed the completed Grade 2/Grade 3 semantic review.",
+    "answerUniquenessReview": {
+      "ledgerPath": "docs/content/answer-uniqueness-ledger/g3-information-detectives-structure-station.json",
+      "blindReceiptSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+      "finalReceiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0043.pass-a.json",
+      "finalReceiptSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+      "finalReviewMethod": "PRIMARY_PASS_C_RECONCILIATION",
+      "independent": false
+    },
     "correctionApplied": false,
-    "correctionSummary": "No authored question correction was required at this fingerprint.",
+    "correctionSummary": "",
     "finalStatus": "PASS"
   },
   {
@@ -261,28 +269,36 @@
       "g3-id-ss-passage-2"
     ],
     "questionType": "multi_select",
-    "contentFingerprint": "qta-v1-8a7c0c5fceb685c3",
+    "contentFingerprint": "qta-v1-92c651f667d50362",
     "independentlySolvedAnswerText": [
-      "The desert fox has very large ears that release body heat into the warm air.",
-      "The Arctic fox has much smaller ears that help it hold in body heat."
+      "The Arctic fox has much smaller ears that help it hold in body heat.",
+      "The desert fox has very large ears that release body heat into the warm air."
     ],
     "independentlySolvedAnswerIds": [
-      "g3-id-ss-q2-3-correct-1",
-      "g3-id-ss-q2-3-correct-2"
+      "g3-id-ss-q2-3-correct-2",
+      "g3-id-ss-q2-3-correct-1"
     ],
     "supportingEvidenceSummary": "Displayed source and resolved evidence IDs support the selected response: g3-id-ss-passage-2-sentence-2, g3-id-ss-passage-2-sentence-4.",
     "authoredKeyMatch": "EXACT_MATCH",
     "evaluatorCanonicalPass": true,
     "evaluatorAdversarialPass": true,
-    "distractorStatus": "PASS - visible alternatives were reviewed and are not defensible answers to the prompt.",
-    "ambiguityStatus": "PASS - one canonical response or exact canonical response set is defensible.",
-    "explanationStatus": "PASS - explanation agrees with the independently solved response.",
-    "evidenceStatus": "PASS - evidence resolves within the displayed lesson context and supports the response.",
-    "ownershipStatus": "PASS - pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.",
-    "promptLeakageStatus": "PASS - no transfer prompt repeats its keyed exemplar.",
-    "difficultyStatus": "PASS - wording and response demand fit the authored DRAFT lesson sequence.",
+    "distractorStatus": "PASS - every visible option has a current fingerprint-bound semantic judgment and no unkeyed option is defensible.",
+    "ambiguityStatus": "PASS - the complete current defensible response set exactly matches the authored response contract.",
+    "explanationStatus": "PASS - final semantic reconciliation confirms the current explanation agrees with the defensible response and learner-visible evidence.",
+    "evidenceStatus": "PASS - current option-level judgments use source-owned evidence and support or exclude every visible response.",
+    "ownershipStatus": "PASS - current pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.",
+    "promptLeakageStatus": "PASS - the current learner-visible projection was reviewed without authored answer metadata and exposes no keyed-answer leakage.",
+    "difficultyStatus": "PASS - current wording and response demand passed the completed Grade 2/Grade 3 semantic review.",
+    "answerUniquenessReview": {
+      "ledgerPath": "docs/content/answer-uniqueness-ledger/g3-information-detectives-structure-station.json",
+      "blindReceiptSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+      "finalReceiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0043.pass-a.json",
+      "finalReceiptSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+      "finalReviewMethod": "PRIMARY_PASS_C_RECONCILIATION",
+      "independent": false
+    },
     "correctionApplied": false,
-    "correctionSummary": "No authored question correction was required at this fingerprint.",
+    "correctionSummary": "",
     "finalStatus": "PASS"
   },
   {
@@ -440,7 +456,7 @@
       "g3-id-ss-passage-3"
     ],
     "questionType": "multi_select",
-    "contentFingerprint": "qta-v1-31ac564dbe6976a9",
+    "contentFingerprint": "qta-v1-f781b6271147adc3",
     "independentlySolvedAnswerText": [
       "On a sunny day, water can leave bare garden soil as it warms and changes into vapor.",
       "As a result, water leaves the covered soil more slowly."
@@ -453,15 +469,23 @@
     "authoredKeyMatch": "EXACT_MATCH",
     "evaluatorCanonicalPass": true,
     "evaluatorAdversarialPass": true,
-    "distractorStatus": "PASS - visible alternatives were reviewed and are not defensible answers to the prompt.",
-    "ambiguityStatus": "PASS - one canonical response or exact canonical response set is defensible.",
-    "explanationStatus": "PASS - explanation agrees with the independently solved response.",
-    "evidenceStatus": "PASS - evidence resolves within the displayed lesson context and supports the response.",
-    "ownershipStatus": "PASS - pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.",
-    "promptLeakageStatus": "PASS - no transfer prompt repeats its keyed exemplar.",
-    "difficultyStatus": "PASS - wording and response demand fit the authored DRAFT lesson sequence.",
+    "distractorStatus": "PASS - every visible option has a current fingerprint-bound semantic judgment and no unkeyed option is defensible.",
+    "ambiguityStatus": "PASS - the complete current defensible response set exactly matches the authored response contract.",
+    "explanationStatus": "PASS - final semantic reconciliation confirms the current explanation agrees with the defensible response and learner-visible evidence.",
+    "evidenceStatus": "PASS - current option-level judgments use source-owned evidence and support or exclude every visible response.",
+    "ownershipStatus": "PASS - current pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.",
+    "promptLeakageStatus": "PASS - the current learner-visible projection was reviewed without authored answer metadata and exposes no keyed-answer leakage.",
+    "difficultyStatus": "PASS - current wording and response demand passed the completed Grade 2/Grade 3 semantic review.",
+    "answerUniquenessReview": {
+      "ledgerPath": "docs/content/answer-uniqueness-ledger/g3-information-detectives-structure-station.json",
+      "blindReceiptSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+      "finalReceiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0043.pass-a.json",
+      "finalReceiptSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+      "finalReviewMethod": "PRIMARY_PASS_C_RECONCILIATION",
+      "independent": false
+    },
     "correctionApplied": false,
-    "correctionSummary": "No authored question correction was required at this fingerprint.",
+    "correctionSummary": "",
     "finalStatus": "PASS"
   },
   {
@@ -619,28 +643,36 @@
       "g3-id-ss-passage-4"
     ],
     "questionType": "multi_select",
-    "contentFingerprint": "qta-v1-93eb0cfcebcdde08",
+    "contentFingerprint": "qta-v1-82d0646aba848b16",
     "independentlySolvedAnswerText": [
-      "First, place a lump of modeling clay in the middle of a sturdy paper plate.",
-      "Finally, watch the arrow turn and record the direction it points from."
+      "Finally, watch the arrow turn and record the direction it points from.",
+      "First, place a lump of modeling clay in the middle of a sturdy paper plate."
     ],
     "independentlySolvedAnswerIds": [
-      "g3-id-ss-q4-3-correct-1",
-      "g3-id-ss-q4-3-correct-2"
+      "g3-id-ss-q4-3-correct-2",
+      "g3-id-ss-q4-3-correct-1"
     ],
     "supportingEvidenceSummary": "Displayed source and resolved evidence IDs support the selected response: g3-id-ss-passage-4-sentence-2, g3-id-ss-passage-4-sentence-7.",
     "authoredKeyMatch": "EXACT_MATCH",
     "evaluatorCanonicalPass": true,
     "evaluatorAdversarialPass": true,
-    "distractorStatus": "PASS - visible alternatives were reviewed and are not defensible answers to the prompt.",
-    "ambiguityStatus": "PASS - one canonical response or exact canonical response set is defensible.",
-    "explanationStatus": "PASS - explanation agrees with the independently solved response.",
-    "evidenceStatus": "PASS - evidence resolves within the displayed lesson context and supports the response.",
-    "ownershipStatus": "PASS - pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.",
-    "promptLeakageStatus": "PASS - no transfer prompt repeats its keyed exemplar.",
-    "difficultyStatus": "PASS - wording and response demand fit the authored DRAFT lesson sequence.",
+    "distractorStatus": "PASS - every visible option has a current fingerprint-bound semantic judgment and no unkeyed option is defensible.",
+    "ambiguityStatus": "PASS - the complete current defensible response set exactly matches the authored response contract.",
+    "explanationStatus": "PASS - final semantic reconciliation confirms the current explanation agrees with the defensible response and learner-visible evidence.",
+    "evidenceStatus": "PASS - current option-level judgments use source-owned evidence and support or exclude every visible response.",
+    "ownershipStatus": "PASS - current pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.",
+    "promptLeakageStatus": "PASS - the current learner-visible projection was reviewed without authored answer metadata and exposes no keyed-answer leakage.",
+    "difficultyStatus": "PASS - current wording and response demand passed the completed Grade 2/Grade 3 semantic review.",
+    "answerUniquenessReview": {
+      "ledgerPath": "docs/content/answer-uniqueness-ledger/g3-information-detectives-structure-station.json",
+      "blindReceiptSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+      "finalReceiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0043.pass-a.json",
+      "finalReceiptSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+      "finalReviewMethod": "PRIMARY_PASS_C_RECONCILIATION",
+      "independent": false
+    },
     "correctionApplied": false,
-    "correctionSummary": "No authored question correction was required at this fingerprint.",
+    "correctionSummary": "",
     "finalStatus": "PASS"
   },
   {
@@ -833,7 +865,7 @@
       "g3-id-ss-passage-5"
     ],
     "questionType": "multi_select",
-    "contentFingerprint": "qta-v1-bf532ec8a7d8463c",
+    "contentFingerprint": "qta-v1-56f9fc5879ed64b4",
     "independentlySolvedAnswerText": [
       "A beam bridge uses a straight deck supported from below by piers or strong banks.",
       "An arch bridge curves upward and carries force along the curve toward supports at each end."
@@ -846,15 +878,23 @@
     "authoredKeyMatch": "EXACT_MATCH",
     "evaluatorCanonicalPass": true,
     "evaluatorAdversarialPass": true,
-    "distractorStatus": "PASS - visible alternatives were reviewed and are not defensible answers to the prompt.",
-    "ambiguityStatus": "PASS - one canonical response or exact canonical response set is defensible.",
-    "explanationStatus": "PASS - explanation agrees with the independently solved response.",
-    "evidenceStatus": "PASS - evidence resolves within the displayed lesson context and supports the response.",
-    "ownershipStatus": "PASS - pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.",
-    "promptLeakageStatus": "PASS - no transfer prompt repeats its keyed exemplar.",
-    "difficultyStatus": "PASS - wording and response demand fit the authored DRAFT lesson sequence.",
+    "distractorStatus": "PASS - every visible option has a current fingerprint-bound semantic judgment and no unkeyed option is defensible.",
+    "ambiguityStatus": "PASS - the complete current defensible response set exactly matches the authored response contract.",
+    "explanationStatus": "PASS - final semantic reconciliation confirms the current explanation agrees with the defensible response and learner-visible evidence.",
+    "evidenceStatus": "PASS - current option-level judgments use source-owned evidence and support or exclude every visible response.",
+    "ownershipStatus": "PASS - current pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.",
+    "promptLeakageStatus": "PASS - the current learner-visible projection was reviewed without authored answer metadata and exposes no keyed-answer leakage.",
+    "difficultyStatus": "PASS - current wording and response demand passed the completed Grade 2/Grade 3 semantic review.",
+    "answerUniquenessReview": {
+      "ledgerPath": "docs/content/answer-uniqueness-ledger/g3-information-detectives-structure-station.json",
+      "blindReceiptSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+      "finalReceiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0032.second-pass.json",
+      "finalReceiptSha256": "7d9a773ba9a88d3285139e34095366126ed8a8a76ec0ac13d82cd289f8035feb",
+      "finalReviewMethod": "STRATIFIED_SECOND_PASS",
+      "independent": false
+    },
     "correctionApplied": false,
-    "correctionSummary": "No authored question correction was required at this fingerprint.",
+    "correctionSummary": "",
     "finalStatus": "PASS"
   },
   {
@@ -1084,7 +1124,7 @@
       "g3-id-ss-passage-6"
     ],
     "questionType": "multi_select",
-    "contentFingerprint": "qta-v1-51b8966e120c54aa",
+    "contentFingerprint": "qta-v1-e9f158801266edd4",
     "independentlySolvedAnswerText": [
       "Because the water cannot soak through those surfaces, it may gather in low places or rush toward a drain.",
       "As a result, less water remains on the nearby surface as a puddle."
@@ -1097,15 +1137,23 @@
     "authoredKeyMatch": "EXACT_MATCH",
     "evaluatorCanonicalPass": true,
     "evaluatorAdversarialPass": true,
-    "distractorStatus": "PASS - visible alternatives were reviewed and are not defensible answers to the prompt.",
-    "ambiguityStatus": "PASS - one canonical response or exact canonical response set is defensible.",
-    "explanationStatus": "PASS - explanation agrees with the independently solved response.",
-    "evidenceStatus": "PASS - evidence resolves within the displayed lesson context and supports the response.",
-    "ownershipStatus": "PASS - pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.",
-    "promptLeakageStatus": "PASS - no transfer prompt repeats its keyed exemplar.",
-    "difficultyStatus": "PASS - wording and response demand fit the authored DRAFT lesson sequence.",
+    "distractorStatus": "PASS - every visible option has a current fingerprint-bound semantic judgment and no unkeyed option is defensible.",
+    "ambiguityStatus": "PASS - the complete current defensible response set exactly matches the authored response contract.",
+    "explanationStatus": "PASS - final semantic reconciliation confirms the current explanation agrees with the defensible response and learner-visible evidence.",
+    "evidenceStatus": "PASS - current option-level judgments use source-owned evidence and support or exclude every visible response.",
+    "ownershipStatus": "PASS - current pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.",
+    "promptLeakageStatus": "PASS - the current learner-visible projection was reviewed without authored answer metadata and exposes no keyed-answer leakage.",
+    "difficultyStatus": "PASS - current wording and response demand passed the completed Grade 2/Grade 3 semantic review.",
+    "answerUniquenessReview": {
+      "ledgerPath": "docs/content/answer-uniqueness-ledger/g3-information-detectives-structure-station.json",
+      "blindReceiptSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+      "finalReceiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0043.pass-a.json",
+      "finalReceiptSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+      "finalReviewMethod": "PRIMARY_PASS_C_RECONCILIATION",
+      "independent": false
+    },
     "correctionApplied": false,
-    "correctionSummary": "No authored question correction was required at this fingerprint.",
+    "correctionSummary": "",
     "finalStatus": "PASS"
   },
   {
@@ -1335,28 +1383,36 @@
       "g3-id-ss-passage-7"
     ],
     "questionType": "multi_select",
-    "contentFingerprint": "qta-v1-1af8b29e3e92d882",
+    "contentFingerprint": "qta-v1-e080185676c0990a",
     "independentlySolvedAnswerText": [
-      "First, small pieces of used paper soak in water until they become soft.",
-      "Finally, the sheet dries and can be used for a note or drawing."
+      "Finally, the sheet dries and can be used for a note or drawing.",
+      "First, small pieces of used paper soak in water until they become soft."
     ],
     "independentlySolvedAnswerIds": [
-      "g3-id-ss-q7-4-correct-1",
-      "g3-id-ss-q7-4-correct-2"
+      "g3-id-ss-q7-4-correct-2",
+      "g3-id-ss-q7-4-correct-1"
     ],
     "supportingEvidenceSummary": "Displayed source and resolved evidence IDs support the selected response: g3-id-ss-passage-7-sentence-2, g3-id-ss-passage-7-sentence-7.",
     "authoredKeyMatch": "EXACT_MATCH",
     "evaluatorCanonicalPass": true,
     "evaluatorAdversarialPass": true,
-    "distractorStatus": "PASS - visible alternatives were reviewed and are not defensible answers to the prompt.",
-    "ambiguityStatus": "PASS - one canonical response or exact canonical response set is defensible.",
-    "explanationStatus": "PASS - explanation agrees with the independently solved response.",
-    "evidenceStatus": "PASS - evidence resolves within the displayed lesson context and supports the response.",
-    "ownershipStatus": "PASS - pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.",
-    "promptLeakageStatus": "PASS - no transfer prompt repeats its keyed exemplar.",
-    "difficultyStatus": "PASS - wording and response demand fit the authored DRAFT lesson sequence.",
+    "distractorStatus": "PASS - every visible option has a current fingerprint-bound semantic judgment and no unkeyed option is defensible.",
+    "ambiguityStatus": "PASS - the complete current defensible response set exactly matches the authored response contract.",
+    "explanationStatus": "PASS - final semantic reconciliation confirms the current explanation agrees with the defensible response and learner-visible evidence.",
+    "evidenceStatus": "PASS - current option-level judgments use source-owned evidence and support or exclude every visible response.",
+    "ownershipStatus": "PASS - current pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.",
+    "promptLeakageStatus": "PASS - the current learner-visible projection was reviewed without authored answer metadata and exposes no keyed-answer leakage.",
+    "difficultyStatus": "PASS - current wording and response demand passed the completed Grade 2/Grade 3 semantic review.",
+    "answerUniquenessReview": {
+      "ledgerPath": "docs/content/answer-uniqueness-ledger/g3-information-detectives-structure-station.json",
+      "blindReceiptSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+      "finalReceiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0043.pass-a.json",
+      "finalReceiptSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+      "finalReviewMethod": "PRIMARY_PASS_C_RECONCILIATION",
+      "independent": false
+    },
     "correctionApplied": false,
-    "correctionSummary": "No authored question correction was required at this fingerprint.",
+    "correctionSummary": "",
     "finalStatus": "PASS"
   },
   {

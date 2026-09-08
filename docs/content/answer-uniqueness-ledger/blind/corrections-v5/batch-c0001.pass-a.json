@@ -1,0 +1,761 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-c0001",
+  "batchFileSha256": "a915db271f53862b8d1c47b0821030f87990a2d9a2c639f59eca597ec0615109",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0354",
+      "fingerprint": "cbbb872c23c7299ce89adb7167a093d16b77d9dcdacb180d76115cbb958f8508",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "UNSUPPORTED",
+              "This only introduces the walk and does not describe the cleaned street or sidewalk.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "This describes litter on the sidewalk before the cleanup.",
+              [
+                "S0049"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This directly says the street looked fresh and names the clean sidewalk after the work.",
+              [
+                "S0048"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Bag placement is a cleanup step, but it does not directly state that the street or sidewalk looks clean.",
+              [
+                "S0050"
+              ]
+            ],
+            [
+              "A5",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Sorting and filling bags describes the work, not the requested clean appearance afterward.",
+              [
+                "S0045"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0501",
+      "fingerprint": "6c010b2ad592439ae0d4c01e7bf4c228d64bcc3fa3d4073fb7991d7f4fe6026a",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "The heading names moon shapes, not birds.",
+              [
+                "S0102"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The heading names moon shapes, not compost changes.",
+              [
+                "S0102"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The heading and nearby section describe counts of moon shapes observed across several nights.",
+              [
+                "S0102",
+                "S0093",
+                "S0095"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The heading names moon-shape counts, not a trail map.",
+              [
+                "S0102"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0502",
+      "fingerprint": "e3b32963c6d6032cdae4268160bd3b9f8572001688a8083ab3c8f6f1484b4729",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "UNSUPPORTED",
+              "The displayed graph contains moon-shape counts and no bean-bed map.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The text explicitly says the graph lets readers compare how many nights each moon shape was seen.",
+              [
+                "S0095",
+                "S0103"
+              ]
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "The graph does not display recycling gloves.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "The graph supplies counts rather than a definition of route.",
+              [
+                "S0103"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0528",
+      "fingerprint": "4adc23c2d8d1425dc15785133afece6f7d5e8942473e46e4fadaacc72c71c468",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The one-way paths directly prevent animals from feeling crowded.",
+              [
+                "S0030"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Cleaning rooms and refilling bowls helps care, but the detail does not directly explain reduced noise or crowding.",
+              [
+                "S0033"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The small individual space directly lets an animal rest without much noise.",
+              [
+                "S0028"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The rest list identifies animals needing help but does not directly explain how noise or crowding is reduced.",
+              [
+                "S0035"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0529",
+      "fingerprint": "8d6df602c95962c1ffa4b7e652ed2634390c996f2afd59606bcd73d96fd86c82",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This lists three shelter items but does not say they work together for the animals.",
+              [
+                "S0026"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This names one path feature rather than three features working together.",
+              [
+                "S0030"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This explicitly names quiet rooms, clean beds, and clear paths working together for the animals.",
+              [
+                "S0036"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This names one small resting space rather than three features working together.",
+              [
+                "S0028"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0539",
+      "fingerprint": "5091199bdf736658e377679645cb53368ea749cb8ff225abe9c85b970531e56c",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This single sentence explicitly combines tools, observations, and what the class learns about weather.",
+              [
+                "S0088"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This connects tools with watching changes but does not name observations and what the class learns.",
+              [
+                "S0087"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes comparing observations but does not combine them with tools and the class learning about weather.",
+              [
+                "S0084"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This explains one tool only and does not combine all three requested ideas.",
+              [
+                "S0080"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0750",
+      "fingerprint": "091504a0e5b6bcb04f838a15dad6244b922cad083c2cf71065356f0df9bfaec9",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This locates seeds in shallow soil and does not state what deep soil gives roots.",
+              [
+                "S0090"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This directly states that deep soil gives roots more room to grow.",
+              [
+                "S0085"
+              ]
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "This defines migrate and does not discuss soil or roots.",
+              [
+                "S0087"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes what shallow soil causes, not what deep soil gives roots.",
+              [
+                "S0083"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0847",
+      "fingerprint": "3b926f2d25a962252134b3e1e1476815462d0293ba27981775ecf2629b19290b",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This introduces the friends and their nature walk, so it is the opening.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "This is the final outcome, not the opening.",
+              [
+                "S0106"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The glove is an explicitly unnecessary minor detail.",
+              [
+                "S0104"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "This search action occurs after the problem begins.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A5",
+              "CONTRADICTED",
+              "This states the problem rather than the opening.",
+              [
+                "S0102"
+              ]
+            ],
+            [
+              "A6",
+              "CONTRADICTED",
+              "This combines later solution events rather than the opening.",
+              [
+                "S0096",
+                "S0098",
+                "S0105"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The slipped map card creates the story problem.",
+              [
+                "S0102"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "This is the opening, before the problem.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "This is the first response to the problem.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The unused glove is a minor detail and not the problem.",
+              [
+                "S0104"
+              ]
+            ],
+            [
+              "A5",
+              "CONTRADICTED",
+              "This combines the solution events.",
+              [
+                "S0096",
+                "S0098",
+                "S0105"
+              ]
+            ],
+            [
+              "A6",
+              "CONTRADICTED",
+              "This is the ending after the problem is solved.",
+              [
+                "S0106"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A6"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The unused glove is a minor detail, not an important event in solving the map-card problem.",
+              [
+                "S0104"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "This is the opening.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "This states the problem before the response begins.",
+              [
+                "S0102"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "This is the ending.",
+              [
+                "S0106"
+              ]
+            ],
+            [
+              "A5",
+              "CONTRADICTED",
+              "This combines the later discovery and replacement of the card.",
+              [
+                "S0096",
+                "S0098",
+                "S0105"
+              ]
+            ],
+            [
+              "A6",
+              "DEFENSIBLE",
+              "Looking under the bench and checking markers is the first important search action after the card slips away.",
+              [
+                "S0103"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "This is the ending after the solution.",
+              [
+                "S0106"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This accurately combines the later actions of following arrows, finding the already-tucked card, and returning it to the folder.",
+              [
+                "S0096",
+                "S0098",
+                "S0105"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "This is the earlier first search action.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "This is the opening.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A5",
+              "CONTRADICTED",
+              "This states the problem.",
+              [
+                "S0102"
+              ]
+            ],
+            [
+              "A6",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The unused glove is an explicitly minor detail.",
+              [
+                "S0104"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_5",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "This is an earlier search action.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Reaching the garden gate on time is the story's concluding outcome.",
+              [
+                "S0106"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "This states the problem.",
+              [
+                "S0102"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "This combines solution events before the ending.",
+              [
+                "S0096",
+                "S0098",
+                "S0105"
+              ]
+            ],
+            [
+              "A5",
+              "CONTRADICTED",
+              "This is the opening.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A6",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The unused glove is a minor detail and not the ending.",
+              [
+                "S0104"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0872",
+      "fingerprint": "445beb98d96e2475ff2f2d093fc40e17dd918f80aaee5e4642c9bd84aa7d3876",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Text 2 directly says the planned route lets the parade move in order from start to finish.",
+              [
+                "S0121"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "Neither displayed route text mentions a camp sky turning purple.",
+              []
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The balloon detail is true but does not show the route plan helping a group start or finish on time.",
+              [
+                "S0120"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Text 1 directly says finding the route card lets the class start on time.",
+              [
+                "S0109"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0887",
+      "fingerprint": "d53255f48ff00ef935ed078b31e9c353a9e52a6c75d92a40b939e73816da8c52",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states the camp circle's ready condition by dusk, not the campers gathering materials before the event.",
+              [
+                "S0165"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This Text 1 line directly says they gathered the materials before the sky changed.",
+              [
+                "S0155"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "This line belongs to Text 2 and describes the room, not campers gathering materials.",
+              [
+                "S0166"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

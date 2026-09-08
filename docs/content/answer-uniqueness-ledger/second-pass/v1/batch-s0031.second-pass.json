@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "stage": "SECOND_PASS_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-s0031",
+  "batchFileSha256": "7729ed0925ff3bfcb3a9ce3447946246b4631c4af6af2e1ba2d9914933222b2a",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "independentReviewer": false,
+  "records": [
+    {
+      "auditId": "Q1298",
+      "fingerprint": "2b1ccda843f79b7518f0323ace970a84fde416687ed488b89c8b8d78b5bcbc4f",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "NONE",
+          "selectionContractValid": true,
+          "challengeSummary": "A4 names only the topic; A1 is the purpose, A3 is a central idea, and A2 is an unsupported purpose."
+        }
+      ]
+    },
+    {
+      "auditId": "Q1310",
+      "fingerprint": "71e9db4fa0c9840f80b3b332b858f9a0935d61c12570391dfa30d82a347863c6",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2"
+          ],
+          "ambiguity": "NONE",
+          "selectionContractValid": true,
+          "challengeSummary": "A1 provides a ground-surface cause and A2 a sunlight cause from different sections; A3 is an observation tool and A4 is irrelevant."
+        }
+      ]
+    },
+    {
+      "auditId": "Q1311",
+      "fingerprint": "26807a80ec372cab2fb1ce434ed83f261afd2ad6562be83641707d39299c8f3e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "PROMPT_EFFECT_CAUSE_MISMATCH",
+          "selectionContractValid": false,
+          "challengeSummary": "A4 is the only option tied to humidity and states that evaporation becomes slower, but the prompt asks why while the actual underlying cause appears in a different unselectable sentence."
+        }
+      ]
+    },
+    {
+      "auditId": "Q1312",
+      "fingerprint": "9aaff9740fb213d230871af9c88a0ee800125562e0ed5d5d2a8343995337cc0e",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "NONE",
+          "selectionContractValid": true,
+          "challengeSummary": "A3 states what the author intends to explain."
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "NONE",
+          "selectionContractValid": true,
+          "challengeSummary": "A4 names the subject without a claim."
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "NONE",
+          "selectionContractValid": true,
+          "challengeSummary": "A3 states the complete idea about factors affecting evaporation and drainage."
+        }
+      ]
+    },
+    {
+      "auditId": "Q1323",
+      "fingerprint": "3b4c9265593a42010f9112546f59d25c3535af1c721f90c413f47dfa1fae93c2",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "NONE",
+          "selectionContractValid": true,
+          "challengeSummary": "A4 precisely states the explanatory purpose; A1 is a central idea, A2 is a topic, and A3 is unsupported persuasion."
+        }
+      ]
+    },
+    {
+      "auditId": "Q1327",
+      "fingerprint": "0cf5260227592e908611664446d2032ab557f8d9ec179eecb9b0a23349024e5a",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "NONE",
+          "selectionContractValid": true,
+          "challengeSummary": "A3 states the author's explanatory purpose; A1 is a topic and A2 is a central idea."
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "NONE",
+          "selectionContractValid": true,
+          "challengeSummary": "A2 combines pumping water up with gravity delivering it to buildings; the other pairs contain irrelevant details."
+        }
+      ]
+    }
+  ]
+}

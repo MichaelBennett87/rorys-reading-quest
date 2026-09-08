@@ -32,6 +32,7 @@ export interface MultiselectQuestionData {
 
 export interface HotTextQuestionData {
   type: 'hot_text'
+  selectionMode?: 'single' | 'multiple'
   selectableSegments: {
     id: string
     text: string

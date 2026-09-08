@@ -1,0 +1,271 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0087",
+  "batchFileSha256": "8b446897bed91810c30a4a2ba2d8a95ce130e2582a1a1c1b8770e2bae7f91190",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1017",
+      "fingerprint": "b23c9138b410109bc85c926e1a99ee45a97f0723ad23a7b92cb340eeb426ab1b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "A short is an incomplete phrase and does not name a complete action.", ["S0019"]],
+            ["A2", "DEFENSIBLE", "Helps create lift keeps the helping verb and action together as one complete action.", ["S0019"]],
+            ["A3", "INCORRECT", "The floor for crosses phrase boundaries and does not name an action.", ["S0019"]],
+            ["A4", "INCORRECT", "The wing's is an incomplete noun phrase and does not name an action.", ["S0019"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1018",
+      "fingerprint": "107432e2ca57bc0155571e87296b918bf528b67fcc63ef8676eaa5800ee412e1",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The comma after forward closes the complete opening idea before the air-movement clause.", ["S0013"]],
+            ["A2", "INCORRECT", "Pausing after As separates the opening connector from the idea it introduces.", ["S0013"]],
+            ["A3", "INCORRECT", "Pausing after glider splits the subject from its action within the opening idea.", ["S0013"]],
+            ["A4", "INCORRECT", "Pausing after the splits a determiner from its noun.", ["S0013"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1019",
+      "fingerprint": "295e326343c5f3108d3e1cd96488a83e20db7c4c29ab8762859bb929e2a8d735",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This sentence has no opening phrase followed by a comma.", ["S0018"]],
+            ["A2", "DEFENSIBLE", "As the glider travels forward is an opening phrase followed by a comma.", ["S0013"]],
+            ["A3", "INCORRECT", "This sentence has no opening phrase followed by a comma.", ["S0015"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1020",
+      "fingerprint": "aaeb1838095bea7c8c880641dc5f0f4a17b1d1644ef6fd210c9991522603cdc9",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2", "A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Because occurs inside the first sentence and is not followed by ending punctuation.", ["S0018"]],
+            ["A2", "DEFENSIBLE", "Wing is followed by the period that ends the second sentence.", ["S0013"]],
+            ["A3", "DEFENSIBLE", "Wings is followed by the period that ends the first sentence.", ["S0018"]],
+            ["A4", "INCORRECT", "Forward is followed by a comma, which marks a brief pause rather than a full stop.", ["S0013"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1021",
+      "fingerprint": "82ef9e8db103a36dc748b4e15203a2ab238983e42b0bbdbfa7fddf17c09165fa",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Could the breeze have moved it asks a question and supports a curious or thoughtful question voice.", ["S0031"]],
+            ["A2", "INCORRECT", "I placed it beside the compass is a calm statement, not a question.", ["S0023"]],
+            ["A3", "INCORRECT", "It isn't there now is an exclamation of surprise, not a question.", ["S0029"]],
+            ["A4", "INCORRECT", "The mystery line is an exclamation celebrating the discovery, not a question.", ["S0025"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1022",
+      "fingerprint": "85405f7b52b2ba60f75d045a787b9e7e29d12f84beba9b814a6d350e1181328e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The exclamation mark and Mateo cried clearly show surprise that the map is gone.", ["S0029"]],
+            ["A2", "INCORRECT", "This narration calmly describes Nia's discovery and contains no exclamation mark.", ["S0030"]],
+            ["A3", "INCORRECT", "This narration describes their final action and contains no exclamation mark.", ["S0027"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1023",
+      "fingerprint": "fdb6cc330c9ffb8e6c3e899246e78675863af8d7708d1dc91485c854abaec2d3",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2", "A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This quoted line states where Nia placed the map and ends with a period.", ["S0023"]],
+            ["A2", "DEFENSIBLE", "This quoted line asks where the map went and ends with a question mark.", ["S0028"]],
+            ["A3", "INCORRECT", "This quoted line celebrates the solved mystery and ends with an exclamation mark.", ["S0025"]],
+            ["A4", "DEFENSIBLE", "This quoted line asks whether the breeze moved the map and ends with a question mark.", ["S0031"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1024",
+      "fingerprint": "7ab425ea494e7eb92e87804c93f66a356f97271e2ad4c3450a5f2255a6d2670f",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The line asks about a missing map rather than cheering about good news.", ["S0028"]],
+            ["A2", "DEFENSIBLE", "The wording asks for missing information and the question mark signals questioning.", ["S0028"]],
+            ["A3", "INCORRECT", "The line is a question, not a quiet factual statement.", ["S0028"]],
+            ["A4", "INCORRECT", "The line seeks information and does not report a startling discovery.", ["S0028"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Mateo cries the line with an exclamation mark, so it is not a calm statement.", ["S0029"]],
+            ["A2", "INCORRECT", "The line does not ask a question.", ["S0029"]],
+            ["A3", "INCORRECT", "The missing map is a problem, not a success being celebrated.", ["S0029"]],
+            ["A4", "DEFENSIBLE", "Mateo's exclamation and the new discovery that the map is absent show surprise.", ["S0029"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The line gives information and does not ask a question.", ["S0023"]],
+            ["A2", "DEFENSIBLE", "Nia calmly explains where she placed the map.", ["S0023"]],
+            ["A3", "INCORRECT", "The line reports an earlier action rather than reacting to sudden news.", ["S0023"]],
+            ["A4", "INCORRECT", "The line does not celebrate a success.", ["S0023"]]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The exclamation and playful wording do not present a quiet fact.", ["S0025"]],
+            ["A2", "INCORRECT", "The line celebrates solving the mystery rather than expressing worry.", ["S0025"]],
+            ["A3", "DEFENSIBLE", "The exclamation and playful landing image joyfully celebrate finding the map.", ["S0025"]],
+            ["A4", "INCORRECT", "The line answers and celebrates; it does not ask for an answer.", ["S0025"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1025",
+      "fingerprint": "69097e64ef907c34cbd649d85fbd12917d01157f943b7a9b671b59b7fe749bf3",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "First is the sequence word that signals the procedure is beginning.", ["S0038"]],
+            ["A2", "INCORRECT", "Paper names the material and does not signal sequence.", ["S0038"]],
+            ["A3", "INCORRECT", "Strip names the object to fold and does not signal sequence.", ["S0038"]],
+            ["A4", "INCORRECT", "Half describes how to fold the strip and does not signal sequence.", ["S0038"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1026",
+      "fingerprint": "5b6cc295a9b6d18eb96f6aefbe54f25f3e5d55e114dfcc2c32697ca47ea8dd14",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Its two commas visibly divide the direction into the three modeled action groups hold, release, and watch.", ["S0034"]],
+            ["A2", "INCORRECT", "This direction contains one main action and no three-action comma series.", ["S0041"]],
+            ["A3", "INCORRECT", "This direction has an opening transition plus one action, not three action groups.", ["S0038"]],
+            ["A4", "INCORRECT", "This direction coordinates two folding actions, not three action groups.", ["S0040"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1027",
+      "fingerprint": "ec201006f8137900f54e7596c225494b5ec5ba5d1dcff574f0b8ca3bf0734111",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "This conditional direction explicitly says to adjust a blade and try again when rotation is uneven.", ["S0036"]],
+            ["A2", "INCORRECT", "Attaching the paper clip is an earlier construction step, not the direction for an uneven spin.", ["S0041"]],
+            ["A3", "INCORRECT", "Cutting rotor blades is an earlier construction step, not the direction for an uneven spin.", ["S0039"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1028",
+      "fingerprint": "f389b7e2b1099950df01df5cc697e359a5275f0082b819b49efdeb6370b2d6c2",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The comma after space divides the hold action from release.", ["S0034"]],
+            ["A2", "DEFENSIBLE", "The comma after it divides release from the final watch action.", ["S0034"]],
+            ["A3", "INCORRECT", "Spin is followed by a period that ends the direction, not a comma dividing actions.", ["S0034"]],
+            ["A4", "INCORRECT", "Release is not followed by a comma in the displayed direction.", ["S0034"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

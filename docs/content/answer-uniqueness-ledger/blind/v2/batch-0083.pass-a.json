@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0083",
+  "batchFileSha256": "12fcd523acc3f8c624814dde40c3aa7a6f8671e55b19af4963b31d3d4bbec485",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0972", "fingerprint": "b706ec0e1e66fc574f2c7bfc007d31f31c8a95efcf306602bd19162b5397c1f4",
+      "slots": [{"slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Sun and set are familiar, pronounceable chunks that reconstruct sunset.", ["S0003"]], ["A2", "INCORRECT", "The unsplit word does not show reading chunks.", ["S0003"]],
+        ["A3", "INCORRECT", "Sunse leaves an isolated final consonant and is not a useful split.", ["S0003"]], ["A4", "INCORRECT", "A single initial consonant plus unset does not follow the taught chunking strategy.", ["S0003"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0973", "fingerprint": "ba4ad1d8fb38d9aafde31f96806c31be03fde1acf6a14bde2f9ed7eb3f14e13e",
+      "slots": [{"slotId": "response", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Ro contains one vowel rather than a vowel team.", ["S0005"]], ["A2", "INCORRECT", "Ro has no silent-e spelling.", ["S0005"]],
+        ["A3", "DEFENSIBLE", "Ro ends in a vowel sound and is an open syllable.", ["S0005"]], ["A4", "INCORRECT", "Ro does not end in a consonant and is not closed.", ["S0005"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0974", "fingerprint": "28c989a3e43f12c2bb051fc387169a6d83dde352284b99719fe5aaa0d22a3f51",
+      "slots": [{"slotId": "response", "defensible": ["A3", "A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Neither sun nor set contains a silent-e syllable.", ["S0003"]], ["A2", "INCORRECT", "Neither ro nor bot contains a silent-e syllable.", ["S0005"]],
+        ["A3", "DEFENSIBLE", "Shine is a silent-e syllable in sunshine.", ["S0007"]], ["A4", "DEFENSIBLE", "Lake and side use silent-e patterns in lakeside.", ["S0009"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0975", "fingerprint": "f91aa73d9db99f43d242533c347cbb93e19e0f229509d10224c7293d7302cc6f",
+      "slots": [{"slotId": "response", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Side is the second reading chunk in lakeside.", ["S0009"]], ["A2", "DEFENSIBLE", "Lake is the first reading chunk in lakeside.", ["S0009"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0976", "fingerprint": "576b58cc485dca4a673ee941116de55abed32a66a3fc89bd64cd50e7a9b83e02",
+      "slots": [
+        {"slotId": "row_1", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Sun and shine rebuild sunshine, not sunset.", ["S0007"]], ["A2", "INCORRECT", "Lake and side rebuild lakeside, not sunset.", ["S0009"]], ["A3", "INCORRECT", "Ro and bot rebuild robot, not sunset.", ["S0005"]], ["A4", "DEFENSIBLE", "Sun and set reconstruct sunset.", ["S0003"]]
+        ]},
+        {"slotId": "row_2", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Sun and shine rebuild sunshine.", ["S0007"]], ["A2", "INCORRECT", "Sun and set rebuild sunset.", ["S0003"]], ["A3", "INCORRECT", "Lake and side rebuild lakeside.", ["S0009"]], ["A4", "DEFENSIBLE", "Ro and bot reconstruct robot.", ["S0005"]]
+        ]},
+        {"slotId": "row_3", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "DEFENSIBLE", "Sun and shine reconstruct sunshine.", ["S0007"]], ["A2", "INCORRECT", "Ro and bot rebuild robot.", ["S0005"]], ["A3", "INCORRECT", "Sun and set rebuild sunset.", ["S0003"]], ["A4", "INCORRECT", "Lake and side rebuild lakeside.", ["S0009"]]
+        ]},
+        {"slotId": "row_4", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Ro and bot rebuild robot.", ["S0005"]], ["A2", "INCORRECT", "Sun and shine rebuild sunshine.", ["S0007"]], ["A3", "INCORRECT", "Sun and set rebuild sunset.", ["S0003"]], ["A4", "DEFENSIBLE", "Lake and side reconstruct lakeside.", ["S0009"]]
+        ]}
+      ], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0977", "fingerprint": "5909df1e680b208b688d530b19bd17128f8321b87207f9c489b4def3b9de9ae0",
+      "slots": [{"slotId": "response", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "The unsplit word does not show reading chunks.", ["S0015"]], ["A2", "INCORRECT", "Raincoa leaves an isolated final consonant and is not a useful split.", ["S0015"]],
+        ["A3", "INCORRECT", "A single initial consonant plus the remainder is not the taught split.", ["S0015"]], ["A4", "DEFENSIBLE", "Rain and coat are pronounceable chunks that reconstruct raincoat.", ["S0015"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0978", "fingerprint": "77056261759b776aea868e55f92a14a5618e6a80323f6f717380460c74f0e39e",
+      "slots": [{"slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Per contains a vowel controlled by the following r.", ["S0017"]], ["A2", "INCORRECT", "Per ends in a consonant and is not an open syllable.", ["S0017"]],
+        ["A3", "INCORRECT", "Although per ends in a consonant, its defining taught pattern is r-controlled.", ["S0017", "S0023"]], ["A4", "INCORRECT", "Per has no silent-e spelling.", ["S0017"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0979", "fingerprint": "71fe360a219b3532fd871b74de0a74db87aef96771e34a77f76354e12b088d2b",
+      "slots": [{"slotId": "response", "defensible": ["A3", "A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Hopeful uses a silent-e chunk and a suffix, not an r-controlled syllable.", ["S0021"]], ["A2", "INCORRECT", "Raincoat uses vowel-team chunks, not an r-controlled syllable.", ["S0015"]],
+        ["A3", "DEFENSIBLE", "The fore chunk in forecast contains an r-controlled vowel pattern.", ["S0019"]], ["A4", "DEFENSIBLE", "The per chunk in paper contains an r-controlled vowel pattern.", ["S0017"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0980", "fingerprint": "b1793231ffdfb0cff5a3431934b331d2c7f6388c0c526a29811d015fbcb4bd51",
+      "slots": [{"slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Hope is the silent-e syllable in hopeful.", ["S0021"]], ["A2", "INCORRECT", "Ful is a familiar suffix and does not use a silent-e pattern.", ["S0021"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0981", "fingerprint": "d2510e266caa4bf03ee32647e75d8b44cd8deb474b768480b352bb39fd900dd3",
+      "slots": [
+        {"slotId": "row_1", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Pa and per rebuild paper.", ["S0017"]], ["A2", "INCORRECT", "Fore and cast rebuild forecast.", ["S0019"]], ["A3", "INCORRECT", "Hope and ful rebuild hopeful.", ["S0021"]], ["A4", "DEFENSIBLE", "Rain and coat reconstruct raincoat.", ["S0015"]]
+        ]},
+        {"slotId": "row_2", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Rain and coat rebuild raincoat.", ["S0015"]], ["A2", "INCORRECT", "Hope and ful rebuild hopeful.", ["S0021"]], ["A3", "INCORRECT", "Fore and cast rebuild forecast.", ["S0019"]], ["A4", "DEFENSIBLE", "Pa and per reconstruct paper.", ["S0017"]]
+        ]},
+        {"slotId": "row_3", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "DEFENSIBLE", "Fore and cast reconstruct forecast.", ["S0019"]], ["A2", "INCORRECT", "Pa and per rebuild paper.", ["S0017"]], ["A3", "INCORRECT", "Hope and ful rebuild hopeful.", ["S0021"]], ["A4", "INCORRECT", "Rain and coat rebuild raincoat.", ["S0015"]]
+        ]},
+        {"slotId": "row_4", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "DEFENSIBLE", "Hope and ful reconstruct hopeful.", ["S0021"]], ["A2", "INCORRECT", "Fore and cast rebuild forecast.", ["S0019"]], ["A3", "INCORRECT", "Pa and per rebuild paper.", ["S0017"]], ["A4", "INCORRECT", "Rain and coat rebuild raincoat.", ["S0015"]]
+        ]}
+      ], "projectionDefect": ""
+    }
+  ]
+}

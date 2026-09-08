@@ -1,0 +1,724 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0034",
+  "batchFileSha256": "09731b1452f593b727d462021d909b408ef3f6684515d7c05c4e8670ba26b7ee",
+  "reviewerThreadId": "01a07bc1-d815-7c71-b972-e3c829df1777",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0398",
+      "fingerprint": "26beb410cca71367aafe740ba32499c248248c36c877eafc21e36d377ebfab04",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The rainy morning names the shared setting, not Maya's view of what should be done.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This describes Theo's initial view, not Maya's perspective.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Maya says the gray clouds mean the seedlings should be covered immediately, directly stating her perspective.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is a shared outcome and does not state Maya's individual view.",
+              [
+                "S0011"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0399",
+      "fingerprint": "e950f7be3f6bd49c4e24b1ef9a18acecfd759e3370ed804471a65041df68031b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is a statement about narration, not Theo's view of the garden preparation.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Theo thinks there is still time to finish the sign despite the drizzle, supporting this description of his perspective.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The rainy morning names the setting, not Theo's view.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is a shared outcome and does not state Theo's individual view.",
+              [
+                "S0011"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0400",
+      "fingerprint": "19611b1bbd2aaf51ec625c13ff55c76355205ad5098f276161ade21f83873c1e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This explicitly states Theo's initial view, not Maya's.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Maya's action of covering the plants supports her view that they needed protection.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This establishes the rainy setting but does not reveal what Maya thinks should be done.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Maya's statement that the seedlings should be covered immediately directly supports her perspective.",
+              [
+                "S0009"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0401",
+      "fingerprint": "12601ac5ccf82cd570be2ba5b326495b49287c549b79c8f5069284d40e78a3ff",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3",
+            "A5"
+          ],
+          "ambiguity": "A3 directly states Theo's initial belief that there is time to finish the sign, while A5 shows his later changed judgment through noticing stronger wind and helping secure the plants; both reveal Theo's perspective at different moments.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Straightening the sign posts indirectly fits Theo's initial priority, but this mixed sentence does not state his view as clearly as the offered thought sentence.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This shared outcome combines both characters' work rather than isolating Theo's perspective.",
+              [
+                "S0011"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Theo's thought that there is still time to finish the sign directly states his initial perspective.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is the shared setting and does not reveal Theo's view.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A5",
+              "DEFENSIBLE",
+              "Seeing the stronger wind and choosing to help with the rope shows Theo's later perspective that protection now needs attention.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A6",
+              "INCORRECT",
+              "This sentence gives Maya's reaction and reason, not Theo's perspective.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A7",
+              "INCORRECT",
+              "This sentence directly states Maya's view, not Theo's.",
+              [
+                "S0009"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0402",
+      "fingerprint": "20bfde3407347e563f3b80c8e67779cf26d2221eba84f6a245d5ca95ea954e07",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The rainy morning is the situation, not Maya's view of how to handle it.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Finishing the sign is a shared outcome, not Maya's stated approach.",
+              [
+                "S0011"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This describes Theo's initial approach, not Maya's.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Maya believes the rainy sky calls for covering the seedlings right away.",
+              [
+                "S0009"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Theo's thought that there is still time for the sign directly shows his view.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This detail states Maya's view.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This gives Maya's final reaction, not Theo's view.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is the shared setting and does not reveal Theo's view.",
+              [
+                "S0003"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The passage uses third-person names and pronouns, so this narration claim is false and does not name the shared situation.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Both characters are preparing the community garden before the seed swap, making this the shared situation.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This is Theo's individual perspective within the situation.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is Maya's individual perspective within the situation.",
+              [
+                "S0009"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0403",
+      "fingerprint": "1e377218553cc0ecb0b25953b49edf2af249060fa8103c8ee65260a0fcb1726d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This describes a shared action and an outcome, not Nia's individual perspective.",
+              [
+                "S0021",
+                "S0023"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This describes Leo's perspective, not Nia's.",
+              [
+                "S0019"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The afternoon in the library names the shared setting, not Nia's view.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Nia imagines smiling children and says the display should be cheerful and colorful, supporting this description of her perspective.",
+              [
+                "S0015",
+                "S0022"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0404",
+      "fingerprint": "1f5610cc670660b2ed69412e9c99438625e4060dc86fa8c63c3a20c990f6c027",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This describes shared actions and an outcome, not Leo's individual perspective.",
+              [
+                "S0021",
+                "S0023"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The afternoon in the library names the shared setting, not Leo's view.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This is a narration statement, not Leo's perspective.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Leo notices disorder and says clear labels will help readers find books, supporting this description of his perspective.",
+              [
+                "S0017",
+                "S0019"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0405",
+      "fingerprint": "63ca203fd9a26da2336bcb1dfad552d94f363804da9dabf77bf109b70b91c0e9",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This detail states Leo's concern with order, not Nia's perspective.",
+              [
+                "S0017"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Nia's thought that the display should be cheerful and colorful directly supports her perspective.",
+              [
+                "S0022"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This establishes the shared setting and task but does not reveal Nia's view.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Nia's bright-picture choice and imagined smiling children show her welcoming, colorful view.",
+              [
+                "S0015"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0406",
+      "fingerprint": "446261430a2e6bd5321da104185124089c8bf91f4e7a639951fe50a114770459",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4",
+            "A7"
+          ],
+          "ambiguity": "A4 explicitly states Leo's clarity goal, and A7 directly states that he noticed a crooked card and wanted to fix the order; both strongly reveal the same order-and-readability perspective.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This sentence shows Nia's perspective, not Leo's.",
+              [
+                "S0015"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The final bright-and-tidy display reflects both children's views rather than isolating Leo's perspective.",
+              [
+                "S0023"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This directly states Nia's view, not Leo's.",
+              [
+                "S0022"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Leo's thought about clear labels helping readers directly states his perspective.",
+              [
+                "S0019"
+              ]
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "Both children feeling proud is a shared reaction, not Leo's distinct view.",
+              [
+                "S0024"
+              ]
+            ],
+            [
+              "A6",
+              "INCORRECT",
+              "This establishes the shared task and setting but not Leo's perspective.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A7",
+              "DEFENSIBLE",
+              "Leo noticing a crooked card and wanting to fix the order directly reveals his concern with order.",
+              [
+                "S0017"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0407",
+      "fingerprint": "84fd543a22eb18d4ac20d77b739abf14a909709d69576f44b9405ce0a1724300",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Nia's words and imagined smiling children show that she wants a cheerful, colorful, welcoming display.",
+              [
+                "S0015",
+                "S0022"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This describes Leo's approach, not Nia's.",
+              [
+                "S0019"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The afternoon in the library is the setting, not Nia's approach.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is a shared action and outcome, not Nia's individual view.",
+              [
+                "S0021",
+                "S0023"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This establishes the shared task and setting but not Leo's view.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This detail shows Nia's perspective.",
+              [
+                "S0015"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This is a shared final reaction rather than Leo's individual view.",
+              [
+                "S0024"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Leo noticing the crooked card and wanting to fix the order directly shows his view.",
+              [
+                "S0017"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is Nia's individual perspective within the situation.",
+              [
+                "S0015",
+                "S0022"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This is Leo's individual perspective within the situation.",
+              [
+                "S0017",
+                "S0019"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Both characters are setting up a new library display after school, so this names their shared situation.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The passage uses third-person names and pronouns, and this narration claim does not name the shared situation.",
+              [
+                "S0021"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

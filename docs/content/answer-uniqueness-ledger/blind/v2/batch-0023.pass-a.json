@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0023",
+  "batchFileSha256": "96a69f2a2be3ddc8c48af49df83eb480b1c55de8553359d1785fb125fb2366b0",
+  "reviewerThreadId": "01a07bc1-d815-7c71-b972-e3c829df1777",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0262",
+      "fingerprint": "7e99301d417d0a795de73550283e03bece1eb088b61c085df0bc22200c27ad7d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Island has a quiet s pattern and does not occur in the night picnic passage.", []],
+            ["A2", "INCORRECT", "Knight has quiet kn and gh patterns but does not occur in the night picnic passage.", []],
+            ["A3", "DEFENSIBLE", "Ghost is visible in the passage and is explicitly taught as a quiet-gh family word.", ["S0029"]],
+            ["A4", "INCORRECT", "Crumb is visible but belongs to the final-mb silent-letter family, not the gh family.", ["S0027"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0263",
+      "fingerprint": "b8a1dd16a0f8416cc988f13fb3ea711b0fab89a74d9042b61ba607fbdce6f1b1",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Night contains quiet gh, appears in the passage, and names the time of day.", ["S0029", "S0031"]],
+            ["A2", "INCORRECT", "Wrap begins with quiet wr, is absent from this passage, and does not name a time of day.", []],
+            ["A3", "INCORRECT", "Comb ends with quiet mb, is absent from this passage, and does not name a time of day.", []],
+            ["A4", "INCORRECT", "Wren begins with quiet wr, is absent from this passage, and does not name a time of day.", []]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0264",
+      "fingerprint": "638488bac9b4bfc60c3d347281ae5981b8afdc47e30b333981a62d3ea5824aa0",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2", "A4", "A5"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Lamb has a quiet final b, not the gh pattern, and is absent from this passage.", []],
+            ["A2", "DEFENSIBLE", "Night is a visible passage word whose gh is not pronounced.", ["S0029", "S0031"]],
+            ["A3", "INCORRECT", "Crumb has a quiet final b in the mb family, not a gh pattern.", ["S0027"]],
+            ["A4", "DEFENSIBLE", "Ghost is visible and is included in the taught quiet-gh family.", ["S0029"]],
+            ["A5", "DEFENSIBLE", "Bright is a visible passage word whose gh is not pronounced.", ["S0027"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0265",
+      "fingerprint": "5fcac2005825250e9efdabd1883cf3845550b69f1c91333095c9371ca3ae9de4",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Crumb is the single word that identifies the snack-made trail.", ["S0027"]],
+            ["A2", "INCORRECT", "A bright lantern names the light source, not the snack trail, and is a phrase rather than the requested word.", ["S0027"]],
+            ["A3", "INCORRECT", "Near the table gives the trail's location, not what kind of trail it is, and is a phrase rather than one word.", ["S0027"]],
+            ["A4", "INCORRECT", "Lights describes what the lantern does; it does not identify the snack trail.", ["S0027"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0266",
+      "fingerprint": "e1e3efce2a747896247f6f4164a9ec0c58fea09b6e2d655c11eafda31e7bf0fc",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Ghost is not an island-family word.", ["S0029"]],
+            ["A2", "INCORRECT", "Ghost does not begin with kn.", ["S0029"]],
+            ["A3", "INCORRECT", "Ghost does not end with mb.", ["S0029"]],
+            ["A4", "DEFENSIBLE", "Ghost is included in the taught quiet-gh family.", ["S0029"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Night is not an island-family word.", ["S0029", "S0031"]],
+            ["A2", "INCORRECT", "Night does not begin with kn.", ["S0029", "S0031"]],
+            ["A3", "INCORRECT", "Night does not end with mb.", ["S0029", "S0031"]],
+            ["A4", "DEFENSIBLE", "The gh in night is not pronounced.", ["S0029", "S0031"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Bright does not end with mb.", ["S0027"]],
+            ["A2", "INCORRECT", "Bright is not an island-family word.", ["S0027"]],
+            ["A3", "DEFENSIBLE", "The gh in bright is not pronounced.", ["S0027"]],
+            ["A4", "INCORRECT", "Bright does not begin with kn.", ["S0027"]]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Crumb belongs to the final-mb family because its b is not pronounced.", ["S0027"]],
+            ["A2", "INCORRECT", "Crumb does not begin with kn.", ["S0027"]],
+            ["A3", "INCORRECT", "Crumb is not an island-family word.", ["S0027"]],
+            ["A4", "INCORRECT", "Crumb contains no gh pattern.", ["S0027"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0267",
+      "fingerprint": "254aea01f770868d1177431b43d9f8b3143cec20268de9623d82597a69f348c7",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Comb ends with quiet mb and is absent from the museum passage.", []],
+            ["A2", "INCORRECT", "Wrap begins with quiet wr and is absent from the museum passage.", []],
+            ["A3", "INCORRECT", "Ghost uses a gh pattern and is absent from the museum passage.", []],
+            ["A4", "DEFENSIBLE", "Knight begins with quiet kn, appears in the museum passage, and names the statue.", ["S0003"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0268",
+      "fingerprint": "218bf945fcdec0a4cc57138222c05d7ccb8f116d4f33f87853044dd57d147130",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Island has a quiet s and is absent from the wrap station passage.", []],
+            ["A2", "DEFENSIBLE", "Write begins with quiet wr and names what the helper is helped to do.", ["S0013"]],
+            ["A3", "INCORRECT", "Comb ends with quiet mb and is absent from the wrap station passage.", []],
+            ["A4", "INCORRECT", "Knight begins with quiet kn and is absent from the wrap station passage.", []]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0269",
+      "fingerprint": "507feb4c65e323dcc01240d6ae1b3f84987168aca8da2c86c1c7c4fd7efc808e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [],
+          "ambiguity": "No option fully meets every visible constraint: comb is the only quiet-mb tool, but the passage never says or implies that it is shiny.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "INCORRECT", "Island neither ends with mb nor names a tool in the shelter passage.", []],
+            ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Comb is the visible quiet-mb tool, but nothing in the source establishes the prompt's added shiny description.", ["S0019"]],
+            ["A3", "INCORRECT", "Wrist begins with quiet wr, does not end with mb, and is absent from the shelter passage.", []],
+            ["A4", "INCORRECT", "Ghost uses the gh family, does not end with mb, and is absent from the shelter passage.", []]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0270",
+      "fingerprint": "6ffaf534e443bca3d49d5b68b43bf60f6035a3849eee559259a0ab8204772a35",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Comb belongs to the mb family and is absent from the night picnic passage.", []],
+            ["A2", "INCORRECT", "Wrap belongs to the wr family and is absent from the night picnic passage.", []],
+            ["A3", "INCORRECT", "Knight has quiet kn and gh patterns but is absent from the night picnic passage.", []],
+            ["A4", "DEFENSIBLE", "Ghost is the quiet-gh word that names the figure in the ghost story.", ["S0029"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0271",
+      "fingerprint": "e2343429ab083189ae1934ce2d8a5442fc546103bf561cff333dcc5c466c9cfc",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4"],
+          "ambiguity": "The prompt refers to checkpoint passages plural, but only the island-map passage is displayed; source membership for wrap, comb, ghost, and knight cannot be confirmed from this learner-visible projection.",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "UNSUPPORTED", "Wrap has a quiet initial w, but it is not present in the only displayed checkpoint passage.", []],
+            ["A2", "INCORRECT", "Music has no silent-letter pattern and is not present in the displayed passage.", []],
+            ["A3", "UNSUPPORTED", "Comb has a quiet final b, but it is not present in the only displayed checkpoint passage.", []],
+            ["A4", "DEFENSIBLE", "Island appears in the displayed passage and has the island-family quiet s pattern.", ["S0035"]],
+            ["A5", "UNSUPPORTED", "Ghost is taught as a quiet-gh word, but it is not present in the only displayed checkpoint passage.", []],
+            ["A6", "UNSUPPORTED", "Knight has quiet kn and gh patterns, but it is not present in the only displayed checkpoint passage.", []]
+          ]
+        }
+      ],
+      "projectionDefect": "The prompt refers to multiple checkpoint passages, but the projection supplies only passage S0034, so most option membership cannot be checked from the material shown to this question's learner."
+    },
+    {
+      "auditId": "Q0272",
+      "fingerprint": "77ab4cc43abe7e44ea2f638cbf83bb25ee60bdb8d4266a874013296ef90c1c1d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Comb belongs to the final-mb silent-letter family, not the island family.", []],
+            ["A2", "DEFENSIBLE", "Island is visible and belongs to the family in which its written s is not pronounced.", ["S0035"]],
+            ["A3", "INCORRECT", "Wrap belongs to the initial-wr family, not the island family.", []],
+            ["A4", "INCORRECT", "Ghost belongs to the taught gh family, not the island family.", []]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0273",
+      "fingerprint": "0f084f3e99288af230a1b109354fe4ae511b5f7f77d41205ac681d402c7a06c0",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A1", "A5"],
+          "ambiguity": "Knight has both a silent initial k in kn- and silent gh, so two offered families are defensible for a one-match row.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "DEFENSIBLE", "The gh in knight is not pronounced, so silent gh accurately describes the word.", ["S0003"]],
+            ["A2", "INCORRECT", "Knight is not an island-family word.", ["S0003"]],
+            ["A3", "INCORRECT", "Knight does not begin with wr.", ["S0003"]],
+            ["A4", "INCORRECT", "Knight does not end with mb.", ["S0003"]],
+            ["A5", "DEFENSIBLE", "Knight begins with kn- and its initial k is not pronounced.", ["S0003"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Wrap is not an island-family word.", []],
+            ["A2", "INCORRECT", "Wrap does not begin with kn.", []],
+            ["A3", "INCORRECT", "Wrap does not end with mb.", []],
+            ["A4", "DEFENSIBLE", "Wrap begins with wr- and its initial w is not pronounced.", []],
+            ["A5", "INCORRECT", "Wrap contains no gh pattern.", []]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Comb contains no gh pattern.", []],
+            ["A2", "INCORRECT", "Comb is not an island-family word.", []],
+            ["A3", "DEFENSIBLE", "Comb ends with mb and its final b is not pronounced.", []],
+            ["A4", "INCORRECT", "Comb does not begin with wr.", []],
+            ["A5", "INCORRECT", "Comb does not begin with kn.", []]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Ghost does not begin with kn.", []],
+            ["A2", "DEFENSIBLE", "Ghost is included in the taught quiet-gh family because its h is not separately pronounced.", []],
+            ["A3", "INCORRECT", "Ghost does not end with mb.", []],
+            ["A4", "INCORRECT", "Ghost does not begin with wr.", []],
+            ["A5", "INCORRECT", "Ghost is not an island-family word.", []]
+          ]
+        },
+        {
+          "slotId": "row_5",
+          "defensible": ["A5"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Island does not end with mb.", []],
+            ["A2", "INCORRECT", "Island does not begin with kn.", []],
+            ["A3", "INCORRECT", "Island does not begin with wr.", []],
+            ["A4", "INCORRECT", "Island contains no gh pattern.", []],
+            ["A5", "DEFENSIBLE", "Island belongs to the family in which its written s is not pronounced.", []]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

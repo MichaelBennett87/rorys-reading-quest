@@ -258,7 +258,7 @@ export const storyMapBuildingBlockQuestions: ReadingQuestion[] = [
     lessonIdentifier: STORY_MAP_LESSON_IDS.guidedB,
     activityIdentifier: 'activity-story-map-guided-b',
     questionIdentifier: storyMapQuestionId('guided-b', 'q4'),
-    prompt: 'Which sentence shows how Jamal solves the problem?',
+    prompt: 'Which sentence lists the actions Jamal uses to make the messy display neat?',
     explanation: 'The third sentence tells the fixing steps.',
     evidenceReference: 'resolution-clue',
     evidenceReferenceIds: [storyMapSentenceId('library-card', 3)],

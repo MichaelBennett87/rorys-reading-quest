@@ -1,0 +1,786 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0122",
+  "batchFileSha256": "7cf0656afd4ae436c44d24fd521bdfb5b9fb0c7a96f0d1e883fcb7a25a388bba",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1425",
+      "fingerprint": "e1a0431a92912c3a601d07fdc9423e2d3a6f9808a3c1843003f6c4bd3a7c9121",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This lists narrow descriptive examples and omits the three transport methods and common result.",
+              [
+                "S0083",
+                "S0087",
+                "S0085"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This gives only the topic.",
+              [
+                "S0092"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This concisely preserves wind, animal, and water mechanisms and their shared spreading result.",
+              [
+                "S0072",
+                "S0081",
+                "S0074",
+                "S0084",
+                "S0076",
+                "S0078"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "Seeds move in several ways, and not every traveling seed grows.",
+              [
+                "S0079",
+                "S0078",
+                "S0091"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1426",
+      "fingerprint": "ffc47ce3c52bdb2ea01a61d986050f745a438a41e3681fd6f9063cefc5a65abc",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "A summary cannot add an event absent from the source.",
+              []
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Fox fur color is explicitly irrelevant to seed travel.",
+              [
+                "S0087"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The wing-like appearance is a minor description of one example.",
+              [
+                "S0082",
+                "S0083"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This sentence states the central mechanism across all three transport methods.",
+              [
+                "S0072"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1427",
+      "fingerprint": "5656eb4c51a5296c3c57607c83a3020839bc1c0eaa84627af1366b64584627bc",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This states the overall role of seed shape and covering across transport methods.",
+              [
+                "S0072"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The tiny-wing appearance is descriptive and not needed to explain seed travel.",
+              [
+                "S0083"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The source explicitly says fur color does not control seed travel.",
+              [
+                "S0087"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This representative example explains how a structure enables wind travel.",
+              [
+                "S0081"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1428",
+      "fingerprint": "123c98efdbdd77259392734cce3542948784319ac273c88edb6a58bc727b2126",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The tiny-wing comparison can be omitted without losing how seeds travel.",
+              [
+                "S0083"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The dandelion tuft supplies a clear mechanism for wind transport.",
+              [
+                "S0081"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This states the passage’s broad central mechanism.",
+              [
+                "S0072"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1429",
+      "fingerprint": "4952b0468d9c6291fdf79f7da1746626d030159ea38e49a207428a56a8a3c569",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This statement spans the passage’s three main transport categories.",
+              [
+                "S0072"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The shape-and-covering mechanism belongs in a concise summary.",
+              [
+                "S0072"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The tiny-wing image is descriptive and can be omitted.",
+              [
+                "S0083"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "A summary can explain spinning without this appearance detail.",
+              [
+                "S0082",
+                "S0083"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The dandelion example clearly shows a structure enabling wind travel.",
+              [
+                "S0081"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This representative mechanism supports the central idea.",
+              [
+                "S0072",
+                "S0081"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Fox fur color is explicitly unrelated to seed travel.",
+              [
+                "S0087"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The detail adds no transport mechanism or outcome.",
+              [
+                "S0087",
+                "S0088"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1430",
+      "fingerprint": "89bfa17a6627f5e7e451433463ea65a1286a62b35db031e2b336bce05cd76d31",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This gives only topic and setting, omitting conflict, response, outcome, and theme.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This preserves the rain conflict, tested adaptations, successful outcome, and teamwork theme.",
+              [
+                "S0109",
+                "S0110",
+                "S0112",
+                "S0114",
+                "S0116",
+                "S0120",
+                "S0122",
+                "S0124",
+                "S0107"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The class protects the scenery, rehearses indoors, and performs successfully.",
+              [
+                "S0105",
+                "S0122",
+                "S0124",
+                "S0125"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This lists minor details and omits the central problem and solution.",
+              [
+                "S0108",
+                "S0117",
+                "S0109",
+                "S0123"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1431",
+      "fingerprint": "b0f215dcd9c1aa575dd80884cf2834dd2119049671cf6cf6b17b45898e17c125",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "A summary cannot add an event absent from the source.",
+              []
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The striped umbrella does not drive the conflict or solution.",
+              [
+                "S0108"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The wet-paper risk and twenty-minute deadline establish the central conflict.",
+              [
+                "S0110"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The lantern scratch has no effect on the plan.",
+              [
+                "S0117"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1432",
+      "fingerprint": "8d1b2d65ec6638cf6713505258a626acc09466897085a825982814ebc18891d7",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "The students succeed by changing and testing their plan.",
+              [
+                "S0114",
+                "S0116",
+                "S0120",
+                "S0124",
+                "S0107"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The group’s tested adaptations overcome rain, cramped space, lighting, and cue obstacles.",
+              [
+                "S0112",
+                "S0114",
+                "S0116",
+                "S0120",
+                "S0122",
+                "S0107"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The umbrella is a minor detail, not a theme.",
+              [
+                "S0108"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This names a topic rather than a transferable message.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1433",
+      "fingerprint": "ac6c583bb8a31707a87d65a4cef47dc135bfc652d63710f389ad992ef2a648d3",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The scenery risk and deadline establish why the rehearsal plan must change.",
+              [
+                "S0110"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The lantern scratch does not affect the lighting solution.",
+              [
+                "S0117"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Testing the cramped roof explains why the first alternative is rejected.",
+              [
+                "S0111",
+                "S0112"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The striped umbrella is incidental.",
+              [
+                "S0108"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1434",
+      "fingerprint": "f86fb3ea78fd9e39893eb51f8296bff3aa0ce30ea92f94c3b6e1243c2e8955a4",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Mina’s test rules out the first proposed replacement space.",
+              [
+                "S0111",
+                "S0112"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The striped umbrella can be omitted without changing the conflict or solution.",
+              [
+                "S0108"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The wet-scenery risk and deadline create the central conflict.",
+              [
+                "S0110"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1435",
+      "fingerprint": "efbb376c2e59ba6492d371e65408fa6a3ac5b9e8bead60fc3ec0f2b0b6c47063",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This sentence establishes the central stakes.",
+              [
+                "S0110"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The risk and deadline belong in a concise summary.",
+              [
+                "S0110"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The umbrella is an incidental detail.",
+              [
+                "S0108"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "It does not affect the rehearsal problem or solution.",
+              [
+                "S0108"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Mina’s test explains why the group rejects the cramped space.",
+              [
+                "S0111",
+                "S0112"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This decision-driving result belongs in a concise summary.",
+              [
+                "S0112"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The scratch has no effect on whether the lantern solves the lighting concern.",
+              [
+                "S0116",
+                "S0117"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The lighting solution matters, but the scratch does not.",
+              [
+                "S0116",
+                "S0117"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1436",
+      "fingerprint": "b22cb4c16f21fdbbbfb29ec29d8a3699aaf444d56ab99a3c742cefc2a99ccdc6",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This preserves the conflict, tested solutions, outcome, and supported theme.",
+              [
+                "S0110",
+                "S0112",
+                "S0114",
+                "S0116",
+                "S0120",
+                "S0122",
+                "S0107"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This only identifies topic and setting.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The scenery stays dry and the performance succeeds.",
+              [
+                "S0105",
+                "S0122",
+                "S0125"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This lists minor details while omitting the plot.",
+              [
+                "S0108",
+                "S0117",
+                "S0123"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Mina’s test directly supports the summary’s statement that the class tested and rejected a cramped space.",
+              [
+                "S0111",
+                "S0112"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The umbrella is not an important source detail for the summary.",
+              [
+                "S0108"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "A prediction absent from the source cannot support a summary.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

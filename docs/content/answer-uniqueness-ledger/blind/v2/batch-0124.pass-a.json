@@ -1,0 +1,695 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0124",
+  "batchFileSha256": "4b3b649e8e90a202d4a79b88d2b343aa8836a184786b52dd6c3a1d6646b86e4a",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1451",
+      "fingerprint": "2a708f8338de6e0ea760291361cface69afe70e18b610db43132a3feb61bb49c",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "The texts use different organizations and details.",
+              [
+                "S0012",
+                "S0014",
+                "S0009",
+                "S0027"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This names one different minor detail from each text, not a similarity.",
+              [
+                "S0017",
+                "S0032"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This accurately states the main presentation difference, not a similarity.",
+              [
+                "S0012",
+                "S0014",
+                "S0025",
+                "S0027"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Both texts use a basin and plants as concrete parts that help manage water.",
+              [
+                "S0014",
+                "S0016",
+                "S0019",
+                "S0027",
+                "S0028",
+                "S0029"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1452",
+      "fingerprint": "f65d3623db66f7e326eb4a8c342f98b183203aa7c8a5aa789c254dae4d4b9c7f",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "This reverses the texts’ organizations.",
+              [
+                "S0012",
+                "S0014",
+                "S0025",
+                "S0027"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Text A gives ordered building actions, while Text B explains runoff causes and effects.",
+              [
+                "S0012",
+                "S0014",
+                "S0016",
+                "S0018",
+                "S0025",
+                "S0026",
+                "S0009",
+                "S0027",
+                "S0011"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a meaningful similarity, not a difference.",
+              [
+                "S0014",
+                "S0016",
+                "S0027",
+                "S0028"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a surface-detail difference and does not describe the authors’ main presentation methods.",
+              [
+                "S0017",
+                "S0032"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1453",
+      "fingerprint": "8a857fa89a6167029780501e52e66730212d14c4c92b05f0556820ce71cd9a27",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Builders begin marks an ordered action in Text A’s construction sequence.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "A possible stone border is a minor construction detail, not clear evidence of the overall sequence.",
+              [
+                "S0015"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This statement begins Text B’s runoff cause-and-effect explanation.",
+              [
+                "S0025",
+                "S0026"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The small sign is an incidental detail rather than evidence of the causal presentation.",
+              [
+                "S0032"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1454",
+      "fingerprint": "c6e57c54380c23bfbc05f7db5acb7c33b2543d0eb4898561d9707b157058e467",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This defines a rain garden but does not reveal the ordered-step presentation.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This possible border is one minor detail without a sequence marker.",
+              [
+                "S0015"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Next explicitly marks an ordered building step.",
+              [
+                "S0014"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1455",
+      "fingerprint": "57648a0f8874a7decd728686870132ac782af295e0472d27b2ca676ddbcc42c7",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "Text B explains runoff effects rather than building steps.",
+              [
+                "S0025",
+                "S0027",
+                "S0011"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Only Text A presents the ordered construction sequence.",
+              [
+                "S0012",
+                "S0014",
+                "S0016",
+                "S0018"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Text A focuses on the sequence for choosing, shaping, planting, and guiding water.",
+              [
+                "S0012",
+                "S0014",
+                "S0016",
+                "S0018"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Text A focuses on building actions rather than primarily tracing effects.",
+              [
+                "S0012",
+                "S0014",
+                "S0018"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Text B traces fast runoff, brief holding, soaking, and reduced puddling.",
+              [
+                "S0025",
+                "S0026",
+                "S0009",
+                "S0027",
+                "S0031",
+                "S0011"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The described cause-and-effect focus belongs to Text B.",
+              [
+                "S0025",
+                "S0011"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Text A also describes a basin and plants.",
+              [
+                "S0014",
+                "S0016",
+                "S0019"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Both texts use basin and plant details to show water handling.",
+              [
+                "S0014",
+                "S0016",
+                "S0019",
+                "S0027",
+                "S0028",
+                "S0029"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Text B also describes a basin and roots.",
+              [
+                "S0027",
+                "S0028"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1456",
+      "fingerprint": "a8b6cb767ee59c9892ef34a0b1e563f4287865db7fe8d90138c83e84ae9ab6b2",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Lia tugs alone before accepting Omar and teacher help; Ben replaces signs alone before asking Maya.",
+              [
+                "S0051",
+                "S0052",
+                "S0053",
+                "S0059",
+                "S0048"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The settings, problem clues, and presentation details differ.",
+              [
+                "S0044",
+                "S0054",
+                "S0060",
+                "S0061"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This accurately states the main presentation difference, not a similarity.",
+              [
+                "S0044",
+                "S0060",
+                "S0048"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This names a setting difference rather than a similarity.",
+              [
+                "S0042",
+                "S0057"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1457",
+      "fingerprint": "a1be91701729103c19f4a832a56193b1944c2db8ed0f434a07d884a8a775d8db",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This surface setting difference does not explain how the authors develop the shared theme.",
+              [
+                "S0042",
+                "S0057"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the central similarity, not a difference.",
+              [
+                "S0051",
+                "S0052",
+                "S0059",
+                "S0048"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Text A uses Omar’s spoken diagnosis, while Text B uses visible leaf clues and joint actions.",
+              [
+                "S0044",
+                "S0060",
+                "S0048",
+                "S0061",
+                "S0062"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "This reverses which presentation method appears in each text.",
+              [
+                "S0044",
+                "S0060",
+                "S0048"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1458",
+      "fingerprint": "65b109a4fe956ba6bb1b448ff643b4b19be67f1390057ef7f6166e1bc39cea88",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The blue border is a decorative detail, not the key visual clue used to solve the problem.",
+              [
+                "S0058"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The gold tape star is decorative and does not show spoken problem-solving.",
+              [
+                "S0049"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Maya’s leaf-sketch matching directly demonstrates Text B’s visual-clue presentation.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Omar’s quoted diagnosis directly demonstrates Text A’s spoken-advice presentation.",
+              [
+                "S0044"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1459",
+      "fingerprint": "35a6e71d46107ff1d0a72cb86649e84c7b2a44b79d26a303b25b6bed8a4c6fb4",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The gold star does not reveal dialogue or advice.",
+              [
+                "S0049"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Omar’s quoted observation is the clearest instance of spoken advice identifying the problem.",
+              [
+                "S0044"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Working together supports the shared theme but does not distinguish Text A’s dialogue-based presentation.",
+              [
+                "S0055"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1460",
+      "fingerprint": "530f2fa3a4b075488d4964507cb899476de21aa4af16a34fd5d41317c77e10e9",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Text B uses leaf sketches and physical comparison rather than the stuck curtain dialogue.",
+              [
+                "S0060",
+                "S0048"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Text A uses Omar’s dialogue and the teacher’s guidance to solve the curtain problem.",
+              [
+                "S0044",
+                "S0053",
+                "S0054"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This specific dialogue-and-curtain method is not shared by Text B.",
+              [
+                "S0044"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Text A uses cord observations and spoken guidance rather than leaf sketches.",
+              [
+                "S0044",
+                "S0053"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Only Text B uses leaf sketches and side-by-side sign matching.",
+              [
+                "S0060",
+                "S0048",
+                "S0061",
+                "S0062"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Text B develops the solution through visible plant clues and joint checking.",
+              [
+                "S0060",
+                "S0048",
+                "S0061",
+                "S0062"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Lia also tries alone before accepting help.",
+              [
+                "S0051",
+                "S0052"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Both stories move from ineffective solo action to useful collaboration.",
+              [
+                "S0051",
+                "S0052",
+                "S0055",
+                "S0059",
+                "S0048",
+                "S0062"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Ben also tries alone before accepting help.",
+              [
+                "S0059",
+                "S0048"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

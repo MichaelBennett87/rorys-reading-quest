@@ -1,0 +1,775 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0059",
+  "batchFileSha256": "dc6a28d1c046ec81cf132bea0b2ac519e2e80fb0c0ec9aaa47c2f29cef782b53",
+  "reviewerThreadId": "01a07bc1-d815-7c71-b972-e3c829df1777",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0690",
+      "fingerprint": "69df9b1d0466603cba2c0e911f8be1364483896a202a363f1f0bf4f851804f58",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does re- mean in rebuild?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Without is the usual contribution of -less, not re-.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "More than one is the plural contribution of -s or -es, not re-.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Re- means again, so rebuild means build again after the windy-day damage.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Before is the usual contribution of pre-, not re-.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0691",
+      "fingerprint": "4c409ed8b81580cb242168fb372062c27af4685e282fa6a142e5c695213c61a3",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does -less mean in careless?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Most is not the meaning contributed by -less.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Again is the usual contribution of re-, not -less.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "-less means without, so careless describes acting without enough care.",
+              [
+                "S0026"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Before is the usual contribution of pre-, not -less.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0692",
+      "fingerprint": "16a0e37f189986d20c18732f644391c97b9cb3ab51fac87fb8ae194b93ac18a5",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two words in the passage that mean more than one after the suffix is added.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2",
+            "A4"
+          ],
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Careless uses -less to mean without care, not more than one.",
+              [
+                "S0026"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Plants uses plural -s to mean more than one plant.",
+              [
+                "S0023"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Rebuild uses re- to mean build again, not more than one.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Boxes uses plural -es to mean more than one box.",
+              [
+                "S0023"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0693",
+      "fingerprint": "88471014741f220660804703454172ef54c1c8a20de518864ff4cf32b1e4e855",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which chunk is the prefix in rebuild?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1"
+          ],
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Re is the word part added before the base build.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Again is the prefix meaning, not the visible chunk.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Rebuild is the complete word, not just the prefix.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Build is the base word, not the prefix.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0694",
+      "fingerprint": "3b62d0be611c45133130ee9cfed324b1b816f2e571c3e2fb01ecbd802602a470",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "prompt": "re-",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Re- does not mean wrongly.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Before is the meaning of pre-, not re-.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Re- commonly means again, as in rebuild.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Re- does not mean opposite.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "prompt": "-less",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1"
+          ],
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "-less commonly means without, as in careless.",
+              [
+                "S0026"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Build again describes rebuild, not -less.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "More fast is neither grammatical nor the meaning of -less.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Full of help describes helpful and -ful, not -less.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "prompt": "-s",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1"
+          ],
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "In plants, plural -s means more than one plant.",
+              [
+                "S0023"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Heat before describes preheat, not -s.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Kind helper does not express plural -s.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Slowly moving describes drift, not -s.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "prompt": "-es",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2"
+          ],
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Careful is unrelated to plural -es.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "In boxes, plural -es means more than one box.",
+              [
+                "S0023"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Count wrongly does not express plural -es.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Most tall describes a superlative idea, not plural -es.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0695",
+      "fingerprint": "d48ca25883fbfa62cf7512ea54b13045ecc9b7b67ef4b3b235a50678c6db0141",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does pre- mean in preheat?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2"
+          ],
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "More than one is a plural meaning, not pre-.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Pre- means before, so preheat means heat before the demo begins.",
+              [
+                "S0039",
+                "S0048"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Again is the usual meaning of re-, not pre-.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Without is the usual meaning of -less, not pre-.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0696",
+      "fingerprint": "f69dcce2d248beeb68f9098ea01556f8496e2b695a3afde646498a5d435c14a9",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word means heat before the snack demo?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Preview means see or show beforehand, not heat beforehand.",
+              [
+                "S0046"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Rebuild means build again and does not concern heating.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Preheat directly means heat before, matching the oven action before the snack demo.",
+              [
+                "S0039",
+                "S0048"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Helping means giving assistance and does not concern heating.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0697",
+      "fingerprint": "897a7a2a07125b83213ed449ac69d4e29d6464920b78a86873b4fa7530db69b7",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two words in the passage that start with pre-.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1",
+            "A3"
+          ],
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Preheat visibly begins with pre- and appears in the passage.",
+              [
+                "S0039"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Helped does not begin with pre-.",
+              [
+                "S0045"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Preview visibly begins with pre- and appears in the passage.",
+              [
+                "S0046"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Faster does not begin with pre- and is not in the displayed passage.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0698",
+      "fingerprint": "23074e98986e4a38d224a902429a90ba171dac17a9910e9d4162332a56d6fafd",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which chunk is the prefix in preheat?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2"
+          ],
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Heat is the base word, not the prefix.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Pre is the word part added before heat.",
+              [
+                "S0039"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Preheat is the complete word, not just the prefix.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Before is the prefix meaning, not the visible chunk.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0699",
+      "fingerprint": "44a28bb1515e0d5e0f358ceaf9052432e84781f4824d7d657e38539f5b6f8781",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "prompt": "preheat",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "More than one plant describes plants, not preheat.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Count wrongly is unrelated to preheat.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Preheat means heat before the demo, matching the oven sentence.",
+              [
+                "S0039",
+                "S0048"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Without care describes careless, not preheat.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "prompt": "preview",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A4"
+          ],
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Build again describes rebuild, not preview.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "In a slow way does not describe preview.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Full of help describes helpful, not preview.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "A preview is a look beforehand; the card shows the steps before the demo.",
+              [
+                "S0046"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "prompt": "helpful",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2",
+            "A3"
+          ],
+          "defensible": [
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "Both “full of help” and “kind helper” reasonably describe the helpful student in the displayed sentence, so the row lacks a unique meaning match.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Most tall does not describe helpful.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Full of help transparently combines help with -ful and fits the student who assists.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Kind helper is an ordinary child-level paraphrase of a helpful student who assists others.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Before the test does not describe helpful.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "prompt": "helped",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "One box does not describe helped.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Slowly moving does not describe helped.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The -ed form shows that the helping already happened.",
+              [
+                "S0045"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Again does not describe the past-tense meaning of helped.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

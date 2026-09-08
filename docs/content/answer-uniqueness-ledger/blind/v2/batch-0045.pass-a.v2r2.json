@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0045",
+  "batchFileSha256": "587f8b1794988bd10aeb5bac8fc23d6e2c5bd4b5bc0f8fe6abe92fed602bb9ed",
+  "reviewerThreadId": "01a07bc2-33d0-74f2-84b3-1f74918ca45e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0526",
+      "fingerprint": "a63152cf3e79c817184ea82eed3572df8f77a0f3c7c82b1ce8bbe29bedcf6cef",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The title and all sections concern the rooms, paths, care, and visitors at an animal shelter.", ["S0037", "S0026", "S0030", "S0032"]],
+            ["A2", "INCORRECT", "Low lights are one room feature, not the broad topic.", ["S0026"]],
+            ["A3", "INCORRECT", "Soft beds are one shelter detail, not the broad topic.", ["S0026"]],
+            ["A4", "INCORRECT", "One-way paths are one shelter arrangement, narrower than the whole passage topic.", ["S0030"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0527",
+      "fingerprint": "4864beb3f03118c9610582e4ec1d19af1d5700e09eb77133c5b3d9bc5ec88606",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Daily cleaning and bowl refilling are one supporting care detail, not the complete idea.", ["S0033"]],
+            ["A2", "INCORRECT", "Beds, lights, and bowls are a list of features rather than the overall point those features support.", ["S0026"]],
+            ["A3", "INCORRECT", "A quiet individual space is one supporting arrangement, not the complete passage-wide thought.", ["S0028"]],
+            ["A4", "DEFENSIBLE", "This sentence directly states the passage-wide idea that a calm, quiet shelter helps animals settle and feel safe.", ["S0032"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0528",
+      "fingerprint": "7927fe56168fa5b7abbfee077533cdb46a801b0c38f53502cba8355eb9e2c0e3",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Preventing crowding through one-way paths directly supports the calm-and-safe central idea.", ["S0030", "S0032"]],
+            ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Cleaning and water care are true and beneficial, but they connect less directly to the passage's quiet, settling, and crowd-control focus than A1 and A3.", ["S0033", "S0032"]],
+            ["A3", "DEFENSIBLE", "A small space for quiet rest directly explains how the shelter helps each animal settle.", ["S0028", "S0032"]],
+            ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The front-desk list is a true administrative detail, but it does not describe how the shelter environment helps animals feel safe and settle.", ["S0035", "S0032"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0529",
+      "fingerprint": "f42c6eaf0558c6447da444f8278724b1ebd1f71a717624940a351438e12523e8",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This lists helpful room supplies but covers only one portion of the shelter's arrangements.", ["S0026"]],
+            ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This explains one path benefit but not how the shelter's several arrangements work together.", ["S0030"]],
+            ["A3", "DEFENSIBLE", "This sentence combines quiet rooms, clean beds, and clear paths, showing how the passage's main supports work together for animals.", ["S0036"]],
+            ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This supports quiet rest but focuses on one individual-space detail rather than the integrated central idea.", ["S0028"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0530",
+      "fingerprint": "3f0d47b568e547c4827eb357784cb4f2487eb9e0402dcd2b0da150e72295eb51",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Animal shelters names the broad subject of all passage sections.", ["S0037", "S0025"]],
+            ["A2", "INCORRECT", "One-way paths are one feature within the broader shelter topic.", ["S0030"]],
+            ["A3", "INCORRECT", "Water bowls are one room-care detail, not the topic.", ["S0026"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Daily cleaning is one supporting detail rather than the central idea.", ["S0033"]],
+            ["A2", "INCORRECT", "Following paths is one supporting detail rather than the complete idea.", ["S0030"]],
+            ["A3", "DEFENSIBLE", "This is the complete passage-wide thought stated in the source.", ["S0032"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Animal shelters names the topic rather than a supporting detail.", ["S0037"]],
+            ["A2", "DEFENSIBLE", "The front desk's list of animals needing extra rest is a specific true passage detail.", ["S0035"]],
+            ["A3", "INCORRECT", "This states the central idea rather than another detail.", ["S0032"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0531",
+      "fingerprint": "7a3ded98bf05de4575850c9b67f15ef54c8ada5f8f7ea8acdc3319d06ab1448d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The passage concerns pollinator-garden observations, not seed travel routes.", ["S0064", "S0052"]],
+            ["A2", "DEFENSIBLE", "The title, row sections, bloom graph, and pollinator observations establish pollinator patch counts as the topic.", ["S0064", "S0066", "S0069", "S0067"]],
+            ["A3", "INCORRECT", "No compost piles are discussed.", ["S0052"]],
+            ["A4", "INCORRECT", "No weather tools are discussed.", ["S0052"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0532",
+      "fingerprint": "0564dc8bf748ae63d4db5cc2dce1dc86f5db4790a652cd57a106424432e34186",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "This complete sentence states the overall idea that the garden provides pollinators with both food and rest.", ["S0059"]],
+            ["A2", "INCORRECT", "This is one shady-row comparison detail, not the whole passage's central idea.", ["S0061"]],
+            ["A3", "INCORRECT", "Tall stems are one sunny-row observation, not the complete idea.", ["S0060"]],
+            ["A4", "INCORRECT", "Counting bloom kinds is one class activity, not the central idea.", ["S0053"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0533",
+      "fingerprint": "51bea75d8df096e8e756bc531f7bf99cd0a011b291503572abace970fdf459c1",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Bee visits in the bloom-rich sunny row directly support the food side of the pollinator-garden central idea.", ["S0057", "S0059"]],
+            ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The blue-versus-red graph comparison is true, but flower-color proportions do not directly explain the garden's food-and-rest value.", ["S0055", "S0067"]],
+            ["A3", "DEFENSIBLE", "The shady row's leaf cover, together with the immediately following butterfly-rest detail, supports the resting-place side of the across-sections idea.", ["S0061", "S0062", "S0059"]],
+            ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Tall stems are a true sunny-row observation without a stated link to pollinator food or rest.", ["S0060", "S0059"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0534",
+      "fingerprint": "29128e67ccc20e9d6b425b381b8ebe9d88dd698a68ad7fdf4655a5fd3203bf3b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This is one sunny-row counting activity, not the complete idea.", ["S0053"]],
+            ["A2", "DEFENSIBLE", "This sentence directly states that the pollinator garden supplies insects with food and rest.", ["S0059"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Bee visits support the food portion but do not state the complete central idea.", ["S0057"]],
+            ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This describes the class's comparison goal rather than the substantive idea about what the garden provides.", ["S0063"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0535",
+      "fingerprint": "f5d9a54bd55008d73e0e9e66122352ba85da4badeba44524a9b0415e11532bf8",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This is one shady-row detail rather than the broad topic.", ["S0061"]],
+            ["A2", "INCORRECT", "Bee visits are one pollinator observation rather than the broad topic.", ["S0057"]],
+            ["A3", "DEFENSIBLE", "Pollinator patch counts names the broad subject established by the title, sections, and graph.", ["S0064", "S0067"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Tall stems are one supporting observation, not the central idea.", ["S0060"]],
+            ["A2", "DEFENSIBLE", "This sentence states the complete idea about food and rest for pollinators.", ["S0059"]],
+            ["A3", "INCORRECT", "The blue-versus-red graph result is one comparison detail, not the central idea.", ["S0055"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The shady row having fewer blooms but more leaves is a specific true passage detail.", ["S0061"]],
+            ["A2", "INCORRECT", "Pollinator patch counts names the topic rather than another detail.", ["S0064"]],
+            ["A3", "INCORRECT", "This states the central idea rather than another detail.", ["S0059"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

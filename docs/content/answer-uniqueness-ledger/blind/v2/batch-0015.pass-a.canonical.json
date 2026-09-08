@@ -1,0 +1,935 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0015",
+  "batchFileSha256": "c77a801ba8208697e6f027753309b96e447c00da530c49401a7c2fb2ec7dc3e2",
+  "reviewerThreadId": "01a07bc1-d815-7c71-b972-e3c829df1777",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0165",
+      "fingerprint": "b9e2729bdca7f60c6960b3e9df6b7fc0390144367c1a912864401391b4bf05f8",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Pack is the unprefixed base word, not a word beginning with the prefix un-.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Unpack is transparently formed from un- plus pack.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Heat does not begin with the prefix un-.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Build is the unprefixed base used in rebuild, not an un- word.",
+              [
+                "S0003"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0166",
+      "fingerprint": "677cb82602675a4d56c25464e59ccfd09ac9be26a7bd9459d7fdac8b590ec7f7",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Build is the unprefixed base word, not a word beginning with re-.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Rebuild is transparently formed from re- plus build.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Count is the base in miscount and does not begin with re-.",
+              [
+                "S0008"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Pack does not begin with the prefix re-.",
+              [
+                "S0003"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0167",
+      "fingerprint": "4ec0397beb9bbb66dbe907dab964012261bd53f34735166cdfbd17105dcf219f",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "Both preview (A3) and preheat (A4) visibly contain the prefix pre-, but the one-answer control permits only one response.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Heat does not begin with the prefix pre-.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Unsafe begins with un-, not pre-.",
+              [
+                "S0017"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Preview is a visible pre- word formed from pre- plus view.",
+              [
+                "S0014"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Preheat is a visible pre- word formed from pre- plus heat.",
+              [
+                "S0012"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0168",
+      "fingerprint": "639c403714cac03533aa2ef0d781635fe247aa88a8e906348240dd2bf0ddcd1b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Unpack contains the meaningful prefix un- before pack.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Miscount contains the meaningful prefix mis- before count.",
+              [
+                "S0008"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Reuse contains the meaningful prefix re- before use.",
+              [
+                "S0006"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Rebuild contains the meaningful prefix re- before build.",
+              [
+                "S0003"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0169",
+      "fingerprint": "8f5fee2dbb3410cf64f04a4d39fd21dab3fe7614824481cce0f2aea50d768074",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This sentence describes unpacking tools and rebuilding a shelf, not miscounting screws.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This is the exact visible sentence stating that one helper miscounted screws.",
+              [
+                "S0008"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This sentence describes reusing paint and checking a preview card, not miscounting screws.",
+              [
+                "S0006"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0170",
+      "fingerprint": "91f68943079c9e99fd18a99f36297115e2c05115acb87ea12136f31bd5609374",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Repaint begins with re- and means paint again, not not safe.",
+              [
+                "S0014"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Unsafe is un- plus safe and means not safe in the tray sentence.",
+              [
+                "S0017"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Heat has neither the prefix un- nor the meaning not safe.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Safe expresses the opposite meaning and has no un- prefix.",
+              [
+                "S0017"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0171",
+      "fingerprint": "590d9c7cc21d16a53c795421d236feae54835bd7980e03150392b3c704bd2e0f",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Repaint is re- plus paint and means paint again.",
+              [
+                "S0014"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Preview begins with pre- and concerns seeing beforehand, not painting again.",
+              [
+                "S0014"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Paint is the base word and lacks the prefix re-.",
+              [
+                "S0014"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Unsafe begins with un- and means not safe.",
+              [
+                "S0017"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0172",
+      "fingerprint": "57ebfb32ff7ed1be488a20cf4a447378ad2d52ad512a74f5930ebcf718677f1e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Preheat is pre- plus heat and means to heat beforehand.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Repaint uses re- with paint and does not mean heat beforehand.",
+              [
+                "S0014"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Preview uses pre- with view, not heat.",
+              [
+                "S0014"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Unsafe uses un- with safe and is unrelated to heating beforehand.",
+              [
+                "S0017"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0173",
+      "fingerprint": "039e9eaabcc2e0030ffc8e23715a7643f68e4c3307025f32928ba0d9db6a5c88",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This split breaks the base safe into nonmeaningful pieces.",
+              [
+                "S0017"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Uns is not the taught prefix and afe is not the base word.",
+              [
+                "S0017"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "U is not the prefix and nsafe is not the base word.",
+              [
+                "S0017"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Unsafe divides cleanly into prefix un- and base safe.",
+              [
+                "S0017"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Rep is not the prefix and aint is not the base word.",
+              [
+                "S0014"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Repaint divides cleanly into prefix re- and base paint.",
+              [
+                "S0014"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This split further breaks the base paint instead of preserving it.",
+              [
+                "S0014"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This split breaks the prefix re- into separate letters.",
+              [
+                "S0014"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Preh is not the prefix and eat is not the base heat.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Preheat divides cleanly into prefix pre- and base heat.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Pr is not the taught prefix and eheat is not the base word.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This split further breaks the base heat instead of preserving it.",
+              [
+                "S0012"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "P is not the prefix and review is not the intended base in preview.",
+              [
+                "S0014"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This split further breaks the base view instead of preserving it.",
+              [
+                "S0014"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Preview divides cleanly into prefix pre- and base view.",
+              [
+                "S0014"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Prev is not the taught prefix and iew is not the base word.",
+              [
+                "S0014"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0174",
+      "fingerprint": "e5846f4960f3e15b4f70cceb8db8f3c22761182268a64a040a1d4bce246cb2b2",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Preschool means before school, not test beforehand.",
+              [
+                "S0026"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Unroll uses un- with roll and is unrelated to testing beforehand.",
+              [
+                "S0023"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Pretest is pre- plus test and means to test beforehand.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Retell uses re- with tell and means tell again.",
+              [
+                "S0023"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0175",
+      "fingerprint": "41f0517eef637ef67dc627c4e3aae3f789b2a33e19f1231fa27039902167c545",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Pretest means test beforehand, not tell again.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Unroll uses un- with roll and does not mean tell again.",
+              [
+                "S0023"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Preschool uses pre- with school and does not mean tell again.",
+              [
+                "S0026"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Retell is re- plus tell and means tell again.",
+              [
+                "S0023"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0176",
+      "fingerprint": "a3fdb981e40849348b97ff5964bf5500e4c62b76113587d20e33cd568dd9d875",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Pretest contains the meaningful prefix pre- before test.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Unroll contains the meaningful prefix un- before roll.",
+              [
+                "S0023"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Preschool contains the meaningful prefix pre- before school.",
+              [
+                "S0026"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Retell contains the meaningful prefix re- before tell.",
+              [
+                "S0023"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0177",
+      "fingerprint": "1648a5a82c9994ff7b99a4f8b938f5ba6f43e446e4799873a85b36912313f6e8",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [],
+          "ambiguity": "No option fully satisfies the prompt: A1 says the teacher could retell the plan, not that the teacher retold it.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence matches the child unrolling a poster, but it says the teacher could retell the plan, not that the teacher retold it.",
+              [
+                "S0023"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This sentence concerns pretesting an art game and hearing a song, not the actions named in the prompt.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This sentence concerns younger guests near the preschool room, not the actions named in the prompt.",
+              [
+                "S0026"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0178",
+      "fingerprint": "8776c698c40b5d32a2450c0856bb5a7afc2776fe22b2b60385de45e46c35de19",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Pr is not the taught prefix and etest is not the base word.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Pret is not the prefix and est is not the base word.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Pretest divides cleanly into prefix pre- and base test.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This split further breaks the base test instead of preserving it.",
+              [
+                "S0021"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Unroll divides cleanly into prefix un- and base roll.",
+              [
+                "S0023"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "U is not the taught prefix and nroll is not the base word.",
+              [
+                "S0023"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This split further breaks the base roll instead of preserving it.",
+              [
+                "S0023"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Unr is not the prefix and oll is not the base word.",
+              [
+                "S0023"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This split further breaks the base tell instead of preserving it.",
+              [
+                "S0023"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "R is not the taught prefix and etell is not the base word.",
+              [
+                "S0023"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Ret is not the prefix and ell is not the base word.",
+              [
+                "S0023"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Retell divides cleanly into prefix re- and base tell.",
+              [
+                "S0023"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Preschool divides cleanly into prefix pre- and base school.",
+              [
+                "S0026"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This split further breaks the base school instead of preserving it.",
+              [
+                "S0026"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Pr is not the taught prefix and eschool is not the base word.",
+              [
+                "S0026"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Pres is not the prefix and chool is not the base word.",
+              [
+                "S0026"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

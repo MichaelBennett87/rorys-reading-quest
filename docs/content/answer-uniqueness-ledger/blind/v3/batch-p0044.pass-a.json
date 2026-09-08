@@ -1,0 +1,398 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0044",
+  "batchFileSha256": "d03e1e875a058164aa3c402aa9582606d01294479a01b32a3297207ccecfb1b0",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1258",
+      "fingerprint": "f655cdfbca83bc653d494b81d13f19adb0b87fa8dfca7a9e474b94561bd14038",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Introduces the helmet's parts but does not explain the shell job or replacement time.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Directly states replacement after a hard crash.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Directly explains the hard shell's force-spreading and contact-resisting jobs.",
+              [
+                "S0064"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Color and pattern do not answer either requested detail.",
+              [
+                "S0070"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1263",
+      "fingerprint": "c89aa780e341857b608be03823417ace5bb47bbd4561d7c488ef0cd226ab9979",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "States the broad travel idea but not the requested wing mechanism or later benefit.",
+              [
+                "S0084"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Directly explains that moving away reduces competition for resources.",
+              [
+                "S0090"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The collector-envelope detail does not explain natural travel or its benefit.",
+              [
+                "S0099"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Directly explains how spinning gives wind more time to carry the seed.",
+              [
+                "S0092"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1264",
+      "fingerprint": "c846e85bc53c2f4f6c8553ce8ad036ba0d001ec07424898ef82490f1f63d5fe4",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "States the broad idea that structures help travel but not the hook mechanism.",
+              [
+                "S0084"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Directly explains hooks catching animal fur and falling off elsewhere.",
+              [
+                "S0095"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Contrasts animal movement with wind but does not explain how hooks carry a seed.",
+              [
+                "S0097"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Describes collectors storing seeds, not animal transport.",
+              [
+                "S0099"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1272",
+      "fingerprint": "5436392bbb77b20816dadcc56c59067971f5a43eb96e819b9b586e86f28ade22",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "The text uses qualified effects and does not claim every wetland completely prevents flooding or soil movement.",
+              [
+                "S0120",
+                "S0126"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Combines the whole text's water storage, slower flow, soil retention, and habitat support.",
+              [
+                "S0120",
+                "S0121",
+                "S0115",
+                "S0125",
+                "S0117",
+                "S0129",
+                "S0130"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Names only the topic and does not state a central idea.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The water-flow detail supports the idea, but numbered study flags do not support the wetland functions in Part A.",
+              [
+                "S0120",
+                "S0119"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Boardwalk and study-flag details do not establish the central wetland functions.",
+              [
+                "S0127",
+                "S0119"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Pairs a water-slowing detail with a later cross-section summary of storage, slower flow, and habitats.",
+              [
+                "S0120",
+                "S0130"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1279",
+      "fingerprint": "4c48455a5151b176d136ccefa665e197016456ae4c777c016f08edd66a35ce5a",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "States the complete process and purpose developed across all sections.",
+              [
+                "S0150"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The source says another power source may provide electricity when panels produce too little.",
+              [
+                "S0156"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Names only the topic without stating a central idea.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Panel location and color do not explain conversion and delivery of energy.",
+              [
+                "S0143",
+                "S0158"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Connects sunlight absorption in the first section to the parts carrying energy to equipment in a later section.",
+              [
+                "S0151",
+                "S0160"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Sunlight absorption supports the idea, but panel color does not support conversion or delivery.",
+              [
+                "S0151",
+                "S0158"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1286",
+      "fingerprint": "4935dfa1505aa53bd49db87d636e92f9d00740e1583fb92acb55d31a6ca6433e",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Names only the topic without explaining the return system.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Accurately combines the scanning, labeling, sorting, and shelving process with its result for readers.",
+              [
+                "S0175",
+                "S0183",
+                "S0184",
+                "S0187",
+                "S0179"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The source explicitly says cover color does not decide shelf location.",
+              [
+                "S0186"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Scanning supports the idea, but the cover-color contrast does not show the return system preparing the book for a reader.",
+              [
+                "S0175",
+                "S0186"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Connects the recorded return in the first section to the later result that the system prepares the book to be borrowed again.",
+              [
+                "S0175",
+                "S0190"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Removing a bookmark and rejecting cover color do not explain the coordinated locating system.",
+              [
+                "S0181",
+                "S0186"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

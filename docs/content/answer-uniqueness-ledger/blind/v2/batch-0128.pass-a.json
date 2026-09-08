@@ -1,0 +1,775 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0128",
+  "batchFileSha256": "184266e52500dd3f20f98a0501169d5d0001fa1bcc27ce921c5513d9b1cb8f7b",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1497",
+      "fingerprint": "403ed9c6e67d711d3b21936c296a439a182aaa2fd98fe101fc531046ebe39e2e",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This is a reasonable approximate count made before every square is counted.",
+              [
+                "S0025",
+                "S0033"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "An exact total found after repeated counting is a determination, not the requested prior estimate.",
+              [
+                "S0029",
+                "S0036"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "A favorite number is not a reasonable approximation from the grid.",
+              [
+                "S0033"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Erasing an aisle does not approximate the number of chairs.",
+              [
+                "S0034",
+                "S0039"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1498",
+      "fingerprint": "5574a61443dcd1711223b866c57b76aa8351b3f5d5ffbb9fa378e9717799b04f",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "A counter does not justify the room without a reason or evidence.",
+              [
+                "S0031"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The model key explicitly makes one counter stand for one real chair.",
+              [
+                "S0027"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "Moving a wall is neither described nor what represent means in the model.",
+              [
+                "S0027"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The counter stands for a chair; it does not estimate after the chairs are counted.",
+              [
+                "S0025",
+                "S0027"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1499",
+      "fingerprint": "6478ce2d54f60135048823189cf67121d5dc24baba9bd7e4ba17ba6ac3e938bc",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "Repeating an answer without a reason does not justify it.",
+              [
+                "S0031"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Counters and an equation are reasons that can justify the spoken plan.",
+              [
+                "S0031",
+                "S0037"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Making a ruler longer does not explain why an answer or plan makes sense.",
+              [
+                "S0031"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Showing two agreeing calculations supplies written reasons for the total.",
+              [
+                "S0029",
+                "S0036"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1500",
+      "fingerprint": "5f2429344580ea298f2ae4bc9be704e0068ed44704798a795fa32f6ca8680ad3",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This explains a difference after the exact answer was already determined.",
+              [
+                "S0037"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "This is an approximate estimate made before the exact count.",
+              [
+                "S0025"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The students calculate and state the exact chair total from the model.",
+              [
+                "S0029"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This defines what a model piece represents, not the exact total.",
+              [
+                "S0027"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1501",
+      "fingerprint": "fd99ce84d9e4c4bbddc40bad45a91eca7b969442e73f771996b44c1d9bc627b3",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Determine means find an answer, not make an approximation.",
+              [
+                "S0029"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Justify means explain with reasons.",
+              [
+                "S0031"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Estimate means make a reasonable approximate answer.",
+              [
+                "S0025",
+                "S0033"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Represent means stand for something in a model.",
+              [
+                "S0027"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Estimate means approximate.",
+              [
+                "S0025"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Determine means find an answer.",
+              [
+                "S0029"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Represent means stand for something in a model.",
+              [
+                "S0027"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Justify means explain with reasons.",
+              [
+                "S0031"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Represent means stand for something.",
+              [
+                "S0027"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Determine means find out by checking or calculating.",
+              [
+                "S0029",
+                "S0036"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Estimate gives an approximation rather than an exact checked result.",
+              [
+                "S0025"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Justify explains why an answer makes sense.",
+              [
+                "S0031"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Determine finds the answer rather than explaining why it makes sense.",
+              [
+                "S0029"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Estimate approximates rather than supplies reasons.",
+              [
+                "S0025"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Justify means explain an answer with reasons or evidence.",
+              [
+                "S0031"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Represent means stand for something in a model.",
+              [
+                "S0027"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1502",
+      "fingerprint": "2a067c8540c1fe1cc5058ac2527fc12ca864f654cb8c69633310a08ac7fca73e",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Copying stated words repeats a fact instead of forming an unstated idea.",
+              [
+                "S0054"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "It connects several stated clues to an idea that the text never states directly.",
+              [
+                "S0055",
+                "S0056",
+                "S0057",
+                "S0047",
+                "S0058"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Naming a printed title repeats visible information.",
+              [
+                "S0064"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Counting sentences does not infer an idea from story clues.",
+              [
+                "S0058"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1503",
+      "fingerprint": "5647c5fe8e3886fe11d0d64d0871d706972e3c1cc2b75af34ba711763bbdb65f",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Copying a page number does not explain meaning.",
+              [
+                "S0049"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "It explains what the repeated images mean in the story discussion.",
+              [
+                "S0049",
+                "S0060"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Sharpening an object does not interpret meaning.",
+              [
+                "S0049"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Folding paper does not explain what a text or image means.",
+              [
+                "S0049"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1504",
+      "fingerprint": "aee6b242fed1e9459aaafb28180120e634e95c22b0a04533fc9391639c36f360",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Writing a page number twice does not strengthen an academic idea with evidence.",
+              [
+                "S0059",
+                "S0063"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Story details strengthen and provide evidence for the inference.",
+              [
+                "S0059",
+                "S0053"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This uses the physical holding-up sense of support, excluded by the academic idea-strengthening prompt.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Measurements can strengthen a science conclusion by serving as evidence.",
+              [
+                "S0059",
+                "S0063"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1505",
+      "fingerprint": "126378a27cf79a66f2753d8889bf590aa334791e80b4388594bdcb5a9d556aa7",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "It explicitly directs partners to keep only the problem, key actions, and result in a brief summary.",
+              [
+                "S0051"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states an inference rather than instructions for a brief account of important information.",
+              [
+                "S0047"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes interpretation rather than summarizing.",
+              [
+                "S0049"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Connecting evidence to an idea is support, not a brief account of the important information.",
+              [
+                "S0063"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1506",
+      "fingerprint": "d9ba68ec7e0a3ada9d9623bf34720c75bf7ea6eb68c40c99e67f49013edc88ec",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Support strengthens an idea with details; it does not name forming the unstated idea.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Summarize tells important information briefly.",
+              [
+                "S0051"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Interpret explains meaning, but infer specifically forms an unstated idea from clues.",
+              [
+                "S0047",
+                "S0049"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Infer means figure out an unstated idea by connecting clues.",
+              [
+                "S0047",
+                "S0058"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Support strengthens an idea rather than explains meaning.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Infer forms an unstated idea, while this row asks to explain meaning.",
+              [
+                "S0047"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Interpret means explain what a text or display means.",
+              [
+                "S0049",
+                "S0060"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Summarize briefly tells important information.",
+              [
+                "S0051"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Infer forms an unstated idea.",
+              [
+                "S0047"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Support strengthens an idea.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Interpret explains meaning.",
+              [
+                "S0049"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Summarize means tell the most important ideas briefly.",
+              [
+                "S0051"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Support means strengthen an idea with useful details or evidence.",
+              [
+                "S0059",
+                "S0053",
+                "S0063"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Interpret explains meaning rather than strengthens an idea with details.",
+              [
+                "S0049"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Summarize tells important information briefly.",
+              [
+                "S0051"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Infer forms an unstated idea from clues.",
+              [
+                "S0047"
+              ]
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

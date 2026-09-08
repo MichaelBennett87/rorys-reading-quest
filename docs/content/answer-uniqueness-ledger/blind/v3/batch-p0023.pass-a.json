@@ -1,0 +1,732 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0023",
+  "batchFileSha256": "d82253019dc9c1e098a515efbf00f780af28a403573612ce5f35c1139be62e3a",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0521",
+      "fingerprint": "9293342b2e23068f76e381f49fef9464017412f961cdf3f1fee290a996e2863d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Rushing water is one detail, not the passage topic.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Blooming flowers are one detail, not the passage topic.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The whole passage explains rain gardens and how they help.",
+              [
+                "S0003",
+                "S0009",
+                "S0014"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "A safer place to grow is one benefit, not the topic.",
+              [
+                "S0009"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0522",
+      "fingerprint": "efb66b6cb3617a73d3b930d3c4c3c0ef85e802c658f7775312cab397efaa4b45",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one supporting rock detail.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This states both major ideas: soaking water and helping plants grow.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This defines a rain garden but omits its broader benefits.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one minor flower-visitor detail.",
+              [
+                "S0012"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0523",
+      "fingerprint": "805bf8486df95d34a735192c6b853cb15c75d4132c264a6ae7b5c16ab8d3a1ff",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This directly explains how soil holds the collected water.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This directly explains how the bed catches rain.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Watching water disappear happens later and does not explain the initial catching or holding.",
+              [
+                "S0013"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Flower visitors do not explain how rainwater is caught or held.",
+              [
+                "S0012"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0524",
+      "fingerprint": "e1a9363dc217b9a8f336c9a636900944153ab8b162c308e58fa610d5108669af",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This sentence states the passage-wide idea about water and plant benefits.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a supporting root detail.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a supporting soil detail.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This defines the subject but omits the full central idea.",
+              [
+                "S0003"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0525",
+      "fingerprint": "31bed37da9765a94b2ed18efe36b22ad28f2b71442dec005342533bd56090e7a",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Rain gardens are the passage's broad subject.",
+              [
+                "S0014",
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a complete supporting detail, not a topic label.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a minor supporting detail, not the topic.",
+              [
+                "S0012"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one rock detail.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This states the passage-wide water and plant benefits.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one observation detail.",
+              [
+                "S0013"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This is a true source detail distinct from the topic and central idea.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the topic label, not a detail statement.",
+              [
+                "S0014"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the central idea, not another detail.",
+              [
+                "S0009"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0526",
+      "fingerprint": "a63152cf3e79c817184ea82eed3572df8f77a0f3c7c82b1ce8bbe29bedcf6cef",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The entire passage explains an animal shelter.",
+              [
+                "S0037",
+                "S0026",
+                "S0036"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Low lights are one shelter detail.",
+              [
+                "S0026"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Soft beds are one shelter detail.",
+              [
+                "S0026"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "One-way paths are one shelter detail.",
+              [
+                "S0030"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0527",
+      "fingerprint": "4864beb3f03118c9610582e4ec1d19af1d5700e09eb77133c5b3d9bc5ec88606",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one daily-care detail.",
+              [
+                "S0033"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This lists several shelter features but does not state their overall benefit.",
+              [
+                "S0026"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one quiet-rest detail.",
+              [
+                "S0028"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This states the passage-wide idea that a calm shelter helps animals feel safe and settle.",
+              [
+                "S0032"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0528",
+      "fingerprint": "7927fe56168fa5b7abbfee077533cdb46a801b0c38f53502cba8355eb9e2c0e3",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "The prompt requests two most-relevant details, but the extra-rest list is also reasonably relevant to helping animals settle, with no visible rule excluding it.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Avoiding crowding directly supports a calm, safe shelter.",
+              [
+                "S0030"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Clean rooms and filled bowls support care, but this detail is less directly about quiet, safety, or settling than the other choices.",
+              [
+                "S0033"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "A low-noise resting space directly supports settling safely.",
+              [
+                "S0028"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Tracking animals that need extra rest reasonably supports helping them settle.",
+              [
+                "S0035"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0529",
+      "fingerprint": "f42c6eaf0558c6447da444f8278724b1ebd1f71a717624940a351438e12523e8",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "All four sentences reasonably help explain how shelter conditions support calm or safety; the word best supplies no visible ranking criterion.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Soft beds, low lights, and water are calm shelter conditions.",
+              [
+                "S0026"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Preventing crowding directly helps animals remain calm.",
+              [
+                "S0030"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This combines quiet rooms, clean beds, and clear paths as coordinated support.",
+              [
+                "S0036"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "A quiet personal space directly helps an animal rest and settle.",
+              [
+                "S0028"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0530",
+      "fingerprint": "3f0d47b568e547c4827eb357784cb4f2487eb9e0402dcd2b0da150e72295eb51",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Animal shelters are the broad subject.",
+              [
+                "S0037",
+                "S0026"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "One-way paths are one detail.",
+              [
+                "S0030"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Water bowls are one detail.",
+              [
+                "S0026"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one care detail.",
+              [
+                "S0033"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one path detail.",
+              [
+                "S0030"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This states the passage-wide benefit of a calm shelter.",
+              [
+                "S0032"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a topic label, not a detail sentence.",
+              [
+                "S0037"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This is a true source detail distinct from the topic and central idea.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the central idea rather than another detail.",
+              [
+                "S0032"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0531",
+      "fingerprint": "7a3ded98bf05de4575850c9b67f15ef54c8ada5f8f7ea8acdc3319d06ab1448d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "UNSUPPORTED",
+              "The passage does not discuss seed travel routes.",
+              [
+                "S0064"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The title and sections focus on counts from a pollinator patch.",
+              [
+                "S0064",
+                "S0053",
+                "S0063"
+              ]
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "The passage does not discuss compost piles.",
+              [
+                "S0064"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "The passage does not discuss weather tools.",
+              [
+                "S0064"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0532",
+      "fingerprint": "0564dc8bf748ae63d4db5cc2dce1dc86f5db4790a652cd57a106424432e34186",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This states the broad benefit tying the garden and insect details together.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one comparison detail.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one stem-height detail.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one counting detail from one row.",
+              [
+                "S0053"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

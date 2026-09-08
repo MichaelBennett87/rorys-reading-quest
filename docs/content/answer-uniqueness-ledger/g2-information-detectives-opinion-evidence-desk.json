@@ -1,0 +1,4136 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "lesson-opinion-fact-opinion-topic-q-1",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-03c722812943363d",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "f9f16235d1dd40c986f6637521799228432fa05ba67352669e9a4bf8065fc6fa",
+        "conclusionsSha256": "11a6cd79fb665785bf4166ef8281cf46180b22aa6442a379b3b2c5300e04e790",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0051.pass-a.json",
+        "receiptSha256": "11a6cd79fb665785bf4166ef8281cf46180b22aa6442a379b3b2c5300e04e790",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the topic of this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "shaded-topic"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "shaded-topic"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "shaded-topic",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Shaded rest spots names the subject of the title and all passage details.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-title"
+              ]
+            },
+            {
+              "answerId": "shaded-opinion",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the author recommendation, not the topic label.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-sentence-6"
+              ]
+            },
+            {
+              "answerId": "shaded-fact",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one measured fact, not the topic label.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-sentence-3"
+              ]
+            },
+            {
+              "answerId": "shaded-detail",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one visitor observation, not the topic label.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-fact-opinion-topic-q-2",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-738630e7a04a5da3",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "f9f16235d1dd40c986f6637521799228432fa05ba67352669e9a4bf8065fc6fa",
+        "conclusionsSha256": "11a6cd79fb665785bf4166ef8281cf46180b22aa6442a379b3b2c5300e04e790",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0051.pass-a.json",
+        "receiptSha256": "11a6cd79fb665785bf4166ef8281cf46180b22aa6442a379b3b2c5300e04e790",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence is a fact from the passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "shaded-fact"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "shaded-fact"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "shaded-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a topic phrase, not a sentence stating a fact.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots"
+              ]
+            },
+            {
+              "answerId": "shaded-opinion",
+              "verdict": "INCORRECT",
+              "rationale": "The word should marks this as a recommendation rather than a checkable fact.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-sentence-6"
+              ]
+            },
+            {
+              "answerId": "shaded-fact",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The class measurement is a checkable fact stated in the passage and graph.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-sentence-3",
+                "g2-id-opinion-shaded-rest-spots-graph"
+              ]
+            },
+            {
+              "answerId": "shaded-false",
+              "verdict": "CONTRADICTED",
+              "rationale": "The passage says visitors stayed longer at the shaded bench, not the sunny bench.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-fact-opinion-topic-q-3",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-e73023cdb6177fa1",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "3107a4ce20807b499ec555413e1b7e3c3e5c0ba2829bd6fc4b2439b361d4b048",
+        "conclusionsSha256": "da5ee1aae49eeeed1a50bf18cc05efba3de7d85a19e4fb342546a999588a48c4",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0028.pass-a.json",
+        "receiptSha256": "da5ee1aae49eeeed1a50bf18cc05efba3de7d85a19e4fb342546a999588a48c4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the measured temperature detail and the detail that directly says the shaded bench felt more comfortable. Select two.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "shaded-detail-1",
+            "shaded-detail-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "shaded-detail-2",
+            "shaded-detail-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "shaded-detail-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly says the shaded bench felt more comfortable.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-sentence-4"
+              ]
+            },
+            {
+              "answerId": "shaded-detail-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This reports the number of benches, not temperature or comfort.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-sentence-1"
+              ]
+            },
+            {
+              "answerId": "shaded-detail-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This says families rest there but does not directly state comfort or measured temperature.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-sentence-5"
+              ]
+            },
+            {
+              "answerId": "shaded-detail-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly gives the measured three-degree temperature difference.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-fact-opinion-topic-q-4",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-408530a7ae65227b",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "f9f16235d1dd40c986f6637521799228432fa05ba67352669e9a4bf8065fc6fa",
+        "conclusionsSha256": "11a6cd79fb665785bf4166ef8281cf46180b22aa6442a379b3b2c5300e04e790",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0051.pass-a.json",
+        "receiptSha256": "11a6cd79fb665785bf4166ef8281cf46180b22aa6442a379b3b2c5300e04e790",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that states the author opinion.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-id-opinion-shaded-rest-spots-sentence-6"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-id-opinion-shaded-rest-spots-sentence-6"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-id-opinion-shaded-rest-spots-sentence-6",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The word should states the author recommendation that more shaded spots ought to be added.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g2-id-opinion-shaded-rest-spots-sentence-1",
+              "verdict": "INCORRECT",
+              "rationale": "The number and location of benches is a checkable fact.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g2-id-opinion-shaded-rest-spots-sentence-3",
+              "verdict": "INCORRECT",
+              "rationale": "The measured temperature difference is a checkable fact.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-sentence-3",
+                "g2-id-opinion-shaded-rest-spots-graph"
+              ]
+            },
+            {
+              "answerId": "g2-id-opinion-shaded-rest-spots-sentence-8",
+              "verdict": "INCORRECT",
+              "rationale": "This states a claimed benefit rather than what the author thinks should happen.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-fact-opinion-topic-q-5",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-6eb89a7b50d1b8df",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "3107a4ce20807b499ec555413e1b7e3c3e5c0ba2829bd6fc4b2439b361d4b048",
+        "conclusionsSha256": "da5ee1aae49eeeed1a50bf18cc05efba3de7d85a19e4fb342546a999588a48c4",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0028.pass-a.json",
+        "receiptSha256": "da5ee1aae49eeeed1a50bf18cc05efba3de7d85a19e4fb342546a999588a48c4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "shaded-topic-row",
+          "prompt": "What is the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "shaded-topic-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "shaded-topic-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "shaded-topic-fact",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a measured detail.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-sentence-3"
+              ]
+            },
+            {
+              "answerId": "shaded-topic-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Shaded rest spots name the broad subject.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-title"
+              ]
+            },
+            {
+              "answerId": "shaded-topic-opinion",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the author's opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "shaded-opinion-row",
+          "prompt": "Which sentence is the opinion?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "shaded-opinion-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "shaded-opinion-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "shaded-opinion-detail",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This reports what the ranger said rather than recommending an action.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-sentence-5"
+              ]
+            },
+            {
+              "answerId": "shaded-opinion-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The word should marks this as a recommendation or opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-sentence-6"
+              ]
+            },
+            {
+              "answerId": "shaded-opinion-fact",
+              "verdict": "CONTRADICTED",
+              "rationale": "This is a measured fact.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "shaded-fact-row",
+          "prompt": "Which sentence is a fact?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "shaded-fact-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "shaded-fact-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "shaded-fact-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a topic phrase, not a factual sentence.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-title"
+              ]
+            },
+            {
+              "answerId": "shaded-fact-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This reports a measurable temperature result.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-sentence-3"
+              ]
+            },
+            {
+              "answerId": "shaded-fact-opinion",
+              "verdict": "CONTRADICTED",
+              "rationale": "This is a should recommendation rather than a fact report.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "shaded-detail-row",
+          "prompt": "Which sentence reports what the ranger said families do after the steep hill?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "shaded-detail-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "shaded-detail-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "shaded-detail-opinion",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the recommendation, not the ranger report.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-sentence-6"
+              ]
+            },
+            {
+              "answerId": "shaded-detail-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly states what the ranger reported families do.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-sentence-5"
+              ]
+            },
+            {
+              "answerId": "shaded-detail-fact",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the temperature measurement, not the ranger report.",
+              "evidenceIds": [
+                "g2-id-opinion-shaded-rest-spots-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-match-evidence-q-1",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-93f4a9eda2612a21",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "bcf0bd29f7328c82cb781766acaf28d89c0d4e59d50b2671e9a0354406ac316b",
+        "conclusionsSha256": "6e28f01c994fe6862c67f5557e4f05bb6da6a1bcc71cdad984f9724a10281740",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0052.pass-a.json",
+        "receiptSha256": "6e28f01c994fe6862c67f5557e4f05bb6da6a1bcc71cdad984f9724a10281740",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence is the author opinion about the flowers?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "flowers-opinion"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "flowers-opinion"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "flowers-detail",
+              "verdict": "INCORRECT",
+              "rationale": "This is a checkable description of the illustration, not an opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds-sentence-7",
+                "g2-id-opinion-native-flower-beds-illustration"
+              ]
+            },
+            {
+              "answerId": "flowers-opinion",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Should signals the author recommendation to include more native flowers.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds-sentence-5"
+              ]
+            },
+            {
+              "answerId": "flowers-fact",
+              "verdict": "INCORRECT",
+              "rationale": "The bee-visit comparison is presented as an observation from the passage.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds-sentence-2"
+              ]
+            },
+            {
+              "answerId": "flowers-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a topic phrase, not a sentence expressing an opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-match-evidence-q-2",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-fc3267f84fd42bc4",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "bcf0bd29f7328c82cb781766acaf28d89c0d4e59d50b2671e9a0354406ac316b",
+        "conclusionsSha256": "6e28f01c994fe6862c67f5557e4f05bb6da6a1bcc71cdad984f9724a10281740",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0008.second-pass.json",
+        "receiptSha256": "cd2fa8ccfe085c1cac01a00da17414424bff8ae62a63b6bf4f50acf2d21aac50",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail best supports the opinion that the garden should include more native flowers?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "flowers-support-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "flowers-support-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "flowers-support-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a different opinion about plant placement, not evidence for adding native flowers.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds-sentence-6"
+              ]
+            },
+            {
+              "answerId": "flowers-support-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "More bee visits to native than nonnative flowers directly supports including more native flowers.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds-sentence-2"
+              ]
+            },
+            {
+              "answerId": "flowers-support-2",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The existence of sunny and shady beds does not compare or justify native flowers.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds-sentence-1"
+              ]
+            },
+            {
+              "answerId": "flowers-support-3",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Fewer blooms and more leaves in shade concerns light conditions, not native versus nonnative flowers.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-match-evidence-q-3",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-79ce3e88ad8872ac",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "bcf0bd29f7328c82cb781766acaf28d89c0d4e59d50b2671e9a0354406ac316b",
+        "conclusionsSha256": "6e28f01c994fe6862c67f5557e4f05bb6da6a1bcc71cdad984f9724a10281740",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0052.pass-a.json",
+        "receiptSha256": "6e28f01c994fe6862c67f5557e4f05bb6da6a1bcc71cdad984f9724a10281740",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details that help explain the opinion about plant placement.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "flowers-layout-1",
+            "flowers-layout-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "flowers-layout-2",
+            "flowers-layout-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "flowers-layout-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Bees near native flowers concerns flower type, not where tall and short plants should be placed.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds-sentence-7",
+                "g2-id-opinion-native-flower-beds-illustration"
+              ]
+            },
+            {
+              "answerId": "flowers-layout-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Fewer blooms in the shady bed supports protecting shorter plants from excess shade.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds-sentence-8"
+              ]
+            },
+            {
+              "answerId": "flowers-layout-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Tall plants casting shadows directly explains why their placement affects shorter plants’ sun.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds-sentence-4"
+              ]
+            },
+            {
+              "answerId": "flowers-layout-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Naming sunny and shady beds supplies setting but does not explain the placement recommendation.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-match-evidence-q-4",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-20b63c22aa3b6f46",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "bcf0bd29f7328c82cb781766acaf28d89c0d4e59d50b2671e9a0354406ac316b",
+        "conclusionsSha256": "6e28f01c994fe6862c67f5557e4f05bb6da6a1bcc71cdad984f9724a10281740",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0052.pass-a.json",
+        "receiptSha256": "6e28f01c994fe6862c67f5557e4f05bb6da6a1bcc71cdad984f9724a10281740",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that gives a strong clue about why the author wants more native flowers.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-id-opinion-native-flower-beds-sentence-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-id-opinion-native-flower-beds-sentence-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-id-opinion-native-flower-beds-sentence-1",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The two bed types do not explain a preference for native flowers.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g2-id-opinion-native-flower-beds-sentence-8",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Shade-related blooms and leaves do not compare native and nonnative flowers.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g2-id-opinion-native-flower-beds-sentence-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The greater number of bee visits to native flowers directly supports wanting more of them.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g2-id-opinion-native-flower-beds-sentence-6",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a separate plant-placement recommendation, not evidence about native flowers.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-match-evidence-q-5",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-59fc37fda3cd7f99",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "bcf0bd29f7328c82cb781766acaf28d89c0d4e59d50b2671e9a0354406ac316b",
+        "conclusionsSha256": "6e28f01c994fe6862c67f5557e4f05bb6da6a1bcc71cdad984f9724a10281740",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0052.pass-a.json",
+        "receiptSha256": "6e28f01c994fe6862c67f5557e4f05bb6da6a1bcc71cdad984f9724a10281740",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "flowers-topic-row",
+          "prompt": "What is the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "flowers-topic-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "flowers-topic-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "flowers-topic-detail",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one bee observation rather than the topic label.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds-sentence-2"
+              ]
+            },
+            {
+              "answerId": "flowers-topic-opinion",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the author opinion rather than the topic label.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds-sentence-5"
+              ]
+            },
+            {
+              "answerId": "flowers-topic-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Native flowers names the subject emphasized by the title, bee evidence, and recommendation.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds-title",
+                "g2-id-opinion-native-flower-beds-sentence-2",
+                "g2-id-opinion-native-flower-beds-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "flowers-central-row",
+          "prompt": "What is the central idea?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "flowers-central-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "flowers-central-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "flowers-central-opinion",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one flower recommendation, not the complete idea covering flowers and placement.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds-sentence-5"
+              ]
+            },
+            {
+              "answerId": "flowers-central-detail",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one shadow detail rather than the passage-wide central idea.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds-sentence-4"
+              ]
+            },
+            {
+              "answerId": "flowers-central-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This combines the passage’s native-flower evidence with its placement-and-sunlight evidence.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds-sentence-2",
+                "g2-id-opinion-native-flower-beds-sentence-4",
+                "g2-id-opinion-native-flower-beds-sentence-5",
+                "g2-id-opinion-native-flower-beds-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "flowers-opinion-row",
+          "prompt": "Which sentence is the opinion about flowers?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "flowers-opinion-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "flowers-opinion-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "flowers-opinion-detail",
+              "verdict": "INCORRECT",
+              "rationale": "This is a checkable observation about the shady bed.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds-sentence-8"
+              ]
+            },
+            {
+              "answerId": "flowers-opinion-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a central-idea summary rather than the author’s explicit flower recommendation.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds"
+              ]
+            },
+            {
+              "answerId": "flowers-opinion-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Should identifies the author recommendation about adding native flowers.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "flowers-detail-row",
+          "prompt": "Which sentence is another true detail?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "flowers-detail-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "flowers-detail-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "flowers-detail-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This is a factual observation stated in the passage.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds-sentence-8"
+              ]
+            },
+            {
+              "answerId": "flowers-detail-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a central-idea summary rather than a source detail.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds"
+              ]
+            },
+            {
+              "answerId": "flowers-detail-opinion",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a recommendation about what should happen, not a checkable factual detail.",
+              "evidenceIds": [
+                "g2-id-opinion-native-flower-beds-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-find-the-author-opinion-q-1",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-ac96fda5b51f6ef1",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "bcf0bd29f7328c82cb781766acaf28d89c0d4e59d50b2671e9a0354406ac316b",
+        "conclusionsSha256": "6e28f01c994fe6862c67f5557e4f05bb6da6a1bcc71cdad984f9724a10281740",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0052.pass-a.json",
+        "receiptSha256": "6e28f01c994fe6862c67f5557e4f05bb6da6a1bcc71cdad984f9724a10281740",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice is the author opinion rather than the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "trail-opinion"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "trail-opinion"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "trail-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an author-purpose statement, not the author’s opinion or the topic.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols"
+              ]
+            },
+            {
+              "answerId": "trail-fact",
+              "verdict": "INCORRECT",
+              "rationale": "This is a checkable explanation of two legend symbols.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols-sentence-4"
+              ]
+            },
+            {
+              "answerId": "trail-opinion",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Should states the author recommendation for clearer symbols.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols-sentence-6"
+              ]
+            },
+            {
+              "answerId": "trail-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the topic phrase, not an opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-find-the-author-opinion-q-2",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-e6aa1399b47e116d",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "bcf0bd29f7328c82cb781766acaf28d89c0d4e59d50b2671e9a0354406ac316b",
+        "conclusionsSha256": "6e28f01c994fe6862c67f5557e4f05bb6da6a1bcc71cdad984f9724a10281740",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0052.pass-a.json",
+        "receiptSha256": "6e28f01c994fe6862c67f5557e4f05bb6da6a1bcc71cdad984f9724a10281740",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice is the author opinion rather than the central idea?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "trail-opinion"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "trail-opinion"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "trail-fact",
+              "verdict": "INCORRECT",
+              "rationale": "This is a factual description of what a legend does.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols-sentence-7"
+              ]
+            },
+            {
+              "answerId": "trail-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the benefit and contributes to the central idea, but it is not the explicit recommendation.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols-sentence-8"
+              ]
+            },
+            {
+              "answerId": "trail-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an author-purpose statement rather than an opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols"
+              ]
+            },
+            {
+              "answerId": "trail-opinion",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Should identifies the author recommendation for clearer trail-map symbols.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-find-the-author-opinion-q-3",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-b3d34a698103a935",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "3107a4ce20807b499ec555413e1b7e3c3e5c0ba2829bd6fc4b2439b361d4b048",
+        "conclusionsSha256": "da5ee1aae49eeeed1a50bf18cc05efba3de7d85a19e4fb342546a999588a48c4",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0028.pass-a.json",
+        "receiptSha256": "da5ee1aae49eeeed1a50bf18cc05efba3de7d85a19e4fb342546a999588a48c4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the detail that describes visitor confusion and the detail that explains what a map legend lists. Select two.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "trail-detail-1",
+            "trail-detail-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "trail-detail-1",
+            "trail-detail-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "trail-detail-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly describes a family confused by an unclear symbol.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols-sentence-2"
+              ]
+            },
+            {
+              "answerId": "trail-detail-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes a path marker direction, not confusion or a legend definition.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols-sentence-5"
+              ]
+            },
+            {
+              "answerId": "trail-detail-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly explains that a legend lists symbols and meanings.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols-sentence-7"
+              ]
+            },
+            {
+              "answerId": "trail-detail-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes adding a key but not what a legend lists.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-find-the-author-opinion-q-4",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-bead4df8c4a6e734",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "3107a4ce20807b499ec555413e1b7e3c3e5c0ba2829bd6fc4b2439b361d4b048",
+        "conclusionsSha256": "da5ee1aae49eeeed1a50bf18cc05efba3de7d85a19e4fb342546a999588a48c4",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0028.pass-a.json",
+        "receiptSha256": "da5ee1aae49eeeed1a50bf18cc05efba3de7d85a19e4fb342546a999588a48c4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that shows a visitor problem caused by unclear symbols.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-id-opinion-clear-trail-symbols-sentence-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-id-opinion-clear-trail-symbols-sentence-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-id-opinion-clear-trail-symbols-sentence-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly states the visitor confusion caused by not understanding a symbol.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g2-id-opinion-clear-trail-symbols-sentence-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This explains clear symbol meanings rather than showing the problem.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g2-id-opinion-clear-trail-symbols-sentence-8",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the benefit of clear symbols, not the specific confusion event.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g2-id-opinion-clear-trail-symbols-sentence-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This lists symbols without showing a visitor problem.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-find-the-author-opinion-q-5",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-f621dba2a7b0d486",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "bcf0bd29f7328c82cb781766acaf28d89c0d4e59d50b2671e9a0354406ac316b",
+        "conclusionsSha256": "6e28f01c994fe6862c67f5557e4f05bb6da6a1bcc71cdad984f9724a10281740",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0052.pass-a.json",
+        "receiptSha256": "6e28f01c994fe6862c67f5557e4f05bb6da6a1bcc71cdad984f9724a10281740",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "trail-topic-row",
+          "prompt": "What is the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "trail-topic-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "trail-topic-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "trail-topic-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Trail map symbols names the subject established by the title and passage.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols-title",
+                "g2-id-opinion-clear-trail-symbols-sentence-1"
+              ]
+            },
+            {
+              "answerId": "trail-topic-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an author-purpose statement rather than the topic label.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols"
+              ]
+            },
+            {
+              "answerId": "trail-topic-opinion",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the author opinion rather than the topic label.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "trail-opinion-row",
+          "prompt": "Which sentence is the opinion?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "trail-opinion-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "trail-opinion-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "trail-opinion-detail",
+              "verdict": "INCORRECT",
+              "rationale": "This is a checkable path-marker detail.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols-sentence-5"
+              ]
+            },
+            {
+              "answerId": "trail-opinion-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an author-purpose statement rather than the opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols"
+              ]
+            },
+            {
+              "answerId": "trail-opinion-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Should states the author recommendation for clearer symbols.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "trail-purpose-row",
+          "prompt": "Which sentence is the purpose?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "trail-purpose-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "trail-purpose-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "trail-purpose-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This explains why the author presents symbols, a legend, and visitor-navigation details.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols-sentence-1",
+                "g2-id-opinion-clear-trail-symbols-sentence-7",
+                "g2-id-opinion-clear-trail-symbols-sentence-8"
+              ]
+            },
+            {
+              "answerId": "trail-purpose-opinion",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the author opinion rather than the purpose.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols-sentence-6"
+              ]
+            },
+            {
+              "answerId": "trail-purpose-fact",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one factual legend detail rather than the purpose.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "trail-detail-row",
+          "prompt": "Which sentence is another true detail?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "trail-detail-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "trail-detail-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "trail-detail-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an author-purpose statement rather than a source detail.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols"
+              ]
+            },
+            {
+              "answerId": "trail-detail-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The passage states that the river path marker bends left.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols-sentence-5"
+              ]
+            },
+            {
+              "answerId": "trail-detail-opinion",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the author recommendation already classified as opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-clear-trail-symbols-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-choose-strongest-evidence-q-1",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-4e3d2b9706b8b09b",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "a278a9d68c00a51194c117955b99168e1be07f83097854079ab5aeecc8b53c6c",
+        "conclusionsSha256": "851cb05d01281758539fcd649cd61ffc59ac0bfbc1801256a4505abce1daf7ca",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0053.pass-a.json",
+        "receiptSha256": "851cb05d01281758539fcd649cd61ffc59ac0bfbc1801256a4505abce1daf7ca",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice is the author opinion rather than the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "container-opinion"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "container-opinion"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "container-fact",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a verifiable fact about reusing a box, not a should-statement expressing an opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-2"
+              ]
+            },
+            {
+              "answerId": "container-opinion",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The word should states the author position that the class ought to use reusable containers.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-4"
+              ]
+            },
+            {
+              "answerId": "container-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an author-purpose statement, not the author opinion itself.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-4",
+                "g2-id-opinion-reusable-containers-sentence-3",
+                "g2-id-opinion-reusable-containers-sentence-7"
+              ]
+            },
+            {
+              "answerId": "container-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names the topic rather than expressing what the author thinks should happen.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-choose-strongest-evidence-q-2",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-738fd55e9e1c72ca",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "a278a9d68c00a51194c117955b99168e1be07f83097854079ab5aeecc8b53c6c",
+        "conclusionsSha256": "851cb05d01281758539fcd649cd61ffc59ac0bfbc1801256a4505abce1daf7ca",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0053.pass-a.json",
+        "receiptSha256": "851cb05d01281758539fcd649cd61ffc59ac0bfbc1801256a4505abce1daf7ca",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which explanation best shows how the evidence supports the opinion?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "container-explain-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "container-explain-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "container-explain-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "It connects wash-and-reuse evidence to avoiding repeated purchases, directly explaining why the containers are a good choice.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-2",
+                "g2-id-opinion-reusable-containers-sentence-7"
+              ]
+            },
+            {
+              "answerId": "container-explain-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This defines reusable but does not explain the practical benefit as completely as the linked evidence-and-result choice.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-8",
+                "g2-id-opinion-reusable-containers-glossary-reusable"
+              ]
+            },
+            {
+              "answerId": "container-explain-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This reports what was packed but does not explain why reusable containers support the opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-1"
+              ]
+            },
+            {
+              "answerId": "container-explain-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states a possible purpose rather than explaining how evidence supports the opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-4",
+                "g2-id-opinion-reusable-containers-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-choose-strongest-evidence-q-3",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-98ef3848d1c7ae8c",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "3107a4ce20807b499ec555413e1b7e3c3e5c0ba2829bd6fc4b2439b361d4b048",
+        "conclusionsSha256": "da5ee1aae49eeeed1a50bf18cc05efba3de7d85a19e4fb342546a999588a48c4",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0008.second-pass.json",
+        "receiptSha256": "cd2fa8ccfe085c1cac01a00da17414424bff8ae62a63b6bf4f50acf2d21aac50",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the detail that shows the same boxes can be used again and the detail that shows less wrapper trash. Select two.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "container-detail-1",
+            "container-detail-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "container-detail-2",
+            "container-detail-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "container-detail-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly reports fewer discarded wrappers.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-3"
+              ]
+            },
+            {
+              "answerId": "container-detail-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This defines reusable in general but does not state that the same boxes were reused.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-8"
+              ]
+            },
+            {
+              "answerId": "container-detail-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly says each box could be washed and used again.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-2"
+              ]
+            },
+            {
+              "answerId": "container-detail-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes collecting empty boxes, not reuse or wrapper reduction.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-choose-strongest-evidence-q-4",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-80a8e65ab531f896",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "3107a4ce20807b499ec555413e1b7e3c3e5c0ba2829bd6fc4b2439b361d4b048",
+        "conclusionsSha256": "da5ee1aae49eeeed1a50bf18cc05efba3de7d85a19e4fb342546a999588a48c4",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0028.pass-a.json",
+        "receiptSha256": "da5ee1aae49eeeed1a50bf18cc05efba3de7d85a19e4fb342546a999588a48c4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that directly shows each box can be cleaned and used again.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-id-opinion-reusable-containers-sentence-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-id-opinion-reusable-containers-sentence-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-id-opinion-reusable-containers-sentence-7",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a cost comparison, not cleaning and reuse.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g2-id-opinion-reusable-containers-sentence-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states what the boxes held, not that they can be cleaned and reused.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g2-id-opinion-reusable-containers-sentence-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly states both washing and reusing each box.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g2-id-opinion-reusable-containers-sentence-5",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes where empty boxes were collected.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-choose-strongest-evidence-q-5",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-e7a862dd57c9d031",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "a278a9d68c00a51194c117955b99168e1be07f83097854079ab5aeecc8b53c6c",
+        "conclusionsSha256": "851cb05d01281758539fcd649cd61ffc59ac0bfbc1801256a4505abce1daf7ca",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0008.second-pass.json",
+        "receiptSha256": "cd2fa8ccfe085c1cac01a00da17414424bff8ae62a63b6bf4f50acf2d21aac50",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "container-topic-row",
+          "prompt": "What is the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "container-topic-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "container-topic-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "container-topic-opinion",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the author opinion, not the topic.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-4"
+              ]
+            },
+            {
+              "answerId": "container-topic-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Reusable containers are the subject named in the title and discussed throughout.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-title"
+              ]
+            },
+            {
+              "answerId": "container-topic-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an author-purpose statement, not the topic.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-4",
+                "g2-id-opinion-reusable-containers-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "container-opinion-row",
+          "prompt": "Which sentence is the opinion?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "container-opinion-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "container-opinion-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "container-opinion-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states a purpose, not an opinion sentence.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-4",
+                "g2-id-opinion-reusable-containers-sentence-3"
+              ]
+            },
+            {
+              "answerId": "container-opinion-fact",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a factual claim about the boxes.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-2"
+              ]
+            },
+            {
+              "answerId": "container-opinion-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The should-statement expresses what the author thinks the class ought to do.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "container-purpose-row",
+          "prompt": "Which sentence is the purpose?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "container-purpose-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "container-purpose-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "container-purpose-opinion",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the opinion itself, not a purpose statement.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-4"
+              ]
+            },
+            {
+              "answerId": "container-purpose-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This infinitive statement explains why the author presents the reusable-container information.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-4",
+                "g2-id-opinion-reusable-containers-sentence-3",
+                "g2-id-opinion-reusable-containers-sentence-7"
+              ]
+            },
+            {
+              "answerId": "container-purpose-fact",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a supporting fact, not the author purpose.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "container-fact-row",
+          "prompt": "Which sentence is a fact?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "container-fact-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "container-fact-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "container-fact-opinion",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The should-statement is an opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-4"
+              ]
+            },
+            {
+              "answerId": "container-fact-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The ability to wash and reuse each box is presented as a factual detail.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-2"
+              ]
+            },
+            {
+              "answerId": "container-fact-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a purpose statement, not a fact sentence.",
+              "evidenceIds": [
+                "g2-id-opinion-reusable-containers-sentence-4",
+                "g2-id-opinion-reusable-containers-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-checkpoint-a-q-1",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-ae00e8e98a7f1035",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "a278a9d68c00a51194c117955b99168e1be07f83097854079ab5aeecc8b53c6c",
+        "conclusionsSha256": "851cb05d01281758539fcd649cd61ffc59ac0bfbc1801256a4505abce1daf7ca",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0008.second-pass.json",
+        "receiptSha256": "cd2fa8ccfe085c1cac01a00da17414424bff8ae62a63b6bf4f50acf2d21aac50",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice is the author opinion rather than the author purpose?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "bird-opinion-shrubs"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "bird-opinion-shrubs"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "bird-fact",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This reports the class count and is a fact rather than an opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-7",
+                "g2-id-opinion-bird-friendly-plants-caption"
+              ]
+            },
+            {
+              "answerId": "bird-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states an author purpose rather than the author opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-4",
+                "g2-id-opinion-bird-friendly-plants-sentence-5",
+                "g2-id-opinion-bird-friendly-plants-sentence-8"
+              ]
+            },
+            {
+              "answerId": "bird-opinion-shrubs",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The should-statement expresses the position that more berry shrubs ought to be added.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-4"
+              ]
+            },
+            {
+              "answerId": "bird-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names the topic rather than an opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-checkpoint-a-q-2",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-6d0c3008cf47ede4",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "a278a9d68c00a51194c117955b99168e1be07f83097854079ab5aeecc8b53c6c",
+        "conclusionsSha256": "851cb05d01281758539fcd649cd61ffc59ac0bfbc1801256a4505abce1daf7ca",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0008.second-pass.json",
+        "receiptSha256": "cd2fa8ccfe085c1cac01a00da17414424bff8ae62a63b6bf4f50acf2d21aac50",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice is the author opinion rather than the central idea?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "bird-opinion-shrubs"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "bird-opinion-shrubs"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "bird-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an author-purpose statement, not the opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-4",
+                "g2-id-opinion-bird-friendly-plants-sentence-5",
+                "g2-id-opinion-bird-friendly-plants-sentence-8"
+              ]
+            },
+            {
+              "answerId": "bird-opinion-shrubs",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The should-statement expresses the author opinion about adding shrubs.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-4"
+              ]
+            },
+            {
+              "answerId": "bird-fact",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The displayed source does not supply this wind statement, so it cannot serve as source-grounded opinion or central idea.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants"
+              ]
+            },
+            {
+              "answerId": "bird-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This summarizes a source-wide idea about food, shelter, and water rather than stating what should be done.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-8",
+                "g2-id-opinion-bird-friendly-plants-sentence-3",
+                "g2-id-opinion-bird-friendly-plants-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-checkpoint-a-q-3",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-95d0c50c212579c8",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "a278a9d68c00a51194c117955b99168e1be07f83097854079ab5aeecc8b53c6c",
+        "conclusionsSha256": "851cb05d01281758539fcd649cd61ffc59ac0bfbc1801256a4505abce1daf7ca",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0008.second-pass.json",
+        "receiptSha256": "cd2fa8ccfe085c1cac01a00da17414424bff8ae62a63b6bf4f50acf2d21aac50",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence is a fact rather than an opinion?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "bird-fact"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "bird-fact"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "bird-opinion-shrubs",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This should-statement is an opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-4"
+              ]
+            },
+            {
+              "answerId": "bird-opinion-water",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This should-statement is another opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-5"
+              ]
+            },
+            {
+              "answerId": "bird-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an author-purpose statement rather than a fact sentence.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-4",
+                "g2-id-opinion-bird-friendly-plants-sentence-5"
+              ]
+            },
+            {
+              "answerId": "bird-fact",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The class count comparing bird visits is presented as an observable fact and is reinforced by the graph.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-7",
+                "g2-id-opinion-bird-friendly-plants-graph",
+                "g2-id-opinion-bird-friendly-plants-caption"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-checkpoint-a-q-4",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-59d538756145fa91",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "e6d562a30358fc677dced85546feb8271b93e260e3dba830e6d109e7e093a52f",
+        "conclusionsSha256": "9678dd068f14ae824586f68f88d972bf031a95943ecafe0b6730f3db75332eea",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0008.second-pass.json",
+        "receiptSha256": "cd2fa8ccfe085c1cac01a00da17414424bff8ae62a63b6bf4f50acf2d21aac50",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details that support the opinion about a water dish under the tree.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "bird-detail-1",
+            "bird-detail-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "bird-detail-1",
+            "bird-detail-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "bird-detail-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Resting in leaves concerns shelter and does not support adding a water dish.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-6"
+              ]
+            },
+            {
+              "answerId": "bird-detail-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Birds drinking from a puddle under the tree directly shows a need for water there.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-3"
+              ]
+            },
+            {
+              "answerId": "bird-detail-4",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Shrubs near the middle path do not support placing a water dish under the tree.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-10"
+              ]
+            },
+            {
+              "answerId": "bird-detail-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The map's shady spot directly supports a suitable place for the dish under the tree.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-9"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": true,
+      "correctionSummary": "Learner-visible content was corrected and re-reviewed in docs/content/answer-uniqueness-ledger/blind/corrections-v6-initial/batch-c0002.pass-a.json.",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-checkpoint-a-q-5",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-ca416e3f59c6d003",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "3107a4ce20807b499ec555413e1b7e3c3e5c0ba2829bd6fc4b2439b361d4b048",
+        "conclusionsSha256": "da5ee1aae49eeeed1a50bf18cc05efba3de7d85a19e4fb342546a999588a48c4",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0028.pass-a.json",
+        "receiptSha256": "da5ee1aae49eeeed1a50bf18cc05efba3de7d85a19e4fb342546a999588a48c4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that compares bird visits near the shrubs with bird visits near the fence.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-id-opinion-bird-friendly-plants-sentence-7"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-id-opinion-bird-friendly-plants-sentence-7"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-id-opinion-bird-friendly-plants-sentence-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This recommends shrubs without comparing visit counts.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g2-id-opinion-bird-friendly-plants-sentence-7",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly compares more visits near shrubs with fewer near the fence.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g2-id-opinion-bird-friendly-plants-sentence-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes bird behavior at the tree, not a shrub-fence comparison.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g2-id-opinion-bird-friendly-plants-sentence-10",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This gives shrub location, not visit counts.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-checkpoint-a-q-6",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-04b873360b89301a",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "a278a9d68c00a51194c117955b99168e1be07f83097854079ab5aeecc8b53c6c",
+        "conclusionsSha256": "851cb05d01281758539fcd649cd61ffc59ac0bfbc1801256a4505abce1daf7ca",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0053.pass-a.json",
+        "receiptSha256": "851cb05d01281758539fcd649cd61ffc59ac0bfbc1801256a4505abce1daf7ca",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "bird-topic-row",
+          "prompt": "What is the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "bird-topic-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "bird-topic-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "bird-topic-opinion",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the shrub opinion, not the topic.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-4"
+              ]
+            },
+            {
+              "answerId": "bird-topic-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a purpose statement, not the topic.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-4",
+                "g2-id-opinion-bird-friendly-plants-sentence-5"
+              ]
+            },
+            {
+              "answerId": "bird-topic-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Bird-friendly plants are the subject named in the title and discussed throughout.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "bird-opinion-row",
+          "prompt": "Which sentence is the opinion about shrubs?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "bird-opinion-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "bird-opinion-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "bird-opinion-detail",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a factual benefit of shrubs rather than the should-opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-8"
+              ]
+            },
+            {
+              "answerId": "bird-opinion-fact",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an observed count, not the opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-7"
+              ]
+            },
+            {
+              "answerId": "bird-opinion-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This should-statement is the opinion about shrubs.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "bird-other-opinion-row",
+          "prompt": "Which sentence is the other opinion?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "bird-other-opinion-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "bird-other-opinion-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "bird-other-opinion-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an author-purpose statement, not an opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-4",
+                "g2-id-opinion-bird-friendly-plants-sentence-5"
+              ]
+            },
+            {
+              "answerId": "bird-other-opinion-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This should-statement expresses the separate opinion about adding a water dish.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-5"
+              ]
+            },
+            {
+              "answerId": "bird-other-opinion-fact",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The displayed source contains no wind statement to classify as its other opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "bird-fact-row",
+          "prompt": "Which sentence is a fact?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "bird-fact-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "bird-fact-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "bird-fact-opinion",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the shrub opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-4"
+              ]
+            },
+            {
+              "answerId": "bird-fact-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The class count is an observable fact supported by the graph.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-7",
+                "g2-id-opinion-bird-friendly-plants-graph"
+              ]
+            },
+            {
+              "answerId": "bird-fact-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an author-purpose statement rather than a fact sentence.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-4",
+                "g2-id-opinion-bird-friendly-plants-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-checkpoint-a-q-7",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-4f217e82679314fe",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "a278a9d68c00a51194c117955b99168e1be07f83097854079ab5aeecc8b53c6c",
+        "conclusionsSha256": "851cb05d01281758539fcd649cd61ffc59ac0bfbc1801256a4505abce1daf7ca",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0053.pass-a.json",
+        "receiptSha256": "851cb05d01281758539fcd649cd61ffc59ac0bfbc1801256a4505abce1daf7ca",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "What is the author opinion about the shrubs?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "bird-part-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "bird-part-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "bird-part-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This should-statement expresses the author opinion about shrubs.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-4"
+              ]
+            },
+            {
+              "answerId": "bird-part-a-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the separate opinion about a water dish.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-5"
+              ]
+            },
+            {
+              "answerId": "bird-part-a-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names the topic rather than the shrub opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which detail best supports that opinion?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "bird-part-b-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "bird-part-b-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "bird-part-b-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Drinking from a puddle supports the water-dish idea, not the shrub opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-3"
+              ]
+            },
+            {
+              "answerId": "bird-part-b-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The fence, path, and tree description does not explain why more shrubs should be added.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-1"
+              ]
+            },
+            {
+              "answerId": "bird-part-b-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "More bird visits near shrubs directly support adding more berry shrubs.",
+              "evidenceIds": [
+                "g2-id-opinion-bird-friendly-plants-sentence-7",
+                "g2-id-opinion-bird-friendly-plants-caption"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-checkpoint-b-q-1",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-e8094573ff552cef",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "fe6d0e414da45d7d08e18c5db9368624a0145662d7ec99d669e463ce94112fdd",
+        "conclusionsSha256": "2705be585ea93ed6b882b4248a5b9f272fc0bbeaa29d697298a35a137c5c21a1",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0054.pass-a.json",
+        "receiptSha256": "2705be585ea93ed6b882b4248a5b9f272fc0bbeaa29d697298a35a137c5c21a1",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice is the author opinion rather than the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "compost-opinion"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "compost-opinion"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "compost-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names the topic rather than expressing a position.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-title"
+              ]
+            },
+            {
+              "answerId": "compost-opinion",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The should-statement expresses the author opinion that the signs ought to remain near the bin.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-7"
+              ]
+            },
+            {
+              "answerId": "compost-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an author-purpose statement, not the opinion itself.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-4",
+                "g2-id-opinion-compost-sorting-signs-sentence-5",
+                "g2-id-opinion-compost-sorting-signs-sentence-6"
+              ]
+            },
+            {
+              "answerId": "compost-fact",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This reports what the class did and is a fact rather than an opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-checkpoint-b-q-2",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-761e68c4d2400298",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "fe6d0e414da45d7d08e18c5db9368624a0145662d7ec99d669e463ce94112fdd",
+        "conclusionsSha256": "2705be585ea93ed6b882b4248a5b9f272fc0bbeaa29d697298a35a137c5c21a1",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0054.pass-a.json",
+        "receiptSha256": "2705be585ea93ed6b882b4248a5b9f272fc0bbeaa29d697298a35a137c5c21a1",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice is the author opinion rather than the central idea?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "compost-opinion"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "compost-opinion"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "compost-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an author-purpose statement rather than an opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-4",
+                "g2-id-opinion-compost-sorting-signs-sentence-5"
+              ]
+            },
+            {
+              "answerId": "compost-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This summarizes the source-wide idea that clear signs improve sorting.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-4",
+                "g2-id-opinion-compost-sorting-signs-sentence-5",
+                "g2-id-opinion-compost-sorting-signs-caption"
+              ]
+            },
+            {
+              "answerId": "compost-fact",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a factual sign detail.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-9"
+              ]
+            },
+            {
+              "answerId": "compost-opinion",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The should-statement expresses what the author thinks the class ought to keep doing.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-checkpoint-b-q-3",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-30c994cbbece1927",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "fe6d0e414da45d7d08e18c5db9368624a0145662d7ec99d669e463ce94112fdd",
+        "conclusionsSha256": "2705be585ea93ed6b882b4248a5b9f272fc0bbeaa29d697298a35a137c5c21a1",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0054.pass-a.json",
+        "receiptSha256": "2705be585ea93ed6b882b4248a5b9f272fc0bbeaa29d697298a35a137c5c21a1",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail is the strongest evidence for the opinion?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "compost-evidence-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "compost-evidence-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "compost-evidence-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The guide lists good items, but that does not show the sorting signs themselves reduced errors.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-10"
+              ]
+            },
+            {
+              "answerId": "compost-evidence-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Adding signs establishes their presence but not their effectiveness as strongly as the measured result.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-3"
+              ]
+            },
+            {
+              "answerId": "compost-evidence-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The former bin contents describe the setting, not evidence that keeping signs helps.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-1"
+              ]
+            },
+            {
+              "answerId": "compost-evidence-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Fewer wrong items after the signs appeared directly demonstrates that the signs improved sorting.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-5",
+                "g2-id-opinion-compost-sorting-signs-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-checkpoint-b-q-4",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-d3271a235015ad07",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "3107a4ce20807b499ec555413e1b7e3c3e5c0ba2829bd6fc4b2439b361d4b048",
+        "conclusionsSha256": "da5ee1aae49eeeed1a50bf18cc05efba3de7d85a19e4fb342546a999588a48c4",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0028.pass-a.json",
+        "receiptSha256": "da5ee1aae49eeeed1a50bf18cc05efba3de7d85a19e4fb342546a999588a48c4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the detail that shows the sorting problem before the signs and the detail that shows mistakes dropped after the signs. Select two.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "compost-detail-1",
+            "compost-detail-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "compost-detail-2",
+            "compost-detail-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "compost-detail-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly reports that wrong items became less frequent after the signs.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-5"
+              ]
+            },
+            {
+              "answerId": "compost-detail-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly states the pre-sign sorting mistake.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-2"
+              ]
+            },
+            {
+              "answerId": "compost-detail-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is another positive result but does not directly state that mistakes dropped.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-6"
+              ]
+            },
+            {
+              "answerId": "compost-detail-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes a sign image, not the before problem or after mistake count.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-9"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-checkpoint-b-q-5",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-31f54075fafcb419",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "3107a4ce20807b499ec555413e1b7e3c3e5c0ba2829bd6fc4b2439b361d4b048",
+        "conclusionsSha256": "da5ee1aae49eeeed1a50bf18cc05efba3de7d85a19e4fb342546a999588a48c4",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0028.pass-a.json",
+        "receiptSha256": "da5ee1aae49eeeed1a50bf18cc05efba3de7d85a19e4fb342546a999588a48c4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that reports what changed after the sorting signs went up.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-id-opinion-compost-sorting-signs-sentence-5"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-id-opinion-compost-sorting-signs-sentence-5"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-id-opinion-compost-sorting-signs-sentence-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the action of adding signs, not the change afterward.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g2-id-opinion-compost-sorting-signs-sentence-7",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a recommendation, not a reported after-sign change.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g2-id-opinion-compost-sorting-signs-sentence-5",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly reports fewer wrong items after the signs went up.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g2-id-opinion-compost-sorting-signs-sentence-10",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes a guide paper rather than the after-sign result.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-checkpoint-b-q-6",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-e0b4e21fb67effab",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "fe6d0e414da45d7d08e18c5db9368624a0145662d7ec99d669e463ce94112fdd",
+        "conclusionsSha256": "2705be585ea93ed6b882b4248a5b9f272fc0bbeaa29d697298a35a137c5c21a1",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0054.pass-a.json",
+        "receiptSha256": "2705be585ea93ed6b882b4248a5b9f272fc0bbeaa29d697298a35a137c5c21a1",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "compost-topic-row",
+          "prompt": "What is the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "compost-topic-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "compost-topic-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "compost-topic-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an author-purpose statement.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-4",
+                "g2-id-opinion-compost-sorting-signs-sentence-5"
+              ]
+            },
+            {
+              "answerId": "compost-topic-opinion",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the opinion rather than the topic.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-7"
+              ]
+            },
+            {
+              "answerId": "compost-topic-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Compost sorting signs are the subject named in the title and discussed throughout.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "compost-opinion-row",
+          "prompt": "Which sentence is the opinion?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "compost-opinion-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "compost-opinion-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "compost-opinion-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a purpose statement, not the opinion sentence.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-4",
+                "g2-id-opinion-compost-sorting-signs-sentence-5"
+              ]
+            },
+            {
+              "answerId": "compost-opinion-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The should-statement expresses the author opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-7"
+              ]
+            },
+            {
+              "answerId": "compost-opinion-fact",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an observed result and therefore a fact.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "compost-purpose-row",
+          "prompt": "Which sentence is the purpose?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "compost-purpose-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "compost-purpose-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "compost-purpose-fact",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a factual detail about a sign.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-9"
+              ]
+            },
+            {
+              "answerId": "compost-purpose-opinion",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the opinion itself.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-7"
+              ]
+            },
+            {
+              "answerId": "compost-purpose-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This infinitive statement expresses why the author presents the information.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-4",
+                "g2-id-opinion-compost-sorting-signs-sentence-5",
+                "g2-id-opinion-compost-sorting-signs-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "compost-fact-row",
+          "prompt": "Which sentence is a fact?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "compost-fact-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "compost-fact-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "compost-fact-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The reduction in wrong items is presented as an observed fact.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-5",
+                "g2-id-opinion-compost-sorting-signs-sentence-8"
+              ]
+            },
+            {
+              "answerId": "compost-fact-opinion",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This should-statement is an opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-7"
+              ]
+            },
+            {
+              "answerId": "compost-fact-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an author-purpose statement rather than a fact sentence.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-4",
+                "g2-id-opinion-compost-sorting-signs-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-checkpoint-b-q-7",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-25714527bab881ab",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "fe6d0e414da45d7d08e18c5db9368624a0145662d7ec99d669e463ce94112fdd",
+        "conclusionsSha256": "2705be585ea93ed6b882b4248a5b9f272fc0bbeaa29d697298a35a137c5c21a1",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0054.pass-a.json",
+        "receiptSha256": "2705be585ea93ed6b882b4248a5b9f272fc0bbeaa29d697298a35a137c5c21a1",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "What is the author opinion?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "compost-part-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "compost-part-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "compost-part-a-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names the topic rather than the opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-title"
+              ]
+            },
+            {
+              "answerId": "compost-part-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The should-statement expresses the author opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-7"
+              ]
+            },
+            {
+              "answerId": "compost-part-a-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the author purpose rather than the opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-4",
+                "g2-id-opinion-compost-sorting-signs-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which detail best supports that opinion?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "compost-part-b-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "compost-part-b-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "compost-part-b-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Fewer wrong items after the signs appeared directly demonstrates why keeping them helps.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-5",
+                "g2-id-opinion-compost-sorting-signs-sentence-8"
+              ]
+            },
+            {
+              "answerId": "compost-part-b-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The picture content shows what one sign looks like but not its effect as strongly as the measured result.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-9",
+                "g2-id-opinion-compost-sorting-signs-illustration"
+              ]
+            },
+            {
+              "answerId": "compost-part-b-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The separate guide paper lists items but does not demonstrate why the sorting signs should stay.",
+              "evidenceIds": [
+                "g2-id-opinion-compost-sorting-signs-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-checkpoint-c-q-1",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-06e2fbd23c9078b6",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "fe6d0e414da45d7d08e18c5db9368624a0145662d7ec99d669e463ce94112fdd",
+        "conclusionsSha256": "2705be585ea93ed6b882b4248a5b9f272fc0bbeaa29d697298a35a137c5c21a1",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0054.pass-a.json",
+        "receiptSha256": "2705be585ea93ed6b882b4248a5b9f272fc0bbeaa29d697298a35a137c5c21a1",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice is the author opinion rather than the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "rain-opinion"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rain-opinion"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "rain-fact",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an observed soil fact, not an opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-7"
+              ]
+            },
+            {
+              "answerId": "rain-opinion",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The should-statement expresses the author opinion about adding a rain barrel.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-4"
+              ]
+            },
+            {
+              "answerId": "rain-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an author-purpose statement.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-5",
+                "g2-id-opinion-rain-barrel-plan-sentence-9"
+              ]
+            },
+            {
+              "answerId": "rain-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names the topic rather than an opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-checkpoint-c-q-2",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-9d9e90a9ebd11905",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "fe6d0e414da45d7d08e18c5db9368624a0145662d7ec99d669e463ce94112fdd",
+        "conclusionsSha256": "2705be585ea93ed6b882b4248a5b9f272fc0bbeaa29d697298a35a137c5c21a1",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0008.second-pass.json",
+        "receiptSha256": "cd2fa8ccfe085c1cac01a00da17414424bff8ae62a63b6bf4f50acf2d21aac50",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice is the author opinion rather than the central idea?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "rain-opinion"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rain-opinion"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "rain-opinion",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The should-statement expresses the author opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-4"
+              ]
+            },
+            {
+              "answerId": "rain-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This summarizes the source-wide central idea about saving water for dry beds.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-5",
+                "g2-id-opinion-rain-barrel-plan-sentence-3",
+                "g2-id-opinion-rain-barrel-plan-sentence-9"
+              ]
+            },
+            {
+              "answerId": "rain-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an author-purpose statement rather than an opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-5",
+                "g2-id-opinion-rain-barrel-plan-sentence-9"
+              ]
+            },
+            {
+              "answerId": "rain-fact",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a factual map detail.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-6",
+                "g2-id-opinion-rain-barrel-plan-map"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-checkpoint-c-q-3",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-6ffbd1bca5279968",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "fe6d0e414da45d7d08e18c5db9368624a0145662d7ec99d669e463ce94112fdd",
+        "conclusionsSha256": "2705be585ea93ed6b882b4248a5b9f272fc0bbeaa29d697298a35a137c5c21a1",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0054.pass-a.json",
+        "receiptSha256": "2705be585ea93ed6b882b4248a5b9f272fc0bbeaa29d697298a35a137c5c21a1",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail is the strongest evidence for the opinion?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "rain-evidence-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rain-evidence-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "rain-evidence-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The compost pile location does not explain why adding a rain barrel would help the beds.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-8"
+              ]
+            },
+            {
+              "answerId": "rain-evidence-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The roof and gutter establish a possible water source, but they do not state the barrel benefit as directly.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-1"
+              ]
+            },
+            {
+              "answerId": "rain-evidence-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This explicitly connects the barrel to watering plants while reducing hose use, directly supporting the opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-5"
+              ]
+            },
+            {
+              "answerId": "rain-evidence-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This repeats the opinion rather than supplying evidence for it.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-checkpoint-c-q-4",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-88cf71c777585cab",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "3107a4ce20807b499ec555413e1b7e3c3e5c0ba2829bd6fc4b2439b361d4b048",
+        "conclusionsSha256": "da5ee1aae49eeeed1a50bf18cc05efba3de7d85a19e4fb342546a999588a48c4",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0008.second-pass.json",
+        "receiptSha256": "cd2fa8ccfe085c1cac01a00da17414424bff8ae62a63b6bf4f50acf2d21aac50",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the detail that shows the beds need water and the detail that shows the barrel could reduce hose use. Select two.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "rain-detail-2",
+            "rain-detail-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rain-detail-2",
+            "rain-detail-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "rain-detail-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Drying beds directly show the need for water.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-3"
+              ]
+            },
+            {
+              "answerId": "rain-detail-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This explains catching runoff but does not directly state bed need or reduced hose use.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-2"
+              ]
+            },
+            {
+              "answerId": "rain-detail-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly states that barrel water could reduce hose use.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-5"
+              ]
+            },
+            {
+              "answerId": "rain-detail-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The compost pile location does not address either requested point.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-checkpoint-c-q-5",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-24486ed36647a54f",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "3107a4ce20807b499ec555413e1b7e3c3e5c0ba2829bd6fc4b2439b361d4b048",
+        "conclusionsSha256": "da5ee1aae49eeeed1a50bf18cc05efba3de7d85a19e4fb342546a999588a48c4",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0008.second-pass.json",
+        "receiptSha256": "cd2fa8ccfe085c1cac01a00da17414424bff8ae62a63b6bf4f50acf2d21aac50",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that states the garden-bed problem on hot afternoons.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-id-opinion-rain-barrel-plan-sentence-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-id-opinion-rain-barrel-plan-sentence-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-id-opinion-rain-barrel-plan-sentence-5",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This gives the proposed benefit, not the hot-afternoon problem.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g2-id-opinion-rain-barrel-plan-sentence-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes capturing runoff, not the bed problem.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g2-id-opinion-rain-barrel-plan-sentence-7",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This reports dry-soil measurements on rainless days, not specifically the hot-afternoon bed problem.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g2-id-opinion-rain-barrel-plan-sentence-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly states that the beds dry quickly on hot afternoons.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-checkpoint-c-q-6",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-7e5fbb740500ca70",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "fe6d0e414da45d7d08e18c5db9368624a0145662d7ec99d669e463ce94112fdd",
+        "conclusionsSha256": "2705be585ea93ed6b882b4248a5b9f272fc0bbeaa29d697298a35a137c5c21a1",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0054.pass-a.json",
+        "receiptSha256": "2705be585ea93ed6b882b4248a5b9f272fc0bbeaa29d697298a35a137c5c21a1",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "rain-topic-row",
+          "prompt": "What is the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "rain-topic-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rain-topic-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "rain-topic-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Rain barrels are the subject named in the title and discussed throughout.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-title"
+              ]
+            },
+            {
+              "answerId": "rain-topic-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an author-purpose statement.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-5",
+                "g2-id-opinion-rain-barrel-plan-sentence-9"
+              ]
+            },
+            {
+              "answerId": "rain-topic-opinion",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the author opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "rain-opinion-row",
+          "prompt": "Which sentence is the opinion?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "rain-opinion-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rain-opinion-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "rain-opinion-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a purpose statement, not an opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-5",
+                "g2-id-opinion-rain-barrel-plan-sentence-9"
+              ]
+            },
+            {
+              "answerId": "rain-opinion-fact",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a factual condition of the beds.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-3"
+              ]
+            },
+            {
+              "answerId": "rain-opinion-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The should-statement expresses the author opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "rain-purpose-row",
+          "prompt": "Which sentence is the purpose?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "rain-purpose-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rain-purpose-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "rain-purpose-opinion",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the opinion itself.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-4"
+              ]
+            },
+            {
+              "answerId": "rain-purpose-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This infinitive statement explains why the author presents the rain-barrel information.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-5",
+                "g2-id-opinion-rain-barrel-plan-sentence-9"
+              ]
+            },
+            {
+              "answerId": "rain-purpose-fact",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an observed soil fact.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "rain-fact-row",
+          "prompt": "Which sentence is a fact?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "rain-fact-answer"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rain-fact-answer"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "rain-fact-answer",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The beds drying quickly is presented as an observable fact.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-3"
+              ]
+            },
+            {
+              "answerId": "rain-fact-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an author-purpose statement.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-5",
+                "g2-id-opinion-rain-barrel-plan-sentence-9"
+              ]
+            },
+            {
+              "answerId": "rain-fact-opinion",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This should-statement is an opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "lesson-opinion-checkpoint-c-q-7",
+      "packId": "g2-information-detectives-opinion-evidence-desk",
+      "contentVersion": "g2-id-opinion-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-0d023064b4cfb6d0",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "fe6d0e414da45d7d08e18c5db9368624a0145662d7ec99d669e463ce94112fdd",
+        "conclusionsSha256": "2705be585ea93ed6b882b4248a5b9f272fc0bbeaa29d697298a35a137c5c21a1",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0008.second-pass.json",
+        "receiptSha256": "cd2fa8ccfe085c1cac01a00da17414424bff8ae62a63b6bf4f50acf2d21aac50",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "What is the author opinion?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "rain-part-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rain-part-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "rain-part-a-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an author-purpose statement, not the opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-5",
+                "g2-id-opinion-rain-barrel-plan-sentence-9"
+              ]
+            },
+            {
+              "answerId": "rain-part-a-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names the topic rather than an opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-title"
+              ]
+            },
+            {
+              "answerId": "rain-part-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The should-statement expresses the author opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which detail best supports that opinion?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "rain-part-b-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rain-part-b-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "rain-part-b-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The compost pile location does not explain why the rain barrel should be added.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-8"
+              ]
+            },
+            {
+              "answerId": "rain-part-b-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Dry beds establish a need for water, but they do not connect the barrel to solving it as directly.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-3"
+              ]
+            },
+            {
+              "answerId": "rain-part-b-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This explicitly links the barrel to watering plants and using the hose less, directly supporting the opinion.",
+              "evidenceIds": [
+                "g2-id-opinion-rain-barrel-plan-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

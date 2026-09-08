@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "stage": "SECOND_PASS_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-s0039",
+  "batchFileSha256": "7a19d4e0c338eef064fde810d39016da949dff3f3912840bbf7c8faf1b9a5e9d",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "independentReviewer": false,
+  "records": [
+    {
+      "auditId": "Q0890",
+      "fingerprint": "81342e750d100403a5ffc9d1d0ee02d3dda37d8dc02fdbb25550cbaab44d52ba",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Tele is the useful beginning in telephone and is explicitly identified in the passage; geo, bi-, and tri- belong to different displayed words."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0893",
+      "fingerprint": "2e6c4ab29fc7371314c804de07a40043ffcf088d2347186791294f93d662a75e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Tri is the requested beginning of triangle; angle is the remaining word part."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0894",
+      "fingerprint": "d41e7b19802040bfe0dcaac329c4ab683d1830cc4d6094111173e433f8ed53d3",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Telephone contains the displayed useful part tele; the other roots belong to different words."
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Geography contains geo as its primary displayed useful part; the other choices do not occur as that word part."
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Bicycle begins with bi-, the useful part identified in the source; the alternatives belong to other targets."
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Triangle begins with tri-, explicitly identified by the source; none of the other useful parts fits the word."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0899",
+      "fingerprint": "d2f765e74c8f397a82d0d7bdd6421eba5bd491c41a766b91ce76472f4db2b698",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Photograph contains photo as its primary displayed useful part; the other choices belong to different labels."
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Biology contains bio, which is supported by the living-things context; bi- alone is not the taught primary part for this row."
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Microscope contains micro, the part associated with tiny details; the other options do not fit this word."
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Biplane begins with bi-, confirmed by its two wings; the alternatives are roots from the other displayed labels."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0901",
+      "fingerprint": "ec9e50d607326a5c0c6c800e4bdcf25d56f331912a8846580a64b7bfc7c7871f",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "The prompt asks for reading chunks, and ge | ol | o | gy supplies the spoken sequence; geo | logy is the contrasting meaningful-part view, while the other choices provide no usable chunking."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0915",
+      "fingerprint": "3c9a4ad2a239e9ad01c6d6ae8a523dc6c2e4e9733364f624dda33299a5561a03",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Graph | ic is the only offered split that gives the authored pronounceable chunks for graphic."
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "The source explicitly identifies u | ni | form as the reading chunks; uni | form is the meaningful-part split."
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Tri | pod gives the complete two spoken chunks; the other options are unsplit or arbitrary letter divisions."
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Trans | fer gives the complete pronounceable chunks; the alternatives are unsplit or split inside a final chunk."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0916",
+      "fingerprint": "b4f548c0dc78e21d2c3fe5125af509129e78244aaeb9f630afa79947008b1634",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "The passage explicitly identifies uni | form as the meaningful-part split; the other divisions are reading chunks, arbitrary, or unsplit."
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "The passage explicitly identifies u | ni | form as the pronounceable chunks; none of the other choices matches that reading sequence."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0924",
+      "fingerprint": "a092c87e0b04e9fdbe32e44fe1b7219c174439ec53cfb396b87a7c88dd1375ac",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Micro is the root at the beginning of microphone and is named in the source; the other roots belong to different displayed words."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0927",
+      "fingerprint": "9211c34ca60e3c4ea48c94fa6e07c4eb3e051cd1d867cd3b2656dd4c27cf8016",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Microphone and microscope visibly contain micro; transplant and disrupt do not contain that complete root."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0928",
+      "fingerprint": "4fcc3c595afba8dfdee9cea1aeb0cd8abc395949c6d4c5616385467cf86612f8",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Micro is the requested initial meaningful part of microphone; phone is the other meaningful part."
+        }
+      ]
+    }
+  ]
+}

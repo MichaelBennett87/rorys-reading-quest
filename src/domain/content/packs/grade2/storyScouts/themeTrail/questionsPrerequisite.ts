@@ -119,7 +119,7 @@ export const themeTrailPrerequisiteQuestions: ReadingQuestion[] = [
     passageIdentifier: THEME_TRAIL_PASSAGE_IDS.gardenHelp,
     lessonIdentifier: lessonAId,
     questionIdentifier: themeTrailQuestionId('prerequisite-a', 'ht-1'),
-    prompt: 'Select the sentence that shows Tia and Ben worked together.',
+    prompt: 'Select the sentence that describes what Tia and Ben did together.',
     explanation: 'The fourth sentence says they held the sign together.',
     evidenceReference: 'sentence-clue',
     evidenceReferenceIds: ['g2-story-scouts-theme-trail-passage-garden-help-sentence-4'],

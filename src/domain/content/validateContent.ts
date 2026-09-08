@@ -219,6 +219,18 @@ export function validateContent(sample: ContentSample): ContentValidationError[]
               'Hot-text questions require at least one correct segment.',
             )
           }
+          const selectionMode = typed.selectionMode ?? 'single'
+          if (
+            (selectionMode === 'single' && typed.correctSegmentIds.length !== 1)
+            || (selectionMode === 'multiple' && typed.correctSegmentIds.length < 2)
+          ) {
+            withError(
+              errors,
+              'malformed_question_payload',
+              question.questionIdentifier,
+              'Hot-text selection mode must agree with the authored correct-segment cardinality.',
+            )
+          }
         }
       }
 

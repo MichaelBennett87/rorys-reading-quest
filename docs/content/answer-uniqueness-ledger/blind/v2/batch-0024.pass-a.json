@@ -1,0 +1,1332 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0024",
+  "batchFileSha256": "e840663e1a5958c8a2b5c59ac206a0d79797466588ff7fbedc8b58e8c48c80c0",
+  "reviewerThreadId": "01a07bc1-d815-7c71-b972-e3c829df1777",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0274",
+      "fingerprint": "e290cf67aed2a1a24d58e17d63d36e05ba6e162f8870041e1a69ac0ef561d8c1",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [],
+          "ambiguity": "No option fully meets every visible constraint: kneel is the quiet-kn action, but the passage does not describe kneeling as careful.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Ghost neither begins with kn nor occurs in the workshop passage.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Wrong begins with quiet wr, not kn, and is absent from the workshop passage.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Island uses the island-family quiet s, not kn, and is absent from the workshop passage.",
+              []
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Kneel begins with quiet kn and names an action, but nothing in the source establishes the prompt's added careful description.",
+              [
+                "S0043"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0275",
+      "fingerprint": "c76678980e074c5875eccdce5181fb2a79a8e76813acea5a4a2555a70f096759",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Comb ends with quiet mb, is not a bird, and is absent from the garden passage.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Ghost uses the gh family, is not the bird named in the garden passage, and is absent from it.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Wren begins with quiet wr, appears in the garden passage, and names a bird.",
+              [
+                "S0054"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Island uses an island-family quiet s, does not name a bird, and is absent from the garden passage.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0276",
+      "fingerprint": "65f294b777cb80ec4f5b72be0c989b8390fd13e55251cd5efbaab14d9f3dd55e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Thumb ends with quiet mb, but in the source it names moving through a list rather than the way up the ramp.",
+              [
+                "S0022"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Climb ends with quiet mb and names the movement up the ramp.",
+              [
+                "S0022"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Night uses quiet gh and is absent from the shelter passage.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Island uses an island-family quiet s and is absent from the shelter passage.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0277",
+      "fingerprint": "8de354d467d0b2dceab8f6addd77f85ac51bc78d84012f0cc76cc840d9f827b1",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "The prompt refers to checkpoint passages plural, but only the night-picnic passage is displayed; source membership for knight, thumb, island, and wrong cannot be confirmed from this learner-visible projection.",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Music has no ordinary quiet-letter pattern and is absent from the displayed passage.",
+              []
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "Knight has quiet kn and gh patterns, but it is not present in the only displayed checkpoint passage.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Bright appears in the displayed passage and its gh is not pronounced.",
+              [
+                "S0027"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "Thumb has a quiet final b, but it is not present in the only displayed checkpoint passage.",
+              []
+            ],
+            [
+              "A5",
+              "UNSUPPORTED",
+              "Island has a quiet s, but it is not present in the only displayed checkpoint passage.",
+              []
+            ],
+            [
+              "A6",
+              "UNSUPPORTED",
+              "Wrong begins with quiet wr, but it is not present in the only displayed checkpoint passage.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": "The prompt refers to multiple checkpoint passages, but the projection supplies only passage S0026, so most option membership cannot be checked from the material shown to this question's learner."
+    },
+    {
+      "auditId": "Q0278",
+      "fingerprint": "f0983e18e0f3a89c4086ad7e48e3298d088c281ceadf940b737563ea1f4d0ecc",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Shore is a location word and does not have the island-family quiet s pattern.",
+              [
+                "S0040"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Island is visible and belongs to the family in which its written s is not pronounced.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Finger has no island-family silent-letter pattern.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Map has no island-family silent-letter pattern.",
+              [
+                "S0035"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0279",
+      "fingerprint": "e769a55ecabe77c3a81c7bac7fbbf59eaf53d0928f9695c0dacc405f7f082267",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "knot does not use the silent mb pattern; its quiet-letter family is silent kn.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "knot does not use the silent wr pattern; its quiet-letter family is silent kn.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "knot does not use the silent island pattern; its quiet-letter family is silent kn.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "knot begins with kn- and its initial k is not pronounced.",
+              []
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "knot does not use the silent gh pattern; its quiet-letter family is silent kn.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "wrist does not use the silent island pattern; its quiet-letter family is silent wr.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "wrist does not use the silent gh pattern; its quiet-letter family is silent wr.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "wrist begins with wr- and its initial w is not pronounced.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "wrist does not use the silent kn pattern; its quiet-letter family is silent wr.",
+              []
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "wrist does not use the silent mb pattern; its quiet-letter family is silent wr.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "comb ends with mb and its final b is not pronounced.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "comb does not use the silent kn pattern; its quiet-letter family is silent mb.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "comb does not use the silent wr pattern; its quiet-letter family is silent mb.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "comb does not use the silent gh pattern; its quiet-letter family is silent mb.",
+              []
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "comb does not use the silent island pattern; its quiet-letter family is silent mb.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The gh in light is not pronounced.",
+              [
+                "S0051"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "light does not use the silent mb pattern; its quiet-letter family is silent gh.",
+              [
+                "S0051"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "light does not use the silent island pattern; its quiet-letter family is silent gh.",
+              [
+                "S0051"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "light does not use the silent wr pattern; its quiet-letter family is silent gh.",
+              [
+                "S0051"
+              ]
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "light does not use the silent kn pattern; its quiet-letter family is silent gh.",
+              [
+                "S0051"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_5",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "aisle belongs to the island family because its written s is not pronounced.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "aisle does not use the silent wr pattern; its quiet-letter family is silent island.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "aisle does not use the silent gh pattern; its quiet-letter family is silent island.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "aisle does not use the silent kn pattern; its quiet-letter family is silent island.",
+              []
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "aisle does not use the silent mb pattern; its quiet-letter family is silent island.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0280",
+      "fingerprint": "17a6eba936d081045f28ea18e504e9162792e3199e4a7aba1f517ff16ec4c26f",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "kneel begins with kn- and its initial k is not pronounced.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "kneel does not use the silent mb pattern; its quiet-letter family is silent kn.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "kneel does not use the silent gh pattern; its quiet-letter family is silent kn.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "kneel does not use the silent island pattern; its quiet-letter family is silent kn.",
+              []
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "kneel does not use the silent wr pattern; its quiet-letter family is silent kn.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "wrong does not use the silent island pattern; its quiet-letter family is silent wr.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "wrong begins with wr- and its initial w is not pronounced.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "wrong does not use the silent mb pattern; its quiet-letter family is silent wr.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "wrong does not use the silent gh pattern; its quiet-letter family is silent wr.",
+              []
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "wrong does not use the silent kn pattern; its quiet-letter family is silent wr.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "thumb does not use the silent gh pattern; its quiet-letter family is silent mb.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "thumb does not use the silent kn pattern; its quiet-letter family is silent mb.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "thumb does not use the silent wr pattern; its quiet-letter family is silent mb.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "thumb ends with mb and its final b is not pronounced.",
+              []
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "thumb does not use the silent island pattern; its quiet-letter family is silent mb.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A5"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "ghost does not use the silent wr pattern; its quiet-letter family is silent gh.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "ghost does not use the silent island pattern; its quiet-letter family is silent gh.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "ghost does not use the silent mb pattern; its quiet-letter family is silent gh.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "ghost does not use the silent kn pattern; its quiet-letter family is silent gh.",
+              []
+            ],
+            [
+              "A5",
+              "DEFENSIBLE",
+              "Ghost belongs to the taught gh family because its h is not separately pronounced.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_5",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "islander does not use the silent kn pattern; its quiet-letter family is silent island.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "islander does not use the silent mb pattern; its quiet-letter family is silent island.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "islander does not use the silent gh pattern; its quiet-letter family is silent island.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "islander belongs to the island family because its written s is not pronounced.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "islander does not use the silent wr pattern; its quiet-letter family is silent island.",
+              [
+                "S0035"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": "The prompt calls the rows garden words, but the projection supplies island-map passage S0034 and only islander among the five rows appears there."
+    },
+    {
+      "auditId": "Q0281",
+      "fingerprint": "08c2eadb818b3f9bbf167ed80b145286cc8919f4d9078a660da952970ac8ae10",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Wrap begins with quiet wr, does not name a body part, and is absent from the museum passage.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Ghost uses the gh family, does not name a body part, and is absent from the museum passage.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Knee begins with quiet kn, appears in the museum passage, and names a body part.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Comb ends with quiet mb, does not name a body part, and is absent from the museum passage.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0282",
+      "fingerprint": "b9efdb4709ef3b7a16b4d8f6eab2a854491dd03d7bcf4f4298860cb570cbe19e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Island does not begin with wr and is absent from the wrap station passage.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Knit begins with quiet kn, not wr, and does not mean make a label with letters.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Comb ends with quiet mb and does not mean make a label with letters.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Write begins with quiet wr and is the action used to make the label with letters.",
+              [
+                "S0013"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0283",
+      "fingerprint": "b2e4b6b6f5691f3041ccce067669a5d7d742a5ff71101ab411e1250b109b7ca3",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [],
+          "ambiguity": "No option fully meets every visible constraint: climb is the quiet-mb movement up the ramp, but the passage does not describe that movement as careful.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Ghost uses the gh family and is absent from the shelter passage.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Wren uses the wr family and is absent from the shelter passage.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Island uses an island-family quiet s and is absent from the shelter passage.",
+              []
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Climb ends with quiet mb and names movement up the ramp, but nothing in the source establishes the prompt's added careful description.",
+              [
+                "S0022"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0284",
+      "fingerprint": "2ae216cef3ed0d451856a6a11e92126b5168672bb7a2603287e0113364334a3b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "The prompt refers to checkpoint passages plural, but only the night-picnic passage is displayed; source membership for lamb, knot, wrist, and isle cannot be confirmed from this learner-visible projection.",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "UNSUPPORTED",
+              "Lamb has a quiet final b, but it is not present in the only displayed checkpoint passage.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Music has no ordinary quiet-letter pattern and is absent from the displayed passage.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Ghost appears in the displayed passage and belongs to the taught quiet-gh family.",
+              [
+                "S0029"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "Knot begins with quiet kn, but it is not present in the only displayed checkpoint passage.",
+              []
+            ],
+            [
+              "A5",
+              "UNSUPPORTED",
+              "Wrist begins with quiet wr, but it is not present in the only displayed checkpoint passage.",
+              []
+            ],
+            [
+              "A6",
+              "UNSUPPORTED",
+              "Isle has a quiet s, but it is not present in the only displayed checkpoint passage.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": "The prompt refers to multiple checkpoint passages, but the projection supplies only passage S0026, so most option membership cannot be checked from the material shown to this question's learner."
+    },
+    {
+      "auditId": "Q0285",
+      "fingerprint": "43591a713675707dfbee08928b7fc20e59faae23fd97adc22ba051a0d5ce7a2a",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Path has no island-family silent-letter pattern.",
+              [
+                "S0040"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Shore has no island-family silent-letter pattern.",
+              [
+                "S0040"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Island is the visible word whose written s is not pronounced.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Finger has no island-family silent-letter pattern.",
+              [
+                "S0035"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0286",
+      "fingerprint": "409b5a503829beac3705e4c2b9e0ae686ebf3fb62f89177a90a7e0477441f66b",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "knock does not use the silent island pattern; its quiet-letter family is silent kn.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "knock does not use the silent gh pattern; its quiet-letter family is silent kn.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "knock begins with kn- and its initial k is not pronounced.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "knock does not use the silent wr pattern; its quiet-letter family is silent kn.",
+              []
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "knock does not use the silent mb pattern; its quiet-letter family is silent kn.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "write does not use the silent kn pattern; its quiet-letter family is silent wr.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "write does not use the silent gh pattern; its quiet-letter family is silent wr.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "write begins with wr- and its initial w is not pronounced.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "write does not use the silent mb pattern; its quiet-letter family is silent wr.",
+              []
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "write does not use the silent island pattern; its quiet-letter family is silent wr.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "thumb does not use the silent gh pattern; its quiet-letter family is silent mb.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "thumb ends with mb and its final b is not pronounced.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "thumb does not use the silent island pattern; its quiet-letter family is silent mb.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "thumb does not use the silent kn pattern; its quiet-letter family is silent mb.",
+              []
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "thumb does not use the silent wr pattern; its quiet-letter family is silent mb.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "bright does not use the silent island pattern; its quiet-letter family is silent gh.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The gh in bright is not pronounced.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "bright does not use the silent wr pattern; its quiet-letter family is silent gh.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "bright does not use the silent mb pattern; its quiet-letter family is silent gh.",
+              []
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "bright does not use the silent kn pattern; its quiet-letter family is silent gh.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_5",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "aisle does not use the silent mb pattern; its quiet-letter family is silent island.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "aisle does not use the silent gh pattern; its quiet-letter family is silent island.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "aisle does not use the silent wr pattern; its quiet-letter family is silent island.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "aisle belongs to the island family because its written s is not pronounced.",
+              []
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "aisle does not use the silent kn pattern; its quiet-letter family is silent island.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": "The prompt calls the rows island-study words while the projection supplies garden passage S0050 and none of the five row words appears there."
+    },
+    {
+      "auditId": "Q0287",
+      "fingerprint": "45da1e74cbef7f9905b5256ed544a88b5a073ef30b937ee2f663d493192eb20f",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "knee does not use the silent wr pattern; its quiet-letter family is silent kn.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "knee does not use the silent island pattern; its quiet-letter family is silent kn.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "knee does not use the silent gh pattern; its quiet-letter family is silent kn.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "knee begins with kn- and its initial k is not pronounced.",
+              []
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "knee does not use the silent mb pattern; its quiet-letter family is silent kn.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "wrong does not use the silent mb pattern; its quiet-letter family is silent wr.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "wrong does not use the silent gh pattern; its quiet-letter family is silent wr.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "wrong does not use the silent island pattern; its quiet-letter family is silent wr.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "wrong begins with wr- and its initial w is not pronounced.",
+              []
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "wrong does not use the silent kn pattern; its quiet-letter family is silent wr.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "comb does not use the silent island pattern; its quiet-letter family is silent mb.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "comb does not use the silent wr pattern; its quiet-letter family is silent mb.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "comb ends with mb and its final b is not pronounced.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "comb does not use the silent gh pattern; its quiet-letter family is silent mb.",
+              []
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "comb does not use the silent kn pattern; its quiet-letter family is silent mb.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "high does not use the silent island pattern; its quiet-letter family is silent gh.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "high does not use the silent mb pattern; its quiet-letter family is silent gh.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "high does not use the silent wr pattern; its quiet-letter family is silent gh.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The gh in high is not pronounced.",
+              []
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "high does not use the silent kn pattern; its quiet-letter family is silent gh.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_5",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "island belongs to the island family because its written s is not pronounced.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "island does not use the silent wr pattern; its quiet-letter family is silent island.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "island does not use the silent kn pattern; its quiet-letter family is silent island.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "island does not use the silent gh pattern; its quiet-letter family is silent island.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "island does not use the silent mb pattern; its quiet-letter family is silent island.",
+              [
+                "S0035"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

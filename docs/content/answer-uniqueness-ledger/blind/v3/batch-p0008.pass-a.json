@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0008",
+  "batchFileSha256": "e90453890d4597bfeb8b013e57c19e40fd2542624325c3dcf1c2671a009112bc",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0230",
+      "fingerprint": "8cf31f6b43482ac8d34e289b22531c71de251ed08bc628954bdd5f1f66dcf558",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A5"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "kinder uses -er to compare how kind people or actions are.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "smaller uses -er to compare size.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "cleanest uses -est to compare cleanliness.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "careful ends in -ful, not a comparative -er or superlative -est suffix.",
+              [
+                "S0053"
+              ]
+            ],
+            [
+              "A5",
+              "DEFENSIBLE",
+              "fastest uses -est to compare speed.",
+              [
+                "S0051"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0231",
+      "fingerprint": "1e80361deea3d00ccbd7003390b149202a657cf3854ca811bffd96ab66ee54aa",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This sentence describes bags and shelves and does not use quickly.",
+              [
+                "S0053"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This sentence describes the cart, signs, and wishes and does not use quickly.",
+              [
+                "S0051"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This sentence says the spill was wiped quickly.",
+              [
+                "S0056"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0237",
+      "fingerprint": "ae3ea7f7973b15a3a1461578f1c2297101fabb035415375acaabccf79ea58d93",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A4",
+            "A5"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "cleanest uses -est to compare cleanliness.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "fastest uses -est to compare speed.",
+              [
+                "S0051"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "careful ends in -ful, not a comparative -er or superlative -est suffix.",
+              [
+                "S0053"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "warmer uses -er to compare temperature.",
+              []
+            ],
+            [
+              "A5",
+              "DEFENSIBLE",
+              "kinder uses -er to compare how kind people or actions are.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0238",
+      "fingerprint": "9972294663c9415f7934503f23c3bf0cc4e6aca83c7ebe2ef251cf438754328e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This sentence describes the cart, signs, and wishes and does not use quickly.",
+              [
+                "S0051"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This sentence describes bags and shelves and does not use quickly.",
+              [
+                "S0053"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This sentence says the spill was wiped quickly.",
+              [
+                "S0056"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0244",
+      "fingerprint": "f3f92b12741b7865875f04285b4b100a3b505f46b6e54fec9e741e41f5795c0a",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3",
+            "A4",
+            "A5"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "cleanest uses -est to compare cleanliness.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "careful ends in -ful, not a comparative -er or superlative -est suffix.",
+              [
+                "S0053"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "fastest uses -est to compare speed.",
+              [
+                "S0051"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "kinder uses -er to compare how kind people or actions are.",
+              []
+            ],
+            [
+              "A5",
+              "DEFENSIBLE",
+              "smaller uses -er to compare size.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0245",
+      "fingerprint": "9bd3142cceebdc9735ebfce4158b0a49760c673d4428c520ddc44ccb4bd359b7",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This sentence says the spill was wiped quickly.",
+              [
+                "S0056"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This sentence describes the cart, signs, and wishes and does not use quickly.",
+              [
+                "S0051"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This sentence describes bags and shelves and does not use quickly.",
+              [
+                "S0053"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

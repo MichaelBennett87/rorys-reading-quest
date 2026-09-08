@@ -1,0 +1,1072 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0130",
+  "batchFileSha256": "0f0cec1f7f1018fabbc296c332ca6200adfd0cea862014f0f6935ae2269941c3",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1519",
+      "fingerprint": "d719deb5827500846833e64858fc68c1e3a40669c8a1b14aa2e764e6a116fcad",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "It directly contrasts the older ferry crossing with the newer bridge crossing.",
+              [
+                "S0130",
+                "S0131",
+                "S0136"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "Naming a shared river states similarity rather than difference.",
+              [
+                "S0129"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Copying titles does not compare how the mapped town changed.",
+              [
+                "S0142"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "Shared compass roses state similarity and are explicitly irrelevant to the change question.",
+              [
+                "S0133"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1520",
+      "fingerprint": "cf2dd4caf57b49193e1a026bf7fc1dfcbd1404eeba49781fbb13026d1e3121b0",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "UNSUPPORTED",
+              "Print size does not show a transportation change.",
+              [
+                "S0132"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Compass direction may help read a map but does not answer how transportation changed.",
+              [
+                "S0133"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The ferry-to-bridge difference directly identifies a changed river crossing.",
+              [
+                "S0130",
+                "S0131",
+                "S0136"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Decorative borders do not answer the transportation-change question.",
+              [
+                "S0135"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1521",
+      "fingerprint": "ac3fa3500617fd0299ef8e1cf6e6bba5eaa15b6adb84cbe299a855234a5eaabc",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "Border color neither answers the transportation question nor proves why families moved.",
+              [
+                "S0134",
+                "S0135"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "Personal weather preference is absent from the source evidence.",
+              [
+                "S0141"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "It answers the source question with the ferry and bridge evidence shown by the maps.",
+              [
+                "S0130",
+                "S0131",
+                "S0128"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Unrelated buildings from another town cannot answer this source question.",
+              [
+                "S0128",
+                "S0141"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1522",
+      "fingerprint": "70b2ce4ab3ae113ff26ff57e1cd735d1081b3b802198cb9db8f98accb0b4b28a",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "A decorative color is a feature, not a stated connection between ideas, events, or amounts.",
+              [
+                "S0135"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "A graph can show a relationship between travel time and distance without claiming they are identical.",
+              [
+                "S0124",
+                "S0138"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The source explicitly warns that a visible relationship does not always prove cause.",
+              [
+                "S0134",
+                "S0138"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "A timeline can show a contextual relationship between a storm event and a road-closing event.",
+              [
+                "S0138"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1523",
+      "fingerprint": "92664530d94c13e3175b8d9a4804385c67de5a133dc74d9449b120337ed8e93b",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "It names useful bridge and street locations and contrasts them with an explicitly irrelevant decorative border.",
+              [
+                "S0135"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This names only an unhelpful shared map feature, not both a useful and decorative detail.",
+              [
+                "S0133"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes summarizing and names no useful/decorative pair.",
+              [
+                "S0140"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This defines relevance but names neither requested detail.",
+              [
+                "S0126"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1524",
+      "fingerprint": "8d3fdb8783b585329780ca54b0b9f64917b5fc416860727f859c13883bd8cafc",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Relevant means directly useful to the question.",
+              [
+                "S0126"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Contrast means show how sources differ.",
+              [
+                "S0122",
+                "S0136"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Respond means answer what was asked.",
+              [
+                "S0128"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Relationship means a connection.",
+              [
+                "S0124"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Respond means answer a question.",
+              [
+                "S0128"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Relationship names a connection between ideas, events, or amounts.",
+              [
+                "S0124",
+                "S0138"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Relevant means useful for the question.",
+              [
+                "S0126"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Contrast means show differences.",
+              [
+                "S0122"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Relationship names a connection, not direct usefulness.",
+              [
+                "S0124"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Respond means answer the question.",
+              [
+                "S0128"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The passage explicitly defines relevant as directly helping answer the source question.",
+              [
+                "S0126"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Contrast means show differences.",
+              [
+                "S0122"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Contrast means show differences.",
+              [
+                "S0122"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Relevant describes useful information.",
+              [
+                "S0126"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Relationship names a connection.",
+              [
+                "S0124"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Respond means answer in a way that fits what was asked.",
+              [
+                "S0128"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1525",
+      "fingerprint": "8458dab94bccb809f4460836cd2c332985b149cbc6e0ee0e209c716acd16eed4",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "The bridge label supplies useful source information rather than decoration.",
+              [
+                "S0131",
+                "S0135"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The label may be accurate, but the sentence asks why it helps answer this question.",
+              [
+                "S0126",
+                "S0141"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The bridge label directly addresses the transportation change.",
+              [
+                "S0131",
+                "S0136"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Relevant precisely means directly useful for answering the transportation-change question.",
+              [
+                "S0126",
+                "S0131"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "It states the visible criterion that makes the bridge label relevant.",
+              [
+                "S0126",
+                "S0131"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "Appearance on a map alone does not guarantee accuracy or relevance.",
+              [
+                "S0133",
+                "S0141"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The bridge label is useful to the transportation question, not merely decorative.",
+              [
+                "S0131",
+                "S0135"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The bridge belongs to the exact transportation topic being studied.",
+              [
+                "S0131",
+                "S0132"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1526",
+      "fingerprint": "afa67da40b8c5bc2618d748a2a7ce473101f4c362dbcb73048491b4277297e3b",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "It applies the stated shared-feature rule of plant purpose to every answer.",
+              [
+                "S0149",
+                "S0158"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Collection order arranges papers but does not classify by shared features.",
+              [
+                "S0149"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "Ignoring answers prevents complete classification.",
+              [
+                "S0156",
+                "S0158"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "Random piles do not use a consistent grouping rule.",
+              [
+                "S0158"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1527",
+      "fingerprint": "73b2bbfcc7e76bd98a7d1b0aa32896c8e1bb49b333914a18fa97c12293d212ae",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The team chooses two items from available results, which is selecting.",
+              [
+                "S0151",
+                "S0160"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This accurately uses determine but the prompt asks for select rather than determine.",
+              [
+                "S0159"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This uses analyze, not select.",
+              [
+                "S0159"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This uses classify, not select.",
+              [
+                "S0149"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1528",
+      "fingerprint": "d8048cd78858a9eab278bf8d5c74950beec8ea182574cbfcc784600ac9f8f5f5",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "A method is planned during the work; it is not the resulting outcome.",
+              [
+                "S0162",
+                "S0166"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The initial question precedes the work rather than resulting from it.",
+              [
+                "S0156",
+                "S0166"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "A blank chart precedes usable survey information and is not the project result.",
+              [
+                "S0159",
+                "S0166"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The passage explicitly identifies the supported recommendation as the project outcome.",
+              [
+                "S0155",
+                "S0166"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1529",
+      "fingerprint": "f8d3406587676020e6b7a3e593412037a78628d4902a77d1c5b23990dac563ff",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "A title without information cannot show the result.",
+              [
+                "S0163"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The graph visibly shows which groups received the most requests.",
+              [
+                "S0159",
+                "S0163"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Showing how the model places plants is an appropriate spoken demonstration.",
+              [
+                "S0153"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "A blank page cannot clearly show every step.",
+              [
+                "S0153",
+                "S0163"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1530",
+      "fingerprint": "ac4df60aad7cf5cc55f3b84adb434e0f0e78c8ae7218765f934bddf83498c780",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This shows a model arrangement, not classification by a stated survey grouping rule.",
+              [
+                "S0153"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "It explicitly states the plant-purpose rule used to classify answers.",
+              [
+                "S0149",
+                "S0158"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states the outcome after classification rather than the grouping rule.",
+              [
+                "S0155"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes selecting results, not classifying all answers.",
+              [
+                "S0151"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1531",
+      "fingerprint": "55c1c5b8570d1b29658774fa1cde55751f96dd52e1a46b25a84336b0e76d42ec",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Classify means group items by shared features.",
+              [
+                "S0149",
+                "S0158"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Outcome is what happens after work.",
+              [
+                "S0155",
+                "S0166"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Select means choose from options.",
+              [
+                "S0151"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Demonstrate means show clearly.",
+              [
+                "S0153",
+                "S0163"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Select means choose carefully from available options.",
+              [
+                "S0151",
+                "S0160"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Classify means group by shared features.",
+              [
+                "S0149"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Outcome is a result.",
+              [
+                "S0155"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Demonstrate means show clearly.",
+              [
+                "S0153"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Classify groups items.",
+              [
+                "S0149"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Select chooses an item.",
+              [
+                "S0151"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Outcome names a result.",
+              [
+                "S0155"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Demonstrate means show an idea clearly with a model or evidence.",
+              [
+                "S0153",
+                "S0163"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Select means choose.",
+              [
+                "S0151"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Classify means group.",
+              [
+                "S0149"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Outcome is what happens after an action or process.",
+              [
+                "S0155",
+                "S0166"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Demonstrate means show clearly.",
+              [
+                "S0153"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1532",
+      "fingerprint": "f787fe6d94500a831aed374f0e187706c670dcae01a71484cdcdd5864416ef58",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Select precisely means choose one chart from the available charts.",
+              [
+                "S0151"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Outcome is a noun naming a result and cannot grammatically fill the verb slot.",
+              [
+                "S0155"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Classify means group by features, not choose one chart.",
+              [
+                "S0149"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Determine means find an answer, not choose from already available charts.",
+              [
+                "S0151",
+                "S0159"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This correctly uses determined but does not use the Part A word select.",
+              [
+                "S0159"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This correctly uses classified but not select.",
+              [
+                "S0149"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The frame correctly uses selected for choosing something because it meets a criterion.",
+              [
+                "S0151",
+                "S0160"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This correctly uses outcome but not select.",
+              [
+                "S0155"
+              ]
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0097",
+  "batchFileSha256": "a8b40d1e560abcde7c7654f40ffcc485ee1d7f0b4d05e2a8b45345affba95878",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1133",
+      "fingerprint": "e68cfce750f287e08794ac0169507e88f2850b000fe00a8a9ae5ff0e85d47343",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A2"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "This is Theo's perspective, not Zara's.", ["S0045", "S0041"]],
+          ["A2", "DEFENSIBLE", "Zara initially trusts the familiar marked crossing and the map's shallow-water symbol.", ["S0044", "S0039", "S0047"]],
+          ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Confidence is a feeling or trait, not Zara's view about which route to use.", ["S0044", "S0039"]],
+          ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Organization is a trait, not Zara's stated route perspective.", ["S0044", "S0039"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1134",
+      "fingerprint": "ae4a65f01b5d970b1e5a179d85ebacb6092e08bb38d7c4b237a62b45a191a250",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A4"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "CONTRADICTED", "The same third-person narrator tells the entire story.", ["S0037", "S0053"]],
+          ["A2", "CONTRADICTED", "After seeing current evidence, Zara leaves the old crossing and scouts a footbridge.", ["S0049", "S0050", "S0043", "S0051"]],
+          ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "A possible feeling does not explain what Zara comes to believe about the route.", ["S0049", "S0043"]],
+          ["A4", "DEFENSIBLE", "Zara moves from relying on the old map to using present creek evidence and updating the map.", ["S0044", "S0039", "S0049", "S0043", "S0052"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1135",
+      "fingerprint": "7898965da3dd7db7ed96f669eb98e7bb1c791d27aa08fb0bb4c3e3ffe8e24431",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A1", "A3"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "DEFENSIBLE", "Zara directly states that the familiar marked crossing should remain the planned route.", ["S0044"]],
+          ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This reports the expedition's outcome, not Zara's perspective.", ["S0053"]],
+          ["A3", "DEFENSIBLE", "Zara's thought directly explains why she initially trusts the map over an unseen alternative.", ["S0039"]],
+          ["A4", "INCORRECT", "The quoted view belongs to Theo.", ["S0045"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1136",
+      "fingerprint": "808bd3ba9f1ab9b38fd1c3c6498df7c57f2d830578157da7ac3f6b35a75b56d6",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A2"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The arrival result does not reveal Theo's route perspective.", ["S0053"]],
+          ["A2", "DEFENSIBLE", "Theo directly explains that storm evidence makes inspection necessary before trusting the old mark.", ["S0045"]],
+          ["A3", "INCORRECT", "This is Zara's initial perspective.", ["S0044"]],
+          ["A4", "INCORRECT", "This thought belongs to Zara, not Theo.", ["S0039"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1137",
+      "fingerprint": "44eec8026d6b7a7f9beb82ff0c5b62e8a97db677fd5a6ba2fed052a085a1a2fa",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Zara initially trusts the familiar crossing because the map records it as shallow.", ["S0044", "S0039"]],
+            ["A2", "INCORRECT", "This is Theo's perspective.", ["S0045"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Narrator type is not Zara's perspective about the route.", ["S0037", "S0053"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This is Zara's initial perspective.", ["S0044", "S0039"]],
+            ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Narrator type is not Theo's perspective about the route.", ["S0037", "S0053"]],
+            ["A3", "DEFENSIBLE", "Theo points to storm changes and insists on inspecting the creek before trusting the old route.", ["S0045", "S0041"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1138",
+      "fingerprint": "ddb3bea31b6a1d3c975412bf938d17a2fc7869c0e3051e6710be1325bb622468",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A2"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Thoughtfulness is a trait, not Suri's view about the corner's design.", ["S0063", "S0066"]],
+          ["A2", "DEFENSIBLE", "Suri explicitly wants a divided quiet area away from busy or group conversation.", ["S0063", "S0065", "S0066"]],
+          ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Hopefulness does not explain Suri's design perspective.", ["S0063"]],
+          ["A4", "INCORRECT", "This states Luis's initial perspective, not Suri's.", ["S0058"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1139",
+      "fingerprint": "27ef7b5bc2ca8b258b0e05bf7afd8650f1aa6989b0dc5c8c30f81a97f9a60bec",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A1"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "DEFENSIBLE", "Luis replaces his single-table plan after the survey and trial show that both quiet and group uses matter.", ["S0058", "S0068", "S0070", "S0071", "S0072"]],
+          ["A2", "CONTRADICTED", "Luis replaces the one-table poster with a flexible plan.", ["S0072"]],
+          ["A3", "CONTRADICTED", "The story remains literary prose and does not become a poem.", ["S0056", "S0073"]],
+          ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "A possible feeling does not state how Luis's belief about the design changes.", ["S0070", "S0072"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1140",
+      "fingerprint": "a903b93b80c1130a7764618d77d74d0dc135228a2c07355ca763c78f9555aebd",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A3", "A4"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This introduces the available space but not Suri's view of its use.", ["S0056"]],
+          ["A2", "INCORRECT", "The quoted design perspective belongs to Luis.", ["S0058"]],
+          ["A3", "DEFENSIBLE", "Suri's count of readers leaving noisy tables supports her belief that quiet space is needed.", ["S0066"]],
+          ["A4", "DEFENSIBLE", "Suri directly states her quiet-reading design and why it is needed.", ["S0063"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1141",
+      "fingerprint": "740d32327c02f20757cfed4cff3b3109978731a758fa4622eb6c06c557ef9fc2",
+      "slots": [{
+        "slotId": "response",
+        "defensible": ["A3"],
+        "ambiguity": "",
+        "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "This is Suri's observation, not Luis's perspective.", ["S0066"]],
+          ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The available corner establishes context but not Luis's view.", ["S0056"]],
+          ["A3", "DEFENSIBLE", "Luis directly explains that book clubs need discussion space and proposes one large table.", ["S0058"]],
+          ["A4", "INCORRECT", "This is Suri's perspective.", ["S0063"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1142",
+      "fingerprint": "4e92b0f26803e32a02a29058a3c66006692ca5ce20f4c4d20f4012d9987887ff",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Narrator type is not Suri's design perspective.", ["S0056", "S0073"]],
+            ["A2", "DEFENSIBLE", "Suri wants a quiet divided area where readers can focus away from conversation.", ["S0063", "S0065", "S0066"]],
+            ["A3", "INCORRECT", "This is Luis's initial perspective.", ["S0058"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Narrator type is not Luis's design perspective.", ["S0056", "S0073"]],
+            ["A2", "INCORRECT", "This is Suri's perspective.", ["S0063"]],
+            ["A3", "DEFENSIBLE", "Luis initially proposes one large discussion table for book clubs.", ["S0058", "S0067"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

@@ -29,6 +29,17 @@ describe('Grade 3 Structure Station production pack', () => {
     ])
   })
 
+  test('constrains the first chronology and comparison evidence sets to their keyed pairs', () => {
+    expect(structureStationQuestions.find((question) => question.questionIdentifier === 'g3-id-ss-q1-3')?.prompt)
+      .toBe('Choose the two time-marked action sentences that show the first and final steps in the observer\'s day.')
+    expect(structureStationQuestions.find((question) => question.questionIdentifier === 'g3-id-ss-q2-3')?.prompt)
+      .toBe('Choose the two animal-feature sentences that directly contrast the foxes\' ear sizes and how those ears handle body heat.')
+    expect(structureStationQuestions.find((question) => question.questionIdentifier === 'g3-id-ss-q3-3')?.prompt)
+      .toBe('Choose the cause sentence about sunlight warming bare soil and the result sentence stating that covered soil loses water more slowly.')
+    expect(structureStationQuestions.find((question) => question.questionIdentifier === 'g3-id-ss-q4-3')?.prompt)
+      .toBe('Choose the two action sentences marked First and Finally that show the beginning and end of the wind-vane process.')
+  })
+
   test('uses meaningful, accessible feature contributions with resolved evidence', () => {
     const featureKinds = new Set(structureStationPassages.flatMap((passage) => passage.informationalStructure?.features.map((feature) => feature.kind) ?? []))
     expect(featureKinds).toEqual(new Set(['title', 'heading', 'timeline', 'glossary', 'illustration', 'caption', 'sidebar']))

@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0080",
+  "batchFileSha256": "4dd8f85e234f1a0bc5c6ac7a06ebe3012d52e442e73700ad9528f8648d29b8c1",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0936", "fingerprint": "63b4d602cd711e1e5670148ca02a6f9fab2a18c906b015d7a39ef458818ab413",
+      "slots": [{"slotId": "response", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Dark plus -ful does not build darkness.", ["S0015"]], ["A2", "INCORRECT", "Dark plus -ment does not build darkness.", ["S0015"]],
+        ["A3", "DEFENSIBLE", "Dark plus -ness exactly builds darkness.", ["S0015"]], ["A4", "INCORRECT", "Dark plus -er does not build darkness.", ["S0015"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0937", "fingerprint": "e6ff8237c72603f89044b234b0b227a1dc867dbb546b04806c78c7a3e67eafc3",
+      "slots": [{"slotId": "response", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "T is not the base word in treatment.", ["S0017"]], ["A2", "INCORRECT", "Treatm is not the base word in treatment.", ["S0017"]],
+        ["A3", "DEFENSIBLE", "Treat is the base word and -ment is the suffix in treatment.", ["S0017"]], ["A4", "INCORRECT", "The unsplit word does not show the requested boundary.", ["S0017"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0938", "fingerprint": "08f6ffa29a33fc85b4864bb83b621fdcdf743ad868a3d492f219061b7319438e",
+      "slots": [{"slotId": "response", "defensible": ["A1", "A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Harmless describes the moth, so it is an adjective in the passage.", ["S0021"]],
+        ["A2", "INCORRECT", "Darkness names a condition, so it is a noun in the passage.", ["S0015"]],
+        ["A3", "INCORRECT", "Treatment names a protective process or substance, so it is a noun here.", ["S0017"]],
+        ["A4", "DEFENSIBLE", "Careful describes the guide, so it is an adjective in the passage.", ["S0019"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0939", "fingerprint": "e98adb216ef2055a46ff69a4aa94023ec41af68769b938c7387985bc13572539",
+      "slots": [{"slotId": "response", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Harm is the base word, not the requested suffix.", ["S0021"]], ["A2", "DEFENSIBLE", "Less is the suffix added to harm in harmless.", ["S0021"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0940", "fingerprint": "4a06d344fef61567d1548bb24d6e73eb672de584f6c17ec0bbf33934b3b438ec",
+      "slots": [
+        {"slotId": "row_1", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Dark plus -ful does not build darkness.", ["S0015"]], ["A2", "INCORRECT", "Dark plus -ment does not build darkness.", ["S0015"]], ["A3", "DEFENSIBLE", "Dark plus -ness builds darkness.", ["S0015"]], ["A4", "INCORRECT", "Dark plus -less does not build darkness.", ["S0015"]]
+        ]},
+        {"slotId": "row_2", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Treat plus -ness does not build treatment.", ["S0017"]], ["A2", "INCORRECT", "Treat plus -less does not build treatment.", ["S0017"]], ["A3", "DEFENSIBLE", "Treat plus -ment builds treatment.", ["S0017"]], ["A4", "INCORRECT", "Treat plus -ful does not build treatment.", ["S0017"]]
+        ]},
+        {"slotId": "row_3", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Care plus -ment does not build careful.", ["S0019"]], ["A2", "INCORRECT", "Care plus -ness does not build careful.", ["S0019"]], ["A3", "INCORRECT", "Care plus -less builds careless, not careful.", ["S0019"]], ["A4", "DEFENSIBLE", "Care plus -ful builds careful.", ["S0019"]]
+        ]},
+        {"slotId": "row_4", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Harm plus -ful builds harmful, not harmless.", ["S0021"]], ["A2", "DEFENSIBLE", "Harm plus -less builds harmless.", ["S0021"]], ["A3", "INCORRECT", "Harm plus -ness does not build harmless.", ["S0021"]], ["A4", "INCORRECT", "Harm plus -ment does not build harmless.", ["S0021"]]
+        ]}
+      ], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0941", "fingerprint": "1258728f1c38885c52f3f97ee7f83aeba16b81fdb78384215b82fedc3e45a1c1",
+      "slots": [{"slotId": "response", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Pay plus -ful does not build payment.", ["S0027"]], ["A2", "INCORRECT", "Pay plus -er does not build payment.", ["S0027"]],
+        ["A3", "DEFENSIBLE", "Pay plus -ment builds payment, with the final y changing to i.", ["S0027"]], ["A4", "INCORRECT", "Pay plus -ness does not build payment.", ["S0027"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0942", "fingerprint": "ca9ff7afa27e934928d723f7619d8a697e3d844f7a998d65524d9406963e4104",
+      "slots": [{"slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Paint is the base word and -er is the suffix in painter.", ["S0029"]], ["A2", "INCORRECT", "P is not the base word in painter.", ["S0029"]],
+        ["A3", "INCORRECT", "Painte is not the base word in painter.", ["S0029"]], ["A4", "INCORRECT", "The unsplit word does not show the requested boundary.", ["S0029"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0943", "fingerprint": "a9aaf8ad5bd78808b78b0e89f891ce7b56ba7b1235adf0693023f1b6d717b5ae",
+      "slots": [{"slotId": "response", "defensible": ["A1", "A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Painter names a person, so it is a noun in the passage.", ["S0029"]], ["A2", "DEFENSIBLE", "Payment names what covered the supplies, so it is a noun.", ["S0027"]],
+        ["A3", "INCORRECT", "Playful describes the border, so it is an adjective here.", ["S0031"]], ["A4", "INCORRECT", "Softly tells how the team worked, so it is an adverb here.", ["S0033"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0944", "fingerprint": "af0925a4c4fa42ba492397d2f483baac9f8aafdecb144489a598da2376db6176",
+      "slots": [{"slotId": "response", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Soft is the base word, not the requested suffix.", ["S0033"]], ["A2", "DEFENSIBLE", "Ly is the suffix added to soft in softly.", ["S0033"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0945", "fingerprint": "b2e1f31086e8514e3d785aa5edc491e005f55a23b8688637af49277bcd576adb",
+      "slots": [
+        {"slotId": "row_1", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Pay plus -er does not build payment.", ["S0027"]], ["A2", "INCORRECT", "Pay plus -ly does not build payment.", ["S0027"]], ["A3", "INCORRECT", "Pay plus -ful does not build payment.", ["S0027"]], ["A4", "DEFENSIBLE", "Pay plus -ment builds payment.", ["S0027"]]
+        ]},
+        {"slotId": "row_2", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Paint plus -ful does not build painter.", ["S0029"]], ["A2", "INCORRECT", "Paint plus -ly does not build painter.", ["S0029"]], ["A3", "DEFENSIBLE", "Paint plus -er builds painter.", ["S0029"]], ["A4", "INCORRECT", "Paint plus -ment does not build painter.", ["S0029"]]
+        ]},
+        {"slotId": "row_3", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Play plus -ly does not build playful.", ["S0031"]], ["A2", "INCORRECT", "Play plus -ment does not build playful.", ["S0031"]], ["A3", "DEFENSIBLE", "Play plus -ful builds playful.", ["S0031"]], ["A4", "INCORRECT", "Play plus -er does not build playful.", ["S0031"]]
+        ]},
+        {"slotId": "row_4", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "DEFENSIBLE", "Soft plus -ly builds softly.", ["S0033"]], ["A2", "INCORRECT", "Soft plus -ment does not build softly.", ["S0033"]], ["A3", "INCORRECT", "Soft plus -ful does not build softly.", ["S0033"]], ["A4", "INCORRECT", "Soft plus -er does not build softly.", ["S0033"]]
+        ]}
+      ], "projectionDefect": ""
+    }
+  ]
+}

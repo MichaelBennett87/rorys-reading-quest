@@ -1,0 +1,4616 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "g3-id-ce-q1-1",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-de1c6aa68914d0e2",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "612d59d1d916dd70990c8314a24662bc4b2e7df982a6a8bb60a0de7cd6737660",
+        "conclusionsSha256": "3303563ca327169b3829f2faf496d678428dad0f7486edfaaaf8c41bcd781ddf",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0030.second-pass.json",
+        "receiptSha256": "ccac74149a62657344f73a32f0f0ec5a4f8b904674ed69c7afd9b2402dbc054b",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the author's claim in \"A Native Flower Strip for the Garden\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q1-1-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q1-1-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q1-1-choice-3",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The source supports food across the season but does not make a shelter claim.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-3",
+                "g3-id-claim-passage-1-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-1-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence directly states what the author recommends.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-1-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names the topic rather than the claim.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-1-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes author purpose rather than the recommended action.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q1-2",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-6bc2fd51a28aa1b5",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "612d59d1d916dd70990c8314a24662bc4b2e7df982a6a8bb60a0de7cd6737660",
+        "conclusionsSha256": "3303563ca327169b3829f2faf496d678428dad0f7486edfaaaf8c41bcd781ddf",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0113.pass-a.json",
+        "receiptSha256": "3303563ca327169b3829f2faf496d678428dad0f7486edfaaaf8c41bcd781ddf",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which statement is a reason supporting the author’s claim?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q1-2-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q1-2-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q1-2-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The source explicitly identifies this benefit as one reason for the garden recommendation.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-2-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The border color is irrelevant to the recommendation.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-2-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This factual detail explains pollinator behavior and serves as evidence for the stated nectar-and-pollen reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-2-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This restates the claim rather than a reason for it.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q1-3",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-fa92e7c0a6b7505c",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "612d59d1d916dd70990c8314a24662bc4b2e7df982a6a8bb60a0de7cd6737660",
+        "conclusionsSha256": "3303563ca327169b3829f2faf496d678428dad0f7486edfaaaf8c41bcd781ddf",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0113.pass-a.json",
+        "receiptSha256": "3303563ca327169b3829f2faf496d678428dad0f7486edfaaaf8c41bcd781ddf",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two evidence details from different sections that support the author’s claim.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-id-ce-q1-3-correct-1",
+            "g3-id-ce-q1-3-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q1-3-correct-2",
+            "g3-id-ce-q1-3-correct-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q1-3-weak",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Border color does not support the garden recommendation.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-3-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This middle-section comparison supports the benefit of food across more of the season.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-3-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This later-section observation supplies evidence that pollinators visited the planned flower groups.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-3-repeat",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the claim itself, not supporting evidence.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q1-4",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-afb6d978dc8ff094",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "612d59d1d916dd70990c8314a24662bc4b2e7df982a6a8bb60a0de7cd6737660",
+        "conclusionsSha256": "3303563ca327169b3829f2faf496d678428dad0f7486edfaaaf8c41bcd781ddf",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0030.second-pass.json",
+        "receiptSha256": "ccac74149a62657344f73a32f0f0ec5a4f8b904674ed69c7afd9b2402dbc054b",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that states the author’s claim.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q1-4-segment-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q1-4-segment-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q1-4-segment-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence directly states the proposed action.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-4-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This introduces the decision but does not state the author’s recommendation.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-4-segment-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This irrelevant design detail is not a claim.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-4-segment-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This fact about pollinators is not the recommended action.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q1-5",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-6b1770f16eaaa2a5",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "612d59d1d916dd70990c8314a24662bc4b2e7df982a6a8bb60a0de7cd6737660",
+        "conclusionsSha256": "3303563ca327169b3829f2faf496d678428dad0f7486edfaaaf8c41bcd781ddf",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0113.pass-a.json",
+        "receiptSha256": "3303563ca327169b3829f2faf496d678428dad0f7486edfaaaf8c41bcd781ddf",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-id-ce-q1-5-row-claim",
+          "prompt": "The school garden should include a strip of native flowering plants.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q1-5-claim"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q1-5-claim"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q1-5-claim",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sentence states the author’s recommended action.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-5-reason",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence gives the proposal, not why it should be adopted.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-5-unused",
+              "verdict": "INCORRECT",
+              "rationale": "The claim is supported later in the source.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-3",
+                "g3-id-claim-passage-1-sentence-9",
+                "g3-id-claim-passage-1-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-5-evidence",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence is not an observation or supporting fact.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-5-weak",
+              "verdict": "INCORRECT",
+              "rationale": "This is the central proposal, not a weak detail.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ce-q1-5-row-reason",
+          "prompt": "One reason is that native flowers can provide nectar and pollen for local pollinators.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q1-5-reason"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q1-5-reason"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q1-5-unused",
+              "verdict": "INCORRECT",
+              "rationale": "The source supports this benefit with pollinator and seasonal details.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-4",
+                "g3-id-claim-passage-1-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-5-claim",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence explains why the proposal should be adopted rather than stating the proposal.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-5-reason",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sentence is explicitly introduced as a reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-5-evidence",
+              "verdict": "INCORRECT",
+              "rationale": "Within this argument structure, this broad benefit is the reason that later facts support.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-3",
+                "g3-id-claim-passage-1-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-5-weak",
+              "verdict": "INCORRECT",
+              "rationale": "The nectar-and-pollen benefit directly supports the claim.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ce-q1-5-row-evidence",
+          "prompt": "Many pollinators move pollen while visiting flowers for food.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q1-5-evidence"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q1-5-evidence"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q1-5-weak",
+              "verdict": "INCORRECT",
+              "rationale": "Pollinator behavior is relevant support, not a weak detail.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-5-claim",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence does not recommend an action.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-5-reason",
+              "verdict": "INCORRECT",
+              "rationale": "The explicitly stated reason is that native flowers provide nectar and pollen.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-5-evidence",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This factual detail explains why nectar and pollen matter to pollinators.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-5-unused",
+              "verdict": "INCORRECT",
+              "rationale": "The source uses this relevant fact to support its stated reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-3",
+                "g3-id-claim-passage-1-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ce-q1-5-row-weak",
+          "prompt": "The wooden border in the drawing is painted green.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q1-5-weak"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q1-5-weak"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q1-5-unused",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence is a factual but irrelevant detail, not an unsupported opinion.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-5-evidence",
+              "verdict": "INCORRECT",
+              "rationale": "The border color does not support the recommendation.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-5-reason",
+              "verdict": "INCORRECT",
+              "rationale": "It gives no benefit or rationale for native flowers.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-5-weak",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The border color is unrelated to the claim and its reasons.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q1-5-claim",
+              "verdict": "INCORRECT",
+              "rationale": "It does not state the proposed action.",
+              "evidenceIds": [
+                "g3-id-claim-passage-1-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q2-1",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-85388d0f2e36e293",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "1bbfebef2bd18c8543ea0c3c0eea69f76f01a6a9f1639db3409f619a990278a1",
+        "conclusionsSha256": "1fd810827343e0191158b5a58b61483eb3cb320a19be39145ba24be3d406d643",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0114.pass-a.json",
+        "receiptSha256": "1fd810827343e0191158b5a58b61483eb3cb320a19be39145ba24be3d406d643",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the author's claim in \"Signs That Can Serve Again\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q2-1-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q2-1-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q2-1-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence directly states the supported recommendation.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-1-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This noun phrase names the topic rather than a claim.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-1-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This summarizes how reusable signs work and functions as a central idea, not the proposed judgment.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-5",
+                "g3-id-claim-passage-2-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-1-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states an author-purpose formulation rather than the claim.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q2-2",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-33d6ba9711777ccb",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "1bbfebef2bd18c8543ea0c3c0eea69f76f01a6a9f1639db3409f619a990278a1",
+        "conclusionsSha256": "1fd810827343e0191158b5a58b61483eb3cb320a19be39145ba24be3d406d643",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0114.pass-a.json",
+        "receiptSha256": "1fd810827343e0191158b5a58b61483eb3cb320a19be39145ba24be3d406d643",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which statement is a reason supporting the author’s claim?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q2-2-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q2-2-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q2-2-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The source explicitly marks repeated setup and storage as one reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-2-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Letter colors are identified as irrelevant to material durability.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-10",
+                "g3-id-claim-passage-2-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-2-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes the sample-test setup; it does not state why reusable signs are better.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-2-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the claim itself.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q2-3",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-448c4b9c1ec58018",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "1bbfebef2bd18c8543ea0c3c0eea69f76f01a6a9f1639db3409f619a990278a1",
+        "conclusionsSha256": "1fd810827343e0191158b5a58b61483eb3cb320a19be39145ba24be3d406d643",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0114.pass-a.json",
+        "receiptSha256": "1fd810827343e0191158b5a58b61483eb3cb320a19be39145ba24be3d406d643",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two evidence details from different sections that support the author’s claim.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-id-ce-q2-3-correct-1",
+            "g3-id-ce-q2-3-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q2-3-correct-2",
+            "g3-id-ce-q2-3-correct-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q2-3-weak",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Letter color did not affect the tested durability.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-10",
+                "g3-id-claim-passage-2-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-3-repeat",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the claim rather than supporting evidence.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-3-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This later-section result supports making fewer replacement signs.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-15"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-3-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sample result supports the durability reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q2-4",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-e4e1428e1b88e6d2",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "1bbfebef2bd18c8543ea0c3c0eea69f76f01a6a9f1639db3409f619a990278a1",
+        "conclusionsSha256": "1fd810827343e0191158b5a58b61483eb3cb320a19be39145ba24be3d406d643",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0114.pass-a.json",
+        "receiptSha256": "1fd810827343e0191158b5a58b61483eb3cb320a19be39145ba24be3d406d643",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the strongest sample result supporting the reason that reusable signs handle repeated use.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q2-4-segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q2-4-segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q2-4-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states a requirement for the signs, not a sample result.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-4-segment-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a reuse plan, not the requested result from the durability sample.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-4-segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This measured sample outcome directly shows laminated signs remained usable after mist.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-4-segment-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Letter colors do not establish repeated-use durability.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-10",
+                "g3-id-claim-passage-2-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q2-5",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-54f300fcefa01a88",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "1bbfebef2bd18c8543ea0c3c0eea69f76f01a6a9f1639db3409f619a990278a1",
+        "conclusionsSha256": "1fd810827343e0191158b5a58b61483eb3cb320a19be39145ba24be3d406d643",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0114.pass-a.json",
+        "receiptSha256": "1fd810827343e0191158b5a58b61483eb3cb320a19be39145ba24be3d406d643",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-id-ce-q2-5-row-claim",
+          "prompt": "Reusable signs are the better choice for yearly school events than disposable paper signs.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q2-5-claim"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q2-5-claim"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q2-5-unused",
+              "verdict": "INCORRECT",
+              "rationale": "Later reasons and evidence support the statement.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-5",
+                "g3-id-claim-passage-2-sentence-7",
+                "g3-id-claim-passage-2-sentence-12",
+                "g3-id-claim-passage-2-sentence-15"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-5-reason",
+              "verdict": "INCORRECT",
+              "rationale": "It proposes the position rather than explaining why.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-5-claim",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This is the author’s supported recommendation.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-5-evidence",
+              "verdict": "INCORRECT",
+              "rationale": "It is not a test fact or observed result.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-5-weak",
+              "verdict": "INCORRECT",
+              "rationale": "It is the central argument, not an irrelevant detail.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ce-q2-5-row-reason",
+          "prompt": "One reason is that sturdy reusable signs can handle repeated setup and storage.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q2-5-reason"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q2-5-reason"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q2-5-claim",
+              "verdict": "INCORRECT",
+              "rationale": "This supports the claim but does not state the claim.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-5-evidence",
+              "verdict": "INCORRECT",
+              "rationale": "This general benefit is the reason that the sample results support.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-5",
+                "g3-id-claim-passage-2-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-5-unused",
+              "verdict": "INCORRECT",
+              "rationale": "The source supports the statement with a comparison test.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-6",
+                "g3-id-claim-passage-2-sentence-7",
+                "g3-id-claim-passage-2-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-5-weak",
+              "verdict": "INCORRECT",
+              "rationale": "Repeated setup and storage directly concern reuse.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-5-reason",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sentence is explicitly introduced as a reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ce-q2-5-row-evidence",
+          "prompt": "In the sample test, twelve laminated signs and twelve plain paper signs were displayed for two practice days.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q2-5-evidence"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q2-5-evidence"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q2-5-reason",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence describes test setup rather than the explanatory reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-5-evidence",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This factual test-design detail is part of the evidence used to compare materials.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-6",
+                "g3-id-claim-passage-2-sentence-7",
+                "g3-id-claim-passage-2-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-5-unused",
+              "verdict": "INCORRECT",
+              "rationale": "It is a factual description, not an unsupported opinion.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-5-weak",
+              "verdict": "INCORRECT",
+              "rationale": "The test setup is relevant to interpreting the result.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-6",
+                "g3-id-claim-passage-2-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-5-claim",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence does not state the recommendation.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ce-q2-5-row-weak",
+          "prompt": "One sample sign used blue letters, while another used red letters.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q2-5-weak"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q2-5-weak"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q2-5-claim",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence does not recommend a choice.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-5-evidence",
+              "verdict": "INCORRECT",
+              "rationale": "The source says color did not affect the material result.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-10",
+                "g3-id-claim-passage-2-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-5-reason",
+              "verdict": "INCORRECT",
+              "rationale": "It does not explain why reusable signs are better.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-10",
+                "g3-id-claim-passage-2-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-5-weak",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The color detail is explicitly disconnected from durability.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-10",
+                "g3-id-claim-passage-2-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q2-5-unused",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence reports a sample detail rather than an opinion.",
+              "evidenceIds": [
+                "g3-id-claim-passage-2-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q3-1",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-f5180e17236c1b1b",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "1bbfebef2bd18c8543ea0c3c0eea69f76f01a6a9f1639db3409f619a990278a1",
+        "conclusionsSha256": "1fd810827343e0191158b5a58b61483eb3cb320a19be39145ba24be3d406d643",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0114.pass-a.json",
+        "receiptSha256": "1fd810827343e0191158b5a58b61483eb3cb320a19be39145ba24be3d406d643",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the author's claim in \"A Rain Barrel for the Demonstration Garden\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q3-1-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q3-1-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q3-1-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This phrase names the topic.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-1-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an author-purpose statement, not the claim.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-1-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This summarizes how a proper barrel works and functions as a central idea.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-2",
+                "g3-id-claim-passage-3-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-1-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This opening sentence directly states the supported position.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q3-2",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-15f2fb870141453b",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "1bbfebef2bd18c8543ea0c3c0eea69f76f01a6a9f1639db3409f619a990278a1",
+        "conclusionsSha256": "1fd810827343e0191158b5a58b61483eb3cb320a19be39145ba24be3d406d643",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0114.pass-a.json",
+        "receiptSha256": "1fd810827343e0191158b5a58b61483eb3cb320a19be39145ba24be3d406d643",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which statement is a reason supporting the author’s claim?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q3-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q3-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q3-2-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The barrel color is explicitly unrelated to how it works.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The source explicitly labels later storage as its first reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-2-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the claim itself.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-2-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This factual context supports the storage reason but is not the stated reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q3-3",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-90b9df10269923ec",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "1bbfebef2bd18c8543ea0c3c0eea69f76f01a6a9f1639db3409f619a990278a1",
+        "conclusionsSha256": "1fd810827343e0191158b5a58b61483eb3cb320a19be39145ba24be3d406d643",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0030.second-pass.json",
+        "receiptSha256": "ccac74149a62657344f73a32f0f0ec5a4f8b904674ed69c7afd9b2402dbc054b",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two evidence details from different sections that support the author’s claim.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-id-ce-q3-3-correct-1",
+            "g3-id-ce-q3-3-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q3-3-correct-1",
+            "g3-id-ce-q3-3-correct-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q3-3-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This first-section measurement shows the barrel stored a useful amount.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-3-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This second-section observation supports the screened setup.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-3-repeat",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the claim rather than evidence.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-3-weak",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Color is explicitly unrelated to operation.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q3-4",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-8bae8394973b69e8",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "1bbfebef2bd18c8543ea0c3c0eea69f76f01a6a9f1639db3409f619a990278a1",
+        "conclusionsSha256": "1fd810827343e0191158b5a58b61483eb3cb320a19be39145ba24be3d406d643",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0114.pass-a.json",
+        "receiptSha256": "1fd810827343e0191158b5a58b61483eb3cb320a19be39145ba24be3d406d643",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the measurement that most directly supports storing rainwater for later garden use.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q3-4-segment-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q3-4-segment-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q3-4-segment-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This is the only numerical measurement showing how much water the barrel stored.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-4-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes runoff’s path but gives no storage measurement.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-4-segment-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This safety label gives intended use but no measurement.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-4-segment-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Color is neither a measurement nor functional evidence.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q3-5",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-a58d370a07466b5e",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "1bbfebef2bd18c8543ea0c3c0eea69f76f01a6a9f1639db3409f619a990278a1",
+        "conclusionsSha256": "1fd810827343e0191158b5a58b61483eb3cb320a19be39145ba24be3d406d643",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0114.pass-a.json",
+        "receiptSha256": "1fd810827343e0191158b5a58b61483eb3cb320a19be39145ba24be3d406d643",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-id-ce-q3-5-row-claim",
+          "prompt": "A covered rain barrel is a practical tool for watering a school demonstration garden.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q3-5-claim"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q3-5-claim"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q3-5-reason",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence states the position, not why it is practical.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-5-evidence",
+              "verdict": "INCORRECT",
+              "rationale": "It is not an observed result.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-5-claim",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This opening sentence states the author’s supported claim.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-5-unused",
+              "verdict": "INCORRECT",
+              "rationale": "The claim is supported by measurements and setup evidence.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-4",
+                "g3-id-claim-passage-3-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-5-weak",
+              "verdict": "INCORRECT",
+              "rationale": "It is the central argument, not irrelevant.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ce-q3-5-row-reason",
+          "prompt": "The first reason is that it can store some roof runoff for later non-drinking garden use.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q3-5-reason"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q3-5-reason"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q3-5-unused",
+              "verdict": "INCORRECT",
+              "rationale": "The source supplies supporting measurement evidence.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-4",
+                "g3-id-claim-passage-3-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-5-reason",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The source explicitly labels this statement as its first reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-5-claim",
+              "verdict": "INCORRECT",
+              "rationale": "It explains why the claim makes sense but does not itself state the claim.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-1",
+                "g3-id-claim-passage-3-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-5-evidence",
+              "verdict": "INCORRECT",
+              "rationale": "The broad storage benefit is the reason that numerical details support.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-2",
+                "g3-id-claim-passage-3-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-5-weak",
+              "verdict": "INCORRECT",
+              "rationale": "Stored runoff directly supports practical garden watering.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ce-q3-5-row-evidence",
+          "prompt": "In this article’s fictional demonstration, a marked barrel collected eighteen liters during a short modeled rainfall.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q3-5-evidence"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q3-5-evidence"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q3-5-claim",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence does not make the overall recommendation.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-5-reason",
+              "verdict": "INCORRECT",
+              "rationale": "It is a measured result supporting the storage reason, not the reason itself.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-4",
+                "g3-id-claim-passage-3-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-5-evidence",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The measured collection result is evidence for useful storage.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-5-weak",
+              "verdict": "INCORRECT",
+              "rationale": "The measurement is relevant and useful.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-4",
+                "g3-id-claim-passage-3-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-5-unused",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence reports a fictional demonstration result, not an opinion.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ce-q3-5-row-weak",
+          "prompt": "The barrel in the diagram is dark green, although color does not determine how it works.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q3-5-weak"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q3-5-weak"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q3-5-unused",
+              "verdict": "INCORRECT",
+              "rationale": "The color statement is factual, not an opinion.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-5-claim",
+              "verdict": "INCORRECT",
+              "rationale": "It does not state the recommendation.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-5-weak",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The source explicitly says color does not determine operation.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-5-reason",
+              "verdict": "INCORRECT",
+              "rationale": "Color gives no practical benefit.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q3-5-evidence",
+              "verdict": "INCORRECT",
+              "rationale": "It does not support either functional reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-3-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q4-1",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-afe9f82507b487b1",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "51f2320fffb62df070569d976b067e01d7074678c92acfc1524f3f0ec14e4ba2",
+        "conclusionsSha256": "0f76c2d5ee20187b86069a140b856f347d5bc997d09bf41c873ff73093dee3e2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0115.pass-a.json",
+        "receiptSha256": "0f76c2d5ee20187b86069a140b856f347d5bc997d09bf41c873ff73093dee3e2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the author's claim in \"Shade First for the Play Area\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q4-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q4-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q4-1-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states author purpose rather than the proposed priority.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-1-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This summarizes benefits and functions as a central idea.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-7",
+                "g3-id-claim-passage-4-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence directly states which improvement should come first.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-1-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This only names the topic.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q4-2",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-9ef0db054cd9d871",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "51f2320fffb62df070569d976b067e01d7074678c92acfc1524f3f0ec14e4ba2",
+        "conclusionsSha256": "0f76c2d5ee20187b86069a140b856f347d5bc997d09bf41c873ff73093dee3e2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0115.pass-a.json",
+        "receiptSha256": "0f76c2d5ee20187b86069a140b856f347d5bc997d09bf41c873ff73093dee3e2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which statement is a reason supporting the author’s claim?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q4-2-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q4-2-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q4-2-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The source explicitly introduces this cooling benefit as one reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-2-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the claim itself.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-2-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Fabric color is explicitly incidental to the shading job.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-2-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This measured result is evidence for the cooling reason, not the stated reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q4-3",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-428aede900aedb85",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "51f2320fffb62df070569d976b067e01d7074678c92acfc1524f3f0ec14e4ba2",
+        "conclusionsSha256": "0f76c2d5ee20187b86069a140b856f347d5bc997d09bf41c873ff73093dee3e2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0115.pass-a.json",
+        "receiptSha256": "0f76c2d5ee20187b86069a140b856f347d5bc997d09bf41c873ff73093dee3e2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two evidence details from different sections that support the author’s claim.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-id-ce-q4-3-correct-1",
+            "g3-id-ce-q4-3-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q4-3-correct-1",
+            "g3-id-ce-q4-3-correct-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q4-3-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This middle-section measurement supports the cooler-resting-place reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-3-weak",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The sail color does not determine its shading function.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-3-repeat",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the claim rather than evidence.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-3-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This later-section design result supports serving both benches without blocking the path.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-16"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q4-4",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-f37bb72acddb90ee",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "51f2320fffb62df070569d976b067e01d7074678c92acfc1524f3f0ec14e4ba2",
+        "conclusionsSha256": "0f76c2d5ee20187b86069a140b856f347d5bc997d09bf41c873ff73093dee3e2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0115.pass-a.json",
+        "receiptSha256": "0f76c2d5ee20187b86069a140b856f347d5bc997d09bf41c873ff73093dee3e2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the result that best supports the reason that the shade sail would serve the resting area.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q4-4-segment-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q4-4-segment-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q4-4-segment-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Color is incidental and does not show how the resting area is served.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-4-segment-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This broad comparison does not show a result for the shade sail.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-4-segment-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This result directly shows the sail serving both resting benches while preserving the path.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-16"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-4-segment-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes a competing project’s narrow shadows rather than a result showing the sail’s service.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-15"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q4-5",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-c0d844f133a8ace5",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "51f2320fffb62df070569d976b067e01d7074678c92acfc1524f3f0ec14e4ba2",
+        "conclusionsSha256": "0f76c2d5ee20187b86069a140b856f347d5bc997d09bf41c873ff73093dee3e2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0115.pass-a.json",
+        "receiptSha256": "0f76c2d5ee20187b86069a140b856f347d5bc997d09bf41c873ff73093dee3e2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-id-ce-q4-5-row-claim",
+          "prompt": "Adding a shade sail should be the first improvement made to the sunny play area.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q4-5-claim"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q4-5-claim"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q4-5-unused",
+              "verdict": "INCORRECT",
+              "rationale": "The position is supported by measured and observational evidence.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-8",
+                "g3-id-claim-passage-4-sentence-14",
+                "g3-id-claim-passage-4-sentence-16"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-5-claim",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This is the author’s proposed first priority.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-5-weak",
+              "verdict": "INCORRECT",
+              "rationale": "It is the central position, not a weak detail.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-5-evidence",
+              "verdict": "INCORRECT",
+              "rationale": "It is not a measured or observed detail.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-5-reason",
+              "verdict": "INCORRECT",
+              "rationale": "It states what should be done, not why.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ce-q4-5-row-reason",
+          "prompt": "One reason is that shade can create a cooler resting place during bright midday conditions.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q4-5-reason"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q4-5-reason"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q4-5-evidence",
+              "verdict": "INCORRECT",
+              "rationale": "The broad cooling benefit is the reason supported by the temperature result.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-7",
+                "g3-id-claim-passage-4-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-5-claim",
+              "verdict": "INCORRECT",
+              "rationale": "It supports but does not state the proposed action.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-6",
+                "g3-id-claim-passage-4-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-5-unused",
+              "verdict": "INCORRECT",
+              "rationale": "The source supplies a controlled comparison.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-8",
+                "g3-id-claim-passage-4-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-5-weak",
+              "verdict": "INCORRECT",
+              "rationale": "Cooling the resting area directly supports the claim.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-5-reason",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sentence is explicitly introduced as a reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ce-q4-5-row-evidence",
+          "prompt": "In this article’s sample surface test, the shaded model bench measured nine degrees cooler than the model bench under the lamp.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q4-5-evidence"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q4-5-evidence"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q4-5-unused",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence reports a fictional measurement, not an opinion.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-5-weak",
+              "verdict": "INCORRECT",
+              "rationale": "The temperature comparison directly supports cooling.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-5-reason",
+              "verdict": "INCORRECT",
+              "rationale": "It is a measured result supporting the stated reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-7",
+                "g3-id-claim-passage-4-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-5-evidence",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The nine-degree comparison is evidence for a cooler resting place.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-5-claim",
+              "verdict": "INCORRECT",
+              "rationale": "It does not state the proposal.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ce-q4-5-row-weak",
+          "prompt": "The sample sail fabric is teal, but another color could perform the same shading job.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q4-5-weak"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q4-5-weak"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q4-5-claim",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence does not state the recommendation.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-5-evidence",
+              "verdict": "INCORRECT",
+              "rationale": "Color does not support the shading function.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-5-unused",
+              "verdict": "INCORRECT",
+              "rationale": "It is a factual observation, not an opinion.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-5-weak",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sentence explicitly says another color could perform the same job.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q4-5-reason",
+              "verdict": "INCORRECT",
+              "rationale": "It does not explain why the sail should be first.",
+              "evidenceIds": [
+                "g3-id-claim-passage-4-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q5-1",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-f8dffab657ada752",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "51f2320fffb62df070569d976b067e01d7074678c92acfc1524f3f0ec14e4ba2",
+        "conclusionsSha256": "0f76c2d5ee20187b86069a140b856f347d5bc997d09bf41c873ff73093dee3e2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0115.pass-a.json",
+        "receiptSha256": "0f76c2d5ee20187b86069a140b856f347d5bc997d09bf41c873ff73093dee3e2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the author's claim in \"Make Recycling Directions Easier to Follow\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q5-1-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q5-1-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q5-1-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This phrase names the topic.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-1-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This summarizes how the combined labels help and functions as a central idea.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-4",
+                "g3-id-claim-passage-5-sentence-5",
+                "g3-id-claim-passage-5-sentence-16"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-1-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an author-purpose statement, not the claim.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-1-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence directly states the proposed action.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q5-2",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-22e913f2fac9d92e",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "51f2320fffb62df070569d976b067e01d7074678c92acfc1524f3f0ec14e4ba2",
+        "conclusionsSha256": "0f76c2d5ee20187b86069a140b856f347d5bc997d09bf41c873ff73093dee3e2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0030.second-pass.json",
+        "receiptSha256": "ccac74149a62657344f73a32f0f0ec5a4f8b904674ed69c7afd9b2402dbc054b",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which statement is a reason supporting the author’s claim?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q5-2-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q5-2-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q5-2-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the claim itself.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-2-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The clock detail is explicitly unrelated to sorting.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-6",
+                "g3-id-claim-passage-5-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-2-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The source explicitly introduces matching visual clues as one reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-2-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This baseline result is evidence used in the comparison, not the stated reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-9",
+                "g3-id-claim-passage-5-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q5-3",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-ca7fe0aea4e6b2c2",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "51f2320fffb62df070569d976b067e01d7074678c92acfc1524f3f0ec14e4ba2",
+        "conclusionsSha256": "0f76c2d5ee20187b86069a140b856f347d5bc997d09bf41c873ff73093dee3e2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0115.pass-a.json",
+        "receiptSha256": "0f76c2d5ee20187b86069a140b856f347d5bc997d09bf41c873ff73093dee3e2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Read this new example: A supply cabinet has three identical drawers. In a sample cleanup, picture-and-word labels helped students return more tools correctly than blank drawer fronts did. The cabinet should use picture-and-word labels. Which statement is the supported claim?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q5-3-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q5-3-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q5-3-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This only names the topic of the example.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-3-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is author purpose rather than the supported proposal.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-3-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This final sentence states the action supported by the sample result.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-3-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This general fact explains label function but does not state what the cabinet should do.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q5-4",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-37adafc3786cbe4f",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "51f2320fffb62df070569d976b067e01d7074678c92acfc1524f3f0ec14e4ba2",
+        "conclusionsSha256": "0f76c2d5ee20187b86069a140b856f347d5bc997d09bf41c873ff73093dee3e2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0115.pass-a.json",
+        "receiptSha256": "0f76c2d5ee20187b86069a140b856f347d5bc997d09bf41c873ff73093dee3e2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two evidence details from different sections that support the author’s claim.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-id-ce-q5-4-correct-1",
+            "g3-id-ce-q5-4-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q5-4-correct-2",
+            "g3-id-ce-q5-4-correct-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q5-4-repeat",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the claim rather than evidence.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-4-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This later-section example supports using several accessible clues together.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-18"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-4-weak",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The clock detail is explicitly irrelevant.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-6",
+                "g3-id-claim-passage-5-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-4-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This practice-sort result supports the combined-label proposal.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q5-5",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-f32d923b1d19642f",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "51f2320fffb62df070569d976b067e01d7074678c92acfc1524f3f0ec14e4ba2",
+        "conclusionsSha256": "0f76c2d5ee20187b86069a140b856f347d5bc997d09bf41c873ff73093dee3e2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0115.pass-a.json",
+        "receiptSha256": "0f76c2d5ee20187b86069a140b856f347d5bc997d09bf41c873ff73093dee3e2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the practice-sort result that most strongly supports adding the combined labels.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q5-5-segment-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q5-5-segment-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q5-5-segment-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This is the positive practice-sort result for the proposed combined labels.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-5-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The clock detail does not concern label performance.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-6",
+                "g3-id-claim-passage-5-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-5-segment-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes the sample setup but not its result.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-5-segment-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This caution limits a causal claim but is not the result supporting combined labels.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-13"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q5-6",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-3c7affad108b3b79",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "51f2320fffb62df070569d976b067e01d7074678c92acfc1524f3f0ec14e4ba2",
+        "conclusionsSha256": "0f76c2d5ee20187b86069a140b856f347d5bc997d09bf41c873ff73093dee3e2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0115.pass-a.json",
+        "receiptSha256": "0f76c2d5ee20187b86069a140b856f347d5bc997d09bf41c873ff73093dee3e2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-id-ce-q5-6-row-claim",
+          "prompt": "The school should add color-coded labels with words and pictures to its recycling station.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q5-6-claim"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q5-6-claim"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q5-6-claim",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence states the author’s proposed action.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-6-weak",
+              "verdict": "INCORRECT",
+              "rationale": "It is the central argument, not an irrelevant detail.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-6-evidence",
+              "verdict": "INCORRECT",
+              "rationale": "It is not a measured observation.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-6-unused",
+              "verdict": "INCORRECT",
+              "rationale": "The source supplies reasons and sample evidence.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-3",
+                "g3-id-claim-passage-5-sentence-10",
+                "g3-id-claim-passage-5-sentence-16"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-6-reason",
+              "verdict": "INCORRECT",
+              "rationale": "It states what should be done rather than why.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ce-q5-6-row-reason",
+          "prompt": "One reason is that matching visual clues can help students find the intended container for each material.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q5-6-reason"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q5-6-reason"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q5-6-claim",
+              "verdict": "INCORRECT",
+              "rationale": "It supports the proposal but does not state the proposed action.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-3",
+                "g3-id-claim-passage-5-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-6-unused",
+              "verdict": "INCORRECT",
+              "rationale": "The source supports the benefit with examples and results.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-4",
+                "g3-id-claim-passage-5-sentence-5",
+                "g3-id-claim-passage-5-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-6-reason",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sentence is explicitly introduced as one reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-6-weak",
+              "verdict": "INCORRECT",
+              "rationale": "Matching clues directly concerns usable directions.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-6-evidence",
+              "verdict": "INCORRECT",
+              "rationale": "The broad benefit is the reason that later facts support.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-3",
+                "g3-id-claim-passage-5-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ce-q5-6-row-evidence",
+          "prompt": "With plain identical labels, seventeen items were placed in the intended containers on the first try.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q5-6-evidence"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q5-6-evidence"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q5-6-evidence",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This measured baseline result is evidence in the label comparison.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-9",
+                "g3-id-claim-passage-5-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-6-reason",
+              "verdict": "INCORRECT",
+              "rationale": "The result supports the matching-clues reason rather than stating it.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-3",
+                "g3-id-claim-passage-5-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-6-claim",
+              "verdict": "INCORRECT",
+              "rationale": "It does not state the proposal.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-6-unused",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence reports a fictional test result, not an opinion.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-6-weak",
+              "verdict": "INCORRECT",
+              "rationale": "The baseline is relevant to the ten-item improvement.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-9",
+                "g3-id-claim-passage-5-sentence-10",
+                "g3-id-claim-passage-5-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ce-q5-6-row-weak",
+          "prompt": "A green container in the sample drawing stands beside a wall clock.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q5-6-weak"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q5-6-weak"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q5-6-weak",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The wall-clock placement is explicitly unrelated to sorting.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-6",
+                "g3-id-claim-passage-5-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-6-unused",
+              "verdict": "INCORRECT",
+              "rationale": "It is a factual drawing detail, not an opinion.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-6-reason",
+              "verdict": "INCORRECT",
+              "rationale": "It gives no benefit for the label proposal.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-6",
+                "g3-id-claim-passage-5-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-6-evidence",
+              "verdict": "INCORRECT",
+              "rationale": "The source says the clock color does not explain where materials belong.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-6-claim",
+              "verdict": "INCORRECT",
+              "rationale": "It does not propose an action.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q5-7",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-b76711b498229de8",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "51f2320fffb62df070569d976b067e01d7074678c92acfc1524f3f0ec14e4ba2",
+        "conclusionsSha256": "0f76c2d5ee20187b86069a140b856f347d5bc997d09bf41c873ff73093dee3e2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0030.second-pass.json",
+        "receiptSha256": "ccac74149a62657344f73a32f0f0ec5a4f8b904674ed69c7afd9b2402dbc054b",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Part A: What is the author’s claim?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q5-7-a-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q5-7-a-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q5-7-a-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence directly states the proposed label change.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-7-a-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names the topic.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-7-a-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states author purpose rather than the claim.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Part B: Which pair of details from separate sections best supports that claim?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q5-7-b-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q5-7-b-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q5-7-b-partial",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The practice result supports the claim, but the clock detail is irrelevant.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-10",
+                "g3-id-claim-passage-5-sentence-6",
+                "g3-id-claim-passage-5-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-7-b-repeat",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Repeating the claim is neither evidence nor a pair from separate sections.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q5-7-b-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The practice result and later several-clues example come from separate sections and jointly support the label proposal.",
+              "evidenceIds": [
+                "g3-id-claim-passage-5-sentence-10",
+                "g3-id-claim-passage-5-sentence-18"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q6-1",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-4d7383b21d0177f6",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "83386ffe150afaafb4ae8f87f40596af2bf17c9cb63dd3a4fc4ba03c2c55820d",
+        "conclusionsSha256": "46d2a08c491f64c8f105117daf76da9a2391bcf2a31c6536e79b191f92d49e9a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0116.pass-a.json",
+        "receiptSha256": "46d2a08c491f64c8f105117daf76da9a2391bcf2a31c6536e79b191f92d49e9a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the author's claim in \"Walk Together to the Nearby Library\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q6-1-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q6-1-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q6-1-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence directly states the route-specific recommendation.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-1-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states author purpose rather than the claim.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-1-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This summarizes route features and functions as a central idea.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-3",
+                "g3-id-claim-passage-6-sentence-4",
+                "g3-id-claim-passage-6-sentence-17"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-1-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This only names the topic.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q6-2",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-f858dfd789c8fb03",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "83386ffe150afaafb4ae8f87f40596af2bf17c9cb63dd3a4fc4ba03c2c55820d",
+        "conclusionsSha256": "46d2a08c491f64c8f105117daf76da9a2391bcf2a31c6536e79b191f92d49e9a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0116.pass-a.json",
+        "receiptSha256": "46d2a08c491f64c8f105117daf76da9a2391bcf2a31c6536e79b191f92d49e9a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which statement is a reason supporting the author’s claim?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q6-2-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q6-2-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q6-2-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This map measurement is evidence for the stated short-route reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-2-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the claim itself.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-2-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Seat color is explicitly irrelevant to the travel decision.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-12",
+                "g3-id-claim-passage-6-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-2-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The source explicitly introduces route length and path continuity as a reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q6-3",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-5ac986261566b7e2",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "83386ffe150afaafb4ae8f87f40596af2bf17c9cb63dd3a4fc4ba03c2c55820d",
+        "conclusionsSha256": "46d2a08c491f64c8f105117daf76da9a2391bcf2a31c6536e79b191f92d49e9a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0030.second-pass.json",
+        "receiptSha256": "ccac74149a62657344f73a32f0f0ec5a4f8b904674ed69c7afd9b2402dbc054b",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Read this new example: A nature center has a flat half-mile loop with signs at every turn. A sample schedule shows the loop fits the visit time, and adults can stand at the front and back. The group should use the marked loop for its short hike. Which statement is the supported claim?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q6-3-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q6-3-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q6-3-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names the example’s topic.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-3-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an author-purpose statement.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-3-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This summarizes supporting features rather than stating the proposed action.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This final sentence states the supported recommendation.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q6-4",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-ecbcf83f56f1eabb",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "83386ffe150afaafb4ae8f87f40596af2bf17c9cb63dd3a4fc4ba03c2c55820d",
+        "conclusionsSha256": "46d2a08c491f64c8f105117daf76da9a2391bcf2a31c6536e79b191f92d49e9a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0116.pass-a.json",
+        "receiptSha256": "46d2a08c491f64c8f105117daf76da9a2391bcf2a31c6536e79b191f92d49e9a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two evidence details from different sections that support the author’s claim.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-id-ce-q6-4-correct-1",
+            "g3-id-ce-q6-4-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q6-4-correct-1",
+            "g3-id-ce-q6-4-correct-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q6-4-weak",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Bus-seat color is irrelevant to route suitability.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-12",
+                "g3-id-claim-passage-6-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-4-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This first-section measurement supports that the route is short.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-4-repeat",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the claim rather than evidence.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-4-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This third-section observation supports coordinated adult supervision.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-17"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q6-5",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-e27bbfa4b6d1a8e0",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "83386ffe150afaafb4ae8f87f40596af2bf17c9cb63dd3a4fc4ba03c2c55820d",
+        "conclusionsSha256": "46d2a08c491f64c8f105117daf76da9a2391bcf2a31c6536e79b191f92d49e9a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0116.pass-a.json",
+        "receiptSha256": "46d2a08c491f64c8f105117daf76da9a2391bcf2a31c6536e79b191f92d49e9a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that gives the full schedule result supporting walking for this route.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q6-5-segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q6-5-segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q6-5-segment-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Seat color is not a schedule result.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-5-segment-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This rejects an irrelevant feature but gives no travel-time result.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-5-segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence states the full-schedule comparison result favoring walking.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-5-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This introduces the visit and gives no schedule result.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q6-6",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-1347a3c38aac8a17",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "83386ffe150afaafb4ae8f87f40596af2bf17c9cb63dd3a4fc4ba03c2c55820d",
+        "conclusionsSha256": "46d2a08c491f64c8f105117daf76da9a2391bcf2a31c6536e79b191f92d49e9a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0116.pass-a.json",
+        "receiptSha256": "46d2a08c491f64c8f105117daf76da9a2391bcf2a31c6536e79b191f92d49e9a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-id-ce-q6-6-row-claim",
+          "prompt": "For this short library route, an adult-led walking group is the best choice for the class visit.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q6-6-claim"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q6-6-claim"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q6-6-evidence",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence is the position supported by later evidence.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-6-unused",
+              "verdict": "INCORRECT",
+              "rationale": "The source supplies route, schedule, and supervision support.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-3",
+                "g3-id-claim-passage-6-sentence-11",
+                "g3-id-claim-passage-6-sentence-17"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-6-reason",
+              "verdict": "INCORRECT",
+              "rationale": "It states what choice should be made, not why.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-6-weak",
+              "verdict": "INCORRECT",
+              "rationale": "It is the central proposal, not a weak detail.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-6-claim",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This is the author’s route-specific claim.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ce-q6-6-row-reason",
+          "prompt": "One reason is that the route is short and has a continuous walking path.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q6-6-reason"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q6-6-reason"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q6-6-weak",
+              "verdict": "INCORRECT",
+              "rationale": "Shortness and a continuous path directly support walking.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-6-unused",
+              "verdict": "INCORRECT",
+              "rationale": "The map supplies supporting measurements.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-3",
+                "g3-id-claim-passage-6-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-6-reason",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sentence is explicitly introduced as one reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-6-evidence",
+              "verdict": "INCORRECT",
+              "rationale": "This broad rationale is supported by route evidence rather than being the measurement itself.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-6",
+                "g3-id-claim-passage-6-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-6-claim",
+              "verdict": "INCORRECT",
+              "rationale": "It supports the recommendation but does not state it.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-5",
+                "g3-id-claim-passage-6-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ce-q6-6-row-evidence",
+          "prompt": "The map measures the route at four tenths of a mile from door to door.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q6-6-evidence"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q6-6-evidence"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q6-6-claim",
+              "verdict": "INCORRECT",
+              "rationale": "The measurement does not state the proposed travel choice.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-6-unused",
+              "verdict": "INCORRECT",
+              "rationale": "It is a map measurement, not an opinion.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-6-evidence",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The measured distance is evidence for the short-route reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-3",
+                "g3-id-claim-passage-6-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-6-weak",
+              "verdict": "INCORRECT",
+              "rationale": "The distance directly bears on whether walking fits.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-6-reason",
+              "verdict": "INCORRECT",
+              "rationale": "It is evidence supporting the reason, not the reason’s broad statement.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-3",
+                "g3-id-claim-passage-6-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ce-q6-6-row-weak",
+          "prompt": "The bus seats in the diagram are shown in blue.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q6-6-weak"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q6-6-weak"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q6-6-evidence",
+              "verdict": "INCORRECT",
+              "rationale": "The source explicitly says seat color does not aid the decision.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-12",
+                "g3-id-claim-passage-6-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-6-unused",
+              "verdict": "INCORRECT",
+              "rationale": "The color statement is factual, not an opinion.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-6-reason",
+              "verdict": "INCORRECT",
+              "rationale": "It gives no rationale for walking.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-12",
+                "g3-id-claim-passage-6-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-6-weak",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Seat color is explicitly identified as irrelevant.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-6-claim",
+              "verdict": "INCORRECT",
+              "rationale": "It does not state the travel recommendation.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-12"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q6-7",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-b6a2ff5a70f976e6",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "83386ffe150afaafb4ae8f87f40596af2bf17c9cb63dd3a4fc4ba03c2c55820d",
+        "conclusionsSha256": "46d2a08c491f64c8f105117daf76da9a2391bcf2a31c6536e79b191f92d49e9a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0116.pass-a.json",
+        "receiptSha256": "46d2a08c491f64c8f105117daf76da9a2391bcf2a31c6536e79b191f92d49e9a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Part A: What is the author’s claim?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q6-7-a-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q6-7-a-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q6-7-a-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states author purpose rather than the claim.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-7-a-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This only names the topic.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-7-a-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This is the article’s route-specific recommendation.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Part B: Which pair of details from separate sections best supports that claim?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q6-7-b-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q6-7-b-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q6-7-b-repeat",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Repeating the claim is not evidence from separate sections.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-7-b-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The distance measurement and supervision observation come from separate sections and support both reasons.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-3",
+                "g3-id-claim-passage-6-sentence-17"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q6-7-b-partial",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The distance supports walking, but bus-seat color is irrelevant.",
+              "evidenceIds": [
+                "g3-id-claim-passage-6-sentence-3",
+                "g3-id-claim-passage-6-sentence-12",
+                "g3-id-claim-passage-6-sentence-13"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q7-1",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-a6dcd6d6cb4e18fa",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "83386ffe150afaafb4ae8f87f40596af2bf17c9cb63dd3a4fc4ba03c2c55820d",
+        "conclusionsSha256": "46d2a08c491f64c8f105117daf76da9a2391bcf2a31c6536e79b191f92d49e9a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0116.pass-a.json",
+        "receiptSha256": "46d2a08c491f64c8f105117daf76da9a2391bcf2a31c6536e79b191f92d49e9a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the author's claim in \"A Return Cart Beside the Hallway\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q7-1-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q7-1-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q7-1-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names the topic.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-1-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence directly states the recommended return system.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-2",
+                "g3-id-claim-passage-7-sentence-20"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-1-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states author purpose rather than the claim.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-1-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This summarizes the cart’s benefits and functions as a central idea.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-3",
+                "g3-id-claim-passage-7-sentence-15"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q7-2",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-78469ab77b700b83",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "83386ffe150afaafb4ae8f87f40596af2bf17c9cb63dd3a4fc4ba03c2c55820d",
+        "conclusionsSha256": "46d2a08c491f64c8f105117daf76da9a2391bcf2a31c6536e79b191f92d49e9a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0116.pass-a.json",
+        "receiptSha256": "46d2a08c491f64c8f105117daf76da9a2391bcf2a31c6536e79b191f92d49e9a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which statement is a reason supporting the author’s claim?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q7-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q7-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q7-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The source explicitly introduces one visible return place as a reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-2-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The decorative star is explicitly unrelated to system performance.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-6",
+                "g3-id-claim-passage-7-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-2-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the claim itself.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-2-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This sign description is evidence that the return place is visible and labeled, not the stated reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-4",
+                "g3-id-claim-passage-7-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q7-3",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-df27eee8097c405c",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "83386ffe150afaafb4ae8f87f40596af2bf17c9cb63dd3a4fc4ba03c2c55820d",
+        "conclusionsSha256": "46d2a08c491f64c8f105117daf76da9a2391bcf2a31c6536e79b191f92d49e9a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0116.pass-a.json",
+        "receiptSha256": "46d2a08c491f64c8f105117daf76da9a2391bcf2a31c6536e79b191f92d49e9a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Read this new example: A game shelf has pieces in mixed containers. In a mock cleanup, labeled bins helped more pieces reach the matching game than one open box did. The room should use labeled bins for game pieces. Which statement is the supported claim?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q7-3-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q7-3-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q7-3-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This only names the topic.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-3-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states author purpose.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-3-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This explains a label benefit but does not state the room’s proposed action.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-3-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This final sentence states the supported recommendation.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q7-4",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-ff87b9c17497b165",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "83386ffe150afaafb4ae8f87f40596af2bf17c9cb63dd3a4fc4ba03c2c55820d",
+        "conclusionsSha256": "46d2a08c491f64c8f105117daf76da9a2391bcf2a31c6536e79b191f92d49e9a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0116.pass-a.json",
+        "receiptSha256": "46d2a08c491f64c8f105117daf76da9a2391bcf2a31c6536e79b191f92d49e9a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two evidence details from different sections that support the author’s claim.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-id-ce-q7-4-correct-1",
+            "g3-id-ce-q7-4-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q7-4-correct-2",
+            "g3-id-ce-q7-4-correct-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q7-4-weak",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The paper star is explicitly unrelated to the system’s success.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-6",
+                "g3-id-claim-passage-7-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-4-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This later-section sorting result supports the divided-shelf reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-17"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-4-repeat",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the claim rather than evidence.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-4-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This middle-section return-rate result supports one visible return place.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q7-5",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-f33d4cf99ca972bd",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "83386ffe150afaafb4ae8f87f40596af2bf17c9cb63dd3a4fc4ba03c2c55820d",
+        "conclusionsSha256": "46d2a08c491f64c8f105117daf76da9a2391bcf2a31c6536e79b191f92d49e9a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0030.second-pass.json",
+        "receiptSha256": "ccac74149a62657344f73a32f0f0ec5a4f8b904674ed69c7afd9b2402dbc054b",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the measured result that best supports using one visible return place.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q7-5-segment-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q7-5-segment-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q7-5-segment-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This measured result directly shows more mock cards reaching the labeled cart.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-5-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The decorative star does not measure return success.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-6",
+                "g3-id-claim-passage-7-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-5-segment-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a reasonable limitation, not the measured result supporting the plan.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-5-segment-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes the fictional method but gives no outcome.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q7-6",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-3fa303d6703cd7da",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "83386ffe150afaafb4ae8f87f40596af2bf17c9cb63dd3a4fc4ba03c2c55820d",
+        "conclusionsSha256": "46d2a08c491f64c8f105117daf76da9a2391bcf2a31c6536e79b191f92d49e9a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0030.second-pass.json",
+        "receiptSha256": "ccac74149a62657344f73a32f0f0ec5a4f8b904674ed69c7afd9b2402dbc054b",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-id-ce-q7-6-row-claim",
+          "prompt": "The library should place a labeled return cart beside the classroom hallway.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q7-6-claim"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q7-6-claim"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q7-6-weak",
+              "verdict": "INCORRECT",
+              "rationale": "This is the main recommendation, not an irrelevant detail.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-6-claim",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sentence states the author’s proposed action.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-6-reason",
+              "verdict": "INCORRECT",
+              "rationale": "It states what should be done rather than why.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-6-unused",
+              "verdict": "INCORRECT",
+              "rationale": "The claim has reasons and measured support.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-3",
+                "g3-id-claim-passage-7-sentence-10",
+                "g3-id-claim-passage-7-sentence-15",
+                "g3-id-claim-passage-7-sentence-17"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-6-evidence",
+              "verdict": "INCORRECT",
+              "rationale": "It is not a measured or observed fact.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ce-q7-6-row-reason",
+          "prompt": "One reason is that a single visible cart can give readers a consistent place to return shared books.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q7-6-reason"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q7-6-reason"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q7-6-evidence",
+              "verdict": "INCORRECT",
+              "rationale": "This broad benefit is the reason supported by later measurements.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-3",
+                "g3-id-claim-passage-7-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-6-claim",
+              "verdict": "INCORRECT",
+              "rationale": "It supports but does not state the proposed action.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-2",
+                "g3-id-claim-passage-7-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-6-weak",
+              "verdict": "INCORRECT",
+              "rationale": "The consistent return-place benefit is directly relevant.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-6-reason",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The source explicitly introduces this statement as one reason.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-6-unused",
+              "verdict": "INCORRECT",
+              "rationale": "The source supplies a mock-week comparison.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-10",
+                "g3-id-claim-passage-7-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ce-q7-6-row-evidence",
+          "prompt": "The cart sign in the drawing uses the words Library Returns and a large book picture.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q7-6-evidence"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q7-6-evidence"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q7-6-claim",
+              "verdict": "INCORRECT",
+              "rationale": "The sign description does not state the proposed action.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-6-weak",
+              "verdict": "INCORRECT",
+              "rationale": "Words and a book picture directly support a visible labeled return place.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-4",
+                "g3-id-claim-passage-7-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-6-unused",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence reports a drawing detail, not an opinion.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-6-reason",
+              "verdict": "INCORRECT",
+              "rationale": "It supplies concrete support for the stated reason rather than stating the reason itself.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-4",
+                "g3-id-claim-passage-7-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-6-evidence",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This factual sign detail is evidence that the cart provides a visible labeled return place.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-4",
+                "g3-id-claim-passage-7-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ce-q7-6-row-weak",
+          "prompt": "A small paper star decorates one corner of the sample sign.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q7-6-weak"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q7-6-weak"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q7-6-reason",
+              "verdict": "INCORRECT",
+              "rationale": "A decorative star gives no rationale for the return cart.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-6",
+                "g3-id-claim-passage-7-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-6-unused",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence is factual, not an opinion.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-6-evidence",
+              "verdict": "INCORRECT",
+              "rationale": "The source explicitly says the star does not show whether the system works.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-6-weak",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The decorative star is expressly disconnected from system performance.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-6",
+                "g3-id-claim-passage-7-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-6-claim",
+              "verdict": "INCORRECT",
+              "rationale": "It does not state the recommendation.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ce-q7-7",
+      "packId": "g3-information-detectives-claim-evidence-court",
+      "contentVersion": "g3-id-claim-evidence-r0.1.0",
+      "contentFingerprint": "qta-v1-1b66828a72a12336",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "83386ffe150afaafb4ae8f87f40596af2bf17c9cb63dd3a4fc4ba03c2c55820d",
+        "conclusionsSha256": "46d2a08c491f64c8f105117daf76da9a2391bcf2a31c6536e79b191f92d49e9a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0116.pass-a.json",
+        "receiptSha256": "46d2a08c491f64c8f105117daf76da9a2391bcf2a31c6536e79b191f92d49e9a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Part A: What is the author’s claim?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q7-7-a-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q7-7-a-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q7-7-a-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence directly states the cart recommendation.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-2",
+                "g3-id-claim-passage-7-sentence-20"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-7-a-purpose",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states author purpose.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-7-a-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This only names the topic.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Part B: Which pair of details from separate sections best supports that claim?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ce-q7-7-b-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ce-q7-7-b-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ce-q7-7-b-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The return-rate and sorting-rate results come from separate sections and support both cart benefits.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-10",
+                "g3-id-claim-passage-7-sentence-17"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-7-b-repeat",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Repeating the claim is not evidence from separate sections.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ce-q7-7-b-partial",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The return-rate result supports the claim, but the decorative star is irrelevant.",
+              "evidenceIds": [
+                "g3-id-claim-passage-7-sentence-10",
+                "g3-id-claim-passage-7-sentence-6",
+                "g3-id-claim-passage-7-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

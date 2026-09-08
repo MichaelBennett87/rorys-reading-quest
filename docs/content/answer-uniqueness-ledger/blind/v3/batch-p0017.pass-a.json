@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0017",
+  "batchFileSha256": "2430450384bb702e978af292fa6655064fb8d2207d6b13c143828409ac5ba8aa",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0438",
+      "fingerprint": "adf149279accf51e5f79c3d6ee2bcd5ed38847c05b3e07e65daf93b4d9c7ddd3",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This summarizes the later joint outcome rather than Mira's perspective.",
+              [
+                "S0084"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Mira thinks bringing water first will help tired volunteers, and her words and action show care.",
+              [
+                "S0081",
+                "S0083"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This describes Ben's perspective.",
+              [
+                "S0082"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is only a setting phrase, not a complete perspective.",
+              [
+                "S0080"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This states Ben's view, not Mira acting.",
+              [
+                "S0082"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This gives both characters' ending feeling, not Mira's action.",
+              [
+                "S0075"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Carrying the water jug and pointing out the tired helpers directly enact Mira's view.",
+              [
+                "S0083"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states Mira's perspective but does not show her acting on it.",
+              [
+                "S0081"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

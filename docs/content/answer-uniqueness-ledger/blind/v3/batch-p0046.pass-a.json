@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0046",
+  "batchFileSha256": "17e814c8f485c99a75bc6e93a6159b71221fa33958f471ab521348836fc513af",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1604",
+      "fingerprint": "3f7a8a2d355a83637f1ed1240b66e679fe0adfd4433a6327716e4b5ae415075a",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The washed-away board appears earlier and is not in the immediately following line.",
+              [
+                "S0128"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The immediately following line says the sun moved low, showing time passed.",
+              [
+                "S0139"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Opening the map occurs near the morning beginning, not in the immediately following line.",
+              [
+                "S0134"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The immediately following line says the final loop remained unfinished.",
+              [
+                "S0139"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1605",
+      "fingerprint": "0a74e71be7cb3e69cba4b54b610f1b98552daec47902df0d6b1229e63de60de5",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Repeats the target line rather than the next confirming line.",
+              [
+                "S0126"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the preceding line where Mira introduces the thought.",
+              [
+                "S0135"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The next line shows everyone adding to the accepted idea so the plan grows.",
+              [
+                "S0136"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This later line responds to a bridge problem rather than confirming acceptance of the idea.",
+              [
+                "S0138"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

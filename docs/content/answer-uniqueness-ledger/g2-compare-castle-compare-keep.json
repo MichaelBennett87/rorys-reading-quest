@@ -1,0 +1,3907 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "ck-q-prereq-1",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-654b6ed87fca00a4",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "13f9a7679a98324c3618f89082d5b9f648c7d1ac2b64b8c5b7b67fe978607d1b",
+        "conclusionsSha256": "0a021be0a22c5a396552033c16291d6eaed387867412ad4339ca6ed02bef06ae",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0072.pass-a.json",
+        "receiptSha256": "0a021be0a22c5a396552033c16291d6eaed387867412ad4339ca6ed02bef06ae",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which idea best tells what both texts show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "both-help"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "both-help"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "both-games",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text concerns playground games.",
+              "evidenceIds": [
+                "ck-lit-prose-1-garden-helpers",
+                "ck-lit-prose-2-bell-and-banner"
+              ]
+            },
+            {
+              "answerId": "both-help",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Each text shows two helpers fixing or stabilizing a shared school space.",
+              "evidenceIds": [
+                "ck-lit-prose-1-s1",
+                "ck-lit-prose-1-s3",
+                "ck-lit-prose-1-s5",
+                "ck-lit-prose-2-s1",
+                "ck-lit-prose-2-s3",
+                "ck-lit-prose-2-s5"
+              ]
+            },
+            {
+              "answerId": "both-rain",
+              "verdict": "INCORRECT",
+              "rationale": "Neither story is about rain and puddles.",
+              "evidenceIds": [
+                "ck-lit-prose-1-garden-helpers",
+                "ck-lit-prose-2-bell-and-banner"
+              ]
+            },
+            {
+              "answerId": "both-dogs",
+              "verdict": "INCORRECT",
+              "rationale": "Neither story includes dogs on a walk.",
+              "evidenceIds": [
+                "ck-lit-prose-1-garden-helpers",
+                "ck-lit-prose-2-bell-and-banner"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-prereq-2",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-d8395c9844f4b99c",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "b62780e4bf9d8a631e327336f6b84f8e7114be2feb012b6263a86f74db95cc81",
+        "conclusionsSha256": "252cbbaee230417f039761c00e0eec4796516890d7fd48fbf79fdd9efbc84c5d",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0037.pass-a.json",
+        "receiptSha256": "252cbbaee230417f039761c00e0eec4796516890d7fd48fbf79fdd9efbc84c5d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail belongs in both stories?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "problem-first"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "problem-first"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "problem-first",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both pairs of helpers solve a problem in a shared school space.",
+              "evidenceIds": [
+                "ck-lit-prose-1-s1",
+                "ck-lit-prose-1-s5",
+                "ck-lit-prose-2-s1",
+                "ck-lit-prose-2-s5"
+              ]
+            },
+            {
+              "answerId": "train-station",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Neither story starts at a train station.",
+              "evidenceIds": [
+                "ck-lit-prose-1-garden-helpers"
+              ]
+            },
+            {
+              "answerId": "ocean-shore",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Neither story starts at an ocean shore.",
+              "evidenceIds": [
+                "ck-lit-prose-1-garden-helpers"
+              ]
+            },
+            {
+              "answerId": "birthday-cake",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Neither story starts with a birthday cake.",
+              "evidenceIds": [
+                "ck-lit-prose-1-garden-helpers"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-prereq-3",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-bdd6b8b902670cb5",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "13f9a7679a98324c3618f89082d5b9f648c7d1ac2b64b8c5b7b67fe978607d1b",
+        "conclusionsSha256": "0a021be0a22c5a396552033c16291d6eaed387867412ad4339ca6ed02bef06ae",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0072.pass-a.json",
+        "receiptSha256": "0a021be0a22c5a396552033c16291d6eaed387867412ad4339ca6ed02bef06ae",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details that belong in a comparison of these texts.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "careful-work",
+            "ready-ending"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "ready-ending",
+            "careful-work"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "icy-road",
+              "verdict": "INCORRECT",
+              "rationale": "Neither story takes place on an icy road.",
+              "evidenceIds": [
+                "ck-lit-prose-1-garden-helpers",
+                "ck-lit-prose-2-bell-and-banner"
+              ]
+            },
+            {
+              "answerId": "ready-ending",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The plant sign stands straight and the banner hangs steady at the ends.",
+              "evidenceIds": [
+                "ck-lit-prose-1-s5",
+                "ck-lit-prose-1-s6",
+                "ck-lit-prose-2-s5",
+                "ck-lit-prose-2-s6"
+              ]
+            },
+            {
+              "answerId": "big-storm",
+              "verdict": "INCORRECT",
+              "rationale": "Neither story concerns a big storm.",
+              "evidenceIds": [
+                "ck-lit-prose-1-garden-helpers",
+                "ck-lit-prose-2-bell-and-banner"
+              ]
+            },
+            {
+              "answerId": "careful-work",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both pairs coordinate careful stabilizing work.",
+              "evidenceIds": [
+                "ck-lit-prose-1-s3",
+                "ck-lit-prose-1-s4",
+                "ck-lit-prose-2-s3",
+                "ck-lit-prose-2-s4",
+                "ck-lit-prose-2-s5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-prereq-4",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-58fbe2b76ae7a2e3",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "13f9a7679a98324c3618f89082d5b9f648c7d1ac2b64b8c5b7b67fe978607d1b",
+        "conclusionsSha256": "0a021be0a22c5a396552033c16291d6eaed387867412ad4339ca6ed02bef06ae",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0072.pass-a.json",
+        "receiptSha256": "0a021be0a22c5a396552033c16291d6eaed387867412ad4339ca6ed02bef06ae",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that shows careful work in Text 1.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "seg-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "seg-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "seg-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence explicitly says the helpers worked carefully.",
+              "evidenceIds": [
+                "ck-lit-prose-1-s4"
+              ]
+            },
+            {
+              "answerId": "seg-2",
+              "verdict": "INCORRECT",
+              "rationale": "This describes the tilted sign with a simile.",
+              "evidenceIds": [
+                "ck-lit-prose-1-s2"
+              ]
+            },
+            {
+              "answerId": "seg-3",
+              "verdict": "INCORRECT",
+              "rationale": "This describes the final result, not the careful work itself.",
+              "evidenceIds": [
+                "ck-lit-prose-1-s6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-prereq-5",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-912404f7eae0e9bb",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "13f9a7679a98324c3618f89082d5b9f648c7d1ac2b64b8c5b7b67fe978607d1b",
+        "conclusionsSha256": "0a021be0a22c5a396552033c16291d6eaed387867412ad4339ca6ed02bef06ae",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0072.pass-a.json",
+        "receiptSha256": "0a021be0a22c5a396552033c16291d6eaed387867412ad4339ca6ed02bef06ae",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-a",
+          "prompt": "Two helpers work together to fix a shared space.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "both"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "both"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "both",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both texts feature two helpers stabilizing a shared school space.",
+              "evidenceIds": [
+                "ck-lit-prose-1-s3",
+                "ck-lit-prose-2-s3",
+                "ck-lit-prose-2-s5"
+              ]
+            },
+            {
+              "answerId": "text1",
+              "verdict": "INCORRECT",
+              "rationale": "The teamwork is not limited to Text 1.",
+              "evidenceIds": [
+                "ck-lit-prose-2-s3",
+                "ck-lit-prose-2-s5"
+              ]
+            },
+            {
+              "answerId": "text2",
+              "verdict": "INCORRECT",
+              "rationale": "The teamwork is not limited to Text 2.",
+              "evidenceIds": [
+                "ck-lit-prose-1-s3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-b",
+          "prompt": "A garden sign stands straight again.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "text1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "text1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "text1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Only Text 1 contains the garden sign that stands straight again.",
+              "evidenceIds": [
+                "ck-lit-prose-1-s5"
+              ]
+            },
+            {
+              "answerId": "text2",
+              "verdict": "INCORRECT",
+              "rationale": "Text 2 concerns a banner, not a garden sign.",
+              "evidenceIds": [
+                "ck-lit-prose-2-bell-and-banner"
+              ]
+            },
+            {
+              "answerId": "both",
+              "verdict": "INCORRECT",
+              "rationale": "The detail does not occur in both texts.",
+              "evidenceIds": [
+                "ck-lit-prose-1-garden-helpers",
+                "ck-lit-prose-2-bell-and-banner"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-c",
+          "prompt": "Paper stars and a banner string help decorate the hall.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "text2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "text2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "both",
+              "verdict": "INCORRECT",
+              "rationale": "Only Text 2 includes paper stars and a banner string.",
+              "evidenceIds": [
+                "ck-lit-prose-2-s1",
+                "ck-lit-prose-2-s3"
+              ]
+            },
+            {
+              "answerId": "text1",
+              "verdict": "INCORRECT",
+              "rationale": "Text 1 concerns a plant sign and string, not paper stars and a banner.",
+              "evidenceIds": [
+                "ck-lit-prose-1-garden-helpers"
+              ]
+            },
+            {
+              "answerId": "text2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The paper-star and banner-string details appear only in Text 2.",
+              "evidenceIds": [
+                "ck-lit-prose-2-s1",
+                "ck-lit-prose-2-s3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-prereq-6",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-4ff31e846a13ed18",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "3ed024cd0cd342e12d0db75f1612f46877a7e62a2a96b883139c6f2cee55467b",
+        "conclusionsSha256": "da9a1a3f9497e589d253617b0306927460160595a06ad0096f3bee2243d325ef",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0073.pass-a.json",
+        "receiptSha256": "da9a1a3f9497e589d253617b0306927460160595a06ad0096f3bee2243d325ef",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is both informational texts mostly about?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "seed-travel"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "seed-travel"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "music",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text concerns music.",
+              "evidenceIds": [
+                "ck-info-1-seed-rides",
+                "ck-info-2-seed-clings"
+              ]
+            },
+            {
+              "answerId": "seed-travel",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both texts explain ways seeds travel to new places.",
+              "evidenceIds": [
+                "ck-info-1-s1",
+                "ck-info-1-s4",
+                "ck-info-2-s1",
+                "ck-info-2-s4"
+              ]
+            },
+            {
+              "answerId": "animals",
+              "verdict": "INCORRECT",
+              "rationale": "Animals carry some seeds but the texts do not explain animal homes.",
+              "evidenceIds": [
+                "ck-info-1-s2",
+                "ck-info-1-s3"
+              ]
+            },
+            {
+              "answerId": "weather",
+              "verdict": "INCORRECT",
+              "rationale": "Weather is a transport cause in Text 2, not the shared topic.",
+              "evidenceIds": [
+                "ck-info-2-seed-clings"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-prereq-7",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-5bb2b1286f3d910c",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "3ed024cd0cd342e12d0db75f1612f46877a7e62a2a96b883139c6f2cee55467b",
+        "conclusionsSha256": "da9a1a3f9497e589d253617b0306927460160595a06ad0096f3bee2243d325ef",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0073.pass-a.json",
+        "receiptSha256": "da9a1a3f9497e589d253617b0306927460160595a06ad0096f3bee2243d325ef",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail belongs in Text 2 only?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "wind"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "wind"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "fresh",
+              "verdict": "INCORRECT",
+              "rationale": "Both texts describe seeds reaching fresh soil or a new plant home.",
+              "evidenceIds": [
+                "ck-info-1-s4",
+                "ck-info-2-s5"
+              ]
+            },
+            {
+              "answerId": "wind",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Only Text 2 describes a breeze carrying light seeds.",
+              "evidenceIds": [
+                "ck-info-2-s1",
+                "ck-info-2-s2"
+              ]
+            },
+            {
+              "answerId": "fur",
+              "verdict": "INCORRECT",
+              "rationale": "Clinging to fur or clothing appears only in Text 1.",
+              "evidenceIds": [
+                "ck-info-1-s1",
+                "ck-info-1-s2"
+              ]
+            },
+            {
+              "answerId": "parent",
+              "verdict": "INCORRECT",
+              "rationale": "Both texts explain movement away rather than staying beside the parent plant.",
+              "evidenceIds": [
+                "ck-info-1-s5",
+                "ck-info-2-s5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-prereq-8",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-73fbb803e71823ff",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "3ed024cd0cd342e12d0db75f1612f46877a7e62a2a96b883139c6f2cee55467b",
+        "conclusionsSha256": "da9a1a3f9497e589d253617b0306927460160595a06ad0096f3bee2243d325ef",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0073.pass-a.json",
+        "receiptSha256": "da9a1a3f9497e589d253617b0306927460160595a06ad0096f3bee2243d325ef",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details that belong in the informational comparison.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "spread-plants",
+            "fresh-soil"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "fresh-soil",
+            "spread-plants"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "fresh-soil",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Each text explains seeds reaching a place where a plant can grow.",
+              "evidenceIds": [
+                "ck-info-1-s4",
+                "ck-info-1-s5",
+                "ck-info-2-s5"
+              ]
+            },
+            {
+              "answerId": "desk",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text concerns a classroom desk.",
+              "evidenceIds": [
+                "ck-info-1-seed-rides",
+                "ck-info-2-seed-clings"
+              ]
+            },
+            {
+              "answerId": "ballet",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text concerns a ballet show.",
+              "evidenceIds": [
+                "ck-info-1-seed-rides",
+                "ck-info-2-seed-clings"
+              ]
+            },
+            {
+              "answerId": "spread-plants",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both texts explain seed movement as a way plants spread.",
+              "evidenceIds": [
+                "ck-info-1-s5",
+                "ck-info-2-s6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-prereq-9",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-b6befa88d356d39c",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "b62780e4bf9d8a631e327336f6b84f8e7114be2feb012b6263a86f74db95cc81",
+        "conclusionsSha256": "252cbbaee230417f039761c00e0eec4796516890d7fd48fbf79fdd9efbc84c5d",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0037.pass-a.json",
+        "receiptSha256": "252cbbaee230417f039761c00e0eec4796516890d7fd48fbf79fdd9efbc84c5d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence in Text 1 that tells what happens when a seed reaches new soil.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "seg-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "seg-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "seg-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Explains how a seed first catches on an animal, not what happens near new soil.",
+              "evidenceIds": [
+                "ck-info-1-s2"
+              ]
+            },
+            {
+              "answerId": "seg-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Directly says the seed rubs off near soil and starts a new plant home.",
+              "evidenceIds": [
+                "ck-info-1-s4"
+              ]
+            },
+            {
+              "answerId": "seg-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Summarizes a possible long trip, not the result at new soil.",
+              "evidenceIds": [
+                "ck-info-1-s6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-prereq-10",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-75bda4b6ad8150b2",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "3ed024cd0cd342e12d0db75f1612f46877a7e62a2a96b883139c6f2cee55467b",
+        "conclusionsSha256": "da9a1a3f9497e589d253617b0306927460160595a06ad0096f3bee2243d325ef",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0073.pass-a.json",
+        "receiptSha256": "da9a1a3f9497e589d253617b0306927460160595a06ad0096f3bee2243d325ef",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-a",
+          "prompt": "Seeds can travel away from the parent plant.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "both"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "both"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "both",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both texts explain seeds moving away to new soil.",
+              "evidenceIds": [
+                "ck-info-1-s5",
+                "ck-info-2-s5"
+              ]
+            },
+            {
+              "answerId": "text2",
+              "verdict": "INCORRECT",
+              "rationale": "Text 1 also describes travel away from the parent plant.",
+              "evidenceIds": [
+                "ck-info-1-s5"
+              ]
+            },
+            {
+              "answerId": "text1",
+              "verdict": "INCORRECT",
+              "rationale": "Text 2 also describes travel to fresh soil.",
+              "evidenceIds": [
+                "ck-info-2-s5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-b",
+          "prompt": "Seeds cling to fur or clothes.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "text1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "text1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "text1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Only Text 1 describes seeds clinging to fur or clothing.",
+              "evidenceIds": [
+                "ck-info-1-s1",
+                "ck-info-1-s2"
+              ]
+            },
+            {
+              "answerId": "text2",
+              "verdict": "INCORRECT",
+              "rationale": "Text 2 describes wind and water instead.",
+              "evidenceIds": [
+                "ck-info-2-s1",
+                "ck-info-2-s3"
+              ]
+            },
+            {
+              "answerId": "both",
+              "verdict": "INCORRECT",
+              "rationale": "The detail does not occur in both texts.",
+              "evidenceIds": [
+                "ck-info-1-seed-rides",
+                "ck-info-2-seed-clings"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-c",
+          "prompt": "Wind or water can move seeds.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "text2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "text2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "both",
+              "verdict": "INCORRECT",
+              "rationale": "Text 1 explicitly says its trip does not use wind or water.",
+              "evidenceIds": [
+                "ck-info-1-s6"
+              ]
+            },
+            {
+              "answerId": "text2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Only Text 2 explains wind and water movement.",
+              "evidenceIds": [
+                "ck-info-2-s1",
+                "ck-info-2-s3",
+                "ck-info-2-s4"
+              ]
+            },
+            {
+              "answerId": "text1",
+              "verdict": "INCORRECT",
+              "rationale": "Text 1 explains animal-assisted movement instead.",
+              "evidenceIds": [
+                "ck-info-1-s2",
+                "ck-info-1-s3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-guided-1",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-8fd57ef11447d895",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "3ed024cd0cd342e12d0db75f1612f46877a7e62a2a96b883139c6f2cee55467b",
+        "conclusionsSha256": "da9a1a3f9497e589d253617b0306927460160595a06ad0096f3bee2243d325ef",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0001.second-pass.json",
+        "receiptSha256": "50f047393974ca532baf3c68442287d95cd7ea0ac6670e35785e1ca7efdc0b9e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail do both wind texts share?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "wind-change"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "wind-change"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "snow-day",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text concerns snow.",
+              "evidenceIds": [
+                "ck-lit-prose-3-wind-kite-walk",
+                "ck-lit-poem-1-wind-march"
+              ]
+            },
+            {
+              "answerId": "rain-cups",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text is about rain cups.",
+              "evidenceIds": [
+                "ck-lit-prose-3-wind-kite-walk",
+                "ck-lit-poem-1-wind-march"
+              ]
+            },
+            {
+              "answerId": "music-room",
+              "verdict": "INCORRECT",
+              "rationale": "Both texts take place outdoors, not in a music room.",
+              "evidenceIds": [
+                "ck-lit-prose-3-s1",
+                "ck-lit-poem-1-s1"
+              ]
+            },
+            {
+              "answerId": "wind-change",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both texts show wind moving a kite and changing the park or field scene.",
+              "evidenceIds": [
+                "ck-lit-prose-3-s2",
+                "ck-lit-prose-3-s3",
+                "ck-lit-prose-3-s4",
+                "ck-lit-poem-1-s1",
+                "ck-lit-poem-1-s2",
+                "ck-lit-poem-1-s3",
+                "ck-lit-poem-1-s4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-guided-2",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-a869d8823e26bda6",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "3ed024cd0cd342e12d0db75f1612f46877a7e62a2a96b883139c6f2cee55467b",
+        "conclusionsSha256": "da9a1a3f9497e589d253617b0306927460160595a06ad0096f3bee2243d325ef",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0073.pass-a.json",
+        "receiptSha256": "da9a1a3f9497e589d253617b0306927460160595a06ad0096f3bee2243d325ef",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "How are the two wind texts different?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "story-vs-poem"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "story-vs-poem"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "same-map",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text uses a map.",
+              "evidenceIds": [
+                "ck-lit-prose-3-wind-kite-walk",
+                "ck-lit-poem-1-wind-march"
+              ]
+            },
+            {
+              "answerId": "same-rain",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text is about rain gauges.",
+              "evidenceIds": [
+                "ck-lit-prose-3-wind-kite-walk",
+                "ck-lit-poem-1-wind-march"
+              ]
+            },
+            {
+              "answerId": "story-vs-poem",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Text 1 is prose with story events, while Text 2 is organized as poem lines and stanzas.",
+              "evidenceIds": [
+                "ck-lit-prose-3-wind-kite-walk",
+                "ck-lit-poem-1-wind-march"
+              ]
+            },
+            {
+              "answerId": "same-parade",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text is about a parade.",
+              "evidenceIds": [
+                "ck-lit-prose-3-wind-kite-walk",
+                "ck-lit-poem-1-wind-march"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-guided-3",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-2b6aacd7331bf9e3",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "b62780e4bf9d8a631e327336f6b84f8e7114be2feb012b6263a86f74db95cc81",
+        "conclusionsSha256": "252cbbaee230417f039761c00e0eec4796516890d7fd48fbf79fdd9efbc84c5d",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0037.pass-a.json",
+        "receiptSha256": "252cbbaee230417f039761c00e0eec4796516890d7fd48fbf79fdd9efbc84c5d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details that help compare the wind texts.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "kite-rises",
+            "wind-calms"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "kite-rises",
+            "wind-calms"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "kite-rises",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both texts show a kite rising or climbing as wind conditions and handling change.",
+              "evidenceIds": [
+                "ck-lit-prose-3-s4",
+                "ck-lit-prose-3-s6",
+                "ck-lit-poem-1-s3",
+                "ck-lit-poem-1-s7"
+              ]
+            },
+            {
+              "answerId": "pizza",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Neither wind text mentions pizza night.",
+              "evidenceIds": [
+                "ck-lit-prose-3-wind-kite-walk"
+              ]
+            },
+            {
+              "answerId": "tape",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Neither text is about sticky tape.",
+              "evidenceIds": [
+                "ck-lit-prose-3-wind-kite-walk"
+              ]
+            },
+            {
+              "answerId": "wind-calms",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both texts include gray clouds drifting over or by the field or park.",
+              "evidenceIds": [
+                "ck-lit-prose-3-s5",
+                "ck-lit-poem-1-s6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-guided-4",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-3be65c9c07d29850",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "3ed024cd0cd342e12d0db75f1612f46877a7e62a2a96b883139c6f2cee55467b",
+        "conclusionsSha256": "da9a1a3f9497e589d253617b0306927460160595a06ad0096f3bee2243d325ef",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0073.pass-a.json",
+        "receiptSha256": "da9a1a3f9497e589d253617b0306927460160595a06ad0096f3bee2243d325ef",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence in Text 1 that shows the kite rising.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "seg-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "seg-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "seg-3",
+              "verdict": "INCORRECT",
+              "rationale": "This line belongs to Text 2 and describes clouds.",
+              "evidenceIds": [
+                "ck-lit-poem-1-s6"
+              ]
+            },
+            {
+              "answerId": "seg-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This Text 1 sentence explicitly says the kite rose.",
+              "evidenceIds": [
+                "ck-lit-prose-3-s4"
+              ]
+            },
+            {
+              "answerId": "seg-2",
+              "verdict": "INCORRECT",
+              "rationale": "This Text 2 line describes grass under a gust.",
+              "evidenceIds": [
+                "ck-lit-poem-1-s4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-guided-5",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-0e652e57eaf0b2d3",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "3ed024cd0cd342e12d0db75f1612f46877a7e62a2a96b883139c6f2cee55467b",
+        "conclusionsSha256": "da9a1a3f9497e589d253617b0306927460160595a06ad0096f3bee2243d325ef",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0073.pass-a.json",
+        "receiptSha256": "da9a1a3f9497e589d253617b0306927460160595a06ad0096f3bee2243d325ef",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-a",
+          "prompt": "The wind changes the scene outdoors.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "both"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "both"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "both",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both texts show wind changing an outdoor park or field scene.",
+              "evidenceIds": [
+                "ck-lit-prose-3-s2",
+                "ck-lit-prose-3-s3",
+                "ck-lit-poem-1-s1",
+                "ck-lit-poem-1-s2",
+                "ck-lit-poem-1-s4"
+              ]
+            },
+            {
+              "answerId": "text2",
+              "verdict": "INCORRECT",
+              "rationale": "Text 1 also shows the wind changing the scene.",
+              "evidenceIds": [
+                "ck-lit-prose-3-s2",
+                "ck-lit-prose-3-s3"
+              ]
+            },
+            {
+              "answerId": "text1",
+              "verdict": "INCORRECT",
+              "rationale": "Text 2 also shows the wind changing the scene.",
+              "evidenceIds": [
+                "ck-lit-poem-1-s1",
+                "ck-lit-poem-1-s2",
+                "ck-lit-poem-1-s4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-b",
+          "prompt": "A kite rises when the wind helps.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "both"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "both"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "text2",
+              "verdict": "INCORRECT",
+              "rationale": "Text 1 also shows the kite rising after string adjustment.",
+              "evidenceIds": [
+                "ck-lit-prose-3-s4"
+              ]
+            },
+            {
+              "answerId": "both",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both texts show the kite rise or climb with wind and string control.",
+              "evidenceIds": [
+                "ck-lit-prose-3-s4",
+                "ck-lit-poem-1-s3"
+              ]
+            },
+            {
+              "answerId": "text1",
+              "verdict": "INCORRECT",
+              "rationale": "Text 2 also shows the kite climbing.",
+              "evidenceIds": [
+                "ck-lit-poem-1-s3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-c",
+          "prompt": "Leaves lift and spin in the breeze.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "text2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "text2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "both",
+              "verdict": "INCORRECT",
+              "rationale": "Text 1 does not mention leaves lifting or spinning.",
+              "evidenceIds": [
+                "ck-lit-prose-3-wind-kite-walk"
+              ]
+            },
+            {
+              "answerId": "text1",
+              "verdict": "INCORRECT",
+              "rationale": "The leaves appear only in Text 2.",
+              "evidenceIds": [
+                "ck-lit-poem-1-s2",
+                "ck-lit-poem-1-s7"
+              ]
+            },
+            {
+              "answerId": "text2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Only Text 2 describes lifted and spinning leaves.",
+              "evidenceIds": [
+                "ck-lit-poem-1-s2",
+                "ck-lit-poem-1-s7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-guided-6",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-b32f3a2a64095f7e",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "87f81347b7df59641a8119f71c3f1bff4ec83c9a9cd7a24796cb4902c45cd077",
+        "conclusionsSha256": "92ffd47f63e41d4e9d5e5e5fe8c660ebd90de39274cf4e8a94187d4ea7e9f804",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0074.pass-a.json",
+        "receiptSha256": "92ffd47f63e41d4e9d5e5e5fe8c660ebd90de39274cf4e8a94187d4ea7e9f804",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is both weather-tool texts mostly about?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "weather-tools"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "weather-tools"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "math-tools",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text concerns math riddles.",
+              "evidenceIds": [
+                "ck-info-3-rain-gauges",
+                "ck-info-4-weather-shelter"
+              ]
+            },
+            {
+              "answerId": "music-tools",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text concerns a band.",
+              "evidenceIds": [
+                "ck-info-3-rain-gauges",
+                "ck-info-4-weather-shelter"
+              ]
+            },
+            {
+              "answerId": "weather-tools",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both texts explain tools and records used for weather observations.",
+              "evidenceIds": [
+                "ck-info-3-s1",
+                "ck-info-3-s5",
+                "ck-info-4-s1",
+                "ck-info-4-s4",
+                "ck-info-4-s3"
+              ]
+            },
+            {
+              "answerId": "food-tools",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text concerns snack food.",
+              "evidenceIds": [
+                "ck-info-3-rain-gauges",
+                "ck-info-4-weather-shelter"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-guided-7",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-bbe8677051748df4",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "87f81347b7df59641a8119f71c3f1bff4ec83c9a9cd7a24796cb4902c45cd077",
+        "conclusionsSha256": "92ffd47f63e41d4e9d5e5e5fe8c660ebd90de39274cf4e8a94187d4ea7e9f804",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0074.pass-a.json",
+        "receiptSha256": "92ffd47f63e41d4e9d5e5e5fe8c660ebd90de39274cf4e8a94187d4ea7e9f804",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail belongs only in Text 2?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "wind-sock"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "wind-sock"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "rain-gauge",
+              "verdict": "INCORRECT",
+              "rationale": "The clear rain cup appears only in Text 1.",
+              "evidenceIds": [
+                "ck-info-3-s1"
+              ]
+            },
+            {
+              "answerId": "plants",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text is about plant roots.",
+              "evidenceIds": [
+                "ck-info-3-rain-gauges",
+                "ck-info-4-weather-shelter"
+              ]
+            },
+            {
+              "answerId": "wind-sock",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Only Text 2 describes a wind sock by the shelter.",
+              "evidenceIds": [
+                "ck-info-4-s3"
+              ]
+            },
+            {
+              "answerId": "ballet",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text is about a ballet show.",
+              "evidenceIds": [
+                "ck-info-3-rain-gauges",
+                "ck-info-4-weather-shelter"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-guided-8",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-afabe1983c0d8aec",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "87f81347b7df59641a8119f71c3f1bff4ec83c9a9cd7a24796cb4902c45cd077",
+        "conclusionsSha256": "92ffd47f63e41d4e9d5e5e5fe8c660ebd90de39274cf4e8a94187d4ea7e9f804",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0074.pass-a.json",
+        "receiptSha256": "92ffd47f63e41d4e9d5e5e5fe8c660ebd90de39274cf4e8a94187d4ea7e9f804",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details that help compare the weather-tool texts.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "notes",
+            "compare-days"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "compare-days",
+            "notes"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "bikes",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text concerns bike races.",
+              "evidenceIds": [
+                "ck-info-3-rain-gauges",
+                "ck-info-4-weather-shelter"
+              ]
+            },
+            {
+              "answerId": "compare-days",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Comparing recorded observations is an important weather-study detail.",
+              "evidenceIds": [
+                "ck-info-3-s5",
+                "ck-info-4-s5"
+              ]
+            },
+            {
+              "answerId": "paint",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text is about paint colors.",
+              "evidenceIds": [
+                "ck-info-3-rain-gauges",
+                "ck-info-4-weather-shelter"
+              ]
+            },
+            {
+              "answerId": "notes",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both texts describe recording or gathering weather observations.",
+              "evidenceIds": [
+                "ck-info-3-s3",
+                "ck-info-4-s4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-guided-9",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-abb750a34b3d6c8f",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "87f81347b7df59641a8119f71c3f1bff4ec83c9a9cd7a24796cb4902c45cd077",
+        "conclusionsSha256": "92ffd47f63e41d4e9d5e5e5fe8c660ebd90de39274cf4e8a94187d4ea7e9f804",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0001.second-pass.json",
+        "receiptSha256": "50f047393974ca532baf3c68442287d95cd7ea0ac6670e35785e1ca7efdc0b9e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence in Text 1 that shows the main measurement tool.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "seg-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "seg-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "seg-3",
+              "verdict": "INCORRECT",
+              "rationale": "This gives a setup requirement for the cup.",
+              "evidenceIds": [
+                "ck-info-3-s2"
+              ]
+            },
+            {
+              "answerId": "seg-2",
+              "verdict": "INCORRECT",
+              "rationale": "This explains how to interpret the water line.",
+              "evidenceIds": [
+                "ck-info-3-s4"
+              ]
+            },
+            {
+              "answerId": "seg-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This identifies the rain gauge and directly states its measurement purpose.",
+              "evidenceIds": [
+                "ck-info-3-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-guided-10",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-dae971f725333253",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "87f81347b7df59641a8119f71c3f1bff4ec83c9a9cd7a24796cb4902c45cd077",
+        "conclusionsSha256": "92ffd47f63e41d4e9d5e5e5fe8c660ebd90de39274cf4e8a94187d4ea7e9f804",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0001.second-pass.json",
+        "receiptSha256": "50f047393974ca532baf3c68442287d95cd7ea0ac6670e35785e1ca7efdc0b9e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-a",
+          "prompt": "Students use tools to observe the weather.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "both"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "both"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "text2",
+              "verdict": "INCORRECT",
+              "rationale": "Text 1 also uses a gauge and observations.",
+              "evidenceIds": [
+                "ck-info-3-s1",
+                "ck-info-3-s5"
+              ]
+            },
+            {
+              "answerId": "both",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both texts describe students using tools or their results to observe weather.",
+              "evidenceIds": [
+                "ck-info-3-s1",
+                "ck-info-3-s5",
+                "ck-info-4-s3",
+                "ck-info-4-s4"
+              ]
+            },
+            {
+              "answerId": "text1",
+              "verdict": "INCORRECT",
+              "rationale": "Text 2 also uses weather tools.",
+              "evidenceIds": [
+                "ck-info-4-s1",
+                "ck-info-4-s3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-b",
+          "prompt": "A rain gauge measures how much rain falls.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "text1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "text1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "both",
+              "verdict": "INCORRECT",
+              "rationale": "Text 2 does not describe a rain gauge.",
+              "evidenceIds": [
+                "ck-info-4-weather-shelter"
+              ]
+            },
+            {
+              "answerId": "text2",
+              "verdict": "INCORRECT",
+              "rationale": "The rain gauge appears in Text 1, not Text 2.",
+              "evidenceIds": [
+                "ck-info-3-s1"
+              ]
+            },
+            {
+              "answerId": "text1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Only Text 1 identifies a rain gauge measuring rainfall.",
+              "evidenceIds": [
+                "ck-info-3-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-c",
+          "prompt": "A wind sock shows the breeze moving.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "text2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "text2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "text2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Only Text 2 describes a wind sock showing the breeze.",
+              "evidenceIds": [
+                "ck-info-4-s3"
+              ]
+            },
+            {
+              "answerId": "text1",
+              "verdict": "INCORRECT",
+              "rationale": "Text 1 does not include a wind sock.",
+              "evidenceIds": [
+                "ck-info-3-rain-gauges"
+              ]
+            },
+            {
+              "answerId": "both",
+              "verdict": "INCORRECT",
+              "rationale": "The wind sock does not appear in both texts.",
+              "evidenceIds": [
+                "ck-info-3-rain-gauges",
+                "ck-info-4-weather-shelter"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-checkpoint-a-1",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-c7252ca4df207dc0",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "87f81347b7df59641a8119f71c3f1bff4ec83c9a9cd7a24796cb4902c45cd077",
+        "conclusionsSha256": "92ffd47f63e41d4e9d5e5e5fe8c660ebd90de39274cf4e8a94187d4ea7e9f804",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0074.pass-a.json",
+        "receiptSha256": "92ffd47f63e41d4e9d5e5e5fe8c660ebd90de39274cf4e8a94187d4ea7e9f804",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "How are the two literary texts alike?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "careful-help"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "careful-help"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "seed-trip",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text explains seed travel.",
+              "evidenceIds": [
+                "ck-lit-prose-4-trail-card",
+                "ck-lit-prose-5-map-parade"
+              ]
+            },
+            {
+              "answerId": "camp-lights",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text is about camp lanterns.",
+              "evidenceIds": [
+                "ck-lit-prose-4-trail-card",
+                "ck-lit-prose-5-map-parade"
+              ]
+            },
+            {
+              "answerId": "weather-tools",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text is about weather tools.",
+              "evidenceIds": [
+                "ck-lit-prose-4-trail-card",
+                "ck-lit-prose-5-map-parade"
+              ]
+            },
+            {
+              "answerId": "careful-help",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both show helpers checking clues or sequence so a group can follow a route.",
+              "evidenceIds": [
+                "ck-lit-prose-4-s4",
+                "ck-lit-prose-4-s5",
+                "ck-lit-prose-5-s2",
+                "ck-lit-prose-5-s4",
+                "ck-lit-prose-5-s6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-checkpoint-a-2",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-544ae5de8e45d102",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "87f81347b7df59641a8119f71c3f1bff4ec83c9a9cd7a24796cb4902c45cd077",
+        "conclusionsSha256": "92ffd47f63e41d4e9d5e5e5fe8c660ebd90de39274cf4e8a94187d4ea7e9f804",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0001.second-pass.json",
+        "receiptSha256": "50f047393974ca532baf3c68442287d95cd7ea0ac6670e35785e1ca7efdc0b9e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail belongs only in Text 2?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "map-chairs"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "map-chairs"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "start-on-time",
+              "verdict": "INCORRECT",
+              "rationale": "Starting on time is an outcome in Text 1, not a Text 2-only detail.",
+              "evidenceIds": [
+                "ck-lit-prose-4-s5"
+              ]
+            },
+            {
+              "answerId": "trail-card",
+              "verdict": "INCORRECT",
+              "rationale": "The missing trail card appears only in Text 1.",
+              "evidenceIds": [
+                "ck-lit-prose-4-s1",
+                "ck-lit-prose-4-s2"
+              ]
+            },
+            {
+              "answerId": "map-chairs",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Only Text 2 shows the parade team spreading a map across chairs.",
+              "evidenceIds": [
+                "ck-lit-prose-5-s1"
+              ]
+            },
+            {
+              "answerId": "careful-plan",
+              "verdict": "INCORRECT",
+              "rationale": "This is a comparison claim about both groups, not a Text 2-only detail.",
+              "evidenceIds": [
+                "ck-lit-prose-4-trail-card",
+                "ck-lit-prose-5-map-parade"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-checkpoint-a-3",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-9eaec43151575815",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "87f81347b7df59641a8119f71c3f1bff4ec83c9a9cd7a24796cb4902c45cd077",
+        "conclusionsSha256": "92ffd47f63e41d4e9d5e5e5fe8c660ebd90de39274cf4e8a94187d4ea7e9f804",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0001.second-pass.json",
+        "receiptSha256": "50f047393974ca532baf3c68442287d95cd7ea0ac6670e35785e1ca7efdc0b9e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail is less important for the comparison?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "balloons"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "balloons"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "map-plan",
+              "verdict": "INCORRECT",
+              "rationale": "Checking sequence is central to Text 2's route plan.",
+              "evidenceIds": [
+                "ck-lit-prose-5-s4"
+              ]
+            },
+            {
+              "answerId": "balloons",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The balloons are a decorative side detail that does not drive either route plan.",
+              "evidenceIds": [
+                "ck-lit-prose-5-s5"
+              ]
+            },
+            {
+              "answerId": "trail-card",
+              "verdict": "INCORRECT",
+              "rationale": "Finding the route card is central to Text 1.",
+              "evidenceIds": [
+                "ck-lit-prose-4-s1",
+                "ck-lit-prose-4-s4"
+              ]
+            },
+            {
+              "answerId": "start-order",
+              "verdict": "INCORRECT",
+              "rationale": "The ordered parade is Text 2's main outcome.",
+              "evidenceIds": [
+                "ck-lit-prose-5-s6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-checkpoint-a-4",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-c55fd79d30d6e4a1",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "a915db271f53862b8d1c47b0821030f87990a2d9a2c639f59eca597ec0615109",
+        "conclusionsSha256": "aabd9f358f14370fb36c0f8114eae334f1a6111c80e79c111d839b9dab9528bf",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0001.second-pass.json",
+        "receiptSha256": "50f047393974ca532baf3c68442287d95cd7ea0ac6670e35785e1ca7efdc0b9e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two details that show each route plan helps a group start or finish on time.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "start-on-time",
+            "right-order"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "right-order",
+            "start-on-time"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "right-order",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Text 2 directly says the planned route lets the parade move in order from start to finish.",
+              "evidenceIds": [
+                "ck-lit-prose-5-s6"
+              ]
+            },
+            {
+              "answerId": "purple-sky",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Neither displayed route text mentions a camp sky turning purple.",
+              "evidenceIds": [
+                "ck-lit-prose-4-trail-card"
+              ]
+            },
+            {
+              "answerId": "notebook-slip",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The balloon detail is true but does not show the route plan helping a group start or finish on time.",
+              "evidenceIds": [
+                "ck-lit-prose-5-s5"
+              ]
+            },
+            {
+              "answerId": "start-on-time",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Text 1 directly says finding the route card lets the class start on time.",
+              "evidenceIds": [
+                "ck-lit-prose-4-s5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": true,
+      "correctionSummary": "Learner-visible content was corrected and re-reviewed in docs/content/answer-uniqueness-ledger/blind/corrections-v5/batch-c0001.pass-a.json.",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-checkpoint-a-5",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-495c06451ca80c99",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "87f81347b7df59641a8119f71c3f1bff4ec83c9a9cd7a24796cb4902c45cd077",
+        "conclusionsSha256": "92ffd47f63e41d4e9d5e5e5fe8c660ebd90de39274cf4e8a94187d4ea7e9f804",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0074.pass-a.json",
+        "receiptSha256": "92ffd47f63e41d4e9d5e5e5fe8c660ebd90de39274cf4e8a94187d4ea7e9f804",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence in Text 1 that shows the resolution.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "seg-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "seg-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "seg-2",
+              "verdict": "INCORRECT",
+              "rationale": "This explains how the problem occurred.",
+              "evidenceIds": [
+                "ck-lit-prose-4-s2"
+              ]
+            },
+            {
+              "answerId": "seg-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Finding the card lets the class start on time and resolves Text 1's problem.",
+              "evidenceIds": [
+                "ck-lit-prose-4-s5"
+              ]
+            },
+            {
+              "answerId": "seg-3",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence belongs to Text 2 and concerns a minor balloon detail.",
+              "evidenceIds": [
+                "ck-lit-prose-5-s5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-checkpoint-a-6",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-0eeb6a9a43e0755e",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "87f81347b7df59641a8119f71c3f1bff4ec83c9a9cd7a24796cb4902c45cd077",
+        "conclusionsSha256": "92ffd47f63e41d4e9d5e5e5fe8c660ebd90de39274cf4e8a94187d4ea7e9f804",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0074.pass-a.json",
+        "receiptSha256": "92ffd47f63e41d4e9d5e5e5fe8c660ebd90de39274cf4e8a94187d4ea7e9f804",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-a",
+          "prompt": "A helper finds a missing route card before the walk.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "text1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "text1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "text2",
+              "verdict": "INCORRECT",
+              "rationale": "Text 2 has a planned map but no missing route card.",
+              "evidenceIds": [
+                "ck-lit-prose-5-map-parade"
+              ]
+            },
+            {
+              "answerId": "text1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Only Text 1 shows Eli finding a missing route card.",
+              "evidenceIds": [
+                "ck-lit-prose-4-s1",
+                "ck-lit-prose-4-s4"
+              ]
+            },
+            {
+              "answerId": "both",
+              "verdict": "INCORRECT",
+              "rationale": "The missing-card detail does not appear in both texts.",
+              "evidenceIds": [
+                "ck-lit-prose-4-trail-card",
+                "ck-lit-prose-5-map-parade"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-b",
+          "prompt": "Both texts end with the group ready to move forward.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "both"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "both"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "text2",
+              "verdict": "INCORRECT",
+              "rationale": "Text 1 also ends ready to begin the walk.",
+              "evidenceIds": [
+                "ck-lit-prose-4-s5"
+              ]
+            },
+            {
+              "answerId": "text1",
+              "verdict": "INCORRECT",
+              "rationale": "Text 2 also ends with the parade moving forward.",
+              "evidenceIds": [
+                "ck-lit-prose-5-s6"
+              ]
+            },
+            {
+              "answerId": "both",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both texts end with the group able to follow its route.",
+              "evidenceIds": [
+                "ck-lit-prose-4-s5",
+                "ck-lit-prose-5-s6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-c",
+          "prompt": "The parade team spreads a map across chairs.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "text2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "text2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "text1",
+              "verdict": "INCORRECT",
+              "rationale": "Text 1 does not contain the parade-map setup.",
+              "evidenceIds": [
+                "ck-lit-prose-4-trail-card"
+              ]
+            },
+            {
+              "answerId": "both",
+              "verdict": "INCORRECT",
+              "rationale": "The detail is limited to Text 2.",
+              "evidenceIds": [
+                "ck-lit-prose-5-s1"
+              ]
+            },
+            {
+              "answerId": "text2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Only Text 2 shows the parade team spreading a map across chairs.",
+              "evidenceIds": [
+                "ck-lit-prose-5-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-checkpoint-a-7",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-2218d4d3f1fa22cf",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "87f81347b7df59641a8119f71c3f1bff4ec83c9a9cd7a24796cb4902c45cd077",
+        "conclusionsSha256": "92ffd47f63e41d4e9d5e5e5fe8c660ebd90de39274cf4e8a94187d4ea7e9f804",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0074.pass-a.json",
+        "receiptSha256": "92ffd47f63e41d4e9d5e5e5fe8c660ebd90de39274cf4e8a94187d4ea7e9f804",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Which important difference do the texts show?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "help-and-map"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "help-and-map"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "seed-travel",
+              "verdict": "INCORRECT",
+              "rationale": "Neither literary text explains seed travel.",
+              "evidenceIds": [
+                "ck-lit-prose-4-trail-card",
+                "ck-lit-prose-5-map-parade"
+              ]
+            },
+            {
+              "answerId": "weather-tools",
+              "verdict": "INCORRECT",
+              "rationale": "Neither literary text concerns weather tools.",
+              "evidenceIds": [
+                "ck-lit-prose-4-trail-card",
+                "ck-lit-prose-5-map-parade"
+              ]
+            },
+            {
+              "answerId": "help-and-map",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Text 1 centers on finding a lost route card while Text 2 centers on planning a parade route.",
+              "evidenceIds": [
+                "ck-lit-prose-4-s1",
+                "ck-lit-prose-4-s2",
+                "ck-lit-prose-5-s1",
+                "ck-lit-prose-5-s3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which evidence best supports that difference?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "route-card"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "route-card"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "wind-sock",
+              "verdict": "INCORRECT",
+              "rationale": "These weather-tool details do not occur in either displayed literary text.",
+              "evidenceIds": [
+                "ck-lit-prose-4-trail-card",
+                "ck-lit-prose-5-map-parade"
+              ]
+            },
+            {
+              "answerId": "route-card",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The paired sentences directly contrast the found route card with the parade map.",
+              "evidenceIds": [
+                "ck-lit-prose-4-s5",
+                "ck-lit-prose-5-s1"
+              ]
+            },
+            {
+              "answerId": "pond-roots",
+              "verdict": "INCORRECT",
+              "rationale": "These habitat details do not occur in either literary text.",
+              "evidenceIds": [
+                "ck-lit-prose-4-trail-card",
+                "ck-lit-prose-5-map-parade"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-checkpoint-i-1",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-7935ea74c3e69030",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "205654b97b2c1bc81788700e8b68b9adff459f565601991c060fef06b6f12b0e",
+        "conclusionsSha256": "d3a255db244e7e76030a8dd9cf01f3ff6eafd58706629df6141920df4b349ef2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0001.second-pass.json",
+        "receiptSha256": "50f047393974ca532baf3c68442287d95cd7ea0ac6670e35785e1ca7efdc0b9e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What are both informational texts mostly about?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "living-places"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "living-places"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "music-show",
+              "verdict": "INCORRECT",
+              "rationale": "Neither informational text concerns preparing a music show.",
+              "evidenceIds": [
+                "ck-info-5-pond-layers",
+                "ck-info-6-root-help"
+              ]
+            },
+            {
+              "answerId": "kite-wind",
+              "verdict": "INCORRECT",
+              "rationale": "Neither informational text concerns a kite.",
+              "evidenceIds": [
+                "ck-info-5-pond-layers",
+                "ck-info-6-root-help"
+              ]
+            },
+            {
+              "answerId": "garden-sign",
+              "verdict": "INCORRECT",
+              "rationale": "Neither informational text concerns repairing a garden sign.",
+              "evidenceIds": [
+                "ck-info-5-pond-layers",
+                "ck-info-6-root-help"
+              ]
+            },
+            {
+              "answerId": "living-places",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both texts explain ways roots support plants and keep soil in place.",
+              "evidenceIds": [
+                "ck-info-5-s4",
+                "ck-info-5-s6",
+                "ck-info-6-s2",
+                "ck-info-6-s3",
+                "ck-info-6-s6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-checkpoint-i-2",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-a187bd60950ad38c",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "205654b97b2c1bc81788700e8b68b9adff459f565601991c060fef06b6f12b0e",
+        "conclusionsSha256": "d3a255db244e7e76030a8dd9cf01f3ff6eafd58706629df6141920df4b349ef2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0075.pass-a.json",
+        "receiptSha256": "d3a255db244e7e76030a8dd9cf01f3ff6eafd58706629df6141920df4b349ef2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail belongs only in Text 1?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "pond-layers"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "pond-layers"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "soil-strong",
+              "verdict": "INCORRECT",
+              "rationale": "Both texts state that roots help soil stay in place.",
+              "evidenceIds": [
+                "ck-info-5-s4",
+                "ck-info-6-s3"
+              ]
+            },
+            {
+              "answerId": "pond-layers",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Only Text 1 says pond-edge plants shelter small animals.",
+              "evidenceIds": [
+                "ck-info-5-s3"
+              ]
+            },
+            {
+              "answerId": "notes",
+              "verdict": "INCORRECT",
+              "rationale": "Neither displayed text mentions a class gathering observation notes.",
+              "evidenceIds": [
+                "ck-info-5-pond-layers",
+                "ck-info-6-root-help"
+              ]
+            },
+            {
+              "answerId": "both-support",
+              "verdict": "INCORRECT",
+              "rationale": "This is a comparison of both texts, not a detail unique to Text 1.",
+              "evidenceIds": [
+                "ck-info-5-s6",
+                "ck-info-6-s6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-checkpoint-i-3",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-296acc674e0d1cb3",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "205654b97b2c1bc81788700e8b68b9adff459f565601991c060fef06b6f12b0e",
+        "conclusionsSha256": "d3a255db244e7e76030a8dd9cf01f3ff6eafd58706629df6141920df4b349ef2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0075.pass-a.json",
+        "receiptSha256": "d3a255db244e7e76030a8dd9cf01f3ff6eafd58706629df6141920df4b349ef2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail is less important for the comparison?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "small-shower"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "small-shower"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "small-shower",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The pond edge being shallow describes the setting but does not explain the root-support comparison.",
+              "evidenceIds": [
+                "ck-info-5-s1"
+              ]
+            },
+            {
+              "answerId": "protect-tools",
+              "verdict": "INCORRECT",
+              "rationale": "Moving pond water helps explain the Text 1 setting in which roots hold soil.",
+              "evidenceIds": [
+                "ck-info-5-s4"
+              ]
+            },
+            {
+              "answerId": "root-grip",
+              "verdict": "INCORRECT",
+              "rationale": "Keeping soil in place is a central function shared by both texts.",
+              "evidenceIds": [
+                "ck-info-5-s4",
+                "ck-info-6-s3"
+              ]
+            },
+            {
+              "answerId": "fresh-soil",
+              "verdict": "INCORRECT",
+              "rationale": "This states the important shared idea of the two texts.",
+              "evidenceIds": [
+                "ck-info-5-s6",
+                "ck-info-6-s6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-checkpoint-i-4",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-ee401afdddacecf1",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "205654b97b2c1bc81788700e8b68b9adff459f565601991c060fef06b6f12b0e",
+        "conclusionsSha256": "d3a255db244e7e76030a8dd9cf01f3ff6eafd58706629df6141920df4b349ef2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0075.pass-a.json",
+        "receiptSha256": "d3a255db244e7e76030a8dd9cf01f3ff6eafd58706629df6141920df4b349ef2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details that help compare the informational texts.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "pond-support",
+            "roots-hold"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "pond-support",
+            "roots-hold"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "pond-support",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This Text 1 detail explains how pond-edge roots keep soil in place.",
+              "evidenceIds": [
+                "ck-info-5-s4"
+              ]
+            },
+            {
+              "answerId": "sports-day",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text concerns a sports day.",
+              "evidenceIds": [
+                "ck-info-5-pond-layers",
+                "ck-info-6-root-help"
+              ]
+            },
+            {
+              "answerId": "marker-color",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text compares marker colors.",
+              "evidenceIds": [
+                "ck-info-5-pond-layers",
+                "ck-info-6-root-help"
+              ]
+            },
+            {
+              "answerId": "roots-hold",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This Text 2 detail parallels Text 1 by explaining how garden roots keep soil in place.",
+              "evidenceIds": [
+                "ck-info-6-s3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-checkpoint-i-5",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-5872df67344e874b",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "205654b97b2c1bc81788700e8b68b9adff459f565601991c060fef06b6f12b0e",
+        "conclusionsSha256": "d3a255db244e7e76030a8dd9cf01f3ff6eafd58706629df6141920df4b349ef2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0075.pass-a.json",
+        "receiptSha256": "d3a255db244e7e76030a8dd9cf01f3ff6eafd58706629df6141920df4b349ef2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence in Text 2 that shows the main idea.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "seg-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "seg-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "seg-1",
+              "verdict": "INCORRECT",
+              "rationale": "This introduces where roots grow but does not state the text's main idea about support.",
+              "evidenceIds": [
+                "ck-info-6-s1"
+              ]
+            },
+            {
+              "answerId": "seg-2",
+              "verdict": "INCORRECT",
+              "rationale": "This is one supporting detail about roots, not the full main idea.",
+              "evidenceIds": [
+                "ck-info-6-s2"
+              ]
+            },
+            {
+              "answerId": "seg-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This final sentence states the main idea that garden roots support both plants and soil.",
+              "evidenceIds": [
+                "ck-info-6-s6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-checkpoint-i-6",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-7216dd5feefdd0cb",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "205654b97b2c1bc81788700e8b68b9adff459f565601991c060fef06b6f12b0e",
+        "conclusionsSha256": "d3a255db244e7e76030a8dd9cf01f3ff6eafd58706629df6141920df4b349ef2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0075.pass-a.json",
+        "receiptSha256": "d3a255db244e7e76030a8dd9cf01f3ff6eafd58706629df6141920df4b349ef2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-a",
+          "prompt": "Pond-edge plants give shelter to small animals.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "text1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "text1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "text1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Only Text 1 says pond-edge plants shelter small animals.",
+              "evidenceIds": [
+                "ck-info-5-s3"
+              ]
+            },
+            {
+              "answerId": "both",
+              "verdict": "INCORRECT",
+              "rationale": "Text 2 does not mention sheltering small animals.",
+              "evidenceIds": [
+                "ck-info-6-root-help"
+              ]
+            },
+            {
+              "answerId": "text2",
+              "verdict": "INCORRECT",
+              "rationale": "This fact is absent from Text 2.",
+              "evidenceIds": [
+                "ck-info-6-root-help"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-b",
+          "prompt": "Garden roots hold the plant upright.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "text2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "text2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "both",
+              "verdict": "INCORRECT",
+              "rationale": "The displayed garden-root detail appears only in Text 2.",
+              "evidenceIds": [
+                "ck-info-6-s2",
+                "ck-info-6-s5"
+              ]
+            },
+            {
+              "answerId": "text1",
+              "verdict": "INCORRECT",
+              "rationale": "Text 1 does not describe garden roots holding a plant upright.",
+              "evidenceIds": [
+                "ck-info-5-pond-layers"
+              ]
+            },
+            {
+              "answerId": "text2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Text 2 says garden roots hold the plant steady and support upright growth.",
+              "evidenceIds": [
+                "ck-info-6-s2",
+                "ck-info-6-s5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-c",
+          "prompt": "Roots help soil stay in place.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "both"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "both"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "both",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both texts explain that roots keep soil in place.",
+              "evidenceIds": [
+                "ck-info-5-s4",
+                "ck-info-6-s3"
+              ]
+            },
+            {
+              "answerId": "text1",
+              "verdict": "INCORRECT",
+              "rationale": "The fact is not limited to Text 1.",
+              "evidenceIds": [
+                "ck-info-6-s3"
+              ]
+            },
+            {
+              "answerId": "text2",
+              "verdict": "INCORRECT",
+              "rationale": "The fact is not limited to Text 2.",
+              "evidenceIds": [
+                "ck-info-5-s4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-checkpoint-i-7",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-bf2a1318f47e3324",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "205654b97b2c1bc81788700e8b68b9adff459f565601991c060fef06b6f12b0e",
+        "conclusionsSha256": "d3a255db244e7e76030a8dd9cf01f3ff6eafd58706629df6141920df4b349ef2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0075.pass-a.json",
+        "receiptSha256": "d3a255db244e7e76030a8dd9cf01f3ff6eafd58706629df6141920df4b349ef2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Which important similarity do the texts share?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "support-place"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "support-place"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "support-place",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both texts explain how roots support plants and soil.",
+              "evidenceIds": [
+                "ck-info-5-s6",
+                "ck-info-6-s6"
+              ]
+            },
+            {
+              "answerId": "story-kite",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text concerns a kite.",
+              "evidenceIds": [
+                "ck-info-5-pond-layers",
+                "ck-info-6-root-help"
+              ]
+            },
+            {
+              "answerId": "stage-show",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text concerns a stage show.",
+              "evidenceIds": [
+                "ck-info-5-pond-layers",
+                "ck-info-6-root-help"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which evidence best supports that similarity?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "pond-roots"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "pond-roots"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "trail-map",
+              "verdict": "INCORRECT",
+              "rationale": "These details belong to unrelated route-planning texts.",
+              "evidenceIds": [
+                "ck-info-5-pond-layers",
+                "ck-info-6-root-help"
+              ]
+            },
+            {
+              "answerId": "pond-roots",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The paired details directly show roots keeping soil in place in both settings.",
+              "evidenceIds": [
+                "ck-info-5-s4",
+                "ck-info-6-s3"
+              ]
+            },
+            {
+              "answerId": "wind-kite",
+              "verdict": "INCORRECT",
+              "rationale": "These details concern wind and are absent from the displayed root texts.",
+              "evidenceIds": [
+                "ck-info-5-pond-layers",
+                "ck-info-6-root-help"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-checkpoint-b-1",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-3ca8b49d1acaf4e9",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "205654b97b2c1bc81788700e8b68b9adff459f565601991c060fef06b6f12b0e",
+        "conclusionsSha256": "d3a255db244e7e76030a8dd9cf01f3ff6eafd58706629df6141920df4b349ef2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0075.pass-a.json",
+        "receiptSha256": "d3a255db244e7e76030a8dd9cf01f3ff6eafd58706629df6141920df4b349ef2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "How are the two literary texts alike?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "careful-help"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "careful-help"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "careful-help",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both texts show people preparing carefully for a shared event.",
+              "evidenceIds": [
+                "ck-lit-prose-6-s2",
+                "ck-lit-prose-6-s3",
+                "ck-lit-poem-2-s2",
+                "ck-lit-poem-2-s5"
+              ]
+            },
+            {
+              "answerId": "weather",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text concerns weather tools.",
+              "evidenceIds": [
+                "ck-lit-prose-6-camp-lanterns",
+                "ck-lit-poem-2-before-the-show"
+              ]
+            },
+            {
+              "answerId": "seeds",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text explains seed travel.",
+              "evidenceIds": [
+                "ck-lit-prose-6-camp-lanterns",
+                "ck-lit-poem-2-before-the-show"
+              ]
+            },
+            {
+              "answerId": "ponds",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text concerns pond layers.",
+              "evidenceIds": [
+                "ck-lit-prose-6-camp-lanterns",
+                "ck-lit-poem-2-before-the-show"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-checkpoint-b-2",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-83eda1647e85e840",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "205654b97b2c1bc81788700e8b68b9adff459f565601991c060fef06b6f12b0e",
+        "conclusionsSha256": "d3a255db244e7e76030a8dd9cf01f3ff6eafd58706629df6141920df4b349ef2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0075.pass-a.json",
+        "receiptSha256": "d3a255db244e7e76030a8dd9cf01f3ff6eafd58706629df6141920df4b349ef2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail belongs only in Text 2?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "spotlight"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "spotlight"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "camp-lanterns",
+              "verdict": "INCORRECT",
+              "rationale": "This picnic-table detail appears only in Text 1.",
+              "evidenceIds": [
+                "ck-lit-prose-6-s1"
+              ]
+            },
+            {
+              "answerId": "spotlight",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Only Text 2 includes the spotlight warming the stage.",
+              "evidenceIds": [
+                "ck-lit-poem-2-s6"
+              ]
+            },
+            {
+              "answerId": "careful-work",
+              "verdict": "INCORRECT",
+              "rationale": "This is a similarity between the texts, not a Text 2-only detail.",
+              "evidenceIds": [
+                "ck-lit-prose-6-s2",
+                "ck-lit-poem-2-s2"
+              ]
+            },
+            {
+              "answerId": "ready-calm",
+              "verdict": "INCORRECT",
+              "rationale": "This describes a shared movement from preparation to readiness, not a Text 2-only detail.",
+              "evidenceIds": [
+                "ck-lit-prose-6-s6",
+                "ck-lit-poem-2-s10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-checkpoint-b-3",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-cb4e19fe83cc8bda",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "b62780e4bf9d8a631e327336f6b84f8e7114be2feb012b6263a86f74db95cc81",
+        "conclusionsSha256": "252cbbaee230417f039761c00e0eec4796516890d7fd48fbf79fdd9efbc84c5d",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0037.pass-a.json",
+        "receiptSha256": "252cbbaee230417f039761c00e0eec4796516890d7fd48fbf79fdd9efbc84c5d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail describes the room before the show, rather than an action the helpers take?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "quiet-buzz"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "quiet-buzz"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "ready-ending",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Describes an action the helpers take at the end.",
+              "evidenceIds": [
+                "ck-lit-poem-2-s10"
+              ]
+            },
+            {
+              "answerId": "stage-lines",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Describes audience and performance actions after the show begins.",
+              "evidenceIds": [
+                "ck-lit-poem-2-s7",
+                "ck-lit-poem-2-s8"
+              ]
+            },
+            {
+              "answerId": "careful-help",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Describes what helpers do, which the prompt explicitly contrasts with room description.",
+              "evidenceIds": [
+                "ck-lit-prose-6-s2",
+                "ck-lit-prose-6-s3",
+                "ck-lit-prose-6-s4",
+                "ck-lit-poem-2-s2"
+              ]
+            },
+            {
+              "answerId": "quiet-buzz",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Describes the room's condition before the show rather than a helper action.",
+              "evidenceIds": [
+                "ck-lit-poem-2-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-checkpoint-b-4",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-e623f2dcf82de0c8",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "205654b97b2c1bc81788700e8b68b9adff459f565601991c060fef06b6f12b0e",
+        "conclusionsSha256": "d3a255db244e7e76030a8dd9cf01f3ff6eafd58706629df6141920df4b349ef2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0075.pass-a.json",
+        "receiptSha256": "d3a255db244e7e76030a8dd9cf01f3ff6eafd58706629df6141920df4b349ef2",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details that help compare the literary texts.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "prep-to-ready",
+            "helpers-together"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "helpers-together",
+            "prep-to-ready"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "music-rain",
+              "verdict": "INCORRECT",
+              "rationale": "Text 1 is not about music or rain, and Text 2 is not about rain.",
+              "evidenceIds": [
+                "ck-lit-prose-6-camp-lanterns",
+                "ck-lit-poem-2-before-the-show"
+              ]
+            },
+            {
+              "answerId": "helpers-together",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both texts show helpers working together before their event.",
+              "evidenceIds": [
+                "ck-lit-prose-6-s2",
+                "ck-lit-prose-6-s3",
+                "ck-lit-poem-2-s2",
+                "ck-lit-poem-2-s5"
+              ]
+            },
+            {
+              "answerId": "bike-race",
+              "verdict": "INCORRECT",
+              "rationale": "Neither text concerns a bike race.",
+              "evidenceIds": [
+                "ck-lit-prose-6-camp-lanterns",
+                "ck-lit-poem-2-before-the-show"
+              ]
+            },
+            {
+              "answerId": "prep-to-ready",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both texts progress from preparation toward a ready or calm state.",
+              "evidenceIds": [
+                "ck-lit-prose-6-s6",
+                "ck-lit-poem-2-s10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-checkpoint-b-5",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-12eccf1fdea16f6b",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "a915db271f53862b8d1c47b0821030f87990a2d9a2c639f59eca597ec0615109",
+        "conclusionsSha256": "aabd9f358f14370fb36c0f8114eae334f1a6111c80e79c111d839b9dab9528bf",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "CORRECTION_REREVIEW",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/corrections-v5/batch-c0001.pass-a.json",
+        "receiptSha256": "aabd9f358f14370fb36c0f8114eae334f1a6111c80e79c111d839b9dab9528bf",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the line in Text 1 that shows the campers gathering materials before the event.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "seg-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "seg-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "seg-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the camp circle's ready condition by dusk, not the campers gathering materials before the event.",
+              "evidenceIds": [
+                "ck-lit-prose-6-s6"
+              ]
+            },
+            {
+              "answerId": "seg-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This Text 1 line directly says they gathered the materials before the sky changed.",
+              "evidenceIds": [
+                "ck-lit-prose-6-s2"
+              ]
+            },
+            {
+              "answerId": "seg-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "This line belongs to Text 2 and describes the room, not campers gathering materials.",
+              "evidenceIds": [
+                "ck-lit-poem-2-s1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": true,
+      "correctionSummary": "Learner-visible content was corrected and re-reviewed in docs/content/answer-uniqueness-ledger/blind/corrections-v5/batch-c0001.pass-a.json.",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-checkpoint-b-6",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-ca070b4229866076",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "205654b97b2c1bc81788700e8b68b9adff459f565601991c060fef06b6f12b0e",
+        "conclusionsSha256": "d3a255db244e7e76030a8dd9cf01f3ff6eafd58706629df6141920df4b349ef2",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0001.second-pass.json",
+        "receiptSha256": "50f047393974ca532baf3c68442287d95cd7ea0ac6670e35785e1ca7efdc0b9e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-a",
+          "prompt": "Helpers sort lanterns, cups, and blankets onto one table.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "text1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "text1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "text2",
+              "verdict": "INCORRECT",
+              "rationale": "The sorting action occurs in Text 1, not Text 2.",
+              "evidenceIds": [
+                "ck-lit-prose-6-s1"
+              ]
+            },
+            {
+              "answerId": "text1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Only Text 1 shows helpers sorting lanterns, cups, and blankets onto a table.",
+              "evidenceIds": [
+                "ck-lit-prose-6-s1"
+              ]
+            },
+            {
+              "answerId": "both",
+              "verdict": "INCORRECT",
+              "rationale": "Text 2 does not include this table-sorting detail.",
+              "evidenceIds": [
+                "ck-lit-poem-2-before-the-show"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-b",
+          "prompt": "Both texts show a calm, ready feeling before the event starts.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "both"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "both"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "both",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both texts establish a calm or ready feeling before the shared event.",
+              "evidenceIds": [
+                "ck-lit-prose-6-s6",
+                "ck-lit-poem-2-s1",
+                "ck-lit-poem-2-s3"
+              ]
+            },
+            {
+              "answerId": "text2",
+              "verdict": "INCORRECT",
+              "rationale": "The ready feeling is not limited to Text 2.",
+              "evidenceIds": [
+                "ck-lit-prose-6-s6"
+              ]
+            },
+            {
+              "answerId": "text1",
+              "verdict": "INCORRECT",
+              "rationale": "The ready feeling is not limited to Text 1.",
+              "evidenceIds": [
+                "ck-lit-poem-2-s1",
+                "ck-lit-poem-2-s3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-c",
+          "prompt": "A spotlight warms the stage during the show.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "text2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "text2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "text2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Only Text 2 describes a spotlight warming the stage.",
+              "evidenceIds": [
+                "ck-lit-poem-2-s6"
+              ]
+            },
+            {
+              "answerId": "both",
+              "verdict": "INCORRECT",
+              "rationale": "Text 1 has no stage spotlight.",
+              "evidenceIds": [
+                "ck-lit-prose-6-camp-lanterns"
+              ]
+            },
+            {
+              "answerId": "text1",
+              "verdict": "INCORRECT",
+              "rationale": "The spotlight detail is absent from Text 1.",
+              "evidenceIds": [
+                "ck-lit-prose-6-camp-lanterns"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "ck-q-checkpoint-b-7",
+      "packId": "g2-compare-castle-compare-keep",
+      "contentVersion": "g2-cg-compare-r0.1.0",
+      "contentFingerprint": "qta-v1-87550d525c2af1de",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "b62780e4bf9d8a631e327336f6b84f8e7114be2feb012b6263a86f74db95cc81",
+        "conclusionsSha256": "252cbbaee230417f039761c00e0eec4796516890d7fd48fbf79fdd9efbc84c5d",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0001.second-pass.json",
+        "receiptSha256": "50f047393974ca532baf3c68442287d95cd7ea0ac6670e35785e1ca7efdc0b9e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Which important similarity do the texts share?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "ready-before-event"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "ready-before-event"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "ready-before-event",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Both texts center on helpers preparing before a shared camp or show event.",
+              "evidenceIds": [
+                "ck-lit-prose-6-s2",
+                "ck-lit-prose-6-s3",
+                "ck-lit-poem-2-s2",
+                "ck-lit-poem-2-s4"
+              ]
+            },
+            {
+              "answerId": "weather-tools",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Neither text concerns weather tools.",
+              "evidenceIds": [
+                "ck-lit-prose-6-camp-lanterns"
+              ]
+            },
+            {
+              "answerId": "seed-travel",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Neither text explains seed travel.",
+              "evidenceIds": [
+                "ck-lit-prose-6-camp-lanterns"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which evidence best supports that similarity?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "prep-lines"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "prep-lines"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "pond-roots",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Pond layers and roots appear in neither displayed text.",
+              "evidenceIds": [
+                "ck-lit-prose-6-camp-lanterns"
+              ]
+            },
+            {
+              "answerId": "trail-map",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Trail-card and parade-map evidence comes from different texts.",
+              "evidenceIds": [
+                "ck-lit-prose-6-camp-lanterns"
+              ]
+            },
+            {
+              "answerId": "prep-lines",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Pairs one preparation detail from each displayed text and directly supports Part A.",
+              "evidenceIds": [
+                "ck-lit-prose-6-s2",
+                "ck-lit-poem-2-s2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

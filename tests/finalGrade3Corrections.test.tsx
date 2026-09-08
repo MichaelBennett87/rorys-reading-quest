@@ -1,6 +1,5 @@
 import { readFileSync } from 'node:fs'
 
-import { render, screen } from '@testing-library/react'
 import { describe, expect, test } from 'vitest'
 
 import { getActiveContentPacks } from '../src/domain/content/packs/registry'
@@ -9,7 +8,6 @@ import { curriculumTracks, planGlobalQuest } from '../src/domain/curriculum'
 import { getLessonCandidates } from '../src/domain/lesson'
 import { createInitialSkillProgress } from '../src/domain/progression'
 import { createDefaultQuestProgress } from '../src/persistence'
-import { ProgressionOutcomeScreen } from '../src/screens/ProgressionOutcomeScreen'
 
 const packs = getActiveContentPacks()
 const grade3Packs = packs.filter((pack) => pack.manifest.gradeBand === 3)
@@ -92,7 +90,7 @@ describe('confirmed Phase 7D7 corrections', () => {
     expect(pack('Figurative Fortress').lessons.map((lesson) => lesson.lessonTitle)).toContain('Figurative Fortress Checkpoint: Saturday Garden Signals')
   })
 
-  test('presents terminal curriculum completion without claiming learner mastery', () => {
+  test('preserves terminal curriculum completion semantics without a navigation detour', () => {
     const now = '2026-08-30T12:00:00.000Z'
     const progress = createDefaultQuestProgress(now)
     for (const track of curriculumTracks) {
@@ -120,28 +118,21 @@ describe('confirmed Phase 7D7 corrections', () => {
     expect(noContentPlan.curriculumComplete).toBe(false)
     expect(noContentPlan.displayName).toBe('More Quests Are Being Prepared')
 
-    render(<ProgressionOutcomeScreen
-      outcome={{
-        kind: 'CONTENT_NEEDED', earnedXp: 0, earnedStars: 0, currentDifficulty: 4, completionId: 'complete',
-        nextQuest: plan.nextQuest,
-        curriculumComplete: plan.curriculumComplete,
-      }}
-      onContinueJourney={() => undefined}
-      onBackHome={() => undefined}
-    />)
-
-    expect(document.activeElement).toBe(screen.getByRole('heading', { name: 'Grade 3 Journey Complete!' }))
-    expect(screen.getByText(/Curriculum completion is not the same as learner mastery/)).toBeTruthy()
-    expect(screen.getAllByRole('button')).toHaveLength(1)
-    expect(screen.getByRole('button', { name: 'Back Home' })).toBeTruthy()
+    const appShell = readFileSync('src/app/AppShell.tsx', 'utf8')
+    expect(appShell).not.toContain('ProgressionOutcomeScreen')
+    expect(appShell).not.toContain('Back Home')
+    expect(appShell).toContain('Grade 3 Journey Complete!')
+    expect(appShell).toContain("You completed every reading trail currently in Rory's Reading Quest")
+    expect(appShell).not.toMatch(/mastered Grade 3|Grade 3 mastery/i)
   })
 
-  test('preserves independent ledger decisions instead of deriving them from authored keys', () => {
+  test('preserves reviewed ledger decisions instead of deriving them from authored keys', () => {
     const generator = readFileSync('scripts/generate-question-truth-ledgers.mjs', 'utf8')
     expect(generator).toContain('prior.independentlySolvedAnswerIds')
     expect(generator).toContain('No preserved independent-review decision exists')
     expect(generator).toContain('prior.contentFingerprint !== record.contentFingerprint')
-    expect(generator).toContain('changed after independent review')
+    expect(generator).toContain('resolveReviewedAnswerTruthDecision')
+    expect(generator).toContain('was re-reviewed at this exact fingerprint')
     expect(generator).not.toContain('const independentlySolvedAnswerIds = getAnswerIds(record.authoredCorrectAnswerRepresentation)')
     expect(generator).not.toContain("finalStatus: 'PASS'")
   })

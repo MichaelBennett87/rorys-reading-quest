@@ -1,0 +1,472 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0005",
+  "batchFileSha256": "015618bc592db5523308409132f793dd55e425b572ef6ee0da730861484fc25a",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0086",
+      "fingerprint": "56c8564b77200d1f05199adb48210e4e85a0133f61e484d632f6e398626b3441",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This sentence contains rabbit, basket, and cabin but not napkin.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This sentence explicitly contains napkin, whose two syllables have short vowels.",
+              [
+                "S0006"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This sentence contains magnet and helmet but not napkin.",
+              [
+                "S0008"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0091",
+      "fingerprint": "f636423ea4a5d90cc5062064a915f57427d586262591efef3fe1ae4267f35c15",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This sentence contains photo and zero but not music.",
+              [
+                "S0017"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This sentence contains music, which begins with the open syllable mu.",
+              [
+                "S0014"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This sentence contains robot and open but not music.",
+              [
+                "S0012"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0095",
+      "fingerprint": "8b5c452c1fa6b35348225e988b0107bc0ff60829284eb61c692d013f89d983a4",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Robot begins with an open syllable and does not have a short vowel in both syllables.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Music begins with the long-vowel open syllable mu, so both vowels are not short.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Sunset divides into sun and set, each with a short vowel.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Picnic divides into pic and nic, each with a short vowel.",
+              [
+                "S0021"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0100",
+      "fingerprint": "907594922b2a8b6bea5d11e8a69032c24ed31890d83c981863f36cfa994be6d0",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Tulip begins with the open syllable tu, whose vowel has its long sound.",
+              [
+                "S0032"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Solo begins with the open syllable so, whose vowel has its long sound.",
+              [
+                "S0032"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Photo begins with the open syllable pho, whose vowel has its long sound.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Music begins with the open syllable mu, whose vowel has its long sound.",
+              [
+                "S0030"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0103",
+      "fingerprint": "f18d353367c445161ef8489132275a9a0eb6e278d8e01c38dcff956e02cb1067",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Photo begins with a long-vowel open syllable.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Picnic has a short vowel in both pic and nic.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Music begins with a long-vowel open syllable.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Robot begins with a long-vowel open syllable.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0105",
+      "fingerprint": "79bdd6865303b7a52346d68a722b5c61055a9c75bc9b19fbe0acbbc6ba6b9634",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Sunset has short vowel sounds in sun and set.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Robot begins with a long-vowel open syllable.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Rabbit has short vowel sounds in rab and bit.",
+              [
+                "S0027"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Picnic has short vowel sounds in pic and nic.",
+              [
+                "S0021"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0110",
+      "fingerprint": "29858022acfe7db7cbe68c2c00562f71c74d6356e2a4bc7ef1baf8c076446f7e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Music begins with a long-vowel open syllable.",
+              [
+                "S0030"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Robot begins with a long-vowel open syllable.",
+              [
+                "S0030"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Photo begins with a long-vowel open syllable.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Sunset has short vowel sounds in both sun and set.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0112",
+      "fingerprint": "54f06706bf3cbd5125a609a527a8726ffe07de0880bf01ab6672aa19c4e38528",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Music begins with the long-vowel open syllable mu.",
+              [
+                "S0030"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Basket begins with the closed syllable bas and a short vowel.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Rabbit begins with the closed syllable rab and a short vowel.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Solo begins with the long-vowel open syllable so.",
+              [
+                "S0032"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0117",
+      "fingerprint": "55f59a415b12dc1f7f2fad62707db2b06a3a0fdf8b0046a51b4d54e96da7a386",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Solo begins with a long-vowel open syllable.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Photo begins with a long-vowel open syllable.",
+              [
+                "S0052"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Napkin has short vowel sounds in nap and kin.",
+              [
+                "S0054"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Robot begins with a long-vowel open syllable.",
+              [
+                "S0050"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0119",
+      "fingerprint": "34724c143b989a99fcae01dc2d6029da9fc9dc6b90f74b26ec70386c6da825f5",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Basket appears in the passage and has short vowel sounds in bas and ket.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Photo appears in the passage but begins with a long-vowel open syllable.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Robot appears in the passage but begins with a long-vowel open syllable.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Rabbit appears in the passage and has short vowel sounds in rab and bit.",
+              [
+                "S0061"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

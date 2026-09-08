@@ -1,0 +1,908 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0060",
+  "batchFileSha256": "ecb8d7ca1316851a5204540d614fe9a93894741569356fdaaa27cba338ff4bbb",
+  "reviewerThreadId": "01a07bc1-d815-7c71-b972-e3c829df1777",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0700",
+      "fingerprint": "65d72ad875afb2f6444205b6b1f1c1b3fce8138434aeecfd873341df45605220",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does -s mean in plants?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1"
+          ],
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The plural -s in plants means more than one plant.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Without is associated with -less, not plural -s.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Again is associated with re-, not plural -s.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Before is associated with pre-, not plural -s.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0701",
+      "fingerprint": "07db29136770be1d3125a564e6aca117130bc13c0be17e8748d68a82c10659cb",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does -ly mean in slowly?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Again is associated with re-, not -ly.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Without is associated with -less, not -ly.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "-ly forms an expression of manner, so slowly means in a slow way.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Before is associated with pre-, not -ly.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0702",
+      "fingerprint": "2ac849426c0ff141a7b06047b5b27a73ac734e476d119a17010882e2b091181a",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two words whose suffix tells about more than one or a way of doing something.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1",
+            "A2"
+          ],
+          "defensible": [
+            "A1",
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Slowly uses -ly to tell the way the notes moved.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Plants uses plural -s to mean more than one plant.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Miscount begins with the prefix mis- and does not use a suffix for either requested meaning.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Rebuild begins with re- and does not use a suffix for either requested meaning.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0703",
+      "fingerprint": "b85b25d5044c33d5b84c2f724da805a463ad4469d3bfe298abed4bbdce9ed503",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which chunk is the suffix in tallest?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1"
+          ],
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Est is the ending added to tall to form tallest.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Most is the suffix meaning, not the visible chunk.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Tall is the base word, not the suffix.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Tallest is the complete word, not just the suffix.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0704",
+      "fingerprint": "efa163c0457861edfa1c049f0b7bd0a284ab5ec4396220629b9262adf0094f0c",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "prompt": "miscount",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2"
+          ],
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Not agree describes disagree, not miscount.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Miscount means count wrongly, matching the possible first count error.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Full of help describes helpful, not miscount.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Before the test does not describe miscount.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "prompt": "tallest",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Without care describes careless, not tallest.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Heat before describes preheat, not tallest.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Tallest means most tall in the box comparison.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Build again describes rebuild, not tallest.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "prompt": "plants",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A4"
+          ],
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Slowly moving describes an action, not plants.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Kind helper does not describe plants.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Wrongly is associated with mis-, not plants.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Plants is the plural form meaning more than one plant.",
+              [
+                "S0061"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "prompt": "slowly",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1"
+          ],
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Slowly means in a slow way, matching how the notes moved.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "More fast is the opposite manner and is ungrammatical here.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Again does not describe slowly.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "One box does not describe slowly.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0705",
+      "fingerprint": "46660867396e2a132990f350b9417b9d320afdc0231dc515e0d307d31496c2a2",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the base word in unpack?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Again is a meaning, not a word part in unpack.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Un is the prefix, not the base word.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Pack is the meaningful base remaining after removing un-.",
+              [
+                "S0077"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Cart is a separate noun in the passage, not part of unpack.",
+              [
+                "S0077"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0706",
+      "fingerprint": "34f91d3d2f72e45e8690295c71cc34353e97248f43b82124ad86f8e80ac8569c",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does helpful mean in the passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2"
+          ],
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "More fast does not describe the partner who carried the box.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Full of help expresses that the partner gave useful assistance by carrying the box.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Before does not describe helpful.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Without care is unrelated to helpful and contradicts the helpful action.",
+              [
+                "S0079"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0707",
+      "fingerprint": "51c1c5a564c3a3e27aaf5a91c872a93a11726ebf7c34f67bccaa24aa6e47d67b",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does disagree mean in the passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2"
+          ],
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Count wrongly describes miscount, not disagree.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Disagree means not agree, matching the students’ different views about marker placement.",
+              [
+                "S0083"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "More than one is a plural meaning, not disagree.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Most tall describes tallest, not disagree.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0708",
+      "fingerprint": "f496136e1d7e074f2792916bbc8fe1c16cd04c7b03f4d52f70548ffa8c1d04e1",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two words in the passage that start with a prefix.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1",
+            "A4"
+          ],
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Unpack begins with the prefix un-.",
+              [
+                "S0077"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Helpful ends with the suffix -ful rather than beginning with a prefix.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Boxes ends with plural -es and is not in the displayed checkpoint passage.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Disagree begins with the prefix dis-.",
+              [
+                "S0083"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0709",
+      "fingerprint": "20d4a8383fed591b1e4c744494b1a902361c198b0b552445a9a6008115df5de9",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which chunk is the suffix in helping?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A4"
+          ],
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Help is the base word, not the suffix.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Again is a meaning and is not a chunk in helping.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Helping is the complete word, not just the suffix.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Ing is the ending added to help in helping.",
+              [
+                "S0081"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0710",
+      "fingerprint": "63bfc73f050458c62390da63864278f3b1c386fc2d400d604952ec9a40ec5770",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "prompt": "unpack",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2"
+          ],
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "More than one box describes boxes, not unpack.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Unpack means take something out of a pack, fitting the cart reset.",
+              [
+                "S0077"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Not agree describes disagree, not unpack.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Kind helper describes a person, not unpack.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "prompt": "helpful",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1"
+          ],
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Full of help fits the partner who assists by carrying the box.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Heat before describes preheat, not helpful.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "More fast does not describe helpful.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Count wrongly describes miscount, not helpful.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "prompt": "helping",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Most tall describes tallest, not helping.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Without care describes careless, not helping.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Helping is happening now matches the continuing action in were helping.",
+              [
+                "S0081"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Before does not describe helping.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "prompt": "disagree",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2"
+          ],
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "More than one plant describes plants, not disagree.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Disagree means not agree, matching the students’ differing placement views.",
+              [
+                "S0083"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "In a slow way describes slowly, not disagree.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Again does not describe disagree.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0711",
+      "fingerprint": "11015ca09dc769257444e209ecb111d4fedb91950e4d64b3cefd6c56d985e100",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Which prefix appears in disagree?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2"
+          ],
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Pre- does not appear at the start of disagree.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Dis- is the visible prefix before agree.",
+              [
+                "S0083"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Re- does not appear at the start of disagree.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Un- does not appear at the start of disagree.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "What does disagree mean?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A4"
+          ],
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "More than one is a plural meaning, not disagree.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Build again describes rebuild, not disagree.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Heat before describes preheat, not disagree.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Disagree means not agree, matching the students’ differing views.",
+              [
+                "S0083"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

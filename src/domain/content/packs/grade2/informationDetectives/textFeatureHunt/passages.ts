@@ -707,14 +707,14 @@ export const textFeatureHuntPassages: readonly Passage[] = [
     gradeBand: 2,
     passageText: [
       'Each night, Priya writes moon notes in a class log and circles the shape she sees before bed.',
-      'The graph shows which moon shape the class saw each night, so the reader can compare the moon changes across the week.',
+      'The graph counts how many nights the class saw each moon shape, so the reader can compare the totals.',
       'A caption explains that the tallest bar names the shape seen most often.',
       'The glossary says observe means to watch carefully over time.',
     ].join(' '),
     contentKind: 'informational',
     sentences: [
       sentence(textFeatureHuntSentenceId(TEXT_FEATURE_HUNT_PASSAGE_KEYS.moonNotes, 1), 1, 'Each night, Priya writes moon notes in a class log and circles the shape she sees before bed.'),
-      sentence(textFeatureHuntSentenceId(TEXT_FEATURE_HUNT_PASSAGE_KEYS.moonNotes, 2), 2, 'The graph shows which moon shape the class saw each night, so the reader can compare the moon changes across the week.'),
+      sentence(textFeatureHuntSentenceId(TEXT_FEATURE_HUNT_PASSAGE_KEYS.moonNotes, 2), 2, 'The graph counts how many nights the class saw each moon shape, so the reader can compare the totals.'),
       sentence(textFeatureHuntSentenceId(TEXT_FEATURE_HUNT_PASSAGE_KEYS.moonNotes, 3), 3, 'A caption explains that the tallest bar names the shape seen most often.'),
       sentence(textFeatureHuntSentenceId(TEXT_FEATURE_HUNT_PASSAGE_KEYS.moonNotes, 4), 4, 'The glossary says observe means to watch carefully over time.'),
     ],
@@ -755,7 +755,7 @@ export const textFeatureHuntPassages: readonly Passage[] = [
           featureId: TEXT_FEATURE_HUNT_FEATURE_IDS.moonNotes.headingGraph,
           kind: 'heading',
           sectionId: TEXT_FEATURE_HUNT_PASSAGE_SECTION_IDS.moonNotes.graph,
-          text: 'Night by Night',
+          text: 'Moon Shape Counts',
         },
         {
           featureId: TEXT_FEATURE_HUNT_FEATURE_IDS.moonNotes.graph,
@@ -817,7 +817,7 @@ export const textFeatureHuntPassages: readonly Passage[] = [
         secondPart: 'aph',
         firstSpeech: 'gr',
         secondSpeech: 'aph',
-        sentenceSpeechText: 'The graph shows which moon shape the class saw each night, so the reader can compare the moon changes across the week.',
+        sentenceSpeechText: 'The graph counts how many nights the class saw each moon shape, so the reader can compare the totals.',
       }),
       supportTarget({
         targetId: TEXT_FEATURE_HUNT_SUPPORT_TARGET_IDS.moonNotes.sentence3,
@@ -848,14 +848,14 @@ export const textFeatureHuntPassages: readonly Passage[] = [
     gradeBand: 2,
     passageText: [
       'The class sorts paper, plastic, and cans into recycling bins after lunch clean-up time.',
-      'The graph shows which bin filled fastest during cleanup day, and the class compares the tall bars to see the pattern.',
+      'The graph shows how many bags went into each bin during cleanup day, and the class compares the bars to see which bin held the most.',
       'A caption points to the tallest bar and names the paper bin so readers know what it means.',
       'An illustration labels the bin lids, the sorting arrows, and the helper gloves to show how the class sorts each item.',
     ].join(' '),
     contentKind: 'informational',
     sentences: [
       sentence(textFeatureHuntSentenceId(TEXT_FEATURE_HUNT_PASSAGE_KEYS.recycleSort, 1), 1, 'The class sorts paper, plastic, and cans into recycling bins after lunch clean-up time.'),
-      sentence(textFeatureHuntSentenceId(TEXT_FEATURE_HUNT_PASSAGE_KEYS.recycleSort, 2), 2, 'The graph shows which bin filled fastest during cleanup day, and the class compares the tall bars to see the pattern.'),
+      sentence(textFeatureHuntSentenceId(TEXT_FEATURE_HUNT_PASSAGE_KEYS.recycleSort, 2), 2, 'The graph shows how many bags went into each bin during cleanup day, and the class compares the bars to see which bin held the most.'),
       sentence(textFeatureHuntSentenceId(TEXT_FEATURE_HUNT_PASSAGE_KEYS.recycleSort, 3), 3, 'A caption points to the tallest bar and names the paper bin so readers know what it means.'),
       sentence(textFeatureHuntSentenceId(TEXT_FEATURE_HUNT_PASSAGE_KEYS.recycleSort, 4), 4, 'An illustration labels the bin lids, the sorting arrows, and the helper gloves to show how the class sorts each item.'),
     ],
@@ -965,7 +965,7 @@ export const textFeatureHuntPassages: readonly Passage[] = [
         secondPart: 'aph',
         firstSpeech: 'gr',
         secondSpeech: 'aph',
-        sentenceSpeechText: 'The graph shows which bin filled fastest during cleanup day, and the class compares the tall bars to see the pattern.',
+        sentenceSpeechText: 'The graph shows how many bags went into each bin during cleanup day, and the class compares the bars to see which bin held the most.',
       }),
       supportTarget({
         targetId: TEXT_FEATURE_HUNT_SUPPORT_TARGET_IDS.recycleSort.sentence3,
@@ -995,14 +995,14 @@ export const textFeatureHuntPassages: readonly Passage[] = [
     passageIdentifier: TEXT_FEATURE_HUNT_PASSAGE_IDS.compostChange,
     gradeBand: 2,
     passageText: [
-      'The garden team watches compost change from scraps into soil-like bits near the herb bed.',
+      'The garden team watches compost change from scraps into soil-like bits.',
       'The map shows where the compost bin sits beside the herb bed and the hose hook, so helpers can find it quickly.',
       'A caption explains that the shaded spot keeps the bin cool and slows the warm, slow change inside.',
       'The glossary defines compost as decayed plant and food scraps that can help soil.',
     ].join(' '),
     contentKind: 'informational',
     sentences: [
-      sentence(textFeatureHuntSentenceId(TEXT_FEATURE_HUNT_PASSAGE_KEYS.compostChange, 1), 1, 'The garden team watches compost change from scraps into soil-like bits near the herb bed.'),
+      sentence(textFeatureHuntSentenceId(TEXT_FEATURE_HUNT_PASSAGE_KEYS.compostChange, 1), 1, 'The garden team watches compost change from scraps into soil-like bits.'),
       sentence(textFeatureHuntSentenceId(TEXT_FEATURE_HUNT_PASSAGE_KEYS.compostChange, 2), 2, 'The map shows where the compost bin sits beside the herb bed and the hose hook, so helpers can find it quickly.'),
       sentence(textFeatureHuntSentenceId(TEXT_FEATURE_HUNT_PASSAGE_KEYS.compostChange, 3), 3, 'A caption explains that the shaded spot keeps the bin cool and slows the warm, slow change inside.'),
       sentence(textFeatureHuntSentenceId(TEXT_FEATURE_HUNT_PASSAGE_KEYS.compostChange, 4), 4, 'The glossary defines compost as decayed plant and food scraps that can help soil.'),
@@ -1133,7 +1133,7 @@ export const textFeatureHuntPassages: readonly Passage[] = [
         secondPart: 'post',
         firstSpeech: 'com',
         secondSpeech: 'post',
-        sentenceSpeechText: 'The garden team watches compost change from scraps into soil-like bits near the herb bed.',
+        sentenceSpeechText: 'The garden team watches compost change from scraps into soil-like bits.',
       }),
       supportTarget({
         targetId: TEXT_FEATURE_HUNT_SUPPORT_TARGET_IDS.compostChange.sentence2,

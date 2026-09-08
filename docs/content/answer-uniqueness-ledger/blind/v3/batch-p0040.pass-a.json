@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0040",
+  "batchFileSha256": "45adaf03e5982146163e6e987b276d3c84849d36a70f5a71aabb21444036c0ed",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1089",
+      "fingerprint": "4ddadd24e427a7642006e392709153cb868645a2c1d72008b42cdb39849641e7",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The ending shows that patient observation produces a more detailed page.",
+              [
+                "S0024",
+                "S0029",
+                "S0030"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The early hurried choice establishes the contrast that the later patience resolves.",
+              [
+                "S0020",
+                "S0025",
+                "S0022"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Opening the journal sets the scene but does not develop the patience-versus-hurrying theme.",
+              [
+                "S0018"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The story shows that immediate hurried action scares the bird away.",
+              [
+                "S0020",
+                "S0025",
+                "S0022"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1090",
+      "fingerprint": "f842433372f294bebd58e41fd4da08ed451e4adeb3ffae98c2c89ca6155d4205",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Shows the initial hurried approach, before the turning point.",
+              [
+                "S0020"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Introduces the activity but not the change in approach.",
+              [
+                "S0018"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The guide's suggestion introduces the patient approach Asha then follows.",
+              [
+                "S0027",
+                "S0024"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Shows the successful result after the turning point.",
+              [
+                "S0030"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1091",
+      "fingerprint": "230c684dd82812d7f8405710a9e811184202b06fbf2e98c0b9d05023bb4122dc",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The branch consequence follows Asha's beginning choice and belongs in the middle link.",
+              [
+                "S0025",
+                "S0022"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Opening the journal is setting activity but does not develop the theme.",
+              [
+                "S0018"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the ending resolution.",
+              [
+                "S0029",
+                "S0030"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The hurried choice begins the theme's contrast between rushing and patience.",
+              [
+                "S0020"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the ending resolution.",
+              [
+                "S0029",
+                "S0030"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the beginning choice.",
+              [
+                "S0020"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The bird flying away is the consequence that develops the conflict in the middle.",
+              [
+                "S0025",
+                "S0022"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Opening the journal sets the scene but does not develop the theme.",
+              [
+                "S0018"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the beginning choice.",
+              [
+                "S0020"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The detailed finished page is the ending result that confirms the value of patience.",
+              [
+                "S0029",
+                "S0030"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Opening the journal is an initial setup detail.",
+              [
+                "S0018"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The bird flying away is the middle consequence.",
+              [
+                "S0025",
+                "S0022"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

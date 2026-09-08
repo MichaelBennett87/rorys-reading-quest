@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0046",
+  "batchFileSha256": "35a8c87b218cd933616066bd3edfaa67029c59c3e4e9b4664b60f691555a4fe7",
+  "reviewerThreadId": "01a07bc2-33d0-74f2-84b3-1f74918ca45e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0536",
+      "fingerprint": "aea224f47f0e00e19aa629926b2b702195f8a67b9bf6a776f6201ddcd0025b0d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Compost piles do not appear in the visible title, headings, illustration, caption, or glossary.", ["S0085", "S0089"]],
+            ["A2", "INCORRECT", "Seed travel routes do not match the weather-station title and features.", ["S0085", "S0089"]],
+            ["A3", "DEFENSIBLE", "The title names a class weather station, and the caption explains that its tools help the class keep daily weather notes.", ["S0085", "S0095"]],
+            ["A4", "INCORRECT", "Pollinator counts do not match the weather-station title and features.", ["S0085", "S0089"]]
+          ]
+        }
+      ],
+      "projectionDefect": "The informational projection preserves section sentence IDs but omits their learner-visible sentence text, so the complete passage body cannot be checked in this blind receipt."
+    },
+    {
+      "auditId": "Q0537",
+      "fingerprint": "03c009177a9c5216855a51a377d61176fdfd79c86af5a8bae170bdb905f71e5d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "A thermometer's temperature reading is one tool detail, not the complete passage-wide idea.", ["S0089"]],
+            ["A2", "DEFENSIBLE", "This complete thought unifies the weather tools, daily observations, and learning about weather patterns.", ["S0085", "S0087", "S0091", "S0095"]],
+            ["A3", "INCORRECT", "Circling cloudy days is one charting action rather than the central idea.", ["S0091", "S0077"]],
+            ["A4", "INCORRECT", "A wind sock's function is one tool detail rather than the central idea.", ["S0097"]]
+          ]
+        }
+      ],
+      "projectionDefect": "The informational projection preserves section sentence IDs but omits their learner-visible sentence text, so the complete passage body cannot be checked in this blind receipt."
+    },
+    {
+      "auditId": "Q0538",
+      "fingerprint": "534ddd0c6ddbce6f4d223a27af928716baf6aca05840c83b7826405f3e8ae399",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A2", "A3", "A4"],
+          "ambiguity": "The prompt asks for two details, but all four options directly support the central idea that tools and careful observations help the class learn about weather: A1 and A2 are recording or comparison practices, while A3 and A4 describe measurement tools. No visible criterion ranks only two above the others.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "DEFENSIBLE", "Circling cloudy days for later checking is a careful observation and comparison practice that helps the class learn weather patterns.", ["S0091", "S0077"]],
+            ["A2", "DEFENSIBLE", "Recording daily numbers in a chart is a careful observation practice central to learning about weather over time.", ["S0087", "S0091", "S0095"]],
+            ["A3", "DEFENSIBLE", "A wind sock is one of the station's tools and provides weather information about wind direction.", ["S0089", "S0097"]],
+            ["A4", "DEFENSIBLE", "A thermometer is one of the station's tools and provides weather information about temperature.", ["S0089"]]
+          ]
+        }
+      ],
+      "projectionDefect": "The informational projection preserves section sentence IDs but omits their learner-visible sentence text, so the quoted details also require complete-source rechecking after projection repair."
+    },
+    {
+      "auditId": "Q0539",
+      "fingerprint": "34ea6621132ed67ea4816d1f14011bd87930326e4cab94cf84ee0afa41ff0f72",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "This sentence directly states the complete central idea by naming both the tools and careful observations and explaining that they build weather knowledge.", ["S0085", "S0095", "S0096"]],
+            ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This supports day-to-day observation but does not state the complete learning-through-tools-and-observations idea as fully as A1.", ["S0095", "S0077"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Comparing notes supports pattern finding but covers only the observation portion of the larger idea.", ["S0091", "S0077"]],
+            ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "A rain gauge's function is one supporting tool example, not the complete central idea.", ["S0089"]]
+          ]
+        }
+      ],
+      "projectionDefect": "The informational projection preserves section sentence IDs but omits their learner-visible sentence text, so the Hot Text source segments cannot be checked against the complete passage body."
+    },
+    {
+      "auditId": "Q0540",
+      "fingerprint": "c0321b8ec4f1e304fc1ce86b68cf8462d533b152ec61a8b27da7fe6228033645",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Circling cloudy days is one observation detail, not the broad topic.", ["S0091", "S0077"]],
+            ["A2", "DEFENSIBLE", "Weather station notes accurately names the broad subject established by the title and caption.", ["S0085", "S0095"]],
+            ["A3", "INCORRECT", "A rain gauge's reading is one tool detail, not the broad topic.", ["S0089"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Recording numbers is one observation action rather than the complete central idea.", ["S0095", "S0077"]],
+            ["A2", "INCORRECT", "A thermometer's function is one tool detail rather than the central idea.", ["S0089"]],
+            ["A3", "DEFENSIBLE", "This complete thought explains how tools and careful observation help the class learn about weather.", ["S0085", "S0095", "S0096"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "A wind sock's function is a specific weather-station fact rather than the topic or central idea.", ["S0089", "S0097"]],
+            ["A2", "INCORRECT", "This states the central idea rather than another supporting detail.", ["S0085", "S0095"]],
+            ["A3", "INCORRECT", "Weather station notes names the topic rather than another true detail.", ["S0085"]]
+          ]
+        }
+      ],
+      "projectionDefect": "The informational projection preserves section sentence IDs but omits their learner-visible sentence text, so the truth and exact wording of quoted body details cannot be fully checked."
+    },
+    {
+      "auditId": "Q0541",
+      "fingerprint": "898d4f5fc9bbf7497d32534225541d03507d32a527d63ada26760cab3cecb08b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The title, section headings, map, and caption all focus on routes and methods by which seeds travel.", ["S0108", "S0110", "S0113", "S0117"]],
+            ["A2", "INCORRECT", "Compost piles are not represented in the visible title or features.", ["S0108", "S0111"]],
+            ["A3", "INCORRECT", "Trail markers are not represented in the visible title or features.", ["S0108", "S0111"]],
+            ["A4", "INCORRECT", "Weather stations are not represented in the visible title or features.", ["S0108", "S0111"]]
+          ]
+        }
+      ],
+      "projectionDefect": "The informational projection preserves section sentence IDs but omits their learner-visible sentence text, so the complete passage body cannot be checked in this blind receipt."
+    },
+    {
+      "auditId": "Q0542",
+      "fingerprint": "cd558fdb487679421148e3b0ce44fbc14eb50f136fac9983a33ebd6ecbef5f64",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Wind drift is one example of seed travel, not the complete passage-wide idea.", ["S0124", "S0127", "S0129"]],
+            ["A2", "INCORRECT", "A classroom map is one representation detail rather than the passage's central idea.", ["S0111", "S0117"]],
+            ["A3", "INCORRECT", "Birds dropping seeds is one animal-route example rather than the complete idea.", ["S0126", "S0128"]],
+            ["A4", "DEFENSIBLE", "This complete thought combines the passage's different travel methods with the resulting growth in new places.", ["S0108", "S0110", "S0113", "S0119"]]
+          ]
+        }
+      ],
+      "projectionDefect": "The informational projection preserves section sentence IDs but omits their learner-visible sentence text, so the complete passage body cannot be checked in this blind receipt."
+    },
+    {
+      "auditId": "Q0543",
+      "fingerprint": "809f16afbc010f66ecea793f4e210a80e01cddf3cd441d51275a975be2907495",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A2", "A3", "A4"],
+          "ambiguity": "Every option directly supports a substantial part of the stated central idea: A1, A2, and A4 are distinct ways seeds travel, while A3 explains how arriving at a new place helps a plant grow. The prompt gives no criterion that makes exactly one of these relevant details the most relevant.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "DEFENSIBLE", "Floating after rain is one of the different seed-travel methods named by the water route.", ["S0125", "S0129"]],
+            ["A2", "DEFENSIBLE", "Riding on shoes or socks is another concrete way seeds can travel to a new place.", ["S0100"]],
+            ["A3", "DEFENSIBLE", "Sun, soil, and space at a new location directly support the central idea's claim that travel helps new plants grow.", ["S0119", "S0100"]],
+            ["A4", "DEFENSIBLE", "Riding on fur or feathers is one of the different seed-travel methods explicitly represented by the animal route.", ["S0126", "S0128"]]
+          ]
+        }
+      ],
+      "projectionDefect": "The informational projection preserves section sentence IDs but omits their learner-visible sentence text, so the quoted details also require complete-source rechecking after projection repair."
+    },
+    {
+      "auditId": "Q0544",
+      "fingerprint": "b4a87b20b9f0af50ca6e632baa298690dbe089044e9b187220bd5716e7740fb7",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2", "A3", "A4"],
+          "ambiguity": "The prompt requests two details, but A2, A3, and A4 are three equally direct examples of the different ways seeds travel. No visible criterion selects only two travel methods.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "A classroom map can display travel, but this is a representation of the lesson rather than a seed-travel method supporting the central idea as directly as the other three.", ["S0111", "S0117"]],
+            ["A2", "DEFENSIBLE", "Floating on rainwater is a direct example of one way seeds travel.", ["S0125", "S0129"]],
+            ["A3", "DEFENSIBLE", "Drifting on wind is a direct example of one way seeds travel.", ["S0124", "S0127"]],
+            ["A4", "DEFENSIBLE", "Riding on fur or feathers is a direct example of one way seeds travel.", ["S0126", "S0128"]]
+          ]
+        }
+      ],
+      "projectionDefect": "The informational projection preserves section sentence IDs but omits their learner-visible sentence text, so the quoted details also require complete-source rechecking after projection repair."
+    },
+    {
+      "auditId": "Q0545",
+      "fingerprint": "02f145972e91bff3a734de614ac7ef0813de4bdaa49f2fd00f7c631aef58ec37",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "A bird dropping seeds is one animal-route example, not the complete central idea.", ["S0126", "S0128"]],
+            ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "A classroom map is a supporting representation rather than the passage-wide idea.", ["S0111", "S0117"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Floating after rain is one water-route example, not the complete central idea.", ["S0125", "S0129"]],
+            ["A4", "DEFENSIBLE", "This sentence directly states both parts of the complete idea: varied travel methods and growth in new places.", ["S0108", "S0110", "S0113", "S0119"]]
+          ]
+        }
+      ],
+      "projectionDefect": "The informational projection preserves section sentence IDs but omits their learner-visible sentence text, so the Hot Text source segments cannot be checked against the complete passage body."
+    },
+    {
+      "auditId": "Q0546",
+      "fingerprint": "9a2597556e20b759899bb8a1155af5149f642503db62b0135e19cc1019bc1f6c",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "A classroom map is one representation detail rather than the broad topic.", ["S0111", "S0117"]],
+            ["A2", "DEFENSIBLE", "Seed travel routes accurately names the broad subject established by the title, section headings, map, and caption.", ["S0108", "S0110", "S0113", "S0117"]],
+            ["A3", "INCORRECT", "Birds dropping seeds is one animal-route example rather than the broad topic.", ["S0126", "S0128"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Floating after rain is one water-route detail rather than the complete central idea.", ["S0125", "S0129"]],
+            ["A2", "INCORRECT", "Riding on fur or feathers is one animal-route detail rather than the complete central idea.", ["S0126", "S0128"]],
+            ["A3", "DEFENSIBLE", "This complete thought combines the different travel methods and their role in helping plants grow in new places.", ["S0108", "S0110", "S0113", "S0119"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "A classroom map showing where seeds traveled is a specific supporting detail, unlike the topic and central-idea alternatives, though its exact body occurrence requires rechecking after projection repair.", ["S0111", "S0117"]],
+            ["A2", "INCORRECT", "Seed travel routes names the topic rather than another true detail.", ["S0108"]],
+            ["A3", "INCORRECT", "This states the central idea rather than another supporting detail.", ["S0108", "S0119"]]
+          ]
+        }
+      ],
+      "projectionDefect": "The informational projection preserves section sentence IDs but omits their learner-visible sentence text, so the truth and exact wording of quoted body details cannot be fully checked."
+    },
+    {
+      "auditId": "Q0547",
+      "fingerprint": "d82ca00ac7e36e1f02d6851cd74d80c1591a3527598f12d3ebb1b3576c65b613",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "A classroom map is one supporting representation, not the central idea.", ["S0111", "S0117"]],
+            ["A2", "INCORRECT", "Wind drift is one travel-method detail, not the complete central idea.", ["S0124", "S0127", "S0129"]],
+            ["A3", "DEFENSIBLE", "This complete thought combines varied seed travel with the resulting opportunity for new plant growth.", ["S0108", "S0110", "S0113", "S0119"]]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": ["A1", "A2"],
+          "ambiguity": "Both A1 and A2 are equally direct examples of different seed-travel methods and therefore support the first major claim in Part A. The prompt gives no visible basis for ranking one method as the single best support.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "DEFENSIBLE", "Birds dropping seeds after eating fruit is a concrete animal-based travel method supporting Part A's claim that seeds travel in different ways.", ["S0126", "S0128"]],
+            ["A2", "DEFENSIBLE", "Light seeds drifting on wind are a concrete wind-based travel method supporting the same Part A claim.", ["S0124", "S0127", "S0129"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "A classroom map may show destinations, but it is a representation and does not directly explain a travel method or resulting plant growth as the other details do.", ["S0111", "S0117"]]
+          ]
+        }
+      ],
+      "projectionDefect": "The informational projection preserves section sentence IDs but omits their learner-visible sentence text, so the two-part quoted details require complete-source rechecking after projection repair."
+    }
+  ]
+}

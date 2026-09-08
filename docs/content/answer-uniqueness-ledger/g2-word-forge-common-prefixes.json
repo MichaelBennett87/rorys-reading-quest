@@ -1,0 +1,4183 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "q-word-forge-common-prefixes-guided-find-the-base-1",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-36a041dd01d5bd59",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "c77a801ba8208697e6f027753309b96e447c00da530c49401a7c2fb2ec7dc3e2",
+        "conclusionsSha256": "dc945823409b63a496e547d26a9861d115747445922e95bd46731d5e93b6c647",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0015.second-pass.json",
+        "receiptSha256": "703fe78fc7d3bbe4faa09d30ec9f6f5a6c319c631992321d1375bbb9da9e745a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the prefix un-?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "unpack-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "unpack-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "pack-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Pack is the unprefixed base word, not a word beginning with the prefix un-.",
+              "evidenceIds": [
+                "rebuild-corner-1"
+              ]
+            },
+            {
+              "answerId": "unpack-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Unpack is transparently formed from un- plus pack.",
+              "evidenceIds": [
+                "rebuild-corner-1"
+              ]
+            },
+            {
+              "answerId": "heat-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Heat does not begin with the prefix un-.",
+              "evidenceIds": [
+                "passage-g2-word-forge-common-prefixes-1"
+              ]
+            },
+            {
+              "answerId": "build-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Build is the unprefixed base used in rebuild, not an un- word.",
+              "evidenceIds": [
+                "rebuild-corner-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-guided-find-the-base-2",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-9ec6203e05f45aea",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "c77a801ba8208697e6f027753309b96e447c00da530c49401a7c2fb2ec7dc3e2",
+        "conclusionsSha256": "dc945823409b63a496e547d26a9861d115747445922e95bd46731d5e93b6c647",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0015.pass-a.canonical.json",
+        "receiptSha256": "dc945823409b63a496e547d26a9861d115747445922e95bd46731d5e93b6c647",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the prefix re-?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "rebuild-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rebuild-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "build-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Build is the unprefixed base word, not a word beginning with re-.",
+              "evidenceIds": [
+                "rebuild-corner-1"
+              ]
+            },
+            {
+              "answerId": "rebuild-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Rebuild is transparently formed from re- plus build.",
+              "evidenceIds": [
+                "rebuild-corner-1"
+              ]
+            },
+            {
+              "answerId": "count-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Count is the base in miscount and does not begin with re-.",
+              "evidenceIds": [
+                "rebuild-corner-3"
+              ]
+            },
+            {
+              "answerId": "pack-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Pack does not begin with the prefix re-.",
+              "evidenceIds": [
+                "rebuild-corner-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-guided-find-the-base-3",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-358fe5a3c90354a7",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "401c05135b140b9ac15e2b1599a4ff18a4f30b0e86f280a2380a0988fd8e1ad5",
+        "conclusionsSha256": "f0240f9f47fe4ca0d1ecc038dc433a386efe54ad2e5b7b4e7a45e2c47c68860b",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0007.pass-a.json",
+        "receiptSha256": "f0240f9f47fe4ca0d1ecc038dc433a386efe54ad2e5b7b4e7a45e2c47c68860b",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the prefix pre-?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "preheat-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "preheat-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "heat-choice",
+              "verdict": "INCORRECT",
+              "rationale": "heat is the base word and has no prefix.",
+              "evidenceIds": [
+                "cooking-demo-1"
+              ]
+            },
+            {
+              "answerId": "unsafe-choice",
+              "verdict": "INCORRECT",
+              "rationale": "unsafe begins with un-, not pre-.",
+              "evidenceIds": [
+                "cooking-demo-3"
+              ]
+            },
+            {
+              "answerId": "repaint-choice",
+              "verdict": "INCORRECT",
+              "rationale": "repaint begins with re-, not pre-.",
+              "evidenceIds": [
+                "cooking-demo-2"
+              ]
+            },
+            {
+              "answerId": "preheat-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "preheat begins with the prefix pre- attached to heat.",
+              "evidenceIds": [
+                "cooking-demo-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-guided-find-the-base-4",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-838c3a51068b9045",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "c77a801ba8208697e6f027753309b96e447c00da530c49401a7c2fb2ec7dc3e2",
+        "conclusionsSha256": "dc945823409b63a496e547d26a9861d115747445922e95bd46731d5e93b6c647",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0015.pass-a.canonical.json",
+        "receiptSha256": "dc945823409b63a496e547d26a9861d115747445922e95bd46731d5e93b6c647",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words in the repair passage that have a prefix.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "unpack-choice",
+            "rebuild-choice",
+            "reuse-choice",
+            "miscount-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "unpack-choice",
+            "miscount-choice",
+            "reuse-choice",
+            "rebuild-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "unpack-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Unpack contains the meaningful prefix un- before pack.",
+              "evidenceIds": [
+                "rebuild-corner-1"
+              ]
+            },
+            {
+              "answerId": "miscount-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Miscount contains the meaningful prefix mis- before count.",
+              "evidenceIds": [
+                "rebuild-corner-3"
+              ]
+            },
+            {
+              "answerId": "reuse-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Reuse contains the meaningful prefix re- before use.",
+              "evidenceIds": [
+                "rebuild-corner-2"
+              ]
+            },
+            {
+              "answerId": "rebuild-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Rebuild contains the meaningful prefix re- before build.",
+              "evidenceIds": [
+                "rebuild-corner-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-guided-find-the-base-5",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-0c47f502ec703dd6",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "c77a801ba8208697e6f027753309b96e447c00da530c49401a7c2fb2ec7dc3e2",
+        "conclusionsSha256": "dc945823409b63a496e547d26a9861d115747445922e95bd46731d5e93b6c647",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0015.pass-a.canonical.json",
+        "receiptSha256": "dc945823409b63a496e547d26a9861d115747445922e95bd46731d5e93b6c647",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that says one helper did miscount screws.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "rebuild-corner-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rebuild-corner-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "rebuild-corner-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes unpacking tools and rebuilding a shelf, not miscounting screws.",
+              "evidenceIds": [
+                "rebuild-corner-1"
+              ]
+            },
+            {
+              "answerId": "rebuild-corner-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This is the exact visible sentence stating that one helper miscounted screws.",
+              "evidenceIds": [
+                "rebuild-corner-3"
+              ]
+            },
+            {
+              "answerId": "rebuild-corner-2",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes reusing paint and checking a preview card, not miscounting screws.",
+              "evidenceIds": [
+                "rebuild-corner-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-guided-join-the-parts-1",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-819866c319402edf",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "c77a801ba8208697e6f027753309b96e447c00da530c49401a7c2fb2ec7dc3e2",
+        "conclusionsSha256": "dc945823409b63a496e547d26a9861d115747445922e95bd46731d5e93b6c647",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0015.pass-a.canonical.json",
+        "receiptSha256": "dc945823409b63a496e547d26a9861d115747445922e95bd46731d5e93b6c647",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the prefix un- and means not safe?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "unsafe-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "unsafe-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "repaint-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Repaint begins with re- and means paint again, not not safe.",
+              "evidenceIds": [
+                "cooking-demo-2"
+              ]
+            },
+            {
+              "answerId": "unsafe-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Unsafe is un- plus safe and means not safe in the tray sentence.",
+              "evidenceIds": [
+                "cooking-demo-3"
+              ]
+            },
+            {
+              "answerId": "heat-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Heat has neither the prefix un- nor the meaning not safe.",
+              "evidenceIds": [
+                "cooking-demo-1"
+              ]
+            },
+            {
+              "answerId": "safe-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Safe expresses the opposite meaning and has no un- prefix.",
+              "evidenceIds": [
+                "cooking-demo-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-guided-join-the-parts-2",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-dc5d77121d9aef2e",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "c77a801ba8208697e6f027753309b96e447c00da530c49401a7c2fb2ec7dc3e2",
+        "conclusionsSha256": "dc945823409b63a496e547d26a9861d115747445922e95bd46731d5e93b6c647",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0015.pass-a.canonical.json",
+        "receiptSha256": "dc945823409b63a496e547d26a9861d115747445922e95bd46731d5e93b6c647",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the prefix re- and means paint again?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "repaint-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "repaint-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "repaint-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Repaint is re- plus paint and means paint again.",
+              "evidenceIds": [
+                "cooking-demo-2"
+              ]
+            },
+            {
+              "answerId": "preview-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Preview begins with pre- and concerns seeing beforehand, not painting again.",
+              "evidenceIds": [
+                "cooking-demo-2"
+              ]
+            },
+            {
+              "answerId": "paint-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Paint is the base word and lacks the prefix re-.",
+              "evidenceIds": [
+                "cooking-demo-2"
+              ]
+            },
+            {
+              "answerId": "unsafe-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Unsafe begins with un- and means not safe.",
+              "evidenceIds": [
+                "cooking-demo-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-guided-join-the-parts-3",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-ccf3aaa0e43f44a4",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "c77a801ba8208697e6f027753309b96e447c00da530c49401a7c2fb2ec7dc3e2",
+        "conclusionsSha256": "dc945823409b63a496e547d26a9861d115747445922e95bd46731d5e93b6c647",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0015.pass-a.canonical.json",
+        "receiptSha256": "dc945823409b63a496e547d26a9861d115747445922e95bd46731d5e93b6c647",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the prefix pre- and means before heat?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "preheat-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "preheat-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "preheat-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Preheat is pre- plus heat and means to heat beforehand.",
+              "evidenceIds": [
+                "cooking-demo-1"
+              ]
+            },
+            {
+              "answerId": "repaint-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Repaint uses re- with paint and does not mean heat beforehand.",
+              "evidenceIds": [
+                "cooking-demo-2"
+              ]
+            },
+            {
+              "answerId": "preview-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Preview uses pre- with view, not heat.",
+              "evidenceIds": [
+                "cooking-demo-2"
+              ]
+            },
+            {
+              "answerId": "unsafe-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Unsafe uses un- with safe and is unrelated to heating beforehand.",
+              "evidenceIds": [
+                "cooking-demo-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-guided-join-the-parts-4",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-ae46061f411baf2b",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "c77a801ba8208697e6f027753309b96e447c00da530c49401a7c2fb2ec7dc3e2",
+        "conclusionsSha256": "dc945823409b63a496e547d26a9861d115747445922e95bd46731d5e93b6c647",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0015.pass-a.canonical.json",
+        "receiptSha256": "dc945823409b63a496e547d26a9861d115747445922e95bd46731d5e93b6c647",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "unsafe-row",
+          "prompt": "unsafe",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "unsafe-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "unsafe-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "unsafe-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "This split breaks the base safe into nonmeaningful pieces.",
+              "evidenceIds": [
+                "cooking-demo-3"
+              ]
+            },
+            {
+              "answerId": "unsafe-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "Uns is not the taught prefix and afe is not the base word.",
+              "evidenceIds": [
+                "cooking-demo-3"
+              ]
+            },
+            {
+              "answerId": "unsafe-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "U is not the prefix and nsafe is not the base word.",
+              "evidenceIds": [
+                "cooking-demo-3"
+              ]
+            },
+            {
+              "answerId": "unsafe-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Unsafe divides cleanly into prefix un- and base safe.",
+              "evidenceIds": [
+                "cooking-demo-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "repaint-row",
+          "prompt": "repaint",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "repaint-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "repaint-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "repaint-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "Rep is not the prefix and aint is not the base word.",
+              "evidenceIds": [
+                "cooking-demo-2"
+              ]
+            },
+            {
+              "answerId": "repaint-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Repaint divides cleanly into prefix re- and base paint.",
+              "evidenceIds": [
+                "cooking-demo-2"
+              ]
+            },
+            {
+              "answerId": "repaint-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "This split further breaks the base paint instead of preserving it.",
+              "evidenceIds": [
+                "cooking-demo-2"
+              ]
+            },
+            {
+              "answerId": "repaint-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "This split breaks the prefix re- into separate letters.",
+              "evidenceIds": [
+                "cooking-demo-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "preheat-row",
+          "prompt": "preheat",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "preheat-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "preheat-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "preheat-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "Preh is not the prefix and eat is not the base heat.",
+              "evidenceIds": [
+                "cooking-demo-1"
+              ]
+            },
+            {
+              "answerId": "preheat-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Preheat divides cleanly into prefix pre- and base heat.",
+              "evidenceIds": [
+                "cooking-demo-1"
+              ]
+            },
+            {
+              "answerId": "preheat-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "Pr is not the taught prefix and eheat is not the base word.",
+              "evidenceIds": [
+                "cooking-demo-1"
+              ]
+            },
+            {
+              "answerId": "preheat-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "This split further breaks the base heat instead of preserving it.",
+              "evidenceIds": [
+                "cooking-demo-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "preview-row",
+          "prompt": "preview",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "preview-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "preview-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "preview-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "P is not the prefix and review is not the intended base in preview.",
+              "evidenceIds": [
+                "cooking-demo-2"
+              ]
+            },
+            {
+              "answerId": "preview-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "This split further breaks the base view instead of preserving it.",
+              "evidenceIds": [
+                "cooking-demo-2"
+              ]
+            },
+            {
+              "answerId": "preview-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Preview divides cleanly into prefix pre- and base view.",
+              "evidenceIds": [
+                "cooking-demo-2"
+              ]
+            },
+            {
+              "answerId": "preview-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "Prev is not the taught prefix and iew is not the base word.",
+              "evidenceIds": [
+                "cooking-demo-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-guided-un-re-pre-1",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-0c71ebc55892f919",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "c77a801ba8208697e6f027753309b96e447c00da530c49401a7c2fb2ec7dc3e2",
+        "conclusionsSha256": "dc945823409b63a496e547d26a9861d115747445922e95bd46731d5e93b6c647",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0015.second-pass.json",
+        "receiptSha256": "703fe78fc7d3bbe4faa09d30ec9f6f5a6c319c631992321d1375bbb9da9e745a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the prefix pre- and means before test?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "pretest-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "pretest-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "preschool-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Preschool means before school, not test beforehand.",
+              "evidenceIds": [
+                "school-preview-3"
+              ]
+            },
+            {
+              "answerId": "unroll-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Unroll uses un- with roll and is unrelated to testing beforehand.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            },
+            {
+              "answerId": "pretest-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Pretest is pre- plus test and means to test beforehand.",
+              "evidenceIds": [
+                "school-preview-1"
+              ]
+            },
+            {
+              "answerId": "retell-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Retell uses re- with tell and means tell again.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-guided-un-re-pre-2",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-3c125891dcf76155",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "c77a801ba8208697e6f027753309b96e447c00da530c49401a7c2fb2ec7dc3e2",
+        "conclusionsSha256": "dc945823409b63a496e547d26a9861d115747445922e95bd46731d5e93b6c647",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0015.pass-a.canonical.json",
+        "receiptSha256": "dc945823409b63a496e547d26a9861d115747445922e95bd46731d5e93b6c647",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the prefix re- and means tell again?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "retell-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "retell-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "pretest-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Pretest means test beforehand, not tell again.",
+              "evidenceIds": [
+                "school-preview-1"
+              ]
+            },
+            {
+              "answerId": "unroll-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Unroll uses un- with roll and does not mean tell again.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            },
+            {
+              "answerId": "preschool-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Preschool uses pre- with school and does not mean tell again.",
+              "evidenceIds": [
+                "school-preview-3"
+              ]
+            },
+            {
+              "answerId": "retell-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Retell is re- plus tell and means tell again.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-guided-un-re-pre-3",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-4f628815d0731429",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "c77a801ba8208697e6f027753309b96e447c00da530c49401a7c2fb2ec7dc3e2",
+        "conclusionsSha256": "dc945823409b63a496e547d26a9861d115747445922e95bd46731d5e93b6c647",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0015.second-pass.json",
+        "receiptSha256": "703fe78fc7d3bbe4faa09d30ec9f6f5a6c319c631992321d1375bbb9da9e745a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words in the preview passage that have a prefix.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "pretest-choice",
+            "unroll-choice",
+            "retell-choice",
+            "preschool-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "pretest-choice",
+            "unroll-choice",
+            "preschool-choice",
+            "retell-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "pretest-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Pretest contains the meaningful prefix pre- before test.",
+              "evidenceIds": [
+                "school-preview-1"
+              ]
+            },
+            {
+              "answerId": "unroll-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Unroll contains the meaningful prefix un- before roll.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            },
+            {
+              "answerId": "preschool-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Preschool contains the meaningful prefix pre- before school.",
+              "evidenceIds": [
+                "school-preview-3"
+              ]
+            },
+            {
+              "answerId": "retell-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Retell contains the meaningful prefix re- before tell.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-guided-un-re-pre-4",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-316d4e998bbda63d",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "401c05135b140b9ac15e2b1599a4ff18a4f30b0e86f280a2380a0988fd8e1ad5",
+        "conclusionsSha256": "f0240f9f47fe4ca0d1ecc038dc433a386efe54ad2e5b7b4e7a45e2c47c68860b",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0015.second-pass.json",
+        "receiptSha256": "703fe78fc7d3bbe4faa09d30ec9f6f5a6c319c631992321d1375bbb9da9e745a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that says a child could unroll a poster while the teacher could retell the plan.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "school-preview-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "school-preview-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "school-preview-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence states both actions named in the prompt.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            },
+            {
+              "answerId": "school-preview-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes previewing an art game and hearing a song, not unrolling and retelling.",
+              "evidenceIds": [
+                "school-preview-1"
+              ]
+            },
+            {
+              "answerId": "school-preview-3",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes younger guests near a preschool room, not the requested actions.",
+              "evidenceIds": [
+                "school-preview-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-guided-un-re-pre-5",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-6f2c22706808418c",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "c77a801ba8208697e6f027753309b96e447c00da530c49401a7c2fb2ec7dc3e2",
+        "conclusionsSha256": "dc945823409b63a496e547d26a9861d115747445922e95bd46731d5e93b6c647",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0015.second-pass.json",
+        "receiptSha256": "703fe78fc7d3bbe4faa09d30ec9f6f5a6c319c631992321d1375bbb9da9e745a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "pretest-row",
+          "prompt": "pretest",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "pretest-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "pretest-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "pretest-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "Pr is not the taught prefix and etest is not the base word.",
+              "evidenceIds": [
+                "school-preview-1"
+              ]
+            },
+            {
+              "answerId": "pretest-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "Pret is not the prefix and est is not the base word.",
+              "evidenceIds": [
+                "school-preview-1"
+              ]
+            },
+            {
+              "answerId": "pretest-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Pretest divides cleanly into prefix pre- and base test.",
+              "evidenceIds": [
+                "school-preview-1"
+              ]
+            },
+            {
+              "answerId": "pretest-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "This split further breaks the base test instead of preserving it.",
+              "evidenceIds": [
+                "school-preview-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "unroll-row",
+          "prompt": "unroll",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "unroll-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "unroll-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "unroll-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Unroll divides cleanly into prefix un- and base roll.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            },
+            {
+              "answerId": "unroll-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "U is not the taught prefix and nroll is not the base word.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            },
+            {
+              "answerId": "unroll-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "This split further breaks the base roll instead of preserving it.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            },
+            {
+              "answerId": "unroll-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "Unr is not the prefix and oll is not the base word.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "retell-row",
+          "prompt": "retell",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "retell-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "retell-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "retell-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "This split further breaks the base tell instead of preserving it.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            },
+            {
+              "answerId": "retell-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "R is not the taught prefix and etell is not the base word.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            },
+            {
+              "answerId": "retell-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "Ret is not the prefix and ell is not the base word.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            },
+            {
+              "answerId": "retell-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Retell divides cleanly into prefix re- and base tell.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "preschool-row",
+          "prompt": "preschool",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "preschool-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "preschool-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "preschool-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Preschool divides cleanly into prefix pre- and base school.",
+              "evidenceIds": [
+                "school-preview-3"
+              ]
+            },
+            {
+              "answerId": "preschool-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "This split further breaks the base school instead of preserving it.",
+              "evidenceIds": [
+                "school-preview-3"
+              ]
+            },
+            {
+              "answerId": "preschool-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "Pr is not the taught prefix and eschool is not the base word.",
+              "evidenceIds": [
+                "school-preview-3"
+              ]
+            },
+            {
+              "answerId": "preschool-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "Pres is not the prefix and chool is not the base word.",
+              "evidenceIds": [
+                "school-preview-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-guided-join-the-parts-5",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-75d685594bbad6cd",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "ace0837a4e84ecf2da249f5bf2d3625d4fecd6e81193d5a3dedd461a9d067952",
+        "conclusionsSha256": "3149c7475e9dacc35f1979aa733206bc8c00a9ebadcd9d73d104eaecc753eabb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0016.pass-a.canonical.json",
+        "receiptSha256": "3149c7475e9dacc35f1979aa733206bc8c00a9ebadcd9d73d104eaecc753eabb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that says the class had to preheat the oven before it started.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "cooking-demo-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "cooking-demo-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "cooking-demo-3",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence says the tray was unsafe while cooling, not that the class preheated the oven.",
+              "evidenceIds": [
+                "cooking-demo-3"
+              ]
+            },
+            {
+              "answerId": "cooking-demo-2",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes a preview card and repainting a sign, not preheating the oven.",
+              "evidenceIds": [
+                "cooking-demo-2"
+              ]
+            },
+            {
+              "answerId": "cooking-demo-4",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence says everyone waited calmly and does not mention the oven.",
+              "evidenceIds": [
+                "cooking-demo-4"
+              ]
+            },
+            {
+              "answerId": "cooking-demo-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This is the exact visible sentence stating that the class had to preheat the oven before it started.",
+              "evidenceIds": [
+                "cooking-demo-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-guided-dis-mis-1",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-a84750b1620d72f5",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ace0837a4e84ecf2da249f5bf2d3625d4fecd6e81193d5a3dedd461a9d067952",
+        "conclusionsSha256": "3149c7475e9dacc35f1979aa733206bc8c00a9ebadcd9d73d104eaecc753eabb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0015.second-pass.json",
+        "receiptSha256": "703fe78fc7d3bbe4faa09d30ec9f6f5a6c319c631992321d1375bbb9da9e745a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the prefix dis- and means not agree?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "disagree-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "disagree-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "disconnect-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Disconnect means separate a connection, not fail to agree.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "agree-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Agree is the unprefixed base and expresses agreement rather than not agreeing.",
+              "evidenceIds": [
+                "science-notebook-1"
+              ]
+            },
+            {
+              "answerId": "disagree-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Disagree is dis- plus agree and means not agree.",
+              "evidenceIds": [
+                "science-notebook-1"
+              ]
+            },
+            {
+              "answerId": "place-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Place has neither the prefix dis- nor the meaning not agree.",
+              "evidenceIds": [
+                "science-notebook-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-guided-dis-mis-2",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-fe3ffe441afe24d0",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ace0837a4e84ecf2da249f5bf2d3625d4fecd6e81193d5a3dedd461a9d067952",
+        "conclusionsSha256": "3149c7475e9dacc35f1979aa733206bc8c00a9ebadcd9d73d104eaecc753eabb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0016.pass-a.canonical.json",
+        "receiptSha256": "3149c7475e9dacc35f1979aa733206bc8c00a9ebadcd9d73d104eaecc753eabb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the prefix mis- and means to put in the wrong place?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "misplace-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "misplace-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "disagree-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Disagree uses dis- and means not agree, not put in the wrong place.",
+              "evidenceIds": [
+                "science-notebook-1"
+              ]
+            },
+            {
+              "answerId": "disobey-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Disobey uses dis- and means not obey, not put in the wrong place.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "disconnect-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Disconnect uses dis- and means separate a connection, not put in the wrong place.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "misplace-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Misplace is mis- plus place and means put in the wrong place.",
+              "evidenceIds": [
+                "science-notebook-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-guided-dis-mis-3",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-158ed2309fcddacc",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "ace0837a4e84ecf2da249f5bf2d3625d4fecd6e81193d5a3dedd461a9d067952",
+        "conclusionsSha256": "3149c7475e9dacc35f1979aa733206bc8c00a9ebadcd9d73d104eaecc753eabb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0016.pass-a.canonical.json",
+        "receiptSha256": "3149c7475e9dacc35f1979aa733206bc8c00a9ebadcd9d73d104eaecc753eabb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words in the science notebook passage that have a prefix.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "disagree-choice",
+            "misplace-choice",
+            "disconnect-choice",
+            "disobey-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "disconnect-choice",
+            "misplace-choice",
+            "disagree-choice",
+            "disobey-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "disconnect-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Disconnect contains the meaningful prefix dis- before connect.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "misplace-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Misplace contains the meaningful prefix mis- before place.",
+              "evidenceIds": [
+                "science-notebook-2"
+              ]
+            },
+            {
+              "answerId": "disagree-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Disagree contains the meaningful prefix dis- before agree.",
+              "evidenceIds": [
+                "science-notebook-1"
+              ]
+            },
+            {
+              "answerId": "disobey-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Disobey contains the meaningful prefix dis- before obey.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-guided-dis-mis-4",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-d3e8fc4097360a04",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "ace0837a4e84ecf2da249f5bf2d3625d4fecd6e81193d5a3dedd461a9d067952",
+        "conclusionsSha256": "3149c7475e9dacc35f1979aa733206bc8c00a9ebadcd9d73d104eaecc753eabb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0016.pass-a.canonical.json",
+        "receiptSha256": "3149c7475e9dacc35f1979aa733206bc8c00a9ebadcd9d73d104eaecc753eabb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "disagree-row",
+          "prompt": "disagree",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "disagree-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "disagree-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "disagree-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "This split breaks the base agree into nonmeaningful pieces.",
+              "evidenceIds": [
+                "science-notebook-1"
+              ]
+            },
+            {
+              "answerId": "disagree-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "Disa is not the taught prefix and gree is not the base word.",
+              "evidenceIds": [
+                "science-notebook-1"
+              ]
+            },
+            {
+              "answerId": "disagree-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "This split separates the first letter from the base agree.",
+              "evidenceIds": [
+                "science-notebook-1"
+              ]
+            },
+            {
+              "answerId": "disagree-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Disagree divides cleanly into prefix dis- and base agree.",
+              "evidenceIds": [
+                "science-notebook-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "misplace-row",
+          "prompt": "misplace",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "misplace-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "misplace-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "misplace-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "Misp is not the prefix and lace is not the base word.",
+              "evidenceIds": [
+                "science-notebook-2"
+              ]
+            },
+            {
+              "answerId": "misplace-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "This split breaks the base place into nonmeaningful pieces.",
+              "evidenceIds": [
+                "science-notebook-2"
+              ]
+            },
+            {
+              "answerId": "misplace-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Misplace divides cleanly into prefix mis- and base place.",
+              "evidenceIds": [
+                "science-notebook-2"
+              ]
+            },
+            {
+              "answerId": "misplace-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "Mi is not the taught prefix and splace is not the base word.",
+              "evidenceIds": [
+                "science-notebook-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "disconnect-row",
+          "prompt": "disconnect",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "disconnect-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "disconnect-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "disconnect-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "D is not the taught prefix and isconnect is not the base word.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "disconnect-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Disconnect divides cleanly into prefix dis- and base connect.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "disconnect-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "This split breaks the base connect into nonmeaningful pieces.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "disconnect-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "Disco is not the prefix and nnect is not the base word.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "disobey-row",
+          "prompt": "disobey",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "disobey-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "disobey-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "disobey-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "D is not the taught prefix and isobey is not the base word.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "disobey-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "This split breaks the base obey into nonmeaningful pieces.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "disobey-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "Diso is not the prefix and bey is not the base word.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "disobey-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Disobey divides cleanly into prefix dis- and base obey.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-guided-dis-mis-5",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-9b0b95fe403dd20a",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "ace0837a4e84ecf2da249f5bf2d3625d4fecd6e81193d5a3dedd461a9d067952",
+        "conclusionsSha256": "3149c7475e9dacc35f1979aa733206bc8c00a9ebadcd9d73d104eaecc753eabb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0016.pass-a.canonical.json",
+        "receiptSha256": "3149c7475e9dacc35f1979aa733206bc8c00a9ebadcd9d73d104eaecc753eabb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "disagree-base-row",
+          "prompt": "disagree",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "agree-base"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "agree-base"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "connect-base",
+              "verdict": "INCORRECT",
+              "rationale": "Connect is the base of disconnect, not disagree.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "obey-base",
+              "verdict": "INCORRECT",
+              "rationale": "Obey is the base of disobey, not disagree.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "place-base",
+              "verdict": "INCORRECT",
+              "rationale": "Place is the base of misplace, not disagree.",
+              "evidenceIds": [
+                "science-notebook-2"
+              ]
+            },
+            {
+              "answerId": "agree-base",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Removing dis- from disagree leaves the base agree.",
+              "evidenceIds": [
+                "science-notebook-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "misplace-base-row",
+          "prompt": "misplace",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "place-base"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "place-base"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "agree-base-2",
+              "verdict": "INCORRECT",
+              "rationale": "Agree is the base of disagree, not misplace.",
+              "evidenceIds": [
+                "science-notebook-1"
+              ]
+            },
+            {
+              "answerId": "place-base",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Removing mis- from misplace leaves the base place.",
+              "evidenceIds": [
+                "science-notebook-2"
+              ]
+            },
+            {
+              "answerId": "connect-base-2",
+              "verdict": "INCORRECT",
+              "rationale": "Connect is the base of disconnect, not misplace.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "obey-base-2",
+              "verdict": "INCORRECT",
+              "rationale": "Obey is the base of disobey, not misplace.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "disconnect-base-row",
+          "prompt": "disconnect",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "connect-base"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "connect-base"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "obey-base-3",
+              "verdict": "INCORRECT",
+              "rationale": "Obey is the base of disobey, not disconnect.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "agree-base-3",
+              "verdict": "INCORRECT",
+              "rationale": "Agree is the base of disagree, not disconnect.",
+              "evidenceIds": [
+                "science-notebook-1"
+              ]
+            },
+            {
+              "answerId": "place-base-3",
+              "verdict": "INCORRECT",
+              "rationale": "Place is the base of misplace, not disconnect.",
+              "evidenceIds": [
+                "science-notebook-2"
+              ]
+            },
+            {
+              "answerId": "connect-base",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Removing dis- from disconnect leaves the base connect.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "disobey-base-row",
+          "prompt": "disobey",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "obey-base"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "obey-base"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "obey-base",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Removing dis- from disobey leaves the base obey.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "place-base-4",
+              "verdict": "INCORRECT",
+              "rationale": "Place is the base of misplace, not disobey.",
+              "evidenceIds": [
+                "science-notebook-2"
+              ]
+            },
+            {
+              "answerId": "agree-base-4",
+              "verdict": "INCORRECT",
+              "rationale": "Agree is the base of disagree, not disobey.",
+              "evidenceIds": [
+                "science-notebook-1"
+              ]
+            },
+            {
+              "answerId": "connect-base-4",
+              "verdict": "INCORRECT",
+              "rationale": "Connect is the base of disconnect, not disobey.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-checkpoint-a-1",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-0acb27e63e071e92",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ace0837a4e84ecf2da249f5bf2d3625d4fecd6e81193d5a3dedd461a9d067952",
+        "conclusionsSha256": "3149c7475e9dacc35f1979aa733206bc8c00a9ebadcd9d73d104eaecc753eabb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0016.pass-a.canonical.json",
+        "receiptSha256": "3149c7475e9dacc35f1979aa733206bc8c00a9ebadcd9d73d104eaecc753eabb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word means not happy?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "unhappy-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "unhappy-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "unhappy-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Unhappy means not happy and fits the child's feeling when the page was hard.",
+              "evidenceIds": [
+                "reading-circle-1"
+              ]
+            },
+            {
+              "answerId": "replay-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Replay means play again, not not happy.",
+              "evidenceIds": [
+                "reading-circle-2"
+              ]
+            },
+            {
+              "answerId": "unlock-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Unlock means open a lock or make accessible, not not happy.",
+              "evidenceIds": [
+                "reading-circle-1"
+              ]
+            },
+            {
+              "answerId": "happy-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Happy means pleased and is the opposite of not happy.",
+              "evidenceIds": [
+                "reading-circle-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-checkpoint-a-2",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-464da23db45a96d9",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ace0837a4e84ecf2da249f5bf2d3625d4fecd6e81193d5a3dedd461a9d067952",
+        "conclusionsSha256": "3149c7475e9dacc35f1979aa733206bc8c00a9ebadcd9d73d104eaecc753eabb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0016.pass-a.canonical.json",
+        "receiptSha256": "3149c7475e9dacc35f1979aa733206bc8c00a9ebadcd9d73d104eaecc753eabb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the prefix re- and means play again?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "replay-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "replay-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "happy-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Happy has no re- prefix and does not mean play again.",
+              "evidenceIds": [
+                "reading-circle-1"
+              ]
+            },
+            {
+              "answerId": "unlock-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Unlock uses un- with lock and does not mean play again.",
+              "evidenceIds": [
+                "reading-circle-1"
+              ]
+            },
+            {
+              "answerId": "unkind-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Unkind uses un- with kind and does not mean play again.",
+              "evidenceIds": [
+                "reading-circle-2"
+              ]
+            },
+            {
+              "answerId": "replay-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Replay is re- plus play and means play again.",
+              "evidenceIds": [
+                "reading-circle-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-checkpoint-a-3",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-d5b7a49f4347e2bb",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ace0837a4e84ecf2da249f5bf2d3625d4fecd6e81193d5a3dedd461a9d067952",
+        "conclusionsSha256": "3149c7475e9dacc35f1979aa733206bc8c00a9ebadcd9d73d104eaecc753eabb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0016.pass-a.canonical.json",
+        "receiptSha256": "3149c7475e9dacc35f1979aa733206bc8c00a9ebadcd9d73d104eaecc753eabb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the prefix pre- and means before heat?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "preheat-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "preheat-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "rebuild-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Rebuild uses re- with build and means build again.",
+              "evidenceIds": [
+                "community-project-1"
+              ]
+            },
+            {
+              "answerId": "unpack-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Unpack uses un- with pack and is unrelated to heating beforehand.",
+              "evidenceIds": [
+                "community-project-1"
+              ]
+            },
+            {
+              "answerId": "preheat-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Preheat is pre- plus heat and means to heat beforehand.",
+              "evidenceIds": [
+                "community-project-1"
+              ]
+            },
+            {
+              "answerId": "dislike-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Dislike uses dis- with like and means not like.",
+              "evidenceIds": [
+                "community-project-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-checkpoint-a-4",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-b544b0fe67571c3a",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ace0837a4e84ecf2da249f5bf2d3625d4fecd6e81193d5a3dedd461a9d067952",
+        "conclusionsSha256": "3149c7475e9dacc35f1979aa733206bc8c00a9ebadcd9d73d104eaecc753eabb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0016.pass-a.canonical.json",
+        "receiptSha256": "3149c7475e9dacc35f1979aa733206bc8c00a9ebadcd9d73d104eaecc753eabb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the base word in rebuild?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "build-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "build-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "heat-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Heat is the base of preheat, not rebuild.",
+              "evidenceIds": [
+                "community-project-1"
+              ]
+            },
+            {
+              "answerId": "pack-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Pack is the base of unpack, not rebuild.",
+              "evidenceIds": [
+                "community-project-1"
+              ]
+            },
+            {
+              "answerId": "re-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Re is the prefix in rebuild, not its base word.",
+              "evidenceIds": [
+                "community-project-1"
+              ]
+            },
+            {
+              "answerId": "build-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Removing re- from rebuild leaves the base word build.",
+              "evidenceIds": [
+                "community-project-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-checkpoint-a-5",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-86aa7888cfda66cc",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "401c05135b140b9ac15e2b1599a4ff18a4f30b0e86f280a2380a0988fd8e1ad5",
+        "conclusionsSha256": "f0240f9f47fe4ca0d1ecc038dc433a386efe54ad2e5b7b4e7a45e2c47c68860b",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0007.pass-a.json",
+        "receiptSha256": "f0240f9f47fe4ca0d1ecc038dc433a386efe54ad2e5b7b4e7a45e2c47c68860b",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words with prefixes in the supply cart passage.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "miscount-choice",
+            "misspell-choice",
+            "misprint-choice",
+            "unroll-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "miscount-choice",
+            "misspell-choice",
+            "misprint-choice",
+            "unroll-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "miscount-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "miscount contains the prefix mis- attached to count.",
+              "evidenceIds": [
+                "supply-cart-1"
+              ]
+            },
+            {
+              "answerId": "misspell-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "misspell contains the prefix mis- attached to spell.",
+              "evidenceIds": [
+                "supply-cart-2"
+              ]
+            },
+            {
+              "answerId": "misprint-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "misprint contains the prefix mis- attached to print.",
+              "evidenceIds": [
+                "supply-cart-2"
+              ]
+            },
+            {
+              "answerId": "unroll-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "unrolled contains the prefix un- attached to roll, with the ending -ed.",
+              "evidenceIds": [
+                "supply-cart-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-checkpoint-a-6",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-d8d93f7cb0e4c8f8",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "ace0837a4e84ecf2da249f5bf2d3625d4fecd6e81193d5a3dedd461a9d067952",
+        "conclusionsSha256": "3149c7475e9dacc35f1979aa733206bc8c00a9ebadcd9d73d104eaecc753eabb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0016.pass-a.canonical.json",
+        "receiptSha256": "3149c7475e9dacc35f1979aa733206bc8c00a9ebadcd9d73d104eaecc753eabb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that says children unpack boxes, rebuild a shelf, and preheat soup for the helpers.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "community-project-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "community-project-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "community-project-2",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence concerns disliking the plan and ignoring the chart, not the three project actions in the prompt.",
+              "evidenceIds": [
+                "community-project-2"
+              ]
+            },
+            {
+              "answerId": "community-project-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This is the exact visible sentence naming unpacking boxes, rebuilding a shelf, and preheating soup.",
+              "evidenceIds": [
+                "community-project-1"
+              ]
+            },
+            {
+              "answerId": "community-project-3",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence concerns retelling steps and painting a sign, not the three project actions in the prompt.",
+              "evidenceIds": [
+                "community-project-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-checkpoint-a-7",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-8c1590064320922a",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "ace0837a4e84ecf2da249f5bf2d3625d4fecd6e81193d5a3dedd461a9d067952",
+        "conclusionsSha256": "3149c7475e9dacc35f1979aa733206bc8c00a9ebadcd9d73d104eaecc753eabb",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0016.pass-a.canonical.json",
+        "receiptSha256": "3149c7475e9dacc35f1979aa733206bc8c00a9ebadcd9d73d104eaecc753eabb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "unpack-row",
+          "prompt": "unpack",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "unpack-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "unpack-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "unpack-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Unpack divides cleanly into prefix un- and base pack.",
+              "evidenceIds": [
+                "community-project-1"
+              ]
+            },
+            {
+              "answerId": "unpack-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "U is not the taught prefix and npack is not the base word.",
+              "evidenceIds": [
+                "community-project-1"
+              ]
+            },
+            {
+              "answerId": "unpack-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "This split breaks the base pack into nonmeaningful pieces.",
+              "evidenceIds": [
+                "community-project-1"
+              ]
+            },
+            {
+              "answerId": "unpack-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "Unp is not the prefix and ack is not the base word.",
+              "evidenceIds": [
+                "community-project-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "rebuild-row",
+          "prompt": "rebuild",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "rebuild-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rebuild-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "rebuild-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "This split breaks the base build into nonmeaningful pieces.",
+              "evidenceIds": [
+                "community-project-1"
+              ]
+            },
+            {
+              "answerId": "rebuild-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "R is not the taught prefix and ebuild is not the base word.",
+              "evidenceIds": [
+                "community-project-1"
+              ]
+            },
+            {
+              "answerId": "rebuild-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "Reb is not the prefix and uild is not the base word.",
+              "evidenceIds": [
+                "community-project-1"
+              ]
+            },
+            {
+              "answerId": "rebuild-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Rebuild divides cleanly into prefix re- and base build.",
+              "evidenceIds": [
+                "community-project-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "preheat-row",
+          "prompt": "preheat",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "preheat-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "preheat-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "preheat-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Preheat divides cleanly into prefix pre- and base heat.",
+              "evidenceIds": [
+                "community-project-1"
+              ]
+            },
+            {
+              "answerId": "preheat-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "Preh is not the prefix and eat is not the base heat.",
+              "evidenceIds": [
+                "community-project-1"
+              ]
+            },
+            {
+              "answerId": "preheat-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "Pr is not the taught prefix and eheat is not the base word.",
+              "evidenceIds": [
+                "community-project-1"
+              ]
+            },
+            {
+              "answerId": "preheat-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "This split breaks the base heat into nonmeaningful pieces.",
+              "evidenceIds": [
+                "community-project-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "dislike-row",
+          "prompt": "dislike",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "dislike-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "dislike-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "dislike-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "This split breaks the base like into nonmeaningful pieces.",
+              "evidenceIds": [
+                "community-project-2"
+              ]
+            },
+            {
+              "answerId": "dislike-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "Di is not the taught prefix and slike is not the base word.",
+              "evidenceIds": [
+                "community-project-2"
+              ]
+            },
+            {
+              "answerId": "dislike-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "Disl is not the prefix and ike is not the base word.",
+              "evidenceIds": [
+                "community-project-2"
+              ]
+            },
+            {
+              "answerId": "dislike-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Dislike divides cleanly into prefix dis- and base like.",
+              "evidenceIds": [
+                "community-project-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-checkpoint-b-1",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-8fb361ffc7c72193",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "3ea5369f3625cc865582b6992adb97d720a8a2a2ca1e694110337fd3539f2723",
+        "conclusionsSha256": "05955fb97eb0e69b9d697319f91db0699d4364c3035ae55c85435f58f8f9d70d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0017.pass-a.json",
+        "receiptSha256": "05955fb97eb0e69b9d697319f91db0699d4364c3035ae55c85435f58f8f9d70d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word means not safe?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "unsafe-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "unsafe-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "repaint-choice",
+              "verdict": "INCORRECT",
+              "rationale": "repaint means paint again, not not safe.",
+              "evidenceIds": [
+                "cooking-demo-2"
+              ]
+            },
+            {
+              "answerId": "preview-choice",
+              "verdict": "INCORRECT",
+              "rationale": "preview means view beforehand, not not safe.",
+              "evidenceIds": [
+                "cooking-demo-2"
+              ]
+            },
+            {
+              "answerId": "unsafe-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "unsafe combines un- with safe and means not safe, matching the tray context.",
+              "evidenceIds": [
+                "cooking-demo-3"
+              ]
+            },
+            {
+              "answerId": "safe-choice",
+              "verdict": "INCORRECT",
+              "rationale": "safe is the opposite of not safe.",
+              "evidenceIds": [
+                "cooking-demo-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-checkpoint-b-2",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-adc116fbde60220f",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "3ea5369f3625cc865582b6992adb97d720a8a2a2ca1e694110337fd3539f2723",
+        "conclusionsSha256": "05955fb97eb0e69b9d697319f91db0699d4364c3035ae55c85435f58f8f9d70d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0017.pass-a.json",
+        "receiptSha256": "05955fb97eb0e69b9d697319f91db0699d4364c3035ae55c85435f58f8f9d70d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the prefix re- and means paint again?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "repaint-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "repaint-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "preheat-choice",
+              "verdict": "INCORRECT",
+              "rationale": "preheat uses pre- and means heat beforehand, not paint again.",
+              "evidenceIds": [
+                "cooking-demo-1"
+              ]
+            },
+            {
+              "answerId": "unsafe-choice",
+              "verdict": "INCORRECT",
+              "rationale": "unsafe uses un-, not re-, and means not safe.",
+              "evidenceIds": [
+                "cooking-demo-3"
+              ]
+            },
+            {
+              "answerId": "preview-choice",
+              "verdict": "INCORRECT",
+              "rationale": "preview uses pre-, not re-, and means view beforehand.",
+              "evidenceIds": [
+                "cooking-demo-2"
+              ]
+            },
+            {
+              "answerId": "repaint-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "repaint separates into re- plus paint and means paint again.",
+              "evidenceIds": [
+                "cooking-demo-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-checkpoint-b-3",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-c858b6d30b182337",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "3ea5369f3625cc865582b6992adb97d720a8a2a2ca1e694110337fd3539f2723",
+        "conclusionsSha256": "05955fb97eb0e69b9d697319f91db0699d4364c3035ae55c85435f58f8f9d70d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0017.pass-a.json",
+        "receiptSha256": "05955fb97eb0e69b9d697319f91db0699d4364c3035ae55c85435f58f8f9d70d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the prefix mis- and means to put in the wrong place?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "misplace-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "misplace-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "disagree-choice",
+              "verdict": "INCORRECT",
+              "rationale": "disagree begins with dis- and means not agree.",
+              "evidenceIds": [
+                "science-notebook-1"
+              ]
+            },
+            {
+              "answerId": "disconnect-choice",
+              "verdict": "INCORRECT",
+              "rationale": "disconnect begins with dis- and means break or remove a connection.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "misplace-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "misplace begins with mis- and means put in the wrong place.",
+              "evidenceIds": [
+                "science-notebook-2"
+              ]
+            },
+            {
+              "answerId": "disobey-choice",
+              "verdict": "INCORRECT",
+              "rationale": "disobey begins with dis- and means not obey.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-checkpoint-b-4",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-c8e93478b3014934",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "3ea5369f3625cc865582b6992adb97d720a8a2a2ca1e694110337fd3539f2723",
+        "conclusionsSha256": "05955fb97eb0e69b9d697319f91db0699d4364c3035ae55c85435f58f8f9d70d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0017.pass-a.json",
+        "receiptSha256": "05955fb97eb0e69b9d697319f91db0699d4364c3035ae55c85435f58f8f9d70d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words with prefixes in the science notebook passage.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "disagree-choice",
+            "misplace-choice",
+            "disconnect-choice",
+            "disobey-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "disconnect-choice",
+            "disagree-choice",
+            "disobey-choice",
+            "misplace-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "disconnect-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "disconnect appears in the passage and contains the prefix dis- before connect.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "disagree-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "disagree appears in the passage and contains the prefix dis- before agree.",
+              "evidenceIds": [
+                "science-notebook-1"
+              ]
+            },
+            {
+              "answerId": "disobey-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "disobey appears in the passage and contains the prefix dis- before obey.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "misplace-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "misplace appears in the passage and contains the prefix mis- before place.",
+              "evidenceIds": [
+                "science-notebook-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-checkpoint-b-5",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-1764dbe17119ec0d",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "3ea5369f3625cc865582b6992adb97d720a8a2a2ca1e694110337fd3539f2723",
+        "conclusionsSha256": "05955fb97eb0e69b9d697319f91db0699d4364c3035ae55c85435f58f8f9d70d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0017.pass-a.json",
+        "receiptSha256": "05955fb97eb0e69b9d697319f91db0699d4364c3035ae55c85435f58f8f9d70d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that says the school preview let families pretest the art game and hear a welcome song.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "school-preview-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "school-preview-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "school-preview-2",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes unrolling a poster and retelling a plan.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            },
+            {
+              "answerId": "school-preview-3",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes younger guests near the preschool room.",
+              "evidenceIds": [
+                "school-preview-3"
+              ]
+            },
+            {
+              "answerId": "school-preview-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence exactly states that the preview let families pretest the game and hear a song.",
+              "evidenceIds": [
+                "school-preview-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-checkpoint-b-6",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-fc70809eb5e067b2",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "3ea5369f3625cc865582b6992adb97d720a8a2a2ca1e694110337fd3539f2723",
+        "conclusionsSha256": "05955fb97eb0e69b9d697319f91db0699d4364c3035ae55c85435f58f8f9d70d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0017.pass-a.json",
+        "receiptSha256": "05955fb97eb0e69b9d697319f91db0699d4364c3035ae55c85435f58f8f9d70d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words in the science notebook passage that begin with dis-.",
+          "requestedSelectionCount": 3,
+          "keyedAnswerIds": [
+            "disagree-choice",
+            "disconnect-choice",
+            "disobey-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "disagree-choice",
+            "disobey-choice",
+            "disconnect-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "disagree-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "disagree appears in the passage and begins with dis-.",
+              "evidenceIds": [
+                "science-notebook-1"
+              ]
+            },
+            {
+              "answerId": "disobey-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "disobey appears in the passage and begins with dis-.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "disconnect-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "disconnect appears in the passage and begins with dis-.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "misplace-choice",
+              "verdict": "INCORRECT",
+              "rationale": "misplace begins with mis-, not dis-.",
+              "evidenceIds": [
+                "science-notebook-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-checkpoint-b-7",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-f2a9e65513be5971",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "3ea5369f3625cc865582b6992adb97d720a8a2a2ca1e694110337fd3539f2723",
+        "conclusionsSha256": "05955fb97eb0e69b9d697319f91db0699d4364c3035ae55c85435f58f8f9d70d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0017.pass-a.json",
+        "receiptSha256": "05955fb97eb0e69b9d697319f91db0699d4364c3035ae55c85435f58f8f9d70d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "disagree-row",
+          "prompt": "disagree",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "disagree-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "disagree-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "disagree-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "dis | a gree breaks the base agree into separate pieces.",
+              "evidenceIds": [
+                "science-notebook-1"
+              ]
+            },
+            {
+              "answerId": "disagree-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "dis | agree preserves the prefix dis- and the complete base agree.",
+              "evidenceIds": [
+                "science-notebook-1"
+              ]
+            },
+            {
+              "answerId": "disagree-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "disa | gree places part of the base with the prefix.",
+              "evidenceIds": [
+                "science-notebook-1"
+              ]
+            },
+            {
+              "answerId": "disagree-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "dis | ag ree breaks the base agree into separate pieces.",
+              "evidenceIds": [
+                "science-notebook-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "misplace-row",
+          "prompt": "misplace",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "misplace-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "misplace-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "misplace-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "mi | splace does not preserve the prefix mis- or base place.",
+              "evidenceIds": [
+                "science-notebook-2"
+              ]
+            },
+            {
+              "answerId": "misplace-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "misp | lace places part of the base with the prefix.",
+              "evidenceIds": [
+                "science-notebook-2"
+              ]
+            },
+            {
+              "answerId": "misplace-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "mis | pl ace breaks the base place into separate pieces.",
+              "evidenceIds": [
+                "science-notebook-2"
+              ]
+            },
+            {
+              "answerId": "misplace-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "mis | place preserves the prefix mis- and complete base place.",
+              "evidenceIds": [
+                "science-notebook-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "disconnect-row",
+          "prompt": "disconnect",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "disconnect-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "disconnect-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "disconnect-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "d | isconnect does not preserve the prefix dis- or base connect.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "disconnect-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "disco | nnect places part of the base with the prefix.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "disconnect-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "dis | connect preserves the prefix dis- and complete base connect.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "disconnect-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "dis | con nect breaks the base connect into separate pieces.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "disobey-row",
+          "prompt": "disobey",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "disobey-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "disobey-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "disobey-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "dis | obey preserves the prefix dis- and complete base obey.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "disobey-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "d | isobey does not preserve the prefix dis- or base obey.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "disobey-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "dis | o bey breaks the base obey into separate pieces.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "disobey-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "diso | bey places part of the base with the prefix.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-checkpoint-c-1",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-6ec40bafde89288b",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "3ea5369f3625cc865582b6992adb97d720a8a2a2ca1e694110337fd3539f2723",
+        "conclusionsSha256": "05955fb97eb0e69b9d697319f91db0699d4364c3035ae55c85435f58f8f9d70d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0017.pass-a.json",
+        "receiptSha256": "05955fb97eb0e69b9d697319f91db0699d4364c3035ae55c85435f58f8f9d70d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the prefix pre- and means before test?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "pretest-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "pretest-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "preschool-choice",
+              "verdict": "INCORRECT",
+              "rationale": "preschool uses pre- with school and means before school, not before test.",
+              "evidenceIds": [
+                "school-preview-3"
+              ]
+            },
+            {
+              "answerId": "unroll-choice",
+              "verdict": "INCORRECT",
+              "rationale": "unroll uses un-, not pre-, and means open something rolled.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            },
+            {
+              "answerId": "pretest-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "pretest separates into pre- plus test and means a test beforehand.",
+              "evidenceIds": [
+                "school-preview-1"
+              ]
+            },
+            {
+              "answerId": "retell-choice",
+              "verdict": "INCORRECT",
+              "rationale": "retell uses re-, not pre-, and means tell again.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-checkpoint-c-2",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-7f75cad1e074f74d",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "3ea5369f3625cc865582b6992adb97d720a8a2a2ca1e694110337fd3539f2723",
+        "conclusionsSha256": "05955fb97eb0e69b9d697319f91db0699d4364c3035ae55c85435f58f8f9d70d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0017.pass-a.json",
+        "receiptSha256": "05955fb97eb0e69b9d697319f91db0699d4364c3035ae55c85435f58f8f9d70d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the prefix dis- and means not obey?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "disobey-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "disobey-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "disagree-choice",
+              "verdict": "INCORRECT",
+              "rationale": "disagree means not agree, not not obey.",
+              "evidenceIds": [
+                "science-notebook-1"
+              ]
+            },
+            {
+              "answerId": "misplace-choice",
+              "verdict": "INCORRECT",
+              "rationale": "misplace begins with mis- and means put in the wrong place.",
+              "evidenceIds": [
+                "science-notebook-2"
+              ]
+            },
+            {
+              "answerId": "disobey-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "disobey separates into dis- plus obey and means not obey.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            },
+            {
+              "answerId": "disconnect-choice",
+              "verdict": "INCORRECT",
+              "rationale": "disconnect means break or remove a connection, not not obey.",
+              "evidenceIds": [
+                "science-notebook-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-checkpoint-c-3",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-99a1967a2ba6df46",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "3ea5369f3625cc865582b6992adb97d720a8a2a2ca1e694110337fd3539f2723",
+        "conclusionsSha256": "05955fb97eb0e69b9d697319f91db0699d4364c3035ae55c85435f58f8f9d70d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0017.pass-a.json",
+        "receiptSha256": "05955fb97eb0e69b9d697319f91db0699d4364c3035ae55c85435f58f8f9d70d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has the prefix un- and means not kind?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "unkind-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "unkind-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "replay-choice",
+              "verdict": "INCORRECT",
+              "rationale": "replay uses re- and means play again.",
+              "evidenceIds": [
+                "reading-circle-2"
+              ]
+            },
+            {
+              "answerId": "unkind-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "unkind separates into un- plus kind and means not kind.",
+              "evidenceIds": [
+                "reading-circle-2"
+              ]
+            },
+            {
+              "answerId": "unlock-choice",
+              "verdict": "INCORRECT",
+              "rationale": "unlock uses un- but means open a lock, not not kind.",
+              "evidenceIds": [
+                "reading-circle-1"
+              ]
+            },
+            {
+              "answerId": "happy-choice",
+              "verdict": "INCORRECT",
+              "rationale": "happy does not begin with un- and does not mean not kind.",
+              "evidenceIds": [
+                "reading-circle-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-checkpoint-c-4",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-025eb1810f928aed",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "3ea5369f3625cc865582b6992adb97d720a8a2a2ca1e694110337fd3539f2723",
+        "conclusionsSha256": "05955fb97eb0e69b9d697319f91db0699d4364c3035ae55c85435f58f8f9d70d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0017.pass-a.json",
+        "receiptSha256": "05955fb97eb0e69b9d697319f91db0699d4364c3035ae55c85435f58f8f9d70d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words with prefixes in the reading circle passage.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "unhappy-choice",
+            "unlock-choice",
+            "replay-choice",
+            "unkind-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "unhappy-choice",
+            "unkind-choice",
+            "unlock-choice",
+            "replay-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "unhappy-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "unhappy appears in the passage and contains un- before happy.",
+              "evidenceIds": [
+                "reading-circle-1"
+              ]
+            },
+            {
+              "answerId": "unkind-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "unkind appears in the passage and contains un- before kind.",
+              "evidenceIds": [
+                "reading-circle-2"
+              ]
+            },
+            {
+              "answerId": "unlock-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "unlock appears in the passage and contains un- before lock.",
+              "evidenceIds": [
+                "reading-circle-1"
+              ]
+            },
+            {
+              "answerId": "replay-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "replay appears in the passage and contains re- before play.",
+              "evidenceIds": [
+                "reading-circle-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-checkpoint-c-5",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-90bb2fafaad555bb",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "401c05135b140b9ac15e2b1599a4ff18a4f30b0e86f280a2380a0988fd8e1ad5",
+        "conclusionsSha256": "f0240f9f47fe4ca0d1ecc038dc433a386efe54ad2e5b7b4e7a45e2c47c68860b",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0007.pass-a.json",
+        "receiptSha256": "f0240f9f47fe4ca0d1ecc038dc433a386efe54ad2e5b7b4e7a45e2c47c68860b",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that says a child could unroll a poster while the teacher could retell the plan.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "school-preview-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "school-preview-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "school-preview-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence states both actions named in the prompt.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            },
+            {
+              "answerId": "school-preview-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes previewing an art game and hearing a song, not unrolling and retelling.",
+              "evidenceIds": [
+                "school-preview-1"
+              ]
+            },
+            {
+              "answerId": "school-preview-3",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes younger guests near a preschool room, not the requested actions.",
+              "evidenceIds": [
+                "school-preview-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-checkpoint-c-6",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-465a542fe67cddd3",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "3ea5369f3625cc865582b6992adb97d720a8a2a2ca1e694110337fd3539f2723",
+        "conclusionsSha256": "05955fb97eb0e69b9d697319f91db0699d4364c3035ae55c85435f58f8f9d70d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0017.pass-a.json",
+        "receiptSha256": "05955fb97eb0e69b9d697319f91db0699d4364c3035ae55c85435f58f8f9d70d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that says a helper can misspell the label and notice a misprint on the sign.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "supply-cart-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "supply-cart-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "supply-cart-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes not miscounting crayons.",
+              "evidenceIds": [
+                "supply-cart-1"
+              ]
+            },
+            {
+              "answerId": "supply-cart-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence exactly states that a helper can misspell a label and notice a misprint.",
+              "evidenceIds": [
+                "supply-cart-2"
+              ]
+            },
+            {
+              "answerId": "supply-cart-3",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes two children unrolling a chart.",
+              "evidenceIds": [
+                "supply-cart-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-common-prefixes-checkpoint-c-7",
+      "packId": "g2-word-forge-common-prefixes",
+      "contentVersion": "g2-wf-common-prefixes-r0.1.0",
+      "contentFingerprint": "qta-v1-7a32b4fa31748fbe",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "3ea5369f3625cc865582b6992adb97d720a8a2a2ca1e694110337fd3539f2723",
+        "conclusionsSha256": "05955fb97eb0e69b9d697319f91db0699d4364c3035ae55c85435f58f8f9d70d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0015.second-pass.json",
+        "receiptSha256": "703fe78fc7d3bbe4faa09d30ec9f6f5a6c319c631992321d1375bbb9da9e745a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "pretest-row",
+          "prompt": "pretest",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "pretest-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "pretest-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "pretest-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "pret | est does not preserve the prefix pre- or base test.",
+              "evidenceIds": [
+                "school-preview-1"
+              ]
+            },
+            {
+              "answerId": "pretest-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "pr | etest does not preserve the prefix pre- or base test.",
+              "evidenceIds": [
+                "school-preview-1"
+              ]
+            },
+            {
+              "answerId": "pretest-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "pre | test preserves the prefix pre- and complete base test.",
+              "evidenceIds": [
+                "school-preview-1"
+              ]
+            },
+            {
+              "answerId": "pretest-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "pre | t est breaks the base test into separate pieces.",
+              "evidenceIds": [
+                "school-preview-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "unroll-row",
+          "prompt": "unroll",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "unroll-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "unroll-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "unroll-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "unr | oll places part of the base with the prefix.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            },
+            {
+              "answerId": "unroll-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "u | nroll does not preserve the prefix un- or base roll.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            },
+            {
+              "answerId": "unroll-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "un | roll preserves the prefix un- and complete base roll.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            },
+            {
+              "answerId": "unroll-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "un | r oll breaks the base roll into separate pieces.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "retell-row",
+          "prompt": "retell",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "retell-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "retell-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "retell-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "ret | ell places part of the base with the prefix.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            },
+            {
+              "answerId": "retell-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "re | t ell breaks the base tell into separate pieces.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            },
+            {
+              "answerId": "retell-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "r | etell does not preserve the prefix re- or base tell.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            },
+            {
+              "answerId": "retell-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "re | tell preserves the prefix re- and complete base tell.",
+              "evidenceIds": [
+                "school-preview-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "preschool-row",
+          "prompt": "preschool",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "preschool-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "preschool-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "preschool-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "pr | eschool does not preserve the prefix pre- or base school.",
+              "evidenceIds": [
+                "school-preview-3"
+              ]
+            },
+            {
+              "answerId": "preschool-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "pre | school preserves the prefix pre- and complete base school.",
+              "evidenceIds": [
+                "school-preview-3"
+              ]
+            },
+            {
+              "answerId": "preschool-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "pre | s chool breaks the base school into separate pieces.",
+              "evidenceIds": [
+                "school-preview-3"
+              ]
+            },
+            {
+              "answerId": "preschool-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "pres | chool places part of the base with the prefix.",
+              "evidenceIds": [
+                "school-preview-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

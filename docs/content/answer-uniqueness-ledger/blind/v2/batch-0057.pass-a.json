@@ -1,0 +1,1076 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0057",
+  "batchFileSha256": "8425319e8019223c48b38499ae8ffd6fb457b2d92bd991a63348cfd984113267",
+  "reviewerThreadId": "01a07bc1-57ca-7230-a515-d322b50c9d2e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0664",
+      "fingerprint": "381fddc9a78b9afc6899c7acb49aecf5b51d887a60336cc97bc158b439528c60",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence uses example, not identify.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence uses predict, not identify.",
+              [
+                "S0077"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence contains neither the target word nor its identifying action.",
+              [
+                "S0082"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Identify correctly names the action of determining the book category from its cover.",
+              [
+                "S0075"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0665",
+      "fingerprint": "3bfde8adf0f66fee3867789f134d3b7be97eaf7163611f76ec4bdc8a63bd7260",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence uses identify, not predict.",
+              [
+                "S0075"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence uses example, not predict.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Predict correctly means making a reasoned guess about the ending before it is known.",
+              [
+                "S0077"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Visiting a preview table does not itself use or express predict.",
+              [
+                "S0082"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0666",
+      "fingerprint": "ea964989f437a1420b8fbe4d51853b803249558113ad5648c46add3fe0b16dc3",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence does not use example or describe a sample illustrating an idea.",
+              [
+                "S0082"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence uses predict, not example.",
+              [
+                "S0077"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Example correctly names a sample note card used to show what a book-talk card can be like.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence uses identify, not example.",
+              [
+                "S0075"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0667",
+      "fingerprint": "5867fcc2baf273b0dcec75c2ef039474e6624a6aecb201aa5e724ed1dac09130",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8"
+          ],
+          "ambiguity": "The prompt asks for two subjects, but detail is an ordinary academic word in writing, math, nature study, art, science, reading, library work, and social studies; no visible constraint distinguishes only two.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The academic word detail can be used meaningfully in this subject; the prompt gives no subject-specific restriction.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The academic word detail can be used meaningfully in this subject; the prompt gives no subject-specific restriction.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The academic word detail can be used meaningfully in this subject; the prompt gives no subject-specific restriction.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The academic word detail can be used meaningfully in this subject; the prompt gives no subject-specific restriction.",
+              []
+            ],
+            [
+              "A5",
+              "DEFENSIBLE",
+              "The academic word detail can be used meaningfully in this subject; the prompt gives no subject-specific restriction.",
+              []
+            ],
+            [
+              "A6",
+              "DEFENSIBLE",
+              "The academic word detail can be used meaningfully in this subject; the prompt gives no subject-specific restriction.",
+              []
+            ],
+            [
+              "A7",
+              "DEFENSIBLE",
+              "The academic word detail can be used meaningfully in this subject; the prompt gives no subject-specific restriction.",
+              []
+            ],
+            [
+              "A8",
+              "DEFENSIBLE",
+              "The academic word detail can be used meaningfully in this subject; the prompt gives no subject-specific restriction.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0668",
+      "fingerprint": "27945712541ba94e544ea02a151b75eecafcdc68ecd3bc39f83fdd361dcfeaa7",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence uses identify rather than predict.",
+              [
+                "S0075"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence uses example rather than predict.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Visiting the table does not express a guess about a future or unknown outcome.",
+              [
+                "S0082"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Predict correctly describes making a reasoned guess about the ending.",
+              [
+                "S0077"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0669",
+      "fingerprint": "aedd6e834c8e95bbe572c8c766fbef1c91ddf5625e92eee136d4836b633f5d10",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Predict means make a reasoned guess, not name or pick out.",
+              [
+                "S0077"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Example means a sample, not name or pick out.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Identify means name or pick out something correctly.",
+              [
+                "S0075"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Detail means a small fact, not the act of naming or picking out.",
+              [
+                "S0081"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Identify means name or pick out, not guess what may happen.",
+              [
+                "S0075"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Example means a sample, not a forecast.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Detail means a small fact, not a reasoned guess.",
+              [
+                "S0081"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Predict means make a smart guess about what may happen.",
+              [
+                "S0077"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "A detail adds information but is not necessarily a sample illustrating an idea.",
+              [
+                "S0081"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Identify means name or pick out, not give a sample.",
+              [
+                "S0075"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "An example is a sample that helps show an idea.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Predict means guess what may happen, not provide a sample.",
+              [
+                "S0077"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Identify is an action, not a small supporting fact.",
+              [
+                "S0075"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "An example is a sample and may contain details, but it is not the word defined by this clue.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "A detail is a small fact that adds information.",
+              [
+                "S0081"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Predict means guess what may happen, not a small fact.",
+              [
+                "S0077"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0670",
+      "fingerprint": "070bc7b605f25e60bd61a6b88fed8cd8d28c31447cb4c7b0bb71491e802d26b8",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "A fact is information known to be true, not specifically a sample used to show an idea.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Example directly means one sample used to help show an idea.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "A topic is what something is about, not a sample.",
+              [
+                "S0086"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "A detail adds information, but the clue specifically asks for a sample illustrating an idea.",
+              [
+                "S0081"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [],
+          "ambiguity": "No option explains the semantic match between example and “one sample that helps show an idea.” The generic academic-word statement applies equally to fact, topic, and detail, so it cannot explain why example fits best.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "Example is a school and academic word, so this claim is false.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "An example can contain a detail, but calling it one small detail does not explain its defining sample function.",
+              [
+                "S0079",
+                "S0081"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "Example does not merely name the topic.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is true of every candidate academic word and does not explain why example matches the definition.",
+              [
+                "S0079"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0671",
+      "fingerprint": "4e7bdfc43af6d1795c45a49b31dda65ab6140fb9c2b0bf9ab2406f9a1227d8a5",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Looking at two charts does not by itself state that similarities or differences are examined.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Compare correctly describes examining the morning and afternoon charts to see what changed.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence uses describe rather than compare.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence uses result rather than compare.",
+              [
+                "S0007"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0672",
+      "fingerprint": "0a9223e47c97a8321adc2b9c876b60afaa0204fc78689f7e54c4013726fb7c3a",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Describe correctly introduces words telling what the morning chart is like.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence uses compare, not describe.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence uses result, not describe.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Looking at charts does not itself tell what either chart is like.",
+              [
+                "S0010"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0673",
+      "fingerprint": "49d0ec5db626de99e5fa17af0686d6d0f5d0576aaabb6c473ecd7895a7937877",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Result correctly names what happened because of the rainstorm.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This reports an action but does not use result or name an outcome.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence uses compare rather than result.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence uses describe rather than result.",
+              [
+                "S0005"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0674",
+      "fingerprint": "970306d89b6a039b3c5cceba46087657a8a81d545362915b62829e37ac674d47",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8"
+          ],
+          "ambiguity": "The prompt asks for two subjects, but example is usable in science, library work, writing, reading, math, nature study, art, and social studies; no visible criterion limits the answer to two.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The academic word example can be used meaningfully in this subject; the prompt gives no subject-specific restriction.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The academic word example can be used meaningfully in this subject; the prompt gives no subject-specific restriction.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The academic word example can be used meaningfully in this subject; the prompt gives no subject-specific restriction.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The academic word example can be used meaningfully in this subject; the prompt gives no subject-specific restriction.",
+              []
+            ],
+            [
+              "A5",
+              "DEFENSIBLE",
+              "The academic word example can be used meaningfully in this subject; the prompt gives no subject-specific restriction.",
+              []
+            ],
+            [
+              "A6",
+              "DEFENSIBLE",
+              "The academic word example can be used meaningfully in this subject; the prompt gives no subject-specific restriction.",
+              []
+            ],
+            [
+              "A7",
+              "DEFENSIBLE",
+              "The academic word example can be used meaningfully in this subject; the prompt gives no subject-specific restriction.",
+              []
+            ],
+            [
+              "A8",
+              "DEFENSIBLE",
+              "The academic word example can be used meaningfully in this subject; the prompt gives no subject-specific restriction.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0675",
+      "fingerprint": "f347283f4e0e2885741e3ae3d86e9bee9ba0e291f68ac771913080a87e871488",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence uses result rather than describe.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Looking at charts does not itself state what a chart is like.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence uses compare rather than describe.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Describe correctly introduces words telling what the morning chart is like.",
+              [
+                "S0005"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0676",
+      "fingerprint": "911ee689267d2de8541dbe21a636152dad64aeeedb8d65248ab49ec8693d9cfd",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Describe tells what something is like, not how two things are alike and different.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Result names an outcome, not a comparison.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Example means a sample, not an examination of similarities and differences.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Compare means notice how two things are alike and different.",
+              [
+                "S0003"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Compare examines similarities and differences rather than telling what one thing is like.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Result names an outcome.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Example means a sample.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Describe means tell what something looks like or is like.",
+              [
+                "S0005"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Result names what happens after an action or event.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Describe tells what something is like.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Compare examines similarities and differences.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Example means a sample, not an outcome.",
+              [
+                "S0009"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Compare is not a sample.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Describe is an action of telling what something is like.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Result means an outcome.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Example means one sample that helps show an idea.",
+              [
+                "S0009"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0677",
+      "fingerprint": "69bec5604c59355101ef90161306b94fde45eb67e9244236a7030e860ee5a081",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "A fact is true information, not specifically what happens after an action.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Result directly names what happens after something is done.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "A detail is a small piece of information, not specifically an outcome.",
+              [
+                "S0011"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "A topic is what something is about, not an outcome.",
+              [
+                "S0014"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [],
+          "ambiguity": "No option explains that result means what happens after something is done. The generic academic-word statement applies to fact, detail, and topic too, so it does not establish why result fits best.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "A result can be discussed as a detail, but “one small detail” does not explain its outcome meaning.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "Result is an academic and school word, so this claim is false.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is true of every candidate academic word and does not explain why result matches the clue.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "Result does not merely name the topic.",
+              [
+                "S0007",
+                "S0014"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

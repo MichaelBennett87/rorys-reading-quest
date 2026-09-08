@@ -1,0 +1,832 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0056",
+  "batchFileSha256": "334a463ac877f93248f84a9768148c5733c5bada796076194affa0d70d2847bf",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0654",
+      "fingerprint": "ecc724e4a799edbe991373242e4d0b1f1fe588ddfb9ecf768584a77e9c1478a4",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Color and shape tell what the leaves look like.",
+              [
+                "S0039"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Keeping notes does not describe the plants.",
+              [
+                "S0047"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Tracking change does not state plant qualities.",
+              [
+                "S0046"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This uses identify, not describe.",
+              [
+                "S0041"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q0655",
+      "fingerprint": "98148fa18b9933592c0923943887d239ccb35636eb4d42af4bf336a2bb8c8d81",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Keeping notes does not name or recognize the plant category.",
+              [
+                "S0047"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The students use the stem to recognize the plant category.",
+              [
+                "S0041"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This uses describe.",
+              [
+                "S0039"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Tracking changes does not identify the category.",
+              [
+                "S0046"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q0656",
+      "fingerprint": "756654d3fd716829c9f4ae2de0ad9616721acf29593d09f993f5ece3ae11de9f",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8"
+          ],
+          "ambiguity": "The prompt supplies no visible criterion limiting measure to two subjects; every listed context can reasonably include measurement.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Reading work can measure time, text length, or bounded reading progress.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Writing work can measure spacing, length, or word counts.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Measurement is a standard math task.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Social studies maps and timelines can require distance or time measurement.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A5",
+              "DEFENSIBLE",
+              "Art projects can require measuring paper, lines, or shapes.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A6",
+              "DEFENSIBLE",
+              "Library work can measure books, shelves, or display space.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A7",
+              "DEFENSIBLE",
+              "Nature study can measure plant or animal features, as the passage measures sprouts.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A8",
+              "DEFENSIBLE",
+              "Science investigations routinely measure observations such as sprout height.",
+              [
+                "S0043"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q0657",
+      "fingerprint": "2454a28e3bf42a993e79daa2c750f9096da263c7af65cb83f0f33f7b1bbdc18b",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2"
+          ],
+          "ambiguity": "Both selectable source sentences use category correctly, but the radio question permits only one answer.",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Plant category is an ordinary correct noun phrase naming the group to identify.",
+              [
+                "S0041"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Putting small plants in one category correctly uses category as a group of similar items.",
+              [
+                "S0045"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This sentence uses describe and does not use category.",
+              [
+                "S0039"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This sentence uses track and does not use category.",
+              [
+                "S0046"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q0658",
+      "fingerprint": "d427853cae4fa65fb69a0112767bcede1f1ae931e958224679491b6e8cfda842",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Describe means tell what something looks or is like.",
+              [
+                "S0039"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Identify means name or recognize.",
+              [
+                "S0041"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Category is a group.",
+              [
+                "S0045"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Measure finds length, height, or depth.",
+              [
+                "S0043"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Category is a group.",
+              [
+                "S0045"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Describe tells qualities.",
+              [
+                "S0039"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Identify means name or pick out something correctly.",
+              [
+                "S0041"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Measure finds dimensions.",
+              [
+                "S0043"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Measure means find how long, tall, or deep something is.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Category is a group.",
+              [
+                "S0045"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Describe tells qualities.",
+              [
+                "S0039"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Identify recognizes an item.",
+              [
+                "S0041"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Describe tells qualities.",
+              [
+                "S0039"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Measure finds dimensions.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Identify recognizes an item.",
+              [
+                "S0041"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Category names a group of things that belong together.",
+              [
+                "S0041",
+                "S0045"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q0659",
+      "fingerprint": "6004610609d09a5e2f74f6b9690e51d362fcf94b06b3114b324fcb9b0bb669a1",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This uses predict.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Writing a report does not itself explain how or why.",
+              [
+                "S0064"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This uses observe.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The students tell why the leaves looked brighter.",
+              [
+                "S0057"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q0660",
+      "fingerprint": "d19c6e3dd62f9767b9db26eeeb7fb5085eaae91fbbd7cbdd771a020d1928f2d3",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Writing a report is not the close-looking action.",
+              [
+                "S0064"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This uses explain.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Looking at stems before and after watering is an appropriate observation.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This uses predict.",
+              [
+                "S0061"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q0661",
+      "fingerprint": "22fb2286b56a89c319541d5e7ce06e68a94a855b2205bf088c73053d3d6426a3",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8"
+          ],
+          "ambiguity": "The prompt provides no visible criterion limiting predict to two subjects; all listed classroom contexts can reasonably use prediction.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Writing can predict how a narrative, argument, or planned process may continue.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Nature study can predict plant growth or animal behavior.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Readers routinely predict what may happen next in a text.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Social studies can predict likely effects from historical or civic patterns.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A5",
+              "DEFENSIBLE",
+              "Art experiments can predict how materials or colors will change.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A6",
+              "DEFENSIBLE",
+              "Library or book-study activities can include predicting a story or information result.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A7",
+              "DEFENSIBLE",
+              "Science uses predictions before tests and observations.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A8",
+              "DEFENSIBLE",
+              "Math uses predictions about patterns, estimates, and likely results.",
+              [
+                "S0061"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q0662",
+      "fingerprint": "8a9a5a1f259d2d46418675eb63d9a491d2699e0b011133198b128a05f5d21963",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The sentence names what happened after watering: a taller, greener plant.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This uses observe.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This uses explain.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Writing the report is an action, not the stated plant-growth result.",
+              [
+                "S0064"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q0663",
+      "fingerprint": "8278b2f85c131f64cb6a1f805d3de8ec713be4790b2fbe64c6e3fa4189291c15",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Predict guesses what may happen.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Explain means tell how or why something happens.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Result is what happened afterward.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Observe means look closely.",
+              [
+                "S0059"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Predict looks ahead.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Observe means look closely and notice details.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Explain tells why.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Result is an outcome.",
+              [
+                "S0063"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Observe looks closely.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Predict means make a smart guess about what may happen.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Explain tells why.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Result is what happened.",
+              [
+                "S0063"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Observe looks closely.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Result tells what happens after something is done.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Predict looks ahead.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Explain tells why.",
+              [
+                "S0057"
+              ]
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -313,7 +313,7 @@ const prosePlans = [
     lines: [
       { sentenceId: 'g2-cg-wordplay-trail-map-sentence-1', lineNumber: 1, text: 'The trail sign looked like a friendly arrow.' },
       { sentenceId: 'g2-cg-wordplay-trail-map-sentence-2', lineNumber: 2, text: 'Our group was as calm as a pond after the rain.' },
-      { sentenceId: 'g2-cg-wordplay-trail-map-sentence-3', lineNumber: 3, text: 'Path markers pointed past pine trees.' },
+      { sentenceId: 'g2-cg-wordplay-trail-map-sentence-3', lineNumber: 3, text: 'Path posts pointed past pine trees.' },
       { sentenceId: 'g2-cg-wordplay-trail-map-sentence-4', lineNumber: 4, text: 'The guide said to keep an eye on the mud patch.' },
       { sentenceId: 'g2-cg-wordplay-trail-map-sentence-5', lineNumber: 5, text: 'We stepped over roots and small stones.' },
       { sentenceId: 'g2-cg-wordplay-trail-map-sentence-6', lineNumber: 6, text: 'The map stayed folded in my pocket.' },
@@ -322,7 +322,7 @@ const prosePlans = [
     supportTargets: [
       { sentenceIndex: 0, surfaceWord: 'like a friendly arrow', split: ['like a friendly ', 'arrow'] as [string, string] },
       { sentenceIndex: 1, surfaceWord: 'as calm as a pond', split: ['as calm as a ', 'pond'] as [string, string] },
-      { sentenceIndex: 2, surfaceWord: 'path markers pointed', split: ['path markers ', 'pointed'] as [string, string] },
+      { sentenceIndex: 2, surfaceWord: 'path posts pointed', split: ['path posts ', 'pointed'] as [string, string] },
       { sentenceIndex: 3, surfaceWord: 'keep an eye on', split: ['keep an ', 'eye on'] as [string, string] },
     ],
     targetPlans: [
@@ -355,13 +355,13 @@ const prosePlans = [
       {
         targetId: 'g2-cg-wordplay-trail-map-alliteration-markers',
         kind: 'alliteration' as const,
-        expressionText: 'path markers pointed',
+        expressionText: 'path posts pointed',
         sentenceIndex: 2,
         evidenceSentenceIndexes: [2],
-        explanationStatement: 'Path markers pointed uses alliteration because the words begin with the /p/ sound.',
+        explanationStatement: 'Path posts pointed uses alliteration because the words begin with the /p/ sound.',
         alliterativeWords: [
           { word: 'path', initialSound: 'p' },
-          { word: 'markers', initialSound: 'p' },
+          { word: 'posts', initialSound: 'p' },
           { word: 'pointed', initialSound: 'p' },
         ],
         repeatedInitialSound: 'p',

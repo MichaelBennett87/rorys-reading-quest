@@ -1,0 +1,4118 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "g3-id-ci-q1-1",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-270cd284b7bea8c8",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "35fd3af8c9ae32cf9c6d1cf45b01196baa187d301761ba92ad4047ab3273a921",
+        "conclusionsSha256": "899e243f112925ac96b78c890ea5bfaa658392f6502e3e7dc23cca7a773834d0",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0106.pass-a.json",
+        "receiptSha256": "899e243f112925ac96b78c890ea5bfaa658392f6502e3e7dc23cca7a773834d0",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the central idea of \"How Beach Grass Builds a Dune\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q1-1-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q1-1-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q1-1-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names only the broad topic without stating the important idea about beach grass's role.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q1-1-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This loosely lists details without expressing how beach grass helps dunes form and remain.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-sentence-2",
+                "g3-id-ci-passage-1-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q1-1-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence states the passage-wide idea about leaves and roots helping dunes form and stay in place.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q1-1-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The beetle track is a minor detail and does not cover the passage's main idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q1-2",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-82588a283a4fcbdc",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "35fd3af8c9ae32cf9c6d1cf45b01196baa187d301761ba92ad4047ab3273a921",
+        "conclusionsSha256": "899e243f112925ac96b78c890ea5bfaa658392f6502e3e7dc23cca7a773834d0",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0029.second-pass.json",
+        "receiptSha256": "8512924bd5bb8f84213911a521c89c8c4486374b20fc16e631fa03063fef575c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice names only the broad topic rather than stating the central idea?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q1-2-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q1-2-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q1-2-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states a complete central idea rather than only a broad topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q1-2-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a minor fact rather than the passage's broad topic label.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q1-2-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a loose sentence of details rather than a topic phrase.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-sentence-2",
+                "g3-id-ci-passage-1-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q1-2-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This phrase names the broad subject without stating what the passage teaches about it.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-feature-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q1-3",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-a0d6cc4f0e07ae23",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "35fd3af8c9ae32cf9c6d1cf45b01196baa187d301761ba92ad4047ab3273a921",
+        "conclusionsSha256": "899e243f112925ac96b78c890ea5bfaa658392f6502e3e7dc23cca7a773834d0",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0106.pass-a.json",
+        "receiptSha256": "899e243f112925ac96b78c890ea5bfaa658392f6502e3e7dc23cca7a773834d0",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two details from different sections that best support the central idea.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-id-ci-q1-3-correct-1",
+            "g3-id-ci-q1-3-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q1-3-correct-1",
+            "g3-id-ci-q1-3-correct-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q1-3-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The leaves slowing sand-carrying wind directly explains how grass helps build a dune.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q1-3-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This later-section detail explains why the dune formed with grass's help matters as a barrier.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q1-3-wrong-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This introduces the topic and setting but does not explain how grass helps dunes form or stay.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q1-3-wrong-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The beetle track is an interesting minor detail unrelated to grass helping the dune.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q1-4",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-567bba7611ce522a",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "35fd3af8c9ae32cf9c6d1cf45b01196baa187d301761ba92ad4047ab3273a921",
+        "conclusionsSha256": "899e243f112925ac96b78c890ea5bfaa658392f6502e3e7dc23cca7a773834d0",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0106.pass-a.json",
+        "receiptSha256": "899e243f112925ac96b78c890ea5bfaa658392f6502e3e7dc23cca7a773834d0",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that directly states the central idea.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q1-4-segment-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q1-4-segment-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q1-4-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This supports one mechanism but does not directly state the complete central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q1-4-segment-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a minor beetle detail rather than the central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q1-4-segment-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence directly states the passage-wide idea about grass helping dunes form and remain.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q1-4-segment-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes one stage in dune growth but omits beach grass's role.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q1-5",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-a6e77528e058a92c",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "35fd3af8c9ae32cf9c6d1cf45b01196baa187d301761ba92ad4047ab3273a921",
+        "conclusionsSha256": "899e243f112925ac96b78c890ea5bfaa658392f6502e3e7dc23cca7a773834d0",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0106.pass-a.json",
+        "receiptSha256": "899e243f112925ac96b78c890ea5bfaa658392f6502e3e7dc23cca7a773834d0",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-id-ci-q1-5-row-central",
+          "prompt": "Central idea",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q1-5-central"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q1-5-central"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q1-5-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is only a broad topic phrase.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q1-5-summary",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This loosely lists details without expressing their central relationship.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-sentence-2",
+                "g3-id-ci-passage-1-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q1-5-minor",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a minor detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q1-5-central",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This states the complete passage-wide central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-sentence-12"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ci-q1-5-row-topic",
+          "prompt": "Topic",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q1-5-topic"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q1-5-topic"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q1-5-topic",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This phrase names the broad subject without making a claim about it.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q1-5-minor",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a minor detail rather than the broad topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q1-5-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the central idea rather than only the topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q1-5-summary",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a loose list of details rather than a topic phrase.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-sentence-2",
+                "g3-id-ci-passage-1-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ci-q1-5-row-minor",
+          "prompt": "Interesting but minor detail",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q1-5-minor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q1-5-minor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q1-5-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the central idea, not a minor detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q1-5-minor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The beetle track is true but unnecessary to the central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q1-5-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the topic, not a minor detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q1-5-summary",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This combines several passage details rather than identifying one minor detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-1-sentence-2",
+                "g3-id-ci-passage-1-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q2-1",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-b20d14aae08bfa06",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "3df93f8cddabb65f31bbf591a452b8e6cfadea3e7396ad6a3dfc243b5db60126",
+        "conclusionsSha256": "b80aacc87745e1eb9289f17f12050a494a11fc496186d0e18638db32f8ddfb80",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0107.pass-a.json",
+        "receiptSha256": "b80aacc87745e1eb9289f17f12050a494a11fc496186d0e18638db32f8ddfb80",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the central idea of \"Cooling a City Block\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q2-1-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q2-1-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q2-1-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names only the broad topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q2-1-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This complete thought unites shade, leaf cooling, comfort, and animal habitat across the passage.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-sentence-2",
+                "g3-id-ci-passage-2-sentence-7",
+                "g3-id-ci-passage-2-sentence-9",
+                "g3-id-ci-passage-2-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q2-1-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Numbered tags are a minor detail rather than the central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q2-1-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This loosely lists details without stating how groups of trees improve nearby spaces.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-sentence-1",
+                "g3-id-ci-passage-2-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q2-2",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-0a917a9648f85d62",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "3df93f8cddabb65f31bbf591a452b8e6cfadea3e7396ad6a3dfc243b5db60126",
+        "conclusionsSha256": "b80aacc87745e1eb9289f17f12050a494a11fc496186d0e18638db32f8ddfb80",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0107.pass-a.json",
+        "receiptSha256": "b80aacc87745e1eb9289f17f12050a494a11fc496186d0e18638db32f8ddfb80",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice names only the broad topic rather than stating the central idea?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q2-2-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q2-2-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q2-2-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a minor fact rather than a broad topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q2-2-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This phrase names the broad subject without stating what the author teaches about it.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q2-2-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states a complete central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-sentence-2",
+                "g3-id-ci-passage-2-sentence-7",
+                "g3-id-ci-passage-2-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q2-2-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a loose list of details rather than a topic phrase.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-sentence-1",
+                "g3-id-ci-passage-2-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q2-3",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-68e10415a65a21f1",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "3df93f8cddabb65f31bbf591a452b8e6cfadea3e7396ad6a3dfc243b5db60126",
+        "conclusionsSha256": "b80aacc87745e1eb9289f17f12050a494a11fc496186d0e18638db32f8ddfb80",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0029.second-pass.json",
+        "receiptSha256": "8512924bd5bb8f84213911a521c89c8c4486374b20fc16e631fa03063fef575c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two details from different sections that best support the central idea.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-id-ci-q2-3-correct-1",
+            "g3-id-ci-q2-3-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q2-3-correct-2",
+            "g3-id-ci-q2-3-correct-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q2-3-wrong-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Warm pavement establishes the problem but does not state how trees improve the space.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q2-3-wrong-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Numbered care tags are a minor detail unrelated to the central benefits.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q2-3-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This later-section conclusion directly states that groups of trees make nearby public spaces more comfortable.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q2-3-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This earlier-section detail directly explains how tree canopy provides shade.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q2-4",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-e46d764f9b442d7b",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "3df93f8cddabb65f31bbf591a452b8e6cfadea3e7396ad6a3dfc243b5db60126",
+        "conclusionsSha256": "b80aacc87745e1eb9289f17f12050a494a11fc496186d0e18638db32f8ddfb80",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0107.pass-a.json",
+        "receiptSha256": "b80aacc87745e1eb9289f17f12050a494a11fc496186d0e18638db32f8ddfb80",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that explains how water from tree leaves can cool nearby air.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q2-4-segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q2-4-segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q2-4-segment-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states where water begins but not how leaf water cools air.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q2-4-segment-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Care tags do not explain evaporative cooling.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q2-4-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Warm hard surfaces establish context but do not explain leaf-water cooling.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q2-4-segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence directly connects evaporation of released water with cooler nearby air.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q2-5",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-4e6212a605472b4a",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "3df93f8cddabb65f31bbf591a452b8e6cfadea3e7396ad6a3dfc243b5db60126",
+        "conclusionsSha256": "b80aacc87745e1eb9289f17f12050a494a11fc496186d0e18638db32f8ddfb80",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0029.second-pass.json",
+        "receiptSha256": "8512924bd5bb8f84213911a521c89c8c4486374b20fc16e631fa03063fef575c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-id-ci-q2-5-row-central",
+          "prompt": "Central idea",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q2-5-central"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q2-5-central"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q2-5-summary",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This loosely lists details rather than expressing their unifying idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-sentence-1",
+                "g3-id-ci-passage-2-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q2-5-minor",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a minor detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q2-5-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is only the topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q2-5-central",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This complete statement unites the important benefits developed across sections.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-sentence-2",
+                "g3-id-ci-passage-2-sentence-7",
+                "g3-id-ci-passage-2-sentence-9",
+                "g3-id-ci-passage-2-sentence-12"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ci-q2-5-row-topic",
+          "prompt": "Topic",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q2-5-topic"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q2-5-topic"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q2-5-topic",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This phrase names the broad subject only.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q2-5-summary",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a loose detail list.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-sentence-1",
+                "g3-id-ci-passage-2-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q2-5-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-sentence-2",
+                "g3-id-ci-passage-2-sentence-7",
+                "g3-id-ci-passage-2-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q2-5-minor",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a minor detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ci-q2-5-row-minor",
+          "prompt": "Interesting but minor detail",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q2-5-minor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q2-5-minor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q2-5-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-sentence-2",
+                "g3-id-ci-passage-2-sentence-7",
+                "g3-id-ci-passage-2-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q2-5-minor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The numbered-tag fact is true but not essential to the passage's central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q2-5-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q2-5-summary",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a loose list spanning several details, not one minor detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-2-sentence-1",
+                "g3-id-ci-passage-2-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q3-1",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-8fbce9717111971d",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "3df93f8cddabb65f31bbf591a452b8e6cfadea3e7396ad6a3dfc243b5db60126",
+        "conclusionsSha256": "b80aacc87745e1eb9289f17f12050a494a11fc496186d0e18638db32f8ddfb80",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0029.second-pass.json",
+        "receiptSha256": "8512924bd5bb8f84213911a521c89c8c4486374b20fc16e631fa03063fef575c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the central idea of \"A Helmet Has More Than One Job\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q3-1-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q3-1-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q3-1-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This inventory includes parts and colors but does not state their important protective relationship.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-sentence-1",
+                "g3-id-ci-passage-3-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q3-1-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names only the broad topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q3-1-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Colors and patterns are a minor detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q3-1-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence states how several fitted parts manage impact and protect a rider.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q3-2",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-8b578ca360cfbe5f",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "3df93f8cddabb65f31bbf591a452b8e6cfadea3e7396ad6a3dfc243b5db60126",
+        "conclusionsSha256": "b80aacc87745e1eb9289f17f12050a494a11fc496186d0e18638db32f8ddfb80",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0107.pass-a.json",
+        "receiptSha256": "b80aacc87745e1eb9289f17f12050a494a11fc496186d0e18638db32f8ddfb80",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice names only the broad topic rather than stating the central idea?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q3-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q3-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q3-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This phrase names the broad subject without stating what the passage teaches about it.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q3-2-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a minor detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q3-2-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a list of parts and details rather than a broad topic phrase.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-sentence-1",
+                "g3-id-ci-passage-3-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q3-2-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q3-3",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-5eaeb59e196bfea2",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "d03e1e875a058164aa3c402aa9582606d01294479a01b32a3297207ccecfb1b0",
+        "conclusionsSha256": "c738ffa3512ade12f9943398307cfaf305f20c8a392e8f63f5baccff73bc9e33",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0029.second-pass.json",
+        "receiptSha256": "8512924bd5bb8f84213911a521c89c8c4486374b20fc16e631fa03063fef575c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the detail explaining what the hard outer shell does and the later detail explaining when a helmet should be replaced.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-id-ci-q3-3-correct-1",
+            "g3-id-ci-q3-3-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q3-3-correct-2",
+            "g3-id-ci-q3-3-correct-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q3-3-wrong-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Introduces the helmet's parts but does not explain the shell job or replacement time.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q3-3-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Directly states replacement after a hard crash.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q3-3-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Directly explains the hard shell's force-spreading and contact-resisting jobs.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q3-3-wrong-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Color and pattern do not answer either requested detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q3-4",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-de557c915aec6415",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "3df93f8cddabb65f31bbf591a452b8e6cfadea3e7396ad6a3dfc243b5db60126",
+        "conclusionsSha256": "b80aacc87745e1eb9289f17f12050a494a11fc496186d0e18638db32f8ddfb80",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0107.pass-a.json",
+        "receiptSha256": "b80aacc87745e1eb9289f17f12050a494a11fc496186d0e18638db32f8ddfb80",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that directly states the central idea.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q3-4-segment-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q3-4-segment-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q3-4-segment-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Colors and patterns are a minor detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q3-4-segment-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The buckle detail supports only one fitted part.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q3-4-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The foam detail supports one mechanism but does not state the complete central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q3-4-segment-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence directly states the passage-wide idea about fitted parts managing force and protecting the rider.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q3-5",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-bd06fdb79e598af3",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "3df93f8cddabb65f31bbf591a452b8e6cfadea3e7396ad6a3dfc243b5db60126",
+        "conclusionsSha256": "b80aacc87745e1eb9289f17f12050a494a11fc496186d0e18638db32f8ddfb80",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0029.second-pass.json",
+        "receiptSha256": "8512924bd5bb8f84213911a521c89c8c4486374b20fc16e631fa03063fef575c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-id-ci-q3-5-row-central",
+          "prompt": "Central idea",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q3-5-central"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q3-5-central"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q3-5-minor",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a minor detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q3-5-summary",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This lists parts without stating their central protective relationship.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-sentence-1",
+                "g3-id-ci-passage-3-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q3-5-central",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This complete statement expresses the central relationship between fitted parts, force, and protection.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q3-5-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is only the broad topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-feature-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ci-q3-5-row-topic",
+          "prompt": "Topic",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q3-5-topic"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q3-5-topic"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q3-5-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q3-5-topic",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This phrase names the broad subject only.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q3-5-summary",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This lists details rather than naming only the topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-sentence-1",
+                "g3-id-ci-passage-3-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q3-5-minor",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a minor detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ci-q3-5-row-minor",
+          "prompt": "Interesting but minor detail",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q3-5-minor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q3-5-minor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q3-5-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q3-5-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q3-5-summary",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This combines many details rather than identifying one minor detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-sentence-1",
+                "g3-id-ci-passage-3-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q3-5-minor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The color-and-pattern fact is true but not essential to the protective central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-3-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q4-1",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-48934f0be10127f7",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "737e249481b8fda4e9ee9e7a5a4fdc76762b1c3d4309b9a649ecbdcdfc05a5dd",
+        "conclusionsSha256": "4a0b14ea0cdfccffd54a0367a03a88c44b97f2751b19f73f146e48a3ec60d3d9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0029.second-pass.json",
+        "receiptSha256": "8512924bd5bb8f84213911a521c89c8c4486374b20fc16e631fa03063fef575c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the central idea of \"Seeds with Built-In Travel Tools\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q4-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q4-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q4-1-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a loose list that includes a minor collector detail without stating the unifying idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-sentence-2",
+                "g3-id-ci-passage-4-sentence-6",
+                "g3-id-ci-passage-4-sentence-10",
+                "g3-id-ci-passage-4-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q4-1-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This narrow detail covers only one wind-travel mechanism.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-sentence-2",
+                "g3-id-ci-passage-4-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q4-1-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names only the broad topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q4-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This complete idea unites seed structures and wind, animal, and water travel across all sections.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-sentence-3",
+                "g3-id-ci-passage-4-sentence-7",
+                "g3-id-ci-passage-4-sentence-10",
+                "g3-id-ci-passage-4-sentence-14"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q4-2",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-5c47d850c9c4079c",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "737e249481b8fda4e9ee9e7a5a4fdc76762b1c3d4309b9a649ecbdcdfc05a5dd",
+        "conclusionsSha256": "4a0b14ea0cdfccffd54a0367a03a88c44b97f2751b19f73f146e48a3ec60d3d9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0108.pass-a.json",
+        "receiptSha256": "4a0b14ea0cdfccffd54a0367a03a88c44b97f2751b19f73f146e48a3ec60d3d9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which choice names only the broad topic rather than stating the central idea?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q4-2-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q4-2-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q4-2-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the full central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-sentence-3",
+                "g3-id-ci-passage-4-sentence-7",
+                "g3-id-ci-passage-4-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q4-2-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a loose detail list, not a topic phrase.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-sentence-2",
+                "g3-id-ci-passage-4-sentence-6",
+                "g3-id-ci-passage-4-sentence-10",
+                "g3-id-ci-passage-4-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q4-2-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is one narrow supporting detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-sentence-2",
+                "g3-id-ci-passage-4-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q4-2-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This phrase names the broad subject without stating what the passage teaches about it.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-feature-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q4-3",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-b1b6856aecfccde6",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "d03e1e875a058164aa3c402aa9582606d01294479a01b32a3297207ccecfb1b0",
+        "conclusionsSha256": "c738ffa3512ade12f9943398307cfaf305f20c8a392e8f63f5baccff73bc9e33",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0044.pass-a.json",
+        "receiptSha256": "c738ffa3512ade12f9943398307cfaf305f20c8a392e8f63f5baccff73bc9e33",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the detail explaining how a seed wing helps wind carry it and the later detail explaining why traveling away helps a seed.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-id-ci-q4-3-correct-1",
+            "g3-id-ci-q4-3-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q4-3-correct-2",
+            "g3-id-ci-q4-3-correct-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q4-3-wrong-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "States the broad travel idea but not the requested wing mechanism or later benefit.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q4-3-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Directly explains that moving away reduces competition for resources.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q4-3-wrong-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The collector-envelope detail does not explain natural travel or its benefit.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q4-3-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Directly explains how spinning gives wind more time to carry the seed.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q4-4",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-d0173991512b419d",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "d03e1e875a058164aa3c402aa9582606d01294479a01b32a3297207ccecfb1b0",
+        "conclusionsSha256": "c738ffa3512ade12f9943398307cfaf305f20c8a392e8f63f5baccff73bc9e33",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0044.pass-a.json",
+        "receiptSha256": "c738ffa3512ade12f9943398307cfaf305f20c8a392e8f63f5baccff73bc9e33",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that explains how tiny hooks can carry a seed on an animal.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q4-4-segment-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q4-4-segment-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q4-4-segment-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "States the broad idea that structures help travel but not the hook mechanism.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q4-4-segment-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Directly explains hooks catching animal fur and falling off elsewhere.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q4-4-segment-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Contrasts animal movement with wind but does not explain how hooks carry a seed.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q4-4-segment-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Describes collectors storing seeds, not animal transport.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-sentence-13"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q4-5",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-60a71ca6b2c78fca",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "737e249481b8fda4e9ee9e7a5a4fdc76762b1c3d4309b9a649ecbdcdfc05a5dd",
+        "conclusionsSha256": "4a0b14ea0cdfccffd54a0367a03a88c44b97f2751b19f73f146e48a3ec60d3d9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0108.pass-a.json",
+        "receiptSha256": "4a0b14ea0cdfccffd54a0367a03a88c44b97f2751b19f73f146e48a3ec60d3d9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-id-ci-q4-5-row-central",
+          "prompt": "Central idea",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q4-5-central"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q4-5-central"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q4-5-minor",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a minor collector detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q4-5-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q4-5-central",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This statement unites structures with all three travel routes and the shared purpose.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-sentence-3",
+                "g3-id-ci-passage-4-sentence-7",
+                "g3-id-ci-passage-4-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q4-5-summary",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This loosely lists examples and a minor detail without stating their relationship.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-sentence-2",
+                "g3-id-ci-passage-4-sentence-6",
+                "g3-id-ci-passage-4-sentence-10",
+                "g3-id-ci-passage-4-sentence-13"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ci-q4-5-row-topic",
+          "prompt": "Topic",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q4-5-topic"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q4-5-topic"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q4-5-topic",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This phrase names the broad subject only.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q4-5-minor",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a minor detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q4-5-summary",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a loose list of details.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-sentence-2",
+                "g3-id-ci-passage-4-sentence-6",
+                "g3-id-ci-passage-4-sentence-10",
+                "g3-id-ci-passage-4-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q4-5-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-sentence-3",
+                "g3-id-ci-passage-4-sentence-7",
+                "g3-id-ci-passage-4-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ci-q4-5-row-minor",
+          "prompt": "Interesting but minor detail",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q4-5-minor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q4-5-minor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q4-5-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-sentence-3",
+                "g3-id-ci-passage-4-sentence-7",
+                "g3-id-ci-passage-4-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q4-5-summary",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a broad detail list rather than one minor detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-sentence-2",
+                "g3-id-ci-passage-4-sentence-6",
+                "g3-id-ci-passage-4-sentence-10",
+                "g3-id-ci-passage-4-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q4-5-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q4-5-minor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Collector storage is true but not essential to the plant-travel central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-4-sentence-13"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q5-1",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-5487664127ee1735",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "737e249481b8fda4e9ee9e7a5a4fdc76762b1c3d4309b9a649ecbdcdfc05a5dd",
+        "conclusionsSha256": "4a0b14ea0cdfccffd54a0367a03a88c44b97f2751b19f73f146e48a3ec60d3d9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0108.pass-a.json",
+        "receiptSha256": "4a0b14ea0cdfccffd54a0367a03a88c44b97f2751b19f73f146e48a3ec60d3d9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the central idea of \"A Wetland Handles Water\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q5-1-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q5-1-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q5-1-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names only the broad topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-1-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This complete idea unites water storage, slower flow, soil retention, and habitat across sections.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-2",
+                "g3-id-ci-passage-5-sentence-7",
+                "g3-id-ci-passage-5-sentence-9",
+                "g3-id-ci-passage-5-sentence-12",
+                "g3-id-ci-passage-5-sentence-15"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-1-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This loosely lists details, including minor visitor and flag facts, without stating their central relationship.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-2",
+                "g3-id-ci-passage-5-sentence-10",
+                "g3-id-ci-passage-5-sentence-11",
+                "g3-id-ci-passage-5-sentence-13",
+                "g3-id-ci-passage-5-sentence-14"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-1-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The boardwalk is a narrow visitor detail rather than the whole-text idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q5-2",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-1d700ce9a5c7d7dd",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "737e249481b8fda4e9ee9e7a5a4fdc76762b1c3d4309b9a649ecbdcdfc05a5dd",
+        "conclusionsSha256": "4a0b14ea0cdfccffd54a0367a03a88c44b97f2751b19f73f146e48a3ec60d3d9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0108.pass-a.json",
+        "receiptSha256": "4a0b14ea0cdfccffd54a0367a03a88c44b97f2751b19f73f146e48a3ec60d3d9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "How does the section \"Water Slows Down\" support the central idea?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q5-2-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q5-2-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q5-2-choice-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The section adds mechanisms and results beyond the title.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-6",
+                "g3-id-ci-passage-5-sentence-7",
+                "g3-id-ci-passage-5-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-2-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The section explains how stems slow water and how slower water leaves less soil moving away.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-6",
+                "g3-id-ci-passage-5-sentence-7",
+                "g3-id-ci-passage-5-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-2-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "Its water-and-soil details directly support the central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-7",
+                "g3-id-ci-passage-5-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-2-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "Other sections remain necessary for water storage and habitat parts of the central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-2",
+                "g3-id-ci-passage-5-sentence-12"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q5-3",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-2682c543dcaed67f",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "737e249481b8fda4e9ee9e7a5a4fdc76762b1c3d4309b9a649ecbdcdfc05a5dd",
+        "conclusionsSha256": "4a0b14ea0cdfccffd54a0367a03a88c44b97f2751b19f73f146e48a3ec60d3d9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0108.pass-a.json",
+        "receiptSha256": "4a0b14ea0cdfccffd54a0367a03a88c44b97f2751b19f73f146e48a3ec60d3d9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Read this new example: One section explains that prairie roots hold soil. Another explains that prairie flowers feed insects. A final section describes birds nesting among tall grasses. What central idea fits all of these details?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q5-3-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q5-3-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q5-3-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names only the topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-3-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This covers only the bird detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-3-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The example does not claim prairies are the only habitat insects need.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-3-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This idea fits roots holding soil and flowers and grasses supporting insects and birds.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q5-4",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-da11533dff8a5221",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "737e249481b8fda4e9ee9e7a5a4fdc76762b1c3d4309b9a649ecbdcdfc05a5dd",
+        "conclusionsSha256": "4a0b14ea0cdfccffd54a0367a03a88c44b97f2751b19f73f146e48a3ec60d3d9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0029.second-pass.json",
+        "receiptSha256": "8512924bd5bb8f84213911a521c89c8c4486374b20fc16e631fa03063fef575c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two details from different sections that best support the central idea.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-id-ci-q5-4-correct-1",
+            "g3-id-ci-q5-4-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q5-4-correct-2",
+            "g3-id-ci-q5-4-correct-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q5-4-wrong-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Study flags are a minor human activity unrelated to the wetland's central benefits.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-14"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-4-wrong-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The boardwalk is a visitor-access detail rather than evidence for the stated land-and-habitat mechanisms.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-4-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This later-section synthesis joins water storage, slower flow, and habitat.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-15"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-4-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This first-section detail explains how a wetland holds and spreads storm water.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q5-5",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-9398a0e8b86b3acc",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "737e249481b8fda4e9ee9e7a5a4fdc76762b1c3d4309b9a649ecbdcdfc05a5dd",
+        "conclusionsSha256": "4a0b14ea0cdfccffd54a0367a03a88c44b97f2751b19f73f146e48a3ec60d3d9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0108.pass-a.json",
+        "receiptSha256": "4a0b14ea0cdfccffd54a0367a03a88c44b97f2751b19f73f146e48a3ec60d3d9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that explains how slower wetland water affects soil particles.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q5-5-segment-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q5-5-segment-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q5-5-segment-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The boardwalk detail does not explain effects on soil particles.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-5-segment-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence directly states that slower water lets soil particles settle.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-5-segment-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Study flags do not explain moving water or soil particles.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-14"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-5-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The measuring stake concerns water height, not slower water's effect on soil particles.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q5-6",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-30ebd26b86362747",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "737e249481b8fda4e9ee9e7a5a4fdc76762b1c3d4309b9a649ecbdcdfc05a5dd",
+        "conclusionsSha256": "4a0b14ea0cdfccffd54a0367a03a88c44b97f2751b19f73f146e48a3ec60d3d9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0108.pass-a.json",
+        "receiptSha256": "4a0b14ea0cdfccffd54a0367a03a88c44b97f2751b19f73f146e48a3ec60d3d9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-id-ci-q5-6-row-central",
+          "prompt": "Central idea",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q5-6-central"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q5-6-central"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q5-6-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-6-minor",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a minor detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-14"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-6-central",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This complete statement unites the major water, soil, and habitat ideas.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-2",
+                "g3-id-ci-passage-5-sentence-7",
+                "g3-id-ci-passage-5-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-6-summary",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a loose list that includes minor details rather than a central relationship.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-2",
+                "g3-id-ci-passage-5-sentence-10",
+                "g3-id-ci-passage-5-sentence-14"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ci-q5-6-row-topic",
+          "prompt": "Topic",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q5-6-topic"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q5-6-topic"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q5-6-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-2",
+                "g3-id-ci-passage-5-sentence-7",
+                "g3-id-ci-passage-5-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-6-minor",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a minor detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-14"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-6-topic",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This single word names the broad subject.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-6-summary",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a list of details rather than a topic label.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-2",
+                "g3-id-ci-passage-5-sentence-10",
+                "g3-id-ci-passage-5-sentence-14"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ci-q5-6-row-minor",
+          "prompt": "Interesting but minor detail",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q5-6-minor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q5-6-minor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q5-6-minor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Numbered study flags are true but not essential to the central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-14"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-6-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-2",
+                "g3-id-ci-passage-5-sentence-7",
+                "g3-id-ci-passage-5-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-6-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-6-summary",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This combines several details rather than identifying one minor detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-2",
+                "g3-id-ci-passage-5-sentence-10",
+                "g3-id-ci-passage-5-sentence-14"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q5-7",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-c9f32e83df51d997",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "d03e1e875a058164aa3c402aa9582606d01294479a01b32a3297207ccecfb1b0",
+        "conclusionsSha256": "c738ffa3512ade12f9943398307cfaf305f20c8a392e8f63f5baccff73bc9e33",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0044.pass-a.json",
+        "receiptSha256": "c738ffa3512ade12f9943398307cfaf305f20c8a392e8f63f5baccff73bc9e33",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Part A: Which central idea fits the whole text?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q5-7-a-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q5-7-a-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q5-7-a-wrong",
+              "verdict": "CONTRADICTED",
+              "rationale": "The text uses qualified effects and does not claim every wetland completely prevents flooding or soil movement.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-2",
+                "g3-id-ci-passage-5-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-7-a-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Combines the whole text's water storage, slower flow, soil retention, and habitat support.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-2",
+                "g3-id-ci-passage-5-sentence-3",
+                "g3-id-ci-passage-5-sentence-7",
+                "g3-id-ci-passage-5-sentence-8",
+                "g3-id-ci-passage-5-sentence-12",
+                "g3-id-ci-passage-5-sentence-13",
+                "g3-id-ci-passage-5-sentence-15"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-7-a-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Names only the topic and does not state a central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Part B: Which pair of details from separate sections best supports Part A?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q5-7-b-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q5-7-b-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q5-7-b-partial",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The water-flow detail supports the idea, but numbered study flags do not support the wetland functions in Part A.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-2",
+                "g3-id-ci-passage-5-sentence-14"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-7-b-minor",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Boardwalk and study-flag details do not establish the central wetland functions.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-10",
+                "g3-id-ci-passage-5-sentence-14"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q5-7-b-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Pairs a water-slowing detail with a later cross-section summary of storage, slower flow, and habitats.",
+              "evidenceIds": [
+                "g3-id-ci-passage-5-sentence-2",
+                "g3-id-ci-passage-5-sentence-15"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q6-1",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-30098af2850a01de",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "5c0c2130e4627899b678095f02b1afbdd2a607d32c2780e51d486a65951a5a74",
+        "conclusionsSha256": "97e542d0577a887cdaf2f641a5a6e5fe8f7b65d9b67898fe688988873287c01e",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0109.pass-a.json",
+        "receiptSha256": "97e542d0577a887cdaf2f641a5a6e5fe8f7b65d9b67898fe688988873287c01e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the central idea of \"From Sunlight to Classroom Electricity\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q6-1-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q6-1-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q6-1-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This complete statement unites sunlight conversion, safe delivery, and building use across sections.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-2",
+                "g3-id-ci-passage-6-sentence-4",
+                "g3-id-ci-passage-6-sentence-6",
+                "g3-id-ci-passage-6-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-1-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This loosely lists details, including panel color, without stating their central relationship.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-1",
+                "g3-id-ci-passage-6-sentence-5",
+                "g3-id-ci-passage-6-sentence-7",
+                "g3-id-ci-passage-6-sentence-11",
+                "g3-id-ci-passage-6-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-1-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names only the topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-1-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Panel color is a minor detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-13"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q6-2",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-5ed36d04e7742208",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "5c0c2130e4627899b678095f02b1afbdd2a607d32c2780e51d486a65951a5a74",
+        "conclusionsSha256": "97e542d0577a887cdaf2f641a5a6e5fe8f7b65d9b67898fe688988873287c01e",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0109.pass-a.json",
+        "receiptSha256": "97e542d0577a887cdaf2f641a5a6e5fe8f7b65d9b67898fe688988873287c01e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "How does the section \"Electricity Becomes Usable\" support the central idea?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q6-2-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q6-2-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q6-2-choice-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The section explains conversion, safety controls, wiring, and equipment use.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-6",
+                "g3-id-ci-passage-6-sentence-7",
+                "g3-id-ci-passage-6-sentence-8",
+                "g3-id-ci-passage-6-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-2-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The other sections remain necessary to explain capture and monitoring.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-3",
+                "g3-id-ci-passage-6-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-2-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The section follows current through the inverter, safety switches, wiring, and equipment.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-6",
+                "g3-id-ci-passage-6-sentence-7",
+                "g3-id-ci-passage-6-sentence-8",
+                "g3-id-ci-passage-6-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-2-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "Its details directly develop usable electricity delivery.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-6",
+                "g3-id-ci-passage-6-sentence-9"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q6-3",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-b3dda7163e277b8a",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "5c0c2130e4627899b678095f02b1afbdd2a607d32c2780e51d486a65951a5a74",
+        "conclusionsSha256": "97e542d0577a887cdaf2f641a5a6e5fe8f7b65d9b67898fe688988873287c01e",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0109.pass-a.json",
+        "receiptSha256": "97e542d0577a887cdaf2f641a5a6e5fe8f7b65d9b67898fe688988873287c01e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Read this new example: A greenhouse roof lets sunlight reach plants. Vents release extra heat, and a watering system supplies moisture. Sensors help workers adjust these parts. What central idea fits all of these details?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q6-3-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q6-3-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q6-3-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This covers only the vent detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-3-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The example includes workers adjusting parts, so care is still required.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This idea unites the roof, vents, water system, and sensors as useful growing controls.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-3-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names only the topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q6-4",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-1ea98a4c2b52dd70",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "5c0c2130e4627899b678095f02b1afbdd2a607d32c2780e51d486a65951a5a74",
+        "conclusionsSha256": "97e542d0577a887cdaf2f641a5a6e5fe8f7b65d9b67898fe688988873287c01e",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0029.second-pass.json",
+        "receiptSha256": "8512924bd5bb8f84213911a521c89c8c4486374b20fc16e631fa03063fef575c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two details from different sections that best support the central idea.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-id-ci-q6-4-correct-1",
+            "g3-id-ci-q6-4-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q6-4-correct-1",
+            "g3-id-ci-q6-4-correct-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q6-4-wrong-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Panel placement introduces the system but does not explain energy conversion or delivery.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-4-wrong-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Panel color is a minor visual detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-4-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Solar cells absorbing sunlight directly supports the conversion part of the central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-4-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This later-section synthesis directly supports the system's delivery of energy to useful equipment.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-15"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q6-5",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-b1dc4a698438c7a5",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "5c0c2130e4627899b678095f02b1afbdd2a607d32c2780e51d486a65951a5a74",
+        "conclusionsSha256": "97e542d0577a887cdaf2f641a5a6e5fe8f7b65d9b67898fe688988873287c01e",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0029.second-pass.json",
+        "receiptSha256": "8512924bd5bb8f84213911a521c89c8c4486374b20fc16e631fa03063fef575c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that directly states the central idea.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q6-5-segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q6-5-segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q6-5-segment-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The monitor detail supports only system observation.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-5-segment-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Panel color is a minor detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-5-segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence directly states the complete sunlight-to-usable-electricity idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-5-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This explains only the initial absorption step.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q6-6",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-72a1eb515eda80c5",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "5c0c2130e4627899b678095f02b1afbdd2a607d32c2780e51d486a65951a5a74",
+        "conclusionsSha256": "97e542d0577a887cdaf2f641a5a6e5fe8f7b65d9b67898fe688988873287c01e",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0109.pass-a.json",
+        "receiptSha256": "97e542d0577a887cdaf2f641a5a6e5fe8f7b65d9b67898fe688988873287c01e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-id-ci-q6-6-row-central",
+          "prompt": "Central idea",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q6-6-central"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q6-6-central"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q6-6-minor",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a minor detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-6-summary",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This loosely lists details without their central relationship.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-1",
+                "g3-id-ci-passage-6-sentence-5",
+                "g3-id-ci-passage-6-sentence-7",
+                "g3-id-ci-passage-6-sentence-11",
+                "g3-id-ci-passage-6-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-6-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-6-central",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This states the complete central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ci-q6-6-row-topic",
+          "prompt": "Topic",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q6-6-topic"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q6-6-topic"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q6-6-summary",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a loose detail list.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-1",
+                "g3-id-ci-passage-6-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-6-minor",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a minor detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-6-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-6-topic",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This phrase names the broad subject only.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-feature-title"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ci-q6-6-row-minor",
+          "prompt": "Interesting but minor detail",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q6-6-minor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q6-6-minor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q6-6-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-6-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-6-summary",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This combines several details rather than one minor detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-1",
+                "g3-id-ci-passage-6-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-6-minor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Dark panel color is true but not essential to energy conversion and delivery.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-13"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q6-7",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-4c7a8d1faa9d25fb",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "d03e1e875a058164aa3c402aa9582606d01294479a01b32a3297207ccecfb1b0",
+        "conclusionsSha256": "c738ffa3512ade12f9943398307cfaf305f20c8a392e8f63f5baccff73bc9e33",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0029.second-pass.json",
+        "receiptSha256": "8512924bd5bb8f84213911a521c89c8c4486374b20fc16e631fa03063fef575c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Part A: Which central idea fits the whole text?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q6-7-a-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q6-7-a-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q6-7-a-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "States the complete process and purpose developed across all sections.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-7-a-wrong",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source says another power source may provide electricity when panels produce too little.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-7-a-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Names only the topic without stating a central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Part B: Which pair of details from separate sections best supports Part A?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q6-7-b-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q6-7-b-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q6-7-b-minor",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Panel location and color do not explain conversion and delivery of energy.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-1",
+                "g3-id-ci-passage-6-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-7-b-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Connects sunlight absorption in the first section to the parts carrying energy to equipment in a later section.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-3",
+                "g3-id-ci-passage-6-sentence-15"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q6-7-b-partial",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Sunlight absorption supports the idea, but panel color does not support conversion or delivery.",
+              "evidenceIds": [
+                "g3-id-ci-passage-6-sentence-3",
+                "g3-id-ci-passage-6-sentence-13"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q7-1",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-f38b63746c4bda48",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "5c0c2130e4627899b678095f02b1afbdd2a607d32c2780e51d486a65951a5a74",
+        "conclusionsSha256": "97e542d0577a887cdaf2f641a5a6e5fe8f7b65d9b67898fe688988873287c01e",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0109.pass-a.json",
+        "receiptSha256": "97e542d0577a887cdaf2f641a5a6e5fe8f7b65d9b67898fe688988873287c01e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the central idea of \"The Return Trip of a Library Book\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q7-1-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q7-1-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q7-1-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Scanning is only one step in the full return system.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-1-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This loosely lists actions and cover appearance without stating how they help the next reader.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-2",
+                "g3-id-ci-passage-7-sentence-3",
+                "g3-id-ci-passage-7-sentence-4",
+                "g3-id-ci-passage-7-sentence-7",
+                "g3-id-ci-passage-7-sentence-12",
+                "g3-id-ci-passage-7-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-1-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names only the topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-1-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This complete idea connects labels, scanning, sorting, shelving, and later findability.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-4",
+                "g3-id-ci-passage-7-sentence-6",
+                "g3-id-ci-passage-7-sentence-7",
+                "g3-id-ci-passage-7-sentence-14"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q7-2",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-185bf5b1be8cf7ed",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "5c0c2130e4627899b678095f02b1afbdd2a607d32c2780e51d486a65951a5a74",
+        "conclusionsSha256": "97e542d0577a887cdaf2f641a5a6e5fe8f7b65d9b67898fe688988873287c01e",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0109.pass-a.json",
+        "receiptSha256": "97e542d0577a887cdaf2f641a5a6e5fe8f7b65d9b67898fe688988873287c01e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "How does the section \"Sort by Location\" support the central idea?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q7-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q7-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q7-2-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "Labels and sorting directly support finding the book.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-6",
+                "g3-id-ci-passage-7-sentence-7",
+                "g3-id-ci-passage-7-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The section explains how location labels guide cart grouping and reduce shelf searching.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-6",
+                "g3-id-ci-passage-7-sentence-7",
+                "g3-id-ci-passage-7-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-2-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "Checking and final shelving sections remain necessary.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-2",
+                "g3-id-ci-passage-7-sentence-11",
+                "g3-id-ci-passage-7-sentence-14"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-2-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The section adds specific sorting information beyond the title.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-6",
+                "g3-id-ci-passage-7-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q7-3",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-b5fb2621376478c5",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "5c0c2130e4627899b678095f02b1afbdd2a607d32c2780e51d486a65951a5a74",
+        "conclusionsSha256": "97e542d0577a887cdaf2f641a5a6e5fe8f7b65d9b67898fe688988873287c01e",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0109.pass-a.json",
+        "receiptSha256": "97e542d0577a887cdaf2f641a5a6e5fe8f7b65d9b67898fe688988873287c01e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Read this new example: A museum worker records each object, adds a location label, and places it in a padded box. A catalog tells staff where to find the box later. What central idea fits all of these details?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q7-3-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q7-3-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q7-3-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This covers only one box function.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-3-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The example does not say every object shares one box.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-3-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This names only the topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-3-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This statement unites records, labels, storage, protection, and later retrieval.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q7-4",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-f148a3a810d2f62c",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "5c0c2130e4627899b678095f02b1afbdd2a607d32c2780e51d486a65951a5a74",
+        "conclusionsSha256": "97e542d0577a887cdaf2f641a5a6e5fe8f7b65d9b67898fe688988873287c01e",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0109.pass-a.json",
+        "receiptSha256": "97e542d0577a887cdaf2f641a5a6e5fe8f7b65d9b67898fe688988873287c01e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two details from different sections that best support the central idea.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-id-ci-q7-4-correct-1",
+            "g3-id-ci-q7-4-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q7-4-correct-2",
+            "g3-id-ci-q7-4-correct-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q7-4-wrong-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Cover color is explicitly not used for shelf location.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-4-wrong-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Removing leftover paper is a small preparation detail rather than key findability evidence.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-4-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The final synthesis states that the return system prepares the book for another reader.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-15"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-4-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The scanner record is a key first-section step in tracking the returned book.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q7-5",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-98e2df7598fca7e9",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "5c0c2130e4627899b678095f02b1afbdd2a607d32c2780e51d486a65951a5a74",
+        "conclusionsSha256": "97e542d0577a887cdaf2f641a5a6e5fe8f7b65d9b67898fe688988873287c01e",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0109.pass-a.json",
+        "receiptSha256": "97e542d0577a887cdaf2f641a5a6e5fe8f7b65d9b67898fe688988873287c01e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that shows the final result of the book return system.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q7-5-segment-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q7-5-segment-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q7-5-segment-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence explicitly states the final result after the return steps: the reader can find the book.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-14"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-5-segment-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Cover color is a middle-section aside, not the return system's final result.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-5-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the first inspection step.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-5-segment-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is an early preparation step.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q7-6",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-cfdf0c325523cb56",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "5c0c2130e4627899b678095f02b1afbdd2a607d32c2780e51d486a65951a5a74",
+        "conclusionsSha256": "97e542d0577a887cdaf2f641a5a6e5fe8f7b65d9b67898fe688988873287c01e",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0109.pass-a.json",
+        "receiptSha256": "97e542d0577a887cdaf2f641a5a6e5fe8f7b65d9b67898fe688988873287c01e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-id-ci-q7-6-row-central",
+          "prompt": "Central idea",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q7-6-central"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q7-6-central"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q7-6-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-6-central",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This complete thought states how the return system enables later finding.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-4",
+                "g3-id-ci-passage-7-sentence-6",
+                "g3-id-ci-passage-7-sentence-7",
+                "g3-id-ci-passage-7-sentence-14"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-6-minor",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a minor cover-color detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-6-summary",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This loosely lists actions without their central purpose.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-2",
+                "g3-id-ci-passage-7-sentence-3",
+                "g3-id-ci-passage-7-sentence-4",
+                "g3-id-ci-passage-7-sentence-7",
+                "g3-id-ci-passage-7-sentence-12",
+                "g3-id-ci-passage-7-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ci-q7-6-row-topic",
+          "prompt": "Topic",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q7-6-topic"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q7-6-topic"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q7-6-minor",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a minor detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-6-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-4",
+                "g3-id-ci-passage-7-sentence-14"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-6-topic",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This phrase names the broad subject only.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-6-summary",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a loose action list.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-2",
+                "g3-id-ci-passage-7-sentence-12"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ci-q7-6-row-minor",
+          "prompt": "Interesting but minor detail",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q7-6-minor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q7-6-minor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q7-6-central",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states the central idea.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-4",
+                "g3-id-ci-passage-7-sentence-14"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-6-summary",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This combines several actions rather than identifying one minor detail.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-2",
+                "g3-id-ci-passage-7-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-6-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the topic.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-feature-title"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-6-minor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Cover color is true but explicitly not used to locate the shelf.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ci-q7-7",
+      "packId": "g3-information-detectives-central-idea-engine",
+      "contentVersion": "g3-id-central-idea-r0.1.0",
+      "contentFingerprint": "qta-v1-c06eb7ec9767d518",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "d03e1e875a058164aa3c402aa9582606d01294479a01b32a3297207ccecfb1b0",
+        "conclusionsSha256": "c738ffa3512ade12f9943398307cfaf305f20c8a392e8f63f5baccff73bc9e33",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0044.pass-a.json",
+        "receiptSha256": "c738ffa3512ade12f9943398307cfaf305f20c8a392e8f63f5baccff73bc9e33",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Part A: Which central idea fits the whole text?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q7-7-a-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q7-7-a-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q7-7-a-topic",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Names only the topic without explaining the return system.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-7-a-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Accurately combines the scanning, labeling, sorting, and shelving process with its result for readers.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-4",
+                "g3-id-ci-passage-7-sentence-6",
+                "g3-id-ci-passage-7-sentence-7",
+                "g3-id-ci-passage-7-sentence-11",
+                "g3-id-ci-passage-7-sentence-14"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-7-a-wrong",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source explicitly says cover color does not decide shelf location.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Part B: Which pair of details from separate sections best supports Part A?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ci-q7-7-b-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ci-q7-7-b-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ci-q7-7-b-partial",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Scanning supports the idea, but the cover-color contrast does not show the return system preparing the book for a reader.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-4",
+                "g3-id-ci-passage-7-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-7-b-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Connects the recorded return in the first section to the later result that the system prepares the book to be borrowed again.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-4",
+                "g3-id-ci-passage-7-sentence-15"
+              ]
+            },
+            {
+              "answerId": "g3-id-ci-q7-7-b-minor",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Removing a bookmark and rejecting cover color do not explain the coordinated locating system.",
+              "evidenceIds": [
+                "g3-id-ci-passage-7-sentence-3",
+                "g3-id-ci-passage-7-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

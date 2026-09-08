@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0099",
+  "batchFileSha256": "b3d62d65b2038087d3cbfd636e8b93399eb8073bfa29b84e66f8c93d512d6022",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId":"Q1157","fingerprint":"10bb2fe97b9bb3db11bbf00007f86ddc2bde153b9325979e8b8320a92c0d865d","slots":[{"slotId":"response","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","INCORRECT","This is Jae's perspective, not Camille's initial view.",["S0120","S0131"]],
+        ["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Being welcoming is a trait, not Camille's view about keeping the platform open.",["S0123","S0125"]],
+        ["A3","DEFENSIBLE","Camille directly says all sides should remain open because families expect the full mapped view.",["S0123","S0125","S0126"]],
+        ["A4","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Disappointment is a feeling and is not Camille's platform perspective.",["S0123","S0125"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1158","fingerprint":"437df7a90e07d5255093e591aa267b1bbd9e38320407c2f6d4881df8dec80cbe","slots":[{"slotId":"response","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Concern is a feeling, not Jae's complete view about the platform route.",["S0120"]],
+        ["A2","DEFENSIBLE","Jae directly calls for a temporary closure near the nest and later tests a quieter western loop.",["S0120","S0127","S0131","S0135"]],
+        ["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Protectiveness is a trait, not Jae's stated route perspective.",["S0120","S0127"]],
+        ["A4","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Narrator type does not state Jae's platform perspective.",["S0117","S0135"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1159","fingerprint":"4919a8678a3f5c3cae99590200fe69d5fef35725e85eece97f665d0ea45dae88","slots":[{"slotId":"response","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","CONTRADICTED","Camille later closes the east route and teaches visitors to use the quiet path.",["S0122","S0134"]],
+        ["A2","CONTRADICTED","The story stays in third person throughout.",["S0117","S0135"]],
+        ["A3","DEFENSIBLE","After observing the disturbed bird, Camille replaces her full-platform plan with a temporary protected route.",["S0123","S0126","S0130","S0122","S0134"]],
+        ["A4","PARTIALLY_TRUE_BUT_NONRESPONSIVE","A possible surprise does not explain Camille's changed belief and action.",["S0128","S0130"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1160","fingerprint":"6b6e0da26fdbb3ba44f26e1d13a7a01d8d082bc83605ba1396927b9fd02d2a1e","slots":[{"slotId":"response","defensible":["A1","A2"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","DEFENSIBLE","Camille directly states her initial full-platform perspective.",["S0123"]],
+        ["A2","DEFENSIBLE","Jae directly states the temporary-closure perspective.",["S0120"]],
+        ["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","A possible feeling neither states Camille's perspective nor supplies Jae evidence.",["S0123"]],
+        ["A4","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This introduces the shared task but reveals neither character's view.",["S0117"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1161","fingerprint":"797753a2f9dcb50f4fc46b0a434d8ecccfa64be79d4b05d13736f05a34dbb254","slots":[{"slotId":"response","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","INCORRECT","This states Camille's earlier perspective, before it changes.",["S0123"]],
+        ["A2","INCORRECT","This states Camille's earlier belief that footsteps would not matter much.",["S0126"]],
+        ["A3","DEFENSIBLE","Changing the map to a quiet nesting-season path most clearly demonstrates Camille's later view.",["S0122","S0134"]],
+        ["A4","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This task-setting sentence reveals no changed perspective.",["S0117"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1162","fingerprint":"31502e07a330bb74f9a9eca3c591d28ff4112928f23d92f9eacbda2aeb467303","slots":[
+        {"slotId":"row_1","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","INCORRECT","This is Jae's perspective.",["S0120","S0131"]],
+          ["A2","DEFENSIBLE","Camille initially wants the entire mapped platform open for visitors.",["S0123","S0125","S0126"]],
+          ["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Narrator type is not Camille's view of the platform route.",["S0117","S0135"]]
+        ]},
+        {"slotId":"row_2","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","INCORRECT","This is Camille's initial perspective.",["S0123","S0125"]],
+          ["A2","DEFENSIBLE","Jae wants the nesting-side route closed temporarily and provides a quieter loop.",["S0120","S0131","S0135"]],
+          ["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Narrator type is not Jae's view of the platform route.",["S0117","S0135"]]
+        ]}
+      ],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1163","fingerprint":"d162c3258f667d0c53d9347498d3855139a80b2a080cea2c82b768326fe4184d","slots":[
+        {"slotId":"part_a","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Narrator type does not compare the characters' platform perspectives.",["S0117","S0135"]],
+          ["A2","DEFENSIBLE","This accurately contrasts Camille's initial open-route view with Jae's temporary protective reroute.",["S0123","S0120"]],
+          ["A3","CONTRADICTED","The roles are reversed; Jae protects the nest and Camille initially favors keeping the route open.",["S0123","S0120"]]
+        ]},
+        {"slotId":"part_b","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This includes Jae's perspective but the task sentence does not supply Camille's contrasting view.",["S0120","S0117"]],
+          ["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This includes Camille's perspective but the task sentence does not supply Jae's contrasting view.",["S0123","S0117"]],
+          ["A3","DEFENSIBLE","The pair contains each character's direct statement and fully supports the Part A contrast.",["S0123","S0120"]]
+        ]}
+      ],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1164","fingerprint":"2e981642d89f0c1f30822da6dfcf2baca7d5c3dc353b3f81b3b5c30d22e7b09a","slots":[{"slotId":"response","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","DEFENSIBLE","The seven uneven lines use intentional breaks without a fixed rhyme scheme or required meter.",["S0009","S0003","S0011","S0012","S0006","S0013","S0008"]],
+        ["A2","CONTRADICTED","A limerick has five lines with a characteristic rhyme pattern, unlike this seven-line poem.",["S0009","S0003","S0011","S0012","S0006","S0013","S0008"]],
+        ["A3","CONTRADICTED","The line-ending words do not follow a fixed end-rhyme pattern.",["S0009","S0003","S0012","S0006","S0013","S0008"]],
+        ["A4","CONTRADICTED","The poem has seven lines rather than the three-line classroom haiku pattern taught here.",["S0009","S0003","S0011","S0012","S0006","S0013","S0008"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1165","fingerprint":"0cdedf126c2bafd0e8219873b47540e4a47f4ef4af3bfa09bfdb85baab728b78","slots":[{"slotId":"response","defensible":["A4"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","CONTRADICTED","Neighboring line endings such as escape, drops, Below, and street do not rhyme in pairs.",["S0009","S0003","S0011","S0012"]],
+        ["A2","CONTRADICTED","The poem has seven lines and no AABBA end-rhyme pattern.",["S0009","S0003","S0011","S0012","S0006","S0013","S0008"]],
+        ["A3","CONTRADICTED","The poem has seven lines, not three.",["S0009","S0003","S0011","S0012","S0006","S0013","S0008"]],
+        ["A4","DEFENSIBLE","The poem's intentional line breaks and absence of a required fixed rhyme pattern identify free verse.",["S0011","S0012","S0006","S0013"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1166","fingerprint":"7bb69fbf5070a5dccb4ae7298eeda9b9ff120c52142e309070d2412cb820eb27","slots":[{"slotId":"response","defensible":["A1","A2"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","DEFENSIBLE","Intentional line breaks without a required fixed rhyme pattern are a defining clue for this free-verse poem.",["S0009","S0003","S0011","S0012","S0006","S0013","S0008"]],
+        ["A2","DEFENSIBLE","The varied line lengths, especially the isolated one-word line, reinforce the flexible free-verse structure.",["S0009","S0011","S0012","S0008"]],
+        ["A3","CONTRADICTED","The poem has seven lines rather than three.",["S0009","S0003","S0011","S0012","S0006","S0013","S0008"]],
+        ["A4","CONTRADICTED","The poem has seven lines and lacks an AABBA rhyme pattern.",["S0009","S0003","S0011","S0012","S0006","S0013","S0008"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1167","fingerprint":"9065a5135f69a2e365e6d6a09f5cbc310c43d9879136e15db3e55963cb4997ea","slots":[{"slotId":"response","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","DEFENSIBLE","Below is the only one-word line and its break pauses before the next line names the street scene.",["S0011","S0012"]],
+        ["A2","CONTRADICTED","This four-word line continues the street scene after the pause.",["S0012"]],
+        ["A3","CONTRADICTED","This five-word opening line is not a one-word pause before the street scene.",["S0009"]],
+        ["A4","CONTRADICTED","This four-word line describes pigeons and is not the one-word pause.",["S0003"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1168","fingerprint":"09b53b6a98c414e8762521843fd7ce1f4bdbfdc3d5b6b54a42d8d005506543f3","slots":[
+        {"slotId":"row_1","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This is the structural clue, not the requested poem-form name.",["S0011","S0012","S0006","S0013"]],
+          ["A2","CONTRADICTED","The poem does not use a fixed end-rhyme pattern.",["S0009","S0003","S0012","S0008"]],
+          ["A3","DEFENSIBLE","Free verse correctly names the form shown by the poem's flexible lineation and rhyme pattern.",["S0009","S0003","S0011","S0012","S0006","S0013","S0008"]]
+        ]},
+        {"slotId":"row_2","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","DEFENSIBLE","Intentional line breaks without required fixed rhyme are the strongest structural clue.",["S0011","S0012","S0006","S0013"]],
+          ["A2","CONTRADICTED","Rhymed verse is neither a clue nor an accurate form for this poem.",["S0009","S0003","S0012","S0008"]],
+          ["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Free verse names the form rather than giving the requested structural clue.",["S0009","S0003","S0011","S0012","S0006","S0013","S0008"]]
+        ]}
+      ],"projectionDefect":""
+    }
+  ]
+}

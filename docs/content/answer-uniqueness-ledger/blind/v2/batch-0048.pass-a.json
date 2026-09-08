@@ -1,0 +1,669 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0048",
+  "batchFileSha256": "0c2c5dec22d1864aa32dfaeac47addae329affc8c695865daae8ff03b4078739",
+  "reviewerThreadId": "01a07bc1-57ca-7230-a515-d322b50c9d2e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0562",
+      "fingerprint": "df703b109f4430aa1c2987b2c6c0aef5b46aa041e05083e7d9cab70ac64bc442",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a feature or detail, not the repeated topic of the whole source.",
+              [
+                "S0003",
+                "S0009"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This does not name the rain-garden subject repeated across the passage.",
+              [
+                "S0003",
+                "S0009",
+                "S0014"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one effect or participant, not the overall source topic.",
+              [
+                "S0012",
+                "S0009"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Rain gardens are named in the title and explained throughout the source.",
+              [
+                "S0003",
+                "S0009",
+                "S0014"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0563",
+      "fingerprint": "f1a04fb7f45a0b1e46937252e73f8a9876b0cd33558bfcd1d9140b7896b53fee",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This reflects a narrow source detail rather than the author purpose across the whole passage.",
+              [
+                "S0012",
+                "S0009"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The source explains how a rain garden catches water and helps it soak safely into soil.",
+              [
+                "S0003",
+                "S0005",
+                "S0009"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This does not match the explanatory treatment of rain gardens and water.",
+              [
+                "S0003",
+                "S0009"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is at most one source action or detail, not the complete author purpose.",
+              [
+                "S0010",
+                "S0011",
+                "S0009"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0564",
+      "fingerprint": "168c35fab59fd5cccb6460669ccc1ee188cea1f4fca191c97d3b678949c46e4b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Soil holding water so it can soak in directly explains how the garden manages rainwater.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Watching water disappear is a true observation, but it is less direct evidence of how the garden catches and absorbs rain.",
+              [
+                "S0013",
+                "S0009"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Catching rain from a roof or walkway directly supports the passage purpose.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Bees and butterflies are a true added benefit, but they do not directly explain rainwater capture and soaking.",
+              [
+                "S0012",
+                "S0009"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0565",
+      "fingerprint": "9fae539640e23c22bf7855760ad5ae945bac50aab196cbf94104834c767cafa4",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one supporting detail and does not summarize why the author explains the rain garden.",
+              [
+                "S0010",
+                "S0009"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a narrower observation rather than the source-wide explanatory purpose.",
+              [
+                "S0013",
+                "S0009"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This concluding sentence directly combines water soaking with the garden being safer for plants, capturing the author purpose.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one additional detail rather than the clearest statement of the source-wide purpose.",
+              [
+                "S0012",
+                "S0009"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0566",
+      "fingerprint": "4a46c652b9851cf506bd1491120fa3cb01084d0c1573155f2f66f6bff258977b",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a rain-garden feature, not the overall topic.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one effect or detail, not the overall topic.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Rain gardens are the repeated subject of the passage and title.",
+              [
+                "S0003",
+                "S0009",
+                "S0014"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This explains the source-wide purpose: showing how a rain garden catches water and helps it soak in.",
+              [
+                "S0003",
+                "S0005",
+                "S0009"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a supporting fact rather than the author purpose.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This names the topic without stating why the author wrote about it.",
+              [
+                "S0014",
+                "S0009"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The source explicitly says bees and butterflies visit the flowers.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states the broader purpose rather than another individual detail.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This names the topic rather than an additional source fact.",
+              [
+                "S0014"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0567",
+      "fingerprint": "6f31c34b786ce83c98f6d3a505d5e341d4a538037abf18db3f13d403c7b2f391",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one shelter feature, not the overall topic of the passage.",
+              [
+                "S0026",
+                "S0036"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one route detail, not the repeated source subject.",
+              [
+                "S0030",
+                "S0036"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This does not name the animal-shelter subject established by the title and details.",
+              [
+                "S0026",
+                "S0037"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Animal shelters are the subject described throughout the passage and title.",
+              [
+                "S0026",
+                "S0032",
+                "S0037"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0568",
+      "fingerprint": "5a836fa01c7f388cb440a3b5522a0f9969191cc36aacef59c449604c2ab083fe",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "The passage describes shelters; it does not try to persuade every reader to visit every shelter.",
+              [
+                "S0026",
+                "S0032",
+                "S0036"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Room cleaning is one detail, not a set of directions or the source-wide purpose.",
+              [
+                "S0033",
+                "S0036"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The source is informational and does not tell a made-up story about a lost pet.",
+              [
+                "S0026",
+                "S0032"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The passage describes how quiet spaces, clean beds, and clear paths help animals rest and feel safe.",
+              [
+                "S0028",
+                "S0032",
+                "S0036"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0569",
+      "fingerprint": "5d5f4b212c586c53b08348b72a5e483120ac47cf933d0b2f48372ff47f1659ed",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "The prompt requests two details, but three choices directly support the stated purpose: reducing crowding, identifying animals needing extra rest, and providing a quiet resting space.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Cleaning rooms and refilling bowls is a true care detail, but it is less directly tied to the emphasized calm, rest, and safety purpose.",
+              [
+                "S0033",
+                "S0032",
+                "S0036"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "One-way paths prevent crowding, directly supporting a calm and safe shelter.",
+              [
+                "S0030",
+                "S0032"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The list identifies animals needing extra rest, directly supporting the passage emphasis on rest.",
+              [
+                "S0035",
+                "S0028"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "A quiet personal space directly helps an animal rest without noise.",
+              [
+                "S0028",
+                "S0032"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0570",
+      "fingerprint": "63990e2316e50f88fa4e6099fbfa5a92a75e61ae3598f5943c330943c150855f",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This directly supports calm movement, but it is one path detail rather than the best synthesis of the author purpose.",
+              [
+                "S0030",
+                "S0036"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This directly supports rest, but it is one room detail rather than the source-wide synthesis.",
+              [
+                "S0028",
+                "S0036"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This lists helpful shelter features but does not connect the major ideas across the source as completely as the conclusion.",
+              [
+                "S0026",
+                "S0036"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This concluding sentence connects quiet rooms, clean beds, and clear paths, matching the taught criterion that the best detail links ideas across sections.",
+              [
+                "S0036"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0571",
+      "fingerprint": "cd2a12c5e6311e8cbcfec2cde55d77b0c3bf72164915ce9901ed7c586bf62858",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "One-way paths are one shelter feature, not the whole topic.",
+              [
+                "S0030"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Animal shelters are the overall source topic.",
+              [
+                "S0026",
+                "S0032",
+                "S0037"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Water bowls are one shelter detail, not the whole topic.",
+              [
+                "S0026"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This states the author purpose of describing how a calm shelter supports rest and safety.",
+              [
+                "S0028",
+                "S0032",
+                "S0036"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one supporting path detail, not the author purpose.",
+              [
+                "S0030"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one supporting care detail, not the author purpose.",
+              [
+                "S0033"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "Both the front-desk rest list and the statement that a calm or quiet shelter helps animals settle and feel safe are true source-supported details; the prompt gives no constraint excluding the paraphrased detail.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This names the source topic, not an additional factual detail.",
+              [
+                "S0037"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The front desk list for animals needing extra rest is stated explicitly.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This accurately paraphrases the source statement that a calm shelter helps animals settle in and feel safe.",
+              [
+                "S0032"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

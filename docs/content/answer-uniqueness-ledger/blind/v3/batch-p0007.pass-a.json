@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0007",
+  "batchFileSha256": "401c05135b140b9ac15e2b1599a4ff18a4f30b0e86f280a2380a0988fd8e1ad5",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0167",
+      "fingerprint": "79bdaae9bf7f8c6638d06010da588121037876a3bf6654c12576d37ce6afc24a",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "heat is the base word and has no prefix.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "unsafe begins with un-, not pre-.",
+              [
+                "S0017"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "repaint begins with re-, not pre-.",
+              [
+                "S0014"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "preheat begins with the prefix pre- attached to heat.",
+              [
+                "S0012"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0177",
+      "fingerprint": "6b0032e83a2ca5267c86434463ba4a7e6caf5f8b9177243e84bfdf2bd49a501b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This sentence states both actions named in the prompt.",
+              [
+                "S0023"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This sentence describes previewing an art game and hearing a song, not unrolling and retelling.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This sentence describes younger guests near a preschool room, not the requested actions.",
+              [
+                "S0026"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0189",
+      "fingerprint": "31f42f7761ec099a6770af23d8010ca43f1bda643b2e908615e8d8e47aef0e7d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "miscount contains the prefix mis- attached to count.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "misspell contains the prefix mis- attached to spell.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "misprint contains the prefix mis- attached to print.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "unrolled contains the prefix un- attached to roll, with the ending -ed.",
+              [
+                "S0062"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0203",
+      "fingerprint": "d6ebb43bc9e2ca76b3cb5c28c99c29f992596e8bec072a6e93451e1d50c82646",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This sentence states both actions named in the prompt.",
+              [
+                "S0023"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This sentence describes previewing an art game and hearing a song, not unrolling and retelling.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This sentence describes younger guests near a preschool room, not the requested actions.",
+              [
+                "S0026"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

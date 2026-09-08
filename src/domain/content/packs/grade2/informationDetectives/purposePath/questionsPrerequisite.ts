@@ -208,8 +208,8 @@ export const purposePathPrerequisiteQuestions = [
     passageIdentifier: purposePathPassageIds.nestBuilderNotes.passageId,
     lessonIdentifier: purposePathLessonIds.prereqFindAuthorGoal,
     questionIdentifier: purposePathQuestionIds.prereqFindAuthorGoal[2],
-    prompt: 'Choose two details that are most relevant to the author purpose.',
-    explanation: 'The best details help readers see how the shelter stays calm and safe.',
+    prompt: 'Choose the detail that gives each animal a quiet resting space and the detail that prevents crowding. Select two.',
+    explanation: 'A quiet resting space and a one-way path that prevents crowding both help the shelter stay calm and safe.',
     evidenceReference: purposePathSentenceIds.nestBuilderNotes[1],
     evidenceReferenceIds: [
       purposePathSentenceIds.nestBuilderNotes[1],
@@ -283,7 +283,7 @@ export const purposePathPrerequisiteQuestions = [
       },
       {
         id: 'quiet-other',
-        prompt: 'Which is another true detail?',
+        prompt: 'Which detail describes a record kept at the front desk?',
         correctChoiceId: 'quiet-other-answer',
         options: [
           choice('quiet-other-answer', 'The front desk keeps a simple list of the animals who need extra rest.'),

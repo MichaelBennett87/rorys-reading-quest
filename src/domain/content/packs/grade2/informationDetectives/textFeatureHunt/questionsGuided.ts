@@ -234,8 +234,8 @@ export const textFeatureHuntGuidedQuestions: ReadingQuestion[] = [
     passageIdentifier: TEXT_FEATURE_HUNT_PASSAGE_IDS.trailMap,
     lessonIdentifier: TEXT_FEATURE_HUNT_LESSON_IDS.guidedB,
     questionIdentifier: textFeatureHuntQuestionId('guided-b', 'ms-1'),
-    prompt: 'Choose the two features that help the reader follow the trail.',
-    explanation: 'The map shows the route, and the caption explains the dashed line that marks the route.',
+    prompt: 'Choose the two features that show or explain the dashed route between the pond, oak tree, and overlook.',
+    explanation: 'The map shows the route between the three places, and the caption explains that its dashed line marks the walking route.',
     evidenceReference: 'feature-selection-for-purpose',
     evidenceReferenceIds: [
       TEXT_FEATURE_HUNT_FEATURE_IDS.trailMap.map,

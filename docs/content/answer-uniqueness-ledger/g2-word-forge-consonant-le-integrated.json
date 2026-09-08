@@ -1,0 +1,4241 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "q-word-forge-consonant-le-guided-final-beat-1",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-df162fcfc9a8ad23",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "3fbb41c46bd7b9c1a01e52c7fb2e6308bd265741c93ea4b994399cf39e7e3a00",
+        "conclusionsSha256": "f795735abfb685fccb5d5a46b08c9819a345b7dae02aa1b1c4b07e5d5e11ee7f",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0017.second-pass.json",
+        "receiptSha256": "24938f90913cb1dc80a5f1d2a19f792f386b4008a313b5600cc49aa48682dbda",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has an open syllable before consonant-le?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "table-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "table-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "table-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "table divides as ta / ble, with open ta before consonant-le.",
+              "evidenceIds": [
+                "orchard-table-1"
+              ]
+            },
+            {
+              "answerId": "bundle-choice",
+              "verdict": "INCORRECT",
+              "rationale": "bundle begins with closed bun before consonant-le.",
+              "evidenceIds": [
+                "orchard-table-4"
+              ]
+            },
+            {
+              "answerId": "candle-choice",
+              "verdict": "INCORRECT",
+              "rationale": "candle begins with closed can before consonant-le.",
+              "evidenceIds": [
+                "orchard-table-2"
+              ]
+            },
+            {
+              "answerId": "apple-choice",
+              "verdict": "INCORRECT",
+              "rationale": "apple begins with closed ap before consonant-le.",
+              "evidenceIds": [
+                "orchard-table-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-guided-final-beat-2",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-0f28c796fe136022",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "3fbb41c46bd7b9c1a01e52c7fb2e6308bd265741c93ea4b994399cf39e7e3a00",
+        "conclusionsSha256": "f795735abfb685fccb5d5a46b08c9819a345b7dae02aa1b1c4b07e5d5e11ee7f",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0011.pass-a.json",
+        "receiptSha256": "f795735abfb685fccb5d5a46b08c9819a345b7dae02aa1b1c4b07e5d5e11ee7f",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has a closed syllable before consonant-le?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "apple-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "apple-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "cable-choice",
+              "verdict": "INCORRECT",
+              "rationale": "cable divides as ca / ble, with open ca.",
+              "evidenceIds": [
+                "orchard-table-3"
+              ]
+            },
+            {
+              "answerId": "maple-choice",
+              "verdict": "INCORRECT",
+              "rationale": "maple divides as ma / ple, with open ma.",
+              "evidenceIds": [
+                "orchard-table-2"
+              ]
+            },
+            {
+              "answerId": "apple-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "apple divides as ap / ple, with closed ap before consonant-le.",
+              "evidenceIds": [
+                "orchard-table-1"
+              ]
+            },
+            {
+              "answerId": "table-choice",
+              "verdict": "INCORRECT",
+              "rationale": "table divides as ta / ble, with open ta.",
+              "evidenceIds": [
+                "orchard-table-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-guided-final-beat-3",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-385350584dad125c",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "3fbb41c46bd7b9c1a01e52c7fb2e6308bd265741c93ea4b994399cf39e7e3a00",
+        "conclusionsSha256": "f795735abfb685fccb5d5a46b08c9819a345b7dae02aa1b1c4b07e5d5e11ee7f",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0017.second-pass.json",
+        "receiptSha256": "24938f90913cb1dc80a5f1d2a19f792f386b4008a313b5600cc49aa48682dbda",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words with consonant-le endings in the orchard passage.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "apple-choice",
+            "table-choice",
+            "maple-choice",
+            "cable-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "table-choice",
+            "cable-choice",
+            "maple-choice",
+            "apple-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "table-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "table appears in the passage and ends with consonant-le ble.",
+              "evidenceIds": [
+                "orchard-table-1"
+              ]
+            },
+            {
+              "answerId": "cable-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "cable appears in the passage and ends with consonant-le ble.",
+              "evidenceIds": [
+                "orchard-table-3"
+              ]
+            },
+            {
+              "answerId": "maple-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "maple appears in the passage and ends with consonant-le ple.",
+              "evidenceIds": [
+                "orchard-table-2"
+              ]
+            },
+            {
+              "answerId": "apple-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "apple appears in the passage and ends with consonant-le ple.",
+              "evidenceIds": [
+                "orchard-table-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-guided-final-beat-4",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-fa7059c57a4360a1",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "3fbb41c46bd7b9c1a01e52c7fb2e6308bd265741c93ea4b994399cf39e7e3a00",
+        "conclusionsSha256": "f795735abfb685fccb5d5a46b08c9819a345b7dae02aa1b1c4b07e5d5e11ee7f",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0011.pass-a.json",
+        "receiptSha256": "f795735abfb685fccb5d5a46b08c9819a345b7dae02aa1b1c4b07e5d5e11ee7f",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that says the farmer tied a cable to the sign.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "orchard-table-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "orchard-table-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "orchard-table-2",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence says a maple leaf rested near a candle box.",
+              "evidenceIds": [
+                "orchard-table-2"
+              ]
+            },
+            {
+              "answerId": "orchard-table-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence exactly states that the farmer tied a cable to the sign.",
+              "evidenceIds": [
+                "orchard-table-3"
+              ]
+            },
+            {
+              "answerId": "orchard-table-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes the apple cart beside a table.",
+              "evidenceIds": [
+                "orchard-table-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-guided-final-beat-5",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-a47ec6707c6eadec",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "3fbb41c46bd7b9c1a01e52c7fb2e6308bd265741c93ea4b994399cf39e7e3a00",
+        "conclusionsSha256": "f795735abfb685fccb5d5a46b08c9819a345b7dae02aa1b1c4b07e5d5e11ee7f",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0011.pass-a.json",
+        "receiptSha256": "f795735abfb685fccb5d5a46b08c9819a345b7dae02aa1b1c4b07e5d5e11ee7f",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "table-row",
+          "prompt": "table",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "table-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "table-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "table-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "tab / le splits inside the consonant-le ending instead of before ble.",
+              "evidenceIds": [
+                "orchard-table-1"
+              ]
+            },
+            {
+              "answerId": "table-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "ta / b le splits apart the final consonant-le chunk.",
+              "evidenceIds": [
+                "orchard-table-1"
+              ]
+            },
+            {
+              "answerId": "table-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "ta / ble preserves final ble and gives the correct split for table.",
+              "evidenceIds": [
+                "orchard-table-1"
+              ]
+            },
+            {
+              "answerId": "table-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "t / able does not isolate the final consonant-le syllable.",
+              "evidenceIds": [
+                "orchard-table-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "maple-row",
+          "prompt": "maple",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "maple-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "maple-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "maple-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "ma / p le splits apart the final consonant-le chunk.",
+              "evidenceIds": [
+                "orchard-table-2"
+              ]
+            },
+            {
+              "answerId": "maple-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "m / aple does not isolate the final consonant-le syllable.",
+              "evidenceIds": [
+                "orchard-table-2"
+              ]
+            },
+            {
+              "answerId": "maple-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "ma / ple preserves final ple and gives the correct split for maple.",
+              "evidenceIds": [
+                "orchard-table-2"
+              ]
+            },
+            {
+              "answerId": "maple-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "map / le splits inside the consonant-le ending instead of before ple.",
+              "evidenceIds": [
+                "orchard-table-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "apple-row",
+          "prompt": "apple",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "apple-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "apple-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "apple-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "ap / ple preserves final ple and gives the correct split for apple.",
+              "evidenceIds": [
+                "orchard-table-1"
+              ]
+            },
+            {
+              "answerId": "apple-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "ap / p le splits apart the final consonant-le chunk.",
+              "evidenceIds": [
+                "orchard-table-1"
+              ]
+            },
+            {
+              "answerId": "apple-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "a / pple does not split directly before the consonant-le syllable.",
+              "evidenceIds": [
+                "orchard-table-1"
+              ]
+            },
+            {
+              "answerId": "apple-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "app / le splits inside the consonant-le ending instead of before ple.",
+              "evidenceIds": [
+                "orchard-table-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "cable-row",
+          "prompt": "cable",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "cable-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "cable-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "cable-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "ca / ble preserves final ble and gives the correct split for cable.",
+              "evidenceIds": [
+                "orchard-table-3"
+              ]
+            },
+            {
+              "answerId": "cable-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "c / able does not isolate the final consonant-le syllable.",
+              "evidenceIds": [
+                "orchard-table-3"
+              ]
+            },
+            {
+              "answerId": "cable-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "cab / le splits inside the consonant-le ending instead of before ble.",
+              "evidenceIds": [
+                "orchard-table-3"
+              ]
+            },
+            {
+              "answerId": "cable-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "ca / b le splits apart the final consonant-le chunk.",
+              "evidenceIds": [
+                "orchard-table-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-guided-split-before-1",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-2253e10bc335be5f",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "fb27a105c88b2c8119459318eb27ad571e676578340e1b2d900b5df3e9b6bccd",
+        "conclusionsSha256": "7fbcc263075310c8dbc9d61a4ca883654c87469fc0e1f16d71cbe90e68c1ccd7",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0012.pass-a.json",
+        "receiptSha256": "7fbcc263075310c8dbc9d61a4ca883654c87469fc0e1f16d71cbe90e68c1ccd7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which split matches candle?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "candle-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "candle-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "candle-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "can | del changes the final letter order and does not reconstruct candle.",
+              "evidenceIds": [
+                "candle-demo-1"
+              ]
+            },
+            {
+              "answerId": "candle-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "cand | le leaves le alone instead of keeping the final consonant-le group dle together.",
+              "evidenceIds": [
+                "candle-demo-1"
+              ]
+            },
+            {
+              "answerId": "candle-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "ca | ndle splits before n rather than before the final consonant-le group dle.",
+              "evidenceIds": [
+                "candle-demo-1"
+              ]
+            },
+            {
+              "answerId": "candle-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "can | dle splits immediately before the final consonant-le group and reconstructs candle.",
+              "evidenceIds": [
+                "candle-demo-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-guided-split-before-2",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-03ec920f93478ab3",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "fb27a105c88b2c8119459318eb27ad571e676578340e1b2d900b5df3e9b6bccd",
+        "conclusionsSha256": "7fbcc263075310c8dbc9d61a4ca883654c87469fc0e1f16d71cbe90e68c1ccd7",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0012.pass-a.json",
+        "receiptSha256": "7fbcc263075310c8dbc9d61a4ca883654c87469fc0e1f16d71cbe90e68c1ccd7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word splits as sim | ple?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "simple-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "simple-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "little-choice",
+              "verdict": "INCORRECT",
+              "rationale": "little splits as lit | tle, not sim | ple.",
+              "evidenceIds": [
+                "candle-demo-2"
+              ]
+            },
+            {
+              "answerId": "simple-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "simple reconstructs exactly from sim | ple and follows the taught split.",
+              "evidenceIds": [
+                "candle-demo-4"
+              ]
+            },
+            {
+              "answerId": "stable-choice",
+              "verdict": "INCORRECT",
+              "rationale": "stable splits as sta | ble, not sim | ple.",
+              "evidenceIds": [
+                "candle-demo-1"
+              ]
+            },
+            {
+              "answerId": "candle-choice",
+              "verdict": "INCORRECT",
+              "rationale": "candle splits as can | dle, not sim | ple.",
+              "evidenceIds": [
+                "candle-demo-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-guided-split-before-3",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-d963423e8d8407a2",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "fb27a105c88b2c8119459318eb27ad571e676578340e1b2d900b5df3e9b6bccd",
+        "conclusionsSha256": "7fbcc263075310c8dbc9d61a4ca883654c87469fc0e1f16d71cbe90e68c1ccd7",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0017.second-pass.json",
+        "receiptSha256": "24938f90913cb1dc80a5f1d2a19f792f386b4008a313b5600cc49aa48682dbda",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words with a closed first syllable in the safety demo.",
+          "requestedSelectionCount": 3,
+          "keyedAnswerIds": [
+            "candle-choice",
+            "little-choice",
+            "simple-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "simple-choice",
+            "little-choice",
+            "candle-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "stable-choice",
+              "verdict": "INCORRECT",
+              "rationale": "stable splits sta | ble, so its first syllable sta ends in a vowel and is open.",
+              "evidenceIds": [
+                "candle-demo-1"
+              ]
+            },
+            {
+              "answerId": "simple-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "simple splits sim | ple, and sim ends in the consonant m, making it closed.",
+              "evidenceIds": [
+                "candle-demo-4"
+              ]
+            },
+            {
+              "answerId": "little-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "little splits lit | tle, and lit ends in the consonant t, making it closed.",
+              "evidenceIds": [
+                "candle-demo-2"
+              ]
+            },
+            {
+              "answerId": "candle-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "candle splits can | dle, and can ends in the consonant n, making it closed.",
+              "evidenceIds": [
+                "candle-demo-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-guided-split-before-4",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-476e4427627830d3",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "fb27a105c88b2c8119459318eb27ad571e676578340e1b2d900b5df3e9b6bccd",
+        "conclusionsSha256": "7fbcc263075310c8dbc9d61a4ca883654c87469fc0e1f16d71cbe90e68c1ccd7",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0012.pass-a.json",
+        "receiptSha256": "7fbcc263075310c8dbc9d61a4ca883654c87469fc0e1f16d71cbe90e68c1ccd7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that says a little helper watched the flame.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "candle-demo-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "candle-demo-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "candle-demo-3",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence says the rules stayed near the candle.",
+              "evidenceIds": [
+                "candle-demo-3"
+              ]
+            },
+            {
+              "answerId": "candle-demo-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence exactly says a little helper watched the flame.",
+              "evidenceIds": [
+                "candle-demo-2"
+              ]
+            },
+            {
+              "answerId": "candle-demo-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence says a candle sat on a stable table.",
+              "evidenceIds": [
+                "candle-demo-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-guided-split-before-5",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-3408bc9cf2c52a88",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "fb27a105c88b2c8119459318eb27ad571e676578340e1b2d900b5df3e9b6bccd",
+        "conclusionsSha256": "7fbcc263075310c8dbc9d61a4ca883654c87469fc0e1f16d71cbe90e68c1ccd7",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0017.second-pass.json",
+        "receiptSha256": "24938f90913cb1dc80a5f1d2a19f792f386b4008a313b5600cc49aa48682dbda",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "candle-row",
+          "prompt": "candle",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "candle-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "candle-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "candle-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "cand | le leaves le alone instead of keeping dle together.",
+              "evidenceIds": [
+                "candle-demo-1"
+              ]
+            },
+            {
+              "answerId": "candle-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "ca | ndle splits before n rather than before the final dle group.",
+              "evidenceIds": [
+                "candle-demo-1"
+              ]
+            },
+            {
+              "answerId": "candle-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "can | del changes the letter order and does not reconstruct candle.",
+              "evidenceIds": [
+                "candle-demo-1"
+              ]
+            },
+            {
+              "answerId": "candle-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "can | dle reconstructs candle and keeps the final dle group together.",
+              "evidenceIds": [
+                "candle-demo-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "little-row",
+          "prompt": "little",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "little-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "little-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "little-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "li | ttle splits before the doubled consonants rather than before the final tle group.",
+              "evidenceIds": [
+                "candle-demo-2"
+              ]
+            },
+            {
+              "answerId": "little-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "lit | tle reconstructs little and matches the taught example.",
+              "evidenceIds": [
+                "candle-demo-2"
+              ]
+            },
+            {
+              "answerId": "little-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "litt | le leaves le alone rather than keeping the consonant-le group together.",
+              "evidenceIds": [
+                "candle-demo-2"
+              ]
+            },
+            {
+              "answerId": "little-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "lit | le omits one t and does not reconstruct little.",
+              "evidenceIds": [
+                "candle-demo-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "simple-row",
+          "prompt": "simple",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "simple-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "simple-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "simple-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "si | mple splits before m rather than before the final ple group.",
+              "evidenceIds": [
+                "candle-demo-4"
+              ]
+            },
+            {
+              "answerId": "simple-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "sim | p le breaks the final consonant-le group into separate pieces.",
+              "evidenceIds": [
+                "candle-demo-4"
+              ]
+            },
+            {
+              "answerId": "simple-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "simp | le leaves le alone rather than keeping ple together.",
+              "evidenceIds": [
+                "candle-demo-4"
+              ]
+            },
+            {
+              "answerId": "simple-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "sim | ple reconstructs simple and keeps the final ple group together.",
+              "evidenceIds": [
+                "candle-demo-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "stable-row",
+          "prompt": "stable",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "stable-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "stable-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "stable-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "st | able does not isolate the final consonant-le group ble.",
+              "evidenceIds": [
+                "candle-demo-1"
+              ]
+            },
+            {
+              "answerId": "stable-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "sta | b le breaks the final consonant-le group into separate pieces.",
+              "evidenceIds": [
+                "candle-demo-1"
+              ]
+            },
+            {
+              "answerId": "stable-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "sta | ble reconstructs stable and keeps the final ble group together.",
+              "evidenceIds": [
+                "candle-demo-1"
+              ]
+            },
+            {
+              "answerId": "stable-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "stab | le leaves le alone rather than keeping ble together.",
+              "evidenceIds": [
+                "candle-demo-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-guided-practice-1",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-bdeee124e26de140",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "fb27a105c88b2c8119459318eb27ad571e676578340e1b2d900b5df3e9b6bccd",
+        "conclusionsSha256": "7fbcc263075310c8dbc9d61a4ca883654c87469fc0e1f16d71cbe90e68c1ccd7",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0012.pass-a.json",
+        "receiptSha256": "7fbcc263075310c8dbc9d61a4ca883654c87469fc0e1f16d71cbe90e68c1ccd7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word splits as ti | tle?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "title-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "title-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "noble-choice",
+              "verdict": "INCORRECT",
+              "rationale": "noble splits as no | ble, not ti | tle.",
+              "evidenceIds": [
+                "machine-exhibit-3"
+              ]
+            },
+            {
+              "answerId": "title-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "title reconstructs exactly from ti | tle and matches the taught example.",
+              "evidenceIds": [
+                "machine-exhibit-1"
+              ]
+            },
+            {
+              "answerId": "handle-choice",
+              "verdict": "INCORRECT",
+              "rationale": "handle splits as han | dle, not ti | tle.",
+              "evidenceIds": [
+                "machine-exhibit-1"
+              ]
+            },
+            {
+              "answerId": "bubble-choice",
+              "verdict": "INCORRECT",
+              "rationale": "bubble splits as bub | ble, not ti | tle.",
+              "evidenceIds": [
+                "machine-exhibit-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-guided-practice-2",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-2cd26a808e80ebd4",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "fb27a105c88b2c8119459318eb27ad571e676578340e1b2d900b5df3e9b6bccd",
+        "conclusionsSha256": "7fbcc263075310c8dbc9d61a4ca883654c87469fc0e1f16d71cbe90e68c1ccd7",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0012.pass-a.json",
+        "receiptSha256": "7fbcc263075310c8dbc9d61a4ca883654c87469fc0e1f16d71cbe90e68c1ccd7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word splits as han | dle?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "handle-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "handle-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "bubble-choice",
+              "verdict": "INCORRECT",
+              "rationale": "bubble splits as bub | ble, not han | dle.",
+              "evidenceIds": [
+                "machine-exhibit-2"
+              ]
+            },
+            {
+              "answerId": "noble-choice",
+              "verdict": "INCORRECT",
+              "rationale": "noble splits as no | ble, not han | dle.",
+              "evidenceIds": [
+                "machine-exhibit-3"
+              ]
+            },
+            {
+              "answerId": "handle-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "handle reconstructs exactly from han | dle and matches the taught example.",
+              "evidenceIds": [
+                "machine-exhibit-1"
+              ]
+            },
+            {
+              "answerId": "title-choice",
+              "verdict": "INCORRECT",
+              "rationale": "title splits as ti | tle, not han | dle.",
+              "evidenceIds": [
+                "machine-exhibit-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-guided-practice-3",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-b5dab2ef2ac4b013",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "fb27a105c88b2c8119459318eb27ad571e676578340e1b2d900b5df3e9b6bccd",
+        "conclusionsSha256": "7fbcc263075310c8dbc9d61a4ca883654c87469fc0e1f16d71cbe90e68c1ccd7",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0012.pass-a.json",
+        "receiptSha256": "7fbcc263075310c8dbc9d61a4ca883654c87469fc0e1f16d71cbe90e68c1ccd7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words in the exhibit passage that end with consonant-le.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "title-choice",
+            "handle-choice",
+            "bubble-choice",
+            "noble-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "handle-choice",
+            "title-choice",
+            "noble-choice",
+            "bubble-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "handle-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "handle appears in the passage and ends with the consonant-le group dle.",
+              "evidenceIds": [
+                "machine-exhibit-1"
+              ]
+            },
+            {
+              "answerId": "title-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "title appears in the passage and ends with the consonant-le group tle.",
+              "evidenceIds": [
+                "machine-exhibit-1"
+              ]
+            },
+            {
+              "answerId": "noble-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "noble appears in the passage and ends with the consonant-le group ble.",
+              "evidenceIds": [
+                "machine-exhibit-3"
+              ]
+            },
+            {
+              "answerId": "bubble-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "bubble appears in the passage and ends with the consonant-le group ble.",
+              "evidenceIds": [
+                "machine-exhibit-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-guided-practice-4",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-3de6a059af783395",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "fb27a105c88b2c8119459318eb27ad571e676578340e1b2d900b5df3e9b6bccd",
+        "conclusionsSha256": "7fbcc263075310c8dbc9d61a4ca883654c87469fc0e1f16d71cbe90e68c1ccd7",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0017.second-pass.json",
+        "receiptSha256": "24938f90913cb1dc80a5f1d2a19f792f386b4008a313b5600cc49aa48682dbda",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that mentions a bubble tube and a stable wheel.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "machine-exhibit-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "machine-exhibit-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "machine-exhibit-3",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes the noble guide and model.",
+              "evidenceIds": [
+                "machine-exhibit-3"
+              ]
+            },
+            {
+              "answerId": "machine-exhibit-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes a title card and handle.",
+              "evidenceIds": [
+                "machine-exhibit-1"
+              ]
+            },
+            {
+              "answerId": "machine-exhibit-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence explicitly mentions both a bubble tube and a stable wheel.",
+              "evidenceIds": [
+                "machine-exhibit-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-guided-practice-5",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-d042007f5d28d0a3",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "fb27a105c88b2c8119459318eb27ad571e676578340e1b2d900b5df3e9b6bccd",
+        "conclusionsSha256": "7fbcc263075310c8dbc9d61a4ca883654c87469fc0e1f16d71cbe90e68c1ccd7",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0012.pass-a.json",
+        "receiptSha256": "7fbcc263075310c8dbc9d61a4ca883654c87469fc0e1f16d71cbe90e68c1ccd7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "title-row",
+          "prompt": "title",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "title-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "title-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "title-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "tit | le leaves le alone instead of keeping tle together.",
+              "evidenceIds": [
+                "machine-exhibit-1"
+              ]
+            },
+            {
+              "answerId": "title-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "t | itle does not isolate the final consonant-le group tle.",
+              "evidenceIds": [
+                "machine-exhibit-1"
+              ]
+            },
+            {
+              "answerId": "title-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "ti | tle reconstructs title and keeps the final tle group together.",
+              "evidenceIds": [
+                "machine-exhibit-1"
+              ]
+            },
+            {
+              "answerId": "title-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "ti | t le breaks the final consonant-le group into separate pieces.",
+              "evidenceIds": [
+                "machine-exhibit-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "handle-row",
+          "prompt": "handle",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "handle-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "handle-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "handle-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "han | d le breaks the final consonant-le group into separate pieces.",
+              "evidenceIds": [
+                "machine-exhibit-1"
+              ]
+            },
+            {
+              "answerId": "handle-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "han | dle reconstructs handle and keeps the final dle group together.",
+              "evidenceIds": [
+                "machine-exhibit-1"
+              ]
+            },
+            {
+              "answerId": "handle-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "ha | ndle splits before n rather than before the final dle group.",
+              "evidenceIds": [
+                "machine-exhibit-1"
+              ]
+            },
+            {
+              "answerId": "handle-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "hand | le leaves le alone rather than keeping dle together.",
+              "evidenceIds": [
+                "machine-exhibit-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "bubble-row",
+          "prompt": "bubble",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "bubble-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "bubble-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "bubble-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "bubb | le leaves le alone rather than keeping ble together.",
+              "evidenceIds": [
+                "machine-exhibit-2"
+              ]
+            },
+            {
+              "answerId": "bubble-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "bub | ble reconstructs bubble and keeps the final ble group together.",
+              "evidenceIds": [
+                "machine-exhibit-2"
+              ]
+            },
+            {
+              "answerId": "bubble-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "bub | b le breaks the final consonant-le group into separate pieces.",
+              "evidenceIds": [
+                "machine-exhibit-2"
+              ]
+            },
+            {
+              "answerId": "bubble-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "bu | bble splits before the doubled consonants rather than before the final ble group.",
+              "evidenceIds": [
+                "machine-exhibit-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "noble-row",
+          "prompt": "noble",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "noble-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "noble-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "noble-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "no | ble reconstructs noble and keeps the final ble group together.",
+              "evidenceIds": [
+                "machine-exhibit-3"
+              ]
+            },
+            {
+              "answerId": "noble-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "n | oble does not isolate the final consonant-le group ble.",
+              "evidenceIds": [
+                "machine-exhibit-3"
+              ]
+            },
+            {
+              "answerId": "noble-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "nob | le leaves le alone rather than keeping ble together.",
+              "evidenceIds": [
+                "machine-exhibit-3"
+              ]
+            },
+            {
+              "answerId": "noble-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "no | b le breaks the final consonant-le group into separate pieces.",
+              "evidenceIds": [
+                "machine-exhibit-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-guided-mixed-1",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-7332346d6693b7d1",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "d1218c1d72f9eeed051e461c2384978adfc8806aac4d54833d60cb6416d622c5",
+        "conclusionsSha256": "d78108068db2824d423ef8e11e493bde01b6ef2cd96d26d10916fd601bbc2eec",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0017.second-pass.json",
+        "receiptSha256": "24938f90913cb1dc80a5f1d2a19f792f386b4008a313b5600cc49aa48682dbda",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has an open syllable before consonant-le?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "stable-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "stable-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "bundle-choice",
+              "verdict": "INCORRECT",
+              "rationale": "bundle splits bun | dle; bun is closed.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-bundle",
+                "jungle-habitat-4"
+              ]
+            },
+            {
+              "answerId": "jungle-choice",
+              "verdict": "INCORRECT",
+              "rationale": "jungle splits jun | gle; jun is closed.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-jungle",
+                "jungle-habitat-1"
+              ]
+            },
+            {
+              "answerId": "dimple-choice",
+              "verdict": "INCORRECT",
+              "rationale": "dimple splits dim | ple; dim is closed.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-dimple",
+                "jungle-habitat-2"
+              ]
+            },
+            {
+              "answerId": "stable-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "stable splits sta | ble; sta is open before consonant-le.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-stable",
+                "jungle-habitat-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-guided-mixed-2",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-f3a4a324b98a4828",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "d1218c1d72f9eeed051e461c2384978adfc8806aac4d54833d60cb6416d622c5",
+        "conclusionsSha256": "d78108068db2824d423ef8e11e493bde01b6ef2cd96d26d10916fd601bbc2eec",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0017.second-pass.json",
+        "receiptSha256": "24938f90913cb1dc80a5f1d2a19f792f386b4008a313b5600cc49aa48682dbda",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word splits as jun | gle?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "jungle-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "jungle-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "jungle-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "jungle is reconstructed by jun | gle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-jungle",
+                "jungle-habitat-1"
+              ]
+            },
+            {
+              "answerId": "stable-choice",
+              "verdict": "INCORRECT",
+              "rationale": "stable splits sta | ble, not jun | gle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-stable",
+                "jungle-habitat-3"
+              ]
+            },
+            {
+              "answerId": "bundle-choice",
+              "verdict": "INCORRECT",
+              "rationale": "bundle splits bun | dle, not jun | gle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-bundle",
+                "jungle-habitat-4"
+              ]
+            },
+            {
+              "answerId": "dimple-choice",
+              "verdict": "INCORRECT",
+              "rationale": "dimple splits dim | ple, not jun | gle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-dimple",
+                "jungle-habitat-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-guided-mixed-3",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-c8335c7b930e500f",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "d1218c1d72f9eeed051e461c2384978adfc8806aac4d54833d60cb6416d622c5",
+        "conclusionsSha256": "d78108068db2824d423ef8e11e493bde01b6ef2cd96d26d10916fd601bbc2eec",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0013.pass-a.json",
+        "receiptSha256": "d78108068db2824d423ef8e11e493bde01b6ef2cd96d26d10916fd601bbc2eec",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words with consonant-le endings in the habitat passage.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "jungle-choice",
+            "dimple-choice",
+            "stable-choice",
+            "bundle-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "dimple-choice",
+            "stable-choice",
+            "jungle-choice",
+            "bundle-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "dimple-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "dimple appears in the passage and ends with consonant-le ple.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-dimple",
+                "jungle-habitat-2"
+              ]
+            },
+            {
+              "answerId": "stable-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "stable appears in the passage and ends with consonant-le ble.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-stable",
+                "jungle-habitat-3"
+              ]
+            },
+            {
+              "answerId": "jungle-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "jungle appears in the passage and ends with consonant-le gle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-jungle",
+                "jungle-habitat-1"
+              ]
+            },
+            {
+              "answerId": "bundle-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "bundle appears in the passage and ends with consonant-le dle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-bundle",
+                "jungle-habitat-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-guided-mixed-4",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-9c88b457d9ed1d43",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "d1218c1d72f9eeed051e461c2384978adfc8806aac4d54833d60cb6416d622c5",
+        "conclusionsSha256": "d78108068db2824d423ef8e11e493bde01b6ef2cd96d26d10916fd601bbc2eec",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0013.pass-a.json",
+        "receiptSha256": "d78108068db2824d423ef8e11e493bde01b6ef2cd96d26d10916fd601bbc2eec",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that says the little monkey crossed a stable bridge.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "jungle-habitat-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "jungle-habitat-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "jungle-habitat-2",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes a dimple card marking animal homes.",
+              "evidenceIds": [
+                "jungle-habitat-2"
+              ]
+            },
+            {
+              "answerId": "jungle-habitat-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes the jungle habitat model and table.",
+              "evidenceIds": [
+                "jungle-habitat-1"
+              ]
+            },
+            {
+              "answerId": "jungle-habitat-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence exactly says the little monkey crossed a stable bridge.",
+              "evidenceIds": [
+                "jungle-habitat-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-guided-mixed-5",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-b2f3f3f7c70e1093",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "d1218c1d72f9eeed051e461c2384978adfc8806aac4d54833d60cb6416d622c5",
+        "conclusionsSha256": "d78108068db2824d423ef8e11e493bde01b6ef2cd96d26d10916fd601bbc2eec",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0013.pass-a.json",
+        "receiptSha256": "d78108068db2824d423ef8e11e493bde01b6ef2cd96d26d10916fd601bbc2eec",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "jungle-row",
+          "prompt": "jungle",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "jungle-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "jungle-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "jungle-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "ju | ngle does not isolate the final consonant-le chunk gle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-jungle"
+              ]
+            },
+            {
+              "answerId": "jungle-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "jun | g le splits inside the consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-jungle"
+              ]
+            },
+            {
+              "answerId": "jungle-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "jun | gle correctly preserves the final consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-jungle"
+              ]
+            },
+            {
+              "answerId": "jungle-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "jung | le separates le from its preceding consonant.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-jungle"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "dimple-row",
+          "prompt": "dimple",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "dimple-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "dimple-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "dimple-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "dim | ple correctly preserves the final consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-dimple"
+              ]
+            },
+            {
+              "answerId": "dimple-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "dim | p le splits inside the consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-dimple"
+              ]
+            },
+            {
+              "answerId": "dimple-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "di | mple does not isolate the final consonant-le chunk ple.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-dimple"
+              ]
+            },
+            {
+              "answerId": "dimple-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "dimp | le separates le from its preceding consonant.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-dimple"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "stable-row",
+          "prompt": "stable",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "stable-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "stable-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "stable-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "sta | ble correctly preserves the final consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-stable"
+              ]
+            },
+            {
+              "answerId": "stable-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "st | able does not split before the final ble chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-stable"
+              ]
+            },
+            {
+              "answerId": "stable-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "stab | le separates le from its preceding consonant.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-stable"
+              ]
+            },
+            {
+              "answerId": "stable-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "sta | b le splits inside the consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-stable"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "bundle-row",
+          "prompt": "bundle",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "bundle-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "bundle-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "bundle-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "bund | le separates le from its preceding consonant.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-bundle"
+              ]
+            },
+            {
+              "answerId": "bundle-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "bu | ndle does not isolate the final dle chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-bundle"
+              ]
+            },
+            {
+              "answerId": "bundle-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "bun | d le splits inside the consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-bundle"
+              ]
+            },
+            {
+              "answerId": "bundle-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "bun | dle correctly preserves the final consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-bundle"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-checkpoint-a-1",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-7d983b0dcd69f521",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "d1218c1d72f9eeed051e461c2384978adfc8806aac4d54833d60cb6416d622c5",
+        "conclusionsSha256": "d78108068db2824d423ef8e11e493bde01b6ef2cd96d26d10916fd601bbc2eec",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0017.second-pass.json",
+        "receiptSha256": "24938f90913cb1dc80a5f1d2a19f792f386b4008a313b5600cc49aa48682dbda",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word splits as jun | gle?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "jungle-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "jungle-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "dimple-choice",
+              "verdict": "INCORRECT",
+              "rationale": "dimple splits dim | ple, not jun | gle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-dimple",
+                "jungle-habitat-2"
+              ]
+            },
+            {
+              "answerId": "table-choice",
+              "verdict": "INCORRECT",
+              "rationale": "table splits ta | ble, not jun | gle.",
+              "evidenceIds": [
+                "jungle-habitat-1"
+              ]
+            },
+            {
+              "answerId": "bundle-choice",
+              "verdict": "INCORRECT",
+              "rationale": "bundle splits bun | dle, not jun | gle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-bundle",
+                "jungle-habitat-4"
+              ]
+            },
+            {
+              "answerId": "jungle-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "jungle is reconstructed by jun | gle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-jungle",
+                "jungle-habitat-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-checkpoint-a-2",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-149c86c70394280b",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "d1218c1d72f9eeed051e461c2384978adfc8806aac4d54833d60cb6416d622c5",
+        "conclusionsSha256": "d78108068db2824d423ef8e11e493bde01b6ef2cd96d26d10916fd601bbc2eec",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0013.pass-a.json",
+        "receiptSha256": "d78108068db2824d423ef8e11e493bde01b6ef2cd96d26d10916fd601bbc2eec",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which split matches bottle?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "bottle-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "bottle-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "bottle-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "bo | ttle does not isolate the final consonant-le chunk tle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-bottle",
+                "bottle-recycling-1"
+              ]
+            },
+            {
+              "answerId": "bottle-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "bot | t le splits inside the consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-bottle",
+                "bottle-recycling-1"
+              ]
+            },
+            {
+              "answerId": "bottle-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "bot | tle correctly preserves the final consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-bottle",
+                "bottle-recycling-1"
+              ]
+            },
+            {
+              "answerId": "bottle-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "bott | le separates le from its preceding consonant.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-bottle",
+                "bottle-recycling-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-checkpoint-a-3",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-951220a89df63204",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "d1218c1d72f9eeed051e461c2384978adfc8806aac4d54833d60cb6416d622c5",
+        "conclusionsSha256": "d78108068db2824d423ef8e11e493bde01b6ef2cd96d26d10916fd601bbc2eec",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0013.pass-a.json",
+        "receiptSha256": "d78108068db2824d423ef8e11e493bde01b6ef2cd96d26d10916fd601bbc2eec",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has an open syllable before consonant-le?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "stable-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "stable-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "stable-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "stable splits sta | ble; sta is an open syllable.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-stable",
+                "jungle-habitat-3"
+              ]
+            },
+            {
+              "answerId": "dimple-choice",
+              "verdict": "INCORRECT",
+              "rationale": "dimple splits dim | ple; dim is closed.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-dimple",
+                "jungle-habitat-2"
+              ]
+            },
+            {
+              "answerId": "jungle-choice",
+              "verdict": "INCORRECT",
+              "rationale": "jungle splits jun | gle; jun is closed.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-jungle",
+                "jungle-habitat-1"
+              ]
+            },
+            {
+              "answerId": "bundle-choice",
+              "verdict": "INCORRECT",
+              "rationale": "bundle splits bun | dle; bun is closed.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-bundle",
+                "jungle-habitat-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-checkpoint-a-4",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-b8d7fe865d1a0f32",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "d1218c1d72f9eeed051e461c2384978adfc8806aac4d54833d60cb6416d622c5",
+        "conclusionsSha256": "d78108068db2824d423ef8e11e493bde01b6ef2cd96d26d10916fd601bbc2eec",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0013.pass-a.json",
+        "receiptSha256": "d78108068db2824d423ef8e11e493bde01b6ef2cd96d26d10916fd601bbc2eec",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word splits as peb | ble?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "pebble-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "pebble-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "bundle-choice",
+              "verdict": "INCORRECT",
+              "rationale": "bundle splits bun | dle, not peb | ble.",
+              "evidenceIds": [
+                "bottle-recycling-1"
+              ]
+            },
+            {
+              "answerId": "stable-choice",
+              "verdict": "INCORRECT",
+              "rationale": "stable splits sta | ble, not peb | ble.",
+              "evidenceIds": [
+                "passage-g2-word-forge-consonant-le-6"
+              ]
+            },
+            {
+              "answerId": "candle-choice",
+              "verdict": "INCORRECT",
+              "rationale": "candle splits can | dle, not peb | ble.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-candle",
+                "bottle-recycling-2"
+              ]
+            },
+            {
+              "answerId": "pebble-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "pebble is reconstructed by peb | ble.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-pebble",
+                "bottle-recycling-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-checkpoint-a-5",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-69b70ec49aef9600",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "d1218c1d72f9eeed051e461c2384978adfc8806aac4d54833d60cb6416d622c5",
+        "conclusionsSha256": "d78108068db2824d423ef8e11e493bde01b6ef2cd96d26d10916fd601bbc2eec",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0013.pass-a.json",
+        "receiptSha256": "d78108068db2824d423ef8e11e493bde01b6ef2cd96d26d10916fd601bbc2eec",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words that show consonant-le in the habitat passage.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "jungle-choice",
+            "dimple-choice",
+            "stable-choice",
+            "bundle-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "stable-choice",
+            "jungle-choice",
+            "bundle-choice",
+            "dimple-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "stable-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "stable appears in the habitat passage and ends with ble.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-stable",
+                "jungle-habitat-3"
+              ]
+            },
+            {
+              "answerId": "jungle-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "jungle appears in the habitat passage and ends with gle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-jungle",
+                "jungle-habitat-1"
+              ]
+            },
+            {
+              "answerId": "bundle-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "bundle appears in the habitat passage and ends with dle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-bundle",
+                "jungle-habitat-4"
+              ]
+            },
+            {
+              "answerId": "dimple-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "dimple appears in the habitat passage and ends with ple.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-5-dimple",
+                "jungle-habitat-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-checkpoint-a-6",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-ca7b914874982e04",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "d1218c1d72f9eeed051e461c2384978adfc8806aac4d54833d60cb6416d622c5",
+        "conclusionsSha256": "d78108068db2824d423ef8e11e493bde01b6ef2cd96d26d10916fd601bbc2eec",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0013.pass-a.json",
+        "receiptSha256": "d78108068db2824d423ef8e11e493bde01b6ef2cd96d26d10916fd601bbc2eec",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that says the bubble jar sat on a table.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "bubble-science-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "bubble-science-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "bubble-science-2",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes a maple leaf near the water.",
+              "evidenceIds": [
+                "bubble-science-2"
+              ]
+            },
+            {
+              "answerId": "bubble-science-3",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes the rattle fan.",
+              "evidenceIds": [
+                "bubble-science-3"
+              ]
+            },
+            {
+              "answerId": "bubble-science-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence exactly says the bubble jar sat on a table.",
+              "evidenceIds": [
+                "bubble-science-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-checkpoint-a-7",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-11eb67fd5dc35ce1",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "d1218c1d72f9eeed051e461c2384978adfc8806aac4d54833d60cb6416d622c5",
+        "conclusionsSha256": "d78108068db2824d423ef8e11e493bde01b6ef2cd96d26d10916fd601bbc2eec",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0013.pass-a.json",
+        "receiptSha256": "d78108068db2824d423ef8e11e493bde01b6ef2cd96d26d10916fd601bbc2eec",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "bottle-row",
+          "prompt": "bottle",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "bottle-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "bottle-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "bottle-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "bott | le separates le from its preceding consonant.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-bottle"
+              ]
+            },
+            {
+              "answerId": "bottle-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "bo | ttle does not isolate the final tle chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-bottle"
+              ]
+            },
+            {
+              "answerId": "bottle-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "bot | tle correctly preserves the final consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-bottle"
+              ]
+            },
+            {
+              "answerId": "bottle-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "bot | t le splits inside the consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-bottle"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "pebble-row",
+          "prompt": "pebble",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "pebble-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "pebble-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "pebble-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "peb | ble correctly preserves the final consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-pebble"
+              ]
+            },
+            {
+              "answerId": "pebble-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "peb | le omits a written b and does not reconstruct pebble.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-pebble"
+              ]
+            },
+            {
+              "answerId": "pebble-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "peb | b le splits inside the consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-pebble"
+              ]
+            },
+            {
+              "answerId": "pebble-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "pe | bble does not isolate the final ble chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-pebble"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "candle-row",
+          "prompt": "candle",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "candle-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "candle-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "candle-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "can | d le splits inside the consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-candle"
+              ]
+            },
+            {
+              "answerId": "candle-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "can | dle correctly preserves the final consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-candle"
+              ]
+            },
+            {
+              "answerId": "candle-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "ca | ndle does not isolate the final dle chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-candle"
+              ]
+            },
+            {
+              "answerId": "candle-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "cand | le separates le from its preceding consonant.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-candle"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "apple-row",
+          "prompt": "apple",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "apple-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "apple-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "apple-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "ap | ple correctly preserves the final consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-apple"
+              ]
+            },
+            {
+              "answerId": "apple-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "app | le separates le from its preceding consonant.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-apple"
+              ]
+            },
+            {
+              "answerId": "apple-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "a | pple does not isolate the final ple chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-apple"
+              ]
+            },
+            {
+              "answerId": "apple-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "ap | p le splits inside the consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-apple"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-checkpoint-b-1",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-32330ca1dd074fb5",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "a6c5f7458324e6a5ac8374169374608dcebb871a06e3b0d4706de5e1ab4fb259",
+        "conclusionsSha256": "05bd33733e4a18cf1cd56c51feb770e6c5c193635e511d915db7020fb389b16c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0014.pass-a.json",
+        "receiptSha256": "05bd33733e4a18cf1cd56c51feb770e6c5c193635e511d915db7020fb389b16c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word splits as ma | ple?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "maple-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "maple-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "apple-choice",
+              "verdict": "INCORRECT",
+              "rationale": "apple splits ap | ple, not ma | ple.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-1-apple",
+                "orchard-table-1"
+              ]
+            },
+            {
+              "answerId": "cable-choice",
+              "verdict": "INCORRECT",
+              "rationale": "cable splits ca | ble, not ma | ple.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-1-cable",
+                "orchard-table-3"
+              ]
+            },
+            {
+              "answerId": "maple-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "maple is reconstructed by ma | ple.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-1-maple",
+                "orchard-table-2"
+              ]
+            },
+            {
+              "answerId": "table-choice",
+              "verdict": "INCORRECT",
+              "rationale": "table splits ta | ble, not ma | ple.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-1-table",
+                "orchard-table-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-checkpoint-b-2",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-b29ffcbcefa2c128",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "a6c5f7458324e6a5ac8374169374608dcebb871a06e3b0d4706de5e1ab4fb259",
+        "conclusionsSha256": "05bd33733e4a18cf1cd56c51feb770e6c5c193635e511d915db7020fb389b16c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0014.pass-a.json",
+        "receiptSha256": "05bd33733e4a18cf1cd56c51feb770e6c5c193635e511d915db7020fb389b16c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word splits as puz | zle?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "puzzle-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "puzzle-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "sample-choice",
+              "verdict": "INCORRECT",
+              "rationale": "sample splits sam | ple, not puz | zle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-3-sample",
+                "puzzle-club-4"
+              ]
+            },
+            {
+              "answerId": "simple-choice",
+              "verdict": "INCORRECT",
+              "rationale": "simple splits sim | ple, not puz | zle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-3-simple",
+                "puzzle-club-1"
+              ]
+            },
+            {
+              "answerId": "puzzle-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "puzzle is reconstructed by puz | zle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-3-puzzle",
+                "puzzle-club-1"
+              ]
+            },
+            {
+              "answerId": "bottle-choice",
+              "verdict": "INCORRECT",
+              "rationale": "bottle splits bot | tle, not puz | zle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-3-bottle",
+                "puzzle-club-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-checkpoint-b-3",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-60b61295d76b8691",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "a6c5f7458324e6a5ac8374169374608dcebb871a06e3b0d4706de5e1ab4fb259",
+        "conclusionsSha256": "05bd33733e4a18cf1cd56c51feb770e6c5c193635e511d915db7020fb389b16c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0014.pass-a.json",
+        "receiptSha256": "05bd33733e4a18cf1cd56c51feb770e6c5c193635e511d915db7020fb389b16c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has a closed syllable before consonant-le in the orchard lesson?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "apple-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "apple-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "table-choice",
+              "verdict": "INCORRECT",
+              "rationale": "table splits ta | ble; ta is open.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-1-table",
+                "orchard-table-1"
+              ]
+            },
+            {
+              "answerId": "maple-choice",
+              "verdict": "INCORRECT",
+              "rationale": "maple splits ma | ple; ma is open.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-1-maple",
+                "orchard-table-2"
+              ]
+            },
+            {
+              "answerId": "cable-choice",
+              "verdict": "INCORRECT",
+              "rationale": "cable splits ca | ble; ca is open.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-1-cable",
+                "orchard-table-3"
+              ]
+            },
+            {
+              "answerId": "apple-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "apple splits ap | ple; ap is closed.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-1-apple",
+                "orchard-table-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-checkpoint-b-4",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-252a853c813d2628",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "dd64af9930fb74230885d0e736e7bcc24c93039513f4c8fffc71d19db416ff92",
+        "conclusionsSha256": "f1205d66402d320f066539d9aed6538cb4ad52fc7506266334a92d5522b22e63",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0006.pass-a.json",
+        "receiptSha256": "f1205d66402d320f066539d9aed6538cb4ad52fc7506266334a92d5522b22e63",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has an open syllable before consonant-le?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "table-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "table-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "bottle-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Bottle divides as bot-tle, with a closed first syllable.",
+              "evidenceIds": [
+                "puzzle-club-2"
+              ]
+            },
+            {
+              "answerId": "simple-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Simple divides as sim-ple, with a closed first syllable.",
+              "evidenceIds": [
+                "puzzle-club-1"
+              ]
+            },
+            {
+              "answerId": "table-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Table divides as ta-ble, with an open first syllable before consonant-le.",
+              "evidenceIds": [
+                "passage-g2-word-forge-consonant-le-3"
+              ]
+            },
+            {
+              "answerId": "puzzle-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Puzzle divides as puz-zle, with a closed first syllable.",
+              "evidenceIds": [
+                "puzzle-club-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-checkpoint-b-5",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-af1795fbe3327b0f",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "a6c5f7458324e6a5ac8374169374608dcebb871a06e3b0d4706de5e1ab4fb259",
+        "conclusionsSha256": "05bd33733e4a18cf1cd56c51feb770e6c5c193635e511d915db7020fb389b16c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0017.second-pass.json",
+        "receiptSha256": "24938f90913cb1dc80a5f1d2a19f792f386b4008a313b5600cc49aa48682dbda",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words with consonant-le endings in the orchard passage.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "apple-choice",
+            "table-choice",
+            "maple-choice",
+            "cable-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "table-choice",
+            "apple-choice",
+            "maple-choice",
+            "cable-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "table-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "table appears in the orchard passage and ends with ble.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-1-table",
+                "orchard-table-1"
+              ]
+            },
+            {
+              "answerId": "apple-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "apple appears in the orchard passage and ends with ple.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-1-apple",
+                "orchard-table-1"
+              ]
+            },
+            {
+              "answerId": "maple-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "maple appears in the orchard passage and ends with ple.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-1-maple",
+                "orchard-table-2"
+              ]
+            },
+            {
+              "answerId": "cable-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "cable appears in the orchard passage and ends with ble.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-1-cable",
+                "orchard-table-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-checkpoint-b-6",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-6c69d3d19c0defc5",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "a6c5f7458324e6a5ac8374169374608dcebb871a06e3b0d4706de5e1ab4fb259",
+        "conclusionsSha256": "05bd33733e4a18cf1cd56c51feb770e6c5c193635e511d915db7020fb389b16c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0014.pass-a.json",
+        "receiptSha256": "05bd33733e4a18cf1cd56c51feb770e6c5c193635e511d915db7020fb389b16c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that says the puzzle club built a simple model.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "puzzle-club-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "puzzle-club-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "puzzle-club-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence exactly says the puzzle club built a simple model.",
+              "evidenceIds": [
+                "puzzle-club-1"
+              ]
+            },
+            {
+              "answerId": "puzzle-club-3",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes a pebble holding a note corner.",
+              "evidenceIds": [
+                "puzzle-club-3"
+              ]
+            },
+            {
+              "answerId": "puzzle-club-2",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes a bottle on a rattle tray.",
+              "evidenceIds": [
+                "puzzle-club-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-checkpoint-b-7",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-83ee61785d3ae3bc",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "a6c5f7458324e6a5ac8374169374608dcebb871a06e3b0d4706de5e1ab4fb259",
+        "conclusionsSha256": "05bd33733e4a18cf1cd56c51feb770e6c5c193635e511d915db7020fb389b16c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0014.pass-a.json",
+        "receiptSha256": "05bd33733e4a18cf1cd56c51feb770e6c5c193635e511d915db7020fb389b16c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "puzzle-row",
+          "prompt": "puzzle",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "puzzle-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "puzzle-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "puzzle-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "puz | le omits a written z and does not reconstruct puzzle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-3-puzzle"
+              ]
+            },
+            {
+              "answerId": "puzzle-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "puz | zle correctly preserves the final consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-3-puzzle"
+              ]
+            },
+            {
+              "answerId": "puzzle-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "puz | z le splits inside the consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-3-puzzle"
+              ]
+            },
+            {
+              "answerId": "puzzle-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "puzz | le separates le from its preceding consonant.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-3-puzzle"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "simple-row",
+          "prompt": "simple",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "simple-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "simple-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "simple-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "simp | le separates le from its preceding consonant.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-3-simple"
+              ]
+            },
+            {
+              "answerId": "simple-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "si | mple does not isolate the final ple chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-3-simple"
+              ]
+            },
+            {
+              "answerId": "simple-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "sim | ple correctly preserves the final consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-3-simple"
+              ]
+            },
+            {
+              "answerId": "simple-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "sim | p le splits inside the consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-3-simple"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "bottle-row",
+          "prompt": "bottle",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "bottle-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "bottle-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "bottle-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "bo | ttle does not isolate the final tle chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-3-bottle"
+              ]
+            },
+            {
+              "answerId": "bottle-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "bot | tle correctly preserves the final consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-3-bottle"
+              ]
+            },
+            {
+              "answerId": "bottle-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "bott | le separates le from its preceding consonant.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-3-bottle"
+              ]
+            },
+            {
+              "answerId": "bottle-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "bot | t le splits inside the consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-3-bottle"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "sample-row",
+          "prompt": "sample",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "sample-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "sample-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "sample-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "sa | mple does not isolate the final ple chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-3-sample"
+              ]
+            },
+            {
+              "answerId": "sample-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "sam | p le splits inside the consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-3-sample"
+              ]
+            },
+            {
+              "answerId": "sample-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "samp | le separates le from its preceding consonant.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-3-sample"
+              ]
+            },
+            {
+              "answerId": "sample-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "sam | ple correctly preserves the final consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-3-sample"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-checkpoint-c-1",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-69fab41053735b6c",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "a6c5f7458324e6a5ac8374169374608dcebb871a06e3b0d4706de5e1ab4fb259",
+        "conclusionsSha256": "05bd33733e4a18cf1cd56c51feb770e6c5c193635e511d915db7020fb389b16c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0014.pass-a.json",
+        "receiptSha256": "05bd33733e4a18cf1cd56c51feb770e6c5c193635e511d915db7020fb389b16c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word splits as can | dle?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "candle-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "candle-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "little-choice",
+              "verdict": "INCORRECT",
+              "rationale": "little splits lit | tle, not can | dle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-2-little",
+                "candle-demo-2"
+              ]
+            },
+            {
+              "answerId": "candle-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "candle is reconstructed by can | dle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-2-candle",
+                "candle-demo-1"
+              ]
+            },
+            {
+              "answerId": "stable-choice",
+              "verdict": "INCORRECT",
+              "rationale": "stable splits sta | ble, not can | dle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-2-stable",
+                "candle-demo-1"
+              ]
+            },
+            {
+              "answerId": "simple-choice",
+              "verdict": "INCORRECT",
+              "rationale": "simple splits sim | ple, not can | dle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-2-simple",
+                "candle-demo-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-checkpoint-c-2",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-1ec48d67a6878bf3",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "a6c5f7458324e6a5ac8374169374608dcebb871a06e3b0d4706de5e1ab4fb259",
+        "conclusionsSha256": "05bd33733e4a18cf1cd56c51feb770e6c5c193635e511d915db7020fb389b16c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0014.pass-a.json",
+        "receiptSha256": "05bd33733e4a18cf1cd56c51feb770e6c5c193635e511d915db7020fb389b16c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word splits as ti | tle?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "title-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "title-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "noble-choice",
+              "verdict": "INCORRECT",
+              "rationale": "noble splits no | ble, not ti | tle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-4-noble",
+                "machine-exhibit-3"
+              ]
+            },
+            {
+              "answerId": "bubble-choice",
+              "verdict": "INCORRECT",
+              "rationale": "bubble splits bub | ble, not ti | tle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-4-bubble",
+                "machine-exhibit-2"
+              ]
+            },
+            {
+              "answerId": "title-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "title is reconstructed by ti | tle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-4-title",
+                "machine-exhibit-1"
+              ]
+            },
+            {
+              "answerId": "handle-choice",
+              "verdict": "INCORRECT",
+              "rationale": "handle splits han | dle, not ti | tle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-4-handle",
+                "machine-exhibit-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-checkpoint-c-3",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-5bcdd165b0a6b849",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "a6c5f7458324e6a5ac8374169374608dcebb871a06e3b0d4706de5e1ab4fb259",
+        "conclusionsSha256": "05bd33733e4a18cf1cd56c51feb770e6c5c193635e511d915db7020fb389b16c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0014.pass-a.json",
+        "receiptSha256": "05bd33733e4a18cf1cd56c51feb770e6c5c193635e511d915db7020fb389b16c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word splits as han | dle?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "handle-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "handle-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "handle-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "handle is reconstructed by han | dle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-4-handle",
+                "machine-exhibit-1"
+              ]
+            },
+            {
+              "answerId": "title-choice",
+              "verdict": "INCORRECT",
+              "rationale": "title splits ti | tle, not han | dle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-4-title",
+                "machine-exhibit-1"
+              ]
+            },
+            {
+              "answerId": "bubble-choice",
+              "verdict": "INCORRECT",
+              "rationale": "bubble splits bub | ble, not han | dle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-4-bubble",
+                "machine-exhibit-2"
+              ]
+            },
+            {
+              "answerId": "noble-choice",
+              "verdict": "INCORRECT",
+              "rationale": "noble splits no | ble, not han | dle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-4-noble",
+                "machine-exhibit-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-checkpoint-c-4",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-c2644ef1a6082795",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "a6c5f7458324e6a5ac8374169374608dcebb871a06e3b0d4706de5e1ab4fb259",
+        "conclusionsSha256": "05bd33733e4a18cf1cd56c51feb770e6c5c193635e511d915db7020fb389b16c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0017.second-pass.json",
+        "receiptSha256": "24938f90913cb1dc80a5f1d2a19f792f386b4008a313b5600cc49aa48682dbda",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word splits as sim | ple?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "simple-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "simple-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "little-choice",
+              "verdict": "INCORRECT",
+              "rationale": "little splits lit | tle, not sim | ple.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-2-little",
+                "candle-demo-2"
+              ]
+            },
+            {
+              "answerId": "stable-choice",
+              "verdict": "INCORRECT",
+              "rationale": "stable splits sta | ble, not sim | ple.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-2-stable",
+                "candle-demo-1"
+              ]
+            },
+            {
+              "answerId": "simple-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "simple is reconstructed by sim | ple.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-2-simple",
+                "candle-demo-4"
+              ]
+            },
+            {
+              "answerId": "candle-choice",
+              "verdict": "INCORRECT",
+              "rationale": "candle splits can | dle, not sim | ple.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-2-candle",
+                "candle-demo-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-checkpoint-c-5",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-885a43aae78c2576",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "a6c5f7458324e6a5ac8374169374608dcebb871a06e3b0d4706de5e1ab4fb259",
+        "conclusionsSha256": "05bd33733e4a18cf1cd56c51feb770e6c5c193635e511d915db7020fb389b16c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0014.pass-a.json",
+        "receiptSha256": "05bd33733e4a18cf1cd56c51feb770e6c5c193635e511d915db7020fb389b16c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words with consonant-le endings in the safety demo.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "candle-choice",
+            "stable-choice",
+            "little-choice",
+            "simple-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "little-choice",
+            "simple-choice",
+            "candle-choice",
+            "stable-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "little-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "little appears in the safety demo and ends with tle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-2-little",
+                "candle-demo-2"
+              ]
+            },
+            {
+              "answerId": "simple-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "simple appears in the safety demo and ends with ple.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-2-simple",
+                "candle-demo-4"
+              ]
+            },
+            {
+              "answerId": "candle-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "candle appears in the safety demo and ends with dle.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-2-candle",
+                "candle-demo-1"
+              ]
+            },
+            {
+              "answerId": "stable-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "stable appears in the safety demo and ends with ble.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-2-stable",
+                "candle-demo-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-checkpoint-c-6",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-41a21076ef57a932",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "a6c5f7458324e6a5ac8374169374608dcebb871a06e3b0d4706de5e1ab4fb259",
+        "conclusionsSha256": "05bd33733e4a18cf1cd56c51feb770e6c5c193635e511d915db7020fb389b16c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0014.pass-a.json",
+        "receiptSha256": "05bd33733e4a18cf1cd56c51feb770e6c5c193635e511d915db7020fb389b16c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that mentions a bubble tube and a stable wheel.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "machine-exhibit-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "machine-exhibit-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "machine-exhibit-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence exactly mentions a bubble tube and stable wheel.",
+              "evidenceIds": [
+                "machine-exhibit-2"
+              ]
+            },
+            {
+              "answerId": "machine-exhibit-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes a title card and handle.",
+              "evidenceIds": [
+                "machine-exhibit-1"
+              ]
+            },
+            {
+              "answerId": "machine-exhibit-3",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes the noble guide and model.",
+              "evidenceIds": [
+                "machine-exhibit-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-consonant-le-checkpoint-c-7",
+      "packId": "g2-word-forge-consonant-le-integrated",
+      "contentVersion": "g2-wf-consonant-le-integrated-r0.1.0",
+      "contentFingerprint": "qta-v1-6da7363f13548c9b",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "a6c5f7458324e6a5ac8374169374608dcebb871a06e3b0d4706de5e1ab4fb259",
+        "conclusionsSha256": "05bd33733e4a18cf1cd56c51feb770e6c5c193635e511d915db7020fb389b16c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0017.second-pass.json",
+        "receiptSha256": "24938f90913cb1dc80a5f1d2a19f792f386b4008a313b5600cc49aa48682dbda",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "candle-row",
+          "prompt": "candle",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "candle-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "candle-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "candle-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "can | d le splits inside the consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-candle"
+              ]
+            },
+            {
+              "answerId": "candle-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "can | dle correctly preserves the final consonant-le chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-candle",
+                "bottle-recycling-2"
+              ]
+            },
+            {
+              "answerId": "candle-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "ca | ndle does not isolate the final dle chunk.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-candle"
+              ]
+            },
+            {
+              "answerId": "candle-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "cand | le separates le from its preceding consonant.",
+              "evidenceIds": [
+                "target-g2-word-forge-consonant-le-6-candle"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "title-row",
+          "prompt": "title",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "title-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "title-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "title-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "ti | t le splits inside the consonant-le chunk.",
+              "evidenceIds": [
+                "passage-g2-word-forge-consonant-le-6"
+              ]
+            },
+            {
+              "answerId": "title-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "tit | le separates le from its preceding consonant.",
+              "evidenceIds": [
+                "passage-g2-word-forge-consonant-le-6"
+              ]
+            },
+            {
+              "answerId": "title-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "ti | tle correctly preserves the final consonant-le chunk.",
+              "evidenceIds": [
+                "passage-g2-word-forge-consonant-le-6"
+              ]
+            },
+            {
+              "answerId": "title-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "t | itle does not isolate the final tle chunk.",
+              "evidenceIds": [
+                "passage-g2-word-forge-consonant-le-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "handle-row",
+          "prompt": "handle",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "handle-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "handle-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "handle-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "han | d le splits inside the consonant-le chunk.",
+              "evidenceIds": [
+                "bottle-recycling-4"
+              ]
+            },
+            {
+              "answerId": "handle-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "han | dle correctly preserves the final consonant-le chunk.",
+              "evidenceIds": [
+                "bottle-recycling-4"
+              ]
+            },
+            {
+              "answerId": "handle-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "ha | ndle does not isolate the final dle chunk.",
+              "evidenceIds": [
+                "bottle-recycling-4"
+              ]
+            },
+            {
+              "answerId": "handle-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "hand | le separates le from its preceding consonant.",
+              "evidenceIds": [
+                "bottle-recycling-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "simple-row",
+          "prompt": "simple",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "simple-split"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "simple-split"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "simple-split",
+              "verdict": "DEFENSIBLE",
+              "rationale": "sim | ple correctly preserves the final consonant-le chunk.",
+              "evidenceIds": [
+                "passage-g2-word-forge-consonant-le-6"
+              ]
+            },
+            {
+              "answerId": "simple-mis3",
+              "verdict": "INCORRECT",
+              "rationale": "sim | p le splits inside the consonant-le chunk.",
+              "evidenceIds": [
+                "passage-g2-word-forge-consonant-le-6"
+              ]
+            },
+            {
+              "answerId": "simple-mis1",
+              "verdict": "INCORRECT",
+              "rationale": "simp | le separates le from its preceding consonant.",
+              "evidenceIds": [
+                "passage-g2-word-forge-consonant-le-6"
+              ]
+            },
+            {
+              "answerId": "simple-mis2",
+              "verdict": "INCORRECT",
+              "rationale": "si | mple does not isolate the final ple chunk.",
+              "evidenceIds": [
+                "passage-g2-word-forge-consonant-le-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

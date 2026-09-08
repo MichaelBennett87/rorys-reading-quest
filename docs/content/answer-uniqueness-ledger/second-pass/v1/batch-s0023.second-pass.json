@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "stage": "SECOND_PASS_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-s0023",
+  "batchFileSha256": "d6e98aeb4f7698fea0bab2d98006d29724385811f5871abd08d83e57397eccaf",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "independentReviewer": false,
+  "records": [
+    {
+      "auditId": "Q1460",
+      "fingerprint": "530f2fa3a4b075488d4964507cb899476de21aa4af16a34fd5d41317c77e10e9",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "The stuck-curtain dialogue, advice, and action occur only in Text A."
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "The leaf sketches and side-by-side sign work occur only in Text B."
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Lia and Ben each try alone before accepting another character's useful help, so the statement applies to both texts."
+        }
+      ]
+    },
+    {
+      "auditId": "Q1477",
+      "fingerprint": "55f9c85f475f852a24707ed91e0bf66b13d6073c414118a57cbac4d5a9ed23f1",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "A1 contrasts Text A's time-ordered observations with Text B's feature-grouped guidance. A2 is a similarity, and A3 is only a minor detail difference."
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "A3 correctly pairs Text A's time marker with Text B's garden-planning detail. A1 reverses source ownership, while A2 does not establish the structural contrast."
+        }
+      ]
+    },
+    {
+      "auditId": "Q1479",
+      "fingerprint": "1c11c200b15d08dbb3009d7bf53f1d9a2a186ce3895f3aa154af78a0dab500a3",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Text A develops cooperation through dialogue and a shared drawing plan; Text B emphasizes assigned physical roles and coordinated movement. A1 reverses the texts, A2 is a similarity, and A4 is incidental."
+        }
+      ]
+    },
+    {
+      "auditId": "Q1481",
+      "fingerprint": "b3a30a5a821fb005c4a8bdb5a61993eaf125d69beac50de99441f394e6f67a0b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "A3 directly shows Text A's dialogue-based plan, and A4 shows Text B's coordinated physical preparation. The pencil cup and cushion are incidental objects."
+        }
+      ]
+    },
+    {
+      "auditId": "Q1489",
+      "fingerprint": "b001fca4d3c20a72e523e42468e2e38219f2a7c4d76ff956b99ceea468e99ba2",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "A2 explicitly summarizes Text A's chain-of-causes presentation. A1 is one event within the chain, and A3 is an incidental non-soil detail."
+        }
+      ]
+    }
+  ]
+}

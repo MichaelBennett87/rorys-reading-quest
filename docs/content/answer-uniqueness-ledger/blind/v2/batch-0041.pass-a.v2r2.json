@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0041",
+  "batchFileSha256": "f216fe0c860b57da594783fc3c6db376835287bc4a0764489afa3a859ee24a9a",
+  "reviewerThreadId": "01a07bc2-33d0-74f2-84b3-1f74918ca45e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0480",
+      "fingerprint": "e332a26b52a59dbf37f1a8d0ab81679ef1b724fc8b112f8877435d1c680a75b0",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Neither the title nor the passage concerns painting animal signs.", ["S0010", "S0002"]],
+            ["A2", "INCORRECT", "The text observes and counts feeder visitors; it does not explain birdhouse construction.", ["S0003", "S0005"]],
+            ["A3", "DEFENSIBLE", "The title Feeder Watch previews the passage's focus on observing birds that visit a feeder.", ["S0010", "S0003", "S0005"]],
+            ["A4", "INCORRECT", "The passage contains a bird graph, not a garden-path map.", ["S0013"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0481",
+      "fingerprint": "93dd0b1b41959e63ad322f781d93be52abb455f89f33041612158a6f4557e381",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The section records feeder birds rather than a storm.", ["S0012", "S0003", "S0005"]],
+            ["A2", "DEFENSIBLE", "The heading Counting Visitors introduces the section where Maya and Leo count birds and list arriving bird types.", ["S0012", "S0003", "S0005"]],
+            ["A3", "INCORRECT", "The graph concerns bird visits, not the moon.", ["S0013"]],
+            ["A4", "INCORRECT", "The section concerns feeder visitors, not creating a flower bed.", ["S0012", "S0003"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0482",
+      "fingerprint": "9fed1713ee468f37527f44c86c447702d5b7531403ac1f075c1642441a245d4d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2", "A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The title previews feeder watching but provides no values or comparison of bird visits.", ["S0010"]],
+            ["A2", "DEFENSIBLE", "The graph supplies separate visit counts whose bar heights let readers compare the birds.", ["S0013", "S0018", "S0019", "S0020"]],
+            ["A3", "DEFENSIBLE", "The caption interprets the tall blue bar as the bird seen most often, directly helping the comparison.", ["S0014"]],
+            ["A4", "INCORRECT", "The glossary defines observe but provides no comparative bird-count information.", ["S0017", "S0021"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0483",
+      "fingerprint": "cd6b7e9a11d544f9e8135c53fa79f5d6b82db63db73e1b26b0f4dff8654a44ad",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "This sentence explicitly says the graph lets the class compare which bird appears most often.", ["S0007"]],
+            ["A2", "INCORRECT", "This lists the order and number of bird arrivals but does not state what the graph helps readers do.", ["S0005"]],
+            ["A3", "INCORRECT", "This explains the glossary's help, not the graph's function.", ["S0009"]],
+            ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This describes collecting and charting counts but does not state the graph's comparison function.", ["S0003"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0484",
+      "fingerprint": "2077107a3546c114fa07c35aedb19f08f8bf34a58281ec65879428870aa9183e",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Feeder Watch previews the whole passage's subject of watching feeder birds.", ["S0010", "S0003"]],
+            ["A2", "INCORRECT", "Defining a word is the glossary's job, not the title's.", ["S0017"]],
+            ["A3", "INCORRECT", "Explaining the tall blue bar is the caption's specific job.", ["S0014"]],
+            ["A4", "INCORRECT", "Comparing count values is the graph's job, not the title's.", ["S0013"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Previewing the whole text is the title's job.", ["S0010"]],
+            ["A2", "DEFENSIBLE", "The graph's three values and bar heights allow readers to compare bird counts.", ["S0013", "S0018", "S0019", "S0020"]],
+            ["A3", "INCORRECT", "Defining observe is the glossary's job.", ["S0017", "S0021"]],
+            ["A4", "INCORRECT", "The caption explains what the tall blue bar means; the graph itself presents the comparative data.", ["S0014"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The graph compares bird-count values; the caption interprets one bar.", ["S0013"]],
+            ["A2", "DEFENSIBLE", "The caption states that the tall blue bar marks the bird seen most often.", ["S0014"]],
+            ["A3", "INCORRECT", "Previewing the whole text is the title's job.", ["S0010"]],
+            ["A4", "INCORRECT", "Defining a word is the glossary's job.", ["S0017"]]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Explaining the tall blue bar is the caption's job.", ["S0014"]],
+            ["A2", "INCORRECT", "Comparing bird counts is the graph's job.", ["S0013"]],
+            ["A3", "INCORRECT", "Previewing the whole text is the title's job.", ["S0010"]],
+            ["A4", "DEFENSIBLE", "The glossary gives the meaning of observe, a word used in the text.", ["S0017", "S0021", "S0009"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0485",
+      "fingerprint": "d890b80470c481de4fb3f6eb5973685ae83c08abfcbb0b1706ae1d40d648463d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The passage contains a garden map, not a weather chart.", ["S0031", "S0034"]],
+            ["A2", "INCORRECT", "The text uses a map and illustration, not a class graph.", ["S0034", "S0038"]],
+            ["A3", "DEFENSIBLE", "Garden Grid previews the garden layout shown by the map and the plant information shown by the illustration.", ["S0031", "S0034", "S0038"]],
+            ["A4", "INCORRECT", "The text contains no moon notes.", ["S0023"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0486",
+      "fingerprint": "1d9697e9164d31a1aa953f997d39ab14e24c468c2b8daffdfc876becd7c242c7",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A4"],
+          "ambiguity": "Both the map and the caption help readers find the bean bed: the map places it in the sunny corner, and the caption points to it and directs readers to start there. The single-answer prompt does not distinguish the two features.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "DEFENSIBLE", "The map marks the bean bed's location in the sunny corner and shows the route to garden places.", ["S0034", "S0039", "S0026"]],
+            ["A2", "INCORRECT", "No learner-visible glossary entry locates the bean bed; the sentence only says the glossary defines locate.", ["S0030"]],
+            ["A3", "INCORRECT", "Garden Grid previews the text's topic but does not identify where the bean bed is.", ["S0031"]],
+            ["A4", "DEFENSIBLE", "The caption explicitly points to the bean bed and tells readers to start near the sunny corner.", ["S0035", "S0028"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0487",
+      "fingerprint": "629102f1dcdb46a7f06439f73fd969fe73457397f97da75db917ce3829753423",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3", "A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The illustration helps readers picture the bean plant and trellis but does not locate the bean bed in the garden.", ["S0038", "S0044", "S0045"]],
+            ["A2", "INCORRECT", "The title previews the garden-grid topic but does not show the bean bed's location.", ["S0031"]],
+            ["A3", "DEFENSIBLE", "The map places the bean bed in the sunny corner and shows garden locations.", ["S0034", "S0039"]],
+            ["A4", "DEFENSIBLE", "The caption points to the bean bed and tells readers where to start.", ["S0035", "S0028"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0488",
+      "fingerprint": "3a172c9b527d29ead4837322a95310588e5b909dfee259e0f5017238d9cf2a95",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This says the children consult the map but does not state the map's informational job.", ["S0024"]],
+            ["A2", "DEFENSIBLE", "This sentence explicitly says the map marks locations so the class can locate each place quickly.", ["S0026"]],
+            ["A3", "INCORRECT", "This states what the caption helps readers do, not the map's job.", ["S0028"]],
+            ["A4", "INCORRECT", "This explains the illustration and glossary, not the map.", ["S0030"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0489",
+      "fingerprint": "cf13c71d0f2eaa4deec69d57316826ba5a4bf1b1f6e94b90589cf5d61033ad11",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Pointing readers to the sunny corner is the caption's job.", ["S0035"]],
+            ["A2", "INCORRECT", "Helping readers picture the bean plant is the illustration's job.", ["S0038"]],
+            ["A3", "DEFENSIBLE", "Garden Grid previews the whole text's garden-layout topic.", ["S0031", "S0023"]],
+            ["A4", "INCORRECT", "Showing where places are is the map's job.", ["S0034"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The garden path map marks the bean bed, compost bin, shelf, and routes, showing where places are.", ["S0034", "S0039", "S0040", "S0041"]],
+            ["A2", "INCORRECT", "Helping readers picture the plant is the illustration's job.", ["S0038"]],
+            ["A3", "INCORRECT", "Previewing the whole text is the title's job.", ["S0031"]],
+            ["A4", "INCORRECT", "Pointing readers to the sunny corner is the caption's specific job.", ["S0035"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Previewing the whole text is the title's job.", ["S0031"]],
+            ["A2", "DEFENSIBLE", "The caption points to the bean bed and tells readers to begin near the sunny corner.", ["S0035", "S0028"]],
+            ["A3", "INCORRECT", "Showing all garden locations is the map's broader job.", ["S0034"]],
+            ["A4", "INCORRECT", "Helping readers picture the bean plant is the illustration's job.", ["S0038"]]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Showing where places are is the map's job.", ["S0034"]],
+            ["A2", "DEFENSIBLE", "The labeled illustration visually depicts the bean plant and trellis, helping readers picture them.", ["S0038", "S0044", "S0045"]],
+            ["A3", "INCORRECT", "Previewing the whole text is the title's job.", ["S0031"]],
+            ["A4", "INCORRECT", "Pointing to the sunny corner is the caption's job.", ["S0035"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

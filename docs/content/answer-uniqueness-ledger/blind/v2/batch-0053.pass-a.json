@@ -1,0 +1,852 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0053",
+  "batchFileSha256": "a278a9d68c00a51194c117955b99168e1be07f83097854079ab5aeecc8b53c6c",
+  "reviewerThreadId": "01a07bc1-57ca-7230-a515-d322b50c9d2e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0618",
+      "fingerprint": "e5d8b763675df35fe604a59a06b252f214761b92fccb56fa3a11bb93f3688a47",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a verifiable fact about reusing a box, not a should-statement expressing an opinion.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The word should states the author position that the class ought to use reusable containers.",
+              [
+                "S0073"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is an author-purpose statement, not the author opinion itself.",
+              [
+                "S0073",
+                "S0080",
+                "S0082"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This names the topic rather than expressing what the author thinks should happen.",
+              [
+                "S0084"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0619",
+      "fingerprint": "f901214964967fdef3d912b052512eb2fcb831d42954d1c27dd4f26598a3a0da",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "It connects wash-and-reuse evidence to avoiding repeated purchases, directly explaining why the containers are a good choice.",
+              [
+                "S0079",
+                "S0082"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This defines reusable but does not explain the practical benefit as completely as the linked evidence-and-result choice.",
+              [
+                "S0083",
+                "S0095"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This reports what was packed but does not explain why reusable containers support the opinion.",
+              [
+                "S0075"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states a possible purpose rather than explaining how evidence supports the opinion.",
+              [
+                "S0073",
+                "S0075"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0620",
+      "fingerprint": "0a183817b789ff975b7e6658e62db98da34683bcdfb4e6f3e6a0e51ade6ed6bf",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "The prompt requests two details, but all four visible choices give ordinary reasons the containers work well: fewer wrappers, reuse after cleaning, actual repeated use, and organized returns.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Fewer wrappers shows a waste-reduction benefit of using the boxes.",
+              [
+                "S0080"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Being usable again after cleaning explains the central practical benefit of reusable containers.",
+              [
+                "S0083",
+                "S0095"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Washing and using each box again directly supports choosing reusable containers.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Keeping returned boxes together supports an organized, workable reuse system for the event.",
+              [
+                "S0081",
+                "S0091"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0621",
+      "fingerprint": "7d46c51233327ed1161f41e1f45c0e3ff7aa45c0fca26a1f941eb188be8dd5bf",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "Each sentence supplies a reasonable clue supporting use of the containers: lower cost, suitability for holding snacks, repeat use, or organized returns. The single-select prompt gives no visible ranking rule.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Lower cost than repeatedly buying trays is a strong reason to use the containers.",
+              [
+                "S0082"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Packing fruit and crackers in sturdy boxes shows that the containers suit the school-event task.",
+              [
+                "S0075"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Washing and reusing each box directly supports the reusable-container opinion.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The return bin keeping boxes together supports practical collection and reuse.",
+              [
+                "S0081",
+                "S0091"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0622",
+      "fingerprint": "fc4786d544c57a925fe9e14e422b42e668439ed328ec39de878cc257a7ad2d25",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the author opinion, not the topic.",
+              [
+                "S0073"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Reusable containers are the subject named in the title and discussed throughout.",
+              [
+                "S0084"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is an author-purpose statement, not the topic.",
+              [
+                "S0073",
+                "S0080"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states a purpose, not an opinion sentence.",
+              [
+                "S0073",
+                "S0080"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a factual claim about the boxes.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The should-statement expresses what the author thinks the class ought to do.",
+              [
+                "S0073"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the opinion itself, not a purpose statement.",
+              [
+                "S0073"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This infinitive statement explains why the author presents the reusable-container information.",
+              [
+                "S0073",
+                "S0080",
+                "S0082"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a supporting fact, not the author purpose.",
+              [
+                "S0080"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The should-statement is an opinion.",
+              [
+                "S0073"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The ability to wash and reuse each box is presented as a factual detail.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a purpose statement, not a fact sentence.",
+              [
+                "S0073",
+                "S0080"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0623",
+      "fingerprint": "43c6faf4c35c82e14654dfdbc6fe1a0efa18b8832c2932311b076a331793a0e4",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This reports the class count and is a fact rather than an opinion.",
+              [
+                "S0110",
+                "S0119"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states an author purpose rather than the author opinion.",
+              [
+                "S0100",
+                "S0104",
+                "S0102"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The should-statement expresses the position that more berry shrubs ought to be added.",
+              [
+                "S0100"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This names the topic rather than an opinion.",
+              [
+                "S0113"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0624",
+      "fingerprint": "15955299b9332a30176ceb32cacd7d5c1fe9bfae6fbf494728412d52ee60394c",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is an author-purpose statement, not the opinion.",
+              [
+                "S0100",
+                "S0104",
+                "S0102"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The should-statement expresses the author opinion about adding shrubs.",
+              [
+                "S0100"
+              ]
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "The displayed source does not supply this wind statement, so it cannot serve as source-grounded opinion or central idea.",
+              [
+                "S0099"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This summarizes a source-wide idea about food, shelter, and water rather than stating what should be done.",
+              [
+                "S0102",
+                "S0108",
+                "S0110"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0625",
+      "fingerprint": "746c30b05f497cadc17fedec0f97e61fcd09b649f9d3d18db3cef836f8626f6b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This should-statement is an opinion.",
+              [
+                "S0100"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This should-statement is another opinion.",
+              [
+                "S0104"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is an author-purpose statement rather than a fact sentence.",
+              [
+                "S0100",
+                "S0104"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The class count comparing bird visits is presented as an observable fact and is reinforced by the graph.",
+              [
+                "S0110",
+                "S0116",
+                "S0119"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0626",
+      "fingerprint": "4cfcef61456fc889f474a74794c9288365c77f4d9e76a809e59d46ecbfe60480",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Birds resting in the tree shows that birds use the proposed location.",
+              [
+                "S0109",
+                "S0116"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The existing small tree establishes that the proposed under-tree location is available.",
+              [
+                "S0107"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The shrubs being near the middle path does not explain why the water dish should be under the tree.",
+              [
+                "S0112"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "The displayed source contains no statement about strong wind in an open yard.",
+              [
+                "S0099"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0627",
+      "fingerprint": "348d1ed9302760024ee3de59d695be5dc91cacc658eae118056e94ccce9ac0bb",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "The opinion sentence itself identifies the position, the higher visit count supports adding shrubs, and birds eating berries supports the shrubs food benefit. The one-answer prompt does not distinguish which kind of clue it seeks.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This sentence states the shrub opinion directly and therefore gives the clearest clue to what the opinion is.",
+              [
+                "S0100"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "More visits near shrubs directly support adding more berry shrubs.",
+              [
+                "S0110",
+                "S0119"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Birds eating berries supports the reason berry-producing plants would help them.",
+              [
+                "S0106",
+                "S0102"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The shrubs location near the path does not show why more shrubs should be added.",
+              [
+                "S0112"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0628",
+      "fingerprint": "dbb287430f9c6e899167227a4a8373f0e0db763e8e0fae9b7c397900ccab22a6",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the shrub opinion, not the topic.",
+              [
+                "S0100"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a purpose statement, not the topic.",
+              [
+                "S0100",
+                "S0104"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Bird-friendly plants are the subject named in the title and discussed throughout.",
+              [
+                "S0113"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a factual benefit of shrubs rather than the should-opinion.",
+              [
+                "S0102"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is an observed count, not the opinion.",
+              [
+                "S0110"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This should-statement is the opinion about shrubs.",
+              [
+                "S0100"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is an author-purpose statement, not an opinion.",
+              [
+                "S0100",
+                "S0104"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This should-statement expresses the separate opinion about adding a water dish.",
+              [
+                "S0104"
+              ]
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "The displayed source contains no wind statement to classify as its other opinion.",
+              [
+                "S0099"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the shrub opinion.",
+              [
+                "S0100"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The class count is an observable fact supported by the graph.",
+              [
+                "S0110",
+                "S0116"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is an author-purpose statement rather than a fact sentence.",
+              [
+                "S0100",
+                "S0104"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0629",
+      "fingerprint": "75f2151c54ed38240817696d91dec9a9eb717e0f31658f7dc82038832c1548e5",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This should-statement expresses the author opinion about shrubs.",
+              [
+                "S0100"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the separate opinion about a water dish.",
+              [
+                "S0104"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This names the topic rather than the shrub opinion.",
+              [
+                "S0113"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Drinking from a puddle supports the water-dish idea, not the shrub opinion.",
+              [
+                "S0108"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The fence, path, and tree description does not explain why more shrubs should be added.",
+              [
+                "S0107"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "More bird visits near shrubs directly support adding more berry shrubs.",
+              [
+                "S0110",
+                "S0119"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

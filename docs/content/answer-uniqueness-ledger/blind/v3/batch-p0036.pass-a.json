@@ -1,0 +1,415 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0036",
+  "batchFileSha256": "254675267d749f0c4e8ee2c02589447c034fd62971504f4347efa0e7ea045c93",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0845",
+      "fingerprint": "3cc3f62b3e70a9de0f56ff4283e83ba6f170f09e2afd35d244f9d912b71e4b7a",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The glove is explicitly unrelated to finding the card.",
+              [
+                "S0104"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Looking under the bench and checking markers are search actions.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Reaching the gate happens after the search is complete.",
+              [
+                "S0106"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Following painted arrows leads the friends to the sign where the card is found.",
+              [
+                "S0096",
+                "S0098"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0846",
+      "fingerprint": "c5e345e27fb5a084c8a36ea12989417464a55bb2c80cd776d7a8b1478ee96719",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Explicitly marks the ending and the group's successful arrival.",
+              [
+                "S0106"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Replacing the card occurs before the walk continues.",
+              [
+                "S0105"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This introduces the problem.",
+              [
+                "S0102"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the opening.",
+              [
+                "S0101"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0847",
+      "fingerprint": "8e7df0425090be892460afeae2e553ba9f01593363cf6272a2c2f214ead61849",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Introduces Luis, Hana, the walk, and its setting.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the ending.",
+              [
+                "S0106"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The glove is explicitly unrelated.",
+              [
+                "S0104"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the first search event.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A5",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states the problem.",
+              [
+                "S0102"
+              ]
+            ],
+            [
+              "A6",
+              "CONTRADICTED",
+              "This later-event summary incorrectly says the friends tuck the card beside the sign.",
+              [
+                "S0096",
+                "S0098",
+                "S0105"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "States the lost-card problem.",
+              [
+                "S0102"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the opening.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the first search event.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The glove is explicitly unrelated.",
+              [
+                "S0104"
+              ]
+            ],
+            [
+              "A5",
+              "CONTRADICTED",
+              "This later-event summary incorrectly says the friends tuck the card beside the sign.",
+              [
+                "S0096",
+                "S0098",
+                "S0105"
+              ]
+            ],
+            [
+              "A6",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the ending.",
+              [
+                "S0106"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A6"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The glove is explicitly unrelated.",
+              [
+                "S0104"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the opening.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the problem.",
+              [
+                "S0102"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the ending.",
+              [
+                "S0106"
+              ]
+            ],
+            [
+              "A5",
+              "CONTRADICTED",
+              "The summary incorrectly says the friends tuck the card beside the sign.",
+              [
+                "S0096",
+                "S0098",
+                "S0105"
+              ]
+            ],
+            [
+              "A6",
+              "DEFENSIBLE",
+              "This is the first search action after the card slips.",
+              [
+                "S0103"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [],
+          "ambiguity": "No option accurately states the second important event: A2 says the friends tuck the card beside the sign, but the source says the card was already tucked there when found.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the ending.",
+              [
+                "S0106"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The source says the card was found tucked beside the sign, not that the friends tucked it there.",
+              [
+                "S0096",
+                "S0098",
+                "S0105"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the first important search event.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the opening.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A5",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the problem.",
+              [
+                "S0102"
+              ]
+            ],
+            [
+              "A6",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The glove is explicitly unrelated.",
+              [
+                "S0104"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_5",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the first search event.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "States the successful arrival at the end of the walk.",
+              [
+                "S0106"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states the problem.",
+              [
+                "S0102"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "This middle-event summary incorrectly says the friends tuck the card beside the sign.",
+              [
+                "S0096",
+                "S0098",
+                "S0105"
+              ]
+            ],
+            [
+              "A5",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the opening.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A6",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The glove is explicitly unrelated.",
+              [
+                "S0104"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

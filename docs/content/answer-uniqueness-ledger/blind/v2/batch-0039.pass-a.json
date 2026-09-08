@@ -1,0 +1,854 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0039",
+  "batchFileSha256": "709b59c74da2b3ab3fa816ae02e582c4ea88e7072f4188e06e67702ef400dd79",
+  "reviewerThreadId": "01a07bc1-57ca-7230-a515-d322b50c9d2e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0454",
+      "fingerprint": "53b4c7e220d4a30b9e3b89fba33d6a441f7d7af4ef716c1a60ccb2cdf7591c09",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "A six-letter AABBCC scheme cannot describe this four-line poem.",
+              [
+                "S0036",
+                "S0038",
+                "S0040",
+                "S0042"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Line 1 ends with site and line 3 with row, so lines 1 and 3 do not form the repeated A rhyme required by ABAB.",
+              [
+                "S0036",
+                "S0040"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The first two end words, site and tool, do not rhyme, and neither do row and stool.",
+              [
+                "S0036",
+                "S0038",
+                "S0040",
+                "S0042"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The end sounds are site (A), tool (B), row (C), and stool (B), producing ABCB.",
+              [
+                "S0036",
+                "S0038",
+                "S0040",
+                "S0042"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0455",
+      "fingerprint": "548059f43b2eb203a1d5d22d2bc3c4fa5651df5602656410f5b933d05bfa3d8a",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "Both lines 2 and 3 are middle lines and each introduces a rhyme sound not used by the preceding line, so “new middle rhyme” does not identify one line.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Line 1 establishes the first rhyme sound and is not a middle line.",
+              [
+                "S0036"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "Line 4 repeats the tool rhyme from line 2 rather than introducing a new rhyme.",
+              [
+                "S0038",
+                "S0042"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Line 2 is a middle line and introduces the tool rhyme after line 1 ends with site.",
+              [
+                "S0036",
+                "S0038"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Line 3 is a middle line and introduces the new row rhyme before line 4 returns to tool.",
+              [
+                "S0038",
+                "S0040",
+                "S0042"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0456",
+      "fingerprint": "d24956198f6760c5928eb51c39eb91a5aad378f629866f56a07befdd2e2c4f18",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Row does not rhyme with tool.",
+              [
+                "S0040"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Stool has the same ending sound as tool.",
+              [
+                "S0042"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Site does not rhyme with tool.",
+              [
+                "S0036"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This line ends with the reference word tool.",
+              [
+                "S0038"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0457",
+      "fingerprint": "9d208a4c59c37023df799073a5f86039b34057589897a25725c1cfce5fad46f7",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Line 4 ends with stool, which rhymes with line 2 end word tool.",
+              [
+                "S0038",
+                "S0042"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Site does not rhyme with tool.",
+              [
+                "S0036",
+                "S0038"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Row does not rhyme with tool.",
+              [
+                "S0038",
+                "S0040"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0458",
+      "fingerprint": "e2a97fef11542ccd309becec63fb6eb90e64264c448e2f95d8c08d0871b2cb26",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Line 1 begins the scheme, so its unique site sound is labeled A, not B.",
+              [
+                "S0036"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The first end sound, site, begins the scheme with A.",
+              [
+                "S0036"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "C is introduced by the distinct row sound on line 3, not line 1.",
+              [
+                "S0036",
+                "S0040"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Tool introduces the second end sound, labeled B.",
+              [
+                "S0038"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "A belongs to the first unique site sound.",
+              [
+                "S0036",
+                "S0038"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "C belongs to the later distinct row sound.",
+              [
+                "S0038",
+                "S0040"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Line 3 end word row does not rhyme with the A sound site.",
+              [
+                "S0036",
+                "S0040"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Row introduces the third distinct end sound, labeled C.",
+              [
+                "S0040"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Row does not rhyme with the B sound tool.",
+              [
+                "S0038",
+                "S0040"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Stool does not rhyme with the A sound site.",
+              [
+                "S0036",
+                "S0042"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Line 4 repeats the tool sound rather than the row sound labeled C.",
+              [
+                "S0040",
+                "S0042"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Stool rhymes with tool, so line 4 repeats letter B.",
+              [
+                "S0038",
+                "S0042"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0459",
+      "fingerprint": "070dae353f3387368ccc01051b56ee2e9dbb4af77314288304653a630df71fbc",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "A six-letter scheme cannot describe this four-line poem.",
+              [
+                "S0046",
+                "S0048",
+                "S0050",
+                "S0052"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Gate and wait form the A pair, while rope and hope form the B pair, giving AABB.",
+              [
+                "S0046",
+                "S0048",
+                "S0050",
+                "S0052"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The first two lines rhyme with each other, rather than only lines 2 and 4 rhyming as ABCB requires.",
+              [
+                "S0046",
+                "S0048",
+                "S0052"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Line 1 does not rhyme with line 3, and line 2 does not rhyme with line 4.",
+              [
+                "S0046",
+                "S0048",
+                "S0050",
+                "S0052"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0460",
+      "fingerprint": "75e8bd73fed245041566a7d72fe2da347819ea3c68ba0a0f36a5ccd2d6c5b077",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "Both lines 3 and 4 belong to the B rhyme in the visible AABB scheme, but the prompt permits only one answer.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Line 4 ends with hope, which is part of the B rhyme pair.",
+              [
+                "S0052"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Line 2 ends with wait and belongs to the A rhyme.",
+              [
+                "S0048"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Line 1 ends with gate and belongs to the A rhyme.",
+              [
+                "S0046"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Line 3 ends with rope, which introduces the B rhyme.",
+              [
+                "S0050"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0461",
+      "fingerprint": "626e99ee5331b59887a1bce9fc901781ad220bad4a515b03c817e4953ead9f77",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Gate and hope do not rhyme.",
+              [
+                "S0046",
+                "S0052"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Wait and rope do not rhyme.",
+              [
+                "S0048",
+                "S0050"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Rope and hope form the later B rhyme, not the A rhyme.",
+              [
+                "S0050",
+                "S0052"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Gate and wait are the first rhyming pair and therefore carry letter A.",
+              [
+                "S0046",
+                "S0048"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0462",
+      "fingerprint": "95e69b07d257beb26bf6eececcce21e5be7673e853b1859a714bb72094ef37cb",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Line 1 ends with gate and begins the A rhyme.",
+              [
+                "S0046"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Line 4 ends with hope and belongs to the B rhyme.",
+              [
+                "S0052"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Line 3 ends with rope and belongs to the B rhyme.",
+              [
+                "S0050"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Line 2 ends with wait, which rhymes with gate and carries A.",
+              [
+                "S0046",
+                "S0048"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0463",
+      "fingerprint": "47155f680c63045b5839cbbab490b14090a23acdc1a22eaac42354803d455679",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Wait does not rhyme with line 3 end word rope.",
+              [
+                "S0048",
+                "S0050"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Gate does not rhyme with rope.",
+              [
+                "S0046",
+                "S0050"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Hope rhymes with line 3 end word rope.",
+              [
+                "S0050",
+                "S0052"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0464",
+      "fingerprint": "811e5b73adcdcc039604878eb94bcf908c8c1211156d053723b5662802b5a6ce",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Gate begins the first rhyme and receives A.",
+              [
+                "S0046"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "B begins with rope on line 3, not line 1.",
+              [
+                "S0046",
+                "S0050"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Wait rhymes with gate, so line 2 repeats A.",
+              [
+                "S0046",
+                "S0048"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Line 2 does not share the rope and hope B sound.",
+              [
+                "S0048",
+                "S0050",
+                "S0052"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Rope introduces the second rhyme and receives B.",
+              [
+                "S0050"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Rope does not rhyme with gate or wait, so line 3 is not A.",
+              [
+                "S0046",
+                "S0048",
+                "S0050"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Hope does not rhyme with the A pair gate and wait.",
+              [
+                "S0046",
+                "S0048",
+                "S0052"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Hope rhymes with rope, so line 4 repeats B.",
+              [
+                "S0050",
+                "S0052"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0465",
+      "fingerprint": "8bd2436b6d97a8c757754752e8cb2c83c8fd357c80c9b23edef92641e82661ff",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Only lines 2 and 4 rhyme in ABCB, but this poem has consecutive rhyming pairs.",
+              [
+                "S0046",
+                "S0048",
+                "S0050",
+                "S0052"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Gate/wait and rope/hope form two consecutive rhyme pairs, producing AABB.",
+              [
+                "S0046",
+                "S0048",
+                "S0050",
+                "S0052"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The alternating pairs required by ABAB are absent.",
+              [
+                "S0046",
+                "S0048",
+                "S0050",
+                "S0052"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "A six-letter scheme cannot describe this four-line poem.",
+              [
+                "S0046",
+                "S0048",
+                "S0050",
+                "S0052"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "Both gate/wait and rope/hope are equally direct end-word pairs supporting the AABB scheme, but Part B permits only one answer.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Gate and wait are the first consecutive rhyming pair, supporting AA in AABB.",
+              [
+                "S0046",
+                "S0048"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Wait and rope do not rhyme and therefore do not support a repeated-letter pair.",
+              [
+                "S0048",
+                "S0050"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Gate and hope do not rhyme.",
+              [
+                "S0046",
+                "S0052"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Rope and hope are the second consecutive rhyming pair, supporting BB in AABB.",
+              [
+                "S0050",
+                "S0052"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

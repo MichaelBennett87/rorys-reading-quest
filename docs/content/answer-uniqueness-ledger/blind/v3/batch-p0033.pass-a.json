@@ -1,0 +1,601 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0033",
+  "batchFileSha256": "451d87778bb7629bc18cbb6fb980ccc6b9b16e4658f8be5214d5cd86d6b78df0",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0767",
+      "fingerprint": "682cc09b8d1342e1d2d294d98fb31342d6430131d674379ea84366d61719cd28",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This directly compares the banner with a bright fish using like.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This idiom describes helping and does not compare the banner to a fish.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This compares a kite tail with a ribbon, not the banner with a fish.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This uses repeated b sounds but contains no fish comparison.",
+              [
+                "S0007"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0770",
+      "fingerprint": "add26a8d1612dcae2b2bff4c66f226ea4924bacaf973ccd3429be7d0f8b71357",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "The words begin with different sounds.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The words begin with different sounds.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Blue, banners, and bobbed all begin with the /b/ sound.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The word the begins with /th/, so all three words do not begin with /b/.",
+              [
+                "S0007"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0774",
+      "fingerprint": "0774cb86aa57d011d9a05cd2780d65c96bdf2e6615569631d77c5be34a8d2df2",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The quiet hall is neither the agreement phrase nor its topic.",
+              [
+                "S0015"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The book club plan names what the readers agreed about.",
+              [
+                "S0017"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "On the same page is the phrase showing agreement.",
+              [
+                "S0017"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The returns shelf belongs to a different sentence.",
+              [
+                "S0021"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0775",
+      "fingerprint": "59471f2a765b3764263038a56bc64712a1011c0676c1c615f28902b78ca79ec7",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Careful, cats, and carried begin with the same /k/ sound.",
+              [
+                "S0019"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The words begin with different sounds and the segment exceeds three words.",
+              [
+                "S0021"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The words begin with different sounds and the segment exceeds three words.",
+              [
+                "S0019"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The words begin with different sounds.",
+              [
+                "S0015"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0780",
+      "fingerprint": "103a862b7c1bc7d72d1656bbe254b0e8d43919ecb07ece94ce27be4b475f82ec",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "This segment exceeds three words and does not share one initial sound.",
+              [
+                "S0029"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Paper, petals, and pushed all begin with /p/.",
+              [
+                "S0033"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The words begin with different sounds and the segment exceeds three words.",
+              [
+                "S0036"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The words begin with different sounds and the segment exceeds three words.",
+              [
+                "S0027"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0785",
+      "fingerprint": "441a271aee6197729d01d5ba7fc556166fbc2a1536d5e4909767244677e9afc4",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "The phrase does not repeat one beginning sound across its content words.",
+              [
+                "S0041"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The phrase does not repeat one beginning sound.",
+              [
+                "S0049"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Tiny, tools, and tapped repeat the initial /t/ sound.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The phrase does not repeat one beginning sound.",
+              [
+                "S0039"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0789",
+      "fingerprint": "77f4a5865d018ef5f8d3438862dff5e269a275fc47c35f086539092080415e53",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Brave, builders, and balanced repeat the initial /b/ sound.",
+              [
+                "S0058"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is an idiom without repeated initial sounds.",
+              [
+                "S0056"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The words begin with different sounds.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The words begin with different sounds.",
+              [
+                "S0056"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0791",
+      "fingerprint": "fdbbbfa8589e5d6a777e1f3e788ac1733cca13b4c12d346941976033c14e6e79",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "The phrase does not repeat one beginning sound.",
+              [
+                "S0039"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Tiny, tools, and tapped repeat the initial /t/ sound.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The phrase does not repeat one beginning sound.",
+              [
+                "S0049"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The phrase does not repeat one beginning sound across its content words.",
+              [
+                "S0041"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0794",
+      "fingerprint": "f4dae3695c8544afb15ec01ab7f02699e9682dc2bde46518ed091c68a3cdf1c7",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is an idiom, not a comparison using like or as.",
+              [
+                "S0072"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This incomplete phrase does not include the comparison.",
+              [
+                "S0066"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "As calm as a pond is a direct comparison using as.",
+              [
+                "S0068"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a literal statement without a comparison.",
+              [
+                "S0074"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0795",
+      "fingerprint": "2cbbb27021243c88fb707db6ab79b3c540747c3a62e0896739d191ce84ddf92f",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The guide's warning about the mud patch shows the phrase means watch carefully.",
+              [
+                "S0072"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The phrase does not mean fold a map.",
+              [
+                "S0072",
+                "S0074"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The guide's warning means notice, not ignore, the mud patch.",
+              [
+                "S0072"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The phrase concerns the mud patch, not looking for a pond.",
+              [
+                "S0072"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0796",
+      "fingerprint": "3bafa040952e9fffebd84709951a86ade44e1e02bc616153c83b000a2a7d5daf",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is an idiom without repeated initial sounds.",
+              [
+                "S0072"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Path, posts, and pointed repeat the initial /p/ sound.",
+              [
+                "S0070"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The words begin with different sounds.",
+              [
+                "S0074"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a simile, not alliteration.",
+              [
+                "S0068"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0797",
+      "fingerprint": "ca4292add82d95853556e6a4d312f1db7940d79a1bc1dc590fdca1965decb6b4",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Our group is the first thing described in the simile.",
+              [
+                "S0068"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The mud patch appears in the idiom sentence, not the simile.",
+              [
+                "S0072"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "A pond is what the group's calmness is compared with.",
+              [
+                "S0068"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The trail sign appears in a different comparison.",
+              [
+                "S0066"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

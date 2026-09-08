@@ -33,7 +33,7 @@ describe('active question truth inventory', () => {
     expect(inventory.records.every((record) => record.passageIds.length >= 1)).toBe(true)
   })
 
-  test('builds a blind projection without keys, explanations, evidence, or guide answers', () => {
+  test('builds a blind projection without keys, keyed explanations, evidence, or guide answers', () => {
     const projection = buildBlindQuestionTruthProjection(getActiveContentPacks())
     const forbiddenKeys = new Set([
       'authoredCorrectAnswerRepresentation',
@@ -42,7 +42,6 @@ describe('active question truth inventory', () => {
       'correctChoiceIds',
       'correctSegmentIds',
       'evidenceReferenceIds',
-      'explanation',
       'guides',
       'partACorrectChoiceId',
       'partBCorrectChoiceId',
@@ -51,6 +50,10 @@ describe('active question truth inventory', () => {
 
     expect(projection).toHaveLength(1614)
     expect([...forbiddenKeys].filter((key) => discoveredKeys.has(key))).toEqual([])
+    expect(projection.some((record) => Object.hasOwn(record, 'explanation'))).toBe(false)
+    expect(projection.some((record) => (
+      (JSON.stringify(record.teachingBlock) ?? '').includes('explanation')
+    ))).toBe(true)
     expect(projection.every((record) => record.displayedTexts.length >= 1)).toBe(true)
     const tableRecords = projection.filter((record) => record.questionType === 'table_match')
     const twoPartRecords = projection.filter((record) => record.questionType === 'two_part')

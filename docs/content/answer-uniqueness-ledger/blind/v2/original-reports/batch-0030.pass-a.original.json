@@ -1,0 +1,797 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0030",
+  "batchFileSha256": "8132be82db744d6eea0204896a30ca29698d6107062bcbfc88d8b14284c5856d",
+  "reviewerThreadId": "01a07bc1-57ca-7230-a515-d322b50c9d2e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0350",
+      "fingerprint": "7a1c508fb7c7a86a9dc27a5d3bf52d5b4612e2d176a04fdc4144bc11012f35bd",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The slipped cover leaves the seedlings exposed to wind and too much rain, which is the story problem.",
+              [
+                "S0068"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "No bird box appears in this story.",
+              []
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "No wrappers or sidewalk appear in this story.",
+              []
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "No library shelf appears in this story.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0351",
+      "fingerprint": "f72322c597090890d63453074e19350b987757e302901faae84001f5e5b0d10c",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "UNSUPPORTED",
+              "The story never places the cleanup in a science room.",
+              []
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "No bird box appears in the cleanup story.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Tia leads neighbors around the block, where the litter is spread across the sidewalk.",
+              [
+                "S0043",
+                "S0049"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "No trail bench appears in the cleanup story.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0352",
+      "fingerprint": "7b9c7aac879b61dd0637cb27ff862b9d335fc08c73fa25367ccc979639198b4a",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "The characters repair the bridge actively and later laugh; the story does not portray them as sad or sleepy.",
+              [
+                "S0053",
+                "S0056"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "They work carefully and laugh quietly rather than behaving loudly or angrily.",
+              [
+                "S0053",
+                "S0056"
+              ]
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "Nothing says either character is late or lost.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Carlos and Emmi carefully strengthen, tape, and check the bridge to help complete the repair.",
+              [
+                "S0053"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0353",
+      "fingerprint": "49dbe53bb93d9e06524df6d24a19803495a723903277c8b2ff48696f2b572cfd",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A3"
+          ],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "UNSUPPORTED",
+              "A science fair is not part of Harper’s garden story.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The school garden identifies where the story happens.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Rainy afternoon identifies the weather and time.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "A blue tray does not appear in Harper’s garden story.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0354",
+      "fingerprint": "49366d0625a905ae5dc5c64b699a0fd4b5533659f3107bf92146c6533120523f",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": true,
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This opening sentence establishes time and characters, not how the litter problem ends.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence states the litter problem rather than its resolution.",
+              [
+                "S0049"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The clean street and Tia’s pride clearly show that the litter problem has been solved.",
+              [
+                "S0048"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Placing the filled bags at the curb is a final cleanup step that completes handling the collected litter.",
+              [
+                "S0050"
+              ]
+            ],
+            [
+              "A5",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This sentence describes the characters’ solution work, but it does not yet show the resolved ending as clearly as the final outcomes.",
+              [
+                "S0045"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0355",
+      "fingerprint": "28445ca7d9f4dc562e9b6492eb3d3aec9639f280f4a4ab24a6f3727a02068b6d",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Adding the brace is a middle action used to solve the problem, not the beginning.",
+              [
+                "S0053"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The steady bridge and laughter belong to the resolution.",
+              [
+                "S0056"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The story begins with Carlos and Emmi examining the bridge after lunch.",
+              [
+                "S0058"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The sagging beam and dipping road state what is wrong with the bridge.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "After lunch establishes time, not the bridge problem.",
+              [
+                "S0058"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Displaying the fixed model happens after the problem is solved.",
+              [
+                "S0060"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "The bridge stands steady after the fix, so the beam does not keep sagging.",
+              [
+                "S0056"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The road is not said to dip again after the repair; the bridge stands steady.",
+              [
+                "S0056"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The bridge standing steady shows that the repair resolved the problem.",
+              [
+                "S0056"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0356",
+      "fingerprint": "84f4b9051657f7ba137919ce5c63bc28c85b7ef1bc19328a5889b4498f91f80f",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The passage explicitly says Harper felt calm and helpful by the end.",
+              [
+                "S0066"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The stated ending feelings are calm and helpful, not sleepy and bored.",
+              [
+                "S0066"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The stated ending feelings are calm and helpful, not angry and loud.",
+              [
+                "S0066"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "UNSUPPORTED",
+              "Wrappers and a sidewalk belong to a different displayed story and do not support Harper’s feelings.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This sentence directly states the feelings identified in Part A.",
+              [
+                "S0066"
+              ]
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "A sagging bridge belongs to a different displayed story and does not support Harper’s feelings.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0357",
+      "fingerprint": "dea06df71b62c6ff636cc4d149faed3e5731a95831f3d2140991526e0a7e8885",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one opening event, not a general message about people or choices.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The story focuses on repairing the sign with help; the seed swap is only the ending time marker.",
+              [
+                "S0005",
+                "S0008"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Tia struggles alone, asks Ben for help, and then finds the job easier, directly supporting this general message.",
+              [
+                "S0010",
+                "S0005",
+                "S0008"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states a story problem, not a broader life message.",
+              [
+                "S0009"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0358",
+      "fingerprint": "80993f581726dcc54ee8bbfd91d6b32c318feae4d35d9ac0174783bc7f08b0ec",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This complete sentence reports the outcome rather than naming the subject with a short label.",
+              [
+                "S0008"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This complete sentence summarizes an important action rather than giving the short topic label requested.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Fixing the welcome sign is a short phrase that names the story’s subject without stating a life message.",
+              [
+                "S0009",
+                "S0005"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This complete general message is a theme, not a topic label.",
+              [
+                "S0010",
+                "S0005",
+                "S0008"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0359",
+      "fingerprint": "a1f4be74111574ddab0ce59e287ec52e986a1bd0ab37c5d9170fd6ea694b7413",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The seed swap beginning does not show that asking for or receiving help makes a hard task easier.",
+              [
+                "S0008"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Holding the sign together while Tia repairs it shows cooperation helping complete the task.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Tia’s decision to ask Ben directly supports the theme about asking for help.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The board wobbling when Tia tries alone provides contrast showing why help makes the difficult task easier.",
+              [
+                "S0010"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0360",
+      "fingerprint": "dd9d63ee4b1da3ea1fb92f64a0247b6b4d3c6429c9279c4ea039604dde74eb54",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": true,
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "In the displayed context, “with help” refers to Ben’s help and shows that their shared work made the task easier.",
+              [
+                "S0005",
+                "S0008"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "This sentence says Tia tried alone, so it does not show Tia and Ben working together.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This sentence directly describes Ben helping and the two holding the sign together while it is repaired.",
+              [
+                "S0005"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    },
+    {
+      "auditId": "Q0361",
+      "fingerprint": "4babf9938eb8c5ebd39f91b95ba96c44c124bd65cdb37046f53840042f0e2a26",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Asking Ben directly demonstrates asking for help.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The rope is tightened later, but asking Ben does not itself show that the rope was tight.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The seed swap begins later and is unrelated to what asking Ben demonstrates.",
+              [
+                "S0008"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The crooked sign is the story problem, not what Tia’s request for help demonstrates.",
+              [
+                "S0009",
+                "S0005"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Tia tightens the rope, but the quoted joint action is holding the sign rather than moving the rope.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "The characters hold and repair the sign; they are not described reading it.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The word “together” and the shared action directly show cooperation.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "The passage does not connect holding the sign to waiting for visitors.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "UNSUPPORTED",
+              "The sentence says the sign stood straight, not that it was new.",
+              [
+                "S0008"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "The story never says the wind stopped.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The statement directly says help made the previously difficult job feel easier.",
+              [
+                "S0008"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "Nothing says the garden was loud.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": false,
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The straight sign shows that the repair task was successfully completed.",
+              [
+                "S0008"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "Tia smiles at the successful result, so the ending does not turn sad.",
+              [
+                "S0008"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The successful straight sign follows Ben’s help; the help is not lost.",
+              [
+                "S0005",
+                "S0008"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "Nothing in the passage indicates that its topic changed.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": false
+    }
+  ]
+}

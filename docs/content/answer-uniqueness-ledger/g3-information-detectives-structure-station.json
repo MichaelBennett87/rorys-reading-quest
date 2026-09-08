@@ -1,0 +1,3726 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "g3-id-ss-q1-1",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-833d82b52a0d17a1",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "96ba7b4c5154306cdde2a49d3cc829b671e00384f4fa935432b809d709678d7c",
+        "conclusionsSha256": "0036b727232e5ebc76fb2546c9579542bb926879e796b0678cd6cccf8bd399ca",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0103.pass-a.json",
+        "receiptSha256": "0036b727232e5ebc76fb2546c9579542bb926879e796b0678cd6cccf8bd399ca",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which structure organizes the important ideas in \"A Day at the Weather Station\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q1-1-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q1-1-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q1-1-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The facts form one connected daily sequence rather than an unrelated collection.",
+              "evidenceIds": [
+                "g3-id-ss-passage-1-sentence-1",
+                "g3-id-ss-passage-1-sentence-2",
+                "g3-id-ss-passage-1-sentence-3",
+                "g3-id-ss-passage-1-sentence-4",
+                "g3-id-ss-passage-1-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q1-1-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Morning, next, noon, later, and finally organize the important actions by time.",
+              "evidenceIds": [
+                "g3-id-ss-passage-1-sentence-1",
+                "g3-id-ss-passage-1-sentence-2",
+                "g3-id-ss-passage-1-sentence-3",
+                "g3-id-ss-passage-1-sentence-4",
+                "g3-id-ss-passage-1-sentence-5",
+                "g3-id-ss-passage-1-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q1-1-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The text does not explain one event causing another; it follows observation steps over time.",
+              "evidenceIds": [
+                "g3-id-ss-passage-1-sentence-1",
+                "g3-id-ss-passage-1-sentence-2",
+                "g3-id-ss-passage-1-sentence-3",
+                "g3-id-ss-passage-1-sentence-4",
+                "g3-id-ss-passage-1-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q1-1-choice-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The passage does not organize ideas around similarities and differences between subjects.",
+              "evidenceIds": [
+                "g3-id-ss-passage-1-sentence-1",
+                "g3-id-ss-passage-1-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q1-2",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-f522575353ee0807",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "96ba7b4c5154306cdde2a49d3cc829b671e00384f4fa935432b809d709678d7c",
+        "conclusionsSha256": "0036b727232e5ebc76fb2546c9579542bb926879e796b0678cd6cccf8bd399ca",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0103.pass-a.json",
+        "receiptSha256": "0036b727232e5ebc76fb2546c9579542bb926879e796b0678cd6cccf8bd399ca",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "How does the timeline contribute to the meaning of \"A Day at the Weather Station\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q1-2-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q1-2-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q1-2-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The ordered morning, noon, and afternoon entries visually summarize the day's work.",
+              "evidenceIds": [
+                "g3-id-ss-passage-1-feature-timeline-morning",
+                "g3-id-ss-passage-1-feature-timeline-noon",
+                "g3-id-ss-passage-1-feature-timeline-afternoon",
+                "g3-id-ss-passage-1-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q1-2-choice-2",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The timeline contains task times and descriptions, not authorship information.",
+              "evidenceIds": [
+                "g3-id-ss-passage-1-feature-timeline-morning",
+                "g3-id-ss-passage-1-feature-timeline-noon",
+                "g3-id-ss-passage-1-feature-timeline-afternoon"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q1-2-choice-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The timeline adds an ordered summary of the observations.",
+              "evidenceIds": [
+                "g3-id-ss-passage-1-feature-timeline-morning",
+                "g3-id-ss-passage-1-feature-timeline-noon",
+                "g3-id-ss-passage-1-feature-timeline-afternoon"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q1-2-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The timeline summarizes selected steps but does not replace passage details such as instruments and the glossary.",
+              "evidenceIds": [
+                "g3-id-ss-passage-1-sentence-1",
+                "g3-id-ss-passage-1-sentence-7",
+                "g3-id-ss-passage-1-feature-timeline-morning",
+                "g3-id-ss-passage-1-feature-timeline-noon",
+                "g3-id-ss-passage-1-feature-timeline-afternoon"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q1-3",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-af69b006f3321faa",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "e6054fd08e5a65b2c4c371404004029b24ed6f9a446609ded5801755bd7bf3e4",
+        "conclusionsSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0043.pass-a.json",
+        "receiptSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two time-marked action sentences that show the first and final steps in the observer's day.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-id-ss-q1-3-correct-1",
+            "g3-id-ss-q1-3-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q1-3-correct-1",
+            "g3-id-ss-q1-3-correct-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q1-3-wrong-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Summarizes the ordered details but is not a first or final action.",
+              "evidenceIds": [
+                "g3-id-ss-passage-1-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q1-3-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Early in the morning marks the first observation action.",
+              "evidenceIds": [
+                "g3-id-ss-passage-1-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q1-3-wrong-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Defines a tool rather than marking an action step.",
+              "evidenceIds": [
+                "g3-id-ss-passage-1-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q1-3-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Finally marks the last action of placing records in the log.",
+              "evidenceIds": [
+                "g3-id-ss-passage-1-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q1-4",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-e5314b53a6f0fbcf",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "96ba7b4c5154306cdde2a49d3cc829b671e00384f4fa935432b809d709678d7c",
+        "conclusionsSha256": "0036b727232e5ebc76fb2546c9579542bb926879e796b0678cd6cccf8bd399ca",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0103.pass-a.json",
+        "receiptSha256": "0036b727232e5ebc76fb2546c9579542bb926879e796b0678cd6cccf8bd399ca",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that shows the final step in the observer's day.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q1-4-segment-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q1-4-segment-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q1-4-segment-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The noon wind measurement occurs before the afternoon reading and final log step.",
+              "evidenceIds": [
+                "g3-id-ss-passage-1-sentence-3",
+                "g3-id-ss-passage-1-sentence-4",
+                "g3-id-ss-passage-1-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q1-4-segment-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "This is the early-morning first action.",
+              "evidenceIds": [
+                "g3-id-ss-passage-1-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q1-4-segment-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The glossary sentence defines a tool and is not an observer step.",
+              "evidenceIds": [
+                "g3-id-ss-passage-1-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q1-4-segment-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sentence explicitly marks placing all records in the log as the final action.",
+              "evidenceIds": [
+                "g3-id-ss-passage-1-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q1-5",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-bbf837a335450ae7",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "96ba7b4c5154306cdde2a49d3cc829b671e00384f4fa935432b809d709678d7c",
+        "conclusionsSha256": "0036b727232e5ebc76fb2546c9579542bb926879e796b0678cd6cccf8bd399ca",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0103.pass-a.json",
+        "receiptSha256": "0036b727232e5ebc76fb2546c9579542bb926879e796b0678cd6cccf8bd399ca",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-id-ss-q1-5-row-structure",
+          "prompt": "Chronology organization",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q1-5-structure"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q1-5-structure"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q1-5-structure",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This explains how the overall chronology organization orders tasks from first check to final log.",
+              "evidenceIds": [
+                "g3-id-ss-passage-1-sentence-1",
+                "g3-id-ss-passage-1-sentence-5",
+                "g3-id-ss-passage-1-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q1-5-unused",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Chronology supplies order, not the author's opinion about a best fact.",
+              "evidenceIds": [
+                "g3-id-ss-passage-1-sentence-1",
+                "g3-id-ss-passage-1-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q1-5-feature",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This specifically explains the timeline feature rather than the overall organization row.",
+              "evidenceIds": [
+                "g3-id-ss-passage-1-feature-timeline-morning",
+                "g3-id-ss-passage-1-feature-timeline-noon",
+                "g3-id-ss-passage-1-feature-timeline-afternoon"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ss-q1-5-row-feature",
+          "prompt": "timeline",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q1-5-feature"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q1-5-feature"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q1-5-feature",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly states how the displayed timeline helps readers follow the work.",
+              "evidenceIds": [
+                "g3-id-ss-passage-1-feature-timeline-morning",
+                "g3-id-ss-passage-1-feature-timeline-noon",
+                "g3-id-ss-passage-1-feature-timeline-afternoon"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q1-5-structure",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This explains the passage's chronology organization rather than the timeline feature row.",
+              "evidenceIds": [
+                "g3-id-ss-passage-1-sentence-1",
+                "g3-id-ss-passage-1-sentence-5",
+                "g3-id-ss-passage-1-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q1-5-unused",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The timeline gives ordered tasks, not an author opinion.",
+              "evidenceIds": [
+                "g3-id-ss-passage-1-feature-timeline-morning",
+                "g3-id-ss-passage-1-feature-timeline-noon",
+                "g3-id-ss-passage-1-feature-timeline-afternoon"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q2-1",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-45aea36fd7cb63eb",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "96ba7b4c5154306cdde2a49d3cc829b671e00384f4fa935432b809d709678d7c",
+        "conclusionsSha256": "0036b727232e5ebc76fb2546c9579542bb926879e796b0678cd6cccf8bd399ca",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0032.second-pass.json",
+        "receiptSha256": "7d9a773ba9a88d3285139e34095366126ed8a8a76ec0ac13d82cd289f8035feb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which structure organizes the important ideas in \"Desert Fox and Arctic Fox\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q2-1-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q2-1-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q2-1-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The facts are related through similarities and differences between two foxes.",
+              "evidenceIds": [
+                "g3-id-ss-passage-2-sentence-1",
+                "g3-id-ss-passage-2-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q2-1-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "Individual features have effects, but the passage as a whole is organized by comparing the foxes.",
+              "evidenceIds": [
+                "g3-id-ss-passage-2-sentence-2",
+                "g3-id-ss-passage-2-sentence-4",
+                "g3-id-ss-passage-2-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q2-1-choice-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The passage does not follow events or steps through time.",
+              "evidenceIds": [
+                "g3-id-ss-passage-2-sentence-1",
+                "g3-id-ss-passage-2-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q2-1-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The text repeatedly presents meaningful similarities and differences between desert and Arctic foxes.",
+              "evidenceIds": [
+                "g3-id-ss-passage-2-sentence-1",
+                "g3-id-ss-passage-2-sentence-2",
+                "g3-id-ss-passage-2-sentence-4",
+                "g3-id-ss-passage-2-sentence-6",
+                "g3-id-ss-passage-2-sentence-9"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q2-2",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-99653acc206fd8c0",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "96ba7b4c5154306cdde2a49d3cc829b671e00384f4fa935432b809d709678d7c",
+        "conclusionsSha256": "0036b727232e5ebc76fb2546c9579542bb926879e796b0678cd6cccf8bd399ca",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0103.pass-a.json",
+        "receiptSha256": "0036b727232e5ebc76fb2546c9579542bb926879e796b0678cd6cccf8bd399ca",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "How does the labeled diagram contribute to the meaning of \"Desert Fox and Arctic Fox\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q2-2-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q2-2-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q2-2-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The side-by-side illustration labels each fox's ears and coat, making their differences visible.",
+              "evidenceIds": [
+                "g3-id-ss-passage-2-feature-illustration",
+                "g3-id-ss-passage-2-feature-illustration-desert-ears",
+                "g3-id-ss-passage-2-feature-illustration-arctic-ears",
+                "g3-id-ss-passage-2-feature-illustration-coats"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q2-2-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The diagram adds focused comparisons but does not replace all passage information.",
+              "evidenceIds": [
+                "g3-id-ss-passage-2-sentence-1",
+                "g3-id-ss-passage-2-sentence-6",
+                "g3-id-ss-passage-2-feature-illustration"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q2-2-choice-2",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The diagram provides animal labels, not author information.",
+              "evidenceIds": [
+                "g3-id-ss-passage-2-feature-illustration",
+                "g3-id-ss-passage-2-feature-illustration-desert-ears",
+                "g3-id-ss-passage-2-feature-illustration-arctic-ears",
+                "g3-id-ss-passage-2-feature-illustration-coats"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q2-2-choice-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "Its labels add information about how ears and coats differ.",
+              "evidenceIds": [
+                "g3-id-ss-passage-2-feature-illustration",
+                "g3-id-ss-passage-2-feature-illustration-desert-ears",
+                "g3-id-ss-passage-2-feature-illustration-arctic-ears",
+                "g3-id-ss-passage-2-feature-illustration-coats"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q2-3",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-92c651f667d50362",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "e6054fd08e5a65b2c4c371404004029b24ed6f9a446609ded5801755bd7bf3e4",
+        "conclusionsSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0043.pass-a.json",
+        "receiptSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two animal-feature sentences that directly contrast the foxes' ear sizes and how those ears handle body heat.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-id-ss-q2-3-correct-1",
+            "g3-id-ss-q2-3-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q2-3-correct-2",
+            "g3-id-ss-q2-3-correct-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q2-3-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "States the Arctic fox's smaller ears and heat-retaining function.",
+              "evidenceIds": [
+                "g3-id-ss-passage-2-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q2-3-wrong-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Summarizes the comparison but does not state either ear-size contrast detail.",
+              "evidenceIds": [
+                "g3-id-ss-passage-2-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q2-3-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "States the desert fox's larger ears and heat-releasing function.",
+              "evidenceIds": [
+                "g3-id-ss-passage-2-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q2-3-wrong-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Defines habitat rather than contrasting ears.",
+              "evidenceIds": [
+                "g3-id-ss-passage-2-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q2-4",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-ac28ae68f25ee0d4",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "96ba7b4c5154306cdde2a49d3cc829b671e00384f4fa935432b809d709678d7c",
+        "conclusionsSha256": "0036b727232e5ebc76fb2546c9579542bb926879e796b0678cd6cccf8bd399ca",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0103.pass-a.json",
+        "receiptSha256": "0036b727232e5ebc76fb2546c9579542bb926879e796b0678cd6cccf8bd399ca",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that states a meaningful similarity between the two foxes.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q2-4-segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q2-4-segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q2-4-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states a desert-fox feature only, not a similarity between both foxes.",
+              "evidenceIds": [
+                "g3-id-ss-passage-2-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q2-4-segment-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This states an Arctic-fox feature only, not a similarity between both foxes.",
+              "evidenceIds": [
+                "g3-id-ss-passage-2-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q2-4-segment-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The glossary definition does not compare the foxes.",
+              "evidenceIds": [
+                "g3-id-ss-passage-2-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q2-4-segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sentence explicitly states that both foxes share sharp hearing used for the same purpose.",
+              "evidenceIds": [
+                "g3-id-ss-passage-2-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q2-5",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-15c7a331ea7f36dd",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "96ba7b4c5154306cdde2a49d3cc829b671e00384f4fa935432b809d709678d7c",
+        "conclusionsSha256": "0036b727232e5ebc76fb2546c9579542bb926879e796b0678cd6cccf8bd399ca",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0103.pass-a.json",
+        "receiptSha256": "0036b727232e5ebc76fb2546c9579542bb926879e796b0678cd6cccf8bd399ca",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-id-ss-q2-5-row-structure",
+          "prompt": "Comparison organization",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q2-5-structure"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q2-5-structure"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q2-5-unused",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Comparison organization does not supply an author opinion about a best fact.",
+              "evidenceIds": [
+                "g3-id-ss-passage-2-sentence-1",
+                "g3-id-ss-passage-2-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q2-5-feature",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This specifically explains the labeled diagram rather than the overall comparison organization.",
+              "evidenceIds": [
+                "g3-id-ss-passage-2-feature-illustration",
+                "g3-id-ss-passage-2-feature-illustration-desert-ears",
+                "g3-id-ss-passage-2-feature-illustration-arctic-ears",
+                "g3-id-ss-passage-2-feature-illustration-coats"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q2-5-structure",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This explains how comparison connects both foxes' features to their habitats.",
+              "evidenceIds": [
+                "g3-id-ss-passage-2-sentence-1",
+                "g3-id-ss-passage-2-sentence-2",
+                "g3-id-ss-passage-2-sentence-4",
+                "g3-id-ss-passage-2-sentence-6",
+                "g3-id-ss-passage-2-sentence-9"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ss-q2-5-row-feature",
+          "prompt": "labeled diagram",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q2-5-feature"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q2-5-feature"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q2-5-feature",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly explains how the side-by-side labeled diagram helps comparison.",
+              "evidenceIds": [
+                "g3-id-ss-passage-2-feature-illustration",
+                "g3-id-ss-passage-2-feature-illustration-desert-ears",
+                "g3-id-ss-passage-2-feature-illustration-arctic-ears",
+                "g3-id-ss-passage-2-feature-illustration-coats"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q2-5-unused",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The diagram contains labels, not an author opinion.",
+              "evidenceIds": [
+                "g3-id-ss-passage-2-feature-illustration",
+                "g3-id-ss-passage-2-feature-illustration-desert-ears",
+                "g3-id-ss-passage-2-feature-illustration-arctic-ears",
+                "g3-id-ss-passage-2-feature-illustration-coats"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q2-5-structure",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This explains the passage's comparison organization rather than the diagram row.",
+              "evidenceIds": [
+                "g3-id-ss-passage-2-sentence-1",
+                "g3-id-ss-passage-2-sentence-9"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q3-1",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-d979010dbdc465e1",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "e8ba04caf7906769edf233c8b22993c309d23ae8b659fa6162b063410b5e392f",
+        "conclusionsSha256": "1283d721296fd3395068b75f18a19ae591231e60ba3073f56a05bcf3c3378319",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0104.pass-a.json",
+        "receiptSha256": "1283d721296fd3395068b75f18a19ae591231e60ba3073f56a05bcf3c3378319",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which structure organizes the important ideas in \"Shade, Mulch, and Moist Soil\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q3-1-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q3-1-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q3-1-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The important ideas connect sunlight, air, cover, and shade to changes in soil moisture.",
+              "evidenceIds": [
+                "g3-id-ss-passage-3-sentence-1",
+                "g3-id-ss-passage-3-sentence-2",
+                "g3-id-ss-passage-3-sentence-4",
+                "g3-id-ss-passage-3-sentence-5",
+                "g3-id-ss-passage-3-sentence-6",
+                "g3-id-ss-passage-3-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q3-1-choice-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The passage does not organize a process or events in time order.",
+              "evidenceIds": [
+                "g3-id-ss-passage-3-sentence-1",
+                "g3-id-ss-passage-3-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q3-1-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The facts form a connected explanation rather than an unrelated collection.",
+              "evidenceIds": [
+                "g3-id-ss-passage-3-sentence-1",
+                "g3-id-ss-passage-3-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q3-1-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Bare and covered soil are contrasted, but the passage's main organization explains why their moisture results differ.",
+              "evidenceIds": [
+                "g3-id-ss-passage-3-sentence-1",
+                "g3-id-ss-passage-3-sentence-4",
+                "g3-id-ss-passage-3-sentence-5",
+                "g3-id-ss-passage-3-sentence-9"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q3-2",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-1c3670067a1493da",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "e8ba04caf7906769edf233c8b22993c309d23ae8b659fa6162b063410b5e392f",
+        "conclusionsSha256": "1283d721296fd3395068b75f18a19ae591231e60ba3073f56a05bcf3c3378319",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0104.pass-a.json",
+        "receiptSha256": "1283d721296fd3395068b75f18a19ae591231e60ba3073f56a05bcf3c3378319",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "How does the labeled diagram contribute to the meaning of \"Shade, Mulch, and Moist Soil\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q3-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q3-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q3-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The labels connect sunlight and mulch conditions to moisture near roots.",
+              "evidenceIds": [
+                "g3-id-ss-passage-3-feature-illustration",
+                "g3-id-ss-passage-3-feature-illustration-sunlight",
+                "g3-id-ss-passage-3-feature-illustration-mulch",
+                "g3-id-ss-passage-3-feature-illustration-moisture"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q3-2-choice-3",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The diagram gives soil labels, not authorship information.",
+              "evidenceIds": [
+                "g3-id-ss-passage-3-feature-illustration",
+                "g3-id-ss-passage-3-feature-illustration-sunlight",
+                "g3-id-ss-passage-3-feature-illustration-mulch",
+                "g3-id-ss-passage-3-feature-illustration-moisture"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q3-2-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The labeled causes and results add information.",
+              "evidenceIds": [
+                "g3-id-ss-passage-3-feature-illustration",
+                "g3-id-ss-passage-3-feature-illustration-sunlight",
+                "g3-id-ss-passage-3-feature-illustration-mulch",
+                "g3-id-ss-passage-3-feature-illustration-moisture"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q3-2-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The diagram highlights selected relationships and does not replace all passage details.",
+              "evidenceIds": [
+                "g3-id-ss-passage-3-sentence-1",
+                "g3-id-ss-passage-3-sentence-6",
+                "g3-id-ss-passage-3-feature-illustration"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q3-3",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-f781b6271147adc3",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "e6054fd08e5a65b2c4c371404004029b24ed6f9a446609ded5801755bd7bf3e4",
+        "conclusionsSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0043.pass-a.json",
+        "receiptSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the cause sentence about sunlight warming bare soil and the result sentence stating that covered soil loses water more slowly.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-id-ss-q3-3-correct-1",
+            "g3-id-ss-q3-3-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q3-3-correct-1",
+            "g3-id-ss-q3-3-correct-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q3-3-wrong-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Summarizes the overall cause-effect pattern rather than supplying either specifically requested sentence.",
+              "evidenceIds": [
+                "g3-id-ss-passage-3-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q3-3-wrong-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "States the caption's moisture conclusion, not the requested cause or exact result sentence.",
+              "evidenceIds": [
+                "g3-id-ss-passage-3-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q3-3-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "States the requested sunny warming and water-loss cause for bare soil.",
+              "evidenceIds": [
+                "g3-id-ss-passage-3-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q3-3-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Directly states the requested result that covered soil loses water more slowly.",
+              "evidenceIds": [
+                "g3-id-ss-passage-3-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q3-4",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-98007d03805f00df",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "e8ba04caf7906769edf233c8b22993c309d23ae8b659fa6162b063410b5e392f",
+        "conclusionsSha256": "1283d721296fd3395068b75f18a19ae591231e60ba3073f56a05bcf3c3378319",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0032.second-pass.json",
+        "receiptSha256": "7d9a773ba9a88d3285139e34095366126ed8a8a76ec0ac13d82cd289f8035feb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that states the result of placing mulch over soil.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q3-4-segment-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q3-4-segment-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q3-4-segment-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The diagram description shows the two conditions but does not state the requested result.",
+              "evidenceIds": [
+                "g3-id-ss-passage-3-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q3-4-segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "This describes water loss from bare sun-warmed soil, not the result of mulch.",
+              "evidenceIds": [
+                "g3-id-ss-passage-3-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q3-4-segment-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sentence explicitly states the slower water-loss result after the mulch explanation.",
+              "evidenceIds": [
+                "g3-id-ss-passage-3-sentence-4",
+                "g3-id-ss-passage-3-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q3-4-segment-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes placing mulch, not the result that follows.",
+              "evidenceIds": [
+                "g3-id-ss-passage-3-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q3-5",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-fdb09c284788aed4",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "e8ba04caf7906769edf233c8b22993c309d23ae8b659fa6162b063410b5e392f",
+        "conclusionsSha256": "1283d721296fd3395068b75f18a19ae591231e60ba3073f56a05bcf3c3378319",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0104.pass-a.json",
+        "receiptSha256": "1283d721296fd3395068b75f18a19ae591231e60ba3073f56a05bcf3c3378319",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-id-ss-q3-5-row-structure",
+          "prompt": "Cause and effect organization",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q3-5-structure"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q3-5-structure"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q3-5-unused",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Cause-and-effect organization does not give an author opinion about a best fact.",
+              "evidenceIds": [
+                "g3-id-ss-passage-3-sentence-1",
+                "g3-id-ss-passage-3-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q3-5-feature",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This specifically explains the labeled diagram rather than the passage organization.",
+              "evidenceIds": [
+                "g3-id-ss-passage-3-feature-illustration",
+                "g3-id-ss-passage-3-feature-illustration-sunlight",
+                "g3-id-ss-passage-3-feature-illustration-mulch",
+                "g3-id-ss-passage-3-feature-illustration-moisture"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q3-5-structure",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This explains how the overall cause-and-effect organization connects conditions to moisture results.",
+              "evidenceIds": [
+                "g3-id-ss-passage-3-sentence-1",
+                "g3-id-ss-passage-3-sentence-4",
+                "g3-id-ss-passage-3-sentence-5",
+                "g3-id-ss-passage-3-sentence-6",
+                "g3-id-ss-passage-3-sentence-9"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ss-q3-5-row-feature",
+          "prompt": "labeled diagram",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q3-5-feature"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q3-5-feature"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q3-5-structure",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This explains the overall passage organization rather than the diagram row.",
+              "evidenceIds": [
+                "g3-id-ss-passage-3-sentence-1",
+                "g3-id-ss-passage-3-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q3-5-feature",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly explains how the diagram's labels connect conditions with moisture results.",
+              "evidenceIds": [
+                "g3-id-ss-passage-3-feature-illustration",
+                "g3-id-ss-passage-3-feature-illustration-sunlight",
+                "g3-id-ss-passage-3-feature-illustration-mulch",
+                "g3-id-ss-passage-3-feature-illustration-moisture"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q3-5-unused",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The diagram presents labels, not an author opinion.",
+              "evidenceIds": [
+                "g3-id-ss-passage-3-feature-illustration",
+                "g3-id-ss-passage-3-feature-illustration-sunlight",
+                "g3-id-ss-passage-3-feature-illustration-mulch",
+                "g3-id-ss-passage-3-feature-illustration-moisture"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q4-1",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-c11711fb733518b7",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "e8ba04caf7906769edf233c8b22993c309d23ae8b659fa6162b063410b5e392f",
+        "conclusionsSha256": "1283d721296fd3395068b75f18a19ae591231e60ba3073f56a05bcf3c3378319",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0104.pass-a.json",
+        "receiptSha256": "1283d721296fd3395068b75f18a19ae591231e60ba3073f56a05bcf3c3378319",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which structure organizes the important ideas in \"Building a Classroom Wind Vane\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q4-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q4-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q4-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "First, next, then, and finally organize the wind-vane construction and test in required order.",
+              "evidenceIds": [
+                "g3-id-ss-passage-4-sentence-2",
+                "g3-id-ss-passage-4-sentence-3",
+                "g3-id-ss-passage-4-sentence-5",
+                "g3-id-ss-passage-4-sentence-7",
+                "g3-id-ss-passage-4-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q4-1-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Some steps have practical results, but the passage is primarily organized as an ordered procedure.",
+              "evidenceIds": [
+                "g3-id-ss-passage-4-sentence-2",
+                "g3-id-ss-passage-4-sentence-7",
+                "g3-id-ss-passage-4-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q4-1-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The passage does not organize ideas around similarities and differences between subjects.",
+              "evidenceIds": [
+                "g3-id-ss-passage-4-sentence-1",
+                "g3-id-ss-passage-4-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q4-1-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The sentences form a connected build-and-test sequence.",
+              "evidenceIds": [
+                "g3-id-ss-passage-4-sentence-2",
+                "g3-id-ss-passage-4-sentence-3",
+                "g3-id-ss-passage-4-sentence-5",
+                "g3-id-ss-passage-4-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q4-2",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-afe0faad0f1d8309",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "e8ba04caf7906769edf233c8b22993c309d23ae8b659fa6162b063410b5e392f",
+        "conclusionsSha256": "1283d721296fd3395068b75f18a19ae591231e60ba3073f56a05bcf3c3378319",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0032.second-pass.json",
+        "receiptSha256": "7d9a773ba9a88d3285139e34095366126ed8a8a76ec0ac13d82cd289f8035feb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "How does the timeline contribute to the meaning of \"Building a Classroom Wind Vane\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q4-2-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q4-2-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q4-2-choice-3",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The timeline contains steps, not authorship information.",
+              "evidenceIds": [
+                "g3-id-ss-passage-4-feature-timeline",
+                "g3-id-ss-passage-4-feature-timeline-base",
+                "g3-id-ss-passage-4-feature-timeline-arrow",
+                "g3-id-ss-passage-4-feature-timeline-test"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q4-2-choice-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The timeline adds an ordered summary of building and testing.",
+              "evidenceIds": [
+                "g3-id-ss-passage-4-feature-timeline",
+                "g3-id-ss-passage-4-feature-timeline-base",
+                "g3-id-ss-passage-4-feature-timeline-arrow",
+                "g3-id-ss-passage-4-feature-timeline-test"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q4-2-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The timeline condenses stages but does not replace every passage detail.",
+              "evidenceIds": [
+                "g3-id-ss-passage-4-sentence-1",
+                "g3-id-ss-passage-4-sentence-9",
+                "g3-id-ss-passage-4-feature-timeline"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q4-2-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Its numbered base, arrow, and label/test stages make the sequence easy to follow.",
+              "evidenceIds": [
+                "g3-id-ss-passage-4-feature-timeline",
+                "g3-id-ss-passage-4-feature-timeline-base",
+                "g3-id-ss-passage-4-feature-timeline-arrow",
+                "g3-id-ss-passage-4-feature-timeline-test"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q4-3",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-82d0646aba848b16",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "e6054fd08e5a65b2c4c371404004029b24ed6f9a446609ded5801755bd7bf3e4",
+        "conclusionsSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0043.pass-a.json",
+        "receiptSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two action sentences marked First and Finally that show the beginning and end of the wind-vane process.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-id-ss-q4-3-correct-1",
+            "g3-id-ss-q4-3-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q4-3-correct-2",
+            "g3-id-ss-q4-3-correct-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q4-3-wrong-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Defines direction rather than marking an action step.",
+              "evidenceIds": [
+                "g3-id-ss-passage-4-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q4-3-wrong-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Explains why sequence matters rather than giving the marked first or final action.",
+              "evidenceIds": [
+                "g3-id-ss-passage-4-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q4-3-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Finally marks the concluding observation action.",
+              "evidenceIds": [
+                "g3-id-ss-passage-4-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q4-3-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "First marks the beginning construction action.",
+              "evidenceIds": [
+                "g3-id-ss-passage-4-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q4-4",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-cc7dc9f80ecd4b5c",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "e8ba04caf7906769edf233c8b22993c309d23ae8b659fa6162b063410b5e392f",
+        "conclusionsSha256": "1283d721296fd3395068b75f18a19ae591231e60ba3073f56a05bcf3c3378319",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0104.pass-a.json",
+        "receiptSha256": "1283d721296fd3395068b75f18a19ae591231e60ba3073f56a05bcf3c3378319",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that tells what to do immediately before taking the wind vane outside.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q4-4-segment-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q4-4-segment-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q4-4-segment-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "Making the clay base occurs several steps before taking the vane outside.",
+              "evidenceIds": [
+                "g3-id-ss-passage-4-sentence-2",
+                "g3-id-ss-passage-4-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q4-4-segment-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Labeling directions is sentence 5, immediately before sentence 6 carries the vane outside.",
+              "evidenceIds": [
+                "g3-id-ss-passage-4-sentence-5",
+                "g3-id-ss-passage-4-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q4-4-segment-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "Watching the arrow occurs after the vane is carried outside.",
+              "evidenceIds": [
+                "g3-id-ss-passage-4-sentence-6",
+                "g3-id-ss-passage-4-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q4-4-segment-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "Attaching the arrow occurs before the labeling step.",
+              "evidenceIds": [
+                "g3-id-ss-passage-4-sentence-4",
+                "g3-id-ss-passage-4-sentence-5",
+                "g3-id-ss-passage-4-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q4-5",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-5bc5dd282880b7cc",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "e8ba04caf7906769edf233c8b22993c309d23ae8b659fa6162b063410b5e392f",
+        "conclusionsSha256": "1283d721296fd3395068b75f18a19ae591231e60ba3073f56a05bcf3c3378319",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0104.pass-a.json",
+        "receiptSha256": "1283d721296fd3395068b75f18a19ae591231e60ba3073f56a05bcf3c3378319",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-id-ss-q4-5-row-structure",
+          "prompt": "Chronology organization",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q4-5-structure"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q4-5-structure"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q4-5-feature",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This specifically explains the timeline feature rather than the overall chronology organization.",
+              "evidenceIds": [
+                "g3-id-ss-passage-4-feature-timeline",
+                "g3-id-ss-passage-4-feature-timeline-base",
+                "g3-id-ss-passage-4-feature-timeline-arrow",
+                "g3-id-ss-passage-4-feature-timeline-test"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q4-5-structure",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This explains how chronology orders the full construction and test procedure.",
+              "evidenceIds": [
+                "g3-id-ss-passage-4-sentence-2",
+                "g3-id-ss-passage-4-sentence-3",
+                "g3-id-ss-passage-4-sentence-5",
+                "g3-id-ss-passage-4-sentence-7",
+                "g3-id-ss-passage-4-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q4-5-unused",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Chronology supplies sequence, not an author opinion.",
+              "evidenceIds": [
+                "g3-id-ss-passage-4-sentence-2",
+                "g3-id-ss-passage-4-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ss-q4-5-row-feature",
+          "prompt": "timeline",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q4-5-feature"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q4-5-feature"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q4-5-structure",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This explains the overall chronology rather than the timeline feature row.",
+              "evidenceIds": [
+                "g3-id-ss-passage-4-sentence-2",
+                "g3-id-ss-passage-4-sentence-7",
+                "g3-id-ss-passage-4-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q4-5-feature",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly explains how the displayed timeline groups the steps.",
+              "evidenceIds": [
+                "g3-id-ss-passage-4-feature-timeline",
+                "g3-id-ss-passage-4-feature-timeline-base",
+                "g3-id-ss-passage-4-feature-timeline-arrow",
+                "g3-id-ss-passage-4-feature-timeline-test"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q4-5-unused",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The timeline contains ordered stages, not an author opinion.",
+              "evidenceIds": [
+                "g3-id-ss-passage-4-feature-timeline",
+                "g3-id-ss-passage-4-feature-timeline-base",
+                "g3-id-ss-passage-4-feature-timeline-arrow",
+                "g3-id-ss-passage-4-feature-timeline-test"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q5-1",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-cbbb1ebe4721f55a",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ed5e56ac6787a29e14645c9e4ee42fa32c2b9aae1dbf55d0839c497e91e9cc0b",
+        "conclusionsSha256": "9d05bbfcad9b0c5f6ce2838869f21186da89359dbd4c5bb5b5d745a597c3c31a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0105.pass-a.json",
+        "receiptSha256": "9d05bbfcad9b0c5f6ce2838869f21186da89359dbd4c5bb5b5d745a597c3c31a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which structure organizes the important ideas in \"Beam Bridges and Arch Bridges\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q5-1-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q5-1-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q5-1-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "The passage does not organize its main ideas as causes and results.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q5-1-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The details are deliberately organized side by side rather than presented as unrelated facts.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q5-1-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The passage explicitly compares what the two bridge designs share and how they differ.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-sentence-7",
+                "g3-id-ss-passage-5-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q5-1-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "The passage does not organize bridge information by time or ordered steps.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q5-2",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-bb849b1db66b29f1",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ed5e56ac6787a29e14645c9e4ee42fa32c2b9aae1dbf55d0839c497e91e9cc0b",
+        "conclusionsSha256": "9d05bbfcad9b0c5f6ce2838869f21186da89359dbd4c5bb5b5d745a597c3c31a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0032.second-pass.json",
+        "receiptSha256": "7d9a773ba9a88d3285139e34095366126ed8a8a76ec0ac13d82cd289f8035feb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "How does the labeled diagram contribute to the meaning of \"Beam Bridges and Arch Bridges\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q5-2-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q5-2-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q5-2-choice-2",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The diagram contains bridge labels, not author information.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-feature-illustration"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q5-2-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The labeled straight deck and curved arch present the shapes side by side for comparison.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-feature-illustration",
+                "g3-id-ss-passage-5-feature-illustration-beam",
+                "g3-id-ss-passage-5-feature-illustration-arch"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q5-2-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The passage supplies important details beyond the diagram.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-sentence-2",
+                "g3-id-ss-passage-5-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q5-2-choice-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The labels add information about each bridge shape.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-feature-illustration-beam",
+                "g3-id-ss-passage-5-feature-illustration-arch"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q5-3",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-14c94d6645d38b0a",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ed5e56ac6787a29e14645c9e4ee42fa32c2b9aae1dbf55d0839c497e91e9cc0b",
+        "conclusionsSha256": "9d05bbfcad9b0c5f6ce2838869f21186da89359dbd4c5bb5b5d745a597c3c31a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0105.pass-a.json",
+        "receiptSha256": "9d05bbfcad9b0c5f6ce2838869f21186da89359dbd4c5bb5b5d745a597c3c31a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "A new article explains how bicycles and scooters are alike and different. Which structure best fits that article?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q5-3-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q5-3-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q5-3-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "Being alike and different is not an order-in-time relationship.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q5-3-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The stated alike-and-different relationship supplies a clear organization.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q5-3-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "The prompt gives similarities and differences, not causes and results.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q5-3-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Comparison organizes how two subjects are alike and different.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q5-4",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-56f9fc5879ed64b4",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "e6054fd08e5a65b2c4c371404004029b24ed6f9a446609ded5801755bd7bf3e4",
+        "conclusionsSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0032.second-pass.json",
+        "receiptSha256": "7d9a773ba9a88d3285139e34095366126ed8a8a76ec0ac13d82cd289f8035feb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two details that describe the different bridge shapes being compared.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-id-ss-q5-4-correct-1",
+            "g3-id-ss-q5-4-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q5-4-correct-1",
+            "g3-id-ss-q5-4-correct-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q5-4-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Describes the beam bridge's straight deck shape.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q5-4-wrong-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Defines a support but does not describe either compared bridge shape.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q5-4-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Describes the arch bridge's upward curve.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q5-4-wrong-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Explains the organization, not the two bridge shapes themselves.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q5-5",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-b18cf2dcf4e73398",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "ed5e56ac6787a29e14645c9e4ee42fa32c2b9aae1dbf55d0839c497e91e9cc0b",
+        "conclusionsSha256": "9d05bbfcad9b0c5f6ce2838869f21186da89359dbd4c5bb5b5d745a597c3c31a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0105.pass-a.json",
+        "receiptSha256": "9d05bbfcad9b0c5f6ce2838869f21186da89359dbd4c5bb5b5d745a597c3c31a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that states a similarity between beam and arch bridges.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q5-5-segment-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q5-5-segment-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q5-5-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes only the beam bridge and states no similarity with an arch bridge.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q5-5-segment-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The phrase Both kinds directly states a shared need of beam and arch bridges.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q5-5-segment-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This defines pier without stating a similarity between both bridge types.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q5-5-segment-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes only the arch bridge and states no similarity with a beam bridge.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q5-6",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-c13c80cf67dc79d3",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "ed5e56ac6787a29e14645c9e4ee42fa32c2b9aae1dbf55d0839c497e91e9cc0b",
+        "conclusionsSha256": "9d05bbfcad9b0c5f6ce2838869f21186da89359dbd4c5bb5b5d745a597c3c31a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0105.pass-a.json",
+        "receiptSha256": "9d05bbfcad9b0c5f6ce2838869f21186da89359dbd4c5bb5b5d745a597c3c31a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-id-ss-q5-6-row-structure",
+          "prompt": "Comparison organization",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q5-6-structure"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q5-6-structure"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q5-6-structure",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Comparison organization explains shared purposes and differing solutions across the two bridge types.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q5-6-unused",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The comparison does not rank facts or present an author opinion.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q5-6-feature",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes the labeled diagram's contribution rather than the comparison organization as a whole.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-feature-illustration"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ss-q5-6-row-feature",
+          "prompt": "labeled diagram",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q5-6-feature"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q5-6-feature"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q5-6-unused",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The diagram does not give the author's opinion or rank facts.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-feature-illustration"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q5-6-feature",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The diagram's side-by-side labels make the straight and curved shapes easy to compare.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-feature-illustration",
+                "g3-id-ss-passage-5-feature-illustration-beam",
+                "g3-id-ss-passage-5-feature-illustration-arch"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q5-6-structure",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes what comparison organization contributes, not the labeled diagram specifically.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q5-7",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-f42069b17da8f525",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "ed5e56ac6787a29e14645c9e4ee42fa32c2b9aae1dbf55d0839c497e91e9cc0b",
+        "conclusionsSha256": "9d05bbfcad9b0c5f6ce2838869f21186da89359dbd4c5bb5b5d745a597c3c31a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0105.pass-a.json",
+        "receiptSha256": "9d05bbfcad9b0c5f6ce2838869f21186da89359dbd4c5bb5b5d745a597c3c31a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Part A: Which structure is best supported?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q5-7-a-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q5-7-a-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q5-7-a-wrong-1",
+              "verdict": "INCORRECT",
+              "rationale": "The passage does not organize its important ideas by time or ordered steps.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q5-7-a-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The passage organizes beam and arch bridge details to show shared and differing features.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-sentence-7",
+                "g3-id-ss-passage-5-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q5-7-a-wrong-2",
+              "verdict": "INCORRECT",
+              "rationale": "Cause and effect is not the passage's main organizational relationship.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Part B: Which pair of details best proves Part A?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q5-7-b-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q5-7-b-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q5-7-b-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The paired details present the beam's straight deck beside the arch's curved structure.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-sentence-2",
+                "g3-id-ss-passage-5-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q5-7-b-wrong-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The passage contains no date-ordered bridge inventions.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-sentence-1",
+                "g3-id-ss-passage-5-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q5-7-b-wrong-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The passage does not say one bridge type causes the other to form.",
+              "evidenceIds": [
+                "g3-id-ss-passage-5-sentence-2",
+                "g3-id-ss-passage-5-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q6-1",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-c6e785bc206c0f40",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ed5e56ac6787a29e14645c9e4ee42fa32c2b9aae1dbf55d0839c497e91e9cc0b",
+        "conclusionsSha256": "9d05bbfcad9b0c5f6ce2838869f21186da89359dbd4c5bb5b5d745a597c3c31a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0105.pass-a.json",
+        "receiptSha256": "9d05bbfcad9b0c5f6ce2838869f21186da89359dbd4c5bb5b5d745a597c3c31a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which structure organizes the important ideas in \"How a Rain Garden Reduces Puddles\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q6-1-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q6-1-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q6-1-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "The passage does not mainly compare two subjects.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q6-1-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The passage explicitly connects causes and effects of runoff and rain-garden soaking.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6-sentence-2",
+                "g3-id-ss-passage-6-sentence-5",
+                "g3-id-ss-passage-6-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q6-1-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "The passage explains relationships rather than a required sequence of steps.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q6-1-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The facts are connected by causes and results rather than being unrelated.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q6-2",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-639bcf880d06c5d4",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ed5e56ac6787a29e14645c9e4ee42fa32c2b9aae1dbf55d0839c497e91e9cc0b",
+        "conclusionsSha256": "9d05bbfcad9b0c5f6ce2838869f21186da89359dbd4c5bb5b5d745a597c3c31a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0105.pass-a.json",
+        "receiptSha256": "9d05bbfcad9b0c5f6ce2838869f21186da89359dbd4c5bb5b5d745a597c3c31a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "How does the labeled diagram contribute to the meaning of \"How a Rain Garden Reduces Puddles\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q6-2-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q6-2-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q6-2-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The labeled diagram traces runoff from the roof through the garden and into soil.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6-sentence-7",
+                "g3-id-ss-passage-6-feature-illustration",
+                "g3-id-ss-passage-6-feature-illustration-roof",
+                "g3-id-ss-passage-6-feature-illustration-garden",
+                "g3-id-ss-passage-6-feature-illustration-ground"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q6-2-choice-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The diagram adds labeled information about runoff's path.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6-feature-illustration"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q6-2-choice-2",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The diagram contains no author information.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6-feature-illustration"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q6-2-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The passage includes important causes, effects, and safety details beyond the diagram.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6-sentence-2",
+                "g3-id-ss-passage-6-sentence-5",
+                "g3-id-ss-passage-6-sentence-9"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q6-3",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-7e99721595b4e261",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ed5e56ac6787a29e14645c9e4ee42fa32c2b9aae1dbf55d0839c497e91e9cc0b",
+        "conclusionsSha256": "9d05bbfcad9b0c5f6ce2838869f21186da89359dbd4c5bb5b5d745a597c3c31a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0105.pass-a.json",
+        "receiptSha256": "9d05bbfcad9b0c5f6ce2838869f21186da89359dbd4c5bb5b5d745a597c3c31a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "A new section explains that cold air cools water vapor, so droplets form. Which structure best fits that section?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q6-3-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q6-3-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q6-3-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "The statement explains why droplets form rather than ordering events as the main construct.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q6-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Cold air cooling vapor is the cause and droplets forming is the effect.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q6-3-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "The statement does not compare two subjects.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q6-3-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The word so explicitly connects the two facts as cause and effect.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q6-4",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-e9f158801266edd4",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "e6054fd08e5a65b2c4c371404004029b24ed6f9a446609ded5801755bd7bf3e4",
+        "conclusionsSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0043.pass-a.json",
+        "receiptSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the cause detail about hard surfaces and the result detail about fewer puddles.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-id-ss-q6-4-correct-1",
+            "g3-id-ss-q6-4-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q6-4-correct-1",
+            "g3-id-ss-q6-4-correct-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q6-4-wrong-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Gives a safety note, not the hard-surface cause or puddle result.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6-feature-sidebar"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q6-4-wrong-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Summarizes the cause-effect organization without stating either requested detail.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q6-4-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Explains that water cannot soak through the hard surfaces and therefore gathers or runs off.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q6-4-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Directly states the requested result of less nearby puddled water.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q6-5",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-1ef0ad73491664f7",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "ed5e56ac6787a29e14645c9e4ee42fa32c2b9aae1dbf55d0839c497e91e9cc0b",
+        "conclusionsSha256": "9d05bbfcad9b0c5f6ce2838869f21186da89359dbd4c5bb5b5d745a597c3c31a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0032.second-pass.json",
+        "receiptSha256": "7d9a773ba9a88d3285139e34095366126ed8a8a76ec0ac13d82cd289f8035feb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that gives a result of water soaking into the rain garden.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q6-5-segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q6-5-segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q6-5-segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sentence directly states that soaking leaves less surface water as a puddle.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q6-5-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes runoff before it enters a rain garden, not a result of soaking.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q6-5-segment-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes the diagram and water's direction, not the result of soaking.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q6-5-segment-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This defines a rain garden rather than stating a result of water soaking into it.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q6-6",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-00be557eb2c5d552",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "ed5e56ac6787a29e14645c9e4ee42fa32c2b9aae1dbf55d0839c497e91e9cc0b",
+        "conclusionsSha256": "9d05bbfcad9b0c5f6ce2838869f21186da89359dbd4c5bb5b5d745a597c3c31a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0105.pass-a.json",
+        "receiptSha256": "9d05bbfcad9b0c5f6ce2838869f21186da89359dbd4c5bb5b5d745a597c3c31a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-id-ss-q6-6-row-structure",
+          "prompt": "Cause and effect organization",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q6-6-structure"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q6-6-structure"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q6-6-feature",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes what the labeled diagram contributes rather than the passage's overall organization.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6-sentence-7",
+                "g3-id-ss-passage-6-feature-illustration"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q6-6-structure",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This mapping identifies the linked causes and effects that the passage organization helps readers understand.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6-sentence-2",
+                "g3-id-ss-passage-6-sentence-5",
+                "g3-id-ss-passage-6-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q6-6-unused",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The organization presents relationships, not an author opinion or fact ranking.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ss-q6-6-row-feature",
+          "prompt": "labeled diagram",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q6-6-feature"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q6-6-feature"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q6-6-unused",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The diagram gives no author opinion or fact ranking.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6-feature-illustration"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q6-6-feature",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The diagram's labels trace runoff from a roof through the garden and into soil.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6-sentence-7",
+                "g3-id-ss-passage-6-feature-illustration",
+                "g3-id-ss-passage-6-feature-illustration-roof",
+                "g3-id-ss-passage-6-feature-illustration-garden",
+                "g3-id-ss-passage-6-feature-illustration-ground"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q6-6-structure",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes the passage's cause-and-effect organization rather than the labeled diagram specifically.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q6-7",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-fc660ae327d55567",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "ed5e56ac6787a29e14645c9e4ee42fa32c2b9aae1dbf55d0839c497e91e9cc0b",
+        "conclusionsSha256": "9d05bbfcad9b0c5f6ce2838869f21186da89359dbd4c5bb5b5d745a597c3c31a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0105.pass-a.json",
+        "receiptSha256": "9d05bbfcad9b0c5f6ce2838869f21186da89359dbd4c5bb5b5d745a597c3c31a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Part A: Which structure is best supported?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q6-7-a-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q6-7-a-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q6-7-a-wrong-1",
+              "verdict": "INCORRECT",
+              "rationale": "The passage does not primarily teach ordered construction steps.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q6-7-a-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The passage links hard surfaces and runoff with soaking water and fewer puddles.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6-sentence-2",
+                "g3-id-ss-passage-6-sentence-5",
+                "g3-id-ss-passage-6-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q6-7-a-wrong-2",
+              "verdict": "INCORRECT",
+              "rationale": "The passage does not mainly compare rain gardens with other gardens.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Part B: Which pair of details best proves Part A?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q6-7-b-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q6-7-b-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q6-7-b-wrong-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The passage does not give exact construction steps that must be followed in order.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6-sentence-3",
+                "g3-id-ss-passage-6-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q6-7-b-wrong-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The passage does not compare rain gardens with four other garden types.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6-sentence-3",
+                "g3-id-ss-passage-6-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q6-7-b-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The paired details explicitly state a cause involving blocked soaking and a result involving fewer puddles.",
+              "evidenceIds": [
+                "g3-id-ss-passage-6-sentence-2",
+                "g3-id-ss-passage-6-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q7-1",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-8c3b4626be23d6fa",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "35fd3af8c9ae32cf9c6d1cf45b01196baa187d301761ba92ad4047ab3273a921",
+        "conclusionsSha256": "899e243f112925ac96b78c890ea5bfaa658392f6502e3e7dc23cca7a773834d0",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0032.second-pass.json",
+        "receiptSha256": "7d9a773ba9a88d3285139e34095366126ed8a8a76ec0ac13d82cd289f8035feb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which structure organizes the important ideas in \"Making Recycled Paper\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q7-1-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q7-1-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q7-1-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The facts are connected as an ordered process rather than being unrelated.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q7-1-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "First, Next, Then, After, and Finally organize the paper-making process in time order.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-sentence-2",
+                "g3-id-ss-passage-7-sentence-3",
+                "g3-id-ss-passage-7-sentence-5",
+                "g3-id-ss-passage-7-sentence-6",
+                "g3-id-ss-passage-7-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q7-1-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Causes and effects occur locally, but they do not organize the passage's main ideas.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q7-1-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "The passage does not organize its main ideas around similarities and differences.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q7-2",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-ee601981c323b6e5",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "35fd3af8c9ae32cf9c6d1cf45b01196baa187d301761ba92ad4047ab3273a921",
+        "conclusionsSha256": "899e243f112925ac96b78c890ea5bfaa658392f6502e3e7dc23cca7a773834d0",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0106.pass-a.json",
+        "receiptSha256": "899e243f112925ac96b78c890ea5bfaa658392f6502e3e7dc23cca7a773834d0",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "How does the timeline contribute to the meaning of \"Making Recycled Paper\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q7-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q7-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q7-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The numbered timeline condenses the transformation into four ordered stages.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-feature-timeline",
+                "g3-id-ss-passage-7-feature-timeline-pieces",
+                "g3-id-ss-passage-7-feature-timeline-pulp",
+                "g3-id-ss-passage-7-feature-timeline-damp",
+                "g3-id-ss-passage-7-feature-timeline-dry"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q7-2-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The passage provides details beyond the timeline's four-stage summary.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-sentence-2",
+                "g3-id-ss-passage-7-sentence-3",
+                "g3-id-ss-passage-7-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q7-2-choice-3",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The timeline contains no author information.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-feature-timeline"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q7-2-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The timeline adds ordered process information.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-feature-timeline"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q7-3",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-e68b345ffa399763",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "35fd3af8c9ae32cf9c6d1cf45b01196baa187d301761ba92ad4047ab3273a921",
+        "conclusionsSha256": "899e243f112925ac96b78c890ea5bfaa658392f6502e3e7dc23cca7a773834d0",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0106.pass-a.json",
+        "receiptSha256": "899e243f112925ac96b78c890ea5bfaa658392f6502e3e7dc23cca7a773834d0",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "A new article explains how a seed sprouts, grows roots, and later forms leaves in time order. Which structure best fits?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q7-3-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q7-3-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q7-3-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "The prompt emphasizes time order rather than why one change causes another.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q7-3-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Chronology organizes sprouting, root growth, and later leaf growth in time order.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q7-3-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "The prompt does not compare two subjects.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q7-3-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The stages have an explicit meaningful time order.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q7-4",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-e080185676c0990a",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "e6054fd08e5a65b2c4c371404004029b24ed6f9a446609ded5801755bd7bf3e4",
+        "conclusionsSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0043.pass-a.json",
+        "receiptSha256": "1ea59b0634459bd6778c9cf2f5a8b2149daf3decd7201560fb8e4a5d3cc19474",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the first and final action sentences that mark the beginning and end of the paper-making process.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-id-ss-q7-4-correct-1",
+            "g3-id-ss-q7-4-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q7-4-correct-2",
+            "g3-id-ss-q7-4-correct-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q7-4-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Finally marks the last action, when the new sheet dries for use.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q7-4-wrong-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Defines pulp rather than marking a process action.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q7-4-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "First marks the beginning action of soaking used paper.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q7-4-wrong-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Summarizes the ordered process rather than giving its first or final action.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q7-5",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-4ac032876527c52b",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "35fd3af8c9ae32cf9c6d1cf45b01196baa187d301761ba92ad4047ab3273a921",
+        "conclusionsSha256": "899e243f112925ac96b78c890ea5bfaa658392f6502e3e7dc23cca7a773834d0",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0106.pass-a.json",
+        "receiptSha256": "899e243f112925ac96b78c890ea5bfaa658392f6502e3e7dc23cca7a773834d0",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that begins with the signal word showing the next step after the pulp is spread.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q7-5-segment-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q7-5-segment-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q7-5-segment-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Then begins the step immediately after the pulp is spread.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-sentence-4",
+                "g3-id-ss-passage-7-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q7-5-segment-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "First introduces an earlier soaking step.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q7-5-segment-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the referenced spreading step, not the next step after it.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q7-5-segment-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "Finally introduces the later drying step rather than the immediate next step.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q7-6",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-5b1f49d648cc502a",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "35fd3af8c9ae32cf9c6d1cf45b01196baa187d301761ba92ad4047ab3273a921",
+        "conclusionsSha256": "899e243f112925ac96b78c890ea5bfaa658392f6502e3e7dc23cca7a773834d0",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0032.second-pass.json",
+        "receiptSha256": "7d9a773ba9a88d3285139e34095366126ed8a8a76ec0ac13d82cd289f8035feb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-id-ss-q7-6-row-structure",
+          "prompt": "Chronology organization",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q7-6-structure"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q7-6-structure"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q7-6-structure",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Chronology helps readers follow the material through its ordered transformations.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q7-6-unused",
+              "verdict": "UNSUPPORTED",
+              "rationale": "Chronology does not give an author opinion or rank facts.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q7-6-feature",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes the timeline feature rather than chronology organization as a whole.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-feature-timeline"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-id-ss-q7-6-row-feature",
+          "prompt": "timeline",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q7-6-feature"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q7-6-feature"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q7-6-unused",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The timeline contains no author opinion or ranking.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-feature-timeline"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q7-6-structure",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes chronology's contribution rather than the timeline specifically.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q7-6-feature",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The timeline visibly condenses the process into four numbered stages.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-feature-timeline"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-id-ss-q7-7",
+      "packId": "g3-information-detectives-structure-station",
+      "contentVersion": "g3-id-structure-station-r0.1.0",
+      "contentFingerprint": "qta-v1-ab9f69f81339de8c",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "35fd3af8c9ae32cf9c6d1cf45b01196baa187d301761ba92ad4047ab3273a921",
+        "conclusionsSha256": "899e243f112925ac96b78c890ea5bfaa658392f6502e3e7dc23cca7a773834d0",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0032.second-pass.json",
+        "receiptSha256": "7d9a773ba9a88d3285139e34095366126ed8a8a76ec0ac13d82cd289f8035feb",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Part A: Which structure is best supported?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q7-7-a-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q7-7-a-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q7-7-a-wrong-1",
+              "verdict": "INCORRECT",
+              "rationale": "The passage does not organize its main ideas by similarities and differences.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q7-7-a-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The passage follows the paper material through an ordered sequence of stages.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-sentence-2",
+                "g3-id-ss-passage-7-sentence-7",
+                "g3-id-ss-passage-7-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q7-7-a-wrong-2",
+              "verdict": "INCORRECT",
+              "rationale": "Cause and effect is not the passage's main organizational relationship.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Part B: Which pair of details best proves Part A?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-id-ss-q7-7-b-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-id-ss-q7-7-b-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-id-ss-q7-7-b-wrong-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "Drying occurs last and does not cause the paper to be torn first.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-sentence-2",
+                "g3-id-ss-passage-7-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q7-7-b-wrong-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The passage does not compare recycled paper with plastic.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-sentence-1",
+                "g3-id-ss-passage-7-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-id-ss-q7-7-b-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "First and Finally mark the opening and closing steps of the chronology.",
+              "evidenceIds": [
+                "g3-id-ss-passage-7-sentence-2",
+                "g3-id-ss-passage-7-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

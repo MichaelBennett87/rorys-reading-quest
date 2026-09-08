@@ -1,0 +1,864 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0020",
+  "batchFileSha256": "59b3c3b86f4ba985f6b9fdedee0e84f8b39bddb86740da3ecbb51e8011083910",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0492",
+      "fingerprint": "e95a3cf022f234185c5d4f11143814e4841eec734d55f33b5b66b92cf6aae922",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The graph displays each day's rainfall as comparable bars.",
+              [
+                "S0058"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The caption explains how bar height represents more rain.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The title previews rain-gauge notes but supplies no comparative amounts.",
+              [
+                "S0055"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The glossary defines millimeter and does not compare daily amounts.",
+              [
+                "S0062"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0493",
+      "fingerprint": "cc1f1e8966ec3fcf9d99e0dae314bdbd988c782d11d1347ff5307b3dbe792c7f",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This describes collecting rainfall data, not the caption's explanation.",
+              [
+                "S0048"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This states the glossary definition.",
+              [
+                "S0054"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This states what the graph displays.",
+              [
+                "S0050"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This directly states that the caption explains taller bars mean more rain.",
+              [
+                "S0052"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0494",
+      "fingerprint": "131dd1d80afb6ac3a85cb97f9aba0576b0271bc3b64848507d7e98086a0e44e4",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The graph compares rain amounts.",
+              [
+                "S0058"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The glossary defines the special word.",
+              [
+                "S0062"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The caption explains the graph bars.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The title Rain Gauge Notes gives a clue about the whole text.",
+              [
+                "S0055"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The caption explains bar meaning; the graph's broader job is comparing amounts.",
+              [
+                "S0059",
+                "S0058"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The graph displays daily rainfall so readers can compare amounts.",
+              [
+                "S0058"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The title gives the whole-text clue.",
+              [
+                "S0055"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The glossary defines a special word.",
+              [
+                "S0062"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The glossary defines a word.",
+              [
+                "S0062"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The caption explains what taller graph bars mean.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The graph compares amounts.",
+              [
+                "S0058"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The title gives the whole-text clue.",
+              [
+                "S0055"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The title gives the whole-text clue.",
+              [
+                "S0055"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The caption explains the bars.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The glossary defines millimeter.",
+              [
+                "S0062",
+                "S0066"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The graph compares rainfall amounts.",
+              [
+                "S0058"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0495",
+      "fingerprint": "f708e3c1b0cb805ee81f50947c69ab88ddf992154511dab7cbb5a9ce15835768",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Nature Center Trail directly previews the trail and map topic.",
+              [
+                "S0076",
+                "S0069"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The text contains no bird-feeder counts.",
+              [
+                "S0076"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The text contains no moon shapes.",
+              [
+                "S0076"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The text contains no recycling survey.",
+              [
+                "S0076"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0496",
+      "fingerprint": "018de2d8b8228991d141b7f6d2fe5ef0a6188a4610555fb19d6f40b8f9315bb6",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The section does not discuss lunch cleanup.",
+              [
+                "S0078"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The section does not count moon shapes.",
+              [
+                "S0078"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The trail-sign picture belongs to the later Looking Closely section.",
+              [
+                "S0082",
+                "S0083"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The heading Reading the Map identifies the section's map-reading content.",
+              [
+                "S0078",
+                "S0069",
+                "S0071"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0497",
+      "fingerprint": "6e90874ac11088123668b2add139f7fcf3200fba3dda01b0fa9c97c35cf779c4",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The map shows the trail locations and the route connecting them.",
+              [
+                "S0079",
+                "S0084",
+                "S0085",
+                "S0086"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The title names the overall trail topic but does not show or explain the dashed route.",
+              [
+                "S0076"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The illustration pictures a trail sign and reeds rather than the route among all three places.",
+              [
+                "S0083"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The caption explains that the dashed line marks the walking route.",
+              [
+                "S0080"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0498",
+      "fingerprint": "e8121ad409938e112a550ee9aaddf0ad65c0698db4ade4a28461f94e5f690779",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This states the caption's route explanation.",
+              [
+                "S0073"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This states what the map shows.",
+              [
+                "S0071"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This directly gives the glossary meaning of route.",
+              [
+                "S0075"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This narrates the family's map use and does not define the glossary word.",
+              [
+                "S0069"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0499",
+      "fingerprint": "375ab0eb8dded9332088e58787857f796d94cf63d0d3a9685ac80331dd9815cd",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The illustration helps picture the trail sign.",
+              [
+                "S0083"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The caption explains the dashed line.",
+              [
+                "S0080"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The title gives a clue about the whole trail text.",
+              [
+                "S0076"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The map shows trail locations.",
+              [
+                "S0079"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The caption explains the dashed line; that is not the map's full job.",
+              [
+                "S0080"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The title gives the broad whole-text clue.",
+              [
+                "S0076"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The illustration pictures the trail sign.",
+              [
+                "S0083"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The map shows where the pond, tree, and overlook are on the trail.",
+              [
+                "S0079"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The map shows where trail places are.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The illustration helps picture the sign.",
+              [
+                "S0083"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The caption directly explains the dashed route line.",
+              [
+                "S0080"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The title gives the whole-text clue.",
+              [
+                "S0076"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The caption explains the dashed line.",
+              [
+                "S0080"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The map shows trail locations.",
+              [
+                "S0079"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The illustration visually helps readers picture the trail sign.",
+              [
+                "S0083"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The title gives the whole-text clue.",
+              [
+                "S0076"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0500",
+      "fingerprint": "7e5580f6a947a765e4d06c1f88a4788cac13d9597b1df3983f76b542f1a766f6",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The title and source do not concern recycling bins.",
+              [
+                "S0100"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The source has a moon graph, not a garden map.",
+              [
+                "S0100",
+                "S0103"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Moon Notes previews the class log of observed moon shapes.",
+              [
+                "S0100",
+                "S0093"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The source contains no trail sign.",
+              [
+                "S0100"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0501",
+      "fingerprint": "a9bfe88aedd62adc96edcd08f510f2f4b431b1a44d97cbba4583911399668fd8",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "The requested heading is not source-owned, although the prompt phrase and source topic still make A3 the sole relevant choice.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Neither the named phrase nor source concerns counting birds.",
+              [
+                "S0102"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Neither the named phrase nor source concerns compost.",
+              [
+                "S0102"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The prompt phrase Night by Night and source both concern moon observations over multiple nights.",
+              [
+                "S0093",
+                "S0095"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Neither the named phrase nor source concerns a trail map.",
+              [
+                "S0102"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": "The prompt names a heading, Night by Night, that is absent from the displayed source; the actual source heading is Moon Shape Counts."
+    },
+    {
+      "auditId": "Q0502",
+      "fingerprint": "5cc4c7fe8e1da57ab1162df2de90689c1f28aea441bb5deaec41c197186804e0",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [],
+          "ambiguity": "No option accurately states that the graph compares how many nights each moon shape was seen; A2 instead implies a sequence of moon changes across a week that the aggregate graph does not show.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The moon graph does not locate a bean bed.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the only moon-related choice, but the graph compares observation totals by shape rather than changes across a week.",
+              [
+                "S0095",
+                "S0103"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The moon graph does not picture recycling gloves.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The glossary, not the graph, gives a word meaning, and the word is observe rather than route.",
+              [
+                "S0107"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0503",
+      "fingerprint": "d6fe760152e242f89385036c4b1c924f6d1bdba0078980d42043e79edf7da85c",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes Priya's nightly log but does not state what the graph counts or what its tallest bar means.",
+              [
+                "S0093"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This states that the graph counts nights for each moon shape.",
+              [
+                "S0095"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This states that the tallest bar identifies the most-often-seen shape.",
+              [
+                "S0097"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This defines observe and answers neither requested graph detail.",
+              [
+                "S0099"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

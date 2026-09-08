@@ -1,0 +1,631 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0121",
+  "batchFileSha256": "ab5d4ad414fd6b5562259c382f7f35577e4c606fcda90ad53a4ee17a1e9bb1e6",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1415",
+      "fingerprint": "bb58eba2bdcbcbc01946471a323399b85ff9fa128c2975309ecf3b6c99b32c95",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This lists minor color, single-leaf, and insect details but omits the process.",
+              [
+                "S0031",
+                "S0034",
+                "S0038"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This concisely preserves compost formation, decomposers, conditions, gradual change, and use.",
+              [
+                "S0022",
+                "S0024",
+                "S0026",
+                "S0039",
+                "S0028"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This identifies only the topic and omits the central idea and key details.",
+              [
+                "S0040"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The source says the process is gradual, excludes some scraps, and depends on decomposers, air, and moisture.",
+              [
+                "S0032",
+                "S0024",
+                "S0026",
+                "S0028"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1416",
+      "fingerprint": "2787bc1ff47dbe753caa73ed6cdc96133195f3f409ece12a838e1faf164d972d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This defines the process and states the passage’s essential transformation.",
+              [
+                "S0022"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Bucket color does not affect how compost forms.",
+              [
+                "S0031"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "One leaf’s temporary shape is a minor example of gradual change.",
+              [
+                "S0034"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "A summary cannot add an event absent from the source.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1417",
+      "fingerprint": "78a80c0d0d68896fda2de4c798c48b0572cde9eb5cb8ba6b3019ce53ae1bafa0",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This states what compost is and how it forms.",
+              [
+                "S0022"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This identifies decomposers as a main cause of breakdown.",
+              [
+                "S0024"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "One dry leaf is a narrow example rather than an essential process detail.",
+              [
+                "S0034"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Collection-bucket color is incidental.",
+              [
+                "S0031"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1418",
+      "fingerprint": "b74e14a2abcb1b59b6efdad50e0be341f5b5820d6dd37153d351d9922164fb63",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The definition of compost is essential to the central idea.",
+              [
+                "S0022"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Bucket color can be omitted without changing the compost process.",
+              [
+                "S0031"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Decomposers are a main cause of scraps breaking down.",
+              [
+                "S0024"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1419",
+      "fingerprint": "fa3b5f50190a88d7348c1dac4652e9ed0b6871a7d21eb75f8ecca861c726507b",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This defines the central process.",
+              [
+                "S0022"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Omitting the definition would remove essential meaning.",
+              [
+                "S0022"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Bucket color does not explain formation or use.",
+              [
+                "S0031"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This incidental color detail can be omitted.",
+              [
+                "S0031"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Decomposers perform a central role in breakdown.",
+              [
+                "S0024"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Omitting the decomposer role would remove a key cause.",
+              [
+                "S0024",
+                "S0028"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "One leaf’s temporary shape is a narrow example that can be omitted.",
+              [
+                "S0034"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The example is not needed to state that composting is gradual.",
+              [
+                "S0034",
+                "S0028"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1420",
+      "fingerprint": "92261ea18eff4759d9e763e85ec04de40acfc0990a310af21c436ceb53a68a4e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "They protect and deliver the books on time instead of abandoning them.",
+              [
+                "S0059",
+                "S0068"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This lists minor details and omits the central problem and solution.",
+              [
+                "S0056",
+                "S0063",
+                "S0065",
+                "S0053"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This only names characters, objects, and setting.",
+              [
+                "S0049"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This preserves the task, locked-wheel problem, safer revised plan, successful outcome, and lesson.",
+              [
+                "S0049",
+                "S0057",
+                "S0059",
+                "S0062",
+                "S0053",
+                "S0068",
+                "S0055"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1421",
+      "fingerprint": "3737fdf2ef175d09e34d530aec665210b1587b859190c4f5d845d0c7a963b851",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "A summary cannot add an event absent from the source.",
+              []
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The old ribbon does not affect the problem or solution.",
+              [
+                "S0056"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The clock’s click is an incidental setting detail.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The locked wheel creates the central problem.",
+              [
+                "S0057"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1422",
+      "fingerprint": "2a784ead915f2d2f8b7246a880f7b0ad7d2493f1e1bff6bce430f2ccaf3b161c",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The clock’s click does not change the plot.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Nia’s action prevents the books and cart from tipping and moves the characters toward a safer plan.",
+              [
+                "S0058",
+                "S0059"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The locked wheel begins the central conflict.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The old ribbon is decorative and unrelated to the conflict.",
+              [
+                "S0056"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1423",
+      "fingerprint": "4eb4d96ea7ee913ece014c6179d1769208374f1c77ca3c9697c488316184d9fa",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The ribbon can be omitted without changing the problem or solution.",
+              [
+                "S0056"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The locked wheel creates the central conflict.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Nia’s intervention prevents the situation from worsening.",
+              [
+                "S0058",
+                "S0059"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1424",
+      "fingerprint": "2cac332c67c1b113e96c5b6c84f76ce6758e5f65259261b54f5be068e2630b39",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The locked wheel initiates the main problem.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This conflict belongs in a concise summary.",
+              [
+                "S0057"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The decorative ribbon can be omitted.",
+              [
+                "S0056"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The ribbon has no effect on the plot.",
+              [
+                "S0056"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Nia’s action protects the books and stops the unsafe approach.",
+              [
+                "S0058",
+                "S0059"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Omitting this action would weaken how the central problem develops.",
+              [
+                "S0058",
+                "S0059"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The clock sound is incidental and can be omitted.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The clock sound does not affect the conflict or solution.",
+              [
+                "S0063"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

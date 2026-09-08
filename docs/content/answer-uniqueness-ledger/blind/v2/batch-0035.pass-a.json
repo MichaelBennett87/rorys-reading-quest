@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0035",
+  "batchFileSha256": "9338a0bd1eee4916316c51a9cd9c3cd47455a18d882bcfee928e471e33272e08",
+  "reviewerThreadId": "01a07bc2-33d0-74f2-84b3-1f74918ca45e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0408",
+      "fingerprint": "e53188566c92d0b1627f1900d047b034571193da8c402be8e15e245073a57cd6",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The evening sky is a setting detail, not Aria's view about which route to take.", ["S0032"]],
+            ["A2", "INCORRECT", "This describes the children's shared movement and does not state Aria's perspective; it also says marker post where the source says marked route.", ["S0029"]],
+            ["A3", "DEFENSIBLE", "This combines Aria's stated excitement about exploring with her belief that the new path could offer a better creek view.", ["S0033", "S0027"]],
+            ["A4", "INCORRECT", "This accurately describes Ben's preference, not Aria's perspective.", ["S0034", "S0035"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0409",
+      "fingerprint": "92e2eac1a281db639a34497c4665aa5cfb29c7f5be0384fd4e3bceb3a5dc7825",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This is a claim about narration and does not describe Ben's view of the route choice.", []],
+            ["A2", "DEFENSIBLE", "Ben wants the familiar route and says the marker makes him feel safe, so this accurately states his perspective.", ["S0034", "S0035"]],
+            ["A3", "INCORRECT", "The evening sky is a setting detail, not Ben's perspective about the route.", ["S0032"]],
+            ["A4", "INCORRECT", "This recounts shared movement rather than Ben's own view, and the source says marked route rather than marker post.", ["S0029"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0410",
+      "fingerprint": "0b4b3a75b940436c2f02306a0724486dab069d36fd7167164439a06ea2e7a819",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Aria's statement that the new path might reveal a better creek view directly supports her positive view of exploring it.", ["S0027"]],
+            ["A2", "INCORRECT", "This only establishes the time, companions, and location of the walk; it gives no route preference from Aria.", ["S0032"]],
+            ["A3", "INCORRECT", "This supports Ben's preference for the regular route, not Aria's perspective.", ["S0034"]],
+            ["A4", "DEFENSIBLE", "Aria's thought that exploring the new path would be exciting directly supports her perspective.", ["S0033"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0411",
+      "fingerprint": "8de01de040700d22a92dce9824bc99bdc1d957b8087628df743943d98b81fd62",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A4", "A7"],
+          "ambiguity": "Two visible sentences directly show Ben's perspective: A7 states his preferred route, while A4 states the safety reason for that preference. The prompt supplies no clear ranking rule that makes only one the best sentence.",
+          "selectionContractValid": false,
+          "options": [
+            ["A1", "INCORRECT", "This states Aria's perspective, not Ben's.", ["S0033"]],
+            ["A2", "INCORRECT", "This is setting information and does not show Ben's view of the route.", ["S0032"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This shared compromise reflects both children but does not state Ben's own route preference as directly as his individual statements do.", ["S0029"]],
+            ["A4", "DEFENSIBLE", "Ben explicitly says the familiar marker makes him feel safe, directly revealing his perspective.", ["S0035"]],
+            ["A5", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This shared positive outcome concerns both children and does not isolate Ben's view about choosing the route.", ["S0036"]],
+            ["A6", "INCORRECT", "This states Aria's view, not Ben's.", ["S0027"]],
+            ["A7", "DEFENSIBLE", "Ben explicitly wants to remain on the regular route, directly revealing his perspective about the choice.", ["S0034"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0412",
+      "fingerprint": "e4f2d03bf7e870160b463cbcaa688c71d476043d5a86bb7c671d99483726dffb",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The evening sky names setting rather than how Aria thinks the route choice should be handled.", ["S0032"]],
+            ["A2", "INCORRECT", "This is Ben's view, not Aria's.", ["S0034", "S0035"]],
+            ["A3", "DEFENSIBLE", "Aria views the new path as exciting and potentially better for seeing the creek.", ["S0033", "S0027"]],
+            ["A4", "INCORRECT", "This recounts shared action and inaccurately substitutes marker post for marked route; it does not state Aria's perspective.", ["S0029"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Ben's desire to stay on the regular route directly shows his view.", ["S0034"]],
+            ["A2", "INCORRECT", "This shows Aria's view, not Ben's.", ["S0033"]],
+            ["A3", "INCORRECT", "This is shared setting information and gives no individual view.", ["S0032"]],
+            ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This gives the shared outcome after compromise rather than Ben's view of the route choice.", ["S0036"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This describes Ben's individual perspective rather than the situation both children share.", ["S0034", "S0035"]],
+            ["A2", "DEFENSIBLE", "Both children are participating in the shared situation of deciding which route to take on their evening walk.", ["S0032", "S0029"]],
+            ["A3", "INCORRECT", "The passage uses third-person names and pronouns, and narration type is not the shared route-choice situation.", ["S0026"]],
+            ["A4", "INCORRECT", "This describes Aria's individual perspective rather than the shared situation.", ["S0033", "S0027"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0413",
+      "fingerprint": "c892f2838994bdc9d747a0cbd7e03870bea6cee7684392c35cf5892a4b07a7c8",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This broadly recounts the setup but does not describe Jada's particular perspective; the source also does not say they waited.", ["S0045", "S0039"]],
+            ["A2", "INCORRECT", "The spring fair names the event, not Jada's perspective about preparing the table.", ["S0045"]],
+            ["A3", "DEFENSIBLE", "Jada thinks sorting first will keep the table ready, and her careful organizing supports this view.", ["S0046", "S0043"]],
+            ["A4", "INCORRECT", "This accurately describes Omar's perspective, not Jada's.", ["S0041"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0414",
+      "fingerprint": "42245abc5e8222a5242127911717686963357c2d70c3fe65cfae4a7e74234b11",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This broadly recounts the setup but does not describe Omar's particular perspective; the source also does not say they waited.", ["S0045", "S0039"]],
+            ["A2", "INCORRECT", "This is a narration claim rather than Omar's view about preparing the table.", []],
+            ["A3", "DEFENSIBLE", "Omar wants the banner up immediately so the space will feel welcoming, which directly states his perspective.", ["S0041"]],
+            ["A4", "INCORRECT", "The spring fair names the event, not Omar's perspective.", ["S0045"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0415",
+      "fingerprint": "1f9fab1234dee1bbc39baedd87506b13114f9f278fd9dc48459cc4987004e8a5",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Jada's careful lining up and counting are actions that support her organized, ready-first perspective.", ["S0043"]],
+            ["A2", "INCORRECT", "This establishes the shared setting and task but does not support Jada's particular view of how to prepare.", ["S0045"]],
+            ["A3", "DEFENSIBLE", "Jada explicitly thinks sorting first will keep the table ready, directly supporting her perspective.", ["S0046"]],
+            ["A4", "INCORRECT", "This supports Omar's welcoming-banner perspective, not Jada's.", ["S0041"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0416",
+      "fingerprint": "ca957d6a7758a6ec59c8192a794a4e541353f5e9c523f22c93266ca7bd4acfb4",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This reports both characters' shared satisfaction after the work and does not isolate Omar's perspective about setup.", ["S0039"]],
+            ["A2", "INCORRECT", "This directly states Jada's perspective, not Omar's.", ["S0046"]],
+            ["A3", "DEFENSIBLE", "Omar's stated wish to hang the banner so the space feels welcoming directly and completely shows his perspective.", ["S0041"]],
+            ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Omar's action is consistent with helping prepare, but it does not state his welcoming-first view as directly or completely as A3.", ["S0047"]],
+            ["A5", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "The final appearance is an outcome of both approaches, not Omar's individual perspective.", ["S0048"]],
+            ["A6", "INCORRECT", "This only establishes the shared setting and task.", ["S0045"]],
+            ["A7", "INCORRECT", "This is Jada's organizing action, not Omar's perspective.", ["S0043"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0417",
+      "fingerprint": "fe7c94bb60bc60ddfd9304cbd3cb5382f043d5fbce90c70a239333afd06dcefa",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This states Omar's individual approach rather than Jada's.", ["S0041"]],
+            ["A2", "DEFENSIBLE", "Jada believes sorting first will keep the table ready, and her actions organize the supplies.", ["S0046", "S0043"]],
+            ["A3", "INCORRECT", "The fair names the event and does not say how Jada thinks setup should be handled.", ["S0045"]],
+            ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This broadly recounts the shared setup and adds an unsupported wait; it does not state Jada's view.", ["S0045", "S0039"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This states Jada's view, not Omar's.", ["S0046"]],
+            ["A2", "DEFENSIBLE", "Omar's wish to hang the banner so the room feels welcoming directly shows his view.", ["S0041"]],
+            ["A3", "INCORRECT", "This establishes the shared setting and task without showing Omar's view.", ["S0045"]],
+            ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This reports both characters' shared feeling after setup rather than Omar's individual view.", ["S0039"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This describes Omar's individual perspective, not the shared situation.", ["S0041"]],
+            ["A2", "INCORRECT", "This describes Jada's individual perspective, not the shared situation.", ["S0046", "S0043"]],
+            ["A3", "INCORRECT", "The source is written in third person, and narration is not the shared setup situation.", ["S0038"]],
+            ["A4", "DEFENSIBLE", "Both characters share the situation of preparing the community art table before the fair.", ["S0045"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

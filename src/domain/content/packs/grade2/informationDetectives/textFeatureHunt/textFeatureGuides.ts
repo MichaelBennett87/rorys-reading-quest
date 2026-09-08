@@ -199,13 +199,13 @@ export const textFeatureHuntTextFeatureGuides: readonly TextFeatureGuide[] = [
       {
         featureId: TEXT_FEATURE_HUNT_FEATURE_IDS.moonNotes.headingGraph,
         featureKind: 'heading',
-        contributionStatement: 'The first heading tells the reader the passage is organized by nights.',
+        contributionStatement: 'The first heading tells the reader the section counts moon shapes seen over several nights.',
         relatedSentenceIds: [textFeatureHuntSentenceId(TEXT_FEATURE_HUNT_PASSAGE_KEYS.moonNotes, 1)],
       },
       {
         featureId: TEXT_FEATURE_HUNT_FEATURE_IDS.moonNotes.graph,
         featureKind: 'graph',
-        contributionStatement: 'The graph organizes the moon shapes so the reader can compare the changes across the week.',
+        contributionStatement: 'The graph organizes how many nights each moon shape was seen so the reader can compare the totals.',
         relatedSentenceIds: [textFeatureHuntSentenceId(TEXT_FEATURE_HUNT_PASSAGE_KEYS.moonNotes, 2)],
       },
       {
@@ -227,7 +227,7 @@ export const textFeatureHuntTextFeatureGuides: readonly TextFeatureGuide[] = [
         relatedSentenceIds: [textFeatureHuntSentenceId(TEXT_FEATURE_HUNT_PASSAGE_KEYS.moonNotes, 4)],
       },
     ],
-    combinedFeatureExplanation: 'The title, graph, caption, and glossary help readers follow moon changes and understand the word observe.',
+    combinedFeatureExplanation: 'The title, graph, caption, and glossary help readers compare moon-shape counts and understand the word observe.',
     reviewStatus: 'DRAFT',
     contentVersion: TEXT_FEATURE_HUNT_CONTENT_VERSION,
   },
@@ -249,7 +249,7 @@ export const textFeatureHuntTextFeatureGuides: readonly TextFeatureGuide[] = [
       {
         featureId: TEXT_FEATURE_HUNT_FEATURE_IDS.recycleSort.graph,
         featureKind: 'graph',
-        contributionStatement: 'The graph organizes the recycling counts so the reader can compare which bin filled fastest.',
+        contributionStatement: 'The graph organizes the recycling counts so the reader can compare how many bags each bin held.',
         relatedSentenceIds: [textFeatureHuntSentenceId(TEXT_FEATURE_HUNT_PASSAGE_KEYS.recycleSort, 2)],
       },
       {
@@ -320,4 +320,3 @@ export const textFeatureHuntTextFeatureGuides: readonly TextFeatureGuide[] = [
     contentVersion: TEXT_FEATURE_HUNT_CONTENT_VERSION,
   },
 ]
-

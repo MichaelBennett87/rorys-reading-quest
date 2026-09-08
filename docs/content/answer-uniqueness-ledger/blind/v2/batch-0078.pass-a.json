@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0078",
+  "batchFileSha256": "5b133472a721a1da09fe7d83101d72537fb7125b2a975ce8a9488c06ce9669c3",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0910",
+      "fingerprint": "77c01e2dadeaa01d57f69127e0e5f0207f37fe67ba760574f59429a58de309b2",
+      "slots": [{
+        "slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "DEFENSIBLE", "Graph is the root at the start of graphic.", ["S0049"]],
+          ["A2", "INCORRECT", "Trans- starts transfer, not graphic.", ["S0055"]],
+          ["A3", "INCORRECT", "Form appears in uniform, not graphic.", ["S0051", "S0058"]],
+          ["A4", "INCORRECT", "Tri- starts tripod, not graphic.", ["S0053"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0911",
+      "fingerprint": "175dc7d36b42d0f0d8acba27a08be5d17def20effd55d1982029068f03e8908f",
+      "slots": [{
+        "slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "DEFENSIBLE", "Tri- is the affix at the start of tripod.", ["S0053"]],
+          ["A2", "INCORRECT", "Form appears in uniform and does not start tripod.", ["S0051", "S0053"]],
+          ["A3", "INCORRECT", "Graph appears in graphic and does not start tripod.", ["S0049", "S0053"]],
+          ["A4", "INCORRECT", "Trans- starts transfer and does not start tripod.", ["S0053", "S0055"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0912",
+      "fingerprint": "860fd524d961aeae6757706bd58df4f0cb9988fdfe7cb327ca4caabe49a193ee",
+      "slots": [{
+        "slotId": "response", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "A graphic is a diagram and is not something every helper wore.", ["S0049", "S0051"]],
+          ["A2", "INCORRECT", "Transfer names an action in the passage and does not fit after wore a.", ["S0051", "S0055"]],
+          ["A3", "DEFENSIBLE", "Uniform exactly completes the displayed sentence about what every helper wore.", ["S0051"]],
+          ["A4", "INCORRECT", "A tripod supports a camera and is not clothing worn by each helper.", ["S0051", "S0053"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0913",
+      "fingerprint": "fe536e676fa7f6527359b0796504dc04f6db983cde2ab517b57025b1d9d2ed4b",
+      "slots": [{
+        "slotId": "response", "defensible": ["A2", "A4"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "Tripod does not contain the letter sequence graph.", ["S0053"]],
+          ["A2", "DEFENSIBLE", "Graphic contains graph at its start.", ["S0049"]],
+          ["A3", "INCORRECT", "Uniform does not contain graph.", ["S0051"]],
+          ["A4", "DEFENSIBLE", "Autograph contains graph at its end.", ["S0048"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0914",
+      "fingerprint": "1c9ac5073667d83d923d1792286ccbb808b9d61fe709a351dfef1f41874119c1",
+      "slots": [{
+        "slotId": "response", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "Ic is the ending after the requested root.", ["S0049"]],
+          ["A2", "DEFENSIBLE", "Graph is the exact requested root at the start of graphic.", ["S0049"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0915",
+      "fingerprint": "3c9a4ad2a239e9ad01c6d6ae8a523dc6c2e4e9733364f624dda33299a5561a03",
+      "slots": [
+        {
+          "slotId": "row_1", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Graph and ic are the authored reading chunks for graphic.", ["S0049"]],
+            ["A2", "INCORRECT", "The unsplit word is not a chunk split.", ["S0049"]],
+            ["A3", "INCORRECT", "Graphi leaves a final single consonant rather than the authored chunks.", ["S0049"]],
+            ["A4", "INCORRECT", "A single initial letter plus the remainder is not the authored split.", ["S0049"]]
+          ]
+        },
+        {
+          "slotId": "row_2", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The passage explicitly gives u, ni, and form as uniform's reading chunks.", ["S0058"]],
+            ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Uni and form are explicitly identified as meaningful parts, not the requested reading chunks.", ["S0058"]],
+            ["A3", "INCORRECT", "U plus the unsplit remainder is not the authored reading split.", ["S0058"]],
+            ["A4", "INCORRECT", "The unsplit word is not a chunk split.", ["S0058"]]
+          ]
+        },
+        {
+          "slotId": "row_3", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "A single initial letter plus the remainder is not the authored split.", ["S0053"]],
+            ["A2", "DEFENSIBLE", "Tri and pod form the authored pronounceable split for tripod.", ["S0053"]],
+            ["A3", "INCORRECT", "The unsplit word is not a chunk split.", ["S0053"]],
+            ["A4", "INCORRECT", "Tripo leaves a final single consonant rather than the authored chunks.", ["S0053"]]
+          ]
+        },
+        {
+          "slotId": "row_4", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Transfe leaves a final single consonant rather than the authored chunks.", ["S0055"]],
+            ["A2", "INCORRECT", "The unsplit word is not a chunk split.", ["S0055"]],
+            ["A3", "INCORRECT", "A single initial letter plus the remainder is not the authored split.", ["S0055"]],
+            ["A4", "DEFENSIBLE", "Trans and fer form the authored pronounceable split for transfer.", ["S0055"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0916",
+      "fingerprint": "b4f548c0dc78e21d2c3fe5125af509129e78244aaeb9f630afa79947008b1634",
+      "slots": [
+        {
+          "slotId": "part_a", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The passage identifies this as the pronunciation split, not the meaningful-part split.", ["S0058"]],
+            ["A2", "DEFENSIBLE", "The passage explicitly identifies uni and form as the meaningful parts.", ["S0058"]],
+            ["A3", "INCORRECT", "U and niform are not the meaningful parts identified by the passage.", ["S0058"]],
+            ["A4", "INCORRECT", "The unsplit word does not show meaningful-part boundaries.", ["S0058"]]
+          ]
+        },
+        {
+          "slotId": "part_b", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Un and iform are not the reading chunks identified by the passage.", ["S0058"]],
+            ["A2", "INCORRECT", "The unsplit word does not show reading chunks.", ["S0058"]],
+            ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Uni and form are the meaningful parts, not the pronunciation chunks requested in Part B.", ["S0058"]],
+            ["A4", "DEFENSIBLE", "The passage explicitly identifies u, ni, and form as the reading chunks.", ["S0058"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0917",
+      "fingerprint": "5f579dbafa0aebe1e371ebd7ff654840e034acf3f5981f55ec18c3643336f790",
+      "slots": [{
+        "slotId": "response", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "Tract appears in retract, not biography.", ["S0067"]],
+          ["A2", "INCORRECT", "Port appears in export, not biography.", ["S0065"]],
+          ["A3", "INCORRECT", "Sub- appears in subway, not biography.", ["S0069"]],
+          ["A4", "DEFENSIBLE", "Bio is the useful root at the start of biography.", ["S0063", "S0072"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0918",
+      "fingerprint": "0395c9324e2cdce41f79f48bce2f1a974565da3268b43fa0dac586c81c8deb41",
+      "slots": [{
+        "slotId": "response", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "Bio starts biography, not subway.", ["S0063"]],
+          ["A2", "DEFENSIBLE", "Sub- is the affix at the start of subway.", ["S0069"]],
+          ["A3", "INCORRECT", "Port appears in export and does not start subway.", ["S0065", "S0069"]],
+          ["A4", "INCORRECT", "Tract appears in retract and does not start subway.", ["S0067", "S0069"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0919",
+      "fingerprint": "ab96665b0e28c6e83399c9b7e5205201ea7b143d86fe634fe8c7e7600f905846",
+      "slots": [{
+        "slotId": "response", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "Subway is a noun and cannot name what workers do to digital copies.", ["S0065", "S0069"]],
+          ["A2", "INCORRECT", "Retract means pull back and does not fit sending copies out.", ["S0065", "S0067"]],
+          ["A3", "INCORRECT", "Biography is a noun and does not fit the action in the sentence.", ["S0063", "S0065"]],
+          ["A4", "DEFENSIBLE", "Export exactly completes the displayed sentence about sending files out.", ["S0065"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0920",
+      "fingerprint": "3e2d9772947283e8b62d8bea96e623fb71371b3ac0ad6a8aac07869c3613b68e",
+      "slots": [{
+        "slotId": "response", "defensible": ["A3", "A4"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "Subway does not contain bio.", ["S0069"]],
+          ["A2", "INCORRECT", "Export does not contain bio.", ["S0065"]],
+          ["A3", "DEFENSIBLE", "Biography begins with bio.", ["S0063", "S0072"]],
+          ["A4", "DEFENSIBLE", "Biology begins with bio.", ["S0062"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0921",
+      "fingerprint": "c35c65f820e09b5a6b882331b13e8d88334c7b4c1dd7879d08d83f0b8a38cb9a",
+      "slots": [{
+        "slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "DEFENSIBLE", "Bio is the exact requested part at the start of biography.", ["S0063", "S0072"]],
+          ["A2", "INCORRECT", "Graph is another meaningful part, but it is not the requested bio part.", ["S0072"]],
+          ["A3", "INCORRECT", "Y is the ending and is not the requested bio part.", ["S0072"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0922",
+      "fingerprint": "ac3baeb6b73b709070729a4d1e221935745cc6ff323219d0d1415bdeb0d663c5",
+      "slots": [
+        {
+          "slotId": "row_1", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "A single initial letter plus the remainder is not the authored split.", ["S0063", "S0072"]],
+            ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Bio, graph, and y show meaningful parts, not the reading chunks requested here.", ["S0072"]],
+            ["A3", "DEFENSIBLE", "The passage explicitly gives bi, og, ra, and phy as biography's reading chunks.", ["S0072"]],
+            ["A4", "INCORRECT", "The unsplit word is not a chunk split.", ["S0072"]]
+          ]
+        },
+        {
+          "slotId": "row_2", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Ex and port form the authored pronounceable split for export.", ["S0065"]],
+            ["A2", "INCORRECT", "A single initial vowel plus the remainder is not the authored split.", ["S0065"]],
+            ["A3", "INCORRECT", "The unsplit word is not a chunk split.", ["S0065"]],
+            ["A4", "INCORRECT", "Expor leaves a final single consonant rather than the authored chunks.", ["S0065"]]
+          ]
+        },
+        {
+          "slotId": "row_3", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The unsplit word is not a chunk split.", ["S0067"]],
+            ["A2", "INCORRECT", "Retrac leaves a final single consonant rather than the authored chunks.", ["S0067"]],
+            ["A3", "DEFENSIBLE", "Re and tract form the authored pronounceable split for retract.", ["S0067"]],
+            ["A4", "INCORRECT", "A single initial letter plus the remainder is not the authored split.", ["S0067"]]
+          ]
+        },
+        {
+          "slotId": "row_4", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "A single initial letter plus the remainder is not the authored split.", ["S0069"]],
+            ["A2", "INCORRECT", "Subwa leaves a final single letter rather than the authored chunks.", ["S0069"]],
+            ["A3", "DEFENSIBLE", "Sub and way form the authored pronounceable split for subway.", ["S0069"]],
+            ["A4", "INCORRECT", "The unsplit word is not a chunk split.", ["S0069"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0923",
+      "fingerprint": "7186bfd8d2a5e97ba93c400d29a01dc49da91b7acfa61bda10bd0637761ee6c2",
+      "slots": [
+        {
+          "slotId": "part_a", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The unsplit word does not show meaningful-part boundaries.", ["S0072"]],
+            ["A2", "DEFENSIBLE", "The passage identifies bio and graph as meaningful parts, with y as the ending.", ["S0072"]],
+            ["A3", "INCORRECT", "The passage identifies these as reading chunks rather than meaningful parts.", ["S0072"]],
+            ["A4", "INCORRECT", "A single letter plus the remainder is not the meaningful split identified by the passage.", ["S0072"]]
+          ]
+        },
+        {
+          "slotId": "part_b", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The unsplit word does not show reading chunks.", ["S0072"]],
+            ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Bio, graph, and y show meaningful parts, not the requested pronunciation chunks.", ["S0072"]],
+            ["A3", "INCORRECT", "Bi plus the unsplit remainder does not match the passage's complete reading split.", ["S0072"]],
+            ["A4", "DEFENSIBLE", "The passage explicitly identifies bi, og, ra, and phy as the reading chunks.", ["S0072"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

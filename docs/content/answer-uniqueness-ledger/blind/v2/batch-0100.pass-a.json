@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0100",
+  "batchFileSha256": "a5d7bd70ec56d715640b40842433eb3bbf3cc2dbb463409f1164bf83241571af",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId":"Q1169","fingerprint":"35377da73c13ba5b6819cd5037b034e66c8ae65b49be6a2154b891c6718e7b2c","slots":[{"slotId":"response","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","CONTRADICTED","The poem has an intentional AABB end-rhyme pattern rather than unrestricted rhyme.",["S0016","S0018","S0020","S0022"]],
+        ["A2","CONTRADICTED","The poem has four lines and paired rhyme, not the five-line AABBA limerick form.",["S0016","S0018","S0020","S0022"]],
+        ["A3","DEFENSIBLE","The end words light/right and hum/drum form two intentional neighboring rhyme pairs.",["S0016","S0018","S0020","S0022"]],
+        ["A4","CONTRADICTED","The poem has four lines rather than a three-line haiku form.",["S0016","S0018","S0020","S0022"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1170","fingerprint":"f7aa1a09dfc44caf8291e697dbed33e4364257637f80817641127a9dd915e86f","slots":[{"slotId":"response","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","CONTRADICTED","The poem has four workshop-action lines, not three observational 5-7-5 lines.",["S0016","S0018","S0020","S0022"]],
+        ["A2","DEFENSIBLE","The two intentional neighboring end-rhyme pairs directly support the rhymed-verse classification.",["S0016","S0018","S0020","S0022"]],
+        ["A3","CONTRADICTED","The poem has a clear fixed AABB rhyme pattern and no one-word line.",["S0016","S0018","S0020","S0022"]],
+        ["A4","CONTRADICTED","The poem has four lines, not five, and its rhyme is AABB rather than AABBA.",["S0016","S0018","S0020","S0022"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1171","fingerprint":"20d1f5b29a9d52558f6b764e244fa22b3908213ad2e16d7c5477d19034d50ac2","slots":[{"slotId":"response","defensible":["A2","A4"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","CONTRADICTED","The poem has four lines and is not a three-line classroom haiku.",["S0016","S0018","S0020","S0022"]],
+        ["A2","DEFENSIBLE","The named line-ending pairs accurately identify the poem's intentional AABB rhyme.",["S0016","S0018","S0020","S0022"]],
+        ["A3","CONTRADICTED","The poem uses a required AABB rhyme pattern and has no one-word line.",["S0016","S0018","S0020","S0022"]],
+        ["A4","DEFENSIBLE","The four lines are accurately organized as two neighboring rhyme pairs.",["S0016","S0018","S0020","S0022"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1172","fingerprint":"38939397792790768b1ba35f36a16a583b3bdf57b2a551f71d7853839dce18cf","slots":[{"slotId":"response","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","DEFENSIBLE","The end word right rhymes with light.",["S0016","S0018"]],
+        ["A2","CONTRADICTED","Drum rhymes with hum, not light.",["S0020","S0022"]],
+        ["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This repeats line 1 rather than selecting the other rhyming line.",["S0016"]],
+        ["A4","CONTRADICTED","Hum rhymes with drum, not light.",["S0020","S0022"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1173","fingerprint":"884f7fb493bb4a21e5b46c0b78f223428b838447852fa154bed800a6a24b659c","slots":[
+        {"slotId":"row_1","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","DEFENSIBLE","Rhymed verse correctly names the poem form.",["S0016","S0018","S0020","S0022"]],
+          ["A2","CONTRADICTED","The intentional AABB rhyme conflicts with a free-verse classification here.",["S0016","S0018","S0020","S0022"]],
+          ["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This is the structural clue, not the requested form name.",["S0016","S0018","S0020","S0022"]]
+        ]},
+        {"slotId":"row_2","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","CONTRADICTED","Free verse is neither the form nor a structural clue supported by this fixed-rhyme poem.",["S0016","S0018","S0020","S0022"]],
+          ["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Rhymed verse names the form rather than the requested structural clue.",["S0016","S0018","S0020","S0022"]],
+          ["A3","DEFENSIBLE","The explicitly identified AABB end-rhyme pairs are the strongest structural clue.",["S0016","S0018","S0020","S0022"]]
+        ]}
+      ],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1174","fingerprint":"054122b94a3bce1447d5bad36988bce7307afd4536307017e3217bdddaeb04d0","slots":[{"slotId":"response","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","DEFENSIBLE","The three short lines capture one quiet natural observation, matching the taught classroom haiku form.",["S0026","S0028","S0031"]],
+        ["A2","CONTRADICTED","The line endings grass, settles, and breath do not create an intentional fixed rhyme pattern.",["S0026","S0028","S0031"]],
+        ["A3","CONTRADICTED","The poem has three lines rather than the five-line limerick form.",["S0026","S0028","S0031"]],
+        ["A4","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Lack of rhyme alone can occur in free verse, but the poem's three-line nature-observation form is the more specific taught classification.",["S0026","S0028","S0031"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1175","fingerprint":"cf4e6946c6980c1698950ed3d25fd166f43d83a4b2c9726a6d96fae4a66f103a","slots":[{"slotId":"response","defensible":["A3"],"ambiguity":"The middle line is seven syllables only when cardinal is pronounced with three syllables; a common two-syllable pronunciation makes it six, so the keyed feature is not pronunciation-neutral.","selectionContractValid":false,"options":[
+        ["A1","CONTRADICTED","The poem has three lines and no AABBA end-rhyme pattern.",["S0026","S0028","S0031"]],
+        ["A2","CONTRADICTED","The poem has three lines and no two-pair rhyme organization.",["S0026","S0028","S0031"]],
+        ["A3","DEFENSIBLE","The claim is true under a three-syllable pronunciation of cardinal but false under a common two-syllable pronunciation.",["S0026","S0028","S0031"]],
+        ["A4","CONTRADICTED","Absence of end rhyme alone does not establish free verse, and the option ignores the taught haiku clues.",["S0026","S0028","S0031"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1176","fingerprint":"a6b5616c5def72fc7312d2785c01fdaf9abff1681e0e56cc185a3fde89c98ff4","slots":[{"slotId":"response","defensible":["A3","A4"],"ambiguity":"The requested two-answer set depends on pronouncing cardinal with three syllables; with a common two-syllable pronunciation, A4 is false and only A3 remains defensible.","selectionContractValid":false,"options":[
+        ["A1","CONTRADICTED","The poem has three lines and no AABBA rhyme.",["S0026","S0028","S0031"]],
+        ["A2","CONTRADICTED","The poem has three lines and no neighboring rhyme pairs.",["S0026","S0028","S0031"]],
+        ["A3","DEFENSIBLE","The poem captures one quiet natural observation of snow, a cardinal, and morning.",["S0026","S0028","S0031"]],
+        ["A4","DEFENSIBLE","The line count is stable, but the 5-7-5 claim changes with the ordinary two- or three-syllable pronunciations of cardinal.",["S0026","S0028","S0031"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1177","fingerprint":"a071716e5497cf56b96e786035fc519606e025f3129adb3cb308d411f835cc67","slots":[{"slotId":"response","defensible":["A2"],"ambiguity":"One red cardinal settles is seven syllables with a three-syllable cardinal but six with a common two-syllable pronunciation, so no pronunciation-neutral unique answer exists.","selectionContractValid":false,"options":[
+        ["A1","CONTRADICTED","Morning holds its breath has five syllables under ordinary pronunciation.",["S0031"]],
+        ["A2","DEFENSIBLE","This is the middle line, but its count is six or seven depending on the ordinary pronunciation of cardinal.",["S0028"]],
+        ["A3","CONTRADICTED","Soft snow covers grass has five syllables under ordinary pronunciation.",["S0026"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1178","fingerprint":"44b46f89a4306bbd3445067de000e8dd012e9ef47a416d3dde451b11bebad2a0","slots":[
+        {"slotId":"row_1","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This is presented as a structural clue, not the requested form name, and its syllable claim is pronunciation-sensitive.",["S0026","S0028","S0031"]],
+          ["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","The poem lacks rhyme, but haiku is the more specific taught three-line nature-observation form.",["S0026","S0028","S0031"]],
+          ["A3","DEFENSIBLE","Haiku correctly names the taught form.",["S0026","S0028","S0031"]]
+        ]},
+        {"slotId":"row_2","defensible":["A3"],"ambiguity":"The keyed structural-clue wording includes a pronunciation-sensitive 5-7-5 claim, so this row needs a source correction even though A3 is the intended mapping.","selectionContractValid":false,"options":[
+          ["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Haiku names the form rather than the requested structural clue.",["S0026","S0028","S0031"]],
+          ["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Free verse names a different form rather than a structural clue.",["S0026","S0028","S0031"]],
+          ["A3","DEFENSIBLE","This is the only clue-shaped option, but its 5-7-5 claim depends on how cardinal is pronounced.",["S0026","S0028","S0031"]]
+        ]}
+      ],"projectionDefect":""
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0106",
+  "batchFileSha256": "35fd3af8c9ae32cf9c6d1cf45b01196baa187d301761ba92ad4047ab3273a921",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1239",
+      "fingerprint": "a14de6e34c84e8b1575d0415f8e8f3b5b4b2c08aca76a66d7824701bb9071921",
+      "slots": [{"slotId":"response","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[["A1","CONTRADICTED","The facts are connected as an ordered process rather than being unrelated.",["S0163"]],["A2","DEFENSIBLE","First, Next, Then, After, and Finally organize the paper-making process in time order.",["S0164","S0165","S0166","S0167","S0168"]],["A3","INCORRECT","Causes and effects occur locally, but they do not organize the passage's main ideas.",["S0163"]],["A4","INCORRECT","The passage does not organize its main ideas around similarities and differences.",["S0163"]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1240",
+      "fingerprint": "d5cbddefc9928fc6ae31612eac9fdda6c63ab24708e16c8c113d6ee88f1c7105",
+      "slots": [{"slotId":"response","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[["A1","DEFENSIBLE","The numbered timeline condenses the transformation into four ordered stages.",["S0174","S0179","S0180","S0181","S0182"]],["A2","CONTRADICTED","The passage provides details beyond the timeline's four-stage summary.",["S0164","S0165","S0166"]],["A3","UNSUPPORTED","The timeline contains no author information.",["S0174"]],["A4","CONTRADICTED","The timeline adds ordered process information.",["S0174"]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1241",
+      "fingerprint": "77ebab33923729dbec2929a0d65808231abdfb2537fc15df68edb3bcdcfbe6f0",
+      "slots": [{"slotId":"response","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[["A1","INCORRECT","The prompt emphasizes time order rather than why one change causes another.",[]],["A2","DEFENSIBLE","Chronology organizes sprouting, root growth, and later leaf growth in time order.",[]],["A3","INCORRECT","The prompt does not compare two subjects.",[]],["A4","CONTRADICTED","The stages have an explicit meaningful time order.",[]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1242",
+      "fingerprint": "43e943bd97d8a1ca53336c553a76184640791bcc67e8d5c0d6f8dd9cbfe4a9f6",
+      "slots": [{"slotId":"response","defensible":["A1","A3","A4"],"ambiguity":"The prompt requests two details, but the First sentence, Finally sentence, and explicit ordered-process sentence all reasonably prove chronology.","selectionContractValid":false,"options":[["A1","DEFENSIBLE","Finally marks the last step in the ordered process.",["S0168"]],["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","The glossary defines pulp but does not prove time-order organization.",["S0159"]],["A3","DEFENSIBLE","First marks the opening step in the ordered process.",["S0164"]],["A4","DEFENSIBLE","This sentence explicitly states that the process is ordered and changes at each stage.",["S0163"]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1243",
+      "fingerprint": "584d906cbfd06a5718a19851cc5e5284f20df33980854a322c1d58252fd796c2",
+      "slots": [{"slotId":"response","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[["A1","DEFENSIBLE","Then begins the step immediately after the pulp is spread.",["S0161","S0166"]],["A2","CONTRADICTED","First introduces an earlier soaking step.",["S0164"]],["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This is the referenced spreading step, not the next step after it.",["S0161"]],["A4","CONTRADICTED","Finally introduces the later drying step rather than the immediate next step.",["S0168"]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1244",
+      "fingerprint": "92de8e697b9ffa2349bd372631d343846fb2c89233b60d09d79756d7bd78b302",
+      "slots": [
+        {"slotId":"row_1","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[["A1","DEFENSIBLE","Chronology helps readers follow the material through its ordered transformations.",["S0163"]],["A2","UNSUPPORTED","Chronology does not give an author opinion or rank facts.",["S0163"]],["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This describes the timeline feature rather than chronology organization as a whole.",["S0174"]]]},
+        {"slotId":"row_2","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[["A1","UNSUPPORTED","The timeline contains no author opinion or ranking.",["S0174"]],["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This describes chronology's contribution rather than the timeline specifically.",["S0163"]],["A3","DEFENSIBLE","The timeline visibly condenses the process into four numbered stages.",["S0174"]]]}
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1245",
+      "fingerprint": "303385ffa5e66ba36469e71b4ccc57d544fb397a596f45c0733616977bde188a",
+      "slots": [
+        {"slotId":"part_a","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[["A1","INCORRECT","The passage does not organize its main ideas by similarities and differences.",["S0163"]],["A2","DEFENSIBLE","The passage follows the paper material through an ordered sequence of stages.",["S0164","S0168","S0163"]],["A3","INCORRECT","Cause and effect is not the passage's main organizational relationship.",["S0163"]]]},
+        {"slotId":"part_b","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[["A1","CONTRADICTED","Drying occurs last and does not cause the paper to be torn first.",["S0164","S0168"]],["A2","CONTRADICTED","The passage does not compare recycled paper with plastic.",["S0157","S0163"]],["A3","DEFENSIBLE","First and Finally mark the opening and closing steps of the chronology.",["S0164","S0168"]]]}
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1246",
+      "fingerprint": "957c93b37d987f03ccaa22da60c60cbc5e461c9173a19e9e410f7320c143e96f",
+      "slots": [{"slotId":"response","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This names only the broad topic without stating the important idea about beach grass's role.",["S0018"]],["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This loosely lists details without expressing how beach grass helps dunes form and remain.",["S0005","S0016"]],["A3","DEFENSIBLE","This sentence states the passage-wide idea about leaves and roots helping dunes form and stay in place.",["S0017"]],["A4","PARTIALLY_TRUE_BUT_NONRESPONSIVE","The beetle track is a minor detail and does not cover the passage's main idea.",["S0016"]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1247",
+      "fingerprint": "e26d248826cc98189660569ce67d29f658396fdd213b2840da7a0e860ce2b24c",
+      "slots": [{"slotId":"response","defensible":["A4"],"ambiguity":"","selectionContractValid":true,"options":[["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This states a complete central idea rather than only a broad topic.",["S0017"]],["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This is a minor fact rather than the passage's broad topic label.",["S0016"]],["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This is a loose sentence of details rather than a topic phrase.",["S0005","S0016"]],["A4","DEFENSIBLE","This phrase names the broad subject without stating what the passage teaches about it.",["S0018"]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1248",
+      "fingerprint": "ea4d41d9113a9409a4b7556c3a3a9178099339cae20ee53c06afa313c65b986e",
+      "slots": [{"slotId":"response","defensible":["A1","A2"],"ambiguity":"","selectionContractValid":true,"options":[["A1","DEFENSIBLE","The leaves slowing sand-carrying wind directly explains how grass helps build a dune.",["S0005"]],["A2","DEFENSIBLE","This later-section detail explains why the dune formed with grass's help matters as a barrier.",["S0014"]],["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This introduces the topic and setting but does not explain how grass helps dunes form or stay.",["S0003"]],["A4","PARTIALLY_TRUE_BUT_NONRESPONSIVE","The beetle track is an interesting minor detail unrelated to grass helping the dune.",["S0016"]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1249",
+      "fingerprint": "c4dc978a8f0a586b4652b9d1727a103c89e33d3cf4fa349072cd37d0de2891ef",
+      "slots": [{"slotId":"response","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This supports one mechanism but does not directly state the complete central idea.",["S0005"]],["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This is a minor beetle detail rather than the central idea.",["S0016"]],["A3","DEFENSIBLE","This sentence directly states the passage-wide idea about grass helping dunes form and remain.",["S0017"]],["A4","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This describes one stage in dune growth but omits beach grass's role.",["S0009"]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1250",
+      "fingerprint": "acf75facc4dfe2f223e8de36498b4b8e246b133321dff168633e5cd0c7a5b725",
+      "slots": [
+        {"slotId":"row_1","defensible":["A4"],"ambiguity":"","selectionContractValid":true,"options":[["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This is only a broad topic phrase.",["S0018"]],["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This loosely lists details without expressing their central relationship.",["S0005","S0016"]],["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This is a minor detail.",["S0016"]],["A4","DEFENSIBLE","This states the complete passage-wide central idea.",["S0017"]]]},
+        {"slotId":"row_2","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[["A1","DEFENSIBLE","This phrase names the broad subject without making a claim about it.",["S0018"]],["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This is a minor detail rather than the broad topic.",["S0016"]],["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This states the central idea rather than only the topic.",["S0017"]],["A4","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This is a loose list of details rather than a topic phrase.",["S0005","S0016"]]]},
+        {"slotId":"row_3","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This is the central idea, not a minor detail.",["S0017"]],["A2","DEFENSIBLE","The beetle track is true but unnecessary to the central idea.",["S0016"]],["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This is the topic, not a minor detail.",["S0018"]],["A4","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This combines several passage details rather than identifying one minor detail.",["S0005","S0016"]]]}
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

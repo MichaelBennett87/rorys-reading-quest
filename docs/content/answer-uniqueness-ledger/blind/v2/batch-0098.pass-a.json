@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0098",
+  "batchFileSha256": "e13c304c02827350f0dd3b405349456183187d74460cee1caceea7e6d75e6b82",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1143",
+      "fingerprint": "447e557633b9f0eed626a8ce4efcc454f2411dfcfbe602499018c8c289a394c1",
+      "slots": [{"slotId":"response","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Impatience is a feeling, not Niko's view about which test should come first.",["S0083"]],
+        ["A2","DEFENSIBLE","Niko directly argues that a short outdoor tether test will reveal actual wind behavior.",["S0083","S0086","S0087"]],
+        ["A3","INCORRECT","This is Esme's perspective, not Niko's.",["S0076","S0079"]],
+        ["A4","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Being adventurous is a trait, not Niko's test-order perspective.",["S0083"]]
+      ]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1144",
+      "fingerprint": "8f2ab34ad4ae26818f0be34972c988d31afbe2b5f8363821855e6e8932530025",
+      "slots": [{"slotId":"response","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Precision is a trait, not Esme's view about which test should come first.",["S0076","S0079"]],
+        ["A2","DEFENSIBLE","Esme directly says the calibration list should be completed before the equipment meets the wind.",["S0076","S0079","S0088","S0089"]],
+        ["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Uneasiness is a feeling, not Esme's test-order perspective.",["S0088","S0089"]],
+        ["A4","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Narrator type does not state Esme's perspective.",["S0082","S0094"]]
+      ]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1145",
+      "fingerprint": "4fe8d3ff59e6fa32938f28a4677919ba5a9609fdee2caa7f28639bc79961fd14",
+      "slots": [{"slotId":"response","defensible":["A4"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","CONTRADICTED","Niko explicitly believes the outdoor test provides useful wind information.",["S0083","S0087"]],
+        ["A2","UNSUPPORTED","Third-person narration does not show that the narrator favors Esme.",["S0082","S0094"]],
+        ["A3","CONTRADICTED","Both students want a safe, reliable demonstration and each proposes a test rather than cancellation.",["S0083","S0076","S0084"]],
+        ["A4","DEFENSIBLE","The answer accurately contrasts Niko's outdoor wind test with Esme's indoor calibration priority.",["S0083","S0076"]]
+      ]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1146",
+      "fingerprint": "775e20bb1f7172c7d46ffb20b61d76970453d00ae78026f925798f79fb745756",
+      "slots": [{"slotId":"response","defensible":["A1","A3"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","DEFENSIBLE","Niko directly states his reason for running an outdoor test.",["S0083"]],
+        ["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","A possible feeling does not state Niko's perspective and supplies no Esme evidence.",["S0083"]],
+        ["A3","DEFENSIBLE","Esme directly states her reason for completing indoor calibration first.",["S0076"]],
+        ["A4","PARTIALLY_TRUE_BUT_NONRESPONSIVE","The schedule is shared context and reveals neither character's perspective.",["S0085"]]
+      ]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1147",
+      "fingerprint": "aa66089c1abed6264e38d45c2cb1d7ee4780793f3614a1508ffa9ef72a21db1d",
+      "slots": [{"slotId":"response","defensible":["A4"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","INCORRECT","This sentence states Niko's perspective.",["S0083"]],
+        ["A2","INCORRECT","This is Niko's observation, not Esme's perspective.",["S0086"]],
+        ["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","The schedule supplies context but not Esme's view.",["S0085"]],
+        ["A4","DEFENSIBLE","Esme directly states that calibration should precede exposure to wind.",["S0076"]]
+      ]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1148",
+      "fingerprint": "6b8ad1a4523f1c97bd8b2910edd5083a0935a089f9c9d41ec8bbc1600b44a73f",
+      "slots": [
+        {"slotId":"row_1","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","INCORRECT","This is Esme's perspective.",["S0076","S0079"]],
+          ["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Narrator type is not Niko's view about testing.",["S0082","S0094"]],
+          ["A3","DEFENSIBLE","Niko prioritizes a tethered outdoor test to observe real wind behavior.",["S0083","S0087"]]
+        ]},
+        {"slotId":"row_2","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","INCORRECT","This is Niko's perspective.",["S0083","S0087"]],
+          ["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Narrator type is not Esme's view about testing.",["S0082","S0094"]],
+          ["A3","DEFENSIBLE","Esme prioritizes sensor checks and calibration before outdoor exposure.",["S0076","S0079","S0089"]]
+        ]}
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1149",
+      "fingerprint": "4731c5136e7bb49d51ca1fb6b8274f573a2d7487ed0aeaa659814895dd4e1e8b",
+      "slots": [
+        {"slotId":"part_a","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Narrator type does not compare the characters' test perspectives.",["S0082","S0094"]],
+          ["A2","DEFENSIBLE","This accurately contrasts Niko's outdoor test with Esme's indoor sensor checks.",["S0083","S0076"]],
+          ["A3","CONTRADICTED","Both propose useful tests and want a safe, reliable demonstration.",["S0083","S0076","S0084"]]
+        ]},
+        {"slotId":"part_b","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This includes Niko's perspective but the schedule detail does not supply Esme's contrasting view.",["S0083","S0085"]],
+          ["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This includes Esme's perspective but the schedule detail does not supply Niko's contrasting view.",["S0076","S0085"]],
+          ["A3","DEFENSIBLE","The two direct statements provide one evidence detail for each side of the Part A comparison.",["S0083","S0076"]]
+        ]}
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1150",
+      "fingerprint": "6f53cc009bce63d9947bf55f80ce7585e665b447f6ac211bdd2ce8e93f83a82c",
+      "slots": [{"slotId":"response","defensible":["A4"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Alertness is a feeling or trait, not Mei's guidance perspective.",["S0105","S0107"]],
+        ["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Being artistic is a trait, not Mei's view about path safety.",["S0105"]],
+        ["A3","INCORRECT","This is Arlo's perspective, not Mei's.",["S0097","S0101","S0112"]],
+        ["A4","DEFENSIBLE","Mei wants steady lantern light at turns and later fills the shadowy gap so the path remains visible.",["S0105","S0107","S0110","S0103"]]
+      ]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1151",
+      "fingerprint": "f2f1f7ed974d092414a6c4af5706117d6ace816d82d443892d9f8082b74b1923",
+      "slots": [{"slotId":"response","defensible":["A4"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Inventiveness is a trait, not Arlo's guidance perspective.",["S0097","S0112"]],
+        ["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Narrator type does not state Arlo's perspective.",["S0104","S0114"]],
+        ["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Focus is a feeling or trait, not Arlo's view about path directions.",["S0097"]],
+        ["A4","DEFENSIBLE","Arlo wants reflective destination markers before branches and installs labels at the entrance and forks.",["S0097","S0108","S0101","S0112"]]
+      ]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1152",
+      "fingerprint": "b5bb4c5daf4729cd4f2c21b3f08d3dd9c89ef2d2b4f4cb69693af9e0a95284f2",
+      "slots": [{"slotId":"response","defensible":["A4"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","UNSUPPORTED","The story shows that both marker types solve different needs and never ranks lanterns as universally better.",["S0111","S0114"]],
+        ["A2","CONTRADICTED","Mei focuses on visibility and Arlo on directions; neither wants the festival ended.",["S0105","S0097"]],
+        ["A3","CONTRADICTED","Arlo supplies directions so visitors choose the correct branch rather than wander.",["S0097","S0101","S0112"]],
+        ["A4","DEFENSIBLE","Both seek confident path travel, with Mei emphasizing light and Arlo destination directions.",["S0099","S0105","S0097","S0111"]]
+      ]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1153",
+      "fingerprint": "fae692158198cc4df8a5162db2257516eeba80b06535b213f2d5e85ebaa73c09",
+      "slots": [{"slotId":"response","defensible":["A1","A4"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","DEFENSIBLE","Arlo directly states that visitors need destination guidance at path branches.",["S0097"]],
+        ["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","The assignment supplies shared context but reveals neither character's perspective.",["S0104"]],
+        ["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Alertness is not Mei's complete path-guidance perspective.",["S0105"]],
+        ["A4","DEFENSIBLE","Mei directly states that visitors need steady light at every turn.",["S0105"]]
+      ]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1154",
+      "fingerprint": "a58eae31dbcca195c7fb570f38648ab9c78c0fbd79b5a939f13364f4078f9677",
+      "slots": [{"slotId":"response","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","INCORRECT","This directly states Mei's perspective.",["S0105"]],
+        ["A2","DEFENSIBLE","Arlo directly explains that visitors need destination information at each branch.",["S0097"]],
+        ["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","The assignment provides context but not Arlo's view.",["S0104"]],
+        ["A4","INCORRECT","This observation belongs to Mei and concerns lighting.",["S0107"]]
+      ]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1155",
+      "fingerprint": "323408b6f27da1497377fe4df2bb1f8407ae87b9c1c5b77295a6c06efa179671",
+      "slots": [
+        {"slotId":"row_1","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","INCORRECT","This is Arlo's perspective.",["S0097","S0112"]],
+          ["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Narrator type is not Mei's path-guidance perspective.",["S0104","S0114"]],
+          ["A3","DEFENSIBLE","Mei uses lanterns to keep turns and shadowed sections visible.",["S0105","S0107","S0103"]]
+        ]},
+        {"slotId":"row_2","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","DEFENSIBLE","Arlo uses reflective arrows and labels to direct visitors at path branches.",["S0097","S0101","S0112"]],
+          ["A2","INCORRECT","This is Mei's perspective.",["S0105","S0103"]],
+          ["A3","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Narrator type is not Arlo's path-guidance perspective.",["S0104","S0114"]]
+        ]}
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1156",
+      "fingerprint": "e2f8bb23fbabc15c7fc27b18d85c77b0010710cf75d7448fb99dcbcfcac2a8cb",
+      "slots": [
+        {"slotId":"part_a","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Narrator type does not compare the characters' perspectives.",["S0104","S0114"]],
+          ["A2","DEFENSIBLE","The answer states their shared safety goal and their distinct lighting and direction emphases.",["S0099","S0105","S0097"]],
+          ["A3","CONTRADICTED","Arlo wants visitors directed to the correct branch, not wandering.",["S0097","S0101"]]
+        ]},
+        {"slotId":"part_b","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This includes Mei's perspective but the assignment sentence does not supply Arlo's contrasting view.",["S0105","S0104"]],
+          ["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This includes Arlo's perspective but the assignment sentence does not supply Mei's contrasting view.",["S0097","S0104"]],
+          ["A3","DEFENSIBLE","The direct statements provide one evidence detail for each side of the Part A comparison.",["S0105","S0097"]]
+        ]}
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

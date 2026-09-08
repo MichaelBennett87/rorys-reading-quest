@@ -1,0 +1,3399 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "q-word-forge-syllable-summit-guided-closed-1",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-1de4574991cb9a4d",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "6ea4b03d3594fbbb2fbd206097a5e4796fa9017e23682c4b1bff665daa485dac",
+        "conclusionsSha256": "3f801b5f6d737722b8f414208f26bf762d5788f87e87da32562fb4a8a815f468",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0020.second-pass.json",
+        "receiptSha256": "01b35637678b4892256221b9b04ab5ac396bea32cd063fc31ed356d0c619fc10",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word begins with a closed syllable ending in b?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "rabbit-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rabbit-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "music-choice",
+              "verdict": "INCORRECT",
+              "rationale": "music begins with the open syllable mu, not a closed syllable ending in b.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-1"
+              ]
+            },
+            {
+              "answerId": "robot-choice",
+              "verdict": "INCORRECT",
+              "rationale": "robot begins with the open syllable ro, not a closed syllable ending in b.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-1"
+              ]
+            },
+            {
+              "answerId": "photo-choice",
+              "verdict": "INCORRECT",
+              "rationale": "photo begins with the open syllable pho, not a closed syllable ending in b.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-1"
+              ]
+            },
+            {
+              "answerId": "rabbit-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "rabbit begins with rab, a closed syllable ending in b.",
+              "evidenceIds": [
+                "rabbit-habitat-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-guided-closed-2",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-82e1bebd4321ffe9",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "6ea4b03d3594fbbb2fbd206097a5e4796fa9017e23682c4b1bff665daa485dac",
+        "conclusionsSha256": "3f801b5f6d737722b8f414208f26bf762d5788f87e87da32562fb4a8a815f468",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0020.second-pass.json",
+        "receiptSha256": "01b35637678b4892256221b9b04ab5ac396bea32cd063fc31ed356d0c619fc10",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word begins with a closed syllable ending in c?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "picnic-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "picnic-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "picnic-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "picnic begins with pic, a closed syllable ending in c.",
+              "evidenceIds": [
+                "rabbit-habitat-4"
+              ]
+            },
+            {
+              "answerId": "robot-choice",
+              "verdict": "INCORRECT",
+              "rationale": "robot begins with the open syllable ro.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-1"
+              ]
+            },
+            {
+              "answerId": "solo-choice",
+              "verdict": "INCORRECT",
+              "rationale": "solo begins with the open syllable so.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-1"
+              ]
+            },
+            {
+              "answerId": "music-choice",
+              "verdict": "INCORRECT",
+              "rationale": "music begins with the open syllable mu.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-guided-closed-3",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-a3aaba3ba0b1f177",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "6ea4b03d3594fbbb2fbd206097a5e4796fa9017e23682c4b1bff665daa485dac",
+        "conclusionsSha256": "3f801b5f6d737722b8f414208f26bf762d5788f87e87da32562fb4a8a815f468",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0008.pass-a.json",
+        "receiptSha256": "3f801b5f6d737722b8f414208f26bf762d5788f87e87da32562fb4a8a815f468",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the closed-syllable words from the rabbit passage.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "rabbit-choice",
+            "basket-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rabbit-choice",
+            "basket-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "music-choice",
+              "verdict": "INCORRECT",
+              "rationale": "music is absent from this passage and begins with an open syllable.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-1"
+              ]
+            },
+            {
+              "answerId": "robot-choice",
+              "verdict": "INCORRECT",
+              "rationale": "robot is absent from this passage and begins with an open syllable.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-1"
+              ]
+            },
+            {
+              "answerId": "rabbit-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "rabbit appears in the passage and divides into closed syllables rab and bit.",
+              "evidenceIds": [
+                "rabbit-habitat-1"
+              ]
+            },
+            {
+              "answerId": "basket-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "basket appears in the passage and divides into closed syllables bas and ket.",
+              "evidenceIds": [
+                "rabbit-habitat-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-guided-closed-4",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-72303328d211c81c",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "015618bc592db5523308409132f793dd55e425b572ef6ee0da730861484fc25a",
+        "conclusionsSha256": "d44c8383f33b6bde4085ea22b97a8538a2e039de941af0bba5b5d8c88709c1c7",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0005.pass-a.json",
+        "receiptSha256": "d44c8383f33b6bde4085ea22b97a8538a2e039de941af0bba5b5d8c88709c1c7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that includes napkin, a word with two closed syllables.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "rabbit-habitat-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rabbit-habitat-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "rabbit-habitat-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence contains rabbit, basket, and cabin but not napkin.",
+              "evidenceIds": [
+                "rabbit-habitat-1"
+              ]
+            },
+            {
+              "answerId": "rabbit-habitat-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence explicitly contains napkin, whose two syllables have short vowels.",
+              "evidenceIds": [
+                "rabbit-habitat-2"
+              ]
+            },
+            {
+              "answerId": "rabbit-habitat-3",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence contains magnet and helmet but not napkin.",
+              "evidenceIds": [
+                "rabbit-habitat-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-guided-closed-5",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-ee0bb9a09f38a03c",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "6ea4b03d3594fbbb2fbd206097a5e4796fa9017e23682c4b1bff665daa485dac",
+        "conclusionsSha256": "3f801b5f6d737722b8f414208f26bf762d5788f87e87da32562fb4a8a815f468",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0008.pass-a.json",
+        "receiptSha256": "3f801b5f6d737722b8f414208f26bf762d5788f87e87da32562fb4a8a815f468",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "rabbit-row",
+          "prompt": "rabbit",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "rabbit-rab-bit"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rabbit-rab-bit"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "rabbit-ro-bot",
+              "verdict": "INCORRECT",
+              "rationale": "ro / bot spells robot, not rabbit.",
+              "evidenceIds": [
+                "rabbit-habitat-1"
+              ]
+            },
+            {
+              "answerId": "rabbit-mu-sic",
+              "verdict": "INCORRECT",
+              "rationale": "mu / sic spells music, not rabbit.",
+              "evidenceIds": [
+                "rabbit-habitat-1"
+              ]
+            },
+            {
+              "answerId": "rabbit-rab-bit",
+              "verdict": "DEFENSIBLE",
+              "rationale": "rab / bit reconstructs rabbit and shows its closed syllables.",
+              "evidenceIds": [
+                "rabbit-habitat-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "basket-row",
+          "prompt": "basket",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "basket-bas-ket"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "basket-bas-ket"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "basket-bas-ket",
+              "verdict": "DEFENSIBLE",
+              "rationale": "bas / ket reconstructs basket and shows its closed syllables.",
+              "evidenceIds": [
+                "rabbit-habitat-1"
+              ]
+            },
+            {
+              "answerId": "basket-tu-lip",
+              "verdict": "INCORRECT",
+              "rationale": "tu / lip spells tulip, not basket.",
+              "evidenceIds": [
+                "rabbit-habitat-1"
+              ]
+            },
+            {
+              "answerId": "basket-pho-to",
+              "verdict": "INCORRECT",
+              "rationale": "pho / to spells photo, not basket.",
+              "evidenceIds": [
+                "rabbit-habitat-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-guided-open-1",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-c34a4300a9c06b7c",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "6ea4b03d3594fbbb2fbd206097a5e4796fa9017e23682c4b1bff665daa485dac",
+        "conclusionsSha256": "3f801b5f6d737722b8f414208f26bf762d5788f87e87da32562fb4a8a815f468",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0008.pass-a.json",
+        "receiptSha256": "3f801b5f6d737722b8f414208f26bf762d5788f87e87da32562fb4a8a815f468",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word begins with a long o in an open syllable?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "robot-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "robot-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "picnic-choice",
+              "verdict": "INCORRECT",
+              "rationale": "picnic begins with the closed syllable pic, with short i.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-2"
+              ]
+            },
+            {
+              "answerId": "rabbit-choice",
+              "verdict": "INCORRECT",
+              "rationale": "rabbit begins with the closed syllable rab, with short a.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-2"
+              ]
+            },
+            {
+              "answerId": "basket-choice",
+              "verdict": "INCORRECT",
+              "rationale": "basket begins with the closed syllable bas, with short a.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-2"
+              ]
+            },
+            {
+              "answerId": "robot-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "robot begins with open ro, whose o has its long sound.",
+              "evidenceIds": [
+                "robot-exhibit-1",
+                "robot-exhibit-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-guided-open-2",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-0e067345f3b6a199",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "6ea4b03d3594fbbb2fbd206097a5e4796fa9017e23682c4b1bff665daa485dac",
+        "conclusionsSha256": "3f801b5f6d737722b8f414208f26bf762d5788f87e87da32562fb4a8a815f468",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0008.pass-a.json",
+        "receiptSha256": "3f801b5f6d737722b8f414208f26bf762d5788f87e87da32562fb4a8a815f468",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word begins with a long u in an open syllable?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "music-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "music-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "helmet-choice",
+              "verdict": "INCORRECT",
+              "rationale": "helmet begins with the closed syllable hel, with short e.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-2"
+              ]
+            },
+            {
+              "answerId": "napkin-choice",
+              "verdict": "INCORRECT",
+              "rationale": "napkin begins with the closed syllable nap, with short a.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-2"
+              ]
+            },
+            {
+              "answerId": "music-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "music begins with open mu, whose u has its long sound.",
+              "evidenceIds": [
+                "robot-exhibit-2"
+              ]
+            },
+            {
+              "answerId": "sunset-choice",
+              "verdict": "INCORRECT",
+              "rationale": "sunset begins with the closed syllable sun, with short u.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-guided-open-3",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-164145201ddbd2cc",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "6ea4b03d3594fbbb2fbd206097a5e4796fa9017e23682c4b1bff665daa485dac",
+        "conclusionsSha256": "3f801b5f6d737722b8f414208f26bf762d5788f87e87da32562fb4a8a815f468",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0008.pass-a.json",
+        "receiptSha256": "3f801b5f6d737722b8f414208f26bf762d5788f87e87da32562fb4a8a815f468",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the open-syllable words from the robot passage.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "robot-choice",
+            "music-choice",
+            "pilot-choice",
+            "zero-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "robot-choice",
+            "pilot-choice",
+            "zero-choice",
+            "music-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "robot-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "robot appears in the passage and begins with open ro.",
+              "evidenceIds": [
+                "robot-exhibit-1",
+                "robot-exhibit-4"
+              ]
+            },
+            {
+              "answerId": "pilot-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "pilot appears in the passage and begins with open pi.",
+              "evidenceIds": [
+                "robot-exhibit-2"
+              ]
+            },
+            {
+              "answerId": "zero-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "zero appears in the passage and begins with open ze.",
+              "evidenceIds": [
+                "robot-exhibit-3"
+              ]
+            },
+            {
+              "answerId": "music-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "music appears in the passage and begins with open mu.",
+              "evidenceIds": [
+                "robot-exhibit-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-guided-open-4",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-b5e6128858b1ef14",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "015618bc592db5523308409132f793dd55e425b572ef6ee0da730861484fc25a",
+        "conclusionsSha256": "d44c8383f33b6bde4085ea22b97a8538a2e039de941af0bba5b5d8c88709c1c7",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0005.pass-a.json",
+        "receiptSha256": "d44c8383f33b6bde4085ea22b97a8538a2e039de941af0bba5b5d8c88709c1c7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that includes music, a word that begins with an open syllable.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "robot-exhibit-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "robot-exhibit-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "robot-exhibit-3",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence contains photo and zero but not music.",
+              "evidenceIds": [
+                "robot-exhibit-3"
+              ]
+            },
+            {
+              "answerId": "robot-exhibit-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence contains music, which begins with the open syllable mu.",
+              "evidenceIds": [
+                "robot-exhibit-2"
+              ]
+            },
+            {
+              "answerId": "robot-exhibit-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence contains robot and open but not music.",
+              "evidenceIds": [
+                "robot-exhibit-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-guided-open-5",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-0c1578d709e237bb",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "6ea4b03d3594fbbb2fbd206097a5e4796fa9017e23682c4b1bff665daa485dac",
+        "conclusionsSha256": "3f801b5f6d737722b8f414208f26bf762d5788f87e87da32562fb4a8a815f468",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0008.pass-a.json",
+        "receiptSha256": "3f801b5f6d737722b8f414208f26bf762d5788f87e87da32562fb4a8a815f468",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "robot-row",
+          "prompt": "robot",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "robot-ro-bot"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "robot-ro-bot"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "robot-rab-bit",
+              "verdict": "INCORRECT",
+              "rationale": "rab / bit spells rabbit, not robot.",
+              "evidenceIds": [
+                "robot-exhibit-1"
+              ]
+            },
+            {
+              "answerId": "robot-ro-bot",
+              "verdict": "DEFENSIBLE",
+              "rationale": "ro / bot reconstructs robot and shows its open first syllable.",
+              "evidenceIds": [
+                "robot-exhibit-1",
+                "robot-exhibit-4"
+              ]
+            },
+            {
+              "answerId": "robot-pic-nic",
+              "verdict": "INCORRECT",
+              "rationale": "pic / nic spells picnic, not robot.",
+              "evidenceIds": [
+                "robot-exhibit-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "music-row",
+          "prompt": "music",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "music-mu-sic"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "music-mu-sic"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "music-mu-sic",
+              "verdict": "DEFENSIBLE",
+              "rationale": "mu / sic reconstructs music and shows its open first syllable.",
+              "evidenceIds": [
+                "robot-exhibit-2"
+              ]
+            },
+            {
+              "answerId": "music-bas-ket",
+              "verdict": "INCORRECT",
+              "rationale": "bas / ket spells basket, not music.",
+              "evidenceIds": [
+                "robot-exhibit-2"
+              ]
+            },
+            {
+              "answerId": "music-sun-set",
+              "verdict": "INCORRECT",
+              "rationale": "sun / set spells sunset, not music.",
+              "evidenceIds": [
+                "robot-exhibit-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-guided-short-1",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-b7c8c8d5deee7cc1",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "56481d9607145175e12a40e68b661937f25f21f2d540cdcfed52c1d390b8f017",
+        "conclusionsSha256": "9df16b6a39a8792a52ff4b69288bf60aa8b48de7a2a27f0c41286972689f3fd4",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0009.pass-a.json",
+        "receiptSha256": "9df16b6a39a8792a52ff4b69288bf60aa8b48de7a2a27f0c41286972689f3fd4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has short i in both syllables?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "picnic-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "picnic-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "music-choice",
+              "verdict": "INCORRECT",
+              "rationale": "music begins with a long-u open syllable, so both syllables do not have short i.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-3"
+              ]
+            },
+            {
+              "answerId": "robot-choice",
+              "verdict": "INCORRECT",
+              "rationale": "robot has long o in its first syllable, not short i in both syllables.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-3"
+              ]
+            },
+            {
+              "answerId": "photo-choice",
+              "verdict": "INCORRECT",
+              "rationale": "photo uses long-o syllables, not short i.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-3"
+              ]
+            },
+            {
+              "answerId": "picnic-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "picnic chunks as pic / nic, with short i in both syllables.",
+              "evidenceIds": [
+                "g2-syllable-summit-p3-picnic",
+                "picnic-planning-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-guided-short-2",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-6736b3e44a838128",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "56481d9607145175e12a40e68b661937f25f21f2d540cdcfed52c1d390b8f017",
+        "conclusionsSha256": "9df16b6a39a8792a52ff4b69288bf60aa8b48de7a2a27f0c41286972689f3fd4",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0020.second-pass.json",
+        "receiptSha256": "01b35637678b4892256221b9b04ab5ac396bea32cd063fc31ed356d0c619fc10",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has short u and short e?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "sunset-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "sunset-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "solo-choice",
+              "verdict": "INCORRECT",
+              "rationale": "solo does not contain the requested short-u and short-e syllables.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-3"
+              ]
+            },
+            {
+              "answerId": "pilot-choice",
+              "verdict": "INCORRECT",
+              "rationale": "pilot does not contain the requested short-u and short-e syllables.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-3"
+              ]
+            },
+            {
+              "answerId": "tulip-choice",
+              "verdict": "INCORRECT",
+              "rationale": "tulip begins with long u and ends with short i, not short u and short e.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-3"
+              ]
+            },
+            {
+              "answerId": "sunset-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "sunset chunks as sun / set, with short u followed by short e.",
+              "evidenceIds": [
+                "g2-syllable-summit-p3-sunset",
+                "picnic-planning-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-guided-short-3",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-a64a3aea48413136",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "015618bc592db5523308409132f793dd55e425b572ef6ee0da730861484fc25a",
+        "conclusionsSha256": "d44c8383f33b6bde4085ea22b97a8538a2e039de941af0bba5b5d8c88709c1c7",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0005.pass-a.json",
+        "receiptSha256": "d44c8383f33b6bde4085ea22b97a8538a2e039de941af0bba5b5d8c88709c1c7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words whose two syllables each have a short vowel sound.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "picnic-choice",
+            "sunset-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "sunset-choice",
+            "picnic-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "robot-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Robot begins with an open syllable and does not have a short vowel in both syllables.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-3"
+              ]
+            },
+            {
+              "answerId": "music-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Music begins with the long-vowel open syllable mu, so both vowels are not short.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-3"
+              ]
+            },
+            {
+              "answerId": "sunset-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Sunset divides into sun and set, each with a short vowel.",
+              "evidenceIds": [
+                "picnic-planning-1"
+              ]
+            },
+            {
+              "answerId": "picnic-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Picnic divides into pic and nic, each with a short vowel.",
+              "evidenceIds": [
+                "picnic-planning-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-guided-short-4",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-4facaf27ba4c6c13",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "56481d9607145175e12a40e68b661937f25f21f2d540cdcfed52c1d390b8f017",
+        "conclusionsSha256": "9df16b6a39a8792a52ff4b69288bf60aa8b48de7a2a27f0c41286972689f3fd4",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0020.second-pass.json",
+        "receiptSha256": "01b35637678b4892256221b9b04ab5ac396bea32cd063fc31ed356d0c619fc10",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that says they packed a basket, a napkin, and a magnet chart.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "picnic-planning-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "picnic-planning-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "picnic-planning-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes the picnic team, blanket, and sunset tree.",
+              "evidenceIds": [
+                "picnic-planning-1"
+              ]
+            },
+            {
+              "answerId": "picnic-planning-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence exactly says they packed a basket, napkin, and magnet chart.",
+              "evidenceIds": [
+                "picnic-planning-2"
+              ]
+            },
+            {
+              "answerId": "picnic-planning-3",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes a helmet near the lunch plan.",
+              "evidenceIds": [
+                "picnic-planning-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-guided-short-5",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-67590f8571557b89",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "56481d9607145175e12a40e68b661937f25f21f2d540cdcfed52c1d390b8f017",
+        "conclusionsSha256": "9df16b6a39a8792a52ff4b69288bf60aa8b48de7a2a27f0c41286972689f3fd4",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0009.pass-a.json",
+        "receiptSha256": "9df16b6a39a8792a52ff4b69288bf60aa8b48de7a2a27f0c41286972689f3fd4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "picnic-row",
+          "prompt": "picnic",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "picnic-pic-nic"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "picnic-pic-nic"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "picnic-pic-nic",
+              "verdict": "DEFENSIBLE",
+              "rationale": "pic / nic reconstructs picnic and gives the taught short-vowel chunks.",
+              "evidenceIds": [
+                "g2-syllable-summit-p3-picnic",
+                "picnic-planning-1"
+              ]
+            },
+            {
+              "answerId": "picnic-tu-lip",
+              "verdict": "INCORRECT",
+              "rationale": "tu / lip spells and chunks tulip, not picnic.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-3"
+              ]
+            },
+            {
+              "answerId": "picnic-ro-bot",
+              "verdict": "INCORRECT",
+              "rationale": "ro / bot spells and chunks robot, not picnic.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "magnet-row",
+          "prompt": "magnet",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "magnet-mag-net"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "magnet-mag-net"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "magnet-so-lo",
+              "verdict": "INCORRECT",
+              "rationale": "so / lo spells and chunks solo, not magnet.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-3"
+              ]
+            },
+            {
+              "answerId": "magnet-pho-to",
+              "verdict": "INCORRECT",
+              "rationale": "pho / to spells and chunks photo, not magnet.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-3"
+              ]
+            },
+            {
+              "answerId": "magnet-mag-net",
+              "verdict": "DEFENSIBLE",
+              "rationale": "mag / net reconstructs magnet with its two short-vowel chunks.",
+              "evidenceIds": [
+                "g2-syllable-summit-p3-magnet",
+                "picnic-planning-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-guided-long-1",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-63f007f13169769d",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "56481d9607145175e12a40e68b661937f25f21f2d540cdcfed52c1d390b8f017",
+        "conclusionsSha256": "9df16b6a39a8792a52ff4b69288bf60aa8b48de7a2a27f0c41286972689f3fd4",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0020.second-pass.json",
+        "receiptSha256": "01b35637678b4892256221b9b04ab5ac396bea32cd063fc31ed356d0c619fc10",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word begins with a long o in an open syllable?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "robot-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "robot-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "helmet-choice",
+              "verdict": "INCORRECT",
+              "rationale": "helmet begins with the closed syllable hel and short e.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-4"
+              ]
+            },
+            {
+              "answerId": "kitten-choice",
+              "verdict": "INCORRECT",
+              "rationale": "kitten begins with the closed syllable kit and short i.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-4"
+              ]
+            },
+            {
+              "answerId": "robot-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "robot chunks as ro / bot; open ro begins with long o.",
+              "evidenceIds": [
+                "music-room-1"
+              ]
+            },
+            {
+              "answerId": "basket-choice",
+              "verdict": "INCORRECT",
+              "rationale": "basket begins with the closed syllable bas and short a.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-guided-long-2",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-609f73c926e48e4d",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "56481d9607145175e12a40e68b661937f25f21f2d540cdcfed52c1d390b8f017",
+        "conclusionsSha256": "9df16b6a39a8792a52ff4b69288bf60aa8b48de7a2a27f0c41286972689f3fd4",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0009.pass-a.json",
+        "receiptSha256": "9df16b6a39a8792a52ff4b69288bf60aa8b48de7a2a27f0c41286972689f3fd4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word begins with a long u in an open syllable?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "music-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "music-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "sunset-choice",
+              "verdict": "INCORRECT",
+              "rationale": "sunset begins with closed sun and short u.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-4"
+              ]
+            },
+            {
+              "answerId": "music-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "music chunks as mu / sic; open mu begins with long u.",
+              "evidenceIds": [
+                "g2-syllable-summit-p4-music",
+                "music-room-1"
+              ]
+            },
+            {
+              "answerId": "magnet-choice",
+              "verdict": "INCORRECT",
+              "rationale": "magnet begins with closed mag and short a.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-4"
+              ]
+            },
+            {
+              "answerId": "napkin-choice",
+              "verdict": "INCORRECT",
+              "rationale": "napkin begins with closed nap and short a.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-guided-long-3",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-9433e5616dc5df95",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "015618bc592db5523308409132f793dd55e425b572ef6ee0da730861484fc25a",
+        "conclusionsSha256": "d44c8383f33b6bde4085ea22b97a8538a2e039de941af0bba5b5d8c88709c1c7",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0005.pass-a.json",
+        "receiptSha256": "d44c8383f33b6bde4085ea22b97a8538a2e039de941af0bba5b5d8c88709c1c7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words that begin with an open syllable whose vowel says its long sound.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "music-choice",
+            "tulip-choice",
+            "solo-choice",
+            "photo-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "tulip-choice",
+            "solo-choice",
+            "photo-choice",
+            "music-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "tulip-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Tulip begins with the open syllable tu, whose vowel has its long sound.",
+              "evidenceIds": [
+                "music-room-2"
+              ]
+            },
+            {
+              "answerId": "solo-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Solo begins with the open syllable so, whose vowel has its long sound.",
+              "evidenceIds": [
+                "music-room-2"
+              ]
+            },
+            {
+              "answerId": "photo-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Photo begins with the open syllable pho, whose vowel has its long sound.",
+              "evidenceIds": [
+                "music-room-3"
+              ]
+            },
+            {
+              "answerId": "music-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Music begins with the open syllable mu, whose vowel has its long sound.",
+              "evidenceIds": [
+                "music-room-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-guided-long-4",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-c61991dc324a4360",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "56481d9607145175e12a40e68b661937f25f21f2d540cdcfed52c1d390b8f017",
+        "conclusionsSha256": "9df16b6a39a8792a52ff4b69288bf60aa8b48de7a2a27f0c41286972689f3fd4",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0009.pass-a.json",
+        "receiptSha256": "9df16b6a39a8792a52ff4b69288bf60aa8b48de7a2a27f0c41286972689f3fd4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that says a photo of the zero sign stayed on the wall.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "music-room-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "music-room-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "music-room-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence exactly says a photo of the zero sign stayed on the wall.",
+              "evidenceIds": [
+                "music-room-3"
+              ]
+            },
+            {
+              "answerId": "music-room-2",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes a tulip poster and solo chair.",
+              "evidenceIds": [
+                "music-room-2"
+              ]
+            },
+            {
+              "answerId": "music-room-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes music and a robot keeping a beat.",
+              "evidenceIds": [
+                "music-room-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-guided-long-5",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-3df1eae33a2db827",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "56481d9607145175e12a40e68b661937f25f21f2d540cdcfed52c1d390b8f017",
+        "conclusionsSha256": "9df16b6a39a8792a52ff4b69288bf60aa8b48de7a2a27f0c41286972689f3fd4",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0009.pass-a.json",
+        "receiptSha256": "9df16b6a39a8792a52ff4b69288bf60aa8b48de7a2a27f0c41286972689f3fd4",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "music-row",
+          "prompt": "music",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "music-mu-sic"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "music-mu-sic"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "music-mu-sic",
+              "verdict": "DEFENSIBLE",
+              "rationale": "mu / sic reconstructs music and matches its taught long-vowel chunking.",
+              "evidenceIds": [
+                "g2-syllable-summit-p4-music",
+                "music-room-1"
+              ]
+            },
+            {
+              "answerId": "music-rab-bit",
+              "verdict": "INCORRECT",
+              "rationale": "rab / bit spells and chunks rabbit, not music.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-4"
+              ]
+            },
+            {
+              "answerId": "music-pic-nic",
+              "verdict": "INCORRECT",
+              "rationale": "pic / nic spells and chunks picnic, not music.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "photo-row",
+          "prompt": "photo",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "photo-pho-to"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "photo-pho-to"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "photo-sun-set",
+              "verdict": "INCORRECT",
+              "rationale": "sun / set spells and chunks sunset, not photo.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-4"
+              ]
+            },
+            {
+              "answerId": "photo-mag-net",
+              "verdict": "INCORRECT",
+              "rationale": "mag / net spells and chunks magnet, not photo.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-4"
+              ]
+            },
+            {
+              "answerId": "photo-pho-to",
+              "verdict": "DEFENSIBLE",
+              "rationale": "pho / to reconstructs photo and matches its long-vowel chunking.",
+              "evidenceIds": [
+                "g2-syllable-summit-p4-photo",
+                "music-room-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-checkpoint-a-1",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-c83e0de1dd7e03b5",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "015618bc592db5523308409132f793dd55e425b572ef6ee0da730861484fc25a",
+        "conclusionsSha256": "d44c8383f33b6bde4085ea22b97a8538a2e039de941af0bba5b5d8c88709c1c7",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0020.second-pass.json",
+        "receiptSha256": "01b35637678b4892256221b9b04ab5ac396bea32cd063fc31ed356d0c619fc10",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has a short vowel sound in both syllables?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "picnic-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "picnic-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "photo-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Photo begins with a long-vowel open syllable.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-1"
+              ]
+            },
+            {
+              "answerId": "picnic-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Picnic has a short vowel in both pic and nic.",
+              "evidenceIds": [
+                "rabbit-habitat-4"
+              ]
+            },
+            {
+              "answerId": "music-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Music begins with a long-vowel open syllable.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-1"
+              ]
+            },
+            {
+              "answerId": "robot-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Robot begins with a long-vowel open syllable.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-checkpoint-a-2",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-50077a33aa1eb797",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ae24b2a743229f5f5a8941220d37869b7eb002393b4a99911abca5361ea5bd68",
+        "conclusionsSha256": "2bbe51e21861b620623cf9ecdcacd99a15d33a9d5dd24627e4491c3ba068fb7c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0020.second-pass.json",
+        "receiptSha256": "01b35637678b4892256221b9b04ab5ac396bea32cd063fc31ed356d0c619fc10",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word begins with an open syllable and a long vowel sound?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "music-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "music-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "napkin-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Napkin begins with the closed syllable nap and a short-a sound.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-2"
+              ]
+            },
+            {
+              "answerId": "sunset-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Sunset begins with the closed syllable sun and a short-u sound.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-2"
+              ]
+            },
+            {
+              "answerId": "helmet-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Helmet begins with the closed syllable hel and a short-e sound.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-2"
+              ]
+            },
+            {
+              "answerId": "music-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Music begins with the open syllable mu and a long-u sound.",
+              "evidenceIds": [
+                "robot-exhibit-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-checkpoint-a-3",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-ba262ab3e7122f87",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "015618bc592db5523308409132f793dd55e425b572ef6ee0da730861484fc25a",
+        "conclusionsSha256": "d44c8383f33b6bde4085ea22b97a8538a2e039de941af0bba5b5d8c88709c1c7",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0005.pass-a.json",
+        "receiptSha256": "d44c8383f33b6bde4085ea22b97a8538a2e039de941af0bba5b5d8c88709c1c7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words whose two syllables each have a short vowel sound.",
+          "requestedSelectionCount": 3,
+          "keyedAnswerIds": [
+            "rabbit-choice",
+            "picnic-choice",
+            "sunset-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "sunset-choice",
+            "rabbit-choice",
+            "picnic-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "sunset-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Sunset has short vowel sounds in sun and set.",
+              "evidenceIds": [
+                "picnic-planning-1"
+              ]
+            },
+            {
+              "answerId": "robot-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Robot begins with a long-vowel open syllable.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-3"
+              ]
+            },
+            {
+              "answerId": "rabbit-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Rabbit has short vowel sounds in rab and bit.",
+              "evidenceIds": [
+                "picnic-planning-4"
+              ]
+            },
+            {
+              "answerId": "picnic-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Picnic has short vowel sounds in pic and nic.",
+              "evidenceIds": [
+                "picnic-planning-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-checkpoint-a-4",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-d1923757d4fe4d93",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "ae24b2a743229f5f5a8941220d37869b7eb002393b4a99911abca5361ea5bd68",
+        "conclusionsSha256": "2bbe51e21861b620623cf9ecdcacd99a15d33a9d5dd24627e4491c3ba068fb7c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0010.pass-a.json",
+        "receiptSha256": "2bbe51e21861b620623cf9ecdcacd99a15d33a9d5dd24627e4491c3ba068fb7c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that says a pilot played music while the model spun.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "robot-exhibit-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "robot-exhibit-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "robot-exhibit-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes the robot standing on the stage, not the pilot playing music.",
+              "evidenceIds": [
+                "robot-exhibit-1"
+              ]
+            },
+            {
+              "answerId": "robot-exhibit-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This is the exact displayed sentence stating that a pilot played music while the model spun.",
+              "evidenceIds": [
+                "robot-exhibit-2"
+              ]
+            },
+            {
+              "answerId": "robot-exhibit-3",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes a photo card and zero, not the pilot playing music.",
+              "evidenceIds": [
+                "robot-exhibit-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-checkpoint-a-5",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-b0d7ee11ce99b1bd",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "ae24b2a743229f5f5a8941220d37869b7eb002393b4a99911abca5361ea5bd68",
+        "conclusionsSha256": "2bbe51e21861b620623cf9ecdcacd99a15d33a9d5dd24627e4491c3ba068fb7c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0010.pass-a.json",
+        "receiptSha256": "2bbe51e21861b620623cf9ecdcacd99a15d33a9d5dd24627e4491c3ba068fb7c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "robot-row",
+          "prompt": "robot",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "robot-ro-bot"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "robot-ro-bot"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "robot-ro-bot",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Robot divides into the two spoken syllables ro / bot.",
+              "evidenceIds": [
+                "robot-exhibit-1"
+              ]
+            },
+            {
+              "answerId": "robot-sun-set",
+              "verdict": "INCORRECT",
+              "rationale": "Sun / set divides sunset, not robot.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-2"
+              ]
+            },
+            {
+              "answerId": "robot-pic-nic",
+              "verdict": "INCORRECT",
+              "rationale": "Pic / nic divides picnic, not robot.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "photo-row",
+          "prompt": "photo",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "photo-pho-to"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "photo-pho-to"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "photo-mag-net",
+              "verdict": "INCORRECT",
+              "rationale": "Mag / net divides magnet, not photo.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-2"
+              ]
+            },
+            {
+              "answerId": "photo-pho-to",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Photo divides into the two spoken syllables pho / to.",
+              "evidenceIds": [
+                "robot-exhibit-3"
+              ]
+            },
+            {
+              "answerId": "photo-rab-bit",
+              "verdict": "INCORRECT",
+              "rationale": "Rab / bit divides rabbit, not photo.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-checkpoint-a-6",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-be923ba6525bc872",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ae24b2a743229f5f5a8941220d37869b7eb002393b4a99911abca5361ea5bd68",
+        "conclusionsSha256": "2bbe51e21861b620623cf9ecdcacd99a15d33a9d5dd24627e4491c3ba068fb7c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0010.pass-a.json",
+        "receiptSha256": "2bbe51e21861b620623cf9ecdcacd99a15d33a9d5dd24627e4491c3ba068fb7c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word begins with an open syllable?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "robot-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "robot-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "kitten-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Kitten begins with the closed syllable kit.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-2"
+              ]
+            },
+            {
+              "answerId": "napkin-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Napkin begins with the closed syllable nap.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-2"
+              ]
+            },
+            {
+              "answerId": "basket-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Basket begins with the closed syllable bas.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-2"
+              ]
+            },
+            {
+              "answerId": "robot-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Robot begins with the open syllable ro.",
+              "evidenceIds": [
+                "robot-exhibit-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-checkpoint-a-7",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-f9d09c1463982170",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ae24b2a743229f5f5a8941220d37869b7eb002393b4a99911abca5361ea5bd68",
+        "conclusionsSha256": "2bbe51e21861b620623cf9ecdcacd99a15d33a9d5dd24627e4491c3ba068fb7c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0010.pass-a.json",
+        "receiptSha256": "2bbe51e21861b620623cf9ecdcacd99a15d33a9d5dd24627e4491c3ba068fb7c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word begins with a closed syllable?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "rabbit-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "rabbit-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "robot-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Robot begins with the open syllable ro.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-1"
+              ]
+            },
+            {
+              "answerId": "photo-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Photo begins with the open syllable pho.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-1"
+              ]
+            },
+            {
+              "answerId": "music-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Music begins with the open syllable mu.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-1"
+              ]
+            },
+            {
+              "answerId": "rabbit-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Rabbit begins with the closed syllable rab.",
+              "evidenceIds": [
+                "rabbit-habitat-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-checkpoint-b-1",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-83c8d380a9bbe934",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "015618bc592db5523308409132f793dd55e425b572ef6ee0da730861484fc25a",
+        "conclusionsSha256": "d44c8383f33b6bde4085ea22b97a8538a2e039de941af0bba5b5d8c88709c1c7",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0005.pass-a.json",
+        "receiptSha256": "d44c8383f33b6bde4085ea22b97a8538a2e039de941af0bba5b5d8c88709c1c7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has a short vowel sound in both syllables?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "sunset-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "sunset-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "music-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Music begins with a long-vowel open syllable.",
+              "evidenceIds": [
+                "music-room-1"
+              ]
+            },
+            {
+              "answerId": "robot-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Robot begins with a long-vowel open syllable.",
+              "evidenceIds": [
+                "music-room-1"
+              ]
+            },
+            {
+              "answerId": "photo-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Photo begins with a long-vowel open syllable.",
+              "evidenceIds": [
+                "music-room-3"
+              ]
+            },
+            {
+              "answerId": "sunset-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Sunset has short vowel sounds in both sun and set.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-checkpoint-b-2",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-2d37c2d802ce5f5c",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ae24b2a743229f5f5a8941220d37869b7eb002393b4a99911abca5361ea5bd68",
+        "conclusionsSha256": "2bbe51e21861b620623cf9ecdcacd99a15d33a9d5dd24627e4491c3ba068fb7c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0010.pass-a.json",
+        "receiptSha256": "2bbe51e21861b620623cf9ecdcacd99a15d33a9d5dd24627e4491c3ba068fb7c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word begins with an open syllable and a long vowel sound?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "tulip-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "tulip-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "helmet-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Helmet begins with the closed syllable hel and a short-e sound.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-4"
+              ]
+            },
+            {
+              "answerId": "basket-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Basket begins with the closed syllable bas and a short-a sound.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-4"
+              ]
+            },
+            {
+              "answerId": "sunset-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Sunset begins with the closed syllable sun and a short-u sound.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-4"
+              ]
+            },
+            {
+              "answerId": "tulip-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Tulip begins with the open syllable tu and a long-u sound.",
+              "evidenceIds": [
+                "music-room-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-checkpoint-b-3",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-d77c5d16b727873a",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "015618bc592db5523308409132f793dd55e425b572ef6ee0da730861484fc25a",
+        "conclusionsSha256": "d44c8383f33b6bde4085ea22b97a8538a2e039de941af0bba5b5d8c88709c1c7",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0005.pass-a.json",
+        "receiptSha256": "d44c8383f33b6bde4085ea22b97a8538a2e039de941af0bba5b5d8c88709c1c7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words that begin with an open syllable whose vowel says its long sound.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "music-choice",
+            "solo-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "music-choice",
+            "solo-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "music-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Music begins with the long-vowel open syllable mu.",
+              "evidenceIds": [
+                "music-room-1"
+              ]
+            },
+            {
+              "answerId": "basket-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Basket begins with the closed syllable bas and a short vowel.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-4"
+              ]
+            },
+            {
+              "answerId": "rabbit-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Rabbit begins with the closed syllable rab and a short vowel.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-4"
+              ]
+            },
+            {
+              "answerId": "solo-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Solo begins with the long-vowel open syllable so.",
+              "evidenceIds": [
+                "music-room-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-checkpoint-b-4",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-c14c81865673430a",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "ae24b2a743229f5f5a8941220d37869b7eb002393b4a99911abca5361ea5bd68",
+        "conclusionsSha256": "2bbe51e21861b620623cf9ecdcacd99a15d33a9d5dd24627e4491c3ba068fb7c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0010.pass-a.json",
+        "receiptSha256": "2bbe51e21861b620623cf9ecdcacd99a15d33a9d5dd24627e4491c3ba068fb7c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that says a photo of the zero sign stayed on the wall.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "music-room-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "music-room-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "music-room-2",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes a tulip poster and solo chair, not the photo of the zero sign.",
+              "evidenceIds": [
+                "music-room-2"
+              ]
+            },
+            {
+              "answerId": "music-room-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes music and a robot, not the photo of the zero sign.",
+              "evidenceIds": [
+                "music-room-1"
+              ]
+            },
+            {
+              "answerId": "music-room-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This is the exact displayed sentence stating that a photo of the zero sign stayed on the wall.",
+              "evidenceIds": [
+                "music-room-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-checkpoint-b-5",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-bffe2c03a441505f",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "ae24b2a743229f5f5a8941220d37869b7eb002393b4a99911abca5361ea5bd68",
+        "conclusionsSha256": "2bbe51e21861b620623cf9ecdcacd99a15d33a9d5dd24627e4491c3ba068fb7c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0020.second-pass.json",
+        "receiptSha256": "01b35637678b4892256221b9b04ab5ac396bea32cd063fc31ed356d0c619fc10",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "pilot-row",
+          "prompt": "pilot",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "pilot-pi-lot"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "pilot-pi-lot"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "pilot-pi-lot",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Pilot divides as pi / lot, with an open first syllable and long-i sound.",
+              "evidenceIds": [
+                "tulip-garden-1"
+              ]
+            },
+            {
+              "answerId": "pilot-rab-bit",
+              "verdict": "INCORRECT",
+              "rationale": "Rab / bit divides rabbit, not pilot.",
+              "evidenceIds": [
+                "tulip-garden-2"
+              ]
+            },
+            {
+              "answerId": "pilot-sun-set",
+              "verdict": "INCORRECT",
+              "rationale": "Sun / set divides sunset, not pilot.",
+              "evidenceIds": [
+                "tulip-garden-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "photo-row",
+          "prompt": "photo",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "photo-pho-to"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "photo-pho-to"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "photo-mag-net",
+              "verdict": "INCORRECT",
+              "rationale": "Mag / net divides magnet, not photo.",
+              "evidenceIds": [
+                "tulip-garden-3"
+              ]
+            },
+            {
+              "answerId": "photo-pho-to",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Photo divides as pho / to, with open syllables and long-o sounds.",
+              "evidenceIds": [
+                "tulip-garden-3"
+              ]
+            },
+            {
+              "answerId": "photo-kit-ten",
+              "verdict": "INCORRECT",
+              "rationale": "Kit / ten divides kitten, not photo.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-checkpoint-b-6",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-9b0a3e43f9886d07",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ae24b2a743229f5f5a8941220d37869b7eb002393b4a99911abca5361ea5bd68",
+        "conclusionsSha256": "2bbe51e21861b620623cf9ecdcacd99a15d33a9d5dd24627e4491c3ba068fb7c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0010.pass-a.json",
+        "receiptSha256": "2bbe51e21861b620623cf9ecdcacd99a15d33a9d5dd24627e4491c3ba068fb7c",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word begins with an open syllable?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "solo-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "solo-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "picnic-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Picnic begins with the closed syllable pic.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-5"
+              ]
+            },
+            {
+              "answerId": "solo-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Solo begins with the open syllable so.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-5"
+              ]
+            },
+            {
+              "answerId": "helmet-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Helmet begins with the closed syllable hel.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-5"
+              ]
+            },
+            {
+              "answerId": "basket-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Basket begins with the closed syllable bas.",
+              "evidenceIds": [
+                "tulip-garden-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-checkpoint-b-7",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-3026b8431a652d7f",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ae24b2a743229f5f5a8941220d37869b7eb002393b4a99911abca5361ea5bd68",
+        "conclusionsSha256": "2bbe51e21861b620623cf9ecdcacd99a15d33a9d5dd24627e4491c3ba068fb7c",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0020.second-pass.json",
+        "receiptSha256": "01b35637678b4892256221b9b04ab5ac396bea32cd063fc31ed356d0c619fc10",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word begins with a closed syllable?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "basket-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "basket-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "photo-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Photo begins with the open syllable pho.",
+              "evidenceIds": [
+                "tulip-garden-3"
+              ]
+            },
+            {
+              "answerId": "basket-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Basket begins with the closed syllable bas.",
+              "evidenceIds": [
+                "tulip-garden-2"
+              ]
+            },
+            {
+              "answerId": "music-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Music begins with the open syllable mu.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-5"
+              ]
+            },
+            {
+              "answerId": "robot-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Robot begins with the open syllable ro.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-checkpoint-c-1",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-7eae97a7dc2f0023",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "015618bc592db5523308409132f793dd55e425b572ef6ee0da730861484fc25a",
+        "conclusionsSha256": "d44c8383f33b6bde4085ea22b97a8538a2e039de941af0bba5b5d8c88709c1c7",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0020.second-pass.json",
+        "receiptSha256": "01b35637678b4892256221b9b04ab5ac396bea32cd063fc31ed356d0c619fc10",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has a short vowel sound in both syllables?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "napkin-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "napkin-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "solo-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Solo begins with a long-vowel open syllable.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-6"
+              ]
+            },
+            {
+              "answerId": "photo-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Photo begins with a long-vowel open syllable.",
+              "evidenceIds": [
+                "pilot-weather-log-3"
+              ]
+            },
+            {
+              "answerId": "napkin-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Napkin has short vowel sounds in nap and kin.",
+              "evidenceIds": [
+                "pilot-weather-log-4"
+              ]
+            },
+            {
+              "answerId": "robot-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Robot begins with a long-vowel open syllable.",
+              "evidenceIds": [
+                "pilot-weather-log-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-checkpoint-c-2",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-108785f3cd22de67",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "3fbb41c46bd7b9c1a01e52c7fb2e6308bd265741c93ea4b994399cf39e7e3a00",
+        "conclusionsSha256": "f795735abfb685fccb5d5a46b08c9819a345b7dae02aa1b1c4b07e5d5e11ee7f",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0011.pass-a.json",
+        "receiptSha256": "f795735abfb685fccb5d5a46b08c9819a345b7dae02aa1b1c4b07e5d5e11ee7f",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word has two open syllables?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "photo-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "photo-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "magnet-choice",
+              "verdict": "INCORRECT",
+              "rationale": "magnet begins with the closed syllable mag.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-6"
+              ]
+            },
+            {
+              "answerId": "kitten-choice",
+              "verdict": "INCORRECT",
+              "rationale": "kitten divides into closed syllables kit and ten.",
+              "evidenceIds": [
+                "pilot-weather-log-4"
+              ]
+            },
+            {
+              "answerId": "sunset-choice",
+              "verdict": "INCORRECT",
+              "rationale": "sunset divides into closed syllables sun and set.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-6"
+              ]
+            },
+            {
+              "answerId": "photo-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "photo divides as pho / to, and both syllables end in vowels.",
+              "evidenceIds": [
+                "pilot-weather-log-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-checkpoint-c-3",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-513deaa8b8a8e234",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "015618bc592db5523308409132f793dd55e425b572ef6ee0da730861484fc25a",
+        "conclusionsSha256": "d44c8383f33b6bde4085ea22b97a8538a2e039de941af0bba5b5d8c88709c1c7",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0020.second-pass.json",
+        "receiptSha256": "01b35637678b4892256221b9b04ab5ac396bea32cd063fc31ed356d0c619fc10",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words from the displayed passage whose two syllables each have a short vowel sound.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "rabbit-choice",
+            "basket-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "basket-choice",
+            "rabbit-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "basket-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Basket appears in the passage and has short vowel sounds in bas and ket.",
+              "evidenceIds": [
+                "photo-display-3"
+              ]
+            },
+            {
+              "answerId": "photo-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Photo appears in the passage but begins with a long-vowel open syllable.",
+              "evidenceIds": [
+                "photo-display-1"
+              ]
+            },
+            {
+              "answerId": "robot-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Robot appears in the passage but begins with a long-vowel open syllable.",
+              "evidenceIds": [
+                "photo-display-2"
+              ]
+            },
+            {
+              "answerId": "rabbit-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Rabbit appears in the passage and has short vowel sounds in rab and bit.",
+              "evidenceIds": [
+                "photo-display-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-checkpoint-c-4",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-25cda23470610f30",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "3fbb41c46bd7b9c1a01e52c7fb2e6308bd265741c93ea4b994399cf39e7e3a00",
+        "conclusionsSha256": "f795735abfb685fccb5d5a46b08c9819a345b7dae02aa1b1c4b07e5d5e11ee7f",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0011.pass-a.json",
+        "receiptSha256": "f795735abfb685fccb5d5a46b08c9819a345b7dae02aa1b1c4b07e5d5e11ee7f",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that says the photo display opened beside the music room.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "photo-display-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "photo-display-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "photo-display-3",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence says the rabbit and basket stayed by the wall.",
+              "evidenceIds": [
+                "photo-display-3"
+              ]
+            },
+            {
+              "answerId": "photo-display-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence exactly states that the photo display opened beside the music room.",
+              "evidenceIds": [
+                "photo-display-1"
+              ]
+            },
+            {
+              "answerId": "photo-display-2",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence says a robot and tulip shared the stage.",
+              "evidenceIds": [
+                "photo-display-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-checkpoint-c-5",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-03495e9e46b56fc2",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "3fbb41c46bd7b9c1a01e52c7fb2e6308bd265741c93ea4b994399cf39e7e3a00",
+        "conclusionsSha256": "f795735abfb685fccb5d5a46b08c9819a345b7dae02aa1b1c4b07e5d5e11ee7f",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0011.pass-a.json",
+        "receiptSha256": "f795735abfb685fccb5d5a46b08c9819a345b7dae02aa1b1c4b07e5d5e11ee7f",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "photo-row",
+          "prompt": "photo",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "photo-pho-to"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "photo-pho-to"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "photo-mag-net",
+              "verdict": "INCORRECT",
+              "rationale": "mag / net reconstructs magnet, not photo.",
+              "evidenceIds": [
+                "photo-display-1"
+              ]
+            },
+            {
+              "answerId": "photo-pho-to",
+              "verdict": "DEFENSIBLE",
+              "rationale": "pho / to reconstructs photo with two open long-vowel syllables.",
+              "evidenceIds": [
+                "photo-display-1"
+              ]
+            },
+            {
+              "answerId": "photo-rab-bit",
+              "verdict": "INCORRECT",
+              "rationale": "rab / bit reconstructs rabbit, not photo.",
+              "evidenceIds": [
+                "photo-display-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "robot-row",
+          "prompt": "robot",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "robot-ro-bot"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "robot-ro-bot"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "robot-sun-set",
+              "verdict": "INCORRECT",
+              "rationale": "sun / set reconstructs sunset, not robot.",
+              "evidenceIds": [
+                "photo-display-2"
+              ]
+            },
+            {
+              "answerId": "robot-ro-bot",
+              "verdict": "DEFENSIBLE",
+              "rationale": "ro / bot reconstructs robot and shows its opening long-o syllable.",
+              "evidenceIds": [
+                "photo-display-2"
+              ]
+            },
+            {
+              "answerId": "robot-pic-nic",
+              "verdict": "INCORRECT",
+              "rationale": "pic / nic reconstructs picnic, not robot.",
+              "evidenceIds": [
+                "photo-display-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-checkpoint-c-6",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-81bcc43911d46635",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "3fbb41c46bd7b9c1a01e52c7fb2e6308bd265741c93ea4b994399cf39e7e3a00",
+        "conclusionsSha256": "f795735abfb685fccb5d5a46b08c9819a345b7dae02aa1b1c4b07e5d5e11ee7f",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0020.second-pass.json",
+        "receiptSha256": "01b35637678b4892256221b9b04ab5ac396bea32cd063fc31ed356d0c619fc10",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word begins with an open syllable?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "robot-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "robot-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "robot-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "robot begins with open ro.",
+              "evidenceIds": [
+                "photo-display-2"
+              ]
+            },
+            {
+              "answerId": "napkin-choice",
+              "verdict": "INCORRECT",
+              "rationale": "napkin begins with closed nap.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-7"
+              ]
+            },
+            {
+              "answerId": "basket-choice",
+              "verdict": "INCORRECT",
+              "rationale": "basket begins with closed bas.",
+              "evidenceIds": [
+                "photo-display-3"
+              ]
+            },
+            {
+              "answerId": "kitten-choice",
+              "verdict": "INCORRECT",
+              "rationale": "kitten begins with closed kit.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-syllable-summit-checkpoint-c-7",
+      "packId": "g2-word-forge-two-syllable-open-closed",
+      "contentVersion": "g2-wf-two-syllable-open-closed-r0.1.0",
+      "contentFingerprint": "qta-v1-f8eefd2f01468b6b",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "3fbb41c46bd7b9c1a01e52c7fb2e6308bd265741c93ea4b994399cf39e7e3a00",
+        "conclusionsSha256": "f795735abfb685fccb5d5a46b08c9819a345b7dae02aa1b1c4b07e5d5e11ee7f",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0011.pass-a.json",
+        "receiptSha256": "f795735abfb685fccb5d5a46b08c9819a345b7dae02aa1b1c4b07e5d5e11ee7f",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word begins with a closed syllable?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "helmet-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "helmet-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "robot-choice",
+              "verdict": "INCORRECT",
+              "rationale": "robot begins with open ro.",
+              "evidenceIds": [
+                "photo-display-2"
+              ]
+            },
+            {
+              "answerId": "helmet-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "helmet begins with closed hel.",
+              "evidenceIds": [
+                "passage-g2-word-forge-syllable-summit-7"
+              ]
+            },
+            {
+              "answerId": "photo-choice",
+              "verdict": "INCORRECT",
+              "rationale": "photo begins with open pho.",
+              "evidenceIds": [
+                "photo-display-1"
+              ]
+            },
+            {
+              "answerId": "solo-choice",
+              "verdict": "INCORRECT",
+              "rationale": "solo begins with open so.",
+              "evidenceIds": [
+                "photo-display-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

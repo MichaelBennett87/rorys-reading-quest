@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0001",
+  "batchFileSha256": "f18b0aad54e29464ed485c03742d110c9948a47aa6418ca4e819d58231970236",
+  "reviewerThreadId": "01a07bc1-57ca-7230-a515-d322b50c9d2e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0001",
+      "fingerprint": "835b52cd99e8ac8eab498d8802891ed3a3e92d64652dc7b49b8e81a57bc0ec99",
+      "slots": [{"slotId":"response","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[["A1","INCORRECT","moon uses oo, not ea.",["S0002"]],["A2","INCORRECT","boot uses oo, not ea.",["S0002"]],["A3","DEFENSIBLE","leaf has ea with the same long-e sound as clean.",["S0001","S0003","S0005"]],["A4","INCORRECT","book uses oo, not ea.",["S0003","S0004"]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0002",
+      "fingerprint": "7e429e19e1a6a588204dd3c5cef24175c392af6c715ed69b250d7d1fc49ec292",
+      "slots": [{"slotId":"response","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[["A1","INCORRECT","dream uses ea, not oo.",["S0006","S0007"]],["A2","DEFENSIBLE","book has oo with the same vowel sound as good.",["S0003","S0004"]],["A3","INCORRECT","ready does not contain oo.",[]],["A4","INCORRECT","clean uses ea, not oo.",["S0003","S0005"]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0003",
+      "fingerprint": "0bddda64b0b4e5274080cdd8f1ad2aa13d17bd0869fcfe43a34bd403b509e3e7",
+      "slots": [{"slotId":"response","defensible":["A1","A2","A3","A4"],"ambiguity":"","selectionContractValid":true,"options":[["A1","DEFENSIBLE","leaf appears in the passage and contains ea.",["S0001","S0003"]],["A2","DEFENSIBLE","clean appears in the passage and contains ea.",["S0003","S0005"]],["A3","DEFENSIBLE","dream appears in the passage and contains ea.",["S0006","S0007"]],["A4","DEFENSIBLE","team appears in the passage and contains ea.",["S0003","S0008","S0009"]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0004",
+      "fingerprint": "39e0182461d419473ad501a54720ab802e5703f31ecacae673c237d0d3df87f1",
+      "slots": [{"slotId":"response","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[["A1","INCORRECT","This sentence concerns the leaf and team talking.",["S0009"]],["A2","INCORRECT","This sentence concerns materials carried into the tree room.",["S0003"]],["A3","DEFENSIBLE","This sentence explicitly mentions the dream, green branch, and little pond.",["S0007"]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0005",
+      "fingerprint": "7abf887143d1eab54683c7b0087893f5845d90eb0d839ab907a063ac4a704220",
+      "slots": [{"slotId":"row_1","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[["A1","DEFENSIBLE","leaf contains the ea vowel team.",["S0001","S0003"]],["A2","INCORRECT","leaf belongs to the stated ea group, not an unspecified mixed group.",["S0001","S0003"]],["A3","INCORRECT","leaf does not contain oo.",["S0001","S0003"]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0006",
+      "fingerprint": "ccd93b00b928c339280645eb3a3132b2c0b0766cb958fa7d174cd567cc0c3605",
+      "slots": [{"slotId":"response","defensible":["A4"],"ambiguity":"","selectionContractValid":true,"options":[["A1","INCORRECT","moon uses oo, not ea.",[]],["A2","INCORRECT","book uses oo, not ea.",["S0003","S0004"]],["A3","INCORRECT","boot uses oo, not ea.",[]],["A4","DEFENSIBLE","clean has ea with the same long-e sound as team.",["S0003","S0005","S0008"]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0007",
+      "fingerprint": "8406c39cea6e79560b9bd1da46412890351052bd9f2f85118e7dff0fc25f70e8",
+      "slots": [{"slotId":"response","defensible":["A1","A4"],"ambiguity":"","selectionContractValid":true,"options":[["A1","DEFENSIBLE","book appears in the passage and contains oo.",["S0003","S0004"]],["A2","INCORRECT","clean contains ea, not oo.",["S0003","S0005"]],["A3","INCORRECT","dream contains ea, not oo.",["S0006","S0007"]],["A4","DEFENSIBLE","room appears in the passage and contains oo.",["S0003"]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0008",
+      "fingerprint": "88977de07b8652fbfa71cb7177ad7cc7c96337ca19606603b194f37efde1d0f0",
+      "slots": [{"slotId":"response","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[["A1","INCORRECT","seat uses ea, not oo.",[]],["A2","INCORRECT","head uses ea, not oo.",[]],["A3","DEFENSIBLE","pool has oo with the same long-oo sound as moon.",["S0010","S0012","S0018"]],["A4","INCORRECT","team uses ea, not oo.",["S0012","S0017"]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0009",
+      "fingerprint": "b5fac864b22f7dc6e0e82bce20ec9a9679aa6a27e83e7a48317d5b4394ac1a17",
+      "slots": [{"slotId":"response","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[["A1","INCORRECT","moon uses oo, not ea.",[]],["A2","DEFENSIBLE","team has ea with the same long-e sound as leaf.",["S0012","S0017","S0018"]],["A3","INCORRECT","good uses oo, not ea.",["S0015","S0016"]],["A4","INCORRECT","boot uses oo, not ea.",["S0012","S0013"]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0010",
+      "fingerprint": "9ef2c085e6e44903cfb73a1ae3faf900b31f64ce1ec5828f94afde23c8599496",
+      "slots": [{"slotId":"response","defensible":["A1","A2","A3","A4"],"ambiguity":"","selectionContractValid":true,"options":[["A1","DEFENSIBLE","spoon appears in the passage and contains oo.",["S0012"]],["A2","DEFENSIBLE","pool appears in the passage and contains oo.",["S0010","S0012","S0018"]],["A3","DEFENSIBLE","good appears in the passage and contains oo.",["S0015","S0016"]],["A4","DEFENSIBLE","boot appears in the passage and contains oo.",["S0012","S0013"]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0011",
+      "fingerprint": "1a8db8809d10f5388bf7967a793ca7a080a5e86d2b3929dc7b2ef4b20ec72b2a",
+      "slots": [{"slotId":"response","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[["A1","INCORRECT","This sentence describes the team, boot, spoon, and fruit.",["S0012"]],["A2","INCORRECT","This sentence describes the pool card and taking turns.",["S0018"]],["A3","DEFENSIBLE","This sentence explicitly says the food tasted good.",["S0015"]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0012",
+      "fingerprint": "143ebcfe9beb2a3617f4a133766a5177bf3591dd033a6215129fb94298b24a8d",
+      "slots": [{"slotId":"row_1","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[["A1","INCORRECT","boot does not contain ea.",["S0012","S0013"]],["A2","DEFENSIBLE","boot contains the oo vowel team.",["S0012","S0013"]],["A3","INCORRECT","boot belongs to the stated oo group, not an unspecified mixed group.",["S0012","S0013"]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0013",
+      "fingerprint": "b71293f92eb4c8a62fe575b7b6cc3b96d63a2cec414c016b486beccd503302f7",
+      "slots": [{"slotId":"response","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[["A1","INCORRECT","head uses ea, not oo.",[]],["A2","INCORRECT","leaf uses ea, not oo.",[]],["A3","DEFENSIBLE","spoon has oo with the same long-oo sound as food.",["S0012"]],["A4","INCORRECT","clean uses ea, not oo.",[]]]}],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0014",
+      "fingerprint": "e23375e2f1e67edf656f9ac679896e59ed4df27a973491db9d910ade1cca443f",
+      "slots": [{"slotId":"response","defensible":["A2","A4"],"ambiguity":"","selectionContractValid":true,"options":[["A1","INCORRECT","good contains oo, not ea.",["S0015","S0016"]],["A2","DEFENSIBLE","team appears in the passage and contains ea.",["S0012","S0017","S0018"]],["A3","INCORRECT","boot contains oo, not ea.",["S0012","S0013"]],["A4","DEFENSIBLE","each appears in the passage and contains ea.",["S0012"]]]}],
+      "projectionDefect": ""
+    }
+  ]
+}

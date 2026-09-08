@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-c0006",
+  "batchFileSha256": "ccb78b1e438937d9ea03dc8254bfa2f0da400bdd6d6b918b3bf62995bfed2a0e",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1311",
+      "fingerprint": "11afa80f100527d2a4f985eafba34628f92b0960fc85a7b82cfc29b46af5b5df",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The boot-print detail does not explain any humidity effect on drying time.",
+              [
+                "S0150"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The weather flag shows moving air, not how humid air changes drying time.",
+              [
+                "S0145"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The chalk circle is an observation tool and does not state the humidity effect.",
+              [
+                "S0139"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This sentence states that evaporation can happen more slowly in humid air than in drier air at the same temperature.",
+              [
+                "S0143"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

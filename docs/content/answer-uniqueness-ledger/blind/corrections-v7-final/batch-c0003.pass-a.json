@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-c0003",
+  "batchFileSha256": "d48dadefa742894272c26f9101458b13d36d5ff4e25c51e2e1a345143c5be699",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0574",
+      "fingerprint": "afbd59eb8509f081ec064797d027284e5c5f22ff4423e76bba177441d724ae26",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes stem height; it neither counts flowers nor describes pollinator visits.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "This concerns the shady row, not the sunny row required by the prompt.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This compares counted blue and red flowers in the sunny row.",
+              [
+                "S0055",
+                "S0067"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This describes bee pollinators visiting the sunny row.",
+              [
+                "S0057"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

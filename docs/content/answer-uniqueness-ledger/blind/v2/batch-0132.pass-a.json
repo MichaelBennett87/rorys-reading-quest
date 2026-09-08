@@ -1,0 +1,781 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0132",
+  "batchFileSha256": "8fd4adf65c2416b7b021e89870c3d36aff42474b49dcfe21e14f7d4a713ec577",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1543",
+      "fingerprint": "ec51412ad5ddfaef26b6c7d505cc9d53dcba22563f0385348f4a6923ef781d1c",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This describes polygon.",
+              [
+                "S0042",
+                "S0048"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "No target in the passage has this meaning.",
+              [
+                "S0052"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This describes monorail.",
+              [
+                "S0044",
+                "S0049"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The tool measures temperature, and its scale responds as the air warms.",
+              [
+                "S0038",
+                "S0046"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1544",
+      "fingerprint": "239be1da7ee5d47bdbbbfee2a846d6601952cc13c2311ea5590ad6df83c4ee35",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This describes monorail.",
+              [
+                "S0044"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Therm supplies the heat meaning and the thermal cover slows heat movement.",
+              [
+                "S0040",
+                "S0050"
+              ]
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "Distance sending is not part of thermal or this context.",
+              [
+                "S0040"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes thermometer as a whole, not the adjective thermal.",
+              [
+                "S0038",
+                "S0040"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1545",
+      "fingerprint": "eed2fb0587f4f9b480058eefdad795a80221acb1e5d7e5970b3441f773b6bcf2",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The Greek part poly contributes the meaning many.",
+              [
+                "S0042",
+                "S0048"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Six sides and angles visibly confirm a many-angled polygon.",
+              [
+                "S0042"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "A heat-measuring tool is a thermometer, not a polygon.",
+              [
+                "S0038",
+                "S0042"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "One is the mono clue; poly means many.",
+              [
+                "S0044",
+                "S0048"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1546",
+      "fingerprint": "73df94107eb87b57d99377069d702c099d8b3eea3ca5b9a40b8e26b50a6ebc43",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This confirms thermometer.",
+              [
+                "S0038"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This confirms polygon.",
+              [
+                "S0042"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This confirms thermal.",
+              [
+                "S0040"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The sentence explicitly says the monorail balances on one rail instead of two.",
+              [
+                "S0044",
+                "S0049"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1547",
+      "fingerprint": "5441b86de961bc5746e81a0391c8c60b0e1a409b551c073042f4585b789be9df",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "A thermometer is a temperature-measuring tool.",
+              [
+                "S0038",
+                "S0046"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "A many-angled flat shape is a polygon.",
+              [
+                "S0042"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "A one-rail railway is a monorail.",
+              [
+                "S0044"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Related to heat describes thermal.",
+              [
+                "S0040"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This describes polygon.",
+              [
+                "S0042"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This describes thermometer.",
+              [
+                "S0038"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Thermal means related to heat.",
+              [
+                "S0040",
+                "S0047"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This describes monorail.",
+              [
+                "S0044"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Polygon is a flat shape with many angles.",
+              [
+                "S0042",
+                "S0048"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Related to heat is thermal.",
+              [
+                "S0040"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "A one-rail railway is a monorail.",
+              [
+                "S0044"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "A temperature-measuring tool is a thermometer.",
+              [
+                "S0038"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Monorail is a railway that uses one rail.",
+              [
+                "S0044",
+                "S0049"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This describes thermometer.",
+              [
+                "S0038"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This describes thermal.",
+              [
+                "S0040"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This describes polygon.",
+              [
+                "S0042"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1548",
+      "fingerprint": "95b06f8446d7b533de039e72fc2feea6b310fa26e1188ebb49cb147aeb64c42f",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Able to be seen describes visible.",
+              [
+                "S0061",
+                "S0066"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The sensor is light enough for one researcher to carry between sites.",
+              [
+                "S0055",
+                "S0063"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Said before an event describes predict.",
+              [
+                "S0059",
+                "S0065"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Carried into a place describes import.",
+              [
+                "S0057",
+                "S0064"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1549",
+      "fingerprint": "5fac9d4ffad7c829f497d2f61b9ad97e24d759938aef9873bfb7886efa816ef5",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This describes visible.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The passage and in-plus-port parts support carrying goods into a place.",
+              [
+                "S0057",
+                "S0064",
+                "S0067"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Able to be carried describes portable, not the inward direction of import.",
+              [
+                "S0055",
+                "S0067"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "Looking closely is not the meaning of import here.",
+              [
+                "S0057"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1550",
+      "fingerprint": "fc84bfae0527a19553cee147d2b6255769b88018e24f9b7eea02d138f2364288",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The sentence explicitly explains a prediction as saying a possible result before a test.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "Carrying into a place describes import.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The passage distinguishes pre as before; vis supplies the seeing clue.",
+              [
+                "S0059",
+                "S0068"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The prefix pre- contributes the meaning before.",
+              [
+                "S0059",
+                "S0065"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1551",
+      "fingerprint": "1ef79e25d693ad269f52e462ed9c50ee37f5b9c72ec433cc1c331984c0315023",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This confirms import.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This confirms predict.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Visible numbers remain readable in shade, and the next sentence confirms they can be seen clearly.",
+              [
+                "S0061",
+                "S0066"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This confirms portable.",
+              [
+                "S0055"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "auditId": "Q1552",
+      "fingerprint": "5d31006128305a3515abfd78809ff8dfec75a8d2227a3ce7de10f3051b552101",
+      "projectionDefect": "",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Able to be seen is visible.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Carry into a place is import.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Say what may happen beforehand is predict.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Portable means able to be carried.",
+              [
+                "S0055",
+                "S0063"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Able to be carried is portable.",
+              [
+                "S0055"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Able to be seen is visible.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Import means carry goods into a place.",
+              [
+                "S0057",
+                "S0064"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Saying what may happen beforehand is predict.",
+              [
+                "S0059"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Able to be carried is portable.",
+              [
+                "S0055"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Carry into a place is import.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Predict means say what may happen before it happens.",
+              [
+                "S0059",
+                "S0065"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Able to be seen is visible.",
+              [
+                "S0061"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Able to be carried is portable.",
+              [
+                "S0055"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Visible means able to be seen.",
+              [
+                "S0061",
+                "S0066"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Saying what may happen beforehand is predict.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Carry into a place is import.",
+              [
+                "S0057"
+              ]
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

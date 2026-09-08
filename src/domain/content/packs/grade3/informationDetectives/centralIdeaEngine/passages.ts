@@ -13,6 +13,7 @@ export interface CentralIdeaEngineRecord {
   difficulty: 1 | 2
   topic: string
   centralIdea: string
+  evidencePrompt?: string
   mode: CentralIdeaMode
   explicitCentralIdeaSentence?: number
   headings: [string, string, string]
@@ -149,6 +150,7 @@ const records: CentralIdeaEngineRecord[] = [
   {
     passageId: p[2], title: 'A Helmet Has More Than One Job', difficulty: 2, topic: 'bicycle helmets', mode: 'stated', explicitCentralIdeaSentence: 2,
     centralIdea: 'A bicycle helmet uses several fitted parts to help manage impact force and protect a rider during a crash.',
+    evidencePrompt: 'Choose the detail explaining what the hard outer shell does and the later detail explaining when a helmet should be replaced.',
     headings: ['Layers That Manage Force', 'A Secure Fit', 'Use and Replace Carefully'], sectionEnds: [5, 9],
     sentences: [
       'A bicycle helmet may look simple from the outside, but it contains several important parts.',
@@ -195,6 +197,7 @@ const records: CentralIdeaEngineRecord[] = [
   {
     passageId: p[3], title: 'Seeds with Built-In Travel Tools', difficulty: 2, topic: 'ways seeds travel', mode: 'inferred',
     centralIdea: 'Different seed structures help plants move their seeds away from the parent plant by using wind, animals, or water.',
+    evidencePrompt: 'Choose the detail explaining how a seed wing helps wind carry it and the later detail explaining why traveling away helps a seed.',
     headings: ['Riding the Air', 'Moving with Animals', 'Floating to New Ground'], sectionEnds: [5, 9],
     sentences: [
       'Plants cannot walk to a new growing place, but many seeds have structures that help them travel.',
@@ -232,7 +235,7 @@ const records: CentralIdeaEngineRecord[] = [
     summaryDistractor: 'Maple seeds spin, burrs hook, coconuts float, and collectors use paper envelopes.',
     narrowDistractor: 'A maple seed spins because it has a thin wing.',
     broadDistractor: 'Every seed can travel equally well through air, on animals, and across water.',
-    hotPrompt: 'Select the sentence that explains how a seed can travel on an animal.', hotCorrectSentence: 7, hotDistractorSentences: [1, 9, 13],
+    hotPrompt: 'Select the sentence that explains how tiny hooks can carry a seed on an animal.', hotCorrectSentence: 7, hotDistractorSentences: [1, 9, 13],
     support: [
       { word: 'structures', sentence: 1, chunks: ['struc', 'tures'], focus: 'struc' },
       { word: 'feathery', sentence: 4, chunks: ['feath', 'er', 'y'], focus: 'feath' },

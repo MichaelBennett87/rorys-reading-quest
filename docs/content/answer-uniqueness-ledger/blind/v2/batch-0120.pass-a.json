@@ -1,0 +1,836 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0120",
+  "batchFileSha256": "1b62a7bacf752ae62d35b44cf31d606b9e1a8031b8fa536a26932135722dfc6c",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1403",
+      "fingerprint": "7d1bf95bea8630dd02ea8f2ce0324e4a84a5232b9cc90225b507c00fe88d180b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The phrase is a comparison, not an extreme exaggeration.",
+              [
+                "S0136"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The channel is directly compared to a road because both guide movement.",
+              [
+                "S0136",
+                "S0137"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "No human action is assigned.",
+              [
+                "S0136"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The source says the channel is not pavement.",
+              [
+                "S0137"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1404",
+      "fingerprint": "b1eb4b2883805ee9f27b07f29f9deac6aa1817cc6caaed39ebe9807fa475dc33",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The next sentence restates invites as open ground giving runoff a clear downhill path.",
+              [
+                "S0139",
+                "S0140"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The source explicitly says a slope cannot truly invite anything.",
+              [
+                "S0140"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The expression gives no measurement.",
+              [
+                "S0139"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This interprets the channel-as-road metaphor, not the bare-slope expression.",
+              [
+                "S0136",
+                "S0137"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1405",
+      "fingerprint": "7d874583f9dbd5e148f9d6f5c497f4e9a24d5a2a48903d6b6acf805749c6d93a",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is a plausible literal volume measurement.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This is a plausible literal length measurement.",
+              []
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This is a plausible literal count from a model.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "A tiny trickle cannot carry an ocean, making this deliberate exaggeration.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1406",
+      "fingerprint": "81ce6e6d97ba0369fd39b8d647ddfd728ded3bf7126af581a56470b55c3fa10f",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The whole-hill claim is hyperbole, and the source says the hill remained.",
+              [
+                "S0151",
+                "S0152"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The channel is directly compared to a road guiding runoff.",
+              [
+                "S0136",
+                "S0137"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Invites gives the slope a human action, making personification.",
+              [
+                "S0139",
+                "S0140"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The spreading roots are directly compared to a woven net holding soil.",
+              [
+                "S0143",
+                "S0144"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1407",
+      "fingerprint": "42761f50d574a0f2acd8956534906c5eaf7c300cb56b9af219abab363d5aef06",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This means a channel guides runoff along a path.",
+              [
+                "S0136",
+                "S0137"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This means bare ground gives water a clear downhill path.",
+              [
+                "S0139",
+                "S0140"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This exaggerates the amount of soil carried away.",
+              [
+                "S0151",
+                "S0152"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The next sentence explains that spreading root shapes help hold nearby soil together.",
+              [
+                "S0143",
+                "S0144"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1408",
+      "fingerprint": "d93a434e2b89b166e5b08fbcd787cccaaaab03d8016243a851c28a349d756d7f",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The channel is directly compared to a road.",
+              [
+                "S0136",
+                "S0137"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "No extreme overstatement appears.",
+              [
+                "S0136"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The source says the channel is not pavement.",
+              [
+                "S0137"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "No human action is assigned.",
+              [
+                "S0136"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "A slope cannot literally invite water.",
+              [
+                "S0140"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The sentence does not directly compare the slope to another object.",
+              [
+                "S0139"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "No extreme quantity appears.",
+              [
+                "S0139"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Invites assigns a human action to the slope.",
+              [
+                "S0139",
+                "S0140"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "No human action is assigned.",
+              [
+                "S0143"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The sentence makes a comparison rather than an extreme exaggeration.",
+              [
+                "S0143"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The source says roots are not string.",
+              [
+                "S0144"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Roots are directly compared to a woven net.",
+              [
+                "S0143",
+                "S0144"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "No direct comparison appears.",
+              [
+                "S0151"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "No human action is assigned.",
+              [
+                "S0151"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The whole-hill claim greatly exaggerates the visible soil movement.",
+              [
+                "S0151",
+                "S0152"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The source says the whole hill remained in the tray.",
+              [
+                "S0152"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1409",
+      "fingerprint": "b87257ba4aa0e29f847594fa32494202377088fceee4f49f5de0d88958497769",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The sentence does not directly compare the trickle to another object.",
+              [
+                "S0151"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "No nonhuman object is assigned a human action.",
+              [
+                "S0151"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The whole-hill statement deliberately exaggerates the model result.",
+              [
+                "S0151",
+                "S0152"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The source says the statement emphasizes the visible soil movement.",
+              [
+                "S0151",
+                "S0152"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The source says the whole hill stayed in the tray.",
+              [
+                "S0152"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This interprets the channel metaphor, not the trickle hyperbole.",
+              [
+                "S0136",
+                "S0137"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1410",
+      "fingerprint": "df206ba3ac3c7197d2e605fb41b7d614a755f6b11989812ea3b5a841c7d559fe",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This names the character and setting but omits the central problem, response, and outcome.",
+              [
+                "S0003",
+                "S0012"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This concisely includes the task, missing-card problem, clue and help, resolution, and source-supported lesson.",
+              [
+                "S0011",
+                "S0012",
+                "S0005",
+                "S0007",
+                "S0016",
+                "S0017",
+                "S0019"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This lists minor details, includes an unstated bent corner, and omits the main resolution.",
+              [
+                "S0010",
+                "S0013",
+                "S0018"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "Ava finds the card, guides every group, and does not send families home.",
+              [
+                "S0016",
+                "S0017"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1411",
+      "fingerprint": "d19bf1752f7991900c05da8aae7fd8d00122fef30a62dafb39801ec88617a54e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The post-event thanks and filing can be omitted without changing the central problem or solution.",
+              [
+                "S0018"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Badge shape is a minor descriptive detail.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "A summary must use source events rather than invent a new one.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The missing route card creates the story’s central problem.",
+              [
+                "S0012"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1412",
+      "fingerprint": "33af3885faf903d9d485f2bfbfce950bf607501d73e7143771f186b4ecfed741",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The missing route card is the central problem.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The later thanks and file location are not needed to explain the problem or solution.",
+              [
+                "S0018"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Badge shape does not affect the events.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Remembering the photograph is a key action that helps Ava solve the route problem.",
+              [
+                "S0005",
+                "S0014",
+                "S0009"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1413",
+      "fingerprint": "63685e0d8f2dc211c6997d4fba0bc6f6337ea51df18b38e46f32ac3999fab0bf",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The badge description does not affect the conflict, solution, or outcome.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The missing route card is the central conflict.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Remembering the photograph is a key step toward solving the route problem.",
+              [
+                "S0005",
+                "S0014"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1414",
+      "fingerprint": "4ce3dd2625c6b19680ddbfb53cd5ae0b668fa50029740ec1f6eb5bfa79757565",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The missing route card establishes the central problem.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Omitting the conflict would make the solution unclear.",
+              [
+                "S0012",
+                "S0016"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Badge shape does not affect the problem or solution.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This descriptive detail can be omitted from a concise account.",
+              [
+                "S0010"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Remembering the photograph drives Ava’s solution.",
+              [
+                "S0005",
+                "S0014",
+                "S0009"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This key action belongs in a concise summary.",
+              [
+                "S0005",
+                "S0014"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The post-event thanks and folder storage can be omitted after the successful route outcome.",
+              [
+                "S0017",
+                "S0018"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "These after-the-resolution details are not needed to explain what problem Ava solved or how.",
+              [
+                "S0012",
+                "S0005",
+                "S0007",
+                "S0016",
+                "S0017"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

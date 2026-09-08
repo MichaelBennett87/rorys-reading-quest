@@ -848,6 +848,27 @@ function getArtifact(key: keyof typeof contextCavernMeaningClueChamberPassageIds
   return passageArtifactByKey.get(key)!
 }
 
+function getTwoVisibleContextClues(passage: Passage, target: TargetArtifact): [string, string] {
+  const sentences = passage.sentences ?? []
+  const targetWord = target.word.toLowerCase()
+  const candidates = [
+    ...target.clueEvidenceIds.map((evidenceId) =>
+      sentences.find((sentence) => sentence.sentenceId === evidenceId)?.text,
+    ),
+    target.sentenceText,
+    ...sentences
+      .filter((sentence) => sentence.text.toLowerCase().includes(targetWord))
+      .map((sentence) => sentence.text),
+  ].filter((text): text is string => Boolean(text))
+  const uniqueCandidates = [...new Set(candidates)]
+
+  if (uniqueCandidates.length < 2) {
+    throw new Error(`Meaning Clue Chamber target ${target.word} needs two learner-visible context clues.`)
+  }
+
+  return [uniqueCandidates[0], uniqueCandidates[1]]
+}
+
 function buildMeaningChoiceQuestion(
   lessonId: string,
   questionId: string,
@@ -986,8 +1007,12 @@ function buildHotTextQuestionForSentence(
   difficulty: 2 | 3,
 ): ReadingQuestion {
   const passageSentences = passage.sentences ?? []
+  const targetWord = target.word.toLowerCase()
   const distractors = passageSentences
-    .filter((sentence) => sentence.sentenceId !== target.sentenceId)
+    .filter((sentence) =>
+      sentence.sentenceId !== target.sentenceId
+      && !sentence.text.toLowerCase().includes(targetWord),
+    )
     .slice(0, 3)
   const selectableSegments = rotate([
     { id: `${questionId}-segment-1`, text: target.sentenceText },
@@ -1122,6 +1147,7 @@ function buildTwoPartQuestionForTarget(
 
 function buildFiveQuestionLesson(lessonId: string, questionIds: readonly string[], artifact: PassageArtifact, difficulty: 2 | 3): ReadingQuestion[] {
   const [contextTarget, relationTarget, referenceTarget, backgroundTarget] = artifact.targets
+  const [firstContextClue, secondContextClue] = getTwoVisibleContextClues(artifact.passage, contextTarget)
   return [
     buildMeaningChoiceQuestion(
       lessonId,
@@ -1139,7 +1165,7 @@ function buildFiveQuestionLesson(lessonId: string, questionIds: readonly string[
       questionIds[1],
       artifact.passage,
       referenceTarget,
-      `Which strategy helps most with ${referenceTarget.word}?`,
+      `Which strategy means checking the displayed glossary entry for ${referenceTarget.word}?`,
       referenceTarget.strategyExplanation,
       difficulty,
       2,
@@ -1149,8 +1175,8 @@ function buildFiveQuestionLesson(lessonId: string, questionIds: readonly string[
       questionIds[2],
       artifact.passage,
       contextTarget,
-      [contextTarget.clueEvidenceIds[0], contextTarget.sentenceText, relationTarget.sentenceText, referenceTarget.sentenceText],
-      `Choose two clues that help explain ${contextTarget.word}.`,
+      [firstContextClue, secondContextClue, referenceTarget.sentenceText, backgroundTarget.sentenceText],
+      `Choose 2 passage clues that help explain ${contextTarget.word}.`,
       contextTarget.strategyExplanation,
       difficulty,
     ),
@@ -1182,6 +1208,10 @@ function buildCheckpointQuestions(
   difficulty: 2 | 3,
 ): ReadingQuestion[] {
   const [contextTarget, relationTarget, referenceTarget, backgroundTarget] = artifact.targets
+  const backgroundKnowledgeClue = backgroundTarget.backgroundKnowledgeStatement
+  if (!backgroundKnowledgeClue) {
+    throw new Error(`Meaning Clue Chamber target ${backgroundTarget.word} needs a background-knowledge statement.`)
+  }
   return [
     buildMeaningChoiceQuestion(
       lessonId,
@@ -1199,7 +1229,7 @@ function buildCheckpointQuestions(
       questionIds[1],
       artifact.passage,
       relationTarget,
-      `Which strategy helps most with ${relationTarget.word}?`,
+      `Which strategy uses the relationship between ${relationTarget.word} and ${relationTarget.relatedWords?.[0] ?? 'another word'}?`,
       relationTarget.strategyExplanation,
       difficulty,
       0,
@@ -1220,8 +1250,8 @@ function buildCheckpointQuestions(
       questionIds[3],
       artifact.passage,
       backgroundTarget,
-      [backgroundTarget.clueEvidenceIds[0], contextTarget.sentenceText, relationTarget.sentenceText, referenceTarget.sentenceText],
-      `Choose two clues that help explain ${backgroundTarget.word}.`,
+      [backgroundTarget.sentenceText, backgroundKnowledgeClue, contextTarget.sentenceText, referenceTarget.sentenceText],
+      `Choose 2: the passage clue and background fact that together help explain ${backgroundTarget.word}.`,
       backgroundTarget.strategyExplanation,
       difficulty,
     ),
@@ -1230,8 +1260,12 @@ function buildCheckpointQuestions(
       questionIds[4],
       artifact.passage,
       relationTarget,
-      `Select the sentence that best helps with ${relationTarget.word}.`,
-      relationTarget.strategyExplanation,
+      relationTarget.word === 'deep'
+        ? 'Select the sentence that states what deep soil gives roots.'
+        : `Select the sentence that best helps with ${relationTarget.word}.`,
+      relationTarget.word === 'deep'
+        ? 'The sentence says deep soil gives roots more room to grow.'
+        : relationTarget.strategyExplanation,
       difficulty,
     ),
     buildTableMatchQuestionForTargets(

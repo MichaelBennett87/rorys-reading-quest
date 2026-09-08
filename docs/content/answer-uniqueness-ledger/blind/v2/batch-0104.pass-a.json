@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0104",
+  "batchFileSha256": "e8ba04caf7906769edf233c8b22993c309d23ae8b659fa6162b063410b5e392f",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId":"Q1215","fingerprint":"12528ca022af0f5cbc373c5f837734c252cf6419a7db26951eab07b25a947982","slots":[{"slotId":"response","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","DEFENSIBLE","The important ideas connect sunlight, air, cover, and shade to changes in soil moisture.",["S0052","S0054","S0059","S0060","S0061","S0063"]],
+        ["A2","CONTRADICTED","The passage does not organize a process or events in time order.",["S0052","S0063"]],
+        ["A3","CONTRADICTED","The facts form a connected explanation rather than an unrelated collection.",["S0052","S0063"]],
+        ["A4","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Bare and covered soil are contrasted, but the passage's main organization explains why their moisture results differ.",["S0052","S0059","S0060","S0063"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1216","fingerprint":"e2b85cbef79a00d3e1b9da12e4005e3c7b94ffc2efd06946a1ab368b9ffd33db","slots":[{"slotId":"response","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","DEFENSIBLE","The labels connect sunlight and mulch conditions to moisture near roots.",["S0067","S0071","S0072","S0073"]],
+        ["A2","UNSUPPORTED","The diagram gives soil labels, not authorship information.",["S0067","S0071","S0072","S0073"]],
+        ["A3","CONTRADICTED","The labeled causes and results add information.",["S0067","S0071","S0072","S0073"]],
+        ["A4","CONTRADICTED","The diagram highlights selected relationships and does not replace all passage details.",["S0052","S0061","S0067"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1217","fingerprint":"9dcd74a8f6fa59290f3bc2a438b4af0eb15a283535b2f00e8ec0ac9145b76204","slots":[{"slotId":"response","defensible":["A1","A2","A3","A4"],"ambiguity":"All four choices describe or explicitly identify a cause/effect relationship, while the prompt asks for only two without defining which relationship or evidence pair to select.","selectionContractValid":false,"options":[
+        ["A1","DEFENSIBLE","The conclusion explicitly identifies the passage's causes and moisture results.",["S0063"]],
+        ["A2","DEFENSIBLE","The caption states that cover helps cause moisture to remain near roots.",["S0062","S0070"]],
+        ["A3","DEFENSIBLE","Sun-warmed soil causes water to change into vapor and leave the soil.",["S0052"]],
+        ["A4","DEFENSIBLE","As a result explicitly introduces slower water loss caused by the mulch conditions.",["S0059","S0060"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1218","fingerprint":"3a8b7c64a0fd7da40e9d554120063bca6767b89e9affe844f201269d32fb4c73","slots":[{"slotId":"response","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","The diagram description shows the two conditions but does not state the requested result.",["S0058"]],
+        ["A2","INCORRECT","This describes water loss from bare sun-warmed soil, not the result of mulch.",["S0052"]],
+        ["A3","DEFENSIBLE","The sentence explicitly states the slower water-loss result after the mulch explanation.",["S0059","S0060"]],
+        ["A4","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This describes placing mulch, not the result that follows.",["S0056"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1219","fingerprint":"4084cfdc517f6ff7e3c04cb2facdbba012a5eefec9b27fd0cb09065facd48834","slots":[
+        {"slotId":"row_1","defensible":["A3"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","UNSUPPORTED","Cause-and-effect organization does not give an author opinion about a best fact.",["S0052","S0063"]],
+          ["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This specifically explains the labeled diagram rather than the passage organization.",["S0067","S0071","S0072","S0073"]],
+          ["A3","DEFENSIBLE","This explains how the overall cause-and-effect organization connects conditions to moisture results.",["S0052","S0059","S0060","S0061","S0063"]]
+        ]},
+        {"slotId":"row_2","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This explains the overall passage organization rather than the diagram row.",["S0052","S0063"]],
+          ["A2","DEFENSIBLE","This directly explains how the diagram's labels connect conditions with moisture results.",["S0067","S0071","S0072","S0073"]],
+          ["A3","UNSUPPORTED","The diagram presents labels, not an author opinion.",["S0067","S0071","S0072","S0073"]]
+        ]}
+      ],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1220","fingerprint":"d9ef02285aa57934a5f909ea53aec55164c478e849d8ddc7f6a01bc578798551","slots":[{"slotId":"response","defensible":["A1"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","DEFENSIBLE","First, next, then, and finally organize the wind-vane construction and test in required order.",["S0079","S0081","S0085","S0087","S0083"]],
+        ["A2","PARTIALLY_TRUE_BUT_NONRESPONSIVE","Some steps have practical results, but the passage is primarily organized as an ordered procedure.",["S0079","S0087","S0083"]],
+        ["A3","CONTRADICTED","The passage does not organize ideas around similarities and differences between subjects.",["S0077","S0083"]],
+        ["A4","CONTRADICTED","The sentences form a connected build-and-test sequence.",["S0079","S0081","S0085","S0087"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1221","fingerprint":"108a8e3138964dc39ccbddc6c072c9cce6da4a640d085f8fb7ff5d64c8d156d2","slots":[{"slotId":"response","defensible":["A4"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","UNSUPPORTED","The timeline contains steps, not authorship information.",["S0093","S0097","S0098","S0099"]],
+        ["A2","CONTRADICTED","The timeline adds an ordered summary of building and testing.",["S0093","S0097","S0098","S0099"]],
+        ["A3","CONTRADICTED","The timeline condenses stages but does not replace every passage detail.",["S0077","S0089","S0093"]],
+        ["A4","DEFENSIBLE","Its numbered base, arrow, and label/test stages make the sequence easy to follow.",["S0093","S0097","S0098","S0099"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1222","fingerprint":"dcfadd9e08ef83b3834d58804584c1c47da01204815c50fb915e7d71f4a6729a","slots":[{"slotId":"response","defensible":["A2","A3","A4"],"ambiguity":"The prompt broadly asks for two details proving chronology, but the sequence conclusion plus the First and Finally action sentences all support chronological organization.","selectionContractValid":false,"options":[
+        ["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","The glossary definition is accurate but does not establish chronology.",["S0089","S0100"]],
+        ["A2","DEFENSIBLE","The sentence explicitly refers to following the sequence before testing.",["S0083"]],
+        ["A3","DEFENSIBLE","Finally marks the last observing action.",["S0087"]],
+        ["A4","DEFENSIBLE","First marks the initial construction action.",["S0079"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1223","fingerprint":"027291ef223223acc791dba3678f35f25922ac3aaceb195c1624570d026f0a74","slots":[{"slotId":"response","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[
+        ["A1","CONTRADICTED","Making the clay base occurs several steps before taking the vane outside.",["S0079","S0086"]],
+        ["A2","DEFENSIBLE","Labeling directions is sentence 5, immediately before sentence 6 carries the vane outside.",["S0085","S0086"]],
+        ["A3","CONTRADICTED","Watching the arrow occurs after the vane is carried outside.",["S0086","S0087"]],
+        ["A4","CONTRADICTED","Attaching the arrow occurs before the labeling step.",["S0084","S0085","S0086"]]
+      ]}],"projectionDefect":""
+    },
+    {
+      "auditId":"Q1224","fingerprint":"2042d7de672cafd75d829bf7c707bf514c4137b5545923f5df599efba0503cdc","slots":[
+        {"slotId":"row_1","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This specifically explains the timeline feature rather than the overall chronology organization.",["S0093","S0097","S0098","S0099"]],
+          ["A2","DEFENSIBLE","This explains how chronology orders the full construction and test procedure.",["S0079","S0081","S0085","S0087","S0083"]],
+          ["A3","UNSUPPORTED","Chronology supplies sequence, not an author opinion.",["S0079","S0087"]]
+        ]},
+        {"slotId":"row_2","defensible":["A2"],"ambiguity":"","selectionContractValid":true,"options":[
+          ["A1","PARTIALLY_TRUE_BUT_NONRESPONSIVE","This explains the overall chronology rather than the timeline feature row.",["S0079","S0087","S0083"]],
+          ["A2","DEFENSIBLE","This directly explains how the displayed timeline groups the steps.",["S0093","S0097","S0098","S0099"]],
+          ["A3","UNSUPPORTED","The timeline contains ordered stages, not an author opinion.",["S0093","S0097","S0098","S0099"]]
+        ]}
+      ],"projectionDefect":""
+    }
+  ]
+}

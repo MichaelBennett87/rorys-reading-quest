@@ -1,0 +1,833 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0114",
+  "batchFileSha256": "1bbfebef2bd18c8543ea0c3c0eea69f76f01a6a9f1639db3409f619a990278a1",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1333",
+      "fingerprint": "60effc198ba53c3be0fe0c1c6f54f0c7433f83e0e2c5e25a17d73fa6913233a7",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This sentence directly states the supported recommendation.",
+              [
+                "S0032"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This noun phrase names the topic rather than a claim.",
+              []
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This summarizes how reusable signs work and functions as a central idea, not the proposed judgment.",
+              [
+                "S0041",
+                "S0047"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states an author-purpose formulation rather than the claim.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1334",
+      "fingerprint": "5ff5be35cd84f7872d73d9a3e7cf4271c7aef00f670ecd943cd8e21f931898b3",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The source explicitly marks repeated setup and storage as one reason.",
+              [
+                "S0041"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Letter colors are identified as irrelevant to material durability.",
+              [
+                "S0045",
+                "S0046"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes the sample-test setup; it does not state why reusable signs are better.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the claim itself.",
+              [
+                "S0032"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1335",
+      "fingerprint": "c140db73a20654866d6821a7c44de24e12902fb665d5253e53e927c77953c878",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Letter color did not affect the tested durability.",
+              [
+                "S0045",
+                "S0046"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the claim rather than supporting evidence.",
+              [
+                "S0032"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This later-section result supports making fewer replacement signs.",
+              [
+                "S0037"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This sample result supports the durability reason.",
+              [
+                "S0042"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1336",
+      "fingerprint": "2c5e573319192ab69c82f650282be69ee88912f44fcbcae4666adc3611fca441",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states a requirement for the signs, not a sample result.",
+              [
+                "S0039"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a reuse plan, not the requested result from the durability sample.",
+              [
+                "S0048"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This measured sample outcome directly shows laminated signs remained usable after mist.",
+              [
+                "S0042"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Letter colors do not establish repeated-use durability.",
+              [
+                "S0045",
+                "S0046"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1337",
+      "fingerprint": "6d2790f914a2d36eeb94d0eb03d9f3794f8fc1c838b375b5026d9b07fcf1c997",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Later reasons and evidence support the statement.",
+              [
+                "S0041",
+                "S0042",
+                "S0047",
+                "S0037"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "It proposes the position rather than explaining why.",
+              [
+                "S0032"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This is the author’s supported recommendation.",
+              [
+                "S0032"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "It is not a test fact or observed result.",
+              [
+                "S0032"
+              ]
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "It is the central argument, not an irrelevant detail.",
+              [
+                "S0032"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A5"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This supports the claim but does not state the claim.",
+              [
+                "S0041"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This general benefit is the reason that the sample results support.",
+              [
+                "S0041",
+                "S0042"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The source supports the statement with a comparison test.",
+              [
+                "S0035",
+                "S0042",
+                "S0043"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Repeated setup and storage directly concern reuse.",
+              [
+                "S0041"
+              ]
+            ],
+            [
+              "A5",
+              "DEFENSIBLE",
+              "The sentence is explicitly introduced as a reason.",
+              [
+                "S0041"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The sentence describes test setup rather than the explanatory reason.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This factual test-design detail is part of the evidence used to compare materials.",
+              [
+                "S0035",
+                "S0042",
+                "S0043"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "It is a factual description, not an unsupported opinion.",
+              [
+                "S0035"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The test setup is relevant to interpreting the result.",
+              [
+                "S0035",
+                "S0042"
+              ]
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "The sentence does not state the recommendation.",
+              [
+                "S0035"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This sentence does not recommend a choice.",
+              [
+                "S0045"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The source says color did not affect the material result.",
+              [
+                "S0045",
+                "S0046"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "It does not explain why reusable signs are better.",
+              [
+                "S0045",
+                "S0046"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The color detail is explicitly disconnected from durability.",
+              [
+                "S0045",
+                "S0046"
+              ]
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "The sentence reports a sample detail rather than an opinion.",
+              [
+                "S0045"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1338",
+      "fingerprint": "31b4c9f966d6f47e9b70d52b9b4741fe7ef701143d2158ff69baf69cd47895d8",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This phrase names the topic.",
+              []
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is an author-purpose statement, not the claim.",
+              []
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This summarizes how a proper barrel works and functions as a central idea.",
+              [
+                "S0069",
+                "S0066"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This opening sentence directly states the supported position.",
+              [
+                "S0062"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1339",
+      "fingerprint": "e0ccdd0673127cb0052c8b8b57862ea5035efdbda4d42b44493d147ae45212f6",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The barrel color is explicitly unrelated to how it works.",
+              [
+                "S0072"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The source explicitly labels later storage as its first reason.",
+              [
+                "S0069"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the claim itself.",
+              [
+                "S0062"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This factual context supports the storage reason but is not the stated reason.",
+              [
+                "S0070"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1340",
+      "fingerprint": "efe133b38c0b84e7db1e68fa6debe27a94fab3cc777ce2f302b4a2c3997a9c38",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This first-section measurement shows the barrel stored a useful amount.",
+              [
+                "S0064"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This second-section observation supports the screened setup.",
+              [
+                "S0076"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the claim rather than evidence.",
+              [
+                "S0062"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Color is explicitly unrelated to operation.",
+              [
+                "S0072"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1341",
+      "fingerprint": "f87689e04465682eb12d6171e5c15fb7eef5126178b07f4bd85762babb0b9a28",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This is the only numerical measurement showing how much water the barrel stored.",
+              [
+                "S0064"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes runoff’s path but gives no storage measurement.",
+              [
+                "S0070"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This safety label gives intended use but no measurement.",
+              [
+                "S0077"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Color is neither a measurement nor functional evidence.",
+              [
+                "S0072"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1342",
+      "fingerprint": "7b888b23eea5dfb87198f924d38d0cb7328df6f8018a7b88f7e865927e3aa60b",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The sentence states the position, not why it is practical.",
+              [
+                "S0062"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "It is not an observed result.",
+              [
+                "S0062"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This opening sentence states the author’s supported claim.",
+              [
+                "S0062"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The claim is supported by measurements and setup evidence.",
+              [
+                "S0064",
+                "S0076"
+              ]
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "It is the central argument, not irrelevant.",
+              [
+                "S0062"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The source supplies supporting measurement evidence.",
+              [
+                "S0064",
+                "S0071"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The source explicitly labels this statement as its first reason.",
+              [
+                "S0069"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "It explains why the claim makes sense but does not itself state the claim.",
+              [
+                "S0062",
+                "S0069"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The broad storage benefit is the reason that numerical details support.",
+              [
+                "S0069",
+                "S0064"
+              ]
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "Stored runoff directly supports practical garden watering.",
+              [
+                "S0069"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The sentence does not make the overall recommendation.",
+              [
+                "S0064"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "It is a measured result supporting the storage reason, not the reason itself.",
+              [
+                "S0064",
+                "S0069"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The measured collection result is evidence for useful storage.",
+              [
+                "S0064"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "The measurement is relevant and useful.",
+              [
+                "S0064",
+                "S0071"
+              ]
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "The sentence reports a fictional demonstration result, not an opinion.",
+              [
+                "S0064"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The color statement is factual, not an opinion.",
+              [
+                "S0072"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "It does not state the recommendation.",
+              [
+                "S0072"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The source explicitly says color does not determine operation.",
+              [
+                "S0072"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Color gives no practical benefit.",
+              [
+                "S0072"
+              ]
+            ],
+            [
+              "A5",
+              "INCORRECT",
+              "It does not support either functional reason.",
+              [
+                "S0072"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

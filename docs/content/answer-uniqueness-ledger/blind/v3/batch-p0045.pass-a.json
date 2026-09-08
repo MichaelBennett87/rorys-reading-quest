@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0045",
+  "batchFileSha256": "87cfa10f5e697941ce8d644afb37db5fca3d6799d00e192e5b775280d7ad9913",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1289",
+      "fingerprint": "2edda1fcff9b8e65157d786dbaa5fb23ab5e0995ac8a2b6c3c836a9115343d3b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Describes a possible color change, not soaking fibers or drying the sheet.",
+              [
+                "S0014"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Describes removing other materials before soaking.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Directly explains that soaking softens paper and loosens fibers.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Directly explains the damp layer drying into a firm sheet.",
+              [
+                "S0018"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1290",
+      "fingerprint": "4b2bd376af3b6d5cf241b0a34e25ff778dd54a28cbbe93d914d6ee1e26abb412",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Directly states that watery pulp is poured across the screen.",
+              [
+                "S0015"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Describes uses after the sheet is finished.",
+              [
+                "S0019"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Describes preparation before the paper is soaked.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Describes a color effect, not forming pulp on a screen.",
+              [
+                "S0014"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1317",
+      "fingerprint": "8be7d86520c052df2b001ea96b084c68e704d1288c130b0aa5e14380637e4088",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Directly states the requested winter ice condition.",
+              [
+                "S0164"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The bench color is unrelated to seasonal pond conditions.",
+              [
+                "S0182"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Describes a measuring tool, not winter ice or the return to winter.",
+              [
+                "S0177"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Directly states the later return to colder winter conditions.",
+              [
+                "S0170"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

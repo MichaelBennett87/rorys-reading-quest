@@ -48,6 +48,35 @@ describe('Grade 3 Poem Form Observatory production pack', () => {
     expect(poemFormGuides.filter((guide) => guide.form === 'free-verse').every((guide) => !guide.rhymeScheme && !/never rhymes/i.test(guide.formExplanation))).toBe(true)
   })
 
+  test('uses a pronunciation-stable seven-syllable middle line in the classroom haiku', () => {
+    const haiku = poemFormRecords.find((record) => record.form === 'haiku')!
+    expect(haiku.lines).toEqual([
+      'Soft snow covers grass',
+      'One bright red bird settles here',
+      'Morning holds its breath',
+    ])
+    expect(haiku.lines[1].split(' ')).toEqual(['One', 'bright', 'red', 'bird', 'settles', 'here'])
+    expect(haiku.support.some((target) => target.word === 'cardinal')).toBe(false)
+    expect(haiku.support.some((target) => target.word === 'bright')).toBe(true)
+  })
+
+  test('asks for the most exact taught form when specific and broad labels overlap', () => {
+    const classifications = poemFormQuestions.filter((question) => /-q\d+-1$/.test(question.questionIdentifier))
+    expect(classifications).toHaveLength(7)
+    expect(classifications.every((question) => question.prompt.startsWith('Which of these taught poem forms gives the most exact name for'))).toBe(true)
+  })
+
+  test('makes transfer, rhyme-exemplar, and two-part selection constraints explicit', () => {
+    expect(poemFormQuestions.find((question) => question.questionIdentifier === 'g3-pp-pfo-q6-3')?.prompt).toContain('most exact name')
+    expect(poemFormQuestions.find((question) => question.questionIdentifier === 'g3-pp-pfo-q6-5')?.prompt).toContain('other line')
+    const twoPartQuestions = poemFormQuestions.filter((question) => question.questionType === 'two_part')
+    expect(twoPartQuestions).toHaveLength(3)
+    expect(twoPartQuestions.every((question) => {
+      const content = question.questionContent
+      return content?.type === 'two_part' && content.partAPrompt.includes('most exact name')
+    })).toBe(true)
+  })
+
   test('aligns four Word Help targets with every poem without leaking form labels', () => {
     for (const passage of poemFormPassages) {
       expect(passage.wordSupportTargets).toHaveLength(4)

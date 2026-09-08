@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0093",
+  "batchFileSha256": "c96dcb09993edfebee3da2dd16db6af4382430a8de3c9c49fb54d2cf345af672",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1087", "fingerprint": "2e7712543894b20f434f0b2cb8a3ad33f4f93d19f5616440b0266a9a19fa13bd",
+      "slots": [{"slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Asha's rush scares away the bird, while waiting and careful observation let her make the detailed sketch, supporting this complete message.", ["S0020", "S0025", "S0024", "S0029", "S0030"]],
+        ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Patience is only a topic, not the complete theme statement requested.", ["S0024", "S0029"]],
+        ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This recounts events but does not state a general story message.", ["S0025", "S0024", "S0030"]],
+        ["A4", "CONTRADICTED", "Asha's immediate rushed action causes the mistake; patient waiting produces the better result.", ["S0020", "S0025", "S0030"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1088", "fingerprint": "a567a3906339292e0ddcc57d5169757ef6b231db42bf3b069c235f2242890bbb",
+      "slots": [{"slotId": "response", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This is a short event summary and does not explain how each plot stage strengthens the theme.", ["S0025", "S0024", "S0030"]],
+        ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This gives only Asha's beginning choice.", ["S0020"]],
+        ["A3", "CONTRADICTED", "The result of rushing contradicts this proposed message.", ["S0025", "S0022"]],
+        ["A4", "DEFENSIBLE", "This connects rushing, its consequence, the guide's waiting strategy, and the later detailed sketch across the full plot.", ["S0020", "S0022", "S0027", "S0024", "S0030"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1089", "fingerprint": "60d6f4590f904a3f7a8f350bcabdf7d8c4bb8a5557391239ed50c92145fe563f",
+      "slots": [{"slotId": "response", "defensible": ["A1", "A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "At the end Asha's quiet waiting leads to a carefully detailed page.", ["S0024", "S0029", "S0030"]],
+        ["A2", "DEFENSIBLE", "At the beginning Asha hurries toward the bird to finish quickly.", ["S0020"]],
+        ["A3", "INCORRECT", "The guide's bench gesture is a middle event, not a beginning or ending detail.", ["S0026"]],
+        ["A4", "CONTRADICTED", "The story shows that rushed immediate action caused the problem.", ["S0020", "S0025"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1090", "fingerprint": "0bfcfe9a97ba522f259eeb2297d09aeb3414b1c772ecc8a4d30c3bcafbd8d8cb",
+      "slots": [{"slotId": "response", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "This is Asha's rushed beginning choice.", ["S0020"]],
+        ["A2", "INCORRECT", "The bench gesture introduces the guide's help, but does not itself state the patient strategy that changes Asha's response.", ["S0026"]],
+        ["A3", "DEFENSIBLE", "The guide explicitly recommends waiting for calm, and Asha follows that new strategy in the next events.", ["S0027", "S0024"]],
+        ["A4", "INCORRECT", "The detailed page is the successful ending result after the turning point.", ["S0030"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1091", "fingerprint": "66b519b90744e8f1abb5b5ce864d862b5ac85fbc0972b24a759ee00244762713",
+      "slots": [
+        {"slotId": "row_1", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "The branch and departing heron are the consequence after Asha's initial rush.", ["S0025", "S0022"]],
+          ["A2", "INCORRECT", "The guide points toward the bench after the failed first attempt.", ["S0026"]],
+          ["A3", "INCORRECT", "The detailed finished page is the ending result.", ["S0029", "S0030"]],
+          ["A4", "DEFENSIBLE", "Asha's rush to finish quickly is the beginning choice that introduces the theme.", ["S0020"]]
+        ]},
+        {"slotId": "row_2", "defensible": ["A3", "A4"], "ambiguity": "Both the consequence of rushing and the guide's redirection toward a waiting place are middle details that a careful learner can reasonably connect to development of the patience theme, but the table permits one match.", "selectionContractValid": false, "options": [
+          ["A1", "INCORRECT", "The detailed finished page is the ending result.", ["S0029", "S0030"]],
+          ["A2", "INCORRECT", "Asha's rush to finish quickly is the beginning choice.", ["S0020"]],
+          ["A3", "DEFENSIBLE", "The branch cracks and the heron flies away, showing the middle consequence of Asha's rushed approach.", ["S0025", "S0022"]],
+          ["A4", "DEFENSIBLE", "The guide's bench redirection is also a middle event that leads directly into the explicit advice to wait and Asha's patient strategy.", ["S0026", "S0027", "S0024"]]
+        ]},
+        {"slotId": "row_3", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Asha's rush occurs at the beginning.", ["S0020"]],
+          ["A2", "DEFENSIBLE", "After patient waiting Asha completes the carefully detailed page at the end.", ["S0024", "S0029", "S0030"]],
+          ["A3", "INCORRECT", "The guide's bench gesture occurs in the middle.", ["S0026"]],
+          ["A4", "INCORRECT", "The branch and departing heron are the middle consequence.", ["S0025", "S0022"]]
+        ]}
+      ], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1092", "fingerprint": "57319980ca76ab5e66e14f5ecf41a6b120eecb43f8e4f002004a34da652fb748",
+      "slots": [{"slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Dev's silence causes unnecessary searching, while admitting the mistake reveals the tiles and his later immediate report shows rebuilt trust and learning.", ["S0041", "S0043", "S0046", "S0047", "S0048"]],
+        ["A2", "CONTRADICTED", "Keeping the problem private makes the club worry and nearly undo careful work.", ["S0043", "S0045"]],
+        ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Honesty is only a topic, not the complete supported theme requested.", ["S0046", "S0048"]],
+        ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This is a plot summary rather than a general message.", ["S0040", "S0046", "S0039"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1093", "fingerprint": "6f0ea1c40d004c1ad1fff5c7c047e28707784901bab2359e3a5ed92147fcaa9c",
+      "slots": [{"slotId": "response", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "CONTRADICTED", "Dev's silence causes unnecessary searching and threatened rework rather than protecting the team.", ["S0043", "S0045"]],
+        ["A2", "DEFENSIBLE", "This traces Dev's hiding, the harmful consequence, his admission, and his later immediate report across the plot.", ["S0041", "S0043", "S0045", "S0046", "S0048"]],
+        ["A3", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This summarizes selected events but omits how the consequence and later transfer develop the message.", ["S0040", "S0046", "S0039"]],
+        ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "This describes only Dev's beginning response.", ["S0041"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1094", "fingerprint": "623a62b354cb9252d2ac5e22069d23f29e228d515cd80ef08787e40f54b98d00",
+      "slots": [{"slotId": "response", "defensible": ["A2", "A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "CONTRADICTED", "The club's wasted search and threatened rework show that secrecy does not protect the team.", ["S0043", "S0045"]],
+        ["A2", "DEFENSIBLE", "At the beginning Dev hides the spill and hopes it goes unnoticed.", ["S0041"]],
+        ["A3", "DEFENSIBLE", "At the end Dev immediately reports the later spill and asks for cleanup help.", ["S0048"]],
+        ["A4", "INCORRECT", "The mosaic project is background setup and does not develop the honesty theme.", ["S0033"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1095", "fingerprint": "504f15db1dd5a082a68b25411305890b6a7bb5886a06c65d0d1421236972dfe1",
+      "slots": [{"slotId": "response", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "This only establishes the club's project.", ["S0033"]],
+        ["A2", "DEFENSIBLE", "Dev's admission ends the harmful silence, lets the group find the tiles, and marks his changed response.", ["S0046", "S0047"]],
+        ["A3", "INCORRECT", "The later immediate report is the ending transfer after the turning point.", ["S0048"]],
+        ["A4", "INCORRECT", "Hiding the tray establishes Dev's beginning response.", ["S0041"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1096", "fingerprint": "5edf651ab57433720d9336c7a6f5812de4a2ae24f6905ee8ac6816506ab14eb1",
+      "slots": [
+        {"slotId": "row_1", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Immediate cleanup help occurs at the end.", ["S0048"]],
+          ["A2", "INCORRECT", "Dev's misleading explanation occurs later in the middle.", ["S0044"]],
+          ["A3", "INCORRECT", "The mosaic project is setup rather than Dev's theme-building beginning choice.", ["S0033"]],
+          ["A4", "DEFENSIBLE", "Dev begins by hiding the spill and hoping it was unnoticed.", ["S0041"]]
+        ]},
+        {"slotId": "row_2", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Hiding the spill is Dev's beginning response.", ["S0041"]],
+          ["A2", "INCORRECT", "The project setup does not trace Dev's development.", ["S0033"]],
+          ["A3", "INCORRECT", "Immediate cleanup help occurs at the end.", ["S0048"]],
+          ["A4", "DEFENSIBLE", "Dev's misleading package explanation extends the middle consequence of his silence.", ["S0044", "S0045"]]
+        ]},
+        {"slotId": "row_3", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Hiding the spill is the beginning response.", ["S0041"]],
+          ["A2", "INCORRECT", "The project setup does not show Dev's ending change.", ["S0033"]],
+          ["A3", "INCORRECT", "The misleading package explanation occurs in the middle.", ["S0044"]],
+          ["A4", "DEFENSIBLE", "After the later spill Dev immediately asks for cleanup help, showing the ending transfer.", ["S0048"]]
+        ]}
+      ], "projectionDefect": ""
+    }
+  ]
+}

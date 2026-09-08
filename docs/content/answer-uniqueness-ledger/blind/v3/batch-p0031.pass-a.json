@@ -1,0 +1,612 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0031",
+  "batchFileSha256": "2bb7671bab3e46865e6c2067a6565c4fde404b0f17219f2a375d3814b8a827bb",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0727",
+      "fingerprint": "36fdae8be6c67e55f758ef118df914f6584a1e7dca10c658daf0c26d9b4f2e44",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Context clues use nearby text, not the named displayed reference entry.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The strategy for checking a displayed glossary entry is glossary use.",
+              [
+                "S0018",
+                "S0019"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "A word relationship compares words rather than checking the entry.",
+              [
+                "S0018"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Background knowledge uses what the learner knows rather than the entry.",
+              [
+                "S0018"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0728",
+      "fingerprint": "f69d2628c3b69fda9c13d4e80a87f10f3ad16818d3d83cc9e973a6418ceb33bb",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This directly defines damp as slightly wet.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This defines habitat, not damp.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes frog rest and does not explain damp.",
+              [
+                "S0009"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Rain provides context showing why the bank is damp.",
+              [
+                "S0010"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0732",
+      "fingerprint": "4d3c04d6ee1fde360b1c630454677088ed02841b2ce148ffc3a95a385e65be89",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Background knowledge does not mean checking the displayed entry.",
+              [
+                "S0038"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Context clues use nearby text, not the named entry.",
+              [
+                "S0027"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Word relationships compare terms rather than checking the entry.",
+              [
+                "S0038"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The displayed glossary entry is checked with the glossary strategy.",
+              [
+                "S0038",
+                "S0039"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0733",
+      "fingerprint": "9ec714b4e101af260b3d51f3a48393b59ef38acb86223dc0d90632678f206d8d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This concerns protecting eggs, not the meaning of fragile.",
+              [
+                "S0029"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This directly defines fragile.",
+              [
+                "S0023"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This defines shelter, not fragile.",
+              [
+                "S0027"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Bent twigs show why the basket is described as fragile.",
+              [
+                "S0030"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0737",
+      "fingerprint": "07e9f51dd9054fb655da4568ed7a649bfff922c8539387f6d21aa468d6356209",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Checking the displayed filter entry is glossary use.",
+              [
+                "S0058",
+                "S0059"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Background knowledge does not mean checking the displayed entry.",
+              [
+                "S0058"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Context clues use nearby text rather than the named entry.",
+              [
+                "S0050"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Word relationships compare terms rather than checking the entry.",
+              [
+                "S0058"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0738",
+      "fingerprint": "0a7bc01872f3ac8621f1f1c4817c9bedee80db8f15ebacbbb3bbd5f9f4a71248",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This directly restates absorb as soak up.",
+              [
+                "S0051"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes filter use, not absorb.",
+              [
+                "S0047"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes a seed response to moisture, not absorbing water.",
+              [
+                "S0049"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The sponge taking extra water supplies a contextual example of absorb.",
+              [
+                "S0043"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0739",
+      "fingerprint": "0040a4bc56e6db572460b59657deedd5b728b99837d5e0b41a81bfa3741fdfe9",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This is the only selectable sentence using filter in its water-cleaning context.",
+              [
+                "S0047",
+                "S0050"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This explains absorb, not filter.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This defines absorb, not filter.",
+              [
+                "S0051"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes surface water and a sponge, not filter.",
+              [
+                "S0045"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0742",
+      "fingerprint": "1c7a2edfff88b23b4d6e38cd9881048bc657a8dbd4dd9a83354f018662bf0c46",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Checking the displayed gather entry is glossary use.",
+              [
+                "S0078",
+                "S0079"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Background knowledge does not mean checking the entry.",
+              [
+                "S0078"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Word relationships compare terms rather than checking the entry.",
+              [
+                "S0078"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Context clues use nearby text rather than the named entry.",
+              [
+                "S0071"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0743",
+      "fingerprint": "0a58935e2b81b60b75202938a4fd599648910d12d7f2642259e96e0ecd4b8224",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Cloudy morning context supports the low-brightness meaning.",
+              [
+                "S0070"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This explains drift, not dim.",
+              [
+                "S0069"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This directly defines dim as not very bright.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This explains gathering notes, not dim.",
+              [
+                "S0067"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0747",
+      "fingerprint": "5cfbdf90509061842283173bc53c9bda7bfbc2dd6ca52c3e581c8b263ab12f50",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Background knowledge does not specifically use the relation between two words.",
+              [
+                "S0091"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Deep and shallow are related as opposites, so this is a word-relationship strategy.",
+              [
+                "S0091",
+                "S0085"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The glossary can define shallow but does not name the strategy of relating the two terms.",
+              [
+                "S0100",
+                "S0102"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Context can help, but the prompt specifically asks for the relation between words.",
+              [
+                "S0091"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0749",
+      "fingerprint": "66d09e88cf631ebe4c54d153123fa147f00c2b05d638b9152cb96b6d4764daa1",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This defines migrate rather than hollow.",
+              [
+                "S0087"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This is the stated general background fact about hollow space.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This is the passage clue showing the hollow log contains a place for plants.",
+              [
+                "S0089"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This explains shallow soil rather than hollow.",
+              [
+                "S0083"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0750",
+      "fingerprint": "d877f88d508a3287940b788fea7a25d546e283004503ce62963180b7d42310c8",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "The prompt asks which sentence best helps with deep, but the lesson-visible shallow/deep relationship makes both shallow sentences useful alongside the direct deep sentence, with no visible ranking criterion.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The nearby definition says shallow means not deep, so this shallow-soil sentence helps through an antonym relationship.",
+              [
+                "S0090",
+                "S0091"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This directly uses deep and gives the root-room context.",
+              [
+                "S0085"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This defines migrate and does not help with deep.",
+              [
+                "S0087"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This shallow-soil cause-and-effect example also helps contrast shallow with deep.",
+              [
+                "S0083",
+                "S0091"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

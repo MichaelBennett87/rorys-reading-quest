@@ -99,11 +99,11 @@ export const compareKeepGuidedQuestions: ReadingQuestion[] = [
     activityIdentifier: 'activity-compare-castle-compare-keep-guided-compare-characters-and-events',
     questionIdentifier: COMPARE_KEEP_QUESTION_IDS.guidedCompareCharactersAndEvents[2],
     prompt: 'Choose two details that help compare the wind texts.',
-    explanation: 'The best details show the wind, the kite, and the calm ending.',
-    evidenceReference: createScopedEvidenceReference(proseWind, 'ck-lit-prose-3-s6'),
+    explanation: 'Both texts show the kite rising and gray clouds drifting across the outdoor scene.',
+    evidenceReference: createScopedEvidenceReference(proseWind, 'ck-lit-prose-3-s5'),
     evidenceReferenceIds: [
-      createScopedEvidenceReference(proseWind, 'ck-lit-prose-3-s6'),
-      createScopedEvidenceReference(poemWind, 'ck-lit-poem-1-s5'),
+      createScopedEvidenceReference(proseWind, 'ck-lit-prose-3-s5'),
+      createScopedEvidenceReference(poemWind, 'ck-lit-poem-1-s6'),
     ],
     targetVocabulary: ['important', 'event'],
     soundOutChunks: ['im', 'por', 'tant'],
@@ -112,7 +112,7 @@ export const compareKeepGuidedQuestions: ReadingQuestion[] = [
     tags: ['paired-text', 'different-format'],
     choices: [
       choice('kite-rises', 'The kite rises when the wind changes.'),
-      choice('wind-calms', 'The wind becomes calmer at the end.'),
+      choice('wind-calms', 'Gray clouds drift over the field.'),
       choice('pizza', 'The texts talk about pizza night.'),
       choice('tape', 'The texts are about sticky tape only.'),
     ],
@@ -162,6 +162,8 @@ export const compareKeepGuidedQuestions: ReadingQuestion[] = [
     evidenceReferenceIds: [
       createScopedEvidenceReference(proseWind, 'ck-lit-prose-3-s1'),
       createScopedEvidenceReference(poemWind, 'ck-lit-poem-1-s1'),
+      createScopedEvidenceReference(proseWind, 'ck-lit-prose-3-s4'),
+      createScopedEvidenceReference(poemWind, 'ck-lit-poem-1-s3'),
     ],
     targetVocabulary: ['compare', 'event'],
     soundOutChunks: ['ev', 'ent'],
@@ -182,7 +184,7 @@ export const compareKeepGuidedQuestions: ReadingQuestion[] = [
       {
         id: 'row-b',
         prompt: 'A kite rises when the wind helps.',
-        correctChoiceId: 'text1',
+        correctChoiceId: 'both',
         options: [
           choice('both', 'Both texts'),
           choice('text1', 'Text 1 only'),

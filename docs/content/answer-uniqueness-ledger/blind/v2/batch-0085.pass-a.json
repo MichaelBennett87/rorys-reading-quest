@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0085",
+  "batchFileSha256": "f5506666d8c240da0dd78dc692d3addfe0130c3a8aa344399a23d162068b1ad8",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0992", "fingerprint": "e3371ab56f9db6992b62028e7c74ed995f0f75ab2e0a4870ef1b3579cada31cf",
+      "slots": [{"slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Di ends in a vowel sound and is open; un ends in a consonant and is closed.", ["S0051", "S0057"]], ["A2", "INCORRECT", "Di is open, not closed.", ["S0051"]],
+        ["A3", "INCORRECT", "This reverses both displayed chunk types.", ["S0051", "S0057"]], ["A4", "INCORRECT", "Un is closed, not open.", ["S0057"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0993", "fingerprint": "730382e1ebe7a29b532be36f1033eab0a247faece870b71021d581bc23368659",
+      "slots": [{"slotId": "response", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Dinosaur does not contain two silent-e chunks.", ["S0051"]], ["A2", "INCORRECT", "Uncover does not contain two silent-e chunks.", ["S0057"]],
+        ["A3", "INCORRECT", "Title ends in a consonant-le syllable rather than containing two silent-e chunks.", ["S0055"]], ["A4", "DEFENSIBLE", "Time and line are both silent-e chunks in timeline.", ["S0053"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0994", "fingerprint": "6eab554d3d5b3d65b0aa75cdcd90678b512c6ebfd8ae6b7c9e98b51a8d4f7cfe",
+      "slots": [{"slotId": "response", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Timeline ends with the silent-e word line, not a consonant-le chunk.", ["S0053"]], ["A2", "INCORRECT", "Dinosaur does not end in consonant-le.", ["S0051"]],
+        ["A3", "DEFENSIBLE", "Title ends with the consonant-le chunk tle.", ["S0055"]], ["A4", "INCORRECT", "Uncover ends with an r-controlled chunk, not consonant-le.", ["S0057"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0995", "fingerprint": "376ca2a84fb61b1463a444ffa8ac56bfe6ea236ad470ff222beb57ccbcd24857",
+      "slots": [{"slotId": "response", "defensible": ["A1", "A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Time and line are familiar compound parts that help decode timeline.", ["S0053", "S0059"]], ["A2", "DEFENSIBLE", "Un- is a useful prefix boundary in uncover.", ["S0057", "S0059"]],
+        ["A3", "INCORRECT", "Dino and saur are bound classical parts, not the prefix or familiar-word compound boundary requested here.", ["S0051", "S0059"]], ["A4", "INCORRECT", "Title has neither a useful prefix nor a compound boundary.", ["S0055"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0996", "fingerprint": "258addaf06a78dd35747dc20aae1132902f4a63d4c6be786790e6238a663c63e",
+      "slots": [{"slotId": "response", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Er is the final reading chunk, not the prefix.", ["S0057"]], ["A2", "DEFENSIBLE", "Un is the prefix at the beginning of uncover.", ["S0057", "S0059"]], ["A3", "INCORRECT", "Cov is a middle reading chunk, not the prefix.", ["S0057"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0997", "fingerprint": "63ea901f97821a6f7132302660567e5b1978572cf76c4e89652cc78e798011f6",
+      "slots": [
+        {"slotId": "row_1", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "DEFENSIBLE", "Di, no, and saur reconstruct dinosaur.", ["S0051"]], ["A2", "INCORRECT", "Un, cov, and er rebuild uncover.", ["S0057"]], ["A3", "INCORRECT", "Ti and tle rebuild title.", ["S0055"]], ["A4", "INCORRECT", "Time and line rebuild timeline.", ["S0053"]]
+        ]},
+        {"slotId": "row_2", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Di, no, and saur rebuild dinosaur.", ["S0051"]], ["A2", "DEFENSIBLE", "Time and line reconstruct timeline.", ["S0053"]], ["A3", "INCORRECT", "Un, cov, and er rebuild uncover.", ["S0057"]], ["A4", "INCORRECT", "Ti and tle rebuild title.", ["S0055"]]
+        ]},
+        {"slotId": "row_3", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Di, no, and saur rebuild dinosaur.", ["S0051"]], ["A2", "INCORRECT", "Un, cov, and er rebuild uncover.", ["S0057"]], ["A3", "INCORRECT", "Time and line rebuild timeline.", ["S0053"]], ["A4", "DEFENSIBLE", "Ti and tle reconstruct title.", ["S0055"]]
+        ]},
+        {"slotId": "row_4", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Di, no, and saur rebuild dinosaur.", ["S0051"]], ["A2", "INCORRECT", "Ti and tle rebuild title.", ["S0055"]], ["A3", "INCORRECT", "Time and line rebuild timeline.", ["S0053"]], ["A4", "DEFENSIBLE", "Un, cov, and er reconstruct uncover.", ["S0057"]]
+        ]}
+      ], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0998", "fingerprint": "7df11c0a72c2ce60418327670781ed0d52b467081ea8fc812ee3ed9271712fb4",
+      "slots": [
+        {"slotId": "part_a", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "The unsplit word does not show meaningful boundaries.", ["S0057"]], ["A2", "INCORRECT", "U is not the prefix in uncover.", ["S0057"]], ["A3", "DEFENSIBLE", "Un is the prefix and cover is the familiar base word.", ["S0057", "S0059"]], ["A4", "INCORRECT", "Un, cov, and er are pronunciation chunks rather than the meaningful prefix-base split.", ["S0057", "S0059"]]
+        ]},
+        {"slotId": "part_b", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "The unsplit word does not show the authored reading chunks.", ["S0057"]], ["A2", "DEFENSIBLE", "Un, cov, and er are the complete syllable-oriented reading chunks.", ["S0057", "S0060"]], ["A3", "INCORRECT", "Uncove leaves an isolated final consonant and is not the authored split.", ["S0057"]], ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Un and cover show helpful meaningful parts, but cover still contains two spoken syllables and is not the authored reading split.", ["S0057", "S0059"]]
+        ]}
+      ], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0999", "fingerprint": "a488b20b3ce4a43bc62de81a8754a0b04cedecfa5437a8f57e1d23d7d9c54211",
+      "slots": [{"slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Pro ends in a vowel sound and is open; mag ends in a consonant and is closed.", ["S0063", "S0069"]], ["A2", "INCORRECT", "Mag is closed, not open.", ["S0069"]],
+        ["A3", "INCORRECT", "Pro is open, not closed.", ["S0063"]], ["A4", "INCORRECT", "This reverses both chunk types.", ["S0063", "S0069"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1000", "fingerprint": "5319488614c2cc95d329aac32f798f012d20979e95b88223fb2aaf33abb71ebc",
+      "slots": [{"slotId": "response", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Worktable ends in a consonant-le chunk rather than a silent-e chunk.", ["S0065", "S0071"]], ["A2", "DEFENSIBLE", "Prototype ends with the silent-e chunk type.", ["S0063"]],
+        ["A3", "INCORRECT", "Rebuild does not end with a silent-e chunk.", ["S0067"]], ["A4", "INCORRECT", "Magnetic does not end with a silent-e chunk.", ["S0069"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1001", "fingerprint": "e59ed3e465f7fa9c00c035b9282f021a4aa321509a750187050771535fc07985",
+      "slots": [{"slotId": "response", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Prototype ends with a silent-e chunk, not consonant-le.", ["S0063"]], ["A2", "INCORRECT", "Rebuild does not end in consonant-le.", ["S0067"]],
+        ["A3", "DEFENSIBLE", "Worktable ends with the consonant-le chunk ble in table.", ["S0065", "S0071"]], ["A4", "INCORRECT", "Magnetic does not end in consonant-le.", ["S0069"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1002", "fingerprint": "8e59ad6b71f9bb2cec9d9412504386032972dfe7ee26614da1b41737639c964a",
+      "slots": [{"slotId": "response", "defensible": ["A1", "A2", "A3"], "ambiguity": "Worktable has a familiar compound boundary and rebuild has the prefix re-, but prototype can also reasonably be analyzed with the commonly taught proto- combining form. The prompt requests two without excluding that analysis.", "selectionContractValid": false, "options": [
+        ["A1", "DEFENSIBLE", "Proto- is commonly taught as a prefix or combining form and provides a useful boundary in prototype.", ["S0063"]], ["A2", "DEFENSIBLE", "Work and table are familiar compound parts in worktable.", ["S0065", "S0071"]],
+        ["A3", "DEFENSIBLE", "Re- is a familiar prefix at the start of rebuild.", ["S0067"]], ["A4", "INCORRECT", "Magnetic has no visible prefix or compound boundary established by the lesson.", ["S0069"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1003", "fingerprint": "566a5905621724cc48792d343e08804274349cec979f6900b1d110827fe56471",
+      "slots": [{"slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Re is the prefix chunk at the beginning of rebuild.", ["S0067"]], ["A2", "INCORRECT", "Build is the base word after the prefix.", ["S0067"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1004", "fingerprint": "e231cbab0c512914dec83842da970dc9af93d58752b65bbb3ca96c3c3cea4578",
+      "slots": [
+        {"slotId": "row_1", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "DEFENSIBLE", "Pro, to, and type reconstruct prototype.", ["S0063"]], ["A2", "INCORRECT", "Work, ta, and ble rebuild worktable.", ["S0065"]], ["A3", "INCORRECT", "Re and build rebuild rebuild.", ["S0067"]], ["A4", "INCORRECT", "Mag, net, and ic rebuild magnetic.", ["S0069"]]
+        ]},
+        {"slotId": "row_2", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Pro, to, and type rebuild prototype.", ["S0063"]], ["A2", "DEFENSIBLE", "Work, ta, and ble reconstruct worktable.", ["S0065", "S0071"]], ["A3", "INCORRECT", "Re and build rebuild rebuild.", ["S0067"]], ["A4", "INCORRECT", "Mag, net, and ic rebuild magnetic.", ["S0069"]]
+        ]},
+        {"slotId": "row_3", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "DEFENSIBLE", "Re and build reconstruct rebuild.", ["S0067"]], ["A2", "INCORRECT", "Work, ta, and ble rebuild worktable.", ["S0065"]], ["A3", "INCORRECT", "Pro, to, and type rebuild prototype.", ["S0063"]], ["A4", "INCORRECT", "Mag, net, and ic rebuild magnetic.", ["S0069"]]
+        ]},
+        {"slotId": "row_4", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Work, ta, and ble rebuild worktable.", ["S0065"]], ["A2", "DEFENSIBLE", "Mag, net, and ic reconstruct magnetic.", ["S0069"]], ["A3", "INCORRECT", "Pro, to, and type rebuild prototype.", ["S0063"]], ["A4", "INCORRECT", "Re and build rebuild rebuild.", ["S0067"]]
+        ]}
+      ], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1005", "fingerprint": "672db074afa528fe50c7794ee23bb9c36d6dad65fb713fb88726923dea3bd68a",
+      "slots": [
+        {"slotId": "part_a", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "This is the pronunciation split, not the compound boundary.", ["S0065", "S0071"]], ["A2", "DEFENSIBLE", "Work and table are the helpful compound parts.", ["S0065"]], ["A3", "INCORRECT", "The unsplit word does not show meaningful parts.", ["S0065"]], ["A4", "INCORRECT", "A single initial letter plus the remainder is not the meaningful split.", ["S0065"]]
+        ]},
+        {"slotId": "part_b", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "The unsplit word does not show the authored reading chunks.", ["S0065"]], ["A2", "DEFENSIBLE", "The passage explicitly says table is divided into ta and ble, giving work, ta, and ble.", ["S0065", "S0071"]], ["A3", "INCORRECT", "Worktabl leaves an isolated final letter and is not the authored split.", ["S0065"]], ["A4", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Work and table show the compound parts, but the passage explicitly gives a different pronunciation split for table.", ["S0065", "S0071"]]
+        ]}
+      ], "projectionDefect": ""
+    }
+  ]
+}

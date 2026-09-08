@@ -39,7 +39,7 @@ function supportTarget(spec: {
 const weatherPassageText = [
   'At the weather table, the host smiled and said, "Clouds are moving in, but the morning is calm."',
   'She pointed to the chart, then read the note again.',
-  '"Will the wind stay gentle?" she asked.',
+  '"Will the wind move gently?" she asked.',
   'The class watched the map quietly.',
   'One student said, "Let\'s reread the page before we leave!"',
 ].join(' ')
@@ -78,7 +78,7 @@ const sciencePassageText = [
   'During the science demonstration, the teacher said, "Preheat the lamp board, then watch what changes."',
   'The class used a question card, wrote one careful note, and compared the results.',
   '"That is exciting!" one student shouted.',
-  'Another student replied, "Let\'s review the steps and help each other."',
+  'Another student helped the class review the steps.',
 ].join(' ')
 
 const libraryPassageText = [

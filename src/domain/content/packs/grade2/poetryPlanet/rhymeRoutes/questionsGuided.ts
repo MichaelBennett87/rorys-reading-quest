@@ -218,7 +218,7 @@ export const rhymeRoutesGuidedQuestions: ReadingQuestion[] = [
     passageIdentifier: poemB.passageId,
     lessonIdentifier: lessonBId,
     questionIdentifier: poetryQuestionId(RHYME_ROUTES_LESSON_KEYS.guidedB, 'mc-2'),
-    prompt: 'Which line has the new middle rhyme?',
+    prompt: 'Which line ends with row, the new rhyme sound between lines 2 and 4?',
     explanation: 'Line 3 ends with row, which is a new rhyme sound in the poem.',
     evidenceReference: 'middle-rhyme',
     evidenceReferenceIds: [poetryLineId(RHYME_ROUTES_POEM_KEYS.bridgeTool, 3)],

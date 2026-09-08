@@ -85,7 +85,7 @@
       "passage-g2-word-forge-common-prefixes-2"
     ],
     "questionType": "multiple_choice",
-    "contentFingerprint": "qta-v1-f5cfc2dee4e66bea",
+    "contentFingerprint": "qta-v1-358fe5a3c90354a7",
     "independentlySolvedAnswerText": [
       "preheat"
     ],
@@ -96,15 +96,23 @@
     "authoredKeyMatch": "EXACT_MATCH",
     "evaluatorCanonicalPass": true,
     "evaluatorAdversarialPass": true,
-    "distractorStatus": "PASS - visible alternatives were reviewed and are not defensible answers to the prompt.",
-    "ambiguityStatus": "PASS - one canonical response or exact canonical response set is defensible.",
-    "explanationStatus": "PASS - explanation agrees with the independently solved response.",
-    "evidenceStatus": "PASS - evidence resolves within the displayed lesson context and supports the response.",
-    "ownershipStatus": "PASS - pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.",
-    "promptLeakageStatus": "PASS - no transfer prompt repeats its keyed exemplar.",
-    "difficultyStatus": "PASS - wording and response demand fit the authored DRAFT lesson sequence.",
+    "distractorStatus": "PASS - every visible option has a current fingerprint-bound semantic judgment and no unkeyed option is defensible.",
+    "ambiguityStatus": "PASS - the complete current defensible response set exactly matches the authored response contract.",
+    "explanationStatus": "PASS - final semantic reconciliation confirms the current explanation agrees with the defensible response and learner-visible evidence.",
+    "evidenceStatus": "PASS - current option-level judgments use source-owned evidence and support or exclude every visible response.",
+    "ownershipStatus": "PASS - current pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.",
+    "promptLeakageStatus": "PASS - the current learner-visible projection was reviewed without authored answer metadata and exposes no keyed-answer leakage.",
+    "difficultyStatus": "PASS - current wording and response demand passed the completed Grade 2/Grade 3 semantic review.",
+    "answerUniquenessReview": {
+      "ledgerPath": "docs/content/answer-uniqueness-ledger/g2-word-forge-common-prefixes.json",
+      "blindReceiptSha256": "f0240f9f47fe4ca0d1ecc038dc433a386efe54ad2e5b7b4e7a45e2c47c68860b",
+      "finalReceiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0007.pass-a.json",
+      "finalReceiptSha256": "f0240f9f47fe4ca0d1ecc038dc433a386efe54ad2e5b7b4e7a45e2c47c68860b",
+      "finalReviewMethod": "PRIMARY_PASS_C_RECONCILIATION",
+      "independent": false
+    },
     "correctionApplied": false,
-    "correctionSummary": "No authored question correction was required at this fingerprint.",
+    "correctionSummary": "",
     "finalStatus": "PASS"
   },
   {
@@ -455,7 +463,7 @@
       "passage-g2-word-forge-common-prefixes-3"
     ],
     "questionType": "hot_text",
-    "contentFingerprint": "qta-v1-e3d295e464ba1f68",
+    "contentFingerprint": "qta-v1-316d4e998bbda63d",
     "independentlySolvedAnswerText": [
       "A child could unroll a poster while the teacher could retell the plan."
     ],
@@ -466,15 +474,23 @@
     "authoredKeyMatch": "EXACT_MATCH",
     "evaluatorCanonicalPass": true,
     "evaluatorAdversarialPass": true,
-    "distractorStatus": "PASS - visible alternatives were reviewed and are not defensible answers to the prompt.",
-    "ambiguityStatus": "PASS - one canonical response or exact canonical response set is defensible.",
-    "explanationStatus": "PASS - explanation agrees with the independently solved response.",
-    "evidenceStatus": "PASS - evidence resolves within the displayed lesson context and supports the response.",
-    "ownershipStatus": "PASS - pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.",
-    "promptLeakageStatus": "PASS - no transfer prompt repeats its keyed exemplar.",
-    "difficultyStatus": "PASS - wording and response demand fit the authored DRAFT lesson sequence.",
+    "distractorStatus": "PASS - every visible option has a current fingerprint-bound semantic judgment and no unkeyed option is defensible.",
+    "ambiguityStatus": "PASS - the complete current defensible response set exactly matches the authored response contract.",
+    "explanationStatus": "PASS - final semantic reconciliation confirms the current explanation agrees with the defensible response and learner-visible evidence.",
+    "evidenceStatus": "PASS - current option-level judgments use source-owned evidence and support or exclude every visible response.",
+    "ownershipStatus": "PASS - current pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.",
+    "promptLeakageStatus": "PASS - the current learner-visible projection was reviewed without authored answer metadata and exposes no keyed-answer leakage.",
+    "difficultyStatus": "PASS - current wording and response demand passed the completed Grade 2/Grade 3 semantic review.",
+    "answerUniquenessReview": {
+      "ledgerPath": "docs/content/answer-uniqueness-ledger/g2-word-forge-common-prefixes.json",
+      "blindReceiptSha256": "f0240f9f47fe4ca0d1ecc038dc433a386efe54ad2e5b7b4e7a45e2c47c68860b",
+      "finalReceiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0015.second-pass.json",
+      "finalReceiptSha256": "703fe78fc7d3bbe4faa09d30ec9f6f5a6c319c631992321d1375bbb9da9e745a",
+      "finalReviewMethod": "STRATIFIED_SECOND_PASS",
+      "independent": false
+    },
     "correctionApplied": false,
-    "correctionSummary": "No authored question correction was required at this fingerprint.",
+    "correctionSummary": "",
     "finalStatus": "PASS"
   },
   {
@@ -909,12 +925,12 @@
       "passage-g2-word-forge-common-prefixes-7"
     ],
     "questionType": "multi_select",
-    "contentFingerprint": "qta-v1-28ad32d95feb97dd",
+    "contentFingerprint": "qta-v1-86aa7888cfda66cc",
     "independentlySolvedAnswerText": [
       "miscount",
       "misspell",
       "misprint",
-      "unroll"
+      "unrolled"
     ],
     "independentlySolvedAnswerIds": [
       "miscount-choice",
@@ -926,15 +942,23 @@
     "authoredKeyMatch": "EXACT_MATCH",
     "evaluatorCanonicalPass": true,
     "evaluatorAdversarialPass": true,
-    "distractorStatus": "PASS - visible alternatives were reviewed and are not defensible answers to the prompt.",
-    "ambiguityStatus": "PASS - one canonical response or exact canonical response set is defensible.",
-    "explanationStatus": "PASS - explanation agrees with the independently solved response.",
-    "evidenceStatus": "PASS - evidence resolves within the displayed lesson context and supports the response.",
-    "ownershipStatus": "PASS - pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.",
-    "promptLeakageStatus": "PASS - no transfer prompt repeats its keyed exemplar.",
-    "difficultyStatus": "PASS - wording and response demand fit the authored DRAFT lesson sequence.",
+    "distractorStatus": "PASS - every visible option has a current fingerprint-bound semantic judgment and no unkeyed option is defensible.",
+    "ambiguityStatus": "PASS - the complete current defensible response set exactly matches the authored response contract.",
+    "explanationStatus": "PASS - final semantic reconciliation confirms the current explanation agrees with the defensible response and learner-visible evidence.",
+    "evidenceStatus": "PASS - current option-level judgments use source-owned evidence and support or exclude every visible response.",
+    "ownershipStatus": "PASS - current pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.",
+    "promptLeakageStatus": "PASS - the current learner-visible projection was reviewed without authored answer metadata and exposes no keyed-answer leakage.",
+    "difficultyStatus": "PASS - current wording and response demand passed the completed Grade 2/Grade 3 semantic review.",
+    "answerUniquenessReview": {
+      "ledgerPath": "docs/content/answer-uniqueness-ledger/g2-word-forge-common-prefixes.json",
+      "blindReceiptSha256": "f0240f9f47fe4ca0d1ecc038dc433a386efe54ad2e5b7b4e7a45e2c47c68860b",
+      "finalReceiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0007.pass-a.json",
+      "finalReceiptSha256": "f0240f9f47fe4ca0d1ecc038dc433a386efe54ad2e5b7b4e7a45e2c47c68860b",
+      "finalReviewMethod": "PRIMARY_PASS_C_RECONCILIATION",
+      "independent": false
+    },
     "correctionApplied": false,
-    "correctionSummary": "No authored question correction was required at this fingerprint.",
+    "correctionSummary": "",
     "finalStatus": "PASS"
   },
   {
@@ -1485,7 +1509,7 @@
       "passage-g2-word-forge-common-prefixes-6"
     ],
     "questionType": "hot_text",
-    "contentFingerprint": "qta-v1-1eef4f5a1e1fdba6",
+    "contentFingerprint": "qta-v1-90bb2fafaad555bb",
     "independentlySolvedAnswerText": [
       "A child could unroll a poster while the teacher could retell the plan."
     ],
@@ -1496,15 +1520,23 @@
     "authoredKeyMatch": "EXACT_MATCH",
     "evaluatorCanonicalPass": true,
     "evaluatorAdversarialPass": true,
-    "distractorStatus": "PASS - visible alternatives were reviewed and are not defensible answers to the prompt.",
-    "ambiguityStatus": "PASS - one canonical response or exact canonical response set is defensible.",
-    "explanationStatus": "PASS - explanation agrees with the independently solved response.",
-    "evidenceStatus": "PASS - evidence resolves within the displayed lesson context and supports the response.",
-    "ownershipStatus": "PASS - pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.",
-    "promptLeakageStatus": "PASS - no transfer prompt repeats its keyed exemplar.",
-    "difficultyStatus": "PASS - wording and response demand fit the authored DRAFT lesson sequence.",
+    "distractorStatus": "PASS - every visible option has a current fingerprint-bound semantic judgment and no unkeyed option is defensible.",
+    "ambiguityStatus": "PASS - the complete current defensible response set exactly matches the authored response contract.",
+    "explanationStatus": "PASS - final semantic reconciliation confirms the current explanation agrees with the defensible response and learner-visible evidence.",
+    "evidenceStatus": "PASS - current option-level judgments use source-owned evidence and support or exclude every visible response.",
+    "ownershipStatus": "PASS - current pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.",
+    "promptLeakageStatus": "PASS - the current learner-visible projection was reviewed without authored answer metadata and exposes no keyed-answer leakage.",
+    "difficultyStatus": "PASS - current wording and response demand passed the completed Grade 2/Grade 3 semantic review.",
+    "answerUniquenessReview": {
+      "ledgerPath": "docs/content/answer-uniqueness-ledger/g2-word-forge-common-prefixes.json",
+      "blindReceiptSha256": "f0240f9f47fe4ca0d1ecc038dc433a386efe54ad2e5b7b4e7a45e2c47c68860b",
+      "finalReceiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0007.pass-a.json",
+      "finalReceiptSha256": "f0240f9f47fe4ca0d1ecc038dc433a386efe54ad2e5b7b4e7a45e2c47c68860b",
+      "finalReviewMethod": "PRIMARY_PASS_C_RECONCILIATION",
+      "independent": false
+    },
     "correctionApplied": false,
-    "correctionSummary": "No authored question correction was required at this fingerprint.",
+    "correctionSummary": "",
     "finalStatus": "PASS"
   },
   {

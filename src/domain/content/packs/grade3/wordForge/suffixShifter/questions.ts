@@ -248,7 +248,11 @@ function buildCheckpointQuestions(config: CheckpointConfig): ReadingQuestion[] {
   const partB = makeChoiceSet(
     `${config.questionIds[6]}-b`,
     reading(analysisTarget),
-    [morphology(analysisTarget), analysisTarget.derivedWord, `${analysisTarget.derivedWord.slice(0, 1)} | ${analysisTarget.derivedWord.slice(1)}`],
+    [
+      analysisTarget.derivedWord,
+      `${analysisTarget.derivedWord.slice(0, 1)} | ${analysisTarget.derivedWord.slice(1)}`,
+      `${analysisTarget.derivedWord.slice(0, -1)} | ${analysisTarget.derivedWord.slice(-1)}`,
+    ],
     2,
   )
 

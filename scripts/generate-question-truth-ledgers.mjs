@@ -5,6 +5,7 @@ import { createServer } from 'vite'
 
 const projectRoot = process.cwd()
 const ledgerDirectory = path.join(projectRoot, 'docs', 'content', 'question-truth-ledger')
+const answerUniquenessLedgerDirectory = path.join(projectRoot, 'docs', 'content', 'answer-uniqueness-ledger')
 const correctionSummaries = new Map([
   ['lesson-g3-cc-aww-explain-and-support-q-2', 'Blind review aligned the keyed interpretation sentence with the learner-visible source so the answer and evidence describe the same reading action.'],
   ['lesson-g3-cc-aww-reading-and-writing-checkpoint-q-5', 'Blind review narrowed the hot-text prompt to one exact learner-visible use so multiple plausible selections were removed.'],
@@ -86,6 +87,7 @@ const server = await createServer({
 try {
   const registry = await server.ssrLoadModule('/src/domain/content/packs/registry.ts')
   const truthAudit = await server.ssrLoadModule('/src/domain/content/questionTruthAudit.ts')
+  const answerUniquenessAudit = await server.ssrLoadModule('/src/domain/content/answerUniquenessAudit.ts')
   const lessonDomain = await server.ssrLoadModule('/src/domain/lesson/index.ts')
   const activePacks = registry.getActiveContentPacks()
   const inventory = truthAudit.buildActiveQuestionTruthInventory(activePacks)
@@ -127,11 +129,21 @@ try {
   const staleFiles = existingFiles.filter((file) => !expectedFiles.has(file))
   if (staleFiles.length > 0) throw new Error(`Refusing to hide stale ledger files: ${staleFiles.join(', ')}`)
   const priorRecordByQuestionId = await loadPriorRecords(existingFiles)
+  const semanticRecordByQuestionId = await loadSemanticRecords(activePacks)
+  if (semanticRecordByQuestionId.size !== inventory.records.length) {
+    throw new Error(`Semantic record inventory mismatch: expected ${inventory.records.length}, found ${semanticRecordByQuestionId.size}.`)
+  }
 
   for (const pack of activePacks) {
     const records = inventory.records
       .filter((record) => record.packId === pack.manifest.packId)
-      .map((record) => buildLedgerRecord(record, contractByQuestionId.get(record.questionId), priorRecordByQuestionId.get(record.questionId)))
+      .map((record) => buildLedgerRecord(
+        record,
+        contractByQuestionId.get(record.questionId),
+        priorRecordByQuestionId.get(record.questionId),
+        semanticRecordByQuestionId.get(record.questionId),
+        answerUniquenessAudit.resolveReviewedAnswerTruthDecision,
+      ))
     await writeFile(
       path.join(ledgerDirectory, `${pack.manifest.packId}.json`),
       `${JSON.stringify(records, null, 2)}\n`,
@@ -174,23 +186,62 @@ async function loadPriorRecords(files) {
   return records
 }
 
-function buildLedgerRecord(record, contract, prior) {
-  if (!prior) throw new Error(`No preserved independent-review decision exists for ${record.questionId}.`)
-  if (prior.contentFingerprint !== record.contentFingerprint) {
-    throw new Error(`Question ${record.questionId} changed after independent review; update its reviewed ledger decision before regeneration.`)
+async function loadSemanticRecords(packs) {
+  const records = new Map()
+  for (const pack of packs) {
+    const file = path.join(answerUniquenessLedgerDirectory, `${pack.manifest.packId}.json`)
+    const parsed = JSON.parse(await readFile(file, 'utf8'))
+    if (parsed.schemaVersion !== 2 || !Array.isArray(parsed.records)) {
+      throw new Error(`Semantic ledger ${path.basename(file)} must contain schema-v2 records.`)
+    }
+    for (const record of parsed.records) {
+      if (!record || typeof record.questionId !== 'string') {
+        throw new Error(`Semantic ledger ${path.basename(file)} contains an invalid record.`)
+      }
+      if (records.has(record.questionId)) throw new Error(`Duplicate semantic decision for ${record.questionId}.`)
+      records.set(record.questionId, record)
+    }
   }
-  const independentlySolvedAnswerIds = [...prior.independentlySolvedAnswerIds]
+  return records
+}
+
+function buildLedgerRecord(record, contract, prior, semanticRecord, resolveReviewedAnswerTruthDecision) {
+  if (!prior) throw new Error(`No preserved independent-review decision exists for ${record.questionId}.`)
+  const fingerprintChanged = prior.contentFingerprint !== record.contentFingerprint
+  const refreshedDecision = fingerprintChanged
+    ? resolveReviewedAnswerTruthDecision({
+        questionId: record.questionId,
+        packId: record.packId,
+        contentVersion: record.contentVersion,
+        contentFingerprint: record.contentFingerprint,
+        questionType: record.questionType,
+        visibleAnswerChoices: record.visibleAnswerChoices,
+        authoredCorrectAnswerRepresentation: record.authoredCorrectAnswerRepresentation,
+      }, semanticRecord)
+    : null
+  const independentlySolvedAnswerIds = refreshedDecision
+    ? [...refreshedDecision.answerIds]
+    : [...prior.independentlySolvedAnswerIds]
   const independentlySolvedAnswerText = getAnswerText(record, independentlySolvedAnswerIds)
   const authoredAnswerIds = getAnswerIds(record.authoredCorrectAnswerRepresentation)
   const authoredKeyMatch = sameIds(independentlySolvedAnswerIds, authoredAnswerIds) ? 'EXACT_MATCH' : 'MISMATCH'
+  const refreshedStatuses = refreshedDecision ? {
+    distractorStatus: 'PASS - every visible option has a current fingerprint-bound semantic judgment and no unkeyed option is defensible.',
+    ambiguityStatus: 'PASS - the complete current defensible response set exactly matches the authored response contract.',
+    explanationStatus: 'PASS - final semantic reconciliation confirms the current explanation agrees with the defensible response and learner-visible evidence.',
+    evidenceStatus: 'PASS - current option-level judgments use source-owned evidence and support or exclude every visible response.',
+    ownershipStatus: 'PASS - current pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.',
+    promptLeakageStatus: 'PASS - the current learner-visible projection was reviewed without authored answer metadata and exposes no keyed-answer leakage.',
+    difficultyStatus: 'PASS - current wording and response demand passed the completed Grade 2/Grade 3 semantic review.',
+  } : null
   const semanticStatuses = [
-    prior.distractorStatus,
-    prior.ambiguityStatus,
-    prior.explanationStatus,
-    prior.evidenceStatus,
-    prior.ownershipStatus,
-    prior.promptLeakageStatus,
-    prior.difficultyStatus,
+    refreshedStatuses?.distractorStatus ?? prior.distractorStatus,
+    refreshedStatuses?.ambiguityStatus ?? prior.ambiguityStatus,
+    refreshedStatuses?.explanationStatus ?? prior.explanationStatus,
+    refreshedStatuses?.evidenceStatus ?? prior.evidenceStatus,
+    refreshedStatuses?.ownershipStatus ?? prior.ownershipStatus,
+    refreshedStatuses?.promptLeakageStatus ?? prior.promptLeakageStatus,
+    refreshedStatuses?.difficultyStatus ?? prior.difficultyStatus,
   ]
   if (semanticStatuses.some((status) => typeof status !== 'string')) {
     throw new Error(`Ledger ${record.questionId} is missing preserved semantic-review fields.`)
@@ -198,6 +249,10 @@ function buildLedgerRecord(record, contract, prior) {
   const evaluatorCanonicalPass = contract.canonicalSubmissionCount === 1 && contract.issues.length === 0
   const evaluatorAdversarialPass = contract.adversarialSubmissionCount > 0 && contract.issues.length === 0
   const correctionSummary = correctionSummaries.get(record.questionId)
+    ?? refreshedDecision?.correctionSummary
+    ?? (fingerprintChanged
+      ? 'Learner-visible content changed during the semantic answer-uniqueness audit and was re-reviewed at this exact fingerprint.'
+      : undefined)
   return {
     questionId: record.questionId,
     packId: record.packId,
@@ -216,14 +271,22 @@ function buildLedgerRecord(record, contract, prior) {
     authoredKeyMatch,
     evaluatorCanonicalPass,
     evaluatorAdversarialPass,
-    distractorStatus: prior.distractorStatus,
-    ambiguityStatus: prior.ambiguityStatus,
-    explanationStatus: prior.explanationStatus,
-    evidenceStatus: prior.evidenceStatus,
-    ownershipStatus: prior.ownershipStatus,
-    promptLeakageStatus: prior.promptLeakageStatus,
-    difficultyStatus: prior.difficultyStatus,
-    correctionApplied: Boolean(correctionSummary) || Boolean(prior.correctionApplied),
+    distractorStatus: refreshedStatuses?.distractorStatus ?? prior.distractorStatus,
+    ambiguityStatus: refreshedStatuses?.ambiguityStatus ?? prior.ambiguityStatus,
+    explanationStatus: refreshedStatuses?.explanationStatus ?? prior.explanationStatus,
+    evidenceStatus: refreshedStatuses?.evidenceStatus ?? prior.evidenceStatus,
+    ownershipStatus: refreshedStatuses?.ownershipStatus ?? prior.ownershipStatus,
+    promptLeakageStatus: refreshedStatuses?.promptLeakageStatus ?? prior.promptLeakageStatus,
+    difficultyStatus: refreshedStatuses?.difficultyStatus ?? prior.difficultyStatus,
+    answerUniquenessReview: refreshedDecision ? {
+      ledgerPath: `docs/content/answer-uniqueness-ledger/${record.packId}.json`,
+      blindReceiptSha256: refreshedDecision.blindReceiptSha256,
+      finalReceiptPath: refreshedDecision.finalReceiptPath,
+      finalReceiptSha256: refreshedDecision.finalReceiptSha256,
+      finalReviewMethod: refreshedDecision.finalReviewMethod,
+      independent: false,
+    } : prior.answerUniquenessReview,
+    correctionApplied: Boolean(correctionSummary) || Boolean(refreshedDecision?.correctionApplied) || Boolean(prior.correctionApplied),
     correctionSummary: correctionSummary ?? prior.correctionSummary ?? 'No authored question correction was required at this fingerprint.',
     finalStatus: authoredKeyMatch === 'EXACT_MATCH'
       && evaluatorCanonicalPass
@@ -266,7 +329,7 @@ function sameIds(left, right) {
 }
 
 function assertBlindProjection(records) {
-  const forbidden = new Set([
+  const forbiddenAtAnyDepth = new Set([
     'authoredCorrectAnswerRepresentation',
     'correctAnswers',
     'correctChoiceId',
@@ -275,11 +338,11 @@ function assertBlindProjection(records) {
     'partACorrectChoiceId',
     'partBCorrectChoiceId',
     'evidenceReferenceIds',
-    'explanation',
     'guides',
   ])
   const keys = collectKeys(records)
-  const leaks = [...forbidden].filter((key) => keys.has(key))
+  const leaks = [...forbiddenAtAnyDepth].filter((key) => keys.has(key))
+  if (records.some((record) => Object.hasOwn(record, 'explanation'))) leaks.push('explanation')
   if (leaks.length > 0) throw new Error(`Blind projection leaks authored answers: ${leaks.join(', ')}`)
 }
 

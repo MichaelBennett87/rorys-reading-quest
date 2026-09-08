@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0006",
+  "batchFileSha256": "dd64af9930fb74230885d0e736e7bcc24c93039513f4c8fffc71d19db416ff92",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0154",
+      "fingerprint": "b2a5db1c567dbd9ae83bd157fa17ec187bea4547551a08439ce61f2df80f1072",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Bottle divides as bot-tle, with a closed first syllable.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Simple divides as sim-ple, with a closed first syllable.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Table divides as ta-ble, with an open first syllable before consonant-le.",
+              []
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Puzzle divides as puz-zle, with a closed first syllable.",
+              [
+                "S0057"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

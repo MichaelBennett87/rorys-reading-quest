@@ -1,0 +1,4427 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "g3-cg-ff-q1-1",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-7f1b36bc316bbe38",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ca42150024555e03d936aee198057006d5fafbcf084be718bbed3cd25ee2adf9",
+        "conclusionsSha256": "cfd846d839ebb637269fad1e48ee9dcd4f79c9363b1bd48db674cf308d7c1fdf",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0117.pass-a.json",
+        "receiptSha256": "cfd846d839ebb637269fad1e48ee9dcd4f79c9363b1bd48db674cf308d7c1fdf",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which kind of figurative language appears in “The supply closet was a sleeping dragon.”?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q1-1-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q1-1-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q1-1-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sentence directly says the closet was another thing to compare their qualities.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q1-1-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence makes a comparison rather than an extreme numerical exaggeration.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q1-1-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "The primary construction compares the closet to a dragon; it does not merely assign a human action.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q1-1-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The closet is not literally a dragon.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-2",
+                "g3-cg-figurative-passage-1-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q1-2",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-21d13f3a21f50ee6",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ca42150024555e03d936aee198057006d5fafbcf084be718bbed3cd25ee2adf9",
+        "conclusionsSha256": "cfd846d839ebb637269fad1e48ee9dcd4f79c9363b1bd48db674cf308d7c1fdf",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0024.second-pass.json",
+        "receiptSha256": "6907ce27371bb7063f48025b7bedb2e02c05bc1390af5ebb12d184484d5e7112",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does “The rusty hinge complained with a long squeak.” mean in context?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q1-2-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q1-2-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q1-2-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The next sentence identifies the door as the source of the squeak, so complained means made an unpleasant sound.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-4",
+                "g3-cg-figurative-passage-1-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q1-2-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes the closet image, not the hinge’s squeak.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-2",
+                "g3-cg-figurative-passage-1-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q1-2-choice-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The hinge made a noise and did not speak words.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-4",
+                "g3-cg-figurative-passage-1-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q1-2-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence uses vivid language and gives no measurement.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q1-3",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-17782ccd2dcb5189",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "ca42150024555e03d936aee198057006d5fafbcf084be718bbed3cd25ee2adf9",
+        "conclusionsSha256": "cfd846d839ebb637269fad1e48ee9dcd4f79c9363b1bd48db674cf308d7c1fdf",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0117.pass-a.json",
+        "receiptSha256": "cfd846d839ebb637269fad1e48ee9dcd4f79c9363b1bd48db674cf308d7c1fdf",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two expressions that are metaphor examples.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q1-3-choice-1",
+            "g3-cg-ff-q1-3-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q1-3-choice-1",
+            "g3-cg-ff-q1-3-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q1-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly compares the closet to a sleeping dragon.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q1-3-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Complained gives the hinge a human action, making this personification.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q1-3-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "A million exaggerates the twelve-box job, making this hyperbole.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-6",
+                "g3-cg-figurative-passage-1-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q1-3-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly compares Maya’s organizing plan to a flashlight.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-9",
+                "g3-cg-figurative-passage-1-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q1-4",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-555d67d7669b5aa3",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "ca42150024555e03d936aee198057006d5fafbcf084be718bbed3cd25ee2adf9",
+        "conclusionsSha256": "cfd846d839ebb637269fad1e48ee9dcd4f79c9363b1bd48db674cf308d7c1fdf",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0117.pass-a.json",
+        "receiptSha256": "cfd846d839ebb637269fad1e48ee9dcd4f79c9363b1bd48db674cf308d7c1fdf",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the expression that means: The twelve boxes felt like a very large job.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q1-4-segment-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q1-4-segment-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q1-4-segment-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This means the plan gave guidance through the mess.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-9",
+                "g3-cg-figurative-passage-1-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q1-4-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This compares the crowded closet to a dragon.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-2",
+                "g3-cg-figurative-passage-1-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q1-4-segment-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The next sentence explicitly explains that million means the twelve-box job felt enormous.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-6",
+                "g3-cg-figurative-passage-1-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q1-4-segment-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes the hinge’s long squeak.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-4",
+                "g3-cg-figurative-passage-1-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q1-5",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-9d207af15bc9485d",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "ca42150024555e03d936aee198057006d5fafbcf084be718bbed3cd25ee2adf9",
+        "conclusionsSha256": "cfd846d839ebb637269fad1e48ee9dcd4f79c9363b1bd48db674cf308d7c1fdf",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0117.pass-a.json",
+        "receiptSha256": "cfd846d839ebb637269fad1e48ee9dcd4f79c9363b1bd48db674cf308d7c1fdf",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-cg-ff-q1-5-row-1",
+          "prompt": "The supply closet was a sleeping dragon.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q1-5-metaphor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q1-5-metaphor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q1-5-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "The closet is not literally a dragon.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-2",
+                "g3-cg-figurative-passage-1-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q1-5-personification",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence’s primary form is a direct comparison to a dragon.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q1-5-hyperbole",
+              "verdict": "INCORRECT",
+              "rationale": "It is not a numerical or extreme overstatement.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q1-5-metaphor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sentence directly compares the closet to a dragon.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ff-q1-5-row-2",
+          "prompt": "The rusty hinge complained with a long squeak.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q1-5-personification"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q1-5-personification"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q1-5-personification",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Complained gives a human action to a hinge.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q1-5-hyperbole",
+              "verdict": "INCORRECT",
+              "rationale": "No extreme exaggeration appears.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q1-5-metaphor",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence does not say the hinge is another object.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q1-5-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "A hinge cannot literally complain.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-4",
+                "g3-cg-figurative-passage-1-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ff-q1-5-row-3",
+          "prompt": "We have a million boxes to sort",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q1-5-hyperbole"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q1-5-hyperbole"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q1-5-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source immediately says there are twelve boxes, not one million.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-6",
+                "g3-cg-figurative-passage-1-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q1-5-metaphor",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase does not compare boxes to another thing.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q1-5-hyperbole",
+              "verdict": "DEFENSIBLE",
+              "rationale": "One million intentionally exaggerates the twelve-box job.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-6",
+                "g3-cg-figurative-passage-1-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q1-5-personification",
+              "verdict": "INCORRECT",
+              "rationale": "No human action is assigned to an object.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ff-q1-5-row-4",
+          "prompt": "Maya’s plan was a flashlight in the mess.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q1-5-metaphor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q1-5-metaphor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q1-5-hyperbole",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence is a comparison, not an extreme overstatement.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q1-5-personification",
+              "verdict": "INCORRECT",
+              "rationale": "It does not merely assign a human action.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q1-5-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "Maya’s plan is not literally a flashlight.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-9",
+                "g3-cg-figurative-passage-1-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q1-5-metaphor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The plan is directly compared to a flashlight because it guides the sorting.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-1-sentence-9",
+                "g3-cg-figurative-passage-1-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q2-1",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-1312392d764ab249",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ca42150024555e03d936aee198057006d5fafbcf084be718bbed3cd25ee2adf9",
+        "conclusionsSha256": "cfd846d839ebb637269fad1e48ee9dcd4f79c9363b1bd48db674cf308d7c1fdf",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0117.pass-a.json",
+        "receiptSha256": "cfd846d839ebb637269fad1e48ee9dcd4f79c9363b1bd48db674cf308d7c1fdf",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which kind of figurative language appears in “A lever is a strong arm for a simple job.”?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q2-1-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q2-1-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q2-1-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase is not an extreme exaggeration.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q2-1-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The lever is directly compared to a strong arm.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-2",
+                "g3-cg-figurative-passage-2-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q2-1-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "The main construction is a comparison, not a human action assigned to the bar.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q2-1-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "A lever is not literally an arm.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-2",
+                "g3-cg-figurative-passage-2-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q2-2",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-c6af135f285ddb73",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "ca42150024555e03d936aee198057006d5fafbcf084be718bbed3cd25ee2adf9",
+        "conclusionsSha256": "cfd846d839ebb637269fad1e48ee9dcd4f79c9363b1bd48db674cf308d7c1fdf",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0117.pass-a.json",
+        "receiptSha256": "cfd846d839ebb637269fad1e48ee9dcd4f79c9363b1bd48db674cf308d7c1fdf",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does “The fulcrum waits beneath the board.” mean in context?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q2-2-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q2-2-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q2-2-choice-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The following sentence explains that the fulcrum remains in place; it does not decide.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-4",
+                "g3-cg-figurative-passage-2-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q2-2-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The source directly restates waits as staying in one place beneath the board.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-4",
+                "g3-cg-figurative-passage-2-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q2-2-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is true of levers generally but does not interpret the target sentence.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-1",
+                "g3-cg-figurative-passage-2-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q2-2-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence provides no measurement.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q2-3",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-53e7b51ae9e0666e",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "ca42150024555e03d936aee198057006d5fafbcf084be718bbed3cd25ee2adf9",
+        "conclusionsSha256": "cfd846d839ebb637269fad1e48ee9dcd4f79c9363b1bd48db674cf308d7c1fdf",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0117.pass-a.json",
+        "receiptSha256": "cfd846d839ebb637269fad1e48ee9dcd4f79c9363b1bd48db674cf308d7c1fdf",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two expressions that are metaphor examples.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q2-3-choice-1",
+            "g3-cg-ff-q2-3-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q2-3-choice-1",
+            "g3-cg-ff-q2-3-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q2-3-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Waits gives the fulcrum a human action, making personification.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-4",
+                "g3-cg-figurative-passage-2-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q2-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The lever is directly compared to a strong arm.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-2",
+                "g3-cg-figurative-passage-2-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q2-3-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Answers gives the board end a human action, making personification.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-9",
+                "g3-cg-figurative-passage-2-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q2-3-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The board is directly compared to a bridge carrying force.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-7",
+                "g3-cg-figurative-passage-2-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q2-4",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-2244e8de930127a2",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "ca42150024555e03d936aee198057006d5fafbcf084be718bbed3cd25ee2adf9",
+        "conclusionsSha256": "cfd846d839ebb637269fad1e48ee9dcd4f79c9363b1bd48db674cf308d7c1fdf",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0024.second-pass.json",
+        "receiptSha256": "6907ce27371bb7063f48025b7bedb2e02c05bc1390af5ebb12d184484d5e7112",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the expression that means: The board transfers force from the pushing end to the load.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q2-4-segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q2-4-segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q2-4-segment-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This means the far end rises in response; it does not describe force transfer through the board.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-9",
+                "g3-cg-figurative-passage-2-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q2-4-segment-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This means the fulcrum stays in place.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-4",
+                "g3-cg-figurative-passage-2-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q2-4-segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The next sentence explicitly explains that this bridge comparison means force travels through the board.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-7",
+                "g3-cg-figurative-passage-2-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q2-4-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This broadly compares a lever to an arm but does not specifically state force transfer.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-2",
+                "g3-cg-figurative-passage-2-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q2-5",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-9dcc0f4c10ddfeb8",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "ca42150024555e03d936aee198057006d5fafbcf084be718bbed3cd25ee2adf9",
+        "conclusionsSha256": "cfd846d839ebb637269fad1e48ee9dcd4f79c9363b1bd48db674cf308d7c1fdf",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0117.pass-a.json",
+        "receiptSha256": "cfd846d839ebb637269fad1e48ee9dcd4f79c9363b1bd48db674cf308d7c1fdf",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-cg-ff-q2-5-row-1",
+          "prompt": "A lever is a strong arm for a simple job.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q2-5-metaphor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q2-5-metaphor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q2-5-metaphor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The lever is directly compared to a strong arm.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-2",
+                "g3-cg-figurative-passage-2-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q2-5-personification",
+              "verdict": "INCORRECT",
+              "rationale": "The primary construction is a direct comparison.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q2-5-hyperbole",
+              "verdict": "INCORRECT",
+              "rationale": "No extreme exaggeration appears.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q2-5-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "A lever is not literally an arm.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-2",
+                "g3-cg-figurative-passage-2-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ff-q2-5-row-2",
+          "prompt": "The fulcrum waits beneath the board.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q2-5-personification"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q2-5-personification"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q2-5-hyperbole",
+              "verdict": "INCORRECT",
+              "rationale": "No exaggeration appears.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q2-5-personification",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Waits assigns a human action to the fulcrum.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-4",
+                "g3-cg-figurative-passage-2-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q2-5-metaphor",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence does not compare the fulcrum to another object.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q2-5-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "The fulcrum does not literally wait by choice.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-4",
+                "g3-cg-figurative-passage-2-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ff-q2-5-row-3",
+          "prompt": "The board is a bridge that carries your push to the load.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q2-5-metaphor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q2-5-metaphor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q2-5-personification",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence’s main construction is a direct comparison.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q2-5-hyperbole",
+              "verdict": "INCORRECT",
+              "rationale": "No extreme exaggeration appears.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q2-5-metaphor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The board is directly compared to a bridge carrying force.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-7",
+                "g3-cg-figurative-passage-2-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q2-5-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "The board does not literally cross water as a bridge.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-7",
+                "g3-cg-figurative-passage-2-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ff-q2-5-row-4",
+          "prompt": "The far end answers by rising.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q2-5-personification"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q2-5-personification"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q2-5-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "A board end cannot literally answer.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-9",
+                "g3-cg-figurative-passage-2-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q2-5-metaphor",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence does not compare the end to another object.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q2-5-hyperbole",
+              "verdict": "INCORRECT",
+              "rationale": "No extreme overstatement appears.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-9"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q2-5-personification",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Answers assigns a human response to the board end.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-2-sentence-9",
+                "g3-cg-figurative-passage-2-sentence-10"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q3-1",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-1825dc616246b3dd",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "8c0f319929365bce20d6bb02e644c6aadaa7ab47019fdf9f926d22b166a82adc",
+        "conclusionsSha256": "4098249fbccd7276abd297b07ff3e112a481f077f08fd978a7fc4fc53c1d4e70",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0118.pass-a.json",
+        "receiptSha256": "4098249fbccd7276abd297b07ff3e112a481f077f08fd978a7fc4fc53c1d4e70",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which kind of figurative language appears in “The field was a patchwork quilt of red, yellow, and blue.”?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q3-1-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q3-1-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q3-1-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The field is directly compared to a patchwork quilt because the blankets form colored squares.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-3",
+                "g3-cg-figurative-passage-3-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q3-1-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase makes a direct comparison rather than assigning a human action.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q3-1-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "It does not use an extreme exaggeration.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q3-1-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source explicitly says the field is not cloth.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q3-2",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-80d35842e8d8062e",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "8c0f319929365bce20d6bb02e644c6aadaa7ab47019fdf9f926d22b166a82adc",
+        "conclusionsSha256": "4098249fbccd7276abd297b07ff3e112a481f077f08fd978a7fc4fc53c1d4e70",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0118.pass-a.json",
+        "receiptSha256": "4098249fbccd7276abd297b07ff3e112a481f077f08fd978a7fc4fc53c1d4e70",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does “The wind whispered its next direction.” mean in context?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q3-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q3-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q3-2-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This explains the patchwork-quilt metaphor, not the wind..",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-3",
+                "g3-cg-figurative-passage-3-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q3-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The breeze on Lena’s cheek gives her a gentle directional clue.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-7",
+                "g3-cg-figurative-passage-3-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q3-2-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The wind did not literally speak; Lena felt a breeze.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-7",
+                "g3-cg-figurative-passage-3-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q3-2-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "No measurement appears in the expression.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q3-3",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-faeb394f760ff003",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "8c0f319929365bce20d6bb02e644c6aadaa7ab47019fdf9f926d22b166a82adc",
+        "conclusionsSha256": "4098249fbccd7276abd297b07ff3e112a481f077f08fd978a7fc4fc53c1d4e70",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0118.pass-a.json",
+        "receiptSha256": "4098249fbccd7276abd297b07ff3e112a481f077f08fd978a7fc4fc53c1d4e70",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two expressions that are hyperbole examples.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q3-3-choice-3",
+            "g3-cg-ff-q3-3-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q3-3-choice-4",
+            "g3-cg-ff-q3-3-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q3-3-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A visible kite cannot be one hundred miles high, and the source calls this excitement rather than measurement.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-14",
+                "g3-cg-figurative-passage-3-sentence-15"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q3-3-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This is a metaphor comparing the field to a quilt.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-3",
+                "g3-cg-figurative-passage-3-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q3-3-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This personifies the wind by saying it whispered.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-7",
+                "g3-cg-figurative-passage-3-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q3-3-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Ten years deliberately exaggerates several minutes of holding the string.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-10",
+                "g3-cg-figurative-passage-3-sentence-11",
+                "g3-cg-figurative-passage-3-sentence-12"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q3-4",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-969558c4586c6230",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "8c0f319929365bce20d6bb02e644c6aadaa7ab47019fdf9f926d22b166a82adc",
+        "conclusionsSha256": "4098249fbccd7276abd297b07ff3e112a481f077f08fd978a7fc4fc53c1d4e70",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0118.pass-a.json",
+        "receiptSha256": "4098249fbccd7276abd297b07ff3e112a481f077f08fd978a7fc4fc53c1d4e70",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the expression that means: Lena felt as though she had held the string for a very long time.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q3-4-segment-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q3-4-segment-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q3-4-segment-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This means the breeze provided a gentle directional clue.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-7",
+                "g3-cg-figurative-passage-3-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q3-4-segment-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This exaggerates the kite’s height, not elapsed holding time.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-14",
+                "g3-cg-figurative-passage-3-sentence-15"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q3-4-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes how the colored field looked.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-3",
+                "g3-cg-figurative-passage-3-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q3-4-segment-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The ten-year exaggeration expresses how long the tired holding felt.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-10",
+                "g3-cg-figurative-passage-3-sentence-11",
+                "g3-cg-figurative-passage-3-sentence-12"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q3-5",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-d9780450548790ac",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "8c0f319929365bce20d6bb02e644c6aadaa7ab47019fdf9f926d22b166a82adc",
+        "conclusionsSha256": "4098249fbccd7276abd297b07ff3e112a481f077f08fd978a7fc4fc53c1d4e70",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0118.pass-a.json",
+        "receiptSha256": "4098249fbccd7276abd297b07ff3e112a481f077f08fd978a7fc4fc53c1d4e70",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-cg-ff-q3-5-row-1",
+          "prompt": "The field was a patchwork quilt of red, yellow, and blue.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q3-5-metaphor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q3-5-metaphor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q3-5-personification",
+              "verdict": "INCORRECT",
+              "rationale": "No human action is assigned.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q3-5-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source says the field was not cloth.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q3-5-metaphor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The field is directly compared to a patchwork quilt.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-3",
+                "g3-cg-figurative-passage-3-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q3-5-hyperbole",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase is a comparison, not an extreme exaggeration.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ff-q3-5-row-2",
+          "prompt": "The wind whispered its next direction.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q3-5-personification"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q3-5-personification"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q3-5-hyperbole",
+              "verdict": "INCORRECT",
+              "rationale": "No extreme amount is stated.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q3-5-personification",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Whispered gives the wind a human action.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-7",
+                "g3-cg-figurative-passage-3-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q3-5-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "Wind cannot literally whisper directions.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-7",
+                "g3-cg-figurative-passage-3-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q3-5-metaphor",
+              "verdict": "INCORRECT",
+              "rationale": "The wind is not directly said to be another thing.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ff-q3-5-row-3",
+          "prompt": "I have held this string for ten years!",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q3-5-hyperbole"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q3-5-hyperbole"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q3-5-metaphor",
+              "verdict": "INCORRECT",
+              "rationale": "No direct comparison appears.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q3-5-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source says less than an hour had passed.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q3-5-personification",
+              "verdict": "INCORRECT",
+              "rationale": "No nonhuman object receives a human action.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q3-5-hyperbole",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Ten years greatly exaggerates several minutes.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-10",
+                "g3-cg-figurative-passage-3-sentence-11",
+                "g3-cg-figurative-passage-3-sentence-12"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ff-q3-5-row-4",
+          "prompt": "My kite must be a hundred miles above us",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q3-5-hyperbole"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q3-5-hyperbole"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q3-5-hyperbole",
+              "verdict": "DEFENSIBLE",
+              "rationale": "One hundred miles greatly exaggerates the kite’s visible height.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-14",
+                "g3-cg-figurative-passage-3-sentence-15"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q3-5-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source says the statement is excitement rather than a real measurement.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-15"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q3-5-personification",
+              "verdict": "INCORRECT",
+              "rationale": "No human action is assigned.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-14"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q3-5-metaphor",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase does not directly compare the kite to another thing.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-3-sentence-14"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q4-1",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-b0a527b6ecea58b2",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "8c0f319929365bce20d6bb02e644c6aadaa7ab47019fdf9f926d22b166a82adc",
+        "conclusionsSha256": "4098249fbccd7276abd297b07ff3e112a481f077f08fd978a7fc4fc53c1d4e70",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0118.pass-a.json",
+        "receiptSha256": "4098249fbccd7276abd297b07ff3e112a481f077f08fd978a7fc4fc53c1d4e70",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which kind of figurative language appears in “The pond is a silver mirror”?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q4-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q4-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q4-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The pond is directly compared to a silver mirror reflecting light.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-3",
+                "g3-cg-figurative-passage-4-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q4-1-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "No human action is assigned to the pond.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q4-1-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "The expression is a comparison rather than an extreme overstatement.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q4-1-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "A pond is not literally a mirror.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-3",
+                "g3-cg-figurative-passage-4-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q4-2",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-c2090e977eda03d3",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "8c0f319929365bce20d6bb02e644c6aadaa7ab47019fdf9f926d22b166a82adc",
+        "conclusionsSha256": "4098249fbccd7276abd297b07ff3e112a481f077f08fd978a7fc4fc53c1d4e70",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0024.second-pass.json",
+        "receiptSha256": "6907ce27371bb7063f48025b7bedb2e02c05bc1390af5ebb12d184484d5e7112",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does “The moon peeks between the branches” mean in context?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q4-2-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q4-2-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q4-2-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This explains the pond-as-mirror comparison, not the moon’s action.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-3",
+                "g3-cg-figurative-passage-4-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q4-2-choice-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The moon has no eyes or choice; clouds soon cover its visible light.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-5",
+                "g3-cg-figurative-passage-4-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q4-2-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Peeks means the moon becomes briefly visible through branches before clouds hide it.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-5",
+                "g3-cg-figurative-passage-4-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q4-2-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "The line gives no exact measurement.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q4-3",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-ca636d4ce5ed9048",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "8c0f319929365bce20d6bb02e644c6aadaa7ab47019fdf9f926d22b166a82adc",
+        "conclusionsSha256": "4098249fbccd7276abd297b07ff3e112a481f077f08fd978a7fc4fc53c1d4e70",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0118.pass-a.json",
+        "receiptSha256": "4098249fbccd7276abd297b07ff3e112a481f077f08fd978a7fc4fc53c1d4e70",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two expressions that are hyperbole examples.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q4-3-choice-3",
+            "g3-cg-ff-q4-3-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q4-3-choice-3",
+            "g3-cg-ff-q4-3-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q4-3-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This is a metaphor comparing the pond to a mirror.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-3",
+                "g3-cg-figurative-passage-4-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q4-3-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This personifies the moon by saying it peeks.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-5",
+                "g3-cg-figurative-passage-4-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q4-3-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A thousand nights is an intentional exaggeration of enjoying the sound for a long time.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-7",
+                "g3-cg-figurative-passage-4-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q4-3-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "One small cricket cannot literally fill the whole sky; the line exaggerates how enormous it sounds.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-9",
+                "g3-cg-figurative-passage-4-sentence-10",
+                "g3-cg-figurative-passage-4-sentence-11",
+                "g3-cg-figurative-passage-4-sentence-12"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q4-4",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-876a00ec029aae60",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "8c0f319929365bce20d6bb02e644c6aadaa7ab47019fdf9f926d22b166a82adc",
+        "conclusionsSha256": "4098249fbccd7276abd297b07ff3e112a481f077f08fd978a7fc4fc53c1d4e70",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0118.pass-a.json",
+        "receiptSha256": "4098249fbccd7276abd297b07ff3e112a481f077f08fd978a7fc4fc53c1d4e70",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the expression that means: The speaker enjoys the water sound enough to listen for a very long time.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q4-4-segment-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q4-4-segment-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q4-4-segment-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This means the pond reflects nearby light.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-3",
+                "g3-cg-figurative-passage-4-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q4-4-segment-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This exaggerates how large one cricket sounds.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-9",
+                "g3-cg-figurative-passage-4-sentence-10",
+                "g3-cg-figurative-passage-4-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q4-4-segment-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A thousand nights expresses willingness to enjoy the water sound for a very long time.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-7",
+                "g3-cg-figurative-passage-4-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q4-4-segment-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This means the moon briefly becomes visible.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-5",
+                "g3-cg-figurative-passage-4-sentence-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q4-5",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-06461f3d4e3b2761",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "8c0f319929365bce20d6bb02e644c6aadaa7ab47019fdf9f926d22b166a82adc",
+        "conclusionsSha256": "4098249fbccd7276abd297b07ff3e112a481f077f08fd978a7fc4fc53c1d4e70",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0024.second-pass.json",
+        "receiptSha256": "6907ce27371bb7063f48025b7bedb2e02c05bc1390af5ebb12d184484d5e7112",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-cg-ff-q4-5-row-1",
+          "prompt": "The pond is a silver mirror",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q4-5-metaphor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q4-5-metaphor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q4-5-metaphor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The pond is directly compared to a silver mirror.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-3",
+                "g3-cg-figurative-passage-4-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q4-5-personification",
+              "verdict": "INCORRECT",
+              "rationale": "No human action is assigned.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q4-5-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "A pond is not literally a mirror.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q4-5-hyperbole",
+              "verdict": "INCORRECT",
+              "rationale": "No extreme quantity is used.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ff-q4-5-row-2",
+          "prompt": "The moon peeks between the branches",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q4-5-personification"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q4-5-personification"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q4-5-metaphor",
+              "verdict": "INCORRECT",
+              "rationale": "The moon is not directly compared to another object.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q4-5-hyperbole",
+              "verdict": "INCORRECT",
+              "rationale": "No extreme overstatement appears.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q4-5-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "The moon cannot literally peek with eyes.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-5",
+                "g3-cg-figurative-passage-4-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q4-5-personification",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Peeks assigns a human action to the moon.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ff-q4-5-row-3",
+          "prompt": "I could listen for a thousand nights",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q4-5-hyperbole"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q4-5-hyperbole"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q4-5-personification",
+              "verdict": "INCORRECT",
+              "rationale": "No nonhuman object receives a human action.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q4-5-metaphor",
+              "verdict": "INCORRECT",
+              "rationale": "The line makes no direct comparison.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q4-5-hyperbole",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A thousand nights is an intentional extreme exaggeration.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-7",
+                "g3-cg-figurative-passage-4-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q4-5-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "The speaker is not reporting a completed thousand-night duration.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ff-q4-5-row-4",
+          "prompt": "One cricket fills the whole wide sky with song",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q4-5-hyperbole"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q4-5-hyperbole"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q4-5-personification",
+              "verdict": "INCORRECT",
+              "rationale": "The cricket is not assigned a specifically human action.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q4-5-metaphor",
+              "verdict": "INCORRECT",
+              "rationale": "The cricket is not directly compared to another thing.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q4-5-hyperbole",
+              "verdict": "DEFENSIBLE",
+              "rationale": "One cricket filling the whole sky greatly exaggerates its evening sound.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-9",
+                "g3-cg-figurative-passage-4-sentence-10",
+                "g3-cg-figurative-passage-4-sentence-11",
+                "g3-cg-figurative-passage-4-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q4-5-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "One small cricket cannot literally fill the sky.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-4-sentence-10",
+                "g3-cg-figurative-passage-4-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q5-1",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-e5f93530d46f7d3c",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "16039583b9b8ac146fbf8ec44b9059693012c99450ef2c8bc1c4196cbfc4acb3",
+        "conclusionsSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0119.pass-a.json",
+        "receiptSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which kind of figurative language appears in “The gym was a safe harbor during the storm.”?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q5-1-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q5-1-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q5-1-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source says the gym was not beside an ocean and never became a port.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-5",
+                "g3-cg-figurative-passage-5-sentence-19"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-1-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "No extreme exaggeration appears.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-1-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence directly compares the gym to a harbor rather than assigning a human action.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-1-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The gym is directly compared to a safe harbor because it provides protection.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-4",
+                "g3-cg-figurative-passage-5-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q5-2",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-a3a02747c0d2156b",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "16039583b9b8ac146fbf8ec44b9059693012c99450ef2c8bc1c4196cbfc4acb3",
+        "conclusionsSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0119.pass-a.json",
+        "receiptSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does “Outside, the storm argued with the roof.” mean in context?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q5-2-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q5-2-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q5-2-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This interprets the safe-harbor metaphor, not the arguing-storm sentence.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-4",
+                "g3-cg-figurative-passage-5-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-2-choice-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source explicitly says the roof did not speak or disagree.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-7",
+                "g3-cg-figurative-passage-5-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-2-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The next sentence restates the expression as loud, uneven wind and rain on the roof.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-7",
+                "g3-cg-figurative-passage-5-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-2-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "The expression gives no measurement.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q5-3",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-4f2b68916e19040d",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "16039583b9b8ac146fbf8ec44b9059693012c99450ef2c8bc1c4196cbfc4acb3",
+        "conclusionsSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0119.pass-a.json",
+        "receiptSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "During a warm rehearsal, Nia says, “The classroom was a furnace.” Which explanation identifies the new expression accurately?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q5-3-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q5-3-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q5-3-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Was directly compares an unusually hot classroom with a furnace.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-3-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The rehearsal context gives no literal furnace in the room.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-3-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "The statement compares heat and gives no exact temperature.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-3-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "Was creates a direct metaphor; a simile would use like or as.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q5-4",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-348a7d7cd72fe528",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "16039583b9b8ac146fbf8ec44b9059693012c99450ef2c8bc1c4196cbfc4acb3",
+        "conclusionsSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0024.second-pass.json",
+        "receiptSha256": "6907ce27371bb7063f48025b7bedb2e02c05bc1390af5ebb12d184484d5e7112",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two expressions that are personification examples.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q5-4-choice-2",
+            "g3-cg-ff-q5-4-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q5-4-choice-2",
+            "g3-cg-ff-q5-4-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q5-4-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This directly compares the gym with a safe harbor.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-4",
+                "g3-cg-figurative-passage-5-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-4-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This is an extreme statewide exaggeration of loud thunder.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-10",
+                "g3-cg-figurative-passage-5-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-4-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Argued gives the storm and roof human disagreement behavior.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-7",
+                "g3-cg-figurative-passage-5-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-4-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Watched gives an exit sign a human action.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-13",
+                "g3-cg-figurative-passage-5-sentence-14"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q5-5",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-17b2fa14af2a7f60",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "16039583b9b8ac146fbf8ec44b9059693012c99450ef2c8bc1c4196cbfc4acb3",
+        "conclusionsSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0119.pass-a.json",
+        "receiptSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the expression that means: The thunder sounded extremely loud to Niko.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q5-5-segment-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q5-5-segment-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q5-5-segment-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This depicts loud rain and wind at the roof, but it is not Niko’s thunder statement.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-7",
+                "g3-cg-figurative-passage-5-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-5-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This means the gym was protective, not that thunder sounded loud.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-4",
+                "g3-cg-figurative-passage-5-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-5-segment-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This means the sign remained visible, not that thunder sounded loud.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-13",
+                "g3-cg-figurative-passage-5-sentence-14"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-5-segment-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The next sentence says Niko stretched the truth to describe one especially loud boom.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-10",
+                "g3-cg-figurative-passage-5-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q5-6",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-ea8dd73b23dc1bef",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "16039583b9b8ac146fbf8ec44b9059693012c99450ef2c8bc1c4196cbfc4acb3",
+        "conclusionsSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0024.second-pass.json",
+        "receiptSha256": "6907ce27371bb7063f48025b7bedb2e02c05bc1390af5ebb12d184484d5e7112",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-cg-ff-q5-6-row-1",
+          "prompt": "The gym was a safe harbor during the storm.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q5-6-metaphor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q5-6-metaphor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q5-6-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source says the gym was not by an ocean.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-6-hyperbole",
+              "verdict": "INCORRECT",
+              "rationale": "No extreme overstatement appears.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-6-personification",
+              "verdict": "INCORRECT",
+              "rationale": "No human action is assigned.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-6-metaphor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The gym is directly compared with a safe harbor.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-4",
+                "g3-cg-figurative-passage-5-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ff-q5-6-row-2",
+          "prompt": "Outside, the storm argued with the roof.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q5-6-personification"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q5-6-personification"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q5-6-personification",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Argued assigns human disagreement behavior to the storm and roof.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-7",
+                "g3-cg-figurative-passage-5-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-6-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source says the roof did not speak or disagree.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-6-hyperbole",
+              "verdict": "INCORRECT",
+              "rationale": "No extreme amount is stated.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-6-metaphor",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence does not directly say the storm is another object.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ff-q5-6-row-3",
+          "prompt": "That thunder could wake every sleeper in the state!",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q5-6-hyperbole"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q5-6-hyperbole"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q5-6-metaphor",
+              "verdict": "INCORRECT",
+              "rationale": "No direct comparison appears.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-6-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source says Niko was stretching the truth.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-6-personification",
+              "verdict": "INCORRECT",
+              "rationale": "No nonhuman object receives a human action.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-6-hyperbole",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Waking every sleeper in the state deliberately exaggerates the thunder’s loudness.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-10",
+                "g3-cg-figurative-passage-5-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ff-q5-6-row-4",
+          "prompt": "The exit sign watched over the quiet line near the wall.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q5-6-personification"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q5-6-personification"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q5-6-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source says the sign had no eyes.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-14"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-6-hyperbole",
+              "verdict": "INCORRECT",
+              "rationale": "No extreme exaggeration appears.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-6-metaphor",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence does not directly compare the sign to another object.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-6-personification",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Watched assigns a human action to the exit sign.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-13",
+                "g3-cg-figurative-passage-5-sentence-14"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q5-7",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-59ab3743bacae87f",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "16039583b9b8ac146fbf8ec44b9059693012c99450ef2c8bc1c4196cbfc4acb3",
+        "conclusionsSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0119.pass-a.json",
+        "receiptSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Part A: Which kind appears in “The exit sign watched over the quiet line near the wall.”?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q5-7-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q5-7-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q5-7-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Watched gives the nonhuman exit sign a human action.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-13",
+                "g3-cg-figurative-passage-5-sentence-14"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-7-a-3",
+              "verdict": "INCORRECT",
+              "rationale": "No extreme overstatement appears.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-13"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-7-a-2",
+              "verdict": "INCORRECT",
+              "rationale": "The sign is not directly compared to another object.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-13"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Part B: What does that expression mean in this source?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q5-7-b-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q5-7-b-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q5-7-b-other",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This interprets the gym-as-harbor metaphor, not the exit sign.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-4",
+                "g3-cg-figurative-passage-5-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-7-b-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source explicitly says the sign had no eyes.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-14"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q5-7-b-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The next sentence explains that the bright sign remained easy to see above the group.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-5-sentence-13",
+                "g3-cg-figurative-passage-5-sentence-14"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q6-1",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-60bbbb19f3d1169d",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "16039583b9b8ac146fbf8ec44b9059693012c99450ef2c8bc1c4196cbfc4acb3",
+        "conclusionsSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0119.pass-a.json",
+        "receiptSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which kind of figurative language appears in “The sunrise is a golden flag”?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q6-1-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q6-1-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q6-1-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "No human action is assigned to the sunrise.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-1-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sunrise is directly compared to a golden flag.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-3",
+                "g3-cg-figurative-passage-6-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-1-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "The expression is a comparison, not an extreme exaggeration.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-1-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "A sunrise is not literally a flag.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q6-2",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-17627a88e2aa6a34",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "16039583b9b8ac146fbf8ec44b9059693012c99450ef2c8bc1c4196cbfc4acb3",
+        "conclusionsSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0119.pass-a.json",
+        "receiptSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does “The broom hums a working tune” mean in context?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q6-2-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q6-2-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q6-2-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "The line contains no measurement.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-2-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Hums describes the soft repeated sound made while the crew sweeps.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-5",
+                "g3-cg-figurative-passage-6-sentence-7",
+                "g3-cg-figurative-passage-6-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-2-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This interprets the sunrise metaphor, not the broom.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-2-choice-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "A broom cannot choose or sing a tune.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q6-3",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-06c54d18635d4354",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "16039583b9b8ac146fbf8ec44b9059693012c99450ef2c8bc1c4196cbfc4acb3",
+        "conclusionsSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0119.pass-a.json",
+        "receiptSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which new line uses personification rather than ordinary animal behavior?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q6-3-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q6-3-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q6-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Winked gives the moon a human facial action.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-3-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "Hopping is ordinary rabbit behavior.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-3-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Watching from a branch is ordinary owl behavior.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-3-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Swimming near reeds is ordinary fish behavior.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q6-4",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-0ddad7ba430d8ffe",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "16039583b9b8ac146fbf8ec44b9059693012c99450ef2c8bc1c4196cbfc4acb3",
+        "conclusionsSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0119.pass-a.json",
+        "receiptSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two expressions that are hyperbole examples.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q6-4-choice-3",
+            "g3-cg-ff-q6-4-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q6-4-choice-4",
+            "g3-cg-ff-q6-4-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q6-4-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Nearby friends are the only listeners, so a hundred towns exaggerates the laughter’s reach.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-11",
+                "g3-cg-figurative-passage-6-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-4-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This directly compares the sunrise to a flag.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-4-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "This personifies the broom by saying it hums.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-4-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A billion greatly exaggerates the leaves swept by the crew.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-7",
+                "g3-cg-figurative-passage-6-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q6-5",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-1c5b1ebc6fbfd740",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "16039583b9b8ac146fbf8ec44b9059693012c99450ef2c8bc1c4196cbfc4acb3",
+        "conclusionsSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0119.pass-a.json",
+        "receiptSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the expression that means: The crew sweeps a very large number of leaves.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q6-5-segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q6-5-segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q6-5-segment-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This describes the broom’s sweeping sound.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-5-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This compares the sunrise to a flag.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-5-segment-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This exaggerates how far laughter travels.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-11",
+                "g3-cg-figurative-passage-6-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-5-segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A billion leaves expresses a very large number of leaves swept.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-7",
+                "g3-cg-figurative-passage-6-sentence-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q6-6",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-c85f11f8be99dcac",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "16039583b9b8ac146fbf8ec44b9059693012c99450ef2c8bc1c4196cbfc4acb3",
+        "conclusionsSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0119.pass-a.json",
+        "receiptSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-cg-ff-q6-6-row-1",
+          "prompt": "The sunrise is a golden flag",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q6-6-metaphor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q6-6-metaphor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q6-6-personification",
+              "verdict": "INCORRECT",
+              "rationale": "No human action is assigned.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-6-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "A sunrise is not literally a flag.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-6-hyperbole",
+              "verdict": "INCORRECT",
+              "rationale": "No extreme overstatement appears.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-6-metaphor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sunrise is directly compared to a golden flag.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ff-q6-6-row-2",
+          "prompt": "The broom hums a working tune",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q6-6-personification"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q6-6-personification"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q6-6-hyperbole",
+              "verdict": "INCORRECT",
+              "rationale": "No extreme amount appears.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-6-metaphor",
+              "verdict": "INCORRECT",
+              "rationale": "The broom is not directly said to be another object.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-6-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "A broom cannot literally hum a tune.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-6-personification",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Hums gives the broom a human musical action.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ff-q6-6-row-3",
+          "prompt": "We sweep a billion leaves today",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q6-6-hyperbole"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q6-6-hyperbole"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q6-6-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "A work crew does not literally sweep one billion leaves in this setting.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-6-personification",
+              "verdict": "INCORRECT",
+              "rationale": "No nonhuman object receives a human action.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-6-hyperbole",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A billion deliberately exaggerates the number of leaves.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-7",
+                "g3-cg-figurative-passage-6-sentence-8"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-6-metaphor",
+              "verdict": "INCORRECT",
+              "rationale": "No direct comparison appears.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ff-q6-6-row-4",
+          "prompt": "Our laughter crosses a hundred towns",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q6-6-hyperbole"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q6-6-hyperbole"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q6-6-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem says only nearby friends hear the sounds.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-6-personification",
+              "verdict": "INCORRECT",
+              "rationale": "Laughter is not an object receiving a human action.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-6-hyperbole",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A hundred towns greatly exaggerates how far the laughter carries.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-11",
+                "g3-cg-figurative-passage-6-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-6-metaphor",
+              "verdict": "INCORRECT",
+              "rationale": "No direct comparison appears.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q6-7",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-8512925c0805e468",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "16039583b9b8ac146fbf8ec44b9059693012c99450ef2c8bc1c4196cbfc4acb3",
+        "conclusionsSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0119.pass-a.json",
+        "receiptSha256": "77529ae35fcf15917a8f97e5138cc04f198d831b24c53b8f0883e38d6f7039c7",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Part A: Which kind appears in “Our laughter crosses a hundred towns”?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q6-7-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q6-7-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q6-7-a-3",
+              "verdict": "INCORRECT",
+              "rationale": "No nonhuman object is given a human action.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-7-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A hundred towns is an extreme exaggeration of loud laughter.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-11",
+                "g3-cg-figurative-passage-6-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-7-a-2",
+              "verdict": "INCORRECT",
+              "rationale": "The line does not directly compare laughter to another thing.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Part B: What does that expression mean in this source?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q6-7-b-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q6-7-b-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q6-7-b-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem says only nearby friends hear it.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-7-b-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The exaggeration communicates loud, cheerful group laughter.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-11",
+                "g3-cg-figurative-passage-6-sentence-12"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q6-7-b-other",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This interprets the sunrise line, not the laughter line.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-6-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q7-1",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-0f261f0f4df2d94b",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "1b62a7bacf752ae62d35b44cf31d606b9e1a8031b8fa536a26932135722dfc6c",
+        "conclusionsSha256": "5077064b650be0461692f4134bb4594c57ddf2583efa416ea6088723f07dced6",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0120.pass-a.json",
+        "receiptSha256": "5077064b650be0461692f4134bb4594c57ddf2583efa416ea6088723f07dced6",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which kind of figurative language appears in “A shallow channel is a road for runoff.”?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q7-1-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q7-1-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q7-1-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "The phrase is a comparison, not an extreme exaggeration.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-1-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The channel is directly compared to a road because both guide movement.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-3",
+                "g3-cg-figurative-passage-7-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-1-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "No human action is assigned.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-1-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source says the channel is not pavement.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q7-2",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-5465a13ff29abe83",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "1b62a7bacf752ae62d35b44cf31d606b9e1a8031b8fa536a26932135722dfc6c",
+        "conclusionsSha256": "5077064b650be0461692f4134bb4594c57ddf2583efa416ea6088723f07dced6",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0120.pass-a.json",
+        "receiptSha256": "5077064b650be0461692f4134bb4594c57ddf2583efa416ea6088723f07dced6",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What does “The bare slope invites water to rush straight downhill.” mean in context?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q7-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q7-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q7-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The next sentence restates invites as open ground giving runoff a clear downhill path.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-6",
+                "g3-cg-figurative-passage-7-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-2-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source explicitly says a slope cannot truly invite anything.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-2-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "The expression gives no measurement.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-2-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This interprets the channel-as-road metaphor, not the bare-slope expression.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-3",
+                "g3-cg-figurative-passage-7-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q7-3",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-9b19e02ed5cca8d2",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "1b62a7bacf752ae62d35b44cf31d606b9e1a8031b8fa536a26932135722dfc6c",
+        "conclusionsSha256": "5077064b650be0461692f4134bb4594c57ddf2583efa416ea6088723f07dced6",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0120.pass-a.json",
+        "receiptSha256": "5077064b650be0461692f4134bb4594c57ddf2583efa416ea6088723f07dced6",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which new statement is hyperbole rather than a literal measurement?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q7-3-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q7-3-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q7-3-choice-1",
+              "verdict": "INCORRECT",
+              "rationale": "This is a plausible literal volume measurement.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-3-choice-3",
+              "verdict": "INCORRECT",
+              "rationale": "This is a plausible literal length measurement.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-3-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "This is a plausible literal count from a model.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-3-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "A tiny trickle cannot carry an ocean, making this deliberate exaggeration.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q7-4",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-f0ba4227285e2ee3",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "1b62a7bacf752ae62d35b44cf31d606b9e1a8031b8fa536a26932135722dfc6c",
+        "conclusionsSha256": "5077064b650be0461692f4134bb4594c57ddf2583efa416ea6088723f07dced6",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0120.pass-a.json",
+        "receiptSha256": "5077064b650be0461692f4134bb4594c57ddf2583efa416ea6088723f07dced6",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two expressions that are metaphor examples.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q7-4-choice-1",
+            "g3-cg-ff-q7-4-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q7-4-choice-1",
+            "g3-cg-ff-q7-4-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q7-4-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "The whole-hill claim is hyperbole, and the source says the hill remained.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-19",
+                "g3-cg-figurative-passage-7-sentence-20"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-4-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The channel is directly compared to a road guiding runoff.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-3",
+                "g3-cg-figurative-passage-7-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-4-choice-2",
+              "verdict": "INCORRECT",
+              "rationale": "Invites gives the slope a human action, making personification.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-6",
+                "g3-cg-figurative-passage-7-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-4-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The spreading roots are directly compared to a woven net holding soil.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-10",
+                "g3-cg-figurative-passage-7-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q7-5",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-6381c3c37e7dc55f",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "1b62a7bacf752ae62d35b44cf31d606b9e1a8031b8fa536a26932135722dfc6c",
+        "conclusionsSha256": "5077064b650be0461692f4134bb4594c57ddf2583efa416ea6088723f07dced6",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0120.pass-a.json",
+        "receiptSha256": "5077064b650be0461692f4134bb4594c57ddf2583efa416ea6088723f07dced6",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the expression that means: Spreading roots can help hold nearby soil together.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q7-5-segment-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q7-5-segment-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q7-5-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This means a channel guides runoff along a path.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-3",
+                "g3-cg-figurative-passage-7-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-5-segment-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This means bare ground gives water a clear downhill path.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-6",
+                "g3-cg-figurative-passage-7-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-5-segment-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This exaggerates the amount of soil carried away.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-19",
+                "g3-cg-figurative-passage-7-sentence-20"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-5-segment-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The next sentence explains that spreading root shapes help hold nearby soil together.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-10",
+                "g3-cg-figurative-passage-7-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q7-6",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-f56bc480abbbdc0c",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "1b62a7bacf752ae62d35b44cf31d606b9e1a8031b8fa536a26932135722dfc6c",
+        "conclusionsSha256": "5077064b650be0461692f4134bb4594c57ddf2583efa416ea6088723f07dced6",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0120.pass-a.json",
+        "receiptSha256": "5077064b650be0461692f4134bb4594c57ddf2583efa416ea6088723f07dced6",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-cg-ff-q7-6-row-1",
+          "prompt": "A shallow channel is a road for runoff.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q7-6-metaphor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q7-6-metaphor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q7-6-metaphor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The channel is directly compared to a road.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-3",
+                "g3-cg-figurative-passage-7-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-6-hyperbole",
+              "verdict": "INCORRECT",
+              "rationale": "No extreme overstatement appears.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-6-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source says the channel is not pavement.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-6-personification",
+              "verdict": "INCORRECT",
+              "rationale": "No human action is assigned.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ff-q7-6-row-2",
+          "prompt": "The bare slope invites water to rush straight downhill.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q7-6-personification"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q7-6-personification"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q7-6-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "A slope cannot literally invite water.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-7"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-6-metaphor",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence does not directly compare the slope to another object.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-6-hyperbole",
+              "verdict": "INCORRECT",
+              "rationale": "No extreme quantity appears.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-6"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-6-personification",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Invites assigns a human action to the slope.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-6",
+                "g3-cg-figurative-passage-7-sentence-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ff-q7-6-row-3",
+          "prompt": "A plant’s roots are a woven net in the soil.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q7-6-metaphor"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q7-6-metaphor"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q7-6-personification",
+              "verdict": "INCORRECT",
+              "rationale": "No human action is assigned.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-6-hyperbole",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence makes a comparison rather than an extreme exaggeration.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-10"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-6-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source says roots are not string.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-11"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-6-metaphor",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Roots are directly compared to a woven net.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-10",
+                "g3-cg-figurative-passage-7-sentence-11"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-cg-ff-q7-6-row-4",
+          "prompt": "That trickle carried the whole hill away!",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q7-6-hyperbole"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q7-6-hyperbole"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q7-6-metaphor",
+              "verdict": "INCORRECT",
+              "rationale": "No direct comparison appears.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-19"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-6-personification",
+              "verdict": "INCORRECT",
+              "rationale": "No human action is assigned.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-19"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-6-hyperbole",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The whole-hill claim greatly exaggerates the visible soil movement.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-19",
+                "g3-cg-figurative-passage-7-sentence-20"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-6-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source says the whole hill remained in the tray.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-20"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-cg-ff-q7-7",
+      "packId": "g3-compare-castle-figurative-fortress",
+      "contentVersion": "g3-cg-figurative-fortress-r0.1.0",
+      "contentFingerprint": "qta-v1-fdeee04d6d795d91",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "1b62a7bacf752ae62d35b44cf31d606b9e1a8031b8fa536a26932135722dfc6c",
+        "conclusionsSha256": "5077064b650be0461692f4134bb4594c57ddf2583efa416ea6088723f07dced6",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0024.second-pass.json",
+        "receiptSha256": "6907ce27371bb7063f48025b7bedb2e02c05bc1390af5ebb12d184484d5e7112",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Part A: Which kind appears in “That trickle carried the whole hill away!”?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q7-7-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q7-7-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q7-7-a-2",
+              "verdict": "INCORRECT",
+              "rationale": "The sentence does not directly compare the trickle to another object.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-19"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-7-a-3",
+              "verdict": "INCORRECT",
+              "rationale": "No nonhuman object is assigned a human action.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-19"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-7-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The whole-hill statement deliberately exaggerates the model result.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-19",
+                "g3-cg-figurative-passage-7-sentence-20"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Part B: What does that expression mean in this source?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-cg-ff-q7-7-b-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-cg-ff-q7-7-b-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-cg-ff-q7-7-b-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The source says the statement emphasizes the visible soil movement.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-19",
+                "g3-cg-figurative-passage-7-sentence-20"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-7-b-literal",
+              "verdict": "CONTRADICTED",
+              "rationale": "The source says the whole hill stayed in the tray.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-20"
+              ]
+            },
+            {
+              "answerId": "g3-cg-ff-q7-7-b-other",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This interprets the channel metaphor, not the trickle hyperbole.",
+              "evidenceIds": [
+                "g3-cg-figurative-passage-7-sentence-3",
+                "g3-cg-figurative-passage-7-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

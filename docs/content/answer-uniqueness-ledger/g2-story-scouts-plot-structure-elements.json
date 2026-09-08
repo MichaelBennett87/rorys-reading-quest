@@ -1,0 +1,3883 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-guided-a-q1",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-beb15feaa236d8b6",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "c22c06fe85c6b705797ca7dd8862ab074491b2e361a257df0fe6560e66103366",
+        "conclusionsSha256": "aba632f9ed3496ba6e06a106293d0bb2e8ecbc8b546f0c80452dc9acbfdd18c9",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0013.second-pass.json",
+        "receiptSha256": "3a42c1bba5f69a9afe0aba36c69761b7886e1fcd25ed938f044d5907088edaa9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Where does this story happen?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The opening explicitly places Mia at the community garden.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-1"
+              ]
+            },
+            {
+              "answerId": "d",
+              "verdict": "INCORRECT",
+              "rationale": "No classroom is part of the story setting.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-1"
+              ]
+            },
+            {
+              "answerId": "c",
+              "verdict": "INCORRECT",
+              "rationale": "No trail is part of the story setting.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-1"
+              ]
+            },
+            {
+              "answerId": "b",
+              "verdict": "INCORRECT",
+              "rationale": "No library is part of the story setting.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-guided-a-q2",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-3f4b921a031ce8be",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "c22c06fe85c6b705797ca7dd8862ab074491b2e361a257df0fe6560e66103366",
+        "conclusionsSha256": "aba632f9ed3496ba6e06a106293d0bb2e8ecbc8b546f0c80452dc9acbfdd18c9",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0027.pass-a.json",
+        "receiptSha256": "aba632f9ed3496ba6e06a106293d0bb2e8ecbc8b546f0c80452dc9acbfdd18c9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the main problem in the story?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "b",
+              "verdict": "INCORRECT",
+              "rationale": "The passage does not say the garden is empty.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-1",
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-5"
+              ]
+            },
+            {
+              "answerId": "a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The wind bent the welcome sign and left its letters crooked.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-2"
+              ]
+            },
+            {
+              "answerId": "d",
+              "verdict": "INCORRECT",
+              "rationale": "Leo helps with the repair; he does not lose the tape.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-3"
+              ]
+            },
+            {
+              "answerId": "c",
+              "verdict": "INCORRECT",
+              "rationale": "The passage calls the visitors early, not late.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-guided-a-q3",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-a2216d80b7f89da4",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "c22c06fe85c6b705797ca7dd8862ab074491b2e361a257df0fe6560e66103366",
+        "conclusionsSha256": "aba632f9ed3496ba6e06a106293d0bb2e8ecbc8b546f0c80452dc9acbfdd18c9",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0027.pass-a.json",
+        "receiptSha256": "aba632f9ed3496ba6e06a106293d0bb2e8ecbc8b546f0c80452dc9acbfdd18c9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which details help you know where and when the story happens?",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "a",
+            "b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "b",
+            "a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "community garden identifies where the story happens.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-1"
+              ]
+            },
+            {
+              "answerId": "a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "bright Monday morning identifies when the story happens.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-1"
+              ]
+            },
+            {
+              "answerId": "c",
+              "verdict": "INCORRECT",
+              "rationale": "The story mentions help from Leo, not teacher help, and this does not locate the setting.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-3"
+              ]
+            },
+            {
+              "answerId": "d",
+              "verdict": "INCORRECT",
+              "rationale": "Picture books are not mentioned and do not establish the setting.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-garden-sign"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-guided-a-q4",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-19a61d9abcaf981e",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "c22c06fe85c6b705797ca7dd8862ab074491b2e361a257df0fe6560e66103366",
+        "conclusionsSha256": "aba632f9ed3496ba6e06a106293d0bb2e8ecbc8b546f0c80452dc9acbfdd18c9",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0013.second-pass.json",
+        "receiptSha256": "3a42c1bba5f69a9afe0aba36c69761b7886e1fcd25ed938f044d5907088edaa9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence shows the problem?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-story-scouts-plot-structure-elements-garden-sign-sentence-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-story-scouts-plot-structure-elements-garden-sign-sentence-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-garden-sign-sentence-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence establishes the setting before the problem appears.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-garden-sign-sentence-4",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence shows the repaired sign and positive ending.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-garden-sign-sentence-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence directly states that wind bent the sign and made the letters crooked.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-garden-sign-sentence-5",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence shows the benefit after the fix.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-garden-sign-sentence-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Mia's frown and repair imply a problem, but the sentence chiefly shows her response and solution rather than stating the problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-guided-a-q5",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-03fe4394c25aae60",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "c22c06fe85c6b705797ca7dd8862ab074491b2e361a257df0fe6560e66103366",
+        "conclusionsSha256": "aba632f9ed3496ba6e06a106293d0bb2e8ecbc8b546f0c80452dc9acbfdd18c9",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0013.second-pass.json",
+        "receiptSha256": "3a42c1bba5f69a9afe0aba36c69761b7886e1fcd25ed938f044d5907088edaa9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-beginning",
+          "prompt": "Beginning",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-beginning"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-beginning"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-end",
+              "verdict": "INCORRECT",
+              "rationale": "The sign standing tall again belongs to the ending.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-beginning",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Mia arriving at the garden in the morning establishes the beginning.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-middle",
+              "verdict": "INCORRECT",
+              "rationale": "Straightening the sign is the solution action, not the beginning.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-problem",
+          "prompt": "Problem",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-problem"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-problem"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-helper",
+              "verdict": "INCORRECT",
+              "rationale": "Leo's helping hands support the solution, not the problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-problem",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The bent and crooked welcome sign is the story's problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-ready",
+              "verdict": "INCORRECT",
+              "rationale": "The garden being ready shows the resolved ending.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-resolution",
+          "prompt": "Resolution",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-resolution"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-resolution"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-delay",
+              "verdict": "INCORRECT",
+              "rationale": "The passage does not say the wind keeps blowing.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-event",
+              "verdict": "INCORRECT",
+              "rationale": "The opening time is not the resolution.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-resolution",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Mia repairs the sign, which stands tall by the end, and she smiles.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-3",
+                "g2-story-scouts-plot-structure-elements-garden-sign-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-guided-b-q1",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-28ee1c97e0b1690b",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "c22c06fe85c6b705797ca7dd8862ab074491b2e361a257df0fe6560e66103366",
+        "conclusionsSha256": "aba632f9ed3496ba6e06a106293d0bb2e8ecbc8b546f0c80452dc9acbfdd18c9",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0027.pass-a.json",
+        "receiptSha256": "aba632f9ed3496ba6e06a106293d0bb2e8ecbc8b546f0c80452dc9acbfdd18c9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Where does this story happen?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "d",
+              "verdict": "INCORRECT",
+              "rationale": "The passage mentions a bird book, not a bird box setting.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-2"
+              ]
+            },
+            {
+              "answerId": "b",
+              "verdict": "INCORRECT",
+              "rationale": "No trail appears in the story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-1"
+              ]
+            },
+            {
+              "answerId": "c",
+              "verdict": "INCORRECT",
+              "rationale": "No garden appears in the story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-1"
+              ]
+            },
+            {
+              "answerId": "a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The opening explicitly places Jamal at the library table.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-guided-b-q2",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-1e272b6dfeeb07e9",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "c22c06fe85c6b705797ca7dd8862ab074491b2e361a257df0fe6560e66103366",
+        "conclusionsSha256": "aba632f9ed3496ba6e06a106293d0bb2e8ecbc8b546f0c80452dc9acbfdd18c9",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0027.pass-a.json",
+        "receiptSha256": "aba632f9ed3496ba6e06a106293d0bb2e8ecbc8b546f0c80452dc9acbfdd18c9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Who is the main character in this story?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "d",
+              "verdict": "INCORRECT",
+              "rationale": "Harper is not named in the story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-library-card"
+              ]
+            },
+            {
+              "answerId": "c",
+              "verdict": "INCORRECT",
+              "rationale": "Priya is not named in the story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-library-card"
+              ]
+            },
+            {
+              "answerId": "a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Jamal performs the central actions and solves the display problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-1",
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-3",
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-5"
+              ]
+            },
+            {
+              "answerId": "b",
+              "verdict": "INCORRECT",
+              "rationale": "Mia is not named in the story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-library-card"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-guided-b-q3",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-616a515ce90b0e18",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "c22c06fe85c6b705797ca7dd8862ab074491b2e361a257df0fe6560e66103366",
+        "conclusionsSha256": "aba632f9ed3496ba6e06a106293d0bb2e8ecbc8b546f0c80452dc9acbfdd18c9",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0027.pass-a.json",
+        "receiptSha256": "aba632f9ed3496ba6e06a106293d0bb2e8ecbc8b546f0c80452dc9acbfdd18c9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which details tell you when or where the story happens?",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "a",
+            "b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "b",
+            "a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "rainy afternoon tells when the story happens.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-1"
+              ]
+            },
+            {
+              "answerId": "d",
+              "verdict": "INCORRECT",
+              "rationale": "bright picture book is an object, not a time or place clue.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-5"
+              ]
+            },
+            {
+              "answerId": "a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "after school tells when the story happens.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-1"
+              ]
+            },
+            {
+              "answerId": "c",
+              "verdict": "INCORRECT",
+              "rationale": "A science fair is not part of the story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-library-card"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-guided-b-q4",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-3b139e4e47ef1972",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "732c2d922202bb1920f5b7960248f9c83aec3cbf3deb5c39769565276952ef3a",
+        "conclusionsSha256": "9a4b1c91a0fdeb8aba2479aff70e8a373e3ea21c48fc3985523df4791626a748",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0013.pass-a.json",
+        "receiptSha256": "9a4b1c91a0fdeb8aba2479aff70e8a373e3ea21c48fc3985523df4791626a748",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence lists the actions Jamal uses to make the messy display neat?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-story-scouts-plot-structure-elements-library-card-sentence-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-story-scouts-plot-structure-elements-library-card-sentence-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-library-card-sentence-2",
+              "verdict": "INCORRECT",
+              "rationale": "This states the problem rather than Jamal's fixing actions.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-library-card-sentence-1",
+              "verdict": "INCORRECT",
+              "rationale": "This establishes time, place, and character but lists no fixing actions.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-library-card-sentence-4",
+              "verdict": "INCORRECT",
+              "rationale": "This states the neat result and Jamal's feeling rather than the actions used.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-library-card-sentence-5",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This later placement helps readers notice the book but does not list the actions that made the messy display neat.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-library-card-sentence-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence lists opening, sorting, and labeling actions that make the display neat.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-guided-b-q5",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-41a693d6b575418a",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "c22c06fe85c6b705797ca7dd8862ab074491b2e361a257df0fe6560e66103366",
+        "conclusionsSha256": "aba632f9ed3496ba6e06a106293d0bb2e8ecbc8b546f0c80452dc9acbfdd18c9",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0027.pass-a.json",
+        "receiptSha256": "aba632f9ed3496ba6e06a106293d0bb2e8ecbc8b546f0c80452dc9acbfdd18c9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-beginning",
+          "prompt": "Beginning",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-beginning"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-beginning"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-middle",
+              "verdict": "INCORRECT",
+              "rationale": "Opening the drawer and sorting cards are solution actions after the problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-beginning",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Jamal helping at the library table after school establishes the beginning.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-end",
+              "verdict": "INCORRECT",
+              "rationale": "The neat display and Jamal's pride belong to the ending.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-problem",
+          "prompt": "Problem",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-problem"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-problem"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-reader",
+              "verdict": "INCORRECT",
+              "rationale": "Children stopping to read occurs after the display is fixed.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-helper",
+              "verdict": "INCORRECT",
+              "rationale": "The teacher's help contributes to the solution rather than creating the problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-problem",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The card slipping behind the display creates the story problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-resolution",
+          "prompt": "Resolution",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-resolution"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-resolution"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-neat",
+              "verdict": "INCORRECT",
+              "rationale": "The messy shelf states part of the problem, not its resolution.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-card",
+              "verdict": "INCORRECT",
+              "rationale": "The passage does not say the bird book slips again.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-resolution",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Jamal's new label and display work resolve the card and shelf problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-3",
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-4",
+                "g2-story-scouts-plot-structure-elements-library-card-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-guided-c-q1",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-ee8b9d0007ce2914",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "50d19084089e82d3ea17aefbab97331527d54adda1c027431789b93249400707",
+        "conclusionsSha256": "26411d4f26aacef79f0af873e0c545267daed8dfbadeb5bbd4c6be6915a0deaa",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0028.pass-a.json",
+        "receiptSha256": "26411d4f26aacef79f0af873e0c545267daed8dfbadeb5bbd4c6be6915a0deaa",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Where does this story happen?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c",
+              "verdict": "INCORRECT",
+              "rationale": "No bird box location appears in this story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-trail-cleanup"
+              ]
+            },
+            {
+              "answerId": "d",
+              "verdict": "INCORRECT",
+              "rationale": "No classroom location appears in this story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-trail-cleanup"
+              ]
+            },
+            {
+              "answerId": "b",
+              "verdict": "INCORRECT",
+              "rationale": "No library location appears in this story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-trail-cleanup"
+              ]
+            },
+            {
+              "answerId": "a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The opening explicitly places Nia and Ben on the nature trail.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-guided-c-q2",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-6c9cb9edca387b91",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "50d19084089e82d3ea17aefbab97331527d54adda1c027431789b93249400707",
+        "conclusionsSha256": "26411d4f26aacef79f0af873e0c545267daed8dfbadeb5bbd4c6be6915a0deaa",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0028.pass-a.json",
+        "receiptSha256": "26411d4f26aacef79f0af873e0c545267daed8dfbadeb5bbd4c6be6915a0deaa",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the main problem in this story?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "d",
+              "verdict": "INCORRECT",
+              "rationale": "A library shelf is not part of this story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-trail-cleanup"
+              ]
+            },
+            {
+              "answerId": "a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Leaves cover the sign and wrappers litter the bench area, creating the trail cleanup problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-2"
+              ]
+            },
+            {
+              "answerId": "b",
+              "verdict": "INCORRECT",
+              "rationale": "No bridge model appears in this story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-trail-cleanup"
+              ]
+            },
+            {
+              "answerId": "c",
+              "verdict": "INCORRECT",
+              "rationale": "No bird box appears in this story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-trail-cleanup"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-guided-c-q3",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-dfb48da545ec7c29",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "50d19084089e82d3ea17aefbab97331527d54adda1c027431789b93249400707",
+        "conclusionsSha256": "26411d4f26aacef79f0af873e0c545267daed8dfbadeb5bbd4c6be6915a0deaa",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0028.pass-a.json",
+        "receiptSha256": "26411d4f26aacef79f0af873e0c545267daed8dfbadeb5bbd4c6be6915a0deaa",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which details help you know where and when the story happens?",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "a",
+            "b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "b",
+            "a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c",
+              "verdict": "INCORRECT",
+              "rationale": "Teacher help is neither stated nor a setting clue.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-trail-cleanup"
+              ]
+            },
+            {
+              "answerId": "b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "the nature trail identifies where the story happens.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-1"
+              ]
+            },
+            {
+              "answerId": "d",
+              "verdict": "INCORRECT",
+              "rationale": "A science fair is not part of the story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-trail-cleanup"
+              ]
+            },
+            {
+              "answerId": "a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Saturday morning identifies when the story happens.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-guided-c-q4",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-69810a504c602dbc",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "732c2d922202bb1920f5b7960248f9c83aec3cbf3deb5c39769565276952ef3a",
+        "conclusionsSha256": "9a4b1c91a0fdeb8aba2479aff70e8a373e3ea21c48fc3985523df4791626a748",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0013.second-pass.json",
+        "receiptSha256": "3a42c1bba5f69a9afe0aba36c69761b7886e1fcd25ed938f044d5907088edaa9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence lists the actions the characters use to solve the problem?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-4",
+              "verdict": "INCORRECT",
+              "rationale": "This gives the result after the work rather than listing the solution actions.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-2",
+              "verdict": "INCORRECT",
+              "rationale": "This states the trail problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-5",
+              "verdict": "INCORRECT",
+              "rationale": "This describes the tidy final condition, not the characters' actions.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-1",
+              "verdict": "INCORRECT",
+              "rationale": "This establishes time, place, and characters.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This lists Nia picking up trash and Ben cleaning the sign.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-guided-c-q5",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-48e5eb58181d9a1c",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "50d19084089e82d3ea17aefbab97331527d54adda1c027431789b93249400707",
+        "conclusionsSha256": "26411d4f26aacef79f0af873e0c545267daed8dfbadeb5bbd4c6be6915a0deaa",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0028.pass-a.json",
+        "receiptSha256": "26411d4f26aacef79f0af873e0c545267daed8dfbadeb5bbd4c6be6915a0deaa",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-beginning",
+          "prompt": "Beginning",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-beginning"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-beginning"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-middle",
+              "verdict": "INCORRECT",
+              "rationale": "Picking up trash and cleaning the sign are middle solution actions.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-beginning",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Walking the nature trail in the morning establishes the beginning.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-end",
+              "verdict": "INCORRECT",
+              "rationale": "The trail feeling calm again belongs to the resolved ending.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-problem",
+          "prompt": "Problem",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-problem"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-problem"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-helper",
+              "verdict": "INCORRECT",
+              "rationale": "Smiling hikers show a positive result after the cleanup.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-tidy",
+              "verdict": "INCORRECT",
+              "rationale": "The tidy bench area is the resolved condition.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-problem",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Leaves and wrappers in the trail area state the cleanup problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-resolution",
+          "prompt": "Resolution",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-resolution"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-resolution"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-night",
+              "verdict": "INCORRECT",
+              "rationale": "The windy night is background at the beginning, not the resolution.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-resolution",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The cleaned, calm trail states the problem's resolution.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-3",
+                "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-4",
+                "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-wrappers",
+              "verdict": "INCORRECT",
+              "rationale": "Wrappers by the bench state part of the problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-trail-cleanup-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-guided-d-q1",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-62f1e2330d5846af",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "50d19084089e82d3ea17aefbab97331527d54adda1c027431789b93249400707",
+        "conclusionsSha256": "26411d4f26aacef79f0af873e0c545267daed8dfbadeb5bbd4c6be6915a0deaa",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0013.second-pass.json",
+        "receiptSha256": "3a42c1bba5f69a9afe0aba36c69761b7886e1fcd25ed938f044d5907088edaa9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Where does this story happen?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "d",
+              "verdict": "INCORRECT",
+              "rationale": "No kitchen appears in the story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-bird-box-storm"
+              ]
+            },
+            {
+              "answerId": "c",
+              "verdict": "INCORRECT",
+              "rationale": "No trail appears in the story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-bird-box-storm"
+              ]
+            },
+            {
+              "answerId": "a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The opening places the bird box by the school yard.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-1"
+              ]
+            },
+            {
+              "answerId": "b",
+              "verdict": "INCORRECT",
+              "rationale": "No library appears in the story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-bird-box-storm"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-guided-d-q2",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-ca9018102c6f9984",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "50d19084089e82d3ea17aefbab97331527d54adda1c027431789b93249400707",
+        "conclusionsSha256": "26411d4f26aacef79f0af873e0c545267daed8dfbadeb5bbd4c6be6915a0deaa",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0028.pass-a.json",
+        "receiptSha256": "26411d4f26aacef79f0af873e0c545267daed8dfbadeb5bbd4c6be6915a0deaa",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the main problem in this story?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c",
+              "verdict": "INCORRECT",
+              "rationale": "A wrapper-covered trail is not part of this story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-bird-box-storm"
+              ]
+            },
+            {
+              "answerId": "b",
+              "verdict": "INCORRECT",
+              "rationale": "A missing library card is not part of this story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-bird-box-storm"
+              ]
+            },
+            {
+              "answerId": "d",
+              "verdict": "INCORRECT",
+              "rationale": "Seedlings needing water are not part of this story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-bird-box-storm"
+              ]
+            },
+            {
+              "answerId": "a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The bird box hanging loose is the central problem the siblings repair.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-1",
+                "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-guided-d-q3",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-1af8dbaa03a403ee",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "50d19084089e82d3ea17aefbab97331527d54adda1c027431789b93249400707",
+        "conclusionsSha256": "26411d4f26aacef79f0af873e0c545267daed8dfbadeb5bbd4c6be6915a0deaa",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0028.pass-a.json",
+        "receiptSha256": "26411d4f26aacef79f0af873e0c545267daed8dfbadeb5bbd4c6be6915a0deaa",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which details help you know where and when the story happens?",
+          "requestedSelectionCount": 3,
+          "keyedAnswerIds": [
+            "a",
+            "b",
+            "c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "c",
+            "a",
+            "b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "before the storm arrived tells when the repair is completed.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-4"
+              ]
+            },
+            {
+              "answerId": "a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "late one afternoon identifies when the story happens.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-1"
+              ]
+            },
+            {
+              "answerId": "b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "by the school yard identifies where the story happens.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-1"
+              ]
+            },
+            {
+              "answerId": "d",
+              "verdict": "INCORRECT",
+              "rationale": "The story is not set after school in a library.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-guided-d-q4",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-3007f42e2e42e312",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "732c2d922202bb1920f5b7960248f9c83aec3cbf3deb5c39769565276952ef3a",
+        "conclusionsSha256": "9a4b1c91a0fdeb8aba2479aff70e8a373e3ea21c48fc3985523df4791626a748",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0013.pass-a.json",
+        "receiptSha256": "9a4b1c91a0fdeb8aba2479aff70e8a373e3ea21c48fc3985523df4791626a748",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence lists the actions the characters use to solve the problem?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This lists Priya holding the ladder and Malik securing the box.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-2",
+              "verdict": "INCORRECT",
+              "rationale": "This develops the weather danger and problem, not the solution actions.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-4",
+              "verdict": "INCORRECT",
+              "rationale": "This states the safe result and relief.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-5",
+              "verdict": "INCORRECT",
+              "rationale": "This is a closing robin detail, not a character solution action.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-1",
+              "verdict": "INCORRECT",
+              "rationale": "This introduces the loose bird box and setting.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-guided-d-q5",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-aa32a00c24bfd3c8",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "50d19084089e82d3ea17aefbab97331527d54adda1c027431789b93249400707",
+        "conclusionsSha256": "26411d4f26aacef79f0af873e0c545267daed8dfbadeb5bbd4c6be6915a0deaa",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0028.pass-a.json",
+        "receiptSha256": "26411d4f26aacef79f0af873e0c545267daed8dfbadeb5bbd4c6be6915a0deaa",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-beginning",
+          "prompt": "Beginning",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-beginning"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-beginning"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-beginning",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Priya and Malik noticing the loose box establishes the beginning and problem setup.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-middle",
+              "verdict": "INCORRECT",
+              "rationale": "Holding the ladder is a solution action in the middle.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-end",
+              "verdict": "INCORRECT",
+              "rationale": "The box being safe again belongs to the ending.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-problem",
+          "prompt": "Problem",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-problem"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-problem"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-helper",
+              "verdict": "INCORRECT",
+              "rationale": "The robin hopping is an ending detail unrelated to the central problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-storm",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Dark clouds create urgency, but the central repair problem is the loose bird box.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-problem",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The bird box hanging loose is the condition the siblings must fix.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-resolution",
+          "prompt": "Resolution",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-resolution"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-resolution"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-resolution",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Securing the hook and tightening the string resolve the loose-box problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-box",
+              "verdict": "INCORRECT",
+              "rationale": "The swaying box is part of the danger before the repair.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-late",
+              "verdict": "INCORRECT",
+              "rationale": "Late afternoon is a time clue, not the resolution.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bird-box-storm-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-checkpoint-a-q1",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-7e598e996075ffc5",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "5bcdee1aaae1c622f669fdcfd53fdc6411f294bb74ebde15c6d4234b99b106a7",
+        "conclusionsSha256": "5811818d98c89c62b853c2edb00e92f09ae7a94398bf54c74101dfad4d49cd9d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0029.pass-a.json",
+        "receiptSha256": "5811818d98c89c62b853c2edb00e92f09ae7a94398bf54c74101dfad4d49cd9d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the main problem in the story?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c",
+              "verdict": "INCORRECT",
+              "rationale": "No bird box appears in this cleanup story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-neighborhood-cleanup"
+              ]
+            },
+            {
+              "answerId": "d",
+              "verdict": "INCORRECT",
+              "rationale": "No seedlings appear in this cleanup story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-neighborhood-cleanup"
+              ]
+            },
+            {
+              "answerId": "a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Wrappers and cans covering the sidewalk create the cleanup problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-2"
+              ]
+            },
+            {
+              "answerId": "b",
+              "verdict": "INCORRECT",
+              "rationale": "No bridge model appears in this cleanup story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-neighborhood-cleanup"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-checkpoint-a-q2",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-45cdeada8132e3e6",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "5bcdee1aaae1c622f669fdcfd53fdc6411f294bb74ebde15c6d4234b99b106a7",
+        "conclusionsSha256": "5811818d98c89c62b853c2edb00e92f09ae7a94398bf54c74101dfad4d49cd9d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0013.second-pass.json",
+        "receiptSha256": "3a42c1bba5f69a9afe0aba36c69761b7886e1fcd25ed938f044d5907088edaa9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Where does this story happen?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "c",
+              "verdict": "INCORRECT",
+              "rationale": "The story does not take place by the school yard.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-bridge-model"
+              ]
+            },
+            {
+              "answerId": "b",
+              "verdict": "INCORRECT",
+              "rationale": "The story does not take place on a nature trail.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-bridge-model"
+              ]
+            },
+            {
+              "answerId": "a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The opening explicitly places the story in the classroom after lunch.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-1"
+              ]
+            },
+            {
+              "answerId": "d",
+              "verdict": "INCORRECT",
+              "rationale": "The story is neither in a garden nor at night.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-bridge-model"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-checkpoint-a-q3",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-048ac8e9aaf811c5",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "5bcdee1aaae1c622f669fdcfd53fdc6411f294bb74ebde15c6d4234b99b106a7",
+        "conclusionsSha256": "5811818d98c89c62b853c2edb00e92f09ae7a94398bf54c74101dfad4d49cd9d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0029.pass-a.json",
+        "receiptSha256": "5811818d98c89c62b853c2edb00e92f09ae7a94398bf54c74101dfad4d49cd9d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "How does Harper behave in the story?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Harper carefully protects and dries the seedlings, and the text calls Harper helpful.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-3",
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-helpful",
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-4"
+              ]
+            },
+            {
+              "answerId": "b",
+              "verdict": "INCORRECT",
+              "rationale": "Harper acts patiently and protectively, not grumpily or in a rush.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-3"
+              ]
+            },
+            {
+              "answerId": "d",
+              "verdict": "INCORRECT",
+              "rationale": "The story does not show Harper being loud or silly.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-seedlings-rain"
+              ]
+            },
+            {
+              "answerId": "c",
+              "verdict": "INCORRECT",
+              "rationale": "Harper actively helps the plants rather than acting sleepy or bored.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-checkpoint-a-q4",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-e07f9964a09a95d8",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "5bcdee1aaae1c622f669fdcfd53fdc6411f294bb74ebde15c6d4234b99b106a7",
+        "conclusionsSha256": "5811818d98c89c62b853c2edb00e92f09ae7a94398bf54c74101dfad4d49cd9d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0029.pass-a.json",
+        "receiptSha256": "5811818d98c89c62b853c2edb00e92f09ae7a94398bf54c74101dfad4d49cd9d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which details help you know where and when the story happens?",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "a",
+            "b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "a",
+            "b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "sunny Saturday morning identifies when the story happens.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-1"
+              ]
+            },
+            {
+              "answerId": "b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "around the block identifies where the action happens.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-1"
+              ]
+            },
+            {
+              "answerId": "c",
+              "verdict": "INCORRECT",
+              "rationale": "The story never identifies science fair day.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-neighborhood-cleanup"
+              ]
+            },
+            {
+              "answerId": "d",
+              "verdict": "INCORRECT",
+              "rationale": "The story is not set after school in a library.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-neighborhood-cleanup"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-checkpoint-a-q5",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-bc2a47ca4feda9a6",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "732c2d922202bb1920f5b7960248f9c83aec3cbf3deb5c39769565276952ef3a",
+        "conclusionsSha256": "9a4b1c91a0fdeb8aba2479aff70e8a373e3ea21c48fc3985523df4791626a748",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0013.pass-a.json",
+        "receiptSha256": "9a4b1c91a0fdeb8aba2479aff70e8a373e3ea21c48fc3985523df4791626a748",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence lists the actions the characters use to solve the problem?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-story-scouts-plot-structure-elements-bridge-model-sentence-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-story-scouts-plot-structure-elements-bridge-model-sentence-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-bridge-model-sentence-1",
+              "verdict": "INCORRECT",
+              "rationale": "This introduces the characters, model, place, and time.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-bridge-model-sentence-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This lists the brace, tape, and checking actions used to fix the bridge.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-bridge-model-sentence-4",
+              "verdict": "INCORRECT",
+              "rationale": "This states the steady result and the characters' reaction.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-bridge-model-sentence-2",
+              "verdict": "INCORRECT",
+              "rationale": "This states the bridge problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-bridge-model-sentence-5",
+              "verdict": "INCORRECT",
+              "rationale": "This later display action does not solve the sagging bridge.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-checkpoint-a-q6",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-95e9586b174f945f",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "5bcdee1aaae1c622f669fdcfd53fdc6411f294bb74ebde15c6d4234b99b106a7",
+        "conclusionsSha256": "5811818d98c89c62b853c2edb00e92f09ae7a94398bf54c74101dfad4d49cd9d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0029.pass-a.json",
+        "receiptSha256": "5811818d98c89c62b853c2edb00e92f09ae7a94398bf54c74101dfad4d49cd9d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-beginning",
+          "prompt": "Beginning",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-beginning"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-beginning"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-middle",
+              "verdict": "INCORRECT",
+              "rationale": "Moving the tray is a middle solution action, not the beginning.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-end",
+              "verdict": "INCORRECT",
+              "rationale": "The teacher thanks Harper at the end.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-beginning",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Harper observing the seedlings in the rainy garden begins the story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-problem",
+          "prompt": "Problem",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-problem"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-problem"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-helper",
+              "verdict": "INCORRECT",
+              "rationale": "Safer seedlings describe the result, not the problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-storm",
+              "verdict": "INCORRECT",
+              "rationale": "A teacher noticing or thanking Harper is not the plant problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-5"
+              ]
+            },
+            {
+              "answerId": "choice-problem",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The slipped cover and overly wet soil state the central problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-resolution",
+          "prompt": "Resolution",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-resolution"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-resolution"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-rain",
+              "verdict": "INCORRECT",
+              "rationale": "Rainy weather establishes setting, not resolution.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-wind",
+              "verdict": "INCORRECT",
+              "rationale": "Wind leaning the seedlings contributes to the problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-resolution",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Harper fixes the tray and protects the plants, resolving the problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-3",
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-4",
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-checkpoint-a-q7",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-777b293c3da06198",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "5bcdee1aaae1c622f669fdcfd53fdc6411f294bb74ebde15c6d4234b99b106a7",
+        "conclusionsSha256": "5811818d98c89c62b853c2edb00e92f09ae7a94398bf54c74101dfad4d49cd9d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0029.pass-a.json",
+        "receiptSha256": "5811818d98c89c62b853c2edb00e92f09ae7a94398bf54c74101dfad4d49cd9d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "How does Tia feel at the end of the story?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "part-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "part-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "part-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Tia waves proudly after seeing the clean sidewalk, supporting a proud and happy feeling.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-proudly",
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-4"
+              ]
+            },
+            {
+              "answerId": "part-a-2",
+              "verdict": "INCORRECT",
+              "rationale": "Tia remains active and proud, not sleepy or bored.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-4"
+              ]
+            },
+            {
+              "answerId": "part-a-3",
+              "verdict": "INCORRECT",
+              "rationale": "The ending describes pride, not nervousness or quietness.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which choice best supports that answer?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "part-b-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "part-b-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "part-b-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Waving proudly at the clean sidewalk directly supports the proud, positive feeling.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-4"
+              ]
+            },
+            {
+              "answerId": "part-b-3",
+              "verdict": "INCORRECT",
+              "rationale": "No bird box appears in Tia story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-neighborhood-cleanup"
+              ]
+            },
+            {
+              "answerId": "part-b-2",
+              "verdict": "INCORRECT",
+              "rationale": "The bridge model belongs to a different story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-neighborhood-cleanup"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-checkpoint-b-q1",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-dc615314917d9238",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "5bcdee1aaae1c622f669fdcfd53fdc6411f294bb74ebde15c6d4234b99b106a7",
+        "conclusionsSha256": "5811818d98c89c62b853c2edb00e92f09ae7a94398bf54c74101dfad4d49cd9d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0029.pass-a.json",
+        "receiptSha256": "5811818d98c89c62b853c2edb00e92f09ae7a94398bf54c74101dfad4d49cd9d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the main problem in the story?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "b",
+              "verdict": "INCORRECT",
+              "rationale": "Cleaning the street belongs to another story and describes a solution.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-bridge-model"
+              ]
+            },
+            {
+              "answerId": "c",
+              "verdict": "INCORRECT",
+              "rationale": "No bird box appears in the bridge story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-bridge-model"
+              ]
+            },
+            {
+              "answerId": "a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sagging middle beam is the bridge problem the friends repair.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-2"
+              ]
+            },
+            {
+              "answerId": "d",
+              "verdict": "INCORRECT",
+              "rationale": "Seedlings belong to a different story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-bridge-model"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-checkpoint-b-q2",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-aa5cd6b77329a41b",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "5bcdee1aaae1c622f669fdcfd53fdc6411f294bb74ebde15c6d4234b99b106a7",
+        "conclusionsSha256": "5811818d98c89c62b853c2edb00e92f09ae7a94398bf54c74101dfad4d49cd9d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0029.pass-a.json",
+        "receiptSha256": "5811818d98c89c62b853c2edb00e92f09ae7a94398bf54c74101dfad4d49cd9d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Where does this story happen?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "d",
+              "verdict": "INCORRECT",
+              "rationale": "The story is not set on a city bus.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-seedlings-rain"
+              ]
+            },
+            {
+              "answerId": "a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The opening explicitly places the story in the school garden.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-1"
+              ]
+            },
+            {
+              "answerId": "c",
+              "verdict": "INCORRECT",
+              "rationale": "The story is not set at a picnic table.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-seedlings-rain"
+              ]
+            },
+            {
+              "answerId": "b",
+              "verdict": "INCORRECT",
+              "rationale": "The story is not set in a library.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-seedlings-rain"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-checkpoint-b-q3",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-0a4c98f0687c932c",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "5bcdee1aaae1c622f669fdcfd53fdc6411f294bb74ebde15c6d4234b99b106a7",
+        "conclusionsSha256": "5811818d98c89c62b853c2edb00e92f09ae7a94398bf54c74101dfad4d49cd9d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0029.pass-a.json",
+        "receiptSha256": "5811818d98c89c62b853c2edb00e92f09ae7a94398bf54c74101dfad4d49cd9d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "How does Tia behave in the story?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Tia leads neighbors and helps organize the cleanup.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-1",
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-3",
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-helpers"
+              ]
+            },
+            {
+              "answerId": "d",
+              "verdict": "INCORRECT",
+              "rationale": "Tia cooperates and leads; she is not angry or rude.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-1",
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-3"
+              ]
+            },
+            {
+              "answerId": "b",
+              "verdict": "INCORRECT",
+              "rationale": "The work is described as careful, not careless or hurried.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-carefully",
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-3"
+              ]
+            },
+            {
+              "answerId": "c",
+              "verdict": "INCORRECT",
+              "rationale": "Tia actively leads and sorts trash, not sleepy or quiet.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-1",
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-checkpoint-b-q4",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-0ff7653597eea119",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "5bcdee1aaae1c622f669fdcfd53fdc6411f294bb74ebde15c6d4234b99b106a7",
+        "conclusionsSha256": "5811818d98c89c62b853c2edb00e92f09ae7a94398bf54c74101dfad4d49cd9d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0029.pass-a.json",
+        "receiptSha256": "5811818d98c89c62b853c2edb00e92f09ae7a94398bf54c74101dfad4d49cd9d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which details help you know where and when the story happens?",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "a",
+            "b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "a",
+            "b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "d",
+              "verdict": "INCORRECT",
+              "rationale": "No trail bench appears in the bridge story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-bridge-model"
+              ]
+            },
+            {
+              "answerId": "a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "after lunch identifies when the story happens.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-1"
+              ]
+            },
+            {
+              "answerId": "c",
+              "verdict": "INCORRECT",
+              "rationale": "before the storm belongs to the seedling story, not this bridge story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-bridge-model"
+              ]
+            },
+            {
+              "answerId": "b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "in the classroom identifies where the story happens.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-checkpoint-b-q5",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-9b21d555fd33ada9",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "732c2d922202bb1920f5b7960248f9c83aec3cbf3deb5c39769565276952ef3a",
+        "conclusionsSha256": "9a4b1c91a0fdeb8aba2479aff70e8a373e3ea21c48fc3985523df4791626a748",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0013.pass-a.json",
+        "receiptSha256": "9a4b1c91a0fdeb8aba2479aff70e8a373e3ea21c48fc3985523df4791626a748",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence lists the actions the characters use to solve the problem?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-1",
+              "verdict": "INCORRECT",
+              "rationale": "This introduces Harper, the seedlings, place, and time.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This lists the cover, tray, and drying actions used to protect the seedlings.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-3"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-5",
+              "verdict": "INCORRECT",
+              "rationale": "This reports the teacher's later thanks.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-4",
+              "verdict": "INCORRECT",
+              "rationale": "This states the safer result and Harper's feeling.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-2",
+              "verdict": "INCORRECT",
+              "rationale": "This states the slipped-cover and wet-soil problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-checkpoint-b-q6",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-910acb2dd76a8919",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "5bcdee1aaae1c622f669fdcfd53fdc6411f294bb74ebde15c6d4234b99b106a7",
+        "conclusionsSha256": "5811818d98c89c62b853c2edb00e92f09ae7a94398bf54c74101dfad4d49cd9d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0029.pass-a.json",
+        "receiptSha256": "5811818d98c89c62b853c2edb00e92f09ae7a94398bf54c74101dfad4d49cd9d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-beginning",
+          "prompt": "Beginning",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-beginning"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-beginning"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-beginning",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Tia leading the neighbors around the block is the opening event.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-end",
+              "verdict": "INCORRECT",
+              "rationale": "Tia waves proudly after the cleanup, near the end.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-middle",
+              "verdict": "INCORRECT",
+              "rationale": "Trash work is a middle solution event, and the passage says Tia sorted it.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-problem",
+          "prompt": "Problem",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-problem"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-problem"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-problem",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Wrappers and cans across the sidewalk state the story problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-finish",
+              "verdict": "INCORRECT",
+              "rationale": "The fresh street is the resolved condition.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-helper",
+              "verdict": "INCORRECT",
+              "rationale": "Lining up bags happens after the cleanup and is not the main problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-resolution",
+          "prompt": "Resolution",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-resolution"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-resolution"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-wind",
+              "verdict": "INCORRECT",
+              "rationale": "Continuing windblown trash would preserve the problem, not resolve it.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-resolution",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Sorted trash and a fresh block describe the successful resolution.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-3",
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-night",
+              "verdict": "INCORRECT",
+              "rationale": "Evening is a time detail, not the solution.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-checkpoint-b-q7",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-fb9ac9ea068941fe",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "5bcdee1aaae1c622f669fdcfd53fdc6411f294bb74ebde15c6d4234b99b106a7",
+        "conclusionsSha256": "5811818d98c89c62b853c2edb00e92f09ae7a94398bf54c74101dfad4d49cd9d",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0029.pass-a.json",
+        "receiptSha256": "5811818d98c89c62b853c2edb00e92f09ae7a94398bf54c74101dfad4d49cd9d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "What was the main problem in the bridge story?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "part-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "part-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "part-a-2",
+              "verdict": "INCORRECT",
+              "rationale": "The teacher does not thank the class in this bridge story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-bridge-model"
+              ]
+            },
+            {
+              "answerId": "part-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sagging middle beam is the main structural problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-2"
+              ]
+            },
+            {
+              "answerId": "part-a-3",
+              "verdict": "INCORRECT",
+              "rationale": "A steady bridge is the successful result, not the initial problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-4",
+                "g2-story-scouts-plot-structure-elements-bridge-model-steady"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which choice best supports that answer?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "part-b-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "part-b-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "part-b-3",
+              "verdict": "INCORRECT",
+              "rationale": "The passage says a blue tray, not a blue shelf, and this does not support the bridge problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-5"
+              ]
+            },
+            {
+              "answerId": "part-b-2",
+              "verdict": "INCORRECT",
+              "rationale": "The friends laughing occurs after the bridge is steady.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-4"
+              ]
+            },
+            {
+              "answerId": "part-b-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The paper road dipping low directly supports that the bridge middle was sagging.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-checkpoint-c-q1",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-8e81504b4ca9a617",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "732c2d922202bb1920f5b7960248f9c83aec3cbf3deb5c39769565276952ef3a",
+        "conclusionsSha256": "9a4b1c91a0fdeb8aba2479aff70e8a373e3ea21c48fc3985523df4791626a748",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0013.second-pass.json",
+        "receiptSha256": "3a42c1bba5f69a9afe0aba36c69761b7886e1fcd25ed938f044d5907088edaa9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the main problem in the story?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The slipped cover leaves the seedlings exposed while the tray becomes too wet.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-2"
+              ]
+            },
+            {
+              "answerId": "b",
+              "verdict": "INCORRECT",
+              "rationale": "A loose bird box belongs to a different story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-seedlings-rain"
+              ]
+            },
+            {
+              "answerId": "d",
+              "verdict": "INCORRECT",
+              "rationale": "Wrappers on a sidewalk belong to a different story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-seedlings-rain"
+              ]
+            },
+            {
+              "answerId": "c",
+              "verdict": "INCORRECT",
+              "rationale": "A messy library shelf belongs to a different story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-seedlings-rain"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-checkpoint-c-q2",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-a97c53b1629fb085",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "732c2d922202bb1920f5b7960248f9c83aec3cbf3deb5c39769565276952ef3a",
+        "conclusionsSha256": "9a4b1c91a0fdeb8aba2479aff70e8a373e3ea21c48fc3985523df4791626a748",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0013.pass-a.json",
+        "receiptSha256": "9a4b1c91a0fdeb8aba2479aff70e8a373e3ea21c48fc3985523df4791626a748",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Where does this story happen?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "b",
+              "verdict": "INCORRECT",
+              "rationale": "The cleanup story is not set in a science room.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-1"
+              ]
+            },
+            {
+              "answerId": "d",
+              "verdict": "INCORRECT",
+              "rationale": "The cleanup story is not set under a bird box.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-1"
+              ]
+            },
+            {
+              "answerId": "a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Tia leads neighbors around the block and they clean its sidewalk.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-1",
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-2"
+              ]
+            },
+            {
+              "answerId": "c",
+              "verdict": "INCORRECT",
+              "rationale": "The story is not set at a trail bench.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-checkpoint-c-q3",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-d061fe3b6b641297",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "732c2d922202bb1920f5b7960248f9c83aec3cbf3deb5c39769565276952ef3a",
+        "conclusionsSha256": "9a4b1c91a0fdeb8aba2479aff70e8a373e3ea21c48fc3985523df4791626a748",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0013.pass-a.json",
+        "receiptSha256": "9a4b1c91a0fdeb8aba2479aff70e8a373e3ea21c48fc3985523df4791626a748",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "How does the character behave in the story?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "b",
+              "verdict": "CONTRADICTED",
+              "rationale": "The characters actively repair the bridge and later laugh rather than acting sad or sleepy.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-3",
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-4"
+              ]
+            },
+            {
+              "answerId": "c",
+              "verdict": "CONTRADICTED",
+              "rationale": "They work carefully and laugh quietly, not loudly or angrily.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-3",
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-4"
+              ]
+            },
+            {
+              "answerId": "d",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The story gives no evidence that either character is late or lost.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-1"
+              ]
+            },
+            {
+              "answerId": "a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Adding a brace, taping, and checking corners show careful, helpful behavior.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-checkpoint-c-q4",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-b6ef5c9edc318542",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "732c2d922202bb1920f5b7960248f9c83aec3cbf3deb5c39769565276952ef3a",
+        "conclusionsSha256": "9a4b1c91a0fdeb8aba2479aff70e8a373e3ea21c48fc3985523df4791626a748",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0013.second-pass.json",
+        "receiptSha256": "3a42c1bba5f69a9afe0aba36c69761b7886e1fcd25ed938f044d5907088edaa9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which details help you know where and when the story happens?",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "a",
+            "b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "b",
+            "a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "d",
+              "verdict": "INCORRECT",
+              "rationale": "science fair belongs to the bridge story and is absent from Harper's setting.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-1"
+              ]
+            },
+            {
+              "answerId": "b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "school garden identifies where Harper's story happens.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-1"
+              ]
+            },
+            {
+              "answerId": "a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "rainy afternoon identifies when and under what weather the story happens.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-1"
+              ]
+            },
+            {
+              "answerId": "c",
+              "verdict": "INCORRECT",
+              "rationale": "blue tray belongs to the bridge story and is absent from Harper's setting.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-checkpoint-c-q5",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-155450455f203a91",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "a915db271f53862b8d1c47b0821030f87990a2d9a2c639f59eca597ec0615109",
+        "conclusionsSha256": "aabd9f358f14370fb36c0f8114eae334f1a6111c80e79c111d839b9dab9528bf",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "CORRECTION_REREVIEW",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/corrections-v5/batch-c0001.pass-a.json",
+        "receiptSha256": "aabd9f358f14370fb36c0f8114eae334f1a6111c80e79c111d839b9dab9528bf",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence directly says the street and sidewalk look clean after the work?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-1",
+              "verdict": "UNSUPPORTED",
+              "rationale": "This only introduces the walk and does not describe the cleaned street or sidewalk.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-1"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "This describes litter on the sidewalk before the cleanup.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-2"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly says the street looked fresh and names the clean sidewalk after the work.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-4"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-5",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Bag placement is a cleanup step, but it does not directly state that the street or sidewalk looks clean.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-5"
+              ]
+            },
+            {
+              "answerId": "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Sorting and filling bags describes the work, not the requested clean appearance afterward.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-neighborhood-cleanup-sentence-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": true,
+      "correctionSummary": "Learner-visible content was corrected and re-reviewed in docs/content/answer-uniqueness-ledger/blind/corrections-v5/batch-c0001.pass-a.json.",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-checkpoint-c-q6",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-434d5c65ff803a49",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "732c2d922202bb1920f5b7960248f9c83aec3cbf3deb5c39769565276952ef3a",
+        "conclusionsSha256": "9a4b1c91a0fdeb8aba2479aff70e8a373e3ea21c48fc3985523df4791626a748",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0013.pass-a.json",
+        "receiptSha256": "9a4b1c91a0fdeb8aba2479aff70e8a373e3ea21c48fc3985523df4791626a748",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-beginning",
+          "prompt": "Beginning",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-beginning"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-beginning"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-middle",
+              "verdict": "INCORRECT",
+              "rationale": "Adding the brace is a middle solution action.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-3"
+              ]
+            },
+            {
+              "answerId": "choice-end",
+              "verdict": "INCORRECT",
+              "rationale": "Laughing after the bridge stands steady belongs to the resolution.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-4"
+              ]
+            },
+            {
+              "answerId": "choice-beginning",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Studying the model after lunch begins the story.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-problem",
+          "prompt": "Problem",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-problem"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-problem"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-problem",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The sagging beam and dipping road state the bridge problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-lunch",
+              "verdict": "INCORRECT",
+              "rationale": "The after-lunch detail establishes time, not the problem.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-1"
+              ]
+            },
+            {
+              "answerId": "choice-helper",
+              "verdict": "INCORRECT",
+              "rationale": "Displaying the fixed model happens after the problem is solved.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-resolution",
+          "prompt": "Resolution",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-resolution"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-resolution"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-sagged",
+              "verdict": "CONTRADICTED",
+              "rationale": "Continued sagging would leave the problem unresolved.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-road",
+              "verdict": "CONTRADICTED",
+              "rationale": "A dipping road again would leave the problem unresolved.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-2"
+              ]
+            },
+            {
+              "answerId": "choice-resolution",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The bridge standing steady after the fix is the resolution.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-bridge-model-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-story-scouts-plot-structure-elements-checkpoint-c-q7",
+      "packId": "g2-story-scouts-plot-structure-elements",
+      "contentVersion": "g2-ss-plot-elements-r0.1.0",
+      "contentFingerprint": "qta-v1-d88afcbf7af556eb",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "732c2d922202bb1920f5b7960248f9c83aec3cbf3deb5c39769565276952ef3a",
+        "conclusionsSha256": "9a4b1c91a0fdeb8aba2479aff70e8a373e3ea21c48fc3985523df4791626a748",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0013.second-pass.json",
+        "receiptSha256": "3a42c1bba5f69a9afe0aba36c69761b7886e1fcd25ed938f044d5907088edaa9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "How does Harper feel at the end of the story?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "part-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "part-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "part-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The story directly says Harper felt calm and helpful at the end.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-4"
+              ]
+            },
+            {
+              "answerId": "part-a-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The story says calm and helpful, not sleepy and bored.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-4"
+              ]
+            },
+            {
+              "answerId": "part-a-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The story says calm and helpful, not angry and loud.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which choice best supports that answer?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "part-b-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "part-b-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "part-b-3",
+              "verdict": "INCORRECT",
+              "rationale": "This detail belongs to another story and says nothing about Harper's feeling.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-seedlings-rain"
+              ]
+            },
+            {
+              "answerId": "part-b-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This directly states the calm and helpful feeling selected in Part A.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-seedlings-rain-sentence-4"
+              ]
+            },
+            {
+              "answerId": "part-b-2",
+              "verdict": "INCORRECT",
+              "rationale": "This detail belongs to another story and says nothing about Harper's feeling.",
+              "evidenceIds": [
+                "g2-story-scouts-plot-structure-elements-passage-seedlings-rain"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

@@ -99,7 +99,7 @@ function sectionContributionQuestion(record: PurposeDevelopmentRecord, lessonInd
 
 function multiselect(record: PurposeDevelopmentRecord, lessonIndex: number, questionIndex: number): ReadingQuestion {
   const [first, last] = selectCrossSectionEvidence(record)
-  const data = base(record, lessonIndex, questionIndex, 'multi_select', 'Choose the two details from different sections that most strongly support the author’s purpose.',
+  const data = base(record, lessonIndex, questionIndex, 'multi_select', record.evidencePrompt ?? 'Choose the two details from different sections that most strongly support the author’s purpose.',
     `Both details serve the same precise purpose across sections: ${record.purpose}`,
     [first, last].map((detail) => purposeSentenceId(record.passageId, detail.sentence)), ['supporting-details', 'purpose-development', 'text-evidence'])
   const choices = [

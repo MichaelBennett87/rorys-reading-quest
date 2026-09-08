@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0084",
+  "batchFileSha256": "4329edfafa7c87bfc2b5d192a0fdc098967a550eb1d97a0fe02186d3eb3d1389",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0982", "fingerprint": "00d7a1b525a689e9daa787e9502676025d9833bc1aa9e215d1c35261265c7e6e",
+      "slots": [{"slotId": "response", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "The unsplit word does not show reading chunks.", ["S0027"]], ["A2", "INCORRECT", "Radi does not preserve the three spoken syllables modeled by the lesson.", ["S0027", "S0035"]],
+        ["A3", "DEFENSIBLE", "Ra, di, and o represent the three pronounceable syllable chunks in radio.", ["S0027", "S0035"]], ["A4", "INCORRECT", "A single initial consonant plus the remainder is not the taught split.", ["S0027"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0983", "fingerprint": "93a437a89591321134ad323859ef4d2db67b77a6f57567cfb31b7699c61efc9e",
+      "slots": [{"slotId": "response", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Flow has no silent-e spelling.", ["S0029"]], ["A2", "INCORRECT", "Flow does not use a short vowel closed by a consonant.", ["S0029"]],
+        ["A3", "INCORRECT", "Flow ends with the ow vowel team spelling rather than an open-vowel spelling.", ["S0029"]], ["A4", "DEFENSIBLE", "The ow in flow is the vowel team that carries its vowel sound.", ["S0029"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0984", "fingerprint": "a5a063b2f575c18e3e966fd70de1fb461519f1785a0567bf21a86db68bfb979d",
+      "slots": [{"slotId": "response", "defensible": ["A1", "A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Radio contains open chunks such as ra, di, and o.", ["S0027"]], ["A2", "INCORRECT", "Gar is r-controlled, den is closed, and er is r-controlled in gardener.", ["S0031"]],
+        ["A3", "INCORRECT", "Sun is closed, flow uses a vowel team, and er is r-controlled in sunflower.", ["S0029"]], ["A4", "DEFENSIBLE", "The re chunk in replanting is an open syllable.", ["S0033", "S0035"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0985", "fingerprint": "61407d39e6814201d15e89ecd6d0781583ac0da901c9dac3db538002baf14e2c",
+      "slots": [{"slotId": "response", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Ing is the suffix at the end, not the prefix.", ["S0033", "S0035"]], ["A2", "INCORRECT", "Plant is the base in the middle, not the prefix.", ["S0033", "S0035"]], ["A3", "DEFENSIBLE", "Re is the prefix chunk at the start of replanting.", ["S0033", "S0035"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0986", "fingerprint": "0cdf7de69229da71afb2dc809e0baf23cfa2a0ca587cdb275c904d2c7d7ea930",
+      "slots": [
+        {"slotId": "row_1", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Gar, den, and er rebuild gardener.", ["S0031"]], ["A2", "DEFENSIBLE", "Ra, di, and o reconstruct radio.", ["S0027"]], ["A3", "INCORRECT", "Sun, flow, and er rebuild sunflower.", ["S0029"]], ["A4", "INCORRECT", "Re, plant, and ing rebuild replanting.", ["S0033"]]
+        ]},
+        {"slotId": "row_2", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Gar, den, and er rebuild gardener.", ["S0031"]], ["A2", "INCORRECT", "Re, plant, and ing rebuild replanting.", ["S0033"]], ["A3", "INCORRECT", "Ra, di, and o rebuild radio.", ["S0027"]], ["A4", "DEFENSIBLE", "Sun, flow, and er reconstruct sunflower.", ["S0029"]]
+        ]},
+        {"slotId": "row_3", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Sun, flow, and er rebuild sunflower.", ["S0029"]], ["A2", "INCORRECT", "Ra, di, and o rebuild radio.", ["S0027"]], ["A3", "INCORRECT", "Re, plant, and ing rebuild replanting.", ["S0033"]], ["A4", "DEFENSIBLE", "Gar, den, and er reconstruct gardener.", ["S0031"]]
+        ]},
+        {"slotId": "row_4", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Gar, den, and er rebuild gardener.", ["S0031"]], ["A2", "INCORRECT", "Sun, flow, and er rebuild sunflower.", ["S0029"]], ["A3", "DEFENSIBLE", "Re, plant, and ing reconstruct replanting.", ["S0033"]], ["A4", "INCORRECT", "Ra, di, and o rebuild radio.", ["S0027"]]
+        ]}
+      ], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0987", "fingerprint": "a5c198b647b807ab2dbe6edbb760a2c4efe6b990fac7937c14d8d9de5f6eb50e",
+      "slots": [{"slotId": "response", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Rave plus n would suggest the silent-e word rave rather than raven's first syllable.", ["S0039"]], ["A2", "INCORRECT", "The unsplit word does not show reading chunks.", ["S0039"]],
+        ["A3", "INCORRECT", "A single initial consonant plus the remainder is not the taught split.", ["S0039"]], ["A4", "DEFENSIBLE", "Ra and ven are the modeled pronunciation chunks for raven.", ["S0039"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0988", "fingerprint": "b21ba5b934a78afeabc8c7b0db5da6b983b2c0282f0ac059176378e9a2d79583",
+      "slots": [{"slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Ter contains a vowel whose sound is controlled by r.", ["S0041"]], ["A2", "INCORRECT", "Ter ends in a consonant and is not open.", ["S0041"]],
+        ["A3", "INCORRECT", "Its defining taught pattern is r-controlled rather than an ordinary closed syllable.", ["S0041", "S0047"]], ["A4", "INCORRECT", "Ter has no silent-e spelling.", ["S0041"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0989", "fingerprint": "b4b8f1c5341c616668c669d852ba2ffda50c4a8950bab9955c62bb2d7f5b8e81",
+      "slots": [{"slotId": "response", "defensible": ["A1", "A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Ra is an open syllable in raven.", ["S0039"]], ["A2", "DEFENSIBLE", "Hi is an open syllable in hibernate.", ["S0045"]],
+        ["A3", "INCORRECT", "Shel is closed and ter is r-controlled in shelter.", ["S0041"]], ["A4", "INCORRECT", "Fear uses a vowel-team or r-influenced pattern and less is closed; neither is open.", ["S0043"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0990", "fingerprint": "cd2a0a302c60880744bbfb6c38091440161176ae7caf9adc745a81882bc0bce2",
+      "slots": [{"slotId": "response", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Hi is an open syllable, not a silent-e syllable.", ["S0045"]], ["A2", "INCORRECT", "Ber is r-controlled, not a silent-e syllable.", ["S0045"]], ["A3", "DEFENSIBLE", "Nate contains the final silent-e pattern in hibernate.", ["S0045"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0991", "fingerprint": "4c1308d656ee562f3eb1f2a1b14cdfefc994dc53cc19267c7666a38dc7593e2f",
+      "slots": [
+        {"slotId": "row_1", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Hi, ber, and nate rebuild hibernate.", ["S0045"]], ["A2", "INCORRECT", "Fear and less rebuild fearless.", ["S0043"]], ["A3", "DEFENSIBLE", "Ra and ven reconstruct raven.", ["S0039"]], ["A4", "INCORRECT", "Shel and ter rebuild shelter.", ["S0041"]]
+        ]},
+        {"slotId": "row_2", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Ra and ven rebuild raven.", ["S0039"]], ["A2", "INCORRECT", "Fear and less rebuild fearless.", ["S0043"]], ["A3", "DEFENSIBLE", "Shel and ter reconstruct shelter.", ["S0041"]], ["A4", "INCORRECT", "Hi, ber, and nate rebuild hibernate.", ["S0045"]]
+        ]},
+        {"slotId": "row_3", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Ra and ven rebuild raven.", ["S0039"]], ["A2", "INCORRECT", "Hi, ber, and nate rebuild hibernate.", ["S0045"]], ["A3", "INCORRECT", "Shel and ter rebuild shelter.", ["S0041"]], ["A4", "DEFENSIBLE", "Fear and less reconstruct fearless.", ["S0043"]]
+        ]},
+        {"slotId": "row_4", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Ra and ven rebuild raven.", ["S0039"]], ["A2", "INCORRECT", "Fear and less rebuild fearless.", ["S0043"]], ["A3", "DEFENSIBLE", "Hi, ber, and nate reconstruct hibernate.", ["S0045"]], ["A4", "INCORRECT", "Shel and ter rebuild shelter.", ["S0041"]]
+        ]}
+      ], "projectionDefect": ""
+    }
+  ]
+}

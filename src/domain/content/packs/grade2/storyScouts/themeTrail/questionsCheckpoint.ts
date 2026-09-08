@@ -101,7 +101,7 @@ export const themeTrailCheckpointQuestions: ReadingQuestion[] = [
     passageIdentifier: THEME_TRAIL_PASSAGE_IDS.modelBridge,
     lessonIdentifier: lessonAId,
     questionIdentifier: themeTrailQuestionId('checkpoint-a', 'mc-3'),
-    prompt: 'Which choice shows a character action that supports the theme?',
+    prompt: 'Which action shows Omar and Jun changing their plan so they can use their strengths together?',
     explanation: 'Swapping jobs shows the two friends used their different strengths together.',
     evidenceReference: 'character-action',
     evidenceReferenceIds: ['g2-story-scouts-theme-trail-passage-model-bridge-sentence-3', 'g2-story-scouts-theme-trail-passage-model-bridge-sentence-4'],
@@ -148,7 +148,7 @@ export const themeTrailCheckpointQuestions: ReadingQuestion[] = [
     passageIdentifier: THEME_TRAIL_PASSAGE_IDS.modelBridge,
     lessonIdentifier: lessonAId,
     questionIdentifier: themeTrailQuestionId('checkpoint-a', 'ht-1'),
-    prompt: 'Select the sentence that shows the friends used different strengths.',
+    prompt: 'Select the sentence that identifies a different strength for each friend.',
     explanation: 'The second sentence tells us one friend measured and the other held the pieces steady.',
     evidenceReference: 'sentence-clue',
     evidenceReferenceIds: ['g2-story-scouts-theme-trail-passage-model-bridge-sentence-2'],
@@ -259,6 +259,7 @@ export const themeTrailCheckpointQuestions: ReadingQuestion[] = [
       { id: 'part-a-4', text: 'The bridge was made of sticks and tape.' },
     ],
     partACorrectChoiceId: 'part-a-1',
+    partBPrompt: 'Which choice states the result and explains how it supports that theme?',
     partBChoices: [
       { id: 'part-b-1', text: 'Their first try sagged in the middle, so they talked, swapped jobs, and tried again.' },
       { id: 'part-b-2', text: 'The science club table was beside the window.' },
@@ -366,7 +367,7 @@ export const themeTrailCheckpointQuestions: ReadingQuestion[] = [
     passageIdentifier: THEME_TRAIL_PASSAGE_IDS.birdhousePlan,
     lessonIdentifier: lessonBId,
     questionIdentifier: themeTrailQuestionId('checkpoint-b', 'ht-1'),
-    prompt: 'Select the sentence that shows Ava chose a new plan.',
+    prompt: 'Select the sentence that states the moment Ava decides to change plans.',
     explanation: 'The third sentence says Ava paused, looked, and chose a new plan.',
     evidenceReference: 'sentence-clue',
     evidenceReferenceIds: ['g2-story-scouts-theme-trail-passage-birdhouse-plan-sentence-3'],
@@ -410,7 +411,7 @@ export const themeTrailCheckpointQuestions: ReadingQuestion[] = [
     rows: [
       {
         id: 'row-1',
-        prompt: 'What does The first knot slipped twice show?',
+        prompt: 'What does the first knot slipping twice show?',
         correctChoiceId: 'first-plan-choice',
         options: [
           { id: 'first-plan-choice', text: 'the first plan did not work' },
@@ -421,7 +422,7 @@ export const themeTrailCheckpointQuestions: ReadingQuestion[] = [
       },
       {
         id: 'row-2',
-        prompt: 'What does Ava paused, looked at the twine, and chose a new plan show?',
+        prompt: 'What does Ava pausing, looking at the twine, and choosing a new plan show?',
         correctChoiceId: 'new-plan-choice',
         options: [
           { id: 'new-plan-choice', text: 'she tried a different plan' },
@@ -432,7 +433,7 @@ export const themeTrailCheckpointQuestions: ReadingQuestion[] = [
       },
       {
         id: 'row-3',
-        prompt: 'What does she tied the knot around the post instead show?',
+        prompt: 'What does tying the knot around the post instead show?',
         correctChoiceId: 'instead-choice',
         options: [
           { id: 'instead-choice', text: 'she used a new way' },
@@ -443,7 +444,7 @@ export const themeTrailCheckpointQuestions: ReadingQuestion[] = [
       },
       {
         id: 'row-4',
-        prompt: 'What does the birdhouse stayed steady show?',
+        prompt: "What does the birdhouse staying steady show about Ava's new plan?",
         correctChoiceId: 'outcome-choice',
         options: [
           { id: 'outcome-choice', text: 'the new plan worked' },
@@ -478,6 +479,7 @@ export const themeTrailCheckpointQuestions: ReadingQuestion[] = [
       { id: 'part-a-4', text: 'The birdhouse was by the garden fence.' },
     ],
     partACorrectChoiceId: 'part-a-1',
+    partBPrompt: 'Which choice states the result and explains how it supports that theme?',
     partBChoices: [
       { id: 'part-b-1', text: 'Ava paused, looked at the twine, and chose a new plan.' },
       { id: 'part-b-2', text: 'She tied the knot around the post instead, then added one more loop to hold it tight.' },
@@ -538,7 +540,7 @@ export const themeTrailCheckpointQuestions: ReadingQuestion[] = [
     passageIdentifier: THEME_TRAIL_PASSAGE_IDS.bookSwapTrust,
     lessonIdentifier: lessonCId,
     questionIdentifier: themeTrailQuestionId('checkpoint-c', 'mc-3'),
-    prompt: 'Which choice shows a character action that supports the theme?',
+    prompt: 'Which action shows Eli taking responsibility after his mistake?',
     explanation: 'Returning the book and writing the apology note show responsibility.',
     evidenceReference: 'character-action',
     evidenceReferenceIds: ['g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-3'],
@@ -559,7 +561,7 @@ export const themeTrailCheckpointQuestions: ReadingQuestion[] = [
     passageIdentifier: THEME_TRAIL_PASSAGE_IDS.bookSwapTrust,
     lessonIdentifier: lessonCId,
     questionIdentifier: themeTrailQuestionId('checkpoint-c', 'ms-1'),
-    prompt: 'Choose all the details that support the theme.',
+    prompt: 'Choose all the details that show how Eli repaired trust after he forgot the book.',
     explanation: 'These details show Eli told the truth, made it right, and earned trust again.',
     evidenceReference: 'supporting-details',
     evidenceReferenceIds: [
@@ -585,7 +587,7 @@ export const themeTrailCheckpointQuestions: ReadingQuestion[] = [
     passageIdentifier: THEME_TRAIL_PASSAGE_IDS.bookSwapTrust,
     lessonIdentifier: lessonCId,
     questionIdentifier: themeTrailQuestionId('checkpoint-c', 'ht-1'),
-    prompt: 'Select the sentence that shows Eli made things right.',
+    prompt: "Select the sentence that lists Eli's actions to make things right.",
     explanation: 'The third sentence says he told the truth, returned the book, and wrote an apology note.',
     evidenceReference: 'sentence-clue',
     evidenceReferenceIds: ['g2-story-scouts-theme-trail-passage-book-swap-trust-sentence-3'],
@@ -697,6 +699,7 @@ export const themeTrailCheckpointQuestions: ReadingQuestion[] = [
       { id: 'part-a-4', text: 'The class shelf had new books.' },
     ],
     partACorrectChoiceId: 'part-a-1',
+    partBPrompt: 'Which choice states the result and explains how it supports that theme?',
     partBChoices: [
       { id: 'part-b-1', text: 'On Monday, Eli told his teacher the truth, returned the book, and wrote an apology note for the class shelf.' },
       { id: 'part-b-2', text: 'He also helped sort the new books before recess.' },

@@ -75,7 +75,7 @@ export const guidedQuestions: ReadingQuestion[] = [
     lessonIdentifier: COMMON_SUFFIX_LESSON_IDS.guidedActionEndings,
     activityIdentifier: 'activity-word-forge-common-suffixes-guided-action-endings-3',
     questionIdentifier: COMMON_SUFFIX_QUESTION_IDS.guidedActionEndings[2],
-    prompt: 'Choose all the words in the trail passage that have suffixes.',
+    prompt: 'Choose all the words in the trail passage that end with -ing, -ly, -er, or -est.',
     explanation: 'Helping, quickly, faster, and smallest all have suffixes you can see.',
     evidenceReference: 'word-pattern',
     evidenceReferenceIds: ['helping-choice', 'quickly-choice', 'faster-choice', 'smallest-choice'],
@@ -323,4 +323,3 @@ export const guidedQuestions: ReadingQuestion[] = [
     ],
   }),
 ]
-

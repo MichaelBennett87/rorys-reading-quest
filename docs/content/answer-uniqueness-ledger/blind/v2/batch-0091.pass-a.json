@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0091",
+  "batchFileSha256": "db18c82361b9f14eaee1a0ce1f39423c4e3527876cf0af61fe14b7ad349e1ec1",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1061",
+      "fingerprint": "b317ff2c6c2d74581c1342a3277729693ceb9fd2987a928db9e874424dd21066",
+      "slots": [{
+        "slotId": "response", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "Knowing how to draw maps is an ability, not Priya's response to Luis near the beginning.", ["S0067"]],
+          ["A2", "INCORRECT", "Combining routes and checking a shared plan describe Priya's changed ending behavior.", ["S0071", "S0065"]],
+          ["A3", "INCORRECT", "The gate problem and Priya's realization occur in the middle.", ["S0069", "S0059"]],
+          ["A4", "DEFENSIBLE", "Priya initially insists on her route and dismisses Luis's warning.", ["S0067", "S0068"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1062",
+      "fingerprint": "1b34540410b83a63f5ace898f06e10e682912323c2190688b4c4ec270aa0ed0d",
+      "slots": [{
+        "slotId": "response", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "Knowing how to draw maps is not an event that changes Priya's response.", ["S0067"]],
+          ["A2", "INCORRECT", "Insisting on her route establishes Priya's beginning behavior.", ["S0067", "S0068"]],
+          ["A3", "INCORRECT", "Combining routes and checking the plan show the changed result after the turning point.", ["S0071", "S0065"]],
+          ["A4", "DEFENSIBLE", "The route failure and Priya's realization make her old approach stop working and lead directly to reconsidering.", ["S0069", "S0070", "S0059", "S0061"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1063",
+      "fingerprint": "5bbc703aaa99871a2fcea31f13d3417e1b76df5c828bac6f058c1648d8774ae4",
+      "slots": [{
+        "slotId": "response", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "Organized is one trait and does not trace change across the plot.", ["S0066", "S0065"]],
+          ["A2", "INCORRECT", "Map drawing is an ability and does not explain Priya's changing response.", ["S0067"]],
+          ["A3", "DEFENSIBLE", "This connects Priya's initial insistence, the failed route, her reconsideration, and the shared ending plan.", ["S0067", "S0069", "S0061", "S0071", "S0065"]],
+          ["A4", "INCORRECT", "This accurately describes only the ending and does not explain development across the plot.", ["S0071", "S0065"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1064",
+      "fingerprint": "fdd1b4a9685e4f28c3f851283c8615a098e58e6ef6bbd125f41ba1398ec10a23",
+      "slots": [{
+        "slotId": "response", "defensible": ["A3", "A4"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "The gate failure and realization are middle or turning-point details.", ["S0069", "S0059"]],
+          ["A2", "INCORRECT", "Map drawing is not the contrasting beginning response requested.", ["S0067"]],
+          ["A3", "DEFENSIBLE", "Priya begins by insisting on her route and ignoring Luis's warning.", ["S0067", "S0068"]],
+          ["A4", "DEFENSIBLE", "Priya ends by combining ideas and asking the team to check the shared route.", ["S0071", "S0065"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1065",
+      "fingerprint": "4f488968f5e9fbb6aa29f0d850583bea7638d8573b03793b329a6f41ad5b951c",
+      "slots": [{
+        "slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "DEFENSIBLE", "By the end Priya invites others to check a shared route, directly contrasting with her initial insistence on her own plan.", ["S0065"]],
+          ["A2", "INCORRECT", "This sentence shows Priya's unchanged beginning response.", ["S0068"]],
+          ["A3", "INCORRECT", "This establishes the task and does not show Priya responding differently.", ["S0066"]],
+          ["A4", "INCORRECT", "This is Priya's middle realization, not her later changed response.", ["S0059"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1066",
+      "fingerprint": "5716307baa86235ec13e9f875a12397f6c75878514c6162b46430f4ebdb93e44",
+      "slots": [
+        {
+          "slotId": "row_1", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Priya's insistence and ignored warning establish her beginning response.", ["S0067", "S0068"]],
+            ["A2", "INCORRECT", "Map drawing is an ability, not the response that changes.", ["S0067"]],
+            ["A3", "INCORRECT", "Combining and checking the shared route happen at the end.", ["S0071", "S0065"]],
+            ["A4", "INCORRECT", "The failed route and realization occur in the middle.", ["S0069", "S0059"]]
+          ]
+        },
+        {
+          "slotId": "row_2", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Insisting and ignoring the warning establish the beginning.", ["S0067", "S0068"]],
+            ["A2", "INCORRECT", "Map drawing is not the middle change event.", ["S0067"]],
+            ["A3", "INCORRECT", "The shared plan and checking behavior occur at the end.", ["S0071", "S0065"]],
+            ["A4", "DEFENSIBLE", "The failed route and Priya's realization form the middle turning point.", ["S0069", "S0059", "S0061"]]
+          ]
+        },
+        {
+          "slotId": "row_3", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Insisting and ignoring the warning establish the beginning.", ["S0067", "S0068"]],
+            ["A2", "INCORRECT", "Map drawing is not the changed ending response.", ["S0067"]],
+            ["A3", "DEFENSIBLE", "Combining routes and checking the shared plan describe Priya's ending behavior.", ["S0071", "S0065"]],
+            ["A4", "INCORRECT", "The route failure and realization occur in the middle.", ["S0069", "S0059"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1067",
+      "fingerprint": "d9c2ef9f8a0264eb9dda46256b104ded18963e4fbcafcc71b704fea0b3c01842",
+      "slots": [
+        {
+          "slotId": "part_a", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "This traces Priya from insisting on her failed route to reconsidering and building a shared plan.", ["S0067", "S0069", "S0061", "S0071"]],
+            ["A2", "INCORRECT", "Map drawing is an ability rather than a development explanation.", ["S0067"]],
+            ["A3", "INCORRECT", "Organized is a trait rather than a development explanation.", ["S0066", "S0065"]]
+          ]
+        },
+        {
+          "slotId": "part_b", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "The task setup is a single minor detail and supplies neither the contrasting beginning nor ending pair.", ["S0066"]],
+            ["A2", "DEFENSIBLE", "The first sentence shows Priya rejecting Luis's warning, while the second shows her inviting others to check a shared plan.", ["S0068", "S0065"]],
+            ["A3", "INCORRECT", "This pairs a middle realization with the task setup rather than beginning-and-ending evidence.", ["S0059", "S0066"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1068",
+      "fingerprint": "aabc4fd9ef2c32fbf616568f2e1b0828104a9c801f3e2dd1cb9b65017c6af477",
+      "slots": [{
+        "slotId": "response", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "UNSUPPORTED", "The passage does not state that Mateo likes weather flags.", ["S0082"]],
+          ["A2", "INCORRECT", "Speaking clearly and inviting questions are Mateo's changed ending behaviors.", ["S0088"]],
+          ["A3", "DEFENSIBLE", "Near the beginning Mateo knows the route but stays quiet and lets others direct the group.", ["S0083", "S0075", "S0084"]],
+          ["A4", "INCORRECT", "Catching the flag and volunteering to lead are the middle turning point.", ["S0085", "S0086"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1069",
+      "fingerprint": "11c3257b4b429de3d06f8040cb03d90a2de113f1de9c58a42a5c2ae596c3a876",
+      "slots": [{
+        "slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "DEFENSIBLE", "When the flag blows loose, Mateo catches it and publicly offers to lead, beginning the clear shift from silence to confident action.", ["S0085", "S0086"]],
+          ["A2", "INCORRECT", "Letting others direct the group establishes Mateo's beginning behavior.", ["S0083"]],
+          ["A3", "UNSUPPORTED", "The passage does not state this preference.", ["S0082"]],
+          ["A4", "INCORRECT", "Speaking clearly at every turn describes the developed ending after the turning point.", ["S0088"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1070",
+      "fingerprint": "dab84f73df7947e7d409d7cfe547a854ff1069b80c5d7fe65cc19940a6eaf88f",
+      "slots": [{
+        "slotId": "response", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "UNSUPPORTED", "The passage does not state this preference or trace development through it.", ["S0082"]],
+          ["A2", "INCORRECT", "This accurately states only Mateo's ending behavior.", ["S0088"]],
+          ["A3", "INCORRECT", "Observant is one trait and does not explain change across plot stages.", ["S0084", "S0081"]],
+          ["A4", "DEFENSIBLE", "This connects Mateo's early silence, the flag event, and his later confident leadership.", ["S0083", "S0085", "S0086", "S0088"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1071",
+      "fingerprint": "dcdd59368314cda4b79901c3a70849852010cab16cea68c18df0f4f06b47b78e",
+      "slots": [{
+        "slotId": "response", "defensible": ["A2", "A3"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "Catching the flag and offering to lead are the middle turning point.", ["S0085", "S0086"]],
+          ["A2", "DEFENSIBLE", "At the end Mateo speaks clearly and invites questions.", ["S0088"]],
+          ["A3", "DEFENSIBLE", "At the beginning Mateo knows the route but lets others direct the group.", ["S0083"]],
+          ["A4", "UNSUPPORTED", "The passage does not state that Mateo likes weather flags.", ["S0082"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1072",
+      "fingerprint": "abae8205ce1a442f6024ecf4ed53c4de7e492cfd7650bde8c62364274cca5aad",
+      "slots": [{
+        "slotId": "response", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true,
+        "options": [
+          ["A1", "INCORRECT", "This establishes the club's task and does not show Mateo's response.", ["S0082"]],
+          ["A2", "INCORRECT", "This shows Mateo's hesitant beginning response.", ["S0075"]],
+          ["A3", "INCORRECT", "This shows the middle turning point and first shift, not the requested near-end response.", ["S0086"]],
+          ["A4", "DEFENSIBLE", "The explicit end sentence shows Mateo consistently speaking clearly and inviting questions, directly contrasting with his early silence.", ["S0088"]]
+        ]
+      }],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1073",
+      "fingerprint": "2541955ba817bb83802166ddd0657958543a671790f6281c7a3e4373ffba7ee3",
+      "slots": [
+        {
+          "slotId": "row_1", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "UNSUPPORTED", "The passage does not state this preference.", ["S0082"]],
+            ["A2", "INCORRECT", "The loose flag and Mateo's leadership response are the middle turning point.", ["S0085", "S0086"]],
+            ["A3", "DEFENSIBLE", "Mateo begins by knowing the route but letting others call directions.", ["S0083"]],
+            ["A4", "INCORRECT", "Speaking clearly and inviting questions occur at the end.", ["S0088"]]
+          ]
+        },
+        {
+          "slotId": "row_2", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "The loose flag prompts Mateo to catch it and offer to lead, marking the turning point.", ["S0085", "S0086"]],
+            ["A2", "UNSUPPORTED", "The passage does not state this preference.", ["S0082"]],
+            ["A3", "INCORRECT", "Letting others direct the group is the beginning behavior.", ["S0083"]],
+            ["A4", "INCORRECT", "Speaking clearly at each turn is the ending behavior.", ["S0088"]]
+          ]
+        },
+        {
+          "slotId": "row_3", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "At the end Mateo speaks clearly at each turn and invites questions.", ["S0088"]],
+            ["A2", "UNSUPPORTED", "The passage does not state this preference.", ["S0082"]],
+            ["A3", "INCORRECT", "Letting others direct the group is the beginning behavior.", ["S0083"]],
+            ["A4", "INCORRECT", "The loose-flag response is the middle turning point.", ["S0085", "S0086"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1074",
+      "fingerprint": "b22c5ae6974bf2497443b8b659271f7307fe8cb5a5a33ae20935870684d60dd9",
+      "slots": [
+        {
+          "slotId": "part_a", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "This traces Mateo from early silence through the loose-flag event to confident guidance.", ["S0083", "S0085", "S0086", "S0088"]],
+            ["A2", "INCORRECT", "Observant is one trait rather than a development explanation.", ["S0084", "S0081"]],
+            ["A3", "UNSUPPORTED", "The passage does not state this preference.", ["S0082"]]
+          ]
+        },
+        {
+          "slotId": "part_b", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This combines the middle turning point with a task-setup detail rather than beginning-and-ending evidence.", ["S0086", "S0082"]],
+            ["A2", "DEFENSIBLE", "Mateo's early hesitation contrasts directly with his end-of-story clear speech and invitation for questions.", ["S0075", "S0088"]],
+            ["A3", "INCORRECT", "The task setup alone provides no beginning-to-ending evidence pair.", ["S0082"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

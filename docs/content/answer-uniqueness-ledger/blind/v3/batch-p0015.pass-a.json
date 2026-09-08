@@ -1,0 +1,336 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0015",
+  "batchFileSha256": "7ae308cc96507758782c6cce134c7005ac10f17aa5220e278e299b9a31f3e264",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0390",
+      "fingerprint": "b7562225002ed1d19e95fc2ee4c8987e506217a896fcf2403dcf34b40416fe5c",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is a setting detail, not a general theme.",
+              [
+                "S0053"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This is the initial problem, not a general message.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Ava's failed knot, changed plan, and successful result support this general lesson.",
+              [
+                "S0060",
+                "S0059",
+                "S0057"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This summarizes a setting and action rather than stating a theme.",
+              [
+                "S0053"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This states the steady result and explicitly explains that the new plan solved the problem.",
+              [
+                "S0057"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states the revised action but not its result or why it supports the theme.",
+              [
+                "S0055"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states the decision to change but not the result explaining the theme.",
+              [
+                "S0059"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This states the failed first plan, not the result of trying a new one.",
+              [
+                "S0060"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0393",
+      "fingerprint": "05861bee06e9949664dcee9190129e0913a56eb9db186db35772c6547698f71b",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Forgetting and leaving the book describes Eli's mistake, not taking responsibility afterward.",
+              [
+                "S0068"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "The passage does not present this as an action Eli takes after the mistake.",
+              [
+                "S0062"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Borrowing the book happens before the mistake and is not the repair action.",
+              [
+                "S0069"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Telling the truth, returning the book, and apologizing directly show responsibility after the mistake.",
+              [
+                "S0065"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0394",
+      "fingerprint": "2392828dcd933ae25c458264dcc922e8c65aed4c78d48a03095058a3cf918859",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The teacher's response directly confirms that Eli's responsibility rebuilt trust.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Truth-telling, returning the book, and apologizing are direct trust-repair actions.",
+              [
+                "S0065"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Helping sort books is an additional responsible action after the mistake.",
+              [
+                "S0070"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Borrowing and promising occur before Eli forgets the book, so they do not show how he repaired trust afterward.",
+              [
+                "S0069"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0395",
+      "fingerprint": "24adcaa3bf94d6780652d6374803dfc4060677ec6be3068ee4f05d8d2001cdfe",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This states Eli's mistake rather than actions to make it right.",
+              [
+                "S0068"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This gives the teacher's response and result rather than listing Eli's corrective actions.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This lists Eli telling the truth, returning the book, and writing an apology.",
+              [
+                "S0065"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0397",
+      "fingerprint": "08a55e2d194912b4f7e2d5cc3baade85e54acec2b763c780988b52b32068430b",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This is a setting detail, not a general theme.",
+              [
+                "S0065"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Eli's responsible actions and the teacher trusting him again support this message.",
+              [
+                "S0065",
+                "S0063"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This states the mistake, not a general message.",
+              [
+                "S0068"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This is one plot event, not a general theme.",
+              [
+                "S0069"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This states the mistake and does not show rebuilt trust.",
+              [
+                "S0068"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Helping sort books is responsible, but this choice does not state the trust result or explain the theme.",
+              [
+                "S0070"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This states the result and explicitly connects Eli's responsibility to being trusted again.",
+              [
+                "S0063"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "These are repair actions, but the choice does not state the result or explain that trust was rebuilt.",
+              [
+                "S0065"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

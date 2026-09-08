@@ -1104,7 +1104,7 @@
       "g3-wf-multisyllable-mountain-engineering-challenge"
     ],
     "questionType": "multi_select",
-    "contentFingerprint": "qta-v1-8d64bcdc9f69f658",
+    "contentFingerprint": "qta-v1-fcd08bdf994c3e63",
     "independentlySolvedAnswerText": [
       "worktable",
       "rebuild"
@@ -1117,15 +1117,23 @@
     "authoredKeyMatch": "EXACT_MATCH",
     "evaluatorCanonicalPass": true,
     "evaluatorAdversarialPass": true,
-    "distractorStatus": "PASS - visible alternatives were reviewed and are not defensible answers to the prompt.",
-    "ambiguityStatus": "PASS - one canonical response or exact canonical response set is defensible.",
-    "explanationStatus": "PASS - explanation agrees with the independently solved response.",
-    "evidenceStatus": "PASS - evidence resolves within the displayed lesson context and supports the response.",
-    "ownershipStatus": "PASS - pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.",
-    "promptLeakageStatus": "PASS - no transfer prompt repeats its keyed exemplar.",
-    "difficultyStatus": "PASS - wording and response demand fit the authored DRAFT lesson sequence.",
+    "distractorStatus": "PASS - every visible option has a current fingerprint-bound semantic judgment and no unkeyed option is defensible.",
+    "ambiguityStatus": "PASS - the complete current defensible response set exactly matches the authored response contract.",
+    "explanationStatus": "PASS - final semantic reconciliation confirms the current explanation agrees with the defensible response and learner-visible evidence.",
+    "evidenceStatus": "PASS - current option-level judgments use source-owned evidence and support or exclude every visible response.",
+    "ownershipStatus": "PASS - current pack, lesson, passage, grade, benchmark, skill, and version ownership resolve.",
+    "promptLeakageStatus": "PASS - the current learner-visible projection was reviewed without authored answer metadata and exposes no keyed-answer leakage.",
+    "difficultyStatus": "PASS - current wording and response demand passed the completed Grade 2/Grade 3 semantic review.",
+    "answerUniquenessReview": {
+      "ledgerPath": "docs/content/answer-uniqueness-ledger/g3-word-forge-multisyllable-mountain.json",
+      "blindReceiptSha256": "7eb00fa6b91268f47f018e06f68063e4d04bca32594f62cdb202c3dacbce3ec0",
+      "finalReceiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0039.pass-a.json",
+      "finalReceiptSha256": "7eb00fa6b91268f47f018e06f68063e4d04bca32594f62cdb202c3dacbce3ec0",
+      "finalReviewMethod": "PRIMARY_PASS_C_RECONCILIATION",
+      "independent": false
+    },
     "correctionApplied": false,
-    "correctionSummary": "No authored question correction was required at this fingerprint.",
+    "correctionSummary": "",
     "finalStatus": "PASS"
   },
   {

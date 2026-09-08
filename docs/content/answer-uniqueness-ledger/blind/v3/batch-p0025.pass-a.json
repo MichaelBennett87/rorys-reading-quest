@@ -1,0 +1,591 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0025",
+  "batchFileSha256": "eb7568afbc82fd59bd57b4913c09fc5b818ca0bf07a761528f85149eecf67a5c",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0545",
+      "fingerprint": "d0ba50bf1ab3b7837a4b7f5b38ed86cb8a19c6434bb5704cef81fd5455e73b0d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one animal-travel detail.",
+              [
+                "S0109"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one map detail.",
+              [
+                "S0111"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one water-travel detail.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This states both the range of seed travel and its plant-growth result.",
+              [
+                "S0107"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0546",
+      "fingerprint": "544c9c1af0cfc63ec0a2c86910fae83a50f6cd712323f98ea41ce71803d7eace",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one map detail.",
+              [
+                "S0111"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Seed travel routes name the broad subject.",
+              [
+                "S0114",
+                "S0117"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one animal-travel detail.",
+              [
+                "S0109"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one water example.",
+              [
+                "S0103"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one animal example.",
+              [
+                "S0108"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This states the passage-wide travel and growth idea.",
+              [
+                "S0107"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This is a true source detail distinct from topic and central idea.",
+              [
+                "S0111"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a topic phrase, not a detail sentence.",
+              [
+                "S0114"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the central idea rather than another detail.",
+              [
+                "S0107"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0547",
+      "fingerprint": "ef7d9bdba9c1b3c749210af1a3b22d74e34ea7376b2fd8044c3c95f04962eb9e",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one map detail.",
+              [
+                "S0111"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one travel example.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This states the full travel-and-growth central idea.",
+              [
+                "S0107"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "Birds describe animal travel rather than wind travel.",
+              [
+                "S0109"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This directly gives a wind-based travel example.",
+              [
+                "S0101"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This records routes but does not name a wind-based example.",
+              [
+                "S0111"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0550",
+      "fingerprint": "f5525fd2b746cc4861c9f3f47821902edd24a35dbabba8711989c5cce79148a3",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes a later temperature change, not starting materials.",
+              [
+                "S0140"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes a later smell change.",
+              [
+                "S0142"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This names food scraps, leaves, and paper going into the pile.",
+              [
+                "S0132"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes a later texture and color change.",
+              [
+                "S0136"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0552",
+      "fingerprint": "1b5996811c42b2ab599fa1eecb8f69068ad0c5bca3d1accc2b89b737e0e8388c",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This names composting and states its overall soil-helping result.",
+              [
+                "S0144"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes one change without naming the process or full result.",
+              [
+                "S0136"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states the result but does not name the process as composting.",
+              [
+                "S0138"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes one process step without its overall result.",
+              [
+                "S0139"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0554",
+      "fingerprint": "50199b11fee810062bc8ba7155f30639e85b2c2db613ef186fec655606be46f5",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one graph detail.",
+              [
+                "S0140"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one decomposition detail.",
+              [
+                "S0134"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This states the passage-wide transformation and soil benefit.",
+              [
+                "S0144"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes turning the pile but does not name the materials.",
+              [
+                "S0139"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This directly names the food scraps, leaves, and paper that change.",
+              [
+                "S0132"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This names only remaining leaf bits, not the starting materials collectively.",
+              [
+                "S0143"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0557",
+      "fingerprint": "6c575e7286a226dde6cf4480113f34feecec53b6650b1e9236d5a42bdc945803",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This directly states that bright markers show which path to take.",
+              [
+                "S0161"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes the map rather than the bright markers' basic job.",
+              [
+                "S0163"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one hazard-specific marking event, not the basic general job.",
+              [
+                "S0165"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes an end sign at one location.",
+              [
+                "S0172"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0558",
+      "fingerprint": "df089c75cd0ca87f79cf5725df0c3dd31ab44e47d6adfaf4e47e9996f6bc9c12",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes following markers but names neither a hazard nor the prevented problem.",
+              [
+                "S0171"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes map directions rather than a marked hazard or prevented problem.",
+              [
+                "S0163"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This names getting lost as a problem markers prevent.",
+              [
+                "S0167"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This shows a fallen branch hazard and its marked safe side path.",
+              [
+                "S0165"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0561",
+      "fingerprint": "28e5eafe77d5a1a0a73f92f00e68c9da68fba19fed10e4c5bc1567b0a5cd2b0e",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one map detail.",
+              [
+                "S0163"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This states the passage-wide guidance and safety idea.",
+              [
+                "S0173"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one basic marker detail.",
+              [
+                "S0161"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes continuing around a route, not choosing at a path split.",
+              [
+                "S0171"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This directly states how bright markers guide a path choice.",
+              [
+                "S0161"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This identifies the endpoint rather than a path choice.",
+              [
+                "S0172"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

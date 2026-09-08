@@ -1,0 +1,923 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0051",
+  "batchFileSha256": "f9f16235d1dd40c986f6637521799228432fa05ba67352669e9a4bf8065fc6fa",
+  "reviewerThreadId": "01a07bc1-d815-7c71-b972-e3c829df1777",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0596",
+      "fingerprint": "8ad0a08f077a1cbce8b414f6c568c4ad513ad8a07838881fc4c5b15e39964aa4",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the topic of this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "Compost piles are absent from the trail-marker passage.",
+              [
+                "S0174"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "Weather station notes are absent from the trail-marker passage.",
+              [
+                "S0174"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The title, headings, map, and sentences all concern trail markers guiding visitors.",
+              [
+                "S0174",
+                "S0176",
+                "S0179",
+                "S0182",
+                "S0177"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "Seed travel routes are absent from the trail-marker passage.",
+              [
+                "S0174"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0597",
+      "fingerprint": "d105c4ecbe090348afd74f40a57fc80d9f5911d9101955dff1369d0838b2a6c8",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Why did the author most likely write this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "UNSUPPORTED",
+              "The passage explains existing signs and paths but gives no painting directions.",
+              [
+                "S0161",
+                "S0163"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The informational passage explains trail guidance rather than telling a made-up lost-hiker story.",
+              [
+                "S0174",
+                "S0177"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The sections and conclusion explain how markers and maps guide visitors safely to the end.",
+              [
+                "S0176",
+                "S0179",
+                "S0182",
+                "S0167",
+                "S0173"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The passage says the trail keeps walkers away from a steep bank rather than urging steep paths.",
+              [
+                "S0170"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0598",
+      "fingerprint": "3951186d38ea01577dd180a8aa78c6adbd14a8c9ab5a28a627ad4bc10ff7df87",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which detail is most relevant to the author purpose?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "All four choices directly show a marker, map, or guide helping visitors follow the route or avoid danger; the prompt gives no ranking criterion.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The end sign directs visitors to the parking area and supports reaching the end safely.",
+              [
+                "S0172"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Bright markers showing the path directly support route guidance.",
+              [
+                "S0161"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The map showing turns and the loop end directly supports route guidance.",
+              [
+                "S0163"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Marking a safe side path around a fallen branch directly supports safe guidance.",
+              [
+                "S0165"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0599",
+      "fingerprint": "464a63478c21975f9d68e68fa88287f2b5cd8388bbec4c7275447feee986b9a3",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details that are most relevant to the author purpose.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "defensible": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "Every choice directly explains how trail markers or maps guide visitors or keep them from getting lost, so no unique pair exists.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The safe side-path marker directly shows guidance around a hazard.",
+              [
+                "S0165"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Following one color marker directly shows how families stay on the route.",
+              [
+                "S0171"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The map showing turns and the loop end directly shows navigational help.",
+              [
+                "S0163"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Avoiding getting lost directly states the benefit of markers.",
+              [
+                "S0167"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0600",
+      "fingerprint": "6caa6fa77709827524e8945fbf30dce3255c2bf5958c8c1619ba67bd391bbbfe",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Tap the sentence that best helps readers understand the author purpose.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A4"
+          ],
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one arrow detail rather than the full purpose.",
+              [
+                "S0169"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This covers map guidance but not the full markers-and-safety purpose.",
+              [
+                "S0163"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states one benefit of markers but omits reaching the end and the map.",
+              [
+                "S0167"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This concluding sentence summarizes staying on the right path and reaching the end safely.",
+              [
+                "S0173"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0601",
+      "fingerprint": "d1038b6f010915dabc3d5d22e9a0a30a722949d70915c5e1d65cd14305aaa540",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "prompt": "What is the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1"
+          ],
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Trail markers names the subject established by the title and passage.",
+              [
+                "S0174"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one end-sign detail, not the topic label.",
+              [
+                "S0172"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one marker detail, not the topic label.",
+              [
+                "S0161"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "prompt": "What is the author purpose?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2"
+          ],
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one family-navigation detail rather than the purpose.",
+              [
+                "S0171"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This complete statement explains why the author presents trail markers, maps, and safety details.",
+              [
+                "S0161",
+                "S0163",
+                "S0167",
+                "S0173"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one map detail rather than the passage-wide purpose.",
+              [
+                "S0163"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "prompt": "Which is another true detail?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1",
+            "A3"
+          ],
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "A1 and A3 are both verbatim true passage statements, and the prompt gives no constraint that distinguishes one.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The passage states that markers help visitors stay on the path and reach the end safely.",
+              [
+                "S0173"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the topic label rather than a detail.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The passage states that the end sign shows where the path meets the parking area.",
+              [
+                "S0172"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0602",
+      "fingerprint": "203f9af55527d7e40ae65a4ab935f6dda54a6f49ddc60b771acf922294431783",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "What is the author purpose of the text?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one marker detail rather than the purpose.",
+              [
+                "S0161"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one map detail rather than the purpose.",
+              [
+                "S0163"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This states the full purpose of explaining path guidance and safety.",
+              [
+                "S0161",
+                "S0163",
+                "S0167",
+                "S0173"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which detail best supports that answer?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "defensible": [
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "All three choices directly show trail markers or signs guiding visitors around the route, so no visible criterion selects one best support.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Following the same color marker directly supports route guidance.",
+              [
+                "S0171"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The end sign directing visitors to the parking area directly supports reaching the end.",
+              [
+                "S0172"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Bright markers showing which path to take directly support route guidance.",
+              [
+                "S0161"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0603",
+      "fingerprint": "1f6e089723681614f53daf674426db9495462fa551bb8d3267c6fd6d8768ca12",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What is the topic of this passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1"
+          ],
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Shaded rest spots names the subject of the title and all passage details.",
+              [
+                "S0014"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the author recommendation, not the topic label.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one measured fact, not the topic label.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one visitor observation, not the topic label.",
+              [
+                "S0007"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0604",
+      "fingerprint": "dc6447ddfb0d386177ca466de23a64ba5132900bc65e8f69ee715cfcb4b56007",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which sentence is a fact from the passage?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A3"
+          ],
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a topic phrase, not a sentence stating a fact.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The word should marks this as a recommendation rather than a checkable fact.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The class measurement is a checkable fact stated in the passage and graph.",
+              [
+                "S0005",
+                "S0017"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The passage says visitors stayed longer at the shaded bench, not the sunny bench.",
+              [
+                "S0007"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0605",
+      "fingerprint": "e99e2f377cf7431d22c19bcc356eb799193e005e50e555c57673ee7e55ed1ef5",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose two details that help explain why the author wants more shaded rest spots.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1",
+            "A3",
+            "A4"
+          ],
+          "defensible": [
+            "A1",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "A1, A3, and A4 each directly support the recommendation by showing comfort, need after a steep hill, or cooler temperature, so three defensible details exceed the requested pair.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Visitors staying longer because the shaded bench felt comfortable directly supports adding more shaded spots.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The number of benches alone does not establish why more shaded spots would help.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Families resting after the steep hill directly establishes a need for rest spots.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The shaded bench being three degrees cooler directly supports the comfort benefit.",
+              [
+                "S0005",
+                "S0017"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0606",
+      "fingerprint": "df3858c881a1c33fd5b44eee4016603d9ce3cbb6f16f89b10f766b2555ca1d7c",
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that states the author opinion.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A1"
+          ],
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The word should states the author recommendation that more shaded spots ought to be added.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The number and location of benches is a checkable fact.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The measured temperature difference is a checkable fact.",
+              [
+                "S0005",
+                "S0017"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This states a claimed benefit rather than what the author thinks should happen.",
+              [
+                "S0009"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0607",
+      "fingerprint": "29304a88b11ad345898eb62ec74b8939584875445ea07036a99cea0e50df36d7",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "prompt": "What is the topic?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2"
+          ],
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is one measured fact, not the topic label.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Shaded rest spots names the subject of the title and passage.",
+              [
+                "S0014"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the author opinion, not the topic label.",
+              [
+                "S0003"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "prompt": "Which sentence is the opinion?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2"
+          ],
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The ranger report is presented as a checkable observation.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Should marks the author recommendation that more shaded spots ought to be added.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The temperature measurement is a checkable fact.",
+              [
+                "S0005"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "prompt": "Which sentence is a fact?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2"
+          ],
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is a topic phrase, not a sentence stating a fact.",
+              []
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The class measurement is a checkable fact stated in the passage.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "Should marks a recommendation rather than a fact.",
+              [
+                "S0003"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "prompt": "Which sentence is another true detail?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [],
+          "independentlyDefensibleAnswerIds": [
+            "A2",
+            "A3"
+          ],
+          "defensible": [
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "A2 and A3 are both checkable true details stated in the passage, and the prompt supplies no basis to choose only one.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the author opinion already classified separately, not a factual detail.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The ranger report about families resting after the hill is a true passage detail.",
+              [
+                "S0012"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The class temperature measurement is also a true passage detail.",
+              [
+                "S0005"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

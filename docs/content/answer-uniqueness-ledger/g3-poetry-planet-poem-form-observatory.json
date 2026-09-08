@@ -1,0 +1,3948 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "g3-pp-pfo-q1-1",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-e1347e4d594db399",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "e96a88394b5099effc9113f4e0784e5a46632afebd39de934db8fde610b935ae",
+        "conclusionsSha256": "8f063a0bf2ffddd4d6b871b6ba536fa2e12fb9416ba2a80bc225e2a344dfd8f0",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0041.pass-a.json",
+        "receiptSha256": "8f063a0bf2ffddd4d6b871b6ba536fa2e12fb9416ba2a80bc225e2a344dfd8f0",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which of these taught poem forms gives the most exact name for \"City Rain Window\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q1-1-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q1-1-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q1-1-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Flexible line lengths and breaks occur without a fixed end-rhyme pattern.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-1-line-1",
+                "g3-pp-pfo-passage-1-line-2",
+                "g3-pp-pfo-passage-1-line-3",
+                "g3-pp-pfo-passage-1-line-4",
+                "g3-pp-pfo-passage-1-line-5",
+                "g3-pp-pfo-passage-1-line-6",
+                "g3-pp-pfo-passage-1-line-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q1-1-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem does not use five playful AABBA lines.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-1"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q1-1-choice-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "Its end words do not form an intentional fixed rhyme pattern.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-1"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q1-1-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "It has seven lines rather than the taught short three-line haiku form.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q1-2",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-69b1f97e6fa903ca",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "b3d62d65b2038087d3cbfd636e8b93399eb8073bfa29b84e66f8c93d512d6022",
+        "conclusionsSha256": "45498d822fd984d2abf095118631242abe9abd8bd81295ec6d84bfda362174d6",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0099.pass-a.json",
+        "receiptSha256": "45498d822fd984d2abf095118631242abe9abd8bd81295ec6d84bfda362174d6",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which feature best supports classifying \"City Rain Window\" as free verse?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q1-2-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q1-2-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q1-2-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "Neighboring line endings such as escape, drops, Below, and street do not rhyme in pairs.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-1-line-1",
+                "g3-pp-pfo-passage-1-line-2",
+                "g3-pp-pfo-passage-1-line-3",
+                "g3-pp-pfo-passage-1-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q1-2-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem has seven lines and no AABBA end-rhyme pattern.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-1-line-1",
+                "g3-pp-pfo-passage-1-line-2",
+                "g3-pp-pfo-passage-1-line-3",
+                "g3-pp-pfo-passage-1-line-4",
+                "g3-pp-pfo-passage-1-line-5",
+                "g3-pp-pfo-passage-1-line-6",
+                "g3-pp-pfo-passage-1-line-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q1-2-choice-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem has seven lines, not three.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-1-line-1",
+                "g3-pp-pfo-passage-1-line-2",
+                "g3-pp-pfo-passage-1-line-3",
+                "g3-pp-pfo-passage-1-line-4",
+                "g3-pp-pfo-passage-1-line-5",
+                "g3-pp-pfo-passage-1-line-6",
+                "g3-pp-pfo-passage-1-line-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q1-2-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The poem's intentional line breaks and absence of a required fixed rhyme pattern identify free verse.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-1-line-3",
+                "g3-pp-pfo-passage-1-line-4",
+                "g3-pp-pfo-passage-1-line-5",
+                "g3-pp-pfo-passage-1-line-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q1-3",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-9cfa289b36ec6d77",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "b3d62d65b2038087d3cbfd636e8b93399eb8073bfa29b84e66f8c93d512d6022",
+        "conclusionsSha256": "45498d822fd984d2abf095118631242abe9abd8bd81295ec6d84bfda362174d6",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0099.pass-a.json",
+        "receiptSha256": "45498d822fd984d2abf095118631242abe9abd8bd81295ec6d84bfda362174d6",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two features that work together to identify this poem form.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q1-3-correct-1",
+            "g3-pp-pfo-q1-3-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q1-3-correct-1",
+            "g3-pp-pfo-q1-3-correct-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q1-3-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Intentional line breaks without a required fixed rhyme pattern are a defining clue for this free-verse poem.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-1-line-1",
+                "g3-pp-pfo-passage-1-line-2",
+                "g3-pp-pfo-passage-1-line-3",
+                "g3-pp-pfo-passage-1-line-4",
+                "g3-pp-pfo-passage-1-line-5",
+                "g3-pp-pfo-passage-1-line-6",
+                "g3-pp-pfo-passage-1-line-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q1-3-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The varied line lengths, especially the isolated one-word line, reinforce the flexible free-verse structure.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-1-line-1",
+                "g3-pp-pfo-passage-1-line-3",
+                "g3-pp-pfo-passage-1-line-4",
+                "g3-pp-pfo-passage-1-line-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q1-3-wrong-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem has seven lines rather than three.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-1-line-1",
+                "g3-pp-pfo-passage-1-line-2",
+                "g3-pp-pfo-passage-1-line-3",
+                "g3-pp-pfo-passage-1-line-4",
+                "g3-pp-pfo-passage-1-line-5",
+                "g3-pp-pfo-passage-1-line-6",
+                "g3-pp-pfo-passage-1-line-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q1-3-wrong-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem has seven lines and lacks an AABBA rhyme pattern.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-1-line-1",
+                "g3-pp-pfo-passage-1-line-2",
+                "g3-pp-pfo-passage-1-line-3",
+                "g3-pp-pfo-passage-1-line-4",
+                "g3-pp-pfo-passage-1-line-5",
+                "g3-pp-pfo-passage-1-line-6",
+                "g3-pp-pfo-passage-1-line-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q1-4",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-714031af43089b93",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "b3d62d65b2038087d3cbfd636e8b93399eb8073bfa29b84e66f8c93d512d6022",
+        "conclusionsSha256": "45498d822fd984d2abf095118631242abe9abd8bd81295ec6d84bfda362174d6",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0099.pass-a.json",
+        "receiptSha256": "45498d822fd984d2abf095118631242abe9abd8bd81295ec6d84bfda362174d6",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the one-word line that creates a pause before the street scene continues.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q1-4-segment-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q1-4-segment-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q1-4-segment-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Below is the only one-word line and its break pauses before the next line names the street scene.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-1-line-3",
+                "g3-pp-pfo-passage-1-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q1-4-segment-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "This four-word line continues the street scene after the pause.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-1-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q1-4-segment-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "This five-word opening line is not a one-word pause before the street scene.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-1-line-1"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q1-4-segment-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "This four-word line describes pigeons and is not the one-word pause.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-1-line-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q1-5",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-dae1d85bd5878c77",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "b3d62d65b2038087d3cbfd636e8b93399eb8073bfa29b84e66f8c93d512d6022",
+        "conclusionsSha256": "45498d822fd984d2abf095118631242abe9abd8bd81295ec6d84bfda362174d6",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0033.second-pass.json",
+        "receiptSha256": "95ff5ad14f0b583a6582e58fd1912eec88f43e314e3ebb1085f3f37c54c3cd9b",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-pp-pfo-q1-5-row-form",
+          "prompt": "Poem form",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q1-5-form"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q1-5-form"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q1-5-feature",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the structural clue, not the requested poem-form name.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-1-line-3",
+                "g3-pp-pfo-passage-1-line-4",
+                "g3-pp-pfo-passage-1-line-5",
+                "g3-pp-pfo-passage-1-line-6"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q1-5-other-form",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem does not use a fixed end-rhyme pattern.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-1-line-1",
+                "g3-pp-pfo-passage-1-line-2",
+                "g3-pp-pfo-passage-1-line-4",
+                "g3-pp-pfo-passage-1-line-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q1-5-form",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Free verse correctly names the form shown by the poem's flexible lineation and rhyme pattern.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-1-line-1",
+                "g3-pp-pfo-passage-1-line-2",
+                "g3-pp-pfo-passage-1-line-3",
+                "g3-pp-pfo-passage-1-line-4",
+                "g3-pp-pfo-passage-1-line-5",
+                "g3-pp-pfo-passage-1-line-6",
+                "g3-pp-pfo-passage-1-line-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-pp-pfo-q1-5-row-feature",
+          "prompt": "Strongest structural clue",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q1-5-feature"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q1-5-feature"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q1-5-feature",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Intentional line breaks without required fixed rhyme are the strongest structural clue.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-1-line-3",
+                "g3-pp-pfo-passage-1-line-4",
+                "g3-pp-pfo-passage-1-line-5",
+                "g3-pp-pfo-passage-1-line-6"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q1-5-other-form",
+              "verdict": "CONTRADICTED",
+              "rationale": "Rhymed verse is neither a clue nor an accurate form for this poem.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-1-line-1",
+                "g3-pp-pfo-passage-1-line-2",
+                "g3-pp-pfo-passage-1-line-4",
+                "g3-pp-pfo-passage-1-line-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q1-5-form",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Free verse names the form rather than giving the requested structural clue.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-1-line-1",
+                "g3-pp-pfo-passage-1-line-2",
+                "g3-pp-pfo-passage-1-line-3",
+                "g3-pp-pfo-passage-1-line-4",
+                "g3-pp-pfo-passage-1-line-5",
+                "g3-pp-pfo-passage-1-line-6",
+                "g3-pp-pfo-passage-1-line-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q2-1",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-9cff1ee84f2c1f24",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "e96a88394b5099effc9113f4e0784e5a46632afebd39de934db8fde610b935ae",
+        "conclusionsSha256": "8f063a0bf2ffddd4d6b871b6ba536fa2e12fb9416ba2a80bc225e2a344dfd8f0",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0041.pass-a.json",
+        "receiptSha256": "8f063a0bf2ffddd4d6b871b6ba536fa2e12fb9416ba2a80bc225e2a344dfd8f0",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which of these taught poem forms gives the most exact name for \"Workshop Light\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q2-1-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q2-1-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q2-1-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The poem has a deliberate fixed AABB rhyme, so the taught exact form is rhymed verse.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-2-line-1",
+                "g3-pp-pfo-passage-2-line-2",
+                "g3-pp-pfo-passage-2-line-3",
+                "g3-pp-pfo-passage-2-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q2-1-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "It has four lines, not the taught five-line AABBA limerick form.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-2"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q2-1-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Light/right and hum/drum form two intentional neighboring rhyme pairs.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-2-line-1",
+                "g3-pp-pfo-passage-2-line-2",
+                "g3-pp-pfo-passage-2-line-3",
+                "g3-pp-pfo-passage-2-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q2-1-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "It is not a three-line classroom haiku.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q2-2",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-ff6c0d477410da1b",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "a5d7bd70ec56d715640b40842433eb3bbf3cc2dbb463409f1164bf83241571af",
+        "conclusionsSha256": "07e5f05d0a876edc84864e38c9f9975d0f868676caf05304febb47c049717b39",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0100.pass-a.json",
+        "receiptSha256": "07e5f05d0a876edc84864e38c9f9975d0f868676caf05304febb47c049717b39",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which feature best supports classifying \"Workshop Light\" as rhymed verse?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q2-2-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q2-2-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q2-2-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem has four workshop-action lines, not three observational 5-7-5 lines.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-2-line-1",
+                "g3-pp-pfo-passage-2-line-2",
+                "g3-pp-pfo-passage-2-line-3",
+                "g3-pp-pfo-passage-2-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q2-2-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The two intentional neighboring end-rhyme pairs directly support the rhymed-verse classification.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-2-line-1",
+                "g3-pp-pfo-passage-2-line-2",
+                "g3-pp-pfo-passage-2-line-3",
+                "g3-pp-pfo-passage-2-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q2-2-choice-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem has a clear fixed AABB rhyme pattern and no one-word line.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-2-line-1",
+                "g3-pp-pfo-passage-2-line-2",
+                "g3-pp-pfo-passage-2-line-3",
+                "g3-pp-pfo-passage-2-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q2-2-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem has four lines, not five, and its rhyme is AABB rather than AABBA.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-2-line-1",
+                "g3-pp-pfo-passage-2-line-2",
+                "g3-pp-pfo-passage-2-line-3",
+                "g3-pp-pfo-passage-2-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q2-3",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-b9723dafe517b223",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "a5d7bd70ec56d715640b40842433eb3bbf3cc2dbb463409f1164bf83241571af",
+        "conclusionsSha256": "07e5f05d0a876edc84864e38c9f9975d0f868676caf05304febb47c049717b39",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0100.pass-a.json",
+        "receiptSha256": "07e5f05d0a876edc84864e38c9f9975d0f868676caf05304febb47c049717b39",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two features that work together to identify this poem form.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q2-3-correct-1",
+            "g3-pp-pfo-q2-3-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q2-3-correct-1",
+            "g3-pp-pfo-q2-3-correct-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q2-3-wrong-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem has four lines and is not a three-line classroom haiku.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-2-line-1",
+                "g3-pp-pfo-passage-2-line-2",
+                "g3-pp-pfo-passage-2-line-3",
+                "g3-pp-pfo-passage-2-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q2-3-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The named line-ending pairs accurately identify the poem's intentional AABB rhyme.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-2-line-1",
+                "g3-pp-pfo-passage-2-line-2",
+                "g3-pp-pfo-passage-2-line-3",
+                "g3-pp-pfo-passage-2-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q2-3-wrong-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem uses a required AABB rhyme pattern and has no one-word line.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-2-line-1",
+                "g3-pp-pfo-passage-2-line-2",
+                "g3-pp-pfo-passage-2-line-3",
+                "g3-pp-pfo-passage-2-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q2-3-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The four lines are accurately organized as two neighboring rhyme pairs.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-2-line-1",
+                "g3-pp-pfo-passage-2-line-2",
+                "g3-pp-pfo-passage-2-line-3",
+                "g3-pp-pfo-passage-2-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q2-4",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-a1c84e23e8c3e8af",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "a5d7bd70ec56d715640b40842433eb3bbf3cc2dbb463409f1164bf83241571af",
+        "conclusionsSha256": "07e5f05d0a876edc84864e38c9f9975d0f868676caf05304febb47c049717b39",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0100.pass-a.json",
+        "receiptSha256": "07e5f05d0a876edc84864e38c9f9975d0f868676caf05304febb47c049717b39",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the other line whose end word rhymes with \"light\" in line 1.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q2-4-segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q2-4-segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q2-4-segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The end word right rhymes with light.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-2-line-1",
+                "g3-pp-pfo-passage-2-line-2"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q2-4-segment-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "Drum rhymes with hum, not light.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-2-line-3",
+                "g3-pp-pfo-passage-2-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q2-4-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This repeats line 1 rather than selecting the other rhyming line.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-2-line-1"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q2-4-segment-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "Hum rhymes with drum, not light.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-2-line-3",
+                "g3-pp-pfo-passage-2-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q2-5",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-3e2df75edf8001d2",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "a5d7bd70ec56d715640b40842433eb3bbf3cc2dbb463409f1164bf83241571af",
+        "conclusionsSha256": "07e5f05d0a876edc84864e38c9f9975d0f868676caf05304febb47c049717b39",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0100.pass-a.json",
+        "receiptSha256": "07e5f05d0a876edc84864e38c9f9975d0f868676caf05304febb47c049717b39",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-pp-pfo-q2-5-row-form",
+          "prompt": "Poem form",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q2-5-form"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q2-5-form"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q2-5-form",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Rhymed verse correctly names the poem form.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-2-line-1",
+                "g3-pp-pfo-passage-2-line-2",
+                "g3-pp-pfo-passage-2-line-3",
+                "g3-pp-pfo-passage-2-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q2-5-other-form",
+              "verdict": "CONTRADICTED",
+              "rationale": "The intentional AABB rhyme conflicts with a free-verse classification here.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-2-line-1",
+                "g3-pp-pfo-passage-2-line-2",
+                "g3-pp-pfo-passage-2-line-3",
+                "g3-pp-pfo-passage-2-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q2-5-feature",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the structural clue, not the requested form name.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-2-line-1",
+                "g3-pp-pfo-passage-2-line-2",
+                "g3-pp-pfo-passage-2-line-3",
+                "g3-pp-pfo-passage-2-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-pp-pfo-q2-5-row-feature",
+          "prompt": "Strongest structural clue",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q2-5-feature"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q2-5-feature"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q2-5-other-form",
+              "verdict": "CONTRADICTED",
+              "rationale": "Free verse is neither the form nor a structural clue supported by this fixed-rhyme poem.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-2-line-1",
+                "g3-pp-pfo-passage-2-line-2",
+                "g3-pp-pfo-passage-2-line-3",
+                "g3-pp-pfo-passage-2-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q2-5-form",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Rhymed verse names the form rather than the requested structural clue.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-2-line-1",
+                "g3-pp-pfo-passage-2-line-2",
+                "g3-pp-pfo-passage-2-line-3",
+                "g3-pp-pfo-passage-2-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q2-5-feature",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The explicitly identified AABB end-rhyme pairs are the strongest structural clue.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-2-line-1",
+                "g3-pp-pfo-passage-2-line-2",
+                "g3-pp-pfo-passage-2-line-3",
+                "g3-pp-pfo-passage-2-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q3-1",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-6d79432ffad6b1cb",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "e96a88394b5099effc9113f4e0784e5a46632afebd39de934db8fde610b935ae",
+        "conclusionsSha256": "8f063a0bf2ffddd4d6b871b6ba536fa2e12fb9416ba2a80bc225e2a344dfd8f0",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0041.pass-a.json",
+        "receiptSha256": "8f063a0bf2ffddd4d6b871b6ba536fa2e12fb9416ba2a80bc225e2a344dfd8f0",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which of these taught poem forms gives the most exact name for \"Cardinal Morning\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q3-1-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q3-1-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q3-1-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The three-line nature observation follows the taught classroom haiku clues.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-3-line-1",
+                "g3-pp-pfo-passage-3-line-2",
+                "g3-pp-pfo-passage-3-line-3"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q3-1-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The line endings do not form a fixed rhyme organization.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-3"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q3-1-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "It lacks five playful AABBA lines.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-3"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q3-1-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Haiku is the more exact taught form for these combined clues.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q3-2",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-54d044048e4207f0",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "e96a88394b5099effc9113f4e0784e5a46632afebd39de934db8fde610b935ae",
+        "conclusionsSha256": "8f063a0bf2ffddd4d6b871b6ba536fa2e12fb9416ba2a80bc225e2a344dfd8f0",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0041.pass-a.json",
+        "receiptSha256": "8f063a0bf2ffddd4d6b871b6ba536fa2e12fb9416ba2a80bc225e2a344dfd8f0",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which feature best supports classifying \"Cardinal Morning\" as haiku?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q3-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q3-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q3-2-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem has three lines and no AABBA organization.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-3"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q3-2-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "It does not have four lines with neighboring rhyme pairs.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-3"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q3-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "It states the poem's audited three-line classroom 5-7-5 structure.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-3-line-1",
+                "g3-pp-pfo-passage-3-line-2",
+                "g3-pp-pfo-passage-3-line-3"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q3-2-choice-4",
+              "verdict": "INCORRECT",
+              "rationale": "Lack of rhyme alone neither proves free verse nor outweighs the haiku clues.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q3-3",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-0610afa772716c8b",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "e96a88394b5099effc9113f4e0784e5a46632afebd39de934db8fde610b935ae",
+        "conclusionsSha256": "8f063a0bf2ffddd4d6b871b6ba536fa2e12fb9416ba2a80bc225e2a344dfd8f0",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0033.second-pass.json",
+        "receiptSha256": "95ff5ad14f0b583a6582e58fd1912eec88f43e314e3ebb1085f3f37c54c3cd9b",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two features that work together to identify this poem form.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q3-3-correct-1",
+            "g3-pp-pfo-q3-3-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q3-3-correct-2",
+            "g3-pp-pfo-q3-3-correct-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q3-3-wrong-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem has three lines and no AABBA rhyme.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-3"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q3-3-wrong-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "It does not have four lines or two neighboring rhyme pairs.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-3"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q3-3-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The poem captures a quiet snow-and-bird nature observation.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-3-line-1",
+                "g3-pp-pfo-passage-3-line-2",
+                "g3-pp-pfo-passage-3-line-3"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q3-3-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Its three lines follow the taught classroom 5-7-5 pattern.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-3-line-1",
+                "g3-pp-pfo-passage-3-line-2",
+                "g3-pp-pfo-passage-3-line-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q3-4",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-9f83dc92a09b94ce",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "e96a88394b5099effc9113f4e0784e5a46632afebd39de934db8fde610b935ae",
+        "conclusionsSha256": "8f063a0bf2ffddd4d6b871b6ba536fa2e12fb9416ba2a80bc225e2a344dfd8f0",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0033.second-pass.json",
+        "receiptSha256": "95ff5ad14f0b583a6582e58fd1912eec88f43e314e3ebb1085f3f37c54c3cd9b",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the seven-syllable middle line in this classroom 5-7-5 example.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q3-4-segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q3-4-segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q3-4-segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "Morning holds its breath has five syllables in ordinary pronunciation.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-3-line-3"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q3-4-segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "One bright red bird settles here counts as seven syllables.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-3-line-2"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q3-4-segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "Soft snow covers grass has five syllables.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-3-line-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q3-5",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-bd250084bfa56b10",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "e96a88394b5099effc9113f4e0784e5a46632afebd39de934db8fde610b935ae",
+        "conclusionsSha256": "8f063a0bf2ffddd4d6b871b6ba536fa2e12fb9416ba2a80bc225e2a344dfd8f0",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0041.pass-a.json",
+        "receiptSha256": "8f063a0bf2ffddd4d6b871b6ba536fa2e12fb9416ba2a80bc225e2a344dfd8f0",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-pp-pfo-q3-5-row-form",
+          "prompt": "Poem form",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q3-5-form"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q3-5-form"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q3-5-feature",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is a structural clue, not a poem-form name.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-3-line-1",
+                "g3-pp-pfo-passage-3-line-2",
+                "g3-pp-pfo-passage-3-line-3"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q3-5-other-form",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Free verse is less exact than the taught haiku classification.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-3"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q3-5-form",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Haiku is the taught form matching the poem's combined clues.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-3-line-1",
+                "g3-pp-pfo-passage-3-line-2",
+                "g3-pp-pfo-passage-3-line-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-pp-pfo-q3-5-row-feature",
+          "prompt": "Strongest structural clue",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q3-5-feature"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q3-5-feature"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q3-5-form",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Haiku names the form rather than stating its structural clue.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-3"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q3-5-other-form",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Free verse is a different form name, not a clue.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-3"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q3-5-feature",
+              "verdict": "DEFENSIBLE",
+              "rationale": "States the exact three-line classroom 5-7-5 structural evidence.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-3-line-1",
+                "g3-pp-pfo-passage-3-line-2",
+                "g3-pp-pfo-passage-3-line-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q4-1",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-00ab0380776b4334",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "e96a88394b5099effc9113f4e0784e5a46632afebd39de934db8fde610b935ae",
+        "conclusionsSha256": "8f063a0bf2ffddd4d6b871b6ba536fa2e12fb9416ba2a80bc225e2a344dfd8f0",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0033.second-pass.json",
+        "receiptSha256": "95ff5ad14f0b583a6582e58fd1912eec88f43e314e3ebb1085f3f37c54c3cd9b",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which of these taught poem forms gives the most exact name for \"The Adventurous Kite\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q4-1-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q4-1-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q4-1-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Five playful lines use the taught AABBA rhyme relationship.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-4-line-1",
+                "g3-pp-pfo-passage-4-line-2",
+                "g3-pp-pfo-passage-4-line-3",
+                "g3-pp-pfo-passage-4-line-4",
+                "g3-pp-pfo-passage-4-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q4-1-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem has a fixed rhyme and limerick structure.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q4-1-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "It is rhymed, but limerick is the more exact taught form requested.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-4-line-1",
+                "g3-pp-pfo-passage-4-line-2",
+                "g3-pp-pfo-passage-4-line-3",
+                "g3-pp-pfo-passage-4-line-4",
+                "g3-pp-pfo-passage-4-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q4-1-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "It is not the taught three-line haiku form.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q4-2",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-bf1d0ad474600780",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "debf4856d163619d2869d3b5b8ad14bb5484db554e242c2023d46e5ad7ffc3fe",
+        "conclusionsSha256": "ef736ff16cafccb25532a3695145bcd05e3bc203fc53d280e6d2c00b49cf5eb6",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0101.pass-a.json",
+        "receiptSha256": "ef736ff16cafccb25532a3695145bcd05e3bc203fc53d280e6d2c00b49cf5eb6",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which feature best supports classifying \"The Adventurous Kite\" as limerick?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q4-2-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q4-2-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q4-2-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The five playful lines and kite/delight/sight plus tree/free AABBA rhyme directly support limerick.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-4-line-1",
+                "g3-pp-pfo-passage-4-line-2",
+                "g3-pp-pfo-passage-4-line-3",
+                "g3-pp-pfo-passage-4-line-4",
+                "g3-pp-pfo-passage-4-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q4-2-choice-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem has five lines and an AABBA rhyme, not three 5-7-5 observational lines.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-4-line-1",
+                "g3-pp-pfo-passage-4-line-2",
+                "g3-pp-pfo-passage-4-line-3",
+                "g3-pp-pfo-passage-4-line-4",
+                "g3-pp-pfo-passage-4-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q4-2-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem has a required fixed AABBA rhyme pattern.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-4-line-1",
+                "g3-pp-pfo-passage-4-line-2",
+                "g3-pp-pfo-passage-4-line-3",
+                "g3-pp-pfo-passage-4-line-4",
+                "g3-pp-pfo-passage-4-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q4-2-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "One rhyme alone would not identify a limerick and does not describe this poem's complete structure.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-4-line-1",
+                "g3-pp-pfo-passage-4-line-2",
+                "g3-pp-pfo-passage-4-line-3",
+                "g3-pp-pfo-passage-4-line-4",
+                "g3-pp-pfo-passage-4-line-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q4-3",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-7b2c7d7da9b666f1",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "debf4856d163619d2869d3b5b8ad14bb5484db554e242c2023d46e5ad7ffc3fe",
+        "conclusionsSha256": "ef736ff16cafccb25532a3695145bcd05e3bc203fc53d280e6d2c00b49cf5eb6",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0101.pass-a.json",
+        "receiptSha256": "ef736ff16cafccb25532a3695145bcd05e3bc203fc53d280e6d2c00b49cf5eb6",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two features that work together to identify this poem form.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q4-3-correct-1",
+            "g3-pp-pfo-q4-3-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q4-3-correct-1",
+            "g3-pp-pfo-q4-3-correct-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q4-3-wrong-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem follows a fixed AABBA rhyme pattern.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-4-line-1",
+                "g3-pp-pfo-passage-4-line-2",
+                "g3-pp-pfo-passage-4-line-3",
+                "g3-pp-pfo-passage-4-line-4",
+                "g3-pp-pfo-passage-4-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q4-3-wrong-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem has five lines and is not a three-line classroom haiku.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-4-line-1",
+                "g3-pp-pfo-passage-4-line-2",
+                "g3-pp-pfo-passage-4-line-3",
+                "g3-pp-pfo-passage-4-line-4",
+                "g3-pp-pfo-passage-4-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q4-3-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The five-line AABBA rhyme organization is the defining structural evidence.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-4-line-1",
+                "g3-pp-pfo-passage-4-line-2",
+                "g3-pp-pfo-passage-4-line-3",
+                "g3-pp-pfo-passage-4-line-4",
+                "g3-pp-pfo-passage-4-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q4-3-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The poem presents a short playful event with the bouncing rhythm taught for limericks.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-4-line-1",
+                "g3-pp-pfo-passage-4-line-2",
+                "g3-pp-pfo-passage-4-line-3",
+                "g3-pp-pfo-passage-4-line-4",
+                "g3-pp-pfo-passage-4-line-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q4-4",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-bd43cafa7d00302e",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "debf4856d163619d2869d3b5b8ad14bb5484db554e242c2023d46e5ad7ffc3fe",
+        "conclusionsSha256": "ef736ff16cafccb25532a3695145bcd05e3bc203fc53d280e6d2c00b49cf5eb6",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0033.second-pass.json",
+        "receiptSha256": "95ff5ad14f0b583a6582e58fd1912eec88f43e314e3ebb1085f3f37c54c3cd9b",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the final line that returns to the A rhyme after the two B-rhyme lines.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q4-4-segment-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q4-4-segment-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q4-4-segment-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "Tree is the first B-rhyme ending, not the final return to A.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-4-line-3"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q4-4-segment-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Delight is an A-rhyme ending, but it is line 2 rather than the final post-B return.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-4-line-2"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q4-4-segment-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "Free is the second B-rhyme ending, not the return to A.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-4-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q4-4-segment-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The final end word sight returns to the kite/delight A rhyme after tree/free.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-4-line-1",
+                "g3-pp-pfo-passage-4-line-2",
+                "g3-pp-pfo-passage-4-line-3",
+                "g3-pp-pfo-passage-4-line-4",
+                "g3-pp-pfo-passage-4-line-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q4-5",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-ec7a3849a0adf5f5",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "debf4856d163619d2869d3b5b8ad14bb5484db554e242c2023d46e5ad7ffc3fe",
+        "conclusionsSha256": "ef736ff16cafccb25532a3695145bcd05e3bc203fc53d280e6d2c00b49cf5eb6",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0101.pass-a.json",
+        "receiptSha256": "ef736ff16cafccb25532a3695145bcd05e3bc203fc53d280e6d2c00b49cf5eb6",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-pp-pfo-q4-5-row-form",
+          "prompt": "Poem form",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q4-5-form"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q4-5-form"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q4-5-form",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Limerick is the poem's specific taught form.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-4-line-1",
+                "g3-pp-pfo-passage-4-line-2",
+                "g3-pp-pfo-passage-4-line-3",
+                "g3-pp-pfo-passage-4-line-4",
+                "g3-pp-pfo-passage-4-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q4-5-other-form",
+              "verdict": "CONTRADICTED",
+              "rationale": "The fixed AABBA structure conflicts with the taught free-verse category.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-4-line-1",
+                "g3-pp-pfo-passage-4-line-2",
+                "g3-pp-pfo-passage-4-line-3",
+                "g3-pp-pfo-passage-4-line-4",
+                "g3-pp-pfo-passage-4-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q4-5-feature",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the structural clue rather than a form name.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-4-line-1",
+                "g3-pp-pfo-passage-4-line-2",
+                "g3-pp-pfo-passage-4-line-3",
+                "g3-pp-pfo-passage-4-line-4",
+                "g3-pp-pfo-passage-4-line-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-pp-pfo-q4-5-row-feature",
+          "prompt": "Strongest structural clue",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q4-5-feature"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q4-5-feature"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q4-5-feature",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The five-line AABBA rhyme statement is the strongest structural clue.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-4-line-1",
+                "g3-pp-pfo-passage-4-line-2",
+                "g3-pp-pfo-passage-4-line-3",
+                "g3-pp-pfo-passage-4-line-4",
+                "g3-pp-pfo-passage-4-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q4-5-other-form",
+              "verdict": "CONTRADICTED",
+              "rationale": "Free verse is neither an accurate form nor a structural clue for this poem.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-4-line-1",
+                "g3-pp-pfo-passage-4-line-2",
+                "g3-pp-pfo-passage-4-line-3",
+                "g3-pp-pfo-passage-4-line-4",
+                "g3-pp-pfo-passage-4-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q4-5-form",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Limerick names the form rather than the requested clue.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-4-line-1",
+                "g3-pp-pfo-passage-4-line-2",
+                "g3-pp-pfo-passage-4-line-3",
+                "g3-pp-pfo-passage-4-line-4",
+                "g3-pp-pfo-passage-4-line-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q5-1",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-4e500170a0f8f464",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "e96a88394b5099effc9113f4e0784e5a46632afebd39de934db8fde610b935ae",
+        "conclusionsSha256": "8f063a0bf2ffddd4d6b871b6ba536fa2e12fb9416ba2a80bc225e2a344dfd8f0",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0041.pass-a.json",
+        "receiptSha256": "8f063a0bf2ffddd4d6b871b6ba536fa2e12fb9416ba2a80bc225e2a344dfd8f0",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which of these taught poem forms gives the most exact name for \"The Museum Whale\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q5-1-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q5-1-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q5-1-choice-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem does not organize its line endings into a fixed rhyme pattern.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q5-1-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "It lacks five playful AABBA lines.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q5-1-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Flexible line lengths and intentional breaks shape the seven-line poem without fixed rhyme.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5-line-1",
+                "g3-pp-pfo-passage-5-line-2",
+                "g3-pp-pfo-passage-5-line-3",
+                "g3-pp-pfo-passage-5-line-4",
+                "g3-pp-pfo-passage-5-line-5",
+                "g3-pp-pfo-passage-5-line-6",
+                "g3-pp-pfo-passage-5-line-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q5-1-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "It is not the taught three-line haiku form.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q5-2",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-d638ce36387e3672",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "debf4856d163619d2869d3b5b8ad14bb5484db554e242c2023d46e5ad7ffc3fe",
+        "conclusionsSha256": "ef736ff16cafccb25532a3695145bcd05e3bc203fc53d280e6d2c00b49cf5eb6",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0033.second-pass.json",
+        "receiptSha256": "95ff5ad14f0b583a6582e58fd1912eec88f43e314e3ebb1085f3f37c54c3cd9b",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which feature best supports classifying \"The Museum Whale\" as free verse?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q5-2-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q5-2-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q5-2-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem has seven lines and no AABBA rhyme.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5-line-1",
+                "g3-pp-pfo-passage-5-line-2",
+                "g3-pp-pfo-passage-5-line-3",
+                "g3-pp-pfo-passage-5-line-4",
+                "g3-pp-pfo-passage-5-line-5",
+                "g3-pp-pfo-passage-5-line-6",
+                "g3-pp-pfo-passage-5-line-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q5-2-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The line endings do not form a repeating ABAB rhyme.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5-line-1",
+                "g3-pp-pfo-passage-5-line-2",
+                "g3-pp-pfo-passage-5-line-3",
+                "g3-pp-pfo-passage-5-line-4",
+                "g3-pp-pfo-passage-5-line-5",
+                "g3-pp-pfo-passage-5-line-6",
+                "g3-pp-pfo-passage-5-line-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q5-2-choice-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem has seven lines rather than three.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5-line-1",
+                "g3-pp-pfo-passage-5-line-2",
+                "g3-pp-pfo-passage-5-line-3",
+                "g3-pp-pfo-passage-5-line-4",
+                "g3-pp-pfo-passage-5-line-5",
+                "g3-pp-pfo-passage-5-line-6",
+                "g3-pp-pfo-passage-5-line-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q5-2-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The displayed flexible lineation and lack of required fixed rhyme directly identify free verse.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5-line-1",
+                "g3-pp-pfo-passage-5-line-2",
+                "g3-pp-pfo-passage-5-line-3",
+                "g3-pp-pfo-passage-5-line-5",
+                "g3-pp-pfo-passage-5-line-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q5-3",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-bdcaed3dbbb0fe59",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "debf4856d163619d2869d3b5b8ad14bb5484db554e242c2023d46e5ad7ffc3fe",
+        "conclusionsSha256": "ef736ff16cafccb25532a3695145bcd05e3bc203fc53d280e6d2c00b49cf5eb6",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0101.pass-a.json",
+        "receiptSha256": "ef736ff16cafccb25532a3695145bcd05e3bc203fc53d280e6d2c00b49cf5eb6",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Compare the displayed poem with this new example. A different poem has three lines, observes a quiet natural moment, and uses a common classroom 5-7-5 pattern. Which form is it?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q5-3-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q5-3-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q5-3-choice-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The example's stated classroom 5-7-5 organization is a fixed pattern, not unrestricted free verse.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q5-3-choice-2",
+              "verdict": "UNSUPPORTED",
+              "rationale": "The example provides no intentional end-rhyme relationship.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q5-3-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Three lines, a quiet natural observation, and the qualified classroom 5-7-5 pattern jointly identify haiku.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q5-3-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "A limerick requires five playful lines and AABBA rhyme, neither of which is described.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q5-4",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-97328962db81a0de",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "debf4856d163619d2869d3b5b8ad14bb5484db554e242c2023d46e5ad7ffc3fe",
+        "conclusionsSha256": "ef736ff16cafccb25532a3695145bcd05e3bc203fc53d280e6d2c00b49cf5eb6",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0101.pass-a.json",
+        "receiptSha256": "ef736ff16cafccb25532a3695145bcd05e3bc203fc53d280e6d2c00b49cf5eb6",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two features that work together to identify this poem form.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q5-4-correct-1",
+            "g3-pp-pfo-q5-4-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q5-4-correct-2",
+            "g3-pp-pfo-q5-4-correct-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q5-4-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The isolated opening Overhead creates the stated visual pause before the whale appears.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5-line-1",
+                "g3-pp-pfo-passage-5-line-2"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q5-4-wrong-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem has seven lines and no AABBA pattern.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5-line-1",
+                "g3-pp-pfo-passage-5-line-2",
+                "g3-pp-pfo-passage-5-line-3",
+                "g3-pp-pfo-passage-5-line-4",
+                "g3-pp-pfo-passage-5-line-5",
+                "g3-pp-pfo-passage-5-line-6",
+                "g3-pp-pfo-passage-5-line-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q5-4-wrong-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem has seven lines and does not use a classroom 5-7-5 pattern.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5-line-1",
+                "g3-pp-pfo-passage-5-line-2",
+                "g3-pp-pfo-passage-5-line-3",
+                "g3-pp-pfo-passage-5-line-4",
+                "g3-pp-pfo-passage-5-line-5",
+                "g3-pp-pfo-passage-5-line-6",
+                "g3-pp-pfo-passage-5-line-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q5-4-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Flexible line lengths and intentional breaks without fixed rhyme are supported throughout the poem.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5-line-1",
+                "g3-pp-pfo-passage-5-line-2",
+                "g3-pp-pfo-passage-5-line-3",
+                "g3-pp-pfo-passage-5-line-5",
+                "g3-pp-pfo-passage-5-line-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q5-5",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-c100059823624c3c",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "debf4856d163619d2869d3b5b8ad14bb5484db554e242c2023d46e5ad7ffc3fe",
+        "conclusionsSha256": "ef736ff16cafccb25532a3695145bcd05e3bc203fc53d280e6d2c00b49cf5eb6",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0101.pass-a.json",
+        "receiptSha256": "ef736ff16cafccb25532a3695145bcd05e3bc203fc53d280e6d2c00b49cf5eb6",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the one-word opening line that creates a pause before the whale appears.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q5-5-segment-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q5-5-segment-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q5-5-segment-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Overhead is the only one-word opening and its line break pauses before the whale appears.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5-line-1",
+                "g3-pp-pfo-passage-5-line-2"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q5-5-segment-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "This four-word third line is neither one word nor the opening.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5-line-3"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q5-5-segment-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "This three-word fifth line is not the opening.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q5-5-segment-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "This four-word second line introduces the whale after the pause.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5-line-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q5-6",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-c2cabe5f28d648c3",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "debf4856d163619d2869d3b5b8ad14bb5484db554e242c2023d46e5ad7ffc3fe",
+        "conclusionsSha256": "ef736ff16cafccb25532a3695145bcd05e3bc203fc53d280e6d2c00b49cf5eb6",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0101.pass-a.json",
+        "receiptSha256": "ef736ff16cafccb25532a3695145bcd05e3bc203fc53d280e6d2c00b49cf5eb6",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-pp-pfo-q5-6-row-form",
+          "prompt": "Poem form",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q5-6-form"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q5-6-form"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q5-6-other-form",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem lacks intentional fixed rhyme.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5-line-1",
+                "g3-pp-pfo-passage-5-line-2",
+                "g3-pp-pfo-passage-5-line-3",
+                "g3-pp-pfo-passage-5-line-4",
+                "g3-pp-pfo-passage-5-line-5",
+                "g3-pp-pfo-passage-5-line-6",
+                "g3-pp-pfo-passage-5-line-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q5-6-form",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Free verse correctly names the poem's form.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5-line-1",
+                "g3-pp-pfo-passage-5-line-2",
+                "g3-pp-pfo-passage-5-line-3",
+                "g3-pp-pfo-passage-5-line-4",
+                "g3-pp-pfo-passage-5-line-5",
+                "g3-pp-pfo-passage-5-line-6",
+                "g3-pp-pfo-passage-5-line-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q5-6-feature",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the structural clue rather than the requested form name.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5-line-1",
+                "g3-pp-pfo-passage-5-line-2",
+                "g3-pp-pfo-passage-5-line-3",
+                "g3-pp-pfo-passage-5-line-5",
+                "g3-pp-pfo-passage-5-line-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-pp-pfo-q5-6-row-feature",
+          "prompt": "Strongest structural clue",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q5-6-feature"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q5-6-feature"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q5-6-feature",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Flexible lineation without a required fixed rhyme is the strongest structural clue.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5-line-1",
+                "g3-pp-pfo-passage-5-line-2",
+                "g3-pp-pfo-passage-5-line-3",
+                "g3-pp-pfo-passage-5-line-5",
+                "g3-pp-pfo-passage-5-line-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q5-6-form",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Free verse names the form rather than the requested clue.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5-line-1",
+                "g3-pp-pfo-passage-5-line-2",
+                "g3-pp-pfo-passage-5-line-3",
+                "g3-pp-pfo-passage-5-line-5",
+                "g3-pp-pfo-passage-5-line-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q5-6-other-form",
+              "verdict": "CONTRADICTED",
+              "rationale": "Rhymed verse is neither an accurate form nor a structural clue here.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5-line-1",
+                "g3-pp-pfo-passage-5-line-2",
+                "g3-pp-pfo-passage-5-line-3",
+                "g3-pp-pfo-passage-5-line-4",
+                "g3-pp-pfo-passage-5-line-5",
+                "g3-pp-pfo-passage-5-line-6",
+                "g3-pp-pfo-passage-5-line-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q5-7",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-d1f8c85de0da4441",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "e96a88394b5099effc9113f4e0784e5a46632afebd39de934db8fde610b935ae",
+        "conclusionsSha256": "8f063a0bf2ffddd4d6b871b6ba536fa2e12fb9416ba2a80bc225e2a344dfd8f0",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0041.pass-a.json",
+        "receiptSha256": "8f063a0bf2ffddd4d6b871b6ba536fa2e12fb9416ba2a80bc225e2a344dfd8f0",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Part A: Which of these taught poem forms gives the most exact name?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q5-7-a-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q5-7-a-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q5-7-a-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The poem uses flexible lines without a required fixed rhyme pattern.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5-line-1",
+                "g3-pp-pfo-passage-5-line-2",
+                "g3-pp-pfo-passage-5-line-3",
+                "g3-pp-pfo-passage-5-line-4",
+                "g3-pp-pfo-passage-5-line-5",
+                "g3-pp-pfo-passage-5-line-6",
+                "g3-pp-pfo-passage-5-line-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q5-7-a-wrong-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "No intentional fixed end-rhyme organization appears.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q5-7-a-wrong-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem is not a three-line classroom haiku.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Part B: Which structural clue best supports Part A?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q5-7-b-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q5-7-b-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q5-7-b-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Accurately states the visible structural evidence supporting free verse.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5-line-1",
+                "g3-pp-pfo-passage-5-line-2",
+                "g3-pp-pfo-passage-5-line-3",
+                "g3-pp-pfo-passage-5-line-4",
+                "g3-pp-pfo-passage-5-line-5",
+                "g3-pp-pfo-passage-5-line-6",
+                "g3-pp-pfo-passage-5-line-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q5-7-b-wrong-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem has seven lines, not a three-line 5-7-5 pattern.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q5-7-b-wrong-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem has seven lines and no AABBA pattern.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q6-1",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-edc4d132ec5c3d8e",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "e96a88394b5099effc9113f4e0784e5a46632afebd39de934db8fde610b935ae",
+        "conclusionsSha256": "8f063a0bf2ffddd4d6b871b6ba536fa2e12fb9416ba2a80bc225e2a344dfd8f0",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0041.pass-a.json",
+        "receiptSha256": "8f063a0bf2ffddd4d6b871b6ba536fa2e12fb9416ba2a80bc225e2a344dfd8f0",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which of these taught poem forms gives the most exact name for \"Turning the Seedlings\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q6-1-choice-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q6-1-choice-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q6-1-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "It has four lines rather than the taught three-line haiku form.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q6-1-choice-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The fixed alternating end rhymes make rhymed verse the exact taught form.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6-line-1",
+                "g3-pp-pfo-passage-6-line-2",
+                "g3-pp-pfo-passage-6-line-3",
+                "g3-pp-pfo-passage-6-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q6-1-choice-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Sun/done and wall/tall create an intentional ABAB rhyme.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6-line-1",
+                "g3-pp-pfo-passage-6-line-2",
+                "g3-pp-pfo-passage-6-line-3",
+                "g3-pp-pfo-passage-6-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q6-1-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "It lacks five playful AABBA lines.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q6-2",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-a4313d6fef7c8023",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "38d9d56660f584f49285531a81dc39938b7ad421f7bd6bf7c9a1eccf5e620739",
+        "conclusionsSha256": "1baf427914bbfc77012cceaaab1638e6db97fb4fbba389db68ef45325a84d0dd",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0102.pass-a.json",
+        "receiptSha256": "1baf427914bbfc77012cceaaab1638e6db97fb4fbba389db68ef45325a84d0dd",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which feature best supports classifying \"Turning the Seedlings\" as rhymed verse?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q6-2-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q6-2-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q6-2-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The alternating sun/done and wall/tall end rhymes directly establish ABAB rhymed verse.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6-line-1",
+                "g3-pp-pfo-passage-6-line-2",
+                "g3-pp-pfo-passage-6-line-3",
+                "g3-pp-pfo-passage-6-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q6-2-choice-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "Not every rhymed poem is a limerick, and this poem lacks five AABBA lines.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6-line-1",
+                "g3-pp-pfo-passage-6-line-2",
+                "g3-pp-pfo-passage-6-line-3",
+                "g3-pp-pfo-passage-6-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q6-2-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem has a required fixed ABAB rhyme pattern.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6-line-1",
+                "g3-pp-pfo-passage-6-line-2",
+                "g3-pp-pfo-passage-6-line-3",
+                "g3-pp-pfo-passage-6-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q6-2-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem has four lines rather than three.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6-line-1",
+                "g3-pp-pfo-passage-6-line-2",
+                "g3-pp-pfo-passage-6-line-3",
+                "g3-pp-pfo-passage-6-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q6-3",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-b1de92c3ab5702a7",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "e96a88394b5099effc9113f4e0784e5a46632afebd39de934db8fde610b935ae",
+        "conclusionsSha256": "8f063a0bf2ffddd4d6b871b6ba536fa2e12fb9416ba2a80bc225e2a344dfd8f0",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0033.second-pass.json",
+        "receiptSha256": "95ff5ad14f0b583a6582e58fd1912eec88f43e314e3ebb1085f3f37c54c3cd9b",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Compare the displayed poem with this new example. A different poem has five playful lines and an AABBA rhyme. Which of these taught poem forms gives the most exact name for it?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q6-3-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q6-3-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q6-3-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "Five playful AABBA lines do not match the taught haiku form.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q6-3-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The prompt supplies the defining taught combination of five playful AABBA lines.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q6-3-choice-3",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Rhymed verse is broader; limerick is the most exact taught name requested.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q6-3-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The supplied example has a fixed rhyme organization.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q6-4",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-4a36a01204bac1ae",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "38d9d56660f584f49285531a81dc39938b7ad421f7bd6bf7c9a1eccf5e620739",
+        "conclusionsSha256": "1baf427914bbfc77012cceaaab1638e6db97fb4fbba389db68ef45325a84d0dd",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0102.pass-a.json",
+        "receiptSha256": "1baf427914bbfc77012cceaaab1638e6db97fb4fbba389db68ef45325a84d0dd",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two features that work together to identify this poem form.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q6-4-correct-1",
+            "g3-pp-pfo-q6-4-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q6-4-correct-2",
+            "g3-pp-pfo-q6-4-correct-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q6-4-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Sun/done and wall/tall return on alternating lines rather than neighboring pairs.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6-line-1",
+                "g3-pp-pfo-passage-6-line-2",
+                "g3-pp-pfo-passage-6-line-3",
+                "g3-pp-pfo-passage-6-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q6-4-wrong-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem has four lines rather than three.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6-line-1",
+                "g3-pp-pfo-passage-6-line-2",
+                "g3-pp-pfo-passage-6-line-3",
+                "g3-pp-pfo-passage-6-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q6-4-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The named end-word pairs accurately state the ABAB rhyme evidence.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6-line-1",
+                "g3-pp-pfo-passage-6-line-2",
+                "g3-pp-pfo-passage-6-line-3",
+                "g3-pp-pfo-passage-6-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q6-4-wrong-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "Rhyme alone does not make a poem a limerick, and this poem is not five-line AABBA.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6-line-1",
+                "g3-pp-pfo-passage-6-line-2",
+                "g3-pp-pfo-passage-6-line-3",
+                "g3-pp-pfo-passage-6-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q6-5",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-9b2081f35ec2bf5f",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "1226ef49d1b706a2b0934255cb9fd64b47fc8e685e6c981cc4f8a0a5731226af",
+        "conclusionsSha256": "051176a63275a20d56c923400e6c403eac0d9ce76dfdc7af5f675aabe029628a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0042.pass-a.json",
+        "receiptSha256": "051176a63275a20d56c923400e6c403eac0d9ce76dfdc7af5f675aabe029628a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the other line whose end word rhymes with \"sun\" in line 1.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q6-5-segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q6-5-segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q6-5-segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "Wall rhymes with tall, not sun.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6-line-2",
+                "g3-pp-pfo-passage-6-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q6-5-segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Done rhymes with sun and is the other line requested.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6-line-1",
+                "g3-pp-pfo-passage-6-line-3"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q6-5-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is line 1 itself, while the prompt asks for the other line.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6-line-1"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q6-5-segment-4",
+              "verdict": "INCORRECT",
+              "rationale": "Tall rhymes with wall, not sun.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6-line-4",
+                "g3-pp-pfo-passage-6-line-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q6-6",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-27d552ff7112676b",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "38d9d56660f584f49285531a81dc39938b7ad421f7bd6bf7c9a1eccf5e620739",
+        "conclusionsSha256": "1baf427914bbfc77012cceaaab1638e6db97fb4fbba389db68ef45325a84d0dd",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0102.pass-a.json",
+        "receiptSha256": "1baf427914bbfc77012cceaaab1638e6db97fb4fbba389db68ef45325a84d0dd",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-pp-pfo-q6-6-row-form",
+          "prompt": "Poem form",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q6-6-form"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q6-6-form"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q6-6-other-form",
+              "verdict": "CONTRADICTED",
+              "rationale": "The fixed ABAB rhyme conflicts with free verse.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6-line-1",
+                "g3-pp-pfo-passage-6-line-2",
+                "g3-pp-pfo-passage-6-line-3",
+                "g3-pp-pfo-passage-6-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q6-6-form",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Rhymed verse correctly names the poem's broad taught form.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6-line-1",
+                "g3-pp-pfo-passage-6-line-2",
+                "g3-pp-pfo-passage-6-line-3",
+                "g3-pp-pfo-passage-6-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q6-6-feature",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the structural clue rather than a poem-form name.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6-line-1",
+                "g3-pp-pfo-passage-6-line-2",
+                "g3-pp-pfo-passage-6-line-3",
+                "g3-pp-pfo-passage-6-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-pp-pfo-q6-6-row-feature",
+          "prompt": "Strongest structural clue",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q6-6-feature"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q6-6-feature"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q6-6-feature",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The named ABAB end-rhyme pairs are the strongest structural clue.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6-line-1",
+                "g3-pp-pfo-passage-6-line-2",
+                "g3-pp-pfo-passage-6-line-3",
+                "g3-pp-pfo-passage-6-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q6-6-form",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Rhymed verse names the form rather than the requested clue.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6-line-1",
+                "g3-pp-pfo-passage-6-line-2",
+                "g3-pp-pfo-passage-6-line-3",
+                "g3-pp-pfo-passage-6-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q6-6-other-form",
+              "verdict": "CONTRADICTED",
+              "rationale": "Free verse is neither the form nor a supported structural clue here.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6-line-1",
+                "g3-pp-pfo-passage-6-line-2",
+                "g3-pp-pfo-passage-6-line-3",
+                "g3-pp-pfo-passage-6-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q6-7",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-0284d37b18ae567f",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "1226ef49d1b706a2b0934255cb9fd64b47fc8e685e6c981cc4f8a0a5731226af",
+        "conclusionsSha256": "051176a63275a20d56c923400e6c403eac0d9ce76dfdc7af5f675aabe029628a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0033.second-pass.json",
+        "receiptSha256": "95ff5ad14f0b583a6582e58fd1912eec88f43e314e3ebb1085f3f37c54c3cd9b",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Part A: Which of these taught poem forms gives the most exact name?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q6-7-a-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q6-7-a-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q6-7-a-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The poem has an intentional ABAB end-rhyme organization.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6-line-1",
+                "g3-pp-pfo-passage-6-line-2",
+                "g3-pp-pfo-passage-6-line-3",
+                "g3-pp-pfo-passage-6-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q6-7-a-wrong-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "It has four lines, not the taught three-line haiku form.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q6-7-a-wrong-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "The fixed rhyme pattern makes rhymed verse the more exact taught name.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Part B: Which structural clue best supports Part A?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q6-7-b-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q6-7-b-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q6-7-b-wrong-1",
+              "verdict": "INCORRECT",
+              "rationale": "Not every rhymed poem is a limerick, and this poem lacks five AABBA lines.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q6-7-b-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Sun/done and wall/tall accurately describe the visible ABAB rhyme.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6-line-1",
+                "g3-pp-pfo-passage-6-line-2",
+                "g3-pp-pfo-passage-6-line-3",
+                "g3-pp-pfo-passage-6-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q6-7-b-wrong-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem has four lines, not three.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q7-1",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-dbd84f86ae2a953a",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "1226ef49d1b706a2b0934255cb9fd64b47fc8e685e6c981cc4f8a0a5731226af",
+        "conclusionsSha256": "051176a63275a20d56c923400e6c403eac0d9ce76dfdc7af5f675aabe029628a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0042.pass-a.json",
+        "receiptSha256": "051176a63275a20d56c923400e6c403eac0d9ce76dfdc7af5f675aabe029628a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which of these taught poem forms gives the most exact name for \"The Crab Collection\"?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q7-1-choice-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q7-1-choice-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q7-1-choice-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "It is rhymed, but limerick is the more exact taught form requested.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7-line-1",
+                "g3-pp-pfo-passage-7-line-2",
+                "g3-pp-pfo-passage-7-line-3",
+                "g3-pp-pfo-passage-7-line-4",
+                "g3-pp-pfo-passage-7-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q7-1-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "It is not the taught three-line haiku form.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q7-1-choice-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "It has a fixed AABBA rhyme organization.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q7-1-choice-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Five playful lines use bay/day/tray and high/sigh in AABBA form.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7-line-1",
+                "g3-pp-pfo-passage-7-line-2",
+                "g3-pp-pfo-passage-7-line-3",
+                "g3-pp-pfo-passage-7-line-4",
+                "g3-pp-pfo-passage-7-line-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q7-2",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-78e8a6aa5f9984e6",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "38d9d56660f584f49285531a81dc39938b7ad421f7bd6bf7c9a1eccf5e620739",
+        "conclusionsSha256": "1baf427914bbfc77012cceaaab1638e6db97fb4fbba389db68ef45325a84d0dd",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0102.pass-a.json",
+        "receiptSha256": "1baf427914bbfc77012cceaaab1638e6db97fb4fbba389db68ef45325a84d0dd",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which feature best supports classifying \"The Crab Collection\" as limerick?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q7-2-choice-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q7-2-choice-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q7-2-choice-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "Varying line length does not erase the poem's fixed AABBA rhyme and limerick structure.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7-line-1",
+                "g3-pp-pfo-passage-7-line-2",
+                "g3-pp-pfo-passage-7-line-3",
+                "g3-pp-pfo-passage-7-line-4",
+                "g3-pp-pfo-passage-7-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q7-2-choice-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The five playful lines and named AABBA rhyme pairs directly identify a limerick.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7-line-1",
+                "g3-pp-pfo-passage-7-line-2",
+                "g3-pp-pfo-passage-7-line-3",
+                "g3-pp-pfo-passage-7-line-4",
+                "g3-pp-pfo-passage-7-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q7-2-choice-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Rhymed verse is too broad and the statement wrongly says line count and rhyme organization need not be checked.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7-line-1",
+                "g3-pp-pfo-passage-7-line-2",
+                "g3-pp-pfo-passage-7-line-3",
+                "g3-pp-pfo-passage-7-line-4",
+                "g3-pp-pfo-passage-7-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q7-2-choice-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "Describing an animal does not make a poem a haiku, and this poem has five AABBA lines.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7-line-1",
+                "g3-pp-pfo-passage-7-line-2",
+                "g3-pp-pfo-passage-7-line-3",
+                "g3-pp-pfo-passage-7-line-4",
+                "g3-pp-pfo-passage-7-line-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q7-3",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-a4c8fd4d66776d01",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "38d9d56660f584f49285531a81dc39938b7ad421f7bd6bf7c9a1eccf5e620739",
+        "conclusionsSha256": "1baf427914bbfc77012cceaaab1638e6db97fb4fbba389db68ef45325a84d0dd",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0102.pass-a.json",
+        "receiptSha256": "1baf427914bbfc77012cceaaab1638e6db97fb4fbba389db68ef45325a84d0dd",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Compare the displayed poem with this new example. A different poem uses intentional rhyme throughout but has four lines instead of the five-line AABBA limerick structure. Which broad form fits best?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q7-3-choice-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q7-3-choice-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q7-3-choice-4",
+              "verdict": "CONTRADICTED",
+              "rationale": "The example has four lines rather than the required five-line AABBA limerick structure.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q7-3-choice-3",
+              "verdict": "UNSUPPORTED",
+              "rationale": "No three-line nature-observation or classroom haiku pattern is described.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q7-3-choice-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Intentional rhyme throughout supports the broad rhymed-verse category when the specific limerick structure is absent.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q7-3-choice-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "Intentional rhyme throughout conflicts with the taught no-required-rhyme free-verse clue.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q7-4",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-33b90532ecdec2c6",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "38d9d56660f584f49285531a81dc39938b7ad421f7bd6bf7c9a1eccf5e620739",
+        "conclusionsSha256": "1baf427914bbfc77012cceaaab1638e6db97fb4fbba389db68ef45325a84d0dd",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0102.pass-a.json",
+        "receiptSha256": "1baf427914bbfc77012cceaaab1638e6db97fb4fbba389db68ef45325a84d0dd",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose the two features that work together to identify this poem form.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q7-4-correct-1",
+            "g3-pp-pfo-q7-4-correct-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q7-4-correct-2",
+            "g3-pp-pfo-q7-4-correct-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q7-4-correct-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The short playful event fits the recognizable limerick structure taught with the rhyme evidence.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7-line-1",
+                "g3-pp-pfo-passage-7-line-2",
+                "g3-pp-pfo-passage-7-line-3",
+                "g3-pp-pfo-passage-7-line-4",
+                "g3-pp-pfo-passage-7-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q7-4-wrong-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem's fixed AABBA rhyme contradicts the free-verse claim.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7-line-1",
+                "g3-pp-pfo-passage-7-line-2",
+                "g3-pp-pfo-passage-7-line-3",
+                "g3-pp-pfo-passage-7-line-4",
+                "g3-pp-pfo-passage-7-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q7-4-wrong-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "An animal subject alone does not identify haiku, and this poem has five AABBA lines.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7-line-1",
+                "g3-pp-pfo-passage-7-line-2",
+                "g3-pp-pfo-passage-7-line-3",
+                "g3-pp-pfo-passage-7-line-4",
+                "g3-pp-pfo-passage-7-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q7-4-correct-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Five playful lines with the named AABBA rhyme pairs directly identify the limerick form.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7-line-1",
+                "g3-pp-pfo-passage-7-line-2",
+                "g3-pp-pfo-passage-7-line-3",
+                "g3-pp-pfo-passage-7-line-4",
+                "g3-pp-pfo-passage-7-line-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q7-5",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-ea4ad130a4763e1c",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "38d9d56660f584f49285531a81dc39938b7ad421f7bd6bf7c9a1eccf5e620739",
+        "conclusionsSha256": "1baf427914bbfc77012cceaaab1638e6db97fb4fbba389db68ef45325a84d0dd",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0102.pass-a.json",
+        "receiptSha256": "1baf427914bbfc77012cceaaab1638e6db97fb4fbba389db68ef45325a84d0dd",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the final line that returns to the A rhyme after the two B-rhyme lines.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q7-5-segment-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q7-5-segment-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q7-5-segment-2",
+              "verdict": "CONTRADICTED",
+              "rationale": "High is the first B-rhyme ending, not the final return to A.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7-line-3"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q7-5-segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Day is an A-rhyme ending, but it is line 2 rather than the final post-B return.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7-line-2"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q7-5-segment-3",
+              "verdict": "CONTRADICTED",
+              "rationale": "Sigh is the second B-rhyme ending, not the return to A.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7-line-4"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q7-5-segment-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The final end word tray returns to the bay/day A rhyme after high/sigh.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7-line-1",
+                "g3-pp-pfo-passage-7-line-2",
+                "g3-pp-pfo-passage-7-line-3",
+                "g3-pp-pfo-passage-7-line-4",
+                "g3-pp-pfo-passage-7-line-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q7-6",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-c07b355e4b070402",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "38d9d56660f584f49285531a81dc39938b7ad421f7bd6bf7c9a1eccf5e620739",
+        "conclusionsSha256": "1baf427914bbfc77012cceaaab1638e6db97fb4fbba389db68ef45325a84d0dd",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0102.pass-a.json",
+        "receiptSha256": "1baf427914bbfc77012cceaaab1638e6db97fb4fbba389db68ef45325a84d0dd",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "g3-pp-pfo-q7-6-row-form",
+          "prompt": "Poem form",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q7-6-form"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q7-6-form"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q7-6-feature",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the structural clue rather than a form name.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7-line-1",
+                "g3-pp-pfo-passage-7-line-2",
+                "g3-pp-pfo-passage-7-line-3",
+                "g3-pp-pfo-passage-7-line-4",
+                "g3-pp-pfo-passage-7-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q7-6-other-form",
+              "verdict": "CONTRADICTED",
+              "rationale": "The fixed AABBA rhyme conflicts with free verse.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7-line-1",
+                "g3-pp-pfo-passage-7-line-2",
+                "g3-pp-pfo-passage-7-line-3",
+                "g3-pp-pfo-passage-7-line-4",
+                "g3-pp-pfo-passage-7-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q7-6-form",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Limerick is the specific taught poem form.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7-line-1",
+                "g3-pp-pfo-passage-7-line-2",
+                "g3-pp-pfo-passage-7-line-3",
+                "g3-pp-pfo-passage-7-line-4",
+                "g3-pp-pfo-passage-7-line-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "g3-pp-pfo-q7-6-row-feature",
+          "prompt": "Strongest structural clue",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q7-6-feature"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q7-6-feature"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q7-6-other-form",
+              "verdict": "CONTRADICTED",
+              "rationale": "Free verse is neither an accurate form nor a structural clue here.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7-line-1",
+                "g3-pp-pfo-passage-7-line-2",
+                "g3-pp-pfo-passage-7-line-3",
+                "g3-pp-pfo-passage-7-line-4",
+                "g3-pp-pfo-passage-7-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q7-6-feature",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The five-line AABBA rhyme statement is the strongest structural clue.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7-line-1",
+                "g3-pp-pfo-passage-7-line-2",
+                "g3-pp-pfo-passage-7-line-3",
+                "g3-pp-pfo-passage-7-line-4",
+                "g3-pp-pfo-passage-7-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q7-6-form",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Limerick names the form rather than the requested clue.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7-line-1",
+                "g3-pp-pfo-passage-7-line-2",
+                "g3-pp-pfo-passage-7-line-3",
+                "g3-pp-pfo-passage-7-line-4",
+                "g3-pp-pfo-passage-7-line-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g3-pp-pfo-q7-7",
+      "packId": "g3-poetry-planet-poem-form-observatory",
+      "contentVersion": "g3-pp-poem-form-r0.1.0",
+      "contentFingerprint": "qta-v1-52f538814f35ca1d",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "1226ef49d1b706a2b0934255cb9fd64b47fc8e685e6c981cc4f8a0a5731226af",
+        "conclusionsSha256": "051176a63275a20d56c923400e6c403eac0d9ce76dfdc7af5f675aabe029628a",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0042.pass-a.json",
+        "receiptSha256": "051176a63275a20d56c923400e6c403eac0d9ce76dfdc7af5f675aabe029628a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Part A: Which of these taught poem forms gives the most exact name?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q7-7-a-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q7-7-a-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q7-7-a-wrong-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "The poem has a fixed rhyme and limerick structure.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q7-7-a-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Five playful AABBA lines match the taught limerick form.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7-line-1",
+                "g3-pp-pfo-passage-7-line-2",
+                "g3-pp-pfo-passage-7-line-3",
+                "g3-pp-pfo-passage-7-line-4",
+                "g3-pp-pfo-passage-7-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q7-7-a-wrong-2",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Rhymed verse is broader than the exact limerick form requested.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7-line-1",
+                "g3-pp-pfo-passage-7-line-2",
+                "g3-pp-pfo-passage-7-line-3",
+                "g3-pp-pfo-passage-7-line-4",
+                "g3-pp-pfo-passage-7-line-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Part B: Which structural clue best supports Part A?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "g3-pp-pfo-q7-7-b-correct"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "g3-pp-pfo-q7-7-b-correct"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "g3-pp-pfo-q7-7-b-wrong-1",
+              "verdict": "CONTRADICTED",
+              "rationale": "Varying line lengths do not override the fixed limerick structure.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q7-7-b-correct",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Accurately states the five-line AABBA rhyme evidence.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7-line-1",
+                "g3-pp-pfo-passage-7-line-2",
+                "g3-pp-pfo-passage-7-line-3",
+                "g3-pp-pfo-passage-7-line-4",
+                "g3-pp-pfo-passage-7-line-5"
+              ]
+            },
+            {
+              "answerId": "g3-pp-pfo-q7-7-b-wrong-2",
+              "verdict": "INCORRECT",
+              "rationale": "Describing an animal does not make a poem a haiku.",
+              "evidenceIds": [
+                "g3-pp-pfo-passage-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

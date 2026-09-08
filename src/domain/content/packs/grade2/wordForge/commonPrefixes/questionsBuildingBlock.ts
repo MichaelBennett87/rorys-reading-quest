@@ -84,7 +84,7 @@ export const buildingBlockQuestions: ReadingQuestion[] = [
     tags: ['common-prefixes', 'prefix-pre', 'base-word'],
     choices: [
       { id: 'heat-choice', text: 'heat' },
-      { id: 'preview-choice', text: 'preview' },
+      { id: 'repaint-choice', text: 'repaint' },
       { id: 'unsafe-choice', text: 'unsafe' },
       { id: 'preheat-choice', text: 'preheat' },
     ],

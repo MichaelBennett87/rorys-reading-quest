@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0081",
+  "batchFileSha256": "67627ed9cb3325f14aafe136886b275f76fa767a7f29dcf1372d74fa53fb9305",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0946", "fingerprint": "b15baa211397bf4a84812a00e7a01ea30a58b07dc6ea6cef24413860ba8ec7db",
+      "slots": [{"slotId": "response", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Enjoy plus -ness does not build enjoyment.", ["S0039"]], ["A2", "DEFENSIBLE", "Enjoy plus -ment builds enjoyment.", ["S0039"]],
+        ["A3", "INCORRECT", "Enjoy plus -er does not build enjoyment.", ["S0039"]], ["A4", "INCORRECT", "Enjoy plus -ful does not build enjoyment.", ["S0039"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0947", "fingerprint": "1a921cbae4523b96088c853d6ea5d9c0bbc3749adff7c2712e99cbd22507dcd1",
+      "slots": [{"slotId": "response", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Reade is not the base word in reader.", ["S0041"]], ["A2", "INCORRECT", "The unsplit word does not show the requested boundary.", ["S0041"]],
+        ["A3", "INCORRECT", "R is not the base word in reader.", ["S0041"]], ["A4", "DEFENSIBLE", "Read is the base word and -er is the suffix in reader.", ["S0041"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0948", "fingerprint": "f62116e4482ff598ee6ae14abcc80fa6dfda359ac06af6a06bc84f7a600e5c8e",
+      "slots": [{"slotId": "response", "defensible": ["A1", "A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Enjoyment names a feeling or experience, so it is a noun here.", ["S0039"]],
+        ["A2", "INCORRECT", "Cloudy describes the sky, so it is an adjective here.", ["S0045"]],
+        ["A3", "DEFENSIBLE", "Reader names a person, so it is a noun here.", ["S0041"]],
+        ["A4", "INCORRECT", "Foldable describes the sign, so it is an adjective here.", ["S0043"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0949", "fingerprint": "44e0dfb42895c174d73ab34b67b232ee6e0db1430d9e27cca29528dba9cbf398",
+      "slots": [{"slotId": "response", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Cloud is the base word, not the suffix.", ["S0045"]], ["A2", "DEFENSIBLE", "Y is the suffix added to cloud in cloudy.", ["S0045"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0950", "fingerprint": "4970680200e58c08cab883ef56d3f0524b9b60d66899ec20d50b6e6fdecb1048",
+      "slots": [
+        {"slotId": "row_1", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Enjoy plus -y does not build enjoyment.", ["S0039"]], ["A2", "DEFENSIBLE", "Enjoy plus -ment builds enjoyment.", ["S0039"]], ["A3", "INCORRECT", "Enjoy plus -er does not build enjoyment.", ["S0039"]], ["A4", "INCORRECT", "Enjoy plus -able does not build enjoyment.", ["S0039"]]
+        ]},
+        {"slotId": "row_2", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Read plus -able builds readable, not reader.", ["S0041"]], ["A2", "INCORRECT", "Read plus -ment does not build reader.", ["S0041"]], ["A3", "INCORRECT", "Read plus -y does not build reader.", ["S0041"]], ["A4", "DEFENSIBLE", "Read plus -er builds reader.", ["S0041"]]
+        ]},
+        {"slotId": "row_3", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "DEFENSIBLE", "Fold plus -able builds foldable.", ["S0043"]], ["A2", "INCORRECT", "Fold plus -y does not build foldable.", ["S0043"]], ["A3", "INCORRECT", "Fold plus -er does not build foldable.", ["S0043"]], ["A4", "INCORRECT", "Fold plus -ment does not build foldable.", ["S0043"]]
+        ]},
+        {"slotId": "row_4", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "DEFENSIBLE", "Cloud plus -y builds cloudy.", ["S0045"]], ["A2", "INCORRECT", "Cloud plus -able does not build cloudy.", ["S0045"]], ["A3", "INCORRECT", "Cloud plus -ment does not build cloudy.", ["S0045"]], ["A4", "INCORRECT", "Cloud plus -er does not build cloudy.", ["S0045"]]
+        ]}
+      ], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0951", "fingerprint": "6b280265ae0b1faf286791a8766cacf67d199033579a4366fe2b6ae16ff5ebc9",
+      "slots": [{"slotId": "response", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Ship plus -ness does not build shipment.", ["S0051"]], ["A2", "INCORRECT", "Ship plus -ful does not build shipment.", ["S0051"]],
+        ["A3", "DEFENSIBLE", "Ship plus -ment builds shipment.", ["S0051"]], ["A4", "INCORRECT", "Ship plus -er does not build shipment.", ["S0051"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0952", "fingerprint": "04300f540c417a1b8070180fedf377ab654d3f4448e36919c4e15bb05ee8fdee",
+      "slots": [{"slotId": "response", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "This pair forms brightly, not the requested colorful.", ["S0053", "S0057"]],
+        ["A2", "INCORRECT", "This pair forms careless, not the requested colorful.", ["S0053", "S0055"]],
+        ["A3", "DEFENSIBLE", "Color plus -ful exactly forms colorful.", ["S0053"]],
+        ["A4", "INCORRECT", "This pair forms shipment, not the requested colorful.", ["S0051", "S0053"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0953", "fingerprint": "95749a9fd38bbe2143dff66e3c9106060f14f370c61044771fec855ca284ecf3",
+      "slots": [{"slotId": "response", "defensible": ["A4"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "INCORRECT", "Careless does not tell how an action happens in this sentence.", ["S0055"]],
+        ["A2", "INCORRECT", "Careless does not name a person, place, thing, or idea here.", ["S0055"]],
+        ["A3", "INCORRECT", "Careless does not show an action or state here.", ["S0055"]],
+        ["A4", "DEFENSIBLE", "Careless describes the noun phrase wire placement.", ["S0055"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0954", "fingerprint": "4925de01c38f01ad279b8017c95031b4888d39c35220138b6ab41422348aff3a",
+      "slots": [{"slotId": "response", "defensible": ["A1", "A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Careless describes wire placement, so it is an adjective here.", ["S0055"]],
+        ["A2", "INCORRECT", "Shipment names a collection of delivered items, so it is a noun.", ["S0051"]],
+        ["A3", "DEFENSIBLE", "Colorful describes the robot model, so it is an adjective.", ["S0053"]],
+        ["A4", "INCORRECT", "Brightly tells how the lamps shone, so it is an adverb.", ["S0057"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0955", "fingerprint": "cf7842b568ceb933c4ae14aadf58303de4668a617e97909618552ee8fbde334a",
+      "slots": [{"slotId": "response", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+        ["A1", "DEFENSIBLE", "Ly is the suffix added to bright in brightly.", ["S0057"]], ["A2", "INCORRECT", "Bright is the base word, not the suffix.", ["S0057"]]
+      ]}], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0956", "fingerprint": "dda9809dc2de0112f465e07dfbe7e87eb3048a3cfb043c4cb03e8b6a42d84f31",
+      "slots": [
+        {"slotId": "row_1", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "DEFENSIBLE", "Ship can name an action, and shipment is a noun naming what arrived.", ["S0051"]], ["A2", "INCORRECT", "Shipment is not an adverb made from an adjective.", ["S0051"]], ["A3", "INCORRECT", "Shipment is not an adjective made from a noun.", ["S0051"]]
+        ]},
+        {"slotId": "row_2", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "Colorful is not a noun made from a verb.", ["S0053"]], ["A2", "INCORRECT", "Colorful is not an adverb made from an adjective.", ["S0053"]], ["A3", "DEFENSIBLE", "Color is a noun and colorful is an adjective describing the robot.", ["S0053"]]
+        ]},
+        {"slotId": "row_3", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "DEFENSIBLE", "Care is a noun and careless is an adjective describing placement.", ["S0055"]], ["A2", "INCORRECT", "Careless is not an adverb made from an adjective.", ["S0055"]], ["A3", "INCORRECT", "Careless is not a noun made from a verb.", ["S0055"]]
+        ]},
+        {"slotId": "row_4", "defensible": ["A1"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "DEFENSIBLE", "Bright is an adjective and brightly is an adverb telling how lamps shone.", ["S0057"]], ["A2", "INCORRECT", "Brightly is not a noun made from a verb.", ["S0057"]], ["A3", "INCORRECT", "Brightly is not an adjective made from a noun.", ["S0057"]]
+        ]}
+      ], "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0957", "fingerprint": "9264fe15e67321dc59685f9d7b3d4093b5f023367f013e2787812eae6150ae3a",
+      "slots": [
+        {"slotId": "part_a", "defensible": ["A2"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "C is not the base word in colorful.", ["S0053"]], ["A2", "DEFENSIBLE", "Color is the base and -ful is the suffix in colorful.", ["S0053"]], ["A3", "INCORRECT", "The unsplit word does not show the requested boundary.", ["S0053"]], ["A4", "INCORRECT", "Colorf is not the base word in colorful.", ["S0053"]]
+        ]},
+        {"slotId": "part_b", "defensible": ["A3"], "ambiguity": "", "selectionContractValid": true, "options": [
+          ["A1", "INCORRECT", "The unsplit word does not show reading chunks.", ["S0053"]], ["A2", "PARTIALLY_TRUE_BUT_NONRESPONSIVE", "Color and ful show the meaningful base-suffix split, not the pronunciation chunks contrasted in Part B.", ["S0053", "S0059"]], ["A3", "DEFENSIBLE", "Col, or, and ful are the authored pronunciation chunks for the complete word.", ["S0053"]], ["A4", "INCORRECT", "A single initial letter plus the remainder is not the authored split.", ["S0053"]]
+        ]}
+      ], "projectionDefect": ""
+    }
+  ]
+}

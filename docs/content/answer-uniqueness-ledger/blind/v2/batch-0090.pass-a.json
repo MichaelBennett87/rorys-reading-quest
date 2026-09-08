@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0090",
+  "batchFileSha256": "1a320692cb91a3dcb32487db268d6b651c69b9b666ceabef7fbc2b5261a91a8a",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q1051",
+      "fingerprint": "f54d8e80dbbec0ddd93230d66611e4cc5a708450fa105ec78639418d9d0387d2",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Asking for everyone's ideas is Jalen's changed behavior at the end.", ["S0041"]],
+            ["A2", "INCORRECT", "Noticing friends with another solution is the middle realization that helps Jalen change.", ["S0031"]],
+            ["A3", "DEFENSIBLE", "At the beginning Jalen keeps relying on pulling harder even when that strategy fails.", ["S0037", "S0029", "S0039"]],
+            ["A4", "UNSUPPORTED", "The passage does not state that Jalen enjoys walking on marked trails.", ["S0036"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1052",
+      "fingerprint": "8fca391ccd84d8391f71566f2dc1e42d4722c15feb7ec63f89fa0431aca22b12",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "This compares Jalen's repeated failed approach with his later willingness to listen and change strategy.", ["S0037", "S0031", "S0033", "S0041"]],
+            ["A2", "UNSUPPORTED", "Strong is only a trait and does not explain a change across the plot.", ["S0037"]],
+            ["A3", "UNSUPPORTED", "The passage does not state this preference or trace development through it.", ["S0036"]],
+            ["A4", "INCORRECT", "This names one middle realization but does not explain Jalen's earlier and later responses.", ["S0031"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1053",
+      "fingerprint": "caeefc01fd047d47b127fd1785c659cae215c0193aad0b724790f677dd3cefe7",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "At the end Jalen asks for everyone's ideas before choosing the next repair plan.", ["S0041"]],
+            ["A2", "DEFENSIBLE", "At the beginning Jalen keeps trying the same pull-harder strategy.", ["S0037", "S0039"]],
+            ["A3", "UNSUPPORTED", "The passage does not state this preference.", ["S0036"]],
+            ["A4", "INCORRECT", "Noticing the group has another solution is a middle realization, not a beginning or ending detail.", ["S0031"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1054",
+      "fingerprint": "5101fadaa4e821371a764dc4b11f237bae39e7d7ed3e987e0bc63a830af43618",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This establishes Jalen's initial strategy before it fails.", ["S0037"]],
+            ["A2", "INCORRECT", "This shows Jalen's changed behavior at the end, after the turning point.", ["S0041"]],
+            ["A3", "DEFENSIBLE", "Noticing his prepared friends and their possible solution is the realization immediately followed by Jalen choosing a flexible plan.", ["S0031", "S0033"]],
+            ["A4", "INCORRECT", "The failed lift creates the problem, but Jalen still almost repeats his old plan afterward; it does not itself show the decisive shift.", ["S0029", "S0039"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1055",
+      "fingerprint": "ac09f6c34656217c63a3a31ef5d1370fa8c129dee8637857d1455048d89d0850",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This realization occurs in the middle.", ["S0031"]],
+            ["A2", "INCORRECT", "Asking for ideas is the ending behavior.", ["S0041"]],
+            ["A3", "UNSUPPORTED", "The passage does not state this preference.", ["S0036"]],
+            ["A4", "DEFENSIBLE", "Jalen begins by repeating the pull-harder strategy.", ["S0037", "S0039"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A4"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Repeating the pull-harder strategy is the beginning behavior.", ["S0037", "S0039"]],
+            ["A2", "UNSUPPORTED", "The passage does not state this preference.", ["S0036"]],
+            ["A3", "INCORRECT", "Asking for ideas is the ending behavior.", ["S0041"]],
+            ["A4", "DEFENSIBLE", "Noticing his friends' materials and possible solution is the middle realization that precedes his strategy change.", ["S0031", "S0033"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This realization occurs in the middle.", ["S0031"]],
+            ["A2", "DEFENSIBLE", "At the end Jalen asks for everyone's ideas before deciding.", ["S0041"]],
+            ["A3", "INCORRECT", "Repeating the pull-harder strategy is the beginning behavior.", ["S0037", "S0039"]],
+            ["A4", "UNSUPPORTED", "The passage does not state this preference.", ["S0036"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1056",
+      "fingerprint": "342331fad7449511c5d956514f57cb8fd0e1caeaf49965bfba8615957a2a1ccf",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "UNSUPPORTED", "The passage does not say either character likes bright lanterns.", ["S0051"]],
+            ["A2", "INCORRECT", "The counselor's request is a middle catalyst rather than Sora's beginning behavior.", ["S0050"]],
+            ["A3", "DEFENSIBLE", "The statement includes Sora's beginning insistence on working alone, which is the behavior her arc changes.", ["S0052", "S0053"]],
+            ["A4", "INCORRECT", "Sharing tasks and asking for ideas describe the characters' changed behavior at the end.", ["S0056", "S0048"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1057",
+      "fingerprint": "41bb77da7386a0d3b170513ca159ade943a5e54c5a28eda4cd31bcd3a2f218ef",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "Sora changes from rejecting a second plan to cooperating, while the added Ben clause accurately traces his parallel change.", ["S0052", "S0055", "S0056", "S0048"]],
+            ["A2", "INCORRECT", "The counselor's request names one middle event without explaining Sora's differing responses.", ["S0050"]],
+            ["A3", "INCORRECT", "This only names traits and does not explain development.", ["S0052", "S0053"]],
+            ["A4", "UNSUPPORTED", "The passage does not state this preference and the statement traces no change.", ["S0051"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1058",
+      "fingerprint": "30bb21fcb758f93e0ce07a12ff5f197cf2b3391aa89e94d59bd521e3dd48294a",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A1", "A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "DEFENSIBLE", "At the end Sora shares work and asks for Ben's ideas, showing cooperation.", ["S0056", "S0048"]],
+            ["A2", "UNSUPPORTED", "The passage does not state that the characters like bright lanterns.", ["S0051"]],
+            ["A3", "DEFENSIBLE", "At the beginning Sora wants to work alone; the added Ben detail does not change that stage evidence.", ["S0052", "S0053"]],
+            ["A4", "INCORRECT", "The counselor's question is a middle catalyst, not Sora's beginning or ending behavior.", ["S0050"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1059",
+      "fingerprint": "ab8248497c68118d9851e98a74bef5d5913d9af85c06a93b93541ecc07115cb0",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "This sentence establishes the assignment before Sora's conflict or change.", ["S0051"]],
+            ["A2", "INCORRECT", "This states Sora's beginning resistance to collaboration.", ["S0052"]],
+            ["A3", "DEFENSIBLE", "The counselor's request makes Sora examine both plans, immediately leading her to recognize the value in Ben's design.", ["S0050", "S0055"]],
+            ["A4", "INCORRECT", "This shows the successful cooperative ending after Sora has changed.", ["S0048"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q1060",
+      "fingerprint": "ee707b8b9439c185a605b4006092b8b120bf3e3ee8c20d5fceddc349e3c663aa",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Sharing tasks and ideas is the ending behavior.", ["S0056", "S0048"]],
+            ["A2", "UNSUPPORTED", "The passage does not state this preference.", ["S0051"]],
+            ["A3", "DEFENSIBLE", "Sora begins by wanting to work alone; the sentence also records Ben's parallel beginning concern.", ["S0052", "S0053"]],
+            ["A4", "INCORRECT", "The counselor's request is the middle catalyst.", ["S0050"]]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": ["A3"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "UNSUPPORTED", "The passage does not state this preference.", ["S0051"]],
+            ["A2", "INCORRECT", "Wanting to work alone describes Sora's beginning.", ["S0052", "S0053"]],
+            ["A3", "DEFENSIBLE", "The counselor's request is the middle event that prompts Sora to recognize a useful part of Ben's plan.", ["S0050", "S0055"]],
+            ["A4", "INCORRECT", "Sharing work and ideas describes the ending.", ["S0056", "S0048"]]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": ["A2"],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            ["A1", "INCORRECT", "Wanting to work alone describes the beginning.", ["S0052", "S0053"]],
+            ["A2", "DEFENSIBLE", "Sharing tasks and asking for one another's ideas shows the cooperative ending.", ["S0056", "S0048"]],
+            ["A3", "UNSUPPORTED", "The passage does not state this preference.", ["S0051"]],
+            ["A4", "INCORRECT", "The counselor's request is the middle catalyst.", ["S0050"]]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

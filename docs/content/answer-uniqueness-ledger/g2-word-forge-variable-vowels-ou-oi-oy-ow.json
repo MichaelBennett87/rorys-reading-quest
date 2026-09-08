@@ -1,0 +1,3572 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-guided-ou-ow-prereq-1",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-07e6c4f312178497",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "9d304d27367a80b551befacfa2be5cdf323c775e4ac978e61d9b6fd267dfdd23",
+        "conclusionsSha256": "067d2f64ae5a631fa2f3bc5e3a1a21eb9a974a0d37e8d5340a00356eff131c12",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0002.pass-a.json",
+        "receiptSha256": "067d2f64ae5a631fa2f3bc5e3a1a21eb9a974a0d37e8d5340a00356eff131c12",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word is spelled with ou and has the same vowel sound as loud?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "cloud-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "cloud-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "cloud-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Cloud is spelled with ou and its vowel sound matches loud.",
+              "evidenceIds": [
+                "cloud-board-1"
+              ]
+            },
+            {
+              "answerId": "cow-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Cow has the matching sound but is spelled with ow, not ou.",
+              "evidenceIds": [
+                "passage-g2-word-forge-ou-oi-oy-ow-1"
+              ]
+            },
+            {
+              "answerId": "coin-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Coin is spelled with oi and has a different vowel sound.",
+              "evidenceIds": [
+                "passage-g2-word-forge-ou-oi-oy-ow-1"
+              ]
+            },
+            {
+              "answerId": "toy-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Toy is spelled with oy and has a different vowel sound.",
+              "evidenceIds": [
+                "passage-g2-word-forge-ou-oi-oy-ow-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-guided-ou-ow-prereq-2",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-e888c403d7868b77",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "9d304d27367a80b551befacfa2be5cdf323c775e4ac978e61d9b6fd267dfdd23",
+        "conclusionsSha256": "067d2f64ae5a631fa2f3bc5e3a1a21eb9a974a0d37e8d5340a00356eff131c12",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0002.pass-a.json",
+        "receiptSha256": "067d2f64ae5a631fa2f3bc5e3a1a21eb9a974a0d37e8d5340a00356eff131c12",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word is spelled with ow and has the same vowel sound as grow?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "snow-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "snow-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "snow-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Snow is spelled with ow and has the same vowel sound as grow.",
+              "evidenceIds": [
+                "cloud-board-2"
+              ]
+            },
+            {
+              "answerId": "boy-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Boy is spelled with oy and has a different vowel sound.",
+              "evidenceIds": [
+                "passage-g2-word-forge-ou-oi-oy-ow-1"
+              ]
+            },
+            {
+              "answerId": "coin-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Coin is spelled with oi and has a different vowel sound.",
+              "evidenceIds": [
+                "passage-g2-word-forge-ou-oi-oy-ow-1"
+              ]
+            },
+            {
+              "answerId": "touch-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Touch is spelled with ou and has a different vowel sound.",
+              "evidenceIds": [
+                "passage-g2-word-forge-ou-oi-oy-ow-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-guided-ou-ow-prereq-3",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-1ec9eb0c6ea43830",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "9d304d27367a80b551befacfa2be5cdf323c775e4ac978e61d9b6fd267dfdd23",
+        "conclusionsSha256": "067d2f64ae5a631fa2f3bc5e3a1a21eb9a974a0d37e8d5340a00356eff131c12",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0002.pass-a.json",
+        "receiptSha256": "067d2f64ae5a631fa2f3bc5e3a1a21eb9a974a0d37e8d5340a00356eff131c12",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words spelled with ou that have the same vowel sound as count.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "cloud-choice",
+            "count-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "count-choice",
+            "cloud-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "toy-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Toy is spelled with oy rather than ou.",
+              "evidenceIds": [
+                "passage-g2-word-forge-ou-oi-oy-ow-1"
+              ]
+            },
+            {
+              "answerId": "count-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Count is spelled with ou and supplies the requested vowel sound.",
+              "evidenceIds": [
+                "cloud-board-3"
+              ]
+            },
+            {
+              "answerId": "cloud-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Cloud is spelled with ou and has the same vowel sound as count.",
+              "evidenceIds": [
+                "cloud-board-1"
+              ]
+            },
+            {
+              "answerId": "boy-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Boy is spelled with oy rather than ou.",
+              "evidenceIds": [
+                "passage-g2-word-forge-ou-oi-oy-ow-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-guided-ou-ow-prereq-4",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-846264660b5e8b6a",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "3e7eba399d3be932e1670032832e92c9785f93ee35ecbfbd1cb229109844ffa8",
+        "conclusionsSha256": "53f28d1ee5e018bccf8d1250b923f2ffcda40e4a8f0e57c3d83d93e3168331c5",
+        "reviewer": "primary-agent",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0004.pass-a.json",
+        "receiptSha256": "53f28d1ee5e018bccf8d1250b923f2ffcda40e4a8f0e57c3d83d93e3168331c5",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that says the crowd helped count the cups.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "cloud-board-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "cloud-board-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "cloud-board-2",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes snow, not the crowd counting cups.",
+              "evidenceIds": [
+                "cloud-board-2"
+              ]
+            },
+            {
+              "answerId": "cloud-board-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence states exactly that the crowd helped count the cups.",
+              "evidenceIds": [
+                "cloud-board-3"
+              ]
+            },
+            {
+              "answerId": "cloud-board-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes the town board and a cloud.",
+              "evidenceIds": [
+                "cloud-board-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-guided-ou-ow-prereq-5",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-63b5c54551d95e01",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "9d304d27367a80b551befacfa2be5cdf323c775e4ac978e61d9b6fd267dfdd23",
+        "conclusionsSha256": "067d2f64ae5a631fa2f3bc5e3a1a21eb9a974a0d37e8d5340a00356eff131c12",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0002.pass-a.json",
+        "receiptSha256": "067d2f64ae5a631fa2f3bc5e3a1a21eb9a974a0d37e8d5340a00356eff131c12",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "loud-row",
+          "prompt": "loud",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "ou-sound"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "ou-sound"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "oi-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Loud is not spelled with oi.",
+              "evidenceIds": [
+                "cloud-board-4"
+              ]
+            },
+            {
+              "answerId": "ow-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Loud is not spelled with ow.",
+              "evidenceIds": [
+                "cloud-board-4"
+              ]
+            },
+            {
+              "answerId": "ou-sound",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The vowel sound in loud is spelled with ou.",
+              "evidenceIds": [
+                "cloud-board-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-guided-oi-oy-prereq-1",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-2446e23e364db522",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "9d304d27367a80b551befacfa2be5cdf323c775e4ac978e61d9b6fd267dfdd23",
+        "conclusionsSha256": "067d2f64ae5a631fa2f3bc5e3a1a21eb9a974a0d37e8d5340a00356eff131c12",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0002.pass-a.json",
+        "receiptSha256": "067d2f64ae5a631fa2f3bc5e3a1a21eb9a974a0d37e8d5340a00356eff131c12",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word is spelled with oi and has the same vowel sound as boil?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "coin-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "coin-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "coin-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Coin is spelled with oi and has the same vowel sound as boil.",
+              "evidenceIds": [
+                "toy-sorting-1"
+              ]
+            },
+            {
+              "answerId": "boy-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Boy has the sound but is spelled with oy, not oi.",
+              "evidenceIds": [
+                "toy-sorting-2"
+              ]
+            },
+            {
+              "answerId": "toy-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Toy has the sound but is spelled with oy, not oi.",
+              "evidenceIds": [
+                "toy-sorting-1"
+              ]
+            },
+            {
+              "answerId": "snow-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Snow is spelled with ow and has a different vowel sound.",
+              "evidenceIds": [
+                "passage-g2-word-forge-ou-oi-oy-ow-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-guided-oi-oy-prereq-2",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-e0d09288579f8b04",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "9d304d27367a80b551befacfa2be5cdf323c775e4ac978e61d9b6fd267dfdd23",
+        "conclusionsSha256": "067d2f64ae5a631fa2f3bc5e3a1a21eb9a974a0d37e8d5340a00356eff131c12",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0002.pass-a.json",
+        "receiptSha256": "067d2f64ae5a631fa2f3bc5e3a1a21eb9a974a0d37e8d5340a00356eff131c12",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word is spelled with oy and has the same vowel sound as joy?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "toy-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "toy-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "toy-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Toy is spelled with oy and has the same vowel sound as joy.",
+              "evidenceIds": [
+                "toy-sorting-1",
+                "toy-sorting-4"
+              ]
+            },
+            {
+              "answerId": "join-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Join has the sound but is spelled with oi, not oy.",
+              "evidenceIds": [
+                "toy-sorting-2"
+              ]
+            },
+            {
+              "answerId": "coin-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Coin has the sound but is spelled with oi, not oy.",
+              "evidenceIds": [
+                "toy-sorting-1"
+              ]
+            },
+            {
+              "answerId": "touch-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Touch is spelled with ou and has a different vowel sound.",
+              "evidenceIds": [
+                "passage-g2-word-forge-ou-oi-oy-ow-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-guided-oi-oy-prereq-3",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-b75d4dacc2d083c0",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "9d304d27367a80b551befacfa2be5cdf323c775e4ac978e61d9b6fd267dfdd23",
+        "conclusionsSha256": "067d2f64ae5a631fa2f3bc5e3a1a21eb9a974a0d37e8d5340a00356eff131c12",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0002.pass-a.json",
+        "receiptSha256": "067d2f64ae5a631fa2f3bc5e3a1a21eb9a974a0d37e8d5340a00356eff131c12",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words spelled with oi that have the same vowel sound as coin.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "coin-choice",
+            "join-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "coin-choice",
+            "join-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "boy-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Boy has the sound but is spelled with oy, not oi.",
+              "evidenceIds": [
+                "toy-sorting-2"
+              ]
+            },
+            {
+              "answerId": "coin-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Coin is spelled with oi and has the requested vowel sound.",
+              "evidenceIds": [
+                "toy-sorting-1"
+              ]
+            },
+            {
+              "answerId": "join-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Join is spelled with oi and has the same vowel sound as coin.",
+              "evidenceIds": [
+                "toy-sorting-2"
+              ]
+            },
+            {
+              "answerId": "toy-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Toy has the sound but is spelled with oy, not oi.",
+              "evidenceIds": [
+                "toy-sorting-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-guided-oi-oy-prereq-4",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-7cda172f3a7288eb",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "87973e2f5882d8d05bf65c803ccefa4a581a91ab1259c4f2db77ab9428cedb75",
+        "conclusionsSha256": "eb293af1e502ec84f6260c265c9760aa8db8411813c6f0995ae5bd080db9fe84",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0005.pass-a.json",
+        "receiptSha256": "eb293af1e502ec84f6260c265c9760aa8db8411813c6f0995ae5bd080db9fe84",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that says a boy and a girl joined the game.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "toy-sorting-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "toy-sorting-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "toy-sorting-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes sorting coins at the toy box, not the boy and girl joining.",
+              "evidenceIds": [
+                "toy-sorting-1"
+              ]
+            },
+            {
+              "answerId": "toy-sorting-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This is the exact displayed sentence stating that a boy and a girl joined the game.",
+              "evidenceIds": [
+                "toy-sorting-2"
+              ]
+            },
+            {
+              "answerId": "toy-sorting-3",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes choosing a voice for turns, not joining the game.",
+              "evidenceIds": [
+                "toy-sorting-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-guided-oi-oy-prereq-5",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-7d7d9b7db97e08c9",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "9d304d27367a80b551befacfa2be5cdf323c775e4ac978e61d9b6fd267dfdd23",
+        "conclusionsSha256": "067d2f64ae5a631fa2f3bc5e3a1a21eb9a974a0d37e8d5340a00356eff131c12",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0002.pass-a.json",
+        "receiptSha256": "067d2f64ae5a631fa2f3bc5e3a1a21eb9a974a0d37e8d5340a00356eff131c12",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "toy-row",
+          "prompt": "toy",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "oy-sound"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "oy-sound"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "oi-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Toy is not spelled with oi.",
+              "evidenceIds": [
+                "toy-sorting-1"
+              ]
+            },
+            {
+              "answerId": "oy-sound",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The vowel sound in toy is spelled with oy.",
+              "evidenceIds": [
+                "toy-sorting-1"
+              ]
+            },
+            {
+              "answerId": "ou-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Toy is not spelled with ou.",
+              "evidenceIds": [
+                "toy-sorting-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-guided-ou-ow-practice-1",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-9ed2e2cb646f052f",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "9d304d27367a80b551befacfa2be5cdf323c775e4ac978e61d9b6fd267dfdd23",
+        "conclusionsSha256": "067d2f64ae5a631fa2f3bc5e3a1a21eb9a974a0d37e8d5340a00356eff131c12",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0002.pass-a.json",
+        "receiptSha256": "067d2f64ae5a631fa2f3bc5e3a1a21eb9a974a0d37e8d5340a00356eff131c12",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which other word is spelled with ou and has the same vowel sound as group?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "soup-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "soup-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "snow-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Snow is spelled with ow and has a different vowel sound.",
+              "evidenceIds": [
+                "soup-walk-3"
+              ]
+            },
+            {
+              "answerId": "group-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Group is the comparison word, while the prompt asks for another word.",
+              "evidenceIds": [
+                "soup-walk-1"
+              ]
+            },
+            {
+              "answerId": "soup-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Soup is another ou word with the same vowel sound as group.",
+              "evidenceIds": [
+                "soup-walk-1"
+              ]
+            },
+            {
+              "answerId": "toy-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Toy is spelled with oy and has a different vowel sound.",
+              "evidenceIds": [
+                "passage-g2-word-forge-ou-oi-oy-ow-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-guided-ou-ow-practice-2",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-cd6d5e98721c00c4",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "9d304d27367a80b551befacfa2be5cdf323c775e4ac978e61d9b6fd267dfdd23",
+        "conclusionsSha256": "067d2f64ae5a631fa2f3bc5e3a1a21eb9a974a0d37e8d5340a00356eff131c12",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0002.pass-a.json",
+        "receiptSha256": "067d2f64ae5a631fa2f3bc5e3a1a21eb9a974a0d37e8d5340a00356eff131c12",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word is spelled with ow and has the same vowel sound as grow?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "snow-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "snow-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "touch-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Touch is spelled with ou and has a different vowel sound.",
+              "evidenceIds": [
+                "soup-walk-2"
+              ]
+            },
+            {
+              "answerId": "group-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Group is spelled with ou and has a different vowel sound.",
+              "evidenceIds": [
+                "soup-walk-1"
+              ]
+            },
+            {
+              "answerId": "snow-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Snow is spelled with ow and has the same vowel sound as grow.",
+              "evidenceIds": [
+                "soup-walk-3"
+              ]
+            },
+            {
+              "answerId": "cloud-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Cloud is spelled with ou and has a different vowel sound.",
+              "evidenceIds": [
+                "passage-g2-word-forge-ou-oi-oy-ow-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-guided-ou-ow-practice-3",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-2bd526a814268434",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "9d304d27367a80b551befacfa2be5cdf323c775e4ac978e61d9b6fd267dfdd23",
+        "conclusionsSha256": "067d2f64ae5a631fa2f3bc5e3a1a21eb9a974a0d37e8d5340a00356eff131c12",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0002.pass-a.json",
+        "receiptSha256": "067d2f64ae5a631fa2f3bc5e3a1a21eb9a974a0d37e8d5340a00356eff131c12",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words spelled with ou that have the same vowel sound as soup.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "group-choice",
+            "soup-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "group-choice",
+            "soup-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "young-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Young is spelled with ou but its vowel sound differs from soup.",
+              "evidenceIds": [
+                "soup-walk-3"
+              ]
+            },
+            {
+              "answerId": "group-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Group is spelled with ou and has the same vowel sound as soup.",
+              "evidenceIds": [
+                "soup-walk-1"
+              ]
+            },
+            {
+              "answerId": "soup-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Soup itself is spelled with ou and supplies the requested sound.",
+              "evidenceIds": [
+                "soup-walk-1"
+              ]
+            },
+            {
+              "answerId": "touch-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Touch is spelled with ou but its vowel sound differs from soup.",
+              "evidenceIds": [
+                "soup-walk-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-guided-ou-ow-practice-4",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-86460d7ae01523a6",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "87973e2f5882d8d05bf65c803ccefa4a581a91ab1259c4f2db77ab9428cedb75",
+        "conclusionsSha256": "eb293af1e502ec84f6260c265c9760aa8db8411813c6f0995ae5bd080db9fe84",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0005.pass-a.json",
+        "receiptSha256": "eb293af1e502ec84f6260c265c9760aa8db8411813c6f0995ae5bd080db9fe84",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that says the child tried to touch the warm bowl.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "soup-walk-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "soup-walk-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "soup-walk-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This is the exact displayed sentence saying the child tried to touch the warm bowl.",
+              "evidenceIds": [
+                "soup-walk-2"
+              ]
+            },
+            {
+              "answerId": "soup-walk-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence says the group carried soup and does not describe the child touching the bowl.",
+              "evidenceIds": [
+                "soup-walk-1"
+              ]
+            },
+            {
+              "answerId": "soup-walk-3",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes an owl watching snow, not a child touching a bowl.",
+              "evidenceIds": [
+                "soup-walk-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-guided-ou-ow-practice-5",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-b76963e9d4e187ed",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "9d304d27367a80b551befacfa2be5cdf323c775e4ac978e61d9b6fd267dfdd23",
+        "conclusionsSha256": "067d2f64ae5a631fa2f3bc5e3a1a21eb9a974a0d37e8d5340a00356eff131c12",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0002.pass-a.json",
+        "receiptSha256": "067d2f64ae5a631fa2f3bc5e3a1a21eb9a974a0d37e8d5340a00356eff131c12",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "young-row",
+          "prompt": "young",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "touch-ou-sound"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "touch-ou-sound"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "touch-ou-sound",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Young uses ou with the vowel sound heard in touch.",
+              "evidenceIds": [
+                "soup-walk-3"
+              ]
+            },
+            {
+              "answerId": "oi-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Young is not spelled with oi and does not use the coin sound.",
+              "evidenceIds": [
+                "soup-walk-3"
+              ]
+            },
+            {
+              "answerId": "ow-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Young is not spelled with ow and does not use the grow sound.",
+              "evidenceIds": [
+                "soup-walk-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-guided-oi-oy-practice-1",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-7eb1f49d2f217101",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "33997694f88c79367424f8ba824f47e180a1543ddb679ebac911822fb1c8d5e6",
+        "conclusionsSha256": "80585a273acb3f871d77c30b9d0ea0f51554b23df5f33484175d5c82519176a1",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0003.pass-a.json",
+        "receiptSha256": "80585a273acb3f871d77c30b9d0ea0f51554b23df5f33484175d5c82519176a1",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word is spelled with oi and has the same vowel sound as boil?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "coin-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "coin-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "boy-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Boy has the sound but is spelled with oy, not oi.",
+              "evidenceIds": [
+                "coin-game-4"
+              ]
+            },
+            {
+              "answerId": "cloud-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Cloud is spelled with ou and has a different vowel sound.",
+              "evidenceIds": [
+                "passage-g2-word-forge-ou-oi-oy-ow-4"
+              ]
+            },
+            {
+              "answerId": "coin-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Coin is spelled with oi and has the same vowel sound as boil.",
+              "evidenceIds": [
+                "coin-game-1"
+              ]
+            },
+            {
+              "answerId": "toy-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Toy has the sound but is spelled with oy, not oi.",
+              "evidenceIds": [
+                "coin-game-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-guided-oi-oy-practice-2",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-1215be9ee71fb5fa",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "33997694f88c79367424f8ba824f47e180a1543ddb679ebac911822fb1c8d5e6",
+        "conclusionsSha256": "80585a273acb3f871d77c30b9d0ea0f51554b23df5f33484175d5c82519176a1",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0003.pass-a.json",
+        "receiptSha256": "80585a273acb3f871d77c30b9d0ea0f51554b23df5f33484175d5c82519176a1",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word is spelled with oy and has the same vowel sound as joy?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "toy-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "toy-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "toy-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Toy is spelled with oy and has the same vowel sound as joy.",
+              "evidenceIds": [
+                "coin-game-1"
+              ]
+            },
+            {
+              "answerId": "coin-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Coin has the sound but is spelled with oi, not oy.",
+              "evidenceIds": [
+                "coin-game-1"
+              ]
+            },
+            {
+              "answerId": "join-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Join has the sound but is spelled with oi, not oy.",
+              "evidenceIds": [
+                "coin-game-2"
+              ]
+            },
+            {
+              "answerId": "touch-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Touch is spelled with ou and has a different vowel sound.",
+              "evidenceIds": [
+                "passage-g2-word-forge-ou-oi-oy-ow-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-guided-oi-oy-practice-3",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-ae7795c2948ba7de",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "33997694f88c79367424f8ba824f47e180a1543ddb679ebac911822fb1c8d5e6",
+        "conclusionsSha256": "80585a273acb3f871d77c30b9d0ea0f51554b23df5f33484175d5c82519176a1",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0003.pass-a.json",
+        "receiptSha256": "80585a273acb3f871d77c30b9d0ea0f51554b23df5f33484175d5c82519176a1",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words spelled with oi that have the same vowel sound as coin.",
+          "requestedSelectionCount": 3,
+          "keyedAnswerIds": [
+            "coin-choice",
+            "choice-choice",
+            "voice-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-choice",
+            "voice-choice",
+            "coin-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Choice is spelled with oi and has the same vowel sound as coin.",
+              "evidenceIds": [
+                "coin-game-2"
+              ]
+            },
+            {
+              "answerId": "voice-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Voice is spelled with oi and has the same vowel sound as coin.",
+              "evidenceIds": [
+                "coin-game-3"
+              ]
+            },
+            {
+              "answerId": "boy-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Boy has the sound but is spelled with oy, not oi.",
+              "evidenceIds": [
+                "coin-game-4"
+              ]
+            },
+            {
+              "answerId": "coin-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Coin itself is spelled with oi and supplies the requested sound.",
+              "evidenceIds": [
+                "coin-game-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-guided-oi-oy-practice-4",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-cfb777e598b3ab31",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "2472388de2aeed85de451a263f73050aa89fd672639ad6af7858d68a31921d2c",
+        "conclusionsSha256": "a67151ead4ff016bc46255089c3e881a49af919d37f98761fed2d66b30eda69e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0022.second-pass.json",
+        "receiptSha256": "814f65a0ecedc2cbadfae0f381af81f3d3cb323dbf3e52cddb40dfead4c25fe5",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that says the voice of the announcer told the story.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "coin-game-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "coin-game-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "coin-game-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes the coin jar and toy.",
+              "evidenceIds": [
+                "coin-game-1"
+              ]
+            },
+            {
+              "answerId": "coin-game-2",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes a choice and joining the line.",
+              "evidenceIds": [
+                "coin-game-2"
+              ]
+            },
+            {
+              "answerId": "coin-game-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence exactly says the announcer voice told the story.",
+              "evidenceIds": [
+                "coin-game-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-guided-oi-oy-practice-5",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-470fa06940662f9d",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "33997694f88c79367424f8ba824f47e180a1543ddb679ebac911822fb1c8d5e6",
+        "conclusionsSha256": "80585a273acb3f871d77c30b9d0ea0f51554b23df5f33484175d5c82519176a1",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0022.second-pass.json",
+        "receiptSha256": "814f65a0ecedc2cbadfae0f381af81f3d3cb323dbf3e52cddb40dfead4c25fe5",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "boy-row",
+          "prompt": "boy",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "oy-sound"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "oy-sound"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "oy-sound",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The vowel sound in boy is spelled with oy.",
+              "evidenceIds": [
+                "coin-game-4"
+              ]
+            },
+            {
+              "answerId": "oi-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Boy is not spelled with oi.",
+              "evidenceIds": [
+                "coin-game-4"
+              ]
+            },
+            {
+              "answerId": "ou-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Boy is not spelled with ou.",
+              "evidenceIds": [
+                "coin-game-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-checkpoint-a-1",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-b2a70a4266c8b21e",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "33997694f88c79367424f8ba824f47e180a1543ddb679ebac911822fb1c8d5e6",
+        "conclusionsSha256": "80585a273acb3f871d77c30b9d0ea0f51554b23df5f33484175d5c82519176a1",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0003.pass-a.json",
+        "receiptSha256": "80585a273acb3f871d77c30b9d0ea0f51554b23df5f33484175d5c82519176a1",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word is spelled with ou and has the same vowel sound as loud?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "cloud-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "cloud-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "coin-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Coin is spelled with oi and has a different vowel sound.",
+              "evidenceIds": [
+                "town-fair-2"
+              ]
+            },
+            {
+              "answerId": "snow-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Snow is spelled with ow and has a different vowel sound.",
+              "evidenceIds": [
+                "town-fair-3"
+              ]
+            },
+            {
+              "answerId": "toy-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Toy is spelled with oy and has a different vowel sound.",
+              "evidenceIds": [
+                "town-fair-2"
+              ]
+            },
+            {
+              "answerId": "cloud-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Cloud is spelled with ou and has the same vowel sound as loud.",
+              "evidenceIds": [
+                "town-fair-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-checkpoint-a-2",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-1dc4dbf1fac3b81d",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "33997694f88c79367424f8ba824f47e180a1543ddb679ebac911822fb1c8d5e6",
+        "conclusionsSha256": "80585a273acb3f871d77c30b9d0ea0f51554b23df5f33484175d5c82519176a1",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0003.pass-a.json",
+        "receiptSha256": "80585a273acb3f871d77c30b9d0ea0f51554b23df5f33484175d5c82519176a1",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word is spelled with oi and has the same vowel sound as boil?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "coin-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "coin-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "coin-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Coin is spelled with oi and has the same vowel sound as boil.",
+              "evidenceIds": [
+                "town-fair-2"
+              ]
+            },
+            {
+              "answerId": "cloud-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Cloud is spelled with ou, not oi.",
+              "evidenceIds": [
+                "town-fair-1"
+              ]
+            },
+            {
+              "answerId": "snow-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Snow is spelled with ow, not oi.",
+              "evidenceIds": [
+                "town-fair-3"
+              ]
+            },
+            {
+              "answerId": "toy-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Toy has the sound but is spelled with oy, not oi.",
+              "evidenceIds": [
+                "town-fair-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-checkpoint-a-3",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-03ecdf5a56404f5e",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "33997694f88c79367424f8ba824f47e180a1543ddb679ebac911822fb1c8d5e6",
+        "conclusionsSha256": "80585a273acb3f871d77c30b9d0ea0f51554b23df5f33484175d5c82519176a1",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0003.pass-a.json",
+        "receiptSha256": "80585a273acb3f871d77c30b9d0ea0f51554b23df5f33484175d5c82519176a1",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word is spelled with oy and has the same vowel sound as joy?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "toy-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "toy-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "cloud-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Cloud is spelled with ou and has a different sound.",
+              "evidenceIds": [
+                "town-fair-1"
+              ]
+            },
+            {
+              "answerId": "toy-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Toy is spelled with oy and has the same vowel sound as joy.",
+              "evidenceIds": [
+                "town-fair-2"
+              ]
+            },
+            {
+              "answerId": "snow-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Snow is spelled with ow and has a different sound.",
+              "evidenceIds": [
+                "town-fair-3"
+              ]
+            },
+            {
+              "answerId": "coin-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Coin has the sound but is spelled with oi, not oy.",
+              "evidenceIds": [
+                "town-fair-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-checkpoint-a-4",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-6757ad81bdd51285",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "33997694f88c79367424f8ba824f47e180a1543ddb679ebac911822fb1c8d5e6",
+        "conclusionsSha256": "80585a273acb3f871d77c30b9d0ea0f51554b23df5f33484175d5c82519176a1",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0003.pass-a.json",
+        "receiptSha256": "80585a273acb3f871d77c30b9d0ea0f51554b23df5f33484175d5c82519176a1",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word is spelled with ow and has the same vowel sound as grow?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "snow-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "snow-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "coin-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Coin is spelled with oi and has a different vowel sound.",
+              "evidenceIds": [
+                "town-fair-2"
+              ]
+            },
+            {
+              "answerId": "cloud-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Cloud is spelled with ou and has a different vowel sound.",
+              "evidenceIds": [
+                "town-fair-1"
+              ]
+            },
+            {
+              "answerId": "snow-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Snow is spelled with ow and has the same vowel sound as grow.",
+              "evidenceIds": [
+                "town-fair-3"
+              ]
+            },
+            {
+              "answerId": "toy-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Toy is spelled with oy and has a different vowel sound.",
+              "evidenceIds": [
+                "town-fair-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-checkpoint-a-5",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-0a0f464f9f4c1453",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "2472388de2aeed85de451a263f73050aa89fd672639ad6af7858d68a31921d2c",
+        "conclusionsSha256": "a67151ead4ff016bc46255089c3e881a49af919d37f98761fed2d66b30eda69e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0006.pass-a.json",
+        "receiptSha256": "a67151ead4ff016bc46255089c3e881a49af919d37f98761fed2d66b30eda69e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words that show the Trail 2 patterns in this fair passage.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "cloud-choice",
+            "coin-choice",
+            "toy-choice",
+            "snow-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "snow-choice",
+            "coin-choice",
+            "toy-choice",
+            "cloud-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "snow-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "snow appears in the fair passage and shows the ow pattern.",
+              "evidenceIds": [
+                "target-g2-word-forge-ou-oi-oy-ow-5-snow",
+                "town-fair-3"
+              ]
+            },
+            {
+              "answerId": "coin-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "coin appears in the fair passage and shows the oi pattern.",
+              "evidenceIds": [
+                "target-g2-word-forge-ou-oi-oy-ow-5-coin",
+                "town-fair-2"
+              ]
+            },
+            {
+              "answerId": "toy-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "toy appears in the fair passage and shows the oy pattern.",
+              "evidenceIds": [
+                "target-g2-word-forge-ou-oi-oy-ow-5-toy",
+                "town-fair-2"
+              ]
+            },
+            {
+              "answerId": "cloud-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "cloud appears in the fair passage and shows the ou pattern.",
+              "evidenceIds": [
+                "target-g2-word-forge-ou-oi-oy-ow-5-cloud",
+                "town-fair-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-checkpoint-a-6",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-269435bcb2b70410",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "2472388de2aeed85de451a263f73050aa89fd672639ad6af7858d68a31921d2c",
+        "conclusionsSha256": "a67151ead4ff016bc46255089c3e881a49af919d37f98761fed2d66b30eda69e",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0006.pass-a.json",
+        "receiptSha256": "a67151ead4ff016bc46255089c3e881a49af919d37f98761fed2d66b30eda69e",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that says a coin spun beside a toy wagon.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "town-fair-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "town-fair-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "town-fair-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes smoke rising from the soup tent.",
+              "evidenceIds": [
+                "town-fair-1"
+              ]
+            },
+            {
+              "answerId": "town-fair-3",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes the crowd, line, and snow maker.",
+              "evidenceIds": [
+                "town-fair-3"
+              ]
+            },
+            {
+              "answerId": "town-fair-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence exactly says a coin spun beside a toy wagon.",
+              "evidenceIds": [
+                "town-fair-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-checkpoint-a-7",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-795e7286770e5a6a",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "33997694f88c79367424f8ba824f47e180a1543ddb679ebac911822fb1c8d5e6",
+        "conclusionsSha256": "80585a273acb3f871d77c30b9d0ea0f51554b23df5f33484175d5c82519176a1",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0003.pass-a.json",
+        "receiptSha256": "80585a273acb3f871d77c30b9d0ea0f51554b23df5f33484175d5c82519176a1",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "cloud-row",
+          "prompt": "cloud",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "cloud-ou-sound"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "cloud-ou-sound"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "cloud-oi-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Cloud is not spelled with oi.",
+              "evidenceIds": [
+                "town-fair-1"
+              ]
+            },
+            {
+              "answerId": "cloud-oy-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Cloud is not spelled with oy.",
+              "evidenceIds": [
+                "town-fair-1"
+              ]
+            },
+            {
+              "answerId": "cloud-ow-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Cloud is not spelled with ow.",
+              "evidenceIds": [
+                "town-fair-1"
+              ]
+            },
+            {
+              "answerId": "cloud-ou-sound",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Cloud is spelled with ou.",
+              "evidenceIds": [
+                "town-fair-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "coin-row",
+          "prompt": "coin",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "coin-oi-sound"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "coin-oi-sound"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "coin-ow-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Coin is not spelled with ow.",
+              "evidenceIds": [
+                "town-fair-2"
+              ]
+            },
+            {
+              "answerId": "coin-oy-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Coin is not spelled with oy.",
+              "evidenceIds": [
+                "town-fair-2"
+              ]
+            },
+            {
+              "answerId": "coin-ou-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Coin is not spelled with ou.",
+              "evidenceIds": [
+                "town-fair-2"
+              ]
+            },
+            {
+              "answerId": "coin-oi-sound",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Coin is spelled with oi.",
+              "evidenceIds": [
+                "town-fair-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "toy-row",
+          "prompt": "toy",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "toy-oy-sound"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "toy-oy-sound"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "toy-oi-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Toy is not spelled with oi.",
+              "evidenceIds": [
+                "town-fair-2"
+              ]
+            },
+            {
+              "answerId": "toy-ow-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Toy is not spelled with ow.",
+              "evidenceIds": [
+                "town-fair-2"
+              ]
+            },
+            {
+              "answerId": "toy-oy-sound",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Toy is spelled with oy.",
+              "evidenceIds": [
+                "town-fair-2"
+              ]
+            },
+            {
+              "answerId": "toy-ou-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Toy is not spelled with ou.",
+              "evidenceIds": [
+                "town-fair-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "snow-row",
+          "prompt": "snow",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "snow-ow-sound"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "snow-ow-sound"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "snow-ow-sound",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Snow is spelled with ow.",
+              "evidenceIds": [
+                "town-fair-3"
+              ]
+            },
+            {
+              "answerId": "snow-ou-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Snow is not spelled with ou.",
+              "evidenceIds": [
+                "town-fair-3"
+              ]
+            },
+            {
+              "answerId": "snow-oi-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Snow is not spelled with oi.",
+              "evidenceIds": [
+                "town-fair-3"
+              ]
+            },
+            {
+              "answerId": "snow-oy-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Snow is not spelled with oy.",
+              "evidenceIds": [
+                "town-fair-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-checkpoint-b-1",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-b47fb0af0bbac6c3",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "33997694f88c79367424f8ba824f47e180a1543ddb679ebac911822fb1c8d5e6",
+        "conclusionsSha256": "80585a273acb3f871d77c30b9d0ea0f51554b23df5f33484175d5c82519176a1",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0003.pass-a.json",
+        "receiptSha256": "80585a273acb3f871d77c30b9d0ea0f51554b23df5f33484175d5c82519176a1",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word is spelled with ou and has the same vowel sound as sound?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "round-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "round-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "round-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Round is spelled with ou and has the same vowel sound as sound.",
+              "evidenceIds": [
+                "cleanup-market-1"
+              ]
+            },
+            {
+              "answerId": "toy-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Toy is spelled with oy and has a different vowel sound.",
+              "evidenceIds": [
+                "cleanup-market-3"
+              ]
+            },
+            {
+              "answerId": "choice-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Choice is spelled with oi and has a different vowel sound.",
+              "evidenceIds": [
+                "cleanup-market-2"
+              ]
+            },
+            {
+              "answerId": "cow-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Cow has the sound but is spelled with ow, not ou.",
+              "evidenceIds": [
+                "cleanup-market-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-checkpoint-b-2",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-c42253e8ff02448c",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "33997694f88c79367424f8ba824f47e180a1543ddb679ebac911822fb1c8d5e6",
+        "conclusionsSha256": "80585a273acb3f871d77c30b9d0ea0f51554b23df5f33484175d5c82519176a1",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0022.second-pass.json",
+        "receiptSha256": "814f65a0ecedc2cbadfae0f381af81f3d3cb323dbf3e52cddb40dfead4c25fe5",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word is spelled with oi and has the same vowel sound as noise?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "round-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Round is spelled with ou and has a different vowel sound.",
+              "evidenceIds": [
+                "cleanup-market-1"
+              ]
+            },
+            {
+              "answerId": "choice-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Choice is spelled with oi and has the same vowel sound as noise.",
+              "evidenceIds": [
+                "cleanup-market-2"
+              ]
+            },
+            {
+              "answerId": "cow-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Cow is spelled with ow and has a different vowel sound.",
+              "evidenceIds": [
+                "cleanup-market-4"
+              ]
+            },
+            {
+              "answerId": "toy-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Toy has the sound but is spelled with oy, not oi.",
+              "evidenceIds": [
+                "cleanup-market-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-checkpoint-b-3",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-dc7ec1d181d6ca85",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "33997694f88c79367424f8ba824f47e180a1543ddb679ebac911822fb1c8d5e6",
+        "conclusionsSha256": "80585a273acb3f871d77c30b9d0ea0f51554b23df5f33484175d5c82519176a1",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0003.pass-a.json",
+        "receiptSha256": "80585a273acb3f871d77c30b9d0ea0f51554b23df5f33484175d5c82519176a1",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word is spelled with oy and has the same vowel sound as joy?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "toy-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "toy-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Choice has the sound but is spelled with oi, not oy.",
+              "evidenceIds": [
+                "cleanup-market-2"
+              ]
+            },
+            {
+              "answerId": "round-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Round is spelled with ou and has a different sound.",
+              "evidenceIds": [
+                "cleanup-market-1"
+              ]
+            },
+            {
+              "answerId": "cow-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Cow is spelled with ow and has a different sound.",
+              "evidenceIds": [
+                "cleanup-market-4"
+              ]
+            },
+            {
+              "answerId": "toy-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Toy is spelled with oy and has the same vowel sound as joy.",
+              "evidenceIds": [
+                "cleanup-market-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-checkpoint-b-4",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-26659d9af22cf166",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "003bc4ac9f1465f570b889ded90dea25adece9a243e307050b6d7e3a16bd798f",
+        "conclusionsSha256": "a635cd665bb5db730e3dcdad653fe54a17266b8338b8efd3236f0e66f1f9bcc9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0004.pass-a.json",
+        "receiptSha256": "a635cd665bb5db730e3dcdad653fe54a17266b8338b8efd3236f0e66f1f9bcc9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word is spelled with ow and has the same vowel sound as how?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "cow-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "cow-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "coin-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Coin is spelled with oi and has a different vowel sound.",
+              "evidenceIds": [
+                "cleanup-market-2"
+              ]
+            },
+            {
+              "answerId": "cow-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Cow is spelled with ow and has the same vowel sound as how.",
+              "evidenceIds": [
+                "cleanup-market-4"
+              ]
+            },
+            {
+              "answerId": "cloud-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Cloud has the sound but is spelled with ou, not ow.",
+              "evidenceIds": [
+                "passage-g2-word-forge-ou-oi-oy-ow-6"
+              ]
+            },
+            {
+              "answerId": "toy-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Toy is spelled with oy and has a different vowel sound.",
+              "evidenceIds": [
+                "cleanup-market-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-checkpoint-b-5",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-660e317a7d33667e",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "023df4962d168c841e2f095c276a229afc1dc363a912eaa70ee101dba7b6e74d",
+        "conclusionsSha256": "df1f5b21eb30313c13c336cf9671f3a31626d9df5bea94f79f2cdbb4aacfda3a",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0022.second-pass.json",
+        "receiptSha256": "814f65a0ecedc2cbadfae0f381af81f3d3cb323dbf3e52cddb40dfead4c25fe5",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words that show the Trail 2 patterns in the cleanup passage.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "round-choice",
+            "choice-choice",
+            "toy-choice",
+            "cow-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "round-choice",
+            "cow-choice",
+            "choice-choice",
+            "toy-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "round-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "round appears in the passage and shows the ou pattern.",
+              "evidenceIds": [
+                "cleanup-market-1"
+              ]
+            },
+            {
+              "answerId": "cow-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "cow appears in the passage and shows the ow pattern.",
+              "evidenceIds": [
+                "cleanup-market-4"
+              ]
+            },
+            {
+              "answerId": "choice-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "choice appears in the passage and shows the oi pattern.",
+              "evidenceIds": [
+                "cleanup-market-2"
+              ]
+            },
+            {
+              "answerId": "toy-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "toy appears in the passage and shows the oy pattern.",
+              "evidenceIds": [
+                "cleanup-market-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-checkpoint-b-6",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-96309b9251fb9606",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "023df4962d168c841e2f095c276a229afc1dc363a912eaa70ee101dba7b6e74d",
+        "conclusionsSha256": "df1f5b21eb30313c13c336cf9671f3a31626d9df5bea94f79f2cdbb4aacfda3a",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0007.pass-a.json",
+        "receiptSha256": "df1f5b21eb30313c13c336cf9671f3a31626d9df5bea94f79f2cdbb4aacfda3a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that says another child carried a toy crow past the window.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "cleanup-market-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "cleanup-market-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "cleanup-market-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence exactly states that another child carried a toy crow past the window.",
+              "evidenceIds": [
+                "cleanup-market-3"
+              ]
+            },
+            {
+              "answerId": "cleanup-market-2",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes a girl sorting a coin with a choice card.",
+              "evidenceIds": [
+                "cleanup-market-2"
+              ]
+            },
+            {
+              "answerId": "cleanup-market-1",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes the team finding a sign and horn.",
+              "evidenceIds": [
+                "cleanup-market-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-checkpoint-b-7",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-70ce5c7b077749cf",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "003bc4ac9f1465f570b889ded90dea25adece9a243e307050b6d7e3a16bd798f",
+        "conclusionsSha256": "a635cd665bb5db730e3dcdad653fe54a17266b8338b8efd3236f0e66f1f9bcc9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0004.pass-a.json",
+        "receiptSha256": "a635cd665bb5db730e3dcdad653fe54a17266b8338b8efd3236f0e66f1f9bcc9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "round-row",
+          "prompt": "round",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "round-ou-sound"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "round-ou-sound"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "round-oy-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Round is not spelled with oy.",
+              "evidenceIds": [
+                "cleanup-market-1"
+              ]
+            },
+            {
+              "answerId": "round-ou-sound",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Round is spelled with ou.",
+              "evidenceIds": [
+                "cleanup-market-1"
+              ]
+            },
+            {
+              "answerId": "round-ow-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Round is not spelled with ow.",
+              "evidenceIds": [
+                "cleanup-market-1"
+              ]
+            },
+            {
+              "answerId": "round-oi-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Round is not spelled with oi.",
+              "evidenceIds": [
+                "cleanup-market-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "choice-row",
+          "prompt": "choice",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-oi-sound"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-oi-sound"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-oy-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Choice is not spelled with oy.",
+              "evidenceIds": [
+                "cleanup-market-2"
+              ]
+            },
+            {
+              "answerId": "choice-ow-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Choice is not spelled with ow.",
+              "evidenceIds": [
+                "cleanup-market-2"
+              ]
+            },
+            {
+              "answerId": "choice-oi-sound",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Choice is spelled with oi.",
+              "evidenceIds": [
+                "cleanup-market-2"
+              ]
+            },
+            {
+              "answerId": "choice-ou-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Choice is not spelled with ou.",
+              "evidenceIds": [
+                "cleanup-market-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "toy-row",
+          "prompt": "toy",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "toy-oy-sound"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "toy-oy-sound"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "toy-oi-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Toy is not spelled with oi.",
+              "evidenceIds": [
+                "cleanup-market-3"
+              ]
+            },
+            {
+              "answerId": "toy-oy-sound",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Toy is spelled with oy.",
+              "evidenceIds": [
+                "cleanup-market-3"
+              ]
+            },
+            {
+              "answerId": "toy-ow-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Toy is not spelled with ow.",
+              "evidenceIds": [
+                "cleanup-market-3"
+              ]
+            },
+            {
+              "answerId": "toy-ou-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Toy is not spelled with ou.",
+              "evidenceIds": [
+                "cleanup-market-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "cow-row",
+          "prompt": "cow",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "cow-ow-sound"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "cow-ow-sound"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "cow-oy-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Cow is not spelled with oy.",
+              "evidenceIds": [
+                "cleanup-market-4"
+              ]
+            },
+            {
+              "answerId": "cow-oi-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Cow is not spelled with oi.",
+              "evidenceIds": [
+                "cleanup-market-4"
+              ]
+            },
+            {
+              "answerId": "cow-ou-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Cow is not spelled with ou.",
+              "evidenceIds": [
+                "cleanup-market-4"
+              ]
+            },
+            {
+              "answerId": "cow-ow-sound",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Cow is spelled with ow.",
+              "evidenceIds": [
+                "cleanup-market-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-checkpoint-c-1",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-3e095f15d21b9ad9",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "003bc4ac9f1465f570b889ded90dea25adece9a243e307050b6d7e3a16bd798f",
+        "conclusionsSha256": "a635cd665bb5db730e3dcdad653fe54a17266b8338b8efd3236f0e66f1f9bcc9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0004.pass-a.json",
+        "receiptSha256": "a635cd665bb5db730e3dcdad653fe54a17266b8338b8efd3236f0e66f1f9bcc9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word is spelled with ou and has the same vowel sound as loud?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "cloud-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "cloud-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "voice-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Voice is spelled with oi and has a different vowel sound.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            },
+            {
+              "answerId": "cloud-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Cloud is spelled with ou and has the same vowel sound as loud.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            },
+            {
+              "answerId": "boy-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Boy is spelled with oy and has a different vowel sound.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            },
+            {
+              "answerId": "cow-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Cow has the sound but is spelled with ow, not ou.",
+              "evidenceIds": [
+                "science-walk-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-checkpoint-c-2",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-67de9c7456191c88",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "003bc4ac9f1465f570b889ded90dea25adece9a243e307050b6d7e3a16bd798f",
+        "conclusionsSha256": "a635cd665bb5db730e3dcdad653fe54a17266b8338b8efd3236f0e66f1f9bcc9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0004.pass-a.json",
+        "receiptSha256": "a635cd665bb5db730e3dcdad653fe54a17266b8338b8efd3236f0e66f1f9bcc9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word is spelled with oi and has the same vowel sound as noise?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "voice-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "voice-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "cloud-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Cloud is spelled with ou, not oi.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            },
+            {
+              "answerId": "cow-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Cow is spelled with ow and has a different sound.",
+              "evidenceIds": [
+                "science-walk-1"
+              ]
+            },
+            {
+              "answerId": "voice-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Voice is spelled with oi and has the same vowel sound as noise.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            },
+            {
+              "answerId": "toy-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Toy has the sound but is spelled with oy, not oi.",
+              "evidenceIds": [
+                "science-walk-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-checkpoint-c-3",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-ef291af4f76fd4a8",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "003bc4ac9f1465f570b889ded90dea25adece9a243e307050b6d7e3a16bd798f",
+        "conclusionsSha256": "a635cd665bb5db730e3dcdad653fe54a17266b8338b8efd3236f0e66f1f9bcc9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0004.pass-a.json",
+        "receiptSha256": "a635cd665bb5db730e3dcdad653fe54a17266b8338b8efd3236f0e66f1f9bcc9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word is spelled with oy and has the same vowel sound as joy?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "boy-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "boy-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "cow-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Cow is spelled with ow and has a different sound.",
+              "evidenceIds": [
+                "science-walk-1"
+              ]
+            },
+            {
+              "answerId": "voice-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Voice has the sound but is spelled with oi, not oy.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            },
+            {
+              "answerId": "cloud-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Cloud is spelled with ou and has a different sound.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            },
+            {
+              "answerId": "boy-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Boy is spelled with oy and has the same vowel sound as joy.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-checkpoint-c-4",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-b1c9b80670c8b4b2",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "003bc4ac9f1465f570b889ded90dea25adece9a243e307050b6d7e3a16bd798f",
+        "conclusionsSha256": "a635cd665bb5db730e3dcdad653fe54a17266b8338b8efd3236f0e66f1f9bcc9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0004.pass-a.json",
+        "receiptSha256": "a635cd665bb5db730e3dcdad653fe54a17266b8338b8efd3236f0e66f1f9bcc9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which word is spelled with ow and has the same vowel sound as how?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "cow-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "cow-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "cloud-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Cloud has the sound but is spelled with ou, not ow.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            },
+            {
+              "answerId": "boy-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Boy is spelled with oy and has a different sound.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            },
+            {
+              "answerId": "cow-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Cow is spelled with ow and has the same vowel sound as how.",
+              "evidenceIds": [
+                "science-walk-1"
+              ]
+            },
+            {
+              "answerId": "voice-choice",
+              "verdict": "INCORRECT",
+              "rationale": "Voice is spelled with oi and has a different sound.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-checkpoint-c-5",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-13e76c9648f9ce8a",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "023df4962d168c841e2f095c276a229afc1dc363a912eaa70ee101dba7b6e74d",
+        "conclusionsSha256": "df1f5b21eb30313c13c336cf9671f3a31626d9df5bea94f79f2cdbb4aacfda3a",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0007.pass-a.json",
+        "receiptSha256": "df1f5b21eb30313c13c336cf9671f3a31626d9df5bea94f79f2cdbb4aacfda3a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all the words that show the Trail 2 patterns in the science walk.",
+          "requestedSelectionCount": 4,
+          "keyedAnswerIds": [
+            "cloud-choice",
+            "voice-choice",
+            "boy-choice",
+            "cow-choice"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "cow-choice",
+            "voice-choice",
+            "boy-choice",
+            "cloud-choice"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "cow-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "cow appears in the passage and shows the ow pattern.",
+              "evidenceIds": [
+                "science-walk-1"
+              ]
+            },
+            {
+              "answerId": "voice-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "voice appears in the passage and shows the oi pattern.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            },
+            {
+              "answerId": "boy-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "boy appears in the passage and shows the oy pattern.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            },
+            {
+              "answerId": "cloud-choice",
+              "verdict": "DEFENSIBLE",
+              "rationale": "cloud appears in the passage and shows the ou pattern.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-checkpoint-c-6",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-1bc28ebbe13cee7f",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "023df4962d168c841e2f095c276a229afc1dc363a912eaa70ee101dba7b6e74d",
+        "conclusionsSha256": "df1f5b21eb30313c13c336cf9671f3a31626d9df5bea94f79f2cdbb4aacfda3a",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0007.pass-a.json",
+        "receiptSha256": "df1f5b21eb30313c13c336cf9671f3a31626d9df5bea94f79f2cdbb4aacfda3a",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the sentence that says the cow moved down the brown trail.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "science-walk-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "science-walk-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "science-walk-3",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes writing weather notes and counting leaves.",
+              "evidenceIds": [
+                "science-walk-3"
+              ]
+            },
+            {
+              "answerId": "science-walk-2",
+              "verdict": "INCORRECT",
+              "rationale": "This sentence describes hearing the guide and holding a cloud chart.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            },
+            {
+              "answerId": "science-walk-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This sentence exactly states that the cow moved down the brown trail.",
+              "evidenceIds": [
+                "science-walk-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "q-word-forge-ou-oi-oy-ow-checkpoint-c-7",
+      "packId": "g2-word-forge-variable-vowels-ou-oi-oy-ow",
+      "contentVersion": "g2-wf-ou-oi-oy-ow-r0.1.0",
+      "contentFingerprint": "qta-v1-24fd7500c9b59f94",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "003bc4ac9f1465f570b889ded90dea25adece9a243e307050b6d7e3a16bd798f",
+        "conclusionsSha256": "a635cd665bb5db730e3dcdad653fe54a17266b8338b8efd3236f0e66f1f9bcc9",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0004.pass-a.json",
+        "receiptSha256": "a635cd665bb5db730e3dcdad653fe54a17266b8338b8efd3236f0e66f1f9bcc9",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "cloud-row",
+          "prompt": "cloud",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "cloud-ou-sound"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "cloud-ou-sound"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "cloud-ou-sound",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Cloud is spelled with ou.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            },
+            {
+              "answerId": "cloud-oy-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Cloud is not spelled with oy.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            },
+            {
+              "answerId": "cloud-oi-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Cloud is not spelled with oi.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            },
+            {
+              "answerId": "cloud-ow-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Cloud is not spelled with ow.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "voice-row",
+          "prompt": "voice",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "voice-oi-sound"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "voice-oi-sound"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "voice-ou-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Voice is not spelled with ou.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            },
+            {
+              "answerId": "voice-ow-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Voice is not spelled with ow.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            },
+            {
+              "answerId": "voice-oy-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Voice is not spelled with oy.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            },
+            {
+              "answerId": "voice-oi-sound",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Voice is spelled with oi.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "boy-row",
+          "prompt": "boy",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "boy-oy-sound"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "boy-oy-sound"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "boy-ou-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Boy is not spelled with ou.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            },
+            {
+              "answerId": "boy-ow-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Boy is not spelled with ow.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            },
+            {
+              "answerId": "boy-oi-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Boy is not spelled with oi.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            },
+            {
+              "answerId": "boy-oy-sound",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Boy is spelled with oy.",
+              "evidenceIds": [
+                "science-walk-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "cow-row",
+          "prompt": "cow",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "cow-ow-sound"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "cow-ow-sound"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "cow-oy-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Cow is not spelled with oy.",
+              "evidenceIds": [
+                "science-walk-1"
+              ]
+            },
+            {
+              "answerId": "cow-ow-sound",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Cow is spelled with ow.",
+              "evidenceIds": [
+                "science-walk-1"
+              ]
+            },
+            {
+              "answerId": "cow-oi-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Cow is not spelled with oi.",
+              "evidenceIds": [
+                "science-walk-1"
+              ]
+            },
+            {
+              "answerId": "cow-ou-sound",
+              "verdict": "INCORRECT",
+              "rationale": "Cow is not spelled with ou.",
+              "evidenceIds": [
+                "science-walk-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

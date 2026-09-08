@@ -1,0 +1,4654 @@
+{
+  "schemaVersion": 2,
+  "reviewNotice": "Fingerprint-bound semantic review. PASS records preserve blind conclusions, key comparison, option challenges, and truthful primary-review provenance.",
+  "records": [
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-building-block-a-question-mc-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-4c1263e20e0e1446",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "d03e87d5650e8026e01c155f40c322c40ec8d1044f328f33deee6cd611f9344f",
+        "conclusionsSha256": "40445f7baff2943552dda2815e3f39822631166436f4eb8279d9e3f67b598343",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0037.pass-a.json",
+        "receiptSha256": "40445f7baff2943552dda2815e3f39822631166436f4eb8279d9e3f67b598343",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which pair of end words rhymes?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-d"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-d"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "day and hand have different ending sounds.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-3"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "play and hand have different ending sounds.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-3"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "day and land have different ending sounds.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "DEFENSIBLE",
+              "rationale": "day and play share the same ending sound.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-building-block-a-question-mc-2",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-f73d8d6a240fb616",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "d03e87d5650e8026e01c155f40c322c40ec8d1044f328f33deee6cd611f9344f",
+        "conclusionsSha256": "40445f7baff2943552dda2815e3f39822631166436f4eb8279d9e3f67b598343",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0037.pass-a.json",
+        "receiptSha256": "40445f7baff2943552dda2815e3f39822631166436f4eb8279d9e3f67b598343",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which line should share the letter A with line 1?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-c"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 2 ends in play, which rhymes with line 1's day, so both receive A.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-2"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "Line 3 ends in hand, which does not rhyme with day.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-3"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "share with line 1 asks for another line, not line 1 itself.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-1"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "Line 4 ends in land, which does not rhyme with day.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-building-block-a-question-ms-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-2fff833a3642bd26",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "d03e87d5650e8026e01c155f40c322c40ec8d1044f328f33deee6cd611f9344f",
+        "conclusionsSha256": "40445f7baff2943552dda2815e3f39822631166436f4eb8279d9e3f67b598343",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0037.pass-a.json",
+        "receiptSha256": "40445f7baff2943552dda2815e3f39822631166436f4eb8279d9e3f67b598343",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose both lines that rhyme with hand.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "choice-c",
+            "choice-d"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-c",
+            "choice-d"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "play rhymes with day, not hand.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-3"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This is the line ending in the comparison word hand.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-3"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "DEFENSIBLE",
+              "rationale": "land rhymes with hand, forming the requested pair of lines.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "day rhymes with play, not hand.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-building-block-a-question-ht-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-af485b0aec516e8e",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "d03e87d5650e8026e01c155f40c322c40ec8d1044f328f33deee6cd611f9344f",
+        "conclusionsSha256": "40445f7baff2943552dda2815e3f39822631166436f4eb8279d9e3f67b598343",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0011.second-pass.json",
+        "receiptSha256": "29879d36f9379755d91b3c8fc6b71cbaaaa4d3811276b827c70f496560784c08",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the line that rhymes with line 1.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "segment-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "segment-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "hand does not rhyme with line 1's end word day.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-3"
+              ]
+            },
+            {
+              "answerId": "segment-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "play rhymes with line 1's end word day.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-2"
+              ]
+            },
+            {
+              "answerId": "segment-3",
+              "verdict": "INCORRECT",
+              "rationale": "land does not rhyme with line 1's end word day.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-building-block-a-question-tm-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-b86d93e84de828a4",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "d03e87d5650e8026e01c155f40c322c40ec8d1044f328f33deee6cd611f9344f",
+        "conclusionsSha256": "40445f7baff2943552dda2815e3f39822631166436f4eb8279d9e3f67b598343",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0037.pass-a.json",
+        "receiptSha256": "40445f7baff2943552dda2815e3f39822631166436f4eb8279d9e3f67b598343",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-1",
+          "prompt": "Line 1",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-b",
+              "verdict": "INCORRECT",
+              "rationale": "B is reserved for the second distinct rhyme sound, hand and land.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-4"
+              ]
+            },
+            {
+              "answerId": "letter-d",
+              "verdict": "INCORRECT",
+              "rationale": "D is not needed in this two-rhyme poem.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-1"
+              ]
+            },
+            {
+              "answerId": "letter-c",
+              "verdict": "INCORRECT",
+              "rationale": "C is not needed in this two-rhyme poem.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-1"
+              ]
+            },
+            {
+              "answerId": "letter-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 1 begins the day/play rhyme and receives A.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-2",
+          "prompt": "Line 2",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-a-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-a-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-d-2",
+              "verdict": "INCORRECT",
+              "rationale": "D is not needed in this two-rhyme poem.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-2"
+              ]
+            },
+            {
+              "answerId": "letter-a-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 2 ends in play and shares A with line 1's day.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-2"
+              ]
+            },
+            {
+              "answerId": "letter-c-2",
+              "verdict": "INCORRECT",
+              "rationale": "C is not needed in this two-rhyme poem.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-2"
+              ]
+            },
+            {
+              "answerId": "letter-b-2",
+              "verdict": "INCORRECT",
+              "rationale": "B marks the hand/land rhyme, not play.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-3",
+          "prompt": "Line 3",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-b-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-b-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-a-3",
+              "verdict": "INCORRECT",
+              "rationale": "A marks the day/play rhyme, not hand.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-3"
+              ]
+            },
+            {
+              "answerId": "letter-b-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 3 introduces the hand/land rhyme and receives B.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-4"
+              ]
+            },
+            {
+              "answerId": "letter-d-3",
+              "verdict": "INCORRECT",
+              "rationale": "D is not needed in this two-rhyme poem.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-3"
+              ]
+            },
+            {
+              "answerId": "letter-c-3",
+              "verdict": "INCORRECT",
+              "rationale": "C is not needed in this two-rhyme poem.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-4",
+          "prompt": "Line 4",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-b-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-b-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-a-4",
+              "verdict": "INCORRECT",
+              "rationale": "A marks the day/play rhyme, not land.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-4"
+              ]
+            },
+            {
+              "answerId": "letter-d-4",
+              "verdict": "INCORRECT",
+              "rationale": "D is not needed in this two-rhyme poem.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-4"
+              ]
+            },
+            {
+              "answerId": "letter-c-4",
+              "verdict": "INCORRECT",
+              "rationale": "C is not needed in this two-rhyme poem.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-4"
+              ]
+            },
+            {
+              "answerId": "letter-b-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 4 ends in land and shares B with line 3's hand.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-kite-day-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-building-block-b-question-mc-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-d79a6099caa4eba5",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "5685f6adc195e887eb07c01cdfa082fe7705b8479b7c8659cd1aec1af9b883e6",
+        "conclusionsSha256": "b5316e3e13ca68c8c13000ee9a7f50445fb48160fdbe37319b3275a746564549",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0011.second-pass.json",
+        "receiptSha256": "29879d36f9379755d91b3c8fc6b71cbaaaa4d3811276b827c70f496560784c08",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which line gets the first new letter C?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-c"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 5 ends in near, the first new rhyme sound after A for bare/care and B for dirt/hurt, so it receives C.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-5"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "Line 6 rhymes with line 5 and shares C, but it is not the first C line.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-6"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "Line 1 begins the first rhyme family and receives A.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-1"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "Line 3 begins the second rhyme family and receives B.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-building-block-b-question-mc-2",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-20a4364f54cf08e3",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "5685f6adc195e887eb07c01cdfa082fe7705b8479b7c8659cd1aec1af9b883e6",
+        "conclusionsSha256": "b5316e3e13ca68c8c13000ee9a7f50445fb48160fdbe37319b3275a746564549",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0011.second-pass.json",
+        "receiptSha256": "29879d36f9379755d91b3c8fc6b71cbaaaa4d3811276b827c70f496560784c08",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which pair shows the same rhyme sound?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "dirt and near have different ending sounds.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-5"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "bare and care share the same ending sound.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-2"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "bare and near have different ending sounds.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-5"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "hurt and clear have different ending sounds.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-4",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-building-block-b-question-ms-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-7f806c0a9054615e",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "5685f6adc195e887eb07c01cdfa082fe7705b8479b7c8659cd1aec1af9b883e6",
+        "conclusionsSha256": "b5316e3e13ca68c8c13000ee9a7f50445fb48160fdbe37319b3275a746564549",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0038.pass-a.json",
+        "receiptSha256": "b5316e3e13ca68c8c13000ee9a7f50445fb48160fdbe37319b3275a746564549",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose both lines that rhyme with dirt.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "choice-c",
+            "choice-d"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-c",
+            "choice-d"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This is the line ending in the comparison word dirt.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-3"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The line-end word hurt rhymes with dirt.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "This option is not a displayed poem line and ends in care, which does not rhyme with dirt.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "The line-end word bare does not rhyme with dirt.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-building-block-b-question-ht-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-c089412907006e4d",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "5685f6adc195e887eb07c01cdfa082fe7705b8479b7c8659cd1aec1af9b883e6",
+        "conclusionsSha256": "b5316e3e13ca68c8c13000ee9a7f50445fb48160fdbe37319b3275a746564549",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0038.pass-a.json",
+        "receiptSha256": "b5316e3e13ca68c8c13000ee9a7f50445fb48160fdbe37319b3275a746564549",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the line that ends with clear.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "This line ends with bare, not clear.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-1"
+              ]
+            },
+            {
+              "answerId": "segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "This line ends with near, not clear.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-5"
+              ]
+            },
+            {
+              "answerId": "segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This line ends with the word clear.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-building-block-b-question-tm-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-c508aacdcf1c0721",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "5685f6adc195e887eb07c01cdfa082fe7705b8479b7c8659cd1aec1af9b883e6",
+        "conclusionsSha256": "b5316e3e13ca68c8c13000ee9a7f50445fb48160fdbe37319b3275a746564549",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0011.second-pass.json",
+        "receiptSha256": "29879d36f9379755d91b3c8fc6b71cbaaaa4d3811276b827c70f496560784c08",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-1",
+          "prompt": "Line 1",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-c",
+              "verdict": "INCORRECT",
+              "rationale": "C marks the near/clear rhyme, not line 1's bare.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-6"
+              ]
+            },
+            {
+              "answerId": "letter-b",
+              "verdict": "INCORRECT",
+              "rationale": "B marks the dirt/hurt rhyme, not line 1's bare.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-4"
+              ]
+            },
+            {
+              "answerId": "letter-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 1 begins the bare/care rhyme family and receives A.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-2",
+          "prompt": "Line 2",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-a-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-a-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-a-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 2 ends in care and shares A with line 1's bare.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-2"
+              ]
+            },
+            {
+              "answerId": "letter-c-2",
+              "verdict": "INCORRECT",
+              "rationale": "C marks the near/clear rhyme, not care.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-6"
+              ]
+            },
+            {
+              "answerId": "letter-b-2",
+              "verdict": "INCORRECT",
+              "rationale": "B marks the dirt/hurt rhyme, not care.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-3",
+          "prompt": "Line 3",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-b-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-b-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-c-3",
+              "verdict": "INCORRECT",
+              "rationale": "C marks the near/clear rhyme, not dirt.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-6"
+              ]
+            },
+            {
+              "answerId": "letter-a-3",
+              "verdict": "INCORRECT",
+              "rationale": "A marks the bare/care rhyme, not dirt.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-2"
+              ]
+            },
+            {
+              "answerId": "letter-b-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 3 begins the dirt/hurt rhyme family and receives B.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-4",
+          "prompt": "Line 4",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-b-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-b-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-a-4",
+              "verdict": "INCORRECT",
+              "rationale": "A marks the bare/care rhyme, not hurt.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-4",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-2"
+              ]
+            },
+            {
+              "answerId": "letter-b-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 4 ends in hurt and shares B with line 3's dirt.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-4"
+              ]
+            },
+            {
+              "answerId": "letter-c-4",
+              "verdict": "INCORRECT",
+              "rationale": "C marks the near/clear rhyme, not hurt.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-4",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-5",
+          "prompt": "Line 5",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-c-5"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-c-5"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-c-5",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 5 begins the near/clear rhyme family and receives C.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-6"
+              ]
+            },
+            {
+              "answerId": "letter-a-5",
+              "verdict": "INCORRECT",
+              "rationale": "A marks the bare/care rhyme, not near.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-2"
+              ]
+            },
+            {
+              "answerId": "letter-b-5",
+              "verdict": "INCORRECT",
+              "rationale": "B marks the dirt/hurt rhyme, not near.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-6",
+          "prompt": "Line 6",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-c-6"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-c-6"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-b-6",
+              "verdict": "INCORRECT",
+              "rationale": "B marks the dirt/hurt rhyme, not clear.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-6",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-4"
+              ]
+            },
+            {
+              "answerId": "letter-c-6",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 6 ends in clear and shares C with line 5's near.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-6"
+              ]
+            },
+            {
+              "answerId": "letter-a-6",
+              "verdict": "INCORRECT",
+              "rationale": "A marks the bare/care rhyme, not clear.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-6",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-garden-care-line-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-guided-a-question-mc-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-c4079696e7b89042",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "5685f6adc195e887eb07c01cdfa082fe7705b8479b7c8659cd1aec1af9b883e6",
+        "conclusionsSha256": "b5316e3e13ca68c8c13000ee9a7f50445fb48160fdbe37319b3275a746564549",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0011.second-pass.json",
+        "receiptSha256": "29879d36f9379755d91b3c8fc6b71cbaaaa4d3811276b827c70f496560784c08",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What rhyme scheme does the poem use?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "AABBCC requires six lines in three adjacent rhyme pairs, unlike this four-line pattern.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "Lines 1 and 2 do not rhyme, so the poem is not AABB.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-2"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "bin rhymes with tin and side rhymes with ride, giving ABAB.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "Line 1 rhymes with line 3, so the scheme is not ABCB.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-guided-a-question-mc-2",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-d8b69ed3938b392f",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "5685f6adc195e887eb07c01cdfa082fe7705b8479b7c8659cd1aec1af9b883e6",
+        "conclusionsSha256": "b5316e3e13ca68c8c13000ee9a7f50445fb48160fdbe37319b3275a746564549",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0038.pass-a.json",
+        "receiptSha256": "b5316e3e13ca68c8c13000ee9a7f50445fb48160fdbe37319b3275a746564549",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which line should get the same letter as line 1?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 3 ends in tin, which rhymes with line 1's bin.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-3"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "Line 4 ends in ride, which does not rhyme with bin.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "same letter as line 1 asks for another line, not line 1 itself.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-1"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "Line 2 ends in side, which does not rhyme with bin.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-guided-a-question-ms-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-707eb7867a10612a",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "5685f6adc195e887eb07c01cdfa082fe7705b8479b7c8659cd1aec1af9b883e6",
+        "conclusionsSha256": "b5316e3e13ca68c8c13000ee9a7f50445fb48160fdbe37319b3275a746564549",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0038.pass-a.json",
+        "receiptSha256": "b5316e3e13ca68c8c13000ee9a7f50445fb48160fdbe37319b3275a746564549",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose both lines that rhyme with bin.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "choice-a",
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a",
+            "choice-c"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "Although spin rhymes with bin, this line ends in ride; rhyme scheme uses line-end words.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "Although grin rhymes with bin, this line ends in side; rhyme scheme uses line-end words.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-2"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This is the line ending in the comparison word bin.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-1"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The line-end word tin rhymes with bin.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-guided-a-question-ht-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-0f2f24010085007d",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "5685f6adc195e887eb07c01cdfa082fe7705b8479b7c8659cd1aec1af9b883e6",
+        "conclusionsSha256": "b5316e3e13ca68c8c13000ee9a7f50445fb48160fdbe37319b3275a746564549",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0038.pass-a.json",
+        "receiptSha256": "b5316e3e13ca68c8c13000ee9a7f50445fb48160fdbe37319b3275a746564549",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the line that rhymes with line 1.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "segment-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "segment-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "segment-3",
+              "verdict": "INCORRECT",
+              "rationale": "This line contains spin but ends in ride, which does not rhyme with line 1's bin.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-4"
+              ]
+            },
+            {
+              "answerId": "segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "This line contains grin but ends in side, which does not rhyme with line 1's bin.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-2"
+              ]
+            },
+            {
+              "answerId": "segment-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This line ends in tin, which rhymes with line 1's bin.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-guided-a-question-tm-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-91a4cf7757b3ccb3",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "5685f6adc195e887eb07c01cdfa082fe7705b8479b7c8659cd1aec1af9b883e6",
+        "conclusionsSha256": "b5316e3e13ca68c8c13000ee9a7f50445fb48160fdbe37319b3275a746564549",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0038.pass-a.json",
+        "receiptSha256": "b5316e3e13ca68c8c13000ee9a7f50445fb48160fdbe37319b3275a746564549",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-1",
+          "prompt": "Line 1",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 1 begins the bin/tin rhyme family and receives A.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-3"
+              ]
+            },
+            {
+              "answerId": "letter-b",
+              "verdict": "INCORRECT",
+              "rationale": "B marks the side/ride rhyme, not bin.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-2",
+          "prompt": "Line 2",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-b-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-b-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-a-2",
+              "verdict": "INCORRECT",
+              "rationale": "A marks the bin/tin rhyme, not side.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-3"
+              ]
+            },
+            {
+              "answerId": "letter-b-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 2 begins the side/ride rhyme family and receives B.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-3",
+          "prompt": "Line 3",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-a-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-a-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-b-3",
+              "verdict": "INCORRECT",
+              "rationale": "B marks the side/ride rhyme, not tin.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-4"
+              ]
+            },
+            {
+              "answerId": "letter-a-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 3 ends in tin and shares A with line 1's bin.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-4",
+          "prompt": "Line 4",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-b-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-b-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-a-4",
+              "verdict": "INCORRECT",
+              "rationale": "A marks the bin/tin rhyme, not ride.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-4",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-3"
+              ]
+            },
+            {
+              "answerId": "letter-b-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 4 ends in ride and shares B with line 2's side.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-recycle-spin-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-guided-b-question-mc-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-67c8d29d36867e11",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "709b59c74da2b3ab3fa816ae02e582c4ea88e7072f4188e06e67702ef400dd79",
+        "conclusionsSha256": "f3d6bd80d47edee54aaf2e4aba884a73db04db2ab52a66050a806a7f52c58686",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0011.second-pass.json",
+        "receiptSha256": "29879d36f9379755d91b3c8fc6b71cbaaaa4d3811276b827c70f496560784c08",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What rhyme scheme does the poem use?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-c"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "A six-letter AABBCC scheme cannot describe this four-line poem.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "Line 1 ends with site and line 3 with row, so lines 1 and 3 do not form the repeated A rhyme required by ABAB.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-3"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "The first two end words, site and tool, do not rhyme, and neither do row and stool.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The end sounds are site (A), tool (B), row (C), and stool (B), producing ABCB.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-guided-b-question-mc-2",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-7dac9db64a425732",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "de48d152bcca0e0f63f69a73739a553db15022facf2d52e729dc6b8a71021cdf",
+        "conclusionsSha256": "8805257b08d89f04bb22513e456268bddc0d62bfadaaeecb917f2c46f7f8cb5d",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0018.pass-a.json",
+        "receiptSha256": "8805257b08d89f04bb22513e456268bddc0d62bfadaaeecb917f2c46f7f8cb5d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which line ends with row, the new rhyme sound between lines 2 and 4?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-c"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "Line 1 ends with site, not row.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-1"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "Line 4 ends with stool, returning to line 2's tool rhyme.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "Line 2 ends with tool, not row.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-2"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 3 ends with row, the new sound placed between tool and stool.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-guided-b-question-ms-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-c5a3b49ba1a92dff",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "709b59c74da2b3ab3fa816ae02e582c4ea88e7072f4188e06e67702ef400dd79",
+        "conclusionsSha256": "f3d6bd80d47edee54aaf2e4aba884a73db04db2ab52a66050a806a7f52c58686",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0039.pass-a.json",
+        "receiptSha256": "f3d6bd80d47edee54aaf2e4aba884a73db04db2ab52a66050a806a7f52c58686",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose both lines that rhyme with tool.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "choice-b",
+            "choice-d"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-d",
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "Row does not rhyme with tool.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-3"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Stool has the same ending sound as tool.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "Site does not rhyme with tool.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-1"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This line ends with the reference word tool.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-guided-b-question-ht-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-bff71523de145e7f",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "709b59c74da2b3ab3fa816ae02e582c4ea88e7072f4188e06e67702ef400dd79",
+        "conclusionsSha256": "f3d6bd80d47edee54aaf2e4aba884a73db04db2ab52a66050a806a7f52c58686",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0039.pass-a.json",
+        "receiptSha256": "f3d6bd80d47edee54aaf2e4aba884a73db04db2ab52a66050a806a7f52c58686",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the line that rhymes with line 2.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 4 ends with stool, which rhymes with line 2 end word tool.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-4"
+              ]
+            },
+            {
+              "answerId": "segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "Site does not rhyme with tool.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-2"
+              ]
+            },
+            {
+              "answerId": "segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "Row does not rhyme with tool.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-guided-b-question-tm-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-88aa62c6819ed942",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "709b59c74da2b3ab3fa816ae02e582c4ea88e7072f4188e06e67702ef400dd79",
+        "conclusionsSha256": "f3d6bd80d47edee54aaf2e4aba884a73db04db2ab52a66050a806a7f52c58686",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0039.pass-a.json",
+        "receiptSha256": "f3d6bd80d47edee54aaf2e4aba884a73db04db2ab52a66050a806a7f52c58686",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-1",
+          "prompt": "Line 1",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-b",
+              "verdict": "INCORRECT",
+              "rationale": "Line 1 begins the scheme, so its unique site sound is labeled A, not B.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-1"
+              ]
+            },
+            {
+              "answerId": "letter-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The first end sound, site, begins the scheme with A.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-1"
+              ]
+            },
+            {
+              "answerId": "letter-c",
+              "verdict": "INCORRECT",
+              "rationale": "C is introduced by the distinct row sound on line 3, not line 1.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-2",
+          "prompt": "Line 2",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-b-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-b-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-b-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Tool introduces the second end sound, labeled B.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-2"
+              ]
+            },
+            {
+              "answerId": "letter-a-2",
+              "verdict": "INCORRECT",
+              "rationale": "A belongs to the first unique site sound.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-2"
+              ]
+            },
+            {
+              "answerId": "letter-c-2",
+              "verdict": "INCORRECT",
+              "rationale": "C belongs to the later distinct row sound.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-3",
+          "prompt": "Line 3",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-c-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-c-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-a-3",
+              "verdict": "INCORRECT",
+              "rationale": "Line 3 end word row does not rhyme with the A sound site.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-3"
+              ]
+            },
+            {
+              "answerId": "letter-c-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Row introduces the third distinct end sound, labeled C.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-3"
+              ]
+            },
+            {
+              "answerId": "letter-b-3",
+              "verdict": "INCORRECT",
+              "rationale": "Row does not rhyme with the B sound tool.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-4",
+          "prompt": "Line 4",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-b-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-b-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-a-4",
+              "verdict": "INCORRECT",
+              "rationale": "Stool does not rhyme with the A sound site.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-4"
+              ]
+            },
+            {
+              "answerId": "letter-c-4",
+              "verdict": "INCORRECT",
+              "rationale": "Line 4 repeats the tool sound rather than the row sound labeled C.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-4"
+              ]
+            },
+            {
+              "answerId": "letter-b-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Stool rhymes with tool, so line 4 repeats letter B.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-bridge-tool-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-checkpoint-a-question-mc-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-7228065d72cdf861",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "709b59c74da2b3ab3fa816ae02e582c4ea88e7072f4188e06e67702ef400dd79",
+        "conclusionsSha256": "f3d6bd80d47edee54aaf2e4aba884a73db04db2ab52a66050a806a7f52c58686",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0039.pass-a.json",
+        "receiptSha256": "f3d6bd80d47edee54aaf2e4aba884a73db04db2ab52a66050a806a7f52c58686",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What rhyme scheme is best supported by the poem?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-d"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-d"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "A six-letter scheme cannot describe this four-line poem.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Gate and wait form the A pair, while rope and hope form the B pair, giving AABB.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "The first two lines rhyme with each other, rather than only lines 2 and 4 rhyming as ABCB requires.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "Line 1 does not rhyme with line 3, and line 2 does not rhyme with line 4.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-checkpoint-a-question-mc-2",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-5dac070f164a418b",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "de48d152bcca0e0f63f69a73739a553db15022facf2d52e729dc6b8a71021cdf",
+        "conclusionsSha256": "8805257b08d89f04bb22513e456268bddc0d62bfadaaeecb917f2c46f7f8cb5d",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0018.pass-a.json",
+        "receiptSha256": "8805257b08d89f04bb22513e456268bddc0d62bfadaaeecb917f2c46f7f8cb5d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which line first introduces the rhyme labeled B?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-c"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-c"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "Line 4 repeats the rope/hope B rhyme rather than introducing it.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "Line 2 repeats the gate/wait A rhyme.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-2"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "Line 1 introduces the A rhyme with gate.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-1"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 3 first introduces B with rope, which line 4 repeats with hope.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-checkpoint-a-question-mc-3",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-f56ff2ed3206fc91",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "709b59c74da2b3ab3fa816ae02e582c4ea88e7072f4188e06e67702ef400dd79",
+        "conclusionsSha256": "f3d6bd80d47edee54aaf2e4aba884a73db04db2ab52a66050a806a7f52c58686",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0039.pass-a.json",
+        "receiptSha256": "f3d6bd80d47edee54aaf2e4aba884a73db04db2ab52a66050a806a7f52c58686",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which pair of end words shows the A rhyme?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "Gate and hope do not rhyme.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "Wait and rope do not rhyme.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-3"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "Rope and hope form the later B rhyme, not the A rhyme.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Gate and wait are the first rhyming pair and therefore carry letter A.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-checkpoint-a-question-ms-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-ee7e4107fc9ddee3",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "709b59c74da2b3ab3fa816ae02e582c4ea88e7072f4188e06e67702ef400dd79",
+        "conclusionsSha256": "f3d6bd80d47edee54aaf2e4aba884a73db04db2ab52a66050a806a7f52c58686",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0011.second-pass.json",
+        "receiptSha256": "29879d36f9379755d91b3c8fc6b71cbaaaa4d3811276b827c70f496560784c08",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all lines that should get letter A.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "choice-a",
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a",
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 1 ends with gate and begins the A rhyme.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-1"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "Line 4 ends with hope and belongs to the B rhyme.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "Line 3 ends with rope and belongs to the B rhyme.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-3"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 2 ends with wait, which rhymes with gate and carries A.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-checkpoint-a-question-ht-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-f1cae9c1d86994ed",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "709b59c74da2b3ab3fa816ae02e582c4ea88e7072f4188e06e67702ef400dd79",
+        "conclusionsSha256": "f3d6bd80d47edee54aaf2e4aba884a73db04db2ab52a66050a806a7f52c58686",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0039.pass-a.json",
+        "receiptSha256": "f3d6bd80d47edee54aaf2e4aba884a73db04db2ab52a66050a806a7f52c58686",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the line that rhymes with line 3.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "Wait does not rhyme with line 3 end word rope.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-3"
+              ]
+            },
+            {
+              "answerId": "segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "Gate does not rhyme with rope.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-3"
+              ]
+            },
+            {
+              "answerId": "segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Hope rhymes with line 3 end word rope.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-checkpoint-a-question-tm-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-e02848f96776ce2d",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "709b59c74da2b3ab3fa816ae02e582c4ea88e7072f4188e06e67702ef400dd79",
+        "conclusionsSha256": "f3d6bd80d47edee54aaf2e4aba884a73db04db2ab52a66050a806a7f52c58686",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0039.pass-a.json",
+        "receiptSha256": "f3d6bd80d47edee54aaf2e4aba884a73db04db2ab52a66050a806a7f52c58686",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-1",
+          "prompt": "Line 1",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Gate begins the first rhyme and receives A.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-1"
+              ]
+            },
+            {
+              "answerId": "letter-b",
+              "verdict": "INCORRECT",
+              "rationale": "B begins with rope on line 3, not line 1.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-2",
+          "prompt": "Line 2",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-a-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-a-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-a-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Wait rhymes with gate, so line 2 repeats A.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-2"
+              ]
+            },
+            {
+              "answerId": "letter-b-2",
+              "verdict": "INCORRECT",
+              "rationale": "Line 2 does not share the rope and hope B sound.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-3",
+          "prompt": "Line 3",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-b-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-b-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-b-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Rope introduces the second rhyme and receives B.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-3"
+              ]
+            },
+            {
+              "answerId": "letter-a-3",
+              "verdict": "INCORRECT",
+              "rationale": "Rope does not rhyme with gate or wait, so line 3 is not A.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-4",
+          "prompt": "Line 4",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-b-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-b-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-a-4",
+              "verdict": "INCORRECT",
+              "rationale": "Hope does not rhyme with the A pair gate and wait.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-4"
+              ]
+            },
+            {
+              "answerId": "letter-b-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Hope rhymes with rope, so line 4 repeats B.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-checkpoint-a-question-ep-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-e4189bede12beb11",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "de48d152bcca0e0f63f69a73739a553db15022facf2d52e729dc6b8a71021cdf",
+        "conclusionsSha256": "8805257b08d89f04bb22513e456268bddc0d62bfadaaeecb917f2c46f7f8cb5d",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0018.pass-a.json",
+        "receiptSha256": "8805257b08d89f04bb22513e456268bddc0d62bfadaaeecb917f2c46f7f8cb5d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Which rhyme scheme is best supported by the story?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "part-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "part-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "part-a-3",
+              "verdict": "INCORRECT",
+              "rationale": "The poem has adjacent pairs, not only lines 2 and 4 sharing a rhyme.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-4"
+              ]
+            },
+            {
+              "answerId": "part-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "gate/wait form the first pair and rope/hope form the second pair.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-4"
+              ]
+            },
+            {
+              "answerId": "part-a-2",
+              "verdict": "INCORRECT",
+              "rationale": "The poem does not alternate its two rhyme sounds.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-4"
+              ]
+            },
+            {
+              "answerId": "part-a-4",
+              "verdict": "INCORRECT",
+              "rationale": "The poem has four lines, so a six-line scheme does not fit.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which end-word evidence proves the complete AABB scheme?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "part-b-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "part-b-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "part-b-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "gate rhymes with wait and rope rhymes with hope, proving both AABB pairs.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-4"
+              ]
+            },
+            {
+              "answerId": "part-b-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "gate/wait proves only the first pair, not the complete scheme requested.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-2"
+              ]
+            },
+            {
+              "answerId": "part-b-3",
+              "verdict": "INCORRECT",
+              "rationale": "gate does not rhyme with hope, and wait does not rhyme with rope.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-4"
+              ]
+            },
+            {
+              "answerId": "part-b-2",
+              "verdict": "INCORRECT",
+              "rationale": "gate does not rhyme with rope, and wait does not rhyme with hope.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-help-gate-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-checkpoint-b-question-mc-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-81906d189dadfdf4",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "bcd3833735e77ec6f25317109c56cf2a9411689aaaa843fea75d35ca19f2154d",
+        "conclusionsSha256": "b90579b59c5a71308adadc49aa0ae2843fcbd3c35386978b4f242a5501b2e7be",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0011.second-pass.json",
+        "receiptSha256": "29879d36f9379755d91b3c8fc6b71cbaaaa4d3811276b827c70f496560784c08",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What rhyme scheme is best supported by the poem?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-d"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-d"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "The poem does not use four consecutive same-sound pairs; its rhymes alternate within each four-line group.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-4",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-6",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-7",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-8"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "ABCB describes four lines and does not account for the poem’s eight-line alternating pairs.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-4",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-6",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-7",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-8"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "AABB describes four lines with consecutive pairs, unlike this eight-line poem.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Row/blow form A, pace/place B, high/sky C, and light/night D, giving ABABCDCD.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-4",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-6",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-7",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-checkpoint-b-question-mc-2",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-5bc3cb97a06a56b3",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "bcd3833735e77ec6f25317109c56cf2a9411689aaaa843fea75d35ca19f2154d",
+        "conclusionsSha256": "b90579b59c5a71308adadc49aa0ae2843fcbd3c35386978b4f242a5501b2e7be",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0011.second-pass.json",
+        "receiptSha256": "29879d36f9379755d91b3c8fc6b71cbaaaa4d3811276b827c70f496560784c08",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which line should share the letter A with line 1?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-b"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "Line 4 ends with place, which rhymes with pace rather than row.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "Line 2 ends with pace, which does not rhyme with row.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-2"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "Line 5 ends with high, which does not rhyme with row.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-5"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 3 ends with blow, which rhymes with line 1 end word row.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-checkpoint-b-question-mc-3",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-eebeccb08de4dd6c",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "bcd3833735e77ec6f25317109c56cf2a9411689aaaa843fea75d35ca19f2154d",
+        "conclusionsSha256": "b90579b59c5a71308adadc49aa0ae2843fcbd3c35386978b4f242a5501b2e7be",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0011.second-pass.json",
+        "receiptSha256": "29879d36f9379755d91b3c8fc6b71cbaaaa4d3811276b827c70f496560784c08",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which line should get the same letter as line 6?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-d"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-d"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "Line 4 ends with place, which does not rhyme with line 6 end word light.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-6",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 8 ends with night, which rhymes with line 6 end word light.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-6",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-8"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "Line 1 ends with row, which does not rhyme with light.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-6"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "Line 7 ends with sky, which does not rhyme with light.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-6",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-checkpoint-b-question-ms-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-9f2bac8ba811a347",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "bcd3833735e77ec6f25317109c56cf2a9411689aaaa843fea75d35ca19f2154d",
+        "conclusionsSha256": "b90579b59c5a71308adadc49aa0ae2843fcbd3c35386978b4f242a5501b2e7be",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0040.pass-a.json",
+        "receiptSha256": "b90579b59c5a71308adadc49aa0ae2843fcbd3c35386978b4f242a5501b2e7be",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all lines that rhyme with pace.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "choice-b",
+            "choice-d"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-d",
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "Row does not rhyme with pace.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Place rhymes with pace.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "This line ends with the reference word pace.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-2"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "Sky does not rhyme with pace.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-checkpoint-b-question-ht-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-6193c4b6c3d963ca",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "bcd3833735e77ec6f25317109c56cf2a9411689aaaa843fea75d35ca19f2154d",
+        "conclusionsSha256": "b90579b59c5a71308adadc49aa0ae2843fcbd3c35386978b4f242a5501b2e7be",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0040.pass-a.json",
+        "receiptSha256": "b90579b59c5a71308adadc49aa0ae2843fcbd3c35386978b4f242a5501b2e7be",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the line that rhymes with line 5.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "Light does not rhyme with line 5 end word high.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-6"
+              ]
+            },
+            {
+              "answerId": "segment-1",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "This is the reference line itself rather than the other line sharing its rhyme.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-5"
+              ]
+            },
+            {
+              "answerId": "segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 7 ends with sky, which rhymes with line 5 end word high.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-checkpoint-b-question-tm-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-ac97b259e102568d",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "bcd3833735e77ec6f25317109c56cf2a9411689aaaa843fea75d35ca19f2154d",
+        "conclusionsSha256": "b90579b59c5a71308adadc49aa0ae2843fcbd3c35386978b4f242a5501b2e7be",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0040.pass-a.json",
+        "receiptSha256": "b90579b59c5a71308adadc49aa0ae2843fcbd3c35386978b4f242a5501b2e7be",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-1",
+          "prompt": "Line 1",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-b",
+              "verdict": "INCORRECT",
+              "rationale": "B is the pace/place sound, not line 1 end word row.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-4"
+              ]
+            },
+            {
+              "answerId": "letter-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Row starts the first rhyme and receives A.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1"
+              ]
+            },
+            {
+              "answerId": "letter-d",
+              "verdict": "INCORRECT",
+              "rationale": "D belongs to light/night, not row.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-6",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-8"
+              ]
+            },
+            {
+              "answerId": "letter-c",
+              "verdict": "INCORRECT",
+              "rationale": "C belongs to high/sky, not row.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-2",
+          "prompt": "Line 2",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-b-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-b-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-c-2",
+              "verdict": "INCORRECT",
+              "rationale": "C belongs to high/sky, not pace.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-7"
+              ]
+            },
+            {
+              "answerId": "letter-d-2",
+              "verdict": "INCORRECT",
+              "rationale": "D belongs to light/night, not pace.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-6",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-8"
+              ]
+            },
+            {
+              "answerId": "letter-b-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Pace introduces the second rhyme and receives B.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-2"
+              ]
+            },
+            {
+              "answerId": "letter-a-2",
+              "verdict": "INCORRECT",
+              "rationale": "A belongs to row/blow, not pace.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-3",
+          "prompt": "Line 3",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-a-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-a-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-d-3",
+              "verdict": "INCORRECT",
+              "rationale": "D belongs to light/night, not blow.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-6",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-8"
+              ]
+            },
+            {
+              "answerId": "letter-a-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Blow rhymes with row, so line 3 repeats A.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-3"
+              ]
+            },
+            {
+              "answerId": "letter-b-3",
+              "verdict": "INCORRECT",
+              "rationale": "B belongs to pace/place, not blow.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-4"
+              ]
+            },
+            {
+              "answerId": "letter-c-3",
+              "verdict": "INCORRECT",
+              "rationale": "C belongs to high/sky, not blow.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-4",
+          "prompt": "Line 4",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-b-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-b-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-a-4",
+              "verdict": "INCORRECT",
+              "rationale": "A belongs to row/blow, not place.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-4"
+              ]
+            },
+            {
+              "answerId": "letter-b-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Place rhymes with pace, so line 4 repeats B.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-4"
+              ]
+            },
+            {
+              "answerId": "letter-c-4",
+              "verdict": "INCORRECT",
+              "rationale": "C belongs to high/sky, not place.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-4",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-7"
+              ]
+            },
+            {
+              "answerId": "letter-d-4",
+              "verdict": "INCORRECT",
+              "rationale": "D belongs to light/night, not place.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-4",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-6",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-5",
+          "prompt": "Line 5",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-c-5"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-c-5"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-b-5",
+              "verdict": "INCORRECT",
+              "rationale": "B belongs to pace/place, not high.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-4",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-5"
+              ]
+            },
+            {
+              "answerId": "letter-c-5",
+              "verdict": "DEFENSIBLE",
+              "rationale": "High introduces the third rhyme and receives C.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-5"
+              ]
+            },
+            {
+              "answerId": "letter-d-5",
+              "verdict": "INCORRECT",
+              "rationale": "D belongs to light/night, not high.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-6",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-8"
+              ]
+            },
+            {
+              "answerId": "letter-a-5",
+              "verdict": "INCORRECT",
+              "rationale": "A belongs to row/blow, not high.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-5"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-6",
+          "prompt": "Line 6",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-d-6"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-d-6"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-d-6",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Light introduces the fourth rhyme and receives D.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-6"
+              ]
+            },
+            {
+              "answerId": "letter-b-6",
+              "verdict": "INCORRECT",
+              "rationale": "B belongs to pace/place, not light.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-4",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-6"
+              ]
+            },
+            {
+              "answerId": "letter-c-6",
+              "verdict": "INCORRECT",
+              "rationale": "C belongs to high/sky, not light.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-7",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-6"
+              ]
+            },
+            {
+              "answerId": "letter-a-6",
+              "verdict": "INCORRECT",
+              "rationale": "A belongs to row/blow, not light.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-6"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-7",
+          "prompt": "Line 7",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-c-7"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-c-7"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-c-7",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Sky rhymes with high, so line 7 repeats C.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-7"
+              ]
+            },
+            {
+              "answerId": "letter-d-7",
+              "verdict": "INCORRECT",
+              "rationale": "D belongs to light/night, not sky.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-6",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-8",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-7"
+              ]
+            },
+            {
+              "answerId": "letter-b-7",
+              "verdict": "INCORRECT",
+              "rationale": "B belongs to pace/place, not sky.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-4",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-7"
+              ]
+            },
+            {
+              "answerId": "letter-a-7",
+              "verdict": "INCORRECT",
+              "rationale": "A belongs to row/blow, not sky.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-7"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-8",
+          "prompt": "Line 8",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-d-8"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-d-8"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-d-8",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Night rhymes with light, so line 8 repeats D.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-6",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-8"
+              ]
+            },
+            {
+              "answerId": "letter-b-8",
+              "verdict": "INCORRECT",
+              "rationale": "B belongs to pace/place, not night.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-4",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-8"
+              ]
+            },
+            {
+              "answerId": "letter-a-8",
+              "verdict": "INCORRECT",
+              "rationale": "A belongs to row/blow, not night.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-8"
+              ]
+            },
+            {
+              "answerId": "letter-c-8",
+              "verdict": "INCORRECT",
+              "rationale": "C belongs to high/sky, not night.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-7",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-checkpoint-b-question-ep-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-ed66e3e91d58f78d",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "de48d152bcca0e0f63f69a73739a553db15022facf2d52e729dc6b8a71021cdf",
+        "conclusionsSha256": "8805257b08d89f04bb22513e456268bddc0d62bfadaaeecb917f2c46f7f8cb5d",
+        "reviewer": "primary-agent-current-conversation",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v3/batch-p0018.pass-a.json",
+        "receiptSha256": "8805257b08d89f04bb22513e456268bddc0d62bfadaaeecb917f2c46f7f8cb5d",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Which rhyme scheme is best supported by the story?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "part-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "part-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "part-a-2",
+              "verdict": "INCORRECT",
+              "rationale": "The eight-line poem uses alternating pairs rather than three adjacent pairs.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-8"
+              ]
+            },
+            {
+              "answerId": "part-a-4",
+              "verdict": "INCORRECT",
+              "rationale": "A four-line scheme cannot describe all eight lines.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-8"
+              ]
+            },
+            {
+              "answerId": "part-a-3",
+              "verdict": "INCORRECT",
+              "rationale": "ABCB does not account for both stanzas or the alternating first stanza.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-4"
+              ]
+            },
+            {
+              "answerId": "part-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "row/blow, pace/place, high/sky, and light/night form ABABCDCD.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-4",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-6",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-7",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which end-word evidence proves the complete ABABCDCD scheme?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "part-b-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "part-b-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "part-b-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "These are only the two rhyme pairs in the second stanza, not the complete scheme.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-6",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-7",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-8"
+              ]
+            },
+            {
+              "answerId": "part-b-3",
+              "verdict": "INCORRECT",
+              "rationale": "The proposed pairs do not follow the poem's end-sound matches.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-4",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-6",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-7",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-8"
+              ]
+            },
+            {
+              "answerId": "part-b-2",
+              "verdict": "INCORRECT",
+              "rationale": "The proposed pairs do not rhyme in ordinary pronunciation.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-4",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-6",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-7",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-8"
+              ]
+            },
+            {
+              "answerId": "part-b-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "row/blow, pace/place, high/sky, and light/night prove every alternating pair.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-4",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-5",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-6",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-7",
+                "g2-poetry-planet-rhyme-routes-passage-weather-notes-line-8"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-checkpoint-c-question-mc-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-3bea2bef6afcea63",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "bcd3833735e77ec6f25317109c56cf2a9411689aaaa843fea75d35ca19f2154d",
+        "conclusionsSha256": "b90579b59c5a71308adadc49aa0ae2843fcbd3c35386978b4f242a5501b2e7be",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0040.pass-a.json",
+        "receiptSha256": "b90579b59c5a71308adadc49aa0ae2843fcbd3c35386978b4f242a5501b2e7be",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "What rhyme scheme is best supported by the poem?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "Line 1 ends with show and line 3 with door, so they do not form the alternating A pair required by ABAB.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-3"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The end sounds are show (A), page (B), door (C), and page (B), producing ABCB.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "INCORRECT",
+              "rationale": "A six-letter scheme cannot describe this four-line poem.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "Show and page do not rhyme, and door and page do not rhyme, so the poem is not AABB.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-checkpoint-c-question-mc-2",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-302395b23e77a8ce",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "bcd3833735e77ec6f25317109c56cf2a9411689aaaa843fea75d35ca19f2154d",
+        "conclusionsSha256": "b90579b59c5a71308adadc49aa0ae2843fcbd3c35386978b4f242a5501b2e7be",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0040.pass-a.json",
+        "receiptSha256": "b90579b59c5a71308adadc49aa0ae2843fcbd3c35386978b4f242a5501b2e7be",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which line should get the new letter C?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-d"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-d"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-d",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 3 ends with door, the third distinct end sound, so it introduces C.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-3"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "Line 1 begins the scheme with A.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-1"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "Line 4 repeats the page rhyme from line 2 and therefore receives B.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "Line 2 introduces the second rhyme and receives B.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-checkpoint-c-question-mc-3",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-4fff1be3b62502af",
+      "questionType": "multiple_choice",
+      "blindReview": {
+        "projectionSha256": "bcd3833735e77ec6f25317109c56cf2a9411689aaaa843fea75d35ca19f2154d",
+        "conclusionsSha256": "b90579b59c5a71308adadc49aa0ae2843fcbd3c35386978b4f242a5501b2e7be",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0040.pass-a.json",
+        "receiptSha256": "b90579b59c5a71308adadc49aa0ae2843fcbd3c35386978b4f242a5501b2e7be",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Which line shares line 2’s rhyme sound?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "choice-d"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-d"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-d",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 4 also ends with page, so it shares line 2 rhyme sound.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "INCORRECT",
+              "rationale": "Line 3 ends with door, which does not rhyme with page.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-3"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "Line 1 ends with show, which does not rhyme with page.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-2"
+              ]
+            },
+            {
+              "answerId": "choice-c",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Line 2 is the reference line itself, not the other line that shares its rhyme sound.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-checkpoint-c-question-ms-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-f6f728eff1c20403",
+      "questionType": "multi_select",
+      "blindReview": {
+        "projectionSha256": "bcd3833735e77ec6f25317109c56cf2a9411689aaaa843fea75d35ca19f2154d",
+        "conclusionsSha256": "b90579b59c5a71308adadc49aa0ae2843fcbd3c35386978b4f242a5501b2e7be",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0040.pass-a.json",
+        "receiptSha256": "b90579b59c5a71308adadc49aa0ae2843fcbd3c35386978b4f242a5501b2e7be",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Choose all lines that get letter B.",
+          "requestedSelectionCount": 2,
+          "keyedAnswerIds": [
+            "choice-b",
+            "choice-d"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "choice-d",
+            "choice-b"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "choice-c",
+              "verdict": "INCORRECT",
+              "rationale": "Line 3 ends with door and receives C.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-3"
+              ]
+            },
+            {
+              "answerId": "choice-d",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 4 ends with page and repeats B.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-4"
+              ]
+            },
+            {
+              "answerId": "choice-a",
+              "verdict": "INCORRECT",
+              "rationale": "Line 1 ends with show and receives A.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-1"
+              ]
+            },
+            {
+              "answerId": "choice-b",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 2 ends with page and introduces B.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-checkpoint-c-question-ht-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-7af6e3edbe121819",
+      "questionType": "hot_text",
+      "blindReview": {
+        "projectionSha256": "bcd3833735e77ec6f25317109c56cf2a9411689aaaa843fea75d35ca19f2154d",
+        "conclusionsSha256": "b90579b59c5a71308adadc49aa0ae2843fcbd3c35386978b4f242a5501b2e7be",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0011.second-pass.json",
+        "receiptSha256": "29879d36f9379755d91b3c8fc6b71cbaaaa4d3811276b827c70f496560784c08",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "response",
+          "prompt": "Select the line that rhymes with line 2.",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "segment-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "segment-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "segment-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 4 ends with page, the same rhyme sound as line 2.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-4"
+              ]
+            },
+            {
+              "answerId": "segment-2",
+              "verdict": "INCORRECT",
+              "rationale": "Door does not rhyme with page.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-3"
+              ]
+            },
+            {
+              "answerId": "segment-1",
+              "verdict": "INCORRECT",
+              "rationale": "Show does not rhyme with page.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-checkpoint-c-question-tm-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-199fc12a0768ed56",
+      "questionType": "table_match",
+      "blindReview": {
+        "projectionSha256": "bcd3833735e77ec6f25317109c56cf2a9411689aaaa843fea75d35ca19f2154d",
+        "conclusionsSha256": "b90579b59c5a71308adadc49aa0ae2843fcbd3c35386978b4f242a5501b2e7be",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "PRIMARY_PASS_C_RECONCILIATION",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/blind/v2/batch-0040.pass-a.json",
+        "receiptSha256": "b90579b59c5a71308adadc49aa0ae2843fcbd3c35386978b4f242a5501b2e7be",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": null,
+      "slots": [
+        {
+          "slotId": "row-1",
+          "prompt": "Line 1",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-a"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-a"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-c",
+              "verdict": "INCORRECT",
+              "rationale": "C belongs to the distinct door sound on line 3.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-3"
+              ]
+            },
+            {
+              "answerId": "letter-b",
+              "verdict": "INCORRECT",
+              "rationale": "B belongs to page on lines 2 and 4.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-4"
+              ]
+            },
+            {
+              "answerId": "letter-a",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Show begins the first rhyme and receives A.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-1"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-2",
+          "prompt": "Line 2",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-b-2"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-b-2"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-b-2",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Page introduces the second rhyme and receives B.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-2"
+              ]
+            },
+            {
+              "answerId": "letter-a-2",
+              "verdict": "INCORRECT",
+              "rationale": "A belongs to line 1 end word show.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-2"
+              ]
+            },
+            {
+              "answerId": "letter-c-2",
+              "verdict": "INCORRECT",
+              "rationale": "C belongs to line 3 end word door.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-3",
+          "prompt": "Line 3",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-c-3"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-c-3"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-b-3",
+              "verdict": "INCORRECT",
+              "rationale": "B belongs to page on lines 2 and 4, not door.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-4"
+              ]
+            },
+            {
+              "answerId": "letter-c-3",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Door introduces the third distinct rhyme and receives C.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-3"
+              ]
+            },
+            {
+              "answerId": "letter-a-3",
+              "verdict": "INCORRECT",
+              "rationale": "A belongs to line 1 end word show.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-3"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "row-4",
+          "prompt": "Line 4",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "letter-b-4"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "letter-b-4"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "letter-a-4",
+              "verdict": "INCORRECT",
+              "rationale": "Line 4 ends with page and does not repeat the A sound show.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-4"
+              ]
+            },
+            {
+              "answerId": "letter-b-4",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Line 4 repeats page from line 2 and therefore receives B.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-4"
+              ]
+            },
+            {
+              "answerId": "letter-c-4",
+              "verdict": "INCORRECT",
+              "rationale": "Page does not rhyme with the C sound door.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    },
+    {
+      "questionId": "g2-poetry-planet-rhyme-routes-lesson-checkpoint-c-question-ep-1",
+      "packId": "g2-poetry-planet-rhyme-routes",
+      "contentVersion": "g2-pp-rhyme-routes-r0.1.0",
+      "contentFingerprint": "qta-v1-9d14b522f76148c6",
+      "questionType": "two_part",
+      "blindReview": {
+        "projectionSha256": "bcd3833735e77ec6f25317109c56cf2a9411689aaaa843fea75d35ca19f2154d",
+        "conclusionsSha256": "b90579b59c5a71308adadc49aa0ae2843fcbd3c35386978b4f242a5501b2e7be",
+        "reviewer": "bounded",
+        "frozenBeforeKeyComparison": true
+      },
+      "keyComparisonComplete": true,
+      "distractorChallengeComplete": true,
+      "independentFinalReviewComplete": false,
+      "finalReview": {
+        "completed": true,
+        "independent": false,
+        "reviewer": "primary-agent-current-conversation",
+        "method": "STRATIFIED_SECOND_PASS",
+        "receiptPath": "docs/content/answer-uniqueness-ledger/second-pass/v1/batch-s0011.second-pass.json",
+        "receiptSha256": "29879d36f9379755d91b3c8fc6b71cbaaaa4d3811276b827c70f496560784c08",
+        "currentFingerprintVerified": true
+      },
+      "partBSupportsPartA": true,
+      "slots": [
+        {
+          "slotId": "part_a",
+          "prompt": "Which rhyme scheme is best supported by the story?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "part-a-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "part-a-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "part-a-2",
+              "verdict": "INCORRECT",
+              "rationale": "Show and door do not rhyme, so the poem does not alternate ABAB.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-3"
+              ]
+            },
+            {
+              "answerId": "part-a-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "The end sounds are show (A), page (B), door (C), and page (B), giving ABCB.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-4"
+              ]
+            },
+            {
+              "answerId": "part-a-3",
+              "verdict": "INCORRECT",
+              "rationale": "The first two and last two lines do not form consecutive rhyme pairs.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-4"
+              ]
+            },
+            {
+              "answerId": "part-a-4",
+              "verdict": "INCORRECT",
+              "rationale": "A six-letter scheme cannot describe this four-line poem.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-3",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-4"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        },
+        {
+          "slotId": "part_b",
+          "prompt": "Which choice best supports that answer?",
+          "requestedSelectionCount": 1,
+          "keyedAnswerIds": [
+            "part-b-1"
+          ],
+          "independentlyDefensibleAnswerIds": [
+            "part-b-1"
+          ],
+          "optionJudgments": [
+            {
+              "answerId": "part-b-1",
+              "verdict": "DEFENSIBLE",
+              "rationale": "Page is the end word on both lines 2 and 4, directly proving that those lines share B in ABCB.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-4"
+              ]
+            },
+            {
+              "answerId": "part-b-2",
+              "verdict": "INCORRECT",
+              "rationale": "Stage is inside line 1 rather than its end word, and stage does not rhyme with door.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-3"
+              ]
+            },
+            {
+              "answerId": "part-b-3",
+              "verdict": "INCORRECT",
+              "rationale": "Page and door do not rhyme.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-2",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-3"
+              ]
+            },
+            {
+              "answerId": "part-b-4",
+              "verdict": "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "rationale": "Stage and page rhyme as isolated words, but stage is not the end word of line 1 and therefore does not support the poem rhyme scheme.",
+              "evidenceIds": [
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-1",
+                "g2-poetry-planet-rhyme-routes-passage-stage-page-line-2"
+              ]
+            }
+          ],
+          "ambiguity": "",
+          "uniquenessStatus": "PASS"
+        }
+      ],
+      "correctionApplied": false,
+      "correctionSummary": "",
+      "finalStatus": "PASS"
+    }
+  ]
+}

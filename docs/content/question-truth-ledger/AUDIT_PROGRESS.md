@@ -6,8 +6,8 @@ Registry source: active production content registry through Phase 7D6.
 - Active questions: 1614
 - Canonical submissions: 1614
 - Canonical-equivalent submissions: 542
-- Adversarial submissions: 21238
-- Grading-contract assertions: 26622
+- Adversarial submissions: 19558
+- Grading-contract assertions: 24942
 
 | Pack ID | Questions | Blind pass | Key comparison | Adversarial pass | Evaluator contract | Corrections | Ledger | Final |
 | --- | ---: | --- | --- | --- | --- | --- | --- | --- |

@@ -67,6 +67,7 @@ interface CheckpointConfig extends Omit<LessonConfig, 'multiPattern'> {
   hotTargetIndex: number
   analysisTargetIndex: number
   multiselectKind: 'any-hint' | 'compound-part'
+  multiselectPrompt?: string
 }
 
 function base(spec: QuestionBase) {
@@ -302,9 +303,9 @@ function buildCheckpointQuestions(config: CheckpointConfig): ReadingQuestion[] {
     }),
     multiselect({
       ...questionBase(config, 3, {
-        prompt: config.multiselectKind === 'compound-part'
+        prompt: config.multiselectPrompt ?? (config.multiselectKind === 'compound-part'
           ? 'Choose two words that use a compound-word boundary as a decoding clue.'
-          : 'Choose two words with a useful prefix or compound boundary that helps decoding.',
+          : 'Choose two words with a useful prefix or compound boundary that helps decoding.'),
         explanation: `${multiTargets.map((target) => target.surfaceWord).join(' and ')} each provide an authored meaningful boundary that supports reading the longer word.`,
         evidenceReferenceIds: multiTargets.map((target) => target.sourceSentenceId), targetVocabulary: multiTargets.map((target) => target.surfaceWord), soundOutChunks: [], tags: tags('morphology-assisted-decoding', 'compound-boundary-decoding', 'prefix-boundary-decoding'),
       }),
@@ -355,6 +356,6 @@ export const multisyllableMountainQuestions: ReadingQuestion[] = [
   ...buildGuidedQuestions({ lessonId: multisyllableMountainLessonIds.labGarden, passageId: multisyllableMountainPassageIds.gardenProject, questionIds: multisyllableMountainQuestionIds.labGarden, difficulty: 3, multiPattern: 'open' }),
   ...buildGuidedQuestions({ lessonId: multisyllableMountainLessonIds.labWildlife, passageId: multisyllableMountainPassageIds.wildlifeCenter, questionIds: multisyllableMountainQuestionIds.labWildlife, difficulty: 3, multiPattern: 'open' }),
   ...buildCheckpointQuestions({ lessonId: multisyllableMountainLessonIds.checkpointMuseum, passageId: multisyllableMountainPassageIds.museumExpedition, questionIds: multisyllableMountainQuestionIds.checkpointMuseum, difficulty: 3, contrast: [0, 0, 3, 0], transferTargetIndex: 1, transferPrompt: 'The word bedtime contains the silent-e chunk time. Which passage word contains two silent-e chunks?', consonantLeTargetIndex: 2, hotTargetIndex: 3, analysisTargetIndex: 3, multiselectKind: 'any-hint' }),
-  ...buildCheckpointQuestions({ lessonId: multisyllableMountainLessonIds.checkpointEngineering, passageId: multisyllableMountainPassageIds.engineeringChallenge, questionIds: multisyllableMountainQuestionIds.checkpointEngineering, difficulty: 3, contrast: [0, 0, 3, 0], transferTargetIndex: 0, transferPrompt: 'The word sunshine ends with the silent-e chunk shine. Which passage word also ends with a silent-e chunk?', consonantLeTargetIndex: 1, hotTargetIndex: 2, analysisTargetIndex: 1, multiselectKind: 'any-hint' }),
+  ...buildCheckpointQuestions({ lessonId: multisyllableMountainLessonIds.checkpointEngineering, passageId: multisyllableMountainPassageIds.engineeringChallenge, questionIds: multisyllableMountainQuestionIds.checkpointEngineering, difficulty: 3, contrast: [0, 0, 3, 0], transferTargetIndex: 0, transferPrompt: 'The word sunshine ends with the silent-e chunk shine. Which passage word also ends with a silent-e chunk?', consonantLeTargetIndex: 1, hotTargetIndex: 2, analysisTargetIndex: 1, multiselectKind: 'any-hint', multiselectPrompt: 'Choose the compound word and the word that begins with re-.' }),
   ...buildCheckpointQuestions({ lessonId: multisyllableMountainLessonIds.checkpointAdventure, passageId: multisyllableMountainPassageIds.adventureClub, questionIds: multisyllableMountainQuestionIds.checkpointAdventure, difficulty: 3, contrast: [3, 0, 1, 0], transferTargetIndex: 0, transferPrompt: 'The word raincoat begins with the vowel-team chunk rain. Which passage word also begins with a vowel-team chunk?', consonantLeTargetIndex: 3, hotTargetIndex: 2, analysisTargetIndex: 0, multiselectKind: 'compound-part' }),
 ]

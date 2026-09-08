@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0037",
+  "batchFileSha256": "b62780e4bf9d8a631e327336f6b84f8e7114be2feb012b6263a86f74db95cc81",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0850",
+      "fingerprint": "a939b5b258c2f343f767ae3c845bc1856ba54b62a525e910d1fa74bc65cce7a1",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Both pairs of helpers solve a problem in a shared school space.",
+              [
+                "S0012",
+                "S0015",
+                "S0016",
+                "S0019"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "Neither story starts at a train station.",
+              []
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "Neither story starts at an ocean shore.",
+              []
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "Neither story starts with a birthday cake.",
+              []
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0857",
+      "fingerprint": "c332d1949b8c3736b2e16847275264181d909813f956fce44fbcf8e6e21b5d93",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Explains how a seed first catches on an animal, not what happens near new soil.",
+              [
+                "S0031"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Directly says the seed rubs off near soil and starts a new plant home.",
+              [
+                "S0033"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Summarizes a possible long trip, not the result at new soil.",
+              [
+                "S0034"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0861",
+      "fingerprint": "d3291438d71598a2c8e195e44c2b85ca35b62f87ad39e335f1496ad18dad1db7",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Both texts show a kite rising or climbing as wind conditions and handling change.",
+              [
+                "S0053",
+                "S0063",
+                "S0066",
+                "S0071"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "Neither wind text mentions pizza night.",
+              []
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "Neither text is about sticky tape.",
+              []
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Both texts include gray clouds drifting over or by the field or park.",
+              [
+                "S0055",
+                "S0069"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0872",
+      "fingerprint": "b9479916cca6b528402723ec5b85c67437fb093238051c6f7bed9ffc5fb314fe",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "The prompt does not state the intended comparison criterion. A3 is a true displayed detail from Text 2, so it can reasonably belong in a literary comparison along with A1 and A4.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Text 2 ends with the parade moving in route order.",
+              [
+                "S0121"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "The camp sky belongs to neither displayed text.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This is a true visible Text 2 detail, and the broad prompt gives no reason to exclude it from a comparison.",
+              [
+                "S0120"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Text 1 says finding the route card lets the class start on time.",
+              [
+                "S0109"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0885",
+      "fingerprint": "d23b01a52f7b5802a1336ba10b6c276c2772349a60fc84987cddaaac046d7ad4",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Describes an action the helpers take at the end.",
+              [
+                "S0175"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Describes audience and performance actions after the show begins.",
+              [
+                "S0172",
+                "S0173"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Describes what helpers do, which the prompt explicitly contrasts with room description.",
+              [
+                "S0155",
+                "S0163",
+                "S0157",
+                "S0159"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Describes the room's condition before the show rather than a helper action.",
+              [
+                "S0166"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0887",
+      "fingerprint": "e1cf1bae14f6c4309e7c458921c7180c5306a12096e39839cc2d865c0f4dde26",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2"
+          ],
+          "ambiguity": "A2 shows active preparation, while A1 shows the prepared result; both reasonably show preparation under the broad prompt.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The camp circle looking ready shows that preparation has been completed.",
+              [
+                "S0165"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Directly describes gathering materials before the event.",
+              [
+                "S0155"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This line belongs to Text 2, while the prompt asks for Text 1.",
+              [
+                "S0166"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0889",
+      "fingerprint": "50ec40a11e47f2e33a52d0086aaef690c84931de2b5c3e279b9633300d8160bc",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Both texts center on helpers preparing before a shared camp or show event.",
+              [
+                "S0155",
+                "S0163",
+                "S0159",
+                "S0169"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "Neither text concerns weather tools.",
+              []
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "Neither text explains seed travel.",
+              []
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "UNSUPPORTED",
+              "Pond layers and roots appear in neither displayed text.",
+              []
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "Trail-card and parade-map evidence comes from different texts.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Pairs one preparation detail from each displayed text and directly supports Part A.",
+              [
+                "S0155",
+                "S0159"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

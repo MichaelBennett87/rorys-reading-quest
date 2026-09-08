@@ -1,0 +1,778 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-0062",
+  "batchFileSha256": "4e5fc7ffd0b6dc5d780c939b7b5674f0784352decc8b85157cc5264e75787f69",
+  "reviewerThreadId": "01a07bc1-57ca-7230-a515-d322b50c9d2e",
+  "reviewer": "bounded",
+  "records": [
+    {
+      "auditId": "Q0726",
+      "fingerprint": "cc5898affd316d18e5cd6435ce50a83c7b049970514590e6bd8655d04560ba78",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This defines burrow rather than damp.",
+              [
+                "S0005",
+                "S0009"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The sentence directly defines damp as slightly wet but not soaked.",
+              [
+                "S0003",
+                "S0010"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This defines cluster rather than damp.",
+              [
+                "S0019",
+                "S0020"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This defines habitat rather than damp.",
+              [
+                "S0007",
+                "S0019"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0727",
+      "fingerprint": "c482c846b419fbddda9a1fd54d45491be3d64a0f07dc67ec6aead5d611d81e4a",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2"
+          ],
+          "ambiguity": "The passage sentence directly defines habitat while also stating that the displayed glossary gives the same meaning. Both context clues and the glossary therefore help equally directly; “most” has no visible ranking basis.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The sentence itself supplies a direct definition context clue for habitat.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The displayed glossary directly defines habitat.",
+              [
+                "S0018",
+                "S0019"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Related animal-place ideas can help, but no explicit word relationship is as direct as the definition and glossary.",
+              [
+                "S0007",
+                "S0009"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "General knowledge about animal homes may help, but the source provides direct definitions.",
+              [
+                "S0007",
+                "S0019"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0728",
+      "fingerprint": "972545599a15d080dfae83d93f7a2daf27ac033dcc6518b5d3abfa4fb154f71d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "A4 is visibly a direct definition, but A1 has no learner-visible text. The exact defensible set and requested count cannot be determined until the raw identifier is resolved.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "AMBIGUOUS",
+              "The raw internal identifier does not reveal the learner-visible clue that this option is supposed to contain.",
+              []
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "The cluster-and-burrow sentence does not explain damp.",
+              [
+                "S0005"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "The habitat definition does not explain damp.",
+              [
+                "S0007"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This sentence directly defines damp as slightly wet, not soaked.",
+              [
+                "S0003"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": "Option A1 is exposed as a raw internal sentence identifier instead of learner-visible sentence text, so its semantic content and evidence ownership cannot be audited from this projection."
+    },
+    {
+      "auditId": "Q0729",
+      "fingerprint": "2bcdf89384dd1bd0d9650868bae3139b292826d9da383300d73f748c4755b513",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "This sentence directly defines habitat and points to the glossary meaning.",
+              [
+                "S0007",
+                "S0019"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This uses damp and describes the setting but does not explain habitat.",
+              [
+                "S0010"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This defines damp, not habitat.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This gives one habitat feature but not the meaning of habitat as directly.",
+              [
+                "S0005",
+                "S0009"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0730",
+      "fingerprint": "84e7c55e788cf8bb49185be7efcf1ada63b1bef7a1e5faa050c8172f64cfa2b5",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This defines cluster, not damp.",
+              [
+                "S0020"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This defines habitat, not damp.",
+              [
+                "S0019"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Damp means slightly wet, not soaked.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This defines burrow, not damp.",
+              [
+                "S0005",
+                "S0009"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This defines damp, not cluster.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This defines habitat, not cluster.",
+              [
+                "S0019"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Cluster means a small group of things close together.",
+              [
+                "S0005",
+                "S0020"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This defines burrow, not cluster.",
+              [
+                "S0005",
+                "S0009"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This defines cluster, not habitat.",
+              [
+                "S0020"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This defines burrow, not habitat.",
+              [
+                "S0005",
+                "S0009"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This defines damp, not habitat.",
+              [
+                "S0003"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Habitat means the place where an animal lives.",
+              [
+                "S0007",
+                "S0019"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This defines cluster, not burrow.",
+              [
+                "S0020"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This defines habitat, not burrow.",
+              [
+                "S0019"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "A burrow is a hole or tunnel used by an animal as a safe place.",
+              [
+                "S0005",
+                "S0009"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This defines damp, not burrow.",
+              [
+                "S0003"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0731",
+      "fingerprint": "c47b9dc80a130805e962ea8890bdffff8d687587e93ce01e258198576d2163ce",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This defines sturdy, the contrasting quality, rather than fragile.",
+              [
+                "S0025",
+                "S0040"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The sentence directly defines fragile as easy to break or hurt.",
+              [
+                "S0023",
+                "S0030"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This defines protect rather than fragile.",
+              [
+                "S0029"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This defines shelter rather than fragile.",
+              [
+                "S0027",
+                "S0039"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0732",
+      "fingerprint": "b2ef252b65175c567f26923fddd21fda365b663ccc5455139896fa67728591f1",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2",
+            "A4"
+          ],
+          "ambiguity": "The passage sentence directly defines shelter while also saying the displayed glossary gives that meaning. Context clues and glossary are both equally direct, so “most” does not establish a unique strategy.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Background knowledge about shelter may help, but the source provides direct definitions.",
+              [
+                "S0027",
+                "S0039"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The sentence itself provides a direct definition context clue.",
+              [
+                "S0027"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The protect relationship contributes meaning, but it is less complete than the direct definition.",
+              [
+                "S0027",
+                "S0029"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The displayed glossary directly defines shelter.",
+              [
+                "S0038",
+                "S0039"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0733",
+      "fingerprint": "1445969567f85d9391111b24edf4b941d4726668bdf013d36932147561f46c82",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "A3 gives a useful sturdy-versus-weak contrast and A4 directly defines fragile, but A2 has no learner-visible text. The complete defensible set cannot be determined until that option is resolved.",
+          "selectionContractValid": false,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "The shelter definition does not explain fragile.",
+              [
+                "S0027",
+                "S0039"
+              ]
+            ],
+            [
+              "A2",
+              "AMBIGUOUS",
+              "The raw internal identifier does not reveal the learner-visible clue that this option is supposed to contain.",
+              []
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Sturdy contrasted with weak helps show that fragile means weak or easy to break.",
+              [
+                "S0025",
+                "S0030"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This sentence directly defines fragile as easy to break or hurt.",
+              [
+                "S0023"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": "Option A2 is exposed as a raw internal sentence identifier instead of learner-visible sentence text, so its semantic content and evidence ownership cannot be audited from this projection."
+    },
+    {
+      "auditId": "Q0734",
+      "fingerprint": "806a091e8fec3f599ae4f77992a0feaa44d71ab3c862e62e0721335515660987",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This sentence explains sturdy, not shelter.",
+              [
+                "S0025"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This sentence defines fragile, not shelter.",
+              [
+                "S0023"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This shows the basket becoming fragile but does not explain shelter.",
+              [
+                "S0030"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This sentence directly defines shelter as a safe, protective place.",
+              [
+                "S0027",
+                "S0039"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0735",
+      "fingerprint": "cd9702a83fdff93518b1dcacd959c864c11bc6d96cd4580fc2bd695ce62e08a2",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This defines shelter, not fragile.",
+              [
+                "S0039"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This defines sturdy, not fragile.",
+              [
+                "S0040"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Fragile means easy to break or hurt.",
+              [
+                "S0023"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This defines protect, not fragile.",
+              [
+                "S0029"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Sturdy means strong and not easy to break.",
+              [
+                "S0025",
+                "S0040"
+              ]
+            ],
+            [
+              "A2",
+              "INCORRECT",
+              "This defines shelter, not sturdy.",
+              [
+                "S0039"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This defines protect, not sturdy.",
+              [
+                "S0029"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This defines fragile, the contrasting quality, not sturdy.",
+              [
+                "S0023"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This defines sturdy, not shelter.",
+              [
+                "S0040"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Shelter means a safe place that protects.",
+              [
+                "S0027",
+                "S0039"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This defines the action protect rather than the place shelter.",
+              [
+                "S0029"
+              ]
+            ],
+            [
+              "A4",
+              "INCORRECT",
+              "This defines fragile, not shelter.",
+              [
+                "S0023"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "INCORRECT",
+              "This defines fragile, not protect.",
+              [
+                "S0023"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Protect means keep safe from harm.",
+              [
+                "S0029"
+              ]
+            ],
+            [
+              "A3",
+              "INCORRECT",
+              "This defines sturdy, not protect.",
+              [
+                "S0040"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "A shelter protects, but this choice defines the place rather than the action protect.",
+              [
+                "S0027",
+                "S0039"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

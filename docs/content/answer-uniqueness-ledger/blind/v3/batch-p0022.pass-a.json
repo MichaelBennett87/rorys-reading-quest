@@ -1,0 +1,416 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-p0022",
+  "batchFileSha256": "25003c67dcae81271c29266822b9806f2033925447056bc6b0542b8efd985e1d",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0516",
+      "fingerprint": "e098cf739a6b9deafa361b0b6866e341a891ab3ac388ee04b3c5968bf90606c9",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The caption explains shade, not all three locations.",
+              [
+                "S0147"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The glossary defines compost rather than showing locations.",
+              [
+                "S0150"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The title names the topic but does not show the locations.",
+              [
+                "S0143"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "The map displays the compost bin beside the herb bed and near the hose hook.",
+              [
+                "S0138",
+                "S0146"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0517",
+      "fingerprint": "7003c77068be537cfe0c54ab4930ad6dd8bed113eac95832687af9a2d0df5de0",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This defines compost but gives neither its location nor why the shaded spot helps.",
+              [
+                "S0142"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes compost changing but not its location or the benefit of that spot.",
+              [
+                "S0136"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This identifies where the bin sits.",
+              [
+                "S0138",
+                "S0146"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "This explains that shade keeps the bin cool and slows the change.",
+              [
+                "S0140",
+                "S0147"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0518",
+      "fingerprint": "976cd60eda78949030b34b512024975daa677f6a0855329844227c9b257a1955",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes compost changing but does not state its glossary definition.",
+              [
+                "S0136"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This explains the caption, not the glossary meaning.",
+              [
+                "S0140"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "This sentence directly states the glossary definition of compost.",
+              [
+                "S0142",
+                "S0150"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes the map and bin location, not the glossary meaning.",
+              [
+                "S0138"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0519",
+      "fingerprint": "d87489beac109cd27809508f849ffbae3d65555a891484538e295018a6d3346b",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Showing locations is the map's function.",
+              [
+                "S0146"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The title Compost Change names the whole text's topic.",
+              [
+                "S0143"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Defining compost is the glossary's function.",
+              [
+                "S0150"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Explaining the shade is the caption's function.",
+              [
+                "S0147"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Defining compost is the glossary's function.",
+              [
+                "S0150"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The map shows the bin's position relative to the herb bed and hose hook.",
+              [
+                "S0138",
+                "S0146"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Naming the whole topic is the title's function.",
+              [
+                "S0143"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Explaining the shade is the caption's function.",
+              [
+                "S0147"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Defining compost is the glossary's function.",
+              [
+                "S0150"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Showing locations is the map's function.",
+              [
+                "S0146"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The caption explains how shade affects the compost change.",
+              [
+                "S0140",
+                "S0147"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Naming the whole topic is the title's function.",
+              [
+                "S0143"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_4",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Naming the whole topic is the title's function.",
+              [
+                "S0143"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The glossary supplies the meaning of compost.",
+              [
+                "S0142",
+                "S0150"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Showing locations is the map's function.",
+              [
+                "S0146"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Explaining the shade is the caption's function.",
+              [
+                "S0147"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0520",
+      "fingerprint": "1925255912d50fdc46727c4d3047bc19a08ce8314aa945e753c40011dc4b04a8",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "UNSUPPORTED",
+              "The compost source does not define observe, and that is not the map's job.",
+              [
+                "S0146"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "The source contains no moon graph.",
+              [
+                "S0146"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The map shows the compost bin's location relative to nearby places.",
+              [
+                "S0138",
+                "S0146"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The glossary definition does not support the map-location answer.",
+              [
+                "S0142"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "This directly states that the map shows where the bin sits.",
+              [
+                "S0138"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The title names the topic but does not support the map's location function.",
+              [
+                "S0143"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

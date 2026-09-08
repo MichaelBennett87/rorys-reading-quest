@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-a0001",
+  "batchFileSha256": "a13907452233329d694b9411f21a8ed89e25a5bc9f4df818979246a20ff70c5e",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0369",
+      "fingerprint": "a488fcfae58363c703378afd3112e14774c4b21738a581cdf7aefde3973316f9",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Marco's decision to tell the truth directly supports the truth-and-trust theme.",
+              [
+                "S0025"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The thanks and shared repair show the positive result of his truthful choice.",
+              [
+                "S0029"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Showing where the spill began and helping clean it demonstrate honest, responsible action.",
+              [
+                "S0030"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The blue drops establish the problem but do not by themselves support the story's truth-and-trust message.",
+              [
+                "S0027"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}
