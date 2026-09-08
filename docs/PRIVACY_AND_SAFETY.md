@@ -165,3 +165,9 @@ The child experience preserves semantic source and poem rendering, labeled refer
 ## Phase 7D7 final privacy and security audit
 
 Schema version 1 and the three established storage keys remain unchanged. Child progress, parent access, and parent assessment records stay separated; the Parent PIN remains locally hashed. The final audit confirms no persisted curriculum text, guide metadata, questions, answers, passages, poems, reference entries, learner audio, or learner-written text. No backend, cloud sync, analytics, telemetry, advertising, microphone, speech recognition, external speech provider, remote dictionary, live AI, credential, or new dependency is introduced.
+
+## Question-first route and autosave boundary
+
+The default child route may create or resume one planner-authorized session automatically, but it sends no data off device and awards nothing on page open. Autosave remains schema-v1, local-only, and ID-bounded. It may retain the current question, bounded draft response IDs, submitted checkpoints, assistance, fluency state, and review launch identity; it never stores learner-authored prose, curriculum text, explanations, keys, reference-card contents, audio, or browser diagnostics.
+
+Parent access is bookmarkable at `#/parent`. The route is convenience, not authentication: the existing locally hashed PIN gate remains mandatory, parent access and assessment records remain in their separate established stores, and opening the parent route never auto-launches child curriculum. No backend, cloud synchronization, analytics, telemetry, remote font, remote dictionary, microphone, speech recognition, or live AI is introduced.

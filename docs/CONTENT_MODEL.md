@@ -161,3 +161,9 @@ The guide is authored DRAFT curriculum metadata. It is available to registration
 ## Phase 7 final frozen content model
 
 The active registry contains 40 packs, 280 lessons, 294 texts, 1,614 questions, and 1,111 support targets. Grade 2 remains frozen at 22 packs, 154 lessons, 161 texts, 889 questions, and 614 support targets. Grade 3 is frozen for the Phase 7 completion gate at 18 packs, 126 lessons, 133 texts, 725 questions, and 497 support targets. Every active question has one current PASS ledger record. Phase 7D7 adds audit tests and reports only; no pack, lesson, source, question, support target, benchmark, track, or unit is added or removed.
+
+## Question-first active-session state
+
+Question-first delivery reuses `ActiveLessonSession` and schema version 1. The optional draft checkpoint contains only bounded response IDs or table mappings for the current question, plus the existing question index, submitted results, assistance events, fluency state, and launch context. Drafts are validated against lesson, activity, skill, difficulty, content version, question identity, and the current session fingerprint before restoration.
+
+No prompt, option text, passage, poem, teaching block, reference entry, explanation, answer key, or other curriculum text is persisted. A stale or incompatible unfinished session follows the existing safe recovery path without inventing a failed attempt or duplicate reward.

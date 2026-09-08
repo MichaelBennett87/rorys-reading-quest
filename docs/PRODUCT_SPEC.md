@@ -130,11 +130,15 @@ Theme Development Trail activates Grade 3 Story Scouts Trail 2 only after Charac
 
 Perspective Portal activates Grade 3 Story Scouts Trail 3 only after Theme Development Trail completes. Seven original DRAFT stories and perspective guides teach how two characters see the same situation through dialogue, actions, thoughts, feelings, noticing, choices, motivations, similarities, differences, and supported viewpoint change. The pack reports `ELA.3.R.1.3` curriculum coverage as IMPLEMENTED / DRAFT while keeping feeling-only labels, traits, narrator point of view, author perspective, poetry, unrestricted writing, learner-mastery claims, and FAST prediction outside the scored boundary.
 
-## Simplified Guided Child Journey
+## Question-first child journey
 
-Child mode presents one learning-navigation action: `Start Journey`. `Parent Area` remains a separate, visually secondary grown-up action. The colorful curriculum map remains visible as noninteractive progress information so Rory can see the current world, completed worlds, the next world, and later locked content without choosing a world, unit, or lesson.
+The normal child URL opens directly into the current reading and question. A compatible unfinished session resumes first; otherwise the global planner selects the authoritative next review, verification, remediation, or ordinary curriculum activity. There is no child Home, map, world/unit/lesson selector, Start button, lesson-introduction gate, results menu, or separate progression-outcome navigation stop.
 
-`Start Journey` resumes a valid active session first and otherwise delegates to the global progression planner. The planner retains verification, remediation, and due-review priorities, while ordinary fresh progression follows active curriculum tracks in canonical `curriculumOrder`: Word Forge first, Story Scouts after Word Forge completion, then each later active track. A missing required track fails closed with the existing content-needed result rather than skipping ahead. No content, mastery threshold, review interval, score rule, XP, star, streak, persistence, assessment, or parent analytics contract is removed.
+The child uses one primary action area. It shows `Check Answer` only after a structurally valid response exists, then shows `Next` while feedback remains visible. `Next` advances one question, or on the final question commits the stable session exactly once and replans from the updated persisted state. Response controls are not navigation controls. Multiselect and multi-Hot-Text readiness is based on the learner making a selection, never on a hidden authored-answer count.
+
+Guided instruction, fluency practice, local reference cards, all five scored response forms, and explicitly requested five-stage Word Help remain in the same calm reading surface. Bounded ID-only drafts, submitted feedback, question position, assistance, review launch identity, and active sessions autosave in schema version 1. Parent reporting remains available at the separately bookmarkable, PIN-gated `#/parent` route, which never auto-launches child work.
+
+This contract supersedes the earlier two-button Home journey for current behavior. Historical phase sections below retain their phase-local navigation descriptions. Planner priority, canonical `curriculumOrder`, prerequisites, safe recycling, mastery thresholds, review intervals, scoring, rewards, persistence, assessments, and parent analytics are unchanged.
 
 ## Phase 7B4: Grade 3 Poetry Planet
 

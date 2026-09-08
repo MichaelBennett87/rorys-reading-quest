@@ -107,3 +107,11 @@ Figurative Fortress adds a display-only Grade 3 Across Genres landmark using the
 ## Phase 7D2 one-button confirmation
 
 Summary Stronghold appears as Compare Castle Trail 2 after Figurative Fortress readiness. Home still exposes exactly `Start Journey` and `Parent Area`; world cards remain display-only, and no world, unit, lesson, or Summary Stronghold launch control exists. Start Journey and Continue Journey retain one authoritative reconciled transition. Progression outcomes retain one navigation action, and Author Lens Tower remains visually preparing without becoming selectable.
+
+## Current question-first visual contract
+
+This section supersedes the earlier Home/map/results navigation contract for current child behavior while preserving those sections as historical phase records. The normal route opens directly into one rounded reading-and-question workspace on a deep forest and teal canvas. Wide layouts place reading beside the current question; narrow layouts stack them in reading order without clipping, tiny nested scrollers, or horizontal overflow.
+
+The ordinary child surface contains no Home, map, Start, Parent Area, world/unit/lesson selector, results menu, or progression-outcome action. It keeps one consistently placed primary action: neutral gold `Check Answer`, then `Next` while feedback remains visible. Answer controls remain accessible response inputs rather than navigation. Selected answers are teal/blue and ungraded, correct feedback is green with text and a check, and incorrect feedback is crimson with text and an X. Evidence blocks use a pale green surface and dark text on the warm reading card.
+
+Guided teaching appears inline, local reference cards remain visible when instructionally required, and Word Help stays on demand with an accessible close action and no autoplay. Child counters, grade labels, benchmark IDs, rewards dashboards, and parent controls do not compete with reading. Parent reporting remains at the PIN-gated `#/parent` route. Reduced motion, visible focus, semantic headings, practical touch targets, source labels, poem structure, paired-text identity, and all five response forms remain required.

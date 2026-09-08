@@ -3,9 +3,9 @@
 ## Working Contract
 
 - Use the current user-selected model and reasoning settings. Unless the user changes them, the standing default is Ultra reasoning with Fast mode off.
-- Substantial work should use three to four bounded subagents when useful, with explicit, non-overlapping scopes.
+- Perform all Rory's Reading Quest work in the current user-selected conversation. Additional subagents, conversation forks, and side model sessions are prohibited.
 - The primary agent owns integration decisions, production edits, Git operations, verification, pushes, and deployments.
-- Prefer read-only subagent reviews or isolated file ownership. Subagents must not independently commit, push, deploy, rewrite history, or alter shared files without primary-agent coordination.
+- Do not delegate review, implementation, verification, continuation, or side tasks through another agent, fork, SDK, plugin, shell command, cloud task, browser-based model, or Codex instance.
 - Do not start unsupervised background work.
 - Run shell commands sequentially and prefer deterministic, non-interactive operations.
 - Do not use destructive Git operations or rewrite history.

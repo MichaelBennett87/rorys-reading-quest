@@ -542,9 +542,9 @@ Reason: `ELA.3.R.3.3` asks how two authors present the same topic or theme. A fa
 Consequence: Author Lens Tower is the only new pack, Grade 3 Across-Genre Reading can complete at difficulty 4, and Phase 7D4 Grade 3 Context Cavern remains unstarted. The P0 selector, fluency completion, one-button journey, persistence, rewards, review intervals, and prior authored curriculum remain unchanged.
 
 
-## Phase 7D4 Academic Word Workshop and bounded multi-agent work
+## Phase 7D4 Academic Word Workshop
 
-- The repository permits three to four explicitly bounded subagents for substantial work when useful; the primary agent retains production edits, integration, verification ordering, Git, push, and deployment.
+- Current repository policy supersedes the phase-local multi-agent permission: all Rory's Reading Quest work stays in the current user-selected conversation, with no additional subagents, conversation forks, or side model sessions. Historical reports of earlier agent use remain factual records.
 - ELA.3.V.1.1 is represented as SUPPORTIVE_PRACTICE because all scoring is constrained selected response.
 - Grade 3 Context Cavern activates only when real Unit 1 content exists and Grade 2 Context Cavern is complete.
 - Once its prerequisite is ready, Context Cavern curriculum order 150 canonically precedes Across-Genre order 160 for ordinary progression; valid active sessions, urgent plans, due reviews, and active learning states retain their established higher priority.
@@ -581,3 +581,17 @@ Decision: persist an optional launch context in the existing schema-v1 active se
 Reason: a deployed completed-track review was planned correctly from its historical unit, but launch purpose was discarded before completion. The ordinary progression adapter then compared the historical lesson difficulty with the track's completion difficulty, declined the result, cleared the session, awarded nothing, and left the review queued.
 
 Consequence: historical reviews now complete and reschedule exactly once without mutating track progression. Forged review authority cannot bypass ordinary difficulty checks. Review thresholds, intervals, reward calculations, schema version, storage keys, curriculum inventory, Parent PIN, assessments, one-button journey, and P0 recycling remain unchanged. Phase 8, Phase 9, and Phase 10 remain unstarted.
+
+## 2026-09-07 - Separate semantic defensibility from authored-key agreement
+
+Decision: require an additional fingerprint-bound, option-level answer-uniqueness gate. A canonical answer passing the evaluator does not establish that every distractor is incorrect. Preserve frozen blind conclusions, then compare keys and challenge every option. Missing review, ambiguity, missing source ownership, and extra defensible responses remain release-blocking.
+
+Current status: incomplete local audit infrastructure and three primary review batches only. No production correction or release has occurred. Four bounded reviewer requests returned no usable review reports; no independent approval is inferred. Preserve the original receipts when reconciling the primary review's evidence errors. Phase 7 remains complete historically; this post-Phase-7 P0 repair does not begin Phase 8 or expand curriculum.
+
+## 2026-09-08 - Question-first child delivery supersedes Home navigation
+
+Decision: open the normal application route directly into a compatible resumed session or the global planner's authoritative next question. Use one primary `Check Answer` / `Next` action, replan automatically at lesson boundaries, and move parent access to the separately bookmarkable PIN-gated `#/parent` route. The former Start Journey, Parent Area, display-only map, lesson introduction, results, and progression-outcome stops remain historical records rather than current child navigation.
+
+Reason: the child should make reading and answer decisions, not application-navigation decisions. The redesign keeps complete source context, all five response interfaces, guided teaching, fluency practice, local reference cards, and on-demand Word Help within one calm responsive surface.
+
+Consequence: boot and final completion reuse `prepareJourneyLaunch`; response drafts and feedback remain bounded schema-v1 session data; multiselect readiness never consults the hidden key; and review priority, unit affinity, prerequisites, mastery rules, review intervals, safe recycling, exact-once rewards, Parent PIN, assessments, privacy, and curriculum inventory remain unchanged. This work does not begin Phase 8, Grade 4, FAST timed practice, or Phase 10.

@@ -79,12 +79,15 @@
     - [x] Phase 6F4: final Grade 2 audit and Phase 6 completion
 - [x] Phase 6.5: live UX, phonics, data, and content-integrity hardening
 - [x] Phase 6.6: dark experience, Sol Grade 2 audit, and final live acceptance
-- [x] Guided child journey simplification
-  - [x] Make Start Journey the sole child learning-navigation action on Home.
-  - [x] Keep Parent Area as the only secondary Home navigation action.
-  - [x] Convert curriculum worlds into a display-only current/up-next/locked journey map.
-  - [x] Make ordinary progression sequential by canonical curriculum order while preserving automatic review, verification, remediation, and active-session recovery.
-  - [x] Remove world, unit, and lesson-ready states from the normal child route without removing curriculum content.
+- [x] Historical guided child journey simplification, superseded by the current question-first contract
+  - [x] Preserve the former Start Journey, Parent Area, and display-only map behavior in historical reports and regression provenance.
+- [x] Question-first child experience
+  - [x] Open the default route directly into a resumed or planner-selected current question with zero child navigation decisions.
+  - [x] Use one primary `Check Answer` / `Next` action and remove Home, map, lesson-introduction, results, and progression-outcome detours from ordinary child use.
+  - [x] Keep answer controls, guided teaching, fluency steps, local reference materials, and on-demand five-stage Word Help available.
+  - [x] Autosave bounded ID-only response/session state and preserve exact recovery and exact-once completion.
+  - [x] Move parent access to the separate PIN-gated `#/parent` bookmark route.
+  - [x] Preserve canonical curriculum order, review, verification, remediation, safe recycling, and active-session priority.
 - [x] Phase 7: Grade 3 FAST-aligned content
   - [x] Phase 7A: Grade 3 foundations and transition
     - [x] Phase 7A0: Grade 3 architecture, standards map, FAST blueprint, and progression bridge
@@ -174,3 +177,12 @@ The repository-level Phase 7D7, Phase 7D, and Phase 7 audit work is complete. Re
 - [x] Preserve the frozen Grade 2 inventory, P0 planner liveness, Grade 3 Fluency Flight completion, and one-button journey.
 - [x] Verify schema-v1 persistence, Parent PIN separation, assessments, parent reporting, print privacy, accessibility, and completion-state copy.
 - [x] Keep Phase 8 Grade 4 architecture, Phase 9 FAST-style practice, and Phase 10 PWA/release hardening unstarted.
+
+## Post-Phase-7 P0 semantic answer-uniqueness audit
+
+- [x] Complete the all-active-question semantic answer-uniqueness audit and corrections.
+- [x] Reconcile all 1,614 questions and 2,385 response slots through frozen key-free review, option-level challenge, and a deterministic 323-question second pass.
+- [x] Pass the separate semantic release gate with 1,614 current semantic PASS records and zero unresolved findings.
+- [ ] Publish the combined semantic-correction and question-first release only after every mechanical gate and exact deployed-browser acceptance pass.
+
+Current local checkpoint: all 1,614 blind conclusions are frozen, 25 directly corrected questions have explicit provenance, all 323 required second-pass records cover 40 packs and 191 pack/type strata, and the semantic gate reports PASS with zero issues. Review provenance is same-conversation primary-agent work under the no-subagent policy, not independent-agent approval. See `docs/P0_SEMANTIC_ANSWER_UNIQUENESS_AUDIT.md` and `docs/content/answer-uniqueness-ledger/AUDIT_PROGRESS.md`. Phase 7 remains complete historically. Phase 8, Grade 4, FAST timed practice, and Phase 10 remain unstarted.
