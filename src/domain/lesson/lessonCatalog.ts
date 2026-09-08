@@ -2,6 +2,7 @@ import { contentPacks, sampleContent } from '../content/packs'
 import { validateContent } from '../content/validateContent'
 import type { LessonActivityCandidate } from '../progression/skillProgressTypes'
 import type { LessonCatalogEntry, LessonChoice, LessonDefinition, LessonQuestion } from './lessonTypes'
+import { buildPackSessionContentFingerprint } from './lessonSessionFingerprint'
 import {
   type EvidencePairLessonQuestion,
   type HotTextLessonQuestion,
@@ -9,6 +10,10 @@ import {
   type MultiselectLessonQuestion,
   type TableMatchLessonQuestion,
 } from './lessonTypes'
+
+const sessionContentFingerprints = new Map(
+  contentPacks.map((pack) => [pack.manifest.packId, buildPackSessionContentFingerprint(pack)]),
+)
 
 export const lessonCatalog: readonly LessonCatalogEntry[] = contentPacks.flatMap((pack) =>
   pack.lessons.map((lesson) => ({
@@ -27,6 +32,7 @@ export const lessonCatalog: readonly LessonCatalogEntry[] = contentPacks.flatMap
     selectionStatus: lesson.selectionStatus,
     teachingBlock: lesson.teachingBlock ? { ...lesson.teachingBlock, examples: [...lesson.teachingBlock.examples] } : undefined,
     contentVersion: lesson.contentVersion,
+    sessionContentFingerprint: sessionContentFingerprints.get(pack.manifest.packId)!,
     eligiblePurposes: [...lesson.eligiblePurposes],
     benchmarkReferences: [...pack.manifest.benchmarkReferences],
   })),
@@ -185,6 +191,7 @@ function buildLesson(entry: LessonCatalogEntry): LessonCatalogResult {
       questionCount: questions.length,
       questions,
       contentVersion: entry.contentVersion,
+      sessionContentFingerprint: entry.sessionContentFingerprint,
       eligiblePurposes: [...entry.eligiblePurposes],
     },
     errors: [],
@@ -233,7 +240,7 @@ function toLessonQuestion(raw: typeof sampleContent.questions[number], lessonId:
         questionType: 'HOT_TEXT',
         segments: toChoiceList(raw.questionContent.selectableSegments),
         correctSegmentIds: [...raw.questionContent.correctSegmentIds],
-        allowMultiple: raw.questionContent.correctSegmentIds.length > 1,
+        allowMultiple: (raw.questionContent.selectionMode ?? 'single') === 'multiple',
       }
       return question
     }

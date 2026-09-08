@@ -1,4 +1,4 @@
-import { render, screen, within } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { describe, expect, test } from 'vitest'
 
 import App from '../src/App'
@@ -28,13 +28,12 @@ describe('Phase 7C3 integration and protected child journey', () => {
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.2.4')).toMatchObject({ coverageStatus: 'implemented' })
   })
 
-  test('keeps Home at exactly two controls with a display-only journey map', () => {
+  test('opens directly into one current question without child navigation', () => {
     render(<App />)
-    expect(screen.getAllByRole('button').map((button) => button.textContent?.trim())).toEqual(['Start Journey', 'Parent Area'])
-    const map = screen.getByRole('region', { name: 'Your Reading Journey' })
-    expect(within(map).queryAllByRole('button')).toHaveLength(0)
-    expect(within(map).queryAllByRole('link')).toHaveLength(0)
-    expect(within(map).getAllByRole('article').every((article) => article.getAttribute('tabindex') === null)).toBe(true)
+    expect(screen.getByText(/Question 1 of/i)).toBeTruthy()
+    expect(screen.queryByRole('button', { name: /Start Journey|Parent Area/i })).toBeNull()
+    expect(screen.queryByRole('region', { name: 'Your Reading Journey' })).toBeNull()
+    expect(screen.getByRole('region', { name: 'Question action' }).querySelectorAll('button')).toHaveLength(1)
   })
 
   test('keeps guides, texts, precise purposes, and answers outside persisted progress', () => {

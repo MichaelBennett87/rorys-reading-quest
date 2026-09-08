@@ -9,8 +9,8 @@ import { createActiveLessonSession } from '../src/persistence'
 
 afterEach(() => cleanup())
 
-describe('LessonScreen guided teaching flow', () => {
-  test('a fresh guided lesson begins at its teaching block and Start Practice advances to scored content', () => {
+describe('LessonScreen question-first teaching flow', () => {
+  test('a fresh guided lesson shows teaching, reading, and the scored question together', () => {
     const lesson = getLessonById('lesson-word-forge-ou-oi-oy-ow-guided-ou-ow-prereq').lesson
     expect(lesson).toBeDefined()
 
@@ -24,13 +24,9 @@ describe('LessonScreen guided teaching flow', () => {
     )
 
     expect(screen.getByRole('heading', { name: /Look closely at ou and ow/i })).toBeTruthy()
-    expect(screen.getByRole('button', { name: /Start Practice/i })).toBeTruthy()
-    expect(screen.queryByRole('heading', { name: /Reading Passage/i })).toBeNull()
-
-    fireEvent.click(screen.getByRole('button', { name: /Start Practice/i }))
-
     expect(screen.queryByRole('button', { name: /Start Practice/i })).toBeNull()
-    expect(screen.getByRole('heading', { name: /Reading Passage/i })).toBeTruthy()
+    expect(screen.getByRole('heading', { name: lesson!.lessonTitle })).toBeTruthy()
+    expect(screen.getByRole('button', { name: /Check Answer/i })).toBeTruthy()
   })
 
   test('a checkpoint lesson starts directly with scored content', () => {
@@ -47,10 +43,10 @@ describe('LessonScreen guided teaching flow', () => {
     )
 
     expect(screen.queryByRole('button', { name: /Start Practice/i })).toBeNull()
-    expect(screen.getByRole('heading', { name: /Reading Passage/i })).toBeTruthy()
+    expect(screen.getByRole('heading', { name: lesson!.lessonTitle })).toBeTruthy()
   })
 
-  test('a resumed guided lesson with submitted questions skips repeated teaching', () => {
+  test('a resumed guided lesson restores its question while keeping inline teaching available', () => {
     const lesson = getLessonById('lesson-word-forge-ou-oi-oy-ow-guided-ou-ow-prereq').lesson
     expect(lesson).toBeDefined()
 
@@ -77,8 +73,9 @@ describe('LessonScreen guided teaching flow', () => {
       />,
     )
 
+    expect(screen.getByRole('heading', { name: /Look closely at ou and ow/i })).toBeTruthy()
     expect(screen.queryByRole('button', { name: /Start Practice/i })).toBeNull()
-    expect(screen.getByRole('heading', { name: /Reading Passage/i })).toBeTruthy()
+    expect(screen.getByRole('heading', { name: lesson!.lessonTitle })).toBeTruthy()
   })
 
   test('a fluency lesson routes into practice controls from the lesson shell', () => {
@@ -94,8 +91,8 @@ describe('LessonScreen guided teaching flow', () => {
       />,
     )
 
-    expect(screen.getByRole('heading', { level: 1, name: /Punctuation Pauses/i })).toBeTruthy()
-    fireEvent.click(screen.getByRole('button', { name: /Start Practice/i }))
+    expect(screen.getByRole('heading', { name: /Punctuation Pauses/i })).toBeTruthy()
+    expect(screen.queryByRole('button', { name: /Start Practice/i })).toBeNull()
     expect(screen.getByRole('button', { name: /Hear a Model Read/i })).toBeTruthy()
     expect(screen.getByRole('button', { name: /Read It Once/i })).toBeTruthy()
   })
@@ -175,7 +172,7 @@ describe('LessonScreen guided teaching flow', () => {
     )
 
     fireEvent.click(screen.getByRole('radio', { name: /Both texts show helpers getting ready with care\./i }))
-    fireEvent.click(screen.getByRole('button', { name: /Submit Answer/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Check Answer/i }))
 
     expect(screen.getByText(/Great clue-finding!/i)).toBeTruthy()
     expect(screen.getByText(/They worked carefully so each camper would have a bright spot to sit\./i)).toBeTruthy()

@@ -29,19 +29,20 @@ import { TableMatchQuestion } from '../components/lesson/TableMatchQuestion'
 import { AnswerFeedback } from '../components/lesson/AnswerFeedback'
 import { LessonTextCard } from '../components/lesson/LessonTextCard'
 import { PairedTextCard } from '../components/lesson/PairedTextCard'
-import { LessonResults } from '../components/lesson/LessonResults'
 import { FluencyPracticeScreen } from './FluencyPracticeScreen'
 import { WordHelpPanel } from '../components/wordSupport'
 import { resolveLessonEvidence } from '../domain/content'
 import {
   advanceActiveLessonSession,
+  checkpointQuestionDraft,
   checkpointSubmittedQuestion,
+  restoreLessonDraftAnswer,
   restoreLessonEvaluations,
   type ActiveLessonSession,
 } from '../persistence'
 import { createSpeechService, createWordSupportSpeechRequest, type SpeechService } from '../services/speech'
 
-type LessonState = 'question' | 'feedback' | 'results'
+type LessonState = 'question' | 'feedback'
 
 interface LessonScreenProps {
   lesson: LessonDefinition
@@ -49,32 +50,7 @@ interface LessonScreenProps {
   session?: ActiveLessonSession | null
   onSessionCheckpoint?: (session: ActiveLessonSession) => void
   onComplete?: (result: LessonResult, completionId: string) => void
-}
-
-const emptyLessonResult: LessonResult = {
-  lessonId: '',
-  activityId: '',
-  skillId: '',
-  difficulty: 1,
-  lessonRole: 'GUIDED_PRACTICE',
-  totalQuestions: 0,
-  correctAnswers: 0,
-  firstAttemptCorrect: 0,
-  accuracy: 0,
-  assistanceUsed: 0,
-  assistanceSummary: {
-    totalUniqueEvents: 0,
-    targetsHelped: 0,
-    maximumAssistanceLevel: 0,
-    visualHintUsed: false,
-    spokenChunkHelpUsed: false,
-    spokenWordHelpUsed: false,
-    sentenceReadAloudUsed: false,
-  },
-  fluencyPracticeSummary: null,
-  oralFluencyMeasured: false,
-  questionResults: [],
-  completed: true,
+  storageNotice?: string
 }
 
 export function LessonScreen({
@@ -83,6 +59,7 @@ export function LessonScreen({
   session = null,
   onSessionCheckpoint,
   onComplete,
+  storageNotice,
 }: LessonScreenProps) {
   const restoredEvaluations = useMemo(
     () => restoreLessonEvaluations(lesson, session),
@@ -92,27 +69,31 @@ export function LessonScreen({
   const restoredFeedback = restoredEvaluations.find(
     (evaluation) => evaluation.questionId === lesson.questions[restoredIndex]?.questionId,
   ) ?? null
+  const restoredDraft = useMemo(
+    () => restoreLessonDraftAnswer(lesson, session, restoredIndex),
+    [lesson, session, restoredIndex],
+  )
+  const restoredDraftList = Array.isArray(restoredDraft) ? restoredDraft.map(String) : []
+  const restoredDraftRecord = isStringRecord(restoredDraft) ? restoredDraft : null
 
   const [step, setStep] = useState<LessonState>(restoredFeedback ? 'feedback' : 'question')
   const [currentIndex, setCurrentIndex] = useState(restoredIndex)
   const [questionEvaluations, setQuestionEvaluations] = useState<QuestionEvaluationResult[]>(restoredEvaluations)
-  const [selectedChoiceId, setSelectedChoiceId] = useState('')
-  const [selectedChoiceIds, setSelectedChoiceIds] = useState<string[]>([])
-  const [selectedSegmentIds, setSelectedSegmentIds] = useState<string[]>([])
-  const [selectedPartAChoiceId, setSelectedPartAChoiceId] = useState('')
-  const [selectedPartBChoiceId, setSelectedPartBChoiceId] = useState('')
-  const [selectedMappings, setSelectedMappings] = useState<Record<string, string>>({})
+  const [selectedChoiceId, setSelectedChoiceId] = useState(typeof restoredDraft === 'string' ? restoredDraft : '')
+  const [selectedChoiceIds, setSelectedChoiceIds] = useState<string[]>(restoredDraftList)
+  const [selectedSegmentIds, setSelectedSegmentIds] = useState<string[]>(restoredDraftList)
+  const [selectedPartAChoiceId, setSelectedPartAChoiceId] = useState(restoredDraftRecord?.partA ?? '')
+  const [selectedPartBChoiceId, setSelectedPartBChoiceId] = useState(restoredDraftRecord?.partB ?? '')
+  const [selectedMappings, setSelectedMappings] = useState<Record<string, string>>(restoredDraftRecord ?? {})
   const [pendingFeedback, setPendingFeedback] = useState<QuestionEvaluationResult | null>(restoredFeedback)
   const [assistanceEvents, setAssistanceEvents] = useState<AssistanceEvent[]>(session?.assistanceEvents ?? [])
   const [openSupportTargetId, setOpenSupportTargetId] = useState<string | null>(null)
   const [speechActive, setSpeechActive] = useState(false)
   const [speechService] = useState<SpeechService>(() => createSpeechService())
-  const [practiceStarted, setPracticeStarted] = useState(
-    lesson.lessonRole !== 'GUIDED_PRACTICE' || (session?.submittedQuestions.length ?? 0) > 0,
-  )
 
   const sessionRef = useRef<ActiveLessonSession | null>(session)
   const completionSentRef = useRef(false)
+  const actionLockedRef = useRef(false)
   const currentQuestion = lesson.questions[currentIndex] ?? null
   const lessonPassages = useMemo(() => {
     const passageIds = lesson.passageIds.length > 0 ? lesson.passageIds : [lesson.passageId]
@@ -143,11 +124,7 @@ export function LessonScreen({
   const speechSupported = speechService.isSupported()
   const lessonAssistanceSummary = useMemo(() => summarizeAssistance(assistanceEvents), [assistanceEvents])
   const supportLevels = useMemo(() => deriveSupportLevels(assistanceEvents), [assistanceEvents])
-  const showTeachingBlock =
-    lesson.lessonRole === 'GUIDED_PRACTICE' &&
-    !practiceStarted &&
-    (session?.submittedQuestions.length ?? 0) === 0 &&
-    Boolean(lesson.teachingBlock)
+  const showTeachingBlock = lesson.lessonRole === 'GUIDED_PRACTICE' && Boolean(lesson.teachingBlock)
   const evidenceSnippetsByPassageId = useMemo(() => {
     if (!currentQuestion) {
       return {}
@@ -190,6 +167,10 @@ export function LessonScreen({
     speechService.cancel()
   }, [step, speechService])
 
+  useEffect(() => {
+    actionLockedRef.current = false
+  }, [currentIndex, step])
+
   if (lesson.lessonRole === 'FLUENCY_PRACTICE') {
     return (
       <FluencyPracticeScreen
@@ -198,6 +179,7 @@ export function LessonScreen({
         session={session}
         onSessionCheckpoint={onSessionCheckpoint}
         onComplete={onComplete}
+        storageNotice={storageNotice}
       />
     )
   }
@@ -209,11 +191,11 @@ export function LessonScreen({
           <h1>Lesson content is unavailable</h1>
         </header>
         <section className="card">
-          <p>We can’t load this quest right now. Try another unit from the shell.</p>
+          <p>We can’t load this reading right now.</p>
         </section>
         <section className="screen-actions">
           <ChildButton type="button" className="primary-action" onClick={onBack}>
-            Return to Unit
+            Retry
           </ChildButton>
         </section>
       </section>
@@ -227,11 +209,11 @@ export function LessonScreen({
           <h1>Lesson content is unavailable</h1>
         </header>
         <section className="card">
-          <p>This quest could not restore its current question. Please return to the unit.</p>
+          <p>This reading could not restore its current question safely.</p>
         </section>
         <section className="screen-actions">
           <ChildButton type="button" className="primary-action" onClick={onBack}>
-            Return to Unit
+            Retry
           </ChildButton>
         </section>
       </section>
@@ -297,6 +279,18 @@ export function LessonScreen({
     onSessionCheckpoint?.(nextSession)
   }
 
+  const persistDraft = (answer: string | string[] | Record<string, string>) => {
+    if (!sessionRef.current) return
+    const checkpoint = checkpointQuestionDraft(
+      sessionRef.current,
+      currentQuestion.questionId,
+      answer,
+      new Date().toISOString(),
+    )
+    sessionRef.current = checkpoint
+    onSessionCheckpoint?.(checkpoint)
+  }
+
   const requestAssistance = (target: WordSupportTarget, level: AssistanceLevel, kind: AssistanceKind) => {
     const eventResult = createAssistanceEvent({
       sessionId: sessionRef.current?.sessionId ?? `${lesson.activityId}:preview`,
@@ -353,7 +347,8 @@ export function LessonScreen({
   }
 
   const onSubmit = () => {
-    if (!submissionReady) return
+    if (!submissionReady || actionLockedRef.current) return
+    actionLockedRef.current = true
 
     const payload =
       currentQuestion.questionType === 'MULTIPLE_CHOICE'
@@ -388,21 +383,22 @@ export function LessonScreen({
   }
 
   const onNext = () => {
+    if (actionLockedRef.current) return
+    actionLockedRef.current = true
     speechService.cancel()
     setOpenSupportTargetId(null)
     setSpeechActive(false)
 
     if (currentIndex + 1 >= lesson.questions.length) {
-      setStep('results')
-      if (sessionRef.current) {
-        const checkpoint = advanceActiveLessonSession(
-          sessionRef.current,
-          currentIndex,
-          new Date().toISOString(),
-        )
-        sessionRef.current = checkpoint
-        onSessionCheckpoint?.(checkpoint)
+      if (completionSentRef.current) return
+      completionSentRef.current = true
+      if (onComplete && sessionRef.current) {
+        const completionId = sessionRef.current.sessionId
+        sessionRef.current = null
+        onComplete(result, completionId)
+        return
       }
+      onBack()
       return
     }
 
@@ -420,78 +416,62 @@ export function LessonScreen({
     }
   }
 
-  const continueFromResults = () => {
-    if (completionSentRef.current) return
-    completionSentRef.current = true
-    speechService.cancel()
-    setSpeechActive(false)
-    if (onComplete && sessionRef.current) {
-      const completionId = sessionRef.current.sessionId
-      sessionRef.current = null
-      onComplete(result, completionId)
-      return
-    }
-    onBack()
-  }
-
   const toggleChoice = (choiceId: string) => {
-    setSelectedChoiceIds((previous) =>
-      previous.includes(choiceId) ? previous.filter((entry) => entry !== choiceId) : [...previous, choiceId],
-    )
+    const next = selectedChoiceIds.includes(choiceId)
+      ? selectedChoiceIds.filter((entry) => entry !== choiceId)
+      : [...selectedChoiceIds, choiceId]
+    setSelectedChoiceIds(next)
+    persistDraft(next)
   }
 
   const toggleSegment = (segmentId: string, allowMultiple: boolean) => {
     if (!allowMultiple) {
       setSelectedSegmentIds([segmentId])
+      persistDraft([segmentId])
       return
     }
     const isSelected = selectedSegmentIds.includes(segmentId)
     if (isSelected) {
-      setSelectedSegmentIds((previous) => previous.filter((entry) => entry !== segmentId))
+      const next = selectedSegmentIds.filter((entry) => entry !== segmentId)
+      setSelectedSegmentIds(next)
+      persistDraft(next)
       return
     }
-    setSelectedSegmentIds((previous) => [...previous, segmentId])
+    const next = [...selectedSegmentIds, segmentId]
+    setSelectedSegmentIds(next)
+    persistDraft(next)
   }
 
   const updateMapping = (rowId: string, choiceId: string) => {
-    setSelectedMappings((previous) => ({
-      ...previous,
+    const next = {
+      ...selectedMappings,
       [rowId]: choiceId,
-    }))
+    }
+    setSelectedMappings(next)
+    persistDraft(next)
   }
 
   return (
-    <section className={`screen-shell child-experience lesson-screen world-theme-${lesson.worldId}`} data-appearance="dark" data-world={lesson.worldId}>
-      <header className="screen-header">
-        <h1>{lesson.lessonTitle}</h1>
-        <p>{lesson.lessonObjective}</p>
+    <main className={`screen-shell child-experience lesson-screen question-first-shell world-theme-${lesson.worldId}`} data-appearance="dark" data-world={lesson.worldId}>
+      <header className="question-first-header">
+        <h1>Rory's Reading Quest</h1>
       </header>
-      {showTeachingBlock && lesson.teachingBlock ? (
-        <section className="card teaching-block" aria-labelledby="teaching-block-heading">
-          <h2 id="teaching-block-heading">{lesson.teachingBlock.title}</h2>
-          <p>{lesson.teachingBlock.explanation}</p>
-          <ul>
-            {lesson.teachingBlock.examples.map((example) => (
-              <li key={example}>{example}</li>
-            ))}
-          </ul>
-          {lesson.teachingBlock.contrast && <p>{lesson.teachingBlock.contrast}</p>}
-          <p>{lesson.teachingBlock.learnerCue}</p>
-          <section className="screen-actions">
-            <ChildButton
-              type="button"
-              className="primary-action"
-              onClick={() => setPracticeStarted(true)}
-            >
-              Start Practice
-            </ChildButton>
-            <ChildButton type="button" onClick={onBack}>
-              Save and Exit
-            </ChildButton>
-          </section>
-        </section>
-      ) : (
-        <>
+      {storageNotice && <p className="storage-notice" role="status">{storageNotice}</p>}
+      <div className="question-first-workspace">
+        <section className="question-first-reading" aria-label="Reading material">
+          {showTeachingBlock && lesson.teachingBlock && (
+            <section className="card teaching-block" aria-labelledby="teaching-block-heading">
+              <h2 id="teaching-block-heading">{lesson.teachingBlock.title}</h2>
+              <p>{lesson.teachingBlock.explanation}</p>
+              <ul>
+                {lesson.teachingBlock.examples.map((example) => (
+                  <li key={example}>{example}</li>
+                ))}
+              </ul>
+              {lesson.teachingBlock.contrast && <p>{lesson.teachingBlock.contrast}</p>}
+              <p>{lesson.teachingBlock.learnerCue}</p>
+            </section>
+          )}
           {pairedTextSet && lessonPassages.length >= 2 ? (
             <PairedTextCard
               pairId={pairedTextSet.pairId}
@@ -506,7 +486,7 @@ export function LessonScreen({
           ) : currentPassage ? (
             <LessonTextCard
               passage={currentPassage}
-              heading="Reading Passage"
+              heading={lesson.lessonTitle}
               wordSupportTargets={lessonWordSupportTargets}
               onOpenWordSupport={onOpenSupport}
               visibleWordSupport
@@ -532,18 +512,9 @@ export function LessonScreen({
               speechActive={speechActive}
             />
           )}
-        </>
-      )}
+        </section>
 
-      {step === 'results' && (
-        <LessonResults
-          result={questionEvaluations.length ? result : emptyLessonResult}
-          onContinue={continueFromResults}
-        />
-      )}
-
-      {step !== 'results' && (
-        <section className="card">
+        <section className="card question-first-question" aria-label="Current question">
           <QuestionProgress currentIndex={currentIndex} total={lesson.questions.length} />
           <h2 className="sr-only">Question area</h2>
 
@@ -556,7 +527,10 @@ export function LessonScreen({
               disabled={step !== 'question'}
               submitted={step === 'feedback'}
               correctChoiceIds={currentQuestion.correctChoiceIds}
-              onSelectChoice={setSelectedChoiceId}
+              onSelectChoice={(choiceId) => {
+                setSelectedChoiceId(choiceId)
+                persistDraft(choiceId)
+              }}
             />
           )}
 
@@ -598,8 +572,14 @@ export function LessonScreen({
               submitted={step === 'feedback'}
               partACorrectChoiceId={(currentQuestion as EvidencePairLessonQuestion).partACorrectChoiceId}
               partBCorrectChoiceId={(currentQuestion as EvidencePairLessonQuestion).partBCorrectChoiceId}
-              onPartASelect={setSelectedPartAChoiceId}
-              onPartBSelect={setSelectedPartBChoiceId}
+              onPartASelect={(choiceId) => {
+                setSelectedPartAChoiceId(choiceId)
+                persistDraft({ partA: choiceId, partB: selectedPartBChoiceId })
+              }}
+              onPartBSelect={(choiceId) => {
+                setSelectedPartBChoiceId(choiceId)
+                persistDraft({ partA: selectedPartAChoiceId, partB: choiceId })
+              }}
             />
           )}
 
@@ -626,17 +606,14 @@ export function LessonScreen({
           )}
 
           {step === 'question' && (
-            <section className="screen-actions">
+            <section className="screen-actions question-primary-action" aria-label="Question action">
               <ChildButton
                 type="button"
                 className="primary-action"
                 disabled={!submissionReady}
                 onClick={onSubmit}
               >
-                Submit Answer
-              </ChildButton>
-              <ChildButton type="button" onClick={onBack}>
-                Save and Exit
+                Check Answer
               </ChildButton>
             </section>
           )}
@@ -644,16 +621,16 @@ export function LessonScreen({
           {step === 'feedback' && pendingFeedback && (
             <>
               <AnswerFeedback isCorrect={pendingFeedback.isCorrect} explanation={pendingFeedback.explanation} />
-              <section className="screen-actions">
+              <section className="screen-actions question-primary-action" aria-label="Question action">
                 <ChildButton type="button" className="primary-action" onClick={onNext}>
-                  {currentIndex + 1 >= lesson.questions.length ? 'See Quest Complete' : 'Next Question'}
+                  Next
                 </ChildButton>
               </section>
             </>
           )}
         </section>
-      )}
-    </section>
+      </div>
+    </main>
   )
 }
 

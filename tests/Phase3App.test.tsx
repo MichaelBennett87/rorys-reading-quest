@@ -13,16 +13,16 @@ import {
 afterEach(() => {
   cleanup()
   window.localStorage.removeItem(QUEST_PROGRESS_STORAGE_KEY)
+  window.history.replaceState(null, '', '/')
 })
 
 function launchJourney() {
   render(<App />)
-  fireEvent.click(screen.getByRole('button', { name: 'Start Journey' }))
 }
 
-function submitAndAdvance(final = false) {
-  fireEvent.click(screen.getByRole('button', { name: /Submit Answer/i }))
-  fireEvent.click(screen.getByRole('button', { name: final ? /See Quest Complete/i : /Next Question/i }))
+function submitAndAdvance() {
+  fireEvent.click(screen.getByRole('button', { name: /Check Answer/i }))
+  fireEvent.click(screen.getByRole('button', { name: /^Next$/i }))
 }
 
 function answerCurrentQuestion(correct = true) {
@@ -57,7 +57,7 @@ function answerCurrentQuestion(correct = true) {
   }
 
   const checkboxes = within(group).getAllByRole('checkbox')
-  const passage = screen.getByRole('heading', { name: /Reading Passage/i }).parentElement?.textContent ?? ''
+  const passage = screen.getByRole('region', { name: /Reading material/i }).textContent ?? ''
   let correctCount = 1
   if (/Choose all the ea words/i.test(prompt)) correctCount = /pool party/i.test(passage) ? 2 : 4
   if (/Choose all the oo words/i.test(prompt)) correctCount = /garden morning/i.test(passage) ? 3 : 2
@@ -67,7 +67,7 @@ function answerCurrentQuestion(correct = true) {
 function completeCheckpoint(correct = true) {
   for (let index = 0; index < 7; index += 1) {
     answerCurrentQuestion(correct || index > 1)
-    submitAndAdvance(index === 6)
+    submitAndAdvance()
   }
 }
 
@@ -75,57 +75,56 @@ function readProgress(): QuestProgressV1 {
   return JSON.parse(window.localStorage.getItem(QUEST_PROGRESS_STORAGE_KEY) ?? 'null') as QuestProgressV1
 }
 
-describe('guided adaptive child flow', () => {
-  test('a completed quest reaches one-action progression with no map return', () => {
+describe('guided adaptive question-first flow', () => {
+  test('a completed quest launches the next plan with no result or map detour', () => {
     launchJourney()
     completeCheckpoint()
-    fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
 
-    expect(screen.getByRole('heading', { name: /Almost There/i })).toBeTruthy()
-    expect(screen.getAllByRole('button')).toHaveLength(1)
-    expect(screen.getByRole('button', { name: 'Continue Journey' })).toBeTruthy()
-    expect(screen.queryByRole('button', { name: /Return to Map/i })).toBeNull()
+    expect(screen.getByText(/Question 1 of/i)).toBeTruthy()
+    expect(screen.queryByRole('button', { name: /Continue Quest|Continue Journey|Return to Map/i })).toBeNull()
+    expect(screen.getByRole('button', { name: /Check Answer/i })).toBeTruthy()
     expect(readProgress().completedAttempts).toHaveLength(1)
   }, 10_000)
 
-  test('Continue Journey launches the planner-selected fresh lesson directly', () => {
+  test('final Next launches the planner-selected fresh lesson directly', () => {
     launchJourney()
+    const completedLessonId = readProgress().activeLessonSession?.lessonId
     completeCheckpoint()
-    fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
-    fireEvent.click(screen.getByRole('button', { name: 'Continue Journey' }))
 
-    expect(screen.getByRole('heading', { name: /Pool Party Quest/i })).toBeTruthy()
-    expect(screen.queryByText(/Unit Selection|Ready when you are|Return to Map/i)).toBeNull()
+    expect(readProgress().activeLessonSession?.lessonId).not.toBe(completedLessonId)
+    expect(screen.getByText(/Question 1 of/i)).toBeTruthy()
+    expect(screen.queryByText(/Quest Complete|Almost There|Unit Selection|Ready when you are|Return to Map/i)).toBeNull()
   }, 10_000)
 
   test('partial performance keeps automatic same-level guidance', () => {
     launchJourney()
     completeCheckpoint(false)
-    fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
-    expect(screen.getByRole('heading', { name: /Training Round/i })).toBeTruthy()
+    expect(screen.getByText(/Question 1 of/i)).toBeTruthy()
     expect(readProgress().skillProgress['g2-word-forge-word-practice'].currentDifficulty).toBe(1)
   })
 
-  test('Save and Exit returns Home while preserving and resuming the active lesson', () => {
+  test('draft answers autosave and resume without Save and Exit', () => {
     launchJourney()
-    fireEvent.click(screen.getByRole('button', { name: /Save and Exit/i }))
-
-    expect(screen.getByRole('heading', { name: "Rory's Reading Quest" })).toBeTruthy()
+    fireEvent.click(screen.getByRole('radio', { name: /leaf/i }))
+    const sessionId = readProgress().activeLessonSession?.sessionId
+    expect(readProgress().activeLessonSession?.draftQuestion?.answer).toBeTruthy()
     expect(readProgress().activeLessonSession).not.toBeNull()
     expect(readProgress().completedAttempts).toHaveLength(0)
-    fireEvent.click(screen.getByRole('button', { name: 'Start Journey' }))
-    expect(screen.getByRole('heading', { name: /Vowel Voyage: Tree Study Quest/i })).toBeTruthy()
+    cleanup()
+    render(<App />)
+    expect((screen.getByRole('radio', { name: /leaf/i }) as HTMLInputElement).checked).toBe(true)
+    expect(readProgress().activeLessonSession?.sessionId).toBe(sessionId)
+    expect(screen.queryByRole('button', { name: /Save and Exit|Start Journey/i })).toBeNull()
   })
 
   test('a submitted answer resumes at its feedback boundary after reload', () => {
     launchJourney()
     fireEvent.click(screen.getByRole('radio', { name: /leaf/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Submit Answer/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Check Answer/i }))
     cleanup()
     render(<App />)
-    fireEvent.click(screen.getByRole('button', { name: 'Start Journey' }))
     expect(screen.getByText(/Great clue-finding/i)).toBeTruthy()
-    expect(screen.getByRole('button', { name: /Next Question/i })).toBeTruthy()
+    expect(screen.getByRole('button', { name: /^Next$/i })).toBeTruthy()
   })
 
   test('an existing active lesson always resumes before a stored fresh plan', () => {
@@ -138,8 +137,7 @@ describe('guided adaptive child flow', () => {
     window.localStorage.setItem(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(state))
 
     render(<App />)
-    fireEvent.click(screen.getByRole('button', { name: 'Start Journey' }))
-    expect(screen.getByRole('heading', { name: activeLesson.lessonTitle })).toBeTruthy()
+    expect(screen.getByText(activeLesson.questions[0].prompt)).toBeTruthy()
     expect(readProgress().activeLessonSession?.lessonId).toBe(activeLesson.lessonId)
   })
 
@@ -150,10 +148,10 @@ describe('guided adaptive child flow', () => {
     window.localStorage.setItem(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(state))
     render(<App />)
 
-    expect(screen.getByLabelText('90 experience points')).toBeTruthy()
-    expect(screen.getByLabelText('3 stars earned')).toBeTruthy()
-    fireEvent.click(screen.getByRole('button', { name: 'Start Journey' }))
-    expect(screen.getByRole('heading', { name: /Vowel Voyage: Tree Study Quest/i })).toBeTruthy()
+    expect(readProgress().totalXp).toBe(90)
+    expect(readProgress().totalStars).toBe(3)
+    expect(screen.queryByLabelText(/experience points|stars earned/i)).toBeNull()
+    expect(screen.getByText(/Question 1 of 7/i)).toBeTruthy()
   })
 
   test('an incompatible active session recovers safely to a fresh guided quest', () => {
@@ -174,16 +172,12 @@ describe('guided adaptive child flow', () => {
     }
     window.localStorage.setItem(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(state))
     render(<App />)
-    fireEvent.click(screen.getByRole('button', { name: 'Start Journey' }))
     expect(screen.getByText(/Question 1 of 7/i)).toBeTruthy()
   })
 
   test('double completion interaction remains idempotent', () => {
     launchJourney()
     completeCheckpoint()
-    const continueButton = screen.getByRole('button', { name: /Continue Quest/i })
-    fireEvent.click(continueButton)
-    fireEvent.click(continueButton)
     expect(readProgress().completedAttempts).toHaveLength(1)
     expect(readProgress().completedSessionCount).toBe(1)
   })

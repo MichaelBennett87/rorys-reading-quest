@@ -3,7 +3,7 @@ import { afterEach, describe, expect, test, vi } from 'vitest'
 
 import { LessonScreen } from '../../src/screens/LessonScreen'
 import type { LessonDefinition, LessonQuestion, LessonResult } from '../../src/domain/lesson'
-import type { ActiveLessonSession } from '../../src/persistence'
+import { createActiveLessonSession, type ActiveLessonSession } from '../../src/persistence'
 
 afterEach(() => {
   cleanup()
@@ -225,15 +225,18 @@ const guidedLesson: LessonDefinition = {
 }
 
 const renderLesson = (question: LessonQuestion, onBack = vi.fn()) => {
+  const onComplete = vi.fn()
   const lesson: LessonDefinition = {
     ...baseLesson,
     questionCount: 1,
     questions: [question],
   }
+  const session = createActiveLessonSession(lesson, `session-${question.questionId}`, '2026-08-20T12:00:00.000Z')
 
   return {
     onBack,
-    ...render(<LessonScreen lesson={lesson} onBack={onBack} />),
+    onComplete,
+    ...render(<LessonScreen lesson={lesson} onBack={onBack} session={session} onComplete={onComplete} />),
   }
 }
 
@@ -257,15 +260,15 @@ const renderGuidedLesson = (options?: {
 describe('LessonScreen', () => {
   test('requires a selection before submit', () => {
     renderLesson(multipleChoiceQuestion)
-    expect(screen.getByRole('button', { name: /Submit Answer/i }).getAttribute('disabled')).not.toBeNull()
+    expect(screen.getByRole('button', { name: /Check Answer/i }).getAttribute('disabled')).not.toBeNull()
     fireEvent.click(screen.getByRole('radio', { name: 'Packing her kite bag and checking wind' }))
-    expect(screen.getByRole('button', { name: /Submit Answer/i }).getAttribute('disabled')).toBeNull()
+    expect(screen.getByRole('button', { name: /Check Answer/i }).getAttribute('disabled')).toBeNull()
   })
 
   test('locks a scored answer and cannot resubmit', () => {
     renderLesson(multipleChoiceQuestion)
     fireEvent.click(screen.getByRole('radio', { name: 'Waving' }))
-    fireEvent.click(screen.getByRole('button', { name: /Submit Answer/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Check Answer/i }))
     expect(screen.getByText(/Not quite. Let’s look at the clue./i)).toBeTruthy()
     expect(screen.getByRole('radio', { name: /Waving.*Needs correction/i }).getAttribute('disabled')).not.toBeNull()
   })
@@ -273,8 +276,23 @@ describe('LessonScreen', () => {
   test('supports multiselect interactions', () => {
     renderLesson(multiselectQuestion)
     fireEvent.click(screen.getByRole('checkbox', { name: 'Brother held the spool.' }))
+    expect(screen.getByRole('button', { name: /Check Answer/i }).getAttribute('disabled')).toBeNull()
     fireEvent.click(screen.getByRole('checkbox', { name: 'He counted slowly.' }))
-    expect(screen.getByRole('button', { name: /Submit Answer/i }).getAttribute('disabled')).toBeNull()
+    expect(screen.getByRole('button', { name: /Check Answer/i }).getAttribute('disabled')).toBeNull()
+  })
+
+  test('does not derive multi-Hot-Text readiness from the hidden answer key', () => {
+    const multiHotTextQuestion = {
+      ...hotTextQuestion,
+      questionId: 'q3-multiple',
+      allowMultiple: true,
+      correctSegmentIds: ['seed-1', 'seed-2'],
+    } as LessonQuestion
+
+    renderLesson(multiHotTextQuestion)
+    expect(screen.getByRole('button', { name: /Check Answer/i }).getAttribute('disabled')).not.toBeNull()
+    fireEvent.click(screen.getByRole('checkbox', { name: 'Nora packed her bag.' }))
+    expect(screen.getByRole('button', { name: /Check Answer/i }).getAttribute('disabled')).toBeNull()
   })
 
   test('supports hot-text single-selection and explanation output', () => {
@@ -286,7 +304,7 @@ describe('LessonScreen', () => {
     fireEvent.click(correct)
     expect(alternate.checked).toBe(false)
     expect(correct.checked).toBe(true)
-    fireEvent.click(screen.getByRole('button', { name: /Submit Answer/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Check Answer/i }))
     expect(screen.getByText(/Great clue-finding!/i)).toBeTruthy()
     expect(screen.getByText(/Caring for soil and water is part of setup/i)).toBeTruthy()
   })
@@ -295,18 +313,19 @@ describe('LessonScreen', () => {
     renderLesson(evidencePairQuestion)
     fireEvent.click(screen.getByRole('radio', { name: 'Team launch with help' }))
     fireEvent.click(screen.getByRole('radio', { name: 'Her brother counted the jumps.' }))
-    fireEvent.click(screen.getByRole('button', { name: /Submit Answer/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Check Answer/i }))
     expect(screen.getByText(/Great clue-finding!/i)).toBeTruthy()
   })
 
   test('supports table matching', () => {
-    renderLesson(tableMatchQuestion)
+    const { onComplete } = renderLesson(tableMatchQuestion)
     fireEvent.change(screen.getAllByRole('combobox')[0], { target: { value: 'habit-planned' } })
     fireEvent.change(screen.getAllByRole('combobox')[1], { target: { value: 'habit-tracked' } })
-    expect(screen.getByRole('button', { name: /Submit Answer/i }).getAttribute('disabled')).toBeNull()
-    fireEvent.click(screen.getByRole('button', { name: /Submit Answer/i }))
-    fireEvent.click(screen.getByRole('button', { name: /See Quest Complete/i }))
-    expect(screen.getByText(/Quest Complete/i)).toBeTruthy()
+    expect(screen.getByRole('button', { name: /Check Answer/i }).getAttribute('disabled')).toBeNull()
+    fireEvent.click(screen.getByRole('button', { name: /Check Answer/i }))
+    fireEvent.click(screen.getByRole('button', { name: /^Next$/i }))
+    expect(onComplete).toHaveBeenCalledTimes(1)
+    expect(screen.queryByText(/Quest Complete|Stars earned/i)).toBeNull()
   })
 
   test('supports one-use table matching for Retell Hall builders', () => {
@@ -316,46 +335,46 @@ describe('LessonScreen', () => {
     const selects = screen.getAllByRole('combobox')
     fireEvent.change(selects[0], { target: { value: 'piece-opening' } })
 
-    expect(screen.getByRole('button', { name: /Submit Answer/i }).getAttribute('disabled')).not.toBeNull()
+    expect(screen.getByRole('button', { name: /Check Answer/i }).getAttribute('disabled')).not.toBeNull()
     expect(within(selects[0]).getByRole('option', { name: /Mia and Theo mapped the mural walk\./i }).getAttribute('disabled')).toBeNull()
     expect(within(selects[1]).getByRole('option', { name: /Mia and Theo mapped the mural walk\./i }).getAttribute('disabled')).not.toBeNull()
 
     fireEvent.change(selects[1], { target: { value: 'piece-ending' } })
-    expect(screen.getByRole('button', { name: /Submit Answer/i }).getAttribute('disabled')).toBeNull()
+    expect(screen.getByRole('button', { name: /Check Answer/i }).getAttribute('disabled')).toBeNull()
   })
 
-  test('shows completion screen and return action', () => {
+  test('final Next completes exactly once without a results detour', () => {
     const onBack = vi.fn()
-    renderLesson(hotTextQuestion, onBack)
+    const { onComplete } = renderLesson(hotTextQuestion, onBack)
     fireEvent.click(screen.getByRole('radio', { name: 'She measured soil and water.' }))
-    fireEvent.click(screen.getByRole('button', { name: /Submit Answer/i }))
-    fireEvent.click(screen.getByRole('button', { name: /See Quest Complete/i }))
-    expect(screen.getByText(/Quest Complete/i)).toBeTruthy()
-    expect(screen.getByText(/Stars earned:/i)).toBeTruthy()
-    fireEvent.click(screen.getByRole('button', { name: /Continue Quest/i }))
-    expect(onBack).toHaveBeenCalledTimes(1)
+    fireEvent.click(screen.getByRole('button', { name: /Check Answer/i }))
+    const next = screen.getByRole('button', { name: /^Next$/i })
+    fireEvent.click(next)
+    fireEvent.click(next)
+    expect(onComplete).toHaveBeenCalledTimes(1)
+    expect(onBack).not.toHaveBeenCalled()
+    expect(screen.queryByText(/Quest Complete|Stars earned/i)).toBeNull()
   })
 
-  test('shows the guided teaching block before practice begins', () => {
+  test('shows guided teaching inline with the current question', () => {
     renderGuidedLesson()
 
     expect(screen.getByRole('heading', { name: /Look at the Pattern/i })).toBeTruthy()
     expect(screen.getByText(/oo can sound like moon or book/i)).toBeTruthy()
-    expect(screen.getByRole('button', { name: /Start Practice/i })).toBeTruthy()
-    expect(screen.getAllByRole('button', { name: /Save and Exit/i }).length).toBeGreaterThan(0)
-    expect(screen.getByRole('button', { name: /Submit Answer/i }).getAttribute('disabled')).not.toBeNull()
+    expect(screen.getByText(/Which word uses oo like moon\?/i)).toBeTruthy()
+    expect(screen.queryByRole('button', { name: /Start Practice|Save and Exit/i })).toBeNull()
+    expect(screen.getByRole('button', { name: /Check Answer/i }).getAttribute('disabled')).not.toBeNull()
   })
 
-  test('start practice reveals the scored question and checkpoint lessons do not show teaching', () => {
+  test('guided and checkpoint lessons both open directly into scored content', () => {
     renderLesson(multipleChoiceQuestion)
     expect(screen.queryByRole('button', { name: /Start Practice/i })).toBeNull()
-    expect(screen.getByRole('button', { name: /Submit Answer/i })).toBeTruthy()
+    expect(screen.getByRole('button', { name: /Check Answer/i })).toBeTruthy()
 
     cleanup()
     renderGuidedLesson()
-    fireEvent.click(screen.getByRole('button', { name: /Start Practice/i }))
     expect(screen.queryByRole('button', { name: /Start Practice/i })).toBeNull()
-    expect(screen.getByRole('button', { name: /Submit Answer/i })).toBeTruthy()
+    expect(screen.getByRole('button', { name: /Check Answer/i })).toBeTruthy()
     expect(screen.getByText(/Which word uses oo like moon\?/i)).toBeTruthy()
   })
 
@@ -368,7 +387,7 @@ describe('LessonScreen', () => {
     expect(onComplete).not.toHaveBeenCalled()
   })
 
-  test('a resumed guided session skips the teaching block', () => {
+  test('a resumed guided session restores the current question without a start gate', () => {
     const session: ActiveLessonSession = {
       sessionId: 'session-guided',
       lessonId: guidedLesson.lessonId,
@@ -393,7 +412,8 @@ describe('LessonScreen', () => {
     render(<LessonScreen lesson={guidedLesson} onBack={vi.fn()} session={session} />)
 
     expect(screen.queryByRole('button', { name: /Start Practice/i })).toBeNull()
-    expect(screen.getByRole('button', { name: /Submit Answer/i })).toBeTruthy()
+    expect(screen.getByRole('button', { name: /Check Answer/i })).toBeTruthy()
+    expect(screen.getByRole('heading', { name: /Look at the Pattern/i })).toBeTruthy()
     expect(screen.getByText(/Which word uses ea like team\?/i)).toBeTruthy()
   })
 })

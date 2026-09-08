@@ -1,15 +1,19 @@
 import { describe, expect, test } from 'vitest'
 
-import { getLessonCandidates } from '../../src/domain/lesson'
+import { getLessonById, getLessonCandidates, type LessonQuestion } from '../../src/domain/lesson'
 import {
   COMPLETED_ATTEMPT_LIMIT,
   QUEST_PROGRESS_STORAGE_KEY,
   RECENT_ACTIVITY_LIMIT_PER_TRAIL,
+  checkpointQuestionDraft,
+  createActiveLessonSession,
   createDefaultQuestProgress,
   createLocalStorageQuestProgressStore,
   normalizeQuestProgressForSave,
   recoverActiveLessonSession,
+  restoreLessonDraftAnswer,
   type CompletedLessonAttempt,
+  type PersistedAnswer,
   type StorageLike,
 } from '../../src/persistence'
 
@@ -186,6 +190,53 @@ describe('local quest progress persistence', () => {
     store.save(state)
     const loaded = store.load()
     expect(loaded.state.activeLessonSession?.submittedQuestions[0].questionId).toBe(questionId)
+  })
+
+  test('schema-v1 draft responses persist as validated IDs for every question type', () => {
+    const lesson = getLessonById('g2-story-scouts-plot-structure-elements-lesson-checkpoint-a').lesson
+    expect(lesson).toBeDefined()
+    const examples = new Map<LessonQuestion['questionType'], {
+      lesson: NonNullable<ReturnType<typeof getLessonById>['lesson']>
+      question: LessonQuestion
+      questionIndex: number
+    }>()
+    for (const [questionIndex, question] of lesson!.questions.entries()) {
+      if (!examples.has(question.questionType)) examples.set(question.questionType, { lesson: lesson!, question, questionIndex })
+    }
+    expect([...examples.keys()].sort()).toEqual([
+      'EVIDENCE_PAIR', 'HOT_TEXT', 'MULTIPLE_CHOICE', 'MULTISELECT', 'TABLE_MATCH',
+    ])
+
+    const answerFor = (question: LessonQuestion): PersistedAnswer => {
+      switch (question.questionType) {
+        case 'MULTIPLE_CHOICE': return question.choices[0].id
+        case 'MULTISELECT': return [question.choices[0].id]
+        case 'HOT_TEXT': return [question.segments[0].id]
+        case 'EVIDENCE_PAIR': return { partA: question.partAChoices[0].id, partB: question.partBChoices[0].id }
+        case 'TABLE_MATCH': return { [question.rows[0].id]: question.rows[0].options[0].id }
+      }
+    }
+
+    for (const { lesson, question, questionIndex } of examples.values()) {
+      const storage = new MemoryStorage()
+      const store = createLocalStorageQuestProgressStore(storage, () => now)
+      const state = createDefaultQuestProgress(now)
+      const session = {
+        ...createActiveLessonSession(lesson, `draft-${question.questionId}`, now),
+        currentQuestionIndex: questionIndex,
+      }
+      const answer = answerFor(question)
+      state.activeLessonSession = checkpointQuestionDraft(session, question.questionId, answer, now)
+
+      expect(store.save(state).status).toBe('saved')
+      const loaded = store.load()
+      expect(loaded.status).toBe('loaded')
+      expect(restoreLessonDraftAnswer(lesson, loaded.state.activeLessonSession, questionIndex)).toEqual(answer)
+
+      const raw = storage.values.get(QUEST_PROGRESS_STORAGE_KEY) ?? ''
+      expect(raw).toContain(question.questionId)
+      expect(raw).not.toContain(question.prompt)
+    }
   })
 
   test('legacy version-1 assistance data loads with empty defaults', () => {

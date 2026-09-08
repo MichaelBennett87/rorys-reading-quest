@@ -29,14 +29,15 @@ import { PassageCard } from '../components/lesson/PassageCard'
 import { WordHelpPanel } from '../components/wordSupport'
 import {
   advanceActiveLessonSession,
+  checkpointQuestionDraft,
   checkpointSubmittedQuestion,
+  restoreLessonDraftAnswer,
   restoreLessonEvaluations,
   type ActiveLessonSession,
 } from '../persistence'
-import { starsForAccuracy, xpForLesson } from '../persistence/completeQuestProgress'
 import { DEFAULT_CONFIG, createSpeechService, createWordSupportSpeechRequest, type SpeechService } from '../services/speech'
 
-type FluencyStep = 'question' | 'feedback' | 'results'
+type FluencyStep = 'question' | 'feedback'
 
 interface FluencyPracticeScreenProps {
   lesson: LessonDefinition
@@ -44,6 +45,7 @@ interface FluencyPracticeScreenProps {
   session?: ActiveLessonSession | null
   onSessionCheckpoint?: (session: ActiveLessonSession) => void
   onComplete?: (result: LessonResult, completionId: string) => void
+  storageNotice?: string
 }
 
 export function FluencyPracticeScreen({
@@ -52,6 +54,7 @@ export function FluencyPracticeScreen({
   session = null,
   onSessionCheckpoint,
   onComplete,
+  storageNotice,
 }: FluencyPracticeScreenProps) {
   const restoredEvaluations = useMemo(
     () => restoreLessonEvaluations(lesson, session),
@@ -61,30 +64,27 @@ export function FluencyPracticeScreen({
   const restoredFeedback = restoredEvaluations.find(
     (evaluation) => evaluation.questionId === lesson.questions[restoredIndex]?.questionId,
   ) ?? null
+  const restoredDraft = useMemo(
+    () => restoreLessonDraftAnswer(lesson, session, restoredIndex),
+    [lesson, session, restoredIndex],
+  )
+  const restoredDraftList = Array.isArray(restoredDraft) ? restoredDraft.map(String) : []
+  const restoredDraftRecord = isStringRecord(restoredDraft) ? restoredDraft : null
 
   const [step, setStep] = useState<FluencyStep>(restoredFeedback ? 'feedback' : 'question')
   const [currentIndex, setCurrentIndex] = useState(restoredIndex)
   const [questionEvaluations, setQuestionEvaluations] = useState<QuestionEvaluationResult[]>(restoredEvaluations)
-  const [selectedChoiceId, setSelectedChoiceId] = useState('')
-  const [selectedChoiceIds, setSelectedChoiceIds] = useState<string[]>([])
-  const [selectedSegmentIds, setSelectedSegmentIds] = useState<string[]>([])
-  const [selectedPartAChoiceId, setSelectedPartAChoiceId] = useState('')
-  const [selectedPartBChoiceId, setSelectedPartBChoiceId] = useState('')
-  const [selectedMappings, setSelectedMappings] = useState<Record<string, string>>({})
+  const [selectedChoiceId, setSelectedChoiceId] = useState(typeof restoredDraft === 'string' ? restoredDraft : '')
+  const [selectedChoiceIds, setSelectedChoiceIds] = useState<string[]>(restoredDraftList)
+  const [selectedSegmentIds, setSelectedSegmentIds] = useState<string[]>(restoredDraftList)
+  const [selectedPartAChoiceId, setSelectedPartAChoiceId] = useState(restoredDraftRecord?.partA ?? '')
+  const [selectedPartBChoiceId, setSelectedPartBChoiceId] = useState(restoredDraftRecord?.partB ?? '')
+  const [selectedMappings, setSelectedMappings] = useState<Record<string, string>>(restoredDraftRecord ?? {})
   const [pendingFeedback, setPendingFeedback] = useState<QuestionEvaluationResult | null>(restoredFeedback)
   const [assistanceEvents, setAssistanceEvents] = useState<AssistanceEvent[]>(session?.assistanceEvents ?? [])
   const [openSupportTargetId, setOpenSupportTargetId] = useState<string | null>(null)
   const [speechActive, setSpeechActive] = useState(false)
   const [speechService] = useState<SpeechService>(() => createSpeechService())
-  const [practiceStarted, setPracticeStarted] = useState(
-    lesson.fluencyPracticeBlock?.practiceMode === 'independent'
-      || Boolean(session?.fluencyPracticeState?.modelReadUsed
-        || session?.fluencyPracticeState?.phrasePracticeCompleted
-        || session?.fluencyPracticeState?.completedReadCount
-        || session?.fluencyPracticeState?.reflection)
-      || (session?.submittedQuestions.length ?? 0) > 0,
-  )
-  const [questionsStarted, setQuestionsStarted] = useState((session?.submittedQuestions.length ?? 0) > 0)
   const [fluencyState, setFluencyState] = useState(() => session?.fluencyPracticeState ?? {
     modelReadUsed: false,
     phrasePracticeCompleted: false,
@@ -94,6 +94,7 @@ export function FluencyPracticeScreen({
 
   const sessionRef = useRef<ActiveLessonSession | null>(session)
   const completionSentRef = useRef(false)
+  const actionLockedRef = useRef(false)
   const currentQuestion = lesson.questions[currentIndex] ?? null
   const currentPassage = useMemo(
     () => sampleContent.passages.find((passage) => passage.passageIdentifier === lesson.passageId) ?? null,
@@ -144,8 +145,8 @@ export function FluencyPracticeScreen({
   }, [currentIndex, speechService])
 
   useEffect(() => {
-    speechService.cancel()
-  }, [questionsStarted, speechService])
+    actionLockedRef.current = false
+  }, [currentIndex, step])
 
   if (!lesson.questions.length || !currentQuestion) {
     return (
@@ -158,7 +159,7 @@ export function FluencyPracticeScreen({
         </section>
         <section className="screen-actions">
           <ChildButton type="button" className="primary-action" onClick={onBack}>
-            Return to Unit
+            Retry
           </ChildButton>
         </section>
       </section>
@@ -189,7 +190,7 @@ export function FluencyPracticeScreen({
     return evidenceIds
   })()
 
-  const submissionReady = (() => {
+  const submissionReady = practiceReady && (() => {
     switch (currentQuestion.questionType) {
       case 'MULTIPLE_CHOICE':
         return Boolean(selectedChoiceId)
@@ -220,6 +221,16 @@ export function FluencyPracticeScreen({
   const persistSession = (nextSession: ActiveLessonSession) => {
     sessionRef.current = nextSession
     onSessionCheckpoint?.(nextSession)
+  }
+
+  const persistDraft = (answer: string | string[] | Record<string, string>) => {
+    if (!sessionRef.current) return
+    persistSession(checkpointQuestionDraft(
+      sessionRef.current,
+      currentQuestion.questionId,
+      answer,
+      new Date().toISOString(),
+    ))
   }
 
   const persistFluencyState = (nextState: typeof fluencyState) => {
@@ -326,14 +337,9 @@ export function FluencyPracticeScreen({
     persistFluencyState({ ...fluencyState, reflection })
   }
 
-  const exitQuest = () => {
-    speechService.cancel()
-    setSpeechActive(false)
-    onBack()
-  }
-
   const onSubmit = () => {
-    if (!submissionReady) return
+    if (!submissionReady || actionLockedRef.current) return
+    actionLockedRef.current = true
 
     const payload =
       currentQuestion.questionType === 'MULTIPLE_CHOICE'
@@ -367,20 +373,22 @@ export function FluencyPracticeScreen({
   }
 
   const onNext = () => {
+    if (actionLockedRef.current) return
+    actionLockedRef.current = true
     speechService.cancel()
     setOpenSupportTargetId(null)
     setSpeechActive(false)
 
     if (currentIndex + 1 >= lesson.questions.length) {
-      setStep('results')
-      if (sessionRef.current) {
-        const checkpoint = advanceActiveLessonSession(
-          sessionRef.current,
-          currentIndex,
-          new Date().toISOString(),
-        )
-        persistSession(checkpoint)
+      if (completionSentRef.current) return
+      completionSentRef.current = true
+      if (onComplete && sessionRef.current) {
+        const completionId = sessionRef.current.sessionId
+        sessionRef.current = null
+        onComplete(result, completionId)
+        return
       }
+      onBack()
       return
     }
 
@@ -397,76 +405,60 @@ export function FluencyPracticeScreen({
     }
   }
 
-  const continueFromResults = () => {
-    if (completionSentRef.current) return
-    completionSentRef.current = true
-    speechService.cancel()
-    setSpeechActive(false)
-    if (onComplete && sessionRef.current) {
-      const completionId = sessionRef.current.sessionId
-      sessionRef.current = null
-      onComplete(result, completionId)
+  const toggleChoice = (choiceId: string) => {
+    const next = selectedChoiceIds.includes(choiceId)
+      ? selectedChoiceIds.filter((entry) => entry !== choiceId)
+      : [...selectedChoiceIds, choiceId]
+    setSelectedChoiceIds(next)
+    persistDraft(next)
+  }
+
+  const toggleSegment = (segmentId: string, allowMultiple: boolean) => {
+    if (!allowMultiple) {
+      setSelectedSegmentIds([segmentId])
+      persistDraft([segmentId])
       return
     }
-    onBack()
-  }
-
-  const toggleChoice = (choiceId: string) => {
-    setSelectedChoiceIds((previous) =>
-      previous.includes(choiceId) ? previous.filter((entry) => entry !== choiceId) : [...previous, choiceId],
-    )
-  }
-
-  const toggleSegment = (segmentId: string) => {
     const isSelected = selectedSegmentIds.includes(segmentId)
     if (isSelected) {
-      setSelectedSegmentIds((previous) => previous.filter((entry) => entry !== segmentId))
+      const next = selectedSegmentIds.filter((entry) => entry !== segmentId)
+      setSelectedSegmentIds(next)
+      persistDraft(next)
       return
     }
-    setSelectedSegmentIds((previous) => [...previous, segmentId])
+    const next = [...selectedSegmentIds, segmentId]
+    setSelectedSegmentIds(next)
+    persistDraft(next)
   }
 
   const updateMapping = (rowId: string, choiceId: string) => {
-    setSelectedMappings((previous) => ({
-      ...previous,
+    const next = {
+      ...selectedMappings,
       [rowId]: choiceId,
-    }))
+    }
+    setSelectedMappings(next)
+    persistDraft(next)
   }
 
-  const shouldShowQuestionFlow = questionsStarted || (session?.submittedQuestions.length ?? 0) > 0
-
   return (
-    <section className="screen-shell">
-      <header className="screen-header">
-        <h1>{lesson.lessonTitle}</h1>
-        <p>{lesson.lessonObjective}</p>
-        <p className="parent-muted-copy">Fluency Flight supports practice only. The app does not record or score oral reading.</p>
+    <main className={`screen-shell child-experience lesson-screen question-first-shell world-theme-${lesson.worldId}`} data-appearance="dark" data-world={lesson.worldId}>
+      <header className="question-first-header">
+        <h1>Rory's Reading Quest</h1>
       </header>
-
-      {!practiceStarted && lesson.teachingBlock ? (
-        <section className="card teaching-block" aria-labelledby="fluency-teaching-block-heading">
-          <h2 id="fluency-teaching-block-heading">{lesson.teachingBlock.title}</h2>
-          <p>{lesson.teachingBlock.explanation}</p>
-          <ul>
-            {lesson.teachingBlock.examples.map((example) => (
-              <li key={example}>{example}</li>
-            ))}
-          </ul>
-          {lesson.teachingBlock.contrast && <p>{lesson.teachingBlock.contrast}</p>}
-          <p>{lesson.teachingBlock.learnerCue}</p>
-          <section className="screen-actions">
-            <ChildButton type="button" className="primary-action" onClick={() => setPracticeStarted(true)}>
-              Start Practice
-            </ChildButton>
-            <ChildButton type="button" onClick={exitQuest}>
-              Save and Exit
-            </ChildButton>
-          </section>
-        </section>
-      ) : null}
-
-      {practiceStarted && (
-        <>
+      {storageNotice && <p className="storage-notice" role="status">{storageNotice}</p>}
+      <div className="question-first-workspace">
+        <section className="question-first-reading" aria-label="Reading and fluency practice">
+          {lesson.teachingBlock && (
+            <section className="card teaching-block" aria-labelledby="fluency-teaching-block-heading">
+              <h2 id="fluency-teaching-block-heading">{lesson.teachingBlock.title}</h2>
+              <p>{lesson.teachingBlock.explanation}</p>
+              <ul>
+                {lesson.teachingBlock.examples.map((example) => <li key={example}>{example}</li>)}
+              </ul>
+              {lesson.teachingBlock.contrast && <p>{lesson.teachingBlock.contrast}</p>}
+              <p>{lesson.teachingBlock.learnerCue}</p>
+            </section>
+          )}
           <section className="card" aria-labelledby="fluency-preview-heading">
             <h2 id="fluency-preview-heading">Passage Preview</h2>
             <p><strong>Practice goal:</strong> {lesson.fluencyPracticeBlock?.learnerCue ?? 'Read smoothly, listen carefully, and check your understanding.'}</p>
@@ -484,7 +476,7 @@ export function FluencyPracticeScreen({
               </div>
               <p>Choose this only when you want to hear the passage read aloud. It is optional.</p>
               <section className="screen-actions">
-                <ChildButton type="button" className="primary-action" onClick={startModelRead} disabled={!speechSupported || speechActive}>
+                <ChildButton type="button" onClick={startModelRead} disabled={!speechSupported || speechActive}>
                   Hear a Model Read
                 </ChildButton>
                 <ChildButton type="button" onClick={() => {
@@ -510,7 +502,7 @@ export function FluencyPracticeScreen({
                 ))}
               </ul>
               <section className="screen-actions">
-                <ChildButton type="button" className="primary-action" onClick={markPhrasesPracticed}>
+                <ChildButton type="button" onClick={markPhrasesPracticed}>
                   I Practiced the Phrases
                 </ChildButton>
               </section>
@@ -543,35 +535,18 @@ export function FluencyPracticeScreen({
               </section>
             </section>
 
-            <section className="parent-section-stack">
-              <div className="parent-card-heading-row">
-                <h3>Understanding Check</h3>
-                <span className="parent-muted-copy">These questions check what you noticed in the passage. They are not a speaking score.</span>
-              </div>
-              <p>When your practice steps are ready, start the understanding check.</p>
-              <section className="screen-actions">
-                <ChildButton
-                  type="button"
-                  className="primary-action"
-                  onClick={() => setQuestionsStarted(true)}
-                  disabled={!practiceReady}
-                >
-                  Start Understanding Check
-                </ChildButton>
-              </section>
-              {!practiceReady && (
-                <p className="parent-muted-copy">
-                  Finish phrase practice, rereading, and reflection to unlock the questions. Model listening is optional.
-                </p>
-              )}
-            </section>
+            {!practiceReady && (
+              <p className="parent-muted-copy" role="status">
+                Finish phrase practice, rereading, and reflection to check your answer. Model listening is optional.
+              </p>
+            )}
           </section>
 
           <PassageCard
             passageText={currentPassage?.passageText ?? ''}
             wordSupportTargets={passageTargets}
             onOpenWordSupport={onOpenSupport}
-            visibleWordSupport={practiceStarted}
+            visibleWordSupport
             heading="Reading Passage"
             evidenceSnippets={step === 'feedback' ? evidenceSnippets : []}
           />
@@ -589,30 +564,8 @@ export function FluencyPracticeScreen({
               speechActive={speechActive}
             />
           )}
-        </>
-      )}
-
-      {step === 'results' && (
-        <section className="card lesson-results" aria-labelledby="fluency-complete-heading">
-          <h2 id="fluency-complete-heading">Nice Fluency Practice!</h2>
-          <p>You practiced smooth, meaningful reading with a fresh passage.</p>
-          <p><strong>Practice rewards:</strong> {xpForLesson(result)} XP and {starsForAccuracy(result.accuracy)} stars</p>
-          <p><strong>Understanding-check accuracy:</strong> {Math.round(result.accuracy)}%</p>
-          <p><strong>Model read used:</strong> {fluencyState.modelReadUsed ? 'Yes' : 'No'}</p>
-          <p><strong>Phrase practice completed:</strong> {fluencyState.phrasePracticeCompleted ? 'Yes' : 'No'}</p>
-          <p><strong>Completed reads:</strong> {fluencyState.completedReadCount}</p>
-          <p><strong>Reflection:</strong> {fluencyState.reflection ?? 'Not set'}</p>
-          <p>This session supported modeled reading, phrase grouping, rereading, and self-monitoring. The app did not record or score oral reading.</p>
-              <section className="screen-actions">
-                <ChildButton type="button" className="primary-action" onClick={continueFromResults}>
-                  Continue Quest
-                </ChildButton>
-              </section>
         </section>
-      )}
-
-      {shouldShowQuestionFlow && step !== 'results' && (
-        <section className="card">
+        <section className="card question-first-question" aria-label="Current question">
           <QuestionProgress currentIndex={currentIndex} total={lesson.questions.length} />
           <h2 className="sr-only">Understanding Check</h2>
 
@@ -623,7 +576,12 @@ export function FluencyPracticeScreen({
               choices={currentQuestion.choices}
               selectedChoiceId={selectedChoiceId}
               disabled={step !== 'question'}
-              onSelectChoice={setSelectedChoiceId}
+              submitted={step === 'feedback'}
+              correctChoiceIds={currentQuestion.correctChoiceIds}
+              onSelectChoice={(choiceId) => {
+                setSelectedChoiceId(choiceId)
+                persistDraft(choiceId)
+              }}
             />
           )}
 
@@ -634,6 +592,8 @@ export function FluencyPracticeScreen({
               choices={currentQuestion.choices}
               selectedChoiceIds={selectedChoiceIds}
               disabled={step !== 'question'}
+              submitted={step === 'feedback'}
+              correctChoiceIds={currentQuestion.correctChoiceIds}
               onToggleChoice={toggleChoice}
             />
           )}
@@ -645,7 +605,9 @@ export function FluencyPracticeScreen({
               segments={currentQuestion.segments}
               selectedSegmentIds={selectedSegmentIds}
               disabled={step !== 'question'}
-              onToggleSegment={toggleSegment}
+              submitted={step === 'feedback'}
+              correctSegmentIds={currentQuestion.correctSegmentIds}
+              onToggleSegment={(segmentId) => toggleSegment(segmentId, currentQuestion.allowMultiple)}
             />
           )}
 
@@ -658,8 +620,17 @@ export function FluencyPracticeScreen({
               selectedPartAChoiceId={selectedPartAChoiceId}
               selectedPartBChoiceId={selectedPartBChoiceId}
               disabled={step !== 'question'}
-              onPartASelect={setSelectedPartAChoiceId}
-              onPartBSelect={setSelectedPartBChoiceId}
+              submitted={step === 'feedback'}
+              partACorrectChoiceId={currentQuestion.partACorrectChoiceId}
+              partBCorrectChoiceId={currentQuestion.partBCorrectChoiceId}
+              onPartASelect={(choiceId) => {
+                setSelectedPartAChoiceId(choiceId)
+                persistDraft({ partA: choiceId, partB: selectedPartBChoiceId })
+              }}
+              onPartBSelect={(choiceId) => {
+                setSelectedPartBChoiceId(choiceId)
+                persistDraft({ partA: selectedPartAChoiceId, partB: choiceId })
+              }}
             />
           )}
 
@@ -670,24 +641,23 @@ export function FluencyPracticeScreen({
                 prompt: row.prompt,
                 options: row.options,
                 selectedChoiceId: selectedMappings[row.id] ?? '',
+                correctChoiceId: row.correctChoiceId,
               }))}
               disabled={step !== 'question'}
+              submitted={step === 'feedback'}
               onSelectChoice={updateMapping}
             />
           )}
 
           {step === 'question' && (
-            <section className="screen-actions">
+            <section className="screen-actions question-primary-action" aria-label="Question action">
               <ChildButton
                 type="button"
                 className="primary-action"
                 disabled={!submissionReady}
                 onClick={onSubmit}
               >
-                Submit Answer
-              </ChildButton>
-              <ChildButton type="button" onClick={exitQuest}>
-                Save and Exit
+                Check Answer
               </ChildButton>
             </section>
           )}
@@ -695,16 +665,16 @@ export function FluencyPracticeScreen({
           {step === 'feedback' && pendingFeedback && (
             <>
               <AnswerFeedback isCorrect={pendingFeedback.isCorrect} explanation={pendingFeedback.explanation} />
-              <section className="screen-actions">
+              <section className="screen-actions question-primary-action" aria-label="Question action">
                 <ChildButton type="button" className="primary-action" onClick={onNext}>
-                  {currentIndex + 1 >= lesson.questions.length ? 'See Flight Complete' : 'Next Question'}
+                  Next
                 </ChildButton>
               </section>
             </>
           )}
         </section>
-      )}
-    </section>
+      </div>
+    </main>
   )
 }
 
@@ -714,4 +684,11 @@ function deriveSupportLevels(events: AssistanceEvent[]): Record<string, Assistan
     levels[event.targetId] = Math.max(current, event.assistanceLevel) as AssistanceLevel
     return levels
   }, {})
+}
+
+function isStringRecord(value: unknown): value is Record<string, string> {
+  return typeof value === 'object'
+    && value !== null
+    && !Array.isArray(value)
+    && Object.values(value).every((entry) => typeof entry === 'string')
 }

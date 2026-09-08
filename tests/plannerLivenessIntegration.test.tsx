@@ -1,4 +1,4 @@
-import { act, cleanup, fireEvent, render, renderHook, screen, waitFor, within } from '@testing-library/react'
+import { act, cleanup, render, renderHook, screen } from '@testing-library/react'
 import { afterEach, describe, expect, test } from 'vitest'
 
 import App from '../src/App'
@@ -12,7 +12,6 @@ import {
   type CompletedLessonAttempt,
   type QuestProgressV1,
 } from '../src/persistence'
-import { ProgressionOutcomeScreen } from '../src/screens/ProgressionOutcomeScreen'
 
 const NOW = '2026-08-27T21:30:00.000Z'
 const STORY_SKILL_ID = 'g2-story-scouts-prose'
@@ -120,21 +119,15 @@ describe('P0 planner liveness screenshot integration', () => {
 
     render(<App />)
 
-    expect(screen.getByLabelText('400 experience points')).toBeTruthy()
-    expect(screen.getByLabelText('10 stars earned')).toBeTruthy()
-    expect(screen.getByText('Completed quests: 4')).toBeTruthy()
-    expect(screen.getByText(/Current path: Story Scouts Prose Trail 1.*Level 1/)).toBeTruthy()
-    expect(screen.getAllByRole('button').map((button) => button.textContent?.trim())).toEqual([
-      'Start Journey',
-      'Parent Area',
-    ])
-    expect(within(screen.getByRole('region', { name: 'Your Reading Journey' })).queryAllByRole('button')).toHaveLength(0)
-
-    fireEvent.click(screen.getByRole('button', { name: 'Start Journey' }))
-
-    expect(screen.getByRole('heading', { name: expectedLesson.lessonTitle })).toBeTruthy()
+    expect(await screen.findByText(/Question 1 of/i)).toBeTruthy()
+    expect(screen.queryByLabelText('400 experience points')).toBeNull()
+    expect(screen.queryByLabelText('10 stars earned')).toBeNull()
+    expect(screen.queryByText('Completed quests: 4')).toBeNull()
+    expect(screen.queryByText(/Current path:/)).toBeNull()
+    expect(screen.queryByRole('button', { name: /Start Journey|Parent Area|Back Home/i })).toBeNull()
+    expect(screen.queryByRole('region', { name: 'Your Reading Journey' })).toBeNull()
+    expect(screen.getByRole('region', { name: 'Question action' }).querySelectorAll('button')).toHaveLength(1)
     expect(screen.queryByText('More Quests Are Being Prepared')).toBeNull()
-    expect(screen.queryByRole('button', { name: 'Back Home' })).toBeNull()
     const firstLaunch = readStoredState()
     expect(firstLaunch.activeLessonSession).toMatchObject({
       lessonId: expectedLesson.lessonId,
@@ -145,11 +138,10 @@ describe('P0 planner liveness screenshot integration', () => {
     expect(firstLaunch.completedAttempts).toHaveLength(4)
     const firstSessionId = firstLaunch.activeLessonSession?.sessionId
 
-    fireEvent.click(screen.getByRole('button', { name: 'Save and Exit' }))
-    await waitFor(() => expect(screen.getByRole('button', { name: 'Start Journey' })).toBeTruthy())
-    fireEvent.click(screen.getByRole('button', { name: 'Start Journey' }))
+    cleanup()
+    render(<App />)
 
-    expect(screen.getByRole('heading', { name: expectedLesson.lessonTitle })).toBeTruthy()
+    expect(await screen.findByText(/Question 1 of/i)).toBeTruthy()
     const resumed = readStoredState()
     expect(resumed.activeLessonSession?.sessionId).toBe(firstSessionId)
     expect(resumed.activeLessonSession?.skillId).toBe(STORY_SKILL_ID)
@@ -180,7 +172,7 @@ describe('P0 planner liveness screenshot integration', () => {
     journey.unmount()
   })
 
-  test('shows the coming-soon outcome only for genuine current content-needed', () => {
+  test('returns content-needed only when the authoritative planner has no compatible work', () => {
     const available = planGlobalQuest({
       progress: deployedScreenshotState(),
       availableLessons: lessons,
@@ -188,48 +180,11 @@ describe('P0 planner liveness screenshot integration', () => {
     }).nextQuest
     expect(available.status).toBe('available')
 
-    const rendered = render(
-      <ProgressionOutcomeScreen
-        outcome={{
-          kind: 'CHECKPOINT',
-          earnedXp: 0,
-          earnedStars: 0,
-          currentDifficulty: 1,
-          completionId: 'recycled-plan',
-          nextQuest: available,
-          curriculumComplete: false,
-        }}
-        onContinueJourney={() => {}}
-        onBackHome={() => {}}
-      />,
-    )
-    expect(screen.queryByText('More Quests Are Being Prepared')).toBeNull()
-    expect(screen.getAllByRole('button')).toHaveLength(1)
-    expect(screen.getByRole('button', { name: 'Continue Journey' })).toBeTruthy()
-
-    rendered.rerender(
-      <ProgressionOutcomeScreen
-        outcome={{
-          kind: 'CONTENT_NEEDED',
-          earnedXp: 0,
-          earnedStars: 0,
-          currentDifficulty: 99,
-          completionId: 'genuine-boundary',
-          nextQuest: {
-            status: 'content_needed',
-            purpose: 'progression',
-            skillId: STORY_SKILL_ID,
-            difficulty: 99,
-            reason: 'No authored compatible lesson exists for this skill, difficulty, and purpose.',
-          },
-          curriculumComplete: false,
-        }}
-        onContinueJourney={() => {}}
-        onBackHome={() => {}}
-      />,
-    )
-    expect(screen.getByText('More Quests Are Being Prepared')).toBeTruthy()
-    expect(screen.getAllByRole('button')).toHaveLength(1)
-    expect(screen.getByRole('button', { name: 'Back Home' })).toBeTruthy()
+    const unavailable = planGlobalQuest({
+      progress: deployedScreenshotState(),
+      availableLessons: [],
+      now: NOW,
+    }).nextQuest
+    expect(unavailable).toMatchObject({ status: 'content_needed', purpose: 'progression' })
   })
 })

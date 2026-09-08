@@ -148,6 +148,7 @@ export interface LessonDefinition {
   questionCount: number
   questions: LessonQuestion[]
   contentVersion: string
+  sessionContentFingerprint?: string
   eligiblePurposes: LessonPurpose[]
 }
 
@@ -239,6 +240,7 @@ export interface LessonCatalogEntry {
   teachingBlock?: TeachingBlock
   fluencyPracticeBlock?: FluencyPracticeBlock
   contentVersion: string
+  sessionContentFingerprint: string
   eligiblePurposes: LessonPurpose[]
   benchmarkReferences: string[]
 }

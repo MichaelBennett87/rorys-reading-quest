@@ -25,10 +25,14 @@ export function createActiveLessonSession(
     lessonRole: lesson.lessonRole,
     activityId: lesson.activityId,
     contentVersion: lesson.contentVersion,
+    ...(lesson.sessionContentFingerprint
+      ? { sessionContentFingerprint: lesson.sessionContentFingerprint }
+      : {}),
     skillId: lesson.skillId,
     difficulty: lesson.difficulty,
     currentQuestionIndex: 0,
     submittedQuestions: [],
+    draftQuestion: null,
     assistanceEvents: [],
     fluencyPracticeState: lesson.lessonRole === 'FLUENCY_PRACTICE'
       ? {
@@ -91,6 +95,24 @@ export function checkpointSubmittedQuestion(
       ...session.submittedQuestions.filter((question) => question.questionId !== evaluation.questionId),
       submitted,
     ],
+    draftQuestion: null,
+    assistanceEvents: cloneAssistanceEvents(session.assistanceEvents),
+    updatedAt: timestamp,
+  }
+}
+
+export function checkpointQuestionDraft(
+  session: ActiveLessonSession,
+  questionId: string,
+  answer: PersistedAnswer,
+  timestamp: string,
+): ActiveLessonSession {
+  const clonedAnswer = toPersistedAnswer(answer)
+  return {
+    ...session,
+    draftQuestion: isEmptyPersistedAnswer(clonedAnswer)
+      ? null
+      : { questionId, answer: clonedAnswer },
     assistanceEvents: cloneAssistanceEvents(session.assistanceEvents),
     updatedAt: timestamp,
   }
@@ -101,7 +123,24 @@ export function advanceActiveLessonSession(
   currentQuestionIndex: number,
   timestamp: string,
 ): ActiveLessonSession {
-  return { ...session, currentQuestionIndex, assistanceEvents: cloneAssistanceEvents(session.assistanceEvents), updatedAt: timestamp }
+  return {
+    ...session,
+    currentQuestionIndex,
+    draftQuestion: null,
+    assistanceEvents: cloneAssistanceEvents(session.assistanceEvents),
+    updatedAt: timestamp,
+  }
+}
+
+export function restoreLessonDraftAnswer(
+  lesson: LessonDefinition,
+  session: ActiveLessonSession | null,
+  currentQuestionIndex: number,
+): PersistedAnswer | null {
+  const question = lesson.questions[currentQuestionIndex]
+  const draft = session?.draftQuestion
+  if (!question || !draft || draft.questionId !== question.questionId) return null
+  return sanitizeDraftAnswer(question, draft.answer)
 }
 
 export function restoreLessonEvaluations(
@@ -155,6 +194,51 @@ function toPersistedAnswer(value: unknown): PersistedAnswer {
   if (Array.isArray(value)) return value.filter((entry): entry is string => typeof entry === 'string')
   if (isStringRecord(value)) return { ...value }
   return ''
+}
+
+function sanitizeDraftAnswer(question: LessonQuestion, answer: PersistedAnswer): PersistedAnswer | null {
+  switch (question.questionType) {
+    case 'MULTIPLE_CHOICE':
+      return typeof answer === 'string' && question.choices.some((choice) => choice.id === answer)
+        ? answer
+        : null
+    case 'MULTISELECT':
+      return Array.isArray(answer)
+        ? uniqueStrings(answer.filter((id) => question.choices.some((choice) => choice.id === id)))
+        : null
+    case 'HOT_TEXT':
+      return Array.isArray(answer)
+        ? uniqueStrings(answer.filter((id) => question.segments.some((segment) => segment.id === id)))
+        : null
+    case 'EVIDENCE_PAIR': {
+      if (!isStringRecord(answer)) return null
+      const partA = question.partAChoices.some((choice) => choice.id === answer.partA) ? answer.partA : ''
+      const partB = question.partBChoices.some((choice) => choice.id === answer.partB) ? answer.partB : ''
+      return partA || partB ? { partA, partB } : null
+    }
+    case 'TABLE_MATCH': {
+      if (!isStringRecord(answer)) return null
+      const mappings = Object.fromEntries(question.rows.flatMap((row) => {
+        const choiceId = answer[row.id]
+        return choiceId && row.options.some((option) => option.id === choiceId)
+          ? [[row.id, choiceId]]
+          : []
+      }))
+      return Object.keys(mappings).length > 0 ? mappings : null
+    }
+    default:
+      return null
+  }
+}
+
+function uniqueStrings(values: string[]): string[] {
+  return [...new Set(values)]
+}
+
+function isEmptyPersistedAnswer(answer: PersistedAnswer): boolean {
+  if (typeof answer === 'string') return answer.length === 0
+  if (Array.isArray(answer)) return answer.length === 0
+  return Object.values(answer).every((value) => value.length === 0)
 }
 
 function isStringRecord(value: unknown): value is Record<string, string> {

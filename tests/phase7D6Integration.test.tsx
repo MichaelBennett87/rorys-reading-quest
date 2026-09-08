@@ -1,4 +1,4 @@
-import { act, cleanup, fireEvent, render, renderHook, screen, within } from '@testing-library/react'
+import { act, cleanup, render, renderHook, screen } from '@testing-library/react'
 import { readFileSync } from 'node:fs'
 import { afterEach, describe, expect, test } from 'vitest'
 
@@ -125,14 +125,13 @@ describe('Phase 7D6 integration and reconciled one-button journey', () => {
     journey.unmount()
   })
 
-  test('keeps Home at two controls, world cards display-only, and launches without a selector', async () => {
+  test('opens Meaning Maze directly without a child selector', async () => {
     window.localStorage.setItem(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(stateReadyForMeaningMaze()))
     render(<App />)
-    expect(screen.getAllByRole('button').map((button) => button.textContent?.trim())).toEqual(['Start Journey', 'Parent Area'])
-    const map = screen.getByRole('region', { name: 'Your Reading Journey' })
-    expect(within(map).queryAllByRole('button')).toHaveLength(0)
-    fireEvent.click(screen.getByRole('button', { name: 'Start Journey' }))
-    expect(await screen.findByText(/Meaning Maze Checkpoint:/)).toBeTruthy()
+    expect(await screen.findByText(/Question 1 of/i)).toBeTruthy()
+    expect(screen.queryByRole('button', { name: /Start Journey|Parent Area/i })).toBeNull()
+    expect(screen.queryByRole('region', { name: 'Your Reading Journey' })).toBeNull()
+    expect(screen.getByRole('region', { name: 'Question action' }).querySelectorAll('button')).toHaveLength(1)
     expect(screen.queryByText(/choose a world|choose a unit|choose a word|choose a phrase|choose a lesson|another lesson is already open/i)).toBeNull()
   })
 

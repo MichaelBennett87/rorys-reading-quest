@@ -50,6 +50,11 @@ export interface PersistedSubmittedQuestion extends PersistedQuestionSummary {
   submittedAnswer: PersistedAnswer
 }
 
+export interface PersistedQuestionDraft {
+  questionId: string
+  answer: PersistedAnswer
+}
+
 export interface ActiveReviewIdentity {
   skillId: string
   difficulty: number
@@ -71,10 +76,12 @@ export interface ActiveLessonSession {
   lessonRole?: LessonRole
   activityId: string
   contentVersion: string
+  sessionContentFingerprint?: string
   skillId: string
   difficulty: number
   currentQuestionIndex: number
   submittedQuestions: PersistedSubmittedQuestion[]
+  draftQuestion?: PersistedQuestionDraft | null
   assistanceEvents: PersistedAssistanceEvent[]
   fluencyPracticeState?: ActiveFluencyPracticeState | null
   launchContext?: ActiveLessonLaunchContext

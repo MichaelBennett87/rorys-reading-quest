@@ -1,6 +1,8 @@
 import type { ActiveSessionCompatibilityInput, ActiveSessionRecoveryResult } from './questProgressTypes'
 import { normalizeQuestProgressForSave } from './validatePersistedQuestProgress'
 import { findReviewQueueEntryByResolvedIdentity } from '../domain/progression/reviewQueueAffinity'
+import { getLessonById } from '../domain/lesson/lessonCatalog'
+import { requiresLegacySessionContentFingerprint } from '../domain/lesson/lessonSessionFingerprint'
 
 export function recoverActiveLessonSession(
   input: ActiveSessionCompatibilityInput,
@@ -28,19 +30,47 @@ export function recoverActiveLessonSession(
     candidate?.passageQuestionKeys.map((key) => key.slice(key.indexOf('::') + 2)) ?? [],
   )
   const submittedIds = active.submittedQuestions.map((question) => question.questionId)
+  const currentSessionContentFingerprint = candidate
+    ? getLessonById(candidate.lessonId).lesson?.sessionContentFingerprint
+    : undefined
   const compatible = Boolean(candidate)
     && submittedIds.every((questionId) => validQuestionIds.has(questionId))
     && new Set(submittedIds).size === submittedIds.length
     && active.currentQuestionIndex >= active.submittedQuestions.length - 1
     && active.currentQuestionIndex < validQuestionIds.size
+    && isSessionContentCompatible(active.sessionContentFingerprint, currentSessionContentFingerprint, candidate?.packId)
     && isLaunchContextCompatible(state, active, candidate, input.availableLessons)
 
-  if (compatible) return { state, status: 'resumable' }
+  if (compatible) {
+    if (!active.sessionContentFingerprint && currentSessionContentFingerprint) {
+      return {
+        state: {
+          ...state,
+          activeLessonSession: {
+            ...active,
+            sessionContentFingerprint: currentSessionContentFingerprint,
+          },
+        },
+        status: 'resumable',
+      }
+    }
+    return { state, status: 'resumable' }
+  }
   return {
     state: { ...state, activeLessonSession: null },
     status: 'discarded_incompatible',
     technicalDetail: 'Active lesson identifiers or content version no longer match the local catalog.',
   }
+}
+
+function isSessionContentCompatible(
+  storedFingerprint: string | undefined,
+  currentFingerprint: string | undefined,
+  packId: string | undefined,
+): boolean {
+  if (storedFingerprint) return currentFingerprint === storedFingerprint
+  if (!currentFingerprint || !packId) return true
+  return !requiresLegacySessionContentFingerprint(packId)
 }
 
 function isLaunchContextCompatible(

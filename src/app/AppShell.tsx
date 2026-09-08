@@ -1,15 +1,9 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
-import { resolveActiveLearningFocus } from '../domain/curriculum'
-import { demoLearner } from '../data/demoLearner'
-import { deriveWorldsForProgress } from '../data/demoWorlds'
-import { getLessonCandidates, type LessonDefinition } from '../domain/lesson'
+import type { LessonDefinition } from '../domain/lesson'
 import type { ActiveLessonSession } from '../persistence'
-import { HomeScreen } from '../screens/HomeScreen'
 import { LessonScreen } from '../screens/LessonScreen'
 import { ParentPlaceholderScreen } from '../screens/ParentPlaceholderScreen'
-import { ProgressionOutcomeScreen } from '../screens/ProgressionOutcomeScreen'
-import type { AppScreen } from './appView'
 import { type ProgressionOutcomeViewModel, useQuestProgress } from './useQuestProgress'
 
 interface LessonLaunchState {
@@ -18,16 +12,15 @@ interface LessonLaunchState {
   errors: string[]
 }
 
+type QuestionFirstScreen = 'loading' | 'lesson_run' | 'rest' | 'load_error' | 'parent_gate'
+
+function isParentRoute() {
+  return typeof window !== 'undefined' && window.location.hash.toLowerCase() === '#/parent'
+}
+
 export function AppShell() {
   const questProgress = useQuestProgress()
-  const availableLessons = getLessonCandidates()
-  const activeFocus = resolveActiveLearningFocus({
-    progress: questProgress.progress,
-    availableLessons,
-    now: new Date().toISOString(),
-  })
-  const worlds = deriveWorldsForProgress(questProgress.progress)
-  const [screen, setScreen] = useState<AppScreen>('home')
+  const [screen, setScreen] = useState<QuestionFirstScreen>(() => isParentRoute() ? 'parent_gate' : 'loading')
   const [lessonState, setLessonState] = useState<LessonLaunchState>({
     lesson: null,
     session: null,
@@ -35,80 +28,99 @@ export function AppShell() {
   })
   const [outcome, setOutcome] = useState<ProgressionOutcomeViewModel | null>(null)
   const journeyLaunchPendingRef = useRef(false)
+  const prepareJourneyLaunchRef = useRef(questProgress.prepareJourneyLaunch)
+  const storageNotice = ['unavailable', 'invalid_json', 'unsupported_version', 'invalid_state', 'storage_error']
+    .includes(questProgress.storageStatus)
+    ? 'Your reading can continue safely, but this browser could not restore saved progress.'
+    : undefined
 
   useEffect(() => {
     journeyLaunchPendingRef.current = false
   }, [screen])
 
-  const learner = {
-    ...demoLearner,
-    currentPath: activeFocus.displayName,
-    level: activeFocus.difficulty || 1,
-    xp: questProgress.progress.totalXp,
-    stars: questProgress.progress.totalStars,
-    questStreak: questProgress.progress.completedSessionCount,
-  }
+  useEffect(() => {
+    prepareJourneyLaunchRef.current = questProgress.prepareJourneyLaunch
+  }, [questProgress.prepareJourneyLaunch])
 
-  const launchLesson = (lesson: LessonDefinition, session: ActiveLessonSession) => {
-    setLessonState({ lesson, session, errors: [] })
-    setScreen('lesson_run')
-  }
-
-  const showContentNeeded = (
-    plan: Extract<ProgressionOutcomeViewModel['nextQuest'], { status: 'content_needed' }>,
-    curriculumComplete = false,
-  ) => {
-    setOutcome({
-      kind: 'CONTENT_NEEDED',
-      earnedXp: 0,
-      earnedStars: 0,
-      currentDifficulty: plan.difficulty,
-      completionId: 'content-needed',
-      nextQuest: plan,
-      curriculumComplete,
-    })
-    setScreen('progression_outcome')
-  }
-
-  const launchCurrentJourney = () => {
+  const launchCurrentJourney = useCallback(() => {
     if (journeyLaunchPendingRef.current) return
     journeyLaunchPendingRef.current = true
-    const decision = questProgress.prepareJourneyLaunch()
+    const decision = prepareJourneyLaunchRef.current()
     if (decision.status === 'resume' || decision.status === 'start') {
-      launchLesson(decision.lesson, decision.session)
+      setLessonState({ lesson: decision.lesson, session: decision.session, errors: [] })
+      setScreen('lesson_run')
       return
     }
     if (decision.status === 'content_needed') {
-      showContentNeeded(decision.plan, decision.curriculumComplete)
+      setOutcome({
+        kind: 'CONTENT_NEEDED',
+        earnedXp: 0,
+        earnedStars: 0,
+        currentDifficulty: decision.plan.difficulty,
+        completionId: 'content-needed',
+        nextQuest: decision.plan,
+        curriculumComplete: decision.curriculumComplete,
+      })
+      setScreen('rest')
       return
     }
     if (decision.status === 'unavailable') {
-      showContentNeeded({
-        status: 'content_needed',
-        purpose: 'progression',
-        skillId: activeFocus.skillId ?? 'unknown',
-        difficulty: decision.difficulty,
-        reason: decision.reason,
-      })
+      setLessonState({ lesson: null, session: null, errors: [decision.reason] })
+      setScreen('load_error')
     }
+  }, [])
+
+  const completeAndLaunchNext = (result: Parameters<typeof questProgress.completeLesson>[0], completionId: string) => {
+    const nextOutcome = questProgress.completeLesson(result, completionId)
+    if (nextOutcome.nextQuest.status === 'content_needed') {
+      setOutcome(nextOutcome)
+      setScreen('rest')
+      return
+    }
+    journeyLaunchPendingRef.current = false
+    launchCurrentJourney()
   }
+
+  useEffect(() => {
+    const syncRoute = () => {
+      if (isParentRoute()) {
+        journeyLaunchPendingRef.current = false
+        setScreen('parent_gate')
+        return
+      }
+      setScreen((current) => current === 'parent_gate' ? 'loading' : current)
+      launchCurrentJourney()
+    }
+
+    window.addEventListener('hashchange', syncRoute)
+    syncRoute()
+    return () => window.removeEventListener('hashchange', syncRoute)
+  }, [launchCurrentJourney])
 
   if (screen === 'parent_gate') {
     return (
       <ParentPlaceholderScreen
         progress={questProgress.progress}
-        onBack={() => setScreen('home')}
+        onBack={() => {
+          window.location.hash = ''
+        }}
       />
     )
   }
 
-  if (screen === 'progression_outcome' && outcome) {
+  if (screen === 'rest' && outcome) {
     return (
-      <ProgressionOutcomeScreen
-        outcome={outcome}
-        onContinueJourney={launchCurrentJourney}
-        onBackHome={() => setScreen('home')}
-      />
+      <main className="question-first-status" aria-live="polite">
+        <section className="question-first-status-card">
+          <p className="question-first-mark">Rory's Reading Quest</p>
+          <h1>{outcome.curriculumComplete ? 'Grade 3 Journey Complete!' : 'Reading Rest'}</h1>
+          <p>
+            {outcome.curriculumComplete
+              ? "You completed every reading trail currently in Rory's Reading Quest. Reviews will appear when they are ready."
+              : 'There is no new reading activity ready right now. Your completed work is safely saved.'}
+          </p>
+        </section>
+      </main>
     )
   }
 
@@ -126,41 +138,49 @@ export function AppShell() {
             }
           }}
           onComplete={(result, completionId) => {
-            const nextOutcome = questProgress.completeLesson(result, completionId)
-            setOutcome(nextOutcome)
-            setScreen('progression_outcome')
+            completeAndLaunchNext(result, completionId)
           }}
-          onBack={() => setScreen('home')}
+          onBack={() => {
+            journeyLaunchPendingRef.current = false
+            setScreen('loading')
+            launchCurrentJourney()
+          }}
+          storageNotice={storageNotice}
         />
       )
     }
+  }
 
+  if (screen === 'load_error') {
     return (
-      <section className="screen-shell">
-        <header className="screen-header"><h1>Lesson content is not available</h1></header>
-        <section className="card">
-          <p>{lessonState.errors[0] ?? 'The next guided lesson is not available yet.'}</p>
+      <main className="question-first-status" aria-live="assertive">
+        <section className="question-first-status-card">
+          <p className="question-first-mark">Rory's Reading Quest</p>
+          <h1>Let's try that reading again</h1>
+          <p>{lessonState.errors[0] ?? 'The next reading activity could not load safely.'}</p>
+          <button
+            type="button"
+            className="child-button primary-action"
+            onClick={() => {
+              journeyLaunchPendingRef.current = false
+              setScreen('loading')
+              launchCurrentJourney()
+            }}
+          >
+            Retry
+          </button>
         </section>
-        <section className="screen-actions">
-          <button type="button" className="child-button primary-action" onClick={() => setScreen('home')}>Back Home</button>
-        </section>
-      </section>
+      </main>
     )
   }
 
-  const storageNotice = ['unavailable', 'invalid_json', 'unsupported_version', 'invalid_state', 'storage_error']
-    .includes(questProgress.storageStatus)
-    ? 'Your quest can continue safely, but this browser could not restore saved progress.'
-    : undefined
-
   return (
-    <HomeScreen
-      learner={learner}
-      worlds={worlds}
-      currentWorldId={activeFocus.worldId ?? 'word-forge'}
-      storageNotice={storageNotice}
-      onStartJourney={launchCurrentJourney}
-      onOpenParentArea={() => setScreen('parent_gate')}
-    />
+    <main className="question-first-status" aria-live="polite" aria-busy="true">
+      <section className="question-first-status-card">
+        <p className="question-first-mark">Rory's Reading Quest</p>
+        <h1>Finding your next reading question...</h1>
+        {storageNotice && <p className="storage-notice">{storageNotice}</p>}
+      </section>
+    </main>
   )
 }

@@ -176,6 +176,7 @@ function isActiveLessonSession(value: unknown): value is ActiveLessonSession {
     && typeof value.lessonId === 'string'
     && typeof value.activityId === 'string'
     && typeof value.contentVersion === 'string'
+    && (value.sessionContentFingerprint === undefined || typeof value.sessionContentFingerprint === 'string')
     && typeof value.skillId === 'string'
     && Number.isInteger(value.difficulty)
     && isNonNegativeInteger(value.currentQuestionIndex)
@@ -185,6 +186,11 @@ function isActiveLessonSession(value: unknown): value is ActiveLessonSession {
       && typeof question.isCorrect === 'boolean'
       && typeof question.isFirstAttemptCorrect === 'boolean'
       && isPersistedAnswer(question.submittedAnswer))
+    && (!('draftQuestion' in value) || value.draftQuestion === null || (
+      isRecord(value.draftQuestion)
+      && typeof value.draftQuestion.questionId === 'string'
+      && isPersistedAnswer(value.draftQuestion.answer)
+    ))
     && (!('assistanceEvents' in value) || (
       Array.isArray(value.assistanceEvents)
       && value.assistanceEvents.every(isAssistanceEvent)
@@ -327,6 +333,12 @@ function cloneActiveSession(session: ActiveLessonSession): ActiveLessonSession {
       ...question,
       submittedAnswer: structuredClone(question.submittedAnswer),
     })),
+    ...(session.draftQuestion ? {
+      draftQuestion: {
+        questionId: session.draftQuestion.questionId,
+        answer: structuredClone(session.draftQuestion.answer),
+      },
+    } : { draftQuestion: null }),
     assistanceEvents: (session.assistanceEvents ?? []).map(cloneAssistanceEvent),
     ...(session.launchContext ? {
       launchContext: {

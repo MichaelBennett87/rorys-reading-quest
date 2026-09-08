@@ -168,13 +168,13 @@ describe('semantic answer feedback states', () => {
 
     render(<LessonScreen lesson={pairedLesson} onBack={vi.fn()} />)
     fireEvent.click(screen.getByRole('radio', { name: correct.text }))
-    fireEvent.click(screen.getByRole('button', { name: /Submit Answer/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Check Answer/i }))
     expect(screen.getByRole('status').getAttribute('data-result')).toBe('correct')
 
     cleanup()
     render(<LessonScreen lesson={pairedLesson} onBack={vi.fn()} />)
     fireEvent.click(screen.getByRole('radio', { name: incorrect.text }))
-    fireEvent.click(screen.getByRole('button', { name: /Submit Answer/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Check Answer/i }))
     expect(screen.getByRole('status').getAttribute('data-result')).toBe('incorrect')
   })
 

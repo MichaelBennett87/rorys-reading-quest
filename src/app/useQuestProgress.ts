@@ -82,7 +82,8 @@ export function useQuestProgress() {
     const recovered = recoverActiveLessonSession({ state: loaded.state, availableLessons })
     const normalized = normalizeQuestProgressForPlanning(recovered.state, availableLessons)
     const normalizedState = normalized.changed ? normalized.state : recovered.state
-    const saved = normalized.changed ? store.save(normalizedState) : null
+    const recoveryChanged = activeSessionRecoveryChanged(loaded.state, recovered.state)
+    const saved = normalized.changed || recoveryChanged ? store.save(normalizedState) : null
     return {
       store,
       state: saved?.status === 'saved' ? saved.state : normalizedState,
@@ -382,7 +383,7 @@ export function useQuestProgress() {
     })
     const normalized = normalizeQuestProgressForPlanning(recovered.state, availableLessons)
     let current = normalized.state
-    if (recovered.status === 'discarded_completed' || recovered.status === 'discarded_incompatible' || normalized.changed) {
+    if (activeSessionRecoveryChanged(progressRef.current, recovered.state) || normalized.changed) {
       current = persist(current)
     }
 
@@ -458,6 +459,13 @@ export function useQuestProgress() {
     planContinue,
     prepareJourneyLaunch,
   }
+}
+
+function activeSessionRecoveryChanged(before: QuestProgressV1, after: QuestProgressV1): boolean {
+  const previous = before.activeLessonSession
+  const current = after.activeLessonSession
+  return previous?.sessionId !== current?.sessionId
+    || previous?.sessionContentFingerprint !== current?.sessionContentFingerprint
 }
 
 function buildRejectedCompletionOutcome(

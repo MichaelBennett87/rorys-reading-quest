@@ -53,7 +53,10 @@ describe('Phase 7D6 acceptance documentation and boundary', () => {
 
     expect(audit).toContain('1,614 current PASS ledger records across 40 packs')
     expect(progress).toContain('- Active questions: 1614')
-    expect(progress).toContain('- Grading-contract assertions: 26622')
+    expect(progress).toContain('- Canonical submissions: 1614')
+    expect(progress).toContain('- Canonical-equivalent submissions: 542')
+    expect(progress).toContain('- Adversarial submissions: 19558')
+    expect(progress).toContain('- Grading-contract assertions: 24942')
     expect(semantic).toContain('False positives: 0')
     expect(semantic).toContain('Stale fingerprints: 0')
   })

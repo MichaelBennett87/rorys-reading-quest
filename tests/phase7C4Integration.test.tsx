@@ -1,4 +1,4 @@
-import { act, cleanup, fireEvent, render, renderHook, screen, within } from '@testing-library/react'
+import { act, cleanup, render, renderHook, screen } from '@testing-library/react'
 import { afterEach, describe, expect, test } from 'vitest'
 
 import App from '../src/App'
@@ -36,7 +36,7 @@ describe('Phase 7C4 integration and reconciled one-button journey', () => {
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(0)
   })
 
-  test('releases a persisted Unit 4 content boundary through Start Journey with no child menu', async () => {
+  test('releases a persisted Unit 4 content boundary directly into a question with no child menu', async () => {
     const state = createDefaultQuestProgress(NOW)
     for (const [skillId, difficulty] of [
       ['g2-word-forge-word-practice', 8], ['g2-story-scouts-prose', 4], ['g2-poetry-planet-poetry', 2],
@@ -56,11 +56,13 @@ describe('Phase 7C4 integration and reconciled one-button journey', () => {
     journey.unmount()
 
     render(<App />)
-    expect(screen.getAllByRole('button').map((button) => button.textContent?.trim())).toEqual(['Start Journey', 'Parent Area'])
-    const map = screen.getByRole('region', { name: 'Your Reading Journey' })
-    expect(within(map).queryAllByRole('button')).toHaveLength(0)
-    fireEvent.click(screen.getByRole('button', { name: 'Start Journey' }))
-    expect(await screen.findByText('Recycling Station Court Checkpoint')).toBeTruthy()
+    expect(await screen.findByText(/Question 1 of/i)).toBeTruthy()
+    expect(screen.queryByRole('button', { name: /Start Journey|Parent Area/i })).toBeNull()
+    expect(screen.queryByRole('region', { name: 'Your Reading Journey' })).toBeNull()
+    expect(screen.getByRole('region', { name: 'Question action' }).querySelectorAll('button')).toHaveLength(1)
+    expect(JSON.parse(window.localStorage.getItem(QUEST_PROGRESS_STORAGE_KEY) ?? '{}').activeLessonSession?.lessonId).toBe(
+      decision.status === 'start' ? decision.lesson.lessonId : undefined,
+    )
     expect(screen.queryByText(/choose a world|choose a unit|another lesson is already open/i)).toBeNull()
   })
 

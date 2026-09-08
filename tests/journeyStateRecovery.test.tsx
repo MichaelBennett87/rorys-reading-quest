@@ -3,7 +3,12 @@ import { afterEach, describe, expect, test } from 'vitest'
 
 import App from '../src/App'
 import { normalizePlannedNextQuest, planGlobalQuest } from '../src/domain/curriculum'
-import { getLessonById, getLessonCandidates, type LessonResult } from '../src/domain/lesson'
+import {
+  getLessonById,
+  getLessonCandidates,
+  requiresLegacySessionContentFingerprint,
+  type LessonResult,
+} from '../src/domain/lesson'
 import { applyLessonResult, createInitialSkillProgress } from '../src/domain/progression'
 import {
   QUEST_PROGRESS_STORAGE_KEY,
@@ -30,10 +35,13 @@ const nextCandidate = candidates.find((candidate) => (
 ))!
 const firstLesson = getLessonById(firstCandidate.lessonId).lesson!
 const nextLesson = getLessonById(nextCandidate.lessonId).lesson!
+const unchangedCandidate = candidates.find((candidate) => candidate.packId === 'g3-word-forge-root-reactor')!
+const unchangedLesson = getLessonById(unchangedCandidate.lessonId).lesson!
 
 afterEach(() => {
   cleanup()
   window.localStorage.removeItem(QUEST_PROGRESS_STORAGE_KEY)
+  window.history.replaceState(null, '', '/')
 })
 
 function completedAttempt(completionId: string): CompletedLessonAttempt {
@@ -232,12 +240,62 @@ describe('P0 journey state recovery reproduction', () => {
     expect(recovered.state.totalStars).toBe(2)
   })
 
-  test('Case G: reload discards a completed active session and Start Journey launches the current plan', () => {
+  test('content fingerprints retire only sessions whose authored pack changed', () => {
+    const state = createDefaultQuestProgress(NOW)
+    state.totalXp = 45
+    state.totalStars = 2
+    state.reviewQueue = [{
+      skillId: 'unrelated-review',
+      difficulty: 1,
+      reviewStep: 0,
+      dueAt: NOW,
+    }]
+    state.activeLessonSession = {
+      ...createActiveLessonSession(firstLesson, 'stale-content-session', NOW),
+      sessionContentFingerprint: 'lesson-session-v1-stale',
+    }
+
+    const recovered = recoverActiveLessonSession({ state, availableLessons: candidates })
+    expect(recovered.status).toBe('discarded_incompatible')
+    expect(recovered.state.activeLessonSession).toBeNull()
+    expect(recovered.state.totalXp).toBe(45)
+    expect(recovered.state.totalStars).toBe(2)
+    expect(recovered.state.reviewQueue).toEqual(state.reviewQueue)
+  })
+
+  test('legacy sessions from corrected packs are retired without changing unrelated history', () => {
+    const state = createDefaultQuestProgress(NOW)
+    const legacySession = createActiveLessonSession(firstLesson, 'legacy-corrected-session', NOW)
+    delete legacySession.sessionContentFingerprint
+    state.activeLessonSession = legacySession
+    state.completedSessionCount = 3
+
+    expect(requiresLegacySessionContentFingerprint(firstCandidate.packId)).toBe(true)
+    const recovered = recoverActiveLessonSession({ state, availableLessons: candidates })
+    expect(recovered.status).toBe('discarded_incompatible')
+    expect(recovered.state.activeLessonSession).toBeNull()
+    expect(recovered.state.completedSessionCount).toBe(3)
+  })
+
+  test('legacy sessions from unchanged packs resume and receive the current fingerprint', () => {
+    const state = createDefaultQuestProgress(NOW)
+    const legacySession = createActiveLessonSession(unchangedLesson, 'legacy-unchanged-session', NOW)
+    delete legacySession.sessionContentFingerprint
+    state.activeLessonSession = legacySession
+
+    expect(requiresLegacySessionContentFingerprint(unchangedCandidate.packId)).toBe(false)
+    const recovered = recoverActiveLessonSession({ state, availableLessons: candidates })
+    expect(recovered.status).toBe('resumable')
+    expect(recovered.state.activeLessonSession?.sessionContentFingerprint).toBe(
+      unchangedLesson.sessionContentFingerprint,
+    )
+  })
+
+  test('Case G: reload discards a completed active session and automatically launches the current plan', () => {
     window.localStorage.setItem(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(stateWithCompletedActiveSession()))
     render(<App />)
-    fireEvent.click(screen.getByRole('button', { name: 'Start Journey' }))
 
-    expect(screen.getByRole('heading', { name: nextLesson.lessonTitle })).toBeTruthy()
+    expect(screen.getByText(nextLesson.questions[0].prompt)).toBeTruthy()
     const stored = JSON.parse(window.localStorage.getItem(QUEST_PROGRESS_STORAGE_KEY)!) as QuestProgressV1
     expect(stored.activeLessonSession?.lessonId).toBe(nextLesson.lessonId)
     expect(stored.completedAttempts).toHaveLength(1)
@@ -245,16 +303,15 @@ describe('P0 journey state recovery reproduction', () => {
     expect(stored.totalStars).toBe(3)
   })
 
-  test('Case H: rapid Start Journey activation creates only one active session', () => {
+  test('Case H: repeated launch effects create only one active session', () => {
     render(<App />)
-    const button = screen.getByRole('button', { name: 'Start Journey' })
-    fireEvent.click(button)
-    fireEvent.click(button)
+    fireEvent(window, new HashChangeEvent('hashchange'))
+    fireEvent(window, new HashChangeEvent('hashchange'))
 
     const stored = JSON.parse(window.localStorage.getItem(QUEST_PROGRESS_STORAGE_KEY)!) as QuestProgressV1
     expect(stored.activeLessonSession).not.toBeNull()
     expect(stored.completedAttempts).toHaveLength(0)
-    expect(screen.getAllByRole('heading', { name: firstLesson.lessonTitle })).toHaveLength(1)
+    expect(screen.getAllByText(firstLesson.questions[0].prompt)).toHaveLength(1)
   })
 
   test('Case I: genuine content-needed remains fail-closed without inventing a lesson', () => {

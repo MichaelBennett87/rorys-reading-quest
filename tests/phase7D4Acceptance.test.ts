@@ -71,7 +71,7 @@ describe('Phase 7D4 acceptance documentation and boundary', () => {
     expect(journey).toContain('Phase 7D4 boundary regression')
     expect(p0).toContain('Phase 7D4 preservation reconciliation')
     expect(agents).toContain(
-      'Substantial work should use three to four bounded subagents when useful, with explicit, non-overlapping scopes.',
+      "Perform all Rory's Reading Quest work in the current user-selected conversation. Additional subagents, conversation forks, and side model sessions are prohibited.",
     )
     expect(agents).toContain(
       'The primary agent owns integration decisions, production edits, Git operations, verification, pushes, and deployments.',

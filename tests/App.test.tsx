@@ -3,14 +3,14 @@ import { afterEach, describe, expect, test, vi } from 'vitest'
 
 import App from '../src/App'
 import { curriculumTracks, planGlobalQuest } from '../src/domain/curriculum'
-import { getLessonById, getLessonCandidates } from '../src/domain/lesson'
+import { getLessonCandidates } from '../src/domain/lesson'
 import { createInitialSkillProgress } from '../src/domain/progression'
-import { ProgressionOutcomeScreen } from '../src/screens/ProgressionOutcomeScreen'
 import {
   PARENT_ACCESS_STORAGE_KEY,
   PARENT_RECORDS_STORAGE_KEY,
   QUEST_PROGRESS_STORAGE_KEY,
   createDefaultQuestProgress,
+  type QuestProgressV1,
 } from '../src/persistence'
 import * as parentAccess from '../src/services/parentAccess'
 import type { ParentPinRecord } from '../src/services/parentAccess'
@@ -51,15 +51,12 @@ afterEach(() => {
   window.localStorage.removeItem(QUEST_PROGRESS_STORAGE_KEY)
   window.localStorage.removeItem(PARENT_ACCESS_STORAGE_KEY)
   window.localStorage.removeItem(PARENT_RECORDS_STORAGE_KEY)
+  window.history.replaceState(null, '', '/')
   parentCryptoSupported = true
 })
 
-function getHomeButtons() {
-  return screen.getAllByRole('button')
-}
-
-function startJourney() {
-  fireEvent.click(screen.getByRole('button', { name: 'Start Journey' }))
+function readProgress(): QuestProgressV1 {
+  return JSON.parse(window.localStorage.getItem(QUEST_PROGRESS_STORAGE_KEY) ?? 'null') as QuestProgressV1
 }
 
 function seedWordForgeComplete() {
@@ -85,62 +82,42 @@ function seedAllAuthoredCurriculumComplete() {
   window.localStorage.setItem(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(progress))
 }
 
-describe('simplified guided child journey', () => {
-  test('renders the title and exactly the two approved Home navigation buttons', () => {
-    render(<App />)
+function openParentRoute() {
+  window.location.hash = '#/parent'
+  fireEvent(window, new HashChangeEvent('hashchange'))
+}
 
-    expect(screen.getByRole('heading', { name: "Rory's Reading Quest" })).toBeTruthy()
-    expect(getHomeButtons().map((button) => button.textContent?.trim())).toEqual([
-      'Start Journey',
-      'Parent Area',
-    ])
-  })
-
-  test('keeps the whole journey visible as static, unfocusable progress landmarks', () => {
-    render(<App />)
-
-    const map = screen.getByRole('region', { name: 'Your Reading Journey' })
-    expect(within(map).queryAllByRole('button')).toHaveLength(0)
-    expect(within(map).queryAllByRole('link')).toHaveLength(0)
-    expect(within(map).getByRole('article', { name: /Word Forge: You are here/i }).getAttribute('aria-current')).toBe('step')
-    expect(within(map).getByRole('article', { name: /Story Scouts: Up Next/i })).toBeTruthy()
-    expect(within(map).getByText('Poetry Planet')).toBeTruthy()
-    expect(within(map).getByText('Information Detectives')).toBeTruthy()
-    expect(within(map).getByText('Context Cavern')).toBeTruthy()
-    expect(within(map).getByText('Compare Castle')).toBeTruthy()
-    within(map).getAllByRole('article').forEach((card) => {
-      expect(card.getAttribute('tabindex')).toBeNull()
-    })
-  })
-
-  test('world-card text cannot navigate or activate a selection route', () => {
-    render(<App />)
-
-    fireEvent.click(screen.getByText('Story Scouts'))
-    fireEvent.keyDown(screen.getByText('Story Scouts'), { key: 'Enter' })
-    expect(screen.getByRole('heading', { name: "Rory's Reading Quest" })).toBeTruthy()
-    expect(screen.queryByText(/Skills trained/i)).toBeNull()
-    expect(screen.queryByText(/Unit Selection/i)).toBeNull()
-  })
-
-  test('fresh Start Journey launches Word Forge directly with no selection or preview route', () => {
+describe('question-first child journey', () => {
+  test('opens directly into the first planner-selected question with no child navigation decisions', () => {
     const progress = createDefaultQuestProgress('2026-08-20T12:00:00.000Z')
     const planned = planGlobalQuest({
       progress,
       availableLessons: getLessonCandidates(),
       now: '2026-08-20T12:00:00.000Z',
     })
-    expect(planned.lesson?.worldId).toBe('word-forge')
-    const lesson = getLessonById(planned.lesson!.lessonId).lesson!
+    expect(planned.status).toBe('available')
 
     render(<App />)
-    startJourney()
 
-    expect(screen.getByRole('heading', { name: lesson.lessonTitle })).toBeTruthy()
-    expect(screen.queryByText(/Skills trained|Unit Selection|Ready when you are/i)).toBeNull()
+    expect(screen.getByText(/Question 1 of 7/i)).toBeTruthy()
+    expect(readProgress().activeLessonSession?.lessonId).toBe(planned.lesson?.lessonId)
+    expect(screen.queryByRole('button', { name: /Start Journey|Parent Area|Save and Exit/i })).toBeNull()
+    expect(screen.queryByRole('region', { name: /Your Reading Journey/i })).toBeNull()
+    const action = screen.getByRole('region', { name: 'Question action' })
+    expect(within(action).getAllByRole('button')).toHaveLength(1)
+    expect(within(action).getByRole('button', { name: 'Check Answer' }).hasAttribute('disabled')).toBe(true)
   })
 
-  test('completed Word Forge moves Start Journey directly to Story Scouts', () => {
+  test('does not render world cards, selectors, counters, or parent controls on the child route', () => {
+    render(<App />)
+
+    expect(screen.queryByText(/Story Scouts|Poetry Planet|Information Detectives|Context Cavern|Compare Castle/i)).toBeNull()
+    expect(screen.queryByText(/Unit Selection|World Selection|Skills trained|Ready when you are/i)).toBeNull()
+    expect(screen.queryByLabelText(/experience points|stars earned/i)).toBeNull()
+    expect(screen.queryByRole('button', { name: /Parent/i })).toBeNull()
+  })
+
+  test('completed Word Forge automatically advances ordinary planning to Story Scouts', () => {
     const progress = seedWordForgeComplete()
     const planned = planGlobalQuest({
       progress,
@@ -148,29 +125,41 @@ describe('simplified guided child journey', () => {
       now: '2026-08-20T12:00:00.000Z',
     })
     expect(planned.lesson?.worldId).toBe('story-scouts')
-    const lesson = getLessonById(planned.lesson!.lessonId).lesson!
 
     render(<App />)
-    startJourney()
 
-    expect(screen.getByRole('heading', { name: lesson.lessonTitle })).toBeTruthy()
-    expect(screen.queryByText(/Unit Selection|Ready when you are/i)).toBeNull()
+    expect(readProgress().activeLessonSession?.lessonId).toBe(planned.lesson?.lessonId)
+    expect(screen.getByText(/Question 1 of/i)).toBeTruthy()
   })
 
-  test('lesson answer controls remain interactive and feedback remains supportive', () => {
+  test('keeps one primary action while answer controls and supportive feedback remain available', () => {
     render(<App />)
-    startJourney()
-
     fireEvent.click(screen.getByRole('radio', { name: /leaf/i }))
-    fireEvent.click(screen.getByRole('button', { name: /Submit Answer/i }))
+    fireEvent.click(screen.getByRole('button', { name: 'Check Answer' }))
+
     expect(screen.getByText(/Great clue-finding!/i)).toBeTruthy()
-    expect(screen.getByRole('button', { name: /Next Question/i })).toBeTruthy()
+    expect(screen.getByRole('button', { name: 'Next' })).toBeTruthy()
+    expect(screen.queryByRole('button', { name: /Next Question|See Quest Complete|Continue Journey/i })).toBeNull()
   })
 
-  test('Parent Area setup, lock, and return preserve the simplified Home', async () => {
+  test('opening the parent bookmark does not create a child session', async () => {
+    window.location.hash = '#/parent'
     render(<App />)
 
-    fireEvent.click(screen.getByRole('button', { name: 'Parent Area' }))
+    expect(screen.getByRole('heading', { name: /Set Up Parent Area/i })).toBeTruthy()
+    expect(readProgress().activeLessonSession).toBeNull()
+    expect(readProgress()).toMatchObject({ completedSessionCount: 0, totalXp: 0, totalStars: 0 })
+
+    fireEvent.click(screen.getByRole('button', { name: /Back to Quest/i }))
+    await waitFor(() => expect(screen.getByText(/Question 1 of 7/i)).toBeTruthy())
+    expect(readProgress().activeLessonSession).not.toBeNull()
+  })
+
+  test('the bookmarkable parent route stays PIN-gated and returning resumes the child session', async () => {
+    render(<App />)
+    const sessionId = readProgress().activeLessonSession?.sessionId
+    openParentRoute()
+
     expect(screen.getByRole('heading', { name: /Set Up Parent Area/i })).toBeTruthy()
     fireEvent.change(screen.getByLabelText(/Create Parent PIN/i), { target: { value: '1234' } })
     fireEvent.change(screen.getByLabelText(/Confirm Parent PIN/i), { target: { value: '1234' } })
@@ -181,32 +170,33 @@ describe('simplified guided child journey', () => {
     fireEvent.click(screen.getByRole('button', { name: /Lock Parent Area/i }))
     expect(screen.getByRole('heading', { name: /Unlock Parent Area/i })).toBeTruthy()
     fireEvent.click(screen.getByRole('button', { name: /Back to Quest/i }))
-    expect(getHomeButtons().map((button) => button.textContent?.trim())).toEqual(['Start Journey', 'Parent Area'])
+    await waitFor(() => expect(screen.getByText(/Question 1 of 7/i)).toBeTruthy())
+    expect(readProgress().activeLessonSession?.sessionId).toBe(sessionId)
   })
 
   test('returning parent access still verifies the saved PIN', async () => {
+    window.location.hash = '#/parent'
     render(<App />)
-    fireEvent.click(screen.getByRole('button', { name: 'Parent Area' }))
     fireEvent.change(screen.getByLabelText(/Create Parent PIN/i), { target: { value: '1234' } })
     fireEvent.change(screen.getByLabelText(/Confirm Parent PIN/i), { target: { value: '1234' } })
     fireEvent.click(screen.getByRole('button', { name: /Create Parent PIN/i }))
     await waitFor(() => expect(screen.getByRole('heading', { name: /Parent Area/i })).toBeTruthy())
     fireEvent.click(screen.getByRole('button', { name: /Back to Quest/i }))
-    fireEvent.click(screen.getByRole('button', { name: 'Parent Area' }))
+    await waitFor(() => expect(screen.getByText(/Question 1 of 7/i)).toBeTruthy())
+    openParentRoute()
     await waitFor(() => expect(screen.getByRole('heading', { name: /Unlock Parent Area/i })).toBeTruthy())
     fireEvent.change(screen.getByLabelText(/Parent PIN/i), { target: { value: '9999' } })
     fireEvent.click(screen.getByRole('button', { name: /Unlock/i }))
     await waitFor(() => expect(screen.getByRole('alert').textContent).toMatch(/PIN did not match/i))
   })
 
-  test('parent crypto failures do not block Start Journey', () => {
+  test('parent crypto failures do not block automatic child reading', async () => {
     parentCryptoSupported = false
+    window.location.hash = '#/parent'
     render(<App />)
-    fireEvent.click(screen.getByRole('button', { name: 'Parent Area' }))
     expect(screen.getByText(/Secure local PIN setup is not available/i)).toBeTruthy()
     fireEvent.click(screen.getByRole('button', { name: /Back to Quest/i }))
-    startJourney()
-    expect(screen.getByText(/Question 1 of 7/i)).toBeTruthy()
+    await waitFor(() => expect(screen.getByText(/Question 1 of 7/i)).toBeTruthy())
   })
 
   test('parent storage failures do not damage or block child progress', () => {
@@ -223,75 +213,50 @@ describe('simplified guided child journey', () => {
 
     try {
       render(<App />)
-      startJourney()
       expect(screen.getByText(/Question 1 of 7/i)).toBeTruthy()
+      expect(readProgress().activeLessonSession).not.toBeNull()
     } finally {
       getItemSpy.mockRestore()
       setItemSpy.mockRestore()
     }
   })
 
-  test('content-needed progression exposes exactly one Back Home action', () => {
-    render(
-      <ProgressionOutcomeScreen
-        outcome={{
-          kind: 'CONTENT_NEEDED',
-          earnedXp: 0,
-          earnedStars: 0,
-          currentDifficulty: 1,
-          completionId: 'content-needed-test',
-          nextQuest: {
-            status: 'content_needed',
-            purpose: 'progression',
-            skillId: 'g2-word-forge-word-practice',
-            difficulty: 1,
-            reason: 'More guided quests are being prepared.',
-          },
-          curriculumComplete: false,
-        }}
-        onContinueJourney={() => {}}
-        onBackHome={() => {}}
-      />,
-    )
-
-    expect(screen.getAllByRole('button')).toHaveLength(1)
-    expect(screen.getByRole('button', { name: 'Back Home' })).toBeTruthy()
-    expect(screen.queryByRole('button', { name: /Return to Map|Continue Journey/i })).toBeNull()
-  })
-
-  test('full curriculum completion survives reload and returning Home without relaunching a lesson', () => {
+  test('full curriculum completion is calm, accurate, and does not fabricate navigation', () => {
     seedAllAuthoredCurriculumComplete()
     render(<App />)
 
-    startJourney()
     expect(screen.getByRole('heading', { name: 'Grade 3 Journey Complete!' })).toBeTruthy()
-    expect(screen.getAllByRole('button')).toHaveLength(1)
-    fireEvent.click(screen.getByRole('button', { name: 'Back Home' }))
-
-    expect(getHomeButtons().map((button) => button.textContent?.trim())).toEqual(['Start Journey', 'Parent Area'])
-    startJourney()
-    expect(screen.getByRole('heading', { name: 'Grade 3 Journey Complete!' })).toBeTruthy()
+    expect(screen.queryAllByRole('button')).toHaveLength(0)
     expect(screen.queryByText(/Question 1 of/i)).toBeNull()
+    expect(readProgress().activeLessonSession).toBeNull()
+
+    cleanup()
+    render(<App />)
+    expect(screen.getByRole('heading', { name: 'Grade 3 Journey Complete!' })).toBeTruthy()
+    expect(readProgress().activeLessonSession).toBeNull()
   })
 
-  test('saved rewards and progress load without a schema migration', () => {
+  test('saved rewards remain intact without appearing on the ordinary child surface', () => {
     const progress = createDefaultQuestProgress('2026-08-20T12:00:00.000Z')
     progress.totalXp = 125
     progress.totalStars = 7
-    progress.skillProgress['g2-story-scouts-prose'] = createInitialSkillProgress('g2-story-scouts-prose', 1, 0)
     window.localStorage.setItem(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(progress))
 
     render(<App />)
-    expect(screen.getByLabelText('125 experience points')).toBeTruthy()
-    expect(screen.getByLabelText('7 stars earned')).toBeTruthy()
+    expect(readProgress().totalXp).toBe(125)
+    expect(readProgress().totalStars).toBe(7)
+    expect(screen.queryByLabelText(/experience points|stars earned/i)).toBeNull()
     expect(screen.queryByText(/failed|failure|bad reader|wrong level|behind/i)).toBeNull()
   })
 
-  test('both Home actions expose visible keyboard focus', () => {
+  test('answer controls and the single primary action expose keyboard focus', () => {
     render(<App />)
-    getHomeButtons().forEach((button) => {
-      button.focus()
-      expect(document.activeElement).toBe(button)
-    })
+    const answer = screen.getByRole('radio', { name: /leaf/i })
+    answer.focus()
+    expect(document.activeElement).toBe(answer)
+    fireEvent.click(answer)
+    const action = screen.getByRole('button', { name: 'Check Answer' })
+    action.focus()
+    expect(document.activeElement).toBe(action)
   })
 })

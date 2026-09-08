@@ -1,7 +1,9 @@
-import { render, screen } from '@testing-library/react'
-import { describe, expect, test } from 'vitest'
+import { cleanup, render, screen } from '@testing-library/react'
+import { afterEach, describe, expect, test } from 'vitest'
 
 import App from '../../src/App'
+
+afterEach(() => cleanup())
 
 describe('dark-first experience', () => {
   test('uses the dark child experience by default', () => {
@@ -11,21 +13,14 @@ describe('dark-first experience', () => {
     expect(shell?.getAttribute('data-appearance')).toBe('dark')
   })
 
-  test('keeps distinct world identities and accessible unavailable states', () => {
+  test('applies the current world identity without restoring the retired map', () => {
     render(<App />)
 
     expect(document.querySelector('.world-theme-word-forge')).not.toBeNull()
-    expect(document.querySelector('.world-theme-story-scouts')).not.toBeNull()
-    expect(document.querySelector('.world-theme-poetry-planet')).not.toBeNull()
-    expect(document.querySelector('.world-theme-information-detectives')).not.toBeNull()
-    expect(document.querySelector('.world-theme-context-cavern')).not.toBeNull()
-    expect(document.querySelector('.world-theme-compare-castle')).not.toBeNull()
-
-    const unavailableWorld = document.querySelector<HTMLElement>('.world-coming-later')
-    const unavailableLandmark = unavailableWorld?.closest('article')
-    expect(unavailableLandmark).not.toBeNull()
-    expect(unavailableWorld?.closest('button')).toBeNull()
-    expect(unavailableLandmark?.getAttribute('tabindex')).toBeNull()
-    expect(unavailableWorld?.textContent).toMatch(/coming later/i)
+    expect(document.querySelector('.world-map')).toBeNull()
+    expect(document.querySelector('.world-coming-later')).toBeNull()
+    expect(screen.getByRole('region', { name: /Reading material/i })).toBeTruthy()
+    expect(screen.getByRole('region', { name: /Current question/i })).toBeTruthy()
+    expect(screen.getAllByRole('button', { name: /Check Answer|Next/i })).toHaveLength(1)
   })
 })
