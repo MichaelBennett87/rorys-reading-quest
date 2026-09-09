@@ -82,57 +82,109 @@ describe('local quest progress persistence', () => {
   test('invalid JSON safely falls back without overwriting stored data', () => {
     const storage = new MemoryStorage()
     storage.values.set(QUEST_PROGRESS_STORAGE_KEY, '{not-json')
-    const loaded = createLocalStorageQuestProgressStore(storage, () => now).load()
+    const store = createLocalStorageQuestProgressStore(storage, () => now)
+    const loaded = store.load()
     expect(loaded.status).toBe('invalid_json')
     expect(loaded.state.schemaVersion).toBe(1)
+    expect(store.save(loaded.state).status).toBe('write_blocked')
     expect(storage.writes).toBe(0)
     expect(storage.values.get(QUEST_PROGRESS_STORAGE_KEY)).toBe('{not-json')
   })
 
-  test('unsupported schema and missing fields safely fall back', () => {
+  test('unsupported schema and missing fields safely fall back without permitting overwrite', () => {
     const storage = new MemoryStorage()
     storage.values.set(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify({ schemaVersion: 2 }))
-    expect(createLocalStorageQuestProgressStore(storage, () => now).load().status).toBe('unsupported_version')
+    const futureStore = createLocalStorageQuestProgressStore(storage, () => now)
+    expect(futureStore.load().status).toBe('unsupported_version')
+    expect(futureStore.save(createDefaultQuestProgress(now)).status).toBe('write_blocked')
+    expect(storage.values.get(QUEST_PROGRESS_STORAGE_KEY)).toBe(JSON.stringify({ schemaVersion: 2 }))
     storage.values.set(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify({ schemaVersion: 1 }))
     expect(createLocalStorageQuestProgressStore(storage, () => now).load().status).toBe('invalid_state')
   })
 
-  test('malformed nested planner and outcome objects safely fall back without overwriting storage', () => {
+  test('malformed transient session, plan, and outcome data is discarded without losing durable progress', () => {
+    const durable = createDefaultQuestProgress(now)
+    durable.totalXp = 500
+    durable.totalStars = 20
+    durable.skillProgress['g2-word-forge-word-practice'].currentDifficulty = 4
     const malformedStates = [
-      { ...createDefaultQuestProgress(now), plannedNextQuest: {} },
-      { ...createDefaultQuestProgress(now), lastProgressionOutcome: {} },
-      {
-        ...createDefaultQuestProgress(now),
-        skillProgress: {
-          malformed: {
-            ...createDefaultQuestProgress(now).skillProgress['g2-word-forge-word-practice'],
-            skillId: 'malformed',
-            currentDifficulty: 1,
-            lastMasteredDifficulty: 0,
-            currentLearningState: 'NOT_A_REAL_STATE',
-            qualifyingIndependentActivityIds: [],
-            consecutiveUnsuccessfulAtCurrentDifficulty: 0,
-            lastCompletedActivityId: null,
-            recentActivityUsage: [],
-            reviewStep: 0,
-            nextReviewDate: null,
-            lastDecisionReasonCodes: [],
-            remediationContext: null,
-          },
-        },
-      },
+      { ...durable, activeLessonSession: {} },
+      { ...durable, plannedNextQuest: {} },
+      { ...durable, lastProgressionOutcome: {} },
     ]
 
     for (const malformed of malformedStates) {
       const storage = new MemoryStorage()
       const raw = JSON.stringify(malformed)
       storage.values.set(QUEST_PROGRESS_STORAGE_KEY, raw)
-      const loaded = createLocalStorageQuestProgressStore(storage, () => now).load()
-      expect(loaded.status).toBe('invalid_state')
-      expect(loaded.state).toEqual(createDefaultQuestProgress(now))
+      const store = createLocalStorageQuestProgressStore(storage, () => now)
+      const loaded = store.load()
+      expect(loaded.status).toBe('recovered')
+      expect(loaded.state.totalXp).toBe(500)
+      expect(loaded.state.totalStars).toBe(20)
+      expect(loaded.state.skillProgress['g2-word-forge-word-practice'].currentDifficulty).toBe(4)
+      expect(loaded.state.activeLessonSession).toBeNull()
+      expect(loaded.state.plannedNextQuest).toBeNull()
+      expect(loaded.state.lastProgressionOutcome).toBeNull()
       expect(storage.values.get(QUEST_PROGRESS_STORAGE_KEY)).toBe(raw)
       expect(storage.writes).toBe(0)
+      expect(store.save(loaded.state).status).toBe('saved')
+      expect(JSON.parse(storage.values.get(QUEST_PROGRESS_STORAGE_KEY) ?? '{}').totalXp).toBe(500)
     }
+  })
+
+  test('malformed durable skill progress remains fail-closed and cannot be overwritten', () => {
+    const storage = new MemoryStorage()
+    const state = createDefaultQuestProgress(now)
+    const malformed = {
+      ...state,
+      skillProgress: {
+        malformed: {
+          ...state.skillProgress['g2-word-forge-word-practice'],
+          skillId: 'malformed',
+          currentLearningState: 'NOT_A_REAL_STATE',
+        },
+      },
+    }
+    const raw = JSON.stringify(malformed)
+    storage.values.set(QUEST_PROGRESS_STORAGE_KEY, raw)
+    const store = createLocalStorageQuestProgressStore(storage, () => now)
+    expect(store.load().status).toBe('invalid_state')
+    expect(store.save(createDefaultQuestProgress(now)).status).toBe('write_blocked')
+    expect(storage.values.get(QUEST_PROGRESS_STORAGE_KEY)).toBe(raw)
+  })
+
+  test('a stale store cannot roll back progress saved by another page', () => {
+    const storage = new MemoryStorage()
+    const seedStore = createLocalStorageQuestProgressStore(storage, () => now)
+    expect(seedStore.save(createDefaultQuestProgress(now)).status).toBe('saved')
+    const firstStore = createLocalStorageQuestProgressStore(storage, () => now)
+    const staleStore = createLocalStorageQuestProgressStore(storage, () => now)
+    const first = firstStore.load().state
+    const stale = staleStore.load().state
+
+    first.totalXp = 100
+    expect(firstStore.save(first).status).toBe('saved')
+    stale.skillProgress['g2-word-forge-word-practice'].currentDifficulty = 2
+    const conflict = staleStore.save(stale)
+
+    expect(conflict.status).toBe('conflict')
+    expect(conflict.state.totalXp).toBe(100)
+    const stored = JSON.parse(storage.values.get(QUEST_PROGRESS_STORAGE_KEY) ?? '{}')
+    expect(stored.totalXp).toBe(100)
+    expect(stored.skillProgress['g2-word-forge-word-practice'].currentDifficulty).toBe(1)
+  })
+
+  test('a write is not reported as saved unless the exact value can be read back', () => {
+    const values = new Map<string, string>()
+    const storage: StorageLike = {
+      getItem(key) { return values.get(key) ?? null },
+      setItem() { /* Simulate a browser that silently drops the write. */ },
+    }
+    const result = createLocalStorageQuestProgressStore(storage, () => now)
+      .save(createDefaultQuestProgress(now))
+    expect(result.status).toBe('storage_error')
+    expect(result.technicalDetail).toMatch(/did not retain/i)
   })
 
   test('storage exceptions and unavailable storage use an in-memory fallback', () => {

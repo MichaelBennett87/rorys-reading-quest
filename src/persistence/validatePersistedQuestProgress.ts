@@ -16,6 +16,10 @@ export type PersistedStateValidationResult =
   | { status: 'valid'; state: QuestProgressV1 }
   | { status: 'unsupported_version' | 'invalid_state'; reason: string }
 
+export type PersistedStateRecoveryResult =
+  | { status: 'recovered'; state: QuestProgressV1; discardedFields: string[] }
+  | { status: 'unrecoverable' }
+
 export function validatePersistedQuestProgress(value: unknown): PersistedStateValidationResult {
   if (!isRecord(value)) return { status: 'invalid_state', reason: 'Persisted root must be an object.' }
   if (value.schemaVersion !== QUEST_PROGRESS_SCHEMA_VERSION) {
@@ -65,6 +69,38 @@ export function validatePersistedQuestProgress(value: unknown): PersistedStateVa
   }
 
   return { status: 'valid', state: normalizeQuestProgressForSave(value as unknown as QuestProgressV1) }
+}
+
+export function recoverPersistedQuestProgressTransients(value: unknown): PersistedStateRecoveryResult {
+  if (!isRecord(value) || value.schemaVersion !== QUEST_PROGRESS_SCHEMA_VERSION) {
+    return { status: 'unrecoverable' }
+  }
+
+  const transientFields = ['activeLessonSession', 'plannedNextQuest', 'lastProgressionOutcome'] as const
+  let candidate: Record<string, unknown> = {
+    ...value,
+    activeLessonSession: null,
+    plannedNextQuest: null,
+    lastProgressionOutcome: null,
+  }
+  if (validatePersistedQuestProgress(candidate).status !== 'valid') {
+    return { status: 'unrecoverable' }
+  }
+
+  const discardedFields: string[] = []
+  for (const field of transientFields) {
+    const withOriginal = { ...candidate, [field]: value[field] }
+    if (validatePersistedQuestProgress(withOriginal).status === 'valid') {
+      candidate = withOriginal
+    } else {
+      discardedFields.push(field)
+    }
+  }
+
+  const recovered = validatePersistedQuestProgress(candidate)
+  return recovered.status === 'valid'
+    ? { status: 'recovered', state: recovered.state, discardedFields }
+    : { status: 'unrecoverable' }
 }
 
 export function normalizeQuestProgressForSave(state: QuestProgressV1): QuestProgressV1 {

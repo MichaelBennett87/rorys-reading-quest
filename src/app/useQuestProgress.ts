@@ -21,12 +21,14 @@ import {
   recoverActiveLessonSession,
   type ActiveLessonSession,
   type ActiveLessonLaunchContext,
+  type QuestProgressSaveResult,
   type QuestProgressStorageStatus,
   type QuestProgressV1,
 } from '../persistence'
 import { findReviewQueueEntryByResolvedIdentity } from '../domain/progression/reviewQueueAffinity'
 
 export interface ProgressionOutcomeViewModel {
+  persisted: boolean
   kind: string
   earnedXp: number
   earnedStars: number
@@ -65,6 +67,7 @@ export type JourneyLaunchDecision =
 export type SaveActiveSessionResult =
   | { status: 'saved'; state: QuestProgressV1 }
   | { status: 'ignored_completed' | 'ignored_stale' | 'conflict'; state: QuestProgressV1 }
+  | { status: 'persistence_failed'; state: QuestProgressV1; technicalDetail?: string }
 
 interface InitialProgress {
   store: ReturnType<typeof createLocalStorageQuestProgressStore>
@@ -86,8 +89,12 @@ export function useQuestProgress() {
     const saved = normalized.changed || recoveryChanged ? store.save(normalizedState) : null
     return {
       store,
-      state: saved?.status === 'saved' ? saved.state : normalizedState,
-      storageStatus: saved?.status === 'saved' ? 'loaded' : loaded.status,
+      state: saved?.status === 'saved' || saved?.status === 'conflict'
+        ? saved.state
+        : normalizedState,
+      storageStatus: saved
+        ? saved.status === 'saved' ? 'loaded' : saved.status
+        : loaded.status,
       technicalDetail: recovered.technicalDetail ?? loaded.technicalDetail ?? saved?.technicalDetail,
     }
   })
@@ -97,20 +104,24 @@ export function useQuestProgress() {
   const [storageStatus, setStorageStatus] = useState(initial.storageStatus)
   const [technicalDetail, setTechnicalDetail] = useState(initial.technicalDetail)
 
-  const persist = (next: QuestProgressV1): QuestProgressV1 => {
+  const persist = (next: QuestProgressV1): QuestProgressSaveResult => {
     const saved = storeRef.current.save(next)
-    progressRef.current = saved.state
-    setProgress(saved.state)
+    const authoritativeState = saved.status === 'saved' || saved.status === 'conflict'
+      ? saved.state
+      : progressRef.current
+    const result = { ...saved, state: authoritativeState }
+    progressRef.current = authoritativeState
+    setProgress(authoritativeState)
     setStorageStatus(saved.status === 'saved' ? 'loaded' : saved.status)
     setTechnicalDetail(saved.technicalDetail)
-    return saved.state
+    return result
   }
 
   const beginLessonWithContext = (
     lesson: LessonDefinition,
     launchContext: ActiveLessonLaunchContext,
   ): {
-    status: 'started' | 'resumed' | 'conflict'
+    status: 'started' | 'resumed' | 'conflict' | 'persistence_failed'
     session: ActiveLessonSession
   } => {
     const existing = progressRef.current.activeLessonSession
@@ -132,8 +143,13 @@ export function useQuestProgress() {
       timestamp,
       launchContext,
     )
-    persist({ ...progressRef.current, activeLessonSession: session })
-    return { status: 'started', session }
+    const saved = persist({ ...progressRef.current, activeLessonSession: session })
+    if (saved.status === 'conflict') {
+      return { status: 'conflict', session: saved.state.activeLessonSession ?? session }
+    }
+    return saved.status === 'saved'
+      ? { status: 'started', session }
+      : { status: 'persistence_failed' as const, session }
   }
 
   const beginLesson = (lesson: LessonDefinition) => beginLessonWithContext(lesson, { purpose: 'progression' })
@@ -156,7 +172,10 @@ export function useQuestProgress() {
     ) {
       return { status: 'ignored_stale', state: current }
     }
-    return { status: 'saved', state: persist({ ...current, activeLessonSession: session }) }
+    const saved = persist({ ...current, activeLessonSession: session })
+    if (saved.status === 'saved') return { status: 'saved', state: saved.state }
+    if (saved.status === 'conflict') return { status: 'conflict', state: saved.state }
+    return { status: 'persistence_failed', state: saved.state, technicalDetail: saved.technicalDetail }
   }
 
   const abandonActiveLesson = () => {
@@ -181,8 +200,9 @@ export function useQuestProgress() {
         now: new Date().toISOString(),
       })
       const nextQuest = guidedPlan.nextQuest
-      persist({ ...reconciled, plannedNextQuest: nextQuest })
+      const saved = persist({ ...reconciled, plannedNextQuest: nextQuest })
       return {
+        persisted: saved.status === 'saved',
         kind: nextQuest.status === 'content_needed'
           ? 'CONTENT_NEEDED'
           : existingAttempt.progressionDecisionState,
@@ -260,8 +280,9 @@ export function useQuestProgress() {
         now: completedAt,
       })
       const guidedNextQuest = guidedPlan.nextQuest
-      persist({ ...completed.state, plannedNextQuest: guidedNextQuest })
+      const saved = persist({ ...completed.state, plannedNextQuest: guidedNextQuest })
       return {
+        persisted: saved.status === 'saved',
         kind: 'SPACED_REVIEW',
         earnedXp: completed.earnedXp,
         earnedStars: completed.earnedStars,
@@ -297,8 +318,9 @@ export function useQuestProgress() {
         now: completedAt,
       })
       const guidedNextQuest = guidedPlan.nextQuest
-      persist({ ...completed.state, plannedNextQuest: guidedNextQuest })
+      const saved = persist({ ...completed.state, plannedNextQuest: guidedNextQuest })
       return {
+        persisted: saved.status === 'saved',
         kind: fluencyProgress.reasonCodes.includes('fluency_practice_chapter_completed')
           ? 'FLUENCY_PRACTICE'
           : guidedNextQuest.status === 'content_needed'
@@ -327,8 +349,9 @@ export function useQuestProgress() {
         difficulty: lessonResult.difficulty,
         reason: progression.reason,
       }
-      persist({ ...progressRef.current, activeLessonSession: null, plannedNextQuest: nextQuest })
+      const saved = persist({ ...progressRef.current, activeLessonSession: null, plannedNextQuest: nextQuest })
       return {
+        persisted: saved.status === 'saved',
         kind: 'CONTENT_NEEDED',
         earnedXp: 0,
         earnedStars: 0,
@@ -352,8 +375,9 @@ export function useQuestProgress() {
       now: completedAt,
     })
     const guidedNextQuest = guidedPlan.nextQuest
-    persist({ ...completed.state, plannedNextQuest: guidedNextQuest })
+    const saved = persist({ ...completed.state, plannedNextQuest: guidedNextQuest })
     return {
+      persisted: saved.status === 'saved',
       kind: guidedNextQuest.status === 'content_needed'
         && progression.decision.decisionState !== 'ADVANCE'
         ? 'CONTENT_NEEDED'
@@ -384,7 +408,7 @@ export function useQuestProgress() {
     const normalized = normalizeQuestProgressForPlanning(recovered.state, availableLessons)
     let current = normalized.state
     if (activeSessionRecoveryChanged(progressRef.current, recovered.state) || normalized.changed) {
-      current = persist(current)
+      current = persist(current).state
     }
 
     const active = current.activeLessonSession
@@ -393,7 +417,7 @@ export function useQuestProgress() {
       if (resolved.lesson) {
         return { status: 'resume', lesson: resolved.lesson, session: active, state: current }
       }
-      current = persist({ ...current, activeLessonSession: null })
+      current = persist({ ...current, activeLessonSession: null }).state
     }
 
     const globalPlan = planGlobalQuest({
@@ -403,13 +427,13 @@ export function useQuestProgress() {
     })
     const plan = globalPlan.nextQuest
     if (plan.status === 'content_needed') {
-      const state = persist({ ...current, plannedNextQuest: plan })
+      const state = persist({ ...current, plannedNextQuest: plan }).state
       return { status: 'content_needed', plan, curriculumComplete: globalPlan.curriculumComplete, state }
     }
 
     const selected = getLessonById(plan.lesson.lessonId)
     if (!selected.lesson) {
-      const state = persist({ ...current, plannedNextQuest: null })
+      const state = persist({ ...current, plannedNextQuest: null }).state
       return {
         status: 'unavailable',
         reason: selected.errors[0] ?? 'The planned quest is unavailable.',
@@ -422,6 +446,14 @@ export function useQuestProgress() {
       selected.lesson,
       globalPlan.launchContext ?? { purpose: plan.purpose },
     )
+    if (begun.status === 'persistence_failed') {
+      return {
+        status: 'unavailable',
+        reason: 'This browser could not safely save the next reading activity. Your earlier saved progress was left unchanged.',
+        difficulty: selected.lesson.difficulty,
+        state: progressRef.current,
+      }
+    }
     if (begun.status === 'conflict') {
       const conflictingLesson = getLessonById(begun.session.lessonId)
       if (conflictingLesson.lesson) {
@@ -475,6 +507,7 @@ function buildRejectedCompletionOutcome(
   reason: string,
 ): ProgressionOutcomeViewModel {
   return {
+    persisted: true,
     kind: 'CONTENT_NEEDED',
     earnedXp: 0,
     earnedStars: 0,

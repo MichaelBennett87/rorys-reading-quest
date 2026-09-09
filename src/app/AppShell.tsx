@@ -29,9 +29,9 @@ export function AppShell() {
   const [outcome, setOutcome] = useState<ProgressionOutcomeViewModel | null>(null)
   const journeyLaunchPendingRef = useRef(false)
   const prepareJourneyLaunchRef = useRef(questProgress.prepareJourneyLaunch)
-  const storageNotice = ['unavailable', 'invalid_json', 'unsupported_version', 'invalid_state', 'storage_error']
+  const storageNotice = ['unavailable', 'invalid_json', 'unsupported_version', 'invalid_state', 'conflict', 'write_blocked', 'storage_error']
     .includes(questProgress.storageStatus)
-    ? 'Your reading can continue safely, but this browser could not restore saved progress.'
+    ? 'This browser could not safely update saved progress. Your earlier saved work was left unchanged.'
     : undefined
 
   useEffect(() => {
@@ -53,6 +53,7 @@ export function AppShell() {
     }
     if (decision.status === 'content_needed') {
       setOutcome({
+        persisted: true,
         kind: 'CONTENT_NEEDED',
         earnedXp: 0,
         earnedStars: 0,
@@ -72,6 +73,14 @@ export function AppShell() {
 
   const completeAndLaunchNext = (result: Parameters<typeof questProgress.completeLesson>[0], completionId: string) => {
     const nextOutcome = questProgress.completeLesson(result, completionId)
+    if (!nextOutcome.persisted) {
+      setLessonState((previous) => ({
+        ...previous,
+        errors: ['Rory\'s Reading Quest could not safely save that completed lesson. Your earlier saved progress is unchanged. Please retry.'],
+      }))
+      setScreen('load_error')
+      return
+    }
     if (nextOutcome.nextQuest.status === 'content_needed') {
       setOutcome(nextOutcome)
       setScreen('rest')

@@ -144,11 +144,14 @@ export interface QuestProgressV1 {
 
 export type QuestProgressStorageStatus =
   | 'loaded'
+  | 'recovered'
   | 'empty'
   | 'unavailable'
   | 'invalid_json'
   | 'unsupported_version'
   | 'invalid_state'
+  | 'conflict'
+  | 'write_blocked'
   | 'storage_error'
 
 export interface QuestProgressLoadResult {
@@ -159,7 +162,7 @@ export interface QuestProgressLoadResult {
 
 export interface QuestProgressSaveResult {
   state: QuestProgressV1
-  status: 'saved' | 'unavailable' | 'storage_error'
+  status: 'saved' | 'unavailable' | 'conflict' | 'write_blocked' | 'storage_error'
   technicalDetail?: string
 }
 
