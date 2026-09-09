@@ -595,3 +595,11 @@ Decision: open the normal application route directly into a compatible resumed s
 Reason: the child should make reading and answer decisions, not application-navigation decisions. The redesign keeps complete source context, all five response interfaces, guided teaching, fluency practice, local reference cards, and on-demand Word Help within one calm responsive surface.
 
 Consequence: boot and final completion reuse `prepareJourneyLaunch`; response drafts and feedback remain bounded schema-v1 session data; multiselect readiness never consults the hidden key; and review priority, unit affinity, prerequisites, mastery rules, review intervals, safe recycling, exact-once rewards, Parent PIN, assessments, privacy, and curriculum inventory remain unchanged. This work does not begin Phase 8, Grade 4, FAST timed practice, or Phase 10.
+
+## P0 persisted learning continuity
+
+- Decision: treat successful browser-storage write and exact read-back as the authority for checkpoint persistence; an in-memory transition alone must not be reported as saved.
+- Decision: retain schema version 1 and the established progress key while salvaging valid durable fields only when corruption is isolated to `activeLessonSession`, `plannedNextQuest`, or `lastProgressionOutcome`.
+- Decision: leave unsupported-schema, invalid-JSON, and malformed durable payloads byte-for-byte untouched instead of allowing automatic boot to replace them with a fresh learner.
+- Decision: use an instance-local compare-before-write token to reject stale-page writes without adding a backend, learner identifier, schema field, dependency, or cross-device claim.
+- Decision: automatic lesson completion may replan or show curriculum completion only after the completed attempt, rewards, progression, and cleared session are confirmed by the same authoritative save.

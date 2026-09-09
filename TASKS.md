@@ -88,6 +88,12 @@
   - [x] Autosave bounded ID-only response/session state and preserve exact recovery and exact-once completion.
   - [x] Move parent access to the separate PIN-gated `#/parent` bookmark route.
   - [x] Preserve canonical curriculum order, review, verification, remediation, safe recycling, and active-session priority.
+- [x] P0 persisted learning-continuity hotfix
+  - [x] Prove two distinct independent Word Forge successes survive cold page reopening and advance the correct difficulty.
+  - [x] Preserve durable schema-v1 fields when only transient session, plan, or outcome data is malformed.
+  - [x] Refuse future-schema, unreadable, and malformed-durable overwrites; verify writes by read-back.
+  - [x] Reject stale-tab writes so an older page cannot roll back newer progress or rewards.
+  - [x] Keep failed final-completion writes on a truthful retry path without losing or double-awarding the active session.
 - [x] Phase 7: Grade 3 FAST-aligned content
   - [x] Phase 7A: Grade 3 foundations and transition
     - [x] Phase 7A0: Grade 3 architecture, standards map, FAST blueprint, and progression bridge
