@@ -2,10 +2,10 @@
 
 Release gate: **PASS**.
 
-Registry-derived questions: 1614. Response slots: 2385.
-Frozen blind conclusions: 1614. Corrected questions: 25.
-Stratified second pass: 323/323 across 40 packs and 191/191 pack/type strata.
-Final semantic PASS: 1614.
+Registry-derived questions: 1611. Response slots: 2382.
+Frozen blind conclusions: 1611. Corrected questions: 42.
+Stratified second pass: 343/323 across 40 packs and 191/191 pack/type strata.
+Final semantic PASS: 1611.
 
 Review provenance is primary-agent work under the no-subagent policy. No record claims independent review. Fingerprints prove which learner-visible content was reviewed; they do not prove that natural-language judgment is infallible.
 
@@ -19,7 +19,7 @@ Review provenance is primary-agent work under the no-subagent policy. No record 
 | g2-word-forge-common-suffixes | 41 | 41 | 1 | 9 | 41 |
 | g2-word-forge-silent-letter-combinations | 41 | 41 | 0 | 10 | 41 |
 | g2-word-forge-fluency-practice-foundations | 28 | 28 | 0 | 6 | 28 |
-| g2-story-scouts-plot-structure-elements | 41 | 41 | 1 | 9 | 41 |
+| g2-story-scouts-plot-structure-elements | 38 | 38 | 18 | 23 | 38 |
 | g2-story-scouts-theme-trail | 41 | 41 | 0 | 7 | 41 |
 | g2-story-scouts-perspective-portal | 41 | 41 | 0 | 7 | 41 |
 | g2-poetry-planet-rhyme-routes | 41 | 41 | 0 | 12 | 41 |
@@ -46,7 +46,7 @@ Review provenance is primary-agent work under the no-subagent policy. No record 
 | g3-information-detectives-purpose-development-path | 41 | 41 | 1 | 6 | 41 |
 | g3-information-detectives-claim-evidence-court | 41 | 41 | 0 | 8 | 41 |
 | g3-compare-castle-figurative-fortress | 41 | 41 | 0 | 7 | 41 |
-| g3-compare-castle-summary-stronghold | 41 | 41 | 7 | 5 | 41 |
+| g3-compare-castle-summary-stronghold | 41 | 41 | 7 | 11 | 41 |
 | g3-compare-castle-author-lens-tower | 41 | 41 | 0 | 5 | 41 |
 | g3-context-cavern-academic-word-workshop | 41 | 41 | 0 | 8 | 41 |
 | g3-context-cavern-root-meaning-vault | 41 | 41 | 0 | 6 | 41 |

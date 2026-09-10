@@ -1,6 +1,6 @@
 export const STORY_MAP_PACK_ID = 'g2-story-scouts-plot-structure-elements'
 export const STORY_MAP_PACK_TITLE = 'Grade 2 Story Scouts: Story Map'
-export const STORY_MAP_CONTENT_VERSION = 'g2-ss-plot-elements-r0.1.0'
+export const STORY_MAP_CONTENT_VERSION = 'g2-ss-plot-elements-r0.2.0'
 
 export const STORY_MAP_PASSAGE_KEYS = {
   gardenSign: 'garden-sign',
@@ -62,4 +62,3 @@ export const STORY_MAP_BROAD_TAGS = [
   'characters',
   'sequence-of-events',
 ] as const
-

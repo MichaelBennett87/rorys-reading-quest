@@ -1,0 +1,409 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-story-map-b-r02",
+  "batchFileSha256": "0852bc200d0a65b29815125d8cfb06033c4b816b6b547f375a98deb7d309cfd9",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0343",
+      "fingerprint": "db2f2d790d8e0838dce5467c6eacee993fdd5ed5de9ee1959d401dac80b9da55",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "The friends test with three wooden blocks, so the blocks are present.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "The tray is mentioned only after repair, with no size problem.",
+              [
+                "S0058"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The sagging beam and dipping paper road are the defect they notice.",
+              [
+                "S0062"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "Nothing says the science fair was canceled.",
+              [
+                "S0061"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0344",
+      "fingerprint": "2449fa3f59b563a4c330da1f3d11c737d8a09aa467145e3bc0be4e65d897543c",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "UNSUPPORTED",
+              "The brace goes beneath the beam, not under a tray to hide the bridge.",
+              [
+                "S0054"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The brace supports the sagging beam so the road can remain level.",
+              [
+                "S0062",
+                "S0060"
+              ]
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "The brace does not change the weight of the blocks.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "The repair is for the science fair bridge, not lunch decoration.",
+              [
+                "S0061"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0345",
+      "fingerprint": "42c2ed22c4d55c48f855efa39f320a64b719047a1ff87550e1a616567f9ad575",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Carlos slides the brace into place beneath the beam.",
+              [
+                "S0056"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The model remains in the classroom and is not moved into rain.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Emmi tapes the sides and checks each corner.",
+              [
+                "S0056"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "They repair and test the paper road rather than throwing it away.",
+              [
+                "S0060"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0346",
+      "fingerprint": "53dae987fc958cd989a8b1a7b495758ca9307d1b5f8f941f8a5c08f41a4779d5",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes repair actions before the test, not proof from the test.",
+              [
+                "S0056"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The loaded test leaves the road level and the bridge steady.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the opening setting.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Their laughter follows the test but does not itself report the test result.",
+              [
+                "S0058"
+              ]
+            ],
+            [
+              "A5",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This is the proposed repair, not the successful test.",
+              [
+                "S0054"
+              ]
+            ],
+            [
+              "A6",
+              "CONTRADICTED",
+              "This describes the bridge before it is repaired.",
+              [
+                "S0062"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0347",
+      "fingerprint": "7388ad09bcb47563551de81d60927fdaccb7755b07274c3263fa9254f513659a",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The friends studying the bridge after lunch establishes the beginning.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The sagging beam states the problem.",
+              [
+                "S0062"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The steady repaired bridge states the resolution.",
+              [
+                "S0060"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Studying the bridge is opening setup.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The sagging beam and dipping road are the problem.",
+              [
+                "S0062"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The steady bridge is the resolved outcome.",
+              [
+                "S0060"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Studying the bridge is the beginning.",
+              [
+                "S0061"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Holding the blocks and staying steady proves the problem is resolved.",
+              [
+                "S0060"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The sagging beam states the original problem.",
+              [
+                "S0062"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0348",
+      "fingerprint": "cf7847ee334e5304629a653d139deba60b68fd3faf3ff6b9ba792f7d41aba578",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "They continue working after noticing the sagging beam.",
+              [
+                "S0054",
+                "S0056"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "Emmi tapes and checks while Carlos positions the brace.",
+              [
+                "S0056"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Carlos and Emmi perform complementary repair jobs.",
+              [
+                "S0056"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Placing the model on a tray happens after the repair and does not show combined jobs.",
+              [
+                "S0058"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The sagging beam states the problem, not their teamwork.",
+              [
+                "S0062"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Carlos positions the brace while Emmi tapes and checks, directly supporting Part A.",
+              [
+                "S0056"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

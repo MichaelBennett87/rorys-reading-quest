@@ -1,0 +1,421 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-story-map-c-r02",
+  "batchFileSha256": "a3a734cb268d0da8ad960338dc0f001f48d66a3b6de55165e8677b0ba6124679",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0350",
+      "fingerprint": "678352ce1540f32c60adcc50fb63c00a7ee8297862f5b632dd2f4f89bcac360d",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The cover has slipped and rain threatens the seedlings and soil.",
+              [
+                "S0070",
+                "S0071"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The soil is wet and rainwater is collecting.",
+              [
+                "S0070"
+              ]
+            ],
+            [
+              "A3",
+              "UNSUPPORTED",
+              "The awning remains available as shelter and has not fallen.",
+              [
+                "S0072"
+              ]
+            ],
+            [
+              "A4",
+              "UNSUPPORTED",
+              "Nothing says the teacher cannot find the tray.",
+              [
+                "S0064"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0351",
+      "fingerprint": "d295a89d6b17717adaa904e0682e3b5c865c1873224c3be7b95ecf985a361aea",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "Harper acts to protect the seedlings from wind and rain.",
+              [
+                "S0071",
+                "S0072"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "Harper notices and acts before the teacher speaks.",
+              [
+                "S0072",
+                "S0073"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Moving under the awning protects the tray from additional rain.",
+              [
+                "S0071",
+                "S0072"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "Harper moves the tray away from collecting rainwater.",
+              [
+                "S0070",
+                "S0072"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0352",
+      "fingerprint": "61928f03dcfb68a17d30a86900de291c109a5d8c883b75f08748bb40ba75ae2e",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A4"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Moving the tray under the awning shelters it from rain.",
+              [
+                "S0072"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "Harper does not leave the tray uncovered in the rain.",
+              [
+                "S0072"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "Harper protects the wet soil rather than adding water.",
+              [
+                "S0070",
+                "S0072"
+              ]
+            ],
+            [
+              "A4",
+              "DEFENSIBLE",
+              "Replacing the cover protects the tray from rain.",
+              [
+                "S0072"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0353",
+      "fingerprint": "b3b2f2f53c6ea605077395859e4be75e4210cbbd1e76b5e6e045589e03e82063",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This lists Harper's actions but does not state the later safe condition.",
+              [
+                "S0072"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The seedlings stand upright and the teacher explicitly says they are safe.",
+              [
+                "S0073"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "This describes the exposed tray before Harper acts.",
+              [
+                "S0070"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Harper's feeling follows the rescue but does not directly state the seedlings are safe.",
+              [
+                "S0068"
+              ]
+            ],
+            [
+              "A5",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes the seedlings leaning at the beginning.",
+              [
+                "S0065"
+              ]
+            ],
+            [
+              "A6",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This states Harper's concern before she acts.",
+              [
+                "S0071"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0354",
+      "fingerprint": "b8c5eee6d9f545e88d01b67284852501db99886993cc2fac8b54b225836bda02",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Seeing the leaning seedlings during the rainy afternoon establishes the beginning.",
+              [
+                "S0065"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The uncovered tray and threatened soil state the problem.",
+              [
+                "S0070",
+                "S0071"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The protected upright seedlings describe the resolution.",
+              [
+                "S0072",
+                "S0073"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The uncovered tray and threatened soil are the central problem.",
+              [
+                "S0070",
+                "S0071"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The protected upright seedlings describe the resolution.",
+              [
+                "S0072",
+                "S0073"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Seeing the seedlings establishes the beginning.",
+              [
+                "S0065"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Seeing the seedlings is the beginning.",
+              [
+                "S0065"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The uncovered tray and threatened soil are the problem.",
+              [
+                "S0070",
+                "S0071"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Harper protects the tray and the seedlings become safely upright.",
+              [
+                "S0072",
+                "S0073"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0355",
+      "fingerprint": "b03e12911e04b756bed8fe31ca8563e16e1441ad10eec503627fca6af4d09e5c",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A1"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "Harper quickly replaces the cover, moves the tray, and dries the leaves.",
+              [
+                "S0072",
+                "S0068"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "Harper acts immediately rather than ignoring the seedlings.",
+              [
+                "S0072"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "Harper worries rain will harm the roots and moves the tray to shelter.",
+              [
+                "S0071",
+                "S0072"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The teacher confirms the result but does not describe Harper's quick response.",
+              [
+                "S0073"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Replacing the cover, moving the tray, and drying leaves directly support Part A.",
+              [
+                "S0072"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The rainy setting does not show Harper's response.",
+              [
+                "S0065"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

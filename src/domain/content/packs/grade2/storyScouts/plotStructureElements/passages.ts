@@ -452,27 +452,31 @@ export const storyMapPassages: Passage[] = [
     passageIdentifier: STORY_MAP_PASSAGE_IDS.neighborhoodCleanup,
     gradeBand: 2,
     passageText:
-      'On a sunny Saturday morning, Tia led three neighbors around the block. Snack wrappers and cans had blown across the sidewalk after the picnic. Tia sorted the trash, and the helpers worked carefully until every bag was full. At the end, the street looked fresh, and Tia waved proudly at the clean sidewalk. The neighbors lined up the bags near the curb for pickup that evening.',
+      "On a sunny Saturday morning, Tia met three neighbors beside the block's littered sidewalk. Wind had spread snack wrappers and cans left after Friday's picnic. Tia carefully decided to collect the light wrappers first so they could not blow farther.\n\nShe asked two helpers to hold open bags while she and Malik picked up paper. Then the group sorted cans into a recycling bin and tied every bag. When the sidewalk was clear, Tia proudly thanked everyone for following the plan.",
     sentences: [
       {
         sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.neighborhoodCleanup, 1),
-        text: 'On a sunny Saturday morning, Tia led three neighbors around the block.',
+        text: "On a sunny Saturday morning, Tia met three neighbors beside the block's littered sidewalk.",
       },
       {
         sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.neighborhoodCleanup, 2),
-        text: 'Snack wrappers and cans had blown across the sidewalk after the picnic.',
+        text: "Wind had spread snack wrappers and cans left after Friday's picnic.",
       },
       {
         sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.neighborhoodCleanup, 3),
-        text: 'Tia sorted the trash, and the helpers worked carefully until every bag was full.',
+        text: 'Tia carefully decided to collect the light wrappers first so they could not blow farther.',
       },
       {
         sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.neighborhoodCleanup, 4),
-        text: 'At the end, the street looked fresh, and Tia waved proudly at the clean sidewalk.',
+        text: 'She asked two helpers to hold open bags while she and Malik picked up paper.',
       },
       {
         sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.neighborhoodCleanup, 5),
-        text: 'The neighbors lined up the bags near the curb for pickup that evening.',
+        text: 'Then the group sorted cans into a recycling bin and tied every bag.',
+      },
+      {
+        sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.neighborhoodCleanup, 6),
+        text: 'When the sidewalk was clear, Tia proudly thanked everyone for following the plan.',
       },
     ],
     readingContext: 'A story about neighbors cleaning up a block after a picnic.',
@@ -495,7 +499,7 @@ export const storyMapPassages: Passage[] = [
         blendSpeechText: 'Sat - ur - day',
         wholeWordSpeechText: 'Saturday',
         sentenceSpeechText:
-          'On a sunny Saturday morning, Tia led three neighbors around the block.',
+          "On a sunny Saturday morning, Tia met three neighbors beside the block's littered sidewalk.",
       }),
       supportTarget({
         passageId: STORY_MAP_PASSAGE_IDS.neighborhoodCleanup,
@@ -513,13 +517,13 @@ export const storyMapPassages: Passage[] = [
         blendSpeechText: 'care - ful - ly',
         wholeWordSpeechText: 'carefully',
         sentenceSpeechText:
-          'Tia sorted the trash, and the helpers worked carefully until every bag was full.',
+          'Tia carefully decided to collect the light wrappers first so they could not blow farther.',
       }),
       supportTarget({
         passageId: STORY_MAP_PASSAGE_IDS.neighborhoodCleanup,
         passageKey: STORY_MAP_PASSAGE_KEYS.neighborhoodCleanup,
         targetKey: 'helpers',
-        sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.neighborhoodCleanup, 3),
+        sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.neighborhoodCleanup, 4),
         surfaceWord: 'helpers',
         focusParts: [
           { text: 'help', emphasis: true },
@@ -530,13 +534,13 @@ export const storyMapPassages: Passage[] = [
         blendSpeechText: 'help - ers',
         wholeWordSpeechText: 'helpers',
         sentenceSpeechText:
-          'Tia sorted the trash, and the helpers worked carefully until every bag was full.',
+          'She asked two helpers to hold open bags while she and Malik picked up paper.',
       }),
       supportTarget({
         passageId: STORY_MAP_PASSAGE_IDS.neighborhoodCleanup,
         passageKey: STORY_MAP_PASSAGE_KEYS.neighborhoodCleanup,
         targetKey: 'proudly',
-        sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.neighborhoodCleanup, 4),
+        sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.neighborhoodCleanup, 6),
         surfaceWord: 'proudly',
         focusParts: [
           { text: 'proud', emphasis: true },
@@ -547,7 +551,7 @@ export const storyMapPassages: Passage[] = [
         blendSpeechText: 'proud - ly',
         wholeWordSpeechText: 'proudly',
         sentenceSpeechText:
-          'At the end, the street looked fresh, and Tia waved proudly at the clean sidewalk.',
+          'When the sidewalk was clear, Tia proudly thanked everyone for following the plan.',
       }),
     ],
   },
@@ -555,27 +559,31 @@ export const storyMapPassages: Passage[] = [
     passageIdentifier: STORY_MAP_PASSAGE_IDS.bridgeModel,
     gradeBand: 2,
     passageText:
-      'After lunch in the classroom, Carlos and Emmi studied a model bridge for the science fair. The middle beam sagged, and the paper road dipped low. Carlos added a stronger brace while Emmi taped the sides and checked each corner. When the bridge stood steady, their teacher nodded, and the two friends laughed quietly. They placed the model on a blue tray so the class could see the fix.',
+      'After lunch in the classroom, Carlos and Emmi studied their model bridge for the science fair. The middle beam sagged, so the paper road dipped low. Carlos suggested adding a stronger brace beneath the beam.\n\nHe slid the brace into place while Emmi taped the sides and checked each corner. They tested the bridge with three wooden blocks; the road stayed level and the bridge stood steady. The friends laughed quietly and placed the repaired model on a blue tray.',
     sentences: [
       {
         sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.bridgeModel, 1),
-        text: 'After lunch in the classroom, Carlos and Emmi studied a model bridge for the science fair.',
+        text: 'After lunch in the classroom, Carlos and Emmi studied their model bridge for the science fair.',
       },
       {
         sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.bridgeModel, 2),
-        text: 'The middle beam sagged, and the paper road dipped low.',
+        text: 'The middle beam sagged, so the paper road dipped low.',
       },
       {
         sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.bridgeModel, 3),
-        text: 'Carlos added a stronger brace while Emmi taped the sides and checked each corner.',
+        text: 'Carlos suggested adding a stronger brace beneath the beam.',
       },
       {
         sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.bridgeModel, 4),
-        text: 'When the bridge stood steady, their teacher nodded, and the two friends laughed quietly.',
+        text: 'He slid the brace into place while Emmi taped the sides and checked each corner.',
       },
       {
         sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.bridgeModel, 5),
-        text: 'They placed the model on a blue tray so the class could see the fix.',
+        text: 'They tested the bridge with three wooden blocks; the road stayed level and the bridge stood steady.',
+      },
+      {
+        sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.bridgeModel, 6),
+        text: 'The friends laughed quietly and placed the repaired model on a blue tray.',
       },
     ],
     readingContext: 'A story about fixing a model bridge in a classroom after lunch.',
@@ -597,13 +605,13 @@ export const storyMapPassages: Passage[] = [
         blendSpeechText: 'strong - er',
         wholeWordSpeechText: 'stronger',
         sentenceSpeechText:
-          'Carlos added a stronger brace while Emmi taped the sides and checked each corner.',
+          'Carlos suggested adding a stronger brace beneath the beam.',
       }),
       supportTarget({
         passageId: STORY_MAP_PASSAGE_IDS.bridgeModel,
         passageKey: STORY_MAP_PASSAGE_KEYS.bridgeModel,
         targetKey: 'taped',
-        sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.bridgeModel, 3),
+        sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.bridgeModel, 4),
         surfaceWord: 'taped',
         focusParts: [
           { text: 'tape', emphasis: true },
@@ -614,13 +622,13 @@ export const storyMapPassages: Passage[] = [
         blendSpeechText: 'tape - d',
         wholeWordSpeechText: 'taped',
         sentenceSpeechText:
-          'Carlos added a stronger brace while Emmi taped the sides and checked each corner.',
+          'He slid the brace into place while Emmi taped the sides and checked each corner.',
       }),
       supportTarget({
         passageId: STORY_MAP_PASSAGE_IDS.bridgeModel,
         passageKey: STORY_MAP_PASSAGE_KEYS.bridgeModel,
         targetKey: 'quietly',
-        sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.bridgeModel, 4),
+        sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.bridgeModel, 6),
         surfaceWord: 'quietly',
         focusParts: [
           { text: 'quiet', emphasis: true },
@@ -631,13 +639,13 @@ export const storyMapPassages: Passage[] = [
         blendSpeechText: 'quiet - ly',
         wholeWordSpeechText: 'quietly',
         sentenceSpeechText:
-          'When the bridge stood steady, their teacher nodded, and the two friends laughed quietly.',
+          'The friends laughed quietly and placed the repaired model on a blue tray.',
       }),
       supportTarget({
         passageId: STORY_MAP_PASSAGE_IDS.bridgeModel,
         passageKey: STORY_MAP_PASSAGE_KEYS.bridgeModel,
         targetKey: 'steady',
-        sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.bridgeModel, 4),
+        sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.bridgeModel, 5),
         surfaceWord: 'steady',
         focusParts: [
           { text: 'stead', emphasis: true },
@@ -648,7 +656,7 @@ export const storyMapPassages: Passage[] = [
         blendSpeechText: 'stead - y',
         wholeWordSpeechText: 'steady',
         sentenceSpeechText:
-          'When the bridge stood steady, their teacher nodded, and the two friends laughed quietly.',
+          'They tested the bridge with three wooden blocks; the road stayed level and the bridge stood steady.',
       }),
     ],
   },
@@ -656,27 +664,31 @@ export const storyMapPassages: Passage[] = [
     passageIdentifier: STORY_MAP_PASSAGE_IDS.seedlingsRain,
     gradeBand: 2,
     passageText:
-      'During a rainy afternoon in the school garden, Harper watched the young seedlings lean in the wind. A cover had slipped off the tray, and the soil looked too wet. Harper lifted the cover, moved the tray under the awning, and patted the leaves dry with a cloth. By the end, the seedlings stood safer, and Harper felt calm and helpful. A teacher thanked Harper for keeping the plants safe before the next storm.',
+      'During a rainy afternoon in the school garden, Harper saw the young seedlings leaning in the wind. A plastic cover had slipped off their tray, and rainwater was collecting beside the wet soil. Harper worried that more rain could wash the soil away from the roots.\n\nHarper put the cover back, moved the tray under the awning, and patted the leaves dry. Soon the seedlings stood upright, and the teacher said they were safe. Harper felt calm and helpful after acting quickly.',
     sentences: [
       {
         sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.seedlingsRain, 1),
-        text: 'During a rainy afternoon in the school garden, Harper watched the young seedlings lean in the wind.',
+        text: 'During a rainy afternoon in the school garden, Harper saw the young seedlings leaning in the wind.',
       },
       {
         sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.seedlingsRain, 2),
-        text: 'A cover had slipped off the tray, and the soil looked too wet.',
+        text: 'A plastic cover had slipped off their tray, and rainwater was collecting beside the wet soil.',
       },
       {
         sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.seedlingsRain, 3),
-        text: 'Harper lifted the cover, moved the tray under the awning, and patted the leaves dry with a cloth.',
+        text: 'Harper worried that more rain could wash the soil away from the roots.',
       },
       {
         sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.seedlingsRain, 4),
-        text: 'By the end, the seedlings stood safer, and Harper felt calm and helpful.',
+        text: 'Harper put the cover back, moved the tray under the awning, and patted the leaves dry.',
       },
       {
         sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.seedlingsRain, 5),
-        text: 'A teacher thanked Harper for keeping the plants safe before the next storm.',
+        text: 'Soon the seedlings stood upright, and the teacher said they were safe.',
+      },
+      {
+        sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.seedlingsRain, 6),
+        text: 'Harper felt calm and helpful after acting quickly.',
       },
     ],
     readingContext: 'A story about protecting seedlings in a rainy school garden.',
@@ -698,7 +710,7 @@ export const storyMapPassages: Passage[] = [
         blendSpeechText: 'af - ter - noon',
         wholeWordSpeechText: 'afternoon',
         sentenceSpeechText:
-          'During a rainy afternoon in the school garden, Harper watched the young seedlings lean in the wind.',
+          'During a rainy afternoon in the school garden, Harper saw the young seedlings leaning in the wind.',
       }),
       supportTarget({
         passageId: STORY_MAP_PASSAGE_IDS.seedlingsRain,
@@ -715,13 +727,13 @@ export const storyMapPassages: Passage[] = [
         blendSpeechText: 'seed - lings',
         wholeWordSpeechText: 'seedlings',
         sentenceSpeechText:
-          'During a rainy afternoon in the school garden, Harper watched the young seedlings lean in the wind.',
+          'During a rainy afternoon in the school garden, Harper saw the young seedlings leaning in the wind.',
       }),
       supportTarget({
         passageId: STORY_MAP_PASSAGE_IDS.seedlingsRain,
         passageKey: STORY_MAP_PASSAGE_KEYS.seedlingsRain,
         targetKey: 'helpful',
-        sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.seedlingsRain, 4),
+        sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.seedlingsRain, 6),
         surfaceWord: 'helpful',
         focusParts: [
           { text: 'help', emphasis: true },
@@ -732,13 +744,13 @@ export const storyMapPassages: Passage[] = [
         blendSpeechText: 'help - ful',
         wholeWordSpeechText: 'helpful',
         sentenceSpeechText:
-          'By the end, the seedlings stood safer, and Harper felt calm and helpful.',
+          'Harper felt calm and helpful after acting quickly.',
       }),
       supportTarget({
         passageId: STORY_MAP_PASSAGE_IDS.seedlingsRain,
         passageKey: STORY_MAP_PASSAGE_KEYS.seedlingsRain,
         targetKey: 'calm',
-        sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.seedlingsRain, 4),
+        sentenceId: storyMapSentenceId(STORY_MAP_PASSAGE_KEYS.seedlingsRain, 6),
         surfaceWord: 'calm',
         focusParts: [
           { text: 'calm', emphasis: true },
@@ -748,7 +760,7 @@ export const storyMapPassages: Passage[] = [
         blendSpeechText: 'calm',
         wholeWordSpeechText: 'calm',
         sentenceSpeechText:
-          'By the end, the seedlings stood safer, and Harper felt calm and helpful.',
+          'Harper felt calm and helpful after acting quickly.',
       }),
     ],
   },

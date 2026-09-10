@@ -3,11 +3,11 @@
 Registry source: active production content registry through Phase 7D6.
 
 - Active packs: 40
-- Active questions: 1614
-- Canonical submissions: 1614
+- Active questions: 1611
+- Canonical submissions: 1611
 - Canonical-equivalent submissions: 542
-- Adversarial submissions: 19558
-- Grading-contract assertions: 24942
+- Adversarial submissions: 19636
+- Grading-contract assertions: 25011
 
 | Pack ID | Questions | Blind pass | Key comparison | Adversarial pass | Evaluator contract | Corrections | Ledger | Final |
 | --- | ---: | --- | --- | --- | --- | --- | --- | --- |
@@ -19,7 +19,7 @@ Registry source: active production content registry through Phase 7D6.
 | g2-word-forge-common-suffixes | 41 | yes | yes | yes | yes | yes | yes | PASS |
 | g2-word-forge-silent-letter-combinations | 41 | yes | yes | yes | yes | yes | yes | PASS |
 | g2-word-forge-fluency-practice-foundations | 28 | yes | yes | yes | yes | yes | yes | PASS |
-| g2-story-scouts-plot-structure-elements | 41 | yes | yes | yes | yes | yes | yes | PASS |
+| g2-story-scouts-plot-structure-elements | 38 | yes | yes | yes | yes | yes | yes | PASS |
 | g2-story-scouts-theme-trail | 41 | yes | yes | yes | yes | yes | yes | PASS |
 | g2-story-scouts-perspective-portal | 41 | yes | yes | yes | yes | yes | yes | PASS |
 | g2-poetry-planet-rhyme-routes | 41 | yes | yes | yes | yes | yes | yes | PASS |

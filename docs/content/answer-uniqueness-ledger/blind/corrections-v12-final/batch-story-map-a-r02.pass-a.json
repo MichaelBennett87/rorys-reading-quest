@@ -1,0 +1,413 @@
+{
+  "schemaVersion": 2,
+  "stage": "PASS_A_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-story-map-a-r02",
+  "batchFileSha256": "fba4be8fada5691bda5c02feebf4e940654c9385f566011e14af2d37de074803",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "records": [
+    {
+      "auditId": "Q0336",
+      "fingerprint": "0aa549df1d2eef6f944eaf3bfcdc2de5db7c665ef6b27b109292696ad74826e4",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "The passage shows neighbors meeting Tia and helping with bags and paper.",
+              [
+                "S0043",
+                "S0047"
+              ]
+            ],
+            [
+              "A2",
+              "CONTRADICTED",
+              "The sidewalk is littered at the beginning and becomes clear only at the end.",
+              [
+                "S0043",
+                "S0049"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The wind-spread wrappers and cans are the condition the group works to fix.",
+              [
+                "S0050"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "Two helpers hold open bags, so bags are available.",
+              [
+                "S0047"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0337",
+      "fingerprint": "7d26c85fb92ab609f9f9a48b4491a5622bb3dba74d31641d7fca72203a7b9bc5",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "UNSUPPORTED",
+              "Nothing says helpers are barred from holding bags.",
+              [
+                "S0047"
+              ]
+            ],
+            [
+              "A2",
+              "UNSUPPORTED",
+              "The passage never connects wrappers with making cans heavier.",
+              [
+                "S0042"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Tia collects light wrappers first so they cannot blow farther.",
+              [
+                "S0045"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The cleanup happens on Saturday morning, not after an evening wait.",
+              [
+                "S0043"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0338",
+      "fingerprint": "46166e5c91a70701339542dd27dcfe7a19d1f74eca3213efb5db87d18adaf8c7",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "DEFENSIBLE",
+              "The helpers hold open bags while paper is collected.",
+              [
+                "S0047"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The group sorts cans into a recycling bin.",
+              [
+                "S0051"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "The group ties the bags rather than untying them.",
+              [
+                "S0051"
+              ]
+            ],
+            [
+              "A4",
+              "CONTRADICTED",
+              "The group collects wrappers so they do not remain in the wind.",
+              [
+                "S0045"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0339",
+      "fingerprint": "3bec10edbca4d643b4a485840ca97aa6bc077d566088ba3c3afe583dcd2f2532",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Sorting cans is a cleanup action, but it does not explicitly state the final clean condition.",
+              [
+                "S0051"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "The sentence explicitly says the sidewalk was clear at the end.",
+              [
+                "S0049"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This introduces the littered sidewalk at the beginning.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A4",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This explains how trash spread before the cleanup.",
+              [
+                "S0050"
+              ]
+            ],
+            [
+              "A5",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This gives Tia's plan, not the final condition.",
+              [
+                "S0045"
+              ]
+            ],
+            [
+              "A6",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This gives a cleanup action, not the final condition.",
+              [
+                "S0047"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0340",
+      "fingerprint": "97c3381070d4860771491c62a47d5a7604780f53f753da6e37203e4b23ddfec5",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "This describes the successful resolution, not the beginning.",
+              [
+                "S0049"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Tia meeting the neighbors beside the littered sidewalk establishes the beginning.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Wind-spread trash is the story problem.",
+              [
+                "S0050"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Meeting the neighbors is opening setup rather than the problem itself.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The clear sidewalk describes the resolution.",
+              [
+                "S0049"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "Wind-spread picnic trash is the problem the group must solve.",
+              [
+                "S0050"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Meeting the neighbors belongs to the beginning.",
+              [
+                "S0043"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Following the plan until the sidewalk is clear resolves the problem.",
+              [
+                "S0049"
+              ]
+            ],
+            [
+              "A3",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Wind-spread trash states the problem.",
+              [
+                "S0050"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    },
+    {
+      "auditId": "Q0341",
+      "fingerprint": "75d6c15192180cb92733a641dd740cdb39450fb5efd6a845403656cd9e84a5fc",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "CONTRADICTED",
+              "Tia acts immediately instead of leaving the cleanup for another day.",
+              [
+                "S0045",
+                "S0047"
+              ]
+            ],
+            [
+              "A2",
+              "DEFENSIBLE",
+              "Tia plans the order and assigns helpers, showing careful teamwork.",
+              [
+                "S0045",
+                "S0047"
+              ]
+            ],
+            [
+              "A3",
+              "CONTRADICTED",
+              "Tia decides what to collect first and directs helpers, so she is not confused.",
+              [
+                "S0045",
+                "S0047"
+              ]
+            ]
+          ]
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "options": [
+            [
+              "A1",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "The picnic explains where trash came from but not Tia's character.",
+              [
+                "S0050"
+              ]
+            ],
+            [
+              "A2",
+              "PARTIALLY_TRUE_BUT_NONRESPONSIVE",
+              "Thanking the group shows appreciation but is weaker evidence for planning and coordination.",
+              [
+                "S0049"
+              ]
+            ],
+            [
+              "A3",
+              "DEFENSIBLE",
+              "The stated decisions and request for helpers directly support the Part A trait.",
+              [
+                "S0045",
+                "S0047"
+              ]
+            ]
+          ]
+        }
+      ],
+      "projectionDefect": ""
+    }
+  ]
+}

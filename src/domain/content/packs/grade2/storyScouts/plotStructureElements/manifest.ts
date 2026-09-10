@@ -129,16 +129,12 @@ const storyMapLessonDefinitions = [
     unitId: 'ss-unit-1',
     activityId: 'activity-story-map-checkpoint-a',
     difficulty: 1,
-    passageIdentifiers: [
-      STORY_MAP_PASSAGE_IDS.neighborhoodCleanup,
-      STORY_MAP_PASSAGE_IDS.bridgeModel,
-      STORY_MAP_PASSAGE_IDS.seedlingsRain,
-    ],
+    passageIdentifiers: [STORY_MAP_PASSAGE_IDS.neighborhoodCleanup],
     questionIdentifiers: storyMapCheckpointQuestions
       .filter((question) => question.lessonIdentifier === STORY_MAP_LESSON_IDS.checkpointA)
       .map((question) => question.questionIdentifier),
-    lessonTitle: 'Story Map Checkpoint: Cleanup, Bridge, and Seedlings',
-    lessonObjective: 'Prove story elements, sequence, and resolution with fresh reading.',
+    lessonTitle: "Story Map Checkpoint: Tia's Cleanup Plan",
+    lessonObjective: 'Understand one complete story by tracing its problem, actions, and resolution.',
     lessonRole: 'CHECKPOINT',
     selectionStatus: 'active',
     contentVersion: STORY_MAP_CONTENT_VERSION,
@@ -150,16 +146,12 @@ const storyMapLessonDefinitions = [
     unitId: 'ss-unit-1',
     activityId: 'activity-story-map-checkpoint-b',
     difficulty: 1,
-    passageIdentifiers: [
-      STORY_MAP_PASSAGE_IDS.bridgeModel,
-      STORY_MAP_PASSAGE_IDS.seedlingsRain,
-      STORY_MAP_PASSAGE_IDS.neighborhoodCleanup,
-    ],
+    passageIdentifiers: [STORY_MAP_PASSAGE_IDS.bridgeModel],
     questionIdentifiers: storyMapCheckpointQuestions
       .filter((question) => question.lessonIdentifier === STORY_MAP_LESSON_IDS.checkpointB)
       .map((question) => question.questionIdentifier),
-    lessonTitle: 'Story Map Checkpoint: Bridge, Seedlings, and Cleanup',
-    lessonObjective: 'Prove story elements, sequence, and resolution with fresh reading.',
+    lessonTitle: 'Story Map Checkpoint: The Steady Bridge',
+    lessonObjective: 'Understand one complete story by tracing its problem, teamwork, and resolution.',
     lessonRole: 'CHECKPOINT',
     selectionStatus: 'active',
     contentVersion: STORY_MAP_CONTENT_VERSION,
@@ -171,16 +163,12 @@ const storyMapLessonDefinitions = [
     unitId: 'ss-unit-1',
     activityId: 'activity-story-map-checkpoint-c',
     difficulty: 1,
-    passageIdentifiers: [
-      STORY_MAP_PASSAGE_IDS.seedlingsRain,
-      STORY_MAP_PASSAGE_IDS.neighborhoodCleanup,
-      STORY_MAP_PASSAGE_IDS.bridgeModel,
-    ],
+    passageIdentifiers: [STORY_MAP_PASSAGE_IDS.seedlingsRain],
     questionIdentifiers: storyMapCheckpointQuestions
       .filter((question) => question.lessonIdentifier === STORY_MAP_LESSON_IDS.checkpointC)
       .map((question) => question.questionIdentifier),
-    lessonTitle: 'Story Map Checkpoint: Seedlings, Cleanup, and Bridge',
-    lessonObjective: 'Prove story elements, sequence, and resolution with fresh reading.',
+    lessonTitle: 'Story Map Checkpoint: Harper Saves the Seedlings',
+    lessonObjective: 'Understand one complete story by tracing its problem, response, and resolution.',
     lessonRole: 'CHECKPOINT',
     selectionStatus: 'active',
     contentVersion: STORY_MAP_CONTENT_VERSION,

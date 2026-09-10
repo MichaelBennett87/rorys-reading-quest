@@ -283,8 +283,9 @@ function validateBridgePackStructure(packs: readonly ContentPack[], issues: Cont
     if (pack.passages.length !== passageCount) {
       pushIssue(issues, 'passage_count_mismatch', pack.manifest.packId, `Expected ${passageCount} passages, found ${pack.passages.length}.`)
     }
-    if (pack.questions.length !== 41) {
-      pushIssue(issues, 'question_count_mismatch', pack.manifest.packId, `Expected 41 questions, found ${pack.questions.length}.`)
+    const questionCount = expectation.questionCount ?? 41
+    if (pack.questions.length !== questionCount) {
+      pushIssue(issues, 'question_count_mismatch', pack.manifest.packId, `Expected ${questionCount} questions, found ${pack.questions.length}.`)
     }
     if (guidedLessons.length !== 4) {
       pushIssue(issues, 'lesson_count_mismatch', pack.manifest.packId, `Expected 4 active guided lessons, found ${guidedLessons.length}.`)
@@ -3564,6 +3565,7 @@ function containsUnsafeText(text: string): boolean {
 interface BridgePackExpectation {
   packId: string
   passageCount?: number
+  questionCount?: number
   guidedDifficultyA: number
   guidedDifficultyB: number
   checkpointPassageCount?: number
@@ -4017,8 +4019,10 @@ function getBridgePackExpectation(pack: ContentPack): BridgePackExpectation | nu
   if (!hasB && !hasC && pack.manifest.benchmarkReferences.includes('ELA.2.R.1.1') && minDifficulty === 0 && maxDifficulty === 1) {
     return {
       packId: pack.manifest.packId,
+      questionCount: 38,
       guidedDifficultyA: 0,
       guidedDifficultyB: 1,
+      checkpointPassageCount: 1,
       checkpointPatterns: [
         'plot-structure',
         'setting',
@@ -4041,7 +4045,7 @@ function getBridgePackExpectation(pack: ContentPack): BridgePackExpectation | nu
       closedConsonantLeWords: new Set(),
       forbiddenSilentEWords: new Set(),
       questionTypeCounts: {
-        multiple_choice: 17,
+        multiple_choice: 14,
         multi_select: 7,
         hot_text: 7,
         table_match: 7,

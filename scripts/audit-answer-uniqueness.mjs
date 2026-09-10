@@ -181,7 +181,6 @@ async function loadSecondPass(projection, primaryByAuditId) {
       throw new Error(`Invalid second-pass correction metadata: ${path.relative(repoRoot, file)}`)
     }
     for (const record of receipt.records) {
-      if (!base.has(record.auditId)) continue
       const identity = projection.identityByAuditId.get(record.auditId)
       if (!identity || record.fingerprint !== identity.visibleProjectionFingerprint) continue
       if (corrections.has(record.auditId)) throw new Error(`Duplicate current second-pass correction: ${record.auditId}`)
@@ -194,11 +193,14 @@ async function loadSecondPass(projection, primaryByAuditId) {
   }
 
   const current = new Map()
-  for (const [auditId, original] of base) {
+  const sampledAuditIds = new Set([...base.keys(), ...corrections.keys()])
+  for (const auditId of sampledAuditIds) {
+    const original = base.get(auditId)
     const identity = projection.identityByAuditId.get(auditId)
     const visible = projection.visibleByAuditId.get(auditId)
     const selected = corrections.get(auditId) ?? original
-    if (!identity || !visible || selected.record.fingerprint !== identity.visibleProjectionFingerprint) {
+    if (!identity || !visible) continue
+    if (!selected || selected.record.fingerprint !== identity.visibleProjectionFingerprint) {
       throw new Error(`Sampled second-pass question lacks a current receipt: ${auditId}`)
     }
     if (selected.record.slots.length !== visible.slots.length) throw new Error(`Second-pass slot mismatch: ${auditId}`)

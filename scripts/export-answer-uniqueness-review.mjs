@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from 'node:fs/promises'
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { createHash } from 'node:crypto'
 import path from 'node:path'
 import os from 'node:os'
@@ -6,6 +6,21 @@ import { createServer } from 'vite'
 
 // Offline review export only. No generated semantic verdicts or approval claims.
 const destination = process.argv[2] ?? path.join(os.tmpdir(), 'rrq-answer-uniqueness-452ab84-v2-release')
+const stableAuditIdFile = path.resolve('docs/content/answer-uniqueness-ledger/AUDIT_ID_MAP.json')
+const stableAuditIdRecords = JSON.parse(await readFile(stableAuditIdFile, 'utf8')).entries
+const stableAuditIdByQuestionId = new Map(stableAuditIdRecords.map((entry) => [entry.questionId, entry.auditId]))
+const usedAuditIds = new Set(stableAuditIdRecords.map((entry) => entry.auditId))
+let nextAuditOrdinal = Math.max(...[...usedAuditIds].map((auditId) => Number(auditId.slice(1))))
+const resolveAuditId = (questionId) => {
+  const stable = stableAuditIdByQuestionId.get(questionId)
+  if (stable) return stable
+  let candidate
+  do candidate = `Q${String(++nextAuditOrdinal).padStart(4, '0')}`
+  while (usedAuditIds.has(candidate))
+  usedAuditIds.add(candidate)
+  stableAuditIdByQuestionId.set(questionId, candidate)
+  return candidate
+}
 await mkdir(destination)
 const server = await createServer({ appType: 'custom', logLevel: 'silent', server: { middlewareMode: true } })
 try {
@@ -20,7 +35,6 @@ try {
   const assistanceRecords = []
   const assistanceFiles = []
   const visibleRecords = []
-  let ordinal = 0
   for (const pack of packs) {
     const sourceIds = new Map()
     const remapSourceId = (id) => {
@@ -33,7 +47,7 @@ try {
       return typeof value === 'string' && /(?:Id|Ids|Identifier)$/.test(field) ? remapSourceId(value) : value
     }
     const records = projection.filter((record) => record.packId === pack.manifest.packId).map((record) => {
-      const auditId = `Q${String(++ordinal).padStart(4, '0')}`
+      const auditId = resolveAuditId(record.questionId)
       const question = pack.questions.find((entry) => entry.questionIdentifier === record.questionId)
       const payload = question.questionContent
       const slots = []

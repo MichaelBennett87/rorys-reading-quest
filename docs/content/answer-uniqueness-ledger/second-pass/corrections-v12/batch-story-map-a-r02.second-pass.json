@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "stage": "SECOND_PASS_FROZEN_BEFORE_KEY_COMPARISON",
+  "batchId": "batch-story-map-a-r02",
+  "batchFileSha256": "fba4be8fada5691bda5c02feebf4e940654c9385f566011e14af2d37de074803",
+  "reviewerThreadId": "UNKNOWN_CURRENT_MAIN_CONVERSATION",
+  "reviewer": "primary-agent-current-conversation",
+  "independentReviewer": false,
+  "records": [
+    {
+      "auditId": "Q0336",
+      "fingerprint": "0aa549df1d2eef6f944eaf3bfcdc2de5db7c665ef6b27b109292696ad74826e4",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "A3 alone states the central cleanup problem; the other choices are contradicted or unsupported."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0337",
+      "fingerprint": "7d26c85fb92ab609f9f9a48b4491a5622bb3dba74d31641d7fca72203a7b9bc5",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "A3 directly gives the stated cause for collecting light wrappers first."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0338",
+      "fingerprint": "46166e5c91a70701339542dd27dcfe7a19d1f74eca3213efb5db87d18adaf8c7",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A1",
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "Exactly A1 and A2 are cleanup actions described in the story."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0339",
+      "fingerprint": "3bec10edbca4d643b4a485840ca97aa6bc077d566088ba3c3afe583dcd2f2532",
+      "slots": [
+        {
+          "slotId": "response",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "A2 alone explicitly states the clean end condition."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0340",
+      "fingerprint": "97c3381070d4860771491c62a47d5a7604780f53f753da6e37203e4b23ddfec5",
+      "slots": [
+        {
+          "slotId": "row_1",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "A2 is the opening setup; A1 is the resolution and A3 is the problem."
+        },
+        {
+          "slotId": "row_2",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "A3 uniquely states the problem; the other details belong to beginning and resolution."
+        },
+        {
+          "slotId": "row_3",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "A2 uniquely describes the completed cleanup resolution."
+        }
+      ]
+    },
+    {
+      "auditId": "Q0341",
+      "fingerprint": "75d6c15192180cb92733a641dd740cdb39450fb5efd6a845403656cd9e84a5fc",
+      "slots": [
+        {
+          "slotId": "part_a",
+          "defensible": [
+            "A2"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "A2 is the only characterization supported by Tia's planning and coordination."
+        },
+        {
+          "slotId": "part_b",
+          "defensible": [
+            "A3"
+          ],
+          "ambiguity": "",
+          "selectionContractValid": true,
+          "challengeSummary": "A3 directly combines Tia's careful plan with her coordination of helpers."
+        }
+      ]
+    }
+  ]
+}
