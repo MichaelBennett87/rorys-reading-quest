@@ -17,6 +17,7 @@ export function createDefaultQuestProgress(timestamp: string): QuestProgressV1 {
     recentActivityUsage: {},
     reviewQueue: [],
     activeLessonSession: null,
+    deferredWordStudySession: null,
     plannedNextQuest: null,
     lastProgressionOutcome: null,
     metadata: { createdAt: timestamp, updatedAt: timestamp },

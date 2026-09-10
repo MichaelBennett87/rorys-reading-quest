@@ -54,6 +54,13 @@ const ACTIVE_LEARNING_STATES: readonly SkillProgressState['currentLearningState'
 ] as const
 
 const ACTIVE_LEARNING_STATE_SET = new Set<SkillProgressState['currentLearningState']>(ACTIVE_LEARNING_STATES)
+const WORD_STUDY_WORLD_ID = 'word-forge'
+const STORY_MAP_REVIEW_VERSION_MIGRATION = {
+  skillId: 'g2-story-scouts-prose',
+  unitId: 'ss-unit-1',
+  from: 'g2-ss-plot-elements-r0.1.0',
+  to: 'g2-ss-plot-elements-r0.2.0',
+} as const
 
 export function discoverPlayableTracks(
   availableLessons: readonly LessonActivityCandidate[],
@@ -127,12 +134,73 @@ export function discoverPlayableTracksForState(
     .filter(({ track }) => isCurriculumTrackPlayable(track, state, availableLessons, tracks))
 }
 
+export function discoverJourneyEligibleTracksForState(
+  state: QuestProgressV1,
+  availableLessons: readonly LessonActivityCandidate[],
+  tracks: readonly CurriculumTrackDefinition[] = curriculumTracks,
+): PlayableTrackDiscovery[] {
+  const playableTracks = discoverPlayableTracksForState(state, availableLessons, tracks)
+  const frontier = getCurrentGuidedJourneyTrack(state, playableTracks)
+  if (!frontier) return playableTracks
+  return playableTracks.filter(({ track }) => track.curriculumOrder <= frontier.track.curriculumOrder)
+}
+
+export function isWordStudySkillDeferred(
+  state: QuestProgressV1,
+  skillId: string,
+  availableLessons: readonly LessonActivityCandidate[],
+): boolean {
+  const track = getTrackBySkillId(skillId)
+  if (!track || track.worldId !== WORD_STUDY_WORLD_ID) return false
+  return !discoverJourneyEligibleTracksForState(state, availableLessons)
+    .some(({ track: candidate }) => candidate.skillId === skillId)
+}
+
+export function reconcileDeferredWordStudySession(
+  state: QuestProgressV1,
+  availableLessons: readonly LessonActivityCandidate[],
+): NormalizeQuestProgressForPlanningResult {
+  const active = state.activeLessonSession
+  const deferred = state.deferredWordStudySession ?? null
+
+  if (active && isWordStudySkillDeferred(state, active.skillId, availableLessons)) {
+    const nextDeferred = chooseDeferredSession(deferred, active)
+    return {
+      state: {
+        ...state,
+        activeLessonSession: null,
+        deferredWordStudySession: nextDeferred,
+        plannedNextQuest: plannedQuestBelongsToSkill(state.plannedNextQuest, active.skillId)
+          ? null
+          : state.plannedNextQuest,
+      },
+      changed: true,
+    }
+  }
+
+  if (!active && deferred && !isWordStudySkillDeferred(state, deferred.skillId, availableLessons)) {
+    return {
+      state: {
+        ...state,
+        activeLessonSession: deferred,
+        deferredWordStudySession: null,
+        plannedNextQuest: plannedQuestBelongsToSkill(state.plannedNextQuest, deferred.skillId)
+          ? null
+          : state.plannedNextQuest,
+      },
+      changed: true,
+    }
+  }
+
+  return { state, changed: false }
+}
+
 export function ensureProgressForPlayableTracks(
   state: QuestProgressV1,
   availableLessons: readonly LessonActivityCandidate[],
   tracks: readonly CurriculumTrackDefinition[] = curriculumTracks,
 ): NormalizeQuestProgressForPlanningResult {
-  const playableTracks = discoverPlayableTracksForState(state, availableLessons, tracks).map((entry) => entry.track)
+  const playableTracks = discoverJourneyEligibleTracksForState(state, availableLessons, tracks).map((entry) => entry.track)
   if (playableTracks.length === 0) {
     return { state, changed: false }
   }
@@ -197,9 +265,10 @@ export function normalizeQuestProgressForPlanning(
   state: QuestProgressV1,
   availableLessons: readonly LessonActivityCandidate[],
 ): NormalizeQuestProgressForPlanningResult {
-  const ensured = ensureProgressForPlayableTracks(state, availableLessons)
+  const migrated = normalizeKnownReviewContentVersions(state)
+  const ensured = ensureProgressForPlayableTracks(migrated.state, availableLessons)
   const planned = normalizePlannedNextQuest(ensured.state, availableLessons)
-  return ensured.changed || planned.changed
+  return migrated.changed || ensured.changed || planned.changed
     ? { state: planned.state, changed: true }
     : { state, changed: false }
 }
@@ -208,8 +277,9 @@ export function planGlobalQuest(input: PlanGlobalQuestInput): GlobalQuestPlan {
   const normalized = normalizeQuestProgressForPlanning(input.progress, input.availableLessons)
   const state = normalized.state
   const playableTracks = discoverPlayableTracksForState(state, input.availableLessons)
+  const journeyEligibleTracks = discoverJourneyEligibleTracksForState(state, input.availableLessons)
 
-  const activeSessionPlan = resolveActiveSessionPlan(state, input.availableLessons)
+  const activeSessionPlan = resolveActiveSessionPlan(state, input.availableLessons, journeyEligibleTracks)
   if (activeSessionPlan) return activeSessionPlan
 
   const urgentPlannedQuest = state.plannedNextQuest?.status === 'available'
@@ -219,10 +289,10 @@ export function planGlobalQuest(input: PlanGlobalQuestInput): GlobalQuestPlan {
     : null
   if (urgentPlannedQuest) return urgentPlannedQuest
 
-  const dueReview = chooseDueReview(state, input.availableLessons, playableTracks, input.now)
+  const dueReview = chooseDueReview(state, input.availableLessons, journeyEligibleTracks, input.now)
   if (dueReview) return dueReview
 
-  const activeStatePlan = chooseActiveStatePlan(state, input.availableLessons, playableTracks)
+  const activeStatePlan = chooseActiveStatePlan(state, input.availableLessons, journeyEligibleTracks)
   if (activeStatePlan) return activeStatePlan
 
   const ordinaryPlan = state.plannedNextQuest?.status === 'available'
@@ -232,13 +302,13 @@ export function planGlobalQuest(input: PlanGlobalQuestInput): GlobalQuestPlan {
     : null
   if (ordinaryPlan) return ordinaryPlan
 
-  const guidedTrack = getCurrentGuidedJourneyTrack(state, playableTracks)
+  const guidedTrack = getCurrentGuidedJourneyTrack(state, journeyEligibleTracks)
   const guidedProgression = chooseGuidedProgression(state, input.availableLessons, guidedTrack)
   if (guidedProgression) return guidedProgression
 
   return buildContentNeededPlan(
     state,
-    guidedTrack ? [guidedTrack] : playableTracks,
+    guidedTrack ? [guidedTrack] : journeyEligibleTracks.length > 0 ? journeyEligibleTracks : playableTracks,
     guidedTrack?.track.skillId ?? null,
     isAuthoredCurriculumComplete(state, input.availableLessons),
   )
@@ -248,7 +318,10 @@ export function resolveActiveLearningFocus(
   input: PlanGlobalQuestInput,
 ): ActiveLearningFocus {
   const state = normalizeQuestProgressForPlanning(input.progress, input.availableLessons).state
-  const activeSession = state.activeLessonSession ? getLessonById(state.activeLessonSession.lessonId).lesson : null
+  const activeSession = state.activeLessonSession
+    && !isWordStudySkillDeferred(state, state.activeLessonSession.skillId, input.availableLessons)
+    ? getLessonById(state.activeLessonSession.lessonId).lesson
+    : null
   if (activeSession) {
     return buildFocusForLesson(activeSession.skillId, activeSession.unitId, activeSession.worldId, activeSession.difficulty, 'active_session')
   }
@@ -310,9 +383,13 @@ export function resolveActiveLearningFocus(
 function resolveActiveSessionPlan(
   state: QuestProgressV1,
   availableLessons: readonly LessonActivityCandidate[],
+  journeyEligibleTracks: readonly PlayableTrackDiscovery[],
 ): GlobalQuestPlan | null {
   const active = state.activeLessonSession
   if (!active) return null
+  const activeTrack = getTrackBySkillId(active.skillId)
+  if (activeTrack?.worldId === WORD_STUDY_WORLD_ID
+    && !journeyEligibleTracks.some(({ track }) => track.skillId === active.skillId)) return null
   const lesson = availableLessons.find((candidate) => (
     candidate.lessonId === active.lessonId
     && candidate.activityId === active.activityId
@@ -609,13 +686,44 @@ function isValidPlannedQuest(
     && lesson.eligiblePurposes.includes(plannedQuest.purpose)
   ))
   const track = candidate ? getTrackBySkillId(candidate.skillId) : null
-  if (!candidate || !track || !isCurriculumTrackPlayable(track, state, availableLessons)) return false
+  const eligible = track && discoverJourneyEligibleTracksForState(state, availableLessons)
+    .some(({ track: eligibleTrack }) => eligibleTrack.trackId === track.trackId)
+  if (!candidate || !track || !eligible) return false
   if (plannedQuest.purpose !== 'progression') return true
   const guidedTrack = getCurrentGuidedJourneyTrack(
     state,
     discoverPlayableTracksForState(state, availableLessons),
   )
   return guidedTrack?.track.skillId === candidate.skillId
+}
+
+function normalizeKnownReviewContentVersions(
+  state: QuestProgressV1,
+): NormalizeQuestProgressForPlanningResult {
+  let changed = false
+  const reviewQueue = state.reviewQueue.map((entry) => {
+    if (entry.skillId !== STORY_MAP_REVIEW_VERSION_MIGRATION.skillId
+      || entry.unitId !== STORY_MAP_REVIEW_VERSION_MIGRATION.unitId
+      || entry.contentVersion !== STORY_MAP_REVIEW_VERSION_MIGRATION.from) return entry
+    changed = true
+    return { ...entry, contentVersion: STORY_MAP_REVIEW_VERSION_MIGRATION.to }
+  })
+  return changed ? { state: { ...state, reviewQueue }, changed: true } : { state, changed: false }
+}
+
+function plannedQuestBelongsToSkill(plan: QuestProgressV1['plannedNextQuest'], skillId: string): boolean {
+  if (!plan) return false
+  return plan.status === 'available' ? plan.lesson.skillId === skillId : plan.skillId === skillId
+}
+
+function chooseDeferredSession(
+  stored: NonNullable<QuestProgressV1['deferredWordStudySession']> | null,
+  active: NonNullable<QuestProgressV1['activeLessonSession']>,
+): NonNullable<QuestProgressV1['deferredWordStudySession']> {
+  if (!stored || stored.sessionId === active.sessionId) return active
+  const storedTime = new Date(stored.updatedAt).getTime()
+  const activeTime = new Date(active.updatedAt).getTime()
+  return Number.isFinite(storedTime) && storedTime > activeTime ? stored : active
 }
 
 function compareTrackDefinitions(left: CurriculumTrackDefinition, right: CurriculumTrackDefinition): number {

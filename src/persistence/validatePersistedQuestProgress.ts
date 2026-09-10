@@ -61,6 +61,11 @@ export function validatePersistedQuestProgress(value: unknown): PersistedStateVa
   if (value.activeLessonSession !== null && !isActiveLessonSession(value.activeLessonSession)) {
     return { status: 'invalid_state', reason: 'Persisted active lesson session is malformed.' }
   }
+  if ('deferredWordStudySession' in value
+    && value.deferredWordStudySession !== null
+    && !isActiveLessonSession(value.deferredWordStudySession)) {
+    return { status: 'invalid_state', reason: 'Persisted deferred word-study session is malformed.' }
+  }
   if (value.plannedNextQuest !== null && !isNextQuestPlan(value.plannedNextQuest)) {
     return { status: 'invalid_state', reason: 'Persisted next quest plan is malformed.' }
   }
@@ -76,10 +81,11 @@ export function recoverPersistedQuestProgressTransients(value: unknown): Persist
     return { status: 'unrecoverable' }
   }
 
-  const transientFields = ['activeLessonSession', 'plannedNextQuest', 'lastProgressionOutcome'] as const
+  const transientFields = ['activeLessonSession', 'deferredWordStudySession', 'plannedNextQuest', 'lastProgressionOutcome'] as const
   let candidate: Record<string, unknown> = {
     ...value,
     activeLessonSession: null,
+    deferredWordStudySession: null,
     plannedNextQuest: null,
     lastProgressionOutcome: null,
   }
@@ -137,6 +143,9 @@ export function normalizeQuestProgressForSave(state: QuestProgressV1): QuestProg
     recentActivityUsage,
     reviewQueue: state.reviewQueue.map((entry) => ({ ...entry })),
     activeLessonSession: state.activeLessonSession ? cloneActiveSession(state.activeLessonSession) : null,
+    deferredWordStudySession: state.deferredWordStudySession
+      ? cloneActiveSession(state.deferredWordStudySession)
+      : null,
     plannedNextQuest: state.plannedNextQuest ? structuredClone(state.plannedNextQuest) : null,
     lastProgressionOutcome: state.lastProgressionOutcome ? {
       ...state.lastProgressionOutcome,

@@ -1,6 +1,11 @@
 import { useRef, useState } from 'react'
 
-import { getTrackBySkillId, normalizeQuestProgressForPlanning, planGlobalQuest } from '../domain/curriculum'
+import {
+  getTrackBySkillId,
+  normalizeQuestProgressForPlanning,
+  planGlobalQuest,
+  reconcileDeferredWordStudySession,
+} from '../domain/curriculum'
 import { getLessonById, type LessonDefinition, type LessonResult } from '../domain/lesson'
 import { completeFluencyPractice } from '../domain/progression/fluencyPractice'
 import {
@@ -78,24 +83,40 @@ interface InitialProgress {
 
 const availableLessons = getLessonCandidates()
 
+function reconcileJourneyProgress(state: QuestProgressV1): {
+  state: QuestProgressV1
+  changed: boolean
+  technicalDetail?: string
+} {
+  const recoveredActive = recoverActiveLessonSession({ state, availableLessons })
+  const deferred = reconcileDeferredWordStudySession(recoveredActive.state, availableLessons)
+  const recoveredDeferred = recoverActiveLessonSession({ state: deferred.state, availableLessons })
+  const normalized = normalizeQuestProgressForPlanning(recoveredDeferred.state, availableLessons)
+  return {
+    state: normalized.state,
+    changed: activeSessionRecoveryChanged(state, recoveredActive.state)
+      || deferred.changed
+      || activeSessionRecoveryChanged(deferred.state, recoveredDeferred.state)
+      || normalized.changed,
+    technicalDetail: recoveredDeferred.technicalDetail ?? recoveredActive.technicalDetail,
+  }
+}
+
 export function useQuestProgress() {
   const [initial] = useState<InitialProgress>(() => {
     const store = createLocalStorageQuestProgressStore(getBrowserLocalStorage())
     const loaded = store.load()
-    const recovered = recoverActiveLessonSession({ state: loaded.state, availableLessons })
-    const normalized = normalizeQuestProgressForPlanning(recovered.state, availableLessons)
-    const normalizedState = normalized.changed ? normalized.state : recovered.state
-    const recoveryChanged = activeSessionRecoveryChanged(loaded.state, recovered.state)
-    const saved = normalized.changed || recoveryChanged ? store.save(normalizedState) : null
+    const reconciled = reconcileJourneyProgress(loaded.state)
+    const saved = reconciled.changed ? store.save(reconciled.state) : null
     return {
       store,
       state: saved?.status === 'saved' || saved?.status === 'conflict'
         ? saved.state
-        : normalizedState,
+        : saved ? loaded.state : reconciled.state,
       storageStatus: saved
         ? saved.status === 'saved' ? 'loaded' : saved.status
         : loaded.status,
-      technicalDetail: recovered.technicalDetail ?? loaded.technicalDetail ?? saved?.technicalDetail,
+      technicalDetail: reconciled.technicalDetail ?? loaded.technicalDetail ?? saved?.technicalDetail,
     }
   })
   const storeRef = useRef(initial.store)
@@ -401,14 +422,30 @@ export function useQuestProgress() {
   }
 
   const prepareJourneyLaunch = (): JourneyLaunchDecision => {
-    const recovered = recoverActiveLessonSession({
-      state: progressRef.current,
-      availableLessons,
-    })
-    const normalized = normalizeQuestProgressForPlanning(recovered.state, availableLessons)
-    let current = normalized.state
-    if (activeSessionRecoveryChanged(progressRef.current, recovered.state) || normalized.changed) {
-      current = persist(current).state
+    let current = progressRef.current
+    for (let attempt = 0; attempt < 2; attempt += 1) {
+      const reconciled = reconcileJourneyProgress(current)
+      current = reconciled.state
+      if (!reconciled.changed) break
+      const saved = persist(current)
+      if (saved.status !== 'saved' && saved.status !== 'conflict') {
+        return {
+          status: 'unavailable',
+          reason: 'This browser could not safely save the reading-priority update. Your earlier saved progress was left unchanged.',
+          difficulty: current.activeLessonSession?.difficulty ?? 1,
+          state: saved.state,
+        }
+      }
+      current = saved.state
+      if (saved.status === 'saved') break
+      if (attempt === 1) {
+        return {
+          status: 'unavailable',
+          reason: 'A newer saved reading session was found. It was preserved, but the next activity could not be selected safely yet.',
+          difficulty: current.activeLessonSession?.difficulty ?? 1,
+          state: current,
+        }
+      }
     }
 
     const active = current.activeLessonSession

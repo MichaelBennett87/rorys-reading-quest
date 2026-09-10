@@ -137,6 +137,7 @@ export interface QuestProgressV1 {
   recentActivityUsage: Record<string, RecentLessonActivityUsage[]>
   reviewQueue: ReviewQueueEntry[]
   activeLessonSession: ActiveLessonSession | null
+  deferredWordStudySession?: ActiveLessonSession | null
   plannedNextQuest: NextQuestPlan | null
   lastProgressionOutcome: LastProgressionOutcome | null
   metadata: QuestProgressMetadata
