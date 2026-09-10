@@ -50,7 +50,7 @@ describe('final grade 2 audit', () => {
       activePackCount: 40,
       activeLessonCount: 280,
       activePassageCount: 294,
-      activeQuestionCount: 1614,
+      activeQuestionCount: 1611,
       activeSupportTargetCount: 1111,
     })
     expect(contentPackAudit).toHaveLength(0)

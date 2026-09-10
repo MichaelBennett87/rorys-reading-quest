@@ -36,20 +36,20 @@ describe('multi-grade curriculum track architecture', () => {
   test('preserves Grade 2 identity and records verified completion boundaries', () => {
     const grade2Tracks = curriculumTracks.filter((track) => track.gradeBand === 2)
     expect(grade2Tracks.map((track) => track.trackId)).toEqual([
-      'g2-word-forge-foundations',
       'g2-story-scouts-prose',
-      'g2-poetry-planet',
       'g2-information-detectives-reading',
-      'g2-context-cavern-vocabulary',
+      'g2-poetry-planet',
       'g2-across-genres-reading',
+      'g2-context-cavern-vocabulary',
+      'g2-word-forge-foundations',
     ])
     expect(grade2Tracks.map((track) => track.skillId)).toEqual([
-      'g2-word-forge-word-practice',
       'g2-story-scouts-prose',
-      'g2-poetry-planet-poetry',
       'g2-information-detectives-reading',
-      'g2-context-cavern-vocabulary',
+      'g2-poetry-planet-poetry',
       'g2-across-genres-reading',
+      'g2-context-cavern-vocabulary',
+      'g2-word-forge-word-practice',
     ])
     expect(Object.fromEntries(grade2Tracks.map((track) => [track.trackId, track.completionDifficulty]))).toEqual({
       'g2-word-forge-foundations': 8,
@@ -122,6 +122,8 @@ describe('multi-grade curriculum track architecture', () => {
       2, 2, 2, 2, 2, 2,
     ])
     expect(Object.keys(normalized.skillProgress).some((skillId) => skillId.startsWith('g3-'))).toBe(false)
+    expect(normalized.skillProgress['g2-story-scouts-prose']).toBeDefined()
+    expect(normalized.skillProgress['g2-information-detectives-reading']).toBeUndefined()
   })
 
   test('keeps Grade 2 due review above unlocked Grade 3 ordinary progression', () => {

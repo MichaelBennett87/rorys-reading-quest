@@ -2,8 +2,8 @@ import { describe, expect, test } from 'vitest'
 
 import type { LessonResult } from '../../src/domain/lesson'
 import { getLessonCandidates } from '../../src/domain/lesson'
-import { planGlobalQuest } from '../../src/domain/curriculum'
-import { applyLessonResult, planUnitQuest, type LessonActivityCandidate, type SkillProgressState } from '../../src/domain/progression'
+import { curriculumTracks, planGlobalQuest } from '../../src/domain/curriculum'
+import { applyLessonResult, createInitialSkillProgress, planUnitQuest, type LessonActivityCandidate, type SkillProgressState } from '../../src/domain/progression'
 import { buildReviewQueueIdentity, sameReviewQueueIdentity } from '../../src/domain/progression/reviewQueueAffinity'
 import { createDefaultQuestProgress, type QuestProgressV1 } from '../../src/persistence'
 
@@ -18,28 +18,30 @@ const guided = mountainCandidates.filter((candidate) => candidate.difficulty ===
 const prerequisites = mountainCandidates.filter((candidate) => candidate.difficulty === 2 && candidate.eligiblePurposes.includes('remediation'))
 
 function trailThreeState(): QuestProgressV1 {
-  const initial = createDefaultQuestProgress(NOW)
-  return {
-    ...initial,
-    skillProgress: {
-      ...initial.skillProgress,
-      'g2-word-forge-word-practice': { ...initial.skillProgress['g2-word-forge-word-practice'], currentDifficulty: 8 },
-      [SKILL_ID]: {
-        skillId: SKILL_ID,
-        currentDifficulty: 3,
-        lastMasteredDifficulty: 2,
-        currentLearningState: 'ADVANCE',
-        qualifyingIndependentActivityIds: [],
-        consecutiveUnsuccessfulAtCurrentDifficulty: 0,
-        lastCompletedActivityId: null,
-        recentActivityUsage: [],
-        reviewStep: 0,
-        nextReviewDate: null,
-        lastDecisionReasonCodes: ['advanced'],
-        remediationContext: null,
-      },
-    },
+  const state = createDefaultQuestProgress(NOW)
+  const targetOrder = curriculumTracks.find((track) => track.skillId === SKILL_ID)!.curriculumOrder
+  for (const track of curriculumTracks.filter((candidate) => candidate.curriculumOrder < targetOrder)) {
+    state.skillProgress[track.skillId] = createInitialSkillProgress(
+      track.skillId,
+      track.completionDifficulty,
+      track.completionDifficulty - 1,
+    )
   }
+  state.skillProgress[SKILL_ID] = {
+    skillId: SKILL_ID,
+    currentDifficulty: 3,
+    lastMasteredDifficulty: 2,
+    currentLearningState: 'ADVANCE',
+    qualifyingIndependentActivityIds: [],
+    consecutiveUnsuccessfulAtCurrentDifficulty: 0,
+    lastCompletedActivityId: null,
+    recentActivityUsage: [],
+    reviewStep: 0,
+    nextReviewDate: null,
+    lastDecisionReasonCodes: ['advanced'],
+    remediationContext: null,
+  }
+  return state
 }
 
 function result(candidate: LessonActivityCandidate, accuracy: number, assisted = false): LessonResult {

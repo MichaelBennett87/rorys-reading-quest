@@ -178,7 +178,7 @@ describe('production-registry planner liveness audit', () => {
       activePackCount: 40,
       activeLessonCount: 280,
       activePassageCount: 294,
-      activeQuestionCount: 1614,
+      activeQuestionCount: 1611,
       activeSupportTargetCount: 1111,
     })
   })

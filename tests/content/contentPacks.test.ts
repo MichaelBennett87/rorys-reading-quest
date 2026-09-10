@@ -66,13 +66,13 @@ describe('grade 2 content pack registry', () => {
     expect(activePacks).toHaveLength(40)
     expect(activePacks.reduce((sum, pack) => sum + pack.lessons.length, 0)).toBe(280)
     expect(activePacks.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(294)
-    expect(activePacks.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(1614)
+    expect(activePacks.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(1611)
     expect(activePacks.reduce((sum, pack) => sum + pack.passages.reduce((passageSum, passage) => passageSum + (passage.wordSupportTargets?.length ?? 0), 0), 0)).toBe(1111)
     expect(getActiveContentRegistryTotals()).toEqual({
       activePackCount: 40,
       activeLessonCount: 280,
       activePassageCount: 294,
-      activeQuestionCount: 1614,
+      activeQuestionCount: 1611,
       activeSupportTargetCount: 1111,
     })
     expect(contentPackAudit, JSON.stringify(contentPackAudit, null, 2)).toHaveLength(0)
@@ -295,7 +295,7 @@ describe('grade 2 content pack registry', () => {
     expect(result.lesson?.lessonId).toBe('g2-story-scouts-plot-structure-elements-lesson-checkpoint-a')
     expect(result.lesson?.lessonRole).toBe('CHECKPOINT')
     expect(result.lesson?.selectionStatus).toBe('active')
-    expect(result.lesson?.questionCount).toBe(7)
+    expect(result.lesson?.questionCount).toBe(6)
   })
 
   test('the poetry planet unit resolves to the rhyme routes checkpoint lesson', () => {

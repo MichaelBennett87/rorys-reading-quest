@@ -25,7 +25,7 @@ describe('Phase 7D6 acceptance documentation and boundary', () => {
       activePackCount: 40,
       activeLessonCount: 280,
       activePassageCount: 294,
-      activeQuestionCount: 1614,
+      activeQuestionCount: 1611,
       activeSupportTargetCount: 1111,
     })
 
@@ -52,11 +52,11 @@ describe('Phase 7D6 acceptance documentation and boundary', () => {
     const semantic = read('docs/content/GRADE_3_MEANING_MAZE_SEMANTIC_AUDIT.md')
 
     expect(audit).toContain('1,614 current PASS ledger records across 40 packs')
-    expect(progress).toContain('- Active questions: 1614')
-    expect(progress).toContain('- Canonical submissions: 1614')
+    expect(progress).toContain('- Active questions: 1611')
+    expect(progress).toContain('- Canonical submissions: 1611')
     expect(progress).toContain('- Canonical-equivalent submissions: 542')
-    expect(progress).toContain('- Adversarial submissions: 19558')
-    expect(progress).toContain('- Grading-contract assertions: 24942')
+    expect(progress).toContain('- Adversarial submissions: 19636')
+    expect(progress).toContain('- Grading-contract assertions: 25011')
     expect(semantic).toContain('False positives: 0')
     expect(semantic).toContain('Stale fingerprints: 0')
   })

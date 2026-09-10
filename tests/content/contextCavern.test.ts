@@ -109,7 +109,7 @@ describe('grade 2 context cavern academic word workshop pack', () => {
       activePackCount: 40,
       activeLessonCount: 280,
       activePassageCount: 294,
-      activeQuestionCount: 1614,
+      activeQuestionCount: 1611,
       activeSupportTargetCount: 1111,
     })
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.V.1.1')).toEqual(expect.objectContaining({
@@ -292,7 +292,7 @@ describe('grade 2 context cavern morphology mine pack', () => {
       activePackCount: 40,
       activeLessonCount: 280,
       activePassageCount: 294,
-      activeQuestionCount: 1614,
+      activeQuestionCount: 1611,
       activeSupportTargetCount: 1111,
     })
   })

@@ -27,7 +27,7 @@ describe('Phase 7D2 acceptance documentation and boundary', () => {
       activePackCount: 40,
       activeLessonCount: 280,
       activePassageCount: 294,
-      activeQuestionCount: 1614,
+      activeQuestionCount: 1611,
       activeSupportTargetCount: 1111,
     })
     const snapshot = buildGrade3CoverageSnapshot()

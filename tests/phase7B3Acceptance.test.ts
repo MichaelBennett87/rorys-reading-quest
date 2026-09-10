@@ -23,7 +23,7 @@ describe('Phase 7B3 acceptance documentation and coverage', () => {
       activePackCount: 40,
       activeLessonCount: 280,
       activePassageCount: 294,
-      activeQuestionCount: 1614,
+      activeQuestionCount: 1611,
       activeSupportTargetCount: 1111,
     })
     expect(getActiveContentPacks().filter((pack) => pack.manifest.packId === 'g3-story-scouts-perspective-portal')).toHaveLength(1)

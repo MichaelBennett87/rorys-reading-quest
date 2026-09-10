@@ -13,7 +13,7 @@ describe('Phase 7B3 production integration', () => {
     expect(packs.filter((pack) => pack.manifest.packId === 'g3-story-scouts-perspective-portal')).toHaveLength(1)
     expect(getActiveContentRegistryTotals()).toEqual({
       activePackCount: 40, activeLessonCount: 280, activePassageCount: 294,
-      activeQuestionCount: 1614, activeSupportTargetCount: 1111,
+      activeQuestionCount: 1611, activeSupportTargetCount: 1111,
     })
     const snapshot = buildGrade3CoverageSnapshot()
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.1.3')).toMatchObject({

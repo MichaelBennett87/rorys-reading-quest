@@ -63,7 +63,7 @@ describe('Phase 7D6 integration and reconciled one-button journey', () => {
     expect(packs.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(18)
     expect(packs.filter((pack) => pack.manifest.packId === 'g3-context-cavern-meaning-maze')).toHaveLength(1)
     expect(packs.some((pack) => pack.manifest.packId.includes('phase-7d7'))).toBe(false)
-    expect(getActiveContentRegistryTotals()).toEqual({ activePackCount: 40, activeLessonCount: 280, activePassageCount: 294, activeQuestionCount: 1614, activeSupportTargetCount: 1111 })
+    expect(getActiveContentRegistryTotals()).toEqual({ activePackCount: 40, activeLessonCount: 280, activePassageCount: 294, activeQuestionCount: 1611, activeSupportTargetCount: 1111 })
     const snapshot = buildGrade3CoverageSnapshot()
     expect(snapshot.rows.find((entry) => entry.benchmarkReference === 'ELA.3.V.1.3')).toMatchObject({
       coverageStatus: 'implemented', reviewStatus: 'DRAFT', missingPatterns: [],

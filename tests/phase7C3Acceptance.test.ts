@@ -26,6 +26,6 @@ describe('Phase 7C3 acceptance documentation and boundary', () => {
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'implemented')).toHaveLength(14)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'supportive_practice')).toHaveLength(2)
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(0)
-    expect(getActiveContentRegistryTotals()).toEqual({ activePackCount: 40, activeLessonCount: 280, activePassageCount: 294, activeQuestionCount: 1614, activeSupportTargetCount: 1111 })
+    expect(getActiveContentRegistryTotals()).toEqual({ activePackCount: 40, activeLessonCount: 280, activePassageCount: 294, activeQuestionCount: 1611, activeSupportTargetCount: 1111 })
   })
 })

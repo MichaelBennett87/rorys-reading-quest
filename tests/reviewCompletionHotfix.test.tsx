@@ -20,6 +20,7 @@ import {
 } from '../src/persistence'
 
 const NOW = '2026-08-31T12:00:00.000Z'
+const LEGACY_STORY_MAP_VERSION = 'g2-ss-plot-elements-r0.1.0'
 const candidates = getLessonCandidates()
 
 interface TestReviewIdentity {
@@ -43,7 +44,7 @@ type SessionWithLaunchContext = ActiveLessonSession & {
 const storyMap = findLesson({
   skillId: 'g2-story-scouts-prose',
   unitId: 'ss-unit-1',
-  contentVersion: 'g2-ss-plot-elements-r0.1.0',
+  contentVersion: 'g2-ss-plot-elements-r0.2.0',
   activityId: 'activity-story-map-checkpoint-a',
 })
 const academicWordWorkshop = findLesson({
@@ -80,8 +81,9 @@ describe('P0 unit-affine review completion hotfix', () => {
   test('Case A: a completed Grade 2 historical review records rewards and reschedules only its exact queue entry', () => {
     const state = completedCurriculumState()
     const grade2Review = reviewEntry(storyMap, 1)
+    const storedLegacyGrade2Review = { ...grade2Review, contentVersion: LEGACY_STORY_MAP_VERSION }
     const grade3Review = reviewEntry(meaningMaze, 1)
-    state.reviewQueue = [grade2Review, grade3Review]
+    state.reviewQueue = [storedLegacyGrade2Review, grade3Review]
     const beforeTrack = progressionSnapshot(state, storyMap.skillId)
     const before = counters(state)
     persistState(state)
@@ -89,7 +91,7 @@ describe('P0 unit-affine review completion hotfix', () => {
     const { result } = renderHook(() => useQuestProgress())
     const launch = result.current.prepareJourneyLaunch()
     if (launch.status !== 'start') throw new Error('Expected the due Grade 2 review to start.')
-    expect(launch.lesson.lessonTitle).toBe('Story Map Checkpoint: Cleanup, Bridge, and Seedlings')
+    expect(launch.lesson.lessonTitle).toBe("Story Map Checkpoint: Tia's Cleanup Plan")
 
     let outcome!: ReturnType<typeof result.current.completeLesson>
     act(() => {
@@ -103,7 +105,7 @@ describe('P0 unit-affine review completion hotfix', () => {
     expect(counters(result.current.progress)).toEqual({
       attempts: before.attempts + 1,
       sessions: before.sessions + 1,
-      xp: before.xp + 105,
+      xp: before.xp + 90,
       stars: before.stars + 3,
     })
     expect(progressionSnapshot(result.current.progress, storyMap.skillId)).toEqual(beforeTrack)

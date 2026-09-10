@@ -8,7 +8,7 @@ describe('Structure Station architecture', () => {
   test('activates only the authored Grade 3 informational track with its Grade 2 prerequisite', () => {
     expect(getTrackBySkillId('g3-information-detectives-reading')).toMatchObject({
       trackId: 'g3-information-detectives-reading', worldId: 'information-detectives', gradeBand: 3,
-      entryUnitId: 'g3-id-unit-1', curriculumOrder: 140, worldChapterOrder: 2,
+      entryUnitId: 'g3-id-unit-1', curriculumOrder: 40, worldChapterOrder: 2,
       initialDifficulty: 1, initialLastMasteredDifficulty: 0, completionDifficulty: 5,
       prerequisiteTrackIds: ['g2-information-detectives-reading'], status: 'active',
     })

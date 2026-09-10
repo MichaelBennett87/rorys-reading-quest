@@ -136,7 +136,7 @@ describe('Grade 3 planned roadmaps and production freeze', () => {
       activePackCount: 40,
       activeLessonCount: 280,
       activePassageCount: 294,
-      activeQuestionCount: 1614,
+      activeQuestionCount: 1611,
       activeSupportTargetCount: 1111,
     })
     expect(getActiveContentPacks().filter((pack) => pack.manifest.gradeBand === 2)).toHaveLength(22)

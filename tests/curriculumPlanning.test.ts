@@ -2,6 +2,7 @@ import { describe, expect, test } from 'vitest'
 
 import {
   curriculumTracks,
+  discoverJourneyEligibleTracksForState,
   discoverPlayableTracks,
   ensureProgressForPlayableTracks,
   normalizePlannedNextQuest,
@@ -192,12 +193,26 @@ describe('curriculum planning foundation', () => {
     expect(Object.isFrozen(curriculumTracks)).toBe(true)
     expect(curriculumTracks.every((track) => Object.isFrozen(track))).toBe(true)
     expect(curriculumTracks.filter((track) => track.gradeBand === 2).map((track) => track.trackId)).toEqual([
-      'g2-word-forge-foundations',
       'g2-story-scouts-prose',
-      'g2-poetry-planet',
       'g2-information-detectives-reading',
-      'g2-context-cavern-vocabulary',
+      'g2-poetry-planet',
       'g2-across-genres-reading',
+      'g2-context-cavern-vocabulary',
+      'g2-word-forge-foundations',
+    ])
+    expect(curriculumTracks.map((track) => track.trackId)).toEqual([
+      'g2-story-scouts-prose',
+      'g2-information-detectives-reading',
+      'g3-story-scouts-prose',
+      'g3-information-detectives-reading',
+      'g2-poetry-planet',
+      'g3-poetry-planet',
+      'g2-across-genres-reading',
+      'g3-across-genres-reading',
+      'g2-context-cavern-vocabulary',
+      'g3-context-cavern-vocabulary',
+      'g2-word-forge-foundations',
+      'g3-word-forge-foundations',
     ])
     expect(curriculumTracks.find((track) => track.trackId === 'g2-story-scouts-prose')?.status).toBe('active')
     expect(curriculumTracks.find((track) => track.trackId === 'g2-poetry-planet')?.status).toBe('active')
@@ -261,8 +276,12 @@ describe('curriculum planning foundation', () => {
 
   test('normalizes stale planned quests and preserves valid ones', () => {
     const lessons = getLessonCandidates()
-    const validLesson = lessons.find((lesson) => lesson.unitId === 'wg-unit-1')!
-    const validProgress = createDefaultQuestProgress(now)
+    const validLesson = lessons.find((lesson) => (
+      lesson.unitId === 'ss-unit-1'
+      && lesson.difficulty === 1
+      && lesson.eligiblePurposes.includes('progression')
+    ))!
+    const validProgress = ensureProgressForPlayableTracks(createDefaultQuestProgress(now), lessons).state
     validProgress.plannedNextQuest = {
       status: 'available',
       purpose: 'progression',
@@ -286,9 +305,9 @@ describe('curriculum planning foundation', () => {
     expect(normalized.state.plannedNextQuest).toBeNull()
   })
 
-  test('returns active sessions before any other global plan', () => {
+  test('returns active comprehension sessions before any other global plan', () => {
     const lessons = getLessonCandidates()
-    const activeLessonCandidate = lessons.find((lesson) => lesson.unitId === 'wg-unit-1')!
+    const activeLessonCandidate = lessons.find((lesson) => lesson.unitId === 'ss-unit-1')!
     const activeLesson = getLessonById(activeLessonCandidate.lessonId).lesson!
     const progress = createDefaultQuestProgress(now)
     progress.activeLessonSession = createActiveLessonSession(activeLesson, 'session-active', now)
@@ -301,7 +320,7 @@ describe('curriculum planning foundation', () => {
     expect(plan.lesson?.lessonId).toBe(activeLesson.lessonId)
   })
 
-  test('honors verification, remediation, and due review across skills', () => {
+  test('defers Word Forge verification, remediation, and reviews while Story Scouts is current', () => {
     const storyScoutsLesson = createStoryScoutsLesson()
     const wordForgeLesson = createWordForgeLesson()
     const lessons = [wordForgeLesson, storyScoutsLesson]
@@ -310,7 +329,8 @@ describe('curriculum planning foundation', () => {
 
     const verificationPlan = planGlobalQuest({ progress: verificationProgress, availableLessons: lessons, now })
     expect(verificationPlan.status).toBe('available')
-    expect(verificationPlan.purpose).toBe('verification')
+    expect(verificationPlan.purpose).toBe('progression')
+    expect(verificationPlan.skillId).toBe('g2-story-scouts-prose')
     expect(verificationPlan.source).toBe('global_planned_quest')
 
     const remediationProgress = createDefaultQuestProgress(now)
@@ -318,7 +338,8 @@ describe('curriculum planning foundation', () => {
 
     const remediationPlan = planGlobalQuest({ progress: remediationProgress, availableLessons: lessons, now })
     expect(remediationPlan.status).toBe('available')
-    expect(remediationPlan.purpose).toBe('remediation')
+    expect(remediationPlan.purpose).toBe('progression')
+    expect(remediationPlan.skillId).toBe('g2-story-scouts-prose')
     expect(remediationPlan.source).toBe('global_planned_quest')
 
     const reviewProgress = createDefaultQuestProgress(now)
@@ -340,11 +361,12 @@ describe('curriculum planning foundation', () => {
     const dueReviewPlan = planGlobalQuest({ progress: reviewProgress, availableLessons: lessons, now })
     expect(dueReviewPlan.status).toBe('available')
     expect(dueReviewPlan.purpose).toBe('review')
-    expect(dueReviewPlan.skillId).toBe('g2-word-forge-word-practice')
+    expect(dueReviewPlan.skillId).toBe('g2-story-scouts-prose')
     expect(dueReviewPlan.source).toBe('global_planned_quest')
+    expect(reviewProgress.reviewQueue).toHaveLength(2)
   })
 
-  test('keeps ordinary fresh progression in the first incomplete curriculum track', () => {
+  test('starts ordinary fresh progression in Story Scouts even when Word Forge has history', () => {
     const wordForgeLesson = createWordForgeLesson()
     const storyScoutsLesson = createStoryScoutsLesson({
       eligiblePurposes: ['progression'],
@@ -362,20 +384,20 @@ describe('curriculum planning foundation', () => {
     })
 
     expect(plan.status).toBe('available')
-    expect(plan.skillId).toBe('g2-word-forge-word-practice')
-    expect(plan.lesson?.lessonId).toBe('lesson-word-forge-trail-1-checkpoint-a')
+    expect(plan.skillId).toBe('g2-story-scouts-prose')
+    expect(plan.lesson?.lessonId).toBe('lesson-story-scouts-map-checkpoint-a')
   })
 
   test('resolves active learning focus from active session, planned quest, latest attempt, and fallback', () => {
     const lessons = [...getLessonCandidates(), createStoryScoutsLesson()]
-    const activeLessonCandidate = lessons.find((lesson) => lesson.unitId === 'wg-unit-1')!
+    const activeLessonCandidate = lessons.find((lesson) => lesson.unitId === 'ss-unit-1')!
     const activeLesson = getLessonById(activeLessonCandidate.lessonId).lesson!
 
     const activeProgress = createDefaultQuestProgress(now)
     activeProgress.activeLessonSession = createActiveLessonSession(activeLesson, 'session-focus-active', now)
     const activeFocus = resolveActiveLearningFocus({ progress: activeProgress, availableLessons: lessons, now })
     expect(activeFocus.source).toBe('active_session')
-    expect(activeFocus.displayName).toBe('Word Forge Foundations Trail 1')
+    expect(activeFocus.displayName).toBe('Story Scouts Prose Building Block Trail')
 
     const plannedProgress = createDefaultQuestProgress(now)
     plannedProgress.plannedNextQuest = {
@@ -384,8 +406,8 @@ describe('curriculum planning foundation', () => {
       lesson: createStoryScoutsLesson(),
     }
     const plannedFocus = resolveActiveLearningFocus({ progress: plannedProgress, availableLessons: lessons, now })
-    expect(plannedFocus.source).toBe('global_planned_quest')
-    expect(plannedFocus.displayName).toBe('Word Forge Foundations Trail 1')
+    expect(plannedFocus.source).toBe('planned_quest')
+    expect(plannedFocus.displayName).toBe('Story Scouts Prose Trail 1')
 
     const latestProgress = createDefaultQuestProgress(now)
     latestProgress.completedAttempts = [
@@ -393,7 +415,7 @@ describe('curriculum planning foundation', () => {
     ]
     const latestFocus = resolveActiveLearningFocus({ progress: latestProgress, availableLessons: lessons, now })
     expect(latestFocus.source).toBe('global_planned_quest')
-    expect(latestFocus.displayName).toBe('Word Forge Foundations Trail 1')
+    expect(latestFocus.displayName).toBe('Story Scouts Prose Trail 1')
 
     const fallbackFocus = resolveActiveLearningFocus({
       progress: createDefaultQuestProgress(now),
@@ -406,8 +428,6 @@ describe('curriculum planning foundation', () => {
 
   test('plans Story Scouts through the selected unit when its track is playable', () => {
     const progress = createDefaultQuestProgress(now)
-    progress.skillProgress['g2-word-forge-word-practice'].currentDifficulty = 8
-
     const plan = planUnitQuest({
       selectedUnitId: 'ss-unit-1',
       progress,
@@ -453,7 +473,7 @@ describe('curriculum planning foundation', () => {
     expect(result.state.skillProgress).toEqual(progress.skillProgress)
   })
 
-  test('recycles the exhausted required track instead of skipping it or returning content-needed', () => {
+  test('recycles the exhausted current Story Scouts track instead of skipping it', () => {
     const wordForgeLesson = createWordForgeLesson({
       eligiblePurposes: ['progression'],
     })
@@ -461,15 +481,15 @@ describe('curriculum planning foundation', () => {
       eligiblePurposes: ['progression'],
     })
     const progress = createDefaultQuestProgress(now)
-    progress.skillProgress['g2-word-forge-word-practice'].currentDifficulty = wordForgeLesson.difficulty
-    progress.skillProgress['g2-word-forge-word-practice'].recentActivityUsage = [
+    progress.skillProgress['g2-story-scouts-prose'] = createInitialSkillProgress('g2-story-scouts-prose', 1, 0)
+    progress.skillProgress['g2-story-scouts-prose'].recentActivityUsage = [
       {
-        lessonId: wordForgeLesson.lessonId,
-        activityId: wordForgeLesson.activityId,
-        skillId: wordForgeLesson.skillId,
-        difficulty: wordForgeLesson.difficulty,
-        passageQuestionKeys: [...wordForgeLesson.passageQuestionKeys],
-        contentVersion: wordForgeLesson.contentVersion,
+        lessonId: storyScoutsLesson.lessonId,
+        activityId: storyScoutsLesson.activityId,
+        skillId: storyScoutsLesson.skillId,
+        difficulty: storyScoutsLesson.difficulty,
+        passageQuestionKeys: [...storyScoutsLesson.passageQuestionKeys],
+        contentVersion: storyScoutsLesson.contentVersion,
         completedAt: now,
       },
     ]
@@ -481,8 +501,8 @@ describe('curriculum planning foundation', () => {
     })
 
     expect(plan.status).toBe('available')
-    expect(plan.skillId).toBe('g2-word-forge-word-practice')
-    expect(plan.lesson?.lessonId).toBe(wordForgeLesson.lessonId)
+    expect(plan.skillId).toBe('g2-story-scouts-prose')
+    expect(plan.lesson?.lessonId).toBe(storyScoutsLesson.lessonId)
     expect(plan.source).toBe('global_planned_quest')
   })
 
@@ -494,10 +514,10 @@ describe('curriculum planning foundation', () => {
     expect(result.changed).toBe(true)
     expect(result.state.skillProgress['g2-word-forge-word-practice']).toEqual(progress.skillProgress['g2-word-forge-word-practice'])
     expect(result.state.skillProgress['g2-story-scouts-prose']).toBeDefined()
-    expect(result.state.skillProgress['g2-poetry-planet-poetry']).toBeDefined()
+    expect(result.state.skillProgress['g2-poetry-planet-poetry']).toBeUndefined()
   })
 
-  test('initializes playable Information Detectives and Context Cavern progress without resetting existing tracks', () => {
+  test('initializes only the current comprehension frontier without resetting existing tracks', () => {
     const progress = createDefaultQuestProgress(now)
 
     const result = ensureProgressForPlayableTracks(progress, getLessonCandidates())
@@ -505,17 +525,9 @@ describe('curriculum planning foundation', () => {
     expect(result.changed).toBe(true)
     expect(result.state.skillProgress['g2-word-forge-word-practice']).toEqual(progress.skillProgress['g2-word-forge-word-practice'])
     expect(result.state.skillProgress['g2-story-scouts-prose']).toBeDefined()
-    expect(result.state.skillProgress['g2-poetry-planet-poetry']).toBeDefined()
-    expect(result.state.skillProgress['g2-information-detectives-reading']).toMatchObject({
-      skillId: 'g2-information-detectives-reading',
-      currentDifficulty: 1,
-      lastMasteredDifficulty: 0,
-    })
-    expect(result.state.skillProgress['g2-context-cavern-vocabulary']).toMatchObject({
-      skillId: 'g2-context-cavern-vocabulary',
-      currentDifficulty: 1,
-      lastMasteredDifficulty: 0,
-    })
+    expect(result.state.skillProgress['g2-poetry-planet-poetry']).toBeUndefined()
+    expect(result.state.skillProgress['g2-information-detectives-reading']).toBeUndefined()
+    expect(result.state.skillProgress['g2-context-cavern-vocabulary']).toBeUndefined()
   })
 
   test('initializes fixture Information Detectives and Context Cavern progress without touching existing tracks', () => {
@@ -534,11 +546,7 @@ describe('curriculum planning foundation', () => {
       currentDifficulty: 1,
       lastMasteredDifficulty: 0,
     })
-    expect(result.state.skillProgress['g2-context-cavern-vocabulary']).toMatchObject({
-      skillId: 'g2-context-cavern-vocabulary',
-      currentDifficulty: 1,
-      lastMasteredDifficulty: 0,
-    })
+    expect(result.state.skillProgress['g2-context-cavern-vocabulary']).toBeUndefined()
   })
 
   test('initializes fixture Compare Castle progress without touching existing tracks', () => {
@@ -613,7 +621,7 @@ describe('curriculum planning foundation', () => {
       now,
     })
     expect(firstPlan.status).toBe('available')
-    expect(firstPlan.skillId).toBe('g2-word-forge-word-practice')
+    expect(firstPlan.skillId).toBe('g2-story-scouts-prose')
 
     normalized.completedAttempts = [
       createCompletedAttempt('g2-word-forge-word-practice', '2026-08-19T12:00:00.000Z') as never,
@@ -626,15 +634,12 @@ describe('curriculum planning foundation', () => {
       now,
     })
     expect(secondPlan.status).toBe('available')
-    expect(secondPlan.skillId).toBe('g2-word-forge-word-practice')
+    expect(secondPlan.skillId).toBe('g2-story-scouts-prose')
   })
 
-  test('moves from completed Word Forge to Story Scouts', () => {
+  test('starts Story Scouts without requiring Word Forge completion', () => {
     const lessons = getLessonCandidates()
     const progress = createDefaultQuestProgress(now)
-    const wordForgeTrack = curriculumTracks.find((track) => track.skillId === 'g2-word-forge-word-practice')!
-    progress.skillProgress[wordForgeTrack.skillId].currentDifficulty = wordForgeTrack.completionDifficulty
-
     const plan = planGlobalQuest({ progress, availableLessons: lessons, now })
 
     expect(plan.status).toBe('available')
@@ -642,51 +647,57 @@ describe('curriculum planning foundation', () => {
     expect(plan.worldId).toBe('story-scouts')
   })
 
-  test('continues through later active tracks in curriculum order', () => {
+  test('continues through the comprehension-first active tracks in curriculum order', () => {
     const lessons = getLessonCandidates()
     const progress = createDefaultQuestProgress(now)
-    for (const skillId of ['g2-word-forge-word-practice', 'g2-story-scouts-prose']) {
+    for (const skillId of ['g2-story-scouts-prose']) {
       const track = curriculumTracks.find((entry) => entry.skillId === skillId)!
       progress.skillProgress[skillId] = createInitialSkillProgress(skillId, track.completionDifficulty, track.completionDifficulty - 1)
     }
 
-    const poetryPlan = planGlobalQuest({ progress, availableLessons: lessons, now })
-    expect(poetryPlan.skillId).toBe('g2-poetry-planet-poetry')
-
-    const poetryTrack = curriculumTracks.find((entry) => entry.skillId === 'g2-poetry-planet-poetry')!
-    progress.skillProgress[poetryTrack.skillId] = createInitialSkillProgress(
-      poetryTrack.skillId,
-      poetryTrack.completionDifficulty,
-      poetryTrack.completionDifficulty - 1,
-    )
     const informationPlan = planGlobalQuest({ progress, availableLessons: lessons, now })
     expect(informationPlan.skillId).toBe('g2-information-detectives-reading')
+
+    const informationTrack = curriculumTracks.find((entry) => entry.skillId === 'g2-information-detectives-reading')!
+    progress.skillProgress[informationTrack.skillId] = createInitialSkillProgress(
+      informationTrack.skillId,
+      informationTrack.completionDifficulty,
+      informationTrack.completionDifficulty - 1,
+    )
+    const grade3StoryPlan = planGlobalQuest({ progress, availableLessons: lessons, now })
+    expect(grade3StoryPlan.skillId).toBe('g3-story-scouts-prose')
   })
 
-  test('does not let Grade 3 ordinary progression bypass incomplete Grade 2 tracks', () => {
+  test('allows same-domain Grade 3 Story Scouts while unrelated Grade 2 Word Forge is incomplete', () => {
     const lessons = getLessonCandidates()
     const progress = createDefaultQuestProgress(now)
-    const wordForgeTrack = curriculumTracks.find((track) => track.skillId === 'g2-word-forge-word-practice')!
-    progress.skillProgress[wordForgeTrack.skillId].currentDifficulty = wordForgeTrack.completionDifficulty
+    for (const skillId of ['g2-story-scouts-prose', 'g2-information-detectives-reading']) {
+      const track = curriculumTracks.find((entry) => entry.skillId === skillId)!
+      progress.skillProgress[skillId] = createInitialSkillProgress(skillId, track.completionDifficulty, track.completionDifficulty - 1)
+    }
 
     const plan = planGlobalQuest({ progress, availableLessons: lessons, now })
 
-    expect(plan.skillId).toBe('g2-story-scouts-prose')
-    expect(plan.skillId).not.toBe('g3-word-forge-word-analysis')
+    expect(plan.skillId).toBe('g3-story-scouts-prose')
+    expect(progress.skillProgress['g2-word-forge-word-practice'].currentDifficulty).toBe(1)
   })
 
   test('allows a due earlier review while a later world owns ordinary progression', () => {
     const lessons = getLessonCandidates()
     const progress = createDefaultQuestProgress(now)
-    const wordForgeTrack = curriculumTracks.find((track) => track.skillId === 'g2-word-forge-word-practice')!
-    progress.skillProgress[wordForgeTrack.skillId].currentDifficulty = wordForgeTrack.completionDifficulty
+    const storyTrack = curriculumTracks.find((track) => track.skillId === 'g2-story-scouts-prose')!
+    progress.skillProgress[storyTrack.skillId] = createInitialSkillProgress(
+      storyTrack.skillId,
+      storyTrack.completionDifficulty,
+      storyTrack.completionDifficulty - 1,
+    )
     const reviewLesson = lessons.find((lesson) => (
-      lesson.skillId === wordForgeTrack.skillId
+      lesson.skillId === storyTrack.skillId
       && lesson.difficulty === 1
       && lesson.eligiblePurposes.includes('review')
     ))!
     progress.reviewQueue = [{
-      skillId: wordForgeTrack.skillId,
+      skillId: storyTrack.skillId,
       difficulty: 1,
       reviewStep: 1,
       dueAt: now,
@@ -697,6 +708,12 @@ describe('curriculum planning foundation', () => {
     const plan = planGlobalQuest({ progress, availableLessons: lessons, now })
 
     expect(plan.purpose).toBe('review')
-    expect(plan.skillId).toBe('g2-word-forge-word-practice')
+    expect(plan.skillId).toBe('g2-story-scouts-prose')
+  })
+
+  test('exposes only tracks at or behind the current comprehension frontier', () => {
+    const progress = createDefaultQuestProgress(now)
+    const eligible = discoverJourneyEligibleTracksForState(progress, getLessonCandidates())
+    expect(eligible.map(({ track }) => track.skillId)).toEqual(['g2-story-scouts-prose'])
   })
 })

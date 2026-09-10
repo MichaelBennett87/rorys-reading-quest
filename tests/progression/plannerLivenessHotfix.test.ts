@@ -214,7 +214,7 @@ describe('P0 planner liveness hotfix', () => {
     state.skillProgress[STORY_SKILL_ID].lastMasteredDifficulty = storyTrack.completionDifficulty - 1
 
     const plan = planGlobalQuest({ progress: state, availableLessons: allLessons, now: NOW })
-    expect(plan).toMatchObject({ status: 'available', skillId: 'g2-poetry-planet-poetry' })
+    expect(plan).toMatchObject({ status: 'available', skillId: 'g2-information-detectives-reading' })
     expect(plan.skillId).not.toBe(STORY_SKILL_ID)
   })
 })

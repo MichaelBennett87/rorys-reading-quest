@@ -50,7 +50,7 @@ describe('Phase 7D4 integration and reconciled one-button journey', () => {
       activePackCount: 40,
       activeLessonCount: 280,
       activePassageCount: 294,
-      activeQuestionCount: 1614,
+      activeQuestionCount: 1611,
       activeSupportTargetCount: 1111,
     })
     const snapshot = buildGrade3CoverageSnapshot()

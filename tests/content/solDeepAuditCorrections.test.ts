@@ -30,14 +30,14 @@ describe('GPT-5.6 Sol Grade 2 curricular corrections', () => {
       activePackCount: 22,
       activeLessonCount: 154,
       activePassageCount: 161,
-      activeQuestionCount: 889,
+      activeQuestionCount: 886,
       activeSupportTargetCount: 614,
     })
     expect(contentPackAudit).toEqual([])
     expect(auditSemanticQuestionPacks(activePacks)).toMatchObject({
       reviewedPackCount: 22,
       reviewedLessonCount: 154,
-      reviewedCount: 889,
+      reviewedCount: 886,
       issues: [],
     })
   })

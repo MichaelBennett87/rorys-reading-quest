@@ -23,6 +23,7 @@ function readyState(): QuestProgressV1 {
     skillProgress: {
       ...initial.skillProgress,
       'g2-story-scouts-prose': createInitialSkillProgress('g2-story-scouts-prose', 4, 3),
+      'g2-information-detectives-reading': createInitialSkillProgress('g2-information-detectives-reading', 5, 4),
     },
   }
 }
@@ -81,7 +82,7 @@ describe('Character Arc Camp prerequisite and progression integration', () => {
     })
   })
 
-  test('initializes only Story Scouts after readiness and preserves stale Grade 2 state', () => {
+  test('initializes only Grade 3 Story Scouts at its canonical position and preserves stale Grade 2 state', () => {
     const stale: QuestProgressV1 = {
       ...readyState(),
       plannedNextQuest: { status: 'content_needed', purpose: 'progression', skillId: 'g2-story-scouts-prose', difficulty: 4, reason: 'Historical content boundary.' },

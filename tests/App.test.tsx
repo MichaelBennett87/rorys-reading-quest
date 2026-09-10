@@ -59,16 +59,6 @@ function readProgress(): QuestProgressV1 {
   return JSON.parse(window.localStorage.getItem(QUEST_PROGRESS_STORAGE_KEY) ?? 'null') as QuestProgressV1
 }
 
-function seedWordForgeComplete() {
-  const now = '2026-08-20T12:00:00.000Z'
-  const progress = createDefaultQuestProgress(now)
-  const wordForge = curriculumTracks.find((track) => track.skillId === 'g2-word-forge-word-practice')!
-  progress.skillProgress[wordForge.skillId].currentDifficulty = wordForge.completionDifficulty
-  progress.skillProgress[wordForge.skillId].lastMasteredDifficulty = wordForge.completionDifficulty - 1
-  window.localStorage.setItem(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(progress))
-  return progress
-}
-
 function seedAllAuthoredCurriculumComplete() {
   const now = '2026-08-20T12:00:00.000Z'
   const progress = createDefaultQuestProgress(now)
@@ -99,7 +89,7 @@ describe('question-first child journey', () => {
 
     render(<App />)
 
-    expect(screen.getByText(/Question 1 of 7/i)).toBeTruthy()
+    expect(screen.getByText(/Question 1 of 6/i)).toBeTruthy()
     expect(readProgress().activeLessonSession?.lessonId).toBe(planned.lesson?.lessonId)
     expect(screen.queryByRole('button', { name: /Start Journey|Parent Area|Save and Exit/i })).toBeNull()
     expect(screen.queryByRole('region', { name: /Your Reading Journey/i })).toBeNull()
@@ -117,8 +107,8 @@ describe('question-first child journey', () => {
     expect(screen.queryByRole('button', { name: /Parent/i })).toBeNull()
   })
 
-  test('completed Word Forge automatically advances ordinary planning to Story Scouts', () => {
-    const progress = seedWordForgeComplete()
+  test('fresh ordinary planning starts Story Scouts without requiring Word Forge completion', () => {
+    const progress = createDefaultQuestProgress('2026-08-20T12:00:00.000Z')
     const planned = planGlobalQuest({
       progress,
       availableLessons: getLessonCandidates(),
@@ -134,7 +124,7 @@ describe('question-first child journey', () => {
 
   test('keeps one primary action while answer controls and supportive feedback remain available', () => {
     render(<App />)
-    fireEvent.click(screen.getByRole('radio', { name: /leaf/i }))
+    fireEvent.click(screen.getByRole('radio', { name: /Wind has spread wrappers and cans/i }))
     fireEvent.click(screen.getByRole('button', { name: 'Check Answer' }))
 
     expect(screen.getByText(/Great clue-finding!/i)).toBeTruthy()
@@ -151,7 +141,7 @@ describe('question-first child journey', () => {
     expect(readProgress()).toMatchObject({ completedSessionCount: 0, totalXp: 0, totalStars: 0 })
 
     fireEvent.click(screen.getByRole('button', { name: /Back to Quest/i }))
-    await waitFor(() => expect(screen.getByText(/Question 1 of 7/i)).toBeTruthy())
+    await waitFor(() => expect(screen.getByText(/Question 1 of 6/i)).toBeTruthy())
     expect(readProgress().activeLessonSession).not.toBeNull()
   })
 
@@ -170,7 +160,7 @@ describe('question-first child journey', () => {
     fireEvent.click(screen.getByRole('button', { name: /Lock Parent Area/i }))
     expect(screen.getByRole('heading', { name: /Unlock Parent Area/i })).toBeTruthy()
     fireEvent.click(screen.getByRole('button', { name: /Back to Quest/i }))
-    await waitFor(() => expect(screen.getByText(/Question 1 of 7/i)).toBeTruthy())
+    await waitFor(() => expect(screen.getByText(/Question 1 of 6/i)).toBeTruthy())
     expect(readProgress().activeLessonSession?.sessionId).toBe(sessionId)
   })
 
@@ -182,7 +172,7 @@ describe('question-first child journey', () => {
     fireEvent.click(screen.getByRole('button', { name: /Create Parent PIN/i }))
     await waitFor(() => expect(screen.getByRole('heading', { name: /Parent Area/i })).toBeTruthy())
     fireEvent.click(screen.getByRole('button', { name: /Back to Quest/i }))
-    await waitFor(() => expect(screen.getByText(/Question 1 of 7/i)).toBeTruthy())
+    await waitFor(() => expect(screen.getByText(/Question 1 of 6/i)).toBeTruthy())
     openParentRoute()
     await waitFor(() => expect(screen.getByRole('heading', { name: /Unlock Parent Area/i })).toBeTruthy())
     fireEvent.change(screen.getByLabelText(/Parent PIN/i), { target: { value: '9999' } })
@@ -196,7 +186,7 @@ describe('question-first child journey', () => {
     render(<App />)
     expect(screen.getByText(/Secure local PIN setup is not available/i)).toBeTruthy()
     fireEvent.click(screen.getByRole('button', { name: /Back to Quest/i }))
-    await waitFor(() => expect(screen.getByText(/Question 1 of 7/i)).toBeTruthy())
+    await waitFor(() => expect(screen.getByText(/Question 1 of 6/i)).toBeTruthy())
   })
 
   test('parent storage failures do not damage or block child progress', () => {
@@ -213,7 +203,7 @@ describe('question-first child journey', () => {
 
     try {
       render(<App />)
-      expect(screen.getByText(/Question 1 of 7/i)).toBeTruthy()
+      expect(screen.getByText(/Question 1 of 6/i)).toBeTruthy()
       expect(readProgress().activeLessonSession).not.toBeNull()
     } finally {
       getItemSpy.mockRestore()
@@ -251,7 +241,7 @@ describe('question-first child journey', () => {
 
   test('answer controls and the single primary action expose keyboard focus', () => {
     render(<App />)
-    const answer = screen.getByRole('radio', { name: /leaf/i })
+    const answer = screen.getByRole('radio', { name: /wrappers and cans/i })
     answer.focus()
     expect(document.activeElement).toBe(answer)
     fireEvent.click(answer)

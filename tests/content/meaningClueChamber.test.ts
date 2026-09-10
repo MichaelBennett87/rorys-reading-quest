@@ -93,7 +93,7 @@ describe('grade 2 context cavern meaning clue chamber pack', () => {
       activePackCount: 40,
       activeLessonCount: 280,
       activePassageCount: 294,
-      activeQuestionCount: 1614,
+      activeQuestionCount: 1611,
       activeSupportTargetCount: 1111,
     })
     expect(buildBenchmarkCoverageAudit(contentPacks, 'ELA.2.V.1.3')).toEqual(expect.objectContaining({

@@ -28,44 +28,46 @@ function submitAndAdvance() {
 function answerCurrentQuestion(correct = true) {
   const table = screen.queryByRole('region', { name: /table matching question/i })
   if (table) {
-    const select = within(table).getByRole('combobox')
-    const values = Array.from(select.querySelectorAll('option[value]'))
-      .map((option) => option.getAttribute('value') ?? '')
-      .filter(Boolean)
-    const prompt = (select as HTMLSelectElement).labels?.[0]?.textContent ?? ''
-    const correctValue = /leaf/i.test(prompt) ? 'leaf-sound'
-      : /boot/i.test(prompt) ? 'boot-sound'
-      : 'beach-sound'
-    fireEvent.change(select, { target: { value: correct ? correctValue : values.find((value) => value !== correctValue) ?? values[0] } })
+    within(table).getAllByRole('combobox').forEach((select, index) => {
+      const values = Array.from(select.querySelectorAll('option[value]'))
+        .map((option) => option.getAttribute('value') ?? '')
+        .filter(Boolean)
+      fireEvent.change(select, { target: { value: correct || index > 0 ? values[index] ?? values[0] : values[1] ?? values[0] } })
+    })
+    return
+  }
+
+  const radios = screen.queryAllByRole('radio') as HTMLInputElement[]
+  if (radios.length > 0) {
+    const names = [...new Set(radios.map((radio) => radio.name))]
+    names.forEach((name, index) => {
+      const choices = radios.filter((radio) => radio.name === name)
+      fireEvent.click(choices[correct || index > 0 ? 0 : 1] ?? choices[0])
+    })
     return
   }
 
   const group = screen.getByRole('group')
-  const prompt = group.querySelector('legend')?.textContent ?? ''
-  const radios = within(group).queryAllByRole('radio')
-  if (radios.length > 0) {
-    if (/dream, the green branch, and the little pond/i.test(prompt)) {
-      fireEvent.click(within(group).getByRole('radio', { name: /They wrote about a dream, a green branch, and a little pond/i }))
-    } else if (/food tasted good/i.test(prompt)) {
-      fireEvent.click(within(group).getByRole('radio', { name: /The food tasted good, and the room felt bright/i }))
-    } else if (/beach path/i.test(prompt)) {
-      fireEvent.click(within(group).getByRole('radio', { name: /A spoon of soil helped one seed sprout near the beach path/i }))
-    } else {
-      fireEvent.click(radios[correct ? 0 : 1])
-    }
-    return
-  }
-
   const checkboxes = within(group).getAllByRole('checkbox')
-  const passage = screen.getByRole('region', { name: /Reading material/i }).textContent ?? ''
-  let correctCount = 1
-  if (/Choose all the ea words/i.test(prompt)) correctCount = /pool party/i.test(passage) ? 2 : 4
-  if (/Choose all the oo words/i.test(prompt)) correctCount = /garden morning/i.test(passage) ? 3 : 2
-  checkboxes.slice(0, correct ? correctCount : 1).forEach((choice) => fireEvent.click(choice))
+  const chooseCount = /Which two|Choose 2/i.test(group.textContent ?? '') ? 2 : 1
+  checkboxes.slice(correct ? 0 : 2, correct ? chooseCount : 3).forEach((choice) => fireEvent.click(choice))
+  if (!correct && checkboxes.length > 0 && !checkboxes.some((choice) => (choice as HTMLInputElement).checked)) {
+    fireEvent.click(checkboxes.at(-1)!)
+  }
+}
+
+function currentQuestionCount(): number {
+  const indicator = screen.getByText(/Question \d+ of \d+/i).textContent ?? ''
+  const count = Number(indicator.match(/of (\d+)/i)?.[1])
+  if (!Number.isInteger(count) || count < 1) {
+    throw new Error(`Could not read the current lesson question count from: ${indicator}`)
+  }
+  return count
 }
 
 function completeCheckpoint(correct = true) {
-  for (let index = 0; index < 7; index += 1) {
+  const questionCount = currentQuestionCount()
+  for (let index = 0; index < questionCount; index += 1) {
     answerCurrentQuestion(correct || index > 1)
     submitAndAdvance()
   }
@@ -100,26 +102,26 @@ describe('guided adaptive question-first flow', () => {
     launchJourney()
     completeCheckpoint(false)
     expect(screen.getByText(/Question 1 of/i)).toBeTruthy()
-    expect(readProgress().skillProgress['g2-word-forge-word-practice'].currentDifficulty).toBe(1)
+    expect(readProgress().skillProgress['g2-story-scouts-prose'].currentDifficulty).toBe(1)
   })
 
   test('draft answers autosave and resume without Save and Exit', () => {
     launchJourney()
-    fireEvent.click(screen.getByRole('radio', { name: /leaf/i }))
+    fireEvent.click(screen.getByRole('radio', { name: /Wind has spread wrappers and cans/i }))
     const sessionId = readProgress().activeLessonSession?.sessionId
     expect(readProgress().activeLessonSession?.draftQuestion?.answer).toBeTruthy()
     expect(readProgress().activeLessonSession).not.toBeNull()
     expect(readProgress().completedAttempts).toHaveLength(0)
     cleanup()
     render(<App />)
-    expect((screen.getByRole('radio', { name: /leaf/i }) as HTMLInputElement).checked).toBe(true)
+    expect((screen.getByRole('radio', { name: /Wind has spread wrappers and cans/i }) as HTMLInputElement).checked).toBe(true)
     expect(readProgress().activeLessonSession?.sessionId).toBe(sessionId)
     expect(screen.queryByRole('button', { name: /Save and Exit|Start Journey/i })).toBeNull()
   })
 
   test('a submitted answer resumes at its feedback boundary after reload', () => {
     launchJourney()
-    fireEvent.click(screen.getByRole('radio', { name: /leaf/i }))
+    fireEvent.click(screen.getByRole('radio', { name: /Wind has spread wrappers and cans/i }))
     fireEvent.click(screen.getByRole('button', { name: /Check Answer/i }))
     cleanup()
     render(<App />)
@@ -130,7 +132,8 @@ describe('guided adaptive question-first flow', () => {
   test('an existing active lesson always resumes before a stored fresh plan', () => {
     const state = createDefaultQuestProgress('2026-08-20T12:00:00.000Z')
     const candidates = getLessonCandidates()
-    const activeLesson = getLessonById(candidates[0].lessonId).lesson!
+    const activeCandidate = candidates.find((candidate) => candidate.unitId === 'ss-unit-1')!
+    const activeLesson = getLessonById(activeCandidate.lessonId).lesson!
     const otherLesson = candidates.find((candidate) => candidate.lessonId !== activeLesson.lessonId)!
     state.activeLessonSession = createActiveLessonSession(activeLesson, 'guided-active-session', '2026-08-20T12:00:00.000Z')
     state.plannedNextQuest = { status: 'available', purpose: 'progression', lesson: otherLesson }
@@ -151,7 +154,7 @@ describe('guided adaptive question-first flow', () => {
     expect(readProgress().totalXp).toBe(90)
     expect(readProgress().totalStars).toBe(3)
     expect(screen.queryByLabelText(/experience points|stars earned/i)).toBeNull()
-    expect(screen.getByText(/Question 1 of 7/i)).toBeTruthy()
+    expect(screen.getByText(/Question 1 of 6/i)).toBeTruthy()
   })
 
   test('an incompatible active session recovers safely to a fresh guided quest', () => {
@@ -172,7 +175,7 @@ describe('guided adaptive question-first flow', () => {
     }
     window.localStorage.setItem(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(state))
     render(<App />)
-    expect(screen.getByText(/Question 1 of 7/i)).toBeTruthy()
+    expect(screen.getByText(/Question 1 of 6/i)).toBeTruthy()
   })
 
   test('double completion interaction remains idempotent', () => {

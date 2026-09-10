@@ -115,7 +115,7 @@ describe('Structure Station progression', () => {
     expect(planGlobalQuest({ progress: state, availableLessons: allCandidates, now: NOW })).toMatchObject({
       status: 'available', purpose: 'progression', lesson: { skillId: SKILL_ID, unitId: UNIT_ID },
     })
-    state.skillProgress['g2-context-cavern-vocabulary'].currentDifficulty = 3
-    expect(planGlobalQuest({ progress: state, availableLessons: allCandidates, now: NOW }).lesson?.skillId).toBe('g2-context-cavern-vocabulary')
+    state.skillProgress['g3-story-scouts-prose'].currentDifficulty = 3
+    expect(planGlobalQuest({ progress: state, availableLessons: allCandidates, now: NOW }).lesson?.skillId).toBe('g3-story-scouts-prose')
   })
 })

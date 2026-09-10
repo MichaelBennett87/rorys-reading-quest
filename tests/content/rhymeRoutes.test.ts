@@ -56,7 +56,7 @@ describe('Grade 2 Poetry Planet: Rhyme Routes', () => {
     expect(activePacks).toHaveLength(40)
     expect(activePacks.reduce((sum, pack) => sum + pack.lessons.length, 0)).toBe(280)
     expect(activePacks.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(294)
-    expect(activePacks.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(1614)
+    expect(activePacks.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(1611)
     expect(activePacks.reduce((sum, pack) => sum + pack.passages.reduce((passageSum, passage) => passageSum + (passage.wordSupportTargets?.length ?? 0), 0), 0)).toBe(1111)
     expect(new Set(contentPacks.map((pack) => pack.manifest.packId)).size).toBe(contentPacks.length)
     expect(contentPackAudit).toHaveLength(0)
@@ -64,7 +64,7 @@ describe('Grade 2 Poetry Planet: Rhyme Routes', () => {
       activePackCount: 40,
       activeLessonCount: 280,
       activePassageCount: 294,
-      activeQuestionCount: 1614,
+      activeQuestionCount: 1611,
       activeSupportTargetCount: 1111,
     })
   })

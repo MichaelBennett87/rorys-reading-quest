@@ -25,7 +25,7 @@ describe('grade 2 story scouts story map pack', () => {
       benchmarkReferences: ['ELA.2.R.1.1'],
       partialBenchmarkCoverage: 'Story Map coverage of plot structure, setting, characters, and sequence of events',
       difficultyRange: [0, 1],
-      contentVersion: 'g2-ss-plot-elements-r0.1.0',
+      contentVersion: 'g2-ss-plot-elements-r0.2.0',
       reviewStatus: 'DRAFT',
       coveredPatterns: [
         'plot-structure',
@@ -45,7 +45,7 @@ describe('grade 2 story scouts story map pack', () => {
 
     expect(storyMapPack.lessons).toHaveLength(7)
     expect(storyMapPack.passages).toHaveLength(7)
-    expect(storyMapPack.questions).toHaveLength(41)
+    expect(storyMapPack.questions).toHaveLength(38)
 
     expect(storyMapPack.lessons.filter((lesson) => lesson.lessonRole === 'GUIDED_PRACTICE')).toHaveLength(4)
     expect(storyMapPack.lessons.filter((lesson) => lesson.lessonRole === 'CHECKPOINT')).toHaveLength(3)
@@ -59,9 +59,9 @@ describe('grade 2 story scouts story map pack', () => {
     expect(storyMapPack.lessons.filter((lesson) => lesson.lessonRole === 'CHECKPOINT').every((lesson) => lesson.eligiblePurposes.includes('progression') && lesson.eligiblePurposes.includes('verification') && lesson.eligiblePurposes.includes('review'))).toBe(true)
 
     expect(storyMapPack.lessons.filter((lesson) => lesson.lessonRole === 'GUIDED_PRACTICE').map((lesson) => lesson.questionIdentifiers.length)).toEqual([5, 5, 5, 5])
-    expect(storyMapPack.lessons.filter((lesson) => lesson.lessonRole === 'CHECKPOINT').map((lesson) => lesson.questionIdentifiers.length)).toEqual([7, 7, 7])
+    expect(storyMapPack.lessons.filter((lesson) => lesson.lessonRole === 'CHECKPOINT').map((lesson) => lesson.questionIdentifiers.length)).toEqual([6, 6, 6])
 
-    expect(storyMapPack.questions.map((question) => question.questionType).filter((type) => type === 'multiple_choice')).toHaveLength(17)
+    expect(storyMapPack.questions.map((question) => question.questionType).filter((type) => type === 'multiple_choice')).toHaveLength(14)
     expect(storyMapPack.questions.map((question) => question.questionType).filter((type) => type === 'multi_select')).toHaveLength(7)
     expect(storyMapPack.questions.map((question) => question.questionType).filter((type) => type === 'hot_text')).toHaveLength(7)
     expect(storyMapPack.questions.map((question) => question.questionType).filter((type) => type === 'table_match')).toHaveLength(7)
@@ -72,13 +72,13 @@ describe('grade 2 story scouts story map pack', () => {
     expect(storyMapPack.questions.every((question) => question.skillIdentifier === 'g2-story-scouts-prose')).toBe(true)
     expect(storyMapPack.questions.every((question) => question.reportingCategory === 'Reading Prose and Poetry')).toBe(true)
     expect(storyMapPack.questions.every((question) => question.reviewStatus === 'DRAFT')).toBe(true)
-    expect(storyMapPack.questions.every((question) => question.contentVersion === 'g2-ss-plot-elements-r0.1.0')).toBe(true)
+    expect(storyMapPack.questions.every((question) => question.contentVersion === 'g2-ss-plot-elements-r0.2.0')).toBe(true)
     expect(storyMapPack.questions.every((question) => question.explanation && question.evidenceReference)).toBe(true)
     expect(storyMapPack.questions.every((question) => question.correctAnswers.length > 0)).toBe(true)
     expect(new Set(storyMapPack.questions.map((question) => question.questionIdentifier)).size).toBe(storyMapPack.questions.length)
 
     expect(storyMapPack.passages.every((passage) => passage.reviewStatus === 'DRAFT')).toBe(true)
-    expect(storyMapPack.passages.every((passage) => passage.contentVersion === 'g2-ss-plot-elements-r0.1.0')).toBe(true)
+    expect(storyMapPack.passages.every((passage) => passage.contentVersion === 'g2-ss-plot-elements-r0.2.0')).toBe(true)
     expect(new Set(storyMapPack.passages.map((passage) => passage.passageIdentifier)).size).toBe(storyMapPack.passages.length)
     expect(storyMapPack.passages.every((passage) => (passage.wordSupportTargets ?? []).length === 4)).toBe(true)
     expect(storyMapPack.passages.flatMap((passage) => passage.wordSupportTargets ?? []).length).toBe(28)
@@ -90,7 +90,7 @@ describe('grade 2 story scouts story map pack', () => {
         expect(normalize(focusWord)).toBe(normalize(target.surfaceWord))
         expect(normalize(displayWord)).toBe(normalize(target.surfaceWord))
         expect(target.reviewStatus).toBe('DRAFT')
-        expect(target.contentVersion).toBe('g2-ss-plot-elements-r0.1.0')
+        expect(target.contentVersion).toBe('g2-ss-plot-elements-r0.2.0')
         const sentenceText = (passage.sentences ?? []).map((sentence) => sentence.text).join(' ')
         expect(normalize(`${passage.passageText} ${sentenceText}`)).toContain(normalize(target.surfaceWord))
       }
@@ -98,7 +98,7 @@ describe('grade 2 story scouts story map pack', () => {
   })
 
   test('passes the global content validation and content-pack audit', () => {
-    expect(contentPackAudit).toHaveLength(0)
+    expect(contentPackAudit).toEqual([])
     expect(validateContent(sampleContent)).toHaveLength(0)
   })
 })

@@ -42,14 +42,14 @@ describe('Grade 3 Root Reactor production pack', () => {
     expect(grade2).toHaveLength(22)
     expect(grade2.reduce((sum, pack) => sum + pack.lessons.length, 0)).toBe(154)
     expect(grade2.reduce((sum, pack) => sum + pack.passages.length, 0)).toBe(161)
-    expect(grade2.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(889)
+    expect(grade2.reduce((sum, pack) => sum + pack.questions.length, 0)).toBe(886)
     expect(grade2.reduce((sum, pack) => sum + pack.passages.flatMap((passage) => passage.wordSupportTargets ?? []).length, 0)).toBe(614)
     expect(grade3.map((pack) => pack.manifest.packId)).toEqual([PACK_ID, 'g3-word-forge-suffix-shifter', 'g3-word-forge-multisyllable-mountain', 'g3-word-forge-fluency-flight', 'g3-story-scouts-character-arc-camp', 'g3-story-scouts-theme-development-trail', 'g3-story-scouts-perspective-portal', 'g3-poetry-planet-poem-form-observatory', 'g3-information-detectives-structure-station', 'g3-information-detectives-central-idea-engine', 'g3-information-detectives-purpose-development-path', 'g3-information-detectives-claim-evidence-court', 'g3-compare-castle-figurative-fortress', 'g3-compare-castle-summary-stronghold', 'g3-compare-castle-author-lens-tower', 'g3-context-cavern-academic-word-workshop', 'g3-context-cavern-root-meaning-vault', 'g3-context-cavern-meaning-maze'])
     expect(getActiveContentRegistryTotals()).toEqual({
       activePackCount: 40,
       activeLessonCount: 280,
       activePassageCount: 294,
-      activeQuestionCount: 1614,
+      activeQuestionCount: 1611,
       activeSupportTargetCount: 1111,
     })
   })
@@ -155,7 +155,7 @@ describe('Grade 3 Root Reactor production pack', () => {
     expect(auditSemanticQuestionPacks(getActiveContentPacks())).toMatchObject({
       reviewedPackCount: 40,
       reviewedLessonCount: 280,
-      reviewedCount: 1614,
+      reviewedCount: 1611,
       issues: [],
     })
   })

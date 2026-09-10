@@ -25,13 +25,13 @@ describe('semantic answer-uniqueness corrections for Grade 2 story and fluency q
     ])
   })
 
-  it('distinguishes solution actions from later outcomes in Story Map', () => {
+  it('distinguishes solution actions and explicit story stages in Story Map', () => {
     expect(question('g2-story-scouts-plot-structure-elements-guided-b-q4').prompt).toBe(
       'Which sentence lists the actions Jamal uses to make the messy display neat?',
     )
-    expect(question('g2-story-scouts-plot-structure-elements-checkpoint-c-q5').prompt).toBe(
-      'Which sentence directly says the street and sidewalk look clean after the work?',
-    )
+    const checkpointStoryParts = question('g2-story-scouts-plot-structure-elements-checkpoint-c-q5')
+    expect(checkpointStoryParts.prompt).toBe('Match each story part to the detail that belongs there.')
+    expect(checkpointStoryParts.questionContent?.type).toBe('table_match')
   })
 
   it('uses explicit story-stage constraints for Theme Trail evidence', () => {

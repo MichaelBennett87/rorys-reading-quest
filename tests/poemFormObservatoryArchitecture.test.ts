@@ -8,7 +8,7 @@ describe('Poem Form Observatory architecture', () => {
   test('activates only the planned Grade 3 poetry track and retains its Grade 2 prerequisite', () => {
     expect(getTrackBySkillId('g3-poetry-planet-poetry')).toMatchObject({
       trackId: 'g3-poetry-planet', worldId: 'poetry-planet', gradeBand: 3,
-      entryUnitId: 'g3-pp-unit-1', curriculumOrder: 130, worldChapterOrder: 2,
+      entryUnitId: 'g3-pp-unit-1', curriculumOrder: 60, worldChapterOrder: 2,
       initialDifficulty: 1, initialLastMasteredDifficulty: 0, completionDifficulty: 2,
       prerequisiteTrackIds: ['g2-poetry-planet'], status: 'active',
     })

@@ -9,7 +9,7 @@ import {
   createDefaultQuestProgress,
 } from '../../src/persistence'
 
-const WORD_FORGE_SKILL = 'g2-word-forge-word-practice'
+const STORY_SCOUTS_SKILL = 'g2-story-scouts-prose'
 
 afterEach(() => {
   window.localStorage.removeItem(QUEST_PROGRESS_STORAGE_KEY)
@@ -53,17 +53,17 @@ function perfectResult(lesson: LessonDefinition): LessonResult {
 }
 
 describe('P0 persisted learning continuity', () => {
-  test('two distinct qualifying successes survive hook restarts and advance Word Forge', () => {
+  test('two distinct qualifying successes survive hook restarts and advance Story Scouts', () => {
     const firstVisit = renderHook(() => useQuestProgress())
     const firstLaunch = firstVisit.result.current.prepareJourneyLaunch()
-    if (firstLaunch.status !== 'start') throw new Error('Expected the first Word Forge checkpoint.')
-    expect(firstLaunch.lesson.skillId).toBe(WORD_FORGE_SKILL)
+    if (firstLaunch.status !== 'start') throw new Error('Expected the first Story Scouts checkpoint.')
+    expect(firstLaunch.lesson.skillId).toBe(STORY_SCOUTS_SKILL)
     expect(firstLaunch.lesson.difficulty).toBe(1)
 
     act(() => {
       firstVisit.result.current.completeLesson(perfectResult(firstLaunch.lesson), firstLaunch.session.sessionId)
     })
-    expect(firstVisit.result.current.progress.skillProgress[WORD_FORGE_SKILL]).toMatchObject({
+    expect(firstVisit.result.current.progress.skillProgress[STORY_SCOUTS_SKILL]).toMatchObject({
       currentDifficulty: 1,
       currentLearningState: 'VERIFY_MASTERY',
       qualifyingIndependentActivityIds: [firstLaunch.lesson.activityId],
@@ -79,7 +79,7 @@ describe('P0 persisted learning continuity', () => {
     act(() => {
       secondVisit.result.current.completeLesson(perfectResult(verification.lesson), verification.session.sessionId)
     })
-    expect(secondVisit.result.current.progress.skillProgress[WORD_FORGE_SKILL]).toMatchObject({
+    expect(secondVisit.result.current.progress.skillProgress[STORY_SCOUTS_SKILL]).toMatchObject({
       currentDifficulty: 2,
       lastMasteredDifficulty: 1,
       currentLearningState: 'ADVANCE',
@@ -89,8 +89,8 @@ describe('P0 persisted learning continuity', () => {
 
     const thirdVisit = renderHook(() => useQuestProgress())
     const nextLevel = thirdVisit.result.current.prepareJourneyLaunch()
-    if (nextLevel.status !== 'start') throw new Error('Expected the earned next Word Forge level.')
-    expect(nextLevel.lesson.skillId).toBe(WORD_FORGE_SKILL)
+    if (nextLevel.status !== 'start') throw new Error('Expected the earned next Story Scouts level.')
+    expect(nextLevel.lesson.skillId).toBe(STORY_SCOUTS_SKILL)
     expect(nextLevel.lesson.difficulty).toBe(2)
     expect(thirdVisit.result.current.progress.completedAttempts).toHaveLength(2)
   })

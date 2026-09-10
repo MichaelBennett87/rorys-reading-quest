@@ -22,7 +22,7 @@ describe('Phase 7D2 integration and reconciled one-button journey', () => {
     expect(packs.filter((pack) => pack.manifest.gradeBand === 2)).toHaveLength(22)
     expect(packs.filter((pack) => pack.manifest.gradeBand === 3)).toHaveLength(18)
     expect(packs.filter((pack) => pack.manifest.packId === 'g3-compare-castle-summary-stronghold')).toHaveLength(1)
-    expect(getActiveContentRegistryTotals()).toEqual({ activePackCount: 40, activeLessonCount: 280, activePassageCount: 294, activeQuestionCount: 1614, activeSupportTargetCount: 1111 })
+    expect(getActiveContentRegistryTotals()).toEqual({ activePackCount: 40, activeLessonCount: 280, activePassageCount: 294, activeQuestionCount: 1611, activeSupportTargetCount: 1111 })
     const row = buildGrade3CoverageSnapshot().rows.find((entry) => entry.benchmarkReference === 'ELA.3.R.3.2')
     expect(row).toMatchObject({
       coverageStatus: 'implemented', reviewStatus: 'DRAFT', missingPatterns: [],

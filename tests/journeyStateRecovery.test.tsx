@@ -23,15 +23,10 @@ import {
 const NOW = '2026-08-24T21:00:00.000Z'
 const candidates = getLessonCandidates()
 const firstCandidate = candidates.find((candidate) => (
-  candidate.skillId === 'g2-word-forge-word-practice'
-  && candidate.difficulty === 1
-  && candidate.eligiblePurposes.includes('progression')
+  candidate.lessonId === 'g2-story-scouts-plot-structure-elements-lesson-checkpoint-a'
 ))!
 const nextCandidate = candidates.find((candidate) => (
-  candidate.skillId === firstCandidate.skillId
-  && candidate.difficulty === firstCandidate.difficulty
-  && candidate.lessonId !== firstCandidate.lessonId
-  && candidate.eligiblePurposes.includes('progression')
+  candidate.lessonId === 'g2-story-scouts-plot-structure-elements-lesson-checkpoint-b'
 ))!
 const firstLesson = getLessonById(firstCandidate.lessonId).lesson!
 const nextLesson = getLessonById(nextCandidate.lessonId).lesson!
@@ -53,7 +48,7 @@ function completedAttempt(completionId: string): CompletedLessonAttempt {
     activityId: firstCandidate.activityId,
     skillId: firstCandidate.skillId,
     difficulty: firstCandidate.difficulty,
-    questionResults: Array.from({ length: 7 }, (_, index) => ({
+    questionResults: Array.from({ length: firstLesson.questions.length }, (_, index) => ({
       questionId: `reproduction-question-${index + 1}`,
       isCorrect: true,
       isFirstAttemptCorrect: true,
@@ -109,9 +104,9 @@ function resultForFirstLesson(): LessonResult {
     skillId: firstCandidate.skillId,
     difficulty: firstCandidate.difficulty,
     lessonRole: 'CHECKPOINT',
-    totalQuestions: 7,
-    correctAnswers: 7,
-    firstAttemptCorrect: 7,
+    totalQuestions: firstLesson.questions.length,
+    correctAnswers: firstLesson.questions.length,
+    firstAttemptCorrect: firstLesson.questions.length,
     accuracy: 100,
     assistanceUsed: 0,
     assistanceSummary: {
@@ -123,7 +118,7 @@ function resultForFirstLesson(): LessonResult {
       spokenWordHelpUsed: false,
       sentenceReadAloudUsed: false,
     },
-    questionResults: Array.from({ length: 7 }, (_, index) => ({
+    questionResults: Array.from({ length: firstLesson.questions.length }, (_, index) => ({
       questionId: `completion-question-${index + 1}`,
       isCorrect: true,
       isFirstAttemptCorrect: true,

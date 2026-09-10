@@ -14,7 +14,7 @@ describe('Phase 7C3 integration and protected child journey', () => {
     expect(packs.filter((pack) => pack.manifest.packId === 'g3-information-detectives-purpose-development-path')).toHaveLength(1)
     expect(getActiveContentRegistryTotals()).toEqual({
       activePackCount: 40, activeLessonCount: 280, activePassageCount: 294,
-      activeQuestionCount: 1614, activeSupportTargetCount: 1111,
+      activeQuestionCount: 1611, activeSupportTargetCount: 1111,
     })
     const snapshot = buildGrade3CoverageSnapshot()
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.2.3')).toMatchObject({

@@ -3,11 +3,13 @@ import { describe, expect, test } from 'vitest'
 import type { LessonResult } from '../../src/domain/lesson'
 import { getLessonCandidates } from '../../src/domain/lesson'
 import {
+  curriculumTracks,
   normalizeQuestProgressForPlanning,
   planGlobalQuest,
 } from '../../src/domain/curriculum'
 import {
   applyLessonResult,
+  createInitialSkillProgress,
   planUnitQuest,
   type LessonActivityCandidate,
   type SkillProgressState,
@@ -25,17 +27,16 @@ const guided = rootCandidates.filter((candidate) => candidate.difficulty === 1 &
 const powerUps = rootCandidates.filter((candidate) => candidate.difficulty === 0)
 
 function readyState(): QuestProgressV1 {
-  const initial = createDefaultQuestProgress(NOW)
-  return {
-    ...initial,
-    skillProgress: {
-      ...initial.skillProgress,
-      'g2-word-forge-word-practice': {
-        ...initial.skillProgress['g2-word-forge-word-practice'],
-        currentDifficulty: 8,
-      },
-    },
+  const state = createDefaultQuestProgress(NOW)
+  const targetOrder = curriculumTracks.find((track) => track.skillId === SKILL_ID)!.curriculumOrder
+  for (const track of curriculumTracks.filter((candidate) => candidate.curriculumOrder < targetOrder)) {
+    state.skillProgress[track.skillId] = createInitialSkillProgress(
+      track.skillId,
+      track.completionDifficulty,
+      track.completionDifficulty - 1,
+    )
   }
+  return state
 }
 
 function result(candidate: LessonActivityCandidate, accuracy: number, assisted = false): LessonResult {
@@ -98,7 +99,7 @@ describe('Root Reactor prerequisite and progression integration', () => {
     })
   })
 
-  test('initializes only Grade 3 Word Forge after readiness and recovers stale content-needed state', () => {
+  test('initializes Grade 3 Word Forge at its canonical position and recovers stale content-needed state', () => {
     const ready = readyState()
     const stale: QuestProgressV1 = {
       ...ready,
@@ -110,7 +111,7 @@ describe('Root Reactor prerequisite and progression integration', () => {
         reason: 'Historical end-of-content marker.',
       },
     }
-    const grade2Before = structuredClone(stale.skillProgress)
+    const priorTracksBefore = structuredClone(stale.skillProgress)
     const normalized = normalizeQuestProgressForPlanning(stale, allCandidates)
 
     expect(normalized.changed).toBe(true)
@@ -118,8 +119,7 @@ describe('Root Reactor prerequisite and progression integration', () => {
       currentDifficulty: 1,
       lastMasteredDifficulty: 0,
     })
-    expect(Object.keys(normalized.state.skillProgress).filter((skillId) => skillId.startsWith('g3-'))).toEqual([SKILL_ID])
-    for (const [skillId, progress] of Object.entries(grade2Before)) {
+    for (const [skillId, progress] of Object.entries(priorTracksBefore)) {
       expect(normalized.state.skillProgress[skillId]).toEqual(progress)
     }
     expect(planUnitQuest({ selectedUnitId: UNIT_ID, progress: normalized.state, availableLessons: allCandidates })).toMatchObject({

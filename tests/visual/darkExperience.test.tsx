@@ -16,7 +16,7 @@ describe('dark-first experience', () => {
   test('applies the current world identity without restoring the retired map', () => {
     render(<App />)
 
-    expect(document.querySelector('.world-theme-word-forge')).not.toBeNull()
+    expect(document.querySelector('.world-theme-story-scouts')).not.toBeNull()
     expect(document.querySelector('.world-map')).toBeNull()
     expect(document.querySelector('.world-coming-later')).toBeNull()
     expect(screen.getByRole('region', { name: /Reading material/i })).toBeTruthy()

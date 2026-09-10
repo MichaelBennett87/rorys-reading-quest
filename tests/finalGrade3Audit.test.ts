@@ -61,10 +61,10 @@ describe('final Grade 3 repository audit', () => {
       activePackCount: 40,
       activeLessonCount: 280,
       activePassageCount: 294,
-      activeQuestionCount: 1614,
+      activeQuestionCount: 1611,
       activeSupportTargetCount: 1111,
     })
-    expect(registryCounts(grade2Packs)).toEqual({ lessons: 154, passages: 161, questions: 889, supportTargets: 614 })
+    expect(registryCounts(grade2Packs)).toEqual({ lessons: 154, passages: 161, questions: 886, supportTargets: 614 })
     expect(registryCounts(grade3Packs)).toEqual({ lessons: 126, passages: 133, questions: 725, supportTargets: 497 })
 
     expectUnique(activePacks.map((pack) => pack.manifest.packId))
@@ -148,12 +148,12 @@ describe('final Grade 3 repository audit', () => {
       order: track.curriculumOrder,
       prerequisite: track.prerequisiteTrackIds[0],
     }))).toEqual([
-      { trackId: 'g3-word-forge-foundations', order: 110, prerequisite: 'g2-word-forge-foundations' },
-      { trackId: 'g3-story-scouts-prose', order: 120, prerequisite: 'g2-story-scouts-prose' },
-      { trackId: 'g3-poetry-planet', order: 130, prerequisite: 'g2-poetry-planet' },
-      { trackId: 'g3-information-detectives-reading', order: 140, prerequisite: 'g2-information-detectives-reading' },
-      { trackId: 'g3-context-cavern-vocabulary', order: 150, prerequisite: 'g2-context-cavern-vocabulary' },
-      { trackId: 'g3-across-genres-reading', order: 160, prerequisite: 'g2-across-genres-reading' },
+      { trackId: 'g3-story-scouts-prose', order: 30, prerequisite: 'g2-story-scouts-prose' },
+      { trackId: 'g3-information-detectives-reading', order: 40, prerequisite: 'g2-information-detectives-reading' },
+      { trackId: 'g3-poetry-planet', order: 60, prerequisite: 'g2-poetry-planet' },
+      { trackId: 'g3-across-genres-reading', order: 80, prerequisite: 'g2-across-genres-reading' },
+      { trackId: 'g3-context-cavern-vocabulary', order: 100, prerequisite: 'g2-context-cavern-vocabulary' },
+      { trackId: 'g3-word-forge-foundations', order: 120, prerequisite: 'g2-word-forge-foundations' },
     ])
     expectUnique(grade3Tracks.map((track) => track.trackId))
     expectUnique(grade3Tracks.map((track) => track.skillId))
@@ -166,9 +166,9 @@ describe('final Grade 3 repository audit', () => {
     const ledgerRecords = Object.values(ledgerModules).flatMap((raw) => JSON.parse(raw) as LedgerRecord[])
 
     expect(inventory.issues).toEqual([])
-    expect(inventory.records).toHaveLength(1614)
+    expect(inventory.records).toHaveLength(1611)
     expect(Object.keys(ledgerModules)).toHaveLength(40)
-    expect(ledgerRecords).toHaveLength(1614)
+    expect(ledgerRecords).toHaveLength(1611)
     expectUnique(ledgerRecords.map((record) => record.questionId))
     expect(ledgerRecords.every((record) => record.finalStatus === 'PASS')).toBe(true)
     expect(ledgerRecords.map((record) => record.questionId).sort()).toEqual([...activeById.keys()].sort())
