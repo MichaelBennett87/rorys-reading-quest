@@ -216,6 +216,14 @@ The production registry adds only `g3-context-cavern-meaning-maze`. Existing pai
 
 The final audit derives inventory, coverage, identifiers, content versions, track order, support ownership, and truth fingerprints from the active registry rather than documentation constants. It adds no runtime route, persistence field, curriculum object, or dependency. Terminal no-content presentation recognizes complete Grade 3 curriculum while keeping the existing `progression_outcome` route and its single Back Home action. Nested schema-v1 objects are now validated before recovery, and cross-grade fluency chapter completion requires every active fluency scope rather than an aggregate activity count.
 
+## Current comprehension-first planner and deferred-session architecture
+
+`curriculumTracks` owns the single twelve-stage ordinary-progression order. `discoverJourneyEligibleTracksForState` exposes only the first incomplete stage and any same-domain prerequisite-ready state needed to reach it. Active sessions, stored urgent work, due reviews, verification, and remediation retain priority only when their track is currently journey-eligible; a deferred Word Forge item cannot bypass unfinished comprehension.
+
+`reconcileDeferredWordStudySession` performs the authoritative idempotent transition. It moves one compatible unfinished Word Forge `ActiveLessonSession` out of the active launch slot, preserves its bounded response and launch identity, clears only a matching stale plan, and persists before comprehension launches. When Word Forge becomes eligible, the same session is restored only after normal catalog, content-version, fingerprint, completion, and review-context validation. No authored curriculum text is added to persistence, schema version remains 1, and no unbounded session archive exists.
+
+The Story Map pack keeps stable pack, track, skill, unit, lesson, activity, passage, and support ownership. Its material checkpoint rewrite uses content version `g2-ss-plot-elements-r0.2.0`; exact review affinity migrates only the known `r0.1.0` Story Map identity. The stable semantic audit-ID map retains provenance for the three retired seventh-question IDs without keeping those questions active or scored.
+
 ## P0 unit-affine review completion architecture
 
 `ActiveLessonSession` may carry an optional `ActiveLessonLaunchContext`. The context records the authoritative launch purpose and, for a spaced review, the exact grade-aware skill, historical difficulty, unit, content version, review step, due time, and return learning state selected from the queue. The optional field is backward-compatible inside schema version 1: legacy sessions without it remain ordinary launches and receive no review authority.

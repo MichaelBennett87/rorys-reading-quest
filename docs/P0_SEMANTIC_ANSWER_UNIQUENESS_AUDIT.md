@@ -2,9 +2,9 @@
 
 ## Current local completion status
 
-The fingerprint-bound semantic release gate is `PASS` on the current working tree. Registry-derived coverage is 1,614 active questions and 2,385 scored response slots. All 1,614 key-free primary conclusions are frozen, all 323 required stratified second-pass records are complete across 40 packs and 191 pack/type strata, all 1,614 current records have final semantic `PASS`, and the gate reports zero pending or unresolved issues.
+The fingerprint-bound semantic release gate is `PASS` on the current working tree. Registry-derived coverage is 1,611 active questions and 2,382 scored response slots. All 1,611 key-free primary conclusions are frozen, 343 current second-pass records cover all 323 required questions across 40 packs and 191 pack/type strata, all 1,611 current records have final semantic `PASS`, and the gate reports zero pending or unresolved issues.
 
-Twenty-five questions carry direct correction provenance: 16 in Grade 2 and 9 in Grade 3. Corrections preserve the established totals of 40 packs, 280 lessons, 294 texts, 1,614 questions, and 1,111 support targets. Every changed learner-visible item was re-reviewed before its final record was accepted. The broader truth-ledger refresh is fingerprint reconciliation for source/factory changes and must not be misreported as 324 separate semantic defects.
+Forty-two current questions carry correction provenance. The comprehension-first change materially rewrites eighteen Story Map questions and retires three old seventh questions, producing current totals of 40 packs, 280 lessons, 294 texts, 1,611 questions, and 1,111 support targets. Every changed learner-visible item was re-reviewed before its final record was accepted. The broader truth-ledger refresh is fingerprint reconciliation for source/factory changes and must not be misreported as a separate semantic defect for every record.
 
 Review provenance is same-conversation primary-agent work under the current no-subagent and no-fork policy. Earlier reviewer creation receipts produced no usable reports and are not independent approvals. Fingerprints establish exactly which projection was reviewed; they do not prove that natural-language review is infallible. No unresolved answer-ambiguity findings remained in this audit.
 

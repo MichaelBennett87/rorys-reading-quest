@@ -603,3 +603,11 @@ Consequence: boot and final completion reuse `prepareJourneyLaunch`; response dr
 - Decision: leave unsupported-schema, invalid-JSON, and malformed durable payloads byte-for-byte untouched instead of allowing automatic boot to replace them with a fresh learner.
 - Decision: use an instance-local compare-before-write token to reject stale-page writes without adding a backend, learner identifier, schema field, dependency, or cross-device claim.
 - Decision: automatic lesson completion may replan or show curriculum completion only after the completed attempt, rewards, progression, and cleared session are confirmed by the same authoritative save.
+
+## 2026-09-10 - Make ordinary progression comprehension-first
+
+Decision: use one authoritative twelve-stage progression order beginning with Grade 2 Story Scouts and Grade 2 Information Detectives, followed by their Grade 3 counterparts, then poetry, across-genres reading, Context Cavern, and finally Grade 2 and Grade 3 Word Forge. Preserve every matching same-domain Grade 3 prerequisite.
+
+Reason: passage comprehension should be the learner's immediate experience. Isolated word study must not stand between Rory and existing story or informational reading, and this preference belongs in the planner rather than a child-facing selector.
+
+Consequence: a compatible unfinished Word Forge session can be deferred in one bounded schema-v1 slot while earlier comprehension is incomplete; plans, reviews, remediation, and verification from Word Forge remain stored but ineligible until that stage. Earned attempts, evidence, XP, stars, review identity, Parent PIN, and assessments are unchanged. The three opening Story Map checkpoints now each use one two-paragraph story and six related questions under content version `g2-ss-plot-elements-r0.2.0`. Pack, lesson, text, and support-target totals stay fixed; active questions decrease by three to 1,611. Phase 8 remains unstarted.

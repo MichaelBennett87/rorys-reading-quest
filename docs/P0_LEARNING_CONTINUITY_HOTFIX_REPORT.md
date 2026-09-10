@@ -48,3 +48,7 @@ Additional contract gaps allowed a silently dropped write to be reported as save
 ## Boundaries and remaining uncertainty
 
 The application remains local-only and does not synchronize between devices, browser profiles, private sessions, or embedded-browser storage partitions. The browser profile and engine on Rory's reporting device were not available to this automated investigation, so a device-specific storage policy or origin boundary remains possible. The release acceptance must repeat the continuous history on the built and deployed application using an isolated persistent browser origin.
+
+## Current comprehension-first supersession
+
+The fourteen-session Word Forge trace above remains valid evidence that accepted writes, cold recovery, distinct qualifying evidence, and unit advancement work. It is no longer the fresh-learner route. Current ordinary progression begins in Story Scouts, and Word Forge is deferred until the later word-study stage without deleting the durable history this report tested.

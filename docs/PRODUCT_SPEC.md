@@ -136,6 +136,14 @@ The normal child URL opens directly into the current reading and question. A com
 
 The child uses one primary action area. It shows `Check Answer` only after a structurally valid response exists, then shows `Next` while feedback remains visible. `Next` advances one question, or on the final question commits the stable session exactly once and replans from the updated persisted state. Response controls are not navigation controls. Multiselect and multi-Hot-Text readiness is based on the learner making a selection, never on a hidden authored-answer count.
 
+## Current comprehension-first journey
+
+Ordinary progression now follows one authoritative order: Grade 2 Story Scouts, Grade 2 Information Detectives, Grade 3 Story Scouts, Grade 3 Information Detectives, Grade 2 Poetry Planet, Grade 3 Poetry Planet, Grade 2 Across-Genre Reading, Grade 3 Across-Genre Reading, Grade 2 Context Cavern, Grade 3 Context Cavern, Grade 2 Word Forge, and Grade 3 Word Forge. Each Grade 3 track retains its matching Grade 2 prerequisite; unrelated Grade 2 Word Forge completion is not a prerequisite for Grade 3 comprehension.
+
+A new learner opens directly into `g2-story-scouts-prose`, `ss-unit-1`, difficulty 1, using an active Story Map checkpoint. Earlier Word Forge history is deferred, not erased or relabeled. A compatible unfinished Word Forge session may be held in one bounded schema-v1 slot while earlier comprehension remains incomplete, then restored only when exact lesson, activity, version, fingerprint, and review identity remain valid.
+
+Story Map content version `g2-ss-plot-elements-r0.2.0` keeps seven lessons, seven texts, and twenty-eight support targets while reducing the pack from forty-one to thirty-eight active questions. Each of the three checkpoints owns one stable two-paragraph literary story and six passage-dependent questions spanning detail, character action or motivation, problem, sequence or cause, inference with evidence, and resolution. Five of six correct is 83.33 percent and remains below the unchanged 85 percent strong threshold.
+
 Guided instruction, fluency practice, local reference cards, all five scored response forms, and explicitly requested five-stage Word Help remain in the same calm reading surface. Bounded ID-only drafts, submitted feedback, question position, assistance, review launch identity, and active sessions autosave in schema version 1. Parent reporting remains available at the separately bookmarkable, PIN-gated `#/parent` route, which never auto-launches child work.
 
 This contract supersedes the earlier two-button Home journey for current behavior. Historical phase sections below retain their phase-local navigation descriptions. Planner priority, canonical `curriculumOrder`, prerequisites, safe recycling, mastery thresholds, review intervals, scoring, rewards, persistence, assessments, and parent analytics are unchanged.

@@ -173,7 +173,7 @@ Root Meaning Vault ordinary progression is never substituted for Unit 3 remediat
 Recent use remains a ranking preference, fresh work remains preferred, safe recycling remains available, immediate repetition is avoided when alternatives exist, and sole-candidate repetition remains allowed. Thresholds, review intervals, rewards, active-session reconciliation, exact-once completion, and the shared Start/Continue transition are unchanged.
 ## Phase 7D7 final progression audit
 
-The final registry order is Grade 3 Word Forge at 110, Story Scouts at 120, Poetry Planet at 130, Information Detectives at 140, Context Cavern at 150, and Across-Genre Reading at 160. Each track keeps its matching Grade 2 prerequisite. Active sessions, verification, remediation, and due reviews continue to outrank ordinary progression. Recent use remains ranking metadata rather than a blacklist, and completed Grade 3 curriculum does not disable grade-, skill-, unit-, and version-affine reviews.
+At the Phase 7D7 checkpoint, the Grade 3-only audit observed the then-current order of Word Forge, Story Scouts, Poetry Planet, Information Detectives, Context Cavern, and Across-Genre Reading. Each track kept its matching Grade 2 prerequisite. The later comprehension-first policy below supersedes that ordinary-progression order without changing those prerequisite identities.
 
 ## P0 historical review completion
 
@@ -186,3 +186,9 @@ The active session is the authority across Save and Exit and reload. Missing, fo
 The default child route invokes the existing authoritative launch preparation automatically. Active-session recovery remains first, followed by stored urgent work, due reviews, verification, remediation, and ordinary progression. Boot does not create a second planner, bypass prerequisites, initialize unrelated tracks, or award rewards. A true no-content result renders one calm completion/rest state and does not retry automatically.
 
 `Check Answer` records the current response checkpoint. `Next` advances one question; at the lesson boundary it applies the existing progression or review transition exactly once and immediately replans from the updated state. Historical review difficulty remains distinct from current track difficulty, review identity remains unit/version affine, and remediation launches through the same planner. The question-first view removes navigation decisions without changing mastery thresholds, qualifying evidence, review intervals, reward formulas, or safe recycling.
+
+## Current comprehension-first planning policy
+
+The authoritative ordinary order is: Grade 2 Story Scouts at 10; Grade 2 Information Detectives at 20; Grade 3 Story Scouts at 30; Grade 3 Information Detectives at 40; Grade 2 Poetry Planet at 50; Grade 3 Poetry Planet at 60; Grade 2 Across-Genre Reading at 70; Grade 3 Across-Genre Reading at 80; Grade 2 Context Cavern at 90; Grade 3 Context Cavern at 100; Grade 2 Word Forge at 110; and Grade 3 Word Forge at 120.
+
+Priority remains active compatible session, verification, remediation, due review, then ordinary progression within the current journey-eligible frontier. Word Forge sessions and queue entries remain stored but are ineligible while an earlier comprehension stage is incomplete. Comprehension difficulty, verification, remediation, and reviews remain same-skill and unit-affine; a poor comprehension result cannot route to vowel or word-analysis instruction. Recent use remains a ranking preference, safe recycling remains available within the eligible track, and stale plans are recomputed against current ordering.

@@ -187,8 +187,17 @@ The repository-level Phase 7D7, Phase 7D, and Phase 7 audit work is complete. Re
 ## Post-Phase-7 P0 semantic answer-uniqueness audit
 
 - [x] Complete the all-active-question semantic answer-uniqueness audit and corrections.
-- [x] Reconcile all 1,614 questions and 2,385 response slots through frozen key-free review, option-level challenge, and a deterministic 323-question second pass.
-- [x] Pass the separate semantic release gate with 1,614 current semantic PASS records and zero unresolved findings.
-- [ ] Publish the combined semantic-correction and question-first release only after every mechanical gate and exact deployed-browser acceptance pass.
+- [x] Reconcile the current 1,611 questions and 2,382 response slots through frozen key-free review, option-level challenge, and the required deterministic second pass.
+- [x] Pass the separate semantic release gate with 1,611 current semantic PASS records and zero unresolved findings.
+- [x] Publish the semantic-correction and question-first foundation before the comprehension-first policy change.
 
-Current local checkpoint: all 1,614 blind conclusions are frozen, 25 directly corrected questions have explicit provenance, all 323 required second-pass records cover 40 packs and 191 pack/type strata, and the semantic gate reports PASS with zero issues. Review provenance is same-conversation primary-agent work under the no-subagent policy, not independent-agent approval. See `docs/P0_SEMANTIC_ANSWER_UNIQUENESS_AUDIT.md` and `docs/content/answer-uniqueness-ledger/AUDIT_PROGRESS.md`. Phase 7 remains complete historically. Phase 8, Grade 4, FAST timed practice, and Phase 10 remain unstarted.
+Current semantic checkpoint: all 1,611 blind conclusions are frozen, 42 current questions have correction provenance, all 323 required second-pass records are covered by 343 current records across 40 packs and 191 pack/type strata, and the semantic gate reports PASS with zero issues. Review provenance is same-conversation primary-agent work under the no-subagent policy, not independent-agent approval. See `docs/P0_SEMANTIC_ANSWER_UNIQUENESS_AUDIT.md` and `docs/content/answer-uniqueness-ledger/AUDIT_PROGRESS.md`. Phase 7 remains complete historically. Phase 8, Grade 4, FAST timed practice, and Phase 10 remain unstarted.
+
+## Comprehension-first learning journey
+
+- [x] Make Grade 2 Story Scouts the fresh-learner entry and establish the twelve-stage comprehension-first ordinary-progression order.
+- [x] Preserve same-domain Grade 3 prerequisites while removing unrelated Word Forge completion as an earlier-stage blocker.
+- [x] Defer rather than discard a compatible unfinished Word Forge session, its plans, reviews, evidence, attempts, XP, stars, PIN, and assessments.
+- [x] Revise all three opening Story Map checkpoints to one coherent two-paragraph story with six passage-dependent questions.
+- [x] Reconcile all changed question fingerprints, blind conclusions, second-pass records, truth ledgers, evaluator contracts, and active totals.
+- [ ] Publish only after the complete release gate and isolated deployed-browser acceptance pass.

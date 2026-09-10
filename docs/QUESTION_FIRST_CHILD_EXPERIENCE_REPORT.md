@@ -37,7 +37,7 @@ The local Codex in-app browser was exercised at narrow phone, portrait iPad, lan
 
 ## Semantic release relationship
 
-The parallel semantic answer-uniqueness gate accounts for all 1,614 active questions and 2,385 response slots. It has 1,614 frozen primary conclusions, 323/323 required second-pass records, 25 directly corrected questions, 1,614 final semantic PASS records, and zero unresolved issues. Review was performed sequentially in this conversation; no independent reviewer approval is claimed.
+The semantic answer-uniqueness gate now accounts for all 1,611 current active questions and 2,382 response slots. It has 1,611 frozen primary conclusions, 343 current second-pass records against 323 required, 42 questions with correction provenance, 1,611 final semantic PASS records, and zero unresolved issues. Review was performed sequentially in this conversation; no independent reviewer approval is claimed.
 
 The learner-visible source title remains information already present in the key-free audit projection. The redesign does not expose guide conclusions or remove essential question context. The evidence resolver now numbers unnumbered prose by one-based source order instead of displaying `Sentence 0`.
 
