@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 import type { LessonDefinition } from '../domain/lesson'
-import type { ActiveLessonSession } from '../persistence'
+import { QUEST_PROGRESS_STORAGE_KEY, type ActiveLessonSession } from '../persistence'
 import { LessonScreen } from '../screens/LessonScreen'
 import { ParentPlaceholderScreen } from '../screens/ParentPlaceholderScreen'
 import { type ProgressionOutcomeViewModel, useQuestProgress } from './useQuestProgress'
@@ -52,6 +52,7 @@ export function AppShell() {
       return
     }
     if (decision.status === 'content_needed') {
+      journeyLaunchPendingRef.current = false
       setOutcome({
         persisted: true,
         kind: 'CONTENT_NEEDED',
@@ -66,6 +67,7 @@ export function AppShell() {
       return
     }
     if (decision.status === 'unavailable') {
+      journeyLaunchPendingRef.current = false
       setLessonState({ lesson: null, session: null, errors: [decision.reason] })
       setScreen('load_error')
     }
@@ -76,19 +78,41 @@ export function AppShell() {
     if (!nextOutcome.persisted) {
       setLessonState((previous) => ({
         ...previous,
-        errors: ['Rory\'s Reading Quest could not safely save that completed lesson. Your earlier saved progress is unchanged. Please retry.'],
+        errors: [nextOutcome.recoveryMessage
+          ?? 'Rory\'s Reading Quest could not safely save that completed lesson. Your earlier saved progress is unchanged. Please retry.'],
       }))
       setScreen('load_error')
-      return
-    }
-    if (nextOutcome.nextQuest.status === 'content_needed') {
-      setOutcome(nextOutcome)
-      setScreen('rest')
       return
     }
     journeyLaunchPendingRef.current = false
     launchCurrentJourney()
   }
+
+  useEffect(() => {
+    if (screen !== 'rest') return
+
+    const retryWhenVisible = () => {
+      if (document.visibilityState !== 'visible' || isParentRoute()) return
+      launchCurrentJourney()
+    }
+    const retryAfterPageRestore = () => {
+      if (isParentRoute()) return
+      launchCurrentJourney()
+    }
+    const retryAfterStorageChange = (event: StorageEvent) => {
+      if (event.key !== QUEST_PROGRESS_STORAGE_KEY || isParentRoute()) return
+      launchCurrentJourney()
+    }
+
+    document.addEventListener('visibilitychange', retryWhenVisible)
+    window.addEventListener('pageshow', retryAfterPageRestore)
+    window.addEventListener('storage', retryAfterStorageChange)
+    return () => {
+      document.removeEventListener('visibilitychange', retryWhenVisible)
+      window.removeEventListener('pageshow', retryAfterPageRestore)
+      window.removeEventListener('storage', retryAfterStorageChange)
+    }
+  }, [screen, launchCurrentJourney])
 
   useEffect(() => {
     const syncRoute = () => {

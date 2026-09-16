@@ -467,9 +467,6 @@ function chooseActiveStatePlan(
   availableLessons: readonly LessonActivityCandidate[],
   playableTracks: readonly PlayableTrackDiscovery[],
 ): GlobalQuestPlan | null {
-  const lastCompletedLessonMetadata = state.completedAttempts.at(-1)
-    ? getLessonCatalogMetadata(state.completedAttempts.at(-1)!.lessonId)
-    : null
   const candidates = playableTracks
     .map((entry) => {
       const progress = state.skillProgress[entry.track.skillId]
@@ -484,6 +481,15 @@ function chooseActiveStatePlan(
 
   for (const candidate of candidates) {
     const purpose = candidate.progress.currentLearningState === 'VERIFY_MASTERY' ? 'verification' : 'remediation'
+    const latestOwnedAttempt = [...state.completedAttempts]
+      .reverse()
+      .find((attempt) => (
+        attempt.skillId === candidate.track.skillId
+        && attempt.difficulty === candidate.progress.currentDifficulty
+      ))
+    const lastCompletedLessonMetadata = latestOwnedAttempt
+      ? getLessonCatalogMetadata(latestOwnedAttempt.lessonId)
+      : null
     const plan = selectNextLesson({
       skillId: candidate.track.skillId,
       difficulty: candidate.progress.currentDifficulty,

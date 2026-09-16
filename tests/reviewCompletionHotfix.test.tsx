@@ -220,7 +220,10 @@ describe('P0 unit-affine review completion hotfix', () => {
     persistState(state)
 
     const { result } = renderHook(() => useQuestProgress())
-    const begun = result.current.beginLesson(storyMap)
+    let begun!: ReturnType<typeof result.current.beginLesson>
+    act(() => {
+      begun = result.current.beginLesson(storyMap)
+    })
     expect(begun.status).toBe('started')
     let outcome!: ReturnType<typeof result.current.completeLesson>
     act(() => {
@@ -229,11 +232,13 @@ describe('P0 unit-affine review completion hotfix', () => {
 
     expect(counters(result.current.progress)).toEqual(before)
     expect(progressionSnapshot(result.current.progress, storyMap.skillId)).toEqual(beforeTrack)
-    expect(outcome.kind).toBe('CONTENT_NEEDED')
+    expect(outcome.persisted).toBe(false)
+    expect(outcome.kind).toBe('RECOVERY_NEEDED')
     expect(outcome.nextQuest).toMatchObject({
       status: 'content_needed',
       reason: 'Lesson result does not match the active skill trail.',
     })
+    expect(result.current.progress.activeLessonSession?.sessionId).toBe(begun.session.sessionId)
   })
 
   test('preserves authoritative review purpose through checkpoint save and reload', () => {

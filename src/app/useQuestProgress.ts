@@ -41,6 +41,7 @@ export interface ProgressionOutcomeViewModel {
   nextQuest: NextQuestPlan
   completionId: string
   curriculumComplete: boolean
+  recoveryMessage?: string
 }
 
 export type JourneyLaunchDecision =
@@ -138,6 +139,22 @@ export function useQuestProgress() {
     return result
   }
 
+  const refreshFromDurableStore = (): QuestProgressV1 => {
+    const loaded = storeRef.current.load()
+    if (loaded.status === 'loaded' || loaded.status === 'recovered') {
+      progressRef.current = loaded.state
+      setProgress(loaded.state)
+      setStorageStatus(loaded.status)
+      setTechnicalDetail(loaded.technicalDetail)
+      return loaded.state
+    }
+    if (loaded.status !== 'empty') {
+      setStorageStatus(loaded.status)
+      setTechnicalDetail(loaded.technicalDetail)
+    }
+    return progressRef.current
+  }
+
   const beginLessonWithContext = (
     lesson: LessonDefinition,
     launchContext: ActiveLessonLaunchContext,
@@ -212,14 +229,9 @@ export function useQuestProgress() {
       (attempt) => attempt.completionId === completionId,
     )
     if (existingAttempt) {
-      const recovered = recoverActiveLessonSession({ state: progressRef.current, availableLessons })
-      const normalized = normalizeQuestProgressForPlanning(recovered.state, availableLessons)
-      const reconciled = normalized.state
-      const guidedPlan = planGlobalQuest({
-        progress: reconciled,
-        availableLessons,
-        now: new Date().toISOString(),
-      })
+      const planned = reconcileAndPlanJourney(progressRef.current, new Date().toISOString())
+      const reconciled = planned.state
+      const guidedPlan = planned.plan
       const nextQuest = guidedPlan.nextQuest
       const saved = persist({ ...reconciled, plannedNextQuest: nextQuest })
       return {
@@ -295,13 +307,10 @@ export function useQuestProgress() {
         reviewCompletion: reviewResult.reviewCompletion,
         completedAt,
       })
-      const guidedPlan = planGlobalQuest({
-        progress: completed.state,
-        availableLessons,
-        now: completedAt,
-      })
+      const planned = reconcileAndPlanJourney(completed.state, completedAt)
+      const guidedPlan = planned.plan
       const guidedNextQuest = guidedPlan.nextQuest
-      const saved = persist({ ...completed.state, plannedNextQuest: guidedNextQuest })
+      const saved = persist({ ...planned.state, plannedNextQuest: guidedNextQuest })
       return {
         persisted: saved.status === 'saved',
         kind: 'SPACED_REVIEW',
@@ -333,13 +342,10 @@ export function useQuestProgress() {
         fluencyProgress,
         completedAt,
       })
-      const guidedPlan = planGlobalQuest({
-        progress: completed.state,
-        availableLessons,
-        now: completedAt,
-      })
+      const planned = reconcileAndPlanJourney(completed.state, completedAt)
+      const guidedPlan = planned.plan
       const guidedNextQuest = guidedPlan.nextQuest
-      const saved = persist({ ...completed.state, plannedNextQuest: guidedNextQuest })
+      const saved = persist({ ...planned.state, plannedNextQuest: guidedNextQuest })
       return {
         persisted: saved.status === 'saved',
         kind: fluencyProgress.reasonCodes.includes('fluency_practice_chapter_completed')
@@ -363,24 +369,12 @@ export function useQuestProgress() {
       completedAt,
     })
     if (progression.status === 'declined') {
-      const nextQuest: NextQuestPlan = {
-        status: 'content_needed',
-        purpose: 'progression',
-        skillId: lessonResult.skillId,
-        difficulty: lessonResult.difficulty,
-        reason: progression.reason,
-      }
-      const saved = persist({ ...progressRef.current, activeLessonSession: null, plannedNextQuest: nextQuest })
-      return {
-        persisted: saved.status === 'saved',
-        kind: 'CONTENT_NEEDED',
-        earnedXp: 0,
-        earnedStars: 0,
-        currentDifficulty: lessonResult.difficulty,
-        nextQuest,
+      return buildRejectedCompletionOutcome(
+        progressRef.current,
+        lessonResult,
         completionId,
-        curriculumComplete: false,
-      }
+        progression.reason,
+      )
     }
 
     const completed = completeQuestProgress({
@@ -390,13 +384,10 @@ export function useQuestProgress() {
       progression,
       completedAt,
     })
-    const guidedPlan = planGlobalQuest({
-      progress: completed.state,
-      availableLessons,
-      now: completedAt,
-    })
+    const planned = reconcileAndPlanJourney(completed.state, completedAt)
+    const guidedPlan = planned.plan
     const guidedNextQuest = guidedPlan.nextQuest
-    const saved = persist({ ...completed.state, plannedNextQuest: guidedNextQuest })
+    const saved = persist({ ...planned.state, plannedNextQuest: guidedNextQuest })
     return {
       persisted: saved.status === 'saved',
       kind: guidedNextQuest.status === 'content_needed'
@@ -422,7 +413,7 @@ export function useQuestProgress() {
   }
 
   const prepareJourneyLaunch = (): JourneyLaunchDecision => {
-    let current = progressRef.current
+    let current = refreshFromDurableStore()
     for (let attempt = 0; attempt < 2; attempt += 1) {
       const reconciled = reconcileJourneyProgress(current)
       current = reconciled.state
@@ -517,6 +508,18 @@ export function useQuestProgress() {
     }
   }
 
+  function reconcileAndPlanJourney(state: QuestProgressV1, now: string) {
+    const reconciled = reconcileJourneyProgress(state)
+    return {
+      state: reconciled.state,
+      plan: planGlobalQuest({
+        progress: reconciled.state,
+        availableLessons,
+        now,
+      }),
+    }
+  }
+
   return {
     progress,
     storageStatus,
@@ -544,8 +547,8 @@ function buildRejectedCompletionOutcome(
   reason: string,
 ): ProgressionOutcomeViewModel {
   return {
-    persisted: true,
-    kind: 'CONTENT_NEEDED',
+    persisted: false,
+    kind: 'RECOVERY_NEEDED',
     earnedXp: 0,
     earnedStars: 0,
     currentDifficulty: state.skillProgress[lessonResult.skillId]?.currentDifficulty
@@ -559,6 +562,7 @@ function buildRejectedCompletionOutcome(
     },
     completionId,
     curriculumComplete: false,
+    recoveryMessage: 'That completed lesson could not be confirmed safely. Your current work is still available. Please retry.',
   }
 }
 
