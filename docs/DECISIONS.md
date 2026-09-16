@@ -611,3 +611,13 @@ Decision: use one authoritative twelve-stage progression order beginning with Gr
 Reason: passage comprehension should be the learner's immediate experience. Isolated word study must not stand between Rory and existing story or informational reading, and this preference belongs in the planner rather than a child-facing selector.
 
 Consequence: a compatible unfinished Word Forge session can be deferred in one bounded schema-v1 slot while earlier comprehension is incomplete; plans, reviews, remediation, and verification from Word Forge remain stored but ineligible until that stage. Earned attempts, evidence, XP, stars, review identity, Parent PIN, and assessments are unchanged. The three opening Story Map checkpoints now each use one two-paragraph story and six related questions under content version `g2-ss-plot-elements-r0.2.0`. Pack, lesson, text, and support-target totals stay fixed; active questions decrease by three to 1,611. Phase 8 remains unstarted.
+
+## 2026-09-16 - Treat post-completion rest as a global authoritative decision
+
+Decision: after an accepted completion, reconcile the resulting durable state, initialize newly eligible tracks, retire stale plans, plan globally, and persist that exact reconciled state before the child launcher renders the next activity. The child shell always re-enters the authoritative launcher after final `Next`; it does not treat a unit-local `content_needed` snapshot as a global rest verdict.
+
+Decision: a rejected lesson result is a recoverable completion error, not saved progress and not curriculum exhaustion. Preserve the authoritative active session, award no attempt or reward, and expose the existing single Retry action instead of clearing the session into `Reading Rest`.
+
+Decision: verification and remediation affinity may use only the latest completed attempt from the same skill and current difficulty. Never carry the globally latest attempt's unit or content version into another skill. A genuinely idle page may recheck on `pageshow`, return to visible state, or a newer same-origin progress storage event; no polling or background writes are added.
+
+Consequence: schema version 1, storage keys, thresholds, rewards, review intervals, question-first navigation, comprehension-first ordering, Word Forge deferral, curriculum inventory, Parent PIN, assessments, and local-only privacy remain unchanged. Phase 8 remains unstarted.

@@ -200,4 +200,12 @@ Current semantic checkpoint: all 1,611 blind conclusions are frozen, 42 current 
 - [x] Defer rather than discard a compatible unfinished Word Forge session, its plans, reviews, evidence, attempts, XP, stars, PIN, and assessments.
 - [x] Revise all three opening Story Map checkpoints to one coherent two-paragraph story with six passage-dependent questions.
 - [x] Reconcile all changed question fingerprints, blind conclusions, second-pass records, truth ledgers, evaluator contracts, and active totals.
-- [ ] Publish only after the complete release gate and isolated deployed-browser acceptance pass.
+- [x] Publish only after the complete release gate and isolated deployed-browser acceptance pass.
+
+## P0 false Reading Rest topic-handoff repair
+
+- [x] Reproduce and correct the declined-completion path that cleared an authoritative session and persisted false `CONTENT_NEEDED` without an attempt or reward.
+- [x] Reconcile and persist the same normalized post-completion state used to choose the next global activity.
+- [x] Restrict verification and remediation unit/version affinity to a completed attempt from the same skill and difficulty.
+- [x] Recover stored false no-content plans automatically and recheck genuine idle pages on foreground, page restoration, and newer same-origin storage events without polling.
+- [x] Derive launchability coverage for every current track, ordinary difficulty, topic handoff, and genuine final-completion boundary while preserving comprehension-first ordering and deferred Word Forge history.
