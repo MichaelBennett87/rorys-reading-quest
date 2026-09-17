@@ -219,6 +219,10 @@ export function checkpointSubmittedQuestion(
   currentQuestionIndex: number,
   timestamp: string,
 ): ActiveLessonSession {
+  if (session.submittedQuestions.some((question) => question.questionId === evaluation.questionId)) {
+    return session
+  }
+
   const submittedAnswer = toPersistedAnswer(evaluation.submittedAnswer)
   const submitted: PersistedSubmittedQuestion = {
     questionId: evaluation.questionId,
@@ -229,10 +233,7 @@ export function checkpointSubmittedQuestion(
   return {
     ...session,
     currentQuestionIndex,
-    submittedQuestions: [
-      ...session.submittedQuestions.filter((question) => question.questionId !== evaluation.questionId),
-      submitted,
-    ],
+    submittedQuestions: [...session.submittedQuestions, submitted],
     draftQuestion: null,
     assistanceEvents: cloneAssistanceEvents(session.assistanceEvents),
     updatedAt: timestamp,
