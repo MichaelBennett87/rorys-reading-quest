@@ -224,6 +224,7 @@ function isActiveLessonSession(value: unknown): value is ActiveLessonSession {
     && (value.sessionContentFingerprint === undefined || typeof value.sessionContentFingerprint === 'string')
     && typeof value.skillId === 'string'
     && Number.isInteger(value.difficulty)
+    && (value.checkpointRevision === undefined || isNonNegativeSafeInteger(value.checkpointRevision))
     && isNonNegativeInteger(value.currentQuestionIndex)
     && Array.isArray(value.submittedQuestions)
     && value.submittedQuestions.every((question) => isRecord(question)
@@ -374,6 +375,9 @@ function cloneUsage(usage: RecentLessonActivityUsage): RecentLessonActivityUsage
 function cloneActiveSession(session: ActiveLessonSession): ActiveLessonSession {
   return {
     ...session,
+    checkpointRevision: isNonNegativeSafeInteger(session.checkpointRevision)
+      ? session.checkpointRevision
+      : 0,
     submittedQuestions: session.submittedQuestions.map((question) => ({
       ...question,
       submittedAnswer: structuredClone(question.submittedAnswer),
@@ -397,6 +401,10 @@ function cloneActiveSession(session: ActiveLessonSession): ActiveLessonSession {
       },
     } : {}),
   }
+}
+
+function isNonNegativeSafeInteger(value: unknown): value is number {
+  return Number.isSafeInteger(value) && (value as number) >= 0
 }
 
 function cloneAssistanceEvent(event: PersistedAssistanceEvent): PersistedAssistanceEvent {

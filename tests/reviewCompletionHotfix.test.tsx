@@ -250,7 +250,14 @@ describe('P0 unit-affine review completion hotfix', () => {
     const first = renderHook(() => useQuestProgress())
     const launch = first.result.current.prepareJourneyLaunch()
     if (launch.status !== 'start') throw new Error('Expected a review session to start.')
-    const checkpoint = { ...launch.session, currentQuestionIndex: 1, updatedAt: NOW }
+    const checkpoint = {
+      ...launch.session,
+      draftQuestion: {
+        questionId: launch.lesson.questions[0].questionId,
+        answer: 'focused-review-draft',
+      },
+      updatedAt: NOW,
+    }
     act(() => {
       expect(first.result.current.saveActiveSession(checkpoint).status).toBe('saved')
     })

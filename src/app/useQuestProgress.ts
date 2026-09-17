@@ -20,7 +20,12 @@ import {
   completeQuestProgress,
   completeFluencyPracticeProgress,
   createActiveLessonSession,
-  sameActiveLessonLaunchContext,
+  getActiveLessonCheckpointRevision,
+  runWithProgressWriteLock,
+  sameActiveLessonCheckpointPayload,
+  sameActiveLessonSessionIdentity,
+  validateActiveLessonCheckpointTransition,
+  withAcceptedCheckpointRevision,
   createLocalStorageQuestProgressStore,
   getBrowserLocalStorage,
   recoverActiveLessonSession,
@@ -72,7 +77,7 @@ export type JourneyLaunchDecision =
 
 export type SaveActiveSessionResult =
   | { status: 'saved'; state: QuestProgressV1 }
-  | { status: 'ignored_completed' | 'ignored_stale' | 'conflict'; state: QuestProgressV1 }
+  | { status: 'unchanged' | 'ignored_completed' | 'ignored_stale' | 'conflict'; state: QuestProgressV1 }
   | { status: 'persistence_failed'; state: QuestProgressV1; technicalDetail?: string }
 
 interface InitialProgress {
@@ -108,16 +113,11 @@ export function useQuestProgress() {
     const store = createLocalStorageQuestProgressStore(getBrowserLocalStorage())
     const loaded = store.load()
     const reconciled = reconcileJourneyProgress(loaded.state)
-    const saved = reconciled.changed ? store.save(reconciled.state) : null
     return {
       store,
-      state: saved?.status === 'saved' || saved?.status === 'conflict'
-        ? saved.state
-        : saved ? loaded.state : reconciled.state,
-      storageStatus: saved
-        ? saved.status === 'saved' ? 'loaded' : saved.status
-        : loaded.status,
-      technicalDetail: reconciled.technicalDetail ?? loaded.technicalDetail ?? saved?.technicalDetail,
+      state: reconciled.state,
+      storageStatus: loaded.status,
+      technicalDetail: reconciled.technicalDetail ?? loaded.technicalDetail,
     }
   })
   const storeRef = useRef(initial.store)
@@ -200,17 +200,35 @@ export function useQuestProgress() {
     const active = current.activeLessonSession
     if (!active) return { status: 'ignored_stale', state: current }
     if (active.sessionId !== session.sessionId) return { status: 'conflict', state: current }
+    if (!sameActiveLessonSessionIdentity(active, session)) {
+      return { status: 'ignored_stale', state: current }
+    }
     if (
-      active.lessonId !== session.lessonId
-      || active.activityId !== session.activityId
-      || active.contentVersion !== session.contentVersion
-      || active.skillId !== session.skillId
-      || active.difficulty !== session.difficulty
-      || !sameActiveLessonLaunchContext(active.launchContext, session.launchContext)
+      session.checkpointRevision !== undefined
+      && (!Number.isSafeInteger(session.checkpointRevision) || session.checkpointRevision < 0)
     ) {
       return { status: 'ignored_stale', state: current }
     }
-    const saved = persist({ ...current, activeLessonSession: session })
+    const activeRevision = getActiveLessonCheckpointRevision(active)
+    const proposedRevision = getActiveLessonCheckpointRevision(session)
+    if (
+      proposedRevision === activeRevision - 1
+      && sameActiveLessonCheckpointPayload(active, session)
+    ) {
+      return { status: 'unchanged', state: current }
+    }
+    if (proposedRevision !== activeRevision) {
+      return { status: 'ignored_stale', state: current }
+    }
+    if (sameActiveLessonCheckpointPayload(active, session)) {
+      return { status: 'unchanged', state: current }
+    }
+    const lesson = getLessonById(active.lessonId).lesson
+    if (!lesson || validateActiveLessonCheckpointTransition(active, session, lesson)) {
+      return { status: 'ignored_stale', state: current }
+    }
+    const accepted = withAcceptedCheckpointRevision(session, activeRevision + 1)
+    const saved = persist({ ...current, activeLessonSession: accepted })
     if (saved.status === 'saved') return { status: 'saved', state: saved.state }
     if (saved.status === 'conflict') return { status: 'conflict', state: saved.state }
     return { status: 'persistence_failed', state: saved.state, technicalDetail: saved.technicalDetail }
@@ -224,6 +242,7 @@ export function useQuestProgress() {
   const completeLesson = (
     lessonResult: LessonResult,
     completionId: string,
+    expectedCheckpointRevision?: number,
   ): ProgressionOutcomeViewModel => {
     const existingAttempt = progressRef.current.completedAttempts.find(
       (attempt) => attempt.completionId === completionId,
@@ -258,7 +277,11 @@ export function useQuestProgress() {
       && active.activityId === lessonResult.activityId
       && active.skillId === lessonResult.skillId
       && active.difficulty === lessonResult.difficulty
-      && (!active.lessonRole || active.lessonRole === lessonResult.lessonRole),
+      && (!active.lessonRole || active.lessonRole === lessonResult.lessonRole)
+      && (expectedCheckpointRevision === undefined
+        || getActiveLessonCheckpointRevision(active) === expectedCheckpointRevision)
+      && (expectedCheckpointRevision === undefined
+        || activeSessionSupportsCompletion(active, lessonResult)),
     )
     if (!activeMatchesResult) {
       return buildRejectedCompletionOutcome(
@@ -520,16 +543,74 @@ export function useQuestProgress() {
     }
   }
 
+  const runCoordinated = async <T,>(
+    operation: () => T,
+    unavailable: (technicalDetail: string) => T,
+  ): Promise<T> => {
+    const locked = await runWithProgressWriteLock(() => {
+      const loaded = storeRef.current.load()
+      if (loaded.status !== 'loaded' && loaded.status !== 'recovered' && loaded.status !== 'empty') {
+        return unavailable(loaded.technicalDetail ?? 'Saved reading progress could not be loaded safely.')
+      }
+      progressRef.current = loaded.state
+      setProgress(loaded.state)
+      setStorageStatus(loaded.status)
+      setTechnicalDetail(loaded.technicalDetail)
+      return operation()
+    })
+    if (locked.status === 'acquired') return locked.value
+    setStorageStatus('write_blocked')
+    setTechnicalDetail(locked.technicalDetail)
+    return unavailable(locked.technicalDetail)
+  }
+
+  const prepareJourneyLaunchCoordinated = () => runCoordinated(
+    prepareJourneyLaunch,
+    (reason): JourneyLaunchDecision => ({
+      status: 'unavailable',
+      reason,
+      difficulty: progressRef.current.activeLessonSession?.difficulty ?? 1,
+      state: progressRef.current,
+    }),
+  )
+
+  const saveActiveSessionCoordinated = (session: ActiveLessonSession) => runCoordinated(
+    () => saveActiveSession(session),
+    (technicalDetail): SaveActiveSessionResult => ({
+      status: 'persistence_failed',
+      state: progressRef.current,
+      technicalDetail,
+    }),
+  )
+
+  const completeLessonCoordinated = (
+    lessonResult: LessonResult,
+    completionId: string,
+    expectedCheckpointRevision: number,
+  ) => runCoordinated(
+    () => completeLesson(lessonResult, completionId, expectedCheckpointRevision),
+    (reason) => buildRejectedCompletionOutcome(
+      progressRef.current,
+      lessonResult,
+      completionId,
+      reason,
+    ),
+  )
+
   return {
     progress,
     storageStatus,
     technicalDetail,
     beginLesson,
     saveActiveSession,
+    saveActiveSessionCoordinated,
     abandonActiveLesson,
     completeLesson,
+    completeLessonCoordinated,
     planContinue,
     prepareJourneyLaunch,
+    prepareJourneyLaunchCoordinated,
+    refreshFromDurableStore,
   }
 }
 
@@ -570,4 +651,39 @@ function findActiveSkillProgress(state: QuestProgressV1, result: LessonResult): 
   return Object.values(state.skillProgress).find((progress) => (
     progress.skillId === result.skillId && progress.currentDifficulty === result.difficulty
   )) ?? state.skillProgress[result.skillId]
+}
+
+function activeSessionSupportsCompletion(
+  active: ActiveLessonSession,
+  result: LessonResult,
+): boolean {
+  const lesson = getLessonById(active.lessonId).lesson
+  if (!lesson || lesson.questions.length === 0) return false
+  if (active.currentQuestionIndex !== lesson.questions.length - 1) return false
+  if (active.submittedQuestions.length !== lesson.questions.length) return false
+  if (result.totalQuestions !== lesson.questions.length || result.questionResults.length !== lesson.questions.length) {
+    return false
+  }
+  const submitted = new Map(active.submittedQuestions.map((question) => [question.questionId, question] as const))
+  for (const question of result.questionResults) {
+    const persisted = submitted.get(question.questionId)
+    if (
+      !persisted
+      || persisted.isCorrect !== question.isCorrect
+      || persisted.isFirstAttemptCorrect !== question.isFirstAttemptCorrect
+    ) return false
+  }
+  if (active.assistanceEvents.length !== result.assistanceUsed) return false
+  if (lesson.lessonRole === 'FLUENCY_PRACTICE') {
+    const state = active.fluencyPracticeState
+    const summary = result.fluencyPracticeSummary
+    if (!state || !summary) return false
+    if (
+      state.modelReadUsed !== summary.modelReadUsed
+      || state.phrasePracticeCompleted !== summary.phrasePracticeCompleted
+      || state.completedReadCount !== summary.completedReadCount
+      || state.reflection !== summary.reflection
+    ) return false
+  }
+  return true
 }

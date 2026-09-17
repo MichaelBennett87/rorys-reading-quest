@@ -1,7 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 import type { LessonDefinition } from '../domain/lesson'
-import { QUEST_PROGRESS_STORAGE_KEY, type ActiveLessonSession } from '../persistence'
+import {
+  QUEST_PROGRESS_STORAGE_KEY,
+  getActiveLessonCheckpointRevision,
+  type ActiveLessonSession,
+  type ActiveSessionCheckpointResponse,
+} from '../persistence'
 import { LessonScreen } from '../screens/LessonScreen'
 import { ParentPlaceholderScreen } from '../screens/ParentPlaceholderScreen'
 import { type ProgressionOutcomeViewModel, useQuestProgress } from './useQuestProgress'
@@ -28,7 +33,7 @@ export function AppShell() {
   })
   const [outcome, setOutcome] = useState<ProgressionOutcomeViewModel | null>(null)
   const journeyLaunchPendingRef = useRef(false)
-  const prepareJourneyLaunchRef = useRef(questProgress.prepareJourneyLaunch)
+  const prepareJourneyLaunchRef = useRef(questProgress.prepareJourneyLaunchCoordinated)
   const storageNotice = ['unavailable', 'invalid_json', 'unsupported_version', 'invalid_state', 'conflict', 'write_blocked', 'storage_error']
     .includes(questProgress.storageStatus)
     ? 'This browser could not safely update saved progress. Your earlier saved work was left unchanged.'
@@ -39,13 +44,13 @@ export function AppShell() {
   }, [screen])
 
   useEffect(() => {
-    prepareJourneyLaunchRef.current = questProgress.prepareJourneyLaunch
-  }, [questProgress.prepareJourneyLaunch])
+    prepareJourneyLaunchRef.current = questProgress.prepareJourneyLaunchCoordinated
+  }, [questProgress.prepareJourneyLaunchCoordinated])
 
-  const launchCurrentJourney = useCallback(() => {
+  const launchCurrentJourney = useCallback(async () => {
     if (journeyLaunchPendingRef.current) return
     journeyLaunchPendingRef.current = true
-    const decision = prepareJourneyLaunchRef.current()
+    const decision = await prepareJourneyLaunchRef.current()
     if (decision.status === 'resume' || decision.status === 'start') {
       setLessonState({ lesson: decision.lesson, session: decision.session, errors: [] })
       setScreen('lesson_run')
@@ -73,8 +78,16 @@ export function AppShell() {
     }
   }, [])
 
-  const completeAndLaunchNext = (result: Parameters<typeof questProgress.completeLesson>[0], completionId: string) => {
-    const nextOutcome = questProgress.completeLesson(result, completionId)
+  const completeAndLaunchNext = async (
+    result: Parameters<typeof questProgress.completeLesson>[0],
+    completionId: string,
+    expectedCheckpointRevision: number,
+  ) => {
+    const nextOutcome = await questProgress.completeLessonCoordinated(
+      result,
+      completionId,
+      expectedCheckpointRevision,
+    )
     if (!nextOutcome.persisted) {
       setLessonState((previous) => ({
         ...previous,
@@ -85,7 +98,7 @@ export function AppShell() {
       return
     }
     journeyLaunchPendingRef.current = false
-    launchCurrentJourney()
+    await launchCurrentJourney()
   }
 
   useEffect(() => {
@@ -93,15 +106,15 @@ export function AppShell() {
 
     const retryWhenVisible = () => {
       if (document.visibilityState !== 'visible' || isParentRoute()) return
-      launchCurrentJourney()
+      void launchCurrentJourney()
     }
     const retryAfterPageRestore = () => {
       if (isParentRoute()) return
-      launchCurrentJourney()
+      void launchCurrentJourney()
     }
     const retryAfterStorageChange = (event: StorageEvent) => {
       if (event.key !== QUEST_PROGRESS_STORAGE_KEY || isParentRoute()) return
-      launchCurrentJourney()
+      void launchCurrentJourney()
     }
 
     document.addEventListener('visibilitychange', retryWhenVisible)
@@ -122,13 +135,36 @@ export function AppShell() {
         return
       }
       setScreen((current) => current === 'parent_gate' ? 'loading' : current)
-      launchCurrentJourney()
+    void launchCurrentJourney()
     }
 
     window.addEventListener('hashchange', syncRoute)
     syncRoute()
     return () => window.removeEventListener('hashchange', syncRoute)
   }, [launchCurrentJourney])
+
+  useEffect(() => {
+    const reconcileActiveView = (event: StorageEvent) => {
+      if (event.key !== QUEST_PROGRESS_STORAGE_KEY || isParentRoute()) return
+      const latest = questProgress.refreshFromDurableStore()
+      const active = latest.activeLessonSession
+      if (
+        screen === 'lesson_run'
+        && active
+        && lessonState.session?.sessionId === active.sessionId
+        && getActiveLessonCheckpointRevision(lessonState.session) !== getActiveLessonCheckpointRevision(active)
+      ) {
+        setLessonState((previous) => ({ ...previous, session: active }))
+        return
+      }
+      if (screen === 'lesson_run' && active?.sessionId !== lessonState.session?.sessionId) {
+        journeyLaunchPendingRef.current = false
+        void launchCurrentJourney()
+      }
+    }
+    window.addEventListener('storage', reconcileActiveView)
+    return () => window.removeEventListener('storage', reconcileActiveView)
+  }, [launchCurrentJourney, lessonState.session, questProgress, screen])
 
   if (screen === 'parent_gate') {
     return (
@@ -161,22 +197,43 @@ export function AppShell() {
     if (lessonState.lesson && lessonState.session) {
       return (
         <LessonScreen
-          key={lessonState.session.sessionId}
+          key={`${lessonState.session.sessionId}:${getActiveLessonCheckpointRevision(lessonState.session)}`}
           lesson={lessonState.lesson}
           session={lessonState.session}
-          onSessionCheckpoint={(session) => {
-            const saved = questProgress.saveActiveSession(session)
+          onSessionCheckpoint={async (session): Promise<ActiveSessionCheckpointResponse> => {
+            const saved = await questProgress.saveActiveSessionCoordinated(session)
+            const authoritative = saved.state.activeLessonSession
             if (saved.status === 'saved') {
-              setLessonState((previous) => ({ ...previous, session }))
+              return { status: 'accepted', session: authoritative }
+            }
+            if (saved.status === 'unchanged') {
+              return { status: 'unchanged', session: authoritative }
+            }
+            if (authoritative && authoritative.sessionId === session.sessionId) {
+              setLessonState((previous) => ({ ...previous, session: authoritative }))
+            } else if (saved.status !== 'persistence_failed') {
+              journeyLaunchPendingRef.current = false
+              void launchCurrentJourney()
+            }
+            return {
+              status: saved.status === 'ignored_completed'
+                ? 'already_completed'
+                : saved.status === 'persistence_failed'
+                  ? 'persistence_failed'
+                  : 'stale',
+              session: authoritative,
+              ...('technicalDetail' in saved && saved.technicalDetail
+                ? { technicalDetail: saved.technicalDetail }
+                : {}),
             }
           }}
-          onComplete={(result, completionId) => {
-            completeAndLaunchNext(result, completionId)
+          onComplete={async (result, completionId, expectedCheckpointRevision) => {
+            await completeAndLaunchNext(result, completionId, expectedCheckpointRevision)
           }}
           onBack={() => {
             journeyLaunchPendingRef.current = false
             setScreen('loading')
-            launchCurrentJourney()
+            void launchCurrentJourney()
           }}
           storageNotice={storageNotice}
         />
@@ -197,7 +254,7 @@ export function AppShell() {
             onClick={() => {
               journeyLaunchPendingRef.current = false
               setScreen('loading')
-              launchCurrentJourney()
+              void launchCurrentJourney()
             }}
           >
             Retry

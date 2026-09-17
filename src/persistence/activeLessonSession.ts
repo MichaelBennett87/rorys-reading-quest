@@ -30,6 +30,7 @@ export function createActiveLessonSession(
       : {}),
     skillId: lesson.skillId,
     difficulty: lesson.difficulty,
+    checkpointRevision: 0,
     currentQuestionIndex: 0,
     submittedQuestions: [],
     draftQuestion: null,
@@ -46,6 +47,143 @@ export function createActiveLessonSession(
     startedAt: timestamp,
     updatedAt: timestamp,
   }
+}
+
+export function getActiveLessonCheckpointRevision(session: ActiveLessonSession): number {
+  return Number.isSafeInteger(session.checkpointRevision) && (session.checkpointRevision ?? -1) >= 0
+    ? session.checkpointRevision ?? 0
+    : 0
+}
+
+export function withAcceptedCheckpointRevision(
+  session: ActiveLessonSession,
+  checkpointRevision: number,
+): ActiveLessonSession {
+  return {
+    ...session,
+    checkpointRevision,
+    submittedQuestions: session.submittedQuestions.map((question) => ({
+      ...question,
+      submittedAnswer: structuredClone(question.submittedAnswer),
+    })),
+    draftQuestion: session.draftQuestion
+      ? { ...session.draftQuestion, answer: structuredClone(session.draftQuestion.answer) }
+      : null,
+    assistanceEvents: cloneAssistanceEvents(session.assistanceEvents),
+    fluencyPracticeState: session.fluencyPracticeState ? { ...session.fluencyPracticeState } : null,
+    ...(session.launchContext ? { launchContext: cloneActiveLessonLaunchContext(session.launchContext) } : {}),
+  }
+}
+
+export function sameActiveLessonSessionIdentity(
+  left: ActiveLessonSession,
+  right: ActiveLessonSession,
+): boolean {
+  return left.sessionId === right.sessionId
+    && left.lessonId === right.lessonId
+    && left.lessonRole === right.lessonRole
+    && left.activityId === right.activityId
+    && left.contentVersion === right.contentVersion
+    && left.sessionContentFingerprint === right.sessionContentFingerprint
+    && left.skillId === right.skillId
+    && left.difficulty === right.difficulty
+    && left.startedAt === right.startedAt
+    && sameActiveLessonLaunchContext(left.launchContext, right.launchContext)
+}
+
+export function sameActiveLessonCheckpointPayload(
+  left: ActiveLessonSession,
+  right: ActiveLessonSession,
+): boolean {
+  if (!sameActiveLessonSessionIdentity(left, right)) return false
+  return checkpointPayload(left) === checkpointPayload(right)
+}
+
+export function validateActiveLessonCheckpointTransition(
+  authoritative: ActiveLessonSession,
+  proposed: ActiveLessonSession,
+  lesson: LessonDefinition,
+): string | null {
+  if (!sameActiveLessonSessionIdentity(authoritative, proposed)) {
+    return 'The proposed checkpoint does not match the authoritative lesson session.'
+  }
+  if (
+    proposed.currentQuestionIndex < authoritative.currentQuestionIndex
+    || proposed.currentQuestionIndex > authoritative.currentQuestionIndex + 1
+    || proposed.currentQuestionIndex >= lesson.questions.length
+  ) {
+    return 'The proposed checkpoint does not follow the authoritative question position.'
+  }
+
+  const authoritativeSubmitted = new Map(
+    authoritative.submittedQuestions.map((question) => [question.questionId, question] as const),
+  )
+  const proposedSubmitted = new Map(
+    proposed.submittedQuestions.map((question) => [question.questionId, question] as const),
+  )
+  if (proposedSubmitted.size !== proposed.submittedQuestions.length) {
+    return 'The proposed checkpoint contains duplicate submitted questions.'
+  }
+  for (const [questionId, submitted] of authoritativeSubmitted) {
+    const retained = proposedSubmitted.get(questionId)
+    if (!retained || JSON.stringify(retained) !== JSON.stringify(submitted)) {
+      return 'The proposed checkpoint removes or changes accepted submitted feedback.'
+    }
+  }
+
+  const questionIndexById = new Map(
+    lesson.questions.map((question, index) => [question.questionId, index] as const),
+  )
+  for (const submitted of proposed.submittedQuestions) {
+    const index = questionIndexById.get(submitted.questionId)
+    if (index === undefined || index > proposed.currentQuestionIndex) {
+      return 'The proposed checkpoint contains a submission outside its question position.'
+    }
+  }
+  if (proposed.currentQuestionIndex > authoritative.currentQuestionIndex) {
+    const currentQuestion = lesson.questions[authoritative.currentQuestionIndex]
+    if (!currentQuestion || !proposedSubmitted.has(currentQuestion.questionId)) {
+      return 'The proposed checkpoint advances before the current question is submitted.'
+    }
+  }
+
+  const proposedQuestion = lesson.questions[proposed.currentQuestionIndex]
+  if (proposed.draftQuestion && proposed.draftQuestion.questionId !== proposedQuestion?.questionId) {
+    return 'The proposed draft belongs to a different question.'
+  }
+  if (proposedQuestion && proposedSubmitted.has(proposedQuestion.questionId) && proposed.draftQuestion) {
+    return 'Submitted feedback cannot be replaced by an unsubmitted draft.'
+  }
+
+  const proposedAssistance = new Map(
+    proposed.assistanceEvents.map((event) => [event.eventId, event] as const),
+  )
+  if (proposedAssistance.size !== proposed.assistanceEvents.length) {
+    return 'The proposed checkpoint contains duplicate assistance events.'
+  }
+  for (const event of authoritative.assistanceEvents) {
+    const retained = proposedAssistance.get(event.eventId)
+    if (!retained || JSON.stringify(retained) !== JSON.stringify(event)) {
+      return 'The proposed checkpoint removes or changes accepted assistance.'
+    }
+  }
+
+  const currentFluency = authoritative.fluencyPracticeState
+  const proposedFluency = proposed.fluencyPracticeState
+  if (currentFluency && !proposedFluency) {
+    return 'The proposed checkpoint removes accepted fluency practice.'
+  }
+  if (currentFluency && proposedFluency && (
+    (currentFluency.modelReadUsed && !proposedFluency.modelReadUsed)
+    || (currentFluency.phrasePracticeCompleted && !proposedFluency.phrasePracticeCompleted)
+    || proposedFluency.completedReadCount < currentFluency.completedReadCount
+  )) {
+    return 'The proposed checkpoint rolls back accepted fluency practice.'
+  }
+  if (lesson.lessonRole !== 'FLUENCY_PRACTICE' && proposedFluency) {
+    return 'The proposed checkpoint adds fluency state to a non-fluency lesson.'
+  }
+  return null
 }
 
 export function cloneActiveLessonLaunchContext(
@@ -250,4 +388,13 @@ function isStringRecord(value: unknown): value is Record<string, string> {
 
 function cloneAssistanceEvents(events: PersistedAssistanceEvent[]): PersistedAssistanceEvent[] {
   return events.map((event) => ({ ...event }))
+}
+
+function checkpointPayload(session: ActiveLessonSession): string {
+  const {
+    checkpointRevision: _checkpointRevision,
+    updatedAt: _updatedAt,
+    ...payload
+  } = withAcceptedCheckpointRevision(session, 0)
+  return JSON.stringify(payload)
 }

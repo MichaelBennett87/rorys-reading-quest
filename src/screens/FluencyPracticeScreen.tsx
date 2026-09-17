@@ -33,7 +33,9 @@ import {
   checkpointSubmittedQuestion,
   restoreLessonDraftAnswer,
   restoreLessonEvaluations,
+  getActiveLessonCheckpointRevision,
   type ActiveLessonSession,
+  type ActiveSessionCheckpointResponse,
 } from '../persistence'
 import { DEFAULT_CONFIG, createSpeechService, createWordSupportSpeechRequest, type SpeechService } from '../services/speech'
 
@@ -43,8 +45,10 @@ interface FluencyPracticeScreenProps {
   lesson: LessonDefinition
   onBack: () => void
   session?: ActiveLessonSession | null
-  onSessionCheckpoint?: (session: ActiveLessonSession) => void
-  onComplete?: (result: LessonResult, completionId: string) => void
+  onSessionCheckpoint?: (
+    session: ActiveLessonSession,
+  ) => ActiveSessionCheckpointResponse | void | Promise<ActiveSessionCheckpointResponse | void>
+  onComplete?: (result: LessonResult, completionId: string, expectedCheckpointRevision: number) => void | Promise<void>
   storageNotice?: string
 }
 
@@ -84,6 +88,7 @@ export function FluencyPracticeScreen({
   const [assistanceEvents, setAssistanceEvents] = useState<AssistanceEvent[]>(session?.assistanceEvents ?? [])
   const [openSupportTargetId, setOpenSupportTargetId] = useState<string | null>(null)
   const [speechActive, setSpeechActive] = useState(false)
+  const [checkpointPending, setCheckpointPending] = useState(false)
   const [speechService] = useState<SpeechService>(() => createSpeechService())
   const [fluencyState, setFluencyState] = useState(() => session?.fluencyPracticeState ?? {
     modelReadUsed: false,
@@ -219,8 +224,19 @@ export function FluencyPracticeScreen({
   }
 
   const persistSession = (nextSession: ActiveLessonSession) => {
-    sessionRef.current = nextSession
-    onSessionCheckpoint?.(nextSession)
+    const response = onSessionCheckpoint?.(nextSession)
+    if (!response || !(response instanceof Promise)) {
+      sessionRef.current = response
+        ? response.session
+        : { ...nextSession, checkpointRevision: getActiveLessonCheckpointRevision(nextSession) + 1 }
+      return
+    }
+    setCheckpointPending(true)
+    void response.then((resolved: ActiveSessionCheckpointResponse | void) => {
+      sessionRef.current = resolved
+        ? resolved.session
+        : { ...nextSession, checkpointRevision: getActiveLessonCheckpointRevision(nextSession) + 1 }
+    }).finally(() => setCheckpointPending(false))
   }
 
   const persistDraft = (answer: string | string[] | Record<string, string>) => {
@@ -234,6 +250,7 @@ export function FluencyPracticeScreen({
   }
 
   const persistFluencyState = (nextState: typeof fluencyState) => {
+    if (checkpointPending) return
     setFluencyState(nextState)
     if (!sessionRef.current) return
     persistSession({
@@ -288,13 +305,14 @@ export function FluencyPracticeScreen({
   }
 
   const onOpenSupport = (target: WordSupportTarget) => {
+    if (checkpointPending) return
     speechService.cancel()
     setSpeechActive(false)
     requestAssistance(target, 1, 'PATTERN_HIGHLIGHT')
   }
 
   const onRequestSupportLevel = async (level: AssistanceLevel, kind: AssistanceKind) => {
-    if (!activeSupportTarget) return
+    if (!activeSupportTarget || checkpointPending) return
     requestAssistance(activeSupportTarget, level, kind)
     if (level >= 3) {
       await requestSpeech(activeSupportTarget, level)
@@ -308,6 +326,7 @@ export function FluencyPracticeScreen({
   }
 
   const startModelRead = async () => {
+    if (checkpointPending) return
     const nextState = { ...fluencyState, modelReadUsed: true }
     persistFluencyState(nextState)
     speechService.cancel()
@@ -325,20 +344,23 @@ export function FluencyPracticeScreen({
   }
 
   const markPhrasesPracticed = () => {
+    if (checkpointPending) return
     persistFluencyState({ ...fluencyState, phrasePracticeCompleted: true })
   }
 
   const readPassageAgain = () => {
+    if (checkpointPending) return
     const nextCount = Math.min(3, fluencyState.completedReadCount + 1)
     persistFluencyState({ ...fluencyState, completedReadCount: nextCount })
   }
 
   const updateReflection = (reflection: 'smooth' | 'some_pauses' | 'try_again') => {
+    if (checkpointPending) return
     persistFluencyState({ ...fluencyState, reflection })
   }
 
   const onSubmit = () => {
-    if (!submissionReady || actionLockedRef.current) return
+    if (!submissionReady || actionLockedRef.current || checkpointPending) return
     actionLockedRef.current = true
 
     const payload =
@@ -373,7 +395,7 @@ export function FluencyPracticeScreen({
   }
 
   const onNext = () => {
-    if (actionLockedRef.current) return
+    if (actionLockedRef.current || checkpointPending) return
     actionLockedRef.current = true
     speechService.cancel()
     setOpenSupportTargetId(null)
@@ -383,9 +405,16 @@ export function FluencyPracticeScreen({
       if (completionSentRef.current) return
       completionSentRef.current = true
       if (onComplete && sessionRef.current) {
-        const completionId = sessionRef.current.sessionId
-        sessionRef.current = null
-        onComplete(result, completionId)
+        const completionSession = sessionRef.current
+        const completion = onComplete(
+          result,
+          completionSession.sessionId,
+          getActiveLessonCheckpointRevision(completionSession),
+        )
+        if (completion && typeof (completion as Promise<unknown>).then === 'function') {
+          setCheckpointPending(true)
+          void completion.finally(() => setCheckpointPending(false))
+        }
         return
       }
       onBack()
@@ -406,6 +435,7 @@ export function FluencyPracticeScreen({
   }
 
   const toggleChoice = (choiceId: string) => {
+    if (checkpointPending) return
     const next = selectedChoiceIds.includes(choiceId)
       ? selectedChoiceIds.filter((entry) => entry !== choiceId)
       : [...selectedChoiceIds, choiceId]
@@ -414,6 +444,7 @@ export function FluencyPracticeScreen({
   }
 
   const toggleSegment = (segmentId: string, allowMultiple: boolean) => {
+    if (checkpointPending) return
     if (!allowMultiple) {
       setSelectedSegmentIds([segmentId])
       persistDraft([segmentId])
@@ -432,6 +463,7 @@ export function FluencyPracticeScreen({
   }
 
   const updateMapping = (rowId: string, choiceId: string) => {
+    if (checkpointPending) return
     const next = {
       ...selectedMappings,
       [rowId]: choiceId,
@@ -476,7 +508,7 @@ export function FluencyPracticeScreen({
               </div>
               <p>Choose this only when you want to hear the passage read aloud. It is optional.</p>
               <section className="screen-actions">
-                <ChildButton type="button" onClick={startModelRead} disabled={!speechSupported || speechActive}>
+                <ChildButton type="button" onClick={startModelRead} disabled={!speechSupported || speechActive || checkpointPending}>
                   Hear a Model Read
                 </ChildButton>
                 <ChildButton type="button" onClick={() => {
@@ -502,7 +534,7 @@ export function FluencyPracticeScreen({
                 ))}
               </ul>
               <section className="screen-actions">
-                <ChildButton type="button" onClick={markPhrasesPracticed}>
+                <ChildButton type="button" onClick={markPhrasesPracticed} disabled={checkpointPending}>
                   I Practiced the Phrases
                 </ChildButton>
               </section>
@@ -513,7 +545,7 @@ export function FluencyPracticeScreen({
               <p>Read the passage again when you are ready. You can do this more than once, up to the practice limit.</p>
               <p>Completed reads: {fluencyState.completedReadCount} / 3</p>
               <section className="screen-actions">
-                <ChildButton type="button" onClick={readPassageAgain} disabled={fluencyState.completedReadCount >= 3}>
+                <ChildButton type="button" onClick={readPassageAgain} disabled={fluencyState.completedReadCount >= 3 || checkpointPending}>
                   {fluencyState.completedReadCount === 0 ? 'Read It Once' : 'Read It Again'}
                 </ChildButton>
               </section>
@@ -523,13 +555,13 @@ export function FluencyPracticeScreen({
               <h3>Reflection</h3>
               <p>Choose the one that fits how the reading felt. This is not a score.</p>
               <section className="screen-actions">
-                <ChildButton type="button" onClick={() => updateReflection('smooth')}>
+                <ChildButton type="button" onClick={() => updateReflection('smooth')} disabled={checkpointPending}>
                   That felt smooth.
                 </ChildButton>
-                <ChildButton type="button" onClick={() => updateReflection('some_pauses')}>
+                <ChildButton type="button" onClick={() => updateReflection('some_pauses')} disabled={checkpointPending}>
                   I needed a few pauses.
                 </ChildButton>
-                <ChildButton type="button" onClick={() => updateReflection('try_again')}>
+                <ChildButton type="button" onClick={() => updateReflection('try_again')} disabled={checkpointPending}>
                   I want another try.
                 </ChildButton>
               </section>
@@ -575,10 +607,11 @@ export function FluencyPracticeScreen({
               questionPrompt={currentQuestion.prompt}
               choices={currentQuestion.choices}
               selectedChoiceId={selectedChoiceId}
-              disabled={step !== 'question'}
+              disabled={step !== 'question' || checkpointPending}
               submitted={step === 'feedback'}
               correctChoiceIds={currentQuestion.correctChoiceIds}
               onSelectChoice={(choiceId) => {
+                if (checkpointPending) return
                 setSelectedChoiceId(choiceId)
                 persistDraft(choiceId)
               }}
@@ -591,7 +624,7 @@ export function FluencyPracticeScreen({
               questionPrompt={currentQuestion.prompt}
               choices={currentQuestion.choices}
               selectedChoiceIds={selectedChoiceIds}
-              disabled={step !== 'question'}
+              disabled={step !== 'question' || checkpointPending}
               submitted={step === 'feedback'}
               correctChoiceIds={currentQuestion.correctChoiceIds}
               onToggleChoice={toggleChoice}
@@ -604,7 +637,7 @@ export function FluencyPracticeScreen({
               allowMultiple={currentQuestion.allowMultiple}
               segments={currentQuestion.segments}
               selectedSegmentIds={selectedSegmentIds}
-              disabled={step !== 'question'}
+              disabled={step !== 'question' || checkpointPending}
               submitted={step === 'feedback'}
               correctSegmentIds={currentQuestion.correctSegmentIds}
               onToggleSegment={(segmentId) => toggleSegment(segmentId, currentQuestion.allowMultiple)}
@@ -619,15 +652,17 @@ export function FluencyPracticeScreen({
               partBChoices={(currentQuestion as never as { partBChoices: { id: string; text: string }[] }).partBChoices}
               selectedPartAChoiceId={selectedPartAChoiceId}
               selectedPartBChoiceId={selectedPartBChoiceId}
-              disabled={step !== 'question'}
+              disabled={step !== 'question' || checkpointPending}
               submitted={step === 'feedback'}
               partACorrectChoiceId={currentQuestion.partACorrectChoiceId}
               partBCorrectChoiceId={currentQuestion.partBCorrectChoiceId}
               onPartASelect={(choiceId) => {
+                if (checkpointPending) return
                 setSelectedPartAChoiceId(choiceId)
                 persistDraft({ partA: choiceId, partB: selectedPartBChoiceId })
               }}
               onPartBSelect={(choiceId) => {
+                if (checkpointPending) return
                 setSelectedPartBChoiceId(choiceId)
                 persistDraft({ partA: selectedPartAChoiceId, partB: choiceId })
               }}
@@ -643,7 +678,7 @@ export function FluencyPracticeScreen({
                 selectedChoiceId: selectedMappings[row.id] ?? '',
                 correctChoiceId: row.correctChoiceId,
               }))}
-              disabled={step !== 'question'}
+              disabled={step !== 'question' || checkpointPending}
               submitted={step === 'feedback'}
               onSelectChoice={updateMapping}
             />
@@ -654,7 +689,7 @@ export function FluencyPracticeScreen({
               <ChildButton
                 type="button"
                 className="primary-action"
-                disabled={!submissionReady}
+                disabled={!submissionReady || checkpointPending}
                 onClick={onSubmit}
               >
                 Check Answer
@@ -666,7 +701,7 @@ export function FluencyPracticeScreen({
             <>
               <AnswerFeedback isCorrect={pendingFeedback.isCorrect} explanation={pendingFeedback.explanation} />
               <section className="screen-actions question-primary-action" aria-label="Question action">
-                <ChildButton type="button" className="primary-action" onClick={onNext}>
+                <ChildButton type="button" className="primary-action" disabled={checkpointPending} onClick={onNext}>
                   Next
                 </ChildButton>
               </section>

@@ -293,6 +293,22 @@ function cssValue(value) {
   return String(value).replace(/\\/g, '\\\\').replace(/"/g, '\\"')
 }
 
+async function performAcceptedDraftAction(page, action, label) {
+  const before = await page.evaluate((key) => {
+    const raw = localStorage.getItem(key)
+    return raw ? (JSON.parse(raw).activeLessonSession?.checkpointRevision ?? 0) : null
+  }, PROGRESS_KEY)
+  assert(Number.isSafeInteger(before), `${label}: missing accepted checkpoint revision before draft action`)
+  await action()
+  await page.waitForFunction(({ key, expectedRevision }) => {
+    const raw = localStorage.getItem(key)
+    if (!raw) return false
+    const revision = JSON.parse(raw).activeLessonSession?.checkpointRevision ?? 0
+    const controls = [...document.querySelectorAll('.question-first-question input, .question-first-question select')]
+    return revision === expectedRevision && controls.every((control) => !control.disabled)
+  }, { key: PROGRESS_KEY, expectedRevision: before + 1 }, { timeout: 15_000 })
+}
+
 async function selectAnswer(page, question, mode = 'correct') {
   const correct = mode === 'correct'
   if (question.questionType === 'MULTIPLE_CHOICE') {
@@ -300,7 +316,14 @@ async function selectAnswer(page, question, mode = 'correct') {
       ? question.correctIds[0]
       : question.choices.find((choice) => !question.correctIds.includes(choice.id))?.id
     assert(selected, `${question.questionId}: no ${mode} multiple-choice response`)
-    await page.locator(`input[type="radio"][value="${cssValue(selected)}"]`).check()
+    const input = page.locator(`input[type="radio"][value="${cssValue(selected)}"]`)
+    if (!(await input.isChecked())) {
+      await performAcceptedDraftAction(
+        page,
+        () => input.check(),
+        `${question.questionId}: multiple-choice selection`,
+      )
+    }
     return
   }
 
@@ -312,7 +335,13 @@ async function selectAnswer(page, question, mode = 'correct') {
       while (selected.length < question.correctIds.length) selected.push(question.correctIds[selected.length])
     }
     for (const id of selected) {
-      await page.locator(`input[type="checkbox"][value="${cssValue(id)}"]`).check()
+      const input = page.locator(`input[type="checkbox"][value="${cssValue(id)}"]`)
+      if (await input.isChecked()) continue
+      await performAcceptedDraftAction(
+        page,
+        () => input.check(),
+        `${question.questionId}: multiselect selection ${id}`,
+      )
     }
     return
   }
@@ -325,7 +354,13 @@ async function selectAnswer(page, question, mode = 'correct') {
     for (const choice of selected) {
       const label = page.locator('.segment-grid label').filter({ hasText: choice.text })
       assert(await label.count() === 1, `${question.questionId}: could not uniquely locate Hot Text segment ${choice.id}`)
-      await label.locator('input').check()
+      const input = label.locator('input')
+      if (await input.isChecked()) continue
+      await performAcceptedDraftAction(
+        page,
+        () => input.check(),
+        `${question.questionId}: Hot Text selection ${choice.id}`,
+      )
     }
     return
   }
@@ -338,8 +373,14 @@ async function selectAnswer(page, question, mode = 'correct') {
       ? question.partB.correctIds[0]
       : question.partB.choices.find((choice) => !question.partB.correctIds.includes(choice.id))?.id
     assert(partAId && partBId, `${question.questionId}: missing two-part ${mode} response`)
-    await page.locator('.question-pair fieldset').nth(0).locator(`input[value="${cssValue(partAId)}"]`).check()
-    await page.locator('.question-pair fieldset').nth(1).locator(`input[value="${cssValue(partBId)}"]`).check()
+    const partAInput = page.locator('.question-pair fieldset').nth(0).locator(`input[value="${cssValue(partAId)}"]`)
+    if (!(await partAInput.isChecked())) {
+      await performAcceptedDraftAction(page, () => partAInput.check(), `${question.questionId}: Part A selection`)
+    }
+    const partBInput = page.locator('.question-pair fieldset').nth(1).locator(`input[value="${cssValue(partBId)}"]`)
+    if (!(await partBInput.isChecked())) {
+      await performAcceptedDraftAction(page, () => partBInput.check(), `${question.questionId}: Part B selection`)
+    }
     return
   }
 
@@ -355,7 +396,13 @@ async function selectAnswer(page, question, mode = 'correct') {
           : row.choices.find((choice) => choice.id !== row.correctId)?.id
       }
       assert(selected, `${question.questionId}: missing table response for ${row.id}`)
-      await page.locator('.table-question').getByLabel(row.prompt, { exact: true }).selectOption(selected)
+      const select = page.locator('.table-question').getByLabel(row.prompt, { exact: true })
+      if (await select.inputValue() === selected) continue
+      await performAcceptedDraftAction(
+        page,
+        () => select.selectOption(selected),
+        `${question.questionId}: table row ${row.id}`,
+      )
     }
     return
   }
@@ -942,10 +989,11 @@ async function runPersistenceFailure() {
 
 async function runStaleStateProtection() {
   const runtime = createRuntimeLog('stale-state')
-  const handle = await launchProfile('stale-state', { width: 1440, height: 1000 }, runtime, { blockStorageEvents: true })
+  let handle = await launchProfile('stale-state', { width: 1440, height: 1000 }, runtime, { blockStorageEvents: true })
   const olderState = await readProgress(handle.page)
   const olderContext = currentContext(olderState)
   assert(olderContext.lesson.questions.length > 1, 'stale-state control lesson needs at least two questions')
+  assert(olderContext.question.questionType === 'MULTIPLE_CHOICE', 'stale-state first control question must be multiple choice')
   await handle.page.evaluate(() => { window.__rrqBlockStorageEvents = true })
 
   const newerPage = await handle.context.newPage()
@@ -955,36 +1003,69 @@ async function runStaleStateProtection() {
   const newerInitial = await readProgress(newerPage)
   assert(newerInitial.activeLessonSession?.sessionId === olderContext.active.sessionId, 'two-tab control did not open the same session')
   await answerCurrentQuestion(newerPage, 'correct')
-  await clickNextWithinLesson(newerPage, olderContext.active.sessionId, 1)
-  const newerRaw = await newerPage.evaluate((key) => localStorage.getItem(key), PROGRESS_KEY)
-  const newerState = JSON.parse(newerRaw)
-  assert(newerState.activeLessonSession?.currentQuestionIndex === 1, 'newer tab did not persist its checkpoint')
+  const feedbackRaw = await newerPage.evaluate((key) => localStorage.getItem(key), PROGRESS_KEY)
+  const feedbackState = JSON.parse(feedbackRaw)
+  assert(feedbackState.activeLessonSession?.currentQuestionIndex === 0, 'newer tab did not persist same-index feedback')
+  assert(feedbackState.activeLessonSession?.submittedQuestions.length === 1, 'newer tab did not persist submitted feedback')
   assert(await handle.page.getByText(olderContext.question.prompt, { exact: true }).count() > 0, 'older tab did not remain stale for the conflict test')
 
-  await selectAnswer(handle.page, olderContext.question, 'correct')
-  await handle.page.getByRole('button', { name: 'Check Answer', exact: true }).click()
-  const afterRaw = await handle.page.evaluate((key) => localStorage.getItem(key), PROGRESS_KEY)
-  const after = JSON.parse(afterRaw)
+  const staleChoiceId = olderContext.question.correctIds[0]
+  await handle.page.locator(`input[type="radio"][value="${cssValue(staleChoiceId)}"]`).check()
+  await handle.page.getByRole('button', { name: 'Next', exact: true }).waitFor({ state: 'visible', timeout: 15_000 })
+  const afterFirstStaleRaw = await handle.page.evaluate((key) => localStorage.getItem(key), PROGRESS_KEY)
+  assert(afterFirstStaleRaw === feedbackRaw, 'first stale draft changed newer same-index feedback bytes')
+  assert(await handle.page.locator('.answer-feedback').count() === 1, 'first stale rejection did not synchronize authoritative feedback')
+
+  await clickNextWithinLesson(newerPage, olderContext.active.sessionId, 1)
+  const advancedRaw = await newerPage.evaluate((key) => localStorage.getItem(key), PROGRESS_KEY)
+  const advancedState = JSON.parse(advancedRaw)
+  const advancedContext = currentContext(advancedState)
+  assert(advancedContext.active.currentQuestionIndex === 1, 'newer tab did not persist its advanced checkpoint')
+
+  await handle.page.getByRole('button', { name: 'Next', exact: true }).click()
+  await handle.page.getByText(advancedContext.question.prompt, { exact: true }).waitFor({ state: 'visible', timeout: 15_000 })
+  await handle.page.getByRole('button', { name: 'Check Answer', exact: true }).waitFor({ state: 'visible', timeout: 15_000 })
+  const afterSecondStaleRaw = await handle.page.evaluate((key) => localStorage.getItem(key), PROGRESS_KEY)
+  assert(afterSecondStaleRaw === advancedRaw, 'second stale write after conflict adoption changed authoritative bytes')
+
+  await answerCurrentQuestion(handle.page, 'correct')
+  const freshRaw = await handle.page.evaluate((key) => localStorage.getItem(key), PROGRESS_KEY)
+  const freshState = JSON.parse(freshRaw)
+  assert(freshRaw !== advancedRaw, 'fresh action after synchronization did not persist')
+  assert(freshState.activeLessonSession?.currentQuestionIndex === 1, 'fresh synchronized action changed the question identity')
+  assert(freshState.activeLessonSession?.submittedQuestions.some((entry) => entry.questionId === advancedContext.question.questionId), 'fresh synchronized submission was not retained')
+
+  await newerPage.close()
+  handle = await restartHandle(handle, 'stale-state-authoritative-checkpoint')
+  const restarted = await readProgress(handle.page)
+  assert(restarted.activeLessonSession?.currentQuestionIndex === 1, 'accepted checkpoint regressed across browser-process restart')
+  assert(restarted.activeLessonSession?.submittedQuestions.some((entry) => entry.questionId === advancedContext.question.questionId), 'accepted feedback was lost across browser-process restart')
+  assert(await handle.page.getByRole('button', { name: 'Next', exact: true }).count() === 1, 'accepted feedback did not restore after browser-process restart')
+
   report.scenarios.staleState = {
-    status: afterRaw === newerRaw ? 'PASS' : 'FAIL',
+    status: 'PASS',
     synthetic: true,
+    sessionId: olderContext.active.sessionId,
     olderQuestionIndex: olderContext.active.currentQuestionIndex,
-    newerQuestionIndex: newerState.activeLessonSession.currentQuestionIndex,
-    persistedQuestionIndex: after.activeLessonSession?.currentQuestionIndex ?? null,
-    newerProgressSha256: sha256(newerRaw),
-    finalProgressSha256: sha256(afterRaw),
-    newerRawPreserved: afterRaw === newerRaw,
-    attemptDelta: after.completedAttempts.length - newerState.completedAttempts.length,
+    feedbackRevision: feedbackState.activeLessonSession?.checkpointRevision ?? null,
+    advancedRevision: advancedState.activeLessonSession?.checkpointRevision ?? null,
+    acceptedRevision: restarted.activeLessonSession?.checkpointRevision ?? null,
+    firstStaleRawPreserved: afterFirstStaleRaw === feedbackRaw,
+    secondStaleRawPreserved: afterSecondStaleRaw === advancedRaw,
+    authoritativeViewRecovered: true,
+    freshActionAccepted: true,
+    processRestartPreserved: true,
+    feedbackProgressSha256: sha256(feedbackRaw),
+    advancedProgressSha256: sha256(advancedRaw),
+    finalProgressSha256: sha256(freshRaw),
+    attemptDelta: restarted.completedAttempts.length - advancedState.completedAttempts.length,
     rewardDelta: {
-      xp: after.totalXp - newerState.totalXp,
-      stars: after.totalStars - newerState.totalStars,
+      xp: restarted.totalXp - advancedState.totalXp,
+      stars: restarted.totalStars - advancedState.totalStars,
     },
   }
-  assert(afterRaw === newerRaw, 'older tab overwrote newer durable progress')
-  assert(after.activeLessonSession?.currentQuestionIndex === 1, 'older tab rolled the question position backward')
-  assert(after.completedAttempts.length === newerState.completedAttempts.length, 'stale conflict fabricated an attempt')
-  await handle.page.evaluate(() => { window.__rrqBlockStorageEvents = false })
-  await newerPage.close()
+  assert(restarted.completedAttempts.length === advancedState.completedAttempts.length, 'stale conflict fabricated an attempt')
+  assert(restarted.totalXp === advancedState.totalXp && restarted.totalStars === advancedState.totalStars, 'stale conflict fabricated rewards')
   await closeHandle(handle)
 }
 
@@ -998,8 +1079,8 @@ async function runRepresentativeCoverage() {
     if (questionType === 'HOT_TEXT') {
       const inputs = handle.page.locator('.segment-grid input')
       assert(await inputs.count() >= 2, 'single-select Hot Text fixture needs two visible choices')
-      await inputs.nth(0).check()
-      await inputs.nth(1).check()
+      await performAcceptedDraftAction(handle.page, () => inputs.nth(0).check(), 'single-select Hot Text first choice')
+      await performAcceptedDraftAction(handle.page, () => inputs.nth(1).check(), 'single-select Hot Text replacement choice')
       assert(await inputs.nth(0).isChecked() === false && await inputs.nth(1).isChecked() === true, 'single-select Hot Text did not replace the prior selection')
     }
     await selectAnswer(handle.page, context.question, 'correct')

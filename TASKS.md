@@ -219,3 +219,15 @@ Current semantic checkpoint: all 1,611 blind conclusions are frozen, 42 current 
 - [x] Make missing Edge, zero scenarios, skipped required scenarios, deliberate assertion failure, or artifact mismatch fail closed.
 - [x] Enforce quality plus one build, native acceptance, exact-artifact Pages deployment, and separate deployed acceptance in the Pages workflow.
 - [x] Keep generated profiles, answer-driving fixtures, screenshots, and reports outside Git and the Pages artifact.
+
+## P0 same-session stale-checkpoint authority
+
+- [x] Bind each active-session proposal to the checkpoint revision that produced the learner action.
+- [x] Reject stale, future, malformed, identity-mismatched, regressive, and lower-information checkpoint transitions without changing durable bytes.
+- [x] Return and adopt the authoritative session after a conflict so a second action from the obsolete rendering cannot roll progress backward.
+- [x] Coordinate cooperating same-origin production writers with a short exclusive Web Lock and fail closed when that capability is unavailable.
+- [x] Protect final completion, review identity, assistance, fluency state, attempts, and exact-once rewards with the same authority contract.
+- [x] Preserve schema version 1, existing storage keys, legacy sessions, curriculum, Parent PIN records, and assessments.
+- [x] Retain the native stale-state release scenario and expand it to two rejected writes, a fresh recovered action, and a real browser-process restart.
+
+Release acceptance remains SHA-specific: this checklist does not replace `npm run verify:release`, the exact-artifact Pages workflow, or deployed-browser verification.

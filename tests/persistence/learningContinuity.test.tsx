@@ -105,7 +105,10 @@ describe('P0 persisted learning continuity', () => {
 
     const checkpoint = {
       ...launch.session,
-      currentQuestionIndex: 1,
+      draftQuestion: {
+        questionId: launch.lesson.questions[0].questionId,
+        answer: 'focused-failed-write-draft',
+      },
       updatedAt: '2026-09-09T22:00:00.000Z',
     }
     let result!: ReturnType<typeof hook.result.current.saveActiveSession>
@@ -147,7 +150,7 @@ describe('P0 persisted learning continuity', () => {
     setItem.mockRestore()
   })
 
-  test('initial transient recovery adopts newer progress saved by another page', () => {
+  test('coordinated launch adopts newer progress saved during transient recovery', async () => {
     const timestamp = '2026-09-09T22:10:00.000Z'
     const candidate = getLessonCandidates()[0]
     const lesson = getLessonById(candidate.lessonId).lesson
@@ -182,11 +185,17 @@ describe('P0 persisted learning continuity', () => {
     })
 
     const hook = renderHook(() => useQuestProgress())
+    await act(async () => {
+      await hook.result.current.prepareJourneyLaunchCoordinated()
+    })
 
-    expect(hook.result.current.storageStatus).toBe('conflict')
+    expect(['loaded', 'recovered']).toContain(hook.result.current.storageStatus)
     expect(hook.result.current.progress.totalXp).toBe(250)
-    expect(hook.result.current.progress.activeLessonSession).toBeNull()
-    expect(JSON.parse(window.localStorage.getItem(QUEST_PROGRESS_STORAGE_KEY) ?? '{}').totalXp).toBe(250)
+    const activeSession = hook.result.current.progress.activeLessonSession
+    expect(activeSession?.skillId).toBe('g2-story-scouts-prose')
+    const durable = JSON.parse(window.localStorage.getItem(QUEST_PROGRESS_STORAGE_KEY) ?? '{}')
+    expect(durable.totalXp).toBe(250)
+    expect(durable.activeLessonSession?.sessionId).toBe(activeSession?.sessionId)
     getItem.mockRestore()
   })
 })

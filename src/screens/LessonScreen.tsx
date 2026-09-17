@@ -38,7 +38,9 @@ import {
   checkpointSubmittedQuestion,
   restoreLessonDraftAnswer,
   restoreLessonEvaluations,
+  getActiveLessonCheckpointRevision,
   type ActiveLessonSession,
+  type ActiveSessionCheckpointResponse,
 } from '../persistence'
 import { createSpeechService, createWordSupportSpeechRequest, type SpeechService } from '../services/speech'
 
@@ -48,8 +50,10 @@ interface LessonScreenProps {
   lesson: LessonDefinition
   onBack: () => void
   session?: ActiveLessonSession | null
-  onSessionCheckpoint?: (session: ActiveLessonSession) => void
-  onComplete?: (result: LessonResult, completionId: string) => void
+  onSessionCheckpoint?: (
+    session: ActiveLessonSession,
+  ) => ActiveSessionCheckpointResponse | void | Promise<ActiveSessionCheckpointResponse | void>
+  onComplete?: (result: LessonResult, completionId: string, expectedCheckpointRevision: number) => void | Promise<void>
   storageNotice?: string
 }
 
@@ -89,6 +93,7 @@ export function LessonScreen({
   const [assistanceEvents, setAssistanceEvents] = useState<AssistanceEvent[]>(session?.assistanceEvents ?? [])
   const [openSupportTargetId, setOpenSupportTargetId] = useState<string | null>(null)
   const [speechActive, setSpeechActive] = useState(false)
+  const [checkpointPending, setCheckpointPending] = useState(false)
   const [speechService] = useState<SpeechService>(() => createSpeechService())
 
   const sessionRef = useRef<ActiveLessonSession | null>(session)
@@ -268,6 +273,34 @@ export function LessonScreen({
     setSelectedMappings({})
   }
 
+  const adoptCheckpointResponse = (
+    proposed: ActiveLessonSession,
+    response: ActiveSessionCheckpointResponse | void,
+  ) => {
+    if (!response) {
+      sessionRef.current = {
+        ...proposed,
+        checkpointRevision: getActiveLessonCheckpointRevision(proposed) + 1,
+      }
+      return
+    }
+    sessionRef.current = response.session
+  }
+
+  const persistSession = (nextSession: ActiveLessonSession) => {
+    const response = onSessionCheckpoint?.(nextSession)
+    if (!response || !(response instanceof Promise)) {
+      adoptCheckpointResponse(nextSession, response as ActiveSessionCheckpointResponse | void)
+      return
+    }
+    setCheckpointPending(true)
+    void response.then((resolved: ActiveSessionCheckpointResponse | void) => {
+      adoptCheckpointResponse(nextSession, resolved)
+    }).finally(() => {
+      setCheckpointPending(false)
+    })
+  }
+
   const persistAssistanceEvents = (nextEvents: AssistanceEvent[]) => {
     if (!sessionRef.current) return
     const nextSession: ActiveLessonSession = {
@@ -275,8 +308,7 @@ export function LessonScreen({
       assistanceEvents: nextEvents,
       updatedAt: new Date().toISOString(),
     }
-    sessionRef.current = nextSession
-    onSessionCheckpoint?.(nextSession)
+    persistSession(nextSession)
   }
 
   const persistDraft = (answer: string | string[] | Record<string, string>) => {
@@ -287,8 +319,7 @@ export function LessonScreen({
       answer,
       new Date().toISOString(),
     )
-    sessionRef.current = checkpoint
-    onSessionCheckpoint?.(checkpoint)
+    persistSession(checkpoint)
   }
 
   const requestAssistance = (target: WordSupportTarget, level: AssistanceLevel, kind: AssistanceKind) => {
@@ -327,13 +358,14 @@ export function LessonScreen({
   }
 
   const onOpenSupport = (target: WordSupportTarget) => {
+    if (checkpointPending) return
     speechService.cancel()
     setSpeechActive(false)
     requestAssistance(target, 1, 'PATTERN_HIGHLIGHT')
   }
 
   const onRequestSupportLevel = async (level: AssistanceLevel, kind: AssistanceKind) => {
-    if (!activeSupportTarget) return
+    if (!activeSupportTarget || checkpointPending) return
     requestAssistance(activeSupportTarget, level, kind)
     if (level >= 3) {
       await requestSpeech(activeSupportTarget, level)
@@ -347,7 +379,7 @@ export function LessonScreen({
   }
 
   const onSubmit = () => {
-    if (!submissionReady || actionLockedRef.current) return
+    if (!submissionReady || actionLockedRef.current || checkpointPending) return
     actionLockedRef.current = true
 
     const payload =
@@ -377,13 +409,12 @@ export function LessonScreen({
         currentIndex,
         new Date().toISOString(),
       )
-      sessionRef.current = checkpoint
-      onSessionCheckpoint?.(checkpoint)
+      persistSession(checkpoint)
     }
   }
 
   const onNext = () => {
-    if (actionLockedRef.current) return
+    if (actionLockedRef.current || checkpointPending) return
     actionLockedRef.current = true
     speechService.cancel()
     setOpenSupportTargetId(null)
@@ -393,9 +424,16 @@ export function LessonScreen({
       if (completionSentRef.current) return
       completionSentRef.current = true
       if (onComplete && sessionRef.current) {
-        const completionId = sessionRef.current.sessionId
-        sessionRef.current = null
-        onComplete(result, completionId)
+        const completionSession = sessionRef.current
+        const completion = onComplete(
+          result,
+          completionSession.sessionId,
+          getActiveLessonCheckpointRevision(completionSession),
+        )
+        if (completion && typeof (completion as Promise<unknown>).then === 'function') {
+          setCheckpointPending(true)
+          void completion.finally(() => setCheckpointPending(false))
+        }
         return
       }
       onBack()
@@ -411,12 +449,12 @@ export function LessonScreen({
         nextIndex,
         new Date().toISOString(),
       )
-      sessionRef.current = checkpoint
-      onSessionCheckpoint?.(checkpoint)
+      persistSession(checkpoint)
     }
   }
 
   const toggleChoice = (choiceId: string) => {
+    if (checkpointPending) return
     const next = selectedChoiceIds.includes(choiceId)
       ? selectedChoiceIds.filter((entry) => entry !== choiceId)
       : [...selectedChoiceIds, choiceId]
@@ -425,6 +463,7 @@ export function LessonScreen({
   }
 
   const toggleSegment = (segmentId: string, allowMultiple: boolean) => {
+    if (checkpointPending) return
     if (!allowMultiple) {
       setSelectedSegmentIds([segmentId])
       persistDraft([segmentId])
@@ -443,6 +482,7 @@ export function LessonScreen({
   }
 
   const updateMapping = (rowId: string, choiceId: string) => {
+    if (checkpointPending) return
     const next = {
       ...selectedMappings,
       [rowId]: choiceId,
@@ -524,10 +564,11 @@ export function LessonScreen({
               questionPrompt={currentQuestion.prompt}
               choices={currentQuestion.choices}
               selectedChoiceId={displayedSelectedChoiceId}
-              disabled={step !== 'question'}
+              disabled={step !== 'question' || checkpointPending}
               submitted={step === 'feedback'}
               correctChoiceIds={currentQuestion.correctChoiceIds}
               onSelectChoice={(choiceId) => {
+                if (checkpointPending) return
                 setSelectedChoiceId(choiceId)
                 persistDraft(choiceId)
               }}
@@ -540,7 +581,7 @@ export function LessonScreen({
               questionPrompt={currentQuestion.prompt}
               choices={currentQuestion.choices}
               selectedChoiceIds={displayedSelectedChoiceIds}
-              disabled={step !== 'question'}
+              disabled={step !== 'question' || checkpointPending}
               submitted={step === 'feedback'}
               correctChoiceIds={currentQuestion.correctChoiceIds}
               onToggleChoice={toggleChoice}
@@ -553,7 +594,7 @@ export function LessonScreen({
               allowMultiple={currentQuestion.allowMultiple}
               segments={currentQuestion.segments}
               selectedSegmentIds={displayedSelectedSegmentIds}
-              disabled={step !== 'question'}
+              disabled={step !== 'question' || checkpointPending}
               submitted={step === 'feedback'}
               correctSegmentIds={currentQuestion.correctSegmentIds}
               onToggleSegment={(segmentId) => toggleSegment(segmentId, currentQuestion.allowMultiple)}
@@ -568,15 +609,17 @@ export function LessonScreen({
               partBChoices={(currentQuestion as EvidencePairLessonQuestion).partBChoices}
               selectedPartAChoiceId={displayedPartAChoiceId}
               selectedPartBChoiceId={displayedPartBChoiceId}
-              disabled={step !== 'question'}
+              disabled={step !== 'question' || checkpointPending}
               submitted={step === 'feedback'}
               partACorrectChoiceId={(currentQuestion as EvidencePairLessonQuestion).partACorrectChoiceId}
               partBCorrectChoiceId={(currentQuestion as EvidencePairLessonQuestion).partBCorrectChoiceId}
               onPartASelect={(choiceId) => {
+                if (checkpointPending) return
                 setSelectedPartAChoiceId(choiceId)
                 persistDraft({ partA: choiceId, partB: selectedPartBChoiceId })
               }}
               onPartBSelect={(choiceId) => {
+                if (checkpointPending) return
                 setSelectedPartBChoiceId(choiceId)
                 persistDraft({ partA: selectedPartAChoiceId, partB: choiceId })
               }}
@@ -598,7 +641,7 @@ export function LessonScreen({
                       .filter((choiceId): choiceId is string => Boolean(choiceId))
                   : [],
               }))}
-              disabled={step !== 'question'}
+              disabled={step !== 'question' || checkpointPending}
               submitted={step === 'feedback'}
               selectionMode={tableMatchSelectionMode}
               onSelectChoice={updateMapping}
@@ -610,7 +653,7 @@ export function LessonScreen({
               <ChildButton
                 type="button"
                 className="primary-action"
-                disabled={!submissionReady}
+                disabled={!submissionReady || checkpointPending}
                 onClick={onSubmit}
               >
                 Check Answer
@@ -622,7 +665,7 @@ export function LessonScreen({
             <>
               <AnswerFeedback isCorrect={pendingFeedback.isCorrect} explanation={pendingFeedback.explanation} />
               <section className="screen-actions question-primary-action" aria-label="Question action">
-                <ChildButton type="button" className="primary-action" onClick={onNext}>
+                <ChildButton type="button" className="primary-action" disabled={checkpointPending} onClick={onNext}>
                   Next
                 </ChildButton>
               </section>

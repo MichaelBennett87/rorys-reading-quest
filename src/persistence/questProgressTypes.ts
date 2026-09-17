@@ -79,6 +79,7 @@ export interface ActiveLessonSession {
   sessionContentFingerprint?: string
   skillId: string
   difficulty: number
+  checkpointRevision?: number
   currentQuestionIndex: number
   submittedQuestions: PersistedSubmittedQuestion[]
   draftQuestion?: PersistedQuestionDraft | null
@@ -87,6 +88,12 @@ export interface ActiveLessonSession {
   launchContext?: ActiveLessonLaunchContext
   startedAt: string
   updatedAt: string
+}
+
+export interface ActiveSessionCheckpointResponse {
+  status: 'accepted' | 'unchanged' | 'stale' | 'already_completed' | 'persistence_failed'
+  session: ActiveLessonSession | null
+  technicalDetail?: string
 }
 
 export interface PersistedAssistanceEvent extends Pick<

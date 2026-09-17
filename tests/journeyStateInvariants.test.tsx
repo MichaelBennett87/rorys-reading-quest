@@ -256,11 +256,18 @@ describe('P0 journey state invariants', () => {
     const { result } = renderHook(() => useQuestProgress())
     const launch = result.current.prepareJourneyLaunch()
     if (launch.status !== 'start') throw new Error('Expected a new first session.')
-    const checkpoint = { ...launch.session, currentQuestionIndex: 1, updatedAt: '2026-08-24T22:01:00.000Z' }
+    const checkpoint = {
+      ...launch.session,
+      draftQuestion: {
+        questionId: launch.lesson.questions[0].questionId,
+        answer: 'focused-draft-choice',
+      },
+      updatedAt: '2026-08-24T22:01:00.000Z',
+    }
     let saved!: ReturnType<typeof result.current.saveActiveSession>
     act(() => { saved = result.current.saveActiveSession(checkpoint) })
     expect(saved.status).toBe('saved')
-    expect(saved.state.activeLessonSession?.currentQuestionIndex).toBe(1)
+    expect(saved.state.activeLessonSession?.checkpointRevision).toBe(1)
   })
 
   test('29. a checkpoint carrying a completed identity is ignored', () => {
