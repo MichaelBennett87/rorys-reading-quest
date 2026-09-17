@@ -2,20 +2,22 @@ import { rmSync } from 'node:fs'
 import { join } from 'node:path'
 import { tmpdir } from 'node:os'
 
-import { chromium } from 'playwright-core'
+import { chromium, webkit } from 'playwright-core'
 
-import { findEdgeExecutable } from './release-contract.mjs'
+import { findEdgeExecutable, findWebKitExecutable } from './release-contract.mjs'
 
 if (process.argv[2] !== '--child') throw new Error('This helper is only run by the release-gate contract test.')
 
-const edgePath = process.argv[3] || findEdgeExecutable()
+const engine = process.argv[3]
+if (!['edge', 'webkit'].includes(engine)) throw new Error('The deliberate browser failure requires edge or webkit.')
+const executablePath = process.argv[4] || (engine === 'edge' ? findEdgeExecutable() : findWebKitExecutable())
 const profilePath = join(tmpdir(), `rrq-deliberate-browser-failure-${process.pid}`)
 let context
 try {
-  context = await chromium.launchPersistentContext(profilePath, {
-    executablePath: edgePath,
+  context = await (engine === 'edge' ? chromium : webkit).launchPersistentContext(profilePath, {
+    executablePath,
     headless: true,
-    args: ['--no-first-run', '--no-default-browser-check'],
+    ...(engine === 'edge' ? { args: ['--no-first-run', '--no-default-browser-check'] } : {}),
   })
   const page = context.pages()[0] ?? await context.newPage()
   await page.setContent('<main><p id="actual-marker">Intentional gate self-test</p></main>')

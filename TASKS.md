@@ -231,3 +231,14 @@ Current semantic checkpoint: all 1,611 blind conclusions are frozen, 42 current 
 - [x] Retain the native stale-state release scenario and expand it to two rejected writes, a fresh recovered action, and a real browser-process restart.
 
 Release acceptance remains SHA-specific: this checklist does not replace `npm run verify:release`, the exact-artifact Pages workflow, or deployed-browser verification.
+
+## iPad and WebKit release compatibility
+
+- [x] Parameterize the repository-owned acceptance harness for native Edge and actual pinned Playwright WebKit without introducing a second browser framework.
+- [x] Require iPad touch emulation, rapid-tap safety, all question controls, real Web Locks behavior, page restoration, unsupported-capability handling, and same-origin release upgrades in WebKit.
+- [x] Preserve isolated persistent profiles and real browser-process restarts without exporting or reinjecting storage.
+- [x] Require both native Edge and macOS WebKit acceptance before Pages deployment, then run exact-release deployed acceptance in both engines.
+- [x] Keep missing browsers, missing scenarios, skipped scenarios, artifact mismatch, and browser assertions fail-closed.
+- [x] Preserve curriculum, semantic ledgers, progression, rewards, reviews, schema version 1, Parent PIN records, and assessments.
+
+Playwright WebKit on macOS with an iPad descriptor is required automated Safari-relevant coverage. It is not physical-iPad, shipping-Safari, VoiceOver, or Rory-device certification. Release acceptance remains source-SHA and artifact-digest specific.

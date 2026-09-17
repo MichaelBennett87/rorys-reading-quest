@@ -3,6 +3,7 @@ import { afterEach, describe, expect, test, vi } from 'vitest'
 
 import { useQuestProgress } from '../../src/app/useQuestProgress'
 import type { SaveActiveSessionResult } from '../../src/app/useQuestProgress'
+import { AppShell } from '../../src/app/AppShell'
 import { LessonScreen } from '../../src/screens/LessonScreen'
 import {
   buildLessonResult,
@@ -29,6 +30,8 @@ type Hook = ReturnType<typeof renderHook<Journey, unknown>>
 afterEach(() => {
   cleanup()
   window.localStorage.removeItem(QUEST_PROGRESS_STORAGE_KEY)
+  window.location.hash = ''
+  vi.useRealTimers()
   vi.restoreAllMocks()
 })
 
@@ -40,7 +43,59 @@ describe('same-session checkpoint authority', () => {
     try {
       const result = await runWithProgressWriteLock(operation)
       expect(result.status).toBe('unavailable')
+      expect(result).toMatchObject({ reason: 'missing_capability', retryable: false })
       expect(operation).not.toHaveBeenCalled()
+    } finally {
+      Object.defineProperty(navigator, 'locks', { configurable: true, value: lockManager })
+    }
+  })
+
+  test('lock rejection and timeout remain retryable without running the mutation', async () => {
+    const lockManager = navigator.locks
+    const operation = vi.fn()
+    try {
+      Object.defineProperty(navigator, 'locks', {
+        configurable: true,
+        value: { request: () => Promise.reject(new Error('coordination rejected')) },
+      })
+      await expect(runWithProgressWriteLock(operation)).resolves.toMatchObject({
+        status: 'unavailable',
+        reason: 'request_failed',
+        retryable: true,
+      })
+
+      vi.useFakeTimers()
+      Object.defineProperty(navigator, 'locks', {
+        configurable: true,
+        value: {
+          request: (_name: string, options: { signal: AbortSignal }) => new Promise((_resolve, reject) => {
+            options.signal.addEventListener('abort', () => reject(new DOMException('aborted', 'AbortError')), { once: true })
+          }),
+        },
+      })
+      const pending = runWithProgressWriteLock(operation)
+      await vi.advanceTimersByTimeAsync(8_001)
+      await expect(pending).resolves.toMatchObject({
+        status: 'unavailable',
+        reason: 'timeout',
+        retryable: true,
+      })
+      expect(operation).not.toHaveBeenCalled()
+    } finally {
+      vi.useRealTimers()
+      Object.defineProperty(navigator, 'locks', { configurable: true, value: lockManager })
+    }
+  })
+
+  test('a permanently missing safe-write capability does not create an endless Retry loop', async () => {
+    const lockManager = navigator.locks
+    Object.defineProperty(navigator, 'locks', { configurable: true, value: undefined })
+    try {
+      render(<AppShell />)
+      expect(await screen.findByRole('heading', { name: 'A grown-up needs to help' })).toBeTruthy()
+      expect(screen.getByText(/current Safari or Microsoft Edge/i)).toBeTruthy()
+      expect(screen.queryByRole('button', { name: 'Retry' })).toBeNull()
+      expect(window.localStorage.getItem(QUEST_PROGRESS_STORAGE_KEY)).toBeNull()
     } finally {
       Object.defineProperty(navigator, 'locks', { configurable: true, value: lockManager })
     }

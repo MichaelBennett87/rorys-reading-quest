@@ -47,6 +47,7 @@ export interface ProgressionOutcomeViewModel {
   completionId: string
   curriculumComplete: boolean
   recoveryMessage?: string
+  recoveryRetryable?: boolean
 }
 
 export type JourneyLaunchDecision =
@@ -73,18 +74,31 @@ export type JourneyLaunchDecision =
       reason: string
       difficulty: number
       state: QuestProgressV1
+      retryable: boolean
     }
 
 export type SaveActiveSessionResult =
   | { status: 'saved'; state: QuestProgressV1 }
   | { status: 'unchanged' | 'ignored_completed' | 'ignored_stale' | 'conflict'; state: QuestProgressV1 }
-  | { status: 'persistence_failed'; state: QuestProgressV1; technicalDetail?: string }
+  | { status: 'persistence_failed'; state: QuestProgressV1; technicalDetail?: string; retryable?: boolean }
 
 interface InitialProgress {
   store: ReturnType<typeof createLocalStorageQuestProgressStore>
   state: QuestProgressV1
   storageStatus: QuestProgressStorageStatus
   technicalDetail?: string
+}
+
+interface CoordinationFailure {
+  kind:
+    | 'missing_lock_capability'
+    | 'lock_timeout'
+    | 'lock_request_failed'
+    | 'storage_unavailable'
+    | 'stored_data_requires_attention'
+    | 'storage_error'
+  retryable: boolean
+  technicalDetail: string
 }
 
 const availableLessons = getLessonCandidates()
@@ -231,7 +245,12 @@ export function useQuestProgress() {
     const saved = persist({ ...current, activeLessonSession: accepted })
     if (saved.status === 'saved') return { status: 'saved', state: saved.state }
     if (saved.status === 'conflict') return { status: 'conflict', state: saved.state }
-    return { status: 'persistence_failed', state: saved.state, technicalDetail: saved.technicalDetail }
+    return {
+      status: 'persistence_failed',
+      state: saved.state,
+      technicalDetail: saved.technicalDetail,
+      retryable: saved.status !== 'unavailable' && saved.status !== 'write_blocked',
+    }
   }
 
   const abandonActiveLesson = () => {
@@ -448,6 +467,7 @@ export function useQuestProgress() {
           reason: 'This browser could not safely save the reading-priority update. Your earlier saved progress was left unchanged.',
           difficulty: current.activeLessonSession?.difficulty ?? 1,
           state: saved.state,
+          retryable: true,
         }
       }
       current = saved.state
@@ -458,6 +478,7 @@ export function useQuestProgress() {
           reason: 'A newer saved reading session was found. It was preserved, but the next activity could not be selected safely yet.',
           difficulty: current.activeLessonSession?.difficulty ?? 1,
           state: current,
+          retryable: true,
         }
       }
     }
@@ -490,6 +511,7 @@ export function useQuestProgress() {
         reason: selected.errors[0] ?? 'The planned quest is unavailable.',
         difficulty: plan.lesson.difficulty,
         state,
+        retryable: true,
       }
     }
 
@@ -503,6 +525,7 @@ export function useQuestProgress() {
         reason: 'This browser could not safely save the next reading activity. Your earlier saved progress was left unchanged.',
         difficulty: selected.lesson.difficulty,
         state: progressRef.current,
+        retryable: true,
       }
     }
     if (begun.status === 'conflict') {
@@ -520,6 +543,7 @@ export function useQuestProgress() {
         reason: 'The saved quest could not be resumed safely.',
         difficulty: begun.session.difficulty,
         state: progressRef.current,
+        retryable: true,
       }
     }
 
@@ -545,12 +569,14 @@ export function useQuestProgress() {
 
   const runCoordinated = async <T,>(
     operation: () => T,
-    unavailable: (technicalDetail: string) => T,
+    unavailable: (failure: CoordinationFailure) => T,
   ): Promise<T> => {
     const locked = await runWithProgressWriteLock(() => {
       const loaded = storeRef.current.load()
       if (loaded.status !== 'loaded' && loaded.status !== 'recovered' && loaded.status !== 'empty') {
-        return unavailable(loaded.technicalDetail ?? 'Saved reading progress could not be loaded safely.')
+        setStorageStatus(loaded.status)
+        setTechnicalDetail(loaded.technicalDetail)
+        return unavailable(storageCoordinationFailure(loaded.status, loaded.technicalDetail))
       }
       progressRef.current = loaded.state
       setProgress(loaded.state)
@@ -561,25 +587,35 @@ export function useQuestProgress() {
     if (locked.status === 'acquired') return locked.value
     setStorageStatus('write_blocked')
     setTechnicalDetail(locked.technicalDetail)
-    return unavailable(locked.technicalDetail)
+    return unavailable({
+      kind: locked.reason === 'missing_capability'
+        ? 'missing_lock_capability'
+        : locked.reason === 'timeout'
+          ? 'lock_timeout'
+          : 'lock_request_failed',
+      retryable: locked.retryable,
+      technicalDetail: locked.technicalDetail,
+    })
   }
 
   const prepareJourneyLaunchCoordinated = () => runCoordinated(
     prepareJourneyLaunch,
-    (reason): JourneyLaunchDecision => ({
+    (failure): JourneyLaunchDecision => ({
       status: 'unavailable',
-      reason,
+      reason: childSafeCoordinationMessage(failure),
       difficulty: progressRef.current.activeLessonSession?.difficulty ?? 1,
       state: progressRef.current,
+      retryable: failure.retryable,
     }),
   )
 
   const saveActiveSessionCoordinated = (session: ActiveLessonSession) => runCoordinated(
     () => saveActiveSession(session),
-    (technicalDetail): SaveActiveSessionResult => ({
+    (failure): SaveActiveSessionResult => ({
       status: 'persistence_failed',
       state: progressRef.current,
-      technicalDetail,
+      technicalDetail: failure.technicalDetail,
+      retryable: failure.retryable,
     }),
   )
 
@@ -589,11 +625,13 @@ export function useQuestProgress() {
     expectedCheckpointRevision: number,
   ) => runCoordinated(
     () => completeLesson(lessonResult, completionId, expectedCheckpointRevision),
-    (reason) => buildRejectedCompletionOutcome(
+    (failure) => buildRejectedCompletionOutcome(
       progressRef.current,
       lessonResult,
       completionId,
-      reason,
+      failure.technicalDetail,
+      failure.retryable,
+      childSafeCoordinationMessage(failure),
     ),
   )
 
@@ -626,6 +664,8 @@ function buildRejectedCompletionOutcome(
   lessonResult: LessonResult,
   completionId: string,
   reason: string,
+  recoveryRetryable = true,
+  recoveryMessage = 'That completed lesson could not be confirmed safely. Your current work is still available. Please retry.',
 ): ProgressionOutcomeViewModel {
   return {
     persisted: false,
@@ -643,8 +683,44 @@ function buildRejectedCompletionOutcome(
     },
     completionId,
     curriculumComplete: false,
-    recoveryMessage: 'That completed lesson could not be confirmed safely. Your current work is still available. Please retry.',
+    recoveryMessage,
+    recoveryRetryable,
   }
+}
+
+function storageCoordinationFailure(
+  status: QuestProgressStorageStatus,
+  technicalDetail?: string,
+): CoordinationFailure {
+  if (status === 'unavailable') {
+    return {
+      kind: 'storage_unavailable',
+      retryable: false,
+      technicalDetail: technicalDetail ?? 'Browser storage is unavailable.',
+    }
+  }
+  if (status === 'invalid_json' || status === 'unsupported_version' || status === 'invalid_state' || status === 'write_blocked') {
+    return {
+      kind: 'stored_data_requires_attention',
+      retryable: false,
+      technicalDetail: technicalDetail ?? 'Saved reading progress requires safe recovery.',
+    }
+  }
+  return {
+    kind: 'storage_error',
+    retryable: true,
+    technicalDetail: technicalDetail ?? 'Browser storage could not be read safely.',
+  }
+}
+
+function childSafeCoordinationMessage(failure: CoordinationFailure): string {
+  if (failure.kind === 'missing_lock_capability' || failure.kind === 'storage_unavailable') {
+    return 'This browser cannot safely save reading progress. Ask a grown-up to open this page in a current Safari or Microsoft Edge browser. Keep this browser\'s website data so saved work stays available.'
+  }
+  if (failure.kind === 'stored_data_requires_attention') {
+    return 'Saved reading progress needs a grown-up to check it before more work can be saved. Keep this browser\'s website data so the record stays available.'
+  }
+  return 'This browser could not safely save reading progress right now. Your earlier saved work was left unchanged. Please retry.'
 }
 
 function findActiveSkillProgress(state: QuestProgressV1, result: LessonResult): SkillProgressState {

@@ -2,6 +2,8 @@ import { createHash } from 'node:crypto'
 import { existsSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs'
 import { join, relative, resolve, sep } from 'node:path'
 
+import { webkit } from 'playwright-core'
+
 export const PAGES_BASE = '/rorys-reading-quest/'
 
 export const REQUIRED_BROWSER_SCENARIOS = Object.freeze([
@@ -17,6 +19,13 @@ export const REQUIRED_BROWSER_SCENARIOS = Object.freeze([
   'question-types-and-content',
   'parent-print-responsive',
   'runtime-health',
+])
+
+export const REQUIRED_WEBKIT_SCENARIOS = Object.freeze([
+  'webkit-touch-interaction',
+  'webkit-web-locks',
+  'webkit-page-restoration',
+  'unsupported-capabilities',
 ])
 
 export function sha256(value) {
@@ -141,7 +150,24 @@ export function findEdgeExecutable({ platform = process.platform, env = process.
   return resolve(found)
 }
 
-export function assertRequiredScenarioResults(report, required = REQUIRED_BROWSER_SCENARIOS) {
+export function findWebKitExecutable({ executablePath = webkit.executablePath(), exists = existsSync } = {}) {
+  if (!executablePath || !exists(executablePath)) {
+    throw blocked('The Playwright WebKit binary required by the pinned client is unavailable. Run npm run browser:install:webkit.')
+  }
+  return resolve(executablePath)
+}
+
+export function requiredBrowserScenarios({ engine = 'edge', mode = 'local' } = {}) {
+  const required = [...REQUIRED_BROWSER_SCENARIOS]
+  if (engine === 'webkit') {
+    required.push(...REQUIRED_WEBKIT_SCENARIOS)
+    if (mode === 'local') required.push('release-upgrade')
+  }
+  return required
+}
+
+export function assertRequiredScenarioResults(report, options = {}) {
+  const required = Array.isArray(options) ? options : requiredBrowserScenarios(options)
   const results = report?.requiredScenarios
   if (!results || typeof results !== 'object') throw new Error('Browser report contains zero required scenario results.')
   const names = Object.keys(results)
@@ -159,20 +185,38 @@ export function validatePagesWorkflowContract(source) {
   if ((source.match(/npm run build/g) ?? []).length !== 1) throw new Error('The Pages workflow must build exactly once.')
   const quality = jobBlock(source, 'quality_build')
   const browser = jobBlock(source, 'native_browser')
+  const webkitBrowser = jobBlock(source, 'webkit_browser')
   const deploy = jobBlock(source, 'deploy')
   const deployed = jobBlock(source, 'deployed_browser')
+  const deployedWebkit = jobBlock(source, 'deployed_webkit')
   if (!/^\s{4}needs:\s*quality_build\s*$/m.test(browser)) throw new Error('Native browser acceptance must depend on quality_build.')
-  if (!/^\s{4}needs:\s*native_browser\s*$/m.test(deploy)) throw new Error('Deployment must depend on native_browser.')
+  if (!/^\s{4}needs:\s*quality_build\s*$/m.test(webkitBrowser)) throw new Error('WebKit browser acceptance must depend on quality_build.')
+  if (!/^\s{4}needs:\s*\[native_browser, webkit_browser\]\s*$/m.test(deploy)) throw new Error('Deployment must depend on both native Edge and macOS WebKit acceptance.')
   if (!/^\s{4}needs:\s*deploy\s*$/m.test(deployed)) throw new Error('Deployed-browser verification must depend on deploy.')
-  if (!/npm run test:browser/m.test(browser)) throw new Error('Native browser job does not run the repository browser command.')
-  if (!/npm run verify:deployed/m.test(deployed)) throw new Error('Post-deployment job does not run verify:deployed.')
+  if (!/^\s{4}needs:\s*deploy\s*$/m.test(deployedWebkit)) throw new Error('Deployed WebKit verification must depend on deploy.')
+  if (!/npm run test:browser:edge/m.test(browser) || !/--engine edge/m.test(browser)) throw new Error('Native browser job does not run the explicit Edge command.')
+  if (!/runs-on:\s*macos-15/m.test(webkitBrowser) || !/npm run test:browser:webkit/m.test(webkitBrowser) || !/--engine webkit/m.test(webkitBrowser)) {
+    throw new Error('Prepublication WebKit must run explicitly on macos-15.')
+  }
+  if (!/npm run verify:deployed/m.test(deployed) || !/--engine edge/m.test(deployed)) throw new Error('Post-deployment Edge job is incomplete.')
+  if (!/runs-on:\s*macos-15/m.test(deployedWebkit) || !/npm run verify:deployed/m.test(deployedWebkit) || !/--engine webkit/m.test(deployedWebkit)) {
+    throw new Error('Post-deployment WebKit must run explicitly on macos-15.')
+  }
   if (!/actions\/upload-pages-artifact@/m.test(deploy) || !/actions\/deploy-pages@/m.test(deploy)) {
     throw new Error('Deploy job must publish the tested artifact through GitHub Pages actions.')
   }
-  if (/actions\/upload-pages-artifact@/m.test(quality) || /actions\/deploy-pages@/m.test(browser)) {
+  if (/actions\/upload-pages-artifact@/m.test(quality) || /actions\/deploy-pages@/m.test(browser) || /actions\/deploy-pages@/m.test(webkitBrowser)) {
     throw new Error('Quality and browser jobs must not receive deployment operations.')
   }
-  return { buildCount: 1, chain: ['quality_build', 'native_browser', 'deploy', 'deployed_browser'] }
+  return {
+    buildCount: 1,
+    chain: [
+      'quality_build',
+      ['native_browser', 'webkit_browser'],
+      'deploy',
+      ['deployed_browser', 'deployed_webkit'],
+    ],
+  }
 }
 
 export function extractEntrypoints(html) {

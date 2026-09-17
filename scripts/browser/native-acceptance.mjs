@@ -1,4 +1,4 @@
-import { createHash } from 'node:crypto'
+import { createHash, randomUUID } from 'node:crypto'
 import { execFileSync } from 'node:child_process'
 import {
   mkdirSync,
@@ -6,19 +6,25 @@ import {
   rmSync,
   writeFileSync,
 } from 'node:fs'
-import { basename, join, resolve } from 'node:path'
-import { tmpdir } from 'node:os'
+import { basename, isAbsolute, join, relative, resolve } from 'node:path'
+import { platform, release, tmpdir } from 'node:os'
 import { fileURLToPath } from 'node:url'
 
-import { chromium } from 'playwright-core'
+import { chromium, devices, webkit } from 'playwright-core'
 
 const ROOT = resolve(fileURLToPath(new URL('../..', import.meta.url)))
 const ARTIFACTS = resolve(requiredEnvironment('RRQ_ACCEPTANCE_ARTIFACTS'))
 const RUN_ID = requiredEnvironment('RRQ_ACCEPTANCE_RUN_ID')
 const RUN_DIR = join(ARTIFACTS, `run-${RUN_ID}`)
-const PROFILE_PREFIX = 'rrq-native-acceptance-'
+const ENGINE = requiredEnvironment('RRQ_ACCEPTANCE_ENGINE')
+if (!['edge', 'webkit'].includes(ENGINE)) throw new Error(`Unsupported acceptance engine: ${ENGINE}`)
+const IS_WEBKIT = ENGINE === 'webkit'
+const WEBKIT_DEVICE_NAME = 'iPad (gen 11)'
+const WEBKIT_LANDSCAPE_DEVICE_NAME = 'iPad (gen 11) landscape'
+const { defaultBrowserType: _defaultBrowserType, ...WEBKIT_DEVICE } = devices[WEBKIT_DEVICE_NAME]
+const PROFILE_PREFIX = `rrq-${ENGINE}-acceptance-`
 const PROFILE_ROOT = join(tmpdir(), `${PROFILE_PREFIX}${RUN_ID}`)
-const EDGE = requiredEnvironment('RRQ_ACCEPTANCE_EDGE_PATH')
+const BROWSER_EXECUTABLE = requiredEnvironment('RRQ_ACCEPTANCE_BROWSER_PATH')
 const APP_URL = requiredEnvironment('RRQ_ACCEPTANCE_APP_URL')
 const ORIGIN = new URL(APP_URL).origin
 const RELEASE_SHA = requiredEnvironment('RRQ_ACCEPTANCE_RELEASE_SHA')
@@ -27,12 +33,16 @@ const EXPECTED_CSS = requiredEnvironment('RRQ_ACCEPTANCE_EXPECTED_CSS')
 const FIXTURES_PATH = resolve(requiredEnvironment('RRQ_ACCEPTANCE_FIXTURES'))
 const MANIFEST_DIGEST = requiredEnvironment('RRQ_ACCEPTANCE_MANIFEST_DIGEST')
 const TEST_MODE = requiredEnvironment('RRQ_ACCEPTANCE_MODE')
+const PREVIOUS_COMMIT = process.env.RRQ_ACCEPTANCE_PREVIOUS_COMMIT?.trim() || 'UNKNOWN'
+const PREVIOUS_URL = process.env.RRQ_ACCEPTANCE_PREVIOUS_URL?.trim() || null
+const SWITCH_TO_CANDIDATE_URL = process.env.RRQ_ACCEPTANCE_SWITCH_TO_CANDIDATE_URL?.trim() || null
 const PROGRESS_KEY = 'rorys-reading-quest.progress.v1'
 const PARENT_KEY = 'rorys-reading-quest.parent-access.v1'
 const RECORDS_KEY = 'rorys-reading-quest.parent-records.v1'
 const STORY_SKILL = 'g2-story-scouts-prose'
 const INFORMATION_SKILL = 'g2-information-detectives-reading'
 const WORD_SKILL = 'g2-word-forge-word-practice'
+const PROGRESS_WRITE_LOCK_NAME = `${PROGRESS_KEY}.authoritative-write`
 
 mkdirSync(RUN_DIR, { recursive: true })
 mkdirSync(PROFILE_ROOT, { recursive: true })
@@ -46,6 +56,7 @@ const report = {
   releaseSha: RELEASE_SHA,
   manifestDigest: MANIFEST_DIGEST,
   mode: TEST_MODE,
+  engine: ENGINE,
   runIdentity: RUN_ID,
   expectedAssets: { javascript: EXPECTED_JS, css: EXPECTED_CSS },
   startedAt: new Date().toISOString(),
@@ -64,7 +75,7 @@ const report = {
 
 function requiredEnvironment(name) {
   const value = process.env[name]?.trim()
-  if (!value) throw new Error(`Missing required native-acceptance environment variable: ${name}`)
+  if (!value) throw new Error(`Missing required browser-acceptance environment variable: ${name}`)
   return value
 }
 
@@ -90,6 +101,7 @@ function log(message, detail = undefined) {
 }
 
 function profileProcesses(profilePath) {
+  if (ENGINE !== 'edge' || process.platform !== 'win32') return []
   const script = [
     '$target=$env:RRQ_ACCEPT_PROFILE',
     '$items=@(Get-CimInstance Win32_Process -Filter "Name=\'msedge.exe\'" | Where-Object { $_.CommandLine -and $_.CommandLine.Contains($target) } | Select-Object ProcessId,CreationDate)',
@@ -156,19 +168,27 @@ function attachPage(page, runtime) {
 
 async function launchProfile(
   name,
-  viewport = { width: 1440, height: 1000 },
+  viewport = IS_WEBKIT ? WEBKIT_DEVICE.viewport : { width: 1440, height: 1000 },
   runtime = createRuntimeLog(name),
   options = {},
 ) {
   const profilePath = join(PROFILE_ROOT, name)
   mkdirSync(profilePath, { recursive: true })
   const openedAt = new Date().toISOString()
-  const context = await chromium.launchPersistentContext(profilePath, {
-    executablePath: EDGE,
+  const browserType = IS_WEBKIT ? webkit : chromium
+  const context = await browserType.launchPersistentContext(profilePath, {
+    ...(IS_WEBKIT ? WEBKIT_DEVICE : {}),
+    executablePath: BROWSER_EXECUTABLE,
     headless: true,
     viewport,
     locale: 'en-US',
-    args: ['--no-first-run', '--no-default-browser-check'],
+    ...(IS_WEBKIT ? {} : { args: ['--no-first-run', '--no-default-browser-check'] }),
+  })
+  await context.addInitScript(() => {
+    window.__rrqPageShowEvents = []
+    window.addEventListener('pageshow', (event) => {
+      window.__rrqPageShowEvents.push({ persisted: event.persisted, at: Date.now() })
+    })
   })
   if (options.blockStorageEvents) {
     await context.addInitScript(() => {
@@ -178,23 +198,69 @@ async function launchProfile(
       }, true)
     })
   }
+  if (options.disableWebLocks) {
+    await context.addInitScript(() => {
+      Object.defineProperty(navigator, 'locks', { configurable: true, value: undefined })
+    })
+  }
+  if (options.rejectWebLocks) {
+    await context.addInitScript(() => {
+      Object.defineProperty(navigator, 'locks', {
+        configurable: true,
+        value: {
+          query: async () => ({ held: [], pending: [] }),
+          request: async () => { throw new DOMException('Synthetic lock rejection.', 'AbortError') },
+        },
+      })
+    })
+  }
+  if (options.disableStorage) {
+    await context.addInitScript(() => {
+      Object.defineProperty(window, 'localStorage', {
+        configurable: true,
+        get: () => { throw new DOMException('Synthetic storage unavailability.', 'SecurityError') },
+      })
+    })
+  }
   const page = context.pages()[0] ?? await context.newPage()
   attachPage(page, runtime)
-  const handle = { name, profilePath, context, page, runtime, openedAt }
+  const browser = context.browser()
+  const handle = {
+    name,
+    profilePath,
+    context,
+    browser,
+    page,
+    runtime,
+    openedAt,
+    launchId: randomUUID(),
+    options,
+  }
   activeHandles.add(handle)
   await page.goto(APP_URL, { waitUntil: 'networkidle', timeout: 60_000 })
   await waitForSettledScreen(page)
   const userAgent = await page.evaluate(() => navigator.userAgent)
-  const browserVersion = context.browser()?.version() ?? 'UNKNOWN'
+  const browserVersion = browser?.version() ?? 'UNKNOWN'
   const processes = profileProcesses(profilePath)
-  assert(processes.length > 0, `${name}: no task-owned Edge process was observed for the isolated profile`)
+  if (ENGINE === 'edge') assert(processes.length > 0, `${name}: no task-owned Edge process was observed for the isolated profile`)
   if (!report.browser) {
+    const emulation = await page.evaluate(() => ({
+      maxTouchPoints: navigator.maxTouchPoints,
+      screen: { width: screen.width, height: screen.height },
+      viewport: { width: innerWidth, height: innerHeight },
+    }))
     report.browser = {
-      executable: EDGE,
+      engine: ENGINE,
+      executable: basename(BROWSER_EXECUTABLE),
       browserVersion,
       userAgent,
       automationClient: `playwright-core ${JSON.parse(readFileSync(join(ROOT, 'node_modules/playwright-core/package.json'), 'utf8')).version}`,
-      driver: 'Playwright Chromium protocol; no separate WebDriver binary',
+      driver: IS_WEBKIT
+        ? 'Playwright WebKit protocol; pinned browser binary; no separate WebDriver binary'
+        : 'Playwright Chromium protocol; no separate WebDriver binary',
+      operatingSystem: { platform: platform(), release: release() },
+      deviceDescriptor: IS_WEBKIT ? WEBKIT_DEVICE_NAME : null,
+      emulation: IS_WEBKIT ? { ...emulation, isMobile: true, hasTouch: true, physicalDevice: false } : null,
       headless: true,
     }
   }
@@ -205,6 +271,8 @@ async function closeHandle(handle) {
   if (!handle || !activeHandles.has(handle)) return
   await handle.context.close()
   activeHandles.delete(handle)
+  assert(!handle.browser?.isConnected(), `${handle.name}: Playwright browser connection remained open after context close`)
+  if (ENGINE !== 'edge') return
   for (let index = 0; index < 20; index += 1) {
     if (profileProcesses(handle.profilePath).length === 0) return
     await sleep(250)
@@ -218,6 +286,7 @@ async function restartHandle(handle, label) {
   const viewport = await viewportOf(handle.page)
   const oldSessionId = before.activeLessonSession?.sessionId ?? null
   const oldProcesses = profileProcesses(handle.profilePath)
+  const oldLaunchId = handle.launchId
   await closeHandle(handle)
   const closedAt = new Date().toISOString()
   const restarted = await launchProfile(handle.name, viewport, handle.runtime)
@@ -226,7 +295,11 @@ async function restartHandle(handle, label) {
   const newProcesses = profileProcesses(restarted.profilePath)
   assert(beforeHash === afterHash, `${label}: persisted progress changed across a cold browser restart`)
   assert((after.activeLessonSession?.sessionId ?? null) === oldSessionId, `${label}: active session identity changed across restart`)
-  assert(oldProcesses.every((oldProcess) => newProcesses.every((nextProcess) => nextProcess.pid !== oldProcess.pid)), `${label}: Edge process ID did not change`)
+  if (ENGINE === 'edge') {
+    assert(oldProcesses.every((oldProcess) => newProcesses.every((nextProcess) => nextProcess.pid !== oldProcess.pid)), `${label}: Edge process ID did not change`)
+  } else {
+    assert(oldLaunchId !== restarted.launchId, `${label}: WebKit launch identity did not change`)
+  }
   report.central.restarts.push({
     label,
     closedAt,
@@ -234,6 +307,11 @@ async function restartHandle(handle, label) {
     profile: basename(restarted.profilePath),
     oldPids: oldProcesses.map((entry) => entry.pid),
     newPids: newProcesses.map((entry) => entry.pid),
+    oldLaunchId,
+    newLaunchId: restarted.launchId,
+    processRestartMethod: ENGINE === 'edge'
+      ? 'Task-owned Edge process closed and relaunched with the same isolated user-data directory.'
+      : 'Playwright-owned WebKit persistent browser closed and relaunched with the same isolated user-data directory.',
     sessionId: oldSessionId,
     progressSha256: afterHash,
   })
@@ -293,6 +371,21 @@ function cssValue(value) {
   return String(value).replace(/\\/g, '\\\\').replace(/"/g, '\\"')
 }
 
+async function activate(locator) {
+  if (IS_WEBKIT) await locator.tap()
+  else await locator.click()
+}
+
+async function selectInput(input) {
+  if (!IS_WEBKIT) {
+    await input.check()
+    return
+  }
+  const label = input.locator('xpath=ancestor::label[1]')
+  if (await label.count()) await label.tap()
+  else await input.tap()
+}
+
 async function performAcceptedDraftAction(page, action, label) {
   const before = await page.evaluate((key) => {
     const raw = localStorage.getItem(key)
@@ -320,7 +413,7 @@ async function selectAnswer(page, question, mode = 'correct') {
     if (!(await input.isChecked())) {
       await performAcceptedDraftAction(
         page,
-        () => input.check(),
+        () => selectInput(input),
         `${question.questionId}: multiple-choice selection`,
       )
     }
@@ -339,7 +432,7 @@ async function selectAnswer(page, question, mode = 'correct') {
       if (await input.isChecked()) continue
       await performAcceptedDraftAction(
         page,
-        () => input.check(),
+        () => selectInput(input),
         `${question.questionId}: multiselect selection ${id}`,
       )
     }
@@ -358,7 +451,7 @@ async function selectAnswer(page, question, mode = 'correct') {
       if (await input.isChecked()) continue
       await performAcceptedDraftAction(
         page,
-        () => input.check(),
+        () => selectInput(input),
         `${question.questionId}: Hot Text selection ${choice.id}`,
       )
     }
@@ -375,11 +468,11 @@ async function selectAnswer(page, question, mode = 'correct') {
     assert(partAId && partBId, `${question.questionId}: missing two-part ${mode} response`)
     const partAInput = page.locator('.question-pair fieldset').nth(0).locator(`input[value="${cssValue(partAId)}"]`)
     if (!(await partAInput.isChecked())) {
-      await performAcceptedDraftAction(page, () => partAInput.check(), `${question.questionId}: Part A selection`)
+      await performAcceptedDraftAction(page, () => selectInput(partAInput), `${question.questionId}: Part A selection`)
     }
     const partBInput = page.locator('.question-pair fieldset').nth(1).locator(`input[value="${cssValue(partBId)}"]`)
     if (!(await partBInput.isChecked())) {
-      await performAcceptedDraftAction(page, () => partBInput.check(), `${question.questionId}: Part B selection`)
+      await performAcceptedDraftAction(page, () => selectInput(partBInput), `${question.questionId}: Part B selection`)
     }
     return
   }
@@ -400,7 +493,10 @@ async function selectAnswer(page, question, mode = 'correct') {
       if (await select.inputValue() === selected) continue
       await performAcceptedDraftAction(
         page,
-        () => select.selectOption(selected),
+        async () => {
+          if (IS_WEBKIT) await select.tap()
+          await select.selectOption(selected)
+        },
         `${question.questionId}: table row ${row.id}`,
       )
     }
@@ -426,7 +522,7 @@ async function answerCurrentQuestion(page, mode = 'correct') {
   const beforeSubmitRevision = beforeSubmit.activeLessonSession?.checkpointRevision ?? 0
   const check = page.getByRole('button', { name: 'Check Answer', exact: true })
   assert(await check.isEnabled(), `${question.questionId}: Check Answer stayed disabled after a structurally complete response`)
-  await check.click()
+  await activate(check)
   const feedback = page.locator('.answer-feedback')
   await feedback.waitFor({ state: 'visible', timeout: 10_000 })
   const result = await feedback.getAttribute('data-result')
@@ -450,7 +546,7 @@ async function answerCurrentQuestion(page, mode = 'correct') {
 }
 
 async function clickNextWithinLesson(page, sessionId, nextIndex) {
-  await page.getByRole('button', { name: 'Next', exact: true }).click()
+  await activate(page.getByRole('button', { name: 'Next', exact: true }))
   await page.waitForFunction(({ key, sessionId: expectedSession, index }) => {
     const raw = localStorage.getItem(key)
     if (!raw) return false
@@ -518,7 +614,7 @@ async function completeCurrentLesson(page, mode = 'correct', expected = 'accepte
     }
 
     const before = await readProgress(page)
-    await page.getByRole('button', { name: 'Next', exact: true }).click()
+    await activate(page.getByRole('button', { name: 'Next', exact: true }))
     if (expected === 'accepted') {
       await page.waitForFunction(({ key, oldSessionId }) => {
         const raw = localStorage.getItem(key)
@@ -592,6 +688,57 @@ function pastIso(days = 365) {
 
 function reviewEntry(skillId, difficulty, unitId, contentVersion, dueAt, reviewStep = 0) {
   return { skillId, difficulty, reviewStep, dueAt, unitId, contentVersion }
+}
+
+async function runReleaseUpgrade() {
+  assert(TEST_MODE === 'local' && IS_WEBKIT, 'release-upgrade runs only in local WebKit acceptance')
+  assert(PREVIOUS_URL && SWITCH_TO_CANDIDATE_URL, 'release-upgrade requires the previous release and candidate switch endpoint')
+  let handle = await launchProfile('release-upgrade')
+  const previousInitial = await readProgress(handle.page)
+  assert(previousInitial.completedAttempts.length === 0, 'release-upgrade profile was not initially empty')
+  const earned = await completeCurrentLesson(handle.page, 'correct', 'accepted')
+  const previousAssets = await handle.page.evaluate(() => performance.getEntriesByType('resource').map((entry) => entry.name).filter((entry) => entry.includes('/assets/')))
+  const oldPage = handle.page
+
+  const switched = await fetch(SWITCH_TO_CANDIDATE_URL, { method: 'POST' })
+  assert(switched.ok, `candidate build switch returned HTTP ${switched.status}`)
+  const candidatePage = await handle.context.newPage()
+  attachPage(candidatePage, handle.runtime)
+  await candidatePage.goto(APP_URL, { waitUntil: 'networkidle', timeout: 60_000 })
+  await waitForSettledScreen(candidatePage)
+  await assertAssets(candidatePage)
+  const candidateLoaded = await readProgress(candidatePage)
+  assert(candidateLoaded.completedAttempts.length === earned.after.completedAttempts.length, 'candidate release lost the previous release completion')
+  assert(candidateLoaded.totalXp === earned.after.totalXp && candidateLoaded.totalStars === earned.after.totalStars, 'candidate release changed earned rewards')
+  assert(candidateLoaded.activeLessonSession?.sessionId === earned.after.activeLessonSession?.sessionId, 'candidate release did not resume the compatible session')
+
+  const candidateContext = currentContext(candidateLoaded)
+  await answerCurrentQuestion(candidatePage, 'correct')
+  await clickNextWithinLesson(candidatePage, candidateContext.active.sessionId, candidateContext.active.currentQuestionIndex + 1)
+  const mixedVersionState = await readProgress(candidatePage)
+  await oldPage.getByText(currentContext(mixedVersionState).question.prompt, { exact: true }).waitFor({ state: 'visible', timeout: 15_000 })
+
+  handle.page = candidatePage
+  handle = await restartHandle(handle, 'previous-release-to-candidate-upgrade')
+  const reopened = await readProgress(handle.page)
+  assert(reopened.completedAttempts.length === earned.after.completedAttempts.length, 'earned completion was lost across release upgrade restart')
+  assert(reopened.activeLessonSession?.sessionId === mixedVersionState.activeLessonSession?.sessionId, 'candidate checkpoint did not survive the release upgrade restart')
+  assert(reopened.activeLessonSession?.currentQuestionIndex === mixedVersionState.activeLessonSession?.currentQuestionIndex, 'candidate question position changed across release upgrade restart')
+  report.scenarios.releaseUpgrade = {
+    status: 'PASS',
+    previousUrl: PREVIOUS_URL,
+    previousExpectedCommit: PREVIOUS_COMMIT,
+    previousSourceIdentityBasis: 'Explicit workflow or command input; observed previous asset URLs are retained separately.',
+    previousAssets,
+    candidateAssets: report.central.assetResources,
+    earnedAttemptCount: earned.after.completedAttempts.length,
+    earnedXp: earned.after.totalXp,
+    earnedStars: earned.after.totalStars,
+    mixedVersionCooperation: true,
+    processRestartPreserved: true,
+    profileReusedWithoutStorageExport: true,
+  }
+  await closeHandle(handle)
 }
 
 async function runCentral() {
@@ -713,15 +860,15 @@ async function runParentAndResponsive(handle) {
   assert((await readProgress(handle.page)).activeLessonSession?.sessionId === before.activeLessonSession?.sessionId, 'opening parent route changed the child session')
   await handle.page.locator('#parent-pin-new').fill('2468')
   await handle.page.locator('#parent-pin-confirm').fill('2468')
-  await handle.page.getByRole('button', { name: 'Create Parent PIN', exact: true }).click()
+  await activate(handle.page.getByRole('button', { name: 'Create Parent PIN', exact: true }))
   await handle.page.getByRole('heading', { name: 'Parent Area', exact: true }).waitFor({ state: 'visible', timeout: 15_000 })
   await takeShot(handle.page, '08-parent-dashboard')
-  await handle.page.getByRole('button', { name: 'Lock Parent Area', exact: true }).click()
+  await activate(handle.page.getByRole('button', { name: 'Lock Parent Area', exact: true }))
   await handle.page.getByRole('heading', { name: 'Unlock Parent Area', exact: true }).waitFor({ state: 'visible', timeout: 10_000 })
   await handle.page.locator('#parent-pin').fill('2468')
-  await handle.page.getByRole('button', { name: 'Unlock', exact: true }).click()
+  await activate(handle.page.getByRole('button', { name: 'Unlock', exact: true }))
   await handle.page.getByRole('heading', { name: 'Parent Area', exact: true }).waitFor({ state: 'visible', timeout: 10_000 })
-  await handle.page.getByRole('button', { name: 'Print Summary', exact: true }).click()
+  await activate(handle.page.getByRole('button', { name: 'Print Summary', exact: true }))
   const printText = await handle.page.locator('body').innerText()
   assert(!printText.includes('What problem does Tia'), 'print summary exposed question text')
   assert(!/correct answer|submitted response/i.test(printText), 'print summary exposed answer data')
@@ -729,7 +876,7 @@ async function runParentAndResponsive(handle) {
   assert(await progressHash(handle.page) === beforeHash, 'parent dashboard or print mutated child progress')
   assert(await handle.page.evaluate((key) => Boolean(localStorage.getItem(key)), PARENT_KEY), 'test Parent PIN record was not stored in its separate key')
   const parentRecordsPresent = await handle.page.evaluate((key) => Boolean(localStorage.getItem(key)), RECORDS_KEY)
-  await handle.page.getByRole('button', { name: 'Back to Quest', exact: true }).click()
+  await activate(handle.page.getByRole('button', { name: 'Back to Quest', exact: true }))
   await assertQuestionFirstShell(handle.page)
   const after = await readProgress(handle.page)
   assert(after.activeLessonSession?.sessionId === before.activeLessonSession?.sessionId, 'returning from parent route did not resume the same child session')
@@ -742,10 +889,12 @@ async function runParentAndResponsive(handle) {
     bookmarkUrl: `${APP_URL}#/parent`,
   }
 
+  const ipadPortrait = IS_WEBKIT ? devices[WEBKIT_DEVICE_NAME].viewport : { width: 768, height: 1024 }
+  const ipadLandscape = IS_WEBKIT ? devices[WEBKIT_LANDSCAPE_DEVICE_NAME].viewport : { width: 1024, height: 768 }
   for (const item of [
     { name: 'phone', width: 390, height: 844 },
-    { name: 'ipad-portrait', width: 768, height: 1024 },
-    { name: 'ipad-landscape', width: 1024, height: 768 },
+    { name: 'ipad-portrait', ...ipadPortrait },
+    { name: 'ipad-landscape', ...ipadLandscape },
     { name: 'desktop', width: 1440, height: 1000 },
   ]) {
     await handle.page.setViewportSize({ width: item.width, height: item.height })
@@ -974,7 +1123,7 @@ async function runPersistenceFailure() {
       return original.call(this, storageKey, value)
     }
   }, PROGRESS_KEY)
-  await handle.page.getByRole('button', { name: 'Next', exact: true }).click()
+  await activate(handle.page.getByRole('button', { name: 'Next', exact: true }))
   await handle.page.getByRole('button', { name: 'Retry', exact: true }).waitFor({ state: 'visible', timeout: 15_000 })
   const dropped = await handle.page.evaluate(() => window.__rrqDroppedWrite === true)
   const rawAfter = await handle.page.evaluate((key) => localStorage.getItem(key), PROGRESS_KEY)
@@ -1025,7 +1174,7 @@ async function runStaleStateProtection() {
   assert(await handle.page.getByText(olderContext.question.prompt, { exact: true }).count() > 0, 'older tab did not remain stale for the conflict test')
 
   const staleChoiceId = olderContext.question.correctIds[0]
-  await handle.page.locator(`input[type="radio"][value="${cssValue(staleChoiceId)}"]`).check()
+  await selectInput(handle.page.locator(`input[type="radio"][value="${cssValue(staleChoiceId)}"]`))
   await handle.page.getByRole('button', { name: 'Next', exact: true }).waitFor({ state: 'visible', timeout: 15_000 })
   const afterFirstStaleRaw = await handle.page.evaluate((key) => localStorage.getItem(key), PROGRESS_KEY)
   assert(afterFirstStaleRaw === feedbackRaw, 'first stale draft changed newer same-index feedback bytes')
@@ -1037,11 +1186,18 @@ async function runStaleStateProtection() {
   const advancedContext = currentContext(advancedState)
   assert(advancedContext.active.currentQuestionIndex === 1, 'newer tab did not persist its advanced checkpoint')
 
-  await handle.page.getByRole('button', { name: 'Next', exact: true }).click()
+  await activate(handle.page.getByRole('button', { name: 'Next', exact: true }))
   await handle.page.getByText(advancedContext.question.prompt, { exact: true }).waitFor({ state: 'visible', timeout: 15_000 })
   await handle.page.getByRole('button', { name: 'Check Answer', exact: true }).waitFor({ state: 'visible', timeout: 15_000 })
   const afterSecondStaleRaw = await handle.page.evaluate((key) => localStorage.getItem(key), PROGRESS_KEY)
   assert(afterSecondStaleRaw === advancedRaw, 'second stale write after conflict adoption changed authoritative bytes')
+
+  if (IS_WEBKIT) {
+    await handle.page.goto('about:blank')
+    await handle.page.goBack({ waitUntil: 'networkidle' })
+    await waitForSettledScreen(handle.page)
+    await handle.page.getByText(advancedContext.question.prompt, { exact: true }).waitFor({ state: 'visible', timeout: 15_000 })
+  }
 
   await answerCurrentQuestion(handle.page, 'correct')
   const freshRaw = await handle.page.evaluate((key) => localStorage.getItem(key), PROGRESS_KEY)
@@ -1094,14 +1250,14 @@ async function runRepresentativeCoverage() {
     if (questionType === 'HOT_TEXT') {
       const inputs = handle.page.locator('.segment-grid input')
       assert(await inputs.count() >= 2, 'single-select Hot Text fixture needs two visible choices')
-      await performAcceptedDraftAction(handle.page, () => inputs.nth(0).check(), 'single-select Hot Text first choice')
-      await performAcceptedDraftAction(handle.page, () => inputs.nth(1).check(), 'single-select Hot Text replacement choice')
+      await performAcceptedDraftAction(handle.page, () => selectInput(inputs.nth(0)), 'single-select Hot Text first choice')
+      await performAcceptedDraftAction(handle.page, () => selectInput(inputs.nth(1)), 'single-select Hot Text replacement choice')
       assert(await inputs.nth(0).isChecked() === false && await inputs.nth(1).isChecked() === true, 'single-select Hot Text did not replace the prior selection')
     }
     await selectAnswer(handle.page, context.question, 'correct')
     assert(await handle.page.locator('[data-answer-state="selected"]').count() > 0, `${questionType}: pre-submit selection was not neutral-selected`)
     assert(await handle.page.locator('[data-answer-state="correct"], [data-answer-state="incorrect"]').count() === 0, `${questionType}: correctness leaked before submission`)
-    await handle.page.getByRole('button', { name: 'Check Answer', exact: true }).click()
+    await activate(handle.page.getByRole('button', { name: 'Check Answer', exact: true }))
     await handle.page.locator('.answer-feedback[data-result="correct"]').waitFor({ state: 'visible', timeout: 10_000 })
     assert((await readProgress(handle.page)).activeLessonSession?.currentQuestionIndex === state.activeLessonSession.currentQuestionIndex, `${questionType}: submission auto-advanced before Next`)
     questionTypes.push({ questionType, lessonId: fixture.lessonId, questionId: fixture.questionId, status: 'PASS' })
@@ -1129,9 +1285,9 @@ async function runRepresentativeCoverage() {
   const wordHelp = await seedScenario('content-word-help', clone(wordHelpFixture.state))
   const openWordHelp = wordHelp.page.getByRole('button', { name: /Open word help for/i }).first()
   await openWordHelp.waitFor({ state: 'visible', timeout: 15_000 })
-  await openWordHelp.click()
+  await activate(openWordHelp)
   await wordHelp.page.getByRole('heading', { name: 'Word Help', exact: true }).waitFor({ state: 'visible', timeout: 10_000 })
-  await wordHelp.page.getByRole('button', { name: 'Close Word Help', exact: true }).click()
+  await activate(wordHelp.page.getByRole('button', { name: 'Close Word Help', exact: true }))
   contentForms.push({ form: 'wordHelp', lessonId: wordHelpFixture.lessonId, status: 'PASS' })
   await closeHandle(wordHelp)
 
@@ -1141,12 +1297,12 @@ async function runRepresentativeCoverage() {
   const beforeFluency = await readProgress(fluency.page)
   await performAcceptedDraftAction(
     fluency.page,
-    () => fluency.page.getByRole('button', { name: 'I Practiced the Phrases', exact: true }).click(),
+    () => activate(fluency.page.getByRole('button', { name: 'I Practiced the Phrases', exact: true })),
     'fluency phrase-practice checkpoint',
   )
   await performAcceptedDraftAction(
     fluency.page,
-    () => fluency.page.getByRole('button', { name: 'Read It Once', exact: true }).click(),
+    () => activate(fluency.page.getByRole('button', { name: 'Read It Once', exact: true })),
     'fluency reread checkpoint',
   )
   const afterFluency = await readProgress(fluency.page)
@@ -1206,6 +1362,289 @@ async function runGenuineCompletionAndReactivation() {
   await closeHandle(handle)
 }
 
+async function runWebKitTouchInteraction() {
+  const fixture = fixtures.representatives.questionTypes.MULTIPLE_CHOICE
+  const handle = await seedScenario('webkit-touch-interaction', clone(fixture.state))
+  const page = handle.page
+  const capabilities = await page.evaluate(() => ({
+    maxTouchPoints: navigator.maxTouchPoints,
+    coarsePointer: matchMedia('(pointer: coarse)').matches,
+    viewport: { width: innerWidth, height: innerHeight },
+    screen: { width: screen.width, height: screen.height },
+    userAgent: navigator.userAgent,
+  }))
+  assert(capabilities.maxTouchPoints > 0, 'WebKit iPad context did not expose touch points')
+  const portraitScroll = await page.evaluate(() => {
+    const maxScrollY = Math.max(0, document.documentElement.scrollHeight - innerHeight)
+    const targetScrollY = Math.min(160, maxScrollY)
+    window.scrollTo(0, targetScrollY)
+    return { maxScrollY, targetScrollY }
+  })
+  assert(portraitScroll.targetScrollY >= 40, 'WebKit iPad reading fixture did not provide a meaningful portrait scroll position')
+  await page.waitForFunction(() => window.scrollY > 0)
+  const portraitScrollY = await page.evaluate(() => window.scrollY)
+  await page.setViewportSize(devices[WEBKIT_LANDSCAPE_DEVICE_NAME].viewport)
+  await page.evaluate(() => new Promise((resolvePromise) => requestAnimationFrame(() => requestAnimationFrame(resolvePromise))))
+  const landscapeScrollY = await page.evaluate(() => window.scrollY)
+  assert(landscapeScrollY > 0, 'landscape orientation reset the learner to the top of the reading')
+  await page.setViewportSize(devices[WEBKIT_DEVICE_NAME].viewport)
+  await page.evaluate(() => new Promise((resolvePromise) => requestAnimationFrame(() => requestAnimationFrame(resolvePromise))))
+  const restoredPortraitScrollY = await page.evaluate(() => window.scrollY)
+  assert(restoredPortraitScrollY > 0, 'returning to portrait reset the learner to the top of the reading')
+  const selectedBeforePassageTap = await page.locator('input:checked').count()
+  const reading = page.locator('.question-first-reading').first()
+  await reading.scrollIntoViewIfNeeded()
+  const readingBox = await reading.boundingBox()
+  assert(readingBox, 'reading surface did not expose a touch target')
+  await page.touchscreen.tap(readingBox.x + Math.min(40, readingBox.width / 2), readingBox.y + Math.min(40, readingBox.height / 2))
+  assert(await page.locator('input:checked').count() === selectedBeforePassageTap, 'tapping the passage selected an answer')
+
+  const state = await readProgress(page)
+  const context = currentContext(state)
+  await selectAnswer(page, context.question, 'correct')
+  const selectedState = await readProgress(page)
+  const beforeRevision = selectedState.activeLessonSession.checkpointRevision
+  await page.evaluate(() => {
+    window.__rrqTouchEvents = { starts: 0, ends: 0 }
+    document.addEventListener('touchstart', () => { window.__rrqTouchEvents.starts += 1 }, true)
+    document.addEventListener('touchend', () => { window.__rrqTouchEvents.ends += 1 }, true)
+  })
+  const check = page.getByRole('button', { name: 'Check Answer', exact: true })
+  const checkBox = await check.boundingBox()
+  assert(checkBox, 'Check Answer did not expose a touch target')
+  const tapPoint = { x: checkBox.x + checkBox.width / 2, y: checkBox.y + checkBox.height / 2 }
+  await Promise.all([
+    page.touchscreen.tap(tapPoint.x, tapPoint.y),
+    page.touchscreen.tap(tapPoint.x, tapPoint.y),
+  ])
+  await page.locator('.answer-feedback').waitFor({ state: 'visible', timeout: 15_000 })
+  const afterRapidTap = await readProgress(page)
+  assert(afterRapidTap.activeLessonSession?.currentQuestionIndex === context.active.currentQuestionIndex, 'rapid touch skipped feedback and advanced the question')
+  assert(afterRapidTap.activeLessonSession?.checkpointRevision === beforeRevision + 1, 'rapid touch persisted more than one submission checkpoint')
+  assert(afterRapidTap.activeLessonSession?.submittedQuestions.length === selectedState.activeLessonSession.submittedQuestions.length + 1, 'rapid touch recorded duplicate submitted results')
+  assert(await page.getByRole('button', { name: 'Next', exact: true }).count() === 1, 'rapid Check Answer touch did not leave exactly one Next action')
+  const touchEvents = await page.evaluate(() => window.__rrqTouchEvents)
+  assert(touchEvents.starts >= 2 && touchEvents.ends >= 2, 'rapid action did not use actual emulated touch events')
+  const nextBox = await page.getByRole('button', { name: 'Next', exact: true }).boundingBox()
+  const feedbackBox = await page.locator('.answer-feedback').boundingBox()
+  assert(nextBox && feedbackBox && !boxesOverlap(nextBox, feedbackBox), 'primary action covered the feedback explanation')
+  report.scenarios.webkitTouchInteraction = {
+    status: 'PASS',
+    deviceDescriptor: WEBKIT_DEVICE_NAME,
+    capabilities,
+    actualTouchEvents: touchEvents,
+    orientationReadingPosition: {
+      portraitScrollY,
+      landscapeScrollY,
+      restoredPortraitScrollY,
+      retained: true,
+    },
+    rapidTapSubmissionDelta: 1,
+    feedbackRemainedVisible: true,
+    passageTapDidNotSelectAnswer: true,
+    primaryActionCoveredFeedback: false,
+    physicalDevice: false,
+  }
+  await closeHandle(handle)
+}
+
+async function runWebKitLocks() {
+  const handle = await launchProfile('webkit-web-locks')
+  const owner = await handle.context.newPage()
+  const waiter = await handle.context.newPage()
+  attachPage(owner, handle.runtime)
+  attachPage(waiter, handle.runtime)
+  await owner.goto(APP_URL, { waitUntil: 'networkidle' })
+  await waiter.goto(APP_URL, { waitUntil: 'networkidle' })
+  const availability = await handle.page.evaluate(() => ({
+    secureContext: isSecureContext,
+    request: typeof navigator.locks?.request === 'function',
+    query: typeof navigator.locks?.query === 'function',
+  }))
+  assert(availability.secureContext && availability.request && availability.query, 'real WebKit Web Locks API was unavailable in the secure application context')
+
+  await holdLock(owner, 'rrq-webkit-exclusive-control')
+  await waiter.evaluate((name) => {
+    window.__rrqQueuedLock = 'pending'
+    void navigator.locks.request(name, async () => { window.__rrqQueuedLock = 'acquired' })
+  }, 'rrq-webkit-exclusive-control')
+  await waiter.evaluate(() => new Promise((resolvePromise) => requestAnimationFrame(() => requestAnimationFrame(resolvePromise))))
+  assert(await waiter.evaluate(() => window.__rrqQueuedLock) === 'pending', 'queued WebKit lock entered while the owner still held it')
+  await releaseHeldLock(owner)
+  await waiter.waitForFunction(() => window.__rrqQueuedLock === 'acquired')
+
+  await holdLock(owner, 'rrq-webkit-cancel-control')
+  await waiter.evaluate((name) => {
+    const controller = new AbortController()
+    window.__rrqCancelledLock = 'pending'
+    void navigator.locks.request(name, { signal: controller.signal }, async () => {
+      window.__rrqCancelledLock = 'acquired'
+    }).catch((error) => { window.__rrqCancelledLock = `rejected:${error.name}` })
+    controller.abort()
+  }, 'rrq-webkit-cancel-control')
+  await waiter.waitForFunction(() => String(window.__rrqCancelledLock).startsWith('rejected:'))
+  assert(String(await waiter.evaluate(() => window.__rrqCancelledLock)).includes('AbortError'), 'queued WebKit lock cancellation did not reject with AbortError')
+  await releaseHeldLock(owner)
+
+  const closeOwner = await handle.context.newPage()
+  const closeWaiter = await handle.context.newPage()
+  await closeOwner.goto(APP_URL, { waitUntil: 'networkidle' })
+  await closeWaiter.goto(APP_URL, { waitUntil: 'networkidle' })
+  await holdLock(closeOwner, 'rrq-webkit-page-close-control')
+  await closeWaiter.evaluate((name) => {
+    window.__rrqCloseReleaseLock = 'pending'
+    void navigator.locks.request(name, async () => { window.__rrqCloseReleaseLock = 'acquired' })
+  }, 'rrq-webkit-page-close-control')
+  await closeWaiter.evaluate(() => new Promise((resolvePromise) => requestAnimationFrame(() => requestAnimationFrame(resolvePromise))))
+  assert(await closeWaiter.evaluate(() => window.__rrqCloseReleaseLock) === 'pending', 'page-close waiter was not queued')
+  await closeOwner.close()
+  await closeWaiter.waitForFunction(() => window.__rrqCloseReleaseLock === 'acquired')
+
+  const productionLockState = await handle.page.evaluate(async (name) => {
+    const state = await navigator.locks.query()
+    return {
+      held: state.held.filter((entry) => entry.name === name).length,
+      pending: state.pending.filter((entry) => entry.name === name).length,
+    }
+  }, PROGRESS_WRITE_LOCK_NAME)
+  assert(productionLockState.held === 0 && productionLockState.pending === 0, 'application held its progress lock while waiting for learner input')
+  assert(await handle.page.getByRole('button', { name: 'Check Answer', exact: true }).isEnabled() === false, 'fresh unanswered Check Answer unexpectedly enabled')
+  report.scenarios.webkitWebLocks = {
+    status: 'PASS',
+    availability,
+    exclusiveAcquisition: true,
+    queuedAcquisition: true,
+    queuedCancellation: 'AbortError',
+    releasedAfterOwningPageClosed: true,
+    productionLockIdleDuringUserInput: productionLockState,
+  }
+  await owner.close()
+  await waiter.close()
+  await closeWaiter.close()
+  await closeHandle(handle)
+}
+
+async function runWebKitPageRestoration() {
+  const fixture = fixtures.representatives.questionTypes.MULTIPLE_CHOICE
+  let handle = await seedScenario('webkit-page-restoration', clone(fixture.state))
+  const page = handle.page
+  const initial = await readProgress(page)
+  const initialContext = currentContext(initial)
+  await selectAnswer(page, initialContext.question, 'correct')
+  const draftRaw = await page.evaluate((key) => localStorage.getItem(key), PROGRESS_KEY)
+  const draftRestore = await navigateAwayAndBack(page)
+  assert(await page.locator(`input[value="${cssValue(initialContext.question.correctIds[0])}"]`).isChecked(), 'draft selection was lost after real back navigation')
+  await answerCurrentQuestion(page, 'correct')
+  const feedbackRaw = await page.evaluate((key) => localStorage.getItem(key), PROGRESS_KEY)
+  const feedbackRestore = await navigateAwayAndBack(page)
+  assert(await page.getByRole('button', { name: 'Next', exact: true }).count() === 1, 'submitted feedback did not survive real back navigation')
+  await clickNextWithinLesson(page, initialContext.active.sessionId, 1)
+
+  const blocker = await handle.context.newPage()
+  await blocker.goto(`${APP_URL}${EXPECTED_JS}`, { waitUntil: 'load' })
+  await holdLock(blocker, PROGRESS_WRITE_LOCK_NAME)
+  const pendingState = await readProgress(page)
+  const pendingContext = currentContext(pendingState)
+  const pendingChoice = page.locator(`input[type="radio"][value="${cssValue(pendingContext.question.correctIds[0])}"]`)
+  await selectInput(pendingChoice)
+  await page.waitForFunction(() => [...document.querySelectorAll('.question-first-question input, .question-first-question select')].some((control) => control.disabled))
+  await page.goto('about:blank')
+  await blocker.close()
+  await page.goBack({ waitUntil: 'networkidle' })
+  await waitForSettledScreen(page)
+  const afterInterruptedSave = await readProgress(page)
+  assert(afterInterruptedSave.activeLessonSession?.sessionId === pendingContext.active.sessionId, 'interrupted save changed the active session')
+  assert(afterInterruptedSave.activeLessonSession?.currentQuestionIndex === pendingContext.active.currentQuestionIndex, 'interrupted save changed the question')
+  await page.waitForFunction(() => [...document.querySelectorAll('.question-first-question input, .question-first-question select')].every((control) => !control.disabled))
+  await selectAnswer(page, currentContext(afterInterruptedSave).question, 'correct')
+
+  const finalFeedback = await reachFinalFeedback(page, 'correct')
+  const finalRestore = await navigateAwayAndBack(page)
+  assert(await page.getByRole('button', { name: 'Next', exact: true }).count() === 1, 'final feedback did not survive real back navigation')
+  const beforeCompletion = await readProgress(page)
+  await activate(page.getByRole('button', { name: 'Next', exact: true }))
+  await page.waitForFunction(({ key, sessionId }) => {
+    const raw = localStorage.getItem(key)
+    const state = raw ? JSON.parse(raw) : null
+    return state?.activeLessonSession?.sessionId && state.activeLessonSession.sessionId !== sessionId
+  }, { key: PROGRESS_KEY, sessionId: finalFeedback.source.sessionId }, { timeout: 30_000 })
+  const afterCompletion = await readProgress(page)
+  assert(afterCompletion.completedAttempts.length === beforeCompletion.completedAttempts.length + 1, 'restored final completion did not record exactly one attempt')
+  assert(afterCompletion.completedSessionCount === beforeCompletion.completedSessionCount + 1, 'restored final completion did not record exactly one session')
+  report.scenarios.webkitPageRestoration = {
+    status: 'PASS',
+    draftRawSha256: sha256(draftRaw),
+    feedbackRawSha256: sha256(feedbackRaw),
+    draftRestore,
+    feedbackRestore,
+    finalRestore,
+    interruptedPendingSaveRecovered: true,
+    controlsReenabled: true,
+    finalCompletionAttemptDelta: 1,
+    bfcacheObserved: [draftRestore, feedbackRestore, finalRestore].some((entry) => entry.persisted),
+    desktopWebKitBoundary: 'This does not prove physical iPadOS memory-pressure termination or screen-lock behavior.',
+  }
+  await closeHandle(handle)
+}
+
+async function runUnsupportedCapabilities() {
+  const missingLocks = await launchProfile('unsupported-missing-locks', undefined, createRuntimeLog('unsupported-missing-locks'), { disableWebLocks: true })
+  await missingLocks.page.getByRole('heading', { name: 'A grown-up needs to help', exact: true }).waitFor({ state: 'visible', timeout: 15_000 })
+  assert(await missingLocks.page.getByRole('button', { name: 'Retry', exact: true }).count() === 0, 'permanently missing Web Locks exposed an endless Retry action')
+  assert(await missingLocks.page.getByText(/current Safari or Microsoft Edge/i).count() === 1, 'missing Web Locks did not show the supported-browser message')
+  assert(await missingLocks.page.evaluate((key) => localStorage.getItem(key), PROGRESS_KEY) === null, 'missing Web Locks wrote a fresh profile')
+  await closeHandle(missingLocks)
+
+  const missingStorage = await launchProfile('unsupported-missing-storage', undefined, createRuntimeLog('unsupported-missing-storage'), { disableStorage: true })
+  await missingStorage.page.getByRole('heading', { name: 'A grown-up needs to help', exact: true }).waitFor({ state: 'visible', timeout: 15_000 })
+  assert(await missingStorage.page.getByRole('button', { name: 'Retry', exact: true }).count() === 0, 'permanently unavailable storage exposed an endless Retry action')
+  await closeHandle(missingStorage)
+
+  const rejectedLock = await launchProfile('unsupported-rejected-lock', undefined, createRuntimeLog('unsupported-rejected-lock'), { rejectWebLocks: true })
+  await rejectedLock.page.getByRole('button', { name: 'Retry', exact: true }).waitFor({ state: 'visible', timeout: 15_000 })
+  assert(await rejectedLock.page.evaluate((key) => localStorage.getItem(key), PROGRESS_KEY) === null, 'rejected lock request wrote a fresh profile')
+  report.scenarios.unsupportedCapabilities = {
+    status: 'PASS',
+    missingWebLocks: { blocked: true, retryOffered: false, freshProfileWritten: false },
+    unavailableStorage: { blocked: true, retryOffered: false },
+    rejectedLockRequest: { blocked: true, retryOffered: true, freshProfileWritten: false },
+    technicalDetailsKeptOutOfChildMessage: true,
+  }
+  await closeHandle(rejectedLock)
+}
+
+async function holdLock(page, name) {
+  await page.evaluate((lockName) => {
+    window.__rrqHeldLockAcquired = false
+    window.__rrqHeldLockRelease = null
+    window.__rrqHeldLockPromise = navigator.locks.request(lockName, async () => {
+      window.__rrqHeldLockAcquired = true
+      await new Promise((resolvePromise) => { window.__rrqHeldLockRelease = resolvePromise })
+    })
+  }, name)
+  await page.waitForFunction(() => window.__rrqHeldLockAcquired === true)
+}
+
+async function releaseHeldLock(page) {
+  await page.evaluate(() => window.__rrqHeldLockRelease?.())
+  await page.evaluate(() => window.__rrqHeldLockPromise)
+}
+
+async function navigateAwayAndBack(page) {
+  await page.goto('about:blank')
+  await page.goBack({ waitUntil: 'networkidle' })
+  await waitForSettledScreen(page)
+  const events = await page.evaluate(() => window.__rrqPageShowEvents ?? [])
+  return { persisted: events.some((entry) => entry.persisted), events }
+}
+
+function boxesOverlap(left, right) {
+  return left.x < right.x + right.width
+    && left.x + left.width > right.x
+    && left.y < right.y + right.height
+    && left.y + left.height > right.y
+}
+
 function evaluateRuntime(logs) {
   const all = logs.flatMap((log) => log.requests)
   const failedRequests = logs.flatMap((log) => log.failedRequests)
@@ -1239,13 +1678,19 @@ async function cleanupProfiles() {
   for (const handle of [...activeHandles]) await closeHandle(handle)
   const resolvedProfileRoot = resolve(PROFILE_ROOT)
   const resolvedTemp = resolve(tmpdir())
-  assert(resolvedProfileRoot.startsWith(`${resolvedTemp}\\`) && basename(resolvedProfileRoot).startsWith(PROFILE_PREFIX), 'refusing to remove an unverified profile path')
+  const profileRelative = relative(resolvedTemp, resolvedProfileRoot)
+  assert(profileRelative && !profileRelative.startsWith('..') && !isAbsolute(profileRelative) && basename(resolvedProfileRoot).startsWith(PROFILE_PREFIX), 'refusing to remove an unverified profile path')
   rmSync(resolvedProfileRoot, { recursive: true, force: true })
   return { profileRoot: resolvedProfileRoot, removed: true, remainingTaskOwnedProcesses: profileProcesses(resolvedProfileRoot).length }
 }
 
 async function main() {
   const runtimeLogs = []
+  if (IS_WEBKIT && TEST_MODE === 'local') {
+    log('scenario releaseUpgrade starting')
+    await runReleaseUpgrade()
+    log('scenario releaseUpgrade passed')
+  }
   log('scenario representativeCoverage starting')
   await runRepresentativeCoverage()
   log('scenario representativeCoverage passed')
@@ -1274,6 +1719,19 @@ async function main() {
     log(`scenario ${name} passed`)
   }
 
+  if (IS_WEBKIT) {
+    for (const [name, runner] of [
+      ['webkitTouchInteraction', runWebKitTouchInteraction],
+      ['webkitWebLocks', runWebKitLocks],
+      ['webkitPageRestoration', runWebKitPageRestoration],
+      ['unsupportedCapabilities', runUnsupportedCapabilities],
+    ]) {
+      log(`scenario ${name} starting`)
+      await runner()
+      log(`scenario ${name} passed`)
+    }
+  }
+
   // Scenario handles close themselves, so collect their runtime logs from the report-time registry file below.
   const allRuntimeLogs = [central.handle.runtime, ...runtimeRegistry]
   report.runtime = evaluateRuntime(allRuntimeLogs)
@@ -1291,12 +1749,19 @@ async function main() {
     'parent-print-responsive': report.parent?.setupGate === 'PASS' && report.responsive.length === 4 ? 'PASS' : 'FAIL',
     'runtime-health': report.runtime ? 'PASS' : 'FAIL',
   }
+  if (IS_WEBKIT) {
+    report.requiredScenarios['webkit-touch-interaction'] = report.scenarios.webkitTouchInteraction?.status ?? 'MISSING'
+    report.requiredScenarios['webkit-web-locks'] = report.scenarios.webkitWebLocks?.status ?? 'MISSING'
+    report.requiredScenarios['webkit-page-restoration'] = report.scenarios.webkitPageRestoration?.status ?? 'MISSING'
+    report.requiredScenarios['unsupported-capabilities'] = report.scenarios.unsupportedCapabilities?.status ?? 'MISSING'
+    if (TEST_MODE === 'local') report.requiredScenarios['release-upgrade'] = report.scenarios.releaseUpgrade?.status ?? 'MISSING'
+  }
   assert(Object.values(report.requiredScenarios).every((status) => status === 'PASS'), `required scenario summary was not all PASS: ${JSON.stringify(report.requiredScenarios)}`)
   report.status = 'PASS'
   report.finishedAt = new Date().toISOString()
   report.cleanup = await cleanupProfiles()
-  writeFileSync(join(RUN_DIR, 'native-edge-acceptance.json'), `${JSON.stringify(report, null, 2)}\n`)
-  log('all native Edge acceptance scenarios passed', { report: join(RUN_DIR, 'native-edge-acceptance.json') })
+  writeFileSync(join(RUN_DIR, `${ENGINE}-acceptance.json`), `${JSON.stringify(report, null, 2)}\n`)
+  log(`all ${ENGINE} acceptance scenarios passed`, { report: join(RUN_DIR, `${ENGINE}-acceptance.json`) })
 }
 
 const runtimeRegistry = []
@@ -1319,7 +1784,7 @@ try {
   } catch (cleanupError) {
     report.cleanup = { removed: false, error: cleanupError instanceof Error ? cleanupError.message : String(cleanupError) }
   }
-  writeFileSync(join(RUN_DIR, 'native-edge-acceptance.json'), `${JSON.stringify(report, null, 2)}\n`)
+  writeFileSync(join(RUN_DIR, `${ENGINE}-acceptance.json`), `${JSON.stringify(report, null, 2)}\n`)
   console.error(error)
   process.exitCode = 1
 }

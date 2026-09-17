@@ -1,20 +1,22 @@
-# Native Microsoft Edge release gate
+# Native Edge and WebKit release gate
 
 ## Status and boundary
 
-Native browser acceptance is a required release gate for Rory's Reading Quest. It is infrastructure-only: it changes no learner curriculum, planner rule, progression threshold, reward formula, persistence schema, Parent PIN, or assessment record. Phase 8, Grade 4, FAST timed practice, and broader Phase 10 work remain unstarted.
+Native Edge and Playwright WebKit acceptance are required release gates for Rory's Reading Quest. This compatibility work changes no learner curriculum, planner rule, progression threshold, reward formula, persistence schema, Parent PIN, or assessment record. The only production adjustment classifies permanently missing safe-save capabilities so they cannot create an endless Retry loop. Phase 8, Grade 4, FAST timed practice, and broader Phase 10 work remain unstarted.
 
 The repository harness promotes the proven external acceptance approach from `C:\Users\Micha\RRQ_Acceptance\053c953\native-acceptance.mjs`. The original retained evidence remains external and unchanged. The maintained implementation is now `scripts/browser/native-acceptance.mjs` with release orchestration and fail-closed contracts beside it.
 
 ## Supported tooling
 
-- `playwright-core` is pinned as a development-only dependency and launches an installed Microsoft Edge executable through the Chromium protocol.
-- Local certification supports installed native Edge and never attaches to a personal profile. Every scenario owns a temporary `rrq-native-acceptance-*` profile.
+- `playwright-core` is pinned as a development-only dependency. It launches an installed Microsoft Edge executable through the Chromium protocol and the exact matching Playwright WebKit binary through the WebKit protocol.
+- Local certification supports installed native Edge and never attaches to a personal profile. Every scenario owns a temporary engine-labelled `rrq-*-acceptance-*` profile.
 - GitHub Actions uses `windows-2025`, whose maintained runner image includes Microsoft Edge. The harness still detects Edge explicitly and blocks if it is absent.
+- Authoritative Safari-relevant automation uses `macos-15`, the pinned WebKit revision, and Playwright's `iPad (gen 11)` touch descriptor. The exact Rory iPad and iPadOS remain unknown; this is emulation, not physical hardware or shipping Safari.
+- Install the matching WebKit revision with `npm run browser:install:webkit`. Missing binaries block rather than skip.
 - Microsoft documents Edge automation with Playwright and the `msedge` channel at <https://learn.microsoft.com/en-us/microsoft-edge/playwright/>.
 - GitHub documents the software on `windows-2025`, including Edge, at <https://github.com/actions/runner-images/blob/main/images/windows/Windows2025-Readme.md>.
 
-No Playwright browser download, WebDriver service, cloud browser, self-hosted runner, global browser change, or production dependency is required.
+No WebDriver service, cloud browser, self-hosted runner, global browser change, or production dependency is required. The WebKit binary is downloaded from Playwright's official supported distribution for the pinned client.
 
 ## Command contracts
 
@@ -25,7 +27,7 @@ npm run build
 npm run test:browser
 ```
 
-`test:browser` does not run Vite's development server and does not rebuild. It creates a SHA-256 manifest for the existing `dist`, starts a loopback static server at the real `/rorys-reading-quest/` base, runs gate-contract checks, generates temporary answer-driving fixtures from the checked-out source, and exercises native Edge sequentially.
+`test:browser` does not run Vite's development server and does not rebuild. It creates a SHA-256 manifest for the existing `dist`, starts loopback servers at the real `/rorys-reading-quest/` base, runs gate-contract checks, generates temporary answer-driving fixtures from the checked-out source, and exercises Edge then WebKit sequentially. The WebKit local run also proxies the explicit previous published artifact at that same origin before switching to the candidate build.
 
 ### Complete local release
 
@@ -33,19 +35,20 @@ npm run test:browser
 npm run verify:release
 ```
 
-This command runs lint, typecheck, Vitest, the semantic answer-uniqueness gate, one production build, gate self-tests, and the complete native Edge suite. There is no browser-bypass certification flag.
+This command runs lint, typecheck, Vitest, the semantic answer-uniqueness gate, one production build, gate self-tests, and both complete browser suites. There is no browser-bypass certification flag. If a local host cannot execute its installed WebKit binary, local certification is blocked; the authorized prepublication macOS job still must pass before deployment can occur.
 
 ### Exact deployed release
 
 ```powershell
 npm run verify:deployed -- `
+  --engine <edge-or-webkit> `
   --commit <full-40-character-sha> `
   --manifest <tested-build-manifest.json> `
   --dist <tested-dist-directory> `
   --url https://michaelbennett87.github.io/rorys-reading-quest/
 ```
 
-All identity inputs are explicit. The command verifies the local tested artifact, polls the deployment only for a bounded propagation window, compares published `index.html`, JavaScript, and CSS hashes and MIME types with the manifest, then runs the complete native suite. It cannot silently certify whichever release happens to be live.
+All identity inputs are explicit. The command verifies the local tested artifact, polls the deployment only for a bounded propagation window, compares published `index.html`, JavaScript, and CSS hashes and MIME types with the manifest, then runs the selected engine's complete suite. CI invokes it once for Edge and once for WebKit. It cannot silently certify whichever release happens to be live.
 
 ## Required scenarios
 
@@ -63,6 +66,8 @@ The browser report cannot pass with zero results or a skipped required scenario.
 10. All five question types, prose, poetry, informational features, paired texts, local reference cards, guided instruction, fluency practice, and on-demand Word Help render and interact correctly.
 11. Parent PIN setup, lock/unlock, reporting, privacy-safe print, child-session preservation, and phone, iPad-sized, and desktop overflow checks pass.
 12. Page errors, failed requests, external application traffic, and unexpected HTTP or console errors are absent. The known root `/favicon.ico` 404 is the only narrow nonblocking exception.
+
+WebKit additionally requires actual emulated touch/tap input, rapid-tap protection, real `navigator.locks` acquisition/queue/cancel/page-close release, navigation-away/back restoration, interrupted-save recovery, nonretrying permanent-capability messages, and a same-origin previous-release-to-candidate upgrade. Back-forward-cache use is recorded only when `pageshow.persisted` is actually observed.
 
 The process-restart evidence differs from a page reload. The central journey earns progression from one empty profile; seeded recovery fixtures are separately labeled synthetic and never substitute for earned advancement.
 
@@ -85,11 +90,11 @@ The workflow is a strict chain:
 
 ```text
 quality and semantic checks plus one production build
--> native Edge acceptance of the downloaded hashed build
+-> native Edge AND macOS WebKit acceptance of the downloaded hashed build
 -> Pages upload and deployment of that same build
--> native Edge verification of the exact published hashes and interactions
+-> native Edge AND macOS WebKit verification of the exact published hashes and interactions
 ```
 
 Only the deploy job receives Pages and identity-token write permissions. A pre-deployment browser failure blocks publication. A post-deployment failure cannot undo publication automatically, so it marks that published release unaccepted and preserves evidence for investigation.
 
-The gate self-tests prove that a deliberate native Edge assertion returns nonzero, browser absence blocks, zero or skipped scenarios cannot pass, artifact mutation is rejected, and deployment depends on the required successful browser stage.
+The gate self-tests prove that a deliberate required-engine assertion returns nonzero, either browser's absence blocks, zero or skipped scenarios cannot pass, artifact mutation is rejected, and deployment depends on both successful prepublication browser stages.

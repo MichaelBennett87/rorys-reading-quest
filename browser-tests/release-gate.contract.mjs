@@ -9,6 +9,7 @@ import {
   assertRequiredScenarioResults,
   createBuildManifest,
   findEdgeExecutable,
+  findWebKitExecutable,
   validatePagesWorkflowContract,
   verifyBuildManifest,
 } from '../scripts/browser/release-contract.mjs'
@@ -16,6 +17,13 @@ import {
 test('missing Edge is a blocked release rather than a pass', () => {
   assert.throws(
     () => findEdgeExecutable({ platform: 'win32', env: {}, exists: () => false }),
+    /BROWSER_BLOCKED/,
+  )
+})
+
+test('missing pinned WebKit is a blocked release rather than a pass', () => {
+  assert.throws(
+    () => findWebKitExecutable({ executablePath: '/missing/playwright-webkit', exists: () => false }),
     /BROWSER_BLOCKED/,
   )
 })
@@ -53,15 +61,21 @@ test('an artifact changed after manifest creation is rejected', () => {
 test('the Pages workflow enforces build then browser then deploy then deployed-browser verification', () => {
   const workflow = readFileSync(resolve('.github/workflows/deploy-pages.yml'), 'utf8')
   const result = validatePagesWorkflowContract(workflow)
-  assert.deepEqual(result.chain, ['quality_build', 'native_browser', 'deploy', 'deployed_browser'])
+  assert.deepEqual(result.chain, [
+    'quality_build',
+    ['native_browser', 'webkit_browser'],
+    'deploy',
+    ['deployed_browser', 'deployed_webkit'],
+  ])
   assert.equal(result.buildCount, 1)
 })
 
-test('a real native Edge assertion failure propagates as nonzero', () => {
-  const edgePath = findEdgeExecutable()
+test('a real required-engine assertion failure propagates as nonzero', () => {
+  const engine = process.env.RRQ_BROWSER_SELF_TEST_ENGINE === 'webkit' ? 'webkit' : 'edge'
+  const executablePath = engine === 'edge' ? findEdgeExecutable() : findWebKitExecutable()
   const result = spawnSync(
     process.execPath,
-    [resolve('scripts/browser/deliberate-browser-failure.mjs'), '--child', edgePath],
+    [resolve('scripts/browser/deliberate-browser-failure.mjs'), '--child', engine, executablePath],
     { cwd: resolve('.'), encoding: 'utf8', timeout: 60_000 },
   )
   assert.equal(result.status, 23, `Expected deliberate failure exit 23, received ${result.status}. ${result.stderr}`)

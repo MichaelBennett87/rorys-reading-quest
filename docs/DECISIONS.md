@@ -604,6 +604,14 @@ Consequence: boot and final completion reuse `prepareJourneyLaunch`; response dr
 - Decision: use an instance-local compare-before-write token to reject stale-page writes without adding a backend, learner identifier, schema field, dependency, or cross-device claim.
 - Decision: automatic lesson completion may replan or show curriculum completion only after the completed attempt, rewards, progression, and cleared session are confirmed by the same authoritative save.
 
+## 2026-09-17 - Dual-engine browser release authority
+
+- Decision: retain native Microsoft Edge and add pinned Playwright WebKit on a GitHub-hosted macOS 15 runner as independent mandatory prepublication and post-deployment gates for the same manifest-bound build.
+- Reason: Rory uses an iPad, and a Chromium viewport or Safari user-agent string cannot establish WebKit, touch, Web Locks, page-restoration, or browser-local persistence behavior.
+- Consequence: WebKit runs the shared learning journey plus iPad touch, lock coordination, lifecycle restoration, unsupported-capability, and same-origin release-upgrade scenarios. Deployment waits for both engines, while a post-deployment failure marks the published artifact unaccepted.
+- Boundary: Playwright WebKit with device emulation is Safari-relevant automation, not a physical iPad, shipping Safari, a known iPadOS version, VoiceOver certification, or cross-device synchronization.
+- Status: Applied
+
 ## 2026-09-10 - Make ordinary progression comprehension-first
 
 Decision: use one authoritative twelve-stage progression order beginning with Grade 2 Story Scouts and Grade 2 Information Detectives, followed by their Grade 3 counterparts, then poetry, across-genres reading, Context Cavern, and finally Grade 2 and Grade 3 Word Forge. Preserve every matching same-domain Grade 3 prerequisite.

@@ -15,6 +15,7 @@ interface LessonLaunchState {
   lesson: LessonDefinition | null
   session: ActiveLessonSession | null
   errors: string[]
+  retryable: boolean
 }
 
 type QuestionFirstScreen = 'loading' | 'lesson_run' | 'rest' | 'load_error' | 'parent_gate'
@@ -30,6 +31,7 @@ export function AppShell() {
     lesson: null,
     session: null,
     errors: [],
+    retryable: true,
   })
   const [outcome, setOutcome] = useState<ProgressionOutcomeViewModel | null>(null)
   const journeyLaunchPendingRef = useRef(false)
@@ -52,7 +54,7 @@ export function AppShell() {
     journeyLaunchPendingRef.current = true
     const decision = await prepareJourneyLaunchRef.current()
     if (decision.status === 'resume' || decision.status === 'start') {
-      setLessonState({ lesson: decision.lesson, session: decision.session, errors: [] })
+      setLessonState({ lesson: decision.lesson, session: decision.session, errors: [], retryable: true })
       setScreen('lesson_run')
       return
     }
@@ -73,7 +75,7 @@ export function AppShell() {
     }
     if (decision.status === 'unavailable') {
       journeyLaunchPendingRef.current = false
-      setLessonState({ lesson: null, session: null, errors: [decision.reason] })
+      setLessonState({ lesson: null, session: null, errors: [decision.reason], retryable: decision.retryable })
       setScreen('load_error')
     }
   }, [])
@@ -93,6 +95,7 @@ export function AppShell() {
         ...previous,
         errors: [nextOutcome.recoveryMessage
           ?? 'Rory\'s Reading Quest could not safely save that completed lesson. Your earlier saved progress is unchanged. Please retry.'],
+        retryable: nextOutcome.recoveryRetryable ?? true,
       }))
       setScreen('load_error')
       return
@@ -246,19 +249,21 @@ export function AppShell() {
       <main className="question-first-status" aria-live="assertive">
         <section className="question-first-status-card">
           <p className="question-first-mark">Rory's Reading Quest</p>
-          <h1>Let's try that reading again</h1>
+          <h1>{lessonState.retryable ? "Let's try that reading again" : 'A grown-up needs to help'}</h1>
           <p>{lessonState.errors[0] ?? 'The next reading activity could not load safely.'}</p>
-          <button
-            type="button"
-            className="child-button primary-action"
-            onClick={() => {
-              journeyLaunchPendingRef.current = false
-              setScreen('loading')
-              void launchCurrentJourney()
-            }}
-          >
-            Retry
-          </button>
+          {lessonState.retryable && (
+            <button
+              type="button"
+              className="child-button primary-action"
+              onClick={() => {
+                journeyLaunchPendingRef.current = false
+                setScreen('loading')
+                void launchCurrentJourney()
+              }}
+            >
+              Retry
+            </button>
+          )}
         </section>
       </main>
     )

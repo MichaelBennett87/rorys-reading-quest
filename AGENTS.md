@@ -36,9 +36,10 @@
 ## Verification
 
 - For focused development, run the smallest relevant tests before the full gate.
-- Before any release or phase completion, run `npm run verify:release`. It must complete lint, typecheck, unit/integration tests, the semantic answer gate, one production build, and the repository-owned native Microsoft Edge suite against that exact build.
-- Native browser availability is mandatory. A missing browser, zero scenarios, a skipped required scenario, a browser assertion failure, or an artifact mismatch blocks release certification.
-- A page reload is not a browser-process restart. The continuous-learning scenario must reuse one isolated persistent profile across actual Edge shutdowns and relaunches.
-- After GitHub Pages publishes, run `npm run verify:deployed -- --commit <full-sha> --manifest <manifest-path> --dist <tested-dist-path> --url <deployment-url>`. A post-deployment failure means the already-published release is unaccepted.
+- Before any release or phase completion, run `npm run verify:release`. It must complete lint, typecheck, unit/integration tests, the semantic answer gate, one production build, and the repository-owned Microsoft Edge plus Playwright WebKit suites against that exact build.
+- Native browser availability is mandatory. A missing Edge or pinned WebKit binary, zero scenarios, a skipped required scenario, a browser assertion failure, or an artifact mismatch blocks that engine's certification.
+- A page reload is not a browser-process restart. Each continuous-learning scenario must reuse one isolated persistent profile across actual browser shutdowns and relaunches.
+- Pages publication requires both the native Edge job and the macOS Playwright WebKit job. Playwright WebKit with iPad touch emulation is Safari-relevant automated coverage, not physical-iPad, shipping-Safari, or VoiceOver certification.
+- After GitHub Pages publishes, run `npm run verify:deployed -- --engine <edge|webkit> --commit <full-sha> --manifest <manifest-path> --dist <tested-dist-path> --url <deployment-url>` in both required engines. A post-deployment failure means the already-published release is unaccepted.
 - Never attach browser acceptance to a personal profile or commit generated profiles, fixtures, screenshots, or reports.
 - Do not call a phase or release complete while a required local or deployed gate is failing.

@@ -82,7 +82,8 @@ jobs:
       - name: Verify native Edge and tested build
         shell: pwsh
         run: >-
-          npm run test:browser --
+          npm run test:browser:edge --
+          --engine edge
           --dist release-artifact/dist
           --manifest release-artifact/build-manifest.json
           --commit $env:GITHUB_SHA
@@ -97,8 +98,54 @@ jobs:
           if-no-files-found: warn
           retention-days: 7
 
+  webkit_browser:
+    needs: quality_build
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - run: npm ci
+
+      - name: Install the pinned Playwright WebKit revision
+        run: npm run browser:install:webkit
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.RELEASE_ARTIFACT }}
+          path: release-artifact
+
+      - name: Prove WebKit gate failures propagate
+        env:
+          RRQ_BROWSER_SELF_TEST_ENGINE: webkit
+        run: npm run test:browser:contracts
+
+      - name: Verify macOS WebKit, iPad touch emulation, and tested build
+        run: >-
+          npm run test:browser:webkit --
+          --engine webkit
+          --dist release-artifact/dist
+          --manifest release-artifact/build-manifest.json
+          --commit "${GITHUB_SHA}"
+          --previous-commit "${{ github.event.before || github.sha }}"
+          --previous-url "https://michaelbennett87.github.io/rorys-reading-quest/"
+          --require-existing-manifest
+
+      - name: Upload sanitized WebKit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rrq-webkit-browser-evidence-${{ github.run_attempt }}
+          path: .artifacts/browser/run-*/
+          if-no-files-found: warn
+          retention-days: 7
+
   deploy:
-    needs: native_browser
+    needs: [native_browser, webkit_browser]
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -148,6 +195,7 @@ jobs:
         shell: pwsh
         run: >-
           npm run verify:deployed --
+          --engine edge
           --commit $env:GITHUB_SHA
           --manifest release-artifact/build-manifest.json
           --dist release-artifact/dist
@@ -158,6 +206,45 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: rrq-deployed-browser-evidence-${{ github.run_attempt }}
+          path: .artifacts/browser/run-*/
+          if-no-files-found: warn
+          retention-days: 7
+
+  deployed_webkit:
+    needs: deploy
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - run: npm ci
+
+      - name: Install the pinned Playwright WebKit revision
+        run: npm run browser:install:webkit
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.RELEASE_ARTIFACT }}
+          path: release-artifact
+
+      - name: Verify the exact deployed commit and assets in macOS WebKit
+        run: >-
+          npm run verify:deployed --
+          --engine webkit
+          --commit "${GITHUB_SHA}"
+          --manifest release-artifact/build-manifest.json
+          --dist release-artifact/dist
+          --url "${{ needs.deploy.outputs.page_url }}"
+
+      - name: Upload sanitized deployed WebKit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rrq-deployed-webkit-evidence-${{ github.run_attempt }}
           path: .artifacts/browser/run-*/
           if-no-files-found: warn
           retention-days: 7

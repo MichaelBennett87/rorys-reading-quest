@@ -13,7 +13,12 @@ interface LockManagerLike {
 
 export type ProgressWriteLockResult<T> =
   | { status: 'acquired'; value: T }
-  | { status: 'unavailable'; technicalDetail: string }
+  | {
+      status: 'unavailable'
+      reason: 'missing_capability' | 'timeout' | 'request_failed'
+      retryable: boolean
+      technicalDetail: string
+    }
 
 export async function runWithProgressWriteLock<T>(
   operation: () => Promise<T> | T,
@@ -22,7 +27,9 @@ export async function runWithProgressWriteLock<T>(
   if (!lockManager) {
     return {
       status: 'unavailable',
-      technicalDetail: 'This browser cannot coordinate reading progress safely between open pages.',
+      reason: 'missing_capability',
+      retryable: false,
+      technicalDetail: 'The Web Locks API required for safe reading-progress writes is unavailable.',
     }
   }
 
@@ -36,9 +43,14 @@ export async function runWithProgressWriteLock<T>(
     )
     return { status: 'acquired', value }
   } catch (error) {
+    const timedOut = controller.signal.aborted
     return {
       status: 'unavailable',
-      technicalDetail: error instanceof Error ? error.message : String(error),
+      reason: timedOut ? 'timeout' : 'request_failed',
+      retryable: true,
+      technicalDetail: timedOut
+        ? 'Safe reading-progress coordination timed out.'
+        : error instanceof Error ? error.message : String(error),
     }
   } finally {
     globalThis.clearTimeout(timeout)

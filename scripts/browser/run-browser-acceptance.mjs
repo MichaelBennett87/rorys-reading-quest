@@ -10,6 +10,7 @@ import {
   createBuildManifest,
   extractEntrypoints,
   findEdgeExecutable,
+  findWebKitExecutable,
   parseArguments,
   readBuildManifest,
   sha256,
@@ -22,6 +23,8 @@ const REPO_ROOT = resolve(fileURLToPath(new URL('../..', import.meta.url)))
 const args = parseArguments(process.argv.slice(2))
 const mode = args.mode ?? 'local'
 if (!['local', 'deployed'].includes(mode)) throw new Error(`Unsupported browser acceptance mode: ${mode}`)
+const engine = args.engine?.trim()
+if (!['edge', 'webkit'].includes(engine)) throw new Error('Browser acceptance requires explicit --engine edge or --engine webkit.')
 
 const distDir = resolve(args.dist ?? 'dist')
 const manifestPath = resolve(args.manifest ?? '.artifacts/browser/build-manifest.json')
@@ -43,7 +46,7 @@ if (mode === 'local' && !args.requireExistingManifest) {
 
 const manifest = readBuildManifest(manifestPath)
 const artifactVerification = verifyBuildManifest({ manifest, distDir, expectedCommit: sourceCommit })
-const edgePath = findEdgeExecutable()
+const browserPath = engine === 'edge' ? findEdgeExecutable() : findWebKitExecutable()
 const artifactRoot = resolve(args.artifacts ?? '.artifacts/browser')
 const fixturesPath = join(artifactRoot, 'fixtures', `${manifest.manifestDigest}.json`)
 const fixtureSummary = await generateBrowserFixtures(fixturesPath)
@@ -52,14 +55,21 @@ let appUrl = args.url
 
 try {
   if (mode === 'local') {
-    localServer = await startStaticBuildServer(distDir)
+    const previousUrl = args.previousUrl?.trim()
+    if (engine === 'webkit' && !previousUrl) {
+      throw new Error('Local WebKit acceptance requires an explicit --previous-url for the same-origin release-upgrade scenario.')
+    }
+    localServer = await startStaticBuildServer(distDir, {
+      previousUrl: engine === 'webkit' ? previousUrl : undefined,
+      initialSource: engine === 'webkit' ? 'previous' : 'candidate',
+    })
     appUrl = localServer.url
   } else {
     await verifyPublishedBuild({ appUrl, manifest, attempts: Number(args.propagationAttempts ?? 12) })
   }
-  const acceptanceRunIdentity = sanitize(`${manifest.browserTestRunIdentity}-${mode}-${new Date().toISOString()}`)
+  const acceptanceRunIdentity = sanitize(`${manifest.browserTestRunIdentity}-${mode}-${engine}-${new Date().toISOString()}`)
   const runDirectory = join(artifactRoot, `run-${acceptanceRunIdentity}`)
-  const reportPath = join(runDirectory, 'native-edge-acceptance.json')
+  const reportPath = join(runDirectory, `${engine}-acceptance.json`)
   const javascript = manifest.entrypoints.javascript[0]
   const css = manifest.entrypoints.css[0]
   if (!javascript || !css) throw new Error('Manifest does not contain the required JavaScript and CSS entrypoints.')
@@ -69,7 +79,8 @@ try {
       ...process.env,
       RRQ_ACCEPTANCE_APP_URL: ensureTrailingSlash(appUrl),
       RRQ_ACCEPTANCE_ARTIFACTS: artifactRoot,
-      RRQ_ACCEPTANCE_EDGE_PATH: edgePath,
+      RRQ_ACCEPTANCE_BROWSER_PATH: browserPath,
+      RRQ_ACCEPTANCE_ENGINE: engine,
       RRQ_ACCEPTANCE_EXPECTED_CSS: css,
       RRQ_ACCEPTANCE_EXPECTED_JS: javascript,
       RRQ_ACCEPTANCE_FIXTURES: fixturesPath,
@@ -77,6 +88,9 @@ try {
       RRQ_ACCEPTANCE_MODE: mode,
       RRQ_ACCEPTANCE_RELEASE_SHA: manifest.sourceCommit,
       RRQ_ACCEPTANCE_RUN_ID: acceptanceRunIdentity,
+      RRQ_ACCEPTANCE_PREVIOUS_COMMIT: args.previousCommit?.trim() ?? '',
+      RRQ_ACCEPTANCE_PREVIOUS_URL: args.previousUrl?.trim() ?? '',
+      RRQ_ACCEPTANCE_SWITCH_TO_CANDIDATE_URL: localServer?.switchToCandidateUrl ?? '',
     },
     stdio: 'inherit',
   })
@@ -84,15 +98,16 @@ try {
     child.once('error', reject)
     child.once('exit', (code, signal) => signal ? reject(new Error(`Native browser process ended with signal ${signal}.`)) : resolvePromise(code ?? 1))
   })
-  if (exitCode !== 0) throw new Error(`Native Edge acceptance failed with exit code ${exitCode}. Evidence: ${runDirectory}`)
+  if (exitCode !== 0) throw new Error(`${engine} acceptance failed with exit code ${exitCode}. Evidence: ${runDirectory}`)
   const report = JSON.parse(readFileSync(reportPath, 'utf8'))
-  if (report.status !== 'PASS') throw new Error(`Native Edge report status was ${report.status}.`)
+  if (report.status !== 'PASS') throw new Error(`${engine} browser report status was ${report.status}.`)
   if (report.releaseSha !== manifest.sourceCommit || report.manifestDigest !== manifest.manifestDigest) {
     throw new Error('Browser evidence is not bound to the required source commit and artifact manifest.')
   }
-  const scenarioVerification = assertRequiredScenarioResults(report)
+  const scenarioVerification = assertRequiredScenarioResults(report, { engine, mode })
   console.log(JSON.stringify({
     status: 'PASS',
+    engine,
     mode,
     appUrl: ensureTrailingSlash(appUrl),
     sourceCommit: manifest.sourceCommit,
