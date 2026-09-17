@@ -422,6 +422,8 @@ async function answerCurrentQuestion(page, mode = 'correct') {
   assert(await page.locator('.question-first-reading').isVisible(), `${question.questionId}: reading material is not visible`)
   assert(await page.getByRole('button', { name: 'Check Answer', exact: true }).count() === 1, `${question.questionId}: expected one Check Answer action`)
   await selectAnswer(page, question, mode)
+  const beforeSubmit = await readProgress(page)
+  const beforeSubmitRevision = beforeSubmit.activeLessonSession?.checkpointRevision ?? 0
   const check = page.getByRole('button', { name: 'Check Answer', exact: true })
   assert(await check.isEnabled(), `${question.questionId}: Check Answer stayed disabled after a structurally complete response`)
   await check.click()
@@ -430,6 +432,19 @@ async function answerCurrentQuestion(page, mode = 'correct') {
   const result = await feedback.getAttribute('data-result')
   assert(result === (mode === 'correct' ? 'correct' : 'incorrect'), `${question.questionId}: unexpected ${result} feedback for ${mode} response`)
   assert(await page.getByRole('button', { name: 'Next', exact: true }).count() === 1, `${question.questionId}: expected one Next action after feedback`)
+  await page.waitForFunction(({ key, sessionId, questionId, expectedRevision }) => {
+    const raw = localStorage.getItem(key)
+    if (!raw) return false
+    const active = JSON.parse(raw).activeLessonSession
+    return active?.sessionId === sessionId
+      && active.checkpointRevision === expectedRevision
+      && active.submittedQuestions?.some((entry) => entry.questionId === questionId)
+  }, {
+    key: PROGRESS_KEY,
+    sessionId: active.sessionId,
+    questionId: question.questionId,
+    expectedRevision: beforeSubmitRevision + 1,
+  }, { timeout: 15_000 })
   assert((await readProgress(page)).activeLessonSession?.submittedQuestions.some((entry) => entry.questionId === question.questionId), `${question.questionId}: submitted feedback was not persisted`)
   return { sessionId: active.sessionId, lesson, question, result }
 }
@@ -1124,8 +1139,16 @@ async function runRepresentativeCoverage() {
   const fluency = await seedScenario('content-fluency', clone(fluencyFixture.state))
   await fluency.page.getByRole('heading', { name: 'Practice Steps', exact: true }).waitFor({ state: 'visible', timeout: 15_000 })
   const beforeFluency = await readProgress(fluency.page)
-  await fluency.page.getByRole('button', { name: 'I Practiced the Phrases', exact: true }).click()
-  await fluency.page.getByRole('button', { name: 'Read It Once', exact: true }).click()
+  await performAcceptedDraftAction(
+    fluency.page,
+    () => fluency.page.getByRole('button', { name: 'I Practiced the Phrases', exact: true }).click(),
+    'fluency phrase-practice checkpoint',
+  )
+  await performAcceptedDraftAction(
+    fluency.page,
+    () => fluency.page.getByRole('button', { name: 'Read It Once', exact: true }).click(),
+    'fluency reread checkpoint',
+  )
   const afterFluency = await readProgress(fluency.page)
   assert(afterFluency.completedAttempts.length === beforeFluency.completedAttempts.length, 'fluency practice rendered as a completed attempt')
   assert(afterFluency.activeLessonSession?.fluencyPracticeState?.phrasePracticeCompleted === true, 'fluency phrase practice was not checkpointed')
