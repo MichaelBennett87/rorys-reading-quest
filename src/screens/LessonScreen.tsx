@@ -176,6 +176,106 @@ export function LessonScreen({
     actionLockedRef.current = false
   }, [currentIndex, step])
 
+  useEffect(() => {
+    if (lesson.lessonRole === 'FLUENCY_PRACTICE') {
+      return
+    }
+
+    let stableScrollY = window.scrollY
+    let viewportWidth = window.innerWidth
+    let viewportHeight = window.innerHeight
+    let zeroScrollTimer: number | null = null
+    let firstRestoreFrame: number | null = null
+    let secondRestoreFrame: number | null = null
+    let restoringViewport = false
+
+    const viewportChanged = () => (
+      window.innerWidth !== viewportWidth || window.innerHeight !== viewportHeight
+    )
+
+    const clearZeroScrollTimer = () => {
+      if (zeroScrollTimer !== null) {
+        window.clearTimeout(zeroScrollTimer)
+        zeroScrollTimer = null
+      }
+    }
+
+    const scheduleViewportRestore = () => {
+      if (!viewportChanged()) {
+        return
+      }
+
+      clearZeroScrollTimer()
+      restoringViewport = true
+      const targetScrollY = stableScrollY
+
+      if (firstRestoreFrame !== null) {
+        window.cancelAnimationFrame(firstRestoreFrame)
+      }
+      if (secondRestoreFrame !== null) {
+        window.cancelAnimationFrame(secondRestoreFrame)
+      }
+
+      firstRestoreFrame = window.requestAnimationFrame(() => {
+        secondRestoreFrame = window.requestAnimationFrame(() => {
+          const maximumScrollY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight)
+          if (targetScrollY > 0 && maximumScrollY > 0) {
+            window.scrollTo({
+              top: Math.min(targetScrollY, maximumScrollY),
+              behavior: 'auto',
+            })
+          }
+
+          viewportWidth = window.innerWidth
+          viewportHeight = window.innerHeight
+          stableScrollY = window.scrollY
+          restoringViewport = false
+          firstRestoreFrame = null
+          secondRestoreFrame = null
+        })
+      })
+    }
+
+    const handleScroll = () => {
+      if (restoringViewport) {
+        return
+      }
+      if (viewportChanged()) {
+        scheduleViewportRestore()
+        return
+      }
+
+      if (window.scrollY > 0) {
+        clearZeroScrollTimer()
+        stableScrollY = window.scrollY
+        return
+      }
+
+      clearZeroScrollTimer()
+      zeroScrollTimer = window.setTimeout(() => {
+        if (!viewportChanged() && !restoringViewport) {
+          stableScrollY = 0
+        }
+        zeroScrollTimer = null
+      }, 250)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('resize', scheduleViewportRestore)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', scheduleViewportRestore)
+      clearZeroScrollTimer()
+      if (firstRestoreFrame !== null) {
+        window.cancelAnimationFrame(firstRestoreFrame)
+      }
+      if (secondRestoreFrame !== null) {
+        window.cancelAnimationFrame(secondRestoreFrame)
+      }
+    }
+  }, [currentQuestion?.questionId, lesson.lessonRole, session?.sessionId])
+
   if (lesson.lessonRole === 'FLUENCY_PRACTICE') {
     return (
       <FluencyPracticeScreen
