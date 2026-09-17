@@ -1,4 +1,4 @@
-name: Deploy Rory's Reading Quest to GitHub Pages
+name: Verify and deploy Rory's Reading Quest
 
 on:
   push:
@@ -8,43 +8,156 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
   cancel-in-progress: true
 
+env:
+  NODE_VERSION: 22
+  RELEASE_ARTIFACT: rrq-tested-release
+
 jobs:
-  build:
+  quality_build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
       - run: npm ci
 
+      - name: Quality, semantic, and unit gates
+        run: |
+          npm run lint
+          npm run typecheck
+          npm run test
+          npm run audit:answer-uniqueness
+
       - uses: actions/configure-pages@v5
 
-      - run: npm run build
+      - name: Build production artifact once
+        run: npm run build
 
-      - uses: actions/upload-pages-artifact@v3
+      - name: Bind build manifest to source and assets
+        run: >-
+          npm run release:manifest --
+          --commit "${GITHUB_SHA}"
+          --run-id "${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+
+      - name: Stage immutable release artifact
+        run: |
+          mkdir -p release-artifact
+          cp -R dist release-artifact/dist
+          cp .artifacts/browser/build-manifest.json release-artifact/build-manifest.json
+
+      - uses: actions/upload-artifact@v4
         with:
-          path: ./dist
+          name: ${{ env.RELEASE_ARTIFACT }}
+          path: release-artifact
+          if-no-files-found: error
+          retention-days: 3
+
+  native_browser:
+    needs: quality_build
+    runs-on: windows-2025
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - run: npm ci
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.RELEASE_ARTIFACT }}
+          path: release-artifact
+
+      - name: Verify native Edge and tested build
+        shell: pwsh
+        run: >-
+          npm run test:browser --
+          --dist release-artifact/dist
+          --manifest release-artifact/build-manifest.json
+          --commit $env:GITHUB_SHA
+          --require-existing-manifest
+
+      - name: Upload sanitized local-browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rrq-native-browser-evidence-${{ github.run_attempt }}
+          path: .artifacts/browser/run-*/
+          if-no-files-found: warn
+          retention-days: 7
 
   deploy:
+    needs: native_browser
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
-    runs-on: ubuntu-latest
-    needs: build
-
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.RELEASE_ARTIFACT }}
+          path: release-artifact
+
+      - uses: actions/configure-pages@v5
+
+      - name: Upload the exact browser-tested Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: release-artifact/dist
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  deployed_browser:
+    needs: deploy
+    runs-on: windows-2025
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - run: npm ci
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.RELEASE_ARTIFACT }}
+          path: release-artifact
+
+      - name: Verify the exact deployed commit and assets in native Edge
+        shell: pwsh
+        run: >-
+          npm run verify:deployed --
+          --commit $env:GITHUB_SHA
+          --manifest release-artifact/build-manifest.json
+          --dist release-artifact/dist
+          --url "${{ needs.deploy.outputs.page_url }}"
+
+      - name: Upload sanitized deployed-browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rrq-deployed-browser-evidence-${{ github.run_attempt }}
+          path: .artifacts/browser/run-*/
+          if-no-files-found: warn
+          retention-days: 7

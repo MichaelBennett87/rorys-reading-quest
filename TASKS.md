@@ -209,3 +209,13 @@ Current semantic checkpoint: all 1,611 blind conclusions are frozen, 42 current 
 - [x] Restrict verification and remediation unit/version affinity to a completed attempt from the same skill and difficulty.
 - [x] Recover stored false no-content plans automatically and recheck genuine idle pages on foreground, page restoration, and newer same-origin storage events without polling.
 - [x] Derive launchability coverage for every current track, ordinary difficulty, topic handoff, and genuine final-completion boundary while preserving comprehension-first ordering and deferred Word Forge history.
+
+## Native browser release gate
+
+- [x] Promote the accepted native Edge harness into repository-owned, lockfile-managed infrastructure without adding a production dependency.
+- [x] Bind local and deployed browser evidence to a full source SHA, complete production-file hashes, and a manifest digest.
+- [x] Require the seven-completion comprehension journey and real Edge process restarts with one isolated persistent profile.
+- [x] Require remediation, stranded-save, historical-review, persistence-failure, stale-state, rejected-completion, genuine-completion, all-question-type, parent/print, and responsive scenarios.
+- [x] Make missing Edge, zero scenarios, skipped required scenarios, deliberate assertion failure, or artifact mismatch fail closed.
+- [x] Enforce quality plus one build, native acceptance, exact-artifact Pages deployment, and separate deployed acceptance in the Pages workflow.
+- [x] Keep generated profiles, answer-driving fixtures, screenshots, and reports outside Git and the Pages artifact.

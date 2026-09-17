@@ -12,7 +12,11 @@
     "audit:answer-uniqueness": "node scripts/audit-answer-uniqueness.mjs",
     "audit:answer-uniqueness:second-pass": "node scripts/export-answer-uniqueness-second-pass.mjs",
     "audit:question-truth-ledgers": "node scripts/generate-question-truth-ledgers.mjs",
-    "verify:release": "npm run lint && npm run typecheck && npm run test && npm run audit:answer-uniqueness && npm run build",
+    "release:manifest": "node scripts/browser/create-build-manifest.mjs",
+    "test:browser:contracts": "node --test browser-tests/release-gate.contract.mjs",
+    "test:browser": "npm run test:browser:contracts && node scripts/browser/run-browser-acceptance.mjs --mode local",
+    "verify:deployed": "node scripts/browser/run-browser-acceptance.mjs --mode deployed",
+    "verify:release": "npm run lint && npm run typecheck && npm run test && npm run audit:answer-uniqueness && npm run build && npm run test:browser",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -27,6 +31,7 @@
     "@vitejs/plugin-react": "^6.0.4",
     "jsdom": "^30.0.1",
     "oxlint": "^1.75.0",
+    "playwright-core": "1.62.1",
     "typescript": "~6.0.2",
     "vite": "^8.2.0",
     "vitest": "^3.2.4"
