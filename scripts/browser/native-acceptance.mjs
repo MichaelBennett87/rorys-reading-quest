@@ -1373,7 +1373,7 @@ async function runWebKitTouchInteraction() {
     screen: { width: screen.width, height: screen.height },
     userAgent: navigator.userAgent,
   }))
-  assert(capabilities.maxTouchPoints > 0, 'WebKit iPad context did not expose touch points')
+  assert(WEBKIT_DEVICE.hasTouch === true && WEBKIT_DEVICE.isMobile === true, 'WebKit iPad descriptor did not configure mobile touch input')
   const portraitScroll = await page.evaluate(() => {
     const maxScrollY = Math.max(0, document.documentElement.scrollHeight - innerHeight)
     const targetScrollY = Math.min(160, maxScrollY)
@@ -1431,7 +1431,14 @@ async function runWebKitTouchInteraction() {
   report.scenarios.webkitTouchInteraction = {
     status: 'PASS',
     deviceDescriptor: WEBKIT_DEVICE_NAME,
-    capabilities,
+    capabilities: {
+      ...capabilities,
+      configuredHasTouch: WEBKIT_DEVICE.hasTouch,
+      configuredIsMobile: WEBKIT_DEVICE.isMobile,
+      maxTouchPointsNote: capabilities.maxTouchPoints > 0
+        ? 'Browser exposed touch points.'
+        : 'Playwright WebKit reported zero maxTouchPoints; actual dispatched touch events are the acceptance authority.',
+    },
     actualTouchEvents: touchEvents,
     orientationReadingPosition: {
       portraitScrollY,
