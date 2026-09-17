@@ -73,6 +73,22 @@ function perfectResult(lesson: LessonDefinition): LessonResult {
   }
 }
 
+function unsuccessfulResult(lesson: LessonDefinition): LessonResult {
+  const result = perfectResult(lesson)
+  return {
+    ...result,
+    correctAnswers: 0,
+    firstAttemptCorrect: 0,
+    accuracy: 0,
+    questionResults: result.questionResults.map((question) => ({
+      ...question,
+      isCorrect: false,
+      isFirstAttemptCorrect: false,
+      submittedAnswer: 'audited-incorrect-answer',
+    })),
+  }
+}
+
 function completedAttempt(lesson: LessonDefinition): CompletedLessonAttempt {
   return {
     attemptId: `attempt-${lesson.activityId}`,
@@ -116,6 +132,63 @@ function markTrackComplete(state: QuestProgressV1, trackIndex: number) {
 }
 
 describe('P0 false Reading Rest handoffs', () => {
+  test('launches same-unit guided remediation after a failed Story Map checkpoint', () => {
+    const lesson = resolveLesson((candidate) => (
+      candidate.activityId === 'activity-story-map-checkpoint-a'
+      && candidate.skillId === STORY_SKILL
+      && candidate.difficulty === 1
+    ))
+    const state = createDefaultQuestProgress(NOW)
+    state.skillProgress[STORY_SKILL] = createInitialSkillProgress(STORY_SKILL, 1, 0)
+    state.activeLessonSession = createActiveLessonSession(
+      lesson,
+      'story-map-remediation-handoff',
+      NOW,
+      { purpose: 'progression' },
+    )
+    store(state)
+
+    const firstVisit = renderHook(() => useQuestProgress())
+    let outcome!: ReturnType<typeof firstVisit.result.current.completeLesson>
+    act(() => {
+      outcome = firstVisit.result.current.completeLesson(
+        unsuccessfulResult(lesson),
+        'story-map-remediation-handoff',
+      )
+    })
+
+    expect(outcome.persisted).toBe(true)
+    expect(outcome.kind).toBe('GUIDED_PRACTICE')
+    expect(outcome.nextQuest).toMatchObject({
+      status: 'available',
+      purpose: 'remediation',
+      lesson: {
+        skillId: STORY_SKILL,
+        unitId: 'ss-unit-1',
+        difficulty: 1,
+      },
+    })
+    expect(firstVisit.result.current.progress.skillProgress[STORY_SKILL].currentLearningState)
+      .toBe('GUIDED_PRACTICE')
+    firstVisit.unmount()
+
+    const reopened = renderHook(() => useQuestProgress())
+    let launch!: ReturnType<typeof reopened.result.current.prepareJourneyLaunch>
+    act(() => {
+      launch = reopened.result.current.prepareJourneyLaunch()
+    })
+
+    expect(launch.status).toBe('start')
+    if (launch.status !== 'start') throw new Error('Expected guided remediation to start after reload.')
+    expect(launch.lesson).toMatchObject({
+      skillId: STORY_SKILL,
+      unitId: 'ss-unit-1',
+      difficulty: 1,
+      lessonRole: 'GUIDED_PRACTICE',
+    })
+    expect(launch.session.launchContext).toMatchObject({ purpose: 'remediation' })
+  })
+
   test('a declined stale completion preserves the authoritative active session for recovery', () => {
     const lesson = resolveLesson((candidate) => (
       candidate.skillId === STORY_SKILL

@@ -33,7 +33,7 @@ const STORY_MAP_BASE = {
 export const storyMapGuidedQuestions: ReadingQuestion[] = [
   createMultipleChoiceQuestion({
     ...STORY_MAP_BASE,
-    difficulty: 0,
+    difficulty: 1,
     passageIdentifier: STORY_MAP_PASSAGE_IDS.trailCleanup,
     lessonIdentifier: STORY_MAP_LESSON_IDS.guidedC,
     activityIdentifier: 'activity-story-map-guided-c',
@@ -54,7 +54,7 @@ export const storyMapGuidedQuestions: ReadingQuestion[] = [
   }),
   createMultipleChoiceQuestion({
     ...STORY_MAP_BASE,
-    difficulty: 0,
+    difficulty: 1,
     passageIdentifier: STORY_MAP_PASSAGE_IDS.trailCleanup,
     lessonIdentifier: STORY_MAP_LESSON_IDS.guidedC,
     activityIdentifier: 'activity-story-map-guided-c',
@@ -75,7 +75,7 @@ export const storyMapGuidedQuestions: ReadingQuestion[] = [
   }),
   createMultiselectQuestion({
     ...STORY_MAP_BASE,
-    difficulty: 0,
+    difficulty: 1,
     passageIdentifier: STORY_MAP_PASSAGE_IDS.trailCleanup,
     lessonIdentifier: STORY_MAP_LESSON_IDS.guidedC,
     activityIdentifier: 'activity-story-map-guided-c',
@@ -99,7 +99,7 @@ export const storyMapGuidedQuestions: ReadingQuestion[] = [
   }),
   createHotTextQuestion({
     ...STORY_MAP_BASE,
-    difficulty: 0,
+    difficulty: 1,
     passageIdentifier: STORY_MAP_PASSAGE_IDS.trailCleanup,
     lessonIdentifier: STORY_MAP_LESSON_IDS.guidedC,
     activityIdentifier: 'activity-story-map-guided-c',
@@ -136,7 +136,7 @@ export const storyMapGuidedQuestions: ReadingQuestion[] = [
   }),
   createTableMatchQuestion({
     ...STORY_MAP_BASE,
-    difficulty: 0,
+    difficulty: 1,
     passageIdentifier: STORY_MAP_PASSAGE_IDS.trailCleanup,
     lessonIdentifier: STORY_MAP_LESSON_IDS.guidedC,
     activityIdentifier: 'activity-story-map-guided-c',
@@ -187,7 +187,7 @@ export const storyMapGuidedQuestions: ReadingQuestion[] = [
 
   createMultipleChoiceQuestion({
     ...STORY_MAP_BASE,
-    difficulty: 0,
+    difficulty: 1,
     passageIdentifier: STORY_MAP_PASSAGE_IDS.birdBoxStorm,
     lessonIdentifier: STORY_MAP_LESSON_IDS.guidedD,
     activityIdentifier: 'activity-story-map-guided-d',
@@ -208,7 +208,7 @@ export const storyMapGuidedQuestions: ReadingQuestion[] = [
   }),
   createMultipleChoiceQuestion({
     ...STORY_MAP_BASE,
-    difficulty: 0,
+    difficulty: 1,
     passageIdentifier: STORY_MAP_PASSAGE_IDS.birdBoxStorm,
     lessonIdentifier: STORY_MAP_LESSON_IDS.guidedD,
     activityIdentifier: 'activity-story-map-guided-d',
@@ -229,7 +229,7 @@ export const storyMapGuidedQuestions: ReadingQuestion[] = [
   }),
   createMultiselectQuestion({
     ...STORY_MAP_BASE,
-    difficulty: 0,
+    difficulty: 1,
     passageIdentifier: STORY_MAP_PASSAGE_IDS.birdBoxStorm,
     lessonIdentifier: STORY_MAP_LESSON_IDS.guidedD,
     activityIdentifier: 'activity-story-map-guided-d',
@@ -253,7 +253,7 @@ export const storyMapGuidedQuestions: ReadingQuestion[] = [
   }),
   createHotTextQuestion({
     ...STORY_MAP_BASE,
-    difficulty: 0,
+    difficulty: 1,
     passageIdentifier: STORY_MAP_PASSAGE_IDS.birdBoxStorm,
     lessonIdentifier: STORY_MAP_LESSON_IDS.guidedD,
     activityIdentifier: 'activity-story-map-guided-d',
@@ -290,7 +290,7 @@ export const storyMapGuidedQuestions: ReadingQuestion[] = [
   }),
   createTableMatchQuestion({
     ...STORY_MAP_BASE,
-    difficulty: 0,
+    difficulty: 1,
     passageIdentifier: STORY_MAP_PASSAGE_IDS.birdBoxStorm,
     lessonIdentifier: STORY_MAP_LESSON_IDS.guidedD,
     activityIdentifier: 'activity-story-map-guided-d',
