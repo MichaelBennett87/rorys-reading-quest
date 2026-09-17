@@ -27,9 +27,9 @@ describe('Phase 7C2 integration and protected child journey', () => {
     expect(snapshot.rows.filter((row) => row.coverageStatus === 'planned')).toHaveLength(0)
   })
 
-  test('opens directly into one current question without child navigation', () => {
+  test('opens directly into one current question without child navigation', async () => {
     render(<App />)
-    expect(screen.getByText(/Question 1 of/i)).toBeTruthy()
+    expect(await screen.findByText(/Question 1 of/i)).toBeTruthy()
     expect(screen.queryByRole('button', { name: /Start Journey|Parent Area/i })).toBeNull()
     expect(screen.queryByRole('region', { name: 'Your Reading Journey' })).toBeNull()
     expect(screen.getByRole('region', { name: 'Question action' }).querySelectorAll('button')).toHaveLength(1)

@@ -28,9 +28,9 @@ describe('Phase 7C3 integration and protected child journey', () => {
     expect(snapshot.rows.find((row) => row.benchmarkReference === 'ELA.3.R.2.4')).toMatchObject({ coverageStatus: 'implemented' })
   })
 
-  test('opens directly into one current question without child navigation', () => {
+  test('opens directly into one current question without child navigation', async () => {
     render(<App />)
-    expect(screen.getByText(/Question 1 of/i)).toBeTruthy()
+    expect(await screen.findByText(/Question 1 of/i)).toBeTruthy()
     expect(screen.queryByRole('button', { name: /Start Journey|Parent Area/i })).toBeNull()
     expect(screen.queryByRole('region', { name: 'Your Reading Journey' })).toBeNull()
     expect(screen.getByRole('region', { name: 'Question action' }).querySelectorAll('button')).toHaveLength(1)

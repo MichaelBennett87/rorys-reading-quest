@@ -286,11 +286,11 @@ describe('P0 journey state recovery reproduction', () => {
     )
   })
 
-  test('Case G: reload discards a completed active session and automatically launches the current plan', () => {
+  test('Case G: reload discards a completed active session and automatically launches the current plan', async () => {
     window.localStorage.setItem(QUEST_PROGRESS_STORAGE_KEY, JSON.stringify(stateWithCompletedActiveSession()))
     render(<App />)
 
-    expect(screen.getByText(nextLesson.questions[0].prompt)).toBeTruthy()
+    expect(await screen.findByText(nextLesson.questions[0].prompt)).toBeTruthy()
     const stored = JSON.parse(window.localStorage.getItem(QUEST_PROGRESS_STORAGE_KEY)!) as QuestProgressV1
     expect(stored.activeLessonSession?.lessonId).toBe(nextLesson.lessonId)
     expect(stored.completedAttempts).toHaveLength(1)
@@ -298,11 +298,12 @@ describe('P0 journey state recovery reproduction', () => {
     expect(stored.totalStars).toBe(3)
   })
 
-  test('Case H: repeated launch effects create only one active session', () => {
+  test('Case H: repeated launch effects create only one active session', async () => {
     render(<App />)
     fireEvent(window, new HashChangeEvent('hashchange'))
     fireEvent(window, new HashChangeEvent('hashchange'))
 
+    expect(await screen.findByText(firstLesson.questions[0].prompt)).toBeTruthy()
     const stored = JSON.parse(window.localStorage.getItem(QUEST_PROGRESS_STORAGE_KEY)!) as QuestProgressV1
     expect(stored.activeLessonSession).not.toBeNull()
     expect(stored.completedAttempts).toHaveLength(0)
