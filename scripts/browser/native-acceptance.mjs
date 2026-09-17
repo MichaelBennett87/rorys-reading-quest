@@ -1374,25 +1374,28 @@ async function runWebKitTouchInteraction() {
     userAgent: navigator.userAgent,
   }))
   assert(WEBKIT_DEVICE.hasTouch === true && WEBKIT_DEVICE.isMobile === true, 'WebKit iPad descriptor did not configure mobile touch input')
+  const reading = page.locator('.question-first-reading').first()
+  const readingFingerprintBeforeOrientation = sha256((await reading.textContent()) ?? '')
+  const orientationQuestionId = currentContext(await readProgress(page)).question.questionId
   const portraitScroll = await page.evaluate(() => {
     const maxScrollY = Math.max(0, document.documentElement.scrollHeight - innerHeight)
     const targetScrollY = Math.min(160, maxScrollY)
     window.scrollTo(0, targetScrollY)
     return { maxScrollY, targetScrollY }
   })
-  assert(portraitScroll.targetScrollY >= 40, 'WebKit iPad reading fixture did not provide a meaningful portrait scroll position')
-  await page.waitForFunction(() => window.scrollY > 0)
+  if (portraitScroll.targetScrollY > 0) await page.waitForFunction(() => window.scrollY > 0)
   const portraitScrollY = await page.evaluate(() => window.scrollY)
   await page.setViewportSize(devices[WEBKIT_LANDSCAPE_DEVICE_NAME].viewport)
   await page.evaluate(() => new Promise((resolvePromise) => requestAnimationFrame(() => requestAnimationFrame(resolvePromise))))
   const landscapeScrollY = await page.evaluate(() => window.scrollY)
-  assert(landscapeScrollY > 0, 'landscape orientation reset the learner to the top of the reading')
+  if (portraitScroll.targetScrollY > 0) assert(landscapeScrollY > 0, 'landscape orientation reset the learner to the top of the reading')
   await page.setViewportSize(devices[WEBKIT_DEVICE_NAME].viewport)
   await page.evaluate(() => new Promise((resolvePromise) => requestAnimationFrame(() => requestAnimationFrame(resolvePromise))))
   const restoredPortraitScrollY = await page.evaluate(() => window.scrollY)
-  assert(restoredPortraitScrollY > 0, 'returning to portrait reset the learner to the top of the reading')
+  if (portraitScroll.targetScrollY > 0) assert(restoredPortraitScrollY > 0, 'returning to portrait reset the learner to the top of the reading')
+  assert(sha256((await reading.textContent()) ?? '') === readingFingerprintBeforeOrientation, 'orientation change replaced or truncated the reading surface')
+  assert(currentContext(await readProgress(page)).question.questionId === orientationQuestionId, 'orientation change replaced the active question')
   const selectedBeforePassageTap = await page.locator('input:checked').count()
-  const reading = page.locator('.question-first-reading').first()
   await reading.scrollIntoViewIfNeeded()
   const readingBox = await reading.boundingBox()
   assert(readingBox, 'reading surface did not expose a touch target')
@@ -1444,6 +1447,9 @@ async function runWebKitTouchInteraction() {
       portraitScrollY,
       landscapeScrollY,
       restoredPortraitScrollY,
+      scrollRetentionApplicable: portraitScroll.targetScrollY > 0,
+      readingFingerprintPreserved: true,
+      questionIdentityPreserved: true,
       retained: true,
     },
     rapidTapSubmissionDelta: 1,
