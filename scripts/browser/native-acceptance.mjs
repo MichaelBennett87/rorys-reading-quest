@@ -324,11 +324,12 @@ async function viewportOf(page) {
 
 async function waitForSettledScreen(page) {
   await page.waitForFunction(() => {
+    const statusHeading = document.querySelector('.question-first-status h1')?.textContent?.trim()
     return Boolean(
       document.querySelector('.question-first-shell')
-      || document.querySelector('.question-first-status')
       || document.querySelector('.parent-access-shell')
       || document.querySelector('.parent-dashboard-shell')
+      || (statusHeading && statusHeading !== 'Finding your next reading question...')
       || [...document.querySelectorAll('button')].some((button) => button.textContent?.trim() === 'Retry'),
     )
   }, undefined, { timeout: 30_000 })
@@ -694,6 +695,7 @@ async function runReleaseUpgrade() {
   assert(TEST_MODE === 'local' && IS_WEBKIT, 'release-upgrade runs only in local WebKit acceptance')
   assert(PREVIOUS_URL && SWITCH_TO_CANDIDATE_URL, 'release-upgrade requires the previous release and candidate switch endpoint')
   let handle = await launchProfile('release-upgrade')
+  await handle.page.locator('.question-first-shell').waitFor({ state: 'visible', timeout: 30_000 })
   const previousInitial = await readProgress(handle.page)
   assert(previousInitial.completedAttempts.length === 0, 'release-upgrade profile was not initially empty')
   const earned = await completeCurrentLesson(handle.page, 'correct', 'accepted')
