@@ -9,7 +9,9 @@ import {
 } from '../persistence'
 import { LessonScreen } from '../screens/LessonScreen'
 import { ParentPlaceholderScreen } from '../screens/ParentPlaceholderScreen'
+import { WritingPilotScreen } from '../screens/WritingPilotScreen'
 import { type ProgressionOutcomeViewModel, useQuestProgress } from './useQuestProgress'
+import { useWritingPilot } from './useWritingPilot'
 
 interface LessonLaunchState {
   lesson: LessonDefinition | null
@@ -18,7 +20,7 @@ interface LessonLaunchState {
   retryable: boolean
 }
 
-type QuestionFirstScreen = 'loading' | 'lesson_run' | 'rest' | 'load_error' | 'parent_gate'
+type QuestionFirstScreen = 'loading' | 'lesson_run' | 'writing_pilot' | 'rest' | 'load_error' | 'parent_gate'
 
 function isParentRoute() {
   return typeof window !== 'undefined' && window.location.hash.toLowerCase() === '#/parent'
@@ -26,6 +28,7 @@ function isParentRoute() {
 
 export function AppShell() {
   const questProgress = useQuestProgress()
+  const writingPilot = useWritingPilot()
   const [screen, setScreen] = useState<QuestionFirstScreen>(() => isParentRoute() ? 'parent_gate' : 'loading')
   const [lessonState, setLessonState] = useState<LessonLaunchState>({
     lesson: null,
@@ -36,6 +39,7 @@ export function AppShell() {
   const [outcome, setOutcome] = useState<ProgressionOutcomeViewModel | null>(null)
   const journeyLaunchPendingRef = useRef(false)
   const prepareJourneyLaunchRef = useRef(questProgress.prepareJourneyLaunchCoordinated)
+  const writingPilotRef = useRef(writingPilot)
   const storageNotice = ['unavailable', 'invalid_json', 'unsupported_version', 'invalid_state', 'conflict', 'write_blocked', 'storage_error']
     .includes(questProgress.storageStatus)
     ? 'This browser could not safely update saved progress. Your earlier saved work was left unchanged.'
@@ -49,13 +53,19 @@ export function AppShell() {
     prepareJourneyLaunchRef.current = questProgress.prepareJourneyLaunchCoordinated
   }, [questProgress.prepareJourneyLaunchCoordinated])
 
+  useEffect(() => {
+    writingPilotRef.current = writingPilot
+  }, [writingPilot])
+
   const launchCurrentJourney = useCallback(async () => {
     if (journeyLaunchPendingRef.current) return
     journeyLaunchPendingRef.current = true
     const decision = await prepareJourneyLaunchRef.current()
     if (decision.status === 'resume' || decision.status === 'start') {
       setLessonState({ lesson: decision.lesson, session: decision.session, errors: [], retryable: true })
-      setScreen('lesson_run')
+      const pendingWriting = writingPilotRef.current.pendingRecord
+        && writingPilotRef.current.state.settings.enabled
+      setScreen(pendingWriting ? 'writing_pilot' : 'lesson_run')
       return
     }
     if (decision.status === 'content_needed') {
@@ -85,6 +95,8 @@ export function AppShell() {
     completionId: string,
     expectedCheckpointRevision: number,
   ) => {
+    const completedLesson = lessonState.lesson
+    const completedPurpose = lessonState.session?.launchContext?.purpose ?? 'progression'
     const nextOutcome = await questProgress.completeLessonCoordinated(
       result,
       completionId,
@@ -102,6 +114,14 @@ export function AppShell() {
     }
     journeyLaunchPendingRef.current = false
     await launchCurrentJourney()
+    if (completedLesson) {
+      const scheduled = await writingPilotRef.current.scheduleAfterReading({
+        lesson: completedLesson,
+        purpose: completedPurpose,
+        sourceCompletionId: completionId,
+      })
+      if (scheduled) setScreen('writing_pilot')
+    }
   }
 
   useEffect(() => {
@@ -173,8 +193,26 @@ export function AppShell() {
     return (
       <ParentPlaceholderScreen
         progress={questProgress.progress}
+        writingPilot={writingPilot}
         onBack={() => {
           window.location.hash = ''
+        }}
+      />
+    )
+  }
+
+  if (screen === 'writing_pilot') {
+    return (
+      <WritingPilotScreen
+        controller={writingPilot}
+        onFinished={() => {
+          if (lessonState.lesson && lessonState.session) {
+            setScreen('lesson_run')
+            return
+          }
+          journeyLaunchPendingRef.current = false
+          setScreen('loading')
+          void launchCurrentJourney()
         }}
       />
     )

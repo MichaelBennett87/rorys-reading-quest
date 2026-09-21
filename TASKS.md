@@ -242,3 +242,18 @@ Release acceptance remains SHA-specific: this checklist does not replace `npm ru
 - [x] Preserve curriculum, semantic ledgers, progression, rewards, reviews, schema version 1, Parent PIN records, and assessments.
 
 Playwright WebKit on macOS with an iPad descriptor is required automated Safari-relevant coverage. It is not physical-iPad, shipping-Safari, VoiceOver, or Rory-device certification. Release acceptance remains source-SHA and artifact-digest specific.
+
+## Parent-enabled Read & Write pilot
+
+- [x] Keep the six supplemental DRAFT activities separate from the 1,611 scored reading questions.
+- [x] Add bounded normalized-ink capture, keyboard fallback, transcription confirmation, and parent-review fallback.
+- [x] Keep writing records in a separate versioned store with retention, record, stroke, point, revision, and late-response limits.
+- [x] Add PIN-gated Writing Review controls for consent, transcription correction, suggestion disposition, review status, deletion, and external disablement.
+- [x] Add a fixed protected-service contract with server-owned rubrics, installation authorization, approved-retention checks, request deduplication, and finite budget enforcement.
+- [x] Require the mocked, synthetic `read-write-pilot` scenario in Edge and WebKit release reports.
+- [ ] Deploy and review a protected inference service outside GitHub Pages.
+- [ ] Verify the selected provider project's applicable child-data retention approval; `store: false` alone is not approval.
+- [ ] Configure a finite parent-approved service budget and approved-installation issuance/revocation.
+- [ ] Run one authorized live canary with non-child synthetic ink and record actual observed recognition/evaluation errors and spend.
+
+External status: `EXTERNAL ACTIVATION PENDING`. Ordinary reading remains fully local and available with the pilot disabled.

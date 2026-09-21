@@ -3,6 +3,7 @@ import type { ParentDashboardView } from '../../screens/parent/parentDashboardVi
 interface ParentDashboardNavProps {
   activeView: ParentDashboardView
   onChangeView: (view: ParentDashboardView) => void
+  showWriting?: boolean
 }
 
 const views: Array<{ id: ParentDashboardView; label: string }> = [
@@ -14,10 +15,11 @@ const views: Array<{ id: ParentDashboardView; label: string }> = [
   { id: 'assessments', label: 'Assessments' },
 ]
 
-export function ParentDashboardNav({ activeView, onChangeView }: ParentDashboardNavProps) {
+export function ParentDashboardNav({ activeView, onChangeView, showWriting = false }: ParentDashboardNavProps) {
+  const visibleViews = showWriting ? [...views, { id: 'writing' as const, label: 'Writing Review' }] : views
   return (
     <nav className="card parent-dashboard-nav" aria-label="Parent dashboard views">
-      {views.map((view) => (
+      {visibleViews.map((view) => (
         <button
           key={view.id}
           type="button"

@@ -24,13 +24,15 @@ import { createBrowserParentPinService, type ParentPinRecord, type ParentPinServ
 import { createBrowserPrintService, type PrintService } from '../services/printing'
 import { ParentDashboardScreen } from './parent/ParentDashboardScreen'
 import type { ParentAssessmentMutationResult } from './parent/parentAssessmentActions'
+import type { WritingPilotController } from '../app/useWritingPilot'
 
 interface ParentPlaceholderScreenProps {
   progress: QuestProgressV1
+  writingPilot: WritingPilotController
   onBack: () => void
 }
 
-export function ParentPlaceholderScreen({ progress, onBack }: ParentPlaceholderScreenProps) {
+export function ParentPlaceholderScreen({ progress, writingPilot, onBack }: ParentPlaceholderScreenProps) {
   const [now] = useState(() => new Date().toISOString())
   const [pinService] = useState<ParentPinService>(() => createBrowserParentPinService())
   const [assessmentIdService] = useState<AssessmentIdService>(() => createBrowserAssessmentIdService())
@@ -305,6 +307,7 @@ export function ParentPlaceholderScreen({ progress, onBack }: ParentPlaceholderS
     return (
       <ParentDashboardScreen
         progress={progress}
+        writingPilot={writingPilot}
         dashboard={dashboard}
         recordsState={recordsState}
         storageNotice={storageNotice}

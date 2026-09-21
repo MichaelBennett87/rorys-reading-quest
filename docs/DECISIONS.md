@@ -629,3 +629,17 @@ Decision: a rejected lesson result is a recoverable completion error, not saved 
 Decision: verification and remediation affinity may use only the latest completed attempt from the same skill and current difficulty. Never carry the globally latest attempt's unit or content version into another skill. A genuinely idle page may recheck on `pageshow`, return to visible state, or a newer same-origin progress storage event; no polling or background writes are added.
 
 Consequence: schema version 1, storage keys, thresholds, rewards, review intervals, question-first navigation, comprehension-first ordering, Word Forge deferral, curriculum inventory, Parent PIN, assessments, and local-only privacy remain unchanged. Phase 8 remains unstarted.
+
+## 2026-09-21 - Parent-enabled Read & Write pilot
+
+Decision: add six supplemental DRAFT, passage-bound writing activities without changing the scored reading registry, curriculum order, progression, mastery, reviews, attempts, XP, or stars.
+
+Decision: keep the pilot off by default. A parent may enable the local ink and review path behind Parent Area, but external processing requires a separate protected-service installation session. The local PIN and consent checkbox are not remote authorization.
+
+Decision: store normalized ink and writing provenance under `rorys-reading-quest.writing-pilot.v1`, bounded to 18 records and 30 days. The schema-v1 reading, Parent PIN, and assessment stores remain unchanged.
+
+Decision: implement one server-only OpenAI adapter and keep it inactive until a reviewed host, approved retention controls, provider secret, finite budget, and live non-child synthetic canary exist. `store: false` is required but is not treated as Zero Data Retention approval.
+
+Decision: recognition sees ink and layout only; evaluation sees confirmed untrusted text plus the source and server-owned rubric. Results remain advisory and cannot call reading progression or reward transitions.
+
+Decision: extend the existing mandatory Edge and WebKit artifact-bound gate with a synthetic, mocked `read-write-pilot` scenario. CI performs no paid inference and does not claim physical stylus or Rory-handwriting accuracy.

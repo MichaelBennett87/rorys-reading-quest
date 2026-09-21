@@ -229,3 +229,16 @@ The Story Map pack keeps stable pack, track, skill, unit, lesson, activity, pass
 `ActiveLessonSession` may carry an optional `ActiveLessonLaunchContext`. The context records the authoritative launch purpose and, for a spaced review, the exact grade-aware skill, historical difficulty, unit, content version, review step, due time, and return learning state selected from the queue. The optional field is backward-compatible inside schema version 1: legacy sessions without it remain ordinary launches and receive no review authority.
 
 Review recovery fails closed unless the registered lesson, persisted launch context, and exactly one resolved review-queue entry agree. Save checkpoints may advance question state but may not replace the launch context. Review completion uses a dedicated transition rather than adapting the result to the track's current difficulty. It records the completed attempt and existing exact-once rewards, updates recency for deterministic recycling, and replaces only the exact queue entry through the unchanged review-spacing policy. Current difficulty, last mastered difficulty, qualifying evidence, failure counters, remediation context, chapter completion, unrelated reviews, Parent PIN data, and assessments are preserved.
+
+## Parent-enabled Read & Write pilot boundary
+
+The current architecture adds one optional supplemental layer without changing reading authority:
+
+- `AppShell` completes and persists a reading lesson, prepares the next authoritative reading session, and only then may show one pending writing activity. Writing `Next` reveals that session.
+- `useWritingPilot` owns a separate schema-v1 local state. It has no reference to reading progression, reward, review, or assessment mutation APIs.
+- normalized strokes, drafts, request identities, transcription, bounded feedback, and parent provenance are stored under `rorys-reading-quest.writing-pilot.v1` with a short Web Lock and compare-before-write revision.
+- `WritingPilotScreen` keeps the existing passage visible and uses one state-dependent primary action. `WritingReviewView` is reachable only after the existing Parent PIN gate.
+- browser requests use a fixed service base and credentialed protected session. Server code resolves the source and rubric from its own catalog, rejects browser model/URL/rubric authority, reserves a finite budget before inference, and deduplicates request identities.
+- the OpenAI adapter is server-only. It has no tools, web access, persistent conversation, file, or vector-store state. Recognition and educational evaluation are separate calls.
+
+This is the narrow exception to older historical statements that no backend or live AI existed. Ordinary reading remains local and the protected writing service is not deployed or activated in the current environment.

@@ -14,6 +14,7 @@ import type {
 import type { QuestProgressV1 } from '../../persistence'
 import type { ParentRecordsState } from '../../persistence/parentRecordsStore'
 import type { PrintService } from '../../services/printing'
+import type { WritingPilotController } from '../../app/useWritingPilot'
 import { ChildButton } from '../../components/ChildButton'
 import {
   AccuracyMeter,
@@ -26,6 +27,7 @@ import {
 } from '../../components/parent'
 import { ParentAssessmentsView } from './ParentAssessmentsView'
 import { ParentPrintSummaryView } from './ParentPrintSummaryView'
+import { WritingReviewView } from './WritingReviewView'
 import {
   describePlannedRoute,
   FOUNDATIONAL_SKILLS_BRIDGE_NOTE,
@@ -50,6 +52,7 @@ import '../../styles/parent-dashboard.css'
 
 interface ParentDashboardScreenProps {
   progress: QuestProgressV1
+  writingPilot?: WritingPilotController
   dashboard: DashboardSnapshot
   recordsState: ParentRecordsState
   storageNotice?: string | null
@@ -65,6 +68,7 @@ type SessionKey = string
 
 export function ParentDashboardScreen({
   progress,
+  writingPilot,
   dashboard,
   recordsState,
   storageNotice,
@@ -86,6 +90,7 @@ export function ParentDashboardScreen({
   const reviewsHeadingRef = useRef<HTMLHeadingElement>(null)
   const wordHelpHeadingRef = useRef<HTMLHeadingElement>(null)
   const assessmentsHeadingRef = useRef<HTMLHeadingElement>(null)
+  const writingHeadingRef = useRef<HTMLHeadingElement>(null)
   const printSummaryHeadingRef = useRef<HTMLHeadingElement>(null)
   const skillDetailHeadingRef = useRef<HTMLHeadingElement>(null)
   const sessionDetailHeadingRef = useRef<HTMLHeadingElement>(null)
@@ -136,6 +141,10 @@ export function ParentDashboardScreen({
       assessmentsHeadingRef.current?.focus()
       return
     }
+    if (activeView === 'writing') {
+      writingHeadingRef.current?.focus()
+      return
+    }
     if (activeView === 'print-summary') {
       printSummaryHeadingRef.current?.focus()
     }
@@ -181,7 +190,7 @@ export function ParentDashboardScreen({
         onBackToQuest={onBackToQuest}
       />
 
-      <ParentDashboardNav activeView={activeView} onChangeView={handleChangeView} />
+      <ParentDashboardNav activeView={activeView} onChangeView={handleChangeView} showWriting={Boolean(writingPilot)} />
 
       <main className="parent-dashboard-main">
         {activeView === 'overview' && (
@@ -480,6 +489,12 @@ export function ParentDashboardScreen({
             onUpdateAssessment={onUpdateAssessment}
             onDeleteAssessment={onDeleteAssessment}
           />
+        )}
+
+        {activeView === 'writing' && writingPilot && (
+          <div ref={writingHeadingRef} tabIndex={-1}>
+            <WritingReviewView controller={writingPilot} />
+          </div>
         )}
 
         {activeView === 'print-summary' && (

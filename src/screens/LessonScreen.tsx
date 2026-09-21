@@ -479,7 +479,10 @@ export function LessonScreen({
   }
 
   const onSubmit = () => {
-    if (!submissionReady || actionLockedRef.current || checkpointPending) return
+    const alreadySubmitted = sessionRef.current?.submittedQuestions.some(
+      (entry) => entry.questionId === currentQuestion.questionId,
+    ) ?? false
+    if (!submissionReady || alreadySubmitted || actionLockedRef.current || checkpointPending) return
     actionLockedRef.current = true
 
     const payload =

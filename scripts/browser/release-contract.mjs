@@ -19,6 +19,7 @@ export const REQUIRED_BROWSER_SCENARIOS = Object.freeze([
   'question-types-and-content',
   'parent-print-responsive',
   'runtime-health',
+  'read-write-pilot',
 ])
 
 export const REQUIRED_WEBKIT_SCENARIOS = Object.freeze([

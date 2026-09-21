@@ -39,6 +39,7 @@ const SWITCH_TO_CANDIDATE_URL = process.env.RRQ_ACCEPTANCE_SWITCH_TO_CANDIDATE_U
 const PROGRESS_KEY = 'rorys-reading-quest.progress.v1'
 const PARENT_KEY = 'rorys-reading-quest.parent-access.v1'
 const RECORDS_KEY = 'rorys-reading-quest.parent-records.v1'
+const WRITING_KEY = 'rorys-reading-quest.writing-pilot.v1'
 const STORY_SKILL = 'g2-story-scouts-prose'
 const INFORMATION_SKILL = 'g2-information-detectives-reading'
 const WORD_SKILL = 'g2-word-forge-word-practice'
@@ -184,6 +185,61 @@ async function launchProfile(
     locale: 'en-US',
     ...(IS_WEBKIT ? {} : { args: ['--no-first-run', '--no-default-browser-check'] }),
   })
+  if (options.mockWritingService) {
+    const serviceState = options.writingServiceState ?? { calls: [] }
+    options.writingServiceState = serviceState
+    await context.route('**/api/read-write/v1/**', async (route) => {
+      const request = route.request()
+      const path = new URL(request.url()).pathname.split('/').filter(Boolean).at(-1)
+      const body = request.postDataJSON()
+      serviceState.calls.push({ path, requestId: body?.requestId ?? null })
+      if (path === 'activate') {
+        await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({
+          status: 'authorized',
+          installationId: 'synthetic-browser-installation',
+          endpointId: 'rrq-writing-pilot-v1',
+          retentionControl: 'approved_zero_data_retention',
+          approvedAt: new Date().toISOString(),
+          expiresAt: new Date(Date.now() + 3_600_000).toISOString(),
+          budgetLimitMicros: 2_000_000,
+          budgetRemainingMicros: 1_900_000,
+        }) })
+        return
+      }
+      if (path === 'revoke') {
+        await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ revoked: true }) })
+        return
+      }
+      if (path === 'transcribe') {
+        await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({
+          rawTranscription: 'Tia picked up the light wrappers before the wind blew them away.',
+          uncertainties: [],
+          spellingAssessmentSupportable: true,
+          provider: 'mocked',
+        }) })
+        return
+      }
+      if (path === 'evaluate') {
+        const category = (message) => ({ status: 'meets', message, evidenceIds: ['rw-rubric-tia-r1-e1'] })
+        await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({
+          provider: 'mocked',
+          feedback: {
+            understood: 'You explained why Tia acted first.',
+            comprehension: category('The reason matches the story.'),
+            supportingEvidence: category('The response uses the wind detail.'),
+            spelling: category('The words are spelled clearly.'),
+            grammar: category('The sentence is complete.'),
+            capitalizationPunctuation: category('The sentence begins and ends correctly.'),
+            improvements: [],
+            parentReviewRequired: false,
+            uncertaintyReason: null,
+          },
+        }) })
+        return
+      }
+      await route.fulfill({ status: 404, contentType: 'application/json', body: JSON.stringify({ error: 'unknown_route' }) })
+    })
+  }
   await context.addInitScript(() => {
     window.__rrqPageShowEvents = []
     window.addEventListener('pageshow', (event) => {
@@ -327,6 +383,7 @@ async function waitForSettledScreen(page) {
     const statusHeading = document.querySelector('.question-first-status h1')?.textContent?.trim()
     return Boolean(
       document.querySelector('.question-first-shell')
+      || document.querySelector('.writing-pilot-shell')
       || document.querySelector('.parent-access-shell')
       || document.querySelector('.parent-dashboard-shell')
       || (statusHeading && statusHeading !== 'Finding your next reading question...')
@@ -1425,7 +1482,10 @@ async function runWebKitTouchInteraction() {
   await page.locator('.answer-feedback').waitFor({ state: 'visible', timeout: 15_000 })
   const afterRapidTap = await readProgress(page)
   assert(afterRapidTap.activeLessonSession?.currentQuestionIndex === context.active.currentQuestionIndex, 'rapid touch skipped feedback and advanced the question')
-  assert(afterRapidTap.activeLessonSession?.checkpointRevision === beforeRevision + 1, 'rapid touch persisted more than one submission checkpoint')
+  assert(
+    afterRapidTap.activeLessonSession?.checkpointRevision === beforeRevision + 1,
+    `rapid touch persisted more than one submission checkpoint (before ${beforeRevision}, after ${String(afterRapidTap.activeLessonSession?.checkpointRevision)})`,
+  )
   assert(afterRapidTap.activeLessonSession?.submittedQuestions.length === selectedState.activeLessonSession.submittedQuestions.length + 1, 'rapid touch recorded duplicate submitted results')
   assert(await page.getByRole('button', { name: 'Next', exact: true }).count() === 1, 'rapid Check Answer touch did not leave exactly one Next action')
   const touchEvents = await page.evaluate(() => window.__rrqTouchEvents)
@@ -1602,6 +1662,227 @@ async function runWebKitPageRestoration() {
   await closeHandle(handle)
 }
 
+async function runReadWritePilot() {
+  let local = await launchProfile('read-write-local')
+  const defaultRequests = local.runtime.requests.filter((entry) => entry.url.includes('/api/read-write/v1/'))
+  assert(defaultRequests.length === 0, 'disabled writing pilot made an external-processing request')
+  await enableLocalWritingPilot(local.page)
+  const final = await reachFinalFeedback(local.page, 'correct')
+  const beforeBoundary = await readProgress(local.page)
+  await activate(local.page.getByRole('button', { name: 'Next', exact: true }))
+  await local.page.locator('.writing-pilot-shell').waitFor({ state: 'visible', timeout: 30_000 })
+  const afterBoundary = await readProgress(local.page)
+  assert(afterBoundary.completedAttempts.length === beforeBoundary.completedAttempts.length + 1, 'writing boundary did not preserve exactly one reading attempt')
+  assert(afterBoundary.completedSessionCount === beforeBoundary.completedSessionCount + 1, 'writing boundary did not preserve exactly one completed reading session')
+  assert(afterBoundary.activeLessonSession?.sessionId && afterBoundary.activeLessonSession.sessionId !== final.source.sessionId, 'next authoritative reading session was not prepared before writing')
+  assert(await local.page.getByRole('button', { name: 'Check Writing', exact: true }).count() === 1, 'writing screen did not expose one primary Check Writing action')
+  assert(await local.page.getByRole('button', { name: 'Check Answer', exact: true }).count() === 0, 'reading submit action remained visible during writing')
+  await drawWriting(local.page)
+  const savedBeforeRestart = await writingRaw(local.page)
+  assert(savedBeforeRestart?.includes('strokeId'), 'handwriting strokes were not autosaved')
+  await takeShot(local.page, `read-write-${ENGINE}-draft`)
+  local = await restartHandle(local, 'read-write-saved-ink')
+  await local.page.locator('.writing-pilot-shell').waitFor({ state: 'visible', timeout: 15_000 })
+  assert(await writingRaw(local.page) === savedBeforeRestart, 'saved handwriting changed across browser-process restart')
+  await activate(local.page.getByRole('button', { name: 'Check Writing', exact: true }))
+  await local.page.getByText(/saved for parent review/i).waitFor({ state: 'visible', timeout: 15_000 })
+  assert(local.runtime.requests.filter((entry) => entry.url.includes('/api/read-write/v1/')).length === 0, 'local-only writing path contacted the service')
+  await activate(local.page.getByRole('button', { name: 'Next', exact: true }))
+  await assertQuestionFirstShell(local.page)
+  const afterLocal = await readProgress(local.page)
+  assert(afterLocal.completedAttempts.length === afterBoundary.completedAttempts.length, 'writing completion changed reading attempts')
+  assert(afterLocal.totalXp === afterBoundary.totalXp && afterLocal.totalStars === afterBoundary.totalStars, 'writing completion changed reading rewards')
+  await local.page.goto(`${APP_URL}#/parent`, { waitUntil: 'networkidle' })
+  await unlockExistingParent(local.page)
+  await activate(local.page.getByRole('button', { name: 'Writing Review', exact: true }))
+  await local.page.getByRole('heading', { name: 'Writing Review', exact: true }).waitFor({ state: 'visible' })
+  const correction = local.page.getByLabel('Confirmed or parent-corrected transcription').first()
+  await correction.fill('Tia picked up the wrappers before the wind moved them.')
+  await activate(local.page.getByRole('button', { name: 'Save parent correction', exact: true }).first())
+  await activate(local.page.getByRole('button', { name: 'Mark reviewed', exact: true }).first())
+  await activate(local.page.getByRole('button', { name: 'Delete response', exact: true }).first())
+  await local.page.waitForFunction((key) => {
+    const raw = localStorage.getItem(key)
+    return raw && JSON.parse(raw).records?.length === 0
+  }, WRITING_KEY, { timeout: 15_000 })
+  await local.page.getByText('No writing responses are saved on this browser.', { exact: true }).waitFor({ state: 'visible', timeout: 15_000 })
+  assert(await local.page.getByText('No writing responses are saved on this browser.', { exact: true }).count() === 1, 'parent deletion did not reconcile the visible local writing state')
+  await closeHandle(local)
+
+  const mockState = { calls: [] }
+  const mocked = await launchProfile('read-write-mocked', undefined, createRuntimeLog('read-write-mocked'), { mockWritingService: true, writingServiceState: mockState })
+  const writingFixture = createPendingWritingFixture()
+  await writeProgressFixture(mocked.page, fixtures.representatives.questionTypes.MULTIPLE_CHOICE.state, { [WRITING_KEY]: JSON.stringify(writingFixture) })
+  await mocked.page.locator('.writing-pilot-shell').waitFor({ state: 'visible', timeout: 15_000 })
+  await mocked.page.goto(`${APP_URL}#/parent`, { waitUntil: 'networkidle' })
+  await setupParentPin(mocked.page)
+  await activate(mocked.page.getByRole('button', { name: 'Writing Review', exact: true }))
+  await mocked.page.getByLabel('Private activation code').fill('synthetic-parent-code')
+  await activate(mocked.page.getByRole('button', { name: 'Authorize protected processing', exact: true }))
+  await mocked.page.getByText(/authorized for this installation/i).waitFor({ state: 'visible', timeout: 15_000 })
+  await activate(mocked.page.getByRole('button', { name: 'Back to Quest', exact: true }))
+  await mocked.page.locator('.writing-pilot-shell').waitFor({ state: 'visible', timeout: 15_000 })
+  await drawWriting(mocked.page)
+  await mocked.page.evaluate(() => {
+    const button = [...document.querySelectorAll('button')].find((entry) => entry.textContent?.trim() === 'Check Writing')
+    button?.click()
+    button?.click()
+  })
+  await mocked.page.getByRole('button', { name: "That's What I Wrote", exact: true }).waitFor({ state: 'visible', timeout: 15_000 })
+  assert(mockState.calls.filter((entry) => entry.path === 'transcribe').length === 1, 'rapid repeated submission created more than one transcription request')
+  await activate(mocked.page.getByRole('button', { name: "That's What I Wrote", exact: true }))
+  await mocked.page.getByText('Understanding:', { exact: true }).waitFor({ state: 'visible', timeout: 15_000 })
+  assert(await mocked.page.getByText('Spelling:', { exact: true }).count() === 1, 'feedback did not separate spelling')
+  assert(await mocked.page.getByText('Grammar:', { exact: true }).count() === 1, 'feedback did not separate grammar')
+  assert(await mocked.page.getByText('Capitalization and punctuation:', { exact: true }).count() === 1, 'feedback did not separate capitalization and punctuation')
+  assert(mockState.calls.filter((entry) => entry.path === 'evaluate').length === 1, 'confirmed transcription did not make exactly one evaluation request')
+  await takeShot(mocked.page, `read-write-${ENGINE}-feedback`)
+  await activate(mocked.page.getByRole('button', { name: 'Next', exact: true }))
+  await assertQuestionFirstShell(mocked.page)
+  report.scenarios.readWritePilot = {
+    status: 'PASS',
+    defaultOffNoServiceRequests: true,
+    localInkColdRestart: true,
+    pointerMode: IS_WEBKIT ? 'Playwright iPad touch emulation plus pointer events' : 'native Edge mouse pointer',
+    undoAndEraser: true,
+    orientationRedraw: true,
+    parentCorrectionAndDeletion: true,
+    mockedTranscriptionRequests: 1,
+    mockedEvaluationRequests: 1,
+    liveProviderRequests: 0,
+    readingAttemptDelta: 1,
+    writingRewardSideEffects: 0,
+  }
+  await closeHandle(mocked)
+}
+
+async function enableLocalWritingPilot(page) {
+  await page.goto(`${APP_URL}#/parent`, { waitUntil: 'networkidle' })
+  await setupParentPin(page)
+  await activate(page.getByRole('button', { name: 'Writing Review', exact: true }))
+  await activate(page.getByRole('button', { name: /enable local Read & Write/i }))
+  await activate(page.getByRole('button', { name: 'Back to Quest', exact: true }))
+  await assertQuestionFirstShell(page)
+}
+
+async function setupParentPin(page) {
+  await waitForParentRoute(page)
+  if (await page.getByRole('heading', { name: 'Set Up Parent Area', exact: true }).count()) {
+    await page.locator('#parent-pin-new').fill('2468')
+    await page.locator('#parent-pin-confirm').fill('2468')
+    await activate(page.getByRole('button', { name: 'Create Parent PIN', exact: true }))
+    await page.getByRole('button', { name: 'Writing Review', exact: true }).waitFor({ state: 'visible', timeout: 15_000 })
+    return
+  }
+  await unlockExistingParent(page)
+}
+
+async function unlockExistingParent(page) {
+  await waitForParentRoute(page)
+  if (await page.getByRole('heading', { name: 'Unlock Parent Area', exact: true }).count()) {
+    await page.locator('#parent-pin').fill('2468')
+    await activate(page.getByRole('button', { name: 'Unlock', exact: true }))
+    await page.getByRole('button', { name: 'Writing Review', exact: true }).waitFor({ state: 'visible', timeout: 15_000 })
+  }
+}
+
+async function waitForParentRoute(page) {
+  await page.waitForFunction(() => {
+    const heading = document.querySelector('h1, h2')?.textContent?.trim()
+    const writingReview = [...document.querySelectorAll('button')]
+      .some((button) => button.textContent?.trim() === 'Writing Review')
+    return heading === 'Set Up Parent Area'
+      || heading === 'Unlock Parent Area'
+      || writingReview
+  }, undefined, { timeout: 15_000 })
+}
+
+async function drawWriting(page) {
+  const canvas = page.locator('.writing-pad-canvas')
+  await canvas.scrollIntoViewIfNeeded()
+  const box = await canvas.boundingBox()
+  assert(box, 'writing pad did not have a drawable box')
+  if (IS_WEBKIT) {
+    await page.touchscreen.tap(box.x + box.width * 0.2, box.y + box.height * 0.35)
+    await page.touchscreen.tap(box.x + box.width * 0.32, box.y + box.height * 0.35)
+  } else {
+    await page.mouse.move(box.x + box.width * 0.15, box.y + box.height * 0.35)
+    await page.mouse.down()
+    await page.mouse.move(box.x + box.width * 0.55, box.y + box.height * 0.35, { steps: 8 })
+    await page.mouse.up()
+    await page.mouse.move(box.x + box.width * 0.2, box.y + box.height * 0.55)
+    await page.mouse.down()
+    await page.mouse.move(box.x + box.width * 0.6, box.y + box.height * 0.55, { steps: 8 })
+    await page.mouse.up()
+  }
+  await page.waitForFunction((key) => {
+    const raw = localStorage.getItem(key)
+    return raw && JSON.parse(raw).records?.[0]?.strokes?.length > 0
+  }, WRITING_KEY, { timeout: 15_000 })
+  const beforeUndo = JSON.parse(await writingRaw(page)).records[0].strokes.length
+  await activate(page.getByRole('button', { name: 'Undo', exact: true }))
+  await page.waitForFunction(({ key, maximum }) => {
+    const raw = localStorage.getItem(key)
+    return raw && JSON.parse(raw).records[0].strokes.length < maximum
+  }, { key: WRITING_KEY, maximum: beforeUndo })
+  if (IS_WEBKIT) await page.touchscreen.tap(box.x + box.width * 0.45, box.y + box.height * 0.45)
+  else {
+    await page.mouse.move(box.x + box.width * 0.25, box.y + box.height * 0.45)
+    await page.mouse.down()
+    await page.mouse.move(box.x + box.width * 0.5, box.y + box.height * 0.45, { steps: 5 })
+    await page.mouse.up()
+  }
+  await activate(page.getByRole('button', { name: 'Eraser', exact: true }))
+  if (IS_WEBKIT) await page.touchscreen.tap(box.x + box.width * 0.45, box.y + box.height * 0.45)
+  else await page.mouse.click(box.x + box.width * 0.4, box.y + box.height * 0.45)
+  await activate(page.getByRole('button', { name: 'Write', exact: true }))
+  if (IS_WEBKIT) await page.touchscreen.tap(box.x + box.width * 0.6, box.y + box.height * 0.6)
+  else {
+    await page.mouse.move(box.x + box.width * 0.25, box.y + box.height * 0.6)
+    await page.mouse.down()
+    await page.mouse.move(box.x + box.width * 0.55, box.y + box.height * 0.6, { steps: 5 })
+    await page.mouse.up()
+  }
+  const originalViewport = await viewportOf(page)
+  await page.setViewportSize({ width: originalViewport.height, height: originalViewport.width })
+  await page.setViewportSize(originalViewport)
+  await page.waitForTimeout(450)
+}
+
+async function writingRaw(page) {
+  return page.evaluate((key) => localStorage.getItem(key), WRITING_KEY)
+}
+
+function createPendingWritingFixture() {
+  const now = new Date().toISOString()
+  return {
+    schemaVersion: 1,
+    revision: 0,
+    settings: {
+      enabled: true,
+      consent: {
+        noticeVersion: 'rrq-read-write-pilot-notice-v1',
+        acceptedAt: now,
+        disclosures: ['ink_and_confirmed_text_may_leave_device', 'processor_and_purpose_disclosed', 'retention_and_deletion_disclosed', 'ai_feedback_can_be_wrong'],
+      },
+      externalProcessingEnabled: false,
+      serviceAuthority: null,
+    },
+    records: [{
+      recordId: 'browser-writing-record', submissionId: 'browser-writing-submission', activityId: 'rw-g2-tia-wrappers-reason',
+      sourcePassageId: 'g2-ss-plot-passage-neighborhood-cleanup', sourceContentVersion: 'g2-ss-plot-elements-r0.2.0', rubricVersion: 'rw-rubric-tia-r1', sourceCompletionId: 'synthetic-browser-boundary',
+      inputMode: 'handwriting', status: 'draft', inkRevision: 0, strokes: [], typedDraft: '', rawTranscription: null,
+      recognitionUncertainties: [], confirmedTranscription: null, transcriptionConfirmedBy: null, spellingAssessmentSupportable: true,
+      feedback: null, feedbackProvenance: 'none', suggestionDispositions: {}, requests: [], parentReviewEvents: [], parentReviewedAt: null,
+      failureReason: null, createdAt: now, updatedAt: now, expiresAt: new Date(Date.now() + 86_400_000).toISOString(),
+    }],
+    pendingRecordId: 'browser-writing-record',
+    offeredActivityIds: ['rw-g2-tia-wrappers-reason'],
+    createdAt: now,
+    updatedAt: now,
+  }
+}
+
 async function runUnsupportedCapabilities() {
   const missingLocks = await launchProfile('unsupported-missing-locks', undefined, createRuntimeLog('unsupported-missing-locks'), { disableWebLocks: true })
   await missingLocks.page.getByRole('heading', { name: 'A grown-up needs to help', exact: true }).waitFor({ state: 'visible', timeout: 15_000 })
@@ -1715,6 +1996,7 @@ async function main() {
   await closeHandle(central.handle)
 
   const scenarioRunners = [
+    ['readWritePilot', runReadWritePilot],
     ['strandedRecovery', () => runStrandedRecovery(central.storyCompleteState)],
     ['rejectedCompletion', runRejectedCompletion],
     ['crossSkillAffinity', () => runCrossSkillAffinity(central.firstSuccessState, central.informationAttempt)],
@@ -1763,6 +2045,7 @@ async function main() {
     'question-types-and-content': report.representative?.questionTypes.length === 5 && report.representative?.contentForms.length === 8 ? 'PASS' : 'FAIL',
     'parent-print-responsive': report.parent?.setupGate === 'PASS' && report.responsive.length === 4 ? 'PASS' : 'FAIL',
     'runtime-health': report.runtime ? 'PASS' : 'FAIL',
+    'read-write-pilot': report.scenarios.readWritePilot?.status ?? 'MISSING',
   }
   if (IS_WEBKIT) {
     report.requiredScenarios['webkit-touch-interaction'] = report.scenarios.webkitTouchInteraction?.status ?? 'MISSING'

@@ -2,7 +2,7 @@ import { getTrackBySkillId } from '../../domain/curriculum'
 import type { DashboardDataAvailability, DashboardRecentAttemptSummary, DashboardSnapshot } from '../../domain/dashboard'
 import type { QuestProgressV1 } from '../../persistence'
 
-export type ParentDashboardView = 'overview' | 'progress' | 'sessions' | 'reviews' | 'word-help' | 'assessments' | 'print-summary'
+export type ParentDashboardView = 'overview' | 'progress' | 'sessions' | 'reviews' | 'word-help' | 'assessments' | 'writing' | 'print-summary'
 
 export const parentDashboardViews: readonly ParentDashboardView[] = [
   'overview',
@@ -11,6 +11,7 @@ export const parentDashboardViews: readonly ParentDashboardView[] = [
   'reviews',
   'word-help',
   'assessments',
+  'writing',
 ] as const
 
 export const FOUNDATIONAL_SKILLS_BRIDGE_NOTE =

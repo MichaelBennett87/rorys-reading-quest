@@ -17,7 +17,8 @@
 
 ## Child Safety, Privacy, and Content
 
-- Do not add child-facing live AI, telemetry, advertising, or runtime cloud services.
+- Ordinary reading must remain local, telemetry-free, advertising-free, and independent of runtime cloud services. The only current exception is the parent-enabled Read & Write pilot: bounded handwriting recognition and advisory writing evaluation may use the reviewed protected service described in `docs/READ_WRITE_PILOT.md`, but only with server-enforced installation authorization, current parent notice/consent, approved retention controls, and a finite server-side budget. The pilot stays off by default and must fail safely back to local parent review.
+- Never place provider credentials, rubrics, model selection, arbitrary URLs, or remote authorization authority in browser code. A local PIN or local checkbox is not internet-facing authorization.
 - Browser speech, when introduced, must remain optional, local to the browser, and free of microphone or external speech-provider requirements.
 - Do not store private assessment records, child-sensitive identifiers, credentials, school data, or personal records.
 - Use only original content with an explicit `DRAFT`, `REVIEWED`, `APPROVED`, or `RETIRED` review state.
@@ -42,4 +43,5 @@
 - Pages publication requires both the native Edge job and the macOS Playwright WebKit job. Playwright WebKit with iPad touch emulation is Safari-relevant automated coverage, not physical-iPad, shipping-Safari, or VoiceOver certification.
 - After GitHub Pages publishes, run `npm run verify:deployed -- --engine <edge|webkit> --commit <full-sha> --manifest <manifest-path> --dist <tested-dist-path> --url <deployment-url>` in both required engines. A post-deployment failure means the already-published release is unaccepted.
 - Never attach browser acceptance to a personal profile or commit generated profiles, fixtures, screenshots, or reports.
+- Both Edge and WebKit release suites must execute the required `read-write-pilot` scenario. CI uses mocked protected-service responses and synthetic ink only; live inference is never a release-test dependency.
 - Do not call a phase or release complete while a required local or deployed gate is failing.
