@@ -1480,11 +1480,22 @@ async function runWebKitTouchInteraction() {
     page.touchscreen.tap(tapPoint.x, tapPoint.y),
   ])
   await page.locator('.answer-feedback').waitFor({ state: 'visible', timeout: 15_000 })
+  await page.waitForFunction(({ key, sessionId, questionId }) => {
+    const raw = localStorage.getItem(key)
+    if (!raw) return false
+    const active = JSON.parse(raw).activeLessonSession
+    return active?.sessionId === sessionId
+      && active.submittedQuestions?.some((entry) => entry.questionId === questionId)
+  }, {
+    key: PROGRESS_KEY,
+    sessionId: context.active.sessionId,
+    questionId: context.question.questionId,
+  }, { timeout: 15_000 })
   const afterRapidTap = await readProgress(page)
   assert(afterRapidTap.activeLessonSession?.currentQuestionIndex === context.active.currentQuestionIndex, 'rapid touch skipped feedback and advanced the question')
   assert(
     afterRapidTap.activeLessonSession?.checkpointRevision === beforeRevision + 1,
-    `rapid touch persisted more than one submission checkpoint (before ${beforeRevision}, after ${String(afterRapidTap.activeLessonSession?.checkpointRevision)})`,
+    `rapid touch did not persist exactly one submission checkpoint (before ${beforeRevision}, after ${String(afterRapidTap.activeLessonSession?.checkpointRevision)})`,
   )
   assert(afterRapidTap.activeLessonSession?.submittedQuestions.length === selectedState.activeLessonSession.submittedQuestions.length + 1, 'rapid touch recorded duplicate submitted results')
   assert(await page.getByRole('button', { name: 'Next', exact: true }).count() === 1, 'rapid Check Answer touch did not leave exactly one Next action')
