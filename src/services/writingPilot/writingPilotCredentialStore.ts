@@ -16,9 +16,10 @@ export function createIndexedDbWritingPilotCredentialStore(
     const database = await openDatabase(indexedDb)
     try {
       const transaction = database.transaction(STORE_NAME, mode)
+      const completed = transactionDone(transaction)
       const request = action(transaction.objectStore(STORE_NAME))
       const value = await requestResult(request)
-      await transactionDone(transaction)
+      await completed
       return value
     } finally {
       database.close()

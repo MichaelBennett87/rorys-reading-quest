@@ -7,6 +7,7 @@ Status: `EXTERNAL ACTIVATION PENDING`
 - The former adapter checked only moderation HTTP success. It now requires a well-formed `results[0].flagged` decision, handles a flagged HTTP 200, checks generated child-visible output, and fails closed when safety output is absent or malformed.
 - The former adapter returned configured estimates as actual cost. It now preserves response usage before parsing model content, verifies the configured model identity, calculates cost from reviewed input/output pricing, and marks missing or malformed usage as unresolved rather than free.
 - The former `SameSite=Strict` cookie contract was not suitable for a GitHub Pages frontend calling a separately hosted service in Safari. Activation now yields a revocable installation bearer kept outside localStorage in IndexedDB and sent in an authorization header.
+- WebKit can finish a short IndexedDB transaction immediately after its request succeeds. The credential store now subscribes to transaction completion before issuing the request, preventing authorization from hanging after a successful activation.
 - Deduplication formerly used only request identity. It now binds installation, operation, request identity, and canonical payload hash. A changed payload conflicts; an ambiguous paid outcome retains its maximum reservation.
 - The service now derives spelling-assessment supportability from matching server-side recognition provenance. A browser boolean cannot authorize spelling assessment.
 
