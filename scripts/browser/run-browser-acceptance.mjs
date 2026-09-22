@@ -51,6 +51,7 @@ const artifactRoot = resolve(args.artifacts ?? '.artifacts/browser')
 const fixturesPath = join(artifactRoot, 'fixtures', `${manifest.manifestDigest}.json`)
 const fixtureSummary = await generateBrowserFixtures(fixturesPath)
 let localServer = null
+let candidateReadWriteServer = null
 let appUrl = args.url
 
 try {
@@ -73,30 +74,44 @@ try {
   const javascript = manifest.entrypoints.javascript[0]
   const css = manifest.entrypoints.css[0]
   if (!javascript || !css) throw new Error('Manifest does not contain the required JavaScript and CSS entrypoints.')
-  const child = spawn(process.execPath, [join(REPO_ROOT, 'scripts', 'browser', 'native-acceptance.mjs')], {
-    cwd: REPO_ROOT,
-    env: {
-      ...process.env,
-      RRQ_ACCEPTANCE_APP_URL: ensureTrailingSlash(appUrl),
-      RRQ_ACCEPTANCE_ARTIFACTS: artifactRoot,
-      RRQ_ACCEPTANCE_BROWSER_PATH: browserPath,
-      RRQ_ACCEPTANCE_ENGINE: engine,
-      RRQ_ACCEPTANCE_EXPECTED_CSS: css,
-      RRQ_ACCEPTANCE_EXPECTED_JS: javascript,
-      RRQ_ACCEPTANCE_FIXTURES: fixturesPath,
-      RRQ_ACCEPTANCE_MANIFEST_DIGEST: manifest.manifestDigest,
-      RRQ_ACCEPTANCE_MODE: mode,
-      RRQ_ACCEPTANCE_RELEASE_SHA: manifest.sourceCommit,
-      RRQ_ACCEPTANCE_RUN_ID: acceptanceRunIdentity,
-      RRQ_ACCEPTANCE_PREVIOUS_COMMIT: args.previousCommit?.trim() ?? '',
-      RRQ_ACCEPTANCE_PREVIOUS_URL: args.previousUrl?.trim() ?? '',
-      RRQ_ACCEPTANCE_SWITCH_TO_CANDIDATE_URL: localServer?.switchToCandidateUrl ?? '',
-    },
-    stdio: 'inherit',
-  })
-  const exitCode = await new Promise((resolvePromise, reject) => {
-    child.once('error', reject)
-    child.once('exit', (code, signal) => signal ? reject(new Error(`Native browser process ended with signal ${signal}.`)) : resolvePromise(code ?? 1))
+  const sharedEnvironment = {
+    RRQ_ACCEPTANCE_ARTIFACTS: artifactRoot,
+    RRQ_ACCEPTANCE_BROWSER_PATH: browserPath,
+    RRQ_ACCEPTANCE_ENGINE: engine,
+    RRQ_ACCEPTANCE_EXPECTED_CSS: css,
+    RRQ_ACCEPTANCE_EXPECTED_JS: javascript,
+    RRQ_ACCEPTANCE_FIXTURES: fixturesPath,
+    RRQ_ACCEPTANCE_MANIFEST_DIGEST: manifest.manifestDigest,
+    RRQ_ACCEPTANCE_MODE: mode,
+    RRQ_ACCEPTANCE_RELEASE_SHA: manifest.sourceCommit,
+    RRQ_ACCEPTANCE_PREVIOUS_COMMIT: args.previousCommit?.trim() ?? '',
+    RRQ_ACCEPTANCE_PREVIOUS_URL: args.previousUrl?.trim() ?? '',
+  }
+  let readWriteReportPath = ''
+  if (mode === 'local' && engine === 'webkit') {
+    candidateReadWriteServer = await startStaticBuildServer(distDir)
+    const readWriteRunIdentity = sanitize(`${acceptanceRunIdentity}-read-write`)
+    const readWriteRunDirectory = join(artifactRoot, `run-${readWriteRunIdentity}`)
+    readWriteReportPath = join(readWriteRunDirectory, `${engine}-read-write-acceptance.json`)
+    const readWriteExitCode = await runNativeAcceptance({
+      ...sharedEnvironment,
+      RRQ_ACCEPTANCE_APP_URL: ensureTrailingSlash(candidateReadWriteServer.url),
+      RRQ_ACCEPTANCE_PHASE: 'read-write-only',
+      RRQ_ACCEPTANCE_RUN_ID: readWriteRunIdentity,
+    })
+    if (readWriteExitCode !== 0) throw new Error(`${engine} candidate-bound Read & Write acceptance failed with exit code ${readWriteExitCode}. Evidence: ${readWriteRunDirectory}`)
+    const readWriteReport = JSON.parse(readFileSync(readWriteReportPath, 'utf8'))
+    assertReadWriteEvidence(readWriteReport, manifest)
+    await candidateReadWriteServer.close()
+    candidateReadWriteServer = null
+  }
+  const exitCode = await runNativeAcceptance({
+    ...sharedEnvironment,
+    RRQ_ACCEPTANCE_APP_URL: ensureTrailingSlash(appUrl),
+    RRQ_ACCEPTANCE_PHASE: 'full',
+    RRQ_ACCEPTANCE_READ_WRITE_REPORT: readWriteReportPath,
+    RRQ_ACCEPTANCE_RUN_ID: acceptanceRunIdentity,
+    RRQ_ACCEPTANCE_SWITCH_TO_CANDIDATE_URL: localServer?.switchToCandidateUrl ?? '',
   })
   if (exitCode !== 0) throw new Error(`${engine} acceptance failed with exit code ${exitCode}. Evidence: ${runDirectory}`)
   const report = JSON.parse(readFileSync(reportPath, 'utf8'))
@@ -115,10 +130,38 @@ try {
     artifactVerification,
     fixtureSummary,
     scenarioVerification,
+    readWriteReportPath: readWriteReportPath || null,
     reportPath,
   }))
 } finally {
+  await candidateReadWriteServer?.close()
   await localServer?.close()
+}
+
+async function runNativeAcceptance(environment) {
+  const child = spawn(process.execPath, [join(REPO_ROOT, 'scripts', 'browser', 'native-acceptance.mjs')], {
+    cwd: REPO_ROOT,
+    env: { ...process.env, ...environment },
+    stdio: 'inherit',
+  })
+  return new Promise((resolvePromise, reject) => {
+    child.once('error', reject)
+    child.once('exit', (code, signal) => signal ? reject(new Error(`Native browser process ended with signal ${signal}.`)) : resolvePromise(code ?? 1))
+  })
+}
+
+function assertReadWriteEvidence(report, expectedManifest) {
+  if (report.status !== 'PASS' || report.phase !== 'read-write-only') throw new Error('Candidate-bound Read & Write report did not pass its required phase.')
+  if (report.engine !== 'webkit' || report.mode !== 'local') throw new Error('Candidate-bound Read & Write report used the wrong engine or mode.')
+  if (report.releaseSha !== expectedManifest.sourceCommit || report.manifestDigest !== expectedManifest.manifestDigest) {
+    throw new Error('Candidate-bound Read & Write evidence is not bound to the required source commit and artifact manifest.')
+  }
+  if (report.scenarios?.readWritePilot?.status !== 'PASS' || report.requiredScenarios?.['read-write-pilot'] !== 'PASS') {
+    throw new Error('Candidate-bound Read & Write scenario did not pass.')
+  }
+  if (report.requiredScenarios?.['runtime-health'] !== 'PASS' || report.cleanup?.removed !== true || report.cleanup?.remainingTaskOwnedProcesses !== 0) {
+    throw new Error('Candidate-bound Read & Write runtime health or cleanup did not pass.')
+  }
 }
 
 async function verifyPublishedBuild({ appUrl, manifest: expected, attempts }) {

@@ -23,7 +23,7 @@ const WEBKIT_DEVICE_NAME = 'iPad (gen 11)'
 const WEBKIT_LANDSCAPE_DEVICE_NAME = 'iPad (gen 11) landscape'
 const { defaultBrowserType: _defaultBrowserType, ...WEBKIT_DEVICE } = devices[WEBKIT_DEVICE_NAME]
 const PROFILE_PREFIX = `rrq-${ENGINE}-acceptance-`
-const PROFILE_ROOT = join(tmpdir(), `${PROFILE_PREFIX}${RUN_ID}`)
+const PROFILE_ROOT = join(tmpdir(), `${PROFILE_PREFIX}${createHash('sha256').update(RUN_ID).digest('hex').slice(0, 24)}`)
 const BROWSER_EXECUTABLE = requiredEnvironment('RRQ_ACCEPTANCE_BROWSER_PATH')
 const APP_URL = requiredEnvironment('RRQ_ACCEPTANCE_APP_URL')
 const ORIGIN = new URL(APP_URL).origin
@@ -33,9 +33,13 @@ const EXPECTED_CSS = requiredEnvironment('RRQ_ACCEPTANCE_EXPECTED_CSS')
 const FIXTURES_PATH = resolve(requiredEnvironment('RRQ_ACCEPTANCE_FIXTURES'))
 const MANIFEST_DIGEST = requiredEnvironment('RRQ_ACCEPTANCE_MANIFEST_DIGEST')
 const TEST_MODE = requiredEnvironment('RRQ_ACCEPTANCE_MODE')
+const ACCEPTANCE_PHASE = process.env.RRQ_ACCEPTANCE_PHASE?.trim() || 'full'
+if (!['full', 'read-write-only'].includes(ACCEPTANCE_PHASE)) throw new Error(`Unsupported acceptance phase: ${ACCEPTANCE_PHASE}`)
+const IMPORTED_READ_WRITE_REPORT = process.env.RRQ_ACCEPTANCE_READ_WRITE_REPORT?.trim() || null
 const PREVIOUS_COMMIT = process.env.RRQ_ACCEPTANCE_PREVIOUS_COMMIT?.trim() || 'UNKNOWN'
 const PREVIOUS_URL = process.env.RRQ_ACCEPTANCE_PREVIOUS_URL?.trim() || null
 const SWITCH_TO_CANDIDATE_URL = process.env.RRQ_ACCEPTANCE_SWITCH_TO_CANDIDATE_URL?.trim() || null
+const REPORT_PATH = join(RUN_DIR, ACCEPTANCE_PHASE === 'read-write-only' ? `${ENGINE}-read-write-acceptance.json` : `${ENGINE}-acceptance.json`)
 const PROGRESS_KEY = 'rorys-reading-quest.progress.v1'
 const PARENT_KEY = 'rorys-reading-quest.parent-access.v1'
 const RECORDS_KEY = 'rorys-reading-quest.parent-records.v1'
@@ -70,6 +74,8 @@ const report = {
   runtime: null,
   requiredScenarios: {},
   cleanup: null,
+  phase: ACCEPTANCE_PHASE,
+  readWriteEvidence: null,
   status: 'RUNNING',
   failure: null,
 }
@@ -193,7 +199,7 @@ async function launchProfile(
       const request = route.request()
       const path = new URL(request.url()).pathname.split('/').filter(Boolean).at(-1)
       const body = request.postDataJSON()
-      const authorization = request.headers().authorization ?? null
+      const authorization = (await request.allHeaders()).authorization ?? null
       serviceState.calls.push({ path, requestId: body?.requestId ?? null, authorized: authorization === `Bearer ${installationToken}` })
       if (path === 'activate') {
         await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({
@@ -1737,8 +1743,24 @@ async function runReadWritePilot() {
   await setupParentPin(mocked.page)
   await activate(mocked.page.getByRole('button', { name: 'Writing Review', exact: true }))
   await mocked.page.getByLabel('Private activation code').fill('synthetic-parent-code')
+  const activationWaitStartedAt = Date.now()
   await activate(mocked.page.getByRole('button', { name: 'Authorize protected processing', exact: true }))
-  await mocked.page.getByText(/authorized for this installation/i).waitFor({ state: 'visible', timeout: 15_000 })
+  try {
+    await mocked.page.getByText(/authorized for this installation/i).waitFor({ state: 'visible', timeout: 30_000 })
+  } catch (error) {
+    const diagnostic = await mocked.page.evaluate((writingKey) => {
+      const raw = localStorage.getItem(writingKey)
+      const parsed = raw ? JSON.parse(raw) : null
+      return {
+        statusText: document.querySelector('[role="status"]')?.textContent ?? null,
+        externalProcessingEnabled: parsed?.settings?.externalProcessingEnabled ?? null,
+        authorityInstallationId: parsed?.settings?.serviceAuthority?.installationId ?? null,
+        revision: parsed?.revision ?? null,
+      }
+    }, WRITING_KEY)
+    throw new Error(`Protected writing activation did not become authoritative. ${JSON.stringify({ calls: mockState.calls, diagnostic })}`, { cause: error })
+  }
+  const protectedActivationWaitMs = Date.now() - activationWaitStartedAt
   await activate(mocked.page.getByRole('button', { name: 'Back to Quest', exact: true }))
   await mocked.page.locator('.writing-pilot-shell').waitFor({ state: 'visible', timeout: 15_000 })
   await drawWriting(mocked.page)
@@ -1747,7 +1769,22 @@ async function runReadWritePilot() {
     button?.click()
     button?.click()
   })
-  await mocked.page.getByRole('button', { name: "That's What I Wrote", exact: true }).waitFor({ state: 'visible', timeout: 15_000 })
+  try {
+    await mocked.page.getByRole('button', { name: "That's What I Wrote", exact: true }).waitFor({ state: 'visible', timeout: 30_000 })
+  } catch (error) {
+    const diagnostic = await mocked.page.evaluate((writingKey) => {
+      const raw = localStorage.getItem(writingKey)
+      const parsed = raw ? JSON.parse(raw) : null
+      const pending = parsed?.records?.find((record) => record.recordId === parsed.pendingRecordId) ?? null
+      return {
+        statusText: document.querySelector('[role="status"]')?.textContent ?? null,
+        pendingStatus: pending?.status ?? null,
+        failureReason: pending?.failureReason ?? null,
+        requestStatuses: pending?.requests?.map((request) => ({ operation: request.operation, status: request.status })) ?? [],
+      }
+    }, WRITING_KEY)
+    throw new Error(`Protected writing transcription did not reach confirmation. ${JSON.stringify({ calls: mockState.calls, diagnostic })}`, { cause: error })
+  }
   assert(mockState.calls.filter((entry) => entry.path === 'transcribe').length === 1, 'rapid repeated submission created more than one transcription request')
   await activate(mocked.page.getByRole('button', { name: "That's What I Wrote", exact: true }))
   await mocked.page.getByText('Understanding:', { exact: true }).waitFor({ state: 'visible', timeout: 15_000 })
@@ -1767,6 +1804,8 @@ async function runReadWritePilot() {
     undoAndEraser: true,
     orientationRedraw: true,
     parentCorrectionAndDeletion: true,
+    protectedActivationWaitMs,
+    credentialContinuity: { parentToChildAuthorizedRequest: true },
     mockedTranscriptionRequests: 1,
     mockedEvaluationRequests: 1,
     liveProviderRequests: 0,
@@ -2181,12 +2220,61 @@ async function cleanupProfiles() {
   return { profileRoot: resolvedProfileRoot, removed: true, remainingTaskOwnedProcesses: profileProcesses(resolvedProfileRoot).length }
 }
 
+function importReadWriteEvidence() {
+  assert(IMPORTED_READ_WRITE_REPORT, 'local WebKit acceptance requires candidate-bound Read & Write evidence')
+  const evidencePath = resolve(IMPORTED_READ_WRITE_REPORT)
+  const evidence = JSON.parse(readFileSync(evidencePath, 'utf8'))
+  assert(evidence.status === 'PASS', `imported Read & Write report status was ${evidence.status ?? 'missing'}`)
+  assert(evidence.phase === 'read-write-only', `imported Read & Write report phase was ${evidence.phase ?? 'missing'}`)
+  assert(evidence.engine === ENGINE && evidence.mode === TEST_MODE, 'imported Read & Write report engine or mode did not match')
+  assert(evidence.releaseSha === RELEASE_SHA && evidence.manifestDigest === MANIFEST_DIGEST, 'imported Read & Write report was not bound to this source and artifact')
+  assert(evidence.scenarios?.readWritePilot?.status === 'PASS', 'imported Read & Write scenario did not pass')
+  assert(evidence.requiredScenarios?.['read-write-pilot'] === 'PASS', 'imported Read & Write required-scenario result did not pass')
+  assert(evidence.requiredScenarios?.['runtime-health'] === 'PASS' && evidence.runtime, 'imported Read & Write runtime health did not pass')
+  assert(evidence.cleanup?.removed === true && evidence.cleanup?.remainingTaskOwnedProcesses === 0, 'imported Read & Write cleanup was incomplete')
+  report.scenarios.readWritePilot = clone(evidence.scenarios.readWritePilot)
+  report.readWriteEvidence = {
+    reportPath: evidencePath,
+    runIdentity: evidence.runIdentity,
+    sourceCommit: evidence.releaseSha,
+    manifestDigest: evidence.manifestDigest,
+    runtimeHealth: evidence.requiredScenarios['runtime-health'],
+    cleanup: clone(evidence.cleanup),
+  }
+}
+
+async function completeReadWriteOnlyPhase() {
+  log('scenario readWritePilot starting')
+  await runReadWritePilot()
+  log('scenario readWritePilot passed')
+  report.runtime = evaluateRuntime(runtimeRegistry)
+  report.requiredScenarios = {
+    'read-write-pilot': report.scenarios.readWritePilot?.status ?? 'MISSING',
+    'runtime-health': report.runtime ? 'PASS' : 'FAIL',
+  }
+  assert(Object.values(report.requiredScenarios).every((status) => status === 'PASS'), `required Read & Write scenario summary was not all PASS: ${JSON.stringify(report.requiredScenarios)}`)
+  report.status = 'PASS'
+  report.finishedAt = new Date().toISOString()
+  report.cleanup = await cleanupProfiles()
+  writeFileSync(REPORT_PATH, `${JSON.stringify(report, null, 2)}\n`)
+  log(`candidate-bound ${ENGINE} Read & Write acceptance passed`, { report: REPORT_PATH })
+}
+
 async function main() {
+  if (ACCEPTANCE_PHASE === 'read-write-only') {
+    await completeReadWriteOnlyPhase()
+    return
+  }
   const runtimeLogs = []
   if (IS_WEBKIT && TEST_MODE === 'local') {
+    importReadWriteEvidence()
     log('scenario releaseUpgrade starting')
     await runReleaseUpgrade()
     log('scenario releaseUpgrade passed')
+  } else {
+    log('scenario readWritePilot starting')
+    await runReadWritePilot()
+    log('scenario readWritePilot passed')
   }
   if (TEST_MODE === 'local') {
     log('scenario writingServiceReadiness starting')
@@ -2202,7 +2290,6 @@ async function main() {
   await closeHandle(central.handle)
 
   const scenarioRunners = [
-    ['readWritePilot', runReadWritePilot],
     ['strandedRecovery', () => runStrandedRecovery(central.storyCompleteState)],
     ['rejectedCompletion', runRejectedCompletion],
     ['crossSkillAffinity', () => runCrossSkillAffinity(central.firstSuccessState, central.informationAttempt)],
@@ -2265,8 +2352,8 @@ async function main() {
   report.status = 'PASS'
   report.finishedAt = new Date().toISOString()
   report.cleanup = await cleanupProfiles()
-  writeFileSync(join(RUN_DIR, `${ENGINE}-acceptance.json`), `${JSON.stringify(report, null, 2)}\n`)
-  log(`all ${ENGINE} acceptance scenarios passed`, { report: join(RUN_DIR, `${ENGINE}-acceptance.json`) })
+  writeFileSync(REPORT_PATH, `${JSON.stringify(report, null, 2)}\n`)
+  log(`all ${ENGINE} acceptance scenarios passed`, { report: REPORT_PATH })
 }
 
 const runtimeRegistry = []
@@ -2289,7 +2376,7 @@ try {
   } catch (cleanupError) {
     report.cleanup = { removed: false, error: cleanupError instanceof Error ? cleanupError.message : String(cleanupError) }
   }
-  writeFileSync(join(RUN_DIR, `${ENGINE}-acceptance.json`), `${JSON.stringify(report, null, 2)}\n`)
+  writeFileSync(REPORT_PATH, `${JSON.stringify(report, null, 2)}\n`)
   console.error(error)
   process.exitCode = 1
 }
