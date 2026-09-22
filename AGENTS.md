@@ -18,7 +18,7 @@
 ## Child Safety, Privacy, and Content
 
 - Ordinary reading must remain local, telemetry-free, advertising-free, and independent of runtime cloud services. The only current exception is the parent-enabled Read & Write pilot: bounded handwriting recognition and advisory writing evaluation may use the reviewed protected service described in `docs/READ_WRITE_PILOT.md`, but only with server-enforced installation authorization, current parent notice/consent, approved retention controls, and a finite server-side budget. The pilot stays off by default and must fail safely back to local parent review.
-- Never place provider credentials, rubrics, model selection, arbitrary URLs, or remote authorization authority in browser code. A local PIN or local checkbox is not internet-facing authorization.
+- Never place provider credentials, rubrics, model selection, arbitrary URLs, or remote authorization authority in browser code. A local PIN or local checkbox is not internet-facing authorization. The protected installation bearer belongs only in the dedicated IndexedDB credential store; it must not enter localStorage, writing records, logs, screenshots, or reports.
 - Browser speech, when introduced, must remain optional, local to the browser, and free of microphone or external speech-provider requirements.
 - Do not store private assessment records, child-sensitive identifiers, credentials, school data, or personal records.
 - Use only original content with an explicit `DRAFT`, `REVIEWED`, `APPROVED`, or `RETIRED` review state.

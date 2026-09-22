@@ -1,5 +1,37 @@
-import { WRITING_PILOT_NOTICE_VERSION, type WritingEvaluationResult, type WritingRecognitionResult, type WritingServiceAuthority } from '../../domain/writingPilot'
+import {
+  WRITING_PILOT_NOTICE_VERSION,
+  type WritingEvaluationResult,
+  type WritingRecognitionResult,
+  type WritingServiceAuthority,
+} from '../../domain/writingPilot'
+import { validateWritingFeedback } from '../../persistence/writingPilotStore'
 import { resolveServerWritingTask } from './serverWritingCatalog'
+
+export type WritingProviderOperation = 'transcribe' | 'evaluate'
+
+export type WritingProviderBilling =
+  | {
+      status: 'observed'
+      model: string
+      pricingVersion: string
+      inputTokens: number
+      outputTokens: number
+      totalTokens: number
+      costMicros: number
+    }
+  | { status: 'not_incurred'; model: string }
+  | { status: 'unknown'; model: string }
+
+export type WritingInferenceOutcome<T> =
+  | { status: 'completed'; result: T; billing: Extract<WritingProviderBilling, { status: 'observed' }> }
+  | { status: 'review_required'; code: 'safety_flagged' | 'safety_unavailable'; billing: WritingProviderBilling }
+  | { status: 'refused'; code: 'provider_refused'; billing: WritingProviderBilling }
+  | {
+      status: 'failed'
+      code: 'provider_failure' | 'invalid_provider_output' | 'usage_unavailable'
+      outcome: 'definite' | 'unknown'
+      billing: WritingProviderBilling
+    }
 
 export interface ApprovedWritingInstallation {
   installationId: string
@@ -16,15 +48,67 @@ export interface WritingAuthorizationStore {
   revokeSession(token: string): Promise<void>
 }
 
+export interface StoredWritingServiceResponse {
+  status: number
+  body: unknown
+}
+
+export interface WritingRecognitionProvenance {
+  requestId: string
+  activityId: string
+  submissionId: string
+  inkRevision: number
+  rawTranscriptionHash: string
+  spellingAssessmentSupportable: boolean
+  meaningUncertain: boolean
+}
+
 export interface WritingBudgetLedger {
-  reserve(input: { installationId: string; requestId: string; maximumCostMicros: number }): Promise<{ status: 'reserved'; remainingMicros: number } | { status: 'duplicate'; result: unknown } | { status: 'exhausted' }>
-  complete(input: { installationId: string; requestId: string; result: unknown; actualCostMicros: number }): Promise<void>
-  markUnknown(input: { installationId: string; requestId: string }): Promise<void>
+  getRemaining(installationId: string, limitMicros: number): Promise<number>
+  reserve(input: {
+    installationId: string
+    operation: WritingProviderOperation
+    requestId: string
+    payloadHash: string
+    maximumCostMicros: number
+    limitMicros: number
+  }): Promise<
+    | { status: 'reserved'; remainingMicros: number }
+    | { status: 'duplicate'; response: StoredWritingServiceResponse }
+    | { status: 'unresolved' }
+    | { status: 'identity_conflict' }
+    | { status: 'exhausted' }
+  >
+  complete(input: {
+    installationId: string
+    operation: WritingProviderOperation
+    requestId: string
+    payloadHash: string
+    response: StoredWritingServiceResponse
+    actualCostMicros: number
+    billing: WritingProviderBilling
+    recognitionProvenance?: WritingRecognitionProvenance
+  }): Promise<void>
+  markUnknown(input: {
+    installationId: string
+    operation: WritingProviderOperation
+    requestId: string
+    payloadHash: string
+  }): Promise<void>
+  resolveRecognition(installationId: string, requestId: string): Promise<WritingRecognitionProvenance | null>
 }
 
 export interface WritingInferenceProvider {
-  transcribe(input: { imageDataUrl: string; layout: { width: number; height: number } }): Promise<{ result: WritingRecognitionResult; costMicros: number }>
-  evaluate(input: { confirmedText: string; spellingAssessmentSupportable: boolean; task: NonNullable<ReturnType<typeof resolveServerWritingTask>> }): Promise<{ result: WritingEvaluationResult; costMicros: number }>
+  maximumCostMicros(operation: WritingProviderOperation): number
+  transcribe(input: {
+    imageDataUrl: string
+    layout: { width: number; height: number }
+  }): Promise<WritingInferenceOutcome<WritingRecognitionResult>>
+  evaluate(input: {
+    confirmedText: string
+    spellingAssessmentSupportable: boolean
+    task: NonNullable<ReturnType<typeof resolveServerWritingTask>>
+  }): Promise<WritingInferenceOutcome<WritingEvaluationResult>>
 }
 
 interface WritingPilotServiceOptions {
@@ -33,13 +117,13 @@ interface WritingPilotServiceOptions {
   budget: WritingBudgetLedger
   provider: WritingInferenceProvider
   maxRequestBytes?: number
-  maxCostMicrosPerRequest: number
   now?: () => Date
 }
 
 export function createWritingPilotService(options: WritingPilotServiceOptions) {
   const maxRequestBytes = options.maxRequestBytes ?? 1_600_000
   const now = options.now ?? (() => new Date())
+
   return async (request: Request): Promise<Response> => {
     const origin = request.headers.get('origin') ?? ''
     if (!options.allowedOrigins.includes(origin)) return json({ error: 'origin_not_allowed' }, 403, origin, options.allowedOrigins)
@@ -48,95 +132,259 @@ export function createWritingPilotService(options: WritingPilotServiceOptions) {
         status: 204,
         headers: corsHeaders(origin, options.allowedOrigins, {
           'access-control-allow-methods': 'POST, OPTIONS',
-          'access-control-allow-headers': 'content-type',
+          'access-control-allow-headers': 'authorization, content-type',
           'access-control-max-age': '600',
         }),
       })
     }
     if (request.method !== 'POST') return json({ error: 'method_not_allowed' }, 405, origin, options.allowedOrigins)
     const contentLength = Number(request.headers.get('content-length') ?? 0)
-    if (contentLength > maxRequestBytes) return json({ error: 'payload_too_large' }, 413, origin, options.allowedOrigins)
+    if (!Number.isFinite(contentLength) || contentLength < 0 || contentLength > maxRequestBytes) {
+      return json({ error: 'payload_too_large' }, 413, origin, options.allowedOrigins)
+    }
     const path = new URL(request.url).pathname.split('/').filter(Boolean).at(-1)
     const body = await readBoundedJson(request, maxRequestBytes)
     if (!body) return json({ error: 'invalid_request' }, 422, origin, options.allowedOrigins)
 
     if (path === 'activate') {
-      if (typeof body.activationCode !== 'string' || body.consentVersion !== WRITING_PILOT_NOTICE_VERSION) return json({ error: 'consent_required' }, 412, origin, options.allowedOrigins)
+      if (typeof body.activationCode !== 'string' || body.consentVersion !== WRITING_PILOT_NOTICE_VERSION) {
+        return json({ error: 'consent_required' }, 412, origin, options.allowedOrigins)
+      }
       const installation = await options.authorization.exchangeActivationCode(body.activationCode)
-      if (!installation || installation.consentVersion !== WRITING_PILOT_NOTICE_VERSION) return json({ error: 'unauthorized' }, 403, origin, options.allowedOrigins)
+      if (!validInstallation(installation, now())) return json({ error: 'unauthorized' }, 403, origin, options.allowedOrigins)
+      if (installation.consentVersion !== WRITING_PILOT_NOTICE_VERSION) return json({ error: 'consent_required' }, 412, origin, options.allowedOrigins)
       if (installation.retentionControl !== 'approved_zero_data_retention') return json({ error: 'retention_not_approved' }, 503, origin, options.allowedOrigins)
       if (installation.budgetLimitMicros <= 0) return json({ error: 'budget_exhausted' }, 429, origin, options.allowedOrigins)
       const session = await options.authorization.createSession(installation.installationId)
+      const sessionExpiry = Date.parse(session.expiresAt)
+      const installationExpiry = Date.parse(installation.authorizationExpiresAt)
+      if (session.token.length < 32 || !Number.isFinite(sessionExpiry) || sessionExpiry <= now().getTime()) {
+        return json({ error: 'authorization_unavailable' }, 503, origin, options.allowedOrigins)
+      }
+      const expiresAt = new Date(Math.min(sessionExpiry, installationExpiry)).toISOString()
       const authority: WritingServiceAuthority = {
         status: 'authorized',
+        authMode: 'installation_bearer_v1',
         installationId: installation.installationId,
         endpointId: 'rrq-writing-pilot-v1',
         retentionControl: installation.retentionControl,
         approvedAt: now().toISOString(),
-        expiresAt: session.expiresAt,
+        expiresAt,
         budgetLimitMicros: installation.budgetLimitMicros,
-        budgetRemainingMicros: installation.budgetLimitMicros,
+        budgetRemainingMicros: await options.budget.getRemaining(installation.installationId, installation.budgetLimitMicros),
       }
-      return json(authority, 200, origin, options.allowedOrigins, sessionCookie(session.token, session.expiresAt))
+      return json({ ...authority, installationToken: session.token }, 200, origin, options.allowedOrigins)
     }
 
-    const token = cookieValue(request.headers.get('cookie'), 'rrq_writing_session')
+    const token = bearerToken(request.headers.get('authorization'))
     const installation = token ? await options.authorization.resolveSession(token) : null
-    if (!installation || Date.parse(installation.authorizationExpiresAt) <= now().getTime()) return json({ error: 'unauthorized' }, 401, origin, options.allowedOrigins)
+    if (!validInstallation(installation, now())) return json({ error: 'unauthorized' }, 401, origin, options.allowedOrigins)
     if (installation.consentVersion !== WRITING_PILOT_NOTICE_VERSION) return json({ error: 'consent_required' }, 412, origin, options.allowedOrigins)
     if (installation.retentionControl !== 'approved_zero_data_retention') return json({ error: 'retention_not_approved' }, 503, origin, options.allowedOrigins)
 
     if (path === 'revoke') {
       await options.authorization.revokeSession(token as string)
-      return json({ revoked: true }, 200, origin, options.allowedOrigins, 'rrq_writing_session=; HttpOnly; Secure; SameSite=Strict; Path=/; Max-Age=0')
+      return json({ revoked: true }, 200, origin, options.allowedOrigins)
     }
-
-    if ((path !== 'transcribe' && path !== 'evaluate') || typeof body.requestId !== 'string' || body.requestId.length > 160) {
+    if ((path !== 'transcribe' && path !== 'evaluate') || !validRequestId(body.requestId)) {
       return json({ error: 'invalid_request' }, 422, origin, options.allowedOrigins)
     }
     if (path === 'transcribe' && !validTranscriptionBody(body)) return json({ error: 'invalid_request' }, 422, origin, options.allowedOrigins)
     if (path === 'evaluate' && !validEvaluationBody(body)) return json({ error: 'invalid_request' }, 422, origin, options.allowedOrigins)
+
+    const operation: WritingProviderOperation = path
     const task = resolveServerWritingTask({
       activityId: body.activityId as string,
       sourceContentVersion: body.sourceContentVersion as string,
       rubricVersion: path === 'transcribe' ? inferRubricVersion(body.activityId as string) : body.rubricVersion as string,
     })
     if (!task) return json({ error: 'unknown_activity' }, 422, origin, options.allowedOrigins)
+
+    const maximumCostMicros = options.provider.maximumCostMicros(operation)
+    if (!Number.isSafeInteger(maximumCostMicros) || maximumCostMicros <= 0 || maximumCostMicros > installation.budgetLimitMicros) {
+      return json({ error: 'budget_configuration_invalid' }, 503, origin, options.allowedOrigins)
+    }
+    const payloadHash = await hashJson(body)
     const reservation = await options.budget.reserve({
       installationId: installation.installationId,
+      operation,
       requestId: body.requestId,
-      maximumCostMicros: options.maxCostMicrosPerRequest,
+      payloadHash,
+      maximumCostMicros,
+      limitMicros: installation.budgetLimitMicros,
     })
     if (reservation.status === 'exhausted') return json({ error: 'budget_exhausted' }, 429, origin, options.allowedOrigins)
-    if (reservation.status === 'duplicate') return reservation.result
-      ? json(reservation.result, 200, origin, options.allowedOrigins)
-      : json({ error: 'request_unresolved' }, 409, origin, options.allowedOrigins)
+    if (reservation.status === 'identity_conflict') return json({ error: 'request_identity_conflict' }, 409, origin, options.allowedOrigins)
+    if (reservation.status === 'unresolved') return json({ error: 'request_unresolved' }, 409, origin, options.allowedOrigins)
+    if (reservation.status === 'duplicate') return json(reservation.response.body, reservation.response.status, origin, options.allowedOrigins)
 
+    if (path === 'transcribe') {
+      const transcribeBody = body as TranscriptionBody
+      let outcome: WritingInferenceOutcome<WritingRecognitionResult>
+      try {
+        outcome = await options.provider.transcribe({ imageDataUrl: transcribeBody.imageDataUrl, layout: transcribeBody.layout })
+      } catch {
+        await options.budget.markUnknown({ installationId: installation.installationId, operation, requestId: body.requestId, payloadHash })
+        return json({ error: 'provider_outcome_unknown' }, 409, origin, options.allowedOrigins)
+      }
+      if (outcome.status !== 'completed') return settleNonCompletion(outcome, operation, installation.installationId, body.requestId, payloadHash, maximumCostMicros, options, origin)
+      if (!validBilling(outcome.billing, maximumCostMicros)) {
+        await options.budget.markUnknown({ installationId: installation.installationId, operation, requestId: body.requestId, payloadHash })
+        return json({ error: 'provider_outcome_unknown' }, 409, origin, options.allowedOrigins)
+      }
+      if (!validRecognitionResult(outcome.result)) {
+        const response: StoredWritingServiceResponse = { status: 422, body: { error: 'provider_output_invalid' } }
+        await options.budget.complete({
+          installationId: installation.installationId,
+          operation,
+          requestId: body.requestId,
+          payloadHash,
+          response,
+          actualCostMicros: outcome.billing.costMicros,
+          billing: outcome.billing,
+        })
+        return json(response.body, response.status, origin, options.allowedOrigins)
+      }
+      const response: StoredWritingServiceResponse = { status: 200, body: outcome.result }
+      const provenance: WritingRecognitionProvenance = {
+        requestId: body.requestId,
+        activityId: transcribeBody.activityId,
+        submissionId: transcribeBody.submissionId,
+        inkRevision: transcribeBody.inkRevision,
+        rawTranscriptionHash: await hashText(outcome.result.rawTranscription.trim()),
+        spellingAssessmentSupportable: outcome.result.spellingAssessmentSupportable,
+        meaningUncertain: outcome.result.uncertainties.some((entry) => entry.affectsMeaning),
+      }
+      await options.budget.complete({
+        installationId: installation.installationId,
+        operation,
+        requestId: body.requestId,
+        payloadHash,
+        response,
+        actualCostMicros: outcome.billing.costMicros,
+        billing: outcome.billing,
+        recognitionProvenance: provenance,
+      })
+      return json(response.body, response.status, origin, options.allowedOrigins)
+    }
+
+    const evaluateBody = body as EvaluationBody
+    const spellingAssessmentSupportable = await deriveSpellingSupportability(options.budget, installation.installationId, evaluateBody)
+    if (spellingAssessmentSupportable.status !== 'ok') {
+      const response: StoredWritingServiceResponse = { status: 422, body: { error: spellingAssessmentSupportable.error } }
+      await options.budget.complete({
+        installationId: installation.installationId,
+        operation,
+        requestId: body.requestId,
+        payloadHash,
+        response,
+        actualCostMicros: 0,
+        billing: { status: 'not_incurred', model: 'not_called' },
+      })
+      return json(response.body, response.status, origin, options.allowedOrigins)
+    }
+    let outcome: WritingInferenceOutcome<WritingEvaluationResult>
     try {
-      if (path === 'transcribe') {
-        const transcribeBody = body as Record<string, unknown> & { imageDataUrl: string; layout: { width: number; height: number } }
-        const output = await options.provider.transcribe({ imageDataUrl: transcribeBody.imageDataUrl, layout: transcribeBody.layout })
-        if (!validProviderCost(output.costMicros, options.maxCostMicrosPerRequest)) throw new Error('Provider cost was outside the reserved bound.')
-        await options.budget.complete({ installationId: installation.installationId, requestId: body.requestId, result: output.result, actualCostMicros: output.costMicros })
-        return json(output.result, 200, origin, options.allowedOrigins)
-      }
-      const evaluateBody = body as Record<string, unknown> & { confirmedText: string; spellingAssessmentSupportable: boolean }
-      const output = await options.provider.evaluate({ confirmedText: evaluateBody.confirmedText, spellingAssessmentSupportable: evaluateBody.spellingAssessmentSupportable, task })
-      if (!validProviderCost(output.costMicros, options.maxCostMicrosPerRequest)
-        || !validEvaluationAgainstTask(output.result, evaluateBody.confirmedText, evaluateBody.spellingAssessmentSupportable, task.rubric.relevantEvidence.map((entry) => entry.evidenceId))) {
-        throw new Error('Provider feedback did not satisfy the source-bound response contract.')
-      }
-      await options.budget.complete({ installationId: installation.installationId, requestId: body.requestId, result: output.result, actualCostMicros: output.costMicros })
-      return json(output.result, 200, origin, options.allowedOrigins)
+      outcome = await options.provider.evaluate({ confirmedText: evaluateBody.confirmedText, spellingAssessmentSupportable: spellingAssessmentSupportable.value, task })
     } catch {
-      await options.budget.markUnknown({ installationId: installation.installationId, requestId: body.requestId })
+      await options.budget.markUnknown({ installationId: installation.installationId, operation, requestId: body.requestId, payloadHash })
       return json({ error: 'provider_outcome_unknown' }, 409, origin, options.allowedOrigins)
     }
+    if (outcome.status !== 'completed') return settleNonCompletion(outcome, operation, installation.installationId, body.requestId, payloadHash, maximumCostMicros, options, origin)
+    if (!validBilling(outcome.billing, maximumCostMicros)
+      || !validEvaluationAgainstTask(outcome.result, evaluateBody.confirmedText, spellingAssessmentSupportable.value, task.rubric.relevantEvidence.map((entry) => entry.evidenceId))) {
+      const response: StoredWritingServiceResponse = { status: 422, body: { error: 'provider_output_invalid' } }
+      await options.budget.complete({
+        installationId: installation.installationId,
+        operation,
+        requestId: body.requestId,
+        payloadHash,
+        response,
+        actualCostMicros: validBilling(outcome.billing, maximumCostMicros) ? outcome.billing.costMicros : maximumCostMicros,
+        billing: outcome.billing,
+      })
+      return json(response.body, response.status, origin, options.allowedOrigins)
+    }
+    const response: StoredWritingServiceResponse = { status: 200, body: outcome.result }
+    await options.budget.complete({
+      installationId: installation.installationId,
+      operation,
+      requestId: body.requestId,
+      payloadHash,
+      response,
+      actualCostMicros: outcome.billing.costMicros,
+      billing: outcome.billing,
+    })
+    return json(response.body, response.status, origin, options.allowedOrigins)
   }
 }
 
-function validProviderCost(value: number, maximum: number): boolean {
-  return Number.isSafeInteger(value) && value >= 0 && value <= maximum
+async function settleNonCompletion<T>(
+  outcome: Exclude<WritingInferenceOutcome<T>, { status: 'completed' }>,
+  operation: WritingProviderOperation,
+  installationId: string,
+  requestId: string,
+  payloadHash: string,
+  maximumCostMicros: number,
+  options: WritingPilotServiceOptions,
+  origin: string,
+): Promise<Response> {
+  if (outcome.billing.status === 'unknown' || (outcome.status === 'failed' && outcome.outcome === 'unknown')) {
+    await options.budget.markUnknown({ installationId, operation, requestId, payloadHash })
+    return json({ error: 'provider_outcome_unknown' }, 409, origin, options.allowedOrigins)
+  }
+  const actualCostMicros = outcome.billing.status === 'observed' ? outcome.billing.costMicros : 0
+  if (!Number.isSafeInteger(actualCostMicros) || actualCostMicros < 0 || actualCostMicros > maximumCostMicros) {
+    await options.budget.markUnknown({ installationId, operation, requestId, payloadHash })
+    return json({ error: 'provider_outcome_unknown' }, 409, origin, options.allowedOrigins)
+  }
+  const response: StoredWritingServiceResponse = outcome.status === 'review_required'
+    ? { status: 409, body: { error: 'parent_review_required' } }
+    : outcome.status === 'refused'
+      ? { status: 409, body: { error: 'provider_refused' } }
+      : { status: 503, body: { error: 'provider_failure' } }
+  await options.budget.complete({ installationId, operation, requestId, payloadHash, response, actualCostMicros, billing: outcome.billing })
+  return json(response.body, response.status, origin, options.allowedOrigins)
+}
+
+async function deriveSpellingSupportability(
+  budget: WritingBudgetLedger,
+  installationId: string,
+  body: EvaluationBody,
+): Promise<{ status: 'ok'; value: boolean } | { status: 'error'; error: string }> {
+  if (body.inputMode === 'typed') {
+    return body.recognitionRequestId === null
+      ? { status: 'ok', value: false }
+      : { status: 'error', error: 'recognition_provenance_invalid' }
+  }
+  if (!body.recognitionRequestId) return { status: 'error', error: 'recognition_provenance_required' }
+  const provenance = await budget.resolveRecognition(installationId, body.recognitionRequestId)
+  if (!provenance
+    || provenance.activityId !== body.activityId
+    || provenance.submissionId !== body.submissionId
+    || provenance.inkRevision !== body.inkRevision) return { status: 'error', error: 'recognition_provenance_invalid' }
+  if (provenance.meaningUncertain) return { status: 'error', error: 'parent_review_required' }
+  const unchanged = provenance.rawTranscriptionHash === await hashText(body.confirmedText.trim())
+  return {
+    status: 'ok',
+    value: unchanged && body.transcriptionConfirmedBy === 'learner' && provenance.spellingAssessmentSupportable,
+  }
+}
+
+function validInstallation(value: ApprovedWritingInstallation | null, now: Date): value is ApprovedWritingInstallation {
+  if (!value
+    || !value.installationId
+    || !Number.isSafeInteger(value.budgetLimitMicros)
+    || value.budgetLimitMicros <= 0) return false
+  const expiry = Date.parse(value.authorizationExpiresAt)
+  return Number.isFinite(expiry) && expiry > now.getTime()
+}
+
+function validBilling(value: WritingProviderBilling, maximum: number): value is Extract<WritingProviderBilling, { status: 'observed' }> {
+  return value.status === 'observed'
+    && Number.isSafeInteger(value.costMicros)
+    && value.costMicros >= 0
+    && value.costMicros <= maximum
 }
 
 function validEvaluationAgainstTask(
@@ -145,6 +393,7 @@ function validEvaluationAgainstTask(
   spellingAssessmentSupportable: boolean,
   allowedEvidenceIds: readonly string[],
 ): boolean {
+  if (!result || !validateWritingFeedback(result.feedback)) return false
   const feedback = result.feedback
   if (!spellingAssessmentSupportable && feedback.spelling.status !== 'withheld') return false
   const categories = [feedback.comprehension, feedback.supportingEvidence, feedback.spelling, feedback.grammar, feedback.capitalizationPunctuation]
@@ -153,6 +402,19 @@ function validEvaluationAgainstTask(
     improvement.originalText === null
     || (improvement.originalText.length > 0 && confirmedText.includes(improvement.originalText))
   ))
+}
+
+function validRecognitionResult(result: WritingRecognitionResult): boolean {
+  return Boolean(result)
+    && typeof result.rawTranscription === 'string'
+    && result.rawTranscription.length <= 500
+    && typeof result.spellingAssessmentSupportable === 'boolean'
+    && ['openai', 'mocked'].includes(result.provider)
+    && Array.isArray(result.uncertainties)
+    && result.uncertainties.length <= 12
+    && result.uncertainties.every((entry) => typeof entry.text === 'string'
+      && typeof entry.reason === 'string'
+      && typeof entry.affectsMeaning === 'boolean')
 }
 
 function inferRubricVersion(activityId: string): string {
@@ -167,25 +429,76 @@ function inferRubricVersion(activityId: string): string {
   return mapping[activityId] ?? ''
 }
 
-function validTranscriptionBody(body: Record<string, unknown>): body is Record<string, unknown> & { activityId: string; sourceContentVersion: string; imageDataUrl: string; layout: { width: number; height: number } } {
-  return typeof body.activityId === 'string'
-    && typeof body.sourceContentVersion === 'string'
-    && typeof body.imageDataUrl === 'string'
-    && /^data:image\/png;base64,[A-Za-z0-9+/=]+$/.test(body.imageDataUrl)
-    && body.imageDataUrl.length <= 1_500_000
-    && isRecord(body.layout)
-    && Number.isFinite(body.layout.width)
-    && Number.isFinite(body.layout.height)
+interface TranscriptionBody extends Record<string, unknown> {
+  requestId: string
+  submissionId: string
+  activityId: string
+  sourceContentVersion: string
+  inkRevision: number
+  imageDataUrl: string
+  layout: { width: number; height: number }
 }
 
-function validEvaluationBody(body: Record<string, unknown>): body is Record<string, unknown> & { activityId: string; sourceContentVersion: string; rubricVersion: string; confirmedText: string; spellingAssessmentSupportable: boolean } {
+interface EvaluationBody extends Record<string, unknown> {
+  requestId: string
+  recognitionRequestId: string | null
+  activityId: string
+  sourceContentVersion: string
+  rubricVersion: string
+  submissionId: string
+  inkRevision: number
+  inputMode: 'handwriting' | 'typed' | 'mixed'
+  transcriptionConfirmedBy: 'learner' | 'parent'
+  confirmedText: string
+}
+
+function validRequestId(value: unknown): value is string {
+  return typeof value === 'string' && value.length >= 8 && value.length <= 160
+}
+
+function validTranscriptionBody(body: Record<string, unknown>): body is TranscriptionBody {
+  if (typeof body.submissionId !== 'string' || body.submissionId.length > 160
+    || typeof body.activityId !== 'string'
+    || typeof body.sourceContentVersion !== 'string'
+    || !Number.isSafeInteger(body.inkRevision) || Number(body.inkRevision) < 0
+    || typeof body.imageDataUrl !== 'string'
+    || !isRecord(body.layout)
+    || !boundedDimension(body.layout.width, 4_096)
+    || !boundedDimension(body.layout.height, 4_096)) return false
+  return validPng(body.imageDataUrl)
+}
+
+function validEvaluationBody(body: Record<string, unknown>): body is EvaluationBody {
   return typeof body.activityId === 'string'
     && typeof body.sourceContentVersion === 'string'
     && typeof body.rubricVersion === 'string'
+    && typeof body.submissionId === 'string'
+    && (body.recognitionRequestId === null || validRequestId(body.recognitionRequestId))
+    && Number.isSafeInteger(body.inkRevision)
+    && Number(body.inkRevision) >= 0
+    && ['handwriting', 'typed', 'mixed'].includes(String(body.inputMode))
+    && ['learner', 'parent'].includes(String(body.transcriptionConfirmedBy))
     && typeof body.confirmedText === 'string'
-    && body.confirmedText.length > 0
+    && body.confirmedText.trim().length > 0
     && body.confirmedText.length <= 500
-    && typeof body.spellingAssessmentSupportable === 'boolean'
+}
+
+function validPng(dataUrl: string): boolean {
+  if (!/^data:image\/png;base64,[A-Za-z0-9+/=]+$/.test(dataUrl) || dataUrl.length > 1_500_000) return false
+  try {
+    const bytes = Uint8Array.from(atob(dataUrl.slice(dataUrl.indexOf(',') + 1)), (character) => character.charCodeAt(0))
+    if (bytes.length < 24) return false
+    const signature = [137, 80, 78, 71, 13, 10, 26, 10]
+    if (!signature.every((value, index) => bytes[index] === value)) return false
+    const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength)
+    return boundedDimension(view.getUint32(16), 4_096) && boundedDimension(view.getUint32(20), 4_096)
+  } catch {
+    return false
+  }
+}
+
+function boundedDimension(value: unknown, maximum: number): value is number {
+  return Number.isFinite(value) && Number(value) >= 1 && Number(value) <= maximum
 }
 
 async function readBoundedJson(request: Request, maxBytes: number): Promise<Record<string, unknown> | null> {
@@ -199,28 +512,37 @@ async function readBoundedJson(request: Request, maxBytes: number): Promise<Reco
   }
 }
 
-function json(value: unknown, status: number, origin: string, allowed: string[], cookie?: string): Response {
-  const headers = corsHeaders(origin, allowed, { 'content-type': 'application/json', 'cache-control': 'no-store' })
-  if (cookie) headers.set('set-cookie', cookie)
-  return new Response(JSON.stringify(value), { status, headers })
+async function hashJson(value: unknown): Promise<string> {
+  return hashText(JSON.stringify(canonicalize(value)))
+}
+
+async function hashText(value: string): Promise<string> {
+  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(value))
+  return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, '0')).join('')
+}
+
+function canonicalize(value: unknown): unknown {
+  if (Array.isArray(value)) return value.map(canonicalize)
+  if (!isRecord(value)) return value
+  return Object.fromEntries(Object.keys(value).sort().map((key) => [key, canonicalize(value[key])]))
+}
+
+function json(value: unknown, status: number, origin: string, allowed: string[]): Response {
+  return new Response(JSON.stringify(value), {
+    status,
+    headers: corsHeaders(origin, allowed, { 'content-type': 'application/json', 'cache-control': 'no-store' }),
+  })
 }
 
 function corsHeaders(origin: string, allowed: string[], values: Record<string, string>): Headers {
   const headers = new Headers({ ...values, vary: 'Origin' })
-  if (allowed.includes(origin)) {
-    headers.set('access-control-allow-origin', origin)
-    headers.set('access-control-allow-credentials', 'true')
-  }
+  if (allowed.includes(origin)) headers.set('access-control-allow-origin', origin)
   return headers
 }
 
-function sessionCookie(token: string, expiresAt: string) {
-  return `rrq_writing_session=${encodeURIComponent(token)}; HttpOnly; Secure; SameSite=Strict; Path=/; Expires=${new Date(expiresAt).toUTCString()}`
-}
-
-function cookieValue(header: string | null, name: string): string | null {
-  const match = header?.split(';').map((part) => part.trim()).find((part) => part.startsWith(`${name}=`))
-  return match ? decodeURIComponent(match.slice(name.length + 1)) : null
+function bearerToken(header: string | null): string | null {
+  const match = header?.match(/^Bearer ([A-Za-z0-9._~-]{32,512})$/)
+  return match?.[1] ?? null
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {

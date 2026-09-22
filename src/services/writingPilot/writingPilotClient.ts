@@ -1,12 +1,14 @@
-import {
-  validateWritingFeedback,
-} from '../../persistence/writingPilotStore'
+import { validateWritingFeedback } from '../../persistence/writingPilotStore'
 import type {
   WritingEvaluationResult,
   WritingFeedback,
   WritingRecognitionResult,
   WritingServiceAuthority,
 } from '../../domain/writingPilot'
+import {
+  createIndexedDbWritingPilotCredentialStore,
+  type WritingPilotCredentialStore,
+} from './writingPilotCredentialStore'
 
 export type WritingServiceFailureCode =
   | 'unavailable'
@@ -18,6 +20,9 @@ export type WritingServiceFailureCode =
   | 'invalid_response'
   | 'request_failed'
   | 'revocation_unknown'
+  | 'parent_review_required'
+  | 'provider_refused'
+  | 'request_identity_conflict'
 
 export type WritingServiceResult<T> =
   | { status: 'ok'; value: T }
@@ -29,6 +34,7 @@ export interface WritingPilotClient {
   revoke(): Promise<WritingServiceResult<{ revoked: true }>>
   transcribe(input: {
     requestId: string
+    submissionId: string
     activityId: string
     sourceContentVersion: string
     inkRevision: number
@@ -37,12 +43,15 @@ export interface WritingPilotClient {
   }): Promise<WritingServiceResult<WritingRecognitionResult>>
   evaluate(input: {
     requestId: string
+    recognitionRequestId: string | null
     activityId: string
     sourceContentVersion: string
     rubricVersion: string
     submissionId: string
+    inkRevision: number
+    inputMode: 'handwriting' | 'typed' | 'mixed'
+    transcriptionConfirmedBy: 'learner' | 'parent'
     confirmedText: string
-    spellingAssessmentSupportable: boolean
   }): Promise<WritingServiceResult<WritingEvaluationResult>>
 }
 
@@ -50,6 +59,11 @@ interface ClientOptions {
   baseUrl?: string
   fetchImpl?: typeof fetch
   timeoutMs?: number
+  credentials?: WritingPilotCredentialStore
+}
+
+interface ActivationWire extends WritingServiceAuthority {
+  installationToken: string
 }
 
 export function createWritingPilotClient(options: ClientOptions = {}): WritingPilotClient {
@@ -57,21 +71,40 @@ export function createWritingPilotClient(options: ClientOptions = {}): WritingPi
   const timeoutMs = options.timeoutMs ?? 25_000
   const baseUrl = resolveBaseUrl(options.baseUrl)
   const endpointId = baseUrl ? new URL(baseUrl).origin + new URL(baseUrl).pathname : 'unconfigured'
+  const credentials = options.credentials ?? createIndexedDbWritingPilotCredentialStore()
 
-  const request = async <T>(path: string, init: RequestInit, validate: (value: unknown) => T | null): Promise<WritingServiceResult<T>> => {
+  const request = async <T>(
+    path: string,
+    init: RequestInit,
+    validate: (value: unknown) => T | null,
+    tokenOverride?: string,
+  ): Promise<WritingServiceResult<T>> => {
     if (!baseUrl || typeof fetchImpl !== 'function') return failure('unavailable', 'Protected writing processing is not configured.', false)
+    let token = tokenOverride
+    if (path !== 'activate' && !token) {
+      try {
+        token = await credentials.load(endpointId) ?? undefined
+      } catch {
+        return failure('unavailable', 'Private installation authorization storage is unavailable.', false)
+      }
+      if (!token) return failure('unauthorized', 'Protected writing authorization is not active.', false)
+    }
     const controller = new AbortController()
     const timer = globalThis.setTimeout(() => controller.abort(), timeoutMs)
     try {
       const response = await fetchImpl(new URL(path, baseUrl), {
         ...init,
-        credentials: 'include',
+        credentials: 'omit',
         cache: 'no-store',
         signal: controller.signal,
-        headers: { 'content-type': 'application/json', ...init.headers },
+        headers: {
+          'content-type': 'application/json',
+          ...(token ? { authorization: `Bearer ${token}` } : {}),
+          ...init.headers,
+        },
       })
-      if (!response.ok) return responseFailure(response.status)
-      const parsed: unknown = await response.json()
+      const parsed: unknown = await response.json().catch(() => null)
+      if (!response.ok) return responseFailure(response.status, parsed)
       const value = validate(parsed)
       return value ? { status: 'ok', value } : failure('invalid_response', 'The writing service returned an invalid result.', false)
     } catch (error) {
@@ -84,13 +117,33 @@ export function createWritingPilotClient(options: ClientOptions = {}): WritingPi
 
   return {
     endpointId,
-    activate: (activationCode, consentVersion) => request('activate', {
-      method: 'POST',
-      body: JSON.stringify({ activationCode, consentVersion }),
-    }, validateAuthority),
-    revoke: () => request('revoke', { method: 'POST', body: '{}' }, (value) => (
-      isRecord(value) && value.revoked === true ? { revoked: true as const } : null
-    )),
+    async activate(activationCode, consentVersion) {
+      const result = await request('activate', {
+        method: 'POST',
+        body: JSON.stringify({ activationCode, consentVersion }),
+      }, validateActivation)
+      if (result.status !== 'ok') return result
+      try {
+        await credentials.save(endpointId, result.value.installationToken)
+      } catch {
+        return failure('unavailable', 'Installation authorization could not be protected on this browser.', false)
+      }
+      const { installationToken: _installationToken, ...authority } = result.value
+      return { status: 'ok', value: authority }
+    },
+    async revoke() {
+      let token: string | null = null
+      try {
+        token = await credentials.load(endpointId)
+        if (!token) return failure('unauthorized', 'Protected writing authorization is not active.', false)
+        const result = await request('revoke', { method: 'POST', body: '{}' }, validateRevocation, token)
+        await credentials.clear(endpointId)
+        return result
+      } catch {
+        if (token) await credentials.clear(endpointId).catch(() => undefined)
+        return failure('revocation_unknown', 'Remote authorization could not be confirmed. Local authorization was removed.', false)
+      }
+    },
     transcribe: (input) => request('transcribe', { method: 'POST', body: JSON.stringify(input) }, validateRecognition),
     evaluate: (input) => request('evaluate', { method: 'POST', body: JSON.stringify(input) }, validateEvaluation),
   }
@@ -103,17 +156,30 @@ function resolveBaseUrl(explicit?: string): string | null {
   return ensureTrailingSlash(configured || new URL('api/read-write/v1/', document.baseURI).toString())
 }
 
+function validateActivation(value: unknown): ActivationWire | null {
+  const authority = validateAuthority(value)
+  if (!authority || !isRecord(value) || typeof value.installationToken !== 'string' || value.installationToken.length < 32) return null
+  return { ...authority, installationToken: value.installationToken }
+}
+
 function validateAuthority(value: unknown): WritingServiceAuthority | null {
   if (!isRecord(value)
     || value.status !== 'authorized'
+    || value.authMode !== 'installation_bearer_v1'
     || typeof value.installationId !== 'string'
     || typeof value.endpointId !== 'string'
     || value.retentionControl !== 'approved_zero_data_retention'
     || typeof value.approvedAt !== 'string'
     || typeof value.expiresAt !== 'string'
+    || !Number.isFinite(Date.parse(value.approvedAt))
+    || !Number.isFinite(Date.parse(value.expiresAt))
     || !Number.isSafeInteger(value.budgetLimitMicros)
     || !Number.isSafeInteger(value.budgetRemainingMicros)) return null
   return value as unknown as WritingServiceAuthority
+}
+
+function validateRevocation(value: unknown) {
+  return isRecord(value) && value.revoked === true ? { revoked: true as const } : null
 }
 
 function validateRecognition(value: unknown): WritingRecognitionResult | null {
@@ -135,13 +201,17 @@ function validateEvaluation(value: unknown): WritingEvaluationResult | null {
   return { feedback: value.feedback as WritingFeedback, provider: value.provider as 'openai' | 'mocked' }
 }
 
-function responseFailure(status: number): WritingServiceResult<never> {
+function responseFailure(status: number, value: unknown): WritingServiceResult<never> {
+  const code = isRecord(value) && typeof value.error === 'string' ? value.error : ''
+  if (code === 'parent_review_required' || code === 'safety_review_required') return failure('parent_review_required', 'The writing was saved for calm parent review.', false)
+  if (code === 'provider_refused') return failure('provider_refused', 'The writing was saved for parent review because feedback was unavailable.', false)
+  if (code === 'request_identity_conflict') return failure('request_identity_conflict', 'This protected request identity does not match the saved writing.', false)
   if (status === 401 || status === 403) return failure('unauthorized', 'Protected writing authorization is not active.', false)
   if (status === 409) return failure('timeout_unknown', 'A request with this identity is still unresolved. The work was saved for parent review.', false)
   if (status === 412) return failure('consent_required', 'Parent consent must be renewed before external processing.', false)
   if (status === 422) return failure('invalid_response', 'The writing service rejected the bounded request.', false)
   if (status === 429 || status === 402) return failure('budget_exhausted', 'The parent-approved writing budget is unavailable.', false)
-  if (status === 503) return failure('retention_not_approved', 'Approved child-data retention controls are not active.', false)
+  if (status === 503 && code === 'retention_not_approved') return failure('retention_not_approved', 'Approved child-data retention controls are not active.', false)
   return failure('unavailable', 'Protected writing processing is unavailable.', status >= 500)
 }
 

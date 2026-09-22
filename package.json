@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && npm run build:writing-service",
+    "build:writing-service": "vite build --config service/read-write/vite.config.ts",
     "lint": "oxlint",
     "typecheck": "tsc -p tsconfig.app.json --noEmit",
     "test": "vitest run",
@@ -18,7 +19,7 @@
     "test:browser:edge": "node scripts/browser/run-browser-acceptance.mjs --mode local --engine edge",
     "test:browser:webkit": "node scripts/browser/run-browser-acceptance.mjs --mode local --engine webkit --previous-url https://michaelbennett87.github.io/rorys-reading-quest/",
     "test:browser": "npm run test:browser:contracts && npm run test:browser:edge && npm run test:browser:webkit",
-    "test:writing-pilot": "vitest run tests/writingPilotCatalog.test.ts tests/writingPilotStore.test.ts tests/writingPilotService.test.ts tests/openAiWritingProvider.test.ts tests/useWritingPilot.test.tsx",
+    "test:writing-pilot": "vitest run tests/writingPilotCatalog.test.ts tests/writingPilotStore.test.ts tests/writingPilotService.test.ts tests/openAiWritingProvider.test.ts tests/writingPilotClient.test.ts tests/fileWritingPilotStores.test.ts tests/useWritingPilot.test.tsx",
     "verify:deployed": "node scripts/browser/run-browser-acceptance.mjs --mode deployed",
     "verify:release": "npm run lint && npm run typecheck && npm run test && npm run audit:answer-uniqueness && npm run build && npm run test:browser",
     "preview": "vite preview"

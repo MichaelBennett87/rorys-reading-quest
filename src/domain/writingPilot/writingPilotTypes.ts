@@ -79,6 +79,7 @@ export interface WritingPilotConsentRecord {
 
 export interface WritingServiceAuthority {
   status: 'authorized'
+  authMode: 'installation_bearer_v1'
   installationId: string
   endpointId: string
   retentionControl: 'approved_zero_data_retention'

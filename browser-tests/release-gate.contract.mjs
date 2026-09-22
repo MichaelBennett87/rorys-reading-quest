@@ -68,6 +68,16 @@ test('the Pages workflow enforces build then browser then deploy then deployed-b
     ['deployed_browser', 'deployed_webkit'],
   ])
   assert.equal(result.buildCount, 1)
+  assert.match(workflow, /cp -R \.service-dist release-artifact\/service-dist/)
+  assert.match(workflow, /Restore the tested local service harness bundle/g)
+})
+
+test('both local engine runs require the real protected-service readiness scenario', () => {
+  const harness = readFileSync(resolve('scripts/browser/native-acceptance.mjs'), 'utf8')
+  assert.match(harness, /if \(TEST_MODE === 'local'\) report\.requiredScenarios\['writing-service-readiness'\]/)
+  assert.match(harness, /startNodeWritingPilotServer/)
+  assert.match(harness, /oneTimeActivationReplayRejected: true/)
+  assert.match(harness, /paidProviderRequests: 0/)
 })
 
 test('a real required-engine assertion failure propagates as nonzero', () => {

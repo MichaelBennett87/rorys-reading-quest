@@ -52,6 +52,7 @@ jobs:
         run: |
           mkdir -p release-artifact
           cp -R dist release-artifact/dist
+          cp -R .service-dist release-artifact/service-dist
           cp .artifacts/browser/build-manifest.json release-artifact/build-manifest.json
 
       - uses: actions/upload-artifact@v4
@@ -78,6 +79,10 @@ jobs:
         with:
           name: ${{ env.RELEASE_ARTIFACT }}
           path: release-artifact
+
+      - name: Restore the tested local service harness bundle
+        shell: pwsh
+        run: Copy-Item -Recurse release-artifact/service-dist .service-dist
 
       - name: Verify native Edge and tested build
         shell: pwsh
@@ -118,6 +123,9 @@ jobs:
         with:
           name: ${{ env.RELEASE_ARTIFACT }}
           path: release-artifact
+
+      - name: Restore the tested local service harness bundle
+        run: cp -R release-artifact/service-dist .service-dist
 
       - name: Prove WebKit gate failures propagate
         env:

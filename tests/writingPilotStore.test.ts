@@ -71,4 +71,32 @@ describe('writing pilot persistence', () => {
     expect(normalized.flatMap((stroke) => stroke.points)).toHaveLength(WRITING_PILOT_MAX_POINTS)
     expect(normalized[0].points[0]).toMatchObject({ x: 0, y: 0.5, pressure: 1 })
   })
+
+  it('retains writing records but disables legacy cookie-era external authority', () => {
+    const storage = new MemoryStorage()
+    const state = createDefaultWritingPilotState('2026-09-21T12:00:00.000Z')
+    storage.setItem(WRITING_PILOT_STORAGE_KEY, JSON.stringify({
+      ...state,
+      settings: {
+        ...state.settings,
+        enabled: true,
+        externalProcessingEnabled: true,
+        serviceAuthority: {
+          status: 'authorized',
+          installationId: 'legacy',
+          endpointId: 'legacy-cookie-service',
+          retentionControl: 'approved_zero_data_retention',
+          approvedAt: '2026-09-20T00:00:00.000Z',
+          expiresAt: '2026-10-01T00:00:00.000Z',
+          budgetLimitMicros: 100,
+          budgetRemainingMicros: 100,
+        },
+      },
+    }))
+    const loaded = createLocalStorageWritingPilotStore(storage).load('2026-09-22T00:00:00.000Z')
+    expect(loaded.status).toBe('loaded')
+    expect(loaded.state.settings.enabled).toBe(true)
+    expect(loaded.state.settings.externalProcessingEnabled).toBe(false)
+    expect(loaded.state.settings.serviceAuthority).toBeNull()
+  })
 })

@@ -17,7 +17,7 @@ The local Parent PIN protects Parent Area on the same browser. It is not remote 
 External processing is permitted only after all of these independent controls are active:
 
 - a reviewed provider and fixed endpoint;
-- a protected deployed service with an approved-installation credential in an `HttpOnly`, `Secure`, `SameSite=Strict` session;
+- a protected deployed service that exchanges a one-time parent-provisioned code for a high-entropy, revocable installation bearer stored in a dedicated IndexedDB credential store;
 - the current parent notice and consent version;
 - verified applicable child-data retention controls;
 - a finite server-enforced per-installation budget covering recognition, evaluation, and required safety processing.
@@ -30,6 +30,6 @@ Provider credentials never enter browser JavaScript, Vite variables, Git, screen
 
 `EXTERNAL ACTIVATION PENDING`
 
-The repository has no configured protected service deployment, provider secret, verified provider retention approval, approved installation, or finite parent-authorized spending limit. CI uses synthetic ink and mocked responses and spends $0. A checked box and local PIN do not satisfy the missing controls. A broader public rollout requires a separate legal/compliance and verifiable-parental-consent review.
+The repository has no configured protected service deployment, provider secret, verified provider retention approval, approved installation, or finite parent-authorized spending limit. CI uses synthetic ink, controlled local-service responses, and frontend mocks and spends $0. The service ledger retains hashed authorization and request identities plus budget metadata for 30 days; a sensitive deduplication response is retained for at most 15 minutes. Provider retention is separate and does not delete this service state. A checked box and local PIN do not satisfy the missing controls. A broader public rollout requires a separate legal/compliance and verifiable-parental-consent review.
 
 Never recommend clearing Safari website data as a routine repair; doing so can erase local learning and writing records.

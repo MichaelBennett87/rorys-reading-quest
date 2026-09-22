@@ -112,8 +112,16 @@ export function pruneWritingPilotState(state: WritingPilotStateV1, now: string):
     .sort((left, right) => left.createdAt.localeCompare(right.createdAt))
     .slice(-WRITING_PILOT_RECORD_LIMIT)
   const ids = new Set(records.map((record) => record.recordId))
+  const serviceAuthority = validServiceAuthority(state.settings.serviceAuthority)
+    ? state.settings.serviceAuthority
+    : null
   return {
     ...state,
+    settings: {
+      ...state.settings,
+      externalProcessingEnabled: state.settings.externalProcessingEnabled && serviceAuthority !== null,
+      serviceAuthority,
+    },
     records,
     pendingRecordId: state.pendingRecordId && ids.has(state.pendingRecordId) ? state.pendingRecordId : null,
     offeredActivityIds: [...new Set(state.offeredActivityIds)].slice(-WRITING_PILOT_RECORD_LIMIT * 2),
@@ -164,6 +172,9 @@ export function validateWritingPilotState(value: unknown):
       || typeof value.settings.consent.acceptedAt !== 'string'
       || !Array.isArray(value.settings.consent.disclosures)) return invalid('Writing consent record is malformed.')
   }
+  if (value.settings.serviceAuthority !== null
+    && value.settings.serviceAuthority !== undefined
+    && !isRecord(value.settings.serviceAuthority)) return invalid('Writing service authority is malformed.')
   if (!Array.isArray(value.records) || value.records.length > WRITING_PILOT_RECORD_LIMIT) return invalid('Writing records exceed the bounded limit.')
   if (!Array.isArray(value.offeredActivityIds) || !value.offeredActivityIds.every((entry) => typeof entry === 'string')) return invalid('Writing activity history is malformed.')
   if (value.pendingRecordId !== null && typeof value.pendingRecordId !== 'string') return invalid('Pending writing identity is malformed.')
@@ -174,6 +185,22 @@ export function validateWritingPilotState(value: unknown):
     || records.some((record) => (record as WritingResponseRecord).recordId === value.pendingRecordId)
   if (!pendingMatches) return invalid('Pending writing record does not exist.')
   return { valid: true, state: value as unknown as WritingPilotStateV1 }
+}
+
+function validServiceAuthority(value: unknown): value is WritingPilotStateV1['settings']['serviceAuthority'] {
+  if (!isRecord(value)
+    || value.status !== 'authorized'
+    || value.authMode !== 'installation_bearer_v1'
+    || typeof value.installationId !== 'string'
+    || typeof value.endpointId !== 'string'
+    || value.retentionControl !== 'approved_zero_data_retention'
+    || typeof value.approvedAt !== 'string'
+    || typeof value.expiresAt !== 'string'
+    || !Number.isFinite(Date.parse(value.approvedAt))
+    || !Number.isFinite(Date.parse(value.expiresAt))
+    || !Number.isSafeInteger(value.budgetLimitMicros)
+    || !Number.isSafeInteger(value.budgetRemainingMicros)) return false
+  return true
 }
 
 function validateRecord(value: unknown): value is WritingResponseRecord {

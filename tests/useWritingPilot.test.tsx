@@ -77,6 +77,7 @@ describe('useWritingPilot', () => {
 function clientStub(overrides: Partial<WritingPilotClient> = {}): WritingPilotClient & { transcribe: ReturnType<typeof vi.fn>; evaluate: ReturnType<typeof vi.fn> } {
   const authority: WritingServiceAuthority = {
     status: 'authorized',
+    authMode: 'installation_bearer_v1',
     installationId: 'test-installation',
     endpointId: 'test-service',
     retentionControl: 'approved_zero_data_retention',

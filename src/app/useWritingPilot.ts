@@ -136,6 +136,7 @@ export function useWritingPilot(options: UseWritingPilotOptions = {}): WritingPi
   }, [commit, now])
 
   const disablePilot = useCallback(async () => {
+    if (stateRef.current.settings.externalProcessingEnabled) await client.revoke()
     const result = await commit((current) => ({
       next: {
         ...current,
@@ -145,7 +146,7 @@ export function useWritingPilot(options: UseWritingPilotOptions = {}): WritingPi
       value: true,
     }))
     return result.status === 'saved'
-  }, [commit])
+  }, [client, commit])
 
   const authorizeExternal = useCallback(async (activationCode: string) => {
     const consent = stateRef.current.settings.consent
@@ -159,6 +160,7 @@ export function useWritingPilot(options: UseWritingPilotOptions = {}): WritingPi
       },
       value: true,
     }))
+    if (saved.status !== 'saved') await client.revoke()
     return saved.status === 'saved'
       ? { ok: true, message: 'Protected writing processing is authorized for this installation.' }
       : { ok: false, message: 'Authorization was not saved on this device.' }
@@ -301,11 +303,17 @@ export function useWritingPilot(options: UseWritingPilotOptions = {}): WritingPi
         }],
         updatedAt: now().toISOString(),
       },
-      value: { inkRevision: record.inkRevision, activityId: record.activityId, sourceContentVersion: record.sourceContentVersion },
+      value: {
+        inkRevision: record.inkRevision,
+        submissionId: record.submissionId,
+        activityId: record.activityId,
+        sourceContentVersion: record.sourceContentVersion,
+      },
     })))
     if (prepared.status !== 'saved') return false
     const response = await client.transcribe({
       requestId,
+      submissionId: prepared.value.submissionId,
       activityId: prepared.value.activityId,
       sourceContentVersion: prepared.value.sourceContentVersion,
       inkRevision: prepared.value.inkRevision,
@@ -344,6 +352,13 @@ export function useWritingPilot(options: UseWritingPilotOptions = {}): WritingPi
       const meaningUncertain = record.recognitionUncertainties.some((entry) => entry.affectsMeaning)
       const canEvaluate = externalIsUsable(current) && !meaningUncertain
       const requestId = canEvaluate ? createId('evaluation') : null
+      const recognitionRequestId = record.inputMode === 'typed'
+        ? null
+        : [...record.requests].reverse().find((request) => (
+            request.kind === 'recognition'
+            && request.status === 'completed'
+            && request.inkRevision === record.inkRevision
+          ))?.requestId ?? null
       const updatedAt = now().toISOString()
       return {
         record: {
@@ -373,7 +388,9 @@ export function useWritingPilot(options: UseWritingPilotOptions = {}): WritingPi
           sourceContentVersion: record.sourceContentVersion,
           rubricVersion: record.rubricVersion,
           submissionId: record.submissionId,
-          spellingAssessmentSupportable: corrected ? false : record.spellingAssessmentSupportable,
+          recognitionRequestId,
+          inputMode: record.inputMode,
+          transcriptionConfirmedBy: 'learner' as const,
         } : null,
       }
     }))
@@ -560,8 +577,10 @@ function externalIsUsable(state: WritingPilotStateV1): boolean {
   return state.settings.enabled
     && state.settings.externalProcessingEnabled
     && authority?.status === 'authorized'
+    && authority.authMode === 'installation_bearer_v1'
     && authority.retentionControl === 'approved_zero_data_retention'
     && authority.budgetRemainingMicros > 0
+    && Number.isFinite(Date.parse(authority.expiresAt))
     && Date.parse(authority.expiresAt) > Date.now()
 }
 

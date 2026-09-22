@@ -642,4 +642,14 @@ Decision: implement one server-only OpenAI adapter and keep it inactive until a 
 
 Decision: recognition sees ink and layout only; evaluation sees confirmed untrusted text plus the source and server-owned rubric. Results remain advisory and cannot call reading progression or reward transitions.
 
+## 2026-09-22 - Read & Write external-service readiness
+
+Decision: replace the cross-site cookie assumption with a one-time-code exchange for a high-entropy installation bearer stored only in a dedicated IndexedDB credential store. CORS, the local Parent PIN, and the local consent checkbox are not remote authentication.
+
+Decision: parse moderation bodies for both inputs and generated child-visible output, preserve provider usage before parsing content, calculate observed cost from reviewed pinned pricing, and retain the full reservation whenever a paid outcome is ambiguous. Safety and provider failures route to calm parent review and never become learner errors.
+
+Decision: provide one single-instance Node service using a durable JSON ledger, an exclusive short lock, atomic replacement, payload-bound idempotency, and bounded response/audit retention. Horizontal deployment is not authorized without a transactional ledger.
+
+Consequence: implementation and zero-cost synthetic service tests can ship guarded while external processing remains `EXTERNAL ACTIVATION PENDING`. A real host, verified provider approval, server secret, private installation issuance, finite parent-approved budget, and a non-child live canary remain owner gates.
+
 Decision: extend the existing mandatory Edge and WebKit artifact-bound gate with a synthetic, mocked `read-write-pilot` scenario. CI performs no paid inference and does not claim physical stylus or Rory-handwriting accuracy.

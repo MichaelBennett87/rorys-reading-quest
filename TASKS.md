@@ -250,6 +250,7 @@ Playwright WebKit on macOS with an iPad descriptor is required automated Safari-
 - [x] Keep writing records in a separate versioned store with retention, record, stroke, point, revision, and late-response limits.
 - [x] Add PIN-gated Writing Review controls for consent, transcription correction, suggestion disposition, review status, deletion, and external disablement.
 - [x] Add a fixed protected-service contract with server-owned rubrics, installation authorization, approved-retention checks, request deduplication, and finite budget enforcement.
+- [x] Add provider safety-body validation, generated-feedback safety checks, observed-usage cost reconciliation, payload-bound idempotency, a durable single-instance reservation ledger, and Edge/WebKit real-local-service authorization coverage.
 - [x] Require the mocked, synthetic `read-write-pilot` scenario in Edge and WebKit release reports.
 - [ ] Deploy and review a protected inference service outside GitHub Pages.
 - [ ] Verify the selected provider project's applicable child-data retention approval; `store: false` alone is not approval.

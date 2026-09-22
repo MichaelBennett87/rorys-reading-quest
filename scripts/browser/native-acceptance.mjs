@@ -8,7 +8,7 @@ import {
 } from 'node:fs'
 import { basename, isAbsolute, join, relative, resolve } from 'node:path'
 import { platform, release, tmpdir } from 'node:os'
-import { fileURLToPath } from 'node:url'
+import { fileURLToPath, pathToFileURL } from 'node:url'
 
 import { chromium, devices, webkit } from 'playwright-core'
 
@@ -187,15 +187,18 @@ async function launchProfile(
   })
   if (options.mockWritingService) {
     const serviceState = options.writingServiceState ?? { calls: [] }
+    const installationToken = 'synthetic-browser-installation-token-1234567890'
     options.writingServiceState = serviceState
     await context.route('**/api/read-write/v1/**', async (route) => {
       const request = route.request()
       const path = new URL(request.url()).pathname.split('/').filter(Boolean).at(-1)
       const body = request.postDataJSON()
-      serviceState.calls.push({ path, requestId: body?.requestId ?? null })
+      const authorization = request.headers().authorization ?? null
+      serviceState.calls.push({ path, requestId: body?.requestId ?? null, authorized: authorization === `Bearer ${installationToken}` })
       if (path === 'activate') {
         await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({
           status: 'authorized',
+          authMode: 'installation_bearer_v1',
           installationId: 'synthetic-browser-installation',
           endpointId: 'rrq-writing-pilot-v1',
           retentionControl: 'approved_zero_data_retention',
@@ -203,7 +206,12 @@ async function launchProfile(
           expiresAt: new Date(Date.now() + 3_600_000).toISOString(),
           budgetLimitMicros: 2_000_000,
           budgetRemainingMicros: 1_900_000,
+          installationToken,
         }) })
+        return
+      }
+      if (authorization !== `Bearer ${installationToken}`) {
+        await route.fulfill({ status: 401, contentType: 'application/json', body: JSON.stringify({ error: 'unauthorized' }) })
         return
       }
       if (path === 'revoke') {
@@ -345,7 +353,7 @@ async function restartHandle(handle, label) {
   const oldLaunchId = handle.launchId
   await closeHandle(handle)
   const closedAt = new Date().toISOString()
-  const restarted = await launchProfile(handle.name, viewport, handle.runtime)
+  const restarted = await launchProfile(handle.name, viewport, handle.runtime, handle.options)
   const after = await readProgress(restarted.page)
   const afterHash = await progressHash(restarted.page)
   const newProcesses = profileProcesses(restarted.profilePath)
@@ -1747,6 +1755,7 @@ async function runReadWritePilot() {
   assert(await mocked.page.getByText('Grammar:', { exact: true }).count() === 1, 'feedback did not separate grammar')
   assert(await mocked.page.getByText('Capitalization and punctuation:', { exact: true }).count() === 1, 'feedback did not separate capitalization and punctuation')
   assert(mockState.calls.filter((entry) => entry.path === 'evaluate').length === 1, 'confirmed transcription did not make exactly one evaluation request')
+  assert(mockState.calls.filter((entry) => entry.path !== 'activate').every((entry) => entry.authorized), 'protected writing requests did not use the private installation bearer')
   await takeShot(mocked.page, `read-write-${ENGINE}-feedback`)
   await activate(mocked.page.getByRole('button', { name: 'Next', exact: true }))
   await assertQuestionFirstShell(mocked.page)
@@ -1765,6 +1774,187 @@ async function runReadWritePilot() {
     writingRewardSideEffects: 0,
   }
   await closeHandle(mocked)
+}
+
+async function runWritingServiceReadiness() {
+  assert(TEST_MODE === 'local', 'real local writing service readiness runs only before publication')
+  const serviceBundle = join(ROOT, '.service-dist', 'harness.mjs')
+  const serviceModule = await import(`${pathToFileURL(serviceBundle).href}?run=${encodeURIComponent(RUN_ID)}`)
+  const handle = await launchProfile('writing-service-readiness')
+  const page = await handle.context.newPage()
+  await page.goto(APP_URL, { waitUntil: 'networkidle', timeout: 60_000 })
+  const providerCalls = { transcribe: 0, evaluate: 0 }
+  const controlledProvider = {
+    maximumCostMicros: () => 100_000,
+    transcribe: async () => {
+      providerCalls.transcribe += 1
+      return {
+        status: 'completed',
+        result: {
+          rawTranscription: 'Tia got the wrappers before the wind blew them away.',
+          uncertainties: [],
+          spellingAssessmentSupportable: true,
+          provider: 'mocked',
+        },
+        billing: observedBrowserBilling(10_000),
+      }
+    },
+    evaluate: async ({ spellingAssessmentSupportable }) => {
+      providerCalls.evaluate += 1
+      const category = (message) => ({ status: 'meets', message, evidenceIds: ['rw-rubric-tia-r1-e1'] })
+      return {
+        status: 'completed',
+        result: {
+          provider: 'mocked',
+          feedback: {
+            understood: 'You explained why Tia acted first.',
+            comprehension: category('The reason matches the story.'),
+            supportingEvidence: category('The response uses the wind detail.'),
+            spelling: spellingAssessmentSupportable ? category('The original spelling can be reviewed.') : { status: 'withheld', message: 'Spelling was not assessed.', evidenceIds: [] },
+            grammar: category('The sentence is complete.'),
+            capitalizationPunctuation: category('The sentence begins and ends correctly.'),
+            improvements: [],
+            parentReviewRequired: false,
+            uncertaintyReason: null,
+          },
+        },
+        billing: observedBrowserBilling(20_000),
+      }
+    },
+  }
+  let firstServer = null
+  let expiryServer = null
+  try {
+    const firstClock = { now: new Date() }
+    firstServer = await controlledWritingService(serviceModule, controlledProvider, 'primary', firstClock, 3_600_000)
+    const activation = await browserServiceRequest(page, firstServer.url, 'activate', {
+      activationCode: 'synthetic-browser-activation-primary',
+      consentVersion: 'rrq-read-write-pilot-notice-v1',
+    })
+    assert(activation.status === 200 && typeof activation.body.installationToken === 'string', 'real HTTP activation did not issue an installation bearer')
+    const installationToken = activation.body.installationToken
+    const replayedActivation = await browserServiceRequest(page, firstServer.url, 'activate', {
+      activationCode: 'synthetic-browser-activation-primary',
+      consentVersion: 'rrq-read-write-pilot-notice-v1',
+    })
+    assert(replayedActivation.status === 403, 'one-time activation code was replayable')
+    const unauthorized = await browserServiceRequest(page, firstServer.url, 'transcribe', browserTranscriptionBody())
+    assert(unauthorized.status === 401, 'protected service accepted an unauthenticated inference request')
+    const transcriptionBody = browserTranscriptionBody()
+    const transcription = await browserServiceRequest(page, firstServer.url, 'transcribe', transcriptionBody, installationToken)
+    assert(transcription.status === 200 && transcription.body.rawTranscription?.includes('wrappers'), 'authorized real-service transcription path failed')
+    const duplicate = await browserServiceRequest(page, firstServer.url, 'transcribe', transcriptionBody, installationToken)
+    assert(duplicate.status === 200 && providerCalls.transcribe === 1, 'real-service deduplication did not replay the exact result')
+    const identityConflict = await browserServiceRequest(page, firstServer.url, 'transcribe', { ...transcriptionBody, layout: { width: 2, height: 1 } }, installationToken)
+    assert(identityConflict.status === 409 && identityConflict.body.error === 'request_identity_conflict', 'changed payload reused an existing protected request identity')
+    const evaluation = await browserServiceRequest(page, firstServer.url, 'evaluate', browserEvaluationBody(), installationToken)
+    assert(evaluation.status === 200 && providerCalls.evaluate === 1, 'authorized real-service evaluation path failed')
+    const revoked = await browserServiceRequest(page, firstServer.url, 'revoke', {}, installationToken)
+    assert(revoked.status === 200, 'real HTTP installation revocation failed')
+    assert((await browserServiceRequest(page, firstServer.url, 'transcribe', { ...transcriptionBody, requestId: 'browser-recognition-after-revoke' }, installationToken)).status === 401, 'revoked installation bearer remained authorized')
+
+    const expiryClock = { now: new Date() }
+    expiryServer = await controlledWritingService(serviceModule, controlledProvider, 'expiry', expiryClock, 60_000)
+    const expiryActivation = await browserServiceRequest(page, expiryServer.url, 'activate', {
+      activationCode: 'synthetic-browser-activation-expiry',
+      consentVersion: 'rrq-read-write-pilot-notice-v1',
+    })
+    assert(expiryActivation.status === 200, 'expiry test activation failed')
+    expiryClock.now = new Date(expiryClock.now.getTime() + 120_000)
+    assert((await browserServiceRequest(page, expiryServer.url, 'transcribe', { ...transcriptionBody, requestId: 'browser-recognition-expired' }, expiryActivation.body.installationToken)).status === 401, 'expired installation bearer remained authorized')
+
+    report.scenarios.writingServiceReadiness = {
+      status: 'PASS',
+      realLocalHttpService: true,
+      controlledProvider: true,
+      paidProviderRequests: 0,
+      crossOriginCors: true,
+      bearerAuthorization: true,
+      oneTimeActivationReplayRejected: true,
+      payloadBoundDeduplication: true,
+      expiryRejected: true,
+      revocationRejected: true,
+      providerCalls,
+    }
+  } finally {
+    await page.close().catch(() => undefined)
+    await firstServer?.close().catch(() => undefined)
+    await expiryServer?.close().catch(() => undefined)
+    await closeHandle(handle)
+  }
+}
+
+async function controlledWritingService(serviceModule, provider, suffix, clock, ttlMs) {
+  const activationCode = `synthetic-browser-activation-${suffix}`
+  const installation = {
+    installationId: `browser-installation-${suffix}`,
+    consentVersion: 'rrq-read-write-pilot-notice-v1',
+    authorizationExpiresAt: new Date(clock.now.getTime() + ttlMs).toISOString(),
+    retentionControl: 'approved_zero_data_retention',
+    budgetLimitMicros: 1_000_000,
+  }
+  const stores = new serviceModule.FileWritingPilotStores({
+    statePath: join(PROFILE_ROOT, `writing-service-${suffix}.json`),
+    installation,
+    activationCodeSha256: sha256(activationCode),
+    sessionTtlMs: ttlMs,
+    now: () => clock.now,
+  })
+  const service = serviceModule.createWritingPilotService({
+    allowedOrigins: [ORIGIN],
+    authorization: stores,
+    budget: stores,
+    provider,
+    now: () => clock.now,
+  })
+  return serviceModule.startNodeWritingPilotServer({ service })
+}
+
+async function browserServiceRequest(page, baseUrl, path, body, token = null) {
+  return page.evaluate(async ({ baseUrl: url, path: requestPath, body: requestBody, token: installationToken }) => {
+    const response = await fetch(new URL(requestPath, url), {
+      method: 'POST',
+      cache: 'no-store',
+      credentials: 'omit',
+      headers: {
+        'content-type': 'application/json',
+        ...(installationToken ? { authorization: `Bearer ${installationToken}` } : {}),
+      },
+      body: JSON.stringify(requestBody),
+    })
+    return { status: response.status, body: await response.json() }
+  }, { baseUrl, path, body, token })
+}
+
+function browserTranscriptionBody() {
+  return {
+    requestId: 'browser-recognition-request-1',
+    submissionId: 'browser-submission-1',
+    activityId: 'rw-g2-tia-wrappers-reason',
+    sourceContentVersion: 'g2-ss-plot-elements-r0.2.0',
+    inkRevision: 1,
+    imageDataUrl: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJ',
+    layout: { width: 1, height: 1 },
+  }
+}
+
+function browserEvaluationBody() {
+  return {
+    requestId: 'browser-evaluation-request-1',
+    recognitionRequestId: 'browser-recognition-request-1',
+    activityId: 'rw-g2-tia-wrappers-reason',
+    sourceContentVersion: 'g2-ss-plot-elements-r0.2.0',
+    rubricVersion: 'rw-rubric-tia-r1',
+    submissionId: 'browser-submission-1',
+    inkRevision: 1,
+    inputMode: 'handwriting',
+    transcriptionConfirmedBy: 'learner',
+    confirmedText: 'Tia got the wrappers before the wind blew them away.',
+  }
+}
+
+function observedBrowserBilling(costMicros) {
+  return { status: 'observed', model: 'controlled-browser-provider', pricingVersion: 'synthetic-v1', inputTokens: 10, outputTokens: 5, totalTokens: 15, costMicros }
 }
 
 async function enableLocalWritingPilot(page) {
@@ -1998,6 +2188,11 @@ async function main() {
     await runReleaseUpgrade()
     log('scenario releaseUpgrade passed')
   }
+  if (TEST_MODE === 'local') {
+    log('scenario writingServiceReadiness starting')
+    await runWritingServiceReadiness()
+    log('scenario writingServiceReadiness passed')
+  }
   log('scenario representativeCoverage starting')
   await runRepresentativeCoverage()
   log('scenario representativeCoverage passed')
@@ -2058,6 +2253,7 @@ async function main() {
     'runtime-health': report.runtime ? 'PASS' : 'FAIL',
     'read-write-pilot': report.scenarios.readWritePilot?.status ?? 'MISSING',
   }
+  if (TEST_MODE === 'local') report.requiredScenarios['writing-service-readiness'] = report.scenarios.writingServiceReadiness?.status ?? 'MISSING'
   if (IS_WEBKIT) {
     report.requiredScenarios['webkit-touch-interaction'] = report.scenarios.webkitTouchInteraction?.status ?? 'MISSING'
     report.requiredScenarios['webkit-web-locks'] = report.scenarios.webkitWebLocks?.status ?? 'MISSING'
