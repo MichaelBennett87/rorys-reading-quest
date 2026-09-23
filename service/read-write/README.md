@@ -1,5 +1,7 @@
 # Protected Read & Write service
 
+Historical controlled-contract harness: this Node/OpenAI design is retained for regression evidence only. The current guarded production candidate is `service/read-write-cloudflare`; this service is not a quota fallback and must not be deployed for the free-only pilot.
+
 This is the single-installation, single-instance service boundary for the disabled-by-default Read & Write pilot. GitHub Pages remains the reading frontend. A separately hosted HTTPS service may be configured only after child-data retention approval, a reviewed pinned model and price configuration, an installation authorization, and a finite parent-approved budget are all available.
 
 The service uses a one-time activation code to issue a high-entropy installation bearer. The browser keeps that bearer in IndexedDB, separate from writing records and reading progress. CORS is not authentication, and the local Parent PIN is never accepted by this service.

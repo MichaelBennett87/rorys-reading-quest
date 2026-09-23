@@ -1,7 +1,7 @@
 import type { GradeBand } from '../content/types'
 
 export const WRITING_PILOT_SCHEMA_VERSION = 1 as const
-export const WRITING_PILOT_NOTICE_VERSION = 'rrq-read-write-pilot-notice-v1' as const
+export const WRITING_PILOT_NOTICE_VERSION = 'rrq-read-write-pilot-notice-v2-cloudflare-free' as const
 export const WRITING_PILOT_RETENTION_DAYS = 30
 export const WRITING_PILOT_RECORD_LIMIT = 18
 export const WRITING_PILOT_MAX_STROKES = 200
@@ -82,11 +82,17 @@ export interface WritingServiceAuthority {
   authMode: 'installation_bearer_v1'
   installationId: string
   endpointId: string
-  retentionControl: 'approved_zero_data_retention'
+  provider: 'cloudflare_workers_ai'
+  retentionControl: 'cloudflare_workers_ai_no_training'
+  quotaPolicy: 'cloudflare_free_only_v1'
+  model: '@cf/google/gemma-4-26b-a4b-it'
   approvedAt: string
   expiresAt: string
-  budgetLimitMicros: number
-  budgetRemainingMicros: number
+  freePlanVerifiedAt: string
+  dailyApplicationNeuronLimit: number
+  dailyApplicationNeuronsRemaining: number
+  quotaResetsAt: string
+  actualPaidSpendingMicros: 0
 }
 
 export interface WritingPilotSettings {
@@ -94,6 +100,8 @@ export interface WritingPilotSettings {
   consent: WritingPilotConsentRecord | null
   externalProcessingEnabled: boolean
   serviceAuthority: WritingServiceAuthority | null
+  quotaPauseReason?: 'provider_daily_quota' | 'application_daily_quota' | null
+  quotaPauseUntil?: string | null
 }
 
 export interface WritingProviderRequestRecord {
@@ -112,9 +120,30 @@ export interface WritingParentReviewEvent {
     | 'transcription_corrected'
     | 'suggestion_accepted'
     | 'suggestion_dismissed'
+    | 'parent_judgment_recorded'
     | 'marked_reviewed'
   suggestionId: string | null
   occurredAt: string
+}
+
+export type WritingParentReviewReason =
+  | 'external_not_activated'
+  | 'provider_daily_quota'
+  | 'application_daily_quota'
+  | 'temporarily_unavailable'
+  | 'authorization_required'
+  | 'safety_review_required'
+  | 'recognition_uncertain'
+  | 'invalid_provider_output'
+  | 'request_outcome_unknown'
+  | 'local_save_failed'
+
+export interface WritingParentJudgment {
+  comprehension: 'meets' | 'partly_meets' | 'needs_support' | 'not_recorded'
+  spellingObservations: string
+  grammarPunctuationObservations: string
+  correction: string
+  recordedAt: string
 }
 
 export type WritingRecordStatus =
@@ -145,10 +174,12 @@ export interface WritingResponseRecord {
   transcriptionConfirmedBy: 'learner' | 'parent' | null
   spellingAssessmentSupportable: boolean
   feedback: WritingFeedback | null
-  feedbackProvenance: 'openai' | 'mocked' | 'none'
+  feedbackProvenance: 'cloudflare_workers_ai' | 'openai' | 'mocked' | 'none'
   suggestionDispositions: Record<string, 'accepted' | 'dismissed'>
   requests: WritingProviderRequestRecord[]
   parentReviewEvents: WritingParentReviewEvent[]
+  parentReviewReason?: WritingParentReviewReason | null
+  parentJudgment?: WritingParentJudgment | null
   parentReviewedAt: string | null
   failureReason: string | null
   createdAt: string
@@ -171,12 +202,12 @@ export interface WritingRecognitionResult {
   rawTranscription: string
   uncertainties: RecognitionUncertainty[]
   spellingAssessmentSupportable: boolean
-  provider: 'openai' | 'mocked'
+  provider: 'cloudflare_workers_ai' | 'openai' | 'mocked'
 }
 
 export interface WritingEvaluationResult {
   feedback: WritingFeedback
-  provider: 'openai' | 'mocked'
+  provider: 'cloudflare_workers_ai' | 'openai' | 'mocked'
 }
 
 export function createDefaultWritingPilotState(now: string): WritingPilotStateV1 {
@@ -188,6 +219,8 @@ export function createDefaultWritingPilotState(now: string): WritingPilotStateV1
       consent: null,
       externalProcessingEnabled: false,
       serviceAuthority: null,
+      quotaPauseReason: null,
+      quotaPauseUntil: null,
     },
     records: [],
     pendingRecordId: null,

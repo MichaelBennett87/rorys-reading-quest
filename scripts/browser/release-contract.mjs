@@ -196,6 +196,8 @@ export function validatePagesWorkflowContract(source) {
   if (!/^\s{4}needs:\s*deploy\s*$/m.test(deployed)) throw new Error('Deployed-browser verification must depend on deploy.')
   if (!/^\s{4}needs:\s*deploy\s*$/m.test(deployedWebkit)) throw new Error('Deployed WebKit verification must depend on deploy.')
   if (!/npm run test:browser:edge/m.test(browser) || !/--engine edge/m.test(browser)) throw new Error('Native browser job does not run the explicit Edge command.')
+  if (!/npm run test:writing-worker/m.test(quality)) throw new Error('Quality checks must run the controlled Cloudflare Worker and Durable Object integration gate.')
+  if (!/cp -R \.worker-dist release-artifact\/worker-dist/m.test(quality)) throw new Error('The guarded Worker bundle must be retained with release evidence.')
   if (!/runs-on:\s*macos-15/m.test(webkitBrowser) || !/npm run test:browser:webkit/m.test(webkitBrowser) || !/--engine webkit/m.test(webkitBrowser)) {
     throw new Error('Prepublication WebKit must run explicitly on macos-15.')
   }

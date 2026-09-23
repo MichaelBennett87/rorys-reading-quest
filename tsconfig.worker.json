@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es2023",
+    "lib": ["ES2023", "DOM"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "types": ["@cloudflare/workers-types"],
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": [
+    "service/read-write-cloudflare/**/*.ts",
+    "src/domain/writingPilot/**/*.ts",
+    "src/server/writingPilot/serverWritingCatalog.ts",
+    "src/persistence/writingPilotStore.ts",
+    "src/persistence/questProgressTypes.ts"
+  ]
+}

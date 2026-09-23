@@ -2,6 +2,8 @@
 
 Status: `EXTERNAL ACTIVATION PENDING`
 
+Historical note: this report records the 2026-09-22 OpenAI/Node readiness design. The current guarded production candidate is the Cloudflare free-only Worker documented in `CLOUDFLARE_FREE_READ_WRITE_REPORT.md`; the historical adapter is not a production fallback.
+
 ## Corrected gaps
 
 - The former adapter checked only moderation HTTP success. It now requires a well-formed `results[0].flagged` decision, handles a flagged HTTP 200, checks generated child-visible output, and fails closed when safety output is absent or malformed.

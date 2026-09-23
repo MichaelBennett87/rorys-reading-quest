@@ -653,3 +653,15 @@ Decision: provide one single-instance Node service using a durable JSON ledger, 
 Consequence: implementation and zero-cost synthetic service tests can ship guarded while external processing remains `EXTERNAL ACTIVATION PENDING`. A real host, verified provider approval, server secret, private installation issuance, finite parent-approved budget, and a non-child live canary remain owner gates.
 
 Decision: extend the existing mandatory Edge and WebKit artifact-bound gate with a synthetic, mocked `read-write-pilot` scenario. CI performs no paid inference and does not claim physical stylus or Rory-handwriting accuracy.
+
+## 2026-09-23 - Cloudflare free-only Read & Write candidate
+
+Decision: supersede the inactive paid-provider activation design with one direct Cloudflare Workers AI adapter and one SQLite-backed Durable Object. Keep the historical OpenAI/Node implementation only as controlled contract evidence; it is not a production route or fallback.
+
+Decision: require actual Workers Free verification, a current parent notice, one-time installation authorization, paid routes disabled, and a conservative application allowance no greater than 5,000 estimated neurons per UTC day. The account-wide Cloudflare allowance remains authoritative, usage elsewhere is unknown, and the RRQ monetary limit is exactly $0.
+
+Decision: preserve writing locally before every request. Quota, capacity, authorization, safety, invalid-output, timeout, and unknown outcomes create one stable Ana-review item and never become reading failure, remediation, mastery, XP, or stars. Confirmed daily exhaustion suppresses further inference until 00:00 UTC, and queued work is never uploaded automatically after reset.
+
+Decision: protect every unexpired unreviewed response from record-limit eviction. At queue capacity, supplemental writing pauses while ordinary reading continues. Parent comprehension and mechanics judgments use separate provenance and retain the original ink and machine output.
+
+Consequence: controlled Worker/Durable Object, Edge, and WebKit tests may ship with external processing off. No Cloudflare account was available for deployment or inference, so status remains `LOCAL PARENT FALLBACK READY; CLOUDFLARE ACTIVATION PENDING` until the actual account, processor terms, model-quality benchmark, private installation, and non-child live $0 canary gates pass.

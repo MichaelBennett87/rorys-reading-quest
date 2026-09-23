@@ -12,11 +12,17 @@ describe('writing pilot protected-service client', () => {
         authMode: 'installation_bearer_v1',
         installationId: 'installation-1',
         endpointId: 'rrq-writing-pilot-v1',
-        retentionControl: 'approved_zero_data_retention',
+        provider: 'cloudflare_workers_ai',
+        retentionControl: 'cloudflare_workers_ai_no_training',
+        quotaPolicy: 'cloudflare_free_only_v1',
+        model: '@cf/google/gemma-4-26b-a4b-it',
         approvedAt: '2026-09-22T00:00:00.000Z',
         expiresAt: '2026-10-01T00:00:00.000Z',
-        budgetLimitMicros: 10_000,
-        budgetRemainingMicros: 10_000,
+        freePlanVerifiedAt: '2026-09-22T00:00:00.000Z',
+        dailyApplicationNeuronLimit: 4_000,
+        dailyApplicationNeuronsRemaining: 4_000,
+        quotaResetsAt: '2026-09-23T00:00:00.000Z',
+        actualPaidSpendingMicros: 0,
         installationToken: 'private-installation-token-1234567890',
       }), { status: 200 })
       expect(new Headers(init?.headers).get('authorization')).toBe('Bearer private-installation-token-1234567890')
@@ -40,8 +46,10 @@ describe('writing pilot protected-service client', () => {
     }
     const fetchImpl = vi.fn(async () => new Response(JSON.stringify({
       status: 'authorized', authMode: 'installation_bearer_v1', installationId: 'i', endpointId: 'e',
-      retentionControl: 'approved_zero_data_retention', approvedAt: '2026-09-22T00:00:00.000Z', expiresAt: '2026-10-01T00:00:00.000Z',
-      budgetLimitMicros: 1, budgetRemainingMicros: 1, installationToken: 'private-installation-token-1234567890',
+      provider: 'cloudflare_workers_ai', retentionControl: 'cloudflare_workers_ai_no_training', quotaPolicy: 'cloudflare_free_only_v1', model: '@cf/google/gemma-4-26b-a4b-it',
+      approvedAt: '2026-09-22T00:00:00.000Z', expiresAt: '2026-10-01T00:00:00.000Z', freePlanVerifiedAt: '2026-09-22T00:00:00.000Z',
+      dailyApplicationNeuronLimit: 4_000, dailyApplicationNeuronsRemaining: 4_000, quotaResetsAt: '2026-09-23T00:00:00.000Z', actualPaidSpendingMicros: 0,
+      installationToken: 'private-installation-token-1234567890',
     }), { status: 200 })) as unknown as typeof fetch
     const client = createWritingPilotClient({ baseUrl: 'https://service.example/v1/', fetchImpl, credentials })
     expect(await client.activate('code', WRITING_PILOT_NOTICE_VERSION)).toMatchObject({ status: 'error', code: 'unavailable' })

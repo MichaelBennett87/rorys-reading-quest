@@ -107,25 +107,52 @@ export function createLocalStorageWritingPilotStore(
 
 export function pruneWritingPilotState(state: WritingPilotStateV1, now: string): WritingPilotStateV1 {
   const cutoff = Date.parse(now)
-  const records = state.records
+  const eligibleRecords = state.records
     .filter((record) => !Number.isFinite(cutoff) || Date.parse(record.expiresAt) > cutoff || record.recordId === state.pendingRecordId)
     .sort((left, right) => left.createdAt.localeCompare(right.createdAt))
-    .slice(-WRITING_PILOT_RECORD_LIMIT)
+    .map((record) => ({
+      ...record,
+      parentReviewReason: record.parentReviewReason ?? null,
+      parentJudgment: record.parentJudgment ?? null,
+    }))
+  const protectedRecords = eligibleRecords.filter(isUnreviewedParentRecord)
+  const replaceableRecords = eligibleRecords.filter((record) => !isUnreviewedParentRecord(record))
+  const remainingSlots = Math.max(0, WRITING_PILOT_RECORD_LIMIT - protectedRecords.length)
+  const records = [...protectedRecords, ...(remainingSlots > 0 ? replaceableRecords.slice(-remainingSlots) : [])]
+    .sort((left, right) => left.createdAt.localeCompare(right.createdAt))
   const ids = new Set(records.map((record) => record.recordId))
   const serviceAuthority = validServiceAuthority(state.settings.serviceAuthority)
     ? state.settings.serviceAuthority
+    : null
+  const consent = state.settings.consent?.noticeVersion === WRITING_PILOT_NOTICE_VERSION
+    ? state.settings.consent
+    : null
+  const quotaPauseUntil = typeof state.settings.quotaPauseUntil === 'string'
+    && Number.isFinite(Date.parse(state.settings.quotaPauseUntil))
+    ? state.settings.quotaPauseUntil
+    : null
+  const quotaPauseReason = quotaPauseUntil
+    && ['provider_daily_quota', 'application_daily_quota'].includes(String(state.settings.quotaPauseReason))
+    ? state.settings.quotaPauseReason ?? null
     : null
   return {
     ...state,
     settings: {
       ...state.settings,
-      externalProcessingEnabled: state.settings.externalProcessingEnabled && serviceAuthority !== null,
+      consent,
+      externalProcessingEnabled: state.settings.externalProcessingEnabled && serviceAuthority !== null && consent !== null,
       serviceAuthority,
+      quotaPauseReason,
+      quotaPauseUntil,
     },
     records,
     pendingRecordId: state.pendingRecordId && ids.has(state.pendingRecordId) ? state.pendingRecordId : null,
     offeredActivityIds: [...new Set(state.offeredActivityIds)].slice(-WRITING_PILOT_RECORD_LIMIT * 2),
   }
+}
+
+export function isWritingParentReviewQueueFull(state: WritingPilotStateV1): boolean {
+  return state.records.filter(isUnreviewedParentRecord).length >= WRITING_PILOT_RECORD_LIMIT
 }
 
 export function normalizeInkStrokes(strokes: readonly InkStroke[]): InkStroke[] {
@@ -168,9 +195,16 @@ export function validateWritingPilotState(value: unknown):
   }
   if (value.settings.consent !== null) {
     if (!isRecord(value.settings.consent)
-      || value.settings.consent.noticeVersion !== WRITING_PILOT_NOTICE_VERSION
+      || ![WRITING_PILOT_NOTICE_VERSION, 'rrq-read-write-pilot-notice-v1'].includes(String(value.settings.consent.noticeVersion))
       || typeof value.settings.consent.acceptedAt !== 'string'
       || !Array.isArray(value.settings.consent.disclosures)) return invalid('Writing consent record is malformed.')
+  }
+  if (value.settings.quotaPauseUntil !== undefined && value.settings.quotaPauseUntil !== null && typeof value.settings.quotaPauseUntil !== 'string') {
+    return invalid('Writing quota pause is malformed.')
+  }
+  if (value.settings.quotaPauseReason !== undefined && value.settings.quotaPauseReason !== null
+    && !['provider_daily_quota', 'application_daily_quota'].includes(String(value.settings.quotaPauseReason))) {
+    return invalid('Writing quota reason is malformed.')
   }
   if (value.settings.serviceAuthority !== null
     && value.settings.serviceAuthority !== undefined
@@ -193,13 +227,23 @@ function validServiceAuthority(value: unknown): value is WritingPilotStateV1['se
     || value.authMode !== 'installation_bearer_v1'
     || typeof value.installationId !== 'string'
     || typeof value.endpointId !== 'string'
-    || value.retentionControl !== 'approved_zero_data_retention'
+    || value.provider !== 'cloudflare_workers_ai'
+    || value.retentionControl !== 'cloudflare_workers_ai_no_training'
+    || value.quotaPolicy !== 'cloudflare_free_only_v1'
+    || value.model !== '@cf/google/gemma-4-26b-a4b-it'
     || typeof value.approvedAt !== 'string'
     || typeof value.expiresAt !== 'string'
+    || typeof value.freePlanVerifiedAt !== 'string'
+    || typeof value.quotaResetsAt !== 'string'
     || !Number.isFinite(Date.parse(value.approvedAt))
     || !Number.isFinite(Date.parse(value.expiresAt))
-    || !Number.isSafeInteger(value.budgetLimitMicros)
-    || !Number.isSafeInteger(value.budgetRemainingMicros)) return false
+    || !Number.isFinite(Date.parse(value.freePlanVerifiedAt))
+    || !Number.isFinite(Date.parse(value.quotaResetsAt))
+    || !Number.isSafeInteger(value.dailyApplicationNeuronLimit)
+    || Number(value.dailyApplicationNeuronLimit) <= 0
+    || !Number.isSafeInteger(value.dailyApplicationNeuronsRemaining)
+    || Number(value.dailyApplicationNeuronsRemaining) < 0
+    || value.actualPaidSpendingMicros !== 0) return false
   return true
 }
 
@@ -211,8 +255,24 @@ function validateRecord(value: unknown): value is WritingResponseRecord {
   if (!Array.isArray(value.strokes) || normalizeInkStrokes(value.strokes as InkStroke[]).length !== value.strokes.length) return false
   if (!Array.isArray(value.recognitionUncertainties) || !Array.isArray(value.requests) || !Array.isArray(value.parentReviewEvents)) return false
   if (!isRecord(value.suggestionDispositions)) return false
+  if (value.parentReviewReason !== undefined && value.parentReviewReason !== null && typeof value.parentReviewReason !== 'string') return false
+  if (value.parentJudgment !== undefined && value.parentJudgment !== null && !validParentJudgment(value.parentJudgment)) return false
   if (value.feedback !== null && !validateWritingFeedback(value.feedback)) return false
   return true
+}
+
+function isUnreviewedParentRecord(record: WritingResponseRecord): boolean {
+  return record.parentReviewReason != null && record.parentReviewedAt === null
+}
+
+function validParentJudgment(value: unknown): boolean {
+  return isRecord(value)
+    && ['meets', 'partly_meets', 'needs_support', 'not_recorded'].includes(String(value.comprehension))
+    && typeof value.spellingObservations === 'string'
+    && typeof value.grammarPunctuationObservations === 'string'
+    && typeof value.correction === 'string'
+    && typeof value.recordedAt === 'string'
+    && Number.isFinite(Date.parse(value.recordedAt))
 }
 
 export function validateWritingFeedback(value: unknown): value is WritingFeedback {

@@ -5,10 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && npm run build:writing-service",
+    "build": "tsc -b && vite build && npm run build:writing-service && npm run build:writing-worker",
     "build:writing-service": "vite build --config service/read-write/vite.config.ts",
+    "build:writing-worker": "wrangler deploy --dry-run --outdir .worker-dist --config service/read-write-cloudflare/wrangler.jsonc",
     "lint": "oxlint",
     "typecheck": "tsc -p tsconfig.app.json --noEmit",
+    "typecheck:worker": "tsc -p tsconfig.worker.json --noEmit",
     "test": "vitest run",
     "audit:answer-uniqueness": "node scripts/audit-answer-uniqueness.mjs",
     "audit:answer-uniqueness:second-pass": "node scripts/export-answer-uniqueness-second-pass.mjs",
@@ -19,9 +21,10 @@
     "test:browser:edge": "node scripts/browser/run-browser-acceptance.mjs --mode local --engine edge",
     "test:browser:webkit": "node scripts/browser/run-browser-acceptance.mjs --mode local --engine webkit --previous-url https://michaelbennett87.github.io/rorys-reading-quest/",
     "test:browser": "npm run test:browser:contracts && npm run test:browser:edge && npm run test:browser:webkit",
-    "test:writing-pilot": "vitest run tests/writingPilotCatalog.test.ts tests/writingPilotStore.test.ts tests/writingPilotService.test.ts tests/openAiWritingProvider.test.ts tests/writingPilotClient.test.ts tests/writingPilotCredentialStore.test.ts tests/fileWritingPilotStores.test.ts tests/useWritingPilot.test.tsx",
+    "test:writing-pilot": "vitest run tests/writingPilotCatalog.test.ts tests/writingPilotStore.test.ts tests/writingPilotService.test.ts tests/openAiWritingProvider.test.ts tests/cloudflareWritingProvider.test.ts tests/writingPilotClient.test.ts tests/writingPilotCredentialStore.test.ts tests/fileWritingPilotStores.test.ts tests/useWritingPilot.test.tsx",
+    "test:writing-worker": "npm run typecheck:worker && node scripts/writing-worker-integration.mjs",
     "verify:deployed": "node scripts/browser/run-browser-acceptance.mjs --mode deployed",
-    "verify:release": "npm run lint && npm run typecheck && npm run test && npm run audit:answer-uniqueness && npm run build && npm run test:browser",
+    "verify:release": "npm run lint && npm run typecheck && npm run test && npm run audit:answer-uniqueness && npm run test:writing-worker && npm run build && npm run test:browser",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -29,6 +32,7 @@
     "react-dom": "^19.2.8"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "5.20260923.1",
     "@testing-library/react": "^16.3.0",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.17",
@@ -39,6 +43,7 @@
     "playwright-core": "1.62.1",
     "typescript": "~6.0.2",
     "vite": "^8.2.0",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "wrangler": "4.136.3"
   }
 }

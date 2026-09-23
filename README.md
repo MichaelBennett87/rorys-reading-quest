@@ -50,11 +50,20 @@ Rory's Reading Quest is a local-first, child-safe reading-learning foundation fo
 - Question truth gate: the current active registry derives a 1,611-record audit inventory, a key-free blind-review projection, 40 per-pack JSON ledgers, deterministic content fingerprints, and evaluator tests covering 1,611 canonical, 542 canonical-equivalent, and 19,636 adversarial submissions for 25,011 assertions.
 - Grade 3 fluency boundary: Fluency Flight Grade 3 provides optional model listening, phrase grouping, punctuation cues, expression support, and rereading practice for `ELA.3.F.1.4`. It has no microphone, recording, WCPM, pronunciation score, prosody score, oral-accuracy score, oral-mastery claim, or FAST prediction.
 - Persistence: version-1 child progress plus separate parent-access and parent-record stores behind small interfaces, with safe in-memory fallback and optional assistance-event persistence.
-- Runtime services: ordinary reading is browser-only, with no telemetry, advertising, cloud synchronization, remote content generation, or external request. The optional Read & Write pilot is off by default and retains a complete local writing/parent-review path. Its guarded service now has safety-result validation, usage-based cost reconciliation, payload-bound deduplication, durable atomic reservations, and cross-origin installation-bearer authorization, but live use remains blocked pending an approved host and provider configuration. No provider credential is shipped to the browser; the installation bearer is stored separately in IndexedDB and never in writing or reading state.
+- Runtime services: ordinary reading is browser-only, with no telemetry, advertising, cloud synchronization, remote content generation, or external request. The optional Read & Write pilot is off by default and retains a complete local writing/parent-review path. Its guarded Cloudflare Worker uses direct Workers AI bindings, an installation bearer, a SQLite Durable Object, payload-bound deduplication, conservative neuron reservations, and a strict $0 paid-spending policy. Quota, capacity, authorization, safety, invalid-output, and uncertain outcomes all retain one local Ana-review item and continue reading. No provider credential is shipped to the browser; the installation bearer is stored separately in IndexedDB and never in writing or reading state.
 
 ## Privacy and Assessment Boundary
 
-Read & Write is supplemental DRAFT practice, not benchmark coverage or mastery evidence. It stores bounded ink and writing records under a separate versioned browser key for up to 30 days and 18 records. It does not change reading difficulty, evidence, reviews, attempts, XP, stars, Parent PIN data, or assessment data. See `docs/READ_WRITE_PILOT.md` and `docs/PRIVACY.md`. External processing is currently `EXTERNAL ACTIVATION PENDING`.
+Read & Write is supplemental DRAFT practice, not benchmark coverage or mastery evidence. It stores bounded ink and writing records under a separate versioned browser key for up to 30 days and 18 records. Unexpired parent-review work is never silently evicted; when the queue is full, supplemental writing pauses and ordinary reading continues. It does not change reading difficulty, evidence, reviews, attempts, XP, stars, Parent PIN data, or assessment data. See `docs/READ_WRITE_PILOT.md` and `docs/PRIVACY.md`. Current status: `LOCAL PARENT FALLBACK READY; CLOUDFLARE ACTIVATION PENDING`.
+
+Cloudflare service checks are repository-owned and deterministic:
+
+```powershell
+npm run test:writing-worker
+npm run build:writing-worker
+```
+
+The first command uses Wrangler's local runtime, a real local SQLite Durable Object, synthetic requests, and a controlled provider; it makes no live inference call. `npm run verify:release` includes this gate plus the mandatory Edge and WebKit quota-fallback flow. Deployment and live canary instructions are intentionally separated in `service/read-write-cloudflare/README.md` because account verification and $0 authorization are not yet available.
 
 Persisted records contain stable local IDs and educational summaries only. Passage text, explanation text, correct-answer text, private child identifiers, official FAST reports, official FAST scores, and plaintext PINs are not persisted. Parent access and assessment records use separate local stores. This application is not an official assessment or diagnostic system.
 # Phase 7 completion status

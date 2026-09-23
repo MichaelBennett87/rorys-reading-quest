@@ -187,9 +187,43 @@
 .parent-writing-record,
 .parent-writing-consent,
 .parent-writing-correction,
-.parent-writing-feedback {
+.parent-writing-feedback,
+.parent-writing-judgment {
   display: grid;
   gap: 0.7rem;
+}
+
+.parent-writing-count {
+  width: fit-content;
+  border-radius: 999px;
+  background: #d6eee8;
+  color: #174d47;
+  padding: 0.45rem 0.8rem;
+}
+
+.parent-writing-judgment {
+  margin: 0;
+  border: 1px solid #b8cfc9;
+  border-radius: 0.9rem;
+  background: #f8fbf7;
+  padding: 1rem;
+}
+
+.parent-writing-judgment legend,
+.parent-writing-judgment label {
+  font-weight: 800;
+}
+
+.parent-writing-judgment select,
+.parent-writing-judgment textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #78a99e;
+  border-radius: 0.75rem;
+  background: #fffef9;
+  color: #173b3a;
+  font: inherit;
+  padding: 0.75rem;
 }
 
 .parent-writing-suggestion,

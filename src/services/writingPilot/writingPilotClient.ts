@@ -16,6 +16,9 @@ export type WritingServiceFailureCode =
   | 'consent_required'
   | 'retention_not_approved'
   | 'budget_exhausted'
+  | 'quota_exhausted'
+  | 'application_quota_exhausted'
+  | 'temporarily_unavailable'
   | 'timeout_unknown'
   | 'invalid_response'
   | 'request_failed'
@@ -168,13 +171,23 @@ function validateAuthority(value: unknown): WritingServiceAuthority | null {
     || value.authMode !== 'installation_bearer_v1'
     || typeof value.installationId !== 'string'
     || typeof value.endpointId !== 'string'
-    || value.retentionControl !== 'approved_zero_data_retention'
+    || value.provider !== 'cloudflare_workers_ai'
+    || value.retentionControl !== 'cloudflare_workers_ai_no_training'
+    || value.quotaPolicy !== 'cloudflare_free_only_v1'
+    || value.model !== '@cf/google/gemma-4-26b-a4b-it'
     || typeof value.approvedAt !== 'string'
     || typeof value.expiresAt !== 'string'
+    || typeof value.freePlanVerifiedAt !== 'string'
+    || typeof value.quotaResetsAt !== 'string'
     || !Number.isFinite(Date.parse(value.approvedAt))
     || !Number.isFinite(Date.parse(value.expiresAt))
-    || !Number.isSafeInteger(value.budgetLimitMicros)
-    || !Number.isSafeInteger(value.budgetRemainingMicros)) return null
+    || !Number.isFinite(Date.parse(value.freePlanVerifiedAt))
+    || !Number.isFinite(Date.parse(value.quotaResetsAt))
+    || !Number.isSafeInteger(value.dailyApplicationNeuronLimit)
+    || Number(value.dailyApplicationNeuronLimit) <= 0
+    || !Number.isSafeInteger(value.dailyApplicationNeuronsRemaining)
+    || Number(value.dailyApplicationNeuronsRemaining) < 0
+    || value.actualPaidSpendingMicros !== 0) return null
   return value as unknown as WritingServiceAuthority
 }
 
@@ -188,7 +201,7 @@ function validateRecognition(value: unknown): WritingRecognitionResult | null {
     || value.rawTranscription.length > 500
     || !Array.isArray(value.uncertainties)
     || typeof value.spellingAssessmentSupportable !== 'boolean'
-    || !['openai', 'mocked'].includes(String(value.provider))) return null
+    || !['cloudflare_workers_ai', 'openai', 'mocked'].includes(String(value.provider))) return null
   if (!value.uncertainties.every((entry) => isRecord(entry)
     && typeof entry.text === 'string'
     && typeof entry.reason === 'string'
@@ -197,8 +210,8 @@ function validateRecognition(value: unknown): WritingRecognitionResult | null {
 }
 
 function validateEvaluation(value: unknown): WritingEvaluationResult | null {
-  if (!isRecord(value) || !['openai', 'mocked'].includes(String(value.provider)) || !validateWritingFeedback(value.feedback)) return null
-  return { feedback: value.feedback as WritingFeedback, provider: value.provider as 'openai' | 'mocked' }
+  if (!isRecord(value) || !['cloudflare_workers_ai', 'openai', 'mocked'].includes(String(value.provider)) || !validateWritingFeedback(value.feedback)) return null
+  return { feedback: value.feedback as WritingFeedback, provider: value.provider as WritingEvaluationResult['provider'] }
 }
 
 function responseFailure(status: number, value: unknown): WritingServiceResult<never> {
@@ -206,11 +219,24 @@ function responseFailure(status: number, value: unknown): WritingServiceResult<n
   if (code === 'parent_review_required' || code === 'safety_review_required') return failure('parent_review_required', 'The writing was saved for calm parent review.', false)
   if (code === 'provider_refused') return failure('provider_refused', 'The writing was saved for parent review because feedback was unavailable.', false)
   if (code === 'request_identity_conflict') return failure('request_identity_conflict', 'This protected request identity does not match the saved writing.', false)
+  if (code === 'free_quota_exhausted' || code === 'provider_daily_quota' || code === 'cloudflare_3036') {
+    return failure('quota_exhausted', 'Free AI checking is finished until the next 00:00 UTC reset.', false)
+  }
+  if (code === 'application_quota_exhausted') {
+    return failure('application_quota_exhausted', 'This installation has reached its conservative free-AI allowance for today.', false)
+  }
+  if (code === 'capacity_unavailable' || code === 'provider_rate_limited' || code === 'cloudflare_3040') {
+    return failure('temporarily_unavailable', 'Free AI checking is temporarily unavailable.', true)
+  }
+  if (code === 'paid_plan_required' || code === 'cloudflare_5035') {
+    return failure('unavailable', 'This model is unavailable under the required free-only policy.', false)
+  }
   if (status === 401 || status === 403) return failure('unauthorized', 'Protected writing authorization is not active.', false)
   if (status === 409) return failure('timeout_unknown', 'A request with this identity is still unresolved. The work was saved for parent review.', false)
   if (status === 412) return failure('consent_required', 'Parent consent must be renewed before external processing.', false)
   if (status === 422) return failure('invalid_response', 'The writing service rejected the bounded request.', false)
-  if (status === 429 || status === 402) return failure('budget_exhausted', 'The parent-approved writing budget is unavailable.', false)
+  if (status === 429) return failure('temporarily_unavailable', 'Free AI checking is temporarily unavailable.', true)
+  if (status === 402) return failure('unavailable', 'Paid processing is prohibited for this pilot.', false)
   if (status === 503 && code === 'retention_not_approved') return failure('retention_not_approved', 'Approved child-data retention controls are not active.', false)
   return failure('unavailable', 'Protected writing processing is unavailable.', status >= 500)
 }

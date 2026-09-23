@@ -252,9 +252,14 @@ Playwright WebKit on macOS with an iPad descriptor is required automated Safari-
 - [x] Add a fixed protected-service contract with server-owned rubrics, installation authorization, approved-retention checks, request deduplication, and finite budget enforcement.
 - [x] Add provider safety-body validation, generated-feedback safety checks, observed-usage cost reconciliation, payload-bound idempotency, a durable single-instance reservation ledger, and Edge/WebKit real-local-service authorization coverage.
 - [x] Require the mocked, synthetic `read-write-pilot` scenario in Edge and WebKit release reports.
-- [ ] Deploy and review a protected inference service outside GitHub Pages.
-- [ ] Verify the selected provider project's applicable child-data retention approval; `store: false` alone is not approval.
-- [ ] Configure a finite parent-approved service budget and approved-installation issuance/revocation.
+- [x] Add the guarded Cloudflare Workers AI adapter and SQLite Durable Object contract with direct bindings, one-time installation authorization, conservative daily neuron reservations, payload-bound deduplication, and no paid-provider fallback.
+- [x] Preserve quota, capacity, authorization, safety, timeout, and invalid-output submissions exactly once in Ana's local review queue; pause supplemental writing rather than evict unreviewed work when the bounded queue is full.
+- [x] Add parent-authored comprehension/mechanics judgments with separate provenance and extend required Edge/WebKit acceptance through quota fallback, browser restart, and parent review.
+- [ ] Verify an authorized Workers Free account, actual account-wide free status, required model access, processor terms, and remaining allowance without adding payment authority.
+- [ ] Run the frozen non-child model-quality benchmark and a bounded $0 live canary, then activate only if transcription, evaluation, safety, authorization, and privacy gates pass.
+- [ ] Deploy and review the guarded Cloudflare Worker after actual Workers Free eligibility and account-wide usage are verified.
+- [ ] Review the selected Cloudflare/model processor terms and parent notice for the intended child-data use; code configuration is not provider approval.
+- [ ] Provision one private installation authorization and the conservative free-neuron cap while retaining an exact $0 monetary limit.
 - [ ] Run one authorized live canary with non-child synthetic ink and record actual observed recognition/evaluation errors and spend.
 
 External status: `EXTERNAL ACTIVATION PENDING`. Ordinary reading remains fully local and available with the pilot disabled.

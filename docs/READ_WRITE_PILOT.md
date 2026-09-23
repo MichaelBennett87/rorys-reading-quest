@@ -1,6 +1,6 @@
 # Parent-Enabled Read & Write Pilot
 
-Status: `GUARDED IMPLEMENTATION - EXTERNAL ACTIVATION PENDING`
+Status: `LOCAL PARENT FALLBACK READY; CLOUDFLARE ACTIVATION PENDING`
 
 ## Product role
 
@@ -52,11 +52,23 @@ The local PIN is not service authorization. Activation uses a parent-provisioned
 - A short exclusive durable lock covers reservation and reconciliation. Observed usage is priced from an explicitly reviewed model/pricing version. Unknown paid outcomes retain the full reservation and are not blindly retried or treated as free.
 - The included file-backed ledger supports one service instance on one host with an encrypted attached volume. Horizontal scaling is unsupported until a transactional database implements the same interfaces.
 
-## Provider adapter
+## Cloudflare free-only provider
 
-The repository implements one server-only OpenAI adapter without a browser SDK. It requires explicitly pinned model identities, reviewed pricing, token bounds, `store: false`, no tools, no web access, no persistent conversation/file/vector-store state, bounded timeouts, structured schemas, and zero automatic retries. It parses moderation decisions rather than treating HTTP 200 as permission, checks generated child-visible feedback, preserves usage before content parsing, and distinguishes flagged content, malformed safety results, refusals, definite failures, and ambiguous paid outcomes. `store: false` is not represented as Zero Data Retention approval. Real use remains blocked until the specific project has the required approved retention controls and the protected service is deployed.
+The guarded production candidate is one Cloudflare Worker using direct Workers AI bindings, `@cf/google/gemma-4-26b-a4b-it` for vision/language work, `@cf/meta/llama-guard-3-8b` for bounded text safety classification, and one SQLite-backed Durable Object for installation authorization, request identity, short-lived deduplication, and application quota. AI Gateway and every paid-provider fallback are prohibited. The checked-in OpenAI service remains only as historical controlled-contract test code and is not a runtime fallback.
 
-Recognition receives only the ink image and layout instructions. Evaluation treats confirmed learner text as untrusted data and has no tools or state authority. Returned text is rendered as React text, never raw HTML.
+The Worker requires current Free-plan verification, paid routes disabled, and a conservative application cap of at most 5,000 estimated neurons per UTC day; the default is 4,000. This cap is deliberately below Cloudflare's account-wide 10,000-neuron Free allocation, but it cannot observe use by unrelated applications. Cloudflare quota errors remain authoritative. Provider token usage, estimated neurons, unknown outcomes, and actual paid spending are separate fields. Missing usage is never treated as free, and actual paid spending must remain zero.
+
+Gemma output is parsed and validated as data rather than trusted JSON mode. Recognition receives cropped ink and layout instructions without the expected answer or rubric. Evaluation receives confirmed learner text, the source, and a server-owned rubric. Learner text is untrusted data; the model receives no tools, web access, arbitrary URLs, or application-state authority. Returned text is rendered as React text, never raw HTML.
+
+The candidate is documented as vision-capable and available on Workers Free, and its linked model license is Apache 2.0. This does not certify handwriting quality or child-data suitability. A frozen non-child benchmark and live $0 canary remain activation gates.
+
+## Ana fallback and daily reset
+
+Ink is saved locally before any external request. Provider daily quota, RRQ application quota, capacity, rate limit, network failure, timeout, authorization failure, safety withholding, uncertain recognition, and invalid output each retain one stable parent-review record. None becomes an incorrect answer, reading remediation, mastery evidence, XP, or stars. The child sees only that the writing is saved for a grown-up to check and can continue the already-authoritative reading lesson.
+
+A confirmed quota stop opens a local circuit until the next 00:00 UTC boundary. Page load, rendering, and Parent Area never retry queued work. After reset, only a newly and explicitly submitted response may try free inference; yesterday's queue remains assigned to Ana unless a parent explicitly initiates a future reviewed retry feature. No message claims that Ana was notified, sent a copy, or can view the record from another device.
+
+Unexpired records awaiting parent review are protected from record-limit eviction. At 18 pending items, new supplemental writing offers pause while ordinary reading continues. Ana sees pending work oldest-first and may record separate comprehension, spelling, grammar/punctuation, and correction notes, then mark or delete the local record. Parent provenance never overwrites machine provenance or original ink.
 
 ## Testing and evidence classes
 
@@ -71,12 +83,12 @@ Recognition receives only the ink image and layout instructions. Evaluation trea
 
 External activation requires all of the following and none is currently configured in this repository environment:
 
-- an approved protected-service host and deployment;
-- a service secret stored outside Git and browser code;
-- reviewed OpenAI project retention configuration, including actual Zero Data Retention approval where required;
-- approved-installation issuance and revocation operations;
-- a finite parent-approved server-side budget and price configuration;
-- a live, non-child synthetic canary covering recognition, validation, accounting, and the complete browser flow;
+- an existing authorized Cloudflare account confirmed to use Workers Free, with no paid AI Gateway or paid overage path for RRQ;
+- a deployed HTTPS Worker and SQLite Durable Object, with the activation-code hash and free-plan verification timestamp stored outside Git and browser code;
+- reviewed Cloudflare Workers AI and Gemma processor/data terms reflected in the parent notice;
+- one-time approved-installation issuance, expiry, and revocation operations;
+- a conservative finite daily application neuron cap while the monetary limit remains exactly $0;
+- the frozen non-child synthetic benchmark and a bounded live $0 canary covering recognition, safety, evaluation, accounting, authorization, and the complete browser flow;
 - applicable parent notice/consent and broader-public-rollout compliance review.
 
 ## Service-owned retention and logging

@@ -207,11 +207,17 @@ async function launchProfile(
           authMode: 'installation_bearer_v1',
           installationId: 'synthetic-browser-installation',
           endpointId: 'rrq-writing-pilot-v1',
-          retentionControl: 'approved_zero_data_retention',
+          provider: 'cloudflare_workers_ai',
+          retentionControl: 'cloudflare_workers_ai_no_training',
+          quotaPolicy: 'cloudflare_free_only_v1',
+          model: '@cf/google/gemma-4-26b-a4b-it',
           approvedAt: new Date().toISOString(),
           expiresAt: new Date(Date.now() + 3_600_000).toISOString(),
-          budgetLimitMicros: 2_000_000,
-          budgetRemainingMicros: 1_900_000,
+          freePlanVerifiedAt: new Date().toISOString(),
+          dailyApplicationNeuronLimit: 4_000,
+          dailyApplicationNeuronsRemaining: 3_800,
+          quotaResetsAt: new Date(Date.UTC(new Date().getUTCFullYear(), new Date().getUTCMonth(), new Date().getUTCDate() + 1)).toISOString(),
+          actualPaidSpendingMicros: 0,
           installationToken,
         }) })
         return
@@ -225,6 +231,10 @@ async function launchProfile(
         return
       }
       if (path === 'transcribe') {
+        if (options.forceWritingQuota) {
+          await route.fulfill({ status: 429, contentType: 'application/json', body: JSON.stringify({ error: 'free_quota_exhausted' }) })
+          return
+        }
         await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({
           rawTranscription: 'Tia picked up the light wrappers before the wind blew them away.',
           uncertainties: [],
@@ -1796,6 +1806,55 @@ async function runReadWritePilot() {
   await takeShot(mocked.page, `read-write-${ENGINE}-feedback`)
   await activate(mocked.page.getByRole('button', { name: 'Next', exact: true }))
   await assertQuestionFirstShell(mocked.page)
+  await closeHandle(mocked)
+
+  const quotaState = { calls: [] }
+  let quota = await launchProfile('read-write-free-quota', undefined, createRuntimeLog('read-write-free-quota'), {
+    mockWritingService: true,
+    forceWritingQuota: true,
+    writingServiceState: quotaState,
+  })
+  await writeProgressFixture(quota.page, fixtures.representatives.questionTypes.MULTIPLE_CHOICE.state, { [WRITING_KEY]: JSON.stringify(createPendingWritingFixture()) })
+  await quota.page.goto(`${APP_URL}#/parent`, { waitUntil: 'networkidle' })
+  await setupParentPin(quota.page)
+  await activate(quota.page.getByRole('button', { name: 'Writing Review', exact: true }))
+  await quota.page.getByLabel('Private activation code').fill('synthetic-free-parent-code')
+  await activate(quota.page.getByRole('button', { name: 'Authorize protected processing', exact: true }))
+  await quota.page.getByText(/authorized for this installation/i).waitFor({ state: 'visible', timeout: 15_000 })
+  await activate(quota.page.getByRole('button', { name: 'Back to Quest', exact: true }))
+  await quota.page.locator('.writing-pilot-shell').waitFor({ state: 'visible', timeout: 15_000 })
+  const readingBeforeQuota = await readProgress(quota.page)
+  await drawWriting(quota.page)
+  await activate(quota.page.getByRole('button', { name: 'Check Writing', exact: true }))
+  await quota.page.getByText(/saved for a grown-up to check/i).waitFor({ state: 'visible', timeout: 15_000 })
+  const quotaWriting = JSON.parse(await writingRaw(quota.page))
+  assert(quotaWriting.records.length === 1, 'quota fallback did not save exactly one parent-review record')
+  assert(quotaWriting.records[0].parentReviewReason === 'provider_daily_quota', 'quota fallback did not preserve the specific provider quota reason')
+  assert(quotaWriting.settings.quotaPauseReason === 'provider_daily_quota', 'quota fallback did not pause further inference for the UTC window')
+  assert(quotaState.calls.filter((entry) => entry.path === 'transcribe').length === 1, 'quota fallback made an unexpected repeated transcription request')
+  assert(quotaState.calls.filter((entry) => entry.path === 'evaluate').length === 0, 'quota fallback attempted evaluation after recognition quota exhaustion')
+  await activate(quota.page.getByRole('button', { name: 'Next', exact: true }))
+  await assertQuestionFirstShell(quota.page)
+  const readingAfterQuota = await readProgress(quota.page)
+  assert(readingAfterQuota.completedAttempts.length === readingBeforeQuota.completedAttempts.length, 'quota fallback changed reading attempts')
+  assert(readingAfterQuota.totalXp === readingBeforeQuota.totalXp && readingAfterQuota.totalStars === readingBeforeQuota.totalStars, 'quota fallback changed reading rewards')
+  quota = await restartHandle(quota, 'read-write-free-quota-restart')
+  await quota.page.goto(`${APP_URL}#/parent`, { waitUntil: 'networkidle' })
+  await unlockExistingParent(quota.page)
+  await activate(quota.page.getByRole('button', { name: 'Writing Review', exact: true }))
+  await quota.page.getByText(/1 response needs a grown-up review/i).waitFor({ state: 'visible', timeout: 15_000 })
+  await quota.page.getByLabel('Comprehension').selectOption('meets')
+  await quota.page.getByLabel('Spelling observations').fill('Synthetic spelling review.')
+  await quota.page.getByLabel('Grammar and punctuation observations').fill('Synthetic mechanics review.')
+  await activate(quota.page.getByRole('button', { name: 'Save parent review', exact: true }))
+  await activate(quota.page.getByRole('button', { name: 'Mark reviewed', exact: true }))
+  const reviewedWriting = JSON.parse(await writingRaw(quota.page))
+  assert(reviewedWriting.records[0].parentJudgment?.comprehension === 'meets', 'parent manual judgment was not retained')
+  assert(reviewedWriting.records[0].feedbackProvenance === 'none', 'parent review was misrepresented as AI feedback')
+  assert(await quota.page.getByText(/Ana was notified|sent to Ana|delivered to Ana/i).count() === 0, 'local fallback claimed a remote notification')
+  await takeShot(quota.page, `read-write-${ENGINE}-parent-fallback`)
+  await closeHandle(quota)
+
   report.scenarios.readWritePilot = {
     status: 'PASS',
     defaultOffNoServiceRequests: true,
@@ -1808,11 +1867,14 @@ async function runReadWritePilot() {
     credentialContinuity: { parentToChildAuthorizedRequest: true },
     mockedTranscriptionRequests: 1,
     mockedEvaluationRequests: 1,
+    freeQuotaFallback: true,
+    parentReviewAfterRestart: true,
+    parentJudgmentProvenance: 'parent_separate_from_ai',
+    remoteNotificationClaimed: false,
     liveProviderRequests: 0,
     readingAttemptDelta: 1,
     writingRewardSideEffects: 0,
   }
-  await closeHandle(mocked)
 }
 
 async function runWritingServiceReadiness() {
@@ -1868,13 +1930,13 @@ async function runWritingServiceReadiness() {
     firstServer = await controlledWritingService(serviceModule, controlledProvider, 'primary', firstClock, 3_600_000)
     const activation = await browserServiceRequest(page, firstServer.url, 'activate', {
       activationCode: 'synthetic-browser-activation-primary',
-      consentVersion: 'rrq-read-write-pilot-notice-v1',
+      consentVersion: 'rrq-read-write-pilot-notice-v2-cloudflare-free',
     })
     assert(activation.status === 200 && typeof activation.body.installationToken === 'string', 'real HTTP activation did not issue an installation bearer')
     const installationToken = activation.body.installationToken
     const replayedActivation = await browserServiceRequest(page, firstServer.url, 'activate', {
       activationCode: 'synthetic-browser-activation-primary',
-      consentVersion: 'rrq-read-write-pilot-notice-v1',
+      consentVersion: 'rrq-read-write-pilot-notice-v2-cloudflare-free',
     })
     assert(replayedActivation.status === 403, 'one-time activation code was replayable')
     const unauthorized = await browserServiceRequest(page, firstServer.url, 'transcribe', browserTranscriptionBody())
@@ -1896,7 +1958,7 @@ async function runWritingServiceReadiness() {
     expiryServer = await controlledWritingService(serviceModule, controlledProvider, 'expiry', expiryClock, 60_000)
     const expiryActivation = await browserServiceRequest(page, expiryServer.url, 'activate', {
       activationCode: 'synthetic-browser-activation-expiry',
-      consentVersion: 'rrq-read-write-pilot-notice-v1',
+      consentVersion: 'rrq-read-write-pilot-notice-v2-cloudflare-free',
     })
     assert(expiryActivation.status === 200, 'expiry test activation failed')
     expiryClock.now = new Date(expiryClock.now.getTime() + 120_000)
@@ -1927,7 +1989,7 @@ async function controlledWritingService(serviceModule, provider, suffix, clock, 
   const activationCode = `synthetic-browser-activation-${suffix}`
   const installation = {
     installationId: `browser-installation-${suffix}`,
-    consentVersion: 'rrq-read-write-pilot-notice-v1',
+    consentVersion: 'rrq-read-write-pilot-notice-v2-cloudflare-free',
     authorizationExpiresAt: new Date(clock.now.getTime() + ttlMs).toISOString(),
     retentionControl: 'approved_zero_data_retention',
     budgetLimitMicros: 1_000_000,
@@ -2101,7 +2163,7 @@ function createPendingWritingFixture() {
     settings: {
       enabled: true,
       consent: {
-        noticeVersion: 'rrq-read-write-pilot-notice-v1',
+        noticeVersion: 'rrq-read-write-pilot-notice-v2-cloudflare-free',
         acceptedAt: now,
         disclosures: ['ink_and_confirmed_text_may_leave_device', 'processor_and_purpose_disclosed', 'retention_and_deletion_disclosed', 'ai_feedback_can_be_wrong'],
       },

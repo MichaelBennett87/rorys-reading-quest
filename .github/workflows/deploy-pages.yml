@@ -36,6 +36,7 @@ jobs:
           npm run typecheck
           npm run test
           npm run audit:answer-uniqueness
+          npm run test:writing-worker
 
       - uses: actions/configure-pages@v5
 
@@ -53,6 +54,7 @@ jobs:
           mkdir -p release-artifact
           cp -R dist release-artifact/dist
           cp -R .service-dist release-artifact/service-dist
+          cp -R .worker-dist release-artifact/worker-dist
           cp .artifacts/browser/build-manifest.json release-artifact/build-manifest.json
 
       - uses: actions/upload-artifact@v4

@@ -2,17 +2,22 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { LessonDefinition, LessonPurpose } from '../domain/lesson'
 import {
   WRITING_PILOT_NOTICE_VERSION,
+  WRITING_PILOT_RECORD_LIMIT,
   WRITING_PILOT_RETENTION_DAYS,
   getWritingPilotActivity,
   selectWritingActivityAfterLesson,
   type InkStroke,
+  type WritingParentJudgment,
+  type WritingParentReviewReason,
   type WritingPilotConsentRecord,
+  type WritingPilotSettings,
   type WritingPilotStateV1,
   type WritingResponseRecord,
 } from '../domain/writingPilot'
 import {
   WRITING_PILOT_STORAGE_KEY,
   createLocalStorageWritingPilotStore,
+  isWritingParentReviewQueueFull,
   normalizeInkStrokes,
   runWithWritingPilotWriteLock,
   type WritingPilotStorageStatus,
@@ -45,6 +50,7 @@ export interface WritingPilotController {
   finish(recordId: string): Promise<boolean>
   correctTranscription(recordId: string, correctedText: string): Promise<boolean>
   setSuggestionDisposition(recordId: string, suggestionId: string, disposition: 'accepted' | 'dismissed'): Promise<boolean>
+  recordParentJudgment(recordId: string, judgment: Omit<WritingParentJudgment, 'recordedAt'>): Promise<boolean>
   markReviewed(recordId: string): Promise<boolean>
   deleteRecord(recordId: string): Promise<boolean>
   deleteAllRecords(): Promise<boolean>
@@ -129,7 +135,7 @@ export function useWritingPilot(options: UseWritingPilotOptions = {}): WritingPi
       ],
     }
     const result = await commit((current) => ({
-      next: { ...current, settings: { ...current.settings, enabled: true, consent } },
+      next: { ...current, settings: { ...current.settings, enabled: true, consent, quotaPauseReason: null, quotaPauseUntil: null } },
       value: true,
     }))
     return result.status === 'saved'
@@ -140,7 +146,7 @@ export function useWritingPilot(options: UseWritingPilotOptions = {}): WritingPi
     const result = await commit((current) => ({
       next: {
         ...current,
-        settings: { ...current.settings, enabled: false, externalProcessingEnabled: false, serviceAuthority: null },
+        settings: { ...current.settings, enabled: false, externalProcessingEnabled: false, serviceAuthority: null, quotaPauseReason: null, quotaPauseUntil: null },
         pendingRecordId: null,
       },
       value: true,
@@ -156,7 +162,7 @@ export function useWritingPilot(options: UseWritingPilotOptions = {}): WritingPi
     const saved = await commit((current) => ({
       next: {
         ...current,
-        settings: { ...current.settings, externalProcessingEnabled: true, serviceAuthority: result.value },
+        settings: { ...current.settings, externalProcessingEnabled: true, serviceAuthority: result.value, quotaPauseReason: null, quotaPauseUntil: null },
       },
       value: true,
     }))
@@ -169,7 +175,7 @@ export function useWritingPilot(options: UseWritingPilotOptions = {}): WritingPi
   const disableExternal = useCallback(async () => {
     if (stateRef.current.settings.externalProcessingEnabled) await client.revoke()
     const result = await commit((current) => ({
-      next: { ...current, settings: { ...current.settings, externalProcessingEnabled: false, serviceAuthority: null } },
+      next: { ...current, settings: { ...current.settings, externalProcessingEnabled: false, serviceAuthority: null, quotaPauseReason: null, quotaPauseUntil: null } },
       value: true,
     }))
     return result.status === 'saved'
@@ -177,7 +183,7 @@ export function useWritingPilot(options: UseWritingPilotOptions = {}): WritingPi
 
   const scheduleAfterReading = useCallback(async (input: { lesson: LessonDefinition; purpose: LessonPurpose; sourceCompletionId: string }) => {
     const result = await commit((current) => {
-      if (!current.settings.enabled || current.pendingRecordId) return { next: null, value: false }
+      if (!current.settings.enabled || current.pendingRecordId || isWritingParentReviewQueueFull(current)) return { next: null, value: false }
       const activity = selectWritingActivityAfterLesson({
         lesson: input.lesson,
         purpose: input.purpose,
@@ -209,16 +215,20 @@ export function useWritingPilot(options: UseWritingPilotOptions = {}): WritingPi
         suggestionDispositions: {},
         requests: [],
         parentReviewEvents: [],
+        parentReviewReason: null,
+        parentJudgment: null,
         parentReviewedAt: null,
         failureReason: null,
         createdAt,
         updatedAt: createdAt,
         expiresAt: new Date(now().getTime() + WRITING_PILOT_RETENTION_DAYS * 86_400_000).toISOString(),
       }
+      const records = makeRoomForWritingRecord(current.records)
+      if (!records) return { next: null, value: false }
       return {
         next: {
           ...current,
-          records: [...current.records, record],
+          records: [...records, record],
           pendingRecordId: recordId,
           offeredActivityIds: [...current.offeredActivityIds, activity.activityId],
         },
@@ -251,6 +261,9 @@ export function useWritingPilot(options: UseWritingPilotOptions = {}): WritingPi
         spellingAssessmentSupportable: inputMode === 'handwriting',
         feedback: null,
         feedbackProvenance: 'none',
+        parentReviewReason: null,
+        parentJudgment: null,
+        parentReviewedAt: null,
         requests: record.requests.map((request) => request.status === 'pending'
           ? { ...request, status: 'superseded' as const, resolvedAt: changedAt, outcomeCode: 'ink_changed' }
           : request),
@@ -277,11 +290,12 @@ export function useWritingPilot(options: UseWritingPilotOptions = {}): WritingPi
       return result.status === 'saved'
     }
     if (!imageDataUrl || currentRecord.strokes.length === 0) return false
-    if (!externalIsUsable(stateRef.current)) {
+    if (!externalIsUsable(stateRef.current, now())) {
       const result = await commit((current) => updateRecord(current, recordId, (record) => ({
         ...record,
         status: 'parent_review_needed',
-        failureReason: 'Protected transcription is not activated. The handwriting is saved for parent review.',
+        parentReviewReason: pausedReason(current.settings, now()) ?? 'external_not_activated',
+        failureReason: parentReviewMessage(pausedReason(current.settings, now()) ?? 'external_not_activated'),
         updatedAt: now().toISOString(),
       })))
       return result.status === 'saved'
@@ -320,6 +334,7 @@ export function useWritingPilot(options: UseWritingPilotOptions = {}): WritingPi
       imageDataUrl,
       layout,
     })
+    const fallback = response.status === 'error' ? parentReviewFallback(response.code) : null
     const applied = await commit((current) => updateRecord(current, recordId, (record) => {
       const request = record.requests.find((entry) => entry.requestId === requestId)
       if (!request || request.status !== 'pending' || request.inkRevision !== record.inkRevision) return null
@@ -327,7 +342,10 @@ export function useWritingPilot(options: UseWritingPilotOptions = {}): WritingPi
       const requests = record.requests.map((entry) => entry.requestId === requestId
         ? { ...entry, status: response.status === 'ok' ? 'completed' as const : response.code === 'timeout_unknown' ? 'unknown' as const : 'failed' as const, resolvedAt, outcomeCode: response.status === 'ok' ? 'recognized' : response.code }
         : entry)
-      if (response.status !== 'ok') return { ...record, status: 'parent_review_needed', requests, failureReason: response.message, updatedAt: resolvedAt }
+      if (response.status !== 'ok') {
+        if (!fallback) return null
+        return { ...record, status: 'parent_review_needed', requests, parentReviewReason: fallback.reason, failureReason: fallback.message, updatedAt: resolvedAt }
+      }
       return {
         ...record,
         status: 'transcription_ready',
@@ -336,10 +354,11 @@ export function useWritingPilot(options: UseWritingPilotOptions = {}): WritingPi
         spellingAssessmentSupportable: response.value.spellingAssessmentSupportable,
         feedbackProvenance: response.value.provider,
         requests,
+        parentReviewReason: null,
         failureReason: null,
         updatedAt: resolvedAt,
       }
-    }))
+    }, fallback ? { settings: settingsAfterFailure(current.settings, fallback.reason, now()) } : {}))
     return applied.status === 'saved'
   }, [client, commit, now])
 
@@ -350,7 +369,7 @@ export function useWritingPilot(options: UseWritingPilotOptions = {}): WritingPi
       if (!record.rawTranscription) return null
       const corrected = boundedText !== record.rawTranscription.trim()
       const meaningUncertain = record.recognitionUncertainties.some((entry) => entry.affectsMeaning)
-      const canEvaluate = externalIsUsable(current) && !meaningUncertain
+      const canEvaluate = externalIsUsable(current, now()) && !meaningUncertain
       const requestId = canEvaluate ? createId('evaluation') : null
       const recognitionRequestId = record.inputMode === 'typed'
         ? null
@@ -376,9 +395,12 @@ export function useWritingPilot(options: UseWritingPilotOptions = {}): WritingPi
             resolvedAt: null,
             outcomeCode: null,
           }] : record.requests,
+          parentReviewReason: meaningUncertain
+            ? 'recognition_uncertain'
+            : canEvaluate ? null : pausedReason(current.settings, now()) ?? 'external_not_activated',
           failureReason: meaningUncertain
-            ? 'Recognition uncertainty may change the meaning. The work is saved for parent review.'
-            : canEvaluate ? null : 'Protected feedback is not activated. The response is saved for parent review.',
+            ? parentReviewMessage('recognition_uncertain')
+            : canEvaluate ? null : parentReviewMessage(pausedReason(current.settings, now()) ?? 'external_not_activated'),
           updatedAt,
         },
         value: requestId ? {
@@ -397,6 +419,7 @@ export function useWritingPilot(options: UseWritingPilotOptions = {}): WritingPi
     if (preparation.status !== 'saved') return false
     if (!preparation.value) return true
     const response = await client.evaluate({ ...preparation.value, confirmedText: boundedText })
+    const fallback = response.status === 'error' ? parentReviewFallback(response.code) : null
     const applied = await commit((current) => updateRecord(current, recordId, (record) => {
       const request = record.requests.find((entry) => entry.requestId === preparation.value?.requestId)
       if (!request || request.status !== 'pending' || request.inkRevision !== record.inkRevision || record.confirmedTranscription !== boundedText) return null
@@ -404,17 +427,21 @@ export function useWritingPilot(options: UseWritingPilotOptions = {}): WritingPi
       const requests = record.requests.map((entry) => entry.requestId === request.requestId
         ? { ...entry, status: response.status === 'ok' ? 'completed' as const : response.code === 'timeout_unknown' ? 'unknown' as const : 'failed' as const, resolvedAt, outcomeCode: response.status === 'ok' ? 'evaluated' : response.code }
         : entry)
-      if (response.status !== 'ok') return { ...record, status: 'parent_review_needed', requests, failureReason: response.message, updatedAt: resolvedAt }
+      if (response.status !== 'ok') {
+        if (!fallback) return null
+        return { ...record, status: 'parent_review_needed', requests, parentReviewReason: fallback.reason, failureReason: fallback.message, updatedAt: resolvedAt }
+      }
       return {
         ...record,
         status: response.value.feedback.parentReviewRequired ? 'parent_review_needed' : 'feedback_ready',
         feedback: response.value.feedback,
         feedbackProvenance: response.value.provider,
         requests,
-        failureReason: response.value.feedback.parentReviewRequired ? response.value.feedback.uncertaintyReason : null,
+        parentReviewReason: response.value.feedback.parentReviewRequired ? 'safety_review_required' : null,
+        failureReason: response.value.feedback.parentReviewRequired ? parentReviewMessage('safety_review_required') : null,
         updatedAt: resolvedAt,
       }
-    }))
+    }, fallback ? { settings: settingsAfterFailure(current.settings, fallback.reason, now()) } : {}))
     return applied.status === 'saved'
   }, [client, commit, now])
 
@@ -427,6 +454,10 @@ export function useWritingPilot(options: UseWritingPilotOptions = {}): WritingPi
       confirmedTranscription: null,
       transcriptionConfirmedBy: null,
       feedback: null,
+      feedbackProvenance: 'none',
+      parentReviewReason: null,
+      parentJudgment: null,
+      parentReviewedAt: null,
       failureReason: null,
       updatedAt: now().toISOString(),
     })))
@@ -495,6 +526,29 @@ export function useWritingPilot(options: UseWritingPilotOptions = {}): WritingPi
     return result.status === 'saved'
   }, [commit, now])
 
+  const recordParentJudgment = useCallback(async (recordId: string, judgment: Omit<WritingParentJudgment, 'recordedAt'>) => {
+    const recordedAt = now().toISOString()
+    const bounded: WritingParentJudgment = {
+      comprehension: judgment.comprehension,
+      spellingObservations: judgment.spellingObservations.trim().slice(0, 500),
+      grammarPunctuationObservations: judgment.grammarPunctuationObservations.trim().slice(0, 500),
+      correction: judgment.correction.trim().slice(0, 500),
+      recordedAt,
+    }
+    const result = await commit((current) => updateRecord(current, recordId, (record) => ({
+      ...record,
+      parentJudgment: bounded,
+      parentReviewEvents: [...record.parentReviewEvents, {
+        eventId: createId('parent-event'),
+        kind: 'parent_judgment_recorded',
+        suggestionId: null,
+        occurredAt: recordedAt,
+      }],
+      updatedAt: recordedAt,
+    })))
+    return result.status === 'saved'
+  }, [commit, now])
+
   const deleteRecord = useCallback(async (recordId: string) => {
     const result = await commit((current) => ({
       next: {
@@ -536,6 +590,7 @@ export function useWritingPilot(options: UseWritingPilotOptions = {}): WritingPi
     finish,
     correctTranscription,
     setSuggestionDisposition,
+    recordParentJudgment,
     markReviewed,
     deleteRecord,
     deleteAllRecords,
@@ -572,16 +627,74 @@ function updateRecordWithValue<T>(
   return { next: { ...current, records }, value: updated.value }
 }
 
-function externalIsUsable(state: WritingPilotStateV1): boolean {
+function externalIsUsable(state: WritingPilotStateV1, now: Date): boolean {
   const authority = state.settings.serviceAuthority
+  const pauseUntil = state.settings.quotaPauseUntil ? Date.parse(state.settings.quotaPauseUntil) : Number.NaN
   return state.settings.enabled
     && state.settings.externalProcessingEnabled
     && authority?.status === 'authorized'
     && authority.authMode === 'installation_bearer_v1'
-    && authority.retentionControl === 'approved_zero_data_retention'
-    && authority.budgetRemainingMicros > 0
+    && authority.provider === 'cloudflare_workers_ai'
+    && authority.retentionControl === 'cloudflare_workers_ai_no_training'
+    && authority.quotaPolicy === 'cloudflare_free_only_v1'
+    && authority.actualPaidSpendingMicros === 0
+    && authority.dailyApplicationNeuronsRemaining > 0
+    && (!Number.isFinite(pauseUntil) || pauseUntil <= now.getTime())
     && Number.isFinite(Date.parse(authority.expiresAt))
-    && Date.parse(authority.expiresAt) > Date.now()
+    && Date.parse(authority.expiresAt) > now.getTime()
+}
+
+function makeRoomForWritingRecord(records: WritingResponseRecord[]): WritingResponseRecord[] | null {
+  if (records.length < WRITING_PILOT_RECORD_LIMIT) return records
+  const removable = records.findIndex((record) => record.parentReviewedAt !== null || (record.status === 'completed' && !record.parentReviewReason))
+  if (removable < 0) return null
+  return records.filter((_, index) => index !== removable)
+}
+
+function pausedReason(settings: WritingPilotSettings, now: Date): WritingParentReviewReason | null {
+  if (!settings.quotaPauseUntil || Date.parse(settings.quotaPauseUntil) <= now.getTime()) return null
+  return settings.quotaPauseReason === 'provider_daily_quota'
+    ? 'provider_daily_quota'
+    : settings.quotaPauseReason === 'application_daily_quota' ? 'application_daily_quota' : null
+}
+
+function settingsAfterFailure(settings: WritingPilotSettings, reason: WritingParentReviewReason, now: Date): WritingPilotSettings {
+  if (reason !== 'provider_daily_quota' && reason !== 'application_daily_quota') return settings
+  const quotaPauseReason = reason === 'provider_daily_quota' ? 'provider_daily_quota' : 'application_daily_quota'
+  return { ...settings, quotaPauseReason, quotaPauseUntil: nextUtcMidnight(now).toISOString() }
+}
+
+function nextUtcMidnight(now: Date): Date {
+  return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1))
+}
+
+function parentReviewFallback(code: string): { reason: WritingParentReviewReason; message: string } {
+  const reason: WritingParentReviewReason = code === 'quota_exhausted'
+    ? 'provider_daily_quota'
+    : code === 'application_quota_exhausted' || code === 'budget_exhausted'
+      ? 'application_daily_quota'
+      : code === 'unauthorized' || code === 'consent_required'
+        ? 'authorization_required'
+        : code === 'parent_review_required' || code === 'provider_refused'
+          ? 'safety_review_required'
+          : code === 'invalid_response'
+            ? 'invalid_provider_output'
+            : code === 'timeout_unknown'
+              ? 'request_outcome_unknown'
+              : 'temporarily_unavailable'
+  return { reason, message: parentReviewMessage(reason) }
+}
+
+function parentReviewMessage(reason: WritingParentReviewReason): string {
+  if (reason === 'provider_daily_quota' || reason === 'application_daily_quota') {
+    return 'Free AI checking is finished for today. Your writing is saved for a grown-up to check.'
+  }
+  if (reason === 'recognition_uncertain') return 'Some writing was unclear. Your writing is saved for a grown-up to check.'
+  if (reason === 'safety_review_required') return 'Automatic feedback was withheld. Your writing is saved for a grown-up to check.'
+  if (reason === 'authorization_required' || reason === 'external_not_activated') {
+    return 'Automatic checking is not active. Your writing is saved for a grown-up to check.'
+  }
+  return 'Automatic checking is unavailable. Your writing is saved for a grown-up to check.'
 }
 
 function createId(prefix: string): string {

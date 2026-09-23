@@ -2,12 +2,23 @@ import {
   WRITING_PILOT_NOTICE_VERSION,
   type WritingEvaluationResult,
   type WritingRecognitionResult,
-  type WritingServiceAuthority,
 } from '../../domain/writingPilot'
 import { validateWritingFeedback } from '../../persistence/writingPilotStore'
 import { resolveServerWritingTask } from './serverWritingCatalog'
 
 export type WritingProviderOperation = 'transcribe' | 'evaluate'
+
+interface LegacyControlledServiceAuthority {
+  status: 'authorized'
+  authMode: 'installation_bearer_v1'
+  installationId: string
+  endpointId: string
+  retentionControl: 'approved_zero_data_retention'
+  approvedAt: string
+  expiresAt: string
+  budgetLimitMicros: number
+  budgetRemainingMicros: number
+}
 
 export type WritingProviderBilling =
   | {
@@ -162,7 +173,7 @@ export function createWritingPilotService(options: WritingPilotServiceOptions) {
         return json({ error: 'authorization_unavailable' }, 503, origin, options.allowedOrigins)
       }
       const expiresAt = new Date(Math.min(sessionExpiry, installationExpiry)).toISOString()
-      const authority: WritingServiceAuthority = {
+      const authority: LegacyControlledServiceAuthority = {
         status: 'authorized',
         authMode: 'installation_bearer_v1',
         installationId: installation.installationId,

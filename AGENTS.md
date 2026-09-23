@@ -17,7 +17,7 @@
 
 ## Child Safety, Privacy, and Content
 
-- Ordinary reading must remain local, telemetry-free, advertising-free, and independent of runtime cloud services. The only current exception is the parent-enabled Read & Write pilot: bounded handwriting recognition and advisory writing evaluation may use the reviewed protected service described in `docs/READ_WRITE_PILOT.md`, but only with server-enforced installation authorization, current parent notice/consent, approved retention controls, and a finite server-side budget. The pilot stays off by default and must fail safely back to local parent review.
+- Ordinary reading must remain local, telemetry-free, advertising-free, and independent of runtime cloud services. The only current exception is the parent-enabled Read & Write pilot: bounded handwriting recognition and advisory writing evaluation may use the reviewed direct Cloudflare Workers AI service described in `docs/READ_WRITE_PILOT.md`, but only with server-enforced installation authorization, current parent notice/consent, verified Workers Free eligibility, a conservative server-side neuron allowance, and paid routes disabled. The monetary limit is exactly $0. The pilot stays off by default and must fail safely back to local parent review.
 - Never place provider credentials, rubrics, model selection, arbitrary URLs, or remote authorization authority in browser code. A local PIN or local checkbox is not internet-facing authorization. The protected installation bearer belongs only in the dedicated IndexedDB credential store; it must not enter localStorage, writing records, logs, screenshots, or reports.
 - Browser speech, when introduced, must remain optional, local to the browser, and free of microphone or external speech-provider requirements.
 - Do not store private assessment records, child-sensitive identifiers, credentials, school data, or personal records.
@@ -44,4 +44,5 @@
 - After GitHub Pages publishes, run `npm run verify:deployed -- --engine <edge|webkit> --commit <full-sha> --manifest <manifest-path> --dist <tested-dist-path> --url <deployment-url>` in both required engines. A post-deployment failure means the already-published release is unaccepted.
 - Never attach browser acceptance to a personal profile or commit generated profiles, fixtures, screenshots, or reports.
 - Both Edge and WebKit release suites must execute the required `read-write-pilot` scenario. CI uses mocked protected-service responses and synthetic ink only; live inference is never a release-test dependency.
+- The release gate must also run the repository-owned controlled Cloudflare Worker and SQLite Durable Object integration. Wrangler local tests must not contact Workers AI or consume the account-wide free allowance.
 - Do not call a phase or release complete while a required local or deployed gate is failing.

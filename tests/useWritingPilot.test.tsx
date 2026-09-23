@@ -41,6 +41,15 @@ describe('useWritingPilot', () => {
       expect(await result.current.confirmTranscription(recordId, 'Tia got the wrappers first.')).toBe(true)
     })
     expect(result.current.pendingRecord?.status).toBe('parent_review_needed')
+    await act(async () => {
+      expect(await result.current.recordParentJudgment(recordId, {
+        comprehension: 'meets',
+        spellingObservations: 'One spelling to revisit.',
+        grammarPunctuationObservations: 'Add a period.',
+        correction: 'Tia got the wrappers first.',
+      })).toBe(true)
+    })
+    expect(result.current.pendingRecord?.parentJudgment?.comprehension).toBe('meets')
     expect(client.transcribe).not.toHaveBeenCalled()
     expect(client.evaluate).not.toHaveBeenCalled()
     expect(localStorage.getItem('rorys-reading-quest.progress.v1')).toBe('{"reading":"bytes-stay-identical"}')
@@ -72,6 +81,51 @@ describe('useWritingPilot', () => {
     expect(result.current.pendingRecord?.rawTranscription).toBeNull()
     expect(result.current.pendingRecord?.strokes[0].strokeId).toBe('two')
   })
+
+  it('stops free inference for the UTC quota window without uploading the saved backlog automatically', async () => {
+    let clock = new Date('2026-09-21T12:00:00.000Z')
+    const transcribe = vi.fn(async () => ({
+      status: 'error' as const,
+      code: 'quota_exhausted' as const,
+      message: 'Free daily allowance exhausted.',
+      retryable: false,
+    }))
+    const client = clientStub({ transcribe })
+    const { result } = renderHook(() => useWritingPilot({ client, now: () => clock }))
+    await act(async () => { await result.current.enablePilot() })
+    await act(async () => { await result.current.authorizeExternal('private-code') })
+    const lesson = getLessonById(writingPilotActivities[0].triggerLessonId).lesson
+    if (!lesson) throw new Error('Writing trigger lesson is unavailable.')
+    await act(async () => { await result.current.scheduleAfterReading({ lesson, purpose: 'progression', sourceCompletionId: 'quota-1' }) })
+    const firstId = result.current.pendingRecord?.recordId
+    if (!firstId) throw new Error('First quota record was not created.')
+    const strokes = [{ strokeId: 'quota', pointerType: 'pen' as const, points: [{ x: 0.2, y: 0.2, pressure: 0.5, elapsedMs: 0 }] }]
+    await act(async () => { await result.current.saveDraft(firstId, strokes, '', 'handwriting') })
+    await act(async () => { await result.current.checkWriting(firstId, 'data:image/png;base64,AAAA', { width: 100, height: 50 }) })
+    expect(result.current.pendingRecord?.parentReviewReason).toBe('provider_daily_quota')
+    expect(result.current.state.settings.quotaPauseUntil).toBe('2026-09-22T00:00:00.000Z')
+    expect(transcribe).toHaveBeenCalledTimes(1)
+    await act(async () => { await result.current.finish(firstId) })
+    await act(async () => { await result.current.scheduleAfterReading({ lesson, purpose: 'progression', sourceCompletionId: 'quota-2' }) })
+    const secondId = result.current.pendingRecord?.recordId
+    if (!secondId) throw new Error('Second quota record was not created.')
+    await act(async () => { await result.current.saveDraft(secondId, strokes, '', 'handwriting') })
+    await act(async () => { await result.current.checkWriting(secondId, 'data:image/png;base64,AAAA', { width: 100, height: 50 }) })
+    expect(result.current.pendingRecord?.parentReviewReason).toBe('provider_daily_quota')
+    expect(transcribe).toHaveBeenCalledTimes(1)
+    await act(async () => { await result.current.finish(secondId) })
+    clock = new Date('2026-09-22T00:01:00.000Z')
+    await act(async () => {})
+    expect(transcribe).toHaveBeenCalledTimes(1)
+    const nextLesson = getLessonById(writingPilotActivities[2].triggerLessonId).lesson
+    if (!nextLesson) throw new Error('Post-reset writing trigger lesson is unavailable.')
+    await act(async () => { await result.current.scheduleAfterReading({ lesson: nextLesson, purpose: 'progression', sourceCompletionId: 'quota-3' }) })
+    const thirdId = result.current.pendingRecord?.recordId
+    if (!thirdId) throw new Error('Post-reset writing record was not created.')
+    await act(async () => { await result.current.saveDraft(thirdId, strokes, '', 'handwriting') })
+    await act(async () => { await result.current.checkWriting(thirdId, 'data:image/png;base64,AAAA', { width: 100, height: 50 }) })
+    expect(transcribe).toHaveBeenCalledTimes(2)
+  })
 })
 
 function clientStub(overrides: Partial<WritingPilotClient> = {}): WritingPilotClient & { transcribe: ReturnType<typeof vi.fn>; evaluate: ReturnType<typeof vi.fn> } {
@@ -80,11 +134,17 @@ function clientStub(overrides: Partial<WritingPilotClient> = {}): WritingPilotCl
     authMode: 'installation_bearer_v1',
     installationId: 'test-installation',
     endpointId: 'test-service',
-    retentionControl: 'approved_zero_data_retention',
+    provider: 'cloudflare_workers_ai',
+    retentionControl: 'cloudflare_workers_ai_no_training',
+    quotaPolicy: 'cloudflare_free_only_v1',
+    model: '@cf/google/gemma-4-26b-a4b-it',
     approvedAt: fixedNow.toISOString(),
     expiresAt: '2026-10-01T00:00:00.000Z',
-    budgetLimitMicros: 1_000_000,
-    budgetRemainingMicros: 900_000,
+    freePlanVerifiedAt: fixedNow.toISOString(),
+    dailyApplicationNeuronLimit: 4_000,
+    dailyApplicationNeuronsRemaining: 3_800,
+    quotaResetsAt: '2026-09-23T00:00:00.000Z',
+    actualPaidSpendingMicros: 0,
   }
   return {
     endpointId: 'test-service',

@@ -1,14 +1,18 @@
 import { describe, expect, it } from 'vitest'
 import {
+  WRITING_PILOT_RECORD_LIMIT,
   WRITING_PILOT_MAX_POINTS,
   WRITING_PILOT_MAX_STROKES,
   createDefaultWritingPilotState,
   type InkStroke,
+  type WritingResponseRecord,
 } from '../src/domain/writingPilot'
 import {
   WRITING_PILOT_STORAGE_KEY,
   createLocalStorageWritingPilotStore,
+  isWritingParentReviewQueueFull,
   normalizeInkStrokes,
+  pruneWritingPilotState,
 } from '../src/persistence'
 
 class MemoryStorage implements Storage {
@@ -99,4 +103,58 @@ describe('writing pilot persistence', () => {
     expect(loaded.state.settings.externalProcessingEnabled).toBe(false)
     expect(loaded.state.settings.serviceAuthority).toBeNull()
   })
+
+  it('never evicts an unexpired parent-review item when the bounded queue is full', () => {
+    const now = '2026-09-21T12:00:00.000Z'
+    const state = createDefaultWritingPilotState(now)
+    const protectedRecords = Array.from(
+      { length: WRITING_PILOT_RECORD_LIMIT },
+      (_, index) => writingRecord(`pending-${index}`, now, null, 'temporarily_unavailable'),
+    )
+    expect(isWritingParentReviewQueueFull({ ...state, records: protectedRecords })).toBe(true)
+
+    const reviewed = writingRecord('reviewed-replaceable', now, now, null)
+    const pruned = pruneWritingPilotState({ ...state, records: [...protectedRecords, reviewed] }, now)
+    expect(pruned.records).toHaveLength(WRITING_PILOT_RECORD_LIMIT)
+    expect(pruned.records.map((record) => record.recordId)).toEqual(protectedRecords.map((record) => record.recordId))
+  })
 })
+
+function writingRecord(
+  recordId: string,
+  createdAt: string,
+  parentReviewedAt: string | null,
+  parentReviewReason: WritingResponseRecord['parentReviewReason'],
+): WritingResponseRecord {
+  return {
+    recordId,
+    submissionId: `submission-${recordId}`,
+    activityId: 'writing-pilot-story-map-detail-1',
+    sourcePassageId: 'g2-story-map-cleanup',
+    sourceContentVersion: '1',
+    rubricVersion: '1',
+    sourceCompletionId: `completion-${recordId}`,
+    inputMode: 'handwriting',
+    status: 'completed',
+    inkRevision: 1,
+    strokes: [],
+    typedDraft: '',
+    rawTranscription: null,
+    recognitionUncertainties: [],
+    confirmedTranscription: null,
+    transcriptionConfirmedBy: null,
+    spellingAssessmentSupportable: false,
+    feedback: null,
+    feedbackProvenance: 'none',
+    suggestionDispositions: {},
+    requests: [],
+    parentReviewEvents: [],
+    parentReviewReason,
+    parentJudgment: null,
+    parentReviewedAt,
+    failureReason: null,
+    createdAt,
+    updatedAt: createdAt,
+    expiresAt: '2026-10-21T12:00:00.000Z',
+  }
+}
