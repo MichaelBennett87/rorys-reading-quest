@@ -1720,7 +1720,7 @@ async function runReadWritePilot() {
   await local.page.locator('.writing-pilot-shell').waitFor({ state: 'visible', timeout: 15_000 })
   assert(await writingRaw(local.page) === savedBeforeRestart, 'saved handwriting changed across browser-process restart')
   await activate(local.page.getByRole('button', { name: 'Check Writing', exact: true }))
-  await local.page.getByText(/saved for parent review/i).waitFor({ state: 'visible', timeout: 15_000 })
+  await local.page.getByText(/saved for a grown-up to check/i).waitFor({ state: 'visible', timeout: 15_000 })
   assert(local.runtime.requests.filter((entry) => entry.url.includes('/api/read-write/v1/')).length === 0, 'local-only writing path contacted the service')
   await activate(local.page.getByRole('button', { name: 'Next', exact: true }))
   await assertQuestionFirstShell(local.page)
