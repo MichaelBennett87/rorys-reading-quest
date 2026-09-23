@@ -136,6 +136,7 @@ let createRuntimeLog = (name) => {
     requests: [],
     failedRequests: [],
     failedResponses: [],
+    expectedFailedResponses: [],
     consoleErrors: [],
     pageErrors: [],
   }
@@ -232,6 +233,11 @@ async function launchProfile(
       }
       if (path === 'transcribe') {
         if (options.forceWritingQuota) {
+          runtime.expectedFailedResponses.push({
+            url: request.url(),
+            status: 429,
+            type: request.resourceType(),
+          })
           await route.fulfill({ status: 429, contentType: 'application/json', body: JSON.stringify({ error: 'free_quota_exhausted' }) })
           return
         }
@@ -2247,14 +2253,27 @@ function evaluateRuntime(logs) {
   const all = logs.flatMap((log) => log.requests)
   const failedRequests = logs.flatMap((log) => log.failedRequests)
   const failedResponses = logs.flatMap((log) => log.failedResponses)
+  const expectedFailedResponses = logs.flatMap((log) => log.expectedFailedResponses)
   const pageErrors = logs.flatMap((log) => log.pageErrors)
   const consoleErrors = logs.flatMap((log) => log.consoleErrors)
   const failedAppAssets = failedResponses.filter((entry) => entry.url.includes('/rorys-reading-quest/assets/'))
-  const unexpectedFailedResponses = failedResponses.filter((entry) => !entry.url.endsWith('/favicon.ico'))
+  const remainingExpectedFailures = [...expectedFailedResponses]
+  const unexpectedFailedResponses = failedResponses.filter((entry) => {
+    if (entry.url.endsWith('/favicon.ico')) return false
+    const expectedIndex = remainingExpectedFailures.findIndex((expected) => (
+      expected.url === entry.url
+      && expected.status === entry.status
+      && expected.type === entry.type
+    ))
+    if (expectedIndex < 0) return true
+    remainingExpectedFailures.splice(expectedIndex, 1)
+    return false
+  })
   const unexpectedConsoleErrors = consoleErrors.filter((entry) => !entry.url.endsWith('/favicon.ico'))
   const origins = [...new Set(all.map((entry) => new URL(entry.url).origin))]
   assert(failedRequests.length === 0, `request failures observed: ${JSON.stringify(failedRequests)}`)
   assert(failedAppAssets.length === 0, `application asset failures observed: ${JSON.stringify(failedAppAssets)}`)
+  assert(remainingExpectedFailures.length === 0, `expected controlled HTTP failures were not observed: ${JSON.stringify(remainingExpectedFailures)}`)
   assert(unexpectedFailedResponses.length === 0, `unexpected HTTP failures observed: ${JSON.stringify(unexpectedFailedResponses)}`)
   assert(unexpectedConsoleErrors.length === 0, `unexpected console errors observed: ${JSON.stringify(unexpectedConsoleErrors)}`)
   assert(pageErrors.length === 0, `page errors observed: ${JSON.stringify(pageErrors)}`)
