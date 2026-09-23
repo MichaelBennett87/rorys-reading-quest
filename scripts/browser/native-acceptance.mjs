@@ -2269,7 +2269,13 @@ function evaluateRuntime(logs) {
     remainingExpectedFailures.splice(expectedIndex, 1)
     return false
   })
-  const unexpectedConsoleErrors = consoleErrors.filter((entry) => !entry.url.endsWith('/favicon.ico'))
+  const unexpectedConsoleErrors = consoleErrors.filter((entry) => {
+    if (entry.url.endsWith('/favicon.ico')) return false
+    return !expectedFailedResponses.some((expected) => (
+      expected.url === entry.url
+      && entry.text.includes(`status of ${expected.status}`)
+    ))
+  })
   const origins = [...new Set(all.map((entry) => new URL(entry.url).origin))]
   assert(failedRequests.length === 0, `request failures observed: ${JSON.stringify(failedRequests)}`)
   assert(failedAppAssets.length === 0, `application asset failures observed: ${JSON.stringify(failedAppAssets)}`)
